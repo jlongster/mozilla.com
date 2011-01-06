@@ -1,0 +1,43 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Firefox 모바일 도움말";
+    $search_field  = "Firefox 도움말 검색";
+    $search_button = "검색";
+    $link_to_sumo  = "또는 <a href=\"%s\">도움말 사이트 가기</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Firefox 모바일<em>도움말</em></h1>
+
+    <h2>자주 질문하는 사항</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Firefox 데스크탑과 모바일 사이의 정보 동기화 방법</a>
+        <li><a href="<?=$sumo_links[2]?>">Firefox 업그레이드 하는 방법</a></li>
+        <li><a href="<?=$sumo_links[3]?>">스마트 주소창 사용 방법</a></li>
+    </ul>
+
+    <h2>주요 도움말</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">환경 설정 변경 방법</a></li>
+        <li><a href="<?=$sumo_links[5]?>">키보드 단축키 설명서</a></li>
+        <li><a href="<?=$sumo_links[6]?>">다운로드 파일 관리 방법</a></li>
+        <li><a href="<?=$sumo_links[7]?>">새 탭 여는 방법</a></li>
+        <li><a href="<?=$sumo_links[8]?>">부가 기능 검색 및 설치 방법</a></li>
+        <li><a href="<?=$sumo_links[9]?>">부가 기능 정지 및 삭제 방법</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Firefox 모바일 웹 이용 방법</a></li>
+        <li><a href="<?=$sumo_links[11]?>">북마크 추가 방법</a></li>
+        <li><a href="<?=$sumo_links[12]?>">웹사이트 줌인 및 아웃 방법</a></li>
+    </ul>
+
+    <h2>도움말 검색</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>

@@ -1,0 +1,421 @@
+body {
+    background-position: 50% -20px;
+}
+
+#wrapper {
+/*
+    background: transparent url(/img/tignish/firefox/background-firefox-2.jpg) repeat-x 100px -180px;
+*/
+    background: transparent url(/img/tignish/home/feature-background-2.jpg) repeat-x 100px -70px;
+}
+
+#main-feature {
+    margin-left:50px;
+    padding-top:30px;
+}
+
+#main-feature h2 {
+    padding: 0;
+    margin: 0 10px 20px 0px;
+}
+
+#main-feature p {
+    margin: 0 200px 0 0;
+    font-size: 137%;
+}
+
+#main-content {
+    margin: 0 0 20px 95px;
+    width: auto;
+}
+
+#main-content .sub-feature {
+    float: left;
+    width: 225px;
+    color: #69645c;
+    margin-top: 35px;
+    margin-right: 0;
+    padding-bottom: 0px;
+    background: url(/img/tignish/firstrun/sub-feature-bottom.png) bottom left no-repeat;
+    min-height: 17.5em;
+}
+
+* html #main-content .sub-feature { height: 15em; /* IE hack */ }
+
+#main-content #learn_more,
+#main-content #questions {
+    margin-right: 20px;
+}
+
+#main-content .sub-feature h3 {
+    background: url(/img/tignish/firstrun/sub-feature-top.png) top left no-repeat;
+    margin: 0 0 10px 0;
+    padding: 20px 25px 0 5px;
+    font-size: 137%;
+}
+
+#main-content .sub-feature p {
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+#main-content .sub-feature p a {
+    background: transparent url(/img/tignish/firstrun/link-arrow.png) left center no-repeat;
+    display: block;
+    margin-top: 15px;
+    padding-left: 12px;
+}
+
+[dir=rtl] #main-content .sub-feature p a {
+    background: transparent url(/img/tignish/firstrun/link-arrow-rtl.png) right center no-repeat;
+    padding-left: 0;
+    padding-right: 12px;
+}
+
+#main-content .sub-feature img {
+    float: right;
+    margin: 1em 0 1em 1em;
+}
+
+#landing-page p.thunderbird {
+    background-image:url(/img/thunderbird-logo-64x64.png);
+    background-position:left center;
+    background-repeat:no-repeat;
+    clear:both;
+    height:80px;
+    padding-left:80px;
+    padding-top:2em;
+}
+
+
+/* Download Button, copied from firefox.css */
+
+#landing-page ul.home-download {
+    width: 365px;
+    margin: 0 0 0 28px;
+    left: auto;
+}
+
+#landing-page ul.home-download li {
+    padding: 0;
+    position: relative;
+    height: 124px;
+}
+
+* html #landing-page ul.home-download li {
+    background: none;
+}
+
+#landing-page ul.home-download li a.download-link {
+    background-image: url(/img/tignish/firefox/download-button-primary.png);
+    height: 124px;
+    padding: 0;
+}
+
+#landing-page ul.home-download li a.download-link span {
+    padding: 55px 20px 20px 128px;
+    height: 49px;
+    display: block;
+}
+
+* html #landing-page ul.home-download li a.download-link {
+    background: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',src='/img/tignish/firefox/download-button-primary.png',sizingMethod='crop');
+}
+
+#landing-page #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+#landing-page ul.home-download li a:hover {
+    background-position: top left;
+}
+
+#landing-page ul.home-download li a:hover span {
+    background: url(/img/tignish/firefox/download-button-primary.png) top right no-repeat;
+}
+
+* html #landing-page ul.home-download li a.download-link:hover span {
+    background: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',src='/img/tignish/firefox/download-button-primary-ie.png',sizingMethod='crop');
+}
+
+#landing-page ul.home-download li a.download-link span { line-height: 1.1; }
+
+#landing-page ul.home-download li a.download-link em { color: #38a801; }
+
+#landing-page ul.home-download li a.download-link strong {
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-size: 145%;
+    padding-right: 27px;
+    background: url(/img/tignish/firefox/download-arrow.png) right center no-repeat;
+}
+
+#landing-page ul.download li a.download-link:hover,
+#landing-page ul.download li a.download-link:active {
+    text-decoration: none;
+}
+
+#landing-page #main-feature .download-other {
+    margin-left: 40px;
+    font-size: 70%;
+    width: 365px;
+    text-align:center;
+}
+
+.download-noscript { margin-left: 35px; width: 400px; }
+.download-noscript h3 { font-size: 120%; margin-bottom: 0; }
+.download-noscript h3 span { display: block; font-size: 75%; color: #898378; }
+.download-noscript ul { margin-top: 0.5em; }
+
+
+/* BETA LOCALES SECTION */
+
+#landing-page.locale-es-CL ul.home-download li a.download-link,
+#landing-page.locale-es-MX ul.home-download li a.download-link,
+#landing-page.locale-kk    ul.home-download li a.download-link,
+#landing-page.locale-ku    ul.home-download li a.download-link,
+#landing-page.locale-or    ul.home-download li a.download-link,
+#landing-page.locale-rm    ul.home-download li a.download-link,
+#landing-page.locale-ta    ul.home-download li a.download-link,
+#landing-page.locale-ta-LK ul.home-download li a.download-link,
+#landing-page.locale-mn    ul.home-download li a.download-link,
+#landing-page.locale-ast   ul.home-download li a.download-link,
+#landing-page.locale-gd    ul.home-download li a.download-link
+ {
+    background-image: url(/img/tignish/firefox/download-button-primary-beta2.png);
+}
+
+
+
+
+/* END OF BETA LOCALES SECTION */
+
+
+/* various text adjustments */
+
+#landing-page p#firefox-intro {
+    margin-bottom:2em;
+}
+
+
+#landing-page #main-feature h2 {
+    color:#4B4742;
+}
+
+
+
+/* specific per locale adjustments */
+
+.locale-id #main-content .sub-feature {
+    min-height:20em;
+}
+
+
+.locale-ga-IE #main-content .sub-feature {
+    min-height:18em;
+}
+
+
+.locale-ga-IE ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-ga-IE #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-ka ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-ka #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-id #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-ka #main-content .sub-feature {
+    min-height:21em;
+}
+
+.locale-es-AR #main-content .sub-feature {
+    min-height:17em;
+}
+
+.locale-es-AR #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+
+.locale-oc #main-content .sub-feature {
+    min-height:17em;
+}
+
+.locale-oc ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+
+.locale-mk #main-content .sub-feature {
+    min-height:20em;
+}
+
+.locale-mk ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-mk #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-lv ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-lv #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+
+.locale-lv #main-content .sub-feature {
+    min-height:18em;
+}
+
+
+.locale-si ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-si #main-content .sub-feature {
+    min-height:17em;
+}
+
+
+
+.locale-kn #main-content .sub-feature {
+    min-height:17em;
+}
+
+.locale-be #main-content .sub-feature {
+    min-height:16em;
+}
+
+.locale-be #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+
+.locale-bg ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-et ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-et #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-cy ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-cy #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-de ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-de #main-content .sub-feature {
+    min-height: 20em;
+}
+
+
+.locale-de #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+#main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-el #main-content .sub-feature {
+    min-height: 20em;
+}
+
+.locale-es-AR #main-content .sub-feature {
+    min-height: 20em;
+}
+
+.locale-es-ES #main-content .sub-feature {
+    min-height: 20em;
+}
+
+
+.locale-fr ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-fr #main-content .sub-feature p a {
+    background:transparent url(/img/tignish/firstrun/link-arrow.png) no-repeat scroll left 5px;
+}
+
+.locale-fr #main-content .sub-feature {
+    min-height: 19em;
+}
+
+.locale-hr ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+.locale-it #main-content .sub-feature {
+    min-height: 20em;
+}
+
+.locale-ml ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+
+.locale-rm ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+
+.locale-ru ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+
+.locale-ta ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+
+.locale-uk ul.home-download li a.download-link strong {
+    font-size:110% !important;
+}
+
+.locale-gd ul.home-download li a.download-link strong {
+    font-size:105% !important;
+    padding-right:24px !important;
+}
+
+.locale-gd ul.home-download li a.download-link span {
+    padding:55px 5px 20px 128px !important;
+}
+
+.locale-gd ul.home-download li a.download-link em {
+    padding-top:5px !important;
+}
+
+.locale-vi #main-content .sub-feature {
+    min-height: 19.5em;
+}

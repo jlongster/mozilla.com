@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "فایرفاکس ۴ آزمایشی - نظر بدهید";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "در مورد برنامۀ فایرفاکس ۴ آزمایشی چگونه با خبر شدید؟";
+$str2       = "به‌هنگام باشید";
+$str3       = "عضو شوید تا اخبار، اتفاقات و اطلاعات دربارۀ فایرفاکس آزمایشی را از طریق پست الکترونیکی دریافت کنید.";
+$str4       = "آدرس پست الکترونیک شما:";
+$str5       = "من با <a href=\"%s\">سیاست حفظ حریم خصوصی</a> موافقم.<span class='footnote'>(ما فقط اطلاعات مرتبط با موزیلا را برای شما می‌فرستیم.</span>";
+$str6       = "لطفاً گه‌گاه برای من اخبار موزیلا، نکات و ترفندهایی در مورد فایرفاکس و دیگر اطلاعات در مورد موزیلا را بفرست.";
+$str7       = "عضویت »";
+$str8       = "از شما به خاطر عضویتتان متشکریم!";
+$str9       = "ما انتظار داریم که به زودی بیشترین نکات و ترفندهای فایرفاکس را به اشتراک بگذاریم. همان‌طور که جذاب‌ترین اخبار در مورد موزیلا و این که چگونه تلاش می‌کنیم تا وب بهتری درست کنیم را به اشتراک خواهیم گذاشت.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="فایرفاکس ۴ آزمایشی" /></a></h2>
+        <h3>به کمک شما نیاز داریم</h3>
+        <p>ما فایرفاکسی را می‌سازیم که سریع‌تر و سبک‌تر است و از راه‌های زیادی به شما در مرور وب کمک می‌کند. اما بدون نظرات شما نمی‌توانیم این کار را انجام دهیم.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>فایرفاکس ۴<sup>آزمایشی</sup></span></h3></li>
+    <li class="feedback"><span>نظرات</span></li>
+    <li class="more"><h3>اطلاعات بیشتر به زبان انگلیسی</h3></li>
+    <li class="features"><a href="../features/">قابلیت‌ها</a> </li>
+    <li class="tech"><a href="../technology/">فناوری</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">سیاست حفظ حریم خصوصی نظرات</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>به ما بگویید چه فکر می‌کنید</h2>
+        <h3>به سرعت نظر دهید</h3>
+        <p>روی دکمه‌ی بازخورد کلیک کنید تا به سرعت به ما در مورد نسخۀ آزمایشی بگویید به همین راحتی!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">سازندگان: ما به شما احتیاج داریم</h2>
+        <h3>ایده‌های خود را به اشتراک بگذارید</h3>
+        <p>در مورد <a href="../features/#under-the-hood">قابلیت‌های جدید</a> در نسخۀ آزمایشی چه فکر می‌کنید؟</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">تالار نظرات را ببینید.</a></p>
+
+        <h3>مشکلات فنی را گزارش کنید</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>اگر با Bugzilla آشنایی دارید و به مشکلی در حین مرور وب برخورد کردید آن را برای ما ارسال کنید.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">ارسال مشکل در مورد فایرفاکس ۴</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>به دیگران هم بگویید</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">ما را در توییتر دنبال کنید</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">ما را در فیس‌بوک ببینید</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">وبلاگ موزیلا را بخوانید</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>کمک می‌خواهید؟</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />صفحات پشتیبانی ما</a> پاسخ‌ها و توصیه‌هایی در مورد فایرفاکس ۴ آزمایشی دارد.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'ਫਾਇਰਫਾਕਸ ਵੈੱਬ ਬਰਾਊਜ਼ਰ| ਤਾਜ਼ਾ ਬੀਟਾ ਟੈਸਟ ਲਈ ਸਾਡੀ ਮੱਦਦ ਕਰੋ';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ਫਾਇਰਫਾਕਸ ਦੇ ਭਵਿੱਖ ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਮੱਦਦ!</h2>
+        <p>ਫਾਇਰਫਾਕਸ ਦਾ ਤਾਜ਼ਾ ਬੀਟਾ ਵਰਜਨ ਹੁਣ ਉਪਲੱਬਧ ਹੈ। ਇਸ ਨੂੰ ਟੈਸਟ ਕਰੋ ਅਤੇ ਸਾਨੂੰ ਦੱਸੋ ਕਿ ਤੁਸੀਂ ਕੀ ਸੋਚਦੇ ਹੋ ਇਸ ਬਾਰੇ!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>ਖਾਸ ਜਾਣਕਾਰੀ</h4>
+        <p class="intro">ਡਾਊਨਲੋਡ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਪੜ੍ਹੋ ਜੀ</p>
+    </div>
+    <ul>
+        <li>ਇਹ ਪਹਿਲਾਂ ਰੀਲਿਜ਼ ਕੀਤਾ ਸਾਫਟਵੇਅਰ ਹੈ: ਤੁਹਾਨੂੰ ਕੁਝ ਵੈੱਬਸਾਈਟਾਂ ਅਤੇ ਐਡ-ਆਨ ਨਾਲ ਕੁਝ ਸਮੱਸਿਆਵਾਂ ਆ ਸਕਦੀਆਂ ਹਨ।</li>
+        <li>ਜੇ ਤੁਹਾਨੂੰ ਸਮੱਸਿਆ ਆਉਦੀ ਹੈ ਤਾਂ <a href="http://feedback.mozilla.org/">ਸਾਨੂੰ ਦੱਸੋ</a> ਜਾਂ <a href="https://bugzilla.mozilla.org/">ਬੱਗ ਰਿਪੋਰਟ ਕਰੋ</a>.</li>
+        <li>ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">ਰੀਲਿਜ਼ ਨੋਟਿਸ</a> ਅਤੇ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">ਪਛਾਣੇ ਮੁੱਦੇ</a> (ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ) ਪੜ੍ਹੋ।</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">ਬੀਟਾ ਨਹੀਂ ਚਾਹੁੰਦੇ? ਤਾਂ <a href="/<?=$lang?>/firefox/">ਤਾਜ਼ਾ ਫਾਇਰਫਾਕਸ</a> ਲਵੋ।</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

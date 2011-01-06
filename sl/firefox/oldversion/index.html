@@ -1,0 +1,40 @@
+﻿<?php
+    // Translate the page Title below
+    $page_title = "Firefox Posodobljen";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Ne, hvala lepa";
+    $no_download_button2 = "(Dovolite, da vam povem, za kaj gre)";
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Varnostno opozorilo:
+        </span>
+</h2>
+<h3>
+        Ta različica Firefox je zastarela.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>S to različico Firefoxa boste na spletu še dalje izpostavljeni grožnjam za vašo varnost.</p>
+
+    <p id="main-feature-contents">
+    Prenesite si prosim <a href="/<?=$lang?>/firefox/">najnovejšo različico Firefoxa</a>. Ne samo da vas  to ne bo stalo nič, od najnovejših izboljšav, kar se varnosti, zmogljivosti in potez programa tiče, boste imeli samo korist.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

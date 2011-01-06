@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^([a-z]=.*)  index.php?$1  [L,NE]
+php_value display_errors 0
+php_value error_reporting 0
+</IfModule>
+AddType application/x-httpd-php .php .html .js .css

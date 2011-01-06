@@ -1,0 +1,351 @@
+<?php
+    require_once "{$config['file_root']}/includes/helpers.php";
+
+    $page_title = 'Firefox web browser';
+    $body_id    = 'home-fx';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/home-fx.css" media="screen" />
+    <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
+    <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Good news! Your Firefox is up-to-date. <span>Go beyond basic browsing</span></h2>
+
+    <div id="wheel-frame" class="a">
+        <span id="spin" onclick="javascript:window.switchPage()">
+          <img src="<?=$config['static_prefix']?>/img/covehead/firefox/fx/spinner.png" alt="Click to Spin" height="90" width="89">
+        </span>
+        <div id="wheel" onclick="javascript:window.switchPage()">
+            <div id="section-a" class="section">Mobile</div>
+            <div id="section-b" class="section">Add-ons</div>
+            <div id="section-c" class="section">Personas</div>
+        </div>
+        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/fx/stand.png" alt="" id="wheel-stand">
+        <div id="wheel-creature"></div>
+        <div id="wheel-bubble">
+            <div>
+                <p class="feature-default">Spin the Wheel of Firefox!</p>
+                <p class="feature-a">Firefox, Now in Pocket-size</p>
+                <p class="feature-b">Make Browsing even Better!</p>
+                <p class="feature-c">Change how Firefox Looks!</p>
+            </div>
+        </div>
+        <div id="wheel-panel" class="pager pager-no-history">
+
+            <div class="pager-content">
+
+                <div class="wheel-panel-contents" id="feature-a">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-a').id = 'page-feature-a';
+                    // ]]></script>
+                    <h3>Bring Firefox <span>With You!</span></h3>
+                    <ul>
+                        <li>Sync your desktop and mobile</li>
+                        <li>Customize with add-ons</li>
+                        <li>Type less, browse more</li>
+                    </ul>
+                    <p><a href="/<?=$lang?>/mobile/download/" 
+                          onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/mobile/download/',
+                                      'WT.ti', 'Mobile%20Wheel');">
+                        Get Firefox on your phone »
+                    </a></p>
+                </div>
+
+                <div class="wheel-panel-contents" id="feature-c">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-c').id = 'page-feature-c';
+                    // ]]></script>
+                    <h3>Get More <span>From Your Firefox</span></h3>
+                    <ul>
+                        <li id="addon-invisiblehand">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/11377/?src=mozcom-wheel"
+                               onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                                      'DCS.dcsuri', '/en-US/firefox/addon/11377/',
+                                                      'WT.ti', 'Addons%20Wheel');">
+                                <span class="title">InvisibleHand</span>
+                                <span class="desc">Automatically get the lowest price when you  shop online.</span>
+                            </a>
+                        </li>
+                        <li id="addons-cooliris">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/5579/?src=mozcom-wheel"
+                               onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                                      'DCS.dcsuri', '/en-US/firefox/addon/5579/',
+                                                      'WT.ti', 'Addons%20Wheel');">
+                                <span class="title">Cooliris</span>
+                                <span class="desc">A stunning way to browse photos and videos from the Web.</span>
+                            </a>
+                        </li>
+                        <li id="addon-reminderfox">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/1191/?src=mozcom-wheel"
+                               onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                                      'DCS.dcsuri', '/en-US/firefox/addon/1191/',
+                                                      'WT.ti', 'Addons%20Wheel');">
+                                <span class="title">ReminderFox</span>
+                                <span class="desc">Make sure you remember all of your important dates.</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p><a href="https://addons.mozilla.org/firefox/?src=mozcom-wheel"
+                          onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                                 'DCS.dcsuri', '/firefox/',
+                                                 'WT.ti', 'Addons%20Wheel');">
+                        View all Firefox Add-ons »
+                    </a></p>
+                </div>
+
+                <div class="wheel-panel-contents" id="feature-b">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-b').id = 'page-feature-b';
+                    // ]]></script>
+                    <h3>Roll Over to Try, <span>Click to Apply</span></h3>
+                    <iframe
+                        src="<?= $config['url_scheme'] ?>://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+                        width="330"
+                        height="185">
+                        </iframe>
+                        <p><a href="http://www.getpersonas.com/gallery?source=moz.com_fx"
+                              onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com',
+                                                     'DCS.dcsuri', '/gallery', 
+                                                     'WT.ti', 'Personas%20Wheel');">
+                            Many more this way »
+                        </a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr id="feature-divider">
+
+<div id="main-content">
+
+    <div class="sub-feature" id="sub-firefox">
+        <h3>Get <span>Firefox</span></h3>
+        <p>If you need a fresh new copy of Firefox, you can get it here:</p>
+        <div id="home-fx-download">
+        <script src="/js/download.old.js"></script>
+        <script>
+            <!--
+            // Configure the Firefox download write script
+
+            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"dcsMultiTrack('DCS.dcsurl', '%DOWNLOAD_URL%', 'WT.ti', 'Download%20Firefox'); do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+            var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"dcsMultiTrack('DCS.dcsurl', '%DOWNLOAD_URL%', 'WT.ti', 'Download%20Firefox');\">Free Download<\/a>"
+
+            document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+            writeDownloadItems("fx");
+            document.writeln("<\/ul>");
+            document.writeln("<div class=\"download-other\">");
+            document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+            document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+            document.writeln("<\/div>");
+            //-->
+        </script>
+        <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang); ?>
+        </div>
+    </div>
+
+    <div class="sub-feature" id="sub-participate">
+        <h3>Easy Ways To <span>Pass It On</span></h3>
+        <p>Telling your friends only takes a minute!</p>
+        <a href="/<?=$lang?>/about/participate/" onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/participate/',
+                                                                        'WT.ti', 'Share');">
+          Share Firefox <span>»</span>
+        </a>
+    </div>
+
+    <div class="sub-feature" id="sub-features">
+        <h3>Amazing <span>Features</span></h3>
+        <p>Get acquainted with everything Firefox has to offer.</p>
+        <a href="/<?=$lang?>/firefox/features/" onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/features/',
+                                                                       'WT.ti', 'Learn%20More');">
+          Learn More <span>»</span>
+        </a>
+    </div>
+
+    <div class="sub-feature" id="sub-support">
+        <h3>Need <span>Help?</span></h3>
+        <p>Our Support section has the answers you need.</p>
+        <a href="http://support.mozilla.com/<?=$lang?>/kb/" 
+           onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com', 
+                                  'DCS.dcsuri', '/<?=$lang?>/kb/', 
+                                  'WT.ti', 'Support');">
+          Visit Support <span>»</span>
+        </a>
+    </div>
+
+</div>
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script src="/js/mozilla-pager.js"></script>
+    <script>
+
+    $(document).ready(function() {
+
+        var \$container = \$('#wheel-frame');
+        var panelId     = 'wheel-panel';
+        var \$panel     = \$('#wheel-panel');
+        var wheel       = document.getElementById('wheel');
+        var \$wheel     = \$(wheel);
+        var page        = 0;
+		var bubble      = document.getElementById('wheel-bubble').firstChild;
+		while (bubble.nodeType != 1 && bubble.nextSibling) {
+			bubble = bubble.nextSibling;
+		}
+		var \$bubble    = $(bubble);
+		var \$bubbles   = $('#wheel-bubble p');
+
+        var useTransitions = false;
+        (function() {
+            var div = document.createElement('div');
+            div.innerHTML = '<div style="'
+                + '-webkit-transition: color 1s linear;'
+                + '-moz-transition: color 1s linear;'
+                + '-ms-transition: color 1s linear;'
+                + '-o-transition: color 1s linear;'
+                + '"></div>';
+
+            useTransitions =
+                   (div.firstChild.style.webkitTransition !== undefined)
+                || (div.firstChild.style.MozTransition !== undefined)
+                || (div.firstChild.style.msTransition !== undefined)
+                || (div.firstChild.style.OTransition !== undefined);
+
+            delete div;
+        })();
+
+        var angle;
+        if (useTransitions) {
+            angle = -360.0; // start at an angle to fix font rendering in Windows
+        } else {
+            angle = 0.0;
+        }
+
+        if (typeof wheel.addEventListener != 'undefined') {
+            wheel.addEventListener(
+                'webkitTransitionEnd',
+                showPanel,
+                true
+            );
+
+            wheel.addEventListener(
+                'transitionend',
+                showPanel,
+                true
+            );
+
+			bubble.addEventListener(
+                'webkitTransitionEnd',
+                showBubble,
+                true
+			);
+
+			bubble.addEventListener(
+                'transitionend',
+                showBubble,
+                true
+			);
+        } else {
+            wheel.addEvent(
+                'transitionend',
+                showPanel
+            );
+            bubble.addEvent(
+                'transitionend',
+                showBubble
+            );
+        }
+
+        function showPanel()
+        {
+            Mozilla.Pager.pagers[panelId].setPage(
+                Mozilla.Pager.pagers[panelId].pages[page]
+            );
+
+            if (useTransitions) {
+                \$panel
+                    .css('opacity', 1.0)
+                    .css('bottom', 0);
+            } else {
+                \$panel.animate({ opacity: 1.0, bottom: 0 }, 400);
+            }
+        }
+
+		function showBubble()
+		{
+			\$bubbles.css('display', 'none');
+			\$(\$bubbles.get(page + 1)).css('display', 'block');
+
+           if (useTransitions) {
+                \$bubble.css('opacity', 1.0);
+            } else {
+                \$bubble.animate({ opacity: 1.0 }, 200);
+            }
+		}
+
+		function hideBubble()
+		{
+            if (useTransitions) {
+                \$bubble.css('opacity', 0);
+            } else {
+                \$bubble.animate({ opacity: 0.0 }, 200, 'linear', showBubble);
+            }
+		}
+
+        function switchPage()
+        {
+            hidePanel();
+            hideBubble();
+            spinWheel();
+
+            if(\$container.hasClass('a')) {
+                \$container.removeClass('a');
+                \$container.addClass('b');
+                page = 1;
+            } else if (\$container.hasClass('b')) {
+                \$container.removeClass('b');
+                \$container.addClass('c');
+                page = 2;
+            } else if (\$container.hasClass('c')) {
+                \$container.removeClass('c');
+                \$container.addClass('a');
+                page = 0;
+            }
+        }
+
+        function hidePanel()
+        {
+            if (useTransitions) {
+                \$panel
+                    .css('opacity', 0)
+                    .css('bottom', -278);
+            } else {
+                \$panel.animate({ opacity: 0.0, bottom: -278 }, 400);
+            }
+        }
+
+        function spinWheel()
+        {
+            angle -= 480.0;
+
+            if (useTransitions) {
+                \$wheel.rotate(angle);
+            } else {
+                \$wheel.animate({rotate: angle}, 800, 'linear', showPanel);
+            }
+        }
+
+        window.switchPage = switchPage;
+    });
+
+    </script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

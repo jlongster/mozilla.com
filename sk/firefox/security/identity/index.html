@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Identita stránky jedným kliknutím";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Identita stránky jedným kliknutím</h2>
+    <p>Firefox 3 obsahuje nové tlačidlo na overenie identity stránok, ktoré vám pomôže dozvedieť sa, ku komu sa na internete pripájate.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Táto funkcia vám umožní vidieť na prvý pohľad, či stránky, ktoré ste navštívili, poskytujú informácie o&nbsp;svojej identite, kto overil tieto informácie, a&nbsp;či chránia vaše informácie pred niekým, kto by vás mohol sledovať. K&nbsp;informáciám o&nbsp;identite ľubovoľnej stránky sa dostanete kliknutím na ikonu stránky na&nbsp;ľavej strane poľa s&nbsp;adresou (alebo stlačením Shift-Tab-Enter).</p>
+
+<h3>Často kladené otázky</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Čo znamenajú rôzne úrovne informácií o&nbsp;identite?</h4>
+    <div class="expander-content">
+        <p>Ikona “pasovej kontroly” sa zmení podľa toho, akú úroveň informácií o&nbsp;identite webová stránka poskytuje.</p>
+        <p class="site-id site-id-1">Táto webová stránka neposkytuje informácie o&nbsp;svojej identite.</p>
+        <p class="site-id site-id-2">Webová stránka poskytuje základné informácie o&nbsp;identite a&nbsp;chráni vaše osobné informácie pred sledovaním.</p>
+        <p class="site-id site-id-3">Stránka poskytuje úplne overené informácie o&nbsp;identite jej vlastníka a&nbsp;chráni vaše osobné informácie pred sledovaním.</p>
+        <p class="site-id site-id-4">Táto stránka je na zozname útočných stránkok alebo je podvrhom. Zadávanie osobných údajov do týchto stránok, prípadne len ich návšteva, môžu byť nebezpečné.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Prečo neposkytujú overené informácie o&nbsp;identite všetky stránky?</h4>
+    <div class="expander-content">
+        <p>Väčšina webových stránok na internete nepožaduje od návštevníkov žiadne osobné či finančné údaje, a&nbsp;teda nepovažuje za potrebné vynakladať prostriedky na poskytovanie overených informácií o&nbsp;identite a&nbsp;ochranu pred sledovaním.</p>
+        <p>Webové stránky, ktoré od vás požadujú zadanie osobných či finančných informácií, alebo ktoré tvrdia, že predstavujú vládne alebo podnikateľské organizácie, by sa mali vždy dostatočne identifikovať a&nbsp;chrániť vaše údaje pred sledovaním.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Je bezpečné robiť obchody na stránkach, ktoré sa neidentifikujú?</h4>
+    <div class="expander-content">
+        <p>Rozhodovanie o tom, komu na internete veriť začína tým, že viete, s&nbsp;kým hovoríte. Ale to nie je všetko. Stránky, ktoré neposkytujú informácie o&nbsp;identite a&nbsp;nechránia vaše osobné údaje, vás ohrozujú a&nbsp;nemali by ste ich považovať za bezpečné. Ale aj stránky, ktoré sa identifikujú správne, môžu mať praktiky, s&nbsp;ktorými nesúhlasíte alebo nemusia údaje zabezpečovať dostatočne.</p>
+        <p>Podobne ako v&nbsp;reálnom svete by ste mali byť opatrní aj pri komunikácii so stránkami, ktoré nepoznáte a&nbsp;ktorým neveríte. Vedomosť, že stránka sa správne identifikovala, je súčasťou vašich rozhodnutí o&nbsp;dôverovaní či nedôverovaní danej stránke.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Overuje tieto informácie o&nbsp;každej webovej stránke spoločnosť Mozilla?</h4>
+    <div class="expander-content">
+        <p>Informácie používané na identifikáciu stránok nie sú overované Mozillou. Namiesto toho sa Firefox, rovnako ako ostatné prehliadače, spolieha na niekoľko dôveryhodných spoločností nazývaných “Certifikačné autority”, ktoré overujú identitu stránok a&nbsp;vydávajú “certifikáty” identity. Tieto spoločnosti musia dodržiavať <a href="http://www.mozilla.org/projects/security/certs/policy/" hreflang="en">politiku Mozilla pre certifikáty a certifikačné autority</a>, ktorá okrem iného požaduje od certifikačných autorít audity tretích strán, ktoré potvrdzujú, že certifikáty neudeľujú nenáležite.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

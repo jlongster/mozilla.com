@@ -1,0 +1,127 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Get Involved with Mobile';
+    $body_id    = 'mobile-get-involved';
+	$breadcrumbs = array(
+		'Mobile' => "/{$lang}/mobile",
+		'Get Involved' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-get-involved.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
+    <script src="{$config['static_prefix']}/js/mozilla-input-placeholder.js"></script>
+    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="/includes/yui/2.5.1/container/container-min.js"></script>
+    <script src="/js/mozilla-video-tools.js"></script>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/functions.inc.php";
+    include_once "{$config['file_root']}/includes/feeds/mobile-team.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="download" class="top-right mobile">
+    <a class="dl" href="/<?=$lang?>/mobile/download/"><span>Get Firefox <em>on Your Phone</em></span></a>
+    <p class="notes">Or visit <a href="/<?=$lang?>/m/">Firefox.com/m</a> on your phone’s browser</p>
+</div>
+
+<div id="main-feature">
+    <h2>Get <span>Involved</span></h2>
+    <p>Stay connected and provide your feedback.</p>
+</div>
+
+<div id="sidebar">
+    <div id="sidebar-iphone-home">
+      <h3>Firefox Home <span>for iPhone</span></h3>
+      <p>Get your Firefox history, bookmarks and open tabs on your iPhone.</p>
+      <a class="download" href="/<?=$lang?>/mobile/home/"><span>Download from iTunes - Free</span></a>
+    </div>
+
+    <div id="sidebar-add-ons-cup">
+      <h3>Firefox Mobile <span>Add-ons Cup</span></h3>
+	  <div>
+        <a href="http://extendfirefox.com/mobile-cup/"><img src="<?=$config['static_prefix']?>/img/covehead/mobile/add-ons-cup-enter.png" alt="Enter now!" height="66" width="64"></a>
+        <p>Build or port a <b>Firefox Add-on</b> to Mobile for your chance to win cash, prizes and a trip to Barcelona!</p>
+      </div>
+    </div>
+</div>
+
+<div id="main-content">
+
+		<div id="video-player" class="mozilla-video-control">
+      <video width="640" height="360" controls="controls" tabindex="0" poster="/img/mobile/meetmobile-poster.jpg" onclick="play();">
+        <source type="video/webm" src="http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.webm">
+        <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.theora.ogv">
+        <source type="video/mp4" src="http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.mp4">
+				<object type="application/x-shockwave-flash" style="width: 640px; height: 386px; margin: 0 auto;"
+					data="/includes/flash/playerWithControls.swf?flv=/serv/mobile/meetFFXmobile2-640x360.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+          <param name="movie" value="/includes/flash/playerWithControls.swf?flv=/serv/mobile/meetFFXmobile2-640x360.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+					<param name="wmode" value="transparent" />
+					<div class="video-player-no-flash">
+					This video requires a browser with support for open video:
+					<ul>
+					<li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+					<li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+					</ul>
+					or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+					Alternatively, you may use the video download links to the right.
+					</div>
+				</object>
+			</video>
+		</div>
+
+    <div id="secondary">
+      <div class="section" id="contribute">
+        <h3>Ways to <span>Contribute</span></h3>
+        <p>Your support and innovations are essential to the success of Firefox.</p>
+        <p>Here are some ways you can really help:</p>
+        <ul>
+          <li><a href="/<?=$lang?>/mobile/beta">Try Firefox 4 beta for mobile!</a></li>
+          <li><a href="http://firefoxformobile.uservoice.com/forums/70211-firefox-for-mobile-ideas">Send us your ideas</a></li>
+          <li><a href="http://www.surveygizmo.com/s3/364512/Firefox-for-mobile">Take a quick survey</a></li>
+        </ul>
+
+        <form class="spread-block" id="tweet-this" method="post" action="/mobile/" onsubmit="maketweet();return false;">
+          <label for="tw-status">I want to use Firefox when I&#8217;m</label>
+          <div id="tw-status-container">
+            <input type="text" id="tw-status" name="status" size="20" maxlength="99" placeholder="(ex. At pub trivia night!)" />
+            <img src="/img/covehead/mobile/get-involved-twitter-icon.png" alt="Twitter" />
+          </div>
+          <button type="submit">Tweet this!</button>
+        </form>
+
+        <script>
+          // <![CDATA[
+          function maketweet(){
+            var	tweet = "I want to use Firefox when I'm "+document.getElementById("tw-status").value;
+            window.location.href = "http://twitter.com/home?status="+tweet+" %23fxmobile";
+          }
+          // ]]>
+        </script>
+      </div>
+
+      <div class="section" id="connect">
+        <h3>Ways to <span>Connect</span></h3>
+        <p>Stay up to date on mobile news, info and fun ways to get involved.</p>
+        <ul>
+          <li class="mail"><a href="/<?=$lang?>/newsletter/about_mobile/">Get our monthly news</a></li>
+          <li class="twitter"><a href="http://twitter.com/MozMobile">Follow us on Twitter</a></li>
+          <li class="facebook"><a href="http://www.facebook.com/firefoxformobile">Become a fan on Facebook</a></li>
+          <li class="youtube"><a href="http://www.youtube.com/user/FirefoxforMobile">Watch demos on YouTube</a></li>
+        </ul>
+
+        <p>Developers:</p>
+        <ul>
+          <li><a href="irc://irc.mozilla.org/mobile">Connect with us on IRC #mobile</a></li>
+          <li><a href="https://wiki.mozilla.org/Mobile/#Weekly_Meetings">Call into our weekly developer meeting</a></li>
+        </ul>
+      </div>
+    </div><!-- /#secondary -->
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

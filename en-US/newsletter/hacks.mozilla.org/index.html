@@ -1,0 +1,122 @@
+<?php
+    require_once "{$config['file_root']}/includes/email/forms.php";
+    $form = new NewsletterForm('ABOUT_HACKS', $_POST);
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error-'. $form->error;
+    } else {
+        $status = '';
+    }
+?>
+<html>
+    <head>
+        <style type="text/css">
+            body { 
+                margin: 0; padding: 0; background: #f2f2f2; 
+                font: 10px Arial, sans-serif;
+            }
+            .signup {
+                -moz-border-radius: 4px 4px 4px 4px;
+                background-color: #FFFFFF;
+                color: #000000;
+                border: 1px solid #CCCCCC;
+                margin: 0.25em 0;
+                padding-top: 0.25em;
+                min-height: 170px;
+                position: relative;
+            }
+            .signup fieldset {
+                border: none;
+                margin: 1.3em 5%; clear: both; overflow: hidden;
+            }
+            .signup label {
+                display: block; font-weight: bold; 
+                line-height: 1em; margin: 0.3em 0;
+            }
+            .signup label.privacy {
+                display: inline; line-height: auto; margin: 0;
+                font-size: 90%;
+            }
+            .signup input.email {
+                width: 95%;
+            }
+            .signup .messages {
+                font-weight: bold;
+                float: left; top: -1.4em;
+                overflow: hidden; width: 90%; margin: 0pt 0; clear: both;
+            }
+            .signup .messages .error {
+                padding: 0.25em 0.5em 0.25em 0.5em; 
+                background: #FBE3E4;
+                color: #925214;
+            }
+            .signup .messages .success {
+                padding: 0.25em 0.5em 0.25em 0.5em; 
+                background: #E3FBE4;
+                color: #529214;
+            }
+            .signup input.submit {
+                font-size: 100%;
+                clear: both; width: auto; display: block; 
+                margin: 1em 0pt 1em 0pt;
+            }
+            .signup .archive {
+                position: absolute; right: 20px; bottom: 10px;
+            }
+            .signup .archive a {
+                color: rgb(204, 102, 0);
+            }
+            .signup .field-radios label,
+            .signup .field-radios input {
+                display: inline;
+            }
+                
+        </style>
+    </head>
+    <body>
+        <img src="http://hacks.mozilla.org/wp-content/uploads/2010/01/abouthacks_bw_220x60.png"/>
+        <p>Subscribe to our newsletter...</p>
+        <form class="signup" action="" method="POST">
+            <fieldset>
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email" class="required email" 
+                        value="<?php echo ('success' == $status) ? '' : $form->get('email') ?>"/>
+                </div>
+                <div class="field" id="format-field">
+                  <?php
+                      $html_format = 'checked="checked"';
+                      $text_format = '';
+                      if ($form->get('format') == 'text') {
+                          $text_format = 'checked="checked"';
+                          $html_format = '';
+                      }
+                  ?>
+                  <div class="field-radios">
+                    <label for="html-format">HTML</label>
+                    <input type="radio" name="format" id="html-format" value="html" <?= $html_format?>>
+                    <label for="text-format">Text</label>
+                    <input type="radio" name="format" id="text-format" value="text" <?= $text_format?>>
+                  </div>
+                </div>
+                <div class="field">
+                    <input type="checkbox" id="privacy" name="privacy" class="required" />
+                    <label for="privacy" class="privacy">I agree to the <a href="http://www.mozilla.com/en-US/privacy-policy">Mozilla Privacy Policy</a></label>
+                </div>
+                <div class="messages">
+                    <?php if ('error-email' == $status): ?>
+                        <p class="error error-email">Please enter a valid email
+                        address.</p>
+                    <?php elseif ('error-privacy' == $status): ?>
+                        <p class="error error-privacy">You must agree to the
+                        Mozilla Privacy Policy to subscribe.</p>
+                    <?php elseif ('success' == $status): ?>
+                        <p class="success">Subscription request accepted.</p>
+                    <?php endif ?>
+                </div>
+                <input class="submit" type="submit" name="submit" value="Subscribe" />
+            </fieldset>
+        </form>
+    </body>
+</html>

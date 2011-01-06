@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Mitä uutta? <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Firefox 4 Beta matkalle mukaan!</h3>
+        <p>Töistä kotiin, pöydältä taskuun! Firefox Syncin avulla pääset saumattomasti käsiksi tärkeisiin Firefox-tietoihisi&nbsp;&ndash; mm. kirjanmerkkeihin, salasanoihin, historiaan ja avoimiin välilehtiin&nbsp;&ndash; useilta tietokoneilta ja mobiililaitteilta. Video kertoo, kuinka pääset alkuun.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Lue lisää Syncistä »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Jaa palautteesi »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Julkaisutiedot »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Uusinta uutta</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Selain siistiksi:</h4>
+         <?=$tabvideo?>
+        <p>Onko kaikkien avoimien välilehtien seuraaminen hankalaa? Laita välilehdet järjestykseen: voit vetää ja pudottaa välilehdet helposti hallittaviin ryhmiin, joita voit järjestellä ja nimetä silmää miellyttäviksi kokonaisuuksiksi.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

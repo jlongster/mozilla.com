@@ -1,0 +1,79 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla | Firefox';
+    $body_id    = 'home';
+    $body_class = '';
+    $extra_headers = <<<EXTRA_HEADERS
+	<style>
+		#breadcrumbs { display: none; }
+		#content {
+			width: 994px;
+			padding: 0;
+			max-width: none;
+			height: 715px;
+			white-space: nowrap;
+			position: relative;
+			background: none;
+		}
+		#wrapper {
+			background: url(/img/firefox/googleimgads/customize/pizza-bg.jpg) top left repeat-x;
+		}
+		#content img { float: left; }
+		.download-other,
+		.download {
+			float: left;
+			width: 100%;
+			text-align: center;
+			position: relative;
+			margin: 0;
+		}
+		ul.home-download,
+		ul.home-download li,
+		.download { padding: 0; margin: 0; height: 83px; width: 311px; float: left; text-align: left;  }
+		ul.home-download li img { display: block; margin: 0; padding: 0; }
+		ul.os_windows a.download-firefox, ul.os_linux a.download-firefox, ul.os_osx a.download-firefox { background: none; margin: 0; padding: 0; width: auto; }
+		noscript .download { font-size: 85%; white-space: normal; background-color: #fff; overflow: scroll; }
+	</style>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="wrapper">
+
+<div id="content">
+	<img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-logo.png" alt="Firefox" height="153" width="984" />
+	<img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-txt.png" alt="May we take your order? Customize your browsing experience with the extravaganza of add-ons, themes and extensions that Firefox has to offer. There's something for everyone. Really! Pick and choose from over 1,000 add-ons that will make your browser useful and unique. Your order. Firefox delivers." height="120" width="984" />
+	<img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-pizza.png" alt="" height="83" width="673" />
+	<script src="/js/download.old.js"></script>
+    <script>
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = "<li class=\"%CSS_CLASS%\"><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><img src=\"/img/firefox/googleimgads/customize/pizza-download.png\" alt=\"Download Firefox: %VERSION% for %PLATFORM_NAME%, %LANGUAGE_NAME% (%FILE_SIZE%)\" \/><\/a><\/li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.write("<ul class=\"home-download " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.write("<\/ul>");
+		//-->
+	</script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US'); ?>
+	<div><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-soda.png" alt="" height="169" width="366" /><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-soda2.png" alt="" height="169" width="264" /><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-soda3.png" alt="" height="169" width="354" /></div>
+	<div><a href="https://addons.mozilla.org/en-US/firefox/"><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-myo.png" alt="Make it your own" height="199" width="366" /></a><a href="http://www.mozilla.com/en-US/firefox/features.html"><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-ddb.png" alt="Discover the dynamic browser" height="199" width="264" /></a><a href="http://www.mozilla.com/en-US/firefox/"><img src="<?=$config['static_prefix']?>/img/firefox/googleimgads/customize/pizza-ss.png" alt="Surf safely" height="199" width="354" /></a></div>
+    <script>
+        <!--
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+        document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+    </script>
+
+</div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

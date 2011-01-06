@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Mobil Firefox Yardımı";
+    $search_field  = "Firefox Yardımı'nda Ara";
+    $search_button = "Ara";
+    //$link_to_sumo  = "tam destek sitesine gidin";
+    $link_to_sumo  = "veya <a href=\"%s\">destek sitesinin tamamını görün</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo"><em>Mobil</em> Firefox Yardımı</h1>
+
+    <h2>Sık Sorulan Sorular</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Masaüstü ve mobil Firefox'larımı nasıl eşitlerim?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Firefox'u nasıl yükseltirim?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Şahane Ekran'ı nasıl kullanırım?</a></li>
+    </ul>
+
+    <h2>Mobil Yardım Konuları</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Tercihleri nasıl değiştiririm?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Mobil klavye kısayolları neler?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">İndirmeleri nasıl yönetirim?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Nasıl yeni sekme açarım?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Eklentileri nasıl bulup yüklerim?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Eklentileri nasıl kaldırır veya kapatırım?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Mobil Firefox'la web'de nasıl sörf yaparım?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Nasıl yer imi eklerim?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Bir web sitesini nasıl yakınlaştırır ya da uzaklaştırırım?</a></li>
+    </ul>
+
+    <h2>Daha Fazla Yardım mı Lazım?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>

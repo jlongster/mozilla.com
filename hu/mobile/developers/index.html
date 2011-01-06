@@ -1,0 +1,54 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Mobile-fejlesztés";
+
+    $pageid = "mobile-developers";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Mobile-fejlesztés</h2>
+    <p>Eljött a mobilok ideje. A következőképpen segíthet.</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang,'developers')?>
+
+<div id="main-content">
+
+<h4 class="first">Kövesse a fejlődést</h4>
+
+<p>Legfrissebb Mobile hírek és frissítések. <a href="/<?=$lang?>/newsletter/about_mobile/">Iratkozzon fel az about:mobile hírlevélre</a>.</p>
+
+<h4>Készítsen weblapokat és alkalmazásokat, amelyek a legújabb webes technológiákat használják</h4>
+
+<h5>Mozilla Mobile fejlesztőközpont</h5>
+<p>Töltse le a dokumentumokat, fejlesztőeszközöket és forráskódot, amelyre a Mobile fejlesztése során szüksége van. <a href="https://developer.mozilla.org/En/Mobile">Tovább…</a>.</p>
+
+<h5>Mobile Wiki</h5>
+<p>Tekintse meg a követelményeket és a leírásokat amelynek segítségével mobilkészülékeken tudja futtatni és tesztelni a Firefox böngészőt. <a href="https://wiki.mozilla.org/Fennec">Tovább…</a>.</p>
+
+<h5>Helymeghatározás-képes alkalmazások</h5>
+<p>Adja meg az embereknek a helyes irányt és készítsen helymeghatározó alkalmazást. <a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Tovább…</a></p>
+
+<h4>Kiterjesztések fejlesztése</h4>
+<p>A Maemo és Windows Mobile (beta) platformon futó Firefox is támogatja a kiegészítéseket. Tulajdonképpen ugyanaz a kiegészítő használható ugyanazon a platformon. A leghasznosabb tudnivalók listája:</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Kiterjesztések alapjai</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Leírások a kiterjesztésekhez</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface">Leírások a felhasználói felületekhez</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture">Architektúraáttekintés</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Kódrészletek</a></li>
+</ul>
+
+<h4>Segítsen a Firefox for Mobile készítésében</h4>
+<p>A Firefox sikeréhez az Ön segítségére is szükség van. Csatlakozzon a Mobile IRC-csatornához (irc.mozilla.org, #mobile), <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">a szerdai fejlesztői megbeszéléshez</a>, vagy küldjön <a href="https://bugzilla.mozilla.org/">hibabejelentést</a>.</p>
+
+
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

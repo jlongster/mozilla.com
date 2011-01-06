@@ -1,0 +1,120 @@
+<?php
+
+    // translate The variables below please
+
+    // Page title (the browser title bar)
+    $page_title = "Firefox Home for iPhone";
+
+    // Video player extra variables
+    $video_title  = "See Firefox Home in action";
+    $music_credit = "Music by Kate Earl";
+
+    include_once "{$config['file_root']}/includes/l10n/firefoxhome-page.inc.php";
+
+?>
+
+
+<div id="main-feature">
+  <h2>Your Home<br/>On The Go</h2>
+  <p>Get your Firefox history, bookmarks, and open tabs on your iPhone</p>
+  <p class="dl">
+    <a href="<?=$ituneslink;?>" class="download-link">
+      <strong>Download</strong>
+      <em>Get it now on iTunes &ndash; Free</em>
+    </a>
+  </p>
+</div>
+
+<?=$sidemenu;?>
+
+
+<div class="features-divider top"><hr /></div>
+  <ul id="main-features">
+    <li class="onthego">
+
+      <h4>On the Go?</h4>
+      <p>Have instant access to the list of tabs you have open on your desktop</p>
+
+    </li>
+    <li class="less">
+
+      <h4>Type Less</h4>
+      <p>No need to type long URLs, your bookmarks get you to your favorite sites by tapping</p>
+
+    </li>
+    <li class="search">
+
+      <h4>Search</h4>
+      <p>Start typing and the Awesome Bar takes you to your favorite and important sites</p>
+
+    </li>
+
+    <?=$video;?>
+  </ul>
+  <div class="features-divider"><hr /></div>
+
+<div id="main-content">
+  <div class="container">
+
+    <h3>Why Get Firefox Home on Your iPhone?</h3>
+
+    <h4>Get up and go</h4>
+    <p>Get up and go and have the comforts of your Web waiting for you on your iPhone: Your history, open tabs, bookmarks, the Awesome Bar &mdash; just the way you like it, just the way you left it.</p>
+
+    <h4>Don’t start from scratch</h4>
+    <p>No need to retype long URLs or spend time searching for your favorite websites. Have your Firefox history working for you the moment you fire up your iPhone.</p>
+
+    <h4>Home sweet home</h4>
+    <p>Home is important, so you need an alarm system protecting your private data. Your Secret Phrase ensures that only you can access your info.</p>
+
+  </div>
+  <div id="main-content-footer"></div>
+
+</div>
+
+<div id="sidebar">
+
+    <h3>Getting Started</h3>
+    <ol>
+      <li>
+
+        <h4>Install the <a href="/<?=$lang?>/firefox/sync/">free Firefox Sync add-on</a> on your desktop.</h4>
+        <p>Firefox Home uses the sync capabilities from the Firefox Sync add-on to access your Firefox browser information and securely send it to your iPhone.</p>
+
+      </li>
+      <li>
+
+        <h4>Once Firefox restarts, follow the prompts to create an account with both a password and a Secret Phrase.</h4>
+        <p>Firefox Home uses your Secret Phrase to locally encrypt and protect your information.</p>
+
+      </li>
+      <li>
+
+        <h4>Firefox Sync will now begin securely synchronizing your data with our service.  This initial synchronization may take up to 20 minutes.</h4>
+        <p>Firefox Sync will only work if you are not in Private Browsing mode. Once your initial synchronization is complete, you'll see a Last Update time in the Tools &gt; Sync menu.</p>
+
+      </li>
+      <li>
+
+        <h4>To complete the setup, on your iPhone enter your account, password and Secret Phrase in the field provided and tap "Done" on the keypad.</h4>
+        <p>If you're having trouble logging in, <a href="<?=$sumolink1?>">click here for help</a>.</p>
+
+      </li>
+      <li>
+
+        <h4>Once complete you will be able to access your desktop bookmarks, history, and open tabs on your iPhone.</h4>
+        <p>If your data is not showing up, <a href="<?=$sumolink2?>">click here for help</a>.</p>
+
+      </li>
+    </ol>
+
+    <p><a href="<?=$sumolink3?>">More Detailed Instructions</a></p>
+    <p><a href="/<?=$lang?>/mobile/home/faq/">Frequently Asked Questions</a></p>
+    <p><small>* Note: After you create a Firefox Sync account, the initial sync may take time to complete. Upon the initial sync completion, you will have access to your data through Firefox Home on your iPhone.</small></p>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

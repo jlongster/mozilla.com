@@ -1,0 +1,40 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox Atualizado";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Não, obrigado";
+    $no_download_button2 = "(Diga-me por quê)";
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Aviso de segurança:
+        </span>
+</h2>
+<h3>
+        Esta é uma versão desatualizada do Firefox.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Usar esta versão do Firefox o deixará vulnerável a ameaças à sua segurança online.</p>
+
+    <p id="main-feature-contents">
+    Por favor, <a href="/<?=$lang?>/firefox/">baixe a versão mais recente do Firefox</a>. É gratuita e trará as últimas melhorias de segurança, desempenho e novos recursos.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

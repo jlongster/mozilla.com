@@ -1,0 +1,82 @@
+﻿<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Transfira o Firefox 4 Beta";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Tudo começa aqui:</h3>
+        <p>Ajude a fazer a última versão do melhor navegador do mundo.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Funcionalidades</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Tecnologia</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Feedback</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Política de privacidade do Feedback</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Instalar o Beta</h3>
+
+        <?=$download_link_2;?>
+
+        <p>O Firefox 4 Beta inclui a extensão Feedback o que o inclui em estudos do utilizador. Nenhuns dados serão enviados para a Mozilla sem a sua autorização. <a href="#privacy">Mais informação</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Dê-nos Feedback</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>Clique no botão Feedback a qualquer altura para nos dizer o que achou. Leia mais sobre o <a href="https://testpilot.mozillalabs.com/faq">Test Pilot</a>.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Diga aos seus amigos</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hey!</span></p></li>
+            <li class="second"><p><span>Woah!</span></p></li>
+        </ul>
+
+        <p>Passe a palavra: quantos mais utilizadores beta a ajudar-nos tivermos a fazer o Firefox 4, melhor será o produto final. <a href="/<?=$lang?>/firefox/beta/features/">Saiba mais sobre o beta.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>O Firefox 4 Beta inclui o extra Feedback baseado no Mozilla Test Pilot</h4>
+
+    <p>Assim que instalar o Firefox 4 Beta, irá ver o extra Feedback no canto superior direito. Pode usá-lo para fornecer feedback instantâneamente em qualquer momento. Também será notificado sobre estudos de utilizador (feitos pelo Mozilla&nbsp;Test&nbsp;Pilot) que obtêm informação sobre como usa o Firefox, mas não sobre que sítios web visita. Tem o controlo sobre a sua participação e pode escolher sair de um qualquer estudo, ou ver que dados foram obtidos. Ser-lhe-á perguntado antes de quaisquer dados serem enviados para a Mozilla. Por favor veja a <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Política de privacidade do extra Feedback</a> para mais informação.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

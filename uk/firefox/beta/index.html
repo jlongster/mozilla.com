@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title below */
+
+    $page_title         = "Firefox 4 бета";
+    $download_link_text = "Завантажте Firefox 4 бета";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 бета" /></h2>
+        <h3>Все починається тут:</h3>
+        <p>Допоможіть зробити наступну версію найкращого у світі браузеру.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>бета</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Можливості</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Технологія</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Випробувач</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Політика конфіденційності Випробувача</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Встановіть бету</h3>
+
+        <?=$download_link_2;?>
+
+        <p>Firefox 4 бета має додаток Випробувач, що долучить вас до програми користувацьких досліджень. Жодної інформації не буде надіслано до Мозіли без вашого дозволу. <a href="#privacy">Докладніше</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Надішліть нам відгук</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>Натискайте кнопку Відгук коли є що сказати нам. Докладніше про додаток <a href="https://testpilot.mozillalabs.com/faq">Випробувач</a>.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Розкажіть друзям</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Альо…</span></p></li>
+            <li class="second"><p><span>Вау!</span></p></li>
+        </ul>
+
+        <p>Розповсюджуйте чутки: чим більше ми матимемо користувачів Firefox 4 бета, тим краще буде кінцевий продукт. <a href="/<?=$lang?>/firefox/beta/features/">Докладніше про бету.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>Firefox 4 бета має додаток Випробувач, що базується на платформі Test Pilot від Мозіли</h4>
+
+    <p>Після встановлення Firefox 4 бета, у вас з'явиться кнопка Відгук у верхньому куту праворуч. Використовуйте її для надання миттєвого відгуку у будь-який момент часу. Також, ви будете проінформовані про програму користувацьких досліджень (що проводиться Мозілою), яка збирає інформацію про ваш досвід роботи з Firefox без даних про те, які сайти ви відвідуєте. Ви матимете повний контроль над вашою участю в програмі досліджень і зможете вийти з будь-якого дослідження чи побачити, яка інформація була зібрана. Ви будете запитані перед надсиланням будь-якої інформації до Мозіли. Докладніше, перегляньте <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Політику конфіденційності Випробувача</a>.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

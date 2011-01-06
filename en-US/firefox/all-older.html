@@ -1,0 +1,81 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.5';
+    $body_id    = 'firefox-all';
+    $body_class = 'all-older';
+    $breadcrumbs = array(
+        'All Systems &amp; Languages'      => "/{$lang}/firefox/all",
+        'Firefox 3.5'       => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/all-older.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="feature-header"></div>
+<div id="main-feature">
+	<h2>Download <span>Firefox 3.5</span></h2>
+	<p>Firefox 3.5.x will be maintained with security and stability updates until August 2010. All users are strongly encouraged to upgrade to <a href="/<?=$lang?>/firefox/">Firefox&nbsp;3.6</a>.</p>
+</div>
+
+<div id="main-content">
+
+	<p id="download-intro">Find the Firefox 3.5 release in your language.</p>
+	<ul id="download-menu">
+		<li><a href="#languages">Fully localized versions</a></li>
+		<li><a href="#beta_versions">New languages still in beta</a></li> 
+		<li><a href="#lang_packs">Language packs</a></li>
+	</ul>
+
+    <script src="/js/download.js"></script>
+
+	<div id="languages">
+		<h3>Fully Localized Versions</h3>
+	    <?php echo $firefoxDetails->getDownloadTableForOlderPrimaryBuilds(); ?>
+	</div>
+
+        <div id="beta_versions">
+               <h3 class="lang-title">New Localized Builds</h3>
+               <p>These localized builds are in beta and may contain translation errors.</p>
+            <?php echo $firefoxDetails->getDownloadTableForOlderBetaBuilds(); ?>
+        </div>
+
+    <div id="lang_packs">
+        <h3>Language Packs</h3>
+		<p>Mozilla offers download links to the following language add-ons built by the open source community. These are not full installs of Firefox 3.5 and thus require you to have Firefox 3.5 already.</p>
+
+		<table class="dalvay-table" summary="Language add-ons built by the open source community.">
+			<thead>
+				<tr>
+					<th colspan="2" class="top-left">Language</th>
+					<th class="top-right">Download</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td class="bottom-left" colspan="2"></td>
+					<td class="bottom-right"></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr id="furlan" class="odd">
+					<td class="left">Friulian</td>
+					<td class="second" lang="fur">Furlan</td>
+					<td class="right"><a href="lang-packs/friulian.html">Download</a></td>
+				</tr>
+				<tr id="tatar" class="even">
+					<td class="left">Tatar</td>
+					<td class="second" lang="tt">Tatarça</td>
+					<td class="right"><a href="lang-packs/tatar.html">Download</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

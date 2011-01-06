@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Prenesite Firefox 4 Beta";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Vse se začne tu:</h3>
+        <p>Sodelujte pri razvoju najboljšega brskalnika.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Lastnosti</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Tehnologija</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Povratne informacije</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Politika zasebnosti</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Namestite Beto</h3>
+
+        <?=$download_link_2;?>
+
+        <p>Firefox 4 Beta vsebuje razširitev za zbiranje povratnih informacij, ki služijo razsikovanju uporabniških navad. Brez vašega dovoljenja se podatki ne pošiljajo. <a href="#privacy">Več o tem</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Sporočite nam svoje mnenje</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>S klikom na Povratne informacije nam sporočite svoje mnenje. Preberite več o projektu <a href="https://testpilot.mozillalabs.com/faq">Test Pilot</a>.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Povejte svojim prijateljem</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hej…</span></p></li>
+            <li class="second"><p><span>Vau!</span></p></li>
+        </ul>
+
+        <p>Več uporabnikov bo sodelovalo pri preizkušanju Firefoxa 4 beta, boljši bo končni izdelek. <a href="/<?=$lang?>/firefox/beta/features/">Več o beti.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>Firefox 4 Beta vsebuje razširitev Povratne informacije, ki temelji na projektu Mozilla Test Pilot</h4>
+
+    <p>Po namestitvi Firefoxa 4 Beta boste v zgornjem desnem kotu opazili razširitev povratne informacije, s katero lahko kadarkoli sporočite vaše izkušnje z brskalnikom. Hkrati vas bomo obveščali o raziskavah (projekt Mozilla&nbsp;Test&nbsp;Pilot), ki zbirajo podatke o vaši uporabi Firefoxa, a ne o straneh, ki jih obiskujete. Svoje sodelovanje lahko nadzirate, tako da se odjavite od določenih raziskav ali spremljate podatke, ki se zbirajo. Pošiljanje podatkov Mozilli boste morali predhodno dovoliti. Za podrobnosti si oglejte <a href="/<?=$lang?>/firefox/beta/feedbaDownload Firefox 4 Beta.ckprivacypolicy/">politiko zasebnosti povratnih informacij</a>.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

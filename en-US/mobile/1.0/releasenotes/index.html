@@ -1,0 +1,398 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox for Nokia N900 Release Notes';
+    $body_id    = 'firefox-relnotes';
+    $breadcrumbs = array(
+		"Mobile" => "/{$lang}/mobile",
+        "Release Notes" => "",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+    <style>
+      .faq dt {
+        font-weight: bold;
+      }
+    </style>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox for Nokia N900 <span>Release Notes</span></h2>
+    <p>
+      <em>v.1.0, released January 28, 2010</em><br />
+      The world's best Web browser has gone mobile.
+    </p>
+    <p>
+      Learn how we're bringing the Firefox experience to mobile devices. 
+      Check out the features, known issues and frequently asked questions 
+      about the first version of Firefox for the Nokia N900. 
+      As always, you’re encouraged to tell us what you think, either by using
+      <a href="https://mobile.support.mozilla.com/tiki-view_forum.php?forumId=5" 
+         title="Mobile Support feedback form">this feedback form</a> 
+      or by <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Fennec">filing 
+      a bug in Bugzilla</a>.
+    </p>
+</div>
+
+<div id="main-content">
+	<div id="sidebar">
+		<div id="get-involved">
+			<h3>Get Involved</h3>
+			<p>Want to become part of the Mozilla project?</p>
+			<a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
+		</div>
+	</div>
+
+
+      <div id="whatsnew2" class="expander expander-odd">
+        <h3 class="expander-header">What's in Firefox for the Nokia N900</h3>
+        <div class="expander-content">
+          <p>
+            Firefox is the browser built for the way you use the Web on your mobile phone. These key design principles are at the heart of the browsing experience: minimize typing, let the Web have center stage, and seamlessly synchronize your desktop and mobile browsing, to name a few. It’s built on the same browser engine as Firefox 3.6 for desktop computers with some extensive under the hood work to optimize for mobile. Secure, powerful and customizable -- Firefox for the Nokia N900  is packed with your favorite features. Highlights include:
+          </p>
+            <ul>
+              <li>Works with your favorite sites because it’s built on the same browser engine as Firefox 3.6 for the desktop</li>
+              <li>Awesome Bar gets you to your favorite websites with minimal typing</li>
+              <li>Seamlessly synchronizes your Firefox tabs, history, bookmarks and passwords between your desktop and mobile</li>
+              <li>Location-Aware Browsing gives you info and maps relevant to your locale</li>
+              <li>Tabbed browsing with thumbnail images</li>
+              <li>One-touch bookmarking</li>
+              <li>The first mobile Web browser to support add-ons that anyone can build and distribute to add new features and user experiences</li>
+              <li>Fast JavaScript engine, using Mozilla's "TraceMonkey" just-in-time compiler</li>
+              <li>Instant Web site ID and customized security settings for safe browsing</li>
+              <li>Available in more than 35 languages and counting</li>
+            </ul>
+
+            <em>Friendly Touch Interface </em><br>
+            <ul>
+              <li> Quick zoom: Double tap on a column of text or an image to zoom in, double tap to zoom back out [Ctrl-up and Ctrl-down arrows will also zoom in and out]</li>
+              <li> Panning and scrolling: Use your finger to scroll down a page and pan from side to side</li>
+              <li> View without obstructions: The browser controls and Awesome Bar get stowed away when you reach your website so you can use the whole screen to view the site. Just swipe your finger left or right and your controls and Awesome Bar reappear</li>
+            </ul>
+
+            <em>Minimize Typing and Easy Navigation to Web Content</em><br>
+
+            <ul>
+              <li> The Awesome Bar: The Smart Location Bar, or "Awesome Bar" gets you where you want to go with minimal typing. Touch the Awesome Bar and begin typing. As you type it will display websites that you frequently or recently have visited or bookmarked. It learns as you use it, adapting to your preferences and making your browsing more personal.</li>
+              <li> Easy access to any search engine: Tap the Awesome Bar to enter a URL or search term and send your search directly to Google, Wikipedia, Amazon.com, or Twitter with one touch. Add search engines for many websites using the Instant Web Site ID icon</li>
+              <li> Tabbed browsing: Thumbnails of your open tabs easily identify your open pages, so you can quickly move from tab to tab</li>
+              <li> One-touch bookmarking: Bookmark a website in one touch, and optionally tag it with a memorable term</li>
+              <li> Spell checker: Catch typos and misspellings in form fields</li>
+              <li>Form Assistant: Zoom in to form elements to fill out forms in close view.
+              Form Assistant provides "next" and "previous" buttons to fill out fields with
+              one tap</li>
+            </ul>
+
+          <p>
+            <em>Sync Mobile and Desktop Browsing</em><br><br>
+
+              <a href="/<?= $lang ?>/mobile/sync/">Weave Sync</a>: Sync your mobile and desktop browsing. Weave Sync synchronizes your Firefox history, saved passwords, bookmarks and open tabs between your desktop and Nokia N900. With Weave Sync, the Awesome Bar knows your browsing history regardless of which device you visited it on – home desktop, work laptop, or Nokia N900, so you can leverage years of desktop browsing on the first day you fire up your mobile device -- even your saved passwords from your desktop can be used to automatically fill out forms. Weave Sync's Get Up and Go feature lets you surf the Web on your desktop, get up and go, and have your open tabs ready and waiting for you on your mobile – just as you left them on your computer
+
+          </p>
+
+
+            <em>Personalized Browsing</em><br>
+            <ul>
+              <li><a href="https://addons.mozilla.org/mobile">Add-ons</a>: Customize your Firefox by adding features that help make your browser your own. Firefox is the first mobile Web browser to support add-ons. Add-ons like AdBlock Plus, URL Fixer, TwitterBar, language translators, and geo guides become especially handy when you’re out and about on your mobile. You can both discover and install add-ons directly from your Nokia N900. There are currently more than 40 Firefox add-ons available for mobile and the number is growing every day</li>
+              <li> Set your Preferences: Access your browser tools with one touch to get more Firefox product information, change languages (we support more than 35 and counting), manage content and privacy settings</li>
+              <li> Download manager: Download any file to your N900. The download manager shows download progress visually, will download in the background while you continue browsing, enables multiple simultaneous downloads, and enables you to stop, pause or resume downloads. Helper applications like the PDF reader will automatically launch if needed</li>
+            </ul>
+
+            <em>Private and Secure</em><br>
+            <ul>
+              <li> Customized security settings: Customize settings for passwords, cookies, loading images and installing add-ons for a fully empowered mobile browsing experience</li>
+              <li> Instant Web site ID ("<a href="http://www.dria.org/wordpress/archives/2008/05/06/635/">Larry</a>"): Tap on a site favicon for an instant identity overview</li>
+              <li> Password manager: Typing passwords on your phone is hard. Choose to remember site passwords and avoid long and difficult typing</li>
+              <li> Popup blocker: Banish pop-ups from your surfing experience once and for all</li>
+              <li> Clear private data: As an extra security measure, you can clear all your private data via your Preferences</li>
+              <li> Automated Update: You will receive notifications as soon as updates to Firefox are available. Install them right away, or wait until you're ready</li>
+            </ul>
+
+            <em>Under the hood</em><br>
+            <ul>
+              <li> 
+                Leading Web Compatibility: Firefox for mobile gives 
+                Web developers more tools and features to create the 
+                next big breakthroughs in mobile Web content. 
+                Using open standards like 
+                <a href="http://hacks.mozilla.org/?s=html5">HTML5</a>, 
+                <a href="http://hacks.mozilla.org/category/css/">CSS</a> and 
+                <a href="http://hacks.mozilla.org/category/javascript/">JavaScript</a>, developers can create fast, powerful, beautiful applications, and even tap into the unique capabilities of mobile devices like camera, geolocation and device orientation</li>
+              <li> Fast JavaScript engine: Uses Mozilla's "TraceMonkey" just-in-time compiler, optimized for ARM processors</li>
+              <li><a href="http://www.mozilla.com/en-US/firefox/geolocation/">Location-Aware Browsing</a>: Location-Aware Browsing saves you time by allowing websites to ask you where you are. It’s all optional – Firefox doesn’t share your location without your permission</li>
+              <li> Offline Browsing: Even if your mobile phone doesn’t have a Web connection, you can still have information at your fingertips. Certain enabled sites may allow applications—like your Web-based email—to stay with you at all times </li>
+              <li> Next-Generation Graphics: The rendering of text and graphics, including 
+              <a href="http://hacks.mozilla.org/category/svg/">SVG</a> and 
+              <a href="http://hacks.mozilla.org/category/canvas/">Canvas</a>, is faster and sharper than ever before, thanks to our upgraded graphics engine. Firefox automatically color corrects images that have the color profile data included (like your digital photos) to make sure the colors are exactly as intended</li>
+            </ul>
+
+            <em>A Global Community</em><br>
+            <ul>
+              <li> Set your Language: Firefox for mobile is offered in more than 35 languages and counting. It's been built and tested by a global community of people creating a better Internet</li>
+              <li> These local communities have gone beyond translation  and may have also customized your Firefox browsing experience with local dictionaries and search providers</li>
+            </ul>
+
+          <p>
+            <em>Support</em><br><br>
+            Mozilla’s open source process leverages the experience of 
+            thousands of product testers and experts around the globe. 
+            Go to our 
+            <a href="http://mobile.support.mozilla.com/kb/">Support Knowledge Base page</a>, or 
+            <a href="https://mobile.support.mozilla.com/tiki-view_forum.php?forumId=5">provide feedback</a>
+          </p>
+
+          </div>
+        </div>
+        <div id="system-requirements" class="expander expander-even">
+          <h3 class="expander-header">System Requirements</h3>
+          <div class="expander-content">
+            <p>
+              Before installing, make sure your phone meets the 
+              <a href="/<?= $lang ?>/mobile/platforms/">system requirements</a>.
+            </p>
+          </div>
+        </div>
+        <div id="downloading" class="expander expander-odd">
+          <h3 class="expander-header">Downloading</h3>
+          <div class="expander-content">
+            <p>
+              Download Firefox for Maemo by visiting <a href="/<?= $lang ?>/m">Firefox.com/m</a> on your Nokia N900. You can also go to <a href="/<?= $lang ?>/mobile">Firefox.com/mobile</a> and send an SMS text message that contains the download link directly to your Nokia N900. If you don't have an N900 you can download a build of Firefox for mobile to your desktop in order to test, provide feedback, and build add-ons. Desktop builds are for development purposes only and don't have full functionality: 
+            </p>
+            <ul>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="extensions" class="expander expander-even">
+          <h3 class="expander-header">Add-ons</h3>
+          <div class="expander-content">
+            <p>
+              There are currently over 40 Firefox add-ons available. 
+              View the catalog <a href="https://addons.mozilla.org/mobile" title="here">here</a>, 
+              or search for and install add-ons directly from the 
+              Add-ons Manager. Extensions installed in the Firefox 
+              for Maemo 1.0 may require updates to achieve 
+              full functionality. Please report any issues to the maintainer 
+              of the extension. You will receive an alert to update if a 
+              particular add-on has been updated. We encourage you to install 
+              the recommended add-ons viewable in the Add-ons Manager.
+            </p>
+          </div>
+        </div>
+        <div id="known-issues" class="expander expander-odd">
+          <h3 class="expander-header">Known Issues</h3>
+          <div class="expander-content">
+            <ul>
+              <li>
+                Initially, Firefox for N900 does not support browser plug-ins. Due to performance problems using Adobe Flash within Firefox on many websites, especially those with multiple plug-ins on them, we have disabled plugins for Firefox for Maemo 1.0. We plan to provide a browser add-on that will enable you to selectively enable plugins on certain sites, because some sites, like YouTube, work well. 
+              </li>
+              <li>
+                While a Web page is loading (the page info icon 
+                will display as a turning circle), interaction 
+                with the Web page such as panning 
+                and zooming has limited responsiveness.
+              </li>
+              <li>
+                Firefox is intended for use on the Nokia N900. 
+                It can also be run on the Nokia N810 and N800 Internet Tablets, 
+                but these devices are significantly less powerful, 
+                and performance will degrade accordingly. 
+                We don't recommend Firefox for these devices.
+              </li>
+              <li>
+                We provide desktop builds (Windows, OS X, Linux) 
+                of Firefox for mobile devices to support localizers, 
+                add-on developers and others who want to experiment, 
+                but don't have access to supported devices. 
+                These builds are not intended for general use.
+              </li>
+              <li>
+                Add-ons built based upon earlier beta releases 
+                may depend upon interfaces that have been deprecated, 
+                and therefore may not install properly. 
+                Add-on developers are encouraged to check 
+                that their add-ons work with the Release Candidate build.
+              </li>
+              <li>After panning down to the bottom of the page 
+                and tapping on "Full Site" on www.facebook.com. the 
+                top and bottom bar are 2/5's the width of the viewable 
+                browser window and the bottom bar still floats (<a 
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=540667">bug 
+                540667</a>)
+              </li>
+              <li>When zooming out with the an image on the screen, we've 
+                observed white grid lines during the fuzzy portion of the 
+                zoom (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=539276">bug 
+                539276</a>)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="faq" class="expander expander-even">
+          <h3 class="expander-header">Frequently Asked Questions</h3>
+          <div class="expander-content">
+              <dl class="faq">
+                <dt>My mobile device is not a Nokia N900 or N810. When can I expect to use Firefox on my phone?</dt>
+                <dd>
+                  Firefox for the Windows Mobile platform is in Alpha and we could really use your feedback! 
+                  Learn more and <a href="http://www.mozilla.org/projects/fennec/1.0a3-wm/releasenotes/">download it</a>. 
+                  We’re also investigating development for Android. We will continue to investigate and consider 
+                  <a href="https://wiki.mozilla.org/Mobile/Platforms">other platforms</a> 
+                  that can support the full Firefox experience.
+                </dd>
+                <dt>Is it called Fennec or Firefox?</dt>
+                <dd>
+                  Fennec is the codename of Mozilla’s mobile project, however, 
+                  the official product name is Firefox. 
+                  Enjoy the same Firefox experience that you’ve come 
+                  to know and trust on the desktop, now available for mobile.
+                </dd>
+                <dt>How will Firefox keep me safe while I browse on my mobile?</dt>
+                <dd>
+                  Mozilla’s open source process leverages the experience of 
+                  thousands of security experts around the globe, 
+                  and Firefox includes features like instant Web site ID 
+                  that checks on suspicious sites to ensure they’re what 
+                  they claim to be. Customizable security settings to 
+                  manage passwords, cookies, loading images and installing 
+                  add-ons give you complete control over your browsing experience. 
+                  <a href="/<?= $lang ?>/firefox/security/">Learn more</a>.
+                </dd>
+                <dt>How do I use the Firefox user interface to browse the Web?</dt>
+                <dd>
+                  To save space on your phone’s display, Firefox browser controls are stowed away to the sides of the screen. Swipe right to access your tabs on the left side of the screen. Swipe left to view one-touch bookmarking, back and forward, and access your browser tools. To let you see more of the Web site, your browser controls and Awesome Bar get stowed away out of view. when you scroll down a Web page, but they instantly reappear if you pan to either side.
+                </dd>
+                <dt>How do I zoom in and out?</dt>
+                <dd>
+                  Double tap the screen with your finger to zoom in. Double tap again to zoom out. Also, on the Nokia N900, Ctrl-up and Ctrl-down arrows will zoom in and out.
+                </dd>
+                <dt>How do I bookmark a Web page?</dt>
+                <dd>
+                  Go to the site you wish to bookmark. Touch the bookmark “star” button on the right side of your display.
+                </dd>
+                <dt>How do I open a new tab?</dt>
+                <dd>
+                  Touch the new tab "plus" button on the left side of your display screen to open a new tab. Tabs appear as thumbnails so you can easily see which page you’d like to select.
+                </dd>
+                <dt>What are Firefox Add-ons and how can I get them on my mobile device?</dt>
+                <dd>
+                  Add-ons let you customize your Firefox by adding features and customizations that help make your browser your own. Select the Preferences “gear” button on the bottom right-hand side of your screen, then choose the add-ons “puzzle piece” button and search for and install the add-ons that are most useful to you directly from your phone.
+                </dd>
+                <dt>How can I share my Firefox bookmarks, history, tabs, and passwords between my PC and my mobile?</dt>
+                <dd>
+                   The Weave Sync add-on brings your Firefox experience to your mobile phone. First, create a Weave Sync account on your PC. Then go to Firefox on your mobile and search for and install the Weave Sync add-on. When you enter you Weave Sync account info and sync, your Firefox preferences, history and more will be shared between your PC and your mobile.
+                </dd>
+                <dt>Do I need to get the Weave Sync add-on to use Firefox on my phone?</dt>
+                <dd>
+                  No. Although we think that syncing Firefox between your PC and mobile with Weave Sync is highly useful, it is an optional service that you can choose to use or not. You will still be able to break in your Firefox mobile Web browser with the Awesome Bar, which remembers where you go and how often, getting to your favorite sites very quickly.
+                </dd>
+                <dt>What is Location-Aware Browsing? Is Firefox tracking where I am?</dt>
+                <dd>
+                  Location-Aware Browsing saves you time by allowing websites 
+                  to ask you where you are. If you choose to share your 
+                  location with a website, it can use that information to 
+                  find nearby points of interest and return additional, 
+                  useful data like maps of your area. It’s all optional – 
+                  Firefox doesn’t share your location without your permission. 
+                  Learn more about <a href="/<?= $lang ?>/firefox/geolocation/">Location-Aware Browsing</a>.
+                </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="developer-questions" class="expander expander-odd">
+          <h3 class="expander-header">Developer Questions</h3>
+          <div class="expander-content">
+            <dl class="faq">
+                <dt>Will a Firefox add-on I built for the PC work on mobile?  If not, do I need to change it?</dt>
+                <dd>
+                  Although Firefox for the desktop and mobile are built on the same platform, 
+                  there are small differences that will require developers to make changes to their add-ons. 
+                  These changes are usually straightforward, 
+                  visit the <a href="/<?= $lang ?>/mobile/developers/">Develop for Mobile</a> 
+                  page to learn more.
+                </dd>
+                <dt>What browser engine does Firefox use?</dt>
+                <dd>
+                  The desktop and mobile versions of Firefox both use the Gecko rendering engine. 
+                  The mobile version of Firefox uses Gecko version 1.9.2,
+                  which is the best performing browser engine Mozilla has ever 
+                  released and includes exciting features such as radically improved JavaScript performance, 
+                  geolocation support, worker threads, and much more.What JavaScript engine does Firefox use?
+                  Firefox includes the new “<a href="http://hacks.mozilla.org/2009/07/tracemonkey-overview/">TraceMonkey</a>” 
+                  JavaScript engine, an advanced JIT (“just in time”) compiler using tracing technology. 
+                  The TraceMonkey engine makes Web applications faster by compiling code as you execute it, 
+                  allowing many types of CPU-intensive applications to run at near-native speed.
+                </dd>
+                <dt>How do I develop a Location-Aware website for Firefox?</dt>
+                <dd>
+                  Firefox has implemented the first public draft of the 
+                  <a href="http://www.w3.org/TR/geolocation-API/">Geolocation specification from the W3C</a>. 
+                  An overview on how to develop Location-Aware websites 
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/" hreflang="en">here</a>.
+                </dd>
+                <dt>Does Firefox on my mobile support HTML 5?</dt>
+                <dd>
+                  HTML 5 is the next major revision of HTML. 
+                  The HTML 5 specification is an ongoing work, 
+                  but there are several HTML 5 and related features 
+                  that will enable Web developers to create more innovative 
+                  websites and applications. Firefox includes important features like 
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/">Location-Aware browsing</a>, 
+                  the <a href="http://hacks.mozilla.org/2009/06/pushing-pixels-with-canvas/">&lt;canvas&gt;</a> 
+                  and <a href="http://hacks.mozilla.org/2009/06/rendering-svg-canvas-burst/">&lt;svg&gt;</a> tags, 
+                  <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">Web workers</a> 
+                  and <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">offline storage</a>.
+                </dd>
+                <dt>Does Firefox on my phone support plugins?</dt>
+                <dd>
+                  Support for plugins in Firefox for Maemo has been disabled. On most Web pages that use the Adobe Flash plugin, the performance of the plugin didn't meet our standards, and the interactivity and performance of the entire Web page was negatively impacted. This was especially felt on pages with multiple instances of the plugin. Advanced users can enable plugins for experimentation and testing purposes only.  We plan to provide a browser add-on that will enable you to selectively enable plugins on certain sites, because some sites, like YouTube, work well. 
+                </dd>
+                <dt>How can I get involved?</dt>
+                <dd>
+                  Check out our <a href="/<?= $lang ?>/mobile/developers/">Develop for Mobile</a> 
+                  page to learn more about how you can contribute to Mozilla’s mobile project. 
+                  If you’d like to learn more about you can get involved in other mobile-related initiatives, 
+                  check out our <a href="http://www.mozilla.org/contribute/">Get Involved</a> page.
+                  As always, your input is welcome. Please 
+                  <a href="https://mobile.support.mozilla.com/tiki-view_forum.php?forumId=5">provide your feedback</a>
+                  using Firefox for mobile.
+                </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="other-resources-links" class="expander expander-even">
+          <h3 class="expander-header">Other Resources and Links</h3>
+          <div class="expander-content">
+            <p>
+              The following resources contain useful information about Firefox for mobile:
+            </p>
+            <ul>
+              <li>
+                <a href="http://mobile.support.mozilla.com/en-US/kb/" title="Firefox for Mobile Support Page">Firefox for Mobile Support Page</a>
+              </li>
+              <li>
+                <a href="https://developer.mozilla.org/En/Mobile" title="Mobile Developer Center">Mobile Developer Center</a>
+              </li>
+              <li>
+                <a href="https://addons.mozilla.org/en-US/mobile" title="Mobile Add-ons for Firefox">Mobile Add-ons for Firefox</a>
+              </li>
+              <li>
+                <a href="/<?= $lang ?>/legal/privacy/firefox/mobile/" title="Mozilla Firefox for Mobile Devices Privacy Policy">Mozilla Firefox for Mobile Devices Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    <div id="release-notes-footer"></div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

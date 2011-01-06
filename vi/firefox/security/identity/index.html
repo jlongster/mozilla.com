@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Định Danh Trang Bằng Một Cú Nhấp Chuột";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+	<h2>Định Danh Trang Bằng Một Cú Nhấp Chuột</h2>
+	<p>Firefox 3 bao gồm một nút định danh trang mới để giúp bạn biết mình đang kết nối với ai khi ở trên mạng.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Tính năng này cho phép bạn nhìn nhanh xem trang Web bạn đang vào có cung cấp thông tin định danh hay không, ai đã xác minh thông tin đó, và họ có bảo vệ bạn tránh bị nghe trộm thông tin hay không. Bạn có thể truy cập định danh trang của bất kì trang web nào bằng cách nhấn vào biểu tượng của trang nằm ở bên trái của thanh địa chỉ (hoặc bằng cách nhấn Shift-Tab-Enter).</p>
+
+<h3>Câu Hỏi Thường Gặp</h3>
+
+<div class="expander expander-odd" id="levels">
+	<h4 class="expander-header">Các cấp độ thông tin định danh khác nhau nghĩa là gì?</h4>
+	<div class="expander-content">
+		<p>Biểu tượng “nhân viên xét hộ chiếu” sẽ thay đổi, để phản ánh cấp độ thông tin định danh được cung cấp bởi trang Web.</p>
+		<p class="site-id site-id-1">Trang không cung cấp bất kì thông tin định danh nào.</p>
+		<p class="site-id site-id-2">Trang cung cấp thông tin định danh cơ bản, và bảo vệ thông tin cá nhân của bạn tránh bị nghe trộm.</p>
+		<p class="site-id site-id-3">Trang cung cấp thông tin định danh đã được xác minh đầy đủ về người sở hữu của nó, và bảo vệ thông tin cá nhân của bạn tránh bị nghe trộm.</p>
+		<p class="site-id site-id-4">Trang bị liệt vào danh sách trang web ác ý hoặc giả mạo. Cung cấp cho trang này thông tin cá nhân, hoặc chỉ cần ghé thăm nó thôi, cũng có thể bị nguy hiểm.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">Tại sao không phải tất cả trang Web đều cung cấp thông tin định danh đã được xác minh?</h4>
+	<div class="expander-content">
+		<p>Hầu hết trang Web trên internet không yêu cầu bất kì thông tin tài chính hay cá nhân nào từ khách ghé thăm, và có thể không cho là cần thiết để phải mất chi phí cho việc cung cấp thông tin định danh được xác minh và phòng chống nghe trộm.</p>
+		<p>Các trang Web không muốn bạn cung cấp thông tin tài chính hay cá nhân, hoặc tuyên bố đại diện cho chính phủ hay thực thể kinh doanh, sẽ luôn luôn định danh chúng một cách chính xác, và bảo vệ bạn tránh bị nghe trộm.</p>
+	</div>
+</div>
+<div class="expander expander-odd">
+	<h4 class="expander-header">Có an toàn không khi làm việc với những trang không cung cấp thông tin định danh?</h4>
+	<div class="expander-content">
+		<p>Quyết định tin tưởng ai trên mạng nên bắt đầu bằng việc biết bạn đang nói chuyện với ai, nhưng đó chưa phải là tất cả. Những trang không cung cấp thông tin định danh và không bảo vệ thông tin cá nhân của bạn sẽ đặt bạn vào tình trạng dễ gặp nguy cơ, và không nên coi đó là an toàn. Nhưng thậm chí những trang tự định danh chúng chính xác vẫn có thể có những hành động mà bạn không đồng ý, hoặc để độ bảo mật của trang Web lỏng lẻo.</p>
+		<p>Giống như trong thế giới thật, bạn nên cẩn trọng khi tương tác với các trang mà bạn không biết và không tin tưởng. Biết rằng trang đó đã tự định danh chính xác, là một phần của việc đưa ra các quyết định tin tưởng đó.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">Mozilla có xác minh thông tin này cho mỗi trang Web?</h4>
+	<div class="expander-content">
+		<p>Thông tin dùng để định danh các trang Web không được xác minh bởi Mozilla. Thay vào đó Firefox, cũng như các trình duyệt khác, dựa vào một nhóm các công ty được tin cậy gọi là “Nhà thẩm định Chứng thư” (Certificate Authorities - CA) - họ xác minh định danh của một trang web và phát hành “chứng thư.” Những công ty này phải tuân thủ <a href="http://www.mozilla.org/projects/security/certs/policy/">Chính sách Chứng thư CA Mozilla</a>, điều mà, giữa những thứ khác, yêu cầu những CA cung cấp bản thẩm định cho các bên thứ ba, xác nhận rằng họ không phát hành chứng thư không phù hợp.</p>
+	</div>
+</div>
+
+</div>
+
+
+<?php
+	$extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

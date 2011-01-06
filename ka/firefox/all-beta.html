@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'ინტერნეტ გზამკვლევი Firefox | დაგვეხმარეთ უკანასკნელი ბეტა ვერსიის გამოცდაში';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>დაგვეხმარეთ გამოვცადოთ მომავალი Firefox!</h2>
+        <p>გამოვიდა უკანასკნელი Firefox ბეტა ვერსია. გამოსცადეთ იგი და გვაცნობით თქვენი შთაბეჭდილებები!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>მნიშვნელოვანია!</h4>
+        <p class="intro">ჩამოტვირთვამდე გთხოვთ ყურადღებით გაეცნოთ შემდეგ ინფორმაციას</p>
+    </div>
+    <ul>
+        <li>ეს პროგრამის წინასწარი ვერსიაა: შესაძლოა ზოგიერთ ვებსაიტებთან და პაკეტებთან თავსებადობის პრობლემები შეგექმნათ.</li>
+        <li>ასეთ შემთხვევებში <a href="http://feedback.mozilla.org/">გთხოვთ გვაცნობოთ</a> ან <a href="https://bugzilla.mozilla.org/">გამოგზავნოთ შეტყობინება შეცდომის შესახებ</a>.</li>
+        <li>დაწვრილებითი ინფორმაციისთვის იხილეთ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">ვერსიის მონაცემები</a> და <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">პრობლემების სია</a> (ინგლისურ ენაზე).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">არ გაინტერესებთ ბეტა ვერსია? ჩამოტვირთეთ <a href="/<?=$lang?>/firefox/">უახლესი სტაბილური Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

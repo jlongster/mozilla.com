@@ -1,0 +1,282 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla නිපැයුම් | ක්‍රම සහ විධි';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>ක්‍රම සහ විධි</h2>
+    <p>ඔබ ආධුනික, අතරමැදි හෝ උසස් පරිශීලකයකු විය හැක. නමුත් මෙම කෙටි මාර්‍ග සහ යෝජනා ඔබට Firefox 3 භාවිතය සඳහා සහාය වනු ඇත.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">නිපැයුම්</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">ගුණාංග</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/"ආරක්‍ෂාව</a></li>
+    <li><a href="/<?=$lang?>/firefox/addons/">රිසිකරණය</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100%ක් ඓන්ද්‍රීය මෘදුකාංග</a></li>
+    <li><span>ක්‍රම සහ විධි</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">නිකුතු සටහන්</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">වෙනත් පද්ධති සහ භාෂා</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>ආධුනික</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'තිරපිටපතක් විශාල කරන්න, කුඩා කරන්න', '365', '251', 'right')?>
+
+                <h4>විශාල කරන්න, කුඩා කරන්න</h4>
+                <p>කුඩා අකුරු නැරඹිමෙන් වෙහෙසට පත් වූවාද? පින්තූරයක් මදක් විශාලව ඔබට රුචි අයුරින් නැරඹීමට අවශ්‍යද? දැන් ඔබට ඉතා පහසුවෙන් වෙබ් පිටු විශාල සහ කුඩා කළ හැක.</p>
+
+                <div class="key-combo">
+                    විශාල කරන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    කුඩා කරන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'ටැබ් ප්‍රයෝග තිර දසුන', '388', '135', 'right')?>
+
+                <h4>මෙම ටැබ් ප්‍රයෝග උත්සාහ කරන්න</h4>
+                <p>ඔබ එකවර වෙබ් පිටු බොහෝ ගණනක් විවෘත කරගෙන භාවිතා කිරීමට රුචිකත්වයක් දක්වයි නම් ඔබට ටැබ් සහිත ගවේශනය අනිවාර්යෙන්ම ප්‍රයෝජනවත් වනු ඇත. ටැබ් භාවිතයේ ප්‍රවීණයකු වීමට මෙන්න යතුරු පුවරු කෙටි මාර්‍ග කිහිපයක්:</p>
+
+                <div class="key-combo key-combo-1">
+                    නව හිස් ටැබයක් විවෘත කරන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                     නව ටැබයක් තුළ සබැඳිය විවෘත කරන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab-click.png', 'සබැඳියක මැද ක්ලික් කරන්න (mac: ⌘ + සබැඳිය මත ක්ලික් කරන්න)', '132', '37')?>
+                </div>
+                <div class="key-combo">
+                    ටැබයක් වසන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    වැසූ ටැබයක් යළි විවෘත කරන්න
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'පිටු සලකුණු තිර දසුන', '378', '252', 'right')?>
+
+                <h4>වරක් ක්ලික් කර පිටු සලකුණක් එක් කරන්න</h4>
+                <p> වරක් ක්ලික් කර පිටු සලකුණු එක් කිරීම මඟින් ඔබ රුචි අඩවි වල එකතුවක් තබා ගන්න, මෙහිදි ඔබගේ කාලයද ඉතිරි වේ. ඔබට වෙබ් පිටුවකට පිවිසි විට එය ඔබට මතකයේ තමා බැනීම අවශ්‍යනම් පිහිටුම් තීරුවේ ඇති තරු සලකුණ මත ක්ලික් කරන්න. Firefox විසින් එය ඔබගේ පිටු සලකුණු ලැයිස්තුවට එක් කරන අතර ඉන්පසු ඔබට එය ඉතා පහසුවෙන් සොයාගත හැක..</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.jpg', 'ආරක්‍ෂක අයිකනය', '54', '49')?>
+                        අඩවිය සත්‍යාපනය කළ හැඳිනුම් තොරතුරු ලබා දෙන අතර මාර්‍ගගත තොරතුරු සොරුන්ගෙන් ඔබගේ පෞද්ගලික දත්ත ආරක්‍ෂා කරයි.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.jpg', 'ආරක්‍ෂක අයිකනය', '54', '49')?>
+                        අඩවිය මූලික හැඳිනුම් තොරතුරු ලබා දෙන අතර මාර්‍ගගත තොරතුරු සොරුන්ගෙන් ඔබගේ පෞද්ගලික දත්ත ආරක්‍ෂා කරයි.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.jpg', 'ආරක්‍ෂක අයිකනය', '54', '49')?>
+                        අඩවිය කිසිදු හැඳිනුම් තොරතුරක් ලබා නොදේ.
+                    </li>
+                </ul>
+
+                <h4>ඔබ ගනුදෙනු කරන්නේ කා සමඟ දැයි ඔබ දන්නවාද?</h4>
+                <p>අන්තර්ජාලයේ සිටින්නාවූ වංචනිකයින් සිදු කරන්නන්ගේ පොදු උපක්‍රමයක් වනුයේ, සැබැ වෙබ් අඩවියට සමාන ව්‍යජා අඩවියක් පවත්වාගෙන යාමයි. මෙය ඔබේ බැංකු හෝ ප්‍රියතම ඉලෙක්ට්‍රොනික වානිජ අඩවිය ලෙස පෙනි සිටිය හැක.  වාසනාවකට Firefox එවැනි වංචනික අඩවි හදුනා ගැණීමට පහසුකම් සලසා ඇත. හුදෙක් අඩවි සලකුණ මත ක්ලික් කිරීම මඟින් ක්‍ෂණික අඩවි සාරාංශයක් ලබා ගත හැක.</p>
+                <p id="forgery">ප්‍රහාරාත්මක අඩවි හෝ වංචනික අඩවි; වෙතට ඔබගේ පෞද්ගලික තොරතුරු ලබා දීම හෝ එම අඩවියකට පිවිසිම ඔබට හානිකර විය හැක.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="වංචනික අඩවි තිර දසුන" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            පිටුව පහළට ස්ක්‍රොල් කරන්න
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            පිටුව ඉහළට ස්ක්‍රොල් කරන්න
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            පිටුව ප්‍රකෘතිමත් කරන්න
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            පසුපසට
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            ඉදිරියට
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>ඔබේ සාර්ථකත්වය සඳහා කෙටි මාර්‍ග</h4>
+                <p>ඔබේ පහසුව සඳහා Firefox හි යතුරුපුවරු කෙටි මාර්‍ග බොහෝමයක් ඇත. මෙන්න අපේ ප්‍රියතම කෙටි මාර්‍ග කිහිපයක්:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        පිහිටුම් තීරුවට කර්සරය ගෙනයන්න
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        පිහිටුම් සෙවුම් කොටුවට ගෙනයන්න
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>අතරමැදි</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'පිටු සලකුණු තිර දසුන', '378', '252', 'right')?>
+
+                <h4>ටැග්(ලේබල) භාවිතය</h4>
+                <p>ඔබ විශාල පිටු සලකුණු ලැයිස්තුවක් නිර්මාණයක් කළ පසු එය භාවිතය මදක් අපහසු වනු ඇත. නිසි කළමනාකරණයක් සඳහා ඔබ පිටු සලකුණුගත කළ අඩවි සඳහා ටැග්(ලේබල) එක් කළ හැක. හුදෙක් තරු සලකුණ මත දෙවරක් ක්ලික් කිරීම මඟින් ඔබට ලේබලයක් එක් කිරීමේ අවස්ථාව සැලසේ.</p>
+                <p>ඔබට එක් අඩවියක් සඳහා ලේබල කිහිපයක් භාවිත කළ හැකි අතර, සෑම ලේබලයක් අතරේම කොමා සලකුණක් එක් කිරීමට අමතක නොකරන්න. ඉන්පසු පිහිටුම් තීරුව මත අදාල ලේබලය ඇතුළත් කිරීම මඟින් ඔබට අවශ්‍ය අඩවිය ඉතා පහසුවෙන් සොයාගත හැක. උදාහරණයක් ලෙස, "සිත්සටහන්" ලෙස පිහිටුම් තීරුව මත ඇතුළත් කිරීමෙන් ඔබේ සියලු සිත් සටහන් අඩවි ඔබට ලබාගත හැක.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'ඇඩෝන තිර දසුන', '378', '252', 'right')?>
+
+                <h4>ඇඩෝන පිළිබඳ සියල්ල ඉගෙන ගන්න</h4>
+                <p>Firefox හි සම්මත වෙළුම බොහෝ ගුණාංගවලින් සමන්විතවේ, නමුත් එපමණකින් නවතින්නේ ඇයි? 5,000කට වඩා වැඩි ඇඩෝන ඔබගේ රිසිසේ Firefox භාවිතයට ඉඩ සලසයි. ඇඩෝන කළමණාකරු විවෘත කිරීම සඳහා මෙවලම් → ඇඩෝන මෙනු මාර්‍ගයේ ගමන් කරන්න, ඉන්පසු ඔබේ සිතැගි පරිදි Firefox හැඩ ගැන්වීමට සියලු ආකාර අනාවරණය කරගන්න.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'සොයනවා තිර දසුන', '378', '252', 'right')?>
+
+                <h4>පහසුවෙන් සොයන්න</h4>
+                <p>ඔබ දැනටමත් Firefox සමඟින් ඇති සෙවුම් තීරුවට හුරුවි තිබිය හැක නමුත් එය ඔබට අවශ්‍ය වෙනත් සෙවුම් යන්ත්‍ර සඳහා රිසි කළ හැකි බව ඔබ දන්නවාද? පෙරනිමි විකල්ප දර්ශනය සඳහා හුදෙක් සෙවුම් තීරුවේ වම්පස ඇති අයිකනය මත ක්ලික් කරන්න.</p>
+                <p>සෙවුම් යන්ත්‍ර කළමනාකරණය ක්ලික් කිරීම මඟින් වඩා පහසුවෙන් ලැයිස්තුව යළි සැකසිය හැක. අමතර සෙවුම් යන්ත්‍ර එක් කිරීමට සහ ඔබගේ ප්‍රියතම සෙවුම් යන්ත්‍රය සඳහා යතුරුපුවරු කෙටි මාර්‍ග පවා යෙදිය හැක. උදාහරණයක් ලෙස, Google (ගුගල්) සඳහා ඔබට කෙටි මාර්‍ගය ලෙස G සැකසිය හැක, ඉන්පසු ඔබට සිංහල Firefox පිළිබඳ සෙවිමට අවශ්‍ය නම්, "G සිංහල Firefox" ලෙස පිහිටුම් තීරුවට ඇතුළත් කරන්න.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'සොයාගන්න තිර දසුන', '378', '252', 'right')?>
+
+                <h4>මොහොතකින් සෙවීම</h4>
+                <p>ඔබ යතුරුකරණය කරන අයුරින් සෙවීම තවත් අනගී කාලය ඉතුරු කිරීමකි. පිටුවක් තුළ වචනයක් සෙවීමට "සෙවුම්" බාරය භාවිතා කිරීම වෙනුවට, එම පිටුවේ ඕනැම ස්ථානයක ක්ලික් කර ඔබට අවශ්‍ය වචනය යුතුරුකරණය ආරම්භ කරන්න. ඔබගේ කර්සරය ක්‍ෂණිකවම එම වචනයේ පළමු අවස්ථාව වෙතට පනිනු ඇත.</p>
+                <p>ඔබට එය පුරුකක් සඳහාද භාවිතා කළ හැක. උදාහරණයක් ලෙස, "බොහෝ දේ ඉගෙන ගන්න" පුරුක සෙවීමට ඔබගේ මවුසය පිටුව පුරා ගෙනයාමෙන් තොරව අදාල වචනය සඳහා යතුරුලකරණය අරඹන්න, කර්සරය අදාල ස්ථානයට ලගා වූ විට ඇතුළත් කිරීමේ යතුර ඔබන්න.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'පෞද්ගලිකත්ව තිර දසුන', '378', '252', 'right')?>
+
+                <h4>සෑම පිරික්සීමකදීම ඉවත් කරන්න</h4>
+                <p>ආරක්‍ෂක සහ පෞද්ගලිකත්ව හේතුන් මත, ඔබගේ දත්ත හැරදමා යාම සුදුසු නොවේ (විශේෂයෙන්ම ඔබ හවුල් පරිගණකයක් භාවිතා කරයි නම්). Firefox ඔබට ගවේශන සහ බාගැනීමේ අතිතය, ගබඩා කළ දත්ත සහ කුකී එක ක්ලික් එකක් මඟින් මැකිමට  අවස්ථාව සලසයි. එය සිදු කිරීමට මෙවලම් → පෞද්ගලික දත්ත මකන්න වෙත යන්න. වඩාත් සුරක්‍ෂිත වීම සඳහා <span id="trace-platform">මෙවලම් → විකල්ප → පෞද්ගලිකත්වය</span> වෙත ගොස් "මා Firefox වසන සෑමවිටදීම මගේ පෞද්ගලික දත්ත හිස් කරන්න" විකල්පය තෝරන්න.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → අභිප්‍රේත → පෞද්ගලිකත්වය";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="සැකසුම් → අභිප්‍රේත → පෞද්ගලිකත්වය";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>උසස්</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'පිහිටුම් තිරුවේ තිර දසුන', '378', '252', 'right')?>
+
+                <h4>ඔබේ ප්‍රියතම අඩවි වෙත ක්‍ෂණිකව පිවිසෙන්න</h4>
+                <p>ඔබට පසු සහ ක්‍ෂණික ප්‍රවේශයක් සඳහා ඔබේ පිටු සලකුණු වෙතට මූල පද එක් කළ හැක. පිටු සලකුණු පිළිවෙළ වෙත ගොස් මූල පද ක්‍ෂේත්‍රයට කෙටි මාර්‍ගයක් එක් කළ පසු පිහිටුම් තීරුවේ අදාල මූල පදය යෙදීම මඟින් ඔබට පිටු සලකුණ භාවිතා කළ හැක. උදාහරණයක් ලෙස, www.siyabas.lk සඳහා ඔබ "සිංහල" මූල පදය භාවිත කළ හොත් ඉන්පසු "සිංහල" පිහිටුම් තිරුවට ඇතුළත් කිරීම මඟින් ඔබට අදාල පිටු සලකුණ ලබා ගත හැක.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'පිටු සලකුණු තිර දසුන', '378', '252', 'right')?>
+
+                <h4>අනගි බහලුම් නිර්මාණය</h4>
+                <p>ඔබ නිරන්තරයෙන්ම විවිධාකර වූ විශෙෂිත අඩවි සුරැකීමට සහ කළමනාකරණය කිරීමට අවශ්‍ය උසස් වෙබ් ගවේශකයෙකු නම්, මෙන්න ප්‍රයෝජනවත් කාලය ඉතුරු කිරීමක්:  Firefox 3හි පූස්තාකාල පහසුකම භාවිතයෙන් ඔබට සෙවුම් නිර්මාණයට සහ බහලුම් තුළට සුරැකිය හැකි අතර ඔබ පිටු සලකුණු සහ අතීතයට අඩවි එක් කරන්නාක් සේ ස්වයංක්‍රීයව යාවත් වනු ඇත.</p>
+                <p>පළමුව පිටු සලකුණු මෙනුවේ "පිටු සලකුණු පිළිවෙළ" විකල්පය තේරිම පිටු සලකුණු එක තුව විවෘත කරගන්න. ඉන්පසු සෙවුම් වදනක් සෙවුම් කොටුව තුළට ඇතුළත් කර අනගි බහලුමක් නිර්මාණය සඳහා සුරකින්න බොත්තම ඔබන්න.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'බාගැනීම් කළමනාකරු තිර දසුන', '378', '252', 'right')?>
+
+                <h4>ඔබේ බාගැනීම් කළමනාකරණය</h4>
+                <p>ඔබ නිතුරුවම බාගැනීම් සිදු කරයි නම්, ඔබට බාගැනීම් කළමනාකරු කවුළුව භාවිතා කළ හැක. ඔබට බාගැනිම් තාවකාලිකව නැවැත් වීමට, යළි ඇරඹීමට සහ ගොනු කළමනාකරු හරහාම විවෘත කළ හැකි නිසා ඔබගේ කාලයද ඉතිරි වනු ඇත. </p> <p>ඔබට පැරණි බාගැනීමක් සොයා ගැනීම සඳහා මෙවලම්→බාගැනීම් වෙත ගොස් සෙවුම් කොටුව භාවිතා කර ඔබේ ගොනුව සොයා ගන්න. ඔබට එය හමු වූ පසු ගොනුව මත දෙවරක් ක්ලික් කිරීම මඟින් එය විවෘත කළ හැක. නැතහොත් එය මත දකුණත්-ක්ලික් කිරීම මඟින් "බාගත පුරුක පිටපත් කරන්න" තෝරා ගන්න.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'සංවර්‍ධන මෙවලම් තිර දසුන', '378', '252', 'right')?>
+
+                <h4>සංවර්‍ධන මෙවලම් අනාවරණය</h4>
+                <p>ඔබ වෙබ් අඩවි සංවර්‍ධකයෙක් නම් Firefoxන හි සංවර්‍ධන මෙවලම් ඔබගේ කටයුතු ඉතා පහසු කරණු ඇත.  <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla ඇඩෝන අඩවිය</a> සංවර්‍ධන ක්‍රියාදාමය මැනවින් සිදුවීම සඳහා බොහෝ මෙවලම් ලබාදේ. ඒ අතර සජිවීව ඕනැම වෙබ් පිටුවක CSS, HTML, සහ JavaScript සැකසීමට, දෝෂහරණයට සහ නිරීක්‍ෂණයට Firebug ද, HTTP/HTTPS ශීර්ෂක සහ POST විචල්‍යන් දර්ශනයට සහ වෙනස් කිරීමට, සහ ඕනැම HTML හෝ CSS අංගයක් විශ්ලේෂණයට DOM පරීක්‍ෂක ද අඩංගු වේ.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'අභිප්‍රේත තිර දසුන', '378', '252', 'right')?>
+
+                <h4>ඔබ කැමතිම ආකාරයට වෙබ් සකසන්න</h4>
+                <p>ඔබගේ ප්‍රියතම වෙබ් යෙදුම් වෙතට ක්‍ෂණික ප්‍රවේශයන් සඳහා ඔබට දැන් වෙබ් මත පදනම් වූ නියමාවලි (ප්‍රොටොකෝල) භාවිතා කළ හැක. උදාහරණයක් ලෙස, Firefox හිදි mailto: යන්න ක්ලික් කළ විට ඔබගේ පරිගණකයේ පෙරනිමි තැපැල් වැඩසටහන වෙනුවට ඔබගේ ප්‍රියතම වෙබ් තැපැල් සැපයුම් විසින් නව පණිවිඩයක් විවෘත කිරීම සිදු කරයි.(සටහන: මෙම ගුණාංගය භාවිතයට ඇත්තේ Firefox 3 සමඟ ලියාපදිංචි කළ වෙබ් තැපැල් සේවා සමඟ පමණි).</p>
+            <p>සැම නියමාවලියක් (ප්‍රොටොකෝලයක්) සඳහාම පෙරනිමි යෙදුම තෝරා ගැණීමට <span id="platform-protocol">මෙවලම්→විකල්ප→යෙදුම්</span> වෙතට යන්න හෝ සෑමවිටම ඔබ විසින්ම යෙදුම තෝරා ගැණීම සඳහා "සෑමවිටම අසන්න" තෝරාගන්න.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→අභිප්‍රේත→යෙදුම්";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="සැකසුම්→අභිප්‍රේත→යෙදුම්";
+                }
+                //]]></script>
+                <p>ඔබ වෙබ් යෙදුම් සංවර්‍ධකයෙක් නම් වෙබ් මත පදනම් වූ නියමාවලි සහාය එක් කිරිමේ ආකාරය පිළිබඳ බොහෝ තොරතුරු සඳහා <a href="http://developer.mozilla.org/">Mozilla සංවර්‍ධන මධ්‍යස්ථානය</a> වෙතට පිවිසෙන්න.</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+

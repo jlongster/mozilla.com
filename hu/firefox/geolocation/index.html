@@ -1,0 +1,118 @@
+<?php
+
+$page_title = "Földrajzi hely a Firefoxban";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Helymeghatározó böngészés</h2>
+    <p>A Firefox a meglátogatott weboldalnak meg tudja adni a felhasználó földrajzi helyzetét és így sokkal hasznosabb, helyileg aktuálisabb információt biztosíthat. Ez fejlettebb böngészést eredményez, &ndash; mindezt úgy, hogy személyes adatai teljesen biztonságban tudhatja.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Próbálja ki!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Gyakran ismételt kérdések</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Mi az a Helymeghatározó böngészés?</h4>
+    <div class="expander-content">
+        <p>Az olyan weboldalak, amelyek a helymeghatározást végeznek, a földrajzi helyzetnek megfelelő információt szolgáltatnak, vagy csupán egyszerűbbé teszik a keresését. Mondjuk, hogy egy pizzériát keres a közelben. A weboldalnak lehetősége van megkérdezni a felhasználó földrajzi helyét, így egy egyszerű keresés a "pizza" szóra, a közelben lévő éttermek listáját eredményezheti... nem kell megadni semmilyen más adatot.</p>
+        <p>Útvonaltervezéskor nem szükséges megadni a kiinduló pontot, csak a célállomást.</p>
+        <p>Ez a szolgáltatás teljes mértékben választható &ndash; a Firefox engedély nélkül nem oszt meg semmilyen információt &ndash; és teljes mértékben figyelembe veszi az adatvédelmet. Mindezen felül ez a komponens, a többi Firefox komponenshez hasonlóan olyan nyílt szabványok felhasználásával készült, amely megkönnyíti a webfejlesztőknek a funkció megvalósítását.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hogyan működik?</h4>
+    <div class="expander-content">
+        <p>Egy helymeghatározásra alkalmas weboldal látogatásakor a Firefox megkérdezi, hogy a felhasználó megadja-e földrajzi helyét az ezt kérdező weboldalnak.</p>
+        <p>Hozzájárulás esetén, a Firefox adatokat gyűjt a közelben található lévő hálózati pontok és a számítógépe IP-címe alapján. Ezt követően a Firefox elküldi ezeket az információkat az alapértelmezett földrajzi helymeghatározó szolgáltatónak, a Google Location Services-nek, hogy becsülje meg a felhasználó tartózkodási helyét. Ezt a becsült adatot adja át a Firefox a weboldalnak.</p>
+        <p>Amennyiben nem járul ehhez hozzá, a Firefox nem tesz semmit.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Milyen pontos a helymeghatározás?</h4>
+    <div class="expander-content">
+        <p>A pontosság nagymértékben változik a különböző helyek között. Néhány helyen, a szolgáltató a földrajzi helyet képes néhány méteres pontossággal megadni, más területeken azonban nincs lehetőség ilyen pontosság elérése. A szolgáltatótól visszaérkező minden földrajzi hely csak becslés és nincs garancia annak pontosságára. Ezért kérjük, hogy ezt az információt vészhelyzetben ne, csak általános esetekben használja.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Milyen információ kerül elküldésre, és kinek? Hogyan lesznek személyes adataim biztonságban?</h4>
+    <div class="expander-content">
+        <p>Az adatvédelem rendkívül fontos a számunkra és a Firefox sosem adja ki engedély nélkül a felhasználók földrajzi helyét. Amennyiben egy weboldal kíváncsi erre az információra, dönthet ezen adatainak sorsáról mielőtt azok a szolgáltató vagy weboldal számára elküldésre kerülnek.</p>
+        <p>Alapértelmezésként a Firefox a Google Location Services szolgáltatást használja a földrajzi hely meghatározására. Ehhez az alábbi adatokat küldi el:</p>
+        <ul>
+            <li>a számítógép IP-címe,</li>
+            <li>a közelben található vezeték nélküli hálózati elérésekkel kapcsolatos adatok, és</li>
+            <li>egy kéthetente lejáró, a Google által kiadott ügyfél-azonosítószám.</li>
+        </ul>
+        <p>A Firefox által gyűjtött összes információ leírásának megtekintéséhez, látogassa meg az angol nyelvű <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox adatvédelmi irányelv</a> weboldalt.</p>
+        <p>A Google Location Services ezt követően visszaküldi a becsült földrajzi helyzetet (pl. szélességi és hosszúsági fokokat). A Google által összegyűjtött információk leírása, angol nyelvű <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation adatvédelmi irányelvek</a> oldalon található.</p>
+        <p>Az adatcsere az adatok védelme érdekében titkosított csatornákon történik. Amikor a Firefox megkapta a felhasználó földrajzi helyének adatait, elküldi az azt kérő weboldal számára. A Google Location Services számára sosem kerül átadásra a meglátogatott weboldal neve, helye, vagy bármely onnan érkező süti.</p>
+        <p>A Google Location Services alapján gyűjtött információkat soha nem használja fel sem a Mozilla, sem a Google a felhasználó azonosítására vagy megfigyelésére.</p>
+        <p>Azzal kapcsolatban, hogy az adott weboldal mire használja fel a földrajzi hellyel kapcsolatos információkat, arról a az adott weboldal adatvédelmi irányelve ad tájékoztatást.</p>
+        <p>Az adatvédelemmel kapcsolatban további információ a következő oldalakon olvasható:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox adatvédelmi irányelv</a> (angol)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google adatvédelmi irányelv</a> (angol)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Nyomon tudnak követni internetezés közben?</h4>
+    <div class="expander-content">
+        <p>Nem. A Firefox csak akkor kérdezi le a földrajzi helyet, amikor egy weboldal ezt kéri, és csak akkor adja át ezt az információt, ha felhasználó erre engedélyt ad. A Firefox nem követi és nem is tárolja el böngészés közben a földrajzi helyet.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hogyan lehet egy weboldaltól visszavonni a korábban kiadott engedélyezést?</h4>
+    <div class="expander-content">
+        <p>Amennyiben engedélyezi, hogy a Firefox minden weboldalnak átadja a földrajzi hely adatait, de később meggondolja magát, akkor az alábbi lépéseket hajtsa végre:</p>
+        <ul>
+            <li>Menjen el a weboldalra, amelyen korábban engedélyezte a földrajzi helyzet információjának elküldését.</li>
+            <li>Válassza ki az <em>Eszközök</em> menüből az <em>Oldal adatai</em> menüpontot.</li>
+            <li>Válassza ki az <em>Engedélyek</em> fület.</li>
+            <li>Módosítsa a <em>Földrajzi hely adatainak megosztása</em> beállítást.</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hogyan törölhető a “véletlenszerű kliens-azonosítószám”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Az <em>Eszközök</em> menüből válassza az <em>Előzmények törlése</em> menüpontot.</li>
+            <li>Nyomja meg a <em>Részletek</em> nyilat.</li>
+            <li>Győződjön meg róla, hogy a <em>Sütik</em> ki van választva.</li>
+            <li>Nyomja meg a <em>Törlés most</em> gombot.</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hogyan lehet végleg kikapcsolni a Helymeghatározó böngészést?</h4>
+    <div class="expander-content">
+        <p>A Helymeghatározó böngészés a Firefox beépített funkciója. Engedély nélkül semmilyen földrajzi hellyel kapcsolatos információt nem küld el harmadik félnek. Amennyiben úgy dönt, hogy teljesen kikapcsolja ezt a funkciót, kövesse az alábbi lépéseket:</p>
+        <ul>
+            <li>A címsorba írja be a következőt: <code>about:config</code> .</li>
+            <li>Írja ba a <code>geo.enabled</code> kifejezést.</li>
+            <li>Kattintson duplán a <em>geo.enabled</em> beállításra.</li>
+            <li>A Helymeghatározó böngészés mostantól le van tiltva.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Hol vagyok?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Hiba történt az Ön földrajti helyének meghatározása közben.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

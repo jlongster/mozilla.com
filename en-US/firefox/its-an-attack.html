@@ -1,0 +1,43 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "It's an attack!";
+    $body_id    = 'its-an-attack';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/its-a-trap.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>It’s an Attack!</h2>
+	<p>I’m a naughty web page trying to infect you with badware!</p>
+</div>
+
+<div id="main-content">
+
+<p>OK, not really, but Attack Sites (also known as malware or <a href="http://www.stopbadware.org/home/help">badware</a>) can attack your computer without you even realizing it. These attacks can steal your personal information, damage your computer or use your system to attack others. Sometimes a site you trust can be turned into an Attack Site without the owner's knowledge. Firefox 3 or later provides built-in <a href="/<?=$lang?>/firefox/phishing-protection/">Phishing and Malware Protection</a> to help you avoid Attack Sites. If you are using Firefox 3 or later, you should have been warned away from this page.</p>
+
+<h5>You can help make yourself safer from Attack Sites by:</h5>
+
+<ul>
+<li><strong>not downloading software from sites you don't trust</strong> even if they claim it is required; if a site says that a plugin is necessary, go directly to the plugin vendor's web site instead;</li>
+<li><strong>keeping your system up to date</strong> by applying security updates promptly for Firefox and other applications, as well as your computer's operating system;</li>
+<li><strong>not opening email attachments from people you don't know</strong> even when they appear to be harmless things like screensavers or videos.</li>
+</ul>
+
+</div> <!-- end #main-content  -->
+
+<div id="download">
+    <script src="/js/download.js"></script>
+	<?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+		echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

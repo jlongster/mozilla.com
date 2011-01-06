@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox oppdatert";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Nei takk";
+    $no_download_button2 = "(La meg fortelle hvorfor)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Sikkerhetsadvarsel:
+        </span>
+</h2>
+<h3>
+        Dette er en utdatert versjon av Firefox.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Når du bruker denne Firefox-versjonen vil du være sårbar for sikkerhetstrusler på nettet.</p>
+
+    <p id="main-feature-contents">
+    <a href="/<?=$lang?>/firefox/">Last ned den nyeste versjonen av Firefox</a>. Det er gratis, og du vil få fordelene av de nyeste forbedringene på sikkerhet, ytelse og funksjonalitet.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Willkommen zu Firefox';
+    $extra_feature_text = 'Klicken Sie auf die Schließen-Schaltfläche dieses Tabs, um auf Ihre Startseite zu gelangen.';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+  <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Willkommen zu Firefox 3"/></h2>
+  <p>Vielen Dank, dass Sie die bisher sicherste, schnellste und am besten anpassbare Version von Firefox heruntergeladen haben. Um mit dem Surfen zu beginnen, schließen Sie einfach diesen Tab, wie oben beschrieben.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+    <h3>Lernen Sie mehr</h3>
+    <p>Sie möchten wissen, was Sie jetzt tun können? Unsere Einführungsseite listet eine Reihe von interessanten Seiten und weitere Informationen zu Firefox. <a href="/<?=$lang?>/firefox/central/">Besuchen Sie die Einführungsseite</a>.</p>
+    </div>
+    <div class="sub-feature" id="questions">
+    <h3>Fragen?</h3>
+    <p>Unsere Hilfe-Seite liefert eine Menge von Antworten und bietet ein Forum und einen Chat, um Ihnen auch bei kniffligen Problemen zu helfen. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Besuchen Sie die Hilfe-Seite</a>.</p>
+  </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

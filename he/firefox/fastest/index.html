@@ -1,0 +1,102 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Firefox המהיר ביותר";
+
+    // Video controls strings to translate
+    $download_ogg       = "הורדה בפורמט וידאו פתוח (Ogg Theora)";
+    $download_mp4       = "הורדה בפורמט MPEG-4";
+    $check_back         = "בדוק שוב בקרוב כדי לראות את הוידאו הבא.";
+
+    $play               = "נגן וידאו";
+    $fallback_l1        = "וידאו זה דורש דפדפן עם תמיכה בוידאו פתוח:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 ומעלה';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 ומעלה';
+    $fallback_l4        = 'או <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+<div id="main-feature">
+
+    <h2>
+    חשוב מהר
+    </h2>
+
+    <p>ביקשנו ממעריצי Firefox לעזור לנו להפיץ את הבשורה על המהירות המדהימה של Firefox 3.5. להלן התוצאות:</p>
+
+</div>
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Video preview" /><span>
+
+            צפה בוידאו של קנט פרנץ', מוחא הכפיים המהיר בעולם
+
+            </span></a></p>
+
+            <p class="secondary">
+            מוחא הכפיים המהיר בעולם, קנט "טוסט" פרנץ' מריע ל־Firefox בתור מחזיק השיא. קנט משלב את הסגנון האישי שלו עם זריזות ומוחא כפיים במהירות של 12 מחיאות בשנייה. הוא מתכנן לשבור את השיא שלו עצמו בקרוב.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">עוד על קנט</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Video preview" /><span>
+            צפה בוידאו של סטיבן פוראגנן, עורם הכוסות המהיר בעולם
+
+            </span></a></p>
+
+            <p class="secondary">
+            מחזיק שיא גינס, סטיבן פוראגנן אוהב את Firefox מספיק כדי לעשות הערמת כוסות מהירה במיוחד עבורנו. סטיבן הוא חבר באירגון הערמת הכוסות הספורטיבי העולמי, והוא רק בן 11. הידיים המהירות שלו מאפשרות לו למקם ערימת כוסות במקומן ב־5.93 שניות בלבד.
+
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">למד עוד על הערמת כוסות ספורטיבית.</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Video preview" /><span>
+            צפה בוידאו של טוד טיילור, נגן הבנג'ו המהיר בעולם
+            </span></a></p>
+            <p class="secondary">
+            נגן הבנג'ו ושיאן גינס העולמי טוד טיילור שמח לנגן מהר למען Firefox. טוד מנגן בלוגראס, קאנטרי, פופ ורוקנרול. הוא ממשיך להקליט ולנגן בסרטים, תוכניות טלויזיה ועוד.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">למד עוד על טוד.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

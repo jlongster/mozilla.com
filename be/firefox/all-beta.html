@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Азіральнік Сеціва Firefox | Дапамажыце нам выпрабаваць апошнюю бета';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Дапамажыце нам выпрабаваць будучыню Firefox!</h2>
+        <p>Апошняя бета-версія Firefox зараз даступная для перадпрагляду. Выпрабуйце яе і паведамце нам, што вы пра яе думаеце!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Важныя звесткі</h4>
+        <p class="intro">Прачытайце, калі ласка, перад сцягваннем</p>
+    </div>
+    <ul>
+        <li>Гэта спробнае выданне праграмы: вы можаце сутыкнуцца з праблемамі сумяшчальнасці з асобнымі пляцоўкамі Сеціва або з праблемамі сумяшчальнасці з асобнымі дадаткамі.</li>
+        <li>Калі вы адшукаеце праблему, калі ласка, <a href="http://feedback.mozilla.org/">паведамце нам</a> ці <a href="https://bugzilla.mozilla.org/">ўвядзіце хібу</a>.</li>
+        <li>Каб мець больш падрабязныя звесткі, прачытайце <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">заўвагі пра выданне</a> і <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">вядомыя заганы</a> (па-англійску).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Не шукалі бету? Атрымайце <a href="/<?=$lang?>/firefox/">апошні Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

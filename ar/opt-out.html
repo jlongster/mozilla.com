@@ -1,0 +1,63 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'سياسة الخصوصية لموزيلا - إجراءات خيار عدم المساهمة';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                            'About'          => "/{$lang}/about/",
+                            'Privacy Policy' => ""
+                        );
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="content">
+
+<h2>إجراءات خيار عدم المساهمة</h2>
+
+<p>تصف هذه الصفحة إجراءات خيار عدم المساهمة في تحليلات مواقع الوب المرتكزة على Omniture والمستخدمة في مواقع وب موزيلا. هناك طريقتان قد تُستخدمان سوية أو بشكل مستقل.</p>
+
+<div class="corner-box">
+<h3>استخدام الكعكات</h3>
+<p>من أجل عدم المساهمة في برامج الإحصائيات المرتكزة على Omniture في موزيلا، يجب عليك تثبيت
+"كعكة عدم المساهمة (opt-out cookie)". ستكتشف مواقع وب موزيلا وجود "كعكة عدم المساهمة" هذه وتعطّل التتبع.</p>
+<ul>
+<li>رجاءً زُر <a href="http://ostats.mozilla.com/optout.html">هذه الصفحة</a> لتمكين أو تعطيل "كعكة عدم المساهمة" في موزيلا.</li>
+</ul>
+<p>لاحظ أنك إذا مسحتَ جميع الكعكات أو حذفتَ كعكة عدم المساهمة أو غيّرتَ حاسوبك أو غيّرتَ متصفح الوب، فستحتاج
+إلى تطبيق إجراء اختيار عدم المساهمة من جديد. وفيما عدا ذلك، فالكعكة صالحة لمدة سنتين ابتداءً من اللحظة التي "تثبّتها" فيها.</p>
+</div>
+
+<div class="corner-box">
+<h3>استخدام ملفات المضيفات </h3>
+
+طريقة أخرى لتعطيل إحصائيات مواقع الوب وهي عن طريق حظر الاتصال مع خادومات الإحصائيات.
+يمكن تحقيق ذلك بإضافة بعض الأسطر إلى <a href="http://en.wikipedia.org/wiki/Hosts_file">ملف المضيف</a>
+الخاص بك، وسيعطّل ذلك التواصل مع خادومات Omniture.
+<p>
+من أجل استخدام هذه الطريقة، ينبغي تعديل <a href="http://en.wikipedia.org/wiki/Hosts_file">ملفات المضيف</a>
+في جهازك. لمعرفة مكان هذه الملفات في منصة تشغيل معيّنة، اقرأ <a href="http://en.wikipedia.org/wiki/Hosts_file">
+هذا المقال</a>. افتح الملف في محرر نصوص عاديّ.</p>
+
+<p>أضِف السطور التالية لتعطيل إحصائيات Omniture في خصائص موزيلا:</p>
+<p><code>
+127.0.0.1 ostats.mozilla.com<br />
+127.0.0.1 sostats.mozilla.com<br />
+127.0.0.1 mozilla.com.112.2o7.net
+</code></p>
+
+<p>لاحظ أنّ هذا يعطّل Omniture في مواقع موزيلا فقط، وليس في كل موقع وب يستخدم Omniture.</p>
+</div>
+
+<div class="corner-box">
+<h3>للمزيد من المعلومات</h3>
+<p>إن كان لديك أيّ تعليق أو أسئلة تخصّ <a href="privacy-policy.html">سياسة الخصوصية لموزيلا</a> أو هذه الإجراءات، يُرجى التواصل مع
+Mozilla&nbsp;at:&nbsp;privacy@mozilla.com.</p>
+</div>
+
+<p class="small-print">أبريل 2008</p>
+
+</div><!-- end #content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

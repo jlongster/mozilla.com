@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 бета - Споделете мнение";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Как разбрахте за бета-програмата на Firefox 4?";
+$str2       = "Научавайте последните новини";
+$str3       = "Абонирайте се, за да получавате новини, информация за събития и други интересни неща за Firefox Бета.";
+$str4       = "Вашият e-mail адрес";
+$str5       = "Съгласен съм със <a href=\"%s\">политиката за личните данни</a> <span class='footnote'>(ще ви изпращаме само информация за Mozilla).</span>";
+$str6       = "Моля, изпращайте ми от време на време и новини за Mozilla, интересни неща за Firefox и други проекти на Mozilla";
+$str7       = "Абонирайте се »";
+$str8       = "Благодаря ви за абонамента !";
+$str9       = "Съвсем скоро ще започнем да публикуваме новини и друга интересна информация за Firefox, както и новини за Mozilla и за това как всички ние създаваме по-добър Уеб.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Имаме нужа от помощ</h3>
+        <p>Ние разработваме Firefox - бърз, лек и пълен с начини да ви помогне да сърфирате по-добре в Интернет. Ние не можем да направим това без вашите съвети и наблюдения.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>бета</sup></span></h3></li>
+    <li class="feedback"><span>Обратна връзка</span></li>
+    <li class="more"><h3>Повече информация на английски</h3></li>
+    <li class="features"><a href="../features/">Features</a> </li>
+    <li class="tech"><a href="../technology/">Technology</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Feedback Privacy Policy</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>Е, кажете ни какво мислите?</h2>
+        <h3>Споделете вашето мнение още сега.</h3>
+        <p>Кликнете на бутона за обратна връзка, за да ни дадете мнение за това, което правим в момента. Лесно е нали?</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Разработчици, нуждаем се от вас!</h2>
+        <h3>Споделете вашите идеи!</h3>
+        <p>Какво мислите за <a href="../features/#under-the-hood">новите неща, които създадохме специално за вас</a> в тази бета-версия?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Споделете мнението си още сега във форума ни.</a></p>
+
+        <h3>Сподели за намерена грешка</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>Ако знаете как да работите с Bugzilla, докладвайте грешката направо там!</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Докладвай грешка във Firefox 4 Бета</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Социализирайте се</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Следете ни в Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Посетете ни във Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Прочетете блога на Mozilla</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Имате нужда от помощ?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Нашата секция за поддръжка</a> има отговорите, които търсите, специално за Firefox 4 бета.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

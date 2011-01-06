@@ -1,0 +1,32 @@
+<?php
+    // strings to translate
+    $page_title = 'ברוכים הבאים ל־Firefox';
+    $extra_feature_text = 'לחץ על לחצן הסגירה בלשונית זו כדי לעבור לדף הבית שלך';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="ברוכים הבאים ל־Firefox 3"/></h2>
+    <p>תודה שהורדת את גירסה הבטוחה ביותר, המהירה ביותר ובעלת יכולות ההתאמה האישית הרבות ביותר של Firefox עד כה. כדי להתחיל לגלוש, סגור את לשונית זו כפי שמוצג מעלה.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>למד עוד</h3>
+        <p>תוהה מה לעשות כעת? עמוד ההתחלה של Firefox כולל רשימה של אתרים מומלצים, בתוספת מידע נוסף על Firefox. <a href="/<?=$lang?>/firefox/central/">עבור לעמוד ההתחלה</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>שאלות?</h3>
+        <p>עמוד התמיכה שלנו כולל שפע של תשובות, בתוספת של יכולות שיחה חיה כדי להדריך אותך בנקודות המסובכות. <a href="http://support.mozilla.com/<?=$lang?>/kb/">עבור לדף התמיכה</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

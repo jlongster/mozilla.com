@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Firefox kan finde din position";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Positionssbevidst surfen</h2>
+    <p>Firefox kan fortælle hjemmesider, hvor i verden du befinder dig, så du nemmere kan finde brugbare og relevante informationer. Det gør nettet smartere &ndash; og det gøres uden at sætte privatlivets fred over styr.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Prøv det!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Ofte stillede spørgsmål</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvad er positionsbevidst surfen?</h4>
+    <div class="expander-content">
+        <p>Hjemmesider, der bruger positionsbevidst surfen, vil spørge dig, hvor du befinder dig, for at kunne tilbyde dig mere relevante informationer eller for at spare dig tid, når du søger. Lad os sige, at du leder efter en Pizza-restaurant i dit lokalområde. Hjemmesiden vil så være i stand til at spørge dig om at dele oplysning om din position, så din søgen efter "pizza" kun vil give dig relevante søgeresultater. Du behøver ikke indtaste yderligere oplysninger.</p>
+        <p>Eller hvis du skal bruge en kørevejledning, vil hjemmesiden kende din startposition, så du kan nøjes med at oplyse, hvor du skal hen.</p>
+
+        <p>Funktionen er helt frivillig &ndash; Firefox sender aldrig positionsoplysninger uden din tilladelse &ndash; og den respekterer privatlivets fred. Som alle funktioner i Firefox benytter funktionen åbne standarder, så det er let for hjemmesidedesignere at bruge den.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvordan virker det?</h4>
+    <div class="expander-content">
+        <p>Når du besøger en positionsbevidst hjemmeside, vil Firefox spørge dig, om du vil oplyse din position til hjemmesiden.</p>
+        <p>Hvis du indvilliger, vil Firefox indsamle information om nærliggende trådløse netværk og din computers ip-adresse. Firefox vil så sende oplysningerne til en positionsudbyder &ndash; Google er valgt som standard &ndash; for at få et estimat af, hvor du befinder dig. Estimatet sendes så videre til hjemmesiden.</p>
+        <p>Hvis du ikke indvilliger, sender Firefox ikke nogen oplysninger.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvor nøjagtig er funktionen?</h4>
+    <div class="expander-content">
+        <p>Nøjagtigheden varierer meget fra sted til sted. Nogle steder kan positionsudbydere angive en lokalitet inden for nogle få meter. Andre steder kan nøjagtigheden være betydelig mindre. Alle lokaliteter er udelukkende estimater, og vi garanterer ikke for nøjagtigheden. Undlad at bruge denne funktion i nødstilfælde. Brug altid din fornuft.</p>
+<p>Bemærk, at funktionen især er rettet mod apparater med trådløse forbindelser som fx bærbare computere og -apparater samt mobiltelefoner. Har du en fast netopkobling vil nøjagtigheden sandsynligvis blot være ned til nogle få kilometer.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvilke informationer sendes og til hvem? Hvordan beskyttes mit privatliv?</h4>
+    <div class="expander-content">
+        <p>Dit privatliv er meget vigtigt for os, og Firefox oplyser aldrig andre om din position uden din tilladelse. Når du besøger en hjemmeside, der ønsker at kende din position, vil du blive spurgt, inden nogen oplysninger sendes til hjemmesiden og positionsudbyderen.</p>
+        <p>Firefox benytter som standard Google Location Services til at finde din position. Følgende oplysninger sendes:</p>
+        <ul>
+            <li>Din computers ip-adresse</li>
+            <li>Information om nærliggende trådløse netværks adgangspunkter</li>
+            <li>En tilfældig klient-identifikation, som tildeles af Google, og som udløber efter to uger.</li>
+        </ul>
+        <p>Du kan finde en komplet beskrivelse af de oplysninger, som Firefox indsamler, på siden <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox' privatlivspolitik (privacy policy)</a> (på engelsk).</p>
+        <p>Google Location Services returnerer herefter den estimerede position (fx længde- og breddegrad). Du kan finde en komplet beskrivelse af de oplysninger, som bruges af Google, på siden <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocations privatlivspolitik (privacy policy)</a> (på engelsk).</p>
+        <p>De indsamlede informationer sendes over en krypteret forbindelse for at beskytte dit privatliv. Når Firefox har modtaget estimatet for din position, sendes det til den forespørgende hjemmeside. Oplysninger, såsom navnet på den forespørgende hjemmeside og cookies, sendes ikke til Google Location Services.</p>
+<p>Hverken Mozilla eller Google vil nogensinde bruge den indsamlede information til at identificere dig eller udspionere dig.</p>
+<p>Hvis du vil vide, hvad den forespørgende hjemmeside bruger dine informationer til, bedes du tjekke sidens privatlivspolitik (privacy policy).</p>
+<p>For yderligere information om beskyttelse af dit privatliv, bør du også læse:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox' privatlivspolitik (privacy policy)</a> (på engelsk)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Googles privatlivspolitik (privacy policy)</a> (på engelsk)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Bliver jeg sporet, når jeg surfer på nettet?</h4>
+    <div class="expander-content">
+        <p>Nej. Firefox indhenter kun positionsoplysninger, når en hjemmeside forespørger, og deler kun oplysningerne, når du har givet tilladelse. Firefox sporer ikke og husker ikke din lokalitet, mens du surfer på nettet.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hvordan fortryder jeg en tilladelse til en hjemmeside?</h4>
+    <div class="expander-content">
+        <p>Hvis du har givet Firefox tilladelse til altid at oplyse din position til en hjemmeside, og du senere fortryder, kan du nemt trække tilladelsen tilbage. Det gøres således:</p>
+        <ul>
+            <li>Besøg den hjemmeside, som du har givet tilladelse til</li>
+            <li>Klik på menupunktet <em>Funktioner</em>, og vælg <em>Sideoplysninger</em></li>
+            <li>Klik på fanen <em>Tilladelser</em></li>
+            <li>Du kan nu ændre sidens tilladelser</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvordan sletter jeg "den tilfældige klient-identifikation"?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Klik på menupunktet <em>Funktioner</em>, vælg <em>Ryd historik</em></li>
+            <li>Klik på pilen ud for <em>Detaljer</em></li>
+            <li>Sæt flueben ud for <em>Cookies</em></li>
+            <li>Klik på knappen <em>Ryd nu</em></li>
+        </ul>
+<p>Bemærk, at dette vil slette alle dine cookies, hvilket kan påvirke auto-log-ins på andre hjemmesider. </p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvordan slår jeg positionsbevidst surfen fra?</h4>
+    <div class="expander-content">
+        <p>Positionsbevidst surfen er altid et tilvalg i Firefox. Der sendes aldrig positionsinformation uden din tilladelse. Hvis du ønsker at slå funktionen helt fra, skal du følge denne guide:</p>
+        <ul>
+            <li>I adressefeltet, skriv <code>about:config</code></li>
+            <li>Skriv <code>geo.enabled</code></li>
+            <li>Dobbeltklik på indstillingen <em>geo.enabled</em></li>
+            <li>Positionsbevidst surfen er nu slået fra</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Hvor er jeg?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! En fejl opstod under forsøget på at finde din position.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,42 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Mozilla | Firefox Soghluaiste";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Fáilte go Firefox" /></h1>
+<p>Tá an brabhsálaí Gréasáin is fearr sa siúl anois.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Íosluchtaigh Anois - Saor in Aisce</a>
+    <div><a href="platforms.html" class="system">An bhfuil Firefox ar fáil i mo theanga féin?</a></div>
+
+  <?php else: ?>
+
+    <p>Ní thacaítear le do ghléas-sa</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Féach ar na hardáin agus na gléasanna a dtacaítear leo</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">Bain sult as na gnéithe Firefox is ansa leat:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Sioncrónaigh</b> <span>Sioncrónú gan uaim idir do ríomhaire deisce agus do ghléas soghluaiste</span></li>
+    <li id="customize"><b>Saincheap</b> <span>Suiteáil breiseáin chun Firefox a chur in oiriúint duit féin</span></li>
+    <li id="search"><b>Cuardaigh</b> <span>Aimsigh suímh Ghréasáin go gasta leis an Sárbharra</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Tuilleadh Gnéithe</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

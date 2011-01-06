@@ -1,0 +1,313 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'เกร็ดและกลเม็ด';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript">// <![CDATA[
+    Mozilla.Pager.NEXT_TEXT        = 'Next';
+    Mozilla.Pager.PREV_TEXT        = 'Previous';
+    Mozilla.Pager.PAGE_NUMBER_TEXT = '%s of %s';
+    // ]]></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>เกร็ดและกลเม็ด</h2>
+    <p>ไม่ว่าคุณจะเป็นมือใหม่, ผู้ใช้ระดับกลางหรือผู้ใช้ขั้นสูง ทางลัดและคำแนะนำเหล่านี้จะช่วยคุณให้เข้าใจ Firefox 3 เกือบทั้งหมด</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">ผลิตภัณฑ์</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">ความสามารถ</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">ความปลอดภัย</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">การปรับแต่ง</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">ซอฟต์แวร์อินทรีย์ 100%</a></li>
+    <li><span>กลเม็ดและเคล็ดลับ</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">บันทึกประจำรุ่น</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">ภาษาและระบบอื่น ๆ</a></li>
+</ul>
+
+<div id="content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>มือใหม่</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '362', '225', 'right')?>
+
+                <h4>ขยาย, ย่อ</h4>
+                <p>เหนื่อยกับตัวอักษรขนาดเล็ก? ต้องการดูรูปภาพใกล้ขึ้นกว่าเดิมและเป็นส่วนตัว? คุณสามารถย่อและขยายหน้าเว็บได้อย่างง่าย ๆ</p>
+
+                <div class="key-combo">
+                    ขยาย
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    ย่อ
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '343', '117', 'right')?>
+
+                <h4>ลองเคล็ดลับกับแท็บ</h4>
+                <p>ถ้าคุณเป็นพวกที่ชอบมีหน้าเว็บหลาย ๆ หน้าเปิดไว้ในเวลาเดียวกัน คุณจะได้ประโยชน์จากการดูเว็บแบบแท็บแน่นอน นี่คือปุ่มกดทางลัดที่จะทำให้คุณเป็นปรมาจารย์แห่งแท็บ</p>
+
+                <div class="key-combo key-combo-1">
+                    เปิดแท็บว่างใหม่
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    เปิดลิงก์ในแท็บใหม่
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + คลิกบนลิงก์</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">คลิกปุ่มกลางบนลิงก์</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">คลิกปุ่มกลางบนลิงก์ (mac: ⌘ + คลิกบนลิงก์)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    ปิดแท็บ
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    เปิดแท็บที่ถูกปิดขึ้นมาใหม่
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '389', '250', 'right')?>
+
+                <h4>เพิ่มที่คั่นหน้าเว็บในคลิกเดียว</h4>
+                <p>วิธีติดตามเว็บไซต์ที่คุณชอบได้ดีกว่า (และประหยัดเวลา) ด้วยที่คั่นหน้าเว็บในคลิกเดียว เมื่อคุณเข้าเยี่ยมหน้าที่คุณต้องการจะคั่นไว้ แค่คลิกไอคอนรูปดาวในแถบที่อยู่ Firefox จะทำการเพิ่มเว็บนั้นลงไปในรายการที่คั่นหน้าเว็บของคุณ ซึ่งจะทำให้คุณสามารถค้นหามันได้อย่างง่ายดาย</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        เว็บไซต์มีข้อมูลการระบุตัวตนเจ้าของเว็บแบบเต็มขั้นที่ผ่านการพิสูจน์แล้ว และมีการป้องกันข้อมูลของคุณจากผู้ประสงค์ร้าย
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        เว็บไซต์มีข้อมูลการระบุตัวตนขั้นพื้นฐาน และมีการป้องกันการดักข้อมูลข้อมูลของคุณจากผู้ประสงค์ร้าย
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        เว็บไซต์ไม่มีข้อมูลการระบุตัวตนใด ๆ
+                    </li>
+                </ul>
+
+                <h4>รู้ว่าคุณกำลังติดต่ออยู่กับใคร</h4>
+                <p>การหลอกล่อของเว็บเจ้าเล่ห์ทั่ว ๆ ไปคือการตั้งเว็บหลอก (ที่รู้จักกันในนามเว็บล่อเหยื่อ หรือ phishing site) ด้วยการแกล้งทำตัวเป็นธนาคารที่ใช้คุณงานประจำ เว็บค้าขายทางอินเทอร์เน็ตที่คุณชื่นชอบ ฯลฯ โชคดีที่ Firefox ช่วยคุณได้ด้วยตรวจสอบเว็บที่คุณกำลังใช้งานอยู่ ถ้าเว็บนั้นบอกว่าเขาคือใคร เพียงแค่คลิกที่ไอคอนของไซต์เพื่อดูภาพรวมของข้อมูลเว็บ</p>
+                <p id="forgery">เว็บมุ่งโจมตีหรือเว็บหลอก การให้ข้อมูลส่วนตัว หรือเพียงแค่เข้าดูเว็บก็อาจเป็นอันตรายได้
+                <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-mac.png" alt="หน้าจอเว็บหลอก" />');
+                } else if (gPlatform == PLATFORM_LINUX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-linux.png" alt="หน้าจอเว็บหลอก" />');
+                } else if (gPlatformVista) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-vista.png" alt="หน้าจอเว็บหลอก" />');
+                } else {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-xp.png" alt="หน้าจอเว็บหลอก" />');
+                }
+            // ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="หน้าจอเว็บหลอก" /></div></noscript>
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            เลื่อนหน้าเว็บลง
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            เลื่อนหน้าเว็บขึ้น
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            เรียกใหม่
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            ย้อนกลับ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            ไปข้างหน้า
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>ทางลัดของคุณเพื่อความสำเร็จ</h4>
+                <p>Firefox นั้นมีปุ่มกดทางลัดที่ถูกออกแบบมามากมายเพื่อทำให้ชีวิตของคุณง่ายขึ้น นี่เป็นส่วนหนึ่งที่เราชื่นชอบ:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        ขยับเคอร์เซอร์ไปที่แถบที่อยู่
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        ขยับเคอร์เซอร์ไปยังกล่องค้นหา
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>ผู้ใช้ระดับกลาง</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '387', '220', 'right')?>
+
+                <h4>เล่นกับป้าย</h4>
+                <p>เมื่อคุณทำการสร้างรายการที่คั่นหน้าเว็บจำนวนมาก การติดตามรายการทั้งหมดอาจจะทำให้คุณสับสนได้ คุณสามารถกำหนดป้ายให้กับเว็บที่ถูกคั่นไป เพื่อที่จะทำให้รายการที่คั่นหน้าเว็บเป็นระเบียบอยู่เสมอ เพียงแค่ดับเบิ้ลคลิกบนไอคอนรูปดาว แล้วคุณก็จะสามารถใส่ป้ายได้ทันที</p>
+                <p>คุณสามารถใส่ป้ายไปยังเว็บไซต์ได้มากเท่าที่คุณต้องการ (อย่าลืมใส่เครื่องหมาย , คั่นระหว่างป้าย) และยังสามารถทำการค้นหาได้อย่างง่ายดายด้วยการพิมพ์ชื่อป้ายในแถวที่อยู่ ตัวอย่างเช่น พิมพ์คำว่า "ท่องเที่ยว" ลงในแถบที่อยู่ จะเป็นการแสดงทุกเว็บไซต์ที่คุณทำการคั่นหน้าเว็บไซต์ด้วยป้าย "ท่องเที่ยว"</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '364', '256', 'right')?>
+
+                <h4>เรียนรู้เพิ่มเติมเกี่ยวกับส่วนเสริม</h4>
+                <p>Firefox รุ่นมาตรฐานนั้นเต็มไปด้วยความสามารถพิเศษ แต่มันยังเพิ่มเติมได้มากกว่านั้น? มีส่วนเสริมอีกมากกว่า 5,000 ส่วนเสริม (ส่วนพิเศษเล็ก ๆ ที่ช่วยปรับแต่ง Firefox) ที่คุณสามารถดาวน์โหลดเพื่อเสริมงานใด ๆ ก็ตามที่คุณสามารถนึกถึงได้ เพียงแค่ไปยัง เครื่องมือ → ส่วนเสริมเพื่อเปิดตัวจัดการส่วนเสริมและค้นพบทุกหนทางที่สามารถทำให้ Firefox เป็นอย่างที่คุณต้องการ</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '371', '233', 'right')?>
+
+                <h4>การค้นหาที่ฉลาดขึ้น</h4>
+                <p>คุณคงจะคุ้นเคยกับกล่องค้นหาใน Firefox แล้ว แต่คุณรู้หรือไม่ว่าคุณสามารถปรับแต่งมันให้เป็นตัวค้นหาใด ๆ ก็ได้ที่คุณต้องการ? แค่คลิกบนไอคอนทางด้านซ้ายของกล่องค้นหาเพื่อดูตัวเลือกต่าง ๆ ที่กำหนดมาให้</p>
+                <p>ที่ดียิ่งกว่านั้น ลองกดที่จัดการตัวค้นหา… เพื่อจัดลำดับรายการใหม่, เพิ่มตัวเลือกเพิ่มเติม หรือแม้กระทั่งกำหนดปุ่มกดทางลัดต่าง ๆ ให้กับตัวค้นหาที่คุณชื่นชอบ ตัวอย่างเช่น คุณสามารถกำหนดทางลัด "G" ให้กับ Google เมื่อคุณต้องการที่จะทำการค้นหาตำราอาหาร เพียงแค่พิมพ์ "G ตำราอาหาร" ลงในแถวที่อยู่ คุณจะสามารถที่จะค้นหาได้อย่างง่ายดาย</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '385', '254', 'right')?>
+
+                <h4>ค้นหาแบบสายฟ้าแลบ</h4>
+                <p>ความสามารถ "ค้นหาข้อความเมื่อเริ่มต้นพิมพ์" ช่วยประหยัดเวลาได้มาก แทนที่จะใช้ แถบ "ค้นหา" เพื่อทำการค้นหาคำบนหน้าเว็บ แค่คลิกที่ใดก็ตามบนหน้าเว็บและพิมพ์คำที่คุณต้องการค้นหา เคอร์เซอร์ของคุณจะกระโดดไปยังตัวอักษรชุดแรกของคำนั้น</p>
+                <p>คุณสามารถใช้ความสามารถนี้กับลิงก์ได้เช่นกัน ตัวอย่างเช่น แทนที่จะใช้วิธีเลื่อนเมาส์ข้ามหน้ามาเพื่อคลิกลิงก์ "เรียนรู้เพิ่มเติม" แค่เริ่มพิมพ์คำและเมื่อเคอร์เซอร์พบคำนั้นก็กด Enter</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '358', '219', 'right')?>
+
+                <h4>กำจัดร่องรอยให้หมด</h4>
+                <p>ด้วยเหตุผลทางความปลอดภัยและความเป็นส่วนตัว มันไม่ค่อยดีนักที่จะทิ้งร่อยรอยไว้ว่าคุณได้ท่องไปยังเว็บไหนบ้าง (โดยเฉพาะเมื่อคุณใช้คอมพิวเตอร์ร่วมกับผู้อื่น) Firefox อนุญาตให้คุณทำการลบประวัติการเข้าเว็บและดาวน์โหลด ล้างแคชและลบคุ้กกี้ในคลิกเดียว เพียงแค่ไปยังเครื่องมือ → ล้างข้อมูลส่วนตัว… หรือถ้าต้องการระมัดระวังยิ่งกว่านั้น ไปที่<span id="trace-platform">เครื่องมือ → ปรับแต่ง → ความเป็นส่วนตัว</span> และเลือกตัวเลือก "ล้างข้อมูลส่วนตัวของฉันทุกครั้งที่ปิด Firefox"</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → ตัวเลือก → ความเป็นส่วนตัว";
+                } else if (gPlatform == 2) {
+                    document.getElementById('trace-platform').innerHTML="แก้ไข → ตัวเลือก → ความเป็นส่วนตัว";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>ผู้ใช้ระดับสูง</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'หน้าจอแถบที่อยู่', '392', '245', 'right')?>
+
+                <h4>ไปยังเว็บที่คุณชื่นชอบโดยตรง</h4>
+                <p>คุณสามารถเพิ่มคำสำคัญไปยังที่คั่นหน้าเว็บของคุณเพื่อการเข้าถึงที่ง่ายและเร็วขึ้น เพียงแค่เพิ่มคำสำคัญสั้น ๆ ในช่องคำสำคัญลงในห้องสมุด จากนั้นคุณจะสามารถเข้าถึงที่คั่นหน้าเว็บนั้นได้เพียงแค่พิมพ์คำสำคัญนั้นลงในแถบที่อยู่ ตัวอย่างเช่น คุณให้คำสำคัญกับเว็บ del.icio.us ว่า "ลิงก์" เมื่อคุณทำการพิมพ์ "ลิงก์" ในแถบที่อยู่คุณจะสามารถเข้าถึงเว็บนั้นได้ทันที</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'หน้าจอที่คั่นหน้า', '381', '233', 'right')?>
+
+                <h4>สร้างโฟลเดอร์อัจฉริยะ</h4>
+                <p>ถ้าคุณเป็นนักท่องเว็บขั้นสูงที่ต้องการบันทึกและติดตามเว็บต่าง ๆ ที่หลากหลายบ่อย ๆ การใช้ห้องสมุดของ Firefox 3 สามารถช่วยประหยัดเวลาคุณได้ เพียงคุณสร้างและบันทึกการค้นหาต่าง ๆ ลงในโฟลเดอร์ที่จะทำการปรับปรุงข้อมูลของเว็บไซต์ที่คุณเพิ่มลงในที่คั่นหน้าเว็บโดยอัตโนมัติ</p>
+                <p>เริ่มด้วยการเปิดห้องสมุดโดยการเลือกตัวเลือก "จัดการที่คั่นหน้าเว็บ" จากเมนูที่คั่นหน้าเว็บ แล้วกรอกคำค้นในกล่องค้นหา แล้วคลิกปุ่มบันทึกเพื่อทำการสร้างโฟลเดอร์อัจฉริยะ</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'หน้าจอตัวจัดการดาวน์โหลด', '387', '271', 'right')?>
+
+                <h4>จัดการการดาวน์โหลดของคุณ</h4>
+                <p>ถ้าคุณเป็นนักดาวน์โหลดตัวยง คุณสามารถใช้หน้าต่างตัวจัดการดาวน์โหลดเพื่อติดตามการดาวน์โหลดทั้งหมดของคุณ คุณสามารถหยุดพักและดาวน์โหลดไฟล์ต่อได้และคุณสามารถเปิดไฟล์จากตัวจัดการดาวน์โหลดได้โดยตรงเพื่อประหยัดเวลา</p>
+                <p>ถ้าคุณต้องการติดตามการดาวน์โหลดที่ผ่านมา ไปที่ เครื่องมือ → ดาวน์โหลดและใช้กล่องค้นหาเพื่อค้นหาไฟล์ของคุณ เมื่อคุณพบไฟล์ที่คุณต้องการ คุณสามารถเปิดไฟล์ได้ด้วยการดับเบิ้ลคลิก หรือ <span id="manage-downloads-click">คลิกขวา</span> และเลือก "คัดลอกลิงก์ดาวน์โหลด"</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('manage-downloads-click').innerHTML="ctrl-click";
+                }
+                //]]></script>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'หน้าจอเครื่องมือนักพัฒนา', '378', '252', 'right')?>
+
+                <h4>ค้นพบเครื่องมือนักพัฒนา</h4>
+                <p>ถ้าคุณเป็นนักพัฒนาเว็บ เครื่องมือนักพัฒนาของ Firefox จะทำให้ชีวิตคุณง่ายขึ้น <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">เว็บไซต์ส่วนเสริมของ Mozilla</a> มีเครื่องมือมากมายเพื่อเสริมประสิทธิภาพขั้นตอนการพัฒนา รวมไปถึง Firebug ที่ใช้ในการ แก้ไข, ดีบั๊ก และสำรวจ CSS, HTML และ JavaScript แบบสด ๆ บนเว็บไซต์ใด ๆ หรือจะเป็น Tamper Data ที่ใช้ในการดูและแก้ไขเฮดเดอร์ของ HTTP/HTTPS และพารามิเตอร์ POST และตัวตรวจสอบ DOM ที่ใช้ในการตรวจสอบ HTML และ CSS ใด ๆ เพียงแค่คลิกขวา</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'หน้าจอตัวเลือก', '375', '309', 'right')?>
+
+                <h4>ตั้งค่าเว็บไซต์ให้เป็นอย่างที่คุณชื่นชอบ</h4>
+                <p>คุณสามารถใช้งานตัวจัดการโปรโตคอลบนเว็บ เพื่อเข้าใช้งานเว็บแอปพลิเคชันที่คุณชื่นชอบได้รวดเร็วยิ่งขึ้น ตัวอย่างเช่น คุณสามารถตั้งให้ Firefox เปิดหน้าต่างเขียนอีเมลใหม่กับเว็บเมลที่คุณเลือก แทนที่จะเป็นโปรแกรมอีเมลบนเครื่องของคุณเมื่อใดก็ตามที่คลิกลิงก์ mailto: (หมายเหตุ: คุณสามารถใช้ความสามารถนี้ได้กับบางผู้ให้บริการอีเมลบางราย ที่ทำการลงทะเบียนไว้กับ Firefox 3 เท่านั้น)</p>
+                <p>ไปยัง <span id="platform-protocol">เครื่องมือ → ปรับแต่ง → แอปพลิเคชัน</span> เพื่อเลือกแอปพลิเคชันปริยายสำหรับแต่ละโพรโตคอลหรือเลือก "ถามเสมอ" ถ้าคุณต้องการเลือกแอปพลิเคชันด้วยตัวเองทุกครั้ง</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→ตัวเลือก→แอปพลิเคชัน";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="แก้ไข→ตัวเลือก→แอปพลิเคชัน";
+                }
+                //]]></script>
+                <p>ถ้าคุณเป็นนักพัฒนาเว็บ เข้าไปดูข้อมูลเพิ่มเติมเกี่ยวกับการเพิ่มการรองรับ Web-based protocol handlers ใน <a href="http://developer.mozilla.org/">Mozilla Developer Center.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,291 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla-produkte | Wenke wat werk';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Wenke wat werk</h2>
+    <p>Ongeag of jy 'n beginner, gevorderde gebruiker of 'n ghoeroe is, kan hierdie kortpaaie en wenke jou help om Firefox 3 die beste te benut.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produkte</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Sekuriteit</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Doelmaking</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% organiese sagteware</a></li>
+    <li><span>Wenke wat werk</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Vrystellingsnotas</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Ander stelsels en tale</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Beginners</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Kiekie: Zoem in, zoem uit', '365', '251', 'right')?>
+
+                <h4>Zoem in, zoem uit</h4>
+                <p>Is jy keelvol vir klein teks? Wil jy 'n prentjie net 'n bietjie groter kan sien? Wel, nou kan jy maklik in- en uitzoem op webbladsye.</p>
+
+                <div class="key-combo">
+                    Zoem in
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Zoem uit
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Kiekie: Oortjieopsies', '388', '135', 'right')?>
+
+                <h4>Ongelooflike oortjieopsies</h4>
+                <p>As jy die tipe mens is wat na baie webwerwe tegelyk wil gaan kyk, sal jy beslis mal wees oor oortjies. Hier is 'n paar kortpaaie wat jy met oortjies kan gebruik:</p>
+
+                <div class="key-combo key-combo-1">
+                    Open 'n nuwe, leë oortjie
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Open 'n skakel in 'n nuwe oortjie
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + klik op skakel</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middelklik op \'n skakel</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middelklik op 'n skakel (mac: ⌘ + klik op skakel)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    Sluit 'n oortjie
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Heropen 'n oortjie wat gesluit is
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Kiekie: Boekmerke', '378', '252', 'right')?>
+
+                <h4>Voeg boekmerke by met één klik</h4>
+                <p>As jy beter wil onthou waar jy ook al was (en tyd wil bespaar), sal jy van eenklik-boekmerking hou. Wanneer jy 'n bladsy besoek wat jy graag wil onthou, klik net die sterretjie-ikoon in die adresbalk. Firefox sal dit by jou boekmerke sit sodat jy dit maklik weer kan vind.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Sekuriteitsikoon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Die werf bied geverifieerde identiteitsinligting en beskerm jou persoonlike data van aanlyn afloerders.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Sekuriteitsikoon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Die werf bied basiese identiteitsinligting en beskerm jou persoonlike data van aanlyn afloerders.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Sekuriteitsikoon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Die werf bied nie enige identiteitinligting nie.
+                    </li>
+                </ul>
+
+                <h4>Wéét met wie jy te doen het</h4>
+                <p>'n Algemene slap riem is as webbedrieërs fopwerwe skep wat lyk soos jou bank, jou gunsteling e-handelwerf, ens. 'n Mens noem dit uitvissing. Gelukkig maak Firefox dit nou maklik om te bepaal of die werwe is wat hulle hul as voordoen. Klik bloot die werfikoon vir 'n identiteitsoorsig.</p>
+                <p id="forgery">'n Aanvalswerf of 'n namaaksel. As jy jou persoonlike inligting aan hierdie werf gee, of dit selfs besoek, kan dit jou duur te staan kom.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Forgery screenshot" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Rol met die bladsy na onder
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            Rol met die bladsy na bo
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Verfris die bladsy
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Terug
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Vorentoe
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Kortpaaie na sukses</h4>
+                <p>Firefox is gelaai met kortpaaie wat jou lewe vergemaklik. Hier is 'n paar voorbeelde:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Beweeg por na die adresbalk
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Skuif por na die soekkassie
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>Gevorderde gebruikers</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Kiekie: Boekmerke', '378', '252', 'right')?>
+
+                <h4>Etikette en maniere</h4>
+                <p>Wanneer jou lys boekmerke baie groot begin word, raak dit moeilik om tred van alles te hou, nie waar nie? Met Firefox kan jy nou etikette aan jou boekmerke las. Dubbelklik die sterretjie-ikoon en tik die etikette in.</p>
+                <p>Jy kan soveel etikette by 'n werf voeg as wat jy wil (sit 'n komma tussen elke etiket). Om die werwe te sien, tik die etiket se naam in die adresbalk. As jy byvoorbeeld "reis" in die adresbalk tik, sal dit al die werwe wys wat jy met die etiket "reis" gemerk het.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Kiekie: Byvoegings', '378', '252', 'right')?>
+
+                <h4>Leer meer oor byvoegings</h4>
+                <p>Die standaard weergawe van Firefox is propvol kenmerke, maar hoekom sal 'n mens nou daar wil stop? Daar is meer as 5&nbsp;000 byvoegings waarmee jy byna enige iets kan doen (klein ekstra programmetjies waarmee Firefox selfs beter gemaak word). Kyk die Byvoegingbestuurder by Nutsgoed → Byvoegings, en sien hoe jy Firefox na jou smaak kan aanpas.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Kiekie: Soektogte', '378', '252', 'right')?>
+
+                <h4>Soek slimmer</h4>
+                <p>Jy weet mos 'n mens kan met die ingeboude soekbalk in Firefox soektogte doen. Maar het jy geweet dat 'n mens dit kan doelmaak om met byna enige soekenjin te kan soek? Klik net die ikoon aan die linkerkant van die soekbalk vir 'n kieslys opsies.</p>
+                <p>Of klik 'Bestuur soekenjins...' om die lys te herrangskik, nog opsies by te voeg en selfs kortpaaie in te stel na jou gunsteling soekenjins. Jy kan byvoorbeeld vir Google die kortpad "G" gee, en as jy wil soek vir resepte, tik jy bloot "G resepte" in die adresbalk.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Kiekie: Vind', '378', '252', 'right')?>
+
+                <h4>Vind dit vinnig</h4>
+                <p>Die funksie 'Vind terwyl jy tik' is nog 'n nuttige kenmerk van Firefox. In plaas daarvan dat jy eers op die Vind-balk klik om 'n woord op die bladsy te soek, kan jy enige plek op die bladsy klik en begin tik. Jou por sal dadelik spring na die eerste voorkoms van daardie woord.</p>
+                <p>Jy kan dit vir skakels ook gebruik. In plaas daarvan dat jy jou muis beweeg na die "leer meer"-skakel beweeg, kan jy bloot die woord begin tik, en wanneer die por dit vind, druk jy ENTER.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Kiekie: Privaatheid', '378', '252', 'right')?>
+
+                <h4>Elimineer elke spoor</h4>
+                <p>Dis nie altyd 'n goeie idee om te spoor te laat wanneer jy op die web is nie, om sekuriteits- en privaatheidredes (veral as jy 'n rekenaar deel). Firefox stel jou in staat om jou blaai- en aflaaigeskiedenis te skrap, jou kas skoon te maak en jou koekies uit te wis met net drie klikke. Gaan bloot na Nutsgoed → Skrap private data... Of as jy paranoïes is, besoek <span id="trace-platform">Nutsgoed → Opsies → Privaatheid</span> en kies "Skrap altyd my private data wanneer ek Firefox afsluit".</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Voorkeure → Privaatheid";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Wysig → Voorkeure → Privaatheid";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Ghoeroes</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", 'Kiekie: Adresbalk', '378', '252', 'right')?>
+
+                <h4>Gaan direk na jou gunsteling werwe</h4>
+                <p>Jy kan sleutelwoorde by jou boekmerke voeg sodat jy maklik en vinnig by die werwe kan kom. Voeg bloot 'n kort sleutelwoord in die sleutelwoord-vel van die Biblioteek, en dan sal jy daardie werf kan besoek deur bloot daardie sleutelwoord in die adresbalk te tik. Jy kan byvoorbeeld die sleutelwoord "skakels" aan jou del.icio.us-rekening toeken, en as jy "skakels" in die adresbalk tik, sal jy direk na daardie bladsy gaan.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Kiekie: Boekmerke', '378', '252', 'right')?>
+
+                <h4>Skep slim vouers</h4>
+                <p>As jy 'n ghoeroegebruiker van die web is wat gereeld 'n verskeidenheid werwe moet besoek en dinge moet stoor, het Firefox 'n spesiale verrassing vir jou: Met Firefox se Biblioteek kan jy soektogte in vouers stoor wat outomaties bygewerk word namate jy werwe by jou boekmerke en geskiedenis voeg.</p>
+                <p>Open die Biblioteek met "Organiseer boekmerke" in die Boekmerke-kieslys. Tik dan jou soekwoorde in die soekkassie. Klik dan die Stoor-knoppie om 'n slim vouer te skep.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Kiekie: Aflaaibestuurder', '378', '252', 'right')?>
+
+                <h4>Bestuur jou aflaaie</h4>
+                <p>As jy gereeld goeters aflaai, kan jy die aflaaibestuurder gebruik om tred te hou van jou aflaaie. Jy kan aflaaie laat wag en laat voortgaan, en jy kan tyd spaar deur lêers direk uit die bestuurder te open.</p>
+                <p>As jy 'n ou aflaai wil bekyk, gaan na Nutsgoed → Aflaaie, en gebruik die soekkassie om die lêer te vind. As jy dit kry, dubbelklik dit om dit te open, of gebruik Ctrl+klik en kies "Kopieer aflaaiskakel".</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Kiekie: Ontwikkelaarsnutsgoed', '378', '252', 'right')?>
+
+                <h4>Ontdek ontwikkelaarsnutsgoed</h4>
+                <p>As jy 'n webontwikkelaar is, sal Firefox se ontwikkelaarsnutsgoed jou lewe vergemaklik. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla se byvoegingswerf</a> bied verskeie nutsgoed wat die ontwikkelingsproses bespoedig, waaronder Firebug om CSS, HTML en JavaScript intyds op enige webwerf te redigeer, te ontfout en te monitor, Tamper Data om HTTP/HTTPS-koppe en POST-parameters te bekyk en te wysig, en die DOM Inspector om enige HTML- of CSS-element met 'n enkele regsklik te bekyk.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Kiekie: Voorkeure', '378', '252', 'right')?>
+
+                <h4>Laat die web lyk soos jy daarvan hou</h4>
+                <p>Nou kan jy webprotokol-vatsels gebruik vir vinnige toegang tot jou gunsteling webtoepassings. Jy kan byvoorbeeld Firefox só opstel dat wanneer jy 'n mailto:-skakel klik, dit 'n nuwe boodskap in jou webposverskaffer open in plaas van jou rekenaar se verstekposprogram (let wel, hierdie funksie werk net met webposdienste wat by Firefox 3 geregistreer is).</p>
+                <p>Gaan na <span id="platform-protocol">Nutsgoed → Opsies → Toepassings</span> om die verstektoepassing vir elke protokol te kies, of kies "Vra altyd" as jy verkies om die toepassing elke keer sélf te kies.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox → Voorkeure → Toepassings";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Wysig → Voorkeure → Toepassings";
+                }
+                //]]></script>
+                <p>As jy 'n ontwikkelaar van webtoepassings is, kan jy uitvind hoe om ondersteuning vir webprotokol-vatsels by te voeg, by die <a href="http://developer.mozilla.org/">Mozilla Developer Center.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

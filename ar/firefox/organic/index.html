@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'فَيَرفُكس برنامج جماهيري 100%';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>طريق أفضل للوب</h2>
+    <p>أو ماذا يمكن لمتصفح مفتوح المصدر أن يقدم لك.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">المنتجات</a> / <a href="/<?=$lang?>/firefox/">فَيَرْفُكْس</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">الأمن</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">التخصيص</a></li>
+    <li><span>برنامج جماهيري 100%</span></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">نصائح و تلميحات</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">ملاحظات الإصدار</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">أنظمة و لغات أخرى</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>ما هو البرنامج الجماهيري؟</h3>
+    <p><strong>مقارنة بشركات البرمجيات نحن مختلفون قليلًا.</strong> نحن نستخدم تعبير ’برنامج جماهيري‘ لاختزال اختلافاتنا العديدة عن الآخرين:</p>
+    <p>منتجنا الأشهر فَيَرْفُكْس نتج عن حركة عالمية من قبل الآلاف، القليل منهم فقط هم من الموظفين الفعليين.</p>
+    <p>حافزنا هو مهمتنا في ترويج الانفتاح و الابتكار و الفرص على الوب بدلًا من الاهتمام بالأعمال كالأرباح أو أسعار الأسهم (نحنا لا نملك أسهمًا حتى).</p>
+    <p>و بما أننا <a href="http://www.mozilla.org/foundation/">شركة غير ربحية عامة المنفعة</a>، نحن نعرّف النجاح على أساس بناء المحتمعات و إثراء حياة الأفراد، و نؤمن بقوة و إمكانية الإنترنت و نريد أن نراها تزدهر للجميع في كل مكان.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="فتاة فَيَرفُكس" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>ماذا يعني مفتوح المصدر؟</h3>
+        <p>قد يبدو هذا جنونًا في البداية، و لكن تريث معنا قليلًا: <strong>نحن نؤمن بأنه كلما زاد عدد من يعرف ”أسرارنا“ كلما كان ذلك أفضل.</strong></p>
+        <p>لذلك فنحن نكشف نص كود فَيَرْفُكْس للعالم و نشجع الجميع ليلقي نظرة.</p>
+        <p>بعض الأشخاص رأوا أشياء يمكن تحسينها و قاموا بإصلاحها. غيرهم خطر ببالهم أفكار لميزات جديدة و جعلوها تحدث. و هناك من أخذ نص الشيفرة بأكمله و طبق عليه ابتكاراته الخاصة و بنى منتجات جديدة تمامًا و مذهلة.</p>
+        <p>العبرة من القصة؟ أن نكون مفتوحي المصدر يعني أن أشياءً جيدةً ستحصل. أي شخص يمكنه أن يلقي نظرة خلف ستائرنا… في الواقع ليس هناك من ستائر على الإطلاق.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>لماذا عليك أن تهتم؟</h3>
+        <p>قد لا نكون شركة تقليدية و لكن <strong>نحن مازلنا نعرف كيف نركز على على هدفنا: جعل الوب أفضل لك </strong>.</p>
+        <p>كوننا مفتوحي المصدر يعني أن الفكرة الكبيرة القادمة يمكن أن تأتي من أي شخص حول العالم بدلًا من أن تعتمد على بضع عشرات من الموظفين في مكاتب شركتنا. </p>
+        <p>كل هذا الكلام عن البرنامج الجماهيري و النظم المفتوحة يعني في النهاية متصفحًا أفضل لك و لـ130 مليون مستخدم لفَيَرْفُكْس. هذا يعني جودة أعلى و منتجات أكثر أمانًا. يعني الابتكار و الحرية و دعم الإنترنت و جعلها متوفرة للجميع.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>ماهي موزيلا؟</h3>
+
+            <p>نحن مجتمع عالمي و منظمة عامة المنفعة و مشروع مفتوح المصدر. <span><a href="/<?=$lang?>/about/">اعرف المزيد عنا</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

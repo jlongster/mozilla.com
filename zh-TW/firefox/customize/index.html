@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '零碼尺寸，無法滿足所有需求';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>零碼尺寸，無法滿足所有需求</h2>
+    <p>您為披薩加上最愛的配料、為手機挑選喜歡的鈴聲，那麼何不找一個你喜歡的方式來瀏覽網頁？</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">產品</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">安全性</a></li>
+    <li><span>自訂性</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% 純天然有機軟體</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">使用技巧</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">版本資訊</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">其他系統及語言</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>所有人都適合的附加元件</h3>
+        <p>Firefox 是最能依照您個人喜好自訂上網體驗的瀏覽器。超過 5,000 個附加元件等著伴您以更有趣、更富創造力的方式瀏覽網路，Firefox 剛好可以滿足您個人化的需求。</p>
+        <p>想知道更多細節嗎？先看看下面的範例，然後 <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">在附加元件網站裡滿足您的全面需求。</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>通知／更新</h4>
+            <p>此分類的附加元件可以讓您取得最新的資訊，如：天氣預報、體育消息或是 eBay 的下標情況等。不論您逛到哪個網站，即時資訊都會在您的瀏覽器上顯示。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">看看所有 通知／更新 類附加元件。</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">例如：</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" />隨時隨地追蹤 eBay 的交易情況。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">試試 Firefox eBay 特別版</a> <span>作者：eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>照片／音樂／影片</h4>
+            <p>把您的 Firefox 變成相片上傳工具、音樂播放器或全能多媒體管家。Firefox 就像一支萬能遙控器，不論是上網瀏覽、蒐集工作資料、收發郵件或學術研究都能輕鬆完成。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">看看所有 照片／音樂／影片 類附加元件。</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">例如：</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" />隨意遙控電腦上的多媒體播放程式。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">試試 FoxyTunes</a> <span>作者：Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>社交／分享</h4>
+            <p>這類附加元件能幫您找尋網路上最新最酷的玩意、強化即時通訊功能或透過眾多社交網站和您的朋友們保持聯繫。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">看看所有 社交／分享 類附加元件。</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">例如：</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" />和朋友們分享您發現到的新網站。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">試試 StumbleUpon</a> <span>作者：StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>佈景／外觀</h4>
+            <p>不要被瀏覽器的標準設計限制了您的上網體驗，為您的瀏覽器換個新顏色、自訂操作介面（如初學者可以換更大的按鈕）或選一個您最喜愛的佈景主題。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">看看所有 佈景／外觀 類附加元件。</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">例如：</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" />黑色系的愛好者一定會喜歡的佈景主題。</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">試試 NASA Night Launch</a> <span>作者：mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>附加元件</h3>
+            <h5>自訂專屬於您的 Firefox</h5>
+            <p><a href="https://addons.mozilla.org/firefox/">看看所有附加元件</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

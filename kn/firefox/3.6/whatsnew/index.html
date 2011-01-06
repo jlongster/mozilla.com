@@ -1,0 +1,70 @@
+<?php
+
+/* translate the page title below */
+$page_title = "ಫೈರ್ಫಾಕ್ಸನ್ನು ಅಪ್‌ಡೇಟ್ ಮಾಡಲಾಗಿದೆ";
+
+
+/*
+l10n note: there are 3 cases we have to deal with in the Whatsnew page:
+#1: The visitor is using the latest version of Firefox ($latestVersion)
+#2: The visitor is using an old version of Firefox ($oldVersion)
+#3: The visitor is using a version of Firefox that we can't identify ($unknownVersion)
+
+The text at the top of the page changes depending on the version we detect
+*/
+
+include_once "{$config['file_root']}/includes/headers/3.6/whatsnew-l10n.inc.php";
+
+?>
+
+
+
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+      <p>ಮುಕ್ತತೆ, ನಾವಿನ್ಯತೆ  ಹಾಗು ಜಾಲದಲ್ಲಿ ಸದವಕಾಶವನ್ನು ಒದಗಿಸುವ <a href="/<?=$lang?>/about/whatismozilla.html">ಮೋಝಿಲ್ಲಾದ ಸದುದ್ದೇಶ</a> ವನ್ನು ಬೆಂಬಲಿಸಿದುದಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>ನೀವು ಈಗ ಫೈರ್ಫಾಕ್ಸ್ <?=$_version?> ಅನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ.</h2>
+
+  <p id="main-feature-contents">ಸುರಕ್ಷತೆಯ ಕಾರಣಗಳಿಂದಾಗಿ ನೀವು <a href="/<?=$lang?>/firefox/">ಇತ್ತೀಚಿನ ಹಾಗು ಅತ್ಯುತ್ತಮ ಆವೃತ್ತಿ</a>ಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿಕೊಳ್ಳುವಂತೆ ನಾವು ಸಲಹೆ ಮಾಡುತ್ತೇವೆ.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>ನೀವು ಫೈರ್ಫಾಕ್ಸಿನ ತಿಳಿಯದೆ ಇರುವ ಒಂದು ಆವೃತ್ತಿಯನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ.</h2>
+
+  <p id="main-feature-contents">ಸುರಕ್ಷತೆಯ ಕಾರಣಗಳಿಂದಾಗಿ ನೀವು  <a href="/<?=$lang?>/firefox/">ಇತ್ತೀಚಿನ ಹಾಗು ಅತ್ಯುತ್ತಮ ಆವೃತ್ತಿ</a>ಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿಕೊಳ್ಳುವಂತೆ ನಾವು ಸಲಹೆ ಮಾಡುತ್ತೇವೆ.</p>
+
+</div>
+
+
+
+
+<?php
+
+endif;
+include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
+include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

@@ -1,0 +1,189 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Firefox Browser | Free ways to customize your Internet";
+    $body_id    = 'personal';
+    $body_class = '';
+    $transitional = true;
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/personal.css" media="screen" />
+	  <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+    <script type="text/javascript" charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-customize-page.js"></script>
+	  <script type="text/javascript" src="/js/mozilla-video-tools.js"></script>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/firefox-'.LATEST_FIREFOX_VERSION.'/' => 'firefox-'.LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<div id="main-feature">
+	<h2>It’s Time to Get Personal</h2>
+	<p>There are literally thousands of totally free ways to adapt your Firefox to fit exactly what you like to do online.</p>
+</div>
+
+<div><!-- empty div = dirty IE6 hack -->
+<?=buildFirefoxSubPageMenu($lang, 'firefox');?>
+</div>
+
+<div id="main-content">
+ <div id="personas">
+        <h3>Personas: Your Firefox, Your Style</h3>
+		<p>Personas are easy-to-install themes that help you personalize the look of your Firefox.</p>
+	</div>
+
+    <div id="persona-previews">
+    <div id="try-on"><p><span>Roll over to try,</span> <span>click to apply</span></p></div>
+    <div class="persona-previewer persona-previewer-random">
+        <div class="persona-previewer-content">
+            <div id="persona-tattoo" class="persona-visible">
+                <img src="/img/tignish/add-ons/personas-tattoo.png" width="344" height="174" alt="preview" />
+            </div>
+            <div id="persona-endless">
+                <img src="/img/tignish/add-ons/personas-endless.png" width="344" height="174" alt="preview" />
+            </div>
+            <div id="persona-kanagawa">
+                <img src="/img/tignish/add-ons/personas-kanagawa.png" width="344" height="174" alt="preview" />
+            </div>
+            <div id="persona-harrypotter">
+                <img src="/img/tignish/add-ons/personas-harrypotter.png" width="344" height="174" alt="preview" />
+            </div>
+            <div id="persona-bobmarley">
+                <img src="/img/tignish/add-ons/personas-bobmarley.png" width="344" height="174" alt="preview" />
+            </div>
+            <div id="persona-sunset">
+                <img src="/img/tignish/add-ons/personas-sunset.png" width="344" height="174" alt="preview" />
+            </div>
+        </div>
+        <ul class="persona-previewer-tabs">
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/7610">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/1/0/7610/preview.jpg" width="100" height="33" alt="Japanese Tattoo" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/30987">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/7/30987/preview.jpg" width="100" height="33" alt="Endless Possibilities" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/141882">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/2/141882/preview.jpg" width="100" height="33" alt="
+kanagawa wave
+" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/35081">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/1/35081/preview.jpg" width="100" height="33" alt="Harry Potter" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/44136">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/3/6/44136/preview.jpg" width="100" height="33" alt="Bob Marley" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.getpersonas.com/en-US/persona/64769">
+                    <img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/6/9/64769/preview.jpg" width="100" height="33" alt="Sunset Over Water" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p id="see-all-personas"><a href="http://www.getpersonas.com/gallery/?source=moz.com_getpersonal" class="feature">See all 180,000+</a></p>
+    <p class="video"><a href="/<?=$lang?>/firefox/video/?video=personas" id="tour-video">Watch the video</a></p>
+        <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'tour-video',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Download in Open Video format (Ogg&nbsp;Theora)'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4',
+                    type:  'video/mp4',
+                    title: 'Download in MPEG-4 format'
+                }
+            ],
+            'serv/mobile/firefox-mobile.mp4'
+        );
+        // ]]>
+        </script>
+    </div>
+
+    <div id="customize">
+        <h3>Add-ons &amp; Collections</h3>
+        <p>Whatever you like to do online, there’s an add-on waiting to make it better.</p>
+        <ul>
+            <li id="addons"><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Explore the full range of add-ons</a> available at addons.mozilla.org.</li>
+            <li id="collections"><a href="https://addons.mozilla.org/<?=$lang?>/firefox/collections/">Try Collections</a>, groups of related add-ons organized by popular topics.</li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <script src="/js/download.js"></script>
+	<?php
+    $_product_details_options['ancillary_links'] = true;
+    $_product_details_options['layout'] = 'sidebar';
+    $_product_details_options['download_parent_override'] = 'sidebar';
+    $_product_details_options['download_title'] = 'Upgrade Your Firefox';
+
+		echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_product_details_options);
+	?>
+
+	<div id="support" class="side-feature">
+		<h3>Helpful Links</h3>
+		<p><a href="http://support.mozilla.com/<?=$lang?>/">Firefox Customer Support</a></p>
+		<p><a href="/<?=$lang?>/firefox/tips/">Firefox Tips &amp; Tricks</a></p>
+		<p><a href="/<?=$lang?>/firefox/update/">Firefox Update FAQ</a></p>
+		<p><a href="http://www.mozilla.com/en-US/plugincheck/">Firefox Plugin Check</a></p>
+	</div>
+
+  <?php /*
+	<div id="download-stats" class="side-feature">
+		<p><a href="/<?=$lang?>/firefox/stats/" class="download-total" id="updating-total">&nbsp;</a> <span> Firefox 3.6 downloads</span></p>
+        <p><a href="/<?=$lang?>/firefox/stats/">Learn More</a></p>
+	</div>
+  */ ?>
+
+</div>
+
+<div id="personal-sub-features">
+	<div class="sub-feature" id="firefox-secrets">
+		<h3><a class="launch-video" href="/<?=$lang?>/firefox/video/">More Secrets</a></h3>
+		<p>Watch the people who make Firefox talking about their favorite features.</p>
+		<a href="/<?=$lang?>/firefox/video/" class="bottom">View the Videos</a>
+	</div>
+	<div class="sub-feature" id="firefox-tellafriend">
+		<h3><a href="http://www.spreadfirefox.com/affiliates">Spread the Word</a></h3>
+		<p>Four out of five Firefox users would recommend it to a friend. Shouldn't you?</p>
+		<a href="http://www.spreadfirefox.com/affiliates" class="bottom">Tell a Friend Now</a>
+	</div>
+	<div class="sub-feature" id="firefox-getinvolved">
+		<h3><a href="http://www.mozilla.org/contribute/">Get Involved</a></h3>
+		<p>We rely on help from our worldwide community to build, test and spread Firefox.</p>
+		<a href="http://www.mozilla.org/contribute/" class="bottom">Find Out What You Can Do</a>
+	</div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

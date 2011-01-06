@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Thanks for choosing Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Obrigado por escolher o Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Siga estes passos para transferir o Firefox, saiba mais sobre o Firefox Sync, e continue</h3>
+    <ol id="steps">
+        <li>Verifique a caixa de entrada das mensagens do seu telemóvel e procure a mensagem que acabámos de lhe enviar.</li>
+        <li>Abra a mensagem e seleccione a ligação para transferir o Firefox directamente para o seu telemóvel.</li>
+    </ol>
+    <p class="small-print">*Firefox é de utilização gratuita; no entanto, aplicam-se as tarifas de dados do operador. Verifique o seu plano de dados.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Enquanto espera…</h3>
+    <ol>
+        <li>Configure o Firefox Sync e leve o <em>seu</em> Firefox para onde quer que vá. Partilhe o seu histórico de navegação, marcadores, senhas e separadoresentre o seu PC e o seu telemóvel.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Instale o extra Firefox Sync no seu PC</a> e registe-se no Firefox Sync. Assim que o Firefox for transferido para o seu telemóvel, siga os passos seguintes por nós sugeridos e seleccione "Obter o extra Firefox Sync" para completar a instalação. Em alternativa, pode seleccionar o botão de definições , seleccionar o botão de extras e depois procurar e instalar o extra Firefox Sync no seu telemóvel.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

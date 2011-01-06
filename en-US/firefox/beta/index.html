@@ -1,0 +1,117 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+
+    $page_title = 'Firefox 4 Beta';
+    $body_id    = 'firefox-beta';
+
+    $current_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<script src="/js/download.old.js"></script>
+<?php
+// en-US download box is built in js and doesn't offer the flexibility
+// hidePartialLocaleJS() hides unavailable locales for specific platforms
+// include after download.old.js
+hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
+?>
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>It all begins here:</h3>
+        <p>Help make the next version of the world’s best browser.</p>
+        <script>
+              <!--
+              // Configure the Firefox download write script
+              var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\">Download Firefox 4 Beta.<\/a>";
+
+              document.writeln("<ul class=\"" + gCssClass + " \">");
+              writeDownloadItems("fxbeta");
+              document.writeln("<\/ul>");
+              //-->
+        </script>
+    </div>
+
+
+</div>
+
+<?=buildFirefoxBetaSubPageMenu($lang, 'beta');?>
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+        <h3>Install the Beta</h3>
+
+    <script>
+          <!--
+          // Configure the Firefox download write script
+          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span>Free Download<\/span><\/a> <em>%LANGUAGE_NAME%, %PLATFORM_NAME%<\/em> <\/li>";
+      // Temporary fix for bug 439792
+      if (gPlatform == PLATFORM_MACOSX) {
+            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span>Free Download<\/span><\/a> <em>%LANGUAGE_NAME%, %PLATFORM_NAME% 10.5 and above<\/em> <\/li>";
+      }
+          var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+          document.writeln("<ul class=\"download-firefox " + gCssClass + " \">");
+          writeDownloadItems("fxbeta");
+          document.writeln("<\/ul>");
+          document.writeln("<div class=\"download-other\"><span class=\"other\">");
+          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-beta.html\">All Systems &amp; Languages<\/a> | ");
+          document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+          document.writeln("<\/span><\/div>");
+          //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
+    <p>The Firefox 4 Beta includes the Feedback Add-on which includes you in user studies. No data will be sent to Mozilla without your permission. <a href="#privacy">More information</a></p>
+    </div>
+    <div class="sub-feature" id="beta-feedback">
+        <h3>Give us Feedback</h3>
+        <?=buildPlatformImage('/img/firefox/beta/4/feedback-button.png', 'Feedback button screenshot')?>
+        <p>Click the Feedback button at any time to tell us what you think. Read more about <a href="https://testpilot.mozillalabs.com/faq">Test Pilot</a>.</p>
+    </div>
+    <div class="sub-feature" id="beta-spread-the-word">
+        <h3>Spread the Word</h3>
+        <div class="social-outer">
+            <div class="social-inner tweet-link">
+                <?php $msg = "I just downloaded Firefox 4 Beta !" ; ?>
+                <p><?= htmlspecialchars($msg) ?></p>
+                <a href="http://twitter.com/home/?status=<?=urlencode($msg)?>" class="tweet-this">Tweet this!</a>
+            </div>
+        </div>
+        <div class="social-outer">
+            <div class="social-inner tweet-form">
+                <form action="http://twitter.com/home/" method="GET">
+                    <textarea name="status" rows="2" cols="20">I'm trying out Firefox 4 beta because... #fx4</textarea>
+                    <button class="tweet-this">Tweet this!</button>
+                </form>
+            </div>
+        </div>
+        <div class="social-outer">
+            <div class="social-inner facebook-block">
+                <form action="http://www.facebook.com/sharer.php" method="GET">
+                    <input type="hidden" name="u" value="<?=htmlspecialchars($current_url)?>" />
+                    <textarea rows="2" cols="20" name="t">Customize your Firefox 4 Beta tweet!</textarea>
+                    <button class="update-status">Share this page</button>
+                    <iframe src="http://www.facebook.com/plugins/like.php?href=<?=urlencode($current_url)?>&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=light&amp;height=21" style="border: none; overflow:hidden; width:90px; height:21px;"></iframe>
+                </form>
+            </div>
+        </div>
+        <p>Help us make Firefox 4 Beta even better. After installing, click on feedback button to tell us what you think!. <a href="http://www.mozilla.com/en-US/firefox/beta/features/"></a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+    <h4>Firefox 4 Beta includes Feedback Add-on based on Mozilla Test Pilot</h4>
+    <p>Once you install the Firefox 4 Beta, you will notice the Feedback Add-on in the upper right corner. You can use this to provide instant feedback at any time. You will also be notified about user studies (run by Mozilla Test Pilot) which collect information about how you use Firefox, but not which websites you visit. You have control over your participation, and can choose to opt out of any study, or see what data has been collected. You will be asked before any data is sent to Mozilla. Please see
+the <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Feedback Add-on privacy policy</a> for more information.</p>
+</div></div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

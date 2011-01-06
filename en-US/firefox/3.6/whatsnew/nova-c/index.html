@@ -1,0 +1,106 @@
+<?php
+
+@include_once "{$config['file_root']}/includes/headers/3.6/whatsnew.inc.php";
+
+$page_title = 'Firefox Updated';
+$body_class = 'nova-c';
+@include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.inc.php";
+
+$_version       = getVersionBySelf();
+$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
+
+// check if there is a version
+if ($_version !== null && $_valid_version) {
+    // check if we’re running the latest version
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+        ?>
+        <div id="main-feature" class="latest-version">
+    		<h2><img src="<?=$config['static_prefix']?>/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+    		<p>Thanks for supporting <a href="/<?=$lang?>/about/whatismozilla.html">Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div id="main-feature" class="old-version">
+            <img src="<?=$config['static_prefix']?>/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+            <h2>You’re now running Firefox <?=$_version?>.</h2>
+            <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+        </div>
+        <?php
+    }
+} else {
+    ?>
+    <div id="main-feature" class="unknown-version">
+            <img src="<?=$config['static_prefix']?>/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+            <h2>You’re running an unknown version of Firefox.</h2>
+            <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+    </div>
+    <?php
+}
+?>
+
+<script>// <![CDATA[
+    // Add a class to the body tag to alternate promo features
+    var class_options = new Array( "thunderbird", "rockyourfirefox");
+
+	// If we're not on a mac, add crashprotection feature to the mix
+    if (gPlatform != 3 && gPlatform != 4) {
+        class_options.push( "crashprotection" );
+	}
+
+    if (Math.random) {
+        var choice = Math.floor(Math.random() * (class_options.length));
+
+        // Just in case javascript gets carried away...
+        choice = ( (choice < class_options.length)  && choice >= 0) ? choice : 0;
+
+		if (document.body.className == '') {
+			document.body.className = class_options[choice];
+		} else {
+			document.body.className += ' '+class_options[choice];
+		}
+    }
+// ]]></script>
+
+<div id="main-content">
+
+    <div id="personas">
+    	<h3>Choose Your <span>Persona</span></h3>
+			<iframe
+				src="<?= $config['url_scheme'] ?>://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+				width="320"
+				height="185">
+				</iframe>
+        <p id="try">Roll over to try, click to apply</p>
+			<ul id="personas-link" class="link"><li><a href="http://www.getpersonas.com/gallery?source=moz.com_whatsnew">See all 180,000+</a></li></ul>
+    </div>
+
+    <div id="whatsnew-creature"></div>
+</div>
+
+<div id="footer">
+
+    <div id="connect">
+        <ul class="connect">
+            <li id="connect-email" style="display: block;"><a href="/en-US/newsletter/">Want us to keep in touch? <span>Sign Up for Monthly News</span></a></li>
+        </ul>
+        <ul class="social">
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<p id="sub-links">
+    <a href="/<?=$lang?>/firefox/<?=$_version?>/releasenotes/">Release Notes <span>»</span></a>
+    <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+<script src="/js/detect-flash.js"></script>
+
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

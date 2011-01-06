@@ -1,0 +1,166 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Contact Us | Mozilla';
+    $body_id    = 'about-contact';
+    $breadcrumbs = array(
+        $l10n->get('About') => "/{$lang}/about/",
+        $l10n->get('Contact Us') => "/{$lang}/about/contact",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/about.css" media="screen" />
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key={$config['gmap_api_key']}"></script>
+
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><span>Contact Us</span></h2>
+    <p>Need help? Visit our <a href="http://support.mozilla.com/">support site</a>.<br>Want to get in touch? See below for all the ways to reach us.</p>
+</div>
+
+<div id="content">
+
+<script>
+//<![CDATA[
+
+if (GBrowserIsCompatible()) {
+    document.write('<div id="map_links"></div><div id="map" class="map"></div>');
+}
+
+//]]>
+</script>
+
+
+<div id="map_locations">
+    <div class="contact-main-office">
+        <h3>Main Office</h3>
+        <div class="map-address" id="mountain_view">
+            <h5>Mountain View</h5>
+            <address>650 Castro Street<br />Suite 300<br />Mountain View, CA, 94041-2021<br />USA</address>
+            <div class="geo">
+                <span class="latitude">37.387807</span>
+                <span class="longitude">-122.082656</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-regional-offices">
+        <h3>Regional Offices</h3>
+        <div class="map-address" id="new-zealand">
+            <h5>Auckland</h5>
+            <address>8 Kent Street<br />Newmarket, Auckland<br />New Zealand</address>
+            <div class="geo">
+                <span class="latitude">-36.867639</span>
+                <span class="longitude">174.775915</span>
+            </div>
+        </div>
+
+        <div class="map-address" id="china">
+            <h5>Beijing</h5>
+            <address> Mozilla Online Ltd.<br />International Club Office Tower 800A<br />21 Jian Guo Men Wai Avenue<br />Chaoyang District, Beijing 100020<br />China</address>
+            <div class="geo">
+                <span class="latitude">39.909901</span>
+                <span class="longitude">116.43405</span>
+            </div>
+        </div>
+
+        <div class="map-address" id="europe-paris">
+            <h5>Paris</h5>
+            <address>28 boulevard Poissonnière<br />75009 Paris, France</address>
+            <div class="geo">
+                <span class="latitude">48.8713561</span>
+                <span class="longitude">2.3438915</span>
+            </div>
+        </div>
+
+        <div class="address-row">
+
+        <div class="map-address" id="japan">
+            <h5>Tokyo</h5>
+            <address>Kojimachi GN Yasuda Bldg., 4F<br />3-6-5 Kojimachi, Chiyoda-ku<br />Tokyo, 102-0083, Japan</address>
+            <div class="geo">
+                <span class="latitude">35.685021</span>
+                <span class="longitude">139.738455</span>
+            </div>
+        </div>
+
+        <div class="map-address" id="canada-toronto">
+            <h5>Toronto</h5>
+            <address>720 Spadina Ave, Suite 218<br />Toronto, Ontario<br />Canada, M5S 2T9</address>
+            <div class="geo">
+                <span class="latitude">43.665683</span>
+                <span class="longitude">-79.403129</span>
+            </div>
+        </div>
+
+        <div class="map-address" id="canada-vancouver">
+            <h5>Vancouver</h5>
+            <address>163 West Hastings Street.<br />Suite 209<br />Vancouver BC<br />V6B 1H5</address>
+            <div class="geo">
+                <span class="latitude">49.282411</span>
+                <span class="longitude">-123.109161</span>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="maps-footer"><hr /></div>
+
+<div id="contact-contents">
+
+<div id="feedback">
+
+<h3>Tell Us <span>What You Think</span></h3>
+
+<dl>
+    <dt><a href="mailto:webmaster@mozilla.com" class="email">Web site feedback</a></dt>
+    <dd>Email the webmaster with comments about this web site.</dd>
+    <dt><a href="http://hendrix.mozilla.org/" class="external">Product feedback</a></dt>
+    <dd>Leave feedback and suggestions for our products.</dd>
+    <dt><a href="http://support.mozilla.com/en-US/kb/Web+sites+look+wrong">Broken sites</a></dt>
+    <dd>Do you have problems displaying a web site with Mozilla Firefox? Find out how to either fix it or report it to us in a few simple steps.</dd>
+    <dt><a href="http://www.mozilla.org/quality/bug-writing-guidelines.html" class="external">Software issues</a></dt>
+    <dd>File a bug report to let us know about any problems with Mozilla software.</dd>
+</dl>
+
+</div>
+
+<div id="questions">
+
+<h3>Have more <span>Questions?</span></h3>
+
+<dl>
+    <dt><a href="http://support.mozilla.com/">Technical support</a></dt>
+    <dd>Visit our support area to search for Firefox help in our knowledge base or to ask a direct question in the forum or live chat.</dd>
+    <dt><a href="/<?=$lang?>/press/">Press inquiries</a></dt>
+    <dd>Email press inquiries to <em>press at mozilla dot com</em>. You can also add yourself to our press announcements mailing list.</dd>
+    <dt><a href="/<?=$lang?>/about/careers.html">Career opportunities at Mozilla</a></dt>
+    <dd>Interested in joining our team? Visit our Careers page for more information.</dd>
+    <dt><a href="/<?=$lang?>/about/partnerships.html">Partnering with Mozilla</a></dt>
+    <dd>Have an idea about how your business could work with us to innovate on the Web? Contact our Partners program.</dd>
+    <dt><a href="http://www.mozilla.org/foundation/licensing.html">Browser distribution and licensing</a></dt>
+    <dd>Check out the Mozilla Licensing Policies for detailed information and FAQs on our licensing and trademark policies.</dd>
+    <dt><a href="http://intlstore.mozilla.org/contact_us.php" class="external">Merchandise questions</a></dt>
+    <dd>Contact the Mozilla Store for questions about CD or Mozilla merchandise orders.</dd>
+</dl>
+
+</div>
+
+</div>
+
+</div><!-- end #content div -->
+<?php
+$extra_footers = <<<EXTRA_FOOTERS
+    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="/js/mozilla-map.js"></script>
+
+EXTRA_FOOTERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

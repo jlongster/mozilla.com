@@ -1,0 +1,249 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | Customize your Web with free add-ons';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $breadcrumbs = array(
+        $l10n->get('Features') => "/{$lang}/firefox/features/",
+        $l10n->get('Customization') => "/{$lang}/firefox/customize/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/addons-page.css" media="screen" />
+	<script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+	<script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script src="/js/mozilla-pager.js"></script>
+	<script src="/js/mozilla-customize-page.js"></script>
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+  <h2>Easy Ways To <span>Personalize</span></h2>
+	<p>When it comes to browsing, one size doesn't fit all.</p>
+</div>
+
+<div id="main-content">
+
+	<div class="addon-intro">
+		<h3>Add Style With <span>Personas</span></h3>
+		<p>Easy-to-install themes that help you personalize the look of your Firefox.</p>
+	</div>
+
+  <div id="persona-previews">
+    <div id="try-on"><p>Roll over to try, click to apply</p></div>
+    <div class="persona-previewer persona-previewer-random">
+        <div class="persona-previewer-content">
+            <div id="persona-tattoo" class="persona-visible"><img src="/img/covehead/add-ons/personas-tattoo.png" width="344" height="174" alt="preview" /></div>
+            <div id="persona-endless"><img src="/img/covehead/add-ons/personas-endless.png" width="344" height="174" alt="preview" /></div>
+            <div id="persona-kanagawa"><img src="/img/covehead/add-ons/personas-kanagawa.png" width="344" height="174" alt="preview" /></div>
+            <div id="persona-harrypotter"><img src="/img/covehead/add-ons/personas-harrypotter.png" width="344" height="174" alt="preview" /></div>
+            <div id="persona-bobmarley"><img src="/img/covehead/add-ons/personas-bobmarley.png" width="344" height="174" alt="preview" /></div>
+            <div id="persona-sunset"><img src="/img/covehead/add-ons/personas-sunset.png" width="344" height="174" alt="preview" /></div>
+        </div>
+        <ul class="persona-previewer-tabs">
+            <li><a href="http://www.getpersonas.com/en-US/persona/7610"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/1/0/7610/preview.jpg" width="138" height="46" alt="Japanese Tattoo" /></a></li>
+            <li><a href="http://www.getpersonas.com/en-US/persona/30987"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/7/30987/preview.jpg" width="138" height="46" alt="Endless Possibilities" /></a></li>
+            <li><a href="http://www.getpersonas.com/en-US/persona/141882"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/2/141882/preview.jpg" width="138" height="46" alt="kanagawa wave" /></a></li>
+            <li><a href="http://www.getpersonas.com/en-US/persona/35081"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/1/35081/preview.jpg" width="138" height="46" alt="Harry Potter" /></a></li>
+            <li><a href="http://www.getpersonas.com/en-US/persona/44136"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/3/6/44136/preview.jpg" width="138" height="46" alt="Bob Marley" /></a></li>
+            <li><a href="http://www.getpersonas.com/en-US/persona/64769"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/6/9/64769/preview.jpg" width="138" height="46" alt="Sunset Over Water" /></a></li>
+        </ul>
+    </div>
+    <p id="see-all-personas"><a href="http://www.getpersonas.com/en-US/gallery/" class="feature arrow">See all 180,000+</a></p>
+    </div>
+</div>
+
+
+<div id="content">
+	<div id="collections">
+		<h3>Customize With <span>Add-Ons</span></h3>
+		<p>Choose from thousands of ways to add features, extend functionality and make Firefox work for exactly the way you use the Web. We've grouped some of our favorites into the collections below.</p>
+	</div>
+
+	<div id="addons-feature" class="pager pager-with-tabs">
+
+		<ul id="addons-nav" class="pager-tabs">
+			<li id="travelers-link"><a href="#feature-travelers">Traveler’s Pack</a></li>
+			<li id="reference-link"><a href="#feature-reference">Reference Desk</a></li>
+			<li id="sports-link"><a href="#feature-sports">Sports Fanatic</a></li>
+			<li id="shopping-link"><a href="#feature-shopping">Online Shopping</a></li>
+			<li id="social-link"><a href="#feature-social">Social Circuit</a></li>
+			<li id="web-link"><a href="#feature-web">Web Development</a></li>
+		</ul>
+
+		<div class="pager-content">
+
+			<div class="addons-feature-contents" id="feature-travelers">
+				<script>// <![CDATA[
+				document.getElementById('feature-travelers').id = 'page-feature-travelers';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Traveler’s Pack</h3>
+					<p>When the travel bug bites, these add-ons make it easy to plan, book and document your trip&mdash;without getting lost along the way.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1117?src=fxcustomization" class="foxclocks">FoxClocks</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1035?src=fxcustomization" class="clickweather">1-ClickWeather</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5203?src=fxcustomization" class="minimap">Minimap Sidebar</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/7004?src=fxcustomization" class="babelfish">BabelFish Instant Translation</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1730?src=fxcustomization" class="scribefire">ScribeFire Blog Editor</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5966?src=fxcustomization" class="yapta">Yapta</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/travel" class="arrow">Check out the Traveler’s Pack Collection</a>
+				</div>
+				<div class="featured-addon flagfox"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/5791?src=fxcustomization">Flagfox</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/5791?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-flagfox.png" width="260" height="160" alt="Flagfox" /></a>
+					<p>Displays a country flag depicting the location of the current website’s server and provides quick access to detailed location and webserver information.</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/5791?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+			<div class="addons-feature-contents" id="feature-reference">
+				<script>// <![CDATA[
+				document.getElementById('feature-reference').id = 'page-feature-reference';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Reference Desk</h3>
+					<p>Make the librarian jealous with add-ons that help students, researchers or anyone with a tough question find and document all the answers.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/427?src=fxcustomization" class="scrapbook">ScrapBook</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/7661?src=fxcustomization" class="readitlater">Read It Later</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/10187?src=fxcustomization" class="deeperweb">DeeperWeb</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/4609?src=fxcustomization" class="merriam-webster">Merriam-Webster Search</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/reference" class="arrow">Check Out the Reference Desk Collection</a>
+				</div>
+				<div class="featured-addon similarweb"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/10548?src=fxcustomization">SimilarWeb</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/10548?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-similarweb.png" width="260" height="160" alt="SimilarWeb" /></a>
+					<p>The easiest way to find the best websites on the Internet! As you browse the internet, find the most interesting related sites on the web by similarity and category and get the latest articles and buzz on every website you visit.</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/10548?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+			<div class="addons-feature-contents" id="feature-sports">
+				<script>// <![CDATA[
+				document.getElementById('feature-sports').id = 'page-feature-sports';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Sports Fanatic</h3>
+					<p>This collection is perfect for the sports fanatic. Get the latest scores, highlights, and news from your favorite team. Whatever the sport, these Firefox add-ons keep you up-to-date.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/4740?src=fxcustomization" class="ruwt">RUWT? Sports Toolbar</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/2990?src=fxcustomization" class="nbascoreboard">.NBA Scoreboard 2010</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/725?src=fxcustomization" class="footiefox">FootieFox</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/9357?src=fxcustomization" class="fantasyfootball">Fantasy Football Rankings &amp; News</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/10830?src=fxcustomization" class="hitwicket">HitWicket</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/9598?src=fxcustomization" class="collegefootball">College Football Boom</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/sport" class="arrow">Check out the Sports Fanatic Collection</a>
+				</div>
+				<div class="featured-addon espn"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/4740?src=fxcustomization">RUWT?</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/4740?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-ruwt.png" width="260" height="85" alt="RUWT" /></a>
+					<p>Sports Scores and News for the NFL, NBA, MLB, NHL, College Basketball, College Football, Soccer, NASCAR and more, from the highest-rated sports add-on for Firefox!</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/4740?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+			<div class="addons-feature-contents" id="feature-shopping">
+				<script>// <![CDATA[
+				document.getElementById('feature-shopping').id = 'page-feature-shopping';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Online Shopping</h3>
+					<p>Are you an online shopaholic? Or do you just want to save some money? This collection features the best add-ons for managing your online shopping.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/11542?src=fxcustomization" class="amazon">Amazon Button</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5202?src=fxcustomization" class="ebay">eBay Sidebar for Firefox</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/4980?src=fxcustomization" class="retailmenot">RetailMeNot</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/64761?src=fxcustomization" class="amazonassist">Amazon Assist</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/12715?src=fxcustomization" class="offerassistant">Offer Assistant</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1327?src=fxcustomization" class="grocerylist">Grocery List Generator</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/onlineshopping" class="arrow">Check out the Online Shopping Collection</a>
+				</div>
+				<div class="featured-addon invisiblehand"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/11377?src=fxcustomization">Invisible Hand</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/11377?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-invisiblehand.png" width="260" height="160" alt="Invisible Hand" /></a>
+					<p>Automatically shows a discreet notification when a better price is available on a product you’re browsing.</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/11377?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+			<div class="addons-feature-contents" id="feature-social">
+				<script>// <![CDATA[
+				document.getElementById('feature-social').id = 'page-feature-social';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Social Circuit</h3>
+					<p>Whether it’s LOLing with a BFF, finding a job or staying connected with old classmates, social networking add-ons keep the most popular sites front and center.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/4664?src=fxcustomization" class="twitterbar">TwitterBar</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/3615?src=fxcustomization" class="delicious">Delicious Bookmarks</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/16?src=fxcustomization" class="chatzilla">ChatZilla</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/3794?src=fxcustomization" class="facebook">Facebook Toolbar</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5457?src=fxcustomization" class="shareaholic">Shareaholic</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1833?src=fxcustomization" class="yoono">Yoono</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/social" class="arrow">Check out the Social Circuit Collection</a>
+				</div>
+				<div class="featured-addon stumbleupon"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/138?src=fxcustomization">Stumble Upon</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/138?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-stumbleupon.png" width="260" height="160" alt="Stumble Upon" /></a>
+					<p>StumbleUpon discovers web sites based on your interests, learns what you like and brings you more.</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/138?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+			<div class="addons-feature-contents" id="feature-web">
+				<script>// <![CDATA[
+				document.getElementById('feature-web').id = 'page-feature-web';
+				// ]]></script>
+				<div class="addon-description">
+					<h3>Web Development</h3>
+					<p>Speed up the development process by using add-ons to troubleshoot, edit, and debug web projects without ever clicking away from Firefox.</p>
+					<div class="sample-addon-list">
+						<ul>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/271?src=fxcustomization" class="colorzilla">ColorZilla</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/1843?src=fxcustomization" class="firebug">Firebug</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/748?src=fxcustomization" class="greasemonkey">Greasemonkey</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/2464?src=fxcustomization" class="foxyproxy">FoxyProxy</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/684?src=fxcustomization" class="fireftp">FireFTP</a></li>
+							<li><a href="https://addons.mozilla.org/en-US/firefox/addon/2108?src=fxcustomization" class="stylish">Stylish</a></li>
+						</ul>
+					</div>
+					<a href="https://addons.mozilla.org/collection/webdeveloper" class="arrow">Browse All Collections</a>
+				</div>
+				<div class="featured-addon webdeveloper"><div>
+					<h4>Featured: <a href="https://addons.mozilla.org/en-US/firefox/addon/60?src=fxcustomization">Web Developer Toolbar</a></h4>
+					<a href="https://addons.mozilla.org/en-US/firefox/addon/60?src=fxcustomization"><img src="/img/covehead/add-ons/screenshot-webdeveloper.png" width="260" height="160" alt="Web Developer Toolbar" /></a>
+					<p>The Web Developer extension adds on menu and a toolbar with various web developers tools.</p>
+					<p><a href="https://addons.mozilla.org/en-US/firefox/addon/60?src=fxcustomization" class="arrow">Download Now</a></p>
+				</div></div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

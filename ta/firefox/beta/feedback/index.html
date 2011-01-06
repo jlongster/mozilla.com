@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 பீட்டா - பின்னூட்டமிடுங்கள்";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Firefox 4 பீட்டா நிகழ்ச்சி பற்றி எவ்வாறு உணர்கிறீர்கள்?";
+$str2       = "இன்றையப்படுத்தப்பட்டு இருங்கள்";
+$str3       = "Firefox பீட்டா செய்திகள், நிகழ்வுகள் மற்றும் தகவல்களை மின்னஞ்சல் மூலம் பெற சந்தாப்பெறவும்.";
+$str4       = "உங்கள் மின்னஞ்சல் முகவரி";
+$str5       = "நான் இந்த <a href=\"%s\">தனிமை கொள்கையை</a> ஏற்கிறேன் <span class='footnote'>(நாங்கள் Mozilla-தொடர்பான தகவலை மட்டுமே உங்களுக்கு அனுப்புவோம்).</span>";
+$str6       = "எனக்கு Mozilla செய்திகள், Firefox துணுக்குகள் &amp; தந்திரங்கள் மற்றும் பிற Mozilla தகவலை எப்போதாவது அனுப்பவும்.";
+$str7       = "சந்தாப்படுத்து »";
+$str8       = "சந்தாவுக்கு நன்றி!";
+$str9       = "நாங்கள் துணுக்குகள் &amp; தந்திரங்களை Firefoxஇல் பகிர்ந்து கொள்ள எதிர்பார்க்கிறோம், மற்றும் Mozilla பற்றிய செய்திகள் மற்றும் எவ்வாறு நல்ல இணையத்தை உருவாக்கலாம் என்பது பற்றியும் அறிய விரும்புகிறோம்.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>உதவி தேவைப்படுகிறது</h3>
+        <p>விரைவாக, லேசாக மற்றும் மொத்த வழிகளிலும்  நீங்கள் உலாவுவதற்கு உதவ நாங்கள் ஒரு Firefox-ஐ உருவாக்குகிறோம். ஆனால், உங்களின் பின்னூட்டம் இல்லாமல் இதனை செய்ய முடியாது.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>பீட்டா</sup></span></h3></li>
+    <li class="feedback"><span>பின்னூட்டம்</span></li>
+    <li class="more"><h3>ஆங்கிலத்தில் மேலும் தகவலுக்கு</h3></li>
+    <li class="features"><a href="../features/">அம்சங்கள்</a> </li>
+    <li class="tech"><a href="../technology/">தொழில்நுட்பம்</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">பின்னூட்ட தனிமை கொள்கை</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>நீங்கள் என்ன நினைக்கிறீர்கள் என எங்களுக்கு சொல்லுங்கள்</h2>
+        <h3>உடனடி பின்னூட்டம் கொடுக்கவும்</h3>
+        <p>பின்னூட்ட பொத்தானை சொடுக்கி உடனடியாக பீட்டா பற்றிய கருத்தை கொடுக்கவும். எளிது தானே!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">டெவலப்பர்: நீங்கள் எங்களுக்கு வேண்டும்</h2>
+        <h3>உங்கள் கருத்துங்களை பகிருங்கள்</h3>
+        <p>பீட்டாவில் <a href="../features/#under-the-hood">புதிய டெவலப்பர் அம்சங்களை</a> பற்றி என்ன நினைக்கிறீர்கள்?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">எங்கள் பின்னூட்ட விவாதத்தைப் பார்க்கவும்.</a></p>
+
+        <h3>தொழில்நுட்ப பிழைகளை அறிக்கையிடுங்கள்</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>நீங்கள் ஒரு Bugzilla நிபுணராக இருந்தால், நீங்கள் உலாவும் போது ஏதாவது குறிப்பிட்ட சிக்கல்கள் இருந்தால் பிழையாக அறிக்கையிடவும்.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">ஒரு Firefox 4 பீட்டா பிழையை அறிக்கையிடுங்கள்</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>இந்த சொல்லை பரப்புங்கள்</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Twitter=இல் எங்களை தொடர</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Facebook-இல் எங்களை பார்க்க</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Mozilla வலைப்பதிவை வாசிக்க</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>உதவி தேவையா?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />எங்கள் சேவை பக்கங்கள்</a> குறிப்பாக Firefox 4 பீட்டாவிற்குப் பதில்களையும் அறிவுரைகளையும் கொண்டிருக்கும்.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

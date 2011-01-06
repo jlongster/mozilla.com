@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Hilberînên Mozillayê | Delîl û Marîfet';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Delîl û Marîfet</h2>
+    <p>Bikarhênereke/î nû, navîn an jî pispor bin ferq nake; ev kurterê û pêşniyar dê ji bo naskirina Firefox 3'yê ji we re bibin alîkar.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Hilberîn</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Ewlekarî</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Taybetîkirin</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">%100 Nivîsbariya Organîk</a></li>
+    <li><span>Delîl û Marîfet</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Têbiniyên Guhertoyê</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Pergal û Zimanên Din</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Asta Destpêkê</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '365', '251', 'right')?>
+
+                <h4>Nêzîk Bike, Dûr Bike</h4>
+                <p>We qet li tîpên biçûcik nihêrtiye? Hûn dixwazin wêneyekî ji nêz ve bibînin? Êdî hûn dikarin bi hêsanî rûpela nêzîk  an jî dûr bikin.</p>
+
+                <div class="key-combo">
+                    Nêzîkirin
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Dûrkirin
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Xuyakirina Ekrana Marîfeta Hilpekînan', '388', '135', 'right')?>
+
+                <h4>Van Marîfetên Hilpekînan Biceribînin</h4>
+                <p>Heke hûn hez dikin bi carekê li hemû rûpelan binêrin divê hûn ji geroka bi hilpekîn sûdê wergirin. Va ye çend kurteriyên klavyeyê ku hûn pê dikarin ji hilpekînan sûdê wergirin:</p>
+
+                <div class="key-combo key-combo-1">
+                    Vekirina hilpekîneke nû û vala
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class=" ">
+                    Di hilpekîneke nû de vekirina hilpekînê
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + li ser girêdanê bitikînin</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Bi bişkojka navîn li ser girêdanê bitikînin</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Bi bişkojka navîn li ser girêdanê bitikînin (mac: ⌘ + li ser girêdanê bitikînin)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    Girtina hilpekînê
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Vekirina hilpekîna hatiye girtin
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Xuyakirina Nîşaneyê', '378', '252', 'right')?>
+
+                <h4>Bi Tikandinekê Zêdekirina Bijareyê</h4>
+                <p>Bi tikandinekê malperên ku bi dilê we ne têxin bijareyan û dema xwe ji xwe re veqetînin. Dema ku hûn bixazin malperekê têxin bijareyan, tenê li ser stêrka şiva cî bitikînin. Firefox dê wê malperê têxe bijareyan û dema ku we xwest, hûn dikarin bi hêsanî vekin.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Nîşaneya Ewlekariyê', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Malper agahiyên nasnameyê yên hatine rastandin dide û agahiyên we diparêze.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Nîşaneya Ewlekariyê', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Malper agahiyên nasnameyê yên hatine rastandin bi awayekî bingehîn nîşan dide û agahiyên we diparêze.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Nîşaneya Ewlekariyê', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Malper tu agahiyeke nasnameyê nade.
+                    </li>
+                </ul>
+
+                <h4>Zanibin hûn bi kê re têkilî datînin</h4>
+                <p>Rêbazeke hîlekarên înternetê ew e ku 'malperên xefk' amade bikin. Ev malper dişibin malperên banka, e-bazirganî û hwd. Hûn bisiûd in, lewre Firefox bi fêmkirina rastbûna gaahiyên malperan hêsan dike. Li ser nîşaneya malperê bitikînin û bi hêsanî xwe bigihînin agahiyên nasnameya malperê.</p>
+                <p id="forgery">Malpera êrîşkarî an jî sextekariyê: Dibe ku gelek xetere be ku hûn agahiyên xwe têkevine van malperan an jî van malperan vekin.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Xuyakirina ekrana sextekariyê" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Rûpelê ber bi jêrê ve kaş bike
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="valahî" />
+                        </div>
+                        <div class="key-combo">
+                            Rûpelê ber bi jorê ve kaş bike
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + valahî" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Rûpelê nû bike
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Paş
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Pêş
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Bi awayê hêsan serkeftinê bi dest bixin</h4>
+                <p>Di Firefoxê de gelek kurteriyên klavyeyê hene ku dê jiyana we hêsan bikin Hin ji wan ev in:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Nîşandekê bibe şiva cî
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Nîşandekê bibe qutîka lêgerînê
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>Asta Navîn</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Xuyakirina ekrana bijareyan', '378', '252', 'right')?>
+
+                <h4>Etîket</h4>
+                <p>Dema ku lîsteyeke we ya dirêj ya bijareyan hebe, karê we dê gelekî tevlihev bibe. Ji bo tekûzkirina kar, hûn dikarin bijareyan etîket bikin. Li ser nîşaneya stêrkê cot bitikînin; dê ji bo têketina etîketan paceyek vebe.</p>
+                <p>Hûn dikarin malperekê ji yekê zêdetir peyvan etîket bikin. (Divê di navbera her etîketekê de bêhnok hebe.) Paşê dema ku we di şiva cî de yek ji van etîketan nivîsand, dê malper vebe. Mînak; dem aku we di şiva cî de "Kurdistan" nivîsî, dê malperên ku we bi etîketa "Kurdistanê" nîşan kirine bên nîşandan.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Xuyakirina ekrana pêvekê', '378', '252', 'right')?>
+
+                <h4>Di der barê pêvekan de her tiştî hîn bibin</h4>
+                <p>Guhertoya Firefoxê ya tê zanîn bi pêvekan tije ye. Lê çima hûn van bes binînin? Hûn diakrin ji 5.000'î zêdetir pêvek saz bikin û bikaranîna Firfoxê çêtir bikin. Bi riya Amûr → Pêvek têkevin Rêveberiya Pêvekan û ji bo ku Firefoxê bikin geroka xwe zêdetir rê bibînin.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Xuyakirina ekrana lêgerînê', '378', '252', 'right')?>
+
+                <h4>Lêgerîneke Zîrektir</h4>
+                <p>Hûn jixwe şiva lêgerînê a Firefoxê dizanin. Lê geko hûn dizanin ku hûn bi kîjan motora lêgerînê bixwazin hûn dikarin pê lêgerînê bikin? Li ser nîşaneya li hêla çepê a şiva lêgerînê bitikînin û têkevin pêşeka vebijêrkan.</p>
+                <p>Her wiha hûn dikarin bi bişkojka rêvebirinê motorên lêger
+nê bi rê ve bibin. Mînak ji bo Googleyê kurteriya "G"ê hilbijêrin.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Xuyakirina ekrana bibîne', '378', '252', 'right')?>
+
+                <h4>Bi Leza Roniyê Bibînin</h4>
+                <p>Taybetmendiya Lêgerîna Di Dema Nivîsandinê De dê dema we ji we re bihêle. Ji dêvla şiva "Bibîne"yê li hêleke ji rêzê a malperê bitikînin û peyva ku hûn dixwazin, bibînin.</p>
+                <p>Hûn dikarin vê taybetmendiyê ji bo girêdanan jî bi kar bînin. Mînak; ji dêvla ku hûn mişkê bibin ser "Zêdetir hîn bibe"yê, peyveke girêdanê binivîsin û emterê bitikînin.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Xuyakirina ekrana nepeniyê', '378', '252', 'right')?>
+
+                <h4>Hemû Şopan Jê Bibin</h4>
+                <p>Ji hêla ewlekariyê ve ne baş e ku hûn piştî gerînê li dû xwe şopan bihêkin. (Nexasim ji bo komputerên ku hevpar tên bikaranîn.) Bi Firefoxê hûn dikarin bi tikandinekê mêjûya lêgerîn û daxistinê; paqijkirina pêşbîr û çerezan pêk bînin. Bi riya Amûr → Paqijkirina Daneyan a Taybet hûn dikarin vê bikin. <span id="trace-platform">Amûr → Vebijêrk → Nepenî</span> hilbijêrin û "Her cara ku Firefoxê bigirim, daneyên min ên taybet jê bibe" nîşan bikin.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Asta Bilind</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'Xuyakirina şiva cî', '378', '252', 'right')?>
+
+                <h4>Rasterast Têkevin Malperên Hûn Pir Vedikin</h4>
+                <p>Ji bo têketina hêsantir û lezgîntir hûn dikarin peyvên kilît li bijareyan zêde bikin. Bi vî awayî hûn dikarin peyva kilît di ciyê navnîşanan de binivîsin û têkevin malperê. Mînak; hûn dikarin hesaba xwe ya del.icio.us bi peyva "girêdan"ê re girê bidin.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'Xuyakirina ekrana bijareyan', '378', '252', 'right')?>
+
+                <h4>Pelrêşên ZÎrek Biafirînin</h4>
+                <p>Heke hûn her tim di nav malperan de digerin û malperan tomar dikin, ev taybetmendî li gorî we ye. Hûn dikarin li bin beşa Pirtûkxane a Firefox 3'ê pelrêçan biafirînin û hilînin. Ev pelrêç dê li gorî têketinba te ya malperan û zmdebûna bijareyan fireh bibe.</p>
+                <p>Pêşî ji pêşeka Bijareyan di vebijêrka "Rêveberiya Bijareyan" de Pirtûkxaneyê vekin. Paşê di qutîkalêgerînê de peyvan binivîsin û ji bo afirandina Pelrêşa Zîrek pêl bişkojka Tomar Bibe bikin.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'Xuyakirina ekrana rêveberiya daxistinan', '378', '252', 'right')?>
+
+                <h4>Daxistiyên xwe bi rê ve bibin</h4>
+                <p>Heke hûn pir tiştan dadixin, hûn dikarin bi hêsanî daxistiyên xwe bişopînin. Her wekî hûn diakrin daxistinan rawestînni û bidomînin, hûn dikarin di rêvebera daxistinan jî pelan vekin.</p>
+                <p>Ji bo xwegihandina tomareke daxistineke kevn riya Amûr → Rêveberiya Daxistinan bilopînin Piştî ku we pela xwe dît, an li serî cot bitikînin an jî bi kombînasyona Ctrl+tikandinê "Ciyê girêdanê ji ber igire" hilbijêrin.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Xuyakirina ekrana amûrên pêşdebir', '378', '252', 'right')?>
+
+                <h4>Amûrên pêşdebir keşf bikin</h4>
+                <p>Heke hûnpxêşdebirekî webê bin ev ê jiyane we hêsan bike. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Malpera pêvekan a MOzillayê</a>, ji bo ku pêvajoya pêşdebirinê çêtir be, gelek amûr pêşkêş dike. Di nav van de Fireburg ku hûn pê dikarin kodên CSS, HTML û JavaScriptê serast bikin û çewtiyan ji holê rakin; Tamper Data ku hûn pê dikarin joragahiyên HTTP/HTTPS û guherbarên POSTê bibînin û biguherînin; DOM Inspector ku hûn pê dikarin bi tikandinekê yekbûnên HTML an jî CSS biceribînin hene.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Xuyakirina ekrana tercîhê', '378', '252', 'right')?>
+
+                <h4>Şêwaza Dixwazin Bidin Întenetê</h4>
+                <p>Êdî hûn dikarin bi hêsanî xwe bigihînin sepanên webê. Mînak; dema ku hûn li ser girêdaneke mailto: bitikînin, Firefox rê dide we ku hûn ji dêvla bernameya e-peyaman a komputerê, bernameya ku hûn dixwazin bi kar bînin</p>
+                <p><span id="platform-protocol">Amûr → Vebijêrk → Sepan</span> bişopîne û ji bo her têkiliyekê sepanekê hilbijêre an jî vebijêrka "Her tim bipirse" nîşan bikin.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>Heke hûn pêşdebireke/î webê bin li <a href="http://developer.mozilla.org/">Navenda Pêşdebiran a Mozillayê</a> binêrin û di der barê zêdekirina desteka kiryarkara zagona ragihandinê a bi bingeha webê'ne zêdetir agahî bistînin.</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

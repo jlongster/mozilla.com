@@ -1,0 +1,755 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Trình duyệt web Firefox | Tính năng: nhanh hơn, an toàn hơn &amp; có thể tùy biến được';
+    $body_id    = 'firefox-features';
+    $extra_headers = <<<EXTRA_HEADERS
+
+  <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/features.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+  <h2>Tính năng Firefox</h2>
+  <p>Xem những tính năng nào là mới, được cải tiến, và những tính năng nào vẫn tuyệt vời như từ trước đến nay.</p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'features');?>
+
+<div id="main-content">
+
+  <div id="new-features"><div class="features-container">
+
+    <h3 id="top-new-features">Tính năng Đỉnh</h3>
+
+    <div class="column1">
+
+      <div class="feature">
+      <h4><a href="#private-browsing">Duyệt web Riêng tư</a></h4>
+      <p><span class="new">mới</span> Lướt Web mà không để lại một chút dấu vết.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#password-manager">Trình Quản lí Mật khẩu</a></h4>
+      <p>Ghi nhớ mật khẩu trang mà không phải thấy popup.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature">
+      <h4><a href="#location-bar">Thanh Kì Diệu</a></h4>
+      <p><span class="improved">cải tiến</span> Tìm những trang mà bạn yêu thích trong giây lát (và không cần phải nhớ các URL loằng ngoằng).</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#super-speed">Siêu tốc</a></h4>
+      <p><span class="new">mới</span> Xem trang Web nhanh hơn, sử dụng ít bộ nhớ máy tính hơn.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#anti-phishing">Chống giả mạo &amp; Chống phần mềm ác ý</a></h4>
+      <p><span class="improved">cải tiến</span> Tận hưởng lớp phòng vệ cao cấp nhất chống lại những kẻ xấu trên mạng.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#session-restore">Khôi phục Phiên</a></h4>
+      <p><span class="improved">cải tiến</span> Bị tắt máy bất ngờ? Hãy quay trở lại đúng nơi mà bạn đang xem giữa chừng.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature">
+      <h4><a href="#bookmarking">Đánh dấu bằng Một cú Nhấp chuột</a></h4>
+      <p>Đánh dấu, tìm kiếm và tổ chức các trang Web một cách nhanh chóng và dễ dàng.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#customization">Tùy biến Dễ dàng</a></h4>
+      <p><span class="improved">cải tiến</span> Hàng nghìn tiện ích mang đến cho bạn quyền tự do được biến trình duyệt thành của riêng bạn.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#tabs">Thẻ</a></h4>
+      <p><span class="improved">cải tiến</span> Làm nhiều việc cùng lúc hơn với những thẻ mà bạn có thể tổ chức bằng cách kéo chuột.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#instant-id">Định danh Trang web Nhanh chóng</a></h4>
+      <p>Tránh lừa đảo, giao dịch không an toàn và giả mạo trực tuyến với định danh trang đơn giản.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+  <div id="sidebar-menu">
+    <h4>Duyệt theo Phân mục</h4>
+    <ul>
+      <li><a href="#security">Bảo mật &amp; Riêng tư</a></li>
+      <li><a href="#performance">Hiệu năng</a></li>
+      <li><a href="#customization">Tùy biến</a></li>
+      <li><a href="#personal">Cá nhân</a></li>
+      <li><a href="#productivity">Năng suất</a></li>
+      <li><a href="#tabs">Thẻ</a></li>
+      <li><a href="#search">Tìm kiếm</a></li>
+      <li><a href="#access">Truy cập Toàn cầu</a></li>
+      <li><a href="#cutting-edge">Đỉnh cao</a></li>
+      <li><a href="#help">Trợ giúp</a></li>
+    </ul>
+  </div>
+
+  <script type="text/javascript" src="/js/download.js"></script>
+  <?php
+    $_options = array('ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+    echo $firefoxDetails->getDownloadBlockForLocale('vi', $_options);
+  ?>
+</div>
+
+<div id="content">
+
+  <div id="security" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Bảo mật &amp; Riêng tư <a href="/<?=$lang?>/firefox/video/?video=security" class="video">Xem đoạn phim</a></h3>
+
+    <?=buildPlatformImage('/en-US/img/tignish/features/security-id.png', 'Ảnh chụp Định danh Trang web Nhanh chóng')?>
+
+    <div id="security1" class="features-row">
+
+      <div class="feature" id="instant-id">
+      <h4>Định danh Trang web Nhanh chóng</h4>
+      <p>Muốn chắc chắn về tính hợp pháp của một trang trước khi thực hiện việc mua bán? Hãy nhấn vào favicon của một trang để xem tổng quan định danh nhanh chóng. Nhấn thêm lần nữa để có thêm chi tiết: bạn đã vào trang đó bao nhiêu lần? Mật khẩu của bạn có được lưu không? Kiểm tra các trang nghi ngờ, tránh giả mạo Web và chắc chắn rằng một trang đúng là trang mà nó khai báo.</p>
+      </div>
+
+    </div>
+
+    <div class="column1">
+
+      <div class="feature" id="private-browsing">
+      <h4>Duyệt web Riêng tư</h4>
+      <p><span class="new">mới</span> Thỉnh thoảng, hoạt động ngầm sẽ thú vị hơn. Khi tính năng này được kích hoạt, không có dấu vân tay nào của bạn bị bỏ lại đằng sau để người khác có thể tìm ra. Bạn có thể vào và ra khỏi chế độ duyệt web riêng tư một cách nhanh chóng, cho nên thật dễ dàng quay trở lại với những thứ bạn đang làm như thể chưa từng có chuyện gì xảy ra (bạn cũng có thể duyệt web riêng tư trong toàn bộ thời gian).</p>
+      </div>
+
+    </div>
+
+    <div class="column2 forget-site-column">
+
+      <div class="feature" id="forget-site">
+      <h4>Quên trang này</h4>
+      <p><span class="new">mới</span> Suy nghĩ lại sau khi đã ghé thăm một trang Web nào đó? Với tính năng này, bạn có thể xóa mọi dấu vết của trang đó từ trình duyệt của bạn - sẽ không có câu hỏi nào được đưa ra!</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="anti-malware">
+      <h4>Chống phần mềm ác ý</h4>
+      <p><span class="improved">cải tiến</span> Firefox bảo vệ bạn khỏi virút, sâu, trojan và phần mềm gián điệp. Nếu vô tình truy cập vào một trang ác ý, nó sẽ cảnh báo bạn tránh xa và cho biết lí do tại sao trang đó không an toàn. Firefox sẽ kiểm tra từng thành phần của một trang Web trước khi mở nó để chắc chắn rằng không có thứ gì độc hại đang lẻn vào cửa sau.</p>
+      <?=buildPlatformImage('/en-US/img/tignish/features/anti-malware.jpg', 'Ảnh chụp Chống phần mềm ác ý')?>
+      </div>
+
+      <div class="feature" id="anti-phishing">
+      <h4>Chống giả mạo</h4>
+      <p>Mua sắm và làm việc kinh doanh an toàn trên Internet. Firefox cập nhật các trang giả mạo 48 lần một ngày, do đó khi bạn vào một trang giả mạo là trang mà bạn tin tưởng (chẳng hạn như ngân hàng của bạn), một thông báo của trình duyệt - to như thật - sẽ ngăn bạn lại.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="parental">
+      <h4>Kiểm soát của Cha mẹ</h4>
+      <p>Áp dụng các thiết lập kiểm soát của cha mẹ trên Vista - ngăn chặn các tải xuống không mong muốn và nhiều thứ khác.</p>
+      </div>
+
+      <div class="feature" id="clear-history">
+      <h4>Xóa các Lược sử Gần đây</h4>
+      <p><span class="improved">cải tiến</span> Xóa tất cả các dữ liệu cá nhân hoặc một số hoạt động của bạn trong vài giờ qua chỉ bằng một vài cú nhấn nhanh. Bạn có đầy đủ quyền kiểm soát những gì muốn xóa, và thông tin của bạn sẽ được biến mất hoàn toàn - trên máy tính riêng hoặc thư viện địa phương. Thật là dễ dàng.</p>
+      </div>
+
+      <div class="feature" id="custome-security">
+      <h4>Thiết lập Bảo mật Được tùy biến</h4>
+      <p>Điều khiển mức độ kĩ lưỡng mà bạn muốn Firefox xem xét một trang, và nhập các trang ngoại lệ không cần có bằng cấp thứ ba. Tùy biến thiết lập cho mật khẩu, cookie, việc tải hình ảnh và cài đặt tiện ích để có một trải nghiệm duyệt web mạnh mẽ.</p>
+      </div>
+
+      <div class="feature" id="add-ons">
+      <h4>Tiện ích</h4>
+      <p>Firefox sẽ dò tìm một kết nối an toàn trước khi cài đặt hoặc cập nhật tiện ích, phần mềm bên thứ 3, và <a href="http://www.getpersonas.com/">Personas</a>.</p>
+      </div>
+
+      <div class="feature" id="password-manager">
+      <h4>Trình Quản lí Mật khẩu</h4>
+      <p>Chúng tôi đã tích hợp tính năng này vào trải nghiệm duyệt web của bạn. Chọn “ghi nhớ” mật khẩu trang mà không phải gặp các popup khó chịu. Bây giờ bạn sẽ thấy thông báo “ghi nhớ mật khẩu” được tích hợp ngay trên đầu trang.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="anti-virus">
+      <h4>Phần mềm Diệt virút</h4>
+      <p>Firefox tích hợp tao nhã với phần mềm diệt virút của bạn. Khi tải xuống một tập tin, phần mềm diệt virút trong máy tính của bạn sẽ tự động kiểm tra để bảo vệ bạn khỏi virút và các phần mềm ác ý khác.</p>
+      </div>
+
+      <div class="feature" id="popup-blocker">
+      <h4>Trình chặn Popup</h4>
+      <p>Xua tan các popup ra khỏi trải nghiệm lướt web của bạn một lần và mãi mãi. Hoặc, để tránh bỏ lỡ điều thú vị nào đó - bạn có thể chọn xem các popup hoặc tạo một danh sách “cho phép” các trang có chứa popup mà bạn không thấy phiền.</p>
+      </div>
+
+      <div class="feature" id="auto-update">
+      <h4>Cập nhật Tự động</h4>
+      <p>Chiến lược bảo mật mã nguồn mở cho phép chúng tôi tìm-và-sửa các vấn đề bảo mật trong thời gian kỉ lục, biến Firefox thành phương thức an toàn nhất để lướt web. Hãy cài đặt các bản nâng cấp khi nhận được thông báo tự động hoặc đợi đến khi nào mà bạn sẵn sàng.</p>
+      <?=buildPlatformImage('/en-US/img/tignish/features/password-manager.png', 'Ảnh chụp trình Quản lí Mật khẩu')?>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="performance" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Hiệu năng</h3>
+
+    <div class="column1">
+
+      <div class="feature" id="memory-footprint">
+      <h4>Dấu chân Bộ nhớ Nhỏ hơn</h4>
+      <p>Nhỏ và ngọt ngào, Firefox dùng ít bộ nhớ máy tính hơn khi đang chạy.</p>
+      </div>
+
+      <div class="feature" id="memory-management">
+      <h4>Quản lí Bộ nhớ</h4>
+      <p>Với chức năng quản lí mới, Firefox giữ cho tình trạng sử dụng bộ nhớ luôn trong tầm kiểm soát. Bộ thu thập vòng đời XPCOM liên tục dọn sạch vùng bộ nhớ không dùng đến. Thêm vào đó, hàng trăm lỗi rò rỉ bộ nhớ đã được trị.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="page-load">
+      <h4>Nạp trang Nhanh hơn</h4>
+      <p>Bộ máy bố cục và hiển thị (render) trang mới được thiết kế lại, có nghĩa là bạn sẽ thấy các trang Web nhanh hơn - và theo đúng cách mà chúng phải được hiển thị.</p>
+      </div>
+
+      <div class="feature" id="color-profile">
+      <h4>Hỗ trợ Hồ sơ Màu</h4>
+      <p><span class="improved">cải tiến</span> Màu sắc trong anbum ảnh trực tuyến của bạn sẽ sắc nét hơn và tuyệt vời hơn bao giờ hết, nhờ vào các cải tiến cho bộ máy đồ họa của chúng tôi.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div id="performance1" class="features-row">
+
+      <div class="feature" id="super-speed">
+      <h4>Siêu tốc</h4>
+      <p><span class="new">mới</span> Hãy thắt chặt dây an toàn: Firefox 3.5 bao gồm bộ máy JavaScript TraceMonkey, cung cấp cho trình duyệt hiệu năng tốt hơn một cách bất ngờ hơn trước. Firefox đã luôn nhanh rồi, nhưng đây là phiên bản Firefox nhanh nhất (gấp hai lần Firefox 3, và gấp mười lần Firefox 2), có nghĩa là các ứng dụng Web như thư điện tử, trang xem ảnh, xử lí văn bản và trực tuyến và nhiều trang khác sẽ sống động và nhanh nhạy hơn.</p>
+      </div>
+
+      <div id="performance-chart">
+                <h4>Hiệu năng Firefox: Nhanh — Nhanh hơn — <em>Nhanh nhất</em></h4>
+                <p>Kết quả của một bài kiểm tra SunSpider trên Windows XP</p>
+                <img src="/img/tignish/firefox/performance-chart.png" alt="Biểu đồ hiệu năng Firefox 2, Firefox 3, Firefox 3.5" />
+                <ul>
+                    <li>18,148 ms</li>
+                    <li>3,669 ms</li>
+                    <li>1,524 ms!</li>
+                </ul>
+            </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="customization" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Tùy biến</h3>
+
+    <div id="customization1" class="features-row">
+
+      <div class="feature" id="ways">
+      <?=buildPlatformImage('/en-US/img/tignish/features/addons.png', 'Ảnh chụp trình Quản lí Tiện ích')?>
+      <h4>Hơn 6.000 cách để tùy biến</h4>
+      <p><span class="improved">cải tiến</span> Bầu trời mới là giới hạn đối với một thư viện vẫn đang lớn mạnh gồm <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">hơn 6.000 tiện ích Firefox</a>, những ứng dụng nhỏ mà bạn sẽ tải xuống và cài đặt cho một trình duyệt hoạt động theo ý của bạn. Quản lí các phiên đấu giá trực tuyến, tải lên ảnh kĩ thuật số, xem dự báo thời tiết nhanh chóng và nghe nhạc, tất cả ngay trên trình duyệt của bạn. Không cần mở cửa sổ hay thẻ mới cho mỗi tác vụ. Nếu không chắc đâu là nơi bắt đầu, hãy thử <a href="https://addons.mozilla.org/<?=$lang?>/firefox/fashionyourfirefox">Tạo Mốt Firefox Của Bạn</a> - một ứng dụng Web thuận tiện giới thiệu các tiện ích dựa trên sở thích của bạn.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="addons-manager">
+      <h4>Trình Quản lí Tiện ích</h4>
+      <p>Tìm và cài đặt các tiện ích trực tiếp từ ngay trong trình duyệt của bạn. Bạn không còn cần phải vào trang web Tiện ích nữa - thay vào đó, chỉ cần mở Trình Quản lí Tiện ích. Không biết tiện ích nào dành cho bạn? Các xếp hạng, khuyến nghị, mô tả và hình ảnh của tiện ích sẽ giúp bạn lựa chọn. Trình quản lí tiện ích được tích hợp đầy đủ trên thậm chí còn cho phép bạn xem, quản lí và vô hiệu hóa các phần bổ trợ của bên thứ ba bằng một vài cú nhấp chuột đơn giản.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="look-and-feel">
+      <h4>Nhìn &amp; Cảm nhận của Trình duyệt</h4>
+      <p>Diện quần áo cho trình duyệt của bạn. Với <a href="https://addons.mozilla.org/firefox/browse/type:2">giao diện</a>, hãy chọn một bảng điều khiển màu đen gợi hình ảnh một tàu vũ trụ, bảng giả gỗ, hoặc hàng nghìn các vẻ ngoài độc đáo khác để bao lấy trải nghiệm lướt web của bạn. Với <a href="http://www.getpersonas.com/">Personas</a>, hãy thêm một “lớp da” gọn nhẹ đơn giản cho trình duyệt trong chớp mắt. (Personas là một dự án <a href="http://labs.mozilla.com/">Phòng nghiên cứu Mozilla</a>.)</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="beyond-addons">
+      <h4>Vượt lên trên Tiện ích</h4>
+      <p>Tiện ích là viên đá đặt nền cho việc tùy biến, nhưng điều chỉnh Firefox cho phù hợp với phong cách của bạn không chỉ dừng lại ở đó. Bạn có thể thêm máy tìm kiếm mới, thay đổi tùy chỉnh thanh công cụ, hiển thị các kích thước, hình dạng và kiểu khác nhau cho các nút điều hướng trên trình duyệt, và nhiều thứ khác. Với tùy chỉnh thêm, bạn có thể xác định một ứng dụng thư nền Web, như Gmail, mở ra khi nhấn lên địa chỉ của một trang Web hoặc thiết lập một ứng dụng đọc tin cho blog.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="personal" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Cá nhân</h3>
+
+    <div id="personal1" class="features-row">
+
+      <div class="feature" id="location-bar">
+      <h4>Thanh Kì Diệu</h4>
+      <p><span class="improved">cải tiến</span> Một cách nhanh chóng để vào các trang mà bạn yêu thích - thậm chí cả các trang có địa chỉ mà bạn chỉ nhớ mang máng. Gõ từ khóa vào thanh địa chỉ (còn gọi là Thanh Kì Diệu) và chức năng tự động hoàn tất sẽ bao gồm các trang có kết quả phù hợp từ lược sử duyệt web của bạn, cũng như các trang mà bạn đã đánh dấu và dán nhãn.</p>
+      <?=buildPlatformImage('/en-US/img/tignish/features/location-bar.png', 'Ảnh chụp Thanh Địa Chỉ Thông Minh')?>
+      <p>Ví dụ, bạn có thể nhập nhãn: “đầu tư” để tìm “<a href="http://www.fool.com/">www.fool.com</a>”. Thanh Kì Diệu sẽ 'học' khi bạn dùng nó - dần dần, nó sẽ tự điều chỉnh theo tùy chỉnh của bạn, và cung cấp kết quả phù hợp hơn. Các cải tiến mới trong Firefox 3.5 cho bạn khả năng kiểm soát tốt hơn với Thanh Kì Diệu, và bao gồm các thiết lập riêng tư.</p>
+      <p><a href="/<?=$lang?>/firefox/video/?video=awesomebar" class="video">Xem đoạn phim</a></p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <?=buildPlatformImage('/en-US/img/tignish/features/bookmarks.png', 'Ảnh chụp Đánh dấu bằng Một Nhấn')?>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="tags">
+      <h4>Nhãn</h4>
+      <p><span class="improved">cải tiến</span> Dán nhãn một trang bằng tên hoặc phân mục có ý nghĩa với bạn. Ví dụ, bạn có thể gán cho trang <a href="http://www.tuoitre.com.vn/">www.tuoitre.com.vn</a> bằng nhãn “tin tức” cũng như nhãn  “đầu tư nước ngoài”, và đồng thời gán cho <a href="http://www.vietnamnet.vn/">www.vietnamnet.vn</a> nhãn “tin tức”. Khi bạn nhập “tin tức” vào thanh địa chỉ, cả hai trang sẽ hiện ra trong kết quả. Một trang có thể có nhiều nhãn, và không có giới hạn số nhãn mà bạn có thể tạo. Dù có thể không nhớ chính xác tên một trang, nhưng với nhãn, bạn sẽ có thể tìm ra nó theo cách dễ dàng hơn.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="library">
+      <h4>Thư viện</h4>
+      <p>Làm cho trình duyệt của bạn có hiệu quả đúng như bạn tưởng tượng. Lược sử trình duyệt (tất cả các trang web mà bạn đã thấy) và trang đánh dấu (tất cả các trang web mà bạn đã lưu) đều được lưu kho trong Thư viện, nơi chúng có thể được dễ dàng tìm kiếm và tổ chức. Bạn cũng có thể lưu các tìm kiếm thường thực hiện trong các thư mục thông minh động, chúng sẽ tự động cập nhật khi danh sách trang đánh dấu và lược sử của bạn đầy thêm.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div id="personal3" class="features-row">
+
+      <div class="feature" id="bookmarking">
+      <h4>Đánh dấu bằng Một Nhấn</h4>
+      <p>Quản lí các trang đánh dấu của bạn, dù nhiều hay ít. Nhấn một lần lên biểu tượng ngôi sao ở cuối thanh địa chỉ để đánh dấu một trang. Nhấn hai lần thì bạn có thể chọn nơi lưu và gán nhãn. Lưu các trang đã đánh dấu trong các thư mục dễ truy xuất và tổ chức chúng theo chủ đề (như “tìm việc” hoặc “mua sắm”). Tìm các trang đã được đánh dấu một cách nhanh chóng bằng cách nhập tên nhãn, tên trang hoặc tên đánh dấu vào thanh địa chỉ. Khi càng dùng nhiều tên nhãn và tên đánh dấu trong thanh địa chỉ, hệ thống sẽ càng có thể điều chỉnh cho phù hợp hơn với tùy chỉnh của bạn.</p>
+      <p><a href="/<?=$lang?>/firefox/video/?video=bookmarks" class="video">Xem đoạn phim</a></p>
+      </div>
+
+      <div class="feature" id="smart-folders">
+      <h4>Đánh dấu Thông minh</h4>
+      <p>Tìm nhanh với Đánh dấu Thông minh. Nhấn lên trình đơn “Đánh dấu” để truy cập nhanh vào các trang được tổ chức theo số lần ghé thăm nhiều nhất, được đánh dấu gần đây và được gán nhãn gần đây.</p>
+      <?=buildPlatformImage('/en-US/img/tignish/features/smart-bookmarks.png', 'Ảnh chụp Đánh dấu Thông minh')?>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="productivity" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Năng suất</h3>
+
+    <div id="productivity1" class="features-row">
+
+      <div class="feature" id="native">
+      <h4>Nhìn &amp; Cảm nhận Nền tảng Quen thuộc</h4>
+      <p><span class="improved">cải tiến</span> Nền tảng Firefox trông và cảm giác giống như ở nhà. Có thể coi đó giống như Firefox là người rất giỏi làm bạn. Cho dù bạn dùng Windows Vista, Mac hay Linux, trình duyệt Firefox vẫn tích hợp gọn ghẽ với môi trường máy tính của bạn. Một vẻ ngoài quen thuộc mang đến giao diện không tì vết và không bao giờ làm bạn phải dừng lại.</p>
+      </div>
+
+      <div class="feature" id="feed-reader">
+      <h4>Trình đọc RSS Feed</h4>
+      <p>Bạn có thể đọc feed bằng một dịch vụ Web trực tuyến, một chương trình đọc feed hoặc bằng cách tạo một Đánh Dấu Động Firefox. Do đó không còn cần phải vào Web để đọc các tin tức và cập nhật mới nhất nữa. Xem các dòng tin mới nhất trong thanh công cụ hoặc trình đơn và đi trực tiếp tới bài viết mà bạn chú ý.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div id="productivity2" class="features-row">
+
+      <div class="feature" id="download-manager">
+      <?=buildPlatformImage('/en-US/img/tignish/features/download-manager.png', 'Ảnh chụp trình Quản lí Tải xuống')?>
+      <h4>Trình Quản lí Tải xuống</h4>
+      <p>Tải xuống tập tin thật gọn gàng và an toàn! Tính năng tạm dừng và tiếp tục, có nghĩa là bạn không còn cần phải đợi tập tin tải xong trước khi có thể ngắt mạng. Do đó, nếu đang tải giữa chừng anbum “Tìm lại” mới nhất và đã đến giờ phải bắt xe buýt, bạn chỉ cần tạm dừng và tiếp tục tải xuống khi về nhà. Chức năng tiếp tục tải cũng hoạt động khi hệ thống bị lỗi đổ vỡ hoặc bị khởi động lại. Trình quản lí hiện tiến trình tải và cho phép bạn tìm kiếm tập tin theo tên hoặc địa chỉ Web.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="spell-checking">
+      <h4>Kiểm tra Chính tả</h4>
+      <p>Một trình kiểm tra chính tả có sẵn cho phép bạn nhập văn bản trực tiếp vào các trang Web - như bài viết trên blog và các ứng dụng email trên Web - mà không cần phải suy nghĩ thêm một giây. Hãy làm việc trực tiếp với Web và tiết kiệm cho bạn một bước.</p>
+      <img src="/en-US/img/tignish/features/spell-checking.png" alt="Ảnh chụp Kiểm tra Chính tả" />
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="session-restore">
+      <h4>Khôi phục Phiên</h4>
+      <p><span class="improved">cải tiến</span> Khởi động lại trình duyệt mà không lo bị mất chỗ sau khi cài đặt tiện ích hoặc cập nhật phần mềm. Và, nếu Firefox hoặc máy tính bị đóng bất chợt, bạn không cần phải bỏ thời gian ra khôi phục dữ liệu hoặc dò lại từng bước đã đi trên Web. Nếu đang gõ thư giữa chừng, bạn sẽ có thể trở lại đúng chỗ đang dở tay, thậm chí là đúng ngay từ đang gõ. Khôi phục Phiên nhanh chóng mang trở lại cửa sổ và thẻ của bạn, khôi phục các văn bản mà bạn đã nhập và bất kì tập tin nào đang tải.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="full-zoom">
+      <h4>Thu phóng Đầy đủ</h4>
+      <p>Vào trang tin tức ưa thích và đọc chú thích bên dưới hình - hoặc xem hình trong kích thước mà bạn có thể xem. Tính năng thu phóng mới và thanh nhã cho phép bạn đột kích vào và xem toàn bộ trang web. Chúng sẽ canh chỉnh tỉ lệ theo cách mà bạn mong muốn, tất cả phần tử thuộc bố cục của một trang sẽ mở rộng đều như nhau, do đó bạn có thể chú ý vào những thứ quan trọng.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="tabs" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Thẻ</h3>
+
+    <div id="tabs1" class="features-row">
+
+      <div class="feature" id="tabs-feature">
+      <h4>Thẻ</h4>
+      <?=buildPlatformImage('/en-US/img/tignish/features/tabs.png', 'Ảnh chụp Thẻ')?>
+      <p>Ngay từ cái nhìn đầu tiên, chúng trông giống như các nhãn ở bên trên trang mà bạn đang vào. Nhưng chúng là một cách thức thông minh để duyệt nhiều trang web cùng lúc. Đơn giản và dễ dàng, bạn có thể coi chúng như là phiên bản điện tử của một bộ đóng kẹp hồ sơ, với các thẻ là bộ kẹp và các trang là nội dung được giữ trong bộ kẹp. Mỗi trang mới xuất hiện dưới dạng thẻ mới (không phải cửa sổ mới) và có thể được truy xuất bằng một nhấp chuột.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="drag-tabs">
+      <h4>Tổ chức Dễ dàng</h4>
+      <p><span class="new">mới</span> <span class="improved" style="margin-left: 2px;">cải tiến</span> Đưa các trang vào trật tự. Đơn giản sắp xếp thứ tự các thẻ của bạn bằng cách kéo chúng với một động tác di chuột. Hoặc, nếu cửa sổ trình duyệt có quá nhiều thẻ, chỉ cần kéo một thẻ ra khỏi vị trí hiện tại của nó thì nó sẽ tự động mở trong một cửa sổ mới.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="reopen-tabs">
+      <h4>Mở lại Các thẻ Đã đóng</h4>
+      <p>Nếu lỡ tay đóng một thẻ, bạn có thể mở lại nó bằng một cú nhấp chuột. Chỉ cần xem “Các thẻ Đã đóng Gần đây” trong trình đơn “Lược sử” và chọn thẻ mà bạn muốn mở lại.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="save-on-exit">
+      <h4>Lưu khi Thoát</h4>
+      <p>Khi thoát Firefox, bạn có thể lưu các thẻ và cửa sổ cho lần khởi động sau. Không cần mở lại tất cả cửa sổ mỗi khi bắt đầu một phiên.</p>
+      </div>
+
+      <div class="feature" id="smooth-scrolling">
+      <h4>Cuộn uyển chuyển</h4>
+      <p>Thích có tất cả 20 trang ưa thích được mở cùng một lúc? Một tính năng mới tao nhã cho phép bạn cuộn qua các thẻ một cách dễ dàng để xem tất cả và truy cập vào trang mà bạn muốn một cách nhanh chóng.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="search" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Tìm kiếm</h3>
+
+    <div id="search1" class="features-row">
+
+      <div class="feature" id="smart-keywords">
+      <h4>Từ khóa Thông minh</h4>
+      <p>Tìm kiếm Web trong thời gian kỉ lục với từ khóa thông minh. Chỉ bằng vài cú nhấp chuột, bạn có thể gán từ khóa cho máy tìm kiếm, và rồi chỉ cần nhập từ khóa tìm kiếm vào thanh địa chỉ. Với tính năng này, việc gõ “sách nhà xây dựng” có thể tìm kiếm trên Vinabook.com, và đưa bạn tới đúng quyển sách về xây dựng nhà mà không cần phải dừng chân trước trang chủ.</p>
+      </div>
+
+      <div class="feature" id="search-suggestions">
+      <?=buildPlatformImage('/en-US/img/tignish/features/search-suggestions.png', 'Ảnh chụp Gợi ý Tìm kiếm')?>
+      <h4>Gợi ý Tìm kiếm</h4>
+      <p>Bắt đầu gõ trong thanh tìm kiếm và nó sẽ hiện cho bạn một danh sách thả xuống gồm các gợi ý, thêm vào đó bạn có thể dùng thanh tìm kiếm như là một máy tính bỏ túi, chuyển đổi đơn vị và nhiều thứ khác.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="integrated-search">
+      <?=buildPlatformImage('/en-US/img/tignish/features/integrated-web-search.png', 'Ảnh chụp Tìm kiếm Web Tích hợp')?>
+      <h4>Tìm kiếm Web Tích hợp</h4>
+      <p>Tìm kiếm trên Web nhanh như gió với hộp tìm kiếm sẵn có, ở ngay bên phải thanh địa chỉ của bạn. Chọn máy tìm kiếm của bạn và gõ thứ bạn muốn tìm trực tiếp trong hộp. Chiều rộng có thể điều chỉnh được, do đó bạn có thể làm cho nó to hơn nếu muốn có thêm không gian.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="search-engines">
+      <h4>Hàng trăm Máy tìm kiếm</h4>
+      <p>Truy cập các máy tìm kiếm ưa thích một cách nhanh chóng từ thanh tìm kiếm thích hợp. Bạn có thể dùng một bộ máy mới cho mỗi lần tìm, hay cứ việc gắn bó với bộ máy ưa thích của mình. Chọn từ danh sách có sẵn hoặc chọn “quản lí máy tìm kiếm” để duyệt qua các tùy chọn máy tìm kiếm được cung cấp dưới dạng tiện ích. <a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:4">Kiểm tra lựa chọn của bạn ngay bây giờ</a>.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div id="search2" class="features-row">
+
+      <div class="feature" id="find">
+      <?=buildPlatformImage('/en-US/img/tignish/features/find.png', 'Ảnh chụp Tìm')?>
+      <h4>Tìm</h4>
+      <p>Tính năng tìm sẽ hiện ra bằng một tổ hợp phím. Tìm kiếm từ hoặc cụm từ trên một trang Web đang mở. Nếu tô sáng văn bản trước thì đoạn văn bản sẽ được điền sẵn trong hộp thoại “Tìm kiếm” khi bạn gọi nó ra. Xem tất cả cụm từ tìm thấy cùng lúc, hoặc cuộn lên xuống để xem chúng xuất hiện ở phần nào trên trang.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="access" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Truy cập Toàn cầu</h3>
+
+    <div id="access1" class="features-row">
+
+      <div class="feature" id="text-rendering">
+      <h4>Khả năng Hiển thị Văn bản Được cải tiến</h4>
+      <p>Đọc ngôn ngữ của bạn giống như khi nó được viết-gần như ngoài đời thật. Với một bộ máy đồ họa mới, tiếng Ả Rập, Ba Tư, Punjabi và các ngôn ngữ kịch bản khác nay được hiển thị nhuyễn hơn.</p>
+
+      <h4>Các phông Có thể Tải xuống</h4>
+      <p><span class="new">mới</span> Xem được nhiều loại phông hơn trên các trang Web khi bạn lướt xem. Những nhà thiết kế và phát triển web có thể tạo các phông tùy biến được hiển thị và render đúng cho dù bạn không có phông đó trên máy tính.</p>
+      </div>
+
+      <div class="feature" id="fonts-image">
+      <img src="<?=$config['static_prefix']?>/img/tignish/features/text-rendering.png" alt="Ảnh chụp Khả năng Hiển thị Văn bản Được cải tiến" />
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="accessibility">
+      <h4>Nhấn mạnh Khả năng Truy cập</h4>
+      <p>Bằng việc tối thiểu hóa việc ấn phím, cho phép người dùng phóng to các trang Web và hỗ trợ trình đọc màn hình, Firefox sẽ dễ dàng sử dụng hơn đối với những người tàn tật và khiếm thị.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="universal-customization">
+      <h4>Tùy biến Toàn cầu</h4>
+      <p>Hơn cả việc dịch thuật đơn thuần và trải nghiệm Web theo cách phù hợp với bạn. Những người bản địa hóa - biết rõ điều gì là tốt nhất cho cộng đồng của họ - đã tùy biến trải nghiệm Firefox của bạn với các từ điển, nhà cung cấp tìm kiếm, trang đánh dấu động và feed từ Web. Tùy vào nơi mình sống, bạn sẽ thấy những thứ như tin đầu trên BBC được chọn theo khu vực của bạn, hoặc trải nghiệm các tính năng hoạt động với TraTừ, một máy tra từ điển của Việt Nam.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="language">
+      <h4>Ngôn ngữ của Firefox</h4>
+      <p><span class="improved">cải tiến</span> Firefox nói tiếng mẹ đẻ của bạn không giống như bất kì trình duyệt nào khác trên thế giới. Bởi vì Web là một nguồn tài nguyên toàn cầu và vì tin rằng tài nguyên thuộc về mọi người, chúng tôi đã tạo ra trình duyệt của mình trong nhiều ngôn ngữ nhất có thể. Chúng tôi có hơn 70 bản dịch khác nhau và vẫn sẽ tiếp tục có thêm, từ tiếng Pháp và tiếng Đức cho đến tiếng Việt và tiếng Nhật. <a href="/<?=$lang?>/firefox/all.html">Tìm ngôn ngữ của bạn</a>.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="cutting-edge" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Đỉnh cao</h3>
+
+    <div class="column1">
+
+      <div class="feature" id="offline-browsing">
+      <h4>Duyệt web Ngoại tuyến</h4>
+      <p><span class="improved">cải tiến</span> Ngắt mạng máy tính mà vẫn có thông tin ngay đầu ngón tay. Các trang được kích hoạt có thể cho phép ứng dụng - như email trên nền Web - luôn ở bên cạnh bạn.</p>
+      </div>
+
+            <div class="feature" id="location-aware">
+            <h4>Duyệt web kèm Nhận biết Vị trí</h4>
+            <p><span class="new">mới</span> Nay Firefox có thể nói cho các trang web biết nơi bạn đang ở để bạn có thể tìm thấy các thông tin liên quan và hữu ích hơn (ví dụ, nhận hướng dẫn chỉ đường hay tìm các nhà hàng gần bạn). Tất cả đều là tùy chọn phụ - Firefox không chia sẻ vị trí của bạn nếu chưa được phép - và điều đó cũng được thực hiện với sự tôn trọng cao nhất đối với quyền riêng tư của bạn.</p>
+            </div>
+
+    </div>
+
+    <div class="column2a">
+
+      <div class="feature" id="application-integration">
+      <h4>Tích hợp Ứng dụng Web</h4>
+      <p>Mở rộng sức mạnh của các ứng dụng Web. Trong quá khứ, khi bạn nhấn lên một địa chỉ email trong một trang Web, chương trình gửi thư mặc định trong máy tính sẽ mở ra để gửi thông điệp đến địa chỉ đã nhấn - cho dù bạn không bao giờ gửi thư thông qua chương trình đó. Bây giờ bạn có thể chọn một ứng dụng thư nền Web (như Hotmail, Gmail hay Yahoo! Thư) sẽ mở ra khi bạn nhấn lên địa chỉ email đó.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="graphics">
+      <h4>Đồ họa Thế hệ Tiếp theo</h4>
+      <p><span class="improved">cải tiến</span> Bạn thấy thì sẽ tin ngay. Khả năng hiển thị (render) văn bản và đồ họa, bao gồm SVG và Canvas, đã nhanh hơn và sắc sảo hơn bao giờ hết, nhờ vào bộ máy đồ họa mới được nâng cấp của chúng tôi. Firefox tự động sửa màu của những hình ảnh có dữ liệu hồ sơ màu kèm theo (giống như ảnh kĩ thuật số) để chắc chắn rằng màu được hiển thị chính xác như mong muốn.</p>
+      </div>
+
+            <div class="feature" id="open-video">
+            <h4>Mở Đoạn phim và Âm thanh</h4>
+            <p><span class="new">mới</span> Giới thiệu tương lai của đa phương tiện! Firefox là trình duyệt đầu tiên hỗ trợ định dạng âm thanh và phim mở, cho phép các cách thức mới không giới hạn để các trang hiển thị những nội dung phong phú. Những định dạng mở cũng cho phép các trang web hiện đại hiển thị tập tin đa phương tiện mà không cần có phần bổ trợ hoặc tải thêm phần mềm.</p>
+            </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="newest-technologies">
+      <div>
+        <h4>Công nghệ Web Mới nhất</h4>
+        <p><span class="improved">cải tiến</span> Các chức năng mới và cải tiến sẽ cho phép các tác giả và nhà phát triển Web tạo các nội dung và ứng dụng cao cấp. Có hỗ trợ cho:</p>
+        <table>
+          <tr>
+            <td>
+              <ul>
+                <li>CSS2.1</li>
+                <li>CSS3</li>
+                <li>HTML5</li>
+                <li>SVG Filters</li>
+                <li>Ogg Vorbis</li>
+                <li>Ogg Theora</li>
+                <li>Native JSON</li>
+                <li>MathML</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Animated Portable Network Graphics (APNG)</li>
+                <li>Cross-Site XMLHttpRequest</li>
+                <li>Microformats</li>
+                <li>Web Worker Threads</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <p><a href="https://developer.mozilla.org/En/Firefox_3.5_for_developers">Xem danh sách đầy đủ các công nghệ được hỗ trợ.</a></p>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="help" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link">Trở lên đầu</a>
+
+    <h3>Trợ giúp</h3>
+
+    <div class="column1">
+
+      <div class="feature" id="live-support">
+      <h4>Hỗ trợ Trực tiếp</h4>
+      <p>Chúng tôi có các chuyên gia Firefox đang chờ giúp bạn với các câu hỏi cần gặp người trực tiếp và đối thoại thật sự. Nay bạn có thể chat với các thành viên hiểu biết của cộng đồng Firefox, giúp bạn gỡ rối vấn đề thông qua trang chat trực tiếp của chúng tôi. Bạn sẽ không còn phải chờ phản hồi nữa - giải quyết vấn đề ngay tại chỗ.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="firefox-support">
+      <h4>Hỗ trợ Firefox</h4>
+      <p>Trợ giúp ở ngay nơi bạn trông đợi, cũng như ở cả nơi mà bạn không nghĩ tới. Một liên kết ngay trên đầu trình duyệt sẽ đưa bạn tới một trang hỗ trợ có các câu trả lời mà bạn cần. Muốn đào bới sâu hơn - hay có một câu hỏi thật sự khó?</p>
+      <?=buildPlatformImage('/en-US/img/tignish/features/help.png', 'Ảnh chụp Hỗ trợ Firefox')?>
+      <p><a href="http://support.mozilla.com/<?=$lang?>/kb/">Kho tàng Kiến thức</a> của chúng tôi có nhiều bài viết, cùng với diễn đàn và các bài hướng dẫn chứa các giải pháp và mẹo để cho một trải nghiệm tốt hơn.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+</div><!-- end #content div -->
+
+
+<?php
+  $extra_footers = <<<EXTRA_FOOTERS
+<!-- script type="text/javascript" src="/js/mozilla-platform-images.js"></script-->
+
+EXTRA_FOOTERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

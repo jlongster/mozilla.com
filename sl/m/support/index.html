@@ -1,0 +1,43 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Pomoč za Firefox na mobilnih napravah";
+    $search_field  = "Išči po pomoči za Firefox";
+    $search_button = "Išči";
+	$link_to_sumo  = "ali pa <a <href=\"%s\">Brskaj po celotnem spletišču za pomoč</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Pomoč za Firefox <em>na mobilnih napravah</em></h1>
+
+    <h2>Pogosta vprašanja</h2>
+
+    <ul class="highlight">
+        <li> <a href="<?=$sumo_links[1]?>">Kako sinhroniziram Firefox med namiznim in mobilnim sistemom?</a> </li>
+        <li><a href="<?=$sumo_links[2]?>">Kako nadgradim Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Kako se uporablja Super zaslon?</a></li>
+    </ul>
+
+    <h2>Teme pomoči za mobilne naprave</h2>
+    <ul>
+        <li> <a href="<?=$sumo_links[4]?>">Kako spremenim nastavitve?</a> </li>
+        <li> <a href="<?=$sumo_links[5]?>">Katere bližnjice tipk lahko uporabim?</a> </li>
+        <li> <a href="<?=$sumo_links[6]?>">Kako upravljam s prenosi?</a> </li>
+        <li> <a href="<?=$sumo_links[7]?>">Kako odprem nov zavihek?</a> </li>
+        <li> <a href="<?=$sumo_links[8]?>">Kako poiščem in nameščam dodatke?</a> </li>
+        <li> <a href="<?=$sumo_links[9]?>">Kako odstranim ali onemogočim dodatke?</a> </li>
+        <li> <a href="<?=$sumo_links[10]?>">Kako brskam po spletu z mobilnim Firefox?</a> </li>
+        <li> <a href="<?=$sumo_links[11]?>">Kako dodam zaznamek?</a> </li>
+        <li> <a href="<?=$sumo_links[12]?>">Kako povečam in pomanjšam spletno stran?</a> </li>
+    </ul>
+
+    <h2>Potrebujete pomoč za kaj drugega?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>

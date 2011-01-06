@@ -1,0 +1,38 @@
+<?php
+    //various variables used in the page
+    $top            = '';
+    $home_link      = '../';
+    $fx_sync_blog_link = 'http://mozillalabs.com/blog/2010/06/firefox-sync-graduates-from-mozilla-labs/';
+    $fx_cloud_link  = 'http://blog.mozilla.com/blog/2010/06/16/your-firefox-in-the-cloud-firefox-sync-and-firefox-home/';
+    $pr_link        = $fx_cloud_link;
+    $fx_sync_link   = 'https://addons.mozilla.org/en-US/mobile/addon/10868/';
+    $mpl_link       = 'http://www.mozilla.org/MPL/';
+    $support_link   = 'http://support.mozilla.com/1/firefox-home/1.0/iPhone/en-US/install';
+    $sec_link       = 'http://support.mozilla.com/en-US/kb/What+is+Firefox+Sync#What_s_the_secret_phrase_';
+    $user_api_link  = 'https://wiki.mozilla.org/Labs/Weave/User/1.0/API';
+    $sync_api_link  = 'https://wiki.mozilla.org/Labs/Weave/Sync/1.0/API';
+
+    $body_id        = 'mobile-faq';
+    $breadcrumbs = array(
+        $l10n->get('Mobile') => "/{$lang}/mobile/",
+        $l10n->get('Firefox Home') => "/{$lang}/mobile/home/",
+        $l10n->get('FAQ') => "/{$lang}/mobile/home/faq/",
+    );
+    $extra_headers  = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/mobile-faq.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+EXTRA_HEADERS;
+
+    // get content
+    ob_start();
+    @include_once "{$config['file_root']}/{$lang}/mobile/home/faq/faq-content.html";
+    $page_content = ob_get_contents();
+    ob_clean();
+
+    // build page
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    echo $page_content;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    unset($page_content);
+?>

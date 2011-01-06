@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Спасибо, что выбрали Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Спасибо, что выбрали Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Для загрузки Firefox и получения более подробной информации о Firefox Sync произведите следующие действия</h3>
+    <ol id="steps">
+        <li>Проверьте на своем телефоне наличие входящих SMS с отправленным только что нами текстом.</li>
+        <li>Откройте наше SMS и выберите указанную там ссылку, чтобы загрузить Firefox прямо на ваше мобильное устройство.</li>
+    </ol>
+    <p class="small-print">*Firefox бесплатен в использовании; тем не менее, оператор может взимать плату за трафик. Для получения информации проверьте свой тарифный план.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Пока вы ждёте…</h3>
+    <ol>
+        <li>Установите Firefox Sync и носите <em>свой</em> Firefox с собой, куда бы вы не направлялись. Поделитесь своей историей, закладками, паролями и вкладками на своем персональном компьютере со своим мобильным устройством.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Установите на своем персональном компьютере дополнение Firefox Sync</a> и зарегистрируйтесь в Firefox Sync. Как только Firefox загрузится на ваше мобильное устройство, следуйте предложенным нами шагам и для завершения установки выберите пункт "Загрузить дополнение Firefox Sync". В качестве альтернативы, выберите вручную кнопку Настройки, затем кнопку Дополнения, и затем найдите и установите дополнение Firefox Sync на ваше мобильное устройство.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

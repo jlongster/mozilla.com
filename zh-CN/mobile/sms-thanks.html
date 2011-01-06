@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Thanks for choosing Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Thanks for choosing Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Follow these steps to download Firefox, learn more about Firefox Sync, and be on your way</h3>
+    <ol id="steps">
+        <li>Check your phone’s SMS inbox for the text we just sent you.</li>
+        <li>Open the text and select the embedded link to download Firefox directly to your mobile.</li>
+    </ol>
+    <p class="small-print">*Firefox is free to use; however, standard carrier data rates may apply. Please check your wireless plan.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>While you’re waiting…</h3>
+    <ol>
+        <li>Setup Firefox Sync and take <em>your</em> Firefox with you wherever you go. Share your browsing history, bookmarks, passwords and tabs on your PC with your mobile.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Install the Firefox Sync add-on on your PC</a> and sign in to Firefox Sync. Once Firefox downloads to your mobile, follow our suggested Next Steps and select "Get the Firefox Sync add-on" to complete the install. Alternatively, you can manually select the settings button, select the add-ons button, then search for and install the Firefox Sync add-on on your mobile.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

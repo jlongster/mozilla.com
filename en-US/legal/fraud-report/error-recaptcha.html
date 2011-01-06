@@ -1,0 +1,39 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Violating Website Report Sent | Mozilla';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                        'About'         => "/{$lang}/about/",
+                        'Legal'         => "/{$lang}/about/legal.html",
+                        'Violating Website Report' => "/{$lang}/legal/fraud-report/",
+                        'Error' => ""
+                    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<script>
+    window.onload = setGoBack;
+    function setGoBack() {
+        var el = document.getElementById('goback');
+        var content = el.innerHTML;
+        el.innerHTML = "<a href='javascript:history.go(-1)'>"+ content +"</a>";
+    }
+</script>
+
+<div id="main-feature">
+    <h2>Error</h2>
+    <p>Sorry, the reCAPTCHA you entered was incorrect.<br>
+       Please <span id="goback">go back</span> and try again.</p>
+</div>
+<div id="content">
+    <p>We use reCAPTHCA to protect against spam bots.  This is the "Are you human?" section of the form.<br>
+       Please use your browser’s back button to go back and resubmit the form with a correct reCAPTCHA response.</p>
+</div>
+    
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

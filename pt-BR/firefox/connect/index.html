@@ -1,0 +1,64 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Conecte-se';
+    $body_id    = 'stay-connected';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/connect.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+		<h2>Conecte-se</h2>
+		<p>O Firefox está em suas redes sociais favoritas. Conecte-se a nós e entre na conversa!</p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'connect');?>
+
+<div id="content">
+	<div class="top-row">
+		<div class="item" id="facebook">
+			<a href="http://www.facebook.com/Firefox?v=wall">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-facebook.png" width="42" height="41" />
+			</a>
+
+			<h3>Facebook</h3>
+			<p><a href="http://www.facebook.com/Firefox?v=wall">Tornar-se fã <img src="/img/tignish/firefox/connect/link-arrow.png" width="11" height="13" alt="Ícone do Facebook" /></a></p>
+		</div>
+
+		<div class="item" id="twitter">
+			<a href="http://twitter.com/firefox">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-twitter.png" width="42" height="41" />
+			</a>
+
+			<h3>Twitter</h3>
+			<p><a href="http://twitter.com/firefox">Seguir nossos tweets <img src="/img/tignish/firefox/connect/link-arrow.png" width="11" height="13" alt="" /></a></p>
+			<p><a href="http://twitter.com/firefoxbr">Tweets em Português <img src="/img/tignish/firefox/connect/link-arrow.png" width="11" height="13" alt="" /></a></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="item" id="youtube">
+			<a href="http://www.youtube.com/firefoxchannel">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-youtube.png" width="40" height="56"/>
+			</a>
+
+			<h3>YouTube</h3>
+			<p><a href="http://www.youtube.com/firefoxchannel">Ver vídeos e<br /> demontrações <img src="/img/tignish/firefox/connect/link-arrow.png" width="11" height="13" alt="" /></a></p>
+		</div>
+
+		<div class="item" id="flickr">
+			<a href="http://www.flickr.com/photos/firefox_community">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-flickr.png" width="57" height="41"/>
+			</a>
+
+			<h3>Flickr</h3>
+			<p><a href="http://www.flickr.com/photos/firefox_community">Ver nossa coleção de<br /> fotos da comunidade <span><img src="/img/tignish/firefox/connect/link-arrow.png" width="11" height="13" alt="" /></span></a></p>
+		</div>
+	</div>
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

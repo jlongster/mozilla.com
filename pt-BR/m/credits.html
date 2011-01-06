@@ -1,0 +1,23 @@
+<?php
+    $body_id    = 'credits';
+    @include_once "{$config['file_root']}/{$lang}/mobile/credits/credits-content.html";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+    <h1><?php echo $page_title2; ?></h1>
+    <p><?php echo $slogan; ?></p>
+</div>
+
+<div id="main-content">
+
+<h3><?php echo $thanks_list; ?></h3>
+
+<?php @include_once "{$config['file_root']}/en-US/mobile/credits/credits-people-list.html";?>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

@@ -1,0 +1,26 @@
+<?php
+
+    // variables for conditionnal tests between /m/ and /mobile/ content
+    $short_mobile_page = true;
+    $mobile_menu       = '';
+
+    // include the page content as a buffer because we need the $page_title in the headers
+    ob_start();
+    include_once "{$config['file_root']}/{$lang}/mobile/sync/sync-content.html";
+    $page_content = ob_get_contents();
+    ob_clean();
+
+    $body_id = 'sync';
+
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    echo $page_content;
+?>
+
+
+
+<p class="nav-top"><a href="#head">back to top</a></p>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    unset($page_content);
+?>

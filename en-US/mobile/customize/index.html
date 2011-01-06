@@ -1,0 +1,40 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Get Personal';
+    $body_id    = 'mobile-customize';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/tignish/mobile-later.css" media="screen" />
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<div id="main-feature">
+    <h2>Get Personal</h2>
+	<p>Customize Firefox and enjoy the first browser to offer add-ons for mobile.</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu('en-US','customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>Make your browser your own.</h5>
+<p><a href="https://addons.mozilla.org/en-US/mobile">Mobile add-ons</a> help make life a breeze when you're on the go. Install add-ons that share your info with social networks, fix URL typos, or translate your questions to a different language, all from the convenience of your mobile phone. Add-ons are free and easy to install right from your mobile, so get to it.</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="Add-Ons screenshot" id="personal-screenshot" />
+
+<h5>Customize right from your phone.</h5>
+<p>Personalize your Firefox by searching and installing add-ons right from your mobile. Just swipe across the screen and select the Tools button on the right side of your screen. Tap on the add-ons button to start customizing.</p>
+
+<div id="dev-promo">
+<h3>Want to develop an add-on for mobile?</h3>
+<p>Your innovations are essential to the success of Firefox. We've made it easy to develop add-ons for mobile. Visit the <a href="../developers/">Develop for Mobile</a> page to learn more.</p>
+</div>
+
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

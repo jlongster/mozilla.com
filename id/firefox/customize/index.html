@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Pernak-Pernik untuk Setiap Orang';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Pernak-Pernik untuk Setiap Orang</h2>
+    <p>Sambal untuk hidangan Anda, nada dering untuk ponsel Anda, mengapa tidak melakukannya untuk menjelajah web?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produk</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Keamanan</a></li>
+    <li><span>Kesukaan</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">Perangkat Lunak Organik 100%</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Tips &amp; Trik</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Catatan Rilis</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Bahasa &amp; Sistem Operasi Lainnya</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Pengaya untuk Setiap Orang</h3>
+        <p>Firefox memiliki berbagai cara untuk menambah pengalaman daring Anda terutama bagaimana cara Anda menggunakan Web. Ada lebih dari 5.000 Pengaya (perangkat tambahan kecil yang dapat memperkaya Firefox agar sesuai kebutuhan Anda) menunggu untuk membantu Anda berbuat lebih banyak, lebih menyenangkan, dan lebih kreatif saat daring.</p>
+        <p>Anda ingin contoh? Coba lihat di bawah ini kemudian <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">kunjungi situs Pengaya kami untuk melihat berbagai kemungkinannya.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Alarm &amp; Pemutakhiran</h4>
+            <p>Dari pengaya pada kategori ini Anda dapat selalu mengikuti perkembangan berita olahraga, prakiraan cuaca, maupun lelang daring eBay. Informasi terkini akan selalu tampil di program peramban Anda tanpa peduli Anda sedang menampilkan situs apa.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Tampilkan Pengaya Alarm &amp; Pemutakhiran.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Misalnya:</span> <a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>Amati jual-beli barang Anda di eBay kapan dan dimanapun Anda sedang menjelajah Web.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/5202">Coba Firefox eBay Edition</a> <span>dari eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Foto, Musik &amp; Video</h4>
+            <p>Jadikan Firefox Anda menjadi pengunggah foto, pemutar musik, dan perangkat multimedia canggih. Ini seperti memiliki panel kontrol pemutar multimedia saat Anda menjelajah, bekerja, membuat email, ataupun mencari sesuatu di web.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Tampilkan Pengaya Foto, Musik &amp; Video.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Misalnya:</span> <a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>Kendalikan hampir semua jenis perangkat lunak pemutar media dari program peramban Anda.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/219">Coba FoxyTunes</a> <span>dari Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Pertemanan &amp; Komunikasi</h4>
+            <p>Pengaya ini akan membantu Anda menemukan hal baru yang menarik dari Web, mempercanggih cara Anda bertukar pesan daring, dan selalu tetap berhubungan dengan teman-teman Anda lewat situs jejaring pertemanan populer.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Tampilkan Pengaya Pertemanan &amp; Komunikasi.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Misalnya:</span> <a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>Temukan situs baru kemudian hubungi teman dan bagi hasil temuan Anda dengan mereka.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/138">Coba StumbleUpon</a> <span>dari StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Tema</h4>
+            <p>Jangan batasi pengalaman Anda menjelajah web dengan tampilan standar. Pilih warna baru, buat program peramban supaya lebih mudah dipakai (dengan tombol yang besar-besar untuk pemula), atau pilih tampilan yang sesuai dengan selera Anda.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Tampilkan Semua Tema.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Misalnya:</span> <a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>Tema untuk yang suka nuansa gelap.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/addon/4908">Coba tampilan NASA Night Launch</a> <span>dari mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>Pengaya</h3>
+            <h5>Jadikan Firefox Sesuai Selera Anda</h5>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.org/<?=$lang?>/firefox/">Jelajahi semua Pengaya</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

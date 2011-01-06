@@ -1,0 +1,53 @@
+<?php
+/*  translate the page title below */
+$page_title = "Selamat Datang di Firefox";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1>Selamat Datang di <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+	<p>Terima kasih telah menjadi penguji Firefox 4 beta! Kita sedang berusaha membuat sesuatu yang keren bersama-sama. Pastikan Anda mengabari kami apa-apa yang Anda suka atau tidak suka tentang pengalaman Anda ber-Firefox-ria.</p>
+        <p>Kami menunggu saran Anda. Tonton video dari rekan yang akan mendengarkan saran yang Anda kirimkan!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Fitur Baru »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Berbagi Saran »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Catatan Rilis »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Kabari Kami Saran Anda</h2>
+        <p>Sebagai penguji versi beta, Anda otomatis menjadi anggota tim yang membuat Firefox&nbsp;4. Kabari kami apa-apa yang Anda suka atau tidak suka dengan mengklik tombol <img src="<?=$screencap;?>" alt="Tangkapan layar tombol saran" /><em>Saran</em>.
+	 Anda akan ditanya apakah ingin mengikuti pengumpulan data studi pengguna secara anonim, atau juga mengisi survei tertentu.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>Bagaimana cara studi pengguna ini berjalan?</h5>
+        <p>Studi pengguna mengumpulkan data statistik anonim tentang cara pengguna menggunakan Firefox tetapi bukan apa yang pernah Anda buka atau lakukan di Firefox. Anda mempunyai kontrol penuh atas data Anda. Tidak ada data yang dikirimkan ke server Test Pilot Mozilla tanpa izin Anda.
+	  Data statistik yang dikumpulkan digunakan untuk mendesain Firefox&nbsp;4.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>Jika saya tidak ingin berpartisipasi, bagaimana?</h5>
+        <p>Anda akan mendapatkan kabar sebelum proses pengumpulan data studi pengguna dimulai. Anda juga akan mendapatkan pemberitahuan sebelum data studi dikirim ke Mozilla. Anda dapat memilih untuk tidak mengikuti studi pengguna, atau mematikannya sama sekali dengan mengklik tombol <em>Saran</em> untuk mengubah pengaturannya.</p> 
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

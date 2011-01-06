@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Firefox ja sijaintitiedot";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Selaa sijaintisi mukaan</h2>
+    <p>Firefox osaa kertoa verkkosivuille, missä olet milloinkin, jolloin
+    löydät asiaankuuluvaa ja hyödyllistä tietoa nopeammin. Sijaintitiedot tekevät
+    verkosta älykkäämmän, ja sijaintisi selvitetään yksityisyyttäsi kunnioittavalla
+    tavalla.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Kokeile paikannusta</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Usein kysyttyjä kysymyksiä</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Mitä sijaintitietoinen selaus on?</h4>
+    <div class="expander-content">
+        <p>Sijaintitietoiset verkkosivustot kysyvät selaimelta sijaintipaikkaasi, jotta ne voivat esittää asianmukaisia tietoja tarkemmin: voit säästää aikaasi mm. verkkohakuja tehdessäsi. Saatat olla esimerkiksi etsimässä lähistöllä sijaitsevaa pizzapaikkaa. Verkkosivusto voi pyytää sinua kertomaan sijaintisi, jolloin pelkkä hakusana ”pizza” palauttaa haluamasi hakutuloksen erityisiä lisätietoja syöttämättä.</p>
+        <p>Toinen esimerkki on karttapalvelu: verkkosivu voi selvittää, mistä olet milloinkin lähdössä liikkeelle, joten pelkkä matkan kohteen kertominen riittää.</p>
+        <p>Paikannusominaisuuksien käyttäminen on täysin vapaaehtoista: Firefox ei välitä sijaintitietojasi ilman lupaa, ja ominaisuus kunnioittaa yksityisyyttäsi täysin. Lisäksi, kuten kaikki muutkin Firefoxin ominaisuudet, paikannustoiminnallisuus noudattaa avoimia standardeja, mikä helpottaa sen käyttöönottoa myös verkkosivujen kehittäjille.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Miten se toimii?</h4>
+    <div class="expander-content">
+        <p>Kun käyt sijaintitietoisella verkkosivulla, Firefox kysyy, haluatko jakaa sijaintitietosi.</p>
+        <p>Jos annat luvan, Firefox kerää tietoja läheisten WLAN-tukiasemien ja tietokoneesi IP-osoitteen perusteella. Tämän jälkeen Firefox lähettää tiedot paikannuspalvelun oletustarjoajalle, Google Location Servicesille, joka puolestaan palauttaa arvion sijainnistasi. Lopuksi sijaintiarvio välitetään kyselyn tehneelle verkkosivulle.</p>
+        <p>Jos et annan Firefoxille lupaa tietojen jakamiseen, selain ei tee mitään.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kuinka tarkkoja sijaintitiedot ovat?</h4>
+    <div class="expander-content">
+        <p>Tarkkuus vaihtelee paljon sijainnistasi riippuen. Joissakin paikoissa palveluntarjoajat pystyvät paikantamaan sinut muutaman metrin säteellä, kun taas toisissa paikoissa paikannuksen säde voi olla paljon suurempi. Kaikki palveluntarjoajien toimittamat sijainnit ovat ainoastaan arvioita, emmekä takaa selvitettyjen sijaintien tarkkuutta. Sijaintitietoja ei tule käyttää hätätilanteissa. Turvaudu joka tapauksessa aina maalaisjärkeen.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mitä tietoja lähetetään ja kenelle? Kuinka yksityisyyteni on suojattu?</h4>
+    <div class="expander-content">
+        <p>Yksityisyytesi turvaaminen merkitsee meille erittäin paljon, eikä Firefox koskaan jaa sijaintitietojasi luvatta. Kun käyt sivulla, joka pyytää sijaintitietoja, sinulta kysytään lupa, ennen kuin kyselyn tehnyt sivusto tai sijaintipalveluntarjoaja saa tietosi käyttöönsä.</p>
+        <p>Firefox käyttää oletuksena Google Location Servicesiä sijaintitietojesi selvittämiseen. Jaetut tiedot ovat:</p>
+        <ul>
+            <li>tietokoneesi IP-osoite</li>
+            <li>tiedot läheisistä WLAN-tukiasemista</li>
+            <li>satunnainen Googlen tarjoama tunniste, joka uusiutuu kahden viikon välein</li>
+        </ul>
+        <p>Voit tutustua täydelliseen kuvaukseen kerätyistä tiedoista <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefoxin yksityisyyskäytännöt</a> -sivulla (englanniksi).</p>
+        <p>Google Location Services palauttaa tietojen käsittelyn jälkeen arvioidun sijaintisi (esimerkiksi leveys- ja pituusasteen). Täydelliseen kuvaukseen Googlen keräämistä ja käyttämistä tiedoista voit tutustua <a href="http://www.google.com/privacy-lsf.html" class="external">Googlen paikannustoimintojen yksityisyyskäytännöt</a> -sivulla (englanniksi).</p>
+        <p>Tiedot siirretään salatun yhteyden yli yksityisyyden takaamiseksi. Kun Firefox on kerännyt sijaintitietosi, se välittää tiedot kyselyn tehneelle verkkosivulle. Firefox ei koskaan kerro käyttämiesi verkkosivujen nimeä tai osoitetta taikka niiden asettamia evästeitä Google Location Servicesille.</p>
+        <p>Mozilla ja Google eivät milloinkaan käytä Google Location Servicesin keräämiä tietoja vakoilutarkoituksissa.</p>
+        <p>Saat lisätietoja kyselyitä tekevien verkkosivujen paikannustietojen käyttötarkoituksista tutustumalla asianomaisten sivujen yksityisyyskäytäntöihin.</p>
+        <p>Jos haluat lisätietoja yksityisyytesi takeista, tutustu myös seuraaviin:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefoxin yksityisyyskäytännöt</a> (englanniksi)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Googlen yksityisyyskäytännöt</a> (englanniksi)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Seurataanko liikkeitäni, kun selaan verkkoa?</h4>
+    <div class="expander-content">
+        <p>Ei. Firefox selvittää sijaintisi ainoastaan, kun jokin verkkosivusto pyytää sijaintia, ja välittää sijaintitiedot vain, kun käyttäjä on hyväksynyt pyynnön. Firefox ei seuraa tai muista sijaintiasi, kun selaat verkkoa.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kuinka voin kumota antamani sijaintitietojen lähetysluvan?</h4>
+    <div class="expander-content">
+        <p>Jos olet antanut Firefoxille luvan lähettää sijaintisi joka kerta, kun käyt jollakin sivustolla, mutta muutat mielesi, voit kumota luvan helposti:</p>
+        <ul>
+            <li>Siirry sivustolle, jolle olet antanut luvan</li>
+            <li>Valitse <em>Työkalut</em>-valikosta <em>Tietoja sivusta</em></li>
+            <li>Valitse <em>Oikeudet</em>-välilehti</li>
+            <li>Muuta <em>Jaa sijainti</em> -asetusta</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kuinka voin poistaa satunnaisen tunnistenumeron?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Valitse <em>Työkalut</em>-valikosta <em>Poista historiatietoja</em></li>
+            <li>Napsauta <em>Yksityiskohdat</em>-nuolta</li>
+            <li>Tarkista, että <em>Evästeet</em> on valittuna</li>
+            <li>Valitse <em>Poista tiedot</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kuinka voin poistaa sijaintitietoisen selauksen lopullisesti käytöstä?</h4>
+    <div class="expander-content">
+        <p>Sijaintitietoisen selauksen käyttäminen on aina vapaaehtoista Firefox:ssä. Mitään sijaintitietoja ei lähetetä ilman lupaasi. Jos haluat poistaa ominaisuuden käytöstä kokonaan:</p>
+        <ul>
+            <li>Kirjoita osoitepalkkiin <code>about:config</code></li>
+            <li>Kirjoita <code>geo.enabled</code></li>
+            <li>Kaksoisnapsauta <em>geo.enabled</em>-asetusta</li>
+            <li>Sijaintitietoinen selaus on nyt poistettu käytöstä</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Missä olen?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Sijaintitietojesi määrityksessä tapahtui virhe.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

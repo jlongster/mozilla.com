@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="„Firefox 4“ betos" /> naujovės</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Pirmyn į kelią su „Firefox 4“ beta!</h3>
+        <p>Darbe, namie, ar kelyje – naršykite bet kur! Su „Firefox Sync“ paprastai pasiekite svarbiausius naršyklės duomenis – savo naršymo žurnalą, įrašytus slaptažodžius, adresyną ir atvertas korteles – savo naudojamuose kompiuteriuose ir kituose įrenginiuose. Plačiau – žiūrėkite filmuką.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Daugiau apie „Sync“ »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Pasidalinkite savo nuomone »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Laidos apžvalga »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Naujienos</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organizuotesnis naršymas</h4>
+         <?=$tabvideo?>
+        <p>Darosi sunku aprėpti visas atvertas korteles? Sukurkite temines jų grupes, tiesiog tempdami korteles pele. Grupėms suteikite vardus, išdėstykite jas kaip patinka. Bus ne tik patogu, bet ir smagu!</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

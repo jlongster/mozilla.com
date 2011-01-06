@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>O que há de novo no <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Levante e vá com o Firefox 4 Beta</h3>
+        <p>Vá do trabalho para casa para a rua e volte! O Firefox Sync dá a você acesso direto aos seus dados do Firefox &mdash; incluindo favoritos, senhas, histórico e abas abertas &mdash; em vários computadores e telefones. Assista ao vídeo para dar os primeiros passos.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Saber mais sobre o Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Compartilhar sua opinião »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Notas da versão »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Últimas notícias</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organize sua vida online:</h4>
+         <?=$tabvideo?>
+        <p>Está difícil controlar todas as suas abas abertas? Livre seu navegador da bagunça de abas! Simplesmente arraste suas abas para grupos gerenciáveis que você pode organizar, nomear e reordenar de maneira visual e divertida.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

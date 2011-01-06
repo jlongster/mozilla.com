@@ -1,0 +1,313 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla ৰ উৎপাদন | সঙ্কেত &amp; কায়দা';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript">// <![CDATA[
+    Mozilla.Pager.NEXT_TEXT        = 'Next';
+    Mozilla.Pager.PREV_TEXT        = 'Previous';
+    Mozilla.Pager.PAGE_NUMBER_TEXT = '%s of %s';
+    // ]]></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>সঙ্কেত &amp; কায়দা</h2>
+    <p>আপুনি আৰম্ভ কৰা, মাজৰ বা উন্নত ব্যৱহাৰকৰোঁতা হওক, এই ছ'ৰ্টকাট আৰু পৰামৰ্শই Firefox 3 ৰ সৰ্বাধিক সুবিধা ল'বলৈ সহায় কৰিব ।</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">উৎপাদন</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">গুণ</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">সুৰক্ষা</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">নিজৰ পছন্দৰ মতে সজোৱা</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">১০০% জৈৱ চালনাজ্ঞান</a></li>
+    <li><span>সঙ্কেত &amp; কায়দা</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">মুক্তিৰ টোকা</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">অন্য ব্যৱস্থাপ্ৰণালী আৰু ভাষা</a></li>
+</ul>
+
+<div id="content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>আৰম্ভকৰ্তা</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '362', '225', 'right')?>
+
+                <h4>ডাঙৰ কৰি চাওক, সৰু কৰি চাওক</h4>
+                <p>সৰু লিপিৰ পৰা সমস্যা হৈছে ? এটা প্ৰতিমূৰ্ত্তি ওচৰৰ পৰা আৰু ব্যক্তিগত হিচাপে চাব বিচাৰে নেকি ? এতিয়া আপুনি সহজে ৱেব পৃষ্ঠাক সৰু আৰু ডাঙৰ কৰি চাব পাৰিব ।</p>
+
+                <div class="key-combo">
+                    ডাঙৰ কৰি চাওক
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    সৰু কৰি চাওক
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '343', '117', 'right')?>
+
+                <h4>এই টেব কায়দা চেষ্টা কৰি চাওক</h4>
+                <p>যদি আপুনি এনে ধৰণৰ ব্যক্তি যি একে সময়তে বহুত ৱেব পৃষ্ঠা খোলিবলৈ ভাল পায়, আপুনি নিশ্চয় টেব ব্যৱহাৰ কৰি চৰণ কৰিব ভাল পাব । টেবত দক্ষতা পাবলৈ ইয়াত কিছুমান চাবি ফলকৰ ছ'ৰ্টকাট আছে:</p>
+
+                <div class="key-combo key-combo-1">
+                    এটা নতুন ৰিক্ত টেব খোলক
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    সংযোগ এটা নতুন টেবত খোলক
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middle Click on link</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">সংযোগত মাজৰ বুটাম টিপক(mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    টেব বন্ধ কৰক
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    বন্ধ টেব পুনঃ খোলক
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '389', '250', 'right')?>
+
+                <h4>বুটাম এবাৰ টিপিয়ে পত্ৰচিহ্ন যোগ কৰক</h4>
+                <p>এবাৰ-টিপি পত্ৰচিহ্ন দিয়াৰ সুবিধাৰে নিজৰ পছন্দৰ ছাইটসমূহক পৰিচালনা কৰক (আৰু সময় ৰক্ষা কৰক) । আপুনি মনত ৰাখিব খোজা পৃষ্ঠা দৰ্শন কৰিলে, স্থান বাৰত থকা স্তাৰ আইকণত অকল টিপি দিলেই হ'ব । Firefox এ তাক পত্ৰচিহ্নৰ তালিকালৈ যোগ কৰিব যাতে আপুনি পিছত সহজে বিচাৰিব পাৰিব ।</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        এই ছাইটে পৰীক্ষা কৰা চিনাকিৰ তথ্য দিয়ে আৰু অন-লাইন থাকি আনৰ কথা শুনা লোকৰ পৰা আপোনাৰ ব্যক্তিগত তথ্য ৰক্ষা কৰে ।
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        এই ছাইটে মৌলিক চিনাকিৰ তথ্য দিয়ে আৰু অন-লাইন থাকি আনৰ কথা শুনা লোকৰ পৰা আপোনাৰ ব্যক্তিগত তথ্য ৰক্ষা কৰে ।
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        এই ছাইটে চিনাকিৰ কোনো তথ্য নিদিয়ে ।
+                    </li>
+                </ul>
+
+                <h4>আপুনি লেন-দেন কৰা মানুহক জানক</h4>
+                <p>ৱেব স্কেমাৰৰ এটা সাধাৰণ কায়দা হ'ল জালী ছাইট প্ৰতিষ্ঠা কৰা, যাক ফিশ্বিং ছাইট বুলি কোৱা হয়, যি আপোনাৰ বেঙ্ক, আপোনাৰ পছন্দৰ ঈ-কমাৰ্চ ছাইট, ইত্যাদিৰ ভেশ ধৰে । সৌভাগ্যক্ৰমে, Firefox এ ছাইটৰ বাস্তৱিকতা প্ৰতিষ্ঠা কৰাত সহায় কৰে – তৎক্ষণাত পোৱা চিনাকিৰ প্ৰদৰ্শনৰ বাবে ছাইটৰ আইকণত টিপক ।</p>
+                <p id="forgery">এটা আক্ৰমণৰ ছাইট বা জালিয়াতি; এই ছাইটক আপোনাৰ ব্যক্তিগত তথ্য দিয়া, বা তাক দৰ্শন কৰাও, অপকাৰী হ'ব পাৰে ।
+                <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-mac.png" alt="Forgery screenshot" />');
+                } else if (gPlatform == PLATFORM_LINUX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-linux.png" alt="Forgery screenshot" />');
+                } else if (gPlatformVista) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-vista.png" alt="Forgery screenshot" />');
+                } else {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" />');
+                }
+            // ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" /></div></noscript>
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            পৃষ্ঠাৰ তললৈ যাওক
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            পৃষ্ঠাৰ ওপৰলৈ যাওক
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            পৃষ্ঠাক পুনঃ তোলক
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            পিছলৈ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            আগলৈ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>আপোনাৰ সফলতাৰ বাবে চমু পথ</h4>
+                <p>Firefox ত বহুত চাবি ফলকৰ চমু পথ আছে যাতে আপোনাৰ জীৱন সহজ হয় । ইয়াত আমাৰ পছন্দৰ কিছুমান:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        স্থানৰ বাৰলৈ কাৰ্ছ'ৰ লৈ যাওক
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        বিচৰাৰ বাকছলৈ কাৰ্ছ'ৰ লৈ যাওক
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>মাজৰ</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '387', '220', 'right')?>
+
+                <h4>প্লে টেগ</h4>
+                <p>এবাৰ পত্ৰচিহ্নৰ ডাঙৰ তালিকা সৃষ্টি কৰা হ'লে, সেইবোৰৰ পৰিচালনা কৰা কষ্টকৰ হ'ব পাৰে । সংগঠিত হৈ থাকিবলৈ, আপুনি পত্ৰচিহ্ন দিয়া ছাইটত টেগ বিতৰণ কৰিব পাৰে: স্টাৰ আইকণত ডাবুল-ক্লিক কৰক আৰু টেগ দিবলৈ আপোনাক কোৱা হ'ব ।</p>
+                <p>আপুনি এটা ছাইটক বহুতো শব্দেৰে টেগ কৰিব পাৰে (দুটা টেগৰ মাজত ক'মা দিব নাপাহৰিব), আৰু পিছত স্থান বাৰত টেগ লিখি ছাইটসমূহ সহজে বিচাৰি পাব পাৰে । যেনে, স্থান বাৰত "travel" লিখিলে আপুনি নিজৰ অৱকাশৰ দিনৰ বাবে কৰা অনুসন্ধানত পোৱা সকলো ছাইট প্ৰকাশ কৰা হ'ব ।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '364', '256', 'right')?>
+
+                <h4>এড-অ'নৰ বিষয়ে সকলো জানক</h4>
+                <p>Firefox ৰ মানপ্ৰাপ্ত সংস্কৰণত বহু গুণ আছে, নিশ্চয়, কিন্তু ইয়াতে কিয় বন্ধ কৰিব লাগে? ৫,০০০ তকৈ অধিক এড-অ'ন আছে — কিছুমান অতিৰিক্ত কাৰ্য্যক্ৰম যি Firefox ক সজায় — যাক আপুনি ভবা যি কোনো কাৰ্য্যক উন্নত কৰিবলৈ ডাউন্‌লোড কৰিব পাৰে । Tools → Add-ons লৈ যাওক এড-অ'ন পৰিচালক খুলিবলৈ আৰু Firefox ক নিজৰ কৰিবলৈ বহু উপায় বিচাৰি পাওক ।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '371', '233', 'right')?>
+
+                <h4>বুদ্ধিমান ভাবে বিচাৰক</h4>
+                <p>Firefox ৰ বিচৰাৰ বাৰৰ সৈতে আপুনি ইতিমধ্যে পৰিচিত । কিন্তু আপুনি জানেনে আপুনি তাক যি কোনো তথ্য বিচৰা কলঘৰৰ সৈতে প্ৰতিষ্ঠা কৰিব পাৰে ? আপোনাৰ বিচৰাৰ বাৰৰ বাওঁফালৰ আইকণ টিপি অবিকল্পিত বিকল্পসমূহৰ তালিকা চাওক ।</p>
+                <p>ইয়াতকৈ ভাল, তথ্য বিচৰা কলঘৰ পৰিচালনা কৰক টিপক… তালিকা পুনঃ সংগঠিত কৰিবলৈ, অতিৰিক্ত পছন্দ যোগ কৰিবলৈ আৰু আপোনাৰ পছন্দৰ তথ্য বিচৰা কলঘৰক চাবি ফলকৰ ছ'ৰ্টকাট বিতৰণ কৰিবলৈ । যেনে, আপুনি Google ক "G" ছ'ৰ্টকাট দিব পাৰে - তাৰ পিছত কুকি ৰেচিপি বিচাৰিবলৈ, স্থান বাৰত অকল "G cookie recipes" লিখিলেই হ'ব ।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '385', '254', 'right')?>
+
+                <h4>তৎক্ষণাত বিচাৰি পাওক</h4>
+                <p>লিখাৰ সময়ত বিচাৰক অন্য এটা সময় ৰক্ষা কৰা গুণ । এখন পৃষ্ঠাত এটা শব্দ বিচাৰিবলৈ "find" বাৰ ব্যৱহাৰ কৰাতকে, পৃষ্ঠাৰ যি কোনো স্থানত টিপক আৰু আপুনি বিচৰা শব্দ লিখিব আৰম্ভ কৰক । শব্দ য'ত প্ৰথমে আৰম্ভ হয় তালৈ কাৰ্ছ'ৰ তৎক্ষণাত যাব ।</p>
+                <p>আপুনি সেইটোক সংযোগৰ বাবেও ব্যৱহাৰ কৰিব পাৰে । যেনে, পৃষ্ঠাৰ "learn more" সংযোগলৈ মাউছ লৈ যোৱাতকে, অকল সেই শব্দ লিখিবলৈ আৰম্ভ কৰক আৰু কাৰ্ছ'ৰে যেতিয়া পাই, enter টিপি দিব ।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '358', '219', 'right')?>
+
+                <h4>সকলো পদক্ষেপ আঁতৰাওক</h4>
+                <p>সুৰক্ষা আৰু গোপনীয়তাৰ বাবে, আপুনি চৰণ কৰোঁতে পদচিহ্ন এৰি যোৱা ভাল নহয় (বিশেষকৈ যতিয়া আপুনি এটা কম্পিউটাৰত আনৰ লগত অংশ গ্ৰহণ কৰে) । আপোনাৰ চৰণ কৰা আৰু ডাউন্‌লোডৰ ইতিহাস আঁতৰাবলৈ Firefox এ সহায় কৰে, আপোনাৰ কেছে পৰিষ্কাৰ কৰিবলৈ আৰু এবাৰতে কুকি আঁতৰাবলৈ । তাকে কৰিবলৈ Tools → Clear Private Data… লৈ গ'লে হ'ব । বা, আৰু অধিক সতৰ্ক হ'বলে, <span id="trace-platform">Tools → Options → Privacy</span> লৈ যাওক আৰু "Firefox বন্ধ কৰোঁতে মোৰ ব্যক্তিগত তথ্য সদায়ে পৰিষ্কাৰ কৰিব " বিকল্প নিৰ্ব্বাচন কৰক ।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('trace-platform').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>উন্নত</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'Location bar screenshot', '392', '245', 'right')?>
+
+                <h4>নিজৰ পছন্দৰ ছাইটলৈ পোনেপোনে যাওক</h4>
+                <p>সহজ আৰু দ্ৰুতভাবে অভিগম কৰিবলৈ আপুনি কিছু মূল শব্দ পত্ৰচিহ্নলৈ যোগ দিব পাৰে । Library ৰ পৰা, মূলশব্দ ক্ষেত্ৰত এটা সৰু মূলশব্দ যোগ কৰক, আৰু পত্ৰচিহ্ন অভিগম কৰিবলৈ ঠিকনা বাৰত সেই মূলশব্দ লিখিলেই হ'ব । যেনে, আপুনি নিজৰ del.icio.us হিচাপক “links” মূলশব্দ দিব পাৰে, আৰু তাৰ পিছত ঠিকনা বাৰত অকল “links” লিখিলেই সেই স্থানলৈ লৈ যোৱা হ'ব ।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'Bookmarks screenshot', '381', '233', 'right')?>
+
+                <h4>স্মাৰ্ট ফোল্ডাৰ সৃষ্টি কৰক</h4>
+                <p>যদি আপুনি উন্নত ৱেব সেৱক যি সঘণে বহুতো নিৰ্দ্দিষ্ট ছাইট ৰক্ষা আৰু পৰিচালনা কৰিব লাগে, আগবঢ়াইছো এটা সুবিধাজনক সময় সংৰক্ষক: Firefox 3 ৰ লাইব্ৰেৰী ব্যৱহাৰ কৰি, আপুনি আপোনাৰ পত্ৰচিহ্ন আৰু ইতিহাসত যোগ কৰা ছাইটৰ সৈতে স্বয়ং উন্নয়ন কৰা ফোল্ডাৰত বিচৰা তথ্য সৃষ্টি আৰু ৰক্ষা কৰিব পাৰে ।</p>
+                <p>প্ৰথমে, লাইব্ৰেৰীক পত্ৰচিহ্ন তালিকাৰ পৰা "পত্ৰচিহ্ন সংগঠিত কৰক" বিকল্প নিৰ্ব্বাচন কৰি খোলক । তাৰ পিছত, তথ্য বিচৰা বাকসত আপুনি বিচাৰিব খোজা শব্দ লিখক । তাৰ পিছত ৰক্ষা কৰক বুটাম টিপক এটা স্মাৰ্ট ফোল্ডাৰ সৃষ্টি কৰিবলৈ ।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'Download Manager screenshot', '387', '271', 'right')?>
+
+                <h4>ডাউন্‌লোডৰ পৰিচালনা কৰক</h4>
+                <p>যদি আপুনি সঘণে ডাউন্‌লোড কৰে, সেই ডাউন্‌লোড সমূহক আপুনি ডাউন্‌লোড পৰিচালক সংযোগক্ষেত্ৰ ব্যৱহাৰ কৰি পৰিচালনা কৰিব  পাৰে । আপুনি ডাউন্‌লোড সমূহক স্থগিত কৰি পুনঃ আৰম্ভ কৰিব পাৰে, আৰু পৰিচালকৰ পৰাই নথিপত্ৰ খুলি সময় ৰক্ষা কৰিব পাৰে ।</p>
+                <p>পূৰণি ডাউন্‌লোডৰ বিষয়ে জানিবলৈ, Tools → Downloads লৈ যাওক আৰু আপোনাৰ নথিপত্ৰ বিচাৰিবলৈ বিচৰাৰ বাকস ব্যৱহাৰ কৰক । বিচাৰি পালে, খুলিবলৈ নথিপত্ৰত ডাবুল-ক্লিক কৰক, বা <span id="manage-downloads-click">right-click</span> কৰক আৰু "ডাউন্‌লোড সংযোগ নকল কৰক" নিৰ্ব্বাচন কৰক ।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('manage-downloads-click').innerHTML="ctrl-click";
+                }
+                //]]></script>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>বিকাশকৰ সৰঞ্জাম আৱিষ্কাৰ কৰক</h4>
+                <p>আপুনি ৱেব বিকাশক হ'লে, Firefox ৰ বিকাশকৰ সৰঞ্জামে আপোনাৰ কাম সহজ কৰিব । <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla Add-ons site</a> এ বিকাশৰ প্ৰক্ৰিয়া সংগঠিত কৰিবলৈ Firebug ৰ সৈতে বহুতো সৰঞ্জাম দিয়ে, এটা সহজ ৰাইট-ক্লিকেৰে যি কোনো ৱেব পৃষ্ঠাত জীৱন্তভাবে CSS, HTML, আৰু JavaScript ক সম্পাদন, ডিবাগ, আৰু পৰিচালনা কৰিবলৈ, HTTP/HTTPS হেডাৰসমূহ আৰু POST স্থিতিমাপ সমূহ দৰ্শন কৰি সাল সলনি কৰি তথ্য সলনি কৰিবলৈ, আৰু যি কোনো HTML বা CSS পদাৰ্থ পৰীক্ষা কৰিবলৈ DOM Inspector ।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Preferences screenshot', '375', '309', 'right')?>
+
+                <h4>আপুনি বিচৰা মতে ৱেব প্ৰতিষ্ঠা কৰক</h4>
+                <p>আপুনি এতিয়া নিজৰ পছন্দৰ ৱেব অনুপ্ৰয়োগসমূহ দ্ৰুত ভাবে অভিগম কৰিবলৈ ৱেব-ভিত্তিক নিয়ম পৰিচালক ব্যৱহাৰ কৰিব পাৰে । যেনে, যি কোনো ৱেব ছাইটৰ এটা mailto: সংযোগত টিপিলে আপুনি Firefox ক প্ৰতিষ্ঠা কৰিব পাৰে আপোনাৰ কম্পিউটাৰৰ অবিকল্পিত ডাক কাৰ্য্যক্ৰমৰ পৰিবৰ্ত্তে আপোনাৰ পছন্দৰ ৱেবমেইল সেৱা আগবঢ়োৱা সেৱক আৰম্ভ কৰিবলৈ (মন কৰিব: এই বৈশিষ্ট্য অকল Firefox 3 ৰ লগত পঞ্জিকৰণ কৰা ৱেবমেইল সেৱাৰ বাবেহে উপলব্ধ ।) ।</p>
+                <p>প্ৰত্যেক আচাৰা-বিধিৰ বাবে অবিকল্পিত অনুপ্ৰয়োগ নিৰ্ব্বাচন কৰিবলৈ<span id="platform-protocol">Tools → Options → Applications</span> লৈ যাওক বা “সদায় প্ৰশ্ন কৰিব” নিৰ্ব্বাচন কৰক যদি আপুনি বিচাৰে যে প্ৰত্যেক বাৰ আপুনিয়ে অনুপ্ৰয়োগ নিৰ্ব্বাচন কৰিব ।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>যদি আপুনি ৱেব অনুপ্ৰয়োগৰ বিকাশক হয়, ৱেব-ভিত্তিক আচাৰ-বিধিৰ পৰিচালকৰ বাবে সমৰ্থন যোগ কৰিবলৈ অধিক তথ্য জানিবৰ বাবে <a href="http://developer.mozilla.org/">Mozilla উন্নয়ন কেন্দ্ৰ চাওক ।</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

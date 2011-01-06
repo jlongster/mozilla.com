@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'ఫైర్‌ఫాక్స్  అంతర్జాల విహరిణి | ఇటీవలి బీటా విడుదలను పరీక్షించడంలో సహాయం చేయండి';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ఫైర్‌ఫాక్స్ భవిష్యత్తు ని  పరీక్షించడంలో సహాయం చేయండి!</h2>
+        <p>ఫైర్‌ఫాక్స్ ఇటీవలి బీటా విడుదల  ఉపదర్శన విడుదలగా అందుబాటులో వుంది. దీనిని పరీక్షించి మీ అనుభవాలు తెలపండి!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>ముఖ్య సూచనలు</h4>
+        <p class="intro">దిగుమతి చేసుకునేముందు దయచేసి చదవండి</p>
+    </div>
+    <ul>
+        <li> ఇది ఉపదర్శన విడుదల. మీకు కొన్ని వెబ్సైట్లు లేక పొడిగింపులతో సమస్యలు కలగవచ్చు.</li>
+        <li>మీకు సమస్య ఎదురైతే <a href="http://feedback.mozilla.org/">మాకు తెలియచేయండి</a> లే <a href="https://bugzilla.mozilla.org/">బగ్ సృష్టించండి</a>.</li>
+        <li>మరిన్ని వివరాలకు <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">విడుదల సమాచారం </a> మరియు <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">తెలిసిన సమస్యలు </a> (ఇంగ్లీషులో)చూడండి.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">బీటా కొరకు మీరు చూడడంలేదా?  <a href="/<?=$lang?>/firefox/">ఇటీవలి సాధారణ విడుదలని తెచ్చుకోండి</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,120 @@
+<?php
+
+    // translate The variables below please
+
+    // Page title (the browser title bar)
+    $page_title = "Firefox 之家 iPhone 版";
+
+    // Video player extra variables
+    $video_title  = "观看 Firefox 之家运行情况短片";
+    $music_credit = "配乐 Kate Earl";
+
+    include_once "{$config['file_root']}/includes/l10n/firefoxhome-page.inc.php";
+
+?>
+
+
+<div id="main-feature">
+  <h2>你的家<br/>随你而行</h2>
+  <p>在 iPhone 上获取你的 Firefox 历史记录，书签和打开的标签页</p>
+  <p class="dl">
+    <a href="<?=$ituneslink;?>" class="download-link">
+      <strong>下载</strong>
+      <em>立刻在 iTunes 上安装 &ndash; 免费</em>
+    </a>
+  </p>
+</div>
+
+<?=$sidemenu;?>
+
+
+<div class="features-divider top"><hr /></div>
+  <ul id="main-features">
+    <li class="onthego">
+
+      <h4>四处奔波？</h4>
+      <p>立刻访问之前在电脑上打开的标签页列表</p>
+
+    </li>
+    <li class="less">
+
+      <h4>更少的输入</h4>
+      <p>不必输入冗长的网址，就可以通过触按书签访问你喜爱的网站</p>
+
+    </li>
+    <li class="search">
+
+      <h4>搜索</h4>
+      <p>伴随你的输入，智能地址栏会提示你相匹配的常用网站和重要网址</p>
+
+    </li>
+
+    <?=$video;?>
+  </ul>
+  <div class="features-divider"><hr /></div>
+
+<div id="main-content">
+  <div class="container">
+
+    <h3>为什么要在 iPhone 上安装 Firefox 之家？</h3>
+
+    <h4>随时使用</h4>
+    <p>让你随时可以很便利地在 iPhone 上访问你的网页：历史记录，打开的标签页，智能地址栏 &mdash; 你喜欢怎样，就怎样。</p>
+
+    <h4>不必从头开始</h4>
+    <p>不必重新输入冗长的网址或者花费时间搜索你喜爱的网站，你随时可以通过 iPhone 访问你的 Firefox 历史记录。</p>
+
+    <h4>甜蜜之家</h4>
+    <p>家是重要的，因此你需要一个告警系统保护你的私人数据。你的密码短语确保只有你能访问你的信息。</p>
+
+  </div>
+  <div id="main-content-footer"></div>
+
+</div>
+
+<div id="sidebar">
+
+    <h3>入门指南</h3>
+    <ol>
+      <li>
+
+        <h4>在你的电脑上安装 <a href="/<?=$lang?>/firefox/sync/">免费的 Firefox 同步附加组件</a> 。</h4>
+        <p>Firefox 之家使用 Firefox 同步附加组件的同步功能访问你的 Firefox 浏览器信息并将其安全地发送到你的 iPhone。</p>
+
+      </li>
+      <li>
+
+        <h4>一旦 Firefox 重新启动，根据提示创建一个带有密码和密码短语的帐号。</h4>
+        <p>Firefox 之家使用你的密码短语在本地加密和保护你的信息。</p>
+
+      </li>
+      <li>
+
+        <h4>从现在开始，Firefox 同步功能将会通过我们的服务安全同步你的数据，初次同步可能会花费最多20分钟时间。</h4>
+        <p>只有浏览器不处于隐私浏览模式时，Firefox 同步才会工作。一旦同步完成，你可以在工具 &gt; 同步菜单看到最近更新时间。</p>
+
+      </li>
+      <li>
+
+        <h4>要完成设置，请在你的 iPhone 上输入你的帐号，密码和密码短语，然后触按虚拟键盘上的 “完成” 。</h4>
+        <p>如果你在登录时遇到问题， <a href="<?=$sumolink1?>">点击这里寻求帮助</a>。</p>
+
+      </li>
+      <li>
+
+        <h4>一旦完成，你将可以在 iPhone 上访问你的电脑上的书签，历史记录，以及打开的标签页。</h4>
+        <p>如果没有显示你的数据， <a href="<?=$sumolink2?>">点击这里寻求帮助</a>。</p>
+
+      </li>
+    </ol>
+
+    <p><a href="<?=$sumolink3?>">更多细节介绍</a></p>
+    <p><a href="/<?=$lang?>/mobile/home/faq/">常见问题</a></p>
+    <p><small>* 注意：创建 Firefox 同步帐户之后，初次同步需要一段时间才能完成。完成后，你就可以通过 iPhone 访问你的数据了。</small></p>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

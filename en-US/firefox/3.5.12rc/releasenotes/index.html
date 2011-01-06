@@ -1,0 +1,303 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.5.12 Beta Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+	
+	<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 3.5 Release Notes</h2>
+    <p><em>v.3.5.12 Beta (Build 1), released August 26th, 2010</em>
+    Thanks for participating in the Firefox Community Beta Program!
+    Testing beta builds of Firefox helps ensure that they are secure and stable
+    for hundreds of millions of users around the world. Please let us know if
+    you experience any new problems, either using <a
+    href="http://feedback.mozilla.org/">this feedback form</a> or by <a
+    href="https://bugzilla.mozilla.org/">filing a bug in Bugzilla</a>.</p>
+</div>
+
+
+
+<div id="main-content">
+
+  <div id="whatsnew" class="expander expander-odd">
+    <h3 class="expander-header">What’s New in Firefox&nbsp;3.5.12 Beta</h3>
+    <div class="expander-content">
+      <p>Firefox&nbsp;3.5.12 fixes the following issues found in previous versions of Firefox 3.5:</p>
+      <ul class="spaced">
+        <li>Fixed several security issues.</li>
+        <li>Fixed several stability issues.</li>
+      </ul>
+      <p>Please see the <a href="https://bugzilla.mozilla.org/buglist.cgi?quicksearch=ALL%20status1.9.1%3A.12-fixed">complete list of changes</a> in this version. You may also be interested in the <a href="../../3.5.11/releasenotes/">Firefox 3.5.11 release notes</a> for a list of changes in the previous version.</p>
+    </div>
+  </div>
+
+  <div id="requirements" class="expander">
+    <h3 class="expander-header">System Requirements</h3>
+    <div class="expander-content">
+      <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements.html">
+         system requirements</a>.</p>
+    </div>
+  </div>
+
+  <div id="download" class="expander expander-odd">
+    <h3 class="expander-header">Downloading</h3>
+    <div class="expander-content">
+      <p>If you do not wish to participate in the beta program, you can <a
+        href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/latest-3.5/">get the latest version of Firefox
+        3.5 here</a>. For builds for other systems and languages not provided
+        by Mozilla, see the Contributed Builds section at the end of this
+        document.</p>
+    </div>
+  </div>
+
+  <div id="install" class="expander">
+    <h3 class="expander-header">Installing</h3>
+    <div class="expander-content">
+      <p>Please note that installing Firefox&nbsp;3.5 <em>will
+      overwrite</em> your existing installation of Firefox.
+      You won’t lose any of your bookmarks or browsing history,
+      but some of your extensions and other add-ons might not work
+      until updates for them are made available. You can reinstall an
+      older version later if you wish to downgrade.</p>
+    </div>
+  </div>
+
+  <div id="uninstall" class="expander expander-odd">
+    <h3 class="expander-header">Uninstalling</h3>
+    <div class="expander-content">
+      <p>You can remove Firefox&nbsp;3.5 through the <tt>Control Panel</tt> in the
+         <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on
+         OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+      <p>Removing Firefox&nbsp;3.5 won’t remove your bookmarks, web browsing history,
+         extensions or other add-ons. This data is stored in your <em>profile
+         folder</em>, which is located in one of the following locations depending on
+         your operating system:</p>
+
+      <table style="font-size: small;" border="1" cellspacing="0">
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+          <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP, Server 2003</td>
+          <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+          <td>~/Library/Application Support/Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+          <td>~/.mozilla/firefox</td>
+        </tr>
+      </table>
+      <p>Any version of Firefox that you install after removing Firefox&nbsp;3.5 will
+         continue to use the data from this profile folder.</p>
+    </div>
+  </div>
+
+  <div id="extensions" class="expander">
+    <h3 class="expander-header">Extensions and Themes</h3>
+    <div class="expander-content">
+      <p>Extensions installed under Firefox 3 may be incompatible and/or require updates to work with
+         Firefox&nbsp;3.5. Please report any issues to the maintainer of the extension.
+         When you install Firefox&nbsp;3.5 all of your Extensions and Themes will be
+         disabled until Firefox&nbsp;3.5 determines that either a) they are compatible
+         with the Firefox&nbsp;3.5 release or b) there are newer versions available that
+         are compatible.</p>
+    </div>
+  </div>
+
+  <div id="issues" class="expander expander-odd">
+    <h3 class="expander-header">Known Issues</h3>
+    <div class="expander-content">
+      <p>This list covers some of the known problems with Firefox&nbsp;3.5 which will
+         be fixed in future updates or releases:</p>
+      <dl>
+      <dt id="allsystems">All Systems</dt>
+      <dd>
+        <ul class="spaced">
+          <li>After installing this version, users will not be able to return to a previous
+                  beta version of Firefox 3.5 without creating a new profile (see <a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=488966">bug 488966</a>)</li>
+          <li>Restoring your bookmarks from a backup can take some time, during which the
+                  browser may seem unresponsive (see <a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=493731">bug 493731</a>)</li>
+          <li>Firefox 3.5 will only support color profiles as specified by ICC v2,
+                  later versions will add support for ICC v4 (see <a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=463221">bug 463221</a>)</li>
+          <li>Websites using the new downloadable font support that wish to change the color
+                  using <tt>:hover</tt> will also need to add
+                  <tt>text-rendering&nbsp;:&nbsp;optimizeLegibility</tt> for font sizes less
+                  than 20 pixels (see <a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=495455">bug 495455</a>)</li>
+          <li>Some sites with Flash can cause problems with the Cookies dialog (see <a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=495035">bug 495035</a>)</li>
+          <li>Web pages can no longer automatically install PKCS11 cryptographic
+                  tokens. Users are now required to do this manually or install an
+                  Add-on that installs them (see <a
+                  href="https://developer.mozilla.org/en/PKCS11_Module_Installation">instructions
+                  and documentation</a>)</li>
+        </ul>
+      </dd>
+      <dt id="windows">Microsoft Windows</dt>
+      <dd>
+        <ul class="spaced">
+          <li>Pressing enter in the Location Bar will not do anything if you are running AVG
+              SafeSearch v8.0 or lower. Upgrading AVG SafeSearch fixes the problem (see <a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=479095">bug 479095</a>)</li>
+        </ul>
+      </dd>
+<!--
+      <dt id="osx">Mac OS X</dt>
+      <dd>
+        <ul class="spaced">
+        </ul>
+      </dd>
+-->
+      <dt id="linux">Linux and Unix</dt>
+      <dd>
+        <ul class="spaced">
+          <li>Zooming out on some sites may result in grey or black lines appearing (see
+              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=477552">bug 477552</a>)</li>
+        </ul>
+      </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div id="troubleshooting" class="expander">
+    <h3 class="expander-header">Troubleshooting</h3>
+    <div class="expander-content">
+      <ul class="spaced">
+        <li>
+          Poorly designed or incompatible extensions can cause problems with your browser,
+          including make it crash, slow down page display, etc. If you encounter strange
+          problems relating to parts of the browser no longer working, the browser not
+          starting, windows with strange or distorted appearance, degraded performance, etc,
+          you may be suffering from Extension or Theme trouble.
+          Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+          Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux,
+          start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+          <p><code>
+            cd /Applications/Firefox.app/Contents/MacOS/<br />
+            ./firefox-bin -safe-mode
+          </code></p>
+
+          When started in Safe Mode all extensions are disabled and the Default theme is
+          used. Disable the Extension/Theme that is causing trouble and then start normally.
+        </li>
+        <li>
+          If you uninstall an extension that is installed with your user profile (i.e.
+          you installed it from a Web page) and then wish to install it for all user profiles
+          using the -install-global-extension command line flag, you must restart the
+          browser once to cleanse the profile extensions datasource of traces of that
+          extension before installing with the switch. If you do not do this you may end
+          up with a jammed entry in the Extensions list and will be unable to install
+          the extension globally.
+        </li>
+        <li>
+          If you encounter strange problems relating to bookmarks, downloads, window
+          placement, toolbars, history, or other settings, it is recommended that you try
+          creating a new profile and attempting to reproduce the problem before filing
+          bugs. Create a new profile by running Firefox with the -P command line
+          argument, choose the "Manage Profiles" button and then choose "Create
+          Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+          one by one, checking each time to see if the problems resurface. If you do
+          find a particular profile data file is causing a problem, file a bug and attach
+          the file.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="faq" class="expander expander-odd">
+    <h3 class="expander-header">Frequently Asked Questions</h3>
+    <div class="expander-content">
+      <ol class="faq">
+        <li>
+          What can I do to help?
+          <p>We need help from developers and the testing community to provide as much
+             feedback as possible to make Firefox even better. Please read these notes and
+             the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+             before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+             also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+        </li>
+        <li>
+          Where can I get extensions and themes (add-ons)?
+          <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+        </li>
+        <li>
+          Who makes Firefox&nbsp;3.5?
+          <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who
+            have contributed to Firefox&nbsp;3.5.</p>
+        </li>
+        <li>
+          Where’s the Firefox&nbsp;3.5 source code?
+          <p>A tarball of the Firefox&nbsp;3.5 source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.5.12/source/">download</a>.
+             The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
+             Firefox-specific source is in mozilla-central's "browser", "toolkit",
+             and "chrome" directories. Please follow the <a href=
+             "http://developer.mozilla.org/en/Build_Documentation">build instructions</a>.</p>
+        </li>
+        <li>
+          Where is the mail client?
+          <p>Firefox&nbsp;3.5 works with whatever mail client is the default on your system.
+             However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our
+             next-generation email client and the perfect complement to Firefox.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div id="contributedbuilds" class="expander">
+    <h3 class="expander-header">Contributed Builds</h3>
+    <div class="expander-content">
+      <p>These are unofficial builds and may be configured differently than the official
+         Mozilla builds. They may also be optimized and/or tested for specific
+         platforms. You can browse through the available contributed builds on the
+         <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.5.12/contrib/">FTP
+         site</a>.</p>
+
+<!-- put contributed builds here -->
+
+    </div>
+  </div>
+
+  <div id="links" class="expander expander-odd">
+    <h3 class="expander-header">Other Resources and Links</h3>
+    <div class="expander-content">
+      <p>The following resources contain useful information about Firefox&nbsp;3.5</p>
+
+      <ul class="spaced">
+        <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+        <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+        <li><a href="http://developer.mozilla.org/en/Firefox_3.5_for_developers">Developer Information</a></li>
+        <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
+          Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+      </ul>
+    </div>
+  </div>
+  <div id="release-notes-footer"></div>
+
+</div>
+
+
+<?php
+  @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

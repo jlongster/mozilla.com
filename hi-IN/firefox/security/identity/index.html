@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "एक क्लिक साइट आईडी के बारे में";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>एक क्लिक साइट आईडी के बारे में</h2>
+    <p>फ़ॉयरफ़ॉक्स 3 एक नई साइट पहचान बटन समाहित करता है आपको बताने के लिए कि किससे आप जुड़ रहे हैं जब आप ऑनलाइन हैं.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">यह विशेषता आपको यह देखने की अनुमति देती है कि क्या उस साइट ने अपनी पहचान के बारे में सूचना की आपूर्ति की है, किसने उस सूचना को जाँचा है और क्या वे आपकी सूचना को खुफिये लोगों से रक्षा करते हैं. आप साइट पहचान को किसी वेब साइट के लिए पहुँच ले सकते हैं स्थान पट्टी के बाएँ किनारे पर साइट के प्रतीक पर क्लिक करके (Shift-Tab-Enter दाखिल करके).</p>
+
+<h3>बारं-बार पूछे जाने वाले प्रश्न</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">पहचान के भिन्न स्तरों से क्या मतलब है?</h4>
+    <div class="expander-content">
+        <p>“passport officer” प्रतीक बदलेगा, वेब साइट के द्वारा आपूर्ति किए गए पहचान सूचना के स्तर को प्रतिबिंबित करने के लिए.</p>
+        <p class="site-id site-id-1">साइट कोई पहचान सूचना नहीं देता है.</p>
+        <p class="site-id site-id-2">साइट मौलिक पहचान सूचना देता है और खुफियों से आपकी निजी सूचनाओं की रक्षा करता है.</p>
+        <p class="site-id site-id-3">साइट इसके स्वामी के बारे में पूर्ण जाँची गई सूचना देता है और खुफियों से निजी सूचना की रक्षा करता है.</p>
+        <p class="site-id site-id-4">यह साइट को एक हमला साइट या धोखाखड़ी के रूप में सूची बद्ध किया गया है. इस साइट को निजी सूचना देना, या इसका भ्रमण करना, खतरनाक हो सकता है.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">क्यों सभी वेब साइट जांची हुई पहचान सूचना की आपूर्ति नहीं करता है?</h4>
+    <div class="expander-content">
+        <p>इंटरनेट पर अधिकतर वेबसाइट किसी निजी या वित्तीय सूचना को विजिटर से नहीं मांगता है, और इसलिए जाँची गई पहचान सूचना और खुफिये लोगों से रक्षा में लगने वाली लागत को अनावश्यक मानता है.</p>
+        <p>वेब साइट जो आपसे निजी या वित्तीय सूचना चाहता है, या सरकारी या व्यापारिक सत्ता होने का दावा करता है, की हमेशा उन्हें ठीक से पहचान करनी चाहिए और आपकी सूचना की रक्षा खुफिये लोगों से करना चाहिए.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">क्या यह सुरक्षित है कि जो साइट अपनी पहचान नहीं देते हैं उनके साथ काम किया जाए?</h4>
+    <div class="expander-content">
+        <p>किस पर भरोसा किया जाए का निर्धारण इससे शुरू होता है कि आप किससे बात कर रहे हैं, लेकिन यही पूरी कहानी नहीं है. साइट जो पहचान सूचना नहीं देते हैं और आपकी निजी सूचना की रक्षा नहीं करते हैं आपको जोखिम पर रखते हैं, और इसे सुरक्षित नहीं माना जाना चाहिए. लेकिन वे साइट जो स्वयं की पहचान ठीक से कराते हैं लेकिन उनके आचरण ऐसे हो सकते हैं जिनसे आपकी सहमति न हो, या खराब वेब साइट सुरक्षा.</p>
+        <p>असली दुनिया की तरह आपको सावधानी बरतनी चाहिए जब आप साइट से अंतःक्रिया करते हों जिसे आप नहीं जानते हैं और भरोसा करते हैं. जानना कि साइट ने ठीक से अपनी पहचान दी है उस भरोसे के निर्णय का ही हिस्सा है.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">क्या मोज़िल्ला हर वेब साइटों के लिए इस सूचना की जाँच करता है?</h4>
+    <div class="expander-content">
+        <p>वेबसाइटों की पहचान के लिए प्रयुक्त सूचना मोज़िल्ला के द्वारा पहचानी नहीं जाती है. इसके बजाए फ़ॉयरफ़ॉक्स दूसरे ब्रॉउज़रों की तरह “Certificate Authorities” नामक भरोसेमंद कंपनियों के सेट पर भरोसा करते हैं जो साइट की पहचान की जाँच करता है और एक पहचान “certificates” निर्गत करता है. इन कंपनियों को <a href="http://www.mozilla.org/projects/security/certs/policy/">मोज़िल्ला CA सर्टिफिकेट नीति</a> का पालन करना चाहिए जिसके लिए दूसरे चीजों के साथ CA की जररूत होती है तीसरे पार्टी के ऑडिट पुष्टि के लिए कि वे सर्टिफिकेट को अनुचित तौर पर नहीं दिए हैं.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

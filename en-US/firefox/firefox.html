@@ -1,0 +1,148 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox web browser | Faster, more secure, &amp; customizable';
+    $body_id    = 'firefox';
+    
+    $extra_headers = <<<EXTRA_HEADERS
+  <meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Firefox 2, Firefox 3, Foxfire, Fire Fox, browser, web browser, internet browser, web, pop-up blocker, internet, speed, secure, customize, online, add-ons, toolbar, fastest, surfing, download" />
+  <meta name="description" content="The Firefox Web Browser is the faster, more secure, and fully customizable way to surf the web." />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+
+  <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
+  <script type="text/javascript" src="/js/mozilla-video-tools.js"></script>
+  <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/'.LATEST_FIREFOX_VERSION.'/' => LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<script>// <![CDATA[
+    // Add a class to the body tag to alternate background features
+    var class_options = new Array( "variation1", "variation2", "variation3", "variation4" );
+
+    if (Math.random) {
+        var choice = Math.floor(Math.random() * (class_options.length));
+
+        // Just in case javascript gets carried away...
+        choice = ( (choice < class_options.length)  && choice >= 0) ? choice : 0;
+
+    if (document.body.className == '') {
+      document.body.className = class_options[choice];
+    } else {
+      document.body.className += ' '+class_options[choice];
+    }
+    }
+
+    var partners = ['foxmarks', 'ebay', 'foxytunes', 'stumbleupon', 'cooliris', 'linkedin', 'forecastfox', 'downloadday'];
+    var args = getArgs();
+
+    if(args['p'] && in_array(args['p'], partners)) {
+        createCookie('partner', args['p'], 7, 'mozilla.com');
+    }
+
+// ]]></script>
+<script src="/js/download.old.js"></script>
+
+<div id="main-feature">
+    <div id="feature-contents">
+    <h2 id="firefox-headline">Meet the World’s Best Browser</h2>
+    <p id="firefox-intro">With security, stability, speed and much more, Firefox is made for the way you use the Web. Free and easy to install!</p>
+    </div>
+
+    <?php /*
+    <div id="download-stats">
+        <p>
+            <a href="/<?=$lang?>/firefox/stats/" class="downloads" id="updating-total">&nbsp;</a>
+            Firefox 3.6 downloads
+            <a href="/<?=$lang?>/firefox/stats/">Learn More</a>
+        </p>
+    </div>
+    */ ?>
+
+    <script>
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+    // Temporary fix for bug 439792
+    if (gPlatform == PLATFORM_MACOSX) {
+          gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.4 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+    }
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+
+        if (gPlatform == PLATFORM_SOLARIS) {
+            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a href=\"http://opensolaris.org/os/community/desktop/communities/mozilla/development/\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for OpenSolaris</em> <em>Contributed by OpenSolaris.org<\/em><\/span><\/a> <\/li>";
+        } else {
+            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>";
+        }
+
+        document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+        document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+  </script>
+  <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
+
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'firefox');?>
+
+<?php include('panel.inc.php'); ?>
+
+<div id="firefox-sub-features">
+	<div class="sub-feature" id="firefox-tour">
+		<h3><a href="video/" id="tour-video"><span class="title">Take a Tour of Firefox </span><span class="subtitle">Watch the Video</span></a></h3>
+        <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'tour-video',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Download in Open Video format (Ogg&nbsp;Theora)'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                    type:  'video/mp4',
+                    title: 'Download in MPEG-4 format'
+                }
+            ],
+            'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4'
+        );
+        // ]]>
+        </script>
+	</div>
+	<div class="sub-feature" id="firefox-awards">
+		<h3><a href="/<?=$lang?>/press/awards.html">Awards</a></h3>
+		<p>Firefox is great, but don’t just take our word for it:</p>
+		<a href="/<?=$lang?>/press/awards.html" class="bottom">See the Awards</a>
+	</div>
+	<div class="sub-feature" id="firefox-tips">
+		<h3><a href="/<?=$lang?>/firefox/tips/">Tips &amp; Tricks</a></h3>
+		<p>Get handy hints for beginning, intermediate or advanced Firefox users.</p>
+		<a href="/<?=$lang?>/firefox/tips/" class="bottom">Learn Some New Secrets</a>
+	</div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

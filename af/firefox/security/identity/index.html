@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Aangaande die eenklik-werf-ID";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Aangaande die eenklik-werf-ID</h2>
+    <p>Firefox 3 bevat 'n nuwe werfidentifikasie-knoppie waarmee jy kan bepaal aan wie jy gekoppel word wanneer jy aanlyn is.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Dié kenmerk stel jou in staat om vinnig te sien of die webwerf wat jy besoek, inligting oor sy identiteit gegee het, wie die inligting geverifieer het, en of dit jou inligting van afluisteraars kan beskerm. Jy kan enige webwerf se werfidentiteit bekyk deur die werf se ikoon links op die adresbalk te klik (of deur Shift+Tab+Enter te druk).</p>
+
+<h3>Kwelvrae</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Wat beteken die verskillende vlakke van identiteitinligting?</h4>
+    <div class="expander-content">
+        <p>Die "paspoortbeampte"-ikoon verander volgens die identiteitinligting wat die webwerf voorsien.</p>
+        <p class="site-id site-id-1">Die werf voorsien nie enige identiteitinligting nie.</p>
+        <p class="site-id site-id-2">Die werf voorsien basiese identiteitinligting en beskerm jou persoonlike inligting van afluisteraars.</p>
+        <p class="site-id site-id-3">Die werf bied volledig geverifieerde identiteitinligting oor sy eienaar en beskerm jou persoonlike inligting van afluisteraars.</p>
+        <p class="site-id site-id-4">Die werf is aangegee as 'n aanvalswerf of namaaksel. Dit kan skadelik wees om persoonlike inligting aan hierdie werf te gee of dit selfs net te besoek.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hoekom voorsien nie alle webwerwe geverifieerde identiteitinligting nie?</h4>
+    <div class="expander-content">
+        <p>Die meeste webwerwe op die internet vra nie enige persoonlike of finansiële inligting van hul gebruikers nie en hul ontwerpers meen dus dat dit onnodig is om geverifieerde identiteitinligting en afluisterbeskerming te bied.</p>
+        <p>Webwerwe wat wel persoonlike of finansiële inligting van jou vra, of wat sê dat hulle staatsinstellings of besighede verteenwoordig, behoort hulle altyd behoorlik te identifiseer en jou inligting van afluisteraars te beskerm.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Is dit veilig om besigheid te doen met werwe wat hulle nie identifiseer nie?</h4>
+    <div class="expander-content">
+        <p>Wel, dit hang af met wie jy te doen het, maar dis nie die volle verhaal nie. Werwe wat nie identiteitinligting voorsien nie en wat nie jou persoonlike inligting beskerm nie, onderwerp jou aan 'n risiko, en moet nie as veilig beskou word nie. Selfs werwe wat hulle behoorlik identifiseer kan soms dinge doen waarmee jy nie saamstem nie, of swak webwerf-beveiliging beoefen.</p>
+        <p>Net soos in die regte lewe moet jy versigtig wees wanneer jy omgaan met werwe wat jy nie ken en vertrou nie. Die wete dat 'n werf hom behoorlik geïdentifiseer het, is deel van daardie vertrouebesluite.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Verifieer Mozilla hierdie inligting vir elke webwerf?</h4>
+    <div class="expander-content">
+        <p>Die inligting wat gebruik word om webwerwe te identifiseer, word nie deur Mozilla geverifieer nie. Firefox en ander blaaiers maak gebruik van vertroude maatskappye genaamd "sertifikaatoutoriteite" (CA's) wat werwe se identiteit verifieer en sertifikate uitreik. Hierdie maatskappye moet voldoen aan <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla se CA-sertifikaatbeleid</a> wat van CA's vereis om derdepartyoudits te laat doen om te verseker dat hulle nie sertifikate onregmatig uitreik nie.</p>
+    </div></div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

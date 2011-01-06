@@ -1,0 +1,105 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Ein stærð passar ekki fyrir alla';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Ein stærð passar ekki fyrir alla</h2>
+    <p>Þú getur bætt við áleggi á pizzurnar þínar og hringitóna í símann þinn. Af hverju ekki sérsníða það hvernig þú sérð vefinn?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Vörur</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">Eiginleikar</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Öryggi</a></li>
+    <li><span>Sérsnið</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% Náttúrulegur hugbúnaður</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Ábendingar og snjallræði</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Útgáfuupplýsingar</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Önnur kerfi og tungumál</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Viðbætur fyrir alla</h3>
+        <p>Firefox er með mikla möguleika á að sérsníða netnotkun og þá sérstaklega vafranotkun. Það eru til yfir 5.000 viðbætur (aukahlutir sem hægt er bæta við Firefox til að koma til móts við þínar þarfir) sem bara bíða eftir því að geta hjálpað þér, skemmtu þér vel og vertu skapandi á netinu.</p>
+        <p>Viltu eitthvað ákveðið? Athugaðu þessi dæmi hérna fyrir neðan, <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">heimsóttu svo viðbótarsvæðið okkar til að skoða alla möguleika.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Aðvaranir &amp; Uppfærslur</h4>
+            <p>Með því að nota viðbætur í þessum flokki, geturðu náð í nýjustu upplýsingar um veðrið, íþróttir og jafnvel eBay uppboð. Rauntímaupplýsingar eru birtar í vafranum, sama hvaða vefsvæði þú ert á.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Sjá allar Aðvaranir &amp; Uppfærslu viðbætur.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Til dæmis:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>
+            Fylgstu með eBay viðskiptum þínum þegar þú ert á vefnum.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Prófaðu Firefox eBay útgáfuna</a> <span>frá eBay fyrirtækinu</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Ljósmyndir, Tónlist &amp; Myndbönd</h4>
+            <p>Breyttu Firefox í ljósmynda græju, tónlistarspilara og fjölhæfan margmiðlunarspilara. Það er eins og að vera með margmiðlunarstjórntæki við höndina á meðan þú vafrar, vinnur, sendir pósta eða leitar heimilda á vefnum.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Sjá allar Ljósmynda, Tónlista &amp; Myndbanda viðbætur.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Til dæmis:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>Stjórnaðu næstum því hverjum einasta margmiðlunarspilara beint frá vafranum.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Prófaðu FoxyTunes</a> <span>eftir Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Félagslegt og samskipti</h4>
+            <p>Þessar viðbætur hjálpa þér að finna nýtt svalt efni á vefnum, hjálpar til með skyndiskilaboð og gerir þér kleift að halda sambandi við vini þína í gegnum bestu samskiptavefsvæðin.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Sjá allar Félagslegar og samskipta viðbætur.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Til dæmis:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>Finndu ný vefsvæði, þú getur svo tengst við vini þína og látið þá vita um það.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Prófaðu StumbleUpon</a> <span>eftir StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Þema</h4>
+            <p>Ekki takmarka upplifun vafra við staðlaða hönnun. Veldu nýja liti, gerðu vafrann auðveldari í notkun (með stærri tökkum, til dæmis) eða veldu bara útlit sem hentar þér.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Sjá öll þemu.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Til dæmis:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>Þema fyrir fólk sem vill hafa það svart.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Prófaðu NASA Night Launch</a> <span>eftir mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('is', $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>Viðbætur</h3>
+            <h5>Búðu til þinn eigin Firefox</h5>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Sjá allar viðbætur</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

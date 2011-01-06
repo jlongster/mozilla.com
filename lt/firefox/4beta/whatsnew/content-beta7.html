@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="„Firefox 4“ betos" /> naujovės</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Prisisekite diržus!</h3>
+        <p>Į „Firefox 4“ įtraukti žymūs našumo patobulinimai, tarp kurių – mūsų naujasis „JavaScript“ varikliukas, pavadintas „JägerMonkey“. Pokyčiai – pradedant trumpesniu naršyklės paleidimo ir grafikos apdorojimo laiku, ir baigiant spartesniu tinklalapių įkėlimu – pasijus bemat.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Pasidalinkite savo nuomone »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Laidos apžvalga »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Pamatykite demonstraciją »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>Trimačiai vaizdai saityne</h4>
+        <p>Suderinamumo su „WebGL“ dėka „Firefox“ naršyklei programuotojai gali kurti nuostabius trimačius žaidimus, vizualizacijas ir daugybę kitų naujus potyrius skatinančių dalykų.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Nuostabūs šriftai</h4>
+        <p>„Firefox 4“ yra suderinama su papildomomis „OpenType“ šriftų galimybėmis, tad dizaineriai ir programuotojai dabar turi dar daugiau kūrybinės laisvės, kurdami patrauklias svetaines.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Formų naujovės</h4>
+        <p>„Firefox 4“ leidžia be vargo kurti gražias ir ypač patogias formas. Naršyklėje įgyvendinus tokias galimybes, kaip formų duomenų patikra bei galimų reikšmių pasiūla, laukams suteikiant „list“ atributą, nuobodus formų veikimo programavimas taps praeities reliktu.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobilioji „Firefox“" />
+        <h4>Jau naudojatės „Firefox 4“ beta?</h4>
+        <h5>Pasiimkite ją su savimi.</h5>
+        <p>Parsisiųskite „Android“ telefonams arba „Nokia N900“ įrenginiams skirtą „Firefox“ naršyklę ir mėgaukitės visomis mėgiamiausiomis jos savybėmis – duomenų sinchronizavimu, priedais ir universaliuoju adreso lauku – kur bekeliautumėte.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Mobilizuokitės nemokamai</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Reikia pagalbos?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Pagalba" />Mūsų pagalbos tinklalapiuose</a> rasite atsakymus ir patarimus „Firefox 4“ betos naudotojams.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

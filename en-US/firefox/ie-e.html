@@ -1,0 +1,174 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | Faster &amp; Safer Internet | Free Download';
+    $body_id    = 'firefox';
+    $body_class = 'ie';
+    $extra_headers = <<<EXTRA_HEADERS
+    <meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Firefox 2, Firefox 3, Foxfire, Fire Fox, browser, web browser, internet browser, web, pop-up blocker, internet, speed, secure, customize, online, add-ons, toolbar, fastest, surfing, download" />
+    <meta name="description" content="The Firefox Web Browser is the faster, more secure, and fully customizable way to surf the web." />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/ie-d.css" media="screen" />
+	<script src="/js/jquery/jquery.min.js"></script>
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/'.LATEST_FIREFOX_VERSION.'/' => LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<script src="/js/download.old.js"></script>
+
+<div id="main-feature">
+    <div id="feature-contents">
+    <h2 id="firefox-headline"><img src="/img/ss/firefox/ie-d/title.png" alt="Get the Most Out of the Web" height="110" width="429" /></h2>
+    <p id="firefox-intro">With superior security, advanced features and amazing customization options, Firefox is the best browser around—and it's free!</p>
+    <div class="dl-box">
+    <script>
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+        // Temporary fix for bug 439792
+        if (gPlatform == PLATFORM_MACOSX) {
+            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.4 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+        }
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">Release Notes<\/a>");
+        document.writeln("- <a href=\"\/<?=$lang?>\/firefox\/all.html\">Other Systems and Languages<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
+    </div>
+
+	<blockquote id="quote-1">
+		<p>“Firefox 3.5 makes browsing faster, easier and more fun”</p>
+		<div class="quote-attribution">- Computerworld, June 2009</div>
+	</blockquote>
+
+	<blockquote id="quote-2">
+		<p>“An impressive piece of software gets even better.”</p>
+		<div class="quote-attribution">- PC Magazine, June 2009</div>
+	</blockquote>
+
+    </div>
+</div>
+
+<div id="content">
+
+	<div id="intro" class="features-box"><div class="features-container">
+
+		<div class="intro-section">
+			<h3>Security</h3>
+			<p>Security on the Web is our top priority. We're constantly improving security technology to keep you protected.</p>
+			<a href="#security">Learn More</a>
+		</div>
+
+		<div class="intro-section">
+			<h3>Customization</h3>
+			<p>No two people use the Web in the same way, so Firefox helps you with the right options for the way you browse.</p>
+			<a href="#customization">Learn More</a>
+		</div>
+
+		<div class="intro-section">
+			<h3>Global Acclaim</h3>
+			<p>25% of the world uses Firefox. And 100 million new users made it the most downloaded browser last year.</p>
+			<a href="#acclaim">Learn More</a>
+		</div>
+
+		<div class="intro-section">
+			<h3>Privacy</h3>
+			<p>A lot comes down to trust, and we've made great efforts to earn — and keep — yours. Firefox protects your data and gives you options to manage your privacy.</p>
+			<a href="#privacy">Learn More</a>
+		</div>
+
+	</div></div>
+
+    <div id="security" class="features-box"><div class="features-container">
+        <a href="#doc" class="features-top-link">Return to top</a>
+        <div class="feature" id="security1">
+            <h3>Security</h3>
+            <p>Firefox protects online security and personal info. Our open-source nature lets a world of security researchers get involved in fixing bugs and building stronger features. And that team works from the start to identify and address potential problems before a single line of code is written, giving you tools to stay safe, like outdated plugin detection, private browsing, instant Web Site ID and more.</p>
+        </div>
+        <div class="features-divider"></div>
+        <div class="feature" id="security2">
+            <img src="/img/ss/firefox/ie-d/screenshot-web-id.png" alt="Instant Web Site ID screenshot" />
+            <h6>Feature</h6>
+            <h5>Instant Web Site ID</h5>
+            <p>Check on suspicious sites, avoid Web forgeries and make sure a site is what it claims to be. </p>
+        </div>
+        <div class="features-more"><a href="/<?=$lang?>/firefox/features/#security">Read More</a></div>
+        <div class="features-footer"></div>
+    </div></div>
+
+    <div id="customization" class="features-box"><div class="features-container">
+        <a href="#doc" class="features-top-link">Return to top</a>
+        <div class="feature" id="customization1">
+            <h3>Customization</h3>
+            <p>Because everyone uses the Web differently, we built Firefox with almost limitless options to fine tune things. For starters, choose from over 35,000 designer themes. Or optimize how you browse based on what you do most—socialize, travel, shop and more—all in a few clicks. And Firefox gives you control of your browsing history and adapts your Web experience to your preferences.</p>
+        </div>
+        <div class="features-divider"></div>
+        <div class="feature" id="customization2">
+            <img src="/img/ss/firefox/ie-d/screenshot-personas.jpg" alt="Personas screenshot" />
+            <h6>Feature</h6>
+            <h5>Personas</h5>
+            <p>Personas are easy-to-install themes that help you personalize the look of your Firefox.</p>
+        </div>
+        <div class="features-more"><a href="/<?=$lang?>/firefox/features/#personalization">Read More</a></div>
+        <div class="features-footer"></div>
+    </div></div>
+
+    <div id="acclaim" class="features-box"><div class="features-container">
+        <a href="#doc" class="features-top-link">Return to top</a>
+        <div class="feature" id="acclaim1">
+            <h3>Global Acclaim</h3>
+            <p>When you use Firefox, you're tapping into an organization with a mission. We're building a better internet by making software that allows everyone to access the Internet, and empowering people to do new and unanticipated things on the Web. Last year 100 million new users downloaded Firefox, over 50,000 community members worked to find and fix issues, and around 400 volunteers translated Firefox into more languages than any other browser.</p>
+        </div>
+        <div class="features-divider"></div>
+        <div class="feature" id="acclaim2">
+            <h5>Mozilla Manifesto</h5>
+            <p>We believe that openness, innovation, and opportunity are key to developing the Internet in a way that benefits everyone.</p>
+        </div>
+        <div class="features-more"><a href="http://www.mozilla.org/about/manifesto">Read More</a></div>
+        <div class="features-footer"></div>
+    </div></div>
+
+
+    <div id="privacy" class="features-box"><div class="features-container">
+        <a href="#doc" class="features-top-link">Return to top</a>
+        <div class="feature" id="privacy1">
+            <h3>Privacy</h3>
+            <p>Our users trust Firefox to protect their privacy. We don't sell or share data, and you control your Web experience. Choose private browsing mode, and Firefox won't record your searches. Delete visits to a particular site or browsing history for a specific time period. And you choose how to store searches and manage passwords and cookies, not us. Because how you use the Web is your business.</p>
+        </div>
+        <div class="features-divider"></div>
+        <div class="feature" id="privacy2">
+            <img src="/img/ss/firefox/ie-d/screenshot-privacy.png" alt="Private Browsing screenshot" />
+            <h6>Feature</h6>
+            <h5>Private Browsing</h5>
+            <p>Turn this feature on and don't leave a single browsing fingerprint behind.</p>
+        </div>
+        <div class="features-more"><a href="/<?=$lang?>/firefox/features/#security">Read More</a></div>
+        <div class="features-footer"></div>
+    </div></div>
+
+</div><!-- end #content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/footer-simple.inc.php";
+?>

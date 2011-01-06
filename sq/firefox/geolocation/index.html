@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Gjeolokalizimi në Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Shfletim i Ndjeshëm ndaj Vendit</h2>
+    <p>Firefox mund t’u tregojë <i>site</i>-ve web se ku gjendeni, që kështu të mund të gjeni të dhëna
+    më me peshë dhe më të dobishme. Bëhet fjalë për ta bërë Web-in më të mençur
+    &ndash; dhe kjo bëhet duke respektuar plotësisht vetësinë tuaj.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Provojeni!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Pyetje të Bëra Shpesh</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Çfarë Është Shfletimi i Ndjeshëm ndaj Vendit?</h4>
+    <div class="expander-content">
+        <p><i>Site</i>-et Web që përdorin shfletim të ndjeshëm ndaj vendit do t'ju pyesin se ku gjendeni, që të mund t'ju sjellin të dhëna më me peshë, ose për t'ju kursyer kohë gjatë kërkimeve. Le të themi që po kërkoni për një piceri në zonën tuaj. <i>Site</i>-i web do të jetë në gjendje t'ju pyesë të jepni vendin ku ndodheni, në mënyrë që thjesht kërkimi për “pica” do t'ju sjellë përgjigjen që ju duhet... pa qenë nevoja për të dhëna të tjera apo më tepër shkrim në tastierë.</p>
+        <p>Ose, në rast se po përpiqeni si të gjeni në hartë rrugën për diku, <i>site</i>-i web do e dijë se nga do filloni, e kështu e vetmja gjë që duhet t'i tregoni është ku doni të shkoni.</p>
+        <p>Ky shërbim është krejtësisht nën dëshirën tuaj &ndash; dhe Firefox-i, pa lejen tuaj, nuk e ndan me të tjerët vendin ku gjendeni &ndash; dhe e tëra kjo bëhet me respektin më të madh për vetësinë tuaj. Dhe, si tërë elementët e Firefox-it, është sendërtuar duke përdorur standarde të hapura, që të jetë e mundur birësimi nga programuesit Web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Si funksionon?</h4>
+    <div class="expander-content">
+        <p>Kur vizitoni një <i>site</i> web të ndjeshëm ndaj vendit, Firefox-i do t'ju pyesë nëse doni të jepni vendin ku gjendeni.</p>
+        <p>Nëse pranoni, Firefox-i grumbullon të dhëna rreth pikash të afërta me hyrje në Internet pa kabllo dhe rreth vendndodhjes IP të kompjuterit tuaj. Mandej Firefox-i i dërgon këto të dhëna te mundësuesi parazgjedhje i shërbimit të gjeolokalizimi, Google Location Services, për të pasur një vlerësim mbi vendin tuaj. Ky vlerësim vendi mandej i jepet <i>site</i>-it web që e kërkoi.</p>
+        <p>Po qe se thoni se nuk pranoni, Firefox-i nuk do të bëjë gjë.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Sa të sakta janë vendet?</h4>
+    <div class="expander-content">
+        <p>Saktësia ndryshon fort nga vendi në vend.  Në disa vende, mundësuesit e shërbimit tonë mund të jenë në gjendje të furnizojnë vendndodhje brenda pak metrash.  Sidoqoftë, në zona të tjera mund të bëhet fjalë për më shumë se kaq.  Të tëra vendet e dhëna si përgjigje nga mundësuesit e shërbimit tonë janë vetëm vlerësime dhe nuk garantojmë saktësinë e tyre.  Ju lutem mos i përdorni këto të dhëna për urgjenca. Përdorni përherë arsyen.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ç'të dhëna dërgohen, dhe kujt? Si mbrohet vetësia?</h4>
+    <div class="expander-content">
+        <p>Vetësia juaj është tejet e rëndësishme për ne, dhe Firefox-i nuk i jep kurrë të dhënat tuaja pa leje nga ju. Kur vizitoni një faqe që kërkon të dhëna tuajat, do të pyeteni, përpara se çfarëdo e dhënë të jepet te <i>site</i>-i web që e kërkon dhe te mundësuesi palë e tretë i shërbimit.</p>
+        <p>Si parazgjedhje, Firefox-i përdor Google Location Services për përcaktimin e vendit tuaj përmes dërgimit të:</p>
+        <ul>
+            <li>vendndodhjes IP të kompjuterit tuaj,</li>
+            <li>të dhëna rreth pikash të afërta të hyrjes në Internet pa kabllo, dhe</li>
+            <li>një identifikues të rastësishëm të klientit, i cili caktohet nga Google, që skadon çdo dy javë.</li>
+        </ul>
+        <p>Për një përshkrim të plotë të të dhënave të mbledhura dhe përdorura nga Firefox-i, ju lutem shihni <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Rregulla Vetësie për Firefox-in</a> (në Anglisht).</p>
+        <p>Google Location Services përgjigjet mandej me vendin tuaj sipas tyre (p.sh., gjerësi dhe gjatësi gjeografike).  Për një përshkrim të plotë të të dhënave të mbledhura dhe përdorura nga Google, ju lutem shihni <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation Privacy Policy</a> (në Anglisht).</p>
+        <p>Të dhënat shkëmbehen përmes një lidhjeje të koduar, për të mbrojtur vetësinë tuaj. Pasi të ketë vendin tuaj,  Firefox-i ia kalon atë <i>site</i>-i web që e kërkoi. As emri apo vendi i <i>site</i>-it web që po vizitoni, as ndonjë  <i>cookie</i>, nuk jepen kurrë te Google Location Services.</p>
+        <p>As Mozilla dhe as Google nuk kanë për të përdorur kurrë të dhëna të mbledhura nga Google Location Services për të zbuluar se kush jeni ose për t'ju spiunuar.</p>
+        <p>Për të dhëna rreth se çfarë bën <i>site</i>-i web që bëri kërkesën me të dhënat mbi vendin tuaj, ju lutem shihni rregullat e vetësisë të <i>site</i>-it web.</p>
+        <p>Për më tepër të dhëna rreth vetësisë suaj, do të duhej të lexonit po ashtu:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">rregulla vetësie të Mozilla Firefox-it</a> (në Anglisht)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">rregulla vetësie të Google-it</a> (në Anglisht)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">A më gjurmojnë ndërkohë që shfletoj në web?</h4>
+    <div class="expander-content">
+        <p>Jo. Firefox-i kërkon për një vend vetëm kur bën kërkesë një <i>site</i> web, dhe e jep vendin tuaj vetëm kur përdoruesi e ka miratuar kërkesën. Firefox-i nuk e ndjek apo e ruan në kujtesë vendin tuaj ndërkohë që ju shfletoni.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Si të tërheq lejen që dhashë për një <i></i>?</h4>
+    <div class="expander-content">
+        <p>Po qe se i keni dhënë Firefox-it leje që të japë përherë vendin tuaj te një <i>site</i> dhe më pas ndërroni mendje, mundeni lehtësisht të shfuqizoni atë leje. Ja se si:</p>
+        <ul>
+            <li>Shkoni te <i>site</i> të cilit i keni dhënë leje</li>
+            <li>Shkoni te menuja <em>Mjete</em>, mandej përzgjidhni <em>Të dhëna Faqeje</em></li>
+            <li>Përzgjidhni skedën <em>Leje</em></li>
+            <li>Ndryshoni rregullimin për <em>Lejo Tregim Vendi</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Si ta pastroj “numrin identifikues të rastësishëm të klientit”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Shkoni te menuja <em>Mjete</em>, mandej përzgjidhni <em>Hiq Historikun Së fundmi</em></li>
+            <li>Klikoni te shigjeta <em>Hollësi</em></li>
+            <li>Sigurohuni që <em>Cookies</em> janë të përzgjedhura</li>
+            <li>Klikoni te <em>Pastroje Tani</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Si ta çaktivizoj Shfletimin e Ndjeshëm ndaj Vendit përgjithmonë?</h4>
+    <div class="expander-content">
+        <p>Shfletimi i Ndjeshëm ndaj Vendit është përherë me-zgjedhje te Firefox. Asnjë e dhënë vendi nuk jepet pa lejen tuaj. Nëse dëshironi ta çaktivizoni plotësisht këtë veçori, ju lutem ndiqni këtë grup hapash:</p>
+        <ul>
+            <li>Te shtylla e URL-ve, shtypni <code>about:config</code></li>
+            <li>Shtypni <code>geo.enabled</code></li>
+            <li>Dyklikoni te parapëlqimet për <em>geo.enabled</em></li>
+            <li>Shfletimi i Ndjeshëm ndaj Vendit tani është i çaktivizuar</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Ku gjendem?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ah! Ndodhi një gabim gjatë provës për përcaktimin e pozicionit tuaj.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

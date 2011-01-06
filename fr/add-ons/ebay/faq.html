@@ -1,0 +1,93 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion pour eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-faq';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+    <div class="feature-contents">
+        <div id="feature-header">
+            <h3><img src="/<?=$lang?>/img/add-ons/ebay/faq-title.png" height="124" width="490" alt="Features: Highlights of Firefox eBay Edition" /><a href="."><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+        </div>
+        <div id="feature-text">
+            <dl>
+
+            <dt>Comment ajouter le Firefox Companion pour eBay à mon navigateur Web Firefox&nbsp;?</dt>
+            <dd><p>C'est très facile. Si vous disposez déjà de Firefox 2.0 ou d'une version supérieure, téléchargez et installez [lien vers la page d'extensions - site Companion] le Firefox Companion comme toute autre extension. Après l'installation, il vous est demandé de redémarrer Firefox.</p>
+            <p>Si Firefox 2.0 n'est pas déjà installé, vous pouvez télécharger un fichier unique [lien vers la page d'extensions - site Companion] comprenant à la fois le navigateur Firefox et l'eBay Companion.</p>
+            <p>Le Firefox Companion s'ouvre dans  une barre latérale, à l'intérieur de votre navigateur Firefox.</p></dd>
+
+            <dt>Comment se connecter sur eBay avec l'extension Companion&nbsp;?</dt>
+            <dd>Si la barre latérale du Companion n'est pas ouverte, cliquez sur le bouton eBay dans la barre d'outils&nbsp;: cela ouvrira la barre latérale. Cliquez sur le bouton «&nbsp;Ouvrir une session&nbsp;».  Cela vous dirige vers une page d'autorisation sécurisée eBay où l'on vous demande de saisir vos pseudo et mot de passe eBay. Après cette saisie, le Companion se connectera automatiquement sur eBay à chaque ouverture de votre navigateur.</dd>
+
+            <dt>Comment empêcher l'eBay Companion de se connecter automatiquement à chaque fois que j'ouvre Firefox&nbsp;?</dt>
+            <dd>Cliquez sur le bouton de menu déroulant à droite du bouton eBay dans la barre d'outils. Sélectionner «&nbsp;Options…&nbsp;». Cliquez sur l'onglet «&nbsp;Plus&nbsp;» et vérifier «&nbsp;Déconnecter le Firefox Companion pour eBay à la fermeture de Firefox&nbsp;».</dd>
+
+            <dt>Avec quel type d'ordinateur et de système d'exploitation fonctionne l'extension Companion&nbsp;?</dt>
+            <dd>Le Firefox Companion pour eBay fonctionne avec n'importe quel type d'ordinateur sur lequel Firefox est installé.  Ceci inclut les plates-formes Apple Mac, Linux et Windows. Vous devez avoir un statut d'administrateur pour pouvoir ajouter l'eBay Companion à votre navigateur Web Firefox. </dd>
+
+            <dt>Comment ouvrir l'eBay Companion&nbsp;?</dt>
+            <dd>Cliquez sur l'icône du Firefox Companion pour eBay dans votre barre d'outils Firefox et ceci ouvre une barre latérale dans votre navigateur Web Firefox. </dd>
+
+            <dt>Comment rechercher un objet à partir du eBay Companion&nbsp;?</dt>
+            <dd>Utilisez simplement la barre de recherche à l'intérieur du eBay Companion pour trouver les objets qui vous intéressent.  Vous êtes directement amené sur le site d'eBay où vous pouvez faire une enchère sur l'objet de votre choix.</dd>
+
+            <dt>Est-il possible de (sur)enchérir à partir du eBay Companion&nbsp;?</dt>
+            <dd>Oui. Il suffit de cliquer sur le bouton «&nbsp;enchérir&nbsp;» à côté de l'objet pour lequel vous souhaitez augmenter votre enchère. Cela vous dirige immédiatement vers la page d'eBay où vous pouvez faire une enchère.</dd>
+
+            <dt>Pourquoi dois-je ouvrir une session dans eBay alors que l'eBay Companion est connecté sur eBay&nbsp;?</dt>
+            <dd>Pour garantir votre sécurité, il vous est demandé d'ouvrir une session sur le site d'eBay indépendamment du statut de connexion du eBay Companion.</dd>
+
+            <dt>Le Firefox Companion pour eBay est-il sécurisé&nbsp;?</dt>
+            <dd>Oui, avec l'eBay Companion, vous savez que vous êtes sur une vraie page eBay et pas sur un site usurpé ou piège similaire.  En outre, l'utilisation de Firefox diminue les risques de fenêtres publicitaires, de logiciels espions et autres menaces Internet.</dd>
+
+            <dt>Comment désinstaller le Firefox Companion pour eBay?</dt>
+            <dd>
+                <p>Voici les étapes pour désinstaller le eBay Companion</p>
+                <ol>
+                <li>Dans votre bar de navigation, allez dans outils, puis modules complémentaires</li>
+                <li>Dans la nouvelle fenêtre, cliquez sur « extensions »</li>
+                <li>Sélectionnez « Firefox Companion pour eBay »</li>
+                <li>Cliquez sur « désinstaller »</li>
+                <li>Redémarrez Firefox</li>
+                </ol>
+            </dd>
+
+            <dt>Comment surveiller d'autres objets que ceux que je suis en train de regarder&nbsp;?</dt>
+            <dd>Sélectionnez un objet quelconque sur lequel vous avez enchéri, ou que vous surveillez ou vendez actuellement en utilisant le menu déroulant dans la partie supérieure du eBay Companion.</dd>
+
+            <dt>Puis-je savoir combien de personnes suivent un objet que j'ai mis en vente&nbsp;?</dt>
+            <dd>Oui. Passez simplement votre souris sur l'objet qui vous intéresse et une infobulle apparaît avec des détails sur le nombre de personnes qui suivent l'objet et combien de personnes ont vu votre objet</dd>
+
+            <dt>Puis-je vendre des objets à partir du Companion&nbsp;?</dt>
+            <dd>Non. Vous pouvez toutefois utiliser le menu activé à partir du bouton eBay dans la barre d'outils pour accéder rapidement à un raccourci qui vous redirige vers la page de vente eBay.</dd>
+
+            <dt>Puis-je changer la taille de la barre latérale du Firefox Companion pour eBay&nbsp;»?</dt>
+            <dd>Oui. Placez simplement le curseur sur le bord de barre latérale, cliquez dessus et faites glisser jusqu'à la largeur souhaitée.</dd>
+
+            <dt>À quels pays est destiné le Firefox Companion pour eBay&nbsp;?</dt>
+            <dd>Initialement l'Allemagne, la France et le Royaume-Uni et éventuellement d'autres pays par la suite.</dd>
+
+            <dt>Si je ne me trouve pas dans l'un de ces pays, puis-je quand même utiliser l'eBay Companion&nbsp;?</dt>
+            <dd>Oui, vous pouvez. Toutefois, l'assistance n'est disponible que pour l'Allemagne, la France et le Royaume-Uni.</dd>
+
+            <dt>Le code source du Firefox Companion pour eBay est-il libre&nbsp;?</dt>
+            <dd>Nous envisageons un code source libre dans la mesure de ce qui est possible en ayant développé le code source sous MPL. Nous avons encore du travail en termes de concession de licence et de révision de code avant de sauter le pas, mais nous allons commencer sous peu. Toutefois, les graphiques, les marques, certaines fonctionnalités et les clés d'interface API utilisés pour concevoir Firefox Companion sont couverts par des licences concédées à des tiers et ne seront donc pas proposés avec un code source libre.</dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

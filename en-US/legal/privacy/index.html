@@ -1,0 +1,33 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Privacy Policies';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Mozilla <span>Privacy Policies</span></h2>
+	<p>Translations of the privacy policies will be posted here as they become available.</p>
+</div>
+
+<div id="content">
+
+<h3>Mozilla Firefox (for computers and mobile devices)</h3>
+
+<table class="data-table">
+	<tbody>
+	<tr>
+		<td>English</td>
+		<td><a href="/<?=$lang?>/legal/privacy/firefox-en.html">HTML</a></td>
+		<td><a href="/<?=$lang?>/legal/privacy/firefox-en.txt">plain text</a></td>
+	</tr>
+	</tbody>
+</table>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

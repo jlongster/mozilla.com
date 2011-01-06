@@ -1,0 +1,48 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla produkti | Drošība';
+    $pageid = 'security';
+    
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Drošākais tīmekļa pārlūks</h2>
+    <p>Firefox rūpējas, lai jūsu personiskā informācija un intereses Internetā nenonāktu sliktu cilvēku rokās.</p>
+</div>
+
+<?=$fx_dl_box?>
+
+<div id="main-content">
+
+    <div class="security-intro">
+        <h3>Tātad kā mēs to panākam?</h3>
+        <p>Kas padara Firefox atšķirīgu? Pirmām kārtām, mēs esam atvērti. Tas nozīmē, ka ikviens cilvēks uz pasaules (un mums ir vairāki tūkstoši ekspertu, kas uzmana mūsu bikses) var ielūkoties mūsu kodā un atklāt iespējamās kļūmes jeb vājos punktus mūsu bruņās.</p>
+        <p>Un kolīdz mēs dzirdam par kādu problēmu, mēs atlokām piedurknes un ķeramies pie darba, lai novērstu to. Nepilnību novēršana ir jūsu (un arī mūsu) interesēs, pat ja tas nozīmē, ka mums ir jāatzīst, ka neesam nevainojami.</p>
+        <p>Vienkārši sakot, <strong>jūsu drošība ir mūsu augstākā prioritāte.</strong></p>
+    </div>
+
+    <div class="method-madness">
+        <img src="<?=$config['static_prefix']?>/img/tignish/security/key.png" alt="Mūsu neprātā ir metode" width="150" height="151" />
+        <h3>Mūsu neprātam ir iemesls.</h3>
+        <p>Neviens nemīl Internetu tik ļoti kā mēs. Taču krāpnieki, mēstuļotāji un nadzīgi vīrusi ir īsts drauds, tāpēc mums jāparūpējas, lai jūs Internetā būtu drošībā.</p>
+    </div>
+
+    <div class="firefox-comes-in">
+        <h3>Te talkā nāk Firefox.</h3>
+        <p>Firefox ir drošākais veids kā sērfot Internetā, jo:</p>
+        <ul>
+            <li><strong>Mēs necīnāmies ar problēmām vieni paši.</strong> Iekšēja drošības ekspertu kopiena strādā caurām naktīm, lai padarītu sērfošanu Internetā drošu (te liels paldies jāsaka mūsu atvērtajai lietu darīšanas pieejai). Tas ir tāpat, ja ciema policisti ir labi trenētu nindzu grupa.</li>
+            <li><strong>Mēs domājam par jūsu drošību ik uz soļa.</strong> Drošības eksperti strādā, lai atklātu un atrisinātu potenciālās drošības problēmas pat pirms tiek uzrakstīta kaut rindiņa programmas koda.</li>
+            <li><strong>Mēs kontrolējam situāciju.</strong> Mēs pastāvīgi sekojam līdz jaunākajiem draudiem un gatavojam jaunus Firefox atjauninājumus, lai būtu soli priekšā draudiem. Darbošanās atvērtā pirmkoda pasaulē dod to, ka ikviens var palīdzēt mums tikt galā ar problēmām.</li>
+        </ul>
+        <p>Lai iegūtu papildu informāciju par to kā Firefox rūpējas par jūsu drošību, <a href="http://blog.mozilla.com/security" class="external">apmeklējiet mūsu drošības blogu.</a></p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="divider"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

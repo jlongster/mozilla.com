@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox web browser | Help us test the latest beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Segítsen a Firefox tesztelésében!</h2>
+        <p>A Firefox legfrissebb beta verziója már elérhető. Próbálja ki és mondja el a véleményét!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Fontos információ</h4>
+        <p class="intro">Letöltés előtt olvassa el</p>
+    </div>
+    <ul>
+        <li>Ez egy kiadás előtti változat: a weboldalakkal és kiegészítőkkel kapcsolatos kompatibilitási problémákkal találkozhat.</li>
+        <li>Probléma esetén <a href="http://feedback.mozilla.org/">értesítsen minket</a> vagy <a href="https://bugzilla.mozilla.org/">jelentse be</a>.</li>
+        <li>További információ a <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">kiadási megjegyzésekben</a> és az <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">ismert hibák</a> részben olvasható (angolul).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nem a beta verziót keresi? Töltse le a <a href="/<?=$lang?>/firefox/">legfrissebb Firefox</a> kiadást.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

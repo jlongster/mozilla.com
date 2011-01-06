@@ -1,0 +1,93 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion for eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-faq';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+	<div class="feature-contents">
+		<div id="feature-header">
+			<h3><img src="/<?=$lang?>/img/add-ons/ebay/faq-title.png" height="124" width="490" alt="Features: Highlights of Firefox eBay Edition" /><a href="."><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+		</div>
+		<div id="feature-text">
+			<dl>
+
+			<dt>How do I add the Firefox Companion for eBay to my Firefox Web browser?</dt>
+			<dd><p>It’s easy to add.  If you already have Firefox 2.0 or higher installed, <a href=".">download</a> and install the companion just like any other extension. After installation, you will be asked to restart Firefox.</p>
+			<p>If you do not have Firefox 2.0 installed, you can <a href=".">download a single file</a> comprising the Firefox browser and the eBay companion.</p>
+			<p>The eBay Companion will open in a sidebar in your Firefox browser.</p></dd>
+
+			<dt>How do I connect to eBay with the Companion?</dt>
+			<dd><p>If the Companion sidebar is not open, click on the eBay toolbar button or open the sidebar.  Click on the “Connect to eBay” button.  You will be taken to eBay’s secure authorisation page where you are asked to enter your eBay username and password. Once entered, the Companion will automatically connect to eBay everytime you open your browser.</p></dd>
+
+			<dt>How do I prevent the eBay Companion from automatically connecting everytime I open Firefox?</dt>
+			<dd><p>Click on the menu drop down button to the right of the eBay toolbar button. Select “Options…”. Click on the “More” tab and check “Disconnect companion when I close Firefox”.</p></dd>
+
+			<dt>What kind of computer and operating system does the Companion work with?</dt>
+			<dd><p>Firefox Companion for eBay works with any type of computer that has Firefox installed on it.  This includes Apple Mac, Linux and Windows platforms. You must have administrative rights to add the Companion to your Firefox Web browser.</p></dd>
+
+			<dt>How do I open the eBay Companion?</dt>
+			<dd><p>Click on the Firefox Companion for eBay icon on your Firefox toolbar and it will open up a sidebar in your Firefox Web browser.</p></dd>
+
+			<dt>How can I search for an item from the eBay Companion?</dt>
+			<dd><p>Simply use the search bar within the eBay Companion to find items you are interested in.  That will take you directly to the eBay site where you’ll be able to bid on the item.</p></dd>
+
+			<dt>Can I raise a bid from the eBay Companion?</dt>
+			<dd><p>Yes.  Just click on the “Raise Bid” button next to the item for which you would like to raise your bid. This will take you straight to the item’s bid page on eBay where you can place a bid.</p></dd>
+
+			<dt>Why am I asked to sign in to eBay when the eBay Companion is connected to eBay?</dt>
+			<dd><p>To ensure your security, you are asked to sign in to the eBay site independently of the connection state of the eBay Companion.</p></dd>
+
+			<dt>Is the Firefox Companion for eBay secure?</dt>
+			<dd><p>Yes – with the Companion, you’ll always know you’re on a genuine eBay page and not a spoof site or a lookalike.  Plus, when you are using Firefox you’re at less risk from pop-up ads, spyware and other web threats.</p></dd>
+
+			<dt>How do I uninstall the Firefox Companion for eBay?</dt>
+			<dd>
+				<p>We're sorry to see you've changed your mind! There are a few easy steps to uninstall the Companion.</p>
+				<ol>
+				<li>First, open the Add-ons dialog box by going to Tools->Add-ons</li>
+				<li>Next, click on the Extensions button on the top</li>
+				<li>Then, select the Firefox Companion for eBay by clicking on it</li>
+				<li>Click "Uninstall"</li>
+				<li>Restart Firefox</li>
+				</ol>
+			</dd>
+
+			<dt>How can I monitor other items that I am watching?</dt>
+			<dd><p>Select any item that you have bid on, are currently watching, or selling, by using the drop down menu at the top of the Companion.</p></dd>
+
+			<dt>Can I find out how many watchers are looking at an item I am selling?</dt>
+			<dd><p>Yes. Just hover your mouse over the item you are interested in and a tooltip will appear detailing the number of watchers and page views.</p></dd>
+
+			<dt>Can I sell items from the Companion?</dt>
+			<dd><p>No. However, you can use the eBay toolbar button menu to quickly access a bookmark shortcut to the eBay sell page.</p></dd>
+
+			<dt>Can I change the size of the Firefox Companion for eBay sidebar?</dt>
+			<dd><p>Yes.  Simply place your cursor over the sidebar divider, click and drag it to your desired width.</p></dd>
+
+			<dt>What countries does the Firefox Companion for eBay support?</dt>
+			<dd><p>Initially, Germany, France and the United Kingdom with others possible at a later date.</p></dd>
+
+			<dt>If I am not in one of those countries, can I still use the Companion?</dt>
+			<dd><p>Yes, you may.  However, support is only available for Germany, France and the United Kingdom.</p></dd>
+
+			<dt>Is the Firefox Companion for eBay open source?</dt>
+			<dd><p>We plan on open sourcing as much of the source code we developed under the MPL as possible. We still have some work to do in terms of licensing and code review before we do so, and we'll get to that shortly. However, the graphics, trademarks, certain functionality and the APIs keys used to build this Firefox Companion that have been licensed from third-parties will not be released as open source.</p></dd>
+
+			</dl>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,112 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox web browser | Real-Time Firefox Download Stats';
+    $body_id    = 'firefox-stats';
+    $breadcrumbs = array(
+        'Features'      => "/{$lang}/firefox/features/",
+        'Download Statistics'       => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" media="screen" href="css/stats.css"/>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+	<h2>Download <span>Statistics</span></h2>
+	<p>Track Firefox 3.6’s progress as it spreads around the Web.</p>
+</div>
+
+<div id="main-content-container">
+
+<div id="main-content">
+  <noscript>
+    <p>Sorry, this page requires JavaScript to operate properly because it dynamically
+    updates itself via a <abbr title="JavaScript Object Notation">JSON</abbr> <abbr
+    title="Application Programming Interface">API</abbr>.</p>
+  </noscript>
+  <p id="vduwrap">
+    <canvas id="sea" width="655" height="320" style="position:absolute; top:0px; left:0;"></canvas>
+    <canvas id="land" width="655" height="320" style="position:absolute; top:0px; left:0;"></canvas>
+    <canvas id="vdu" width="655" height="320" style="position:absolute; top:0px; left:0;"></canvas>
+		<span class="zooming">
+			<a id="vduzoomout" href="#"><img src="img/zoom-out.png" width="30" height="30" alt="Zoom Out" /></a>
+			<a id="vduzoomin" href="#"><img src="img/zoom-in.png" width="30" height="30" alt="Zoom In" /></a>
+		</span>
+  </p>
+</div>
+
+<div id="sidebar">
+	<div id="download-summary">
+		<h3>Firefox 3.6 has been <span>downloaded…</span></h3>
+		<dl>
+			<dt><span class="updating_total">Many</span></dt>
+			<dd>times since January 21, 2010</dd>
+		</dl>
+		<p><a href="http://www.spreadfirefox.com/news_events">View the total Firefox downloads since 2004</a></p>
+
+		<p>Wondering how we put all this together? <a href="http://blog.mozilla.com/webdev/2009/08/18/download-stats-move-to-mozilla-com/">Read the blog post.</a></p>
+	</div>
+</div>
+
+</div>
+
+<div id="content">
+
+	<div id="download-tracker">
+		<h3>Download <span>Tracker</span></h3>
+
+		<div class="content">
+			<div id="table-wrapper">
+				<table id="data" class="scroll"></table>
+			</div>
+			<div id="pager" class="scroll"></div>
+		</div>
+
+		<p id="powered-by"><a href="http://www.sqlstream.com/"><img src="/img/firefox/stats/sqlstream.png" width="114" height="25" alt="SQLStream" /></a></p>
+	</div>
+
+    <div id="legend">
+        <h3 class="legend">How do I use the map and table?</h3>
+        <ul>
+        <li>Use the <strong>mousewheel to zoom</strong> in on the map and click and drag to pan.
+        <li>Type a <strong>semicolon separated list of country codes</strong> or names in the search boxes and press enter to filter the list.</li>
+        </ul>
+
+        <h3 class="legend">What does this table mean?</h3>
+        <ul>
+        <li><strong>code</strong> Country code</li>
+        <li><strong>name</strong> Country name</li>
+        <li><strong>trend</strong> Changes in downloads per second over the last minute</li>
+        <li><strong>cur</strong> Number of downloads for this country <strong>per second</strong></li>
+        <li><strong>min</strong> Minimum number of downloads per second over the last minute</li>
+        <li><strong>max</strong> Maximum number of downloads per second over the last minute</li>
+        <li><strong>total</strong> Total number of downloads since Firefox 3.6 launch</li>
+        </ul>
+    </div>
+
+	<div id="thank-yous">
+		<h3>We'd Like to Thank...</h3>
+		<ul>
+		<li><a href="http://twitter.com/f1lt3r">Alistair MacDonald</a> of <a href="http://hyper-metrix.com">hyper-metrix.com</a> for the SVG+Canvas world map</li>
+		<li><a href="http://www.trirand.com/blog/">Tony Tomov</a> for jqGrid data table assistance</li>
+		<li><a href="http://www.maxmind.com/app/ip-location">MaxMind</a> for the GeoIP library</li>
+		</ul>
+	</div>
+
+</div><!-- end #content div -->
+
+<script src="js/stats.js"></script>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

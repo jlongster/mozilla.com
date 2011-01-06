@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = '„Firefox“ naršyklė | Prisidėkite prie naujausios „beta“ versijos testavimo';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Prisidėkite prie „Firefox“ testavimo!</h2>
+        <p>Jau galite parsisiųsti naujausią „Firefox“ naršyklės „beta“ versiją. Išbandykite ją ir pasidalinkite su mumis savo nuomone!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Svarbu!</h4>
+        <p class="intro">Perskaitykite prieš siųsdamiesi</p>
+    </div>
+    <ul>
+        <li>Čia pateikiama oficialiai dar neišleista programinė įranga; ją naudojant, tikėtinos suderinamumo su kai kuriomis svetainėmis ir priedais problemos.</li>
+        <li>Susidūrę su problema, <a href="http://feedback.mozilla.org/" hreflang="en">praneškite apie ją mums</a>, arba <a href="https://bugzilla.mozilla.org/" hreflang="en">užregistruokite klaidą</a>.</li>
+        <li>Daugiau informacijos rasite <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/" hreflang="en">laidos apžvalgoje </a> ir <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues" hreflang="en">žinomų problemų sąraše</a> (anglų k.).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nenorite bandomosios versijos? Parsisiųskite <a href="/<?=$lang?>/firefox/">naujausią „Firefox“</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

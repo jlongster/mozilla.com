@@ -1,0 +1,44 @@
+<?php
+
+    // translate $page_title below
+    $page_title       = "404: Page Not Found";
+
+
+    include_once "{$config['file_root']}/includes/l10n/404.inc.php";
+?>
+
+
+
+<div id="main-feature">
+	 <h2>อืม เรากำลังมีปัญหาในการค้นหาสิ่งนี้</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+    <h3>เราไม่ชอบที่จะพูดมัน แต่เราไม่สามารถหาหน้าหรือไฟล์ที่คุณค้นหาอยู่</h3>
+
+    <ul class="spaced">
+		  <li>ถ้าคุณพิมพ์ในแถบที่อยู่ ลองตรวจสอบคำสะกดอีกที</li>
+		  <li>ถ้าคุณตามลิงก์มาจากที่ไหนสักแห่ง โปรดบอกให้เรารู้โดยส่งมาที่ <em>webmaster at mozilla dot com</em> จงทำให้แน่ใจว่าคุณได้บอกว่าคุณมาจากเว็บไหนและอะไรที่คุณค้นหาอยู่ แล้วเราจะพยายามแก้ไขมันให้ดีที่สุด</li>
+    </ul>
+</div>
+
+<div id="error-suggestions">
+	 <h3>ถ้าคุณยังติดอยู่จริงๆ นี้คือทางเลือกอื่น:</h3>
+
+    <ul class="spaced">
+		  <li>ลองมองหาข้อมูลเกี่ยวกับ <a href="/<?=$lang?>/firefox/">Firefox</a> แล้วหรือยัง?</li>
+		  <li>หรืออาจจะเป็นโปรแกรมอีเมลของเรา <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+		  <li>มันจะดีที่สุดในการเริ่มต้นที่ <a href="/<?=$lang?>/">www.mozilla.com</a></li>
+    </ul>
+</div>
+
+</div><!-- end #content div -->
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

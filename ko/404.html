@@ -1,0 +1,44 @@
+<?php
+
+    // translate $page_title below
+    $page_title       = "404: Page Not Found";
+
+
+    include_once "{$config['file_root']}/includes/l10n/404.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <h2>아이고! 원하는 페이지를 찾을 수 없는 것 같습니다.</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+    <h3>지금 찾은 웹 페이지는 서버에 존재하지 않거나 어디로 옮겨간것 같습니다.</h3>
+
+    <ul class="spaced">
+        <li>여러분이 입력한 웹 주소가 정확한지 한번 확인해 보시기 바랍니다.</li>
+        <li>만약에 어떤 사이트에서 링크된 상태라면 <em>webmaster at mozilla dot com</em>에 메일을 보내 주시기 바랍니다. 웹 사이트가 옮겨 간 곳이 있다면 찾아서 알려 드리겠습니다.</li>
+    </ul>
+</div>
+
+<div id="error-suggestions">
+    <h3>아래 정보를 추천합니다:</h3>
+
+    <ul class="spaced">
+        <li><a href="/<?=$lang?>/firefox/">Firefox</a>에 대한 정보</li>
+        <li><a href="/<?=$lang?>/thunderbird/">Thunderbird</a>에 대한 정보</li>
+        <li><a href="/<?=$lang?>/">www.mozilla.or.kr</a>에서 다시 찾기</li>
+    </ul>
+</div>
+
+</div><!-- end #content div -->
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,121 @@
+<?php
+
+include_once "{$config['file_root']}/includes/headers/3.6/whatsnew.inc.php";
+
+$page_title = 'Firefox Updated';
+include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.inc.php";
+
+$_version       = getVersionBySelf();
+$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
+?>
+
+
+<div id="main-feature">
+    <img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/logo.png')?>" alt="Firefox Logo" id="title-logo" width="128" height="130" />
+<?php // check if there is a version
+if ($_version !== null && $_valid_version) {
+    // check if we’re running the latest version
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+        ?>
+        <h2>Thanks for upgrading to Firefox <?=$_version?></h2>
+        <p id="main-feature-contents">And for supporting 
+          <a href="http://www.mozilla.org/about/mission.html"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org', 'DCS.dcsuri', '/about/mission.html', 'WT.ti', 'Mission');">
+            Mozilla’s mission
+          </a> of promoting openness, innovation and opportunity on the Web!</p>
+        <?php
+    } else {
+        ?>
+        <h2>You’re now running Firefox <?=$_version?></h2>
+        <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+        <?php
+    }
+} else {
+    ?>
+    <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
+    <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+    <?php
+}
+?>
+</div>
+
+<div id="main-content" class="beta-promo">
+    <h3><span>Browse into the Future!</span></h3>
+    <p>Be one of the first to test and give feedback on Firefox 4 Beta.</p>
+    <ul>
+        <li>Awesomely fast</li>
+        <li>Brand new look</li>
+        <li>Tons of new features</li>
+    </ul>
+    <ul class="link"><li>
+        <a href="/<?=$lang?>/firefox/beta/?WT.mc_id=ba3613&amp;WT.mc_ev=click"
+           onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/beta/', 'WT.ti', 'Join%20the%Beta');">
+          Join the Beta Program
+        </a>
+    </li></ul>
+</div>
+
+<div id="sidebar">
+
+    <div class="sub-feature" id="personalize">
+        <div id="personalize-live" class="container">
+            <h3><a href="http://firefoxlive.mozilla.org/"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'firefoxlive.mozilla.org', 'DCS.dcsuri', '/', 'WT.ti', 'Firefox%20Live');">
+                Firefox <span>Live</span>
+            </a></h3>
+            <p>A live feed of firefox cubs. Can you handle the cute?</p>
+            <ul class="link"><li>
+                <a href="http://firefoxlive.mozilla.org/"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'firefoxlive.mozilla.org', 'DCS.dcsuri', '/', 'WT.ti', 'Firefox%20Live');">
+                  View the cubs
+                </a>
+            </li></ul>
+        </div>
+    </div>
+
+    <div class="sub-feature" id="newsletter"><div class="container">
+        <h3>Get Monthly News</h3>
+        <p>Product info, tips &amp; tricks and much more.</p>
+        <ul class="link"><li>
+            <a href="/<?=$lang?>/newsletter/"
+               onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Newsletter');">
+              Sign Me Up
+            </a>
+        </li></ul>
+    </div></div>
+
+    <div class="sub-feature" id="social">
+        <ul class="link">
+            <li id="connect-twitter">
+              <a href="http://twitter.com/firefox"
+                 onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com', 'DCS.dcsuri', '/firefox', 'WT.ti', 'Twitter');">
+                Twitter
+              </a>
+            </li>
+            <li id="connect-facebook">
+              <a href="http://www.facebook.com/Firefox"
+                 onclick="dcsMultiTrack('DCS.dcssip', 'www.facebook.com', 'DCS.dcsuri', '/Firefox', 'WT.ti', 'Facebook');">
+                Facebook
+              </a>
+            </li>
+            <li id="connect-participate">
+              <a href="/<?=$lang?>/about/participate/"
+                 onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/participate/', 'WT.ti', 'Participate');">
+                Participate
+              </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<p id="sub-links">
+    <a href="/<?=$lang?>/firefox/<?=$_version?>/releasenotes/">Release Notes <span>»</span></a>
+    <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+<?php
+include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

@@ -1,0 +1,84 @@
+﻿<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Retroalimentación";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "¿Cómo te enteraste del programa Firefox 4 Beta?";
+$str2       = "Mantente actualizado";
+$str3       = "Suscríbete y recibe información, noticias y eventos sobre Firefox Beta en tu correo.";
+$str4       = "Tu dirección de correo";
+$str5       = "Acepto la <a href=\"%s\">Política de privacidad</a> <span class='footnote'>(Solo recibirás información relacionada con Mozilla).</span>";
+$str6       = "También deseo recibir, en ocasiones, información y noticias sobre Mozilla y tips y trucos de Firefox.";
+$str7       = "Suscribir »";
+$str8       = "¡Gracias por suscribirte!";
+$str9       = "Pronto empezaremos a enviarte tips y trucos sobre Firefox para sacarle el máximo provecho, así como también, noticias sobre Mozilla y lo que estamos haciendo para tener una mejor Web.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Necesitamos ayuda</h3>
+        <p>Estamos haciendo un Firefox más rápido, ligero y con muchas opciones para ayudarte a navegar. Pero no podemos hacerlo sin tu retroalimentación.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Retroalimentación</span></li>
+    <li class="more"><h3>Más información en Inglés</h3></li>
+    <li class="features"><a href="../features/">Características</a> </li>
+    <li class="tech"><a href="../technology/">Tecnología</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Política de privacidad de la retroalimentación</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Botón Retroalimentación" />
+        <h2>Dinos lo que piensas</h2>
+        <h3>Retroalimentación instantánea</h3>
+        <p>Da clic en el botón Retroalimentación para enviarnos tus comentarios sobre la beta, !así de fácil!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Desarrolladores: te necesitamos</h2>
+        <h3>Comparte tus ideas</h3>
+        <p>¿Qué opinas de las <a href="../features/#under-the-hood">nuevas características de desarrollo</a> en esta beta?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Visita nuestro foro sobre retroalimentación.</a></p>
+
+        <h3>Envía tus bugs</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Logo de Bugzilla" />
+        <p>Si eres experto en Bugzilla y encontraste problemas específicos durante tu navegación, envíanos tus bugs.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Envía un bug de Firefox 4 Beta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Pasa la voz</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Síguenos en Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Visítanos en Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Lee el blog de Mozilla</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>¿Necesitas ayuda?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Icono de soporte" />Nuestas páginas de soporte</a> tienen las respuestas y asesorías específicas sobre Firefox 4 Beta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

@@ -1,0 +1,42 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Mozilla | Firefox Mobile";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Velkommen til Firefox" /></h1>
+<p>Verdens beste nettleser er blitt mobil.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Last ned nå - gratis</a>
+    <div><a href="platforms.html" class="system">Er Firefox tilgjengelig på mitt språk?</a></div>
+
+  <?php else: ?>
+
+    <p>Enheten din er ikke støttet</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Se støttede plattformer og enheter</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">Bruk favorittfunksjonene dine i Firefox:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Synk</b> <span>Synkroniser mellom arbeidsstasjonen din og mobil nettlesing</span></li>
+    <li id="customize"><b>Tilpass</b> <span>Installer utvidelser som gjør Firefox akkurat slik du vil ha den</span></li>
+    <li id="search"><b>Søk</b> <span>Tast mindre, og få raskere tilgang til nettet med Awesome Bar</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Se flere funksjoner</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

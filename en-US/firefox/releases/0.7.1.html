@@ -1,0 +1,179 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firebird 0.7.1 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Mozilla Firebird 0.7.1 for Mac OS X - Release Notes</h2>
+
+<p>Mozilla Firebird 0.7.1 is a service update to Mozilla Firebird 0.7 for <strong>Mac OS X</strong>. 
+   For all other platforms, <a href="0.7.html">Mozilla Firebird 0.7</a> is available.</p>
+</div>
+
+<div id="main-content">
+<p>Mozilla Firebird 0.7.1 for Mac OS X is a Technology Preview. While this software works well 
+   in most cases, generally well enough to be relied upon as your primary browser, 
+   we make no guarantees of its performance or stability in its pre-1.0 state and 
+   it should not be relied upon for mission-critical tasks. See the 
+   <a href="http://www.mozilla.org/MPL/">License Agreement</a> for more information.</p>
+   
+<p>This document covers <a href="#new">what's new</a>, <a href="#install">download 
+   and installation instructions</a>, <a href="#issues">known issues</a> and 
+   <a href="#FAQ">frequently asked questions</a> for the Mozilla Firebird 0.7
+   release. Please read these notes and the <a href="http://texturizer.net/firebird/bugs.html">bug filing instructions</a> before reporting any bugs to Bugzilla. 
+</p>
+
+<p>We want to hear your feedback about Mozilla Firebird. Please join us in the 
+   <a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird forums</a>, 
+   kindly hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p>
+
+<h2 id="new">What's New</h2>
+<p>This service release fixes the following bugs in 0.7:</p>
+<ul>
+ <li>Unable to open URLs sent by other applications when set as default browser. (Shows XML error window)</li>
+ <li>Save Page As, Save Image As, Save Link As, are non-functional.</li> 
+ <li>Double clicking a tab when using the Pinstripe theme opens a new one</li>
+ <li>Automatic download of files to desktop not enabled by default</li>
+ <li>First new window after closing all windows has non-functional UI (bookmarks, navigation, session history, etc)</li>
+</ul>
+
+<p>This release also contains some performance enhancements resulting in 15-40% improvements
+   in startup time on Mac OS X 10.2 Jaguar and Mac OS X 10.3 Panther depending on the speed and memory of your system. </p>
+
+<h2 id="install"></a>Download, Install and Uninstall</h2>
+<p><strong>Mac OS X</strong>: <a href=
+"http://ftp.mozilla.org/pub/mozilla.org/firebird/releases/0.7.1/firebird-0.7.1-mac.dmg.gz">
+http://ftp.mozilla.org/pub/mozilla.org/firebird/releases/0.7.1/firebird-0.7.1-mac.dmg.gz</a></p>  
+
+<p>Simply download the file, mount the disk image and drag the application file to where
+   you want it to go.</p>
+   
+<p>For the 0.8 Milestone, we will be transitioning to Kevin Gerich's Pinstripe theme as 
+   the default theme on Mac OS X. In the mean time, we highly recommend you 
+   <a href="http://kmgerich.com/pinstripe/beta.html">Install the Pinstripe Beta</a> in
+   Mozilla Firebird 0.7.1 to enhance the Aqua look and feel.</p>
+   
+<p>To remove Mozilla Firebird from your system, drag its icon to the trash.</p>
+
+<h2 id="issues">Known Issues</h2>
+
+<p>This list covers some of the known problems with Mozilla Firebird 0.7.1. Please read 
+   this before reporting any new bugs, and watch it regularly (we'll update it as new bugs 
+   are found in the release).</p>
+
+<ul>
+  <li>Mozilla Firebird utilizes large chunks of Mozilla Application Suite code. Many of 
+      the problems you may experience in Mozilla Firebird are actually problems in this 
+      Mozilla core code. If you find a problem with page content or connectivity then it 
+      is probably a Mozilla problem and should be reported to the Browser product in 
+      Bugzilla, not to the Mozilla Firebird product.</li>
+  <li>"Use this theme" checkbox in theme install doesn't function properly and you may 
+      have to switch themes by going to <code>Tools > Options > Themes</code>. Some themes
+      may not apply completely until you open a new window, or restart the browser.</li>
+  <li>An option exists to disable Form auto complete, but it only disables the UI, data
+      is still collected as you complete forms. A future release will completely disable
+      data collection.</li>
+  <li>Firebird on Mac OS X is new and still very rough around the edges. Some UI may look
+      or feel like Windows UI. The Firebird team is devoted to Mac OS X and producing the
+      best possible experience on Mac OS X and optimizations and enhancements are planned
+      before 1.0.</li>
+</ul>
+
+<p>For additional issues, FAQs, Tips and Tricks plus general Mozilla Firebird help be sure to 
+   check out David Tenser's very useful <a href="http://texturizer.net/firebird/">
+   Mozilla Firebird</a> help site and the 
+   <a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird 
+   forums</a> hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p> 
+
+<h2 id="FAQ">Frequently Asked Questions</h2>
+
+<ol class="faq">
+<li>Why does Mozilla Firebird look like a bad port on Mac OS X?
+<p>Mozilla Firebird has not received a lot of development attention on Mac OS X in the past
+   because the development team either does not have Macintosh computers or is busy with
+   other work. This has recently changed. The code we are using is unoptimized for Aqua's 
+   UI guidelines but has a lot of potential, especially on the new generation Apple hardware. 
+   Work will be carried out in the coming months to optimize the experience for users
+   of Mac OS X. In the mean time, you can install the <a href="http://kmgerich.com/pinstripe/beta.html">Pinstripe
+   theme</a> for Mac OS X Firebird to improve the look and feel of most aspects of the UI.</p></li> 
+
+<li>What can I do to help?
+<p>We need all the exposure we can get.  Make it your mission to convert 5 friends, family 
+   members or coworkers.  If you're a student, get it distributed at your college. Submit 
+   a story to <a href="http://www.slashdot.org/">Slashdot</a> and other news sites about 
+   the release. Make some noise on your blog. Mass distribution via the Internet is 
+   possible--look at Kazaa. Spread the word!</p></li>
+
+<li>I use another browser because...
+<p>If you're not using Mozilla Firebird, tell the development team why.  We read the feedback at the  
+   <a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird forums</a>.</p></li>
+
+<li>Why haven't you responded to the mail I sent you?
+    <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>.  The 
+    Firebird team reads them regularly.  E-mails are likely to be ignored.</p></li>
+
+<li>Where can I get themes and add-ons (extensions)?
+    <p><a href="http://texturizer.net/firebird/extensions/">Extensions</a> and 
+    <a href="http://texturizer.net/firebird/themes/">Themes</a>.</p></li>
+
+<li>Who is working on Mozilla Firebird?
+<p>The main developers include Dave Hyatt, Blake Ross, Pierre Chanial, noririty, Ben Goodger, Dean Tessman,
+   Mike Kaply, Jan Varga and Brian Ryner.
+   Asa Dotzler provides help doing releases, bug triage, the website, and other odds and ends. 
+   David Tenser helps with documentation, the website and releases. Arvid Axelsson maintains 
+   the default theme. Notes of appreciation, offers to help and most other inquiries
+    should be directed to the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>.</p></li>
+
+<li>Where's the Mozilla Firebird source?
+<p>cvs.mozilla.org.  Mozilla trunk + mozilla/browser + mozilla/toolkit.</p></li>
+
+<li>Is Mozilla Firebird just Mozilla with a couple UI tweaks?
+<p>The 40,000+ lines of code already added or changed from Mozilla beg to differ.</p></li>
+
+<li>What happened with the name Phoenix?
+<p>It had to change because of trademark issues. The new name is Mozilla Firebird.</p></li>
+
+<li>Where is the mail client?
+<p>Many of the current users of the full Mozilla Application Suite are also using it for mail and news. 
+   This isn't possible in Mozilla Firebird since it's a browser only. However, you don't have to give up 
+   Mozilla's mail client by switching to Mozilla Firebird. You can download builds of the new 
+   <a href="http://www.mozilla.org/projects/thunderbird/">Mozilla Thunderbird</a> mail application, 
+   the perfect complement to the Mozilla Firebird browser.</p></li>
+
+</ol>
+
+<small>
+Previous versions of the Release notes: 
+<a href="0.1.html">0.1</a> | 
+<a href="0.2.html">0.2</a> | 
+<a href="0.3.html">0.3</a> | 
+<a href="0.4.html">0.4</a> | 
+<a href="0.5.html">0.5</a> | 
+<a href="0.6.html">0.6</a> | 
+<a href="0.6.1.html">0.6.1</a> |
+<a href="0.7.html">0.7</a>
+</small>
+
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

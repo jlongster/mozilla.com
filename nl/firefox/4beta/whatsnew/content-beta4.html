@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Wat is nieuw in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Bèta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Opstaan en vertrekken met Firefox 4 Bèta</h3>
+        <p>Ga van werk naar huis, naar mobiel en terug! Firefox Sync zorgt voor naadloze toegang tot uw belangrijke Firefox-gegevens - waaronder bladwijzers, wachtwoorden, geschiedenis en open tabbladen - vanaf meerdere computers en apparaten. Bekijk de video om te beginnen.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Meer lezen over Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Feedback geven »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Uitgaveopmerkingen »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Laatste nieuws</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Orden uw onlineleven:</h4>
+         <?=$tabvideo?>
+        <p>Hebt u moeite met het bijhouden van al uw open tabbladen? Haal de rommel uit uw browser! Versleep uw tabbladen eenvoudig naar beheerbare groepen die u op een zichtbare manier kunt ordenen, benoemen en schikken.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

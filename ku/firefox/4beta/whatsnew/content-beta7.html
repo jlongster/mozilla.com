@@ -1,0 +1,61 @@
+<div id="main-feature">
+
+    <h1>Di <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />yê de Tiştên Nû</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Leza kemberên xwe yên rûniştinê zêde bike</h3>
+        <p>Niha di Firefox 4ê de pêşdebirên sereke yên performansê hene, tê de hilberîna me ya nû JägerMonkey a motora JavaScriptê heye. Ji destpêka leztir bo leza barkirina rûpelan a hatî serastkirin, dem û grafîk têne şîrovekirin, tu yê demildest ji cudahiyê haydar bibî.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Cerebeya xwe parve bike »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Têbiniyên weşanê »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Ji bo xwe demoyê biceribîne »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>Li ser Webê 3D</h4>
+        <p>WebGL grafîkên 3D ji Firefoxê re tîne, ji bo pêşdebiran derî vedike ku lîstikên vivid biafirînin û xuyakirinên nû ji bo Webê hilberînin.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Fontên zor çak</h4>
+        <p>Taybetiya fontên OpenType a Firefox 4ê li ser taybetiyên fontên cur bi cur zêdetir kontrolê dide sêwirkar û pêşdebiran-wekî kakil an jî dorpêçan- da ku malperên gelekî xweşik biafirîin.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Formên bilindkirinê</h4>
+        <p>Firefox 4 sepandina forman xweşik û super-hêsan dike. Bi taybetiyên wekî biresera lîsteya nû dagirtina xweber û erêkirina formên HTML5 çalak dike, Form API ya nû amûrên ji bo peydakirina meşandina forman a ji bo pêşdebirina tiştên dema borî peyda dike.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Firefox 4 betaya te heye?</h4>
+        <h5>Niha bi xwe re bigerîne.</h5>
+        <p>Firefoxê bîne ser telefona xwe ya Androîd an jî Nokia N900. Hemû taybetiyên xwe yên sereke yên wekî Sync, Add-on û darika xweşik bi xwe re bigerîne.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Here Mobîlê! — Belaş e</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Alîkarî divê?</h4>
+        <p>Di <a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />rûpelên me yên destekê</a> de bersiv û şîretên der barê Firefox 4 betayê de hene.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

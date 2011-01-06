@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 beeta";
+    $download_link_text = "Laadi Firefox 4 beeta alla";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Kõik algab siit:</h3>
+        <p>Aita luua maailma parima veebilehitseja järgmist versiooni.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beeta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Võimalused</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Tehnoloogia</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Tagasiside</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Tagasiside privaatsuspoliitika</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Paigalda beeta</h3>
+
+        <?=$download_link_2;?>
+
+        <p>Firefox 4 beeta sisaldab Tagasiside lisa, mis kaasab su kasutajauuringutesse. Ilma sinu nõusolekuta andmeid Mozillale ei saadeta. <a href="#privacy">Rohkem teavet</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Anna tagasisidet</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Tagasiside nupu kuvatõmmis" /></p>
+
+        <p>Klõpsa tagasiside nupul alati, kui soovid meile oma arvamuse edastada. Rohkem teavet <a href="https://testpilot.mozillalabs.com/faq">Test Pilot'ist</a>.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Teavita oma sõpru</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hei…</span></p></li>
+            <li class="second"><p><span>Vau!</span></p></li>
+        </ul>
+
+        <p>Levita infot: mida rohkem beeta kasutajaid meid Firefox 4 loomisel aitab, seda parem see tuleb. <a href="/<?=$lang?>/firefox/beta/features/">Rohkem teavet beetast.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>Firefox 4 beeta sisaldab Tagasiside lisa, mis põhineb Mozilla Test Pilot'il</h4>
+
+    <p>Peale Firefox 4 beeta paigaldamist märkad ülal paremal nurgas Tagasiside lisa. Saad seda kasutada kiireks tagasiside saatmiseks igal ajal. Samuti teavitatakse sind kasutajauuringutest (korraldab Mozilla&nbsp;Test&nbsp;Pilot), mis koguvad andmeid selle kohta, kuidas sina veebilehitsejat kasutad, kuid mitte selle kohta, milliseid veebilehti sa külastad. Sina kontrollid oma osalemist ja võid loobuda mis tahes uuringus osalemast või vaadata, missuguseid andmeid koguti. Enne andmete Mozillale saatmist küsitakse sinu nõusolekut. Palun, vaata ka <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Tagasiside lisa privaatsuspoliitikat</a>, kui soovid rohkem infot.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

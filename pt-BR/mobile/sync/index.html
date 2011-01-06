@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync para dispositivos móveis";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Vá e leve tudo consigo</h2>
+    <p>Obtenha o Firefox Sync e sincronize seu histórico, favoritos, abas e mais entre seu computador e seu dispositivo móvel.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Obter o complemento Firefox Sync agora</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Por que usar o Firefox Sync?</h3>
+
+    <h4>Digitação complicada</h4>
+    <p>Convenhamos, digitar algo no seu dispositivo é complicado. Então dê adeus à digitação de URLs longas e termos de pesquisa quando o Campo de Endereços Inteligente lembra seu históricos, favoritos e abas do seu computador e seu dispositivo móvel, levando você onde você quer e com pouca digitação.</p>
+
+    <h4>Não comece do zero</h4>
+    <p>Você não precisará redigitar suas senhas e endereços. O Firefox Sync sincroniza suas senhas e preferências do Firefox para que você não perca tempo.</p>
+
+    <h4>Vá e leve tudo consigo</h4>
+    <p>Leve o Firefox para onde você for. Navegue na web no seu computador e tenha tudo esperando por você no seu aparelho móvel: seu histórico, abas abertas, favoritos e o Campo de Endereços Inteligente &ndash; exatamente como você deixou.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Primeiros passos</h3>
+    <ol>
+    <li>
+        <h4>Instale o Firefox Sync no seu computador</h4>
+        <p>Tenha certeza de estar usando o Firefox 3.5 ou superior e de que seu dispositivo foi testado com o Firefox (<a href="http://firefox.com/">atualizar o Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Baixe o Firefox Sync</a></li>
+            <li>Após o download ser concluído, clique em “Reiniciar o Firefox” para finalizar a instalação do complemento Firefox Sync.</li>
+            <li>Quando o Firefox reiniciar, use o menu “Ferramentas” ou o ícone do Firefox Sync na barra de status para abrir o Firefox Sync e registrar-se.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Instale o Firefox Sync no seu dispositivo móvel</h4>
+        <ul>
+            <li>Vá para as suas preferências e toque no botão "peça de quebra-cabeças".</li>
+            <li>Encontre e selecione o complemento Firefox Sync. Entre com suas informações, sincronize e saia navegando!</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

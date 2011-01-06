@@ -1,0 +1,48 @@
+<?php
+
+$page_title = 'You’re almost there!';
+$body_id    = 'out-of-date';
+$body_class = '';
+$default_styles = '';
+
+$extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/content.css" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/out-of-date.css" />
+    <script src="{$config['static_prefix']}/js/mozilla-input-placeholder.js"></script>
+EXTRA_HEADERS;
+
+include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><span>Almost there!</span></h2>
+</div>
+
+<div id="main-content">
+
+    <p>Thanks for downloading Firefox, but this version is out of date. For the latest security, performance and feature enhancements we strongly recommend that you <a href="/<?=$lang?>/firefox/">get the newest version</a> instead.</p>
+	<script src="/js/download.old.js"></script>
+    <script>
+        <!--
+        // Configure the Firefox download write script
+
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%&nbsp;%FILE_SIZE%<\/em><\/span><\/span><\/a> <\/li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+        document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+        document.writeln("<\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang); ?>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+?>

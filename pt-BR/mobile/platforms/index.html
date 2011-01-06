@@ -1,0 +1,65 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Requisitos do Sistema do Firefox para dispositivos móveis';
+
+    $pageid = "mobile-platforms";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+	<div id="feature-contents">
+    <h2>Dispositivos suportados e Requisitos do Sistema</h2>
+    <p>O Firefox está disponível para aparelhos com Android (2.0 ou superior) e o Nokia N900.</p>
+	</div>
+</div>
+
+<div>
+  <?=buildMobileSubPageMenu('pt-BR', 'platforms')?>
+</div>
+
+<div id="main-content">
+
+  <h3>Dispositivos suportados</h3>
+  <p>Abaixo está uma lista dos dispositivos testados compatíveis com o Firefox.</p>
+
+  <div id="list_maemo">
+    <h4>Maemo</h4>
+    <ul>
+      <li>Nokia N900</li>
+    </ul>
+  </div>
+  
+  <div id="list_android">
+    <h4>Android</h4>
+    <ul>
+      <li>O Firefox é compatível com dispositivos com o Android 2.0 ou superior.</li> 
+      <li>A instalação requer aproximadamente 32<abbr title="MegaBytes">MB</abbr> de armazenamento interno, mais 12<abbr title="MegaBytes">MB</abbr> do cartão SD.</li>
+    </ul>
+    
+    <h5>Dispositivos suportados - Testados</h5>
+    <ul>
+      <li>HTC Desire</li>
+      <li>HTC EVO 4G</li>
+      <li>HTC Google Nexus One</li>
+      <li>Motorola Droid 2</li>
+    </ul>
+
+    <h5>Dispositivos suportados - Não Testados</h5>
+    <ul>
+      <li>HTC Desire Z (T-Mobile G2)</li>
+      <li>HTC Droid Incredible</li>
+      <li>Motorola Droid X</li>
+      <li>Motorola Milestone</li>
+      <li>Samsung I9000 Galaxy S</li>
+    </ul>
+    <p>Veja uma lista completa de dispositivos suportados e não suportados visitando nossa página wiki <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements" hreflang="en">Requisitos do Sistema</a>.</p>
+  </div>
+
+  <h4>Dê a sua opinião ou obtenha ajuda</h4>
+  <p>Embora seu dispositivos possa suportar o Firefox, nós não testamos o Firefox em cada dispositivos Android. Conte para nós a sua experiência ao usar o Firefox no seu aparelho. Faça perguntas ou dê a sua opinião no <a href="http://support.mozilla.com/kb/Mobile+Help+and+Tutorials">Fórum de Suporte do Firefox Móvel</a>.</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

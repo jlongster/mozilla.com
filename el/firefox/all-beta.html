@@ -1,0 +1,37 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Περιηγητής ιστού Firefox | Διεθνείς εκδόσεις: Κάντε λήψη του Firefox στη γλώσσα σας';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Βοηθήστε στον έλεγχο του μέλλοντος του Firefox!</h2>
+        <p>Η πιο πρόσφατη δοκιμαστική («beta») έκδοση του Firefox είναι διαθέσιμη σαν προ-έκδοση. Δοκιμάστε την και πείτε μας την άποψη σας!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Σημαντική πληροφορία</h4>
+        <p class="intro">Παρακαλούμε διαβάστε πριν κάνετε λήψη</p>
+    </div>
+    <ul>
+        <li>Πρόκειται για προ-έκδοση λογισμικού: είναι πιθανό να αντιμετωπίσετε προβλήματα συμβατότητας με μερικές ιστοσελίδες και πρόσθετα.</li>
+        <li>Αν εντοπίσετε κάποιο πρόβλημα, παρακαλούμε <a href="http://feedback.mozilla.org/">αναφέρετε</a> το ή <a href="https://bugzilla.mozilla.org/">καταχωρήστε μια αναφορά σφάλματος</a>.</li>
+        <li>Για περισσότερες λεπτομέρειες, διαβάστε τις <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">σημειώσεις έκδοσης</a> και τα <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">γνωστά προβλήματα</a> (Αγγλικά).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Δεν σας ενδιαφέρουν οι δοκιμαστικές εκδόσεις; Κάντε λήψη της <a href="/<?=$lang?>/firefox/">πιο πρόσφατης σταθερής έκδοσης</a> του Firefox.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

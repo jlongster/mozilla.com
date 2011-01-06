@@ -1,0 +1,32 @@
+<?php
+    // strings to translate
+    $page_title = 'Bun venit în Firefox';
+    $extra_feature_text = 'Clic pe butonul de închidere al acestei file pentru a începe';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Bun venit în Firefox 3"/></h2>
+    <p>Vă mulțumim că ați descărcat cea mai sigură și personalizabilă versiune de Firefox disponibilă până acum. Pentru a începe să navigați, nu trebuie decât să închideți această filă precum vă este indicat mai sus.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Aflați mai multe</h3>
+        <p>Vă întrebați ce trebuie să faceți acum? Pagina noastră cu primii pași are o listă de saituri recomandate și mai multe informații despre Firefox. <a href="/<?=$lang?>/firefox/central/">Vizitați această pagină</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Întrebări?</h3>
+        <p>Paginile noastre de asistență au o mulțime de răspunsuri precum și asistență în direct prin intermediul chat-ului pentru a vă ghida prin locurile mai dificile. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Vizitați paginile de asistență</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

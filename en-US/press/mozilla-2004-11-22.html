@@ -1,0 +1,48 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Important Update to German Language Version of Firefox 1.0';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/tignish/press-release.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+
+<div id="content">
+      
+
+
+<h2>Important Update to German Language Version of Firefox 1.0</h2>
+
+
+<p><b>November 22, 2004</b> - We've made an important update to the German language version of Firefox 1.0.  The eBay search plug-in previously incorporated into the German language version of Firefox 1.0 referred to a URL of a partner company of eBay Germany, instead of to eBay directly.  This URL was provided by eBay Germany.  The Mozilla Foundation allowed this URL to be implemented not realizing the privacy implications. This was an error on our part. When this was brought to our attention, action was immediately taken.</p>
+
+<p>An updated search plug-in for eBay Germany which refers directly to
+search.ebay.de is now available.</p>
+
+<p>All previous installed versions will be updated over the next 72 hours
+through Firefox's update mechanism.  The update may also be installed
+manually by installing the following extension:
+<a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/patches/de-DE/ebay.xpi">http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/patches/de-DE/ebay.xpi</a></p>
+
+<p>Only the German language version of Firefox is affected.</p>
+
+<p>We wanted to incorporate a search plug-in for eBay as we believe it would be useful to our users.  The only purpose for any tracking mechanism was to measure the level of utilization.  All the rumours about spyware are untrue and unfounded.</p>
+
+<p>We regret this error and thank the community for their patience and
+assistance in making this update.</p>
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

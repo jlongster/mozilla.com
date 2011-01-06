@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Sveiki! Čia „Firefox“';
+    $extra_feature_text = 'Jei norite patekti į savo pradžios tinklalapį, spustelėkite šios kortelės užvėrimo mygtuką';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Sveiki! Čia „Firefox 3“" /></h2>
+    <p>Dėkojame, kad parsisiuntėte saugiausią, sparčiausią ir labiausiai individualizuojamą „Firefox“ laidą. Norėdami pradėti naršymą, užverkite šią kortelę, kaip parodyta aukščiau.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Sužinokite daugiau</h3>
+        <p>Nežinote, nuo ko pradėti? Tinklalapyje „Darbo pradžia“ rasite ne tik rekomenduojamų aplankyti svetainių sąrašą, bet ir papildomos informacijos apie „Firefox“. <a href="/<?=$lang?>/firefox/central/">Kviečiame apsilankyti</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Turite klausimų?</h3>
+        <p>Žinyno ir pagalbos svetainėje rasite atsakymus į daugumą klausimų bei galimybę realiu laiku bendrauti ir spręsti iškilusias problemas. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Kviečiame apsilankyti</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,33 @@
+<?php
+    // strings to translate
+    $page_title = 'Witamy w Firefoksie';
+    $extra_feature_text = 'Kliknij przycisk zamykania na tej karcie, aby przejść do swojej strony startowej';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Witamy w Firefoksie"/></h2>
+    <p>Dziękujemy za pobranie najbezpieczniejszej, najszybszej i najbardziej dostosowywalnej wersji Firefoksa, jaka ukazała się do tej pory. Aby zacząć z niej korzystać, zamknij tę kartę w sposób pokazany powyżej.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Dowiedz się więcej</h3>
+        <p>Zastanawiasz się, co teraz? Na stronie „Pierwsze kroki z Firefoksem” możesz znaleźć listę polecanych witryn oraz dodatkowe informacje na temat Firefoksa. <a href="/<?=$lang?>/firefox/central/">Zobacz „Pierwsze kroki z Firefoksem”</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Pytania?</h3>
+        <p>Nasze strony Wsparcia zawierają dużo odpowiedzi na problemy
+użytkowników, a także możliwość czatu na żywo (w języku angielskim), dzięki którym rozwiążesz
+bardziej zawiłe problemy. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Odwiedź strony Wsparcia</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,289 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Phoenix 0.5 (Naples) Release Notes and FAQ';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+	
+
+<div id="main-feature">
+	<h2>Phoenix 0.5 (Naples)</h2>
+	<p>Release Notes and FAQ</p>
+
+<p>Phoenix is a redesign of the Mozilla browser component, similar to Galeon, 
+K-Meleon and Camino&trade;, but written using the <abbr title="XML-based User Interface Language">XUL</abbr> user interface language and 
+designed to be cross-platform. More information about Phoenix is available at
+the <a href="http://www.mozilla.org/projects/phoenix/">Phoenix Project Page</a>.</p>
+</div>
+
+<div id="main-content">
+<p>This document covers <a href="#new">what's new</a>, <a href="#install">download 
+and installation instructions</a>, <a href="#issues">known issues</a> and 
+<a href="#FAQ">frequently asked questions</a> for the Phoenix 0.5 (Naples) 
+release. Please read these notes and the <a href="http://texturizer.net/firebird/bugs.html">bug filing instructions</a> before reporting any bugs to Bugzilla. 
+</p>
+
+<p>We want to hear your feedback about Phoenix. Please join us in the 
+<a href="http://www.mozillazine.org/forums/index.php?c=4">Phoenix forums</a>, 
+kindly hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>, or on 
+irc.mozilla.org in channel #phoenix.</p>
+
+<p style="background-color: #ff9; border: dotted black; padding: .5em;">
+<strong style="background-color: #fc3;">PLEASE NOTE: You 
+should create a new profile for Phoenix 0.5</strong>.  To create a new profile, start Phoenix by running 
+phoenix.exe -ProfileManager and click on the "Create Profile" button.  If you don't want to delete your old profile and are willing to incur the risk of new bugs, you should at least delete your profile's downloads.rdf file.
+
+<strong style="background-color: #fc3;">You must also delete 
+your old Phoenix directory rather than just overwriting the files there.</strong> 
+Not doing so WILL result in problems and you should not file any bugs on 
+Phoenix unless you've first done a clean install and tested on a new profile. 
+As Phoenix stabilizes more this will not be necessary but until then these 
+steps are absolutely necessary.</p>
+
+<h2 id="new">What's New</h2>
+<ul>
+<li>Multiple homepages
+<p>You can now have multiple homepages that will open in tabs upon startup.  To use this feature, you can either type in the addresses of the websites you want to use in the Homepage field of preferences (separate them using a "|"), or open the websites you want and then go to Preferences and click Use Current Pages.  Please note that this feature is in ongoing development.  For example, in the future you'll be able to select multiple bookmarks, and we still haven't decided what to do when you have multiple homepages and open a new window.</p></li>
+
+<li>Intellimouse 5-button support
+<p>You can now use your back and forward mouse buttons with Phoenix, thanks to the fix for <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=30431">bug 30431</a>.</p></li>
+
+<li>Sidebar remembers its state across sessions
+<p>Phoenix will now remember if you had a sidebar open when you quit and will display it when you next start.</p></li>
+
+<li>Download fixes
+<p>Many bugs with the download sidebar have been fixed, including a bunch of cases where downloads remained in the "current downloads" section forever, a bug that caused -1 to be displayed as the progress, and a <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=172811">bug</a> that prevented the progress of downloads with foreign characters in their names from being updated.  A download properties dialog has also been added (right click a finished download to access it), as well as some more prefs (one for download directory, one for opening the download sidebar when you begin a download).</p></li>
+
+<li>History improvements
+<p>The ability to open history items in tabs has been added, and the longstanding bug that history quicksearch was case sensitive has been fixed.</p></li>
+
+<li>Accessibility improvements
+<p>The arrow keys now toggle between focusable elements like buttons, just as on Windows.</p></li>
+
+<li>Size and memory reduction
+<p>Phoenix is lighter than ever before, coming in at 6.1 mb on Windows and 8.7 mb on Linux.  And that isn't the end: we've knocked down our target to about 5mb on Windows by the time we reach 1.0, and probably somewhere between 7 and 8 on Linux.  These are only guesstimates, please treat them as such.  You should also see some decreased memory usage compared with 0.4 (but we still have a ways to go in that area).</p></li>
+
+<li>Performance improvements
+<p>0.5 is certainly our fastest release ever.  You might especially notice a boost if you have a blank page (about:blank) as your homepage.</p></li>
+
+<li>Stability improvements
+<p>A number of crashes and hangs have been fixed in 0.5, including but not limited to bugs <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=173234">173234</a>, <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=178601">178601</a>, <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=183784">183784</a>, <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=180182">180182</a>, <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=181592">181592</a>, <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=181692">181692</a> and <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=181463">181463</a>.</p></li>
+
+<li>Better Windows appearance
+<p>Phoenix users using the Classic (default) theme on Windows XP have long enjoyed a browser that blends in with their operating system.  With 0.5, people on other flavors of Windows can experience that too thanks to the fix for <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=172751">bug 172751</a> (the OS now largely draws our widgets on Windows 9x, NT and 2K).</p></li>
+
+<li>Many more new themes
+<p>Phoenix theme development has really taken off.  Thanks to all the theme authors!  Most themes are available <a href="http://texturizer.net/firebird/themes.html">here</a>.</p></li>
+
+<li>Too many fixes to list
+<p>But here are some of the most noteworthy.  In 0.4, the menubar stayed disabled after customizing the toolbar under certain circumstances, effectively rendering that browser useless.  This has been fixed in 0.5.  Middle clicking in the content area to go to the address in the clipboard (Linux only) has also been fixed.  Some annoying urlbar bugs (like <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=177823">this one</a>) have been plugged, and a longstanding <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=169727">fullscreen bug</a> that made the feature a pain to use is now dead.  With 0.5, Phoenix works on Windows 95 again.</p></li>
+
+</ul>
+
+<p>Phoenix 0.6 is scheduled to be released <a href="phoenix-roadmap.html">sometime in April</a>.</p>
+
+<h2 id="install">Download, Install and Uninstall</h2>
+
+<p>Phoenix binaries are available for Windows, Linux, and OS/2.</p>
+
+<p>Windows: <a href=
+"http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32.zip">
+http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32.zip</a></p>
+
+<p>Linux: <a href=
+"http://ftp36.newaol.com/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu.tar.gz">
+http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu.tar.gz</a></p>
+
+<p>OS/2: <a href=
+"http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-os2.zip">
+http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-os2.zip</a></p>
+
+<div style="border: 1px solid #cccccc; background-color: #f8f8f8; padding: 4px;">
+<p>
+Contributed builds (these are unofficial builds and issues should be reported to the 
+build contributor and not Bugzilla).</p>
+
+<p>Localized builds. Contributed by the volunteers of the <a href="../l10n/mlp_otherproj.html#phoenix">MLP</a>:</p>
+<ul>
+<li>Chinese, Simplified (China):
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-zhCN.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-zhCN.zip">Win32 zip</a>.</li>
+<li>Chinese, Traditional (Taiwan):
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-zhTW.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-zhTW-installer.exe">Win32 full installer</a>.</li>
+<li>Dutch:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-nlNL.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-nlNL.zip">Win32 zip</a>.</li>
+<li>French:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-frFR.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-frFR.zip">Win32 zip</a>.</li>
+<li>German:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-deDE.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-deDE.zip">Win32 zip</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-deDE-installer.exe">Win32 full installer</a>.</li>
+<li>Italian:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-itIT.zip">Win32 zip</a>.</li>
+<li>Korean:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-koKR.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-koKR.zip">Win32 zip</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-koKR-installer.exe">Win32 full installer</a>.</li>
+<li>Polish:
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-gnu-plPL.tar.gz">Linux tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-plPL-installer.exe">Win32 full installer</a>.</li>
+<li>Spanish (Argentina):
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-win32-esAR-installer.exe">Win32 full installer</a>,
+ <a href="http://ftp.mozilla.org/pub/phoenix/releases/0.5/phoenix-0.5-i686-pc-linux-esAR-installer.bin">Linux x86 full installer</a>.</li>
+</ul>
+
+
+</div>
+
+<p>Once you have downloaded the binary, use winzip or gzip to unzip Phoenix to 
+an empty directory. Do not unzip Phoenix to a directory that already contains a 
+binary. Either delete the existing directory, move it out of the way 
+or create a new directory. If you install Phoenix on top of an existing Phoenix 
+or Mozilla directory you <strong>will</strong> have problems.</p>
+
+<p>To uninstall Phoenix, simply delete the Phoenix directory. This will leave 
+your profile in place for use by future Phoenix installs. If you wish to remove 
+your Phoenix profile you can delete the Phoenix dir from your Windows Application 
+Data directory or remove the .phoenix dir from your linux home directory.</p>
+
+<h2 id="issues">Known Issues</h2>
+
+<p>This list covers some of the known problems with 
+Phoenix 0.5. Please read this before reporting any new bugs, and watch it regularly (we'll update it as new bugs are found in the release).</p>
+
+<ul>
+<li>Phoenix utilizes large chunks of Mozilla code. Many of the problems you may 
+experience in Phoenix are actually problems in this Mozilla core code. If you 
+find a problem with page content or connectivity then it is probably a Mozilla 
+problem and should be reported to the Browser product in Bugzilla, not to 
+the Phoenix product.</li>
+
+<li>Talkback builds are not available for 0.5.</li>
+
+<li>Folders in the history sidebar are presented in an illogical order.</li>
+
+<li>The image preferences under Advanced don't yet work.</li>
+
+<li>Menus may not close by clicking on their label (e.g. click File to open, click it again).  Workaround is to click outside the label.</li>
+
+<li>Links might not have the hand cursor when you hover over them if you're on Windows 95 or Windows NT.</li>
+
+</ul>
+
+<p>For additional issues, FAQs, Tips and Tricks plus general Phoenix help be sure to 
+check out David Tenser's very useful <a href="http://texturizer.net/phoenix/">
+Phoenix Help</a> site and the 
+<a href="http://www.mozillazine.org/forums/index.php?c=4">mozillaZine Phoenix 
+forums</a>.</p> 
+
+<h2 id="FAQ">Frequently Asked Questions</h2>
+
+<ol>
+<li>
+<p><em>What can I do to help?</em></p>
+<p>We need all the distribution we can get.  Tell your family.  Tell your 
+friends.  Tell your coworkers.  If you're a student, get it distributed at 
+your college. Submit a story to 
+<a href="http://www.slashdot.org/">Slashdot</a> and other news sites about the release. Make some 
+noise on your blog. Spread the word!</p></li>
+
+<li>
+<p><em>I use another browser because...</em></p>
+<p>If you're not using Phoenix, tell the Phoenix team why.  We read all of 
+the feedback at the mozillaZine Phoenix 
+<a href="http://www.mozillazine.org/forums/index.php?c=4">forums</a>.</p></li>
+
+<li>
+<p><em>I sent you mail  and you haven't responded.</em></p>
+<p>We do appreciate and read all your e-mail, but may not have time to respond.  Please ask questions in the mozillaZine Phoenix 
+<a href="http://www.mozillazine.org/forums/index.php?c=4">forums</a> and report bugs in Bugzilla.  Also, please direct all e-mails to <a href="mailto:mozilla-phoenix@mozilla.org">mozilla-phoenix@mozilla.org</a>, the Phoenix developer mailing list.  Mail to individual developers that clearly applies to the team is likely to be ignored.</p></li>
+<li>
+<p><em>Will I be able to get web content sidebar panels like I can with Mozilla?</em></p>
+<p>Yes, but possibly not until after 1.0.</p></li>
+
+<li>
+<p><em>Is Phoenix as small as it's going to get?</em></p>
+<p>No, we have plenty more to trim out and we're slowly getting to it.  Our current targets are 5mb for Windows and between 7 and 8mb for Linux, but these are <i>just guesses</i>.  It's entirely possible that we'll beat those (case in point: we had previously targetted 6mb for Windows).</p></li>
+
+<li>
+<p><em>Where can I get Phoenix extensions?</em></p>
+<p>Right <a href="http://texturizer.net/firebird/extensions.html">here</a>.</p></li>
+
+<li>
+<p><em>Who is working on Phoenix?</em></p>
+<p>The main developers are <a href="mailto:blaker@netscape.com">Blake Ross</a>, 
+<a href="mailto:hyatt@apple.com">Dave Hyatt</a> and 
+<a href="mailto:chanial@noos.fr">Pierre Chanial</a>. <a href="mailto:hewitt@netscape.com">Joe Hewitt</a> also helps us out on occasion.  <a href="mailto:asa@mozilla.org">Asa Dotzler</a> provides help doing 
+releases, bug triage, the website, and other odds and ends, and 
+<a href="mailto:bryner@netscape.com">Brian Ryner</a> supplies the build expertise.  Please note that Phoenix is a side project for all of us and we may have more pressing issues to attend to as the year draws to a close; inactivity from one or many developers for weeks on end is not unusual. Notes of appreciation, offers to help and most other e-mails should be directed to <a href="mailto:mozilla-phoenix@mozilla.org">the team</a>.</p></li>
+
+<li>
+<p><em>Phoenix is a branch from Mozilla so it's going to get old and outdated. 
+It sucks.</em></p>
+<p>No.  Phoenix is <i>not</i> a branch; it builds right atop the Mozilla trunk. 
+Each milestone contains trunk code that was literally checked in the day before -- 
+we're risky like that ;)  It's the latest and greatest.  As we get closer to 1.0, we may need to explore branching or other options to ensure that we have the stability we need.</p></li>
+
+<li>
+<p><em>Okay, so where's the phoenix source?</em></p>
+<p>cvs.mozilla.org.  Mozilla trunk + mozilla/browser + mozilla/toolkit.</p></li>
+
+<li>
+<p><em>Phoenix is just Mozilla with a couple UI tweaks.</em></p>
+<p>The <a href="http://bonsai.mozilla.org/cvsquery.cgi?treeid=default&amp;module=SeaMonkeyAll&amp;branch=HEAD&amp;branchtype=match&amp;dir=mozilla%2Ftoolkit+mozilla%2Fbrowser&amp;file=&amp;filetype=match&amp;who=&amp;whotype=match&amp;sortby=Change+Size&amp;hours=2&amp;date=all&amp;mindate=10%2F29%2F2002&amp;maxdate=11%2F10%2F2002&amp;cvsroot=%2Fcvsroot">31,000+ lines of code</a> already added or changed from Mozilla beg to differ.  People who claim this are generally unknowledgeable about Phoenix.</p></li>
+
+<li>
+<p><em>You said this was designed to be cross-platform.  Where's the mac version?</em></p>
+<p><i>Designed</i> to be cross-platform doesn't mean we offer a build on every platform, it just means the code itself works anywhere.  We don't officially offer Phoenix for Mac, but some people have already begun experimenting with mac versions (see <a href="http://www.kmgerich.com/misc.html">this page</a>).  We may consider officially releasing Phoenix for Mac in the future, but we want to focus on Windows and Linux for now.</p></li>
+
+<li>
+<p><em>I don't like the stuff on the toolbar.</em></p>
+
+<p>View | Toolbars | Customize...</p>
+</li>
+
+<li>
+<p><em>I hate the theme you're using.</em></p>
+<p>So <a href="http://texturizer.net/firebird/themes.html">get another one</a>.  The next release will feature a new default theme, which is a modified version of <a href="http://texturizer.net/firebird/themes.html#Qute">Qute</a>.</p></li>
+
+<li>
+<p><em>I kept hearing that you were changing the name from Phoenix to something else.  What happened?</em></p>
+<p>That was just a giant publicity stunt.  We've observed that in the past, the open-source community has instinctively favored David when big corporations complain of trademark infringement.  We wanted to cash in on this sympathy by asking the community to send us money to fight the legal battle (obviously we'd really spend it on cool stuff), but with all the taxing issues and whatnot we decided to can the idea.</p></li>
+
+<li>
+<p><em>Uhhhh...really?</em></p>
+<p>No, not really.  This isn't like an action flick where the evil madman reveals the intricacies of his plans to hostages and then leaves them alone with a bomb set to detonate in like 10 hours.  When we're ripping you off, we won't explain how in the FAQ.  The truth is that we'd already had this 0.5 released planned for awhile, so it was okay to release under the Phoenix name.  But under no circumstances will any future release be called Phoenix.</p>
+</li>
+</ol>
+
+<p>
+Previous versions of the Release notes:<br />
+<a href="0.1.html">Phoenix 0.1 (Pescadero)</a> <br />
+<a href="0.2.html">Phoenix 0.2 (Santa Cruz)</a><br />
+<a href="0.3.html">Phoenix 0.3 (Lucia)</a><br />
+<a href="0.4.html">Phoenix 0.4 (Oceano)</a>
+</p>
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

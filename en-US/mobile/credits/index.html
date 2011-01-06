@@ -1,0 +1,62 @@
+<?php @include_once "{$config['file_root']}/{$lang}/mobile/credits/credits-content.html";?>
+<!DOCTYPE HTML>
+<html xml:lang="<?php echo $lang; ?>" lang="<?php echo $lang; ?>" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title><?php echo $page_title; ?></title>
+    <link rel="stylesheet" href="/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" href="/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" href="/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" href="/style/tignish/portal-page.css" media="screen" />
+    <link rel="stylesheet" href="/style/tignish/mobile-credits.css" media="screen" />
+</head>
+
+<body id="mobile-credits" class="locale-<?php echo $lang; ?> portal-page">
+
+<div id="wrapper">
+<div id="doc">
+
+
+
+<div id="main-feature">
+
+    <h2><?php echo $page_title2; ?></h2>
+    <p><?php echo $slogan; ?></p>
+</div>
+
+<div id="main-content">
+
+<h3><?php echo $thanks_list; ?></h3>
+
+
+<?php @include_once "{$config['file_root']}/en-US/mobile/credits/credits-people-list.html";?>
+
+</div>
+
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<!-- start #footer -->
+<div id="footer">
+<div id="footer-contents">
+<div id="copyright">
+<?php
+$creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <br /><a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", 'http://creativecommons.org/licenses/by-sa/3.0/');
+?>
+
+    <p id="footer-links"><strong><a href="/en-US/privacy-policy.html"><?php echo ___('Privacy Policy');?></a></strong> |
+    <strong><a href="/en-US/about/legal.html"><?php echo ___('Legal Notices');?></a></strong></p>
+    <p><?php echo $creative_commons; ?></p>
+</div>
+
+</div>
+</div>
+
+<!-- end #footer -->
+
+</body>
+</html>
+
+

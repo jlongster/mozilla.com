@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Asistencia de Firefox para dispositivos móviles";
+    $search_field  = "Buscar en la ayuda de Firefox";
+    $search_button = "Buscar";
+    $link_to_sumo  = "o <a href=\"%s\">buscar en toda la web de asistencia</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Asistencia de Firefox <em>para dispositivos móviles</em></h1>
+
+    <h2>Preguntas frecuentes</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">¿Cómo sincronizo Firefox entre mi escritorio y mi dispositivo móvil?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">¿Cómo actualizo Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">¿Cómo uso la barra de direcciones?</a></li>
+    </ul>
+
+    <h2>Temas de ayuda para dispositivos móviles</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">¿Cómo cambio las preferencias?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">¿Cuáles son los atajos de teclado?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">¿Cómo gestiono las descargas?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">¿Cómo abro una nueva pestaña?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">¿Cómo encuentro e instalo complementos?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">¿Cómo elimino o desactivo complementos?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">¿Cómo navego por la web con Firefox móvil?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">¿Cómo añado un marcador?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">¿Cómo amplio o reduzco una página web?</a></li>
+    </ul>
+
+    <h2>¿Necesitas más ayuda?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

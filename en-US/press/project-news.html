@@ -1,0 +1,123 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Project News';
+    $body_id    = 'press';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/press-page.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" href="feed.php" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Project News</h2>
+</div>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="main-content">
+
+    <div id="press-sources">
+        <h3>Mozilla News Sources</h3>
+
+        <h4>Blogs</h4>
+        <p>If you need commentary for a story, just email our PR team at <em>press at mozilla dot com</em>.</p>
+
+        <dl>
+            <dt>
+                <a href="http://blog.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-blog.png" alt="Mozilla Blog logo" />The Mozilla Blog</a>
+                <a href="http://blog.mozilla.com/feed/" class="feed">feed</a>
+            </dt>
+            <dd>News, notes and ramblings from the Mozilla project.<br/><br/></dd>
+
+            <dt>
+                <a href="http://developer.mozilla.org/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-developer.png" alt="Mozilla Developer Center logo" />Mozilla Developer Center</a>
+            </dt>
+            <dd>The online hub for all things related to development of Firefox, Thunderbird and other Mozilla software.</dd>
+
+            <dt>
+                <a href="http://planet.mozilla.org/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-planet-mozilla.png" alt="Planet Mozilla logo" />Planet Mozilla</a>
+                <a href="http://planet.mozilla.org/atom.xml" class="feed">feed</a>
+            </dt>
+            <dd>A frequently updated feed of blog posts from around the Mozilla community.</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/security"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-security.png" alt="Mozilla Security Blog logo" />Mozilla Security Blog</a>
+                <a href="http://blog.mozilla.com/security/feed/" class="feed">feed</a>
+            </dt>
+            <dd>The latest security announcements and discussion for Mozilla products.</dd>
+
+        </dl>
+
+        <h4>Other Mozilla Sources</h4>
+        <p>These links are also useful references for Mozilla information.</p>
+
+        <dl>
+            <dt>
+                <a href="http://air.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-air-mozilla.png" alt="Air Mozilla logo" />Air Mozilla</a>
+            </dt>
+            <dd>Multimedia channel featuring interviews, news and more.</dd>
+
+            <dt>
+                <a href="http://wiki.mozilla.org/About:mozilla"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-about-mozilla.png" alt="About: Mozilla logo" />About: Mozilla</a>
+                <a href="http://blog.mozilla.com/about_mozilla/feed/" class="feed">feed</a>
+            </dt>
+            <dd>The Mozilla Project’s community newsletter.<br/><br/></dd>
+
+            <dt>
+                <a href="http://static.mozilla.com/moco/en-US/pdf/firefox-3-6-reviewers-guide.pdf"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-reviewers-guide.png" alt="Reviewer’s Guide logo" />Reviewer’s Guide</a> (PDF)
+            </dt>
+            <dd>The official press briefing on Firefox 3.6.
+            <div class="commons-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/></a> (<a href="guide-license.html">What’s this?</a>)</div>
+</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/ftr/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-for-the-record.png" alt="For the Record logo" />For the Record</a>
+            </dt>
+            <dd>A community program for discovering, cataloging and responding to what’s being said about Mozilla.</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/news/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-above-the-fold.png" alt="Above the Fold logo" />Above the Fold</a>
+                <a href="http://blog.mozilla.com/news/feed/" class="feed">feed</a>
+            </dt>
+            <dd>Tracking the latest press coverage of Mozilla and other industry trends.</dd>
+        </dl>
+
+        <h4>Community News</h4>
+        <p>For additional news, commentary and discussion about Mozilla, we also recommend checking out the following community sites.</p>
+
+        <dl>
+            <dt>
+                <a href="http://www.mozillazine.org/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozillazine.png" alt="Mozillazine logo" />Mozillazine</a>
+            </dt>
+            <dd>The original independent Mozilla news, community and advocacy site.</dd>
+
+            <dt>
+                <a href="http://mozillalinks.org/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-links.png" alt="Mozilla Links logo" />Mozilla Links</a>
+            </dt>
+            <dd>A blog covering anything related to the Mozilla project and its products.</dd>
+
+            <dt>
+                <a href="http://www.firefoxfacts.com/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-firefox-facts.png" alt="Firefox Facts logo" />Firefox Facts</a>
+            </dt>
+            <dd>Firefox tips, themes, news and more.</dd>
+
+            <dt>
+                <a href="http://www.foxiewire.com/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-foxiewire.png" alt="Foxiewire logo" />Foxiewire</a>
+            </dt>
+            <dd>Community-powered Mozilla news.</dd>
+        </dl>
+    </div>
+
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+<?php include "includes/sidebar.php"; ?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

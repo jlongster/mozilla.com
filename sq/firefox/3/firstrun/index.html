@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Mirësevini te Firefox-i';
+    $extra_feature_text = 'Për të shkuar te faqja juaj hyrëse, klikoni butonin e mbylljes te kjo faqe';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Mirësevini te Firefox 3"/></h2>
+    <p>Ju faleminderit që shkarkuat versionin më të sigurt, më të shpejtë dhe më të përpunueshëm të Firefox-it deri sot. Për të filluar shfletimin, thjesht mbyllni këtë skedë si tregohet më sipër.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Mësoni Më Tepër</h3>
+        <p>Po mendoheni se çfarë të bëni tani? Faqja jonë Si T'ia Fillojmë ka një listë <i>site</i>-sh të këshillueshëm, plus më tepër të dhëna rreth Firefox. <a href="/<?=$lang?>/firefox/central/">Vizitoni Si T'ia Fillojmë</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Pyetje?</h3>
+        <p>Faqja jonë për Asistencë ka plot përgjigje, plus një mundësi fjalosjeje në kohë reale (në Anglisht), për t'ju treguar rrugën nëpër vende me zarar. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Vizitoni Asistencën</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

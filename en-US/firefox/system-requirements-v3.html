@@ -1,0 +1,83 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3 System Requirements';
+    $body_id    = 'firefox-requirements';
+	$breadcrumbs = array(
+                            'Products'                          => "/{$lang}/products/",
+                            'Firefox'                           => "/{$lang}/firefox/",
+                            'System Requirements for Firefox 3' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/tignish/system-requirements.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Firefox 3 System Requirements</h2>
+</div>
+
+<div id="main-content">
+
+ <h2>Windows</h2>
+  <h6>Operating Systems</h6>
+  <ul>
+    <li>Windows 2000</li>
+    <li>Windows XP</li>
+    <li>Windows Server 2003</li>
+    <li>Windows Vista</li>
+  </ul>
+  <h6>Minimum Hardware</h6>
+  <ul>
+    <li>Pentium 233 MHz (<em>Recommended:</em> Pentium 500MHz or greater)</li>
+    <li>64 MB RAM (<em>Recommended:</em> 128 MB RAM or greater)</li>
+    <li>52 MB hard drive space</li>
+  </ul>
+
+  <h2>Mac</h2>
+  <h6>Operating Systems</h6>
+  <ul>
+    <li>Mac OS X 10.4 and later</li>
+  </ul>
+  <h6>Minimum Hardware</h6>
+  <ul>
+    <li>Macintosh computer with an Intel x86 or PowerPC G3, G4, or G5 processor</li>
+    <li>128 MB RAM (<em>Recommended:</em> 256 MB RAM or greater)</li>
+    <li>200 MB hard drive space</li>
+  </ul>
+
+  <h2>Linux</h2>
+  <h6>Software Requirements</h6>
+  Please note that Linux distributors may provide packages for your distribution which have different requirements.
+  <ul>
+    <li>Linux kernel - 2.2.14 or higher with the following libraries or packages:
+      <ul>
+        <li>glibc 2.3.2 or higher</li>
+        <li>XFree86-3.3.6 or higher</li>
+        <li>gtk+2.0 or higher</li>
+        <li>fontconfig (also known as xft)</li>
+        <li>libstdc++5</li>
+      </ul>
+    </li>
+  </ul>
+  <h6>Minimum Hardware</h6>
+  <ul>
+    <li>Intel Pentium II or AMD K6-III+ 233 MHz CPU (<em>Recommended:</em> 500MHz or greater)</li>
+    <li>64 MB RAM (<em>Recommended:</em> 128 MB RAM or greater)</li>
+    <li>52 MB hard drive space</li>
+  </ul>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+    <script src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

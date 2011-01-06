@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Om et-kliks identifikation af websteder";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Om et-kliks identifikation af websteder</h2>
+    <p>Firefox 3 indeholder en ny knap til identifikation af websteder, som hjælper dig med at finde ud af, hvem du er i forbindelse med på nettet.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Når du besøger et websted, kan du med et hurtigt klik på en knap se webstedets identitet, hvis den er oplyst. Du kan også se, hvem der har bekræftet identiteten, og om webstedet beskytter din information mod aflytning. Du kan finde webstedets identitet ved at klikke på ikonet i venstre side af adressefeltet.</p>
+
+<h3>Ofte stillede spørgsmål</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Hvad betyder de forskellige identitetsniveauer?</h4>
+    <div class="expander-content">
+        <p>Ikonet med “pasbetjenten” vil ændres i henhold til niveauet af den identitetsinformation, som webstedet leverer.</p>
+        <p class="site-id site-id-1">Webstedet giver ingen information om dets identitet.</p>
+        <p class="site-id site-id-2">Webstedet giver grundlæggende information om dets identitet og beskytter dine personlige oplysninger mod aflytning.</p>
+        <p class="site-id site-id-3">Webstedet giver udvidet information om dets identitet og beskytter dine personlige oplysninger mod aflytning.</p>
+        <p class="site-id site-id-4">Webstedet er et angrebswebsted eller en forfalskning. Det kan være skadeligt at besøge webstedet eller give personlige oplysninger.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvorfor er det ikke alle websteder, der bekræfter deres identitet?</h4>
+    <div class="expander-content">
+        <p>De fleste websteder beder dig ikke indtaste personlige eller finansielle oplysninger, og de mener måske ikke, at det er udgiften værd at tilbyde bekræftet information om deres identitet og beskyttelse mod aflytning.</p>
+        <p>Hvis et websted spørger efter personlige oplysninger som fx kreditkortnummer, adgangskode til netbanken eller CPR-nummer, eller hvis webstedet giver dig følsomme oplysninger, bør det altid identificere sig selv korrekt.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Er det sikkert at bruge websteder, som ikke identificerer sig selv?</h4>
+    <div class="expander-content">
+        <p>Når du skal beslutte dig for, om du vil stole på nogen på internettet, må du starte med at finde ud af, hvem du snakker med. Men det er ikke hele historien. Websteder som ikke identificerer sig selv og som ikke beskytter dine personlige oplysninger, udsætter dig for en risiko, og bør ikke betragtes som sikre. Men selv websteder, som identificerer sig selv korrekt, kan have forretningsmetoder, som du er uenig i, eller de kan have en sløset IT-sikkerhed.</p>
+        <p>Nøjagtigt som i den virkelige verden, bør du udvise forsigtighed over for websteder, som du ikke kender og stoler på. At kende webstedets sande identitet er en del af grundlaget for at beslutte sig, om man stoler på et websted.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kontrollerer Mozilla informationerne for alle websteder?</h4>
+    <div class="expander-content">
+        <p>De informationer, som bruges til at identificere websteder, bliver ikke kontrolleret af Mozilla. I stedet bruger Firefox, lige som andre webbrowsere, en gruppe af betroede virksomheder kaldet “certifikatautoriteter” (CA), som bekræfter et websteds identitet og udsteder et “identitetscertifikat”. Disse virksomheder skal følge <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozillas CA-certifikatpolitik</a>, der blandt andet kræver, at CAerne gennemfører uafhængige revisioner, som bekræfter, at de ikke udsteder certifikater på en uhensigtsmæssig måde.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

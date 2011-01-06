@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Snelste Firefox";
+
+    // Video controls strings to translate
+    $download_ogg       = "Downloaden in Open Video-formaat (Ogg Theora)";
+    $download_mp4       = "Downloaden in MPEG-4-formaat";
+    $check_back         = "Bezoek deze pagina binnenkort weer om de volgende video te bekijken.";
+
+    $play               = "Video afspelen";
+    $fallback_l1        = "Deze video vereist een browser die open video ondersteund:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 of hoger';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 of hoger';
+    $fallback_l4        = 'or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Denk snel
+    </h2>
+
+    <p>We vroegen Firefox fans het nieuws over Firefox 3.5’s ongelooflijke snelheid te verspreiden. Bekijk het resultaat:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Videovoorbeeld" /><span>
+
+            Bekijk de film van Kent French, de snelste klapper ter wereld
+
+            </span></a></p>
+
+            <p class="secondary">
+            De snelste klapper ter wereld, Kent ‘Toast’ French, applaudisseert voor Firefox. Kent combineert zijn eigen stijl met behendigheid en uithoudingsvermogen om te kunnen klappen met een topsnelheid van 12 klappen per seconde. Hij is van plan zijn eigen record gauw te verbeteren.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Meer over Kent</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Videovoorbeeld" /><span>
+
+            Bekijk de film van Steven Purugganan, de snelste stapelaar ter wereld
+
+            </span></a></p>
+
+            <p class="secondary">
+            Medewereldrecordhouder Steven Purugganan houdt genoeg van Firefox om heel snel wat bekertjes te stapelen, enkel voor ons. Als deelnemer aan de World Sport Stacking Association zet Steen, als 11-jarige, met zijn snelle handen een stapel bekertjes op hun plaats in 5,93 seconden.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Meer over Sport Stacking</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Videovoorbeeld" /><span>
+
+            Bekijk de film van Todd Taylor, de snelste banjospeler ter wereld
+
+            </span></a></p>
+            <p class="secondary">
+            Banjoman Todd Taylor wil graag snel spelen voor Firefox en is blij zich ook een medewereldrecordhouder te kunnen noemen. Todd heeft bluegrass, country, pop en rock &amp; roll gespeeld. Hij blijft opnemen en spelen voor films, tv en meer.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Meer over Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

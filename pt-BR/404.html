@@ -1,0 +1,44 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '404: Página não encontrada';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="/style/tignish/404-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Hmmm, está difícil encontrar essa página.</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+	<h3>Odiamos admitir, mas não encontramos a página ou arquivo que você está procurando.</h3>
+
+	<ul class="spaced">
+		<li>Se você digitou o endereço, verifique novamente a ortografia.</li>
+		<li>Se você chegou até aqui clicando em algum link, por favor avise-nos no endereço <em>webmaster [arroba] mozilla.com</em>. Informe a página de onde você veio e o que você estava procurando e daremos o melhor de nós para corrigir esse erro.</li>
+	</ul>
+</div>
+
+<div id="error-suggestions">
+	<h3>Se você não sabe para onde ir, aqui estão algumas opções:</h3>
+
+	<ul class="spaced">
+		<li>Você estava procurando informações sobre o <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
+		<li>Ou talvez nosso cliente de email, o <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+		<li>Talvez seja melhor começar novamente em <a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+	</ul>
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    $disable_js_stats = true;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

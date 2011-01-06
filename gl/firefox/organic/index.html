@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: Software 100% orgánico';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>O mellor camiño á rede</h2>
+    <p>Ou que pode facer polo usuario un navegador de código aberto mantido pola comunidade.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produtos</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">Funcionalidades</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Seguranza</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Personalización</a></li>
+    <li><span>Software 100% orgánico</span></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Suxestións e trucos</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Notas de lanzamento</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Outros sistemas e idiomas</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>Que é o software orgánico?</h3>
+    <p><strong>Tendo en conta as características das empresas de software, nós somos un pouco fóra do común.</strong> A través do termo ‘software orgánico’ pretendemos englobar todo aquilo que nos diferencia dos demais:</p>
+    <p>O noso produto máis coñecido, Firefox, é creado por un movemento internacional de millares de persoas, das cales só unha porcentaxe mínima son auténticos empregados.</p>
+    <p>Móvenos o noso obxectivo de promover a abertura, a innovación e a creación de oportunidades na rede máis que a obtención de beneficios ou o prezo das nosas existencias (de feito, non temos existencias).</p>
+    <p>E como <a href="http://www.mozilla.org/foundation/">organización de interese público sen fins lucrativos</a>, entendemos o éxito en termos de construción de comunidades e mellora da calidade de vida das persoas. Cremos no poder e potencial da Internet e queremos ver como prospera para todos, independentemente do lugar.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Rapaza Firefox" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>Que é o código aberto?</h3>
+        <p>Pode parecer unha loucura, mais non o é. <strong>Para nós, canta máis xente saiba o segredo, mellor.</strong></p>
+        <p>Nós pomos ao dispor de todo o mundo o código fonte -o compoñente básico da aplicación- e animamos a que se lle bote unha ollada.</p>
+        <p>Algunhas persoas xa viron cousas para mellorar e fixeron as modificacións pertinentes. Outras tiveron ideas para novas funcionalidades e fixéronas realidade. E outras colleron o código, aplicaron as súas propias innovacións e construíron produtos impresionantes e completamente novos.</p>
+        <p>Que nos ensina isto? Sendo abertos, acontecen cousas boas. Calquera pode asomarse ao que facemos... De feito, non hai nada que o impida.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>Por que nos deberíamos preocupar?</h3>
+        <p>Podemos non ser unha empresa típica, mais <strong>nunca esquecemos como centrarnos no esencial: facer a rede mellor para o ususario</strong>.</p>
+        <p>Sendo abertos, a próxima idea xenial pode vir de calquera persoa do mundo, o que non se conseguiría delegando a responsabilidade só nos empregados da nosa empresa. Daquela, por que facer as cousas doutro xeito?</p>
+        <p>En última instancia, o software orgánico e o código aberto redunda nun navegador mellor para vostede e para os 150 millóns de usuarios habituais de Firefox. Redunda nun produto máis seguro e de alta calidade. Significa innovación, liberdade e manter unha Internet accesíbel a todas as persoas.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('gl', $_options);
+    ?>
+
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Que é Mozilla?</h3>
+            <h5>Somos unha comunidade global, unha organización de interese público e un proxecto de software en código aberto.</h5>
+            <p><a href="/<?=$lang?>/about/">Máis información</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

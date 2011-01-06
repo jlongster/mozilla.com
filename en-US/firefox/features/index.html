@@ -1,0 +1,472 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox web browser | Features: Faster, more secure &amp; customizable';
+    $body_id    = 'firefox-features';
+    $breadcrumbs = array(
+        $l10n->get('Features') => "/{$lang}/firefox/features/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/features.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+	<h2>Firefox <span>Features</span></h2>
+	<p>Bringing together all kinds of awesomeness to make browsing better for you.</p>
+	<ul class="feature-links">
+		<li id="security-privacy"><a href="#security">Security & <span>Privacy</span></a></li>
+		<li id="high-performance"><a href="#performance">High <span>Performance</span></a></li>
+		<li id="greater-personalization"><a href="#personalization">Greater <span>Personalization</span></a></li>
+		<li id="higher-productivity"><a href="#productivity">Higher <span>Productivity</span></a></li>
+		<li id="cutting-edge"><a href="#cuttingedge">The Cutting <span>Edge</span></a></li>
+		<li id="universal-access"><a href="#universal">Universal <span>Access</span></a></li>
+	</ul>
+
+	<div id="top-features">
+		<h3>Top <span>Features</span></h3>
+		<p>(rollover for details)</p>
+		<ul>
+			<li>
+				<a href="#">Super Speed</a>
+				<div class="top-feature-hover">
+					<h3>Super Speed</h3>
+					<p>View Web pages way faster, using less of your computer’s memory.</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">Private Browsing</a>
+				<div class="top-feature-hover">
+					<h3>Private Browsing</h3>
+					<p>Surf the Web without leaving a trace.</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">Easy Customization</a>
+				<div class="top-feature-hover">
+					<h3>Easy Customization</h3>
+					<p>Thousands of add-ons give you the freedom to make Firefox your own.</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">Awesome Bar</a>
+				<div class="top-feature-hover">
+					<h3>Awesome Bar</h3>
+					<p>Find the sites you love in seconds (and without having to remember clunky URLs).</p>
+				</div>
+			</li>
+			<li>
+				<a href="#">One-Click Bookmarking</a>
+				<div class="top-feature-hover">
+					<h3>One-Click Bookmarking</h3>
+					<p>Bookmark, search and organize Web sites quickly and easily.</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div id="content">
+
+	<div id="security" class="features-box"><div class="features-container">
+
+		<h3>Security &amp; <span>Privacy <a href="/<?=$lang?>/firefox/video/?video=security" class="video">Watch the Video</a></span></h3>
+
+		<div class="column1">
+			<div class="feature">
+			<?=buildPlatformImage('/en-US/img/covehead/features/security-id.png', 'Instant Web Site ID screenshot')?>
+			</div>
+			<div class="feature" id="anti-malware">
+			<h4>Anti-Malware</h4>
+			<p>Firefox protects you from viruses, worms, trojan horses and spyware delivered over the Web. If you accidentally access an attack site, it will warn you away from the site and tell you why it isn’t safe to use.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/anti-malware.png', 'Anti-Malware screenshot')?>
+			</div>
+			<div class="feature" id="anti-phishing">
+			<h4>Anti-Phishing</h4>
+			<p>Shop and do business safely on the Internet. Firefox gets a fresh update of web forgery sites 48 times in a day, so if you try to visit a fraudulent site that’s pretending to be a site you trust (like your bank), a browser message—big as life—will stop you.</p>
+			</div>
+		</div>
+
+		<div class="column2">
+			<div class="feature" id="instant-id">
+			<h4>Instant Web Site ID</h4>
+			<p>Want to be extra sure about a site’s legitimacy before you make a purchase? Click on a site favicon for an instant identity overview. Another click digs deeper: how many times have you visited? Are your passwords saved? Check up on suspicious sites, avoid Web forgeries and make sure a site is what it claims to be.</p>
+			</div>
+			<div class="feature" id="forget-site">
+			<h4>Forget This Site</h4>
+			<p>Having second thoughts about having visited a certain Web site? With this feature, you can remove every trace of that site from your browser&mdash;no questions asked!</p>
+			</div>
+			<div class="feature" id="parental">
+			<h4>Parental Controls</h4>
+			<p>Enforce parental control settings you’ve entered on Windows 7 — stop unwanted downloads and more.</p>
+			</div>
+			<div class="feature" id="plug-in-detection">
+			<h4>Outdated Plug-In Detection</h4>
+			<p>Some web pages require that you install small applications called plugins to watch videos, play games or view documents. These plugins are written by other companies, and it can be hard to make sure they’re always up to date. Since outdated plugins are a security risk, Firefox will let you know when you have a plugin that’s vulnerable to attack and direct you to the right site to get the updated version. <a href="http://www.mozilla.com/<?=$lang?>/plugincheck/">View our plugin check page</a>.</p>
+			</div>
+			<div class="feature" id="clear-history">
+			<h4>Clear Recent History</h4>
+			<p>Clear all your private data or just your activity over the past few hours with a few quick clicks. You have full control over what to delete, and then your info is gone for good&mdash;on your own computer or the one at your local library. It’s that easy.</p>
+			</div>
+		</div>
+
+		<div class="column3">
+			<div class="feature" id="private-browsing">
+			<h4>Private Browsing</h4>
+			<p>Sometimes it’s nice to go undercover, so turn this feature on and protect your browsing history. You can slip in and out of private browsing mode quickly, so it’s easy to go back to what you were doing before as if nothing ever happened. It’s great if you’re doing your online banking on a shared computer or checking email from an Internet café.</p>
+			</div>
+			<div class="feature" id="custome-security">
+			<h4>Customized Security Settings</h4>
+			<p>Control the level of scrutiny you’d like Firefox to give a site and enter exceptions—sites that don’t need the third degree. Customize settings for passwords, cookies, loading images and installing add-ons for a fully empowered Web experience.</p>
+			</div>
+			<div class="feature" id="add-ons">
+			<h4>Add-ons</h4>
+			<p>Firefox looks for a secure connection before installing or updating add-ons, 3rd party software, and <a href="http://www.getpersonas.com/">Personas</a>.</p>
+			</div>
+			<div class="feature" id="anti-virus">
+			<h4>Anti-Virus Software</h4>
+			<p>Firefox integrates elegantly with your Windows antivirus software. When you download a file, your computer’s antivirus program automatically checks it to protect you against viruses and other malware, which could otherwise attack your computer.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/password-manager.png', 'Password Manager screenshot')?>
+			</div>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+	<div id="performance" class="features-box"><div class="features-container">
+
+		<h3>High <span>Performance</span></h3>
+
+		<div class="column1">
+			<div class="feature" id="super-speed">
+			<h4>Super Speed</h4>
+			<p>Fasten your seatbelt: Firefox now includes the TraceMonkey JavaScript engine, which gives the browser dramatically better performance than ever before. Firefox has always been fast, but this is the fastest Firefox ever (more than three times as fast as Firefox 3 and 20% faster than Firefox 3.5), meaning Web applications like email, photo sites, online word processors and more will feel snappier and more responsive.</p>
+			</div>
+			<div class="feature" id="memory-footprint">
+			<h4>Smaller Memory Footprint</h4>
+			<p>Short and sweet, Firefox uses less of your computer’s memory while it’s running.</p>
+			</div>
+			<div class="feature" id="page-load">
+			<h4>Faster Page Load</h4>
+			<p>A redesigned page rendering and layout engine means you see Web pages faster&mdash;and in the way they were meant to be seen.</p>
+			</div>
+		</div>
+
+		<div class="column2">
+			<div class="feature" id="real-world-performance">
+			<h4>Real World Performance</h4>
+			<p>Having a super fast JavaScript engine is definitely important, but since those changes are often measured in milliseconds sometimes what matters even more is the way the browser feels when you’re actually using it. That’s why we’re constantly optimizing Firefox to be great for the way you use the web – things like making new tabs open up more quickly, or having the Awesome Bar provide results even faster. In the end, it’s about getting you where you need to go as quickly and easily as possible.</p>
+			</div>
+			<div class="feature" id="memory-management">
+			<h4>Memory Management</h4>
+			<p>With a new management function in place, Firefox keeps memory usage under control. The XPCOM cycle collector continuously cleans up unused memory. Plus, hundreds of memory leaks have been remedied.</p>
+			</div>
+		</div>
+
+		<div class="column3">
+			<div class="feature" id="performance-chart">
+			<h4>Firefox Performance: Fast — Faster — <em>Fastest</em></h4>
+			<p>Results of a SunSpider test on a Windows 7 machine</p>
+			<img src="/img/covehead/firefox/performance-chart.png" alt="Firefox 2, Firefox 3, Firefox 3.5 performance chart" />
+			<ul><li>Fast <span>3,198 ms</span></li><li>Faster <span>1,188 ms</span></li><li>Fastest <span>995 ms!</span></li></ul>
+			</div>
+			<div class="feature" id="out-of-process">
+			<h4>Crash Protection</h4>
+			<p>Firefox provides uninterrupted browsing for Windows and Linux users when there is a crash in the Adobe Flash, Apple Quicktime or Microsoft Silverlight plugins. If one of these commonly-used plugins crashes or freezes, it won't affect the rest of Firefox. Instead, you can simply reload the page to restart the plugin and try again. <a href="/<?=$lang?>/plugincheck/#what-plugin">Learn more about plugins</a>.</p>
+			</div>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+	<div id="personalization" class="features-box"><div class="features-container">
+
+		<h3>Greater <span>Personalization</span></h3>
+
+		<div class="column1">
+			<?=buildPlatformImage('/en-US/img/covehead/features/addons.png', 'Add-ons Manager screenshot')?>
+			<div class="feature" id="beyond-addons">
+			<h4>Beyond Add-ons</h4>
+			<p>Add-ons are the cornerstone of customization, but adapting Firefox to suit your style doesn’t stop there. You can add new search engines, change toolbar preferences, display different sizes, shapes and styles for your browser’s navigation buttons and more. With additional preferences, you can specify a Web mail client, such as Gmail, to open up when you click on an address from a Web page or set up a news reader application for the blogs you encounter.</p>
+			</div>
+		</div>
+		
+		<div class="column2">
+			<div class="feature" id="ways">
+			<h4>Over 6,000 Ways to Customize</h4>
+			<p>The sky’s the limit with a growing library of <a href="https://addons.mozilla.org/firefox/">over 6,000 Firefox add-ons</a>, little extras you choose to download and install for a browser that works your way. Manage online auctions, upload digital photos, see the weather forecast in a glance and listen to music all from the convenience of your browser. If you’re not sure where to begin, try groups of add-ons assembled around common topics like travel, web development or social networking.</p>
+			</div>
+			<div class="feature" id="addons-manager">
+			<h4>Add-ons Manager</h4>
+			<p>Find and install add-ons directly in your browser. You no longer need to visit the add-ons Web site&mdash;instead simply fire up the Add-ons Manager. Not sure which add-on is right for you? Ratings, recommendations, descriptions and pictures of the add-ons in action help you make your selection. The fully integrated add-on manager even lets you view, manage and disable third-party plugins in a few easy clicks.</p>
+			</div>
+		</div>
+
+		<div class="column3">
+			<div class="feature" id="look-and-feel">
+			<h4>Dress Up Your Firefox with Personas</h4>
+			<p>We’ve enhanced our themes to give you access to <a href="http://www.getpersonas.com/?source=moz.com_features">thousands of easy-to-install themes</a>, meaning you can change the look of your Firefox to practically anything with a single click. Choose anything from simple designs to colorful patterns to content from partners like Harry Potter, Bob Marley or Lance Armstrong’s LiveStrong Foundation.</p>
+			<p><a href="/<?=$lang?>/firefox/video/?video=personas" class="video">View the video</a></p>
+			<img src="/img/covehead/features/persona-sample.jpg" alt="Persona sample" />
+			</div>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+	<div id="productivity" class="features-box"><div class="features-container">
+
+		<h3>Higher <span>Productivity</span></h3>
+
+		<div class="feature" id="location-bar">
+		<h4>Awesome Bar</h4>
+		<p>A quick way to get to the sites you love&mdash;even the ones with addresses you only vaguely remember. Type in term into location bar (aka the Awesome Bar) and the autocomplete function includes possible matching sites from your browsing history, as well as sites you’ve bookmarked and tagged in a drop down.</p>
+		<?=buildPlatformImage('/en-US/img/covehead/features/location-bar.png', 'Smart Location Bar screenshot')?>
+		<p>For example, you could enter the tag: “investments” to find “<a href="http://www.fool.com/">www.fool.com</a>”. The Awesome Bar learns as you use it&mdash;over time, it adapts to your preferences and offers better fitting matches. Since its initial release in Firefox 3.0 we’ve tweaked it to give you greater control over the results (including privacy settings) and increased performance so you find what you need even faster.</p>
+		<p><a href="/<?=$lang?>/firefox/video/?video=awesomebar" class="video">View the video</a></p>
+		</div>
+		
+		<div class="feature" id="tabs-feature">
+		<h4>Tabs</h4>
+		<p>At first glance, they look like little labels living above the site you’re currently visiting. But they are a brilliant way to browse multiple sites at once. Simple and easy, you can think of them as the electronic version of a well kept filing cabinet, with the tabs as the dividers and the sites as the content kept in folders. Each new site appears as a new tab (not a new window) and can be accessed in one click.</p>
+		<?=buildPlatformImage('/en-US/img/covehead/features/tabs.png', 'Tabs screenshot')?>
+		</div>
+		
+		<div class="features-divider"><hr /></div>
+		
+		<div class="column1">
+			<div class="feature" id="drag-tabs">
+			<h4>Easy Organization</h4>
+			<p>Get your sites in order. Simply arrange the order of your tabs by dragging them in one swift move of your mouse. Or, if your browser window is getting cluttered with too many tabs, just drag a tab out of its existing spot and it will automatically open up in a new window.</p>
+			</div>
+			<div class="feature" id="location-aware">
+			<h4>Location-Aware Browsing</h4>
+			<p>Now Firefox can tell websites where you’re located so you can find info that’s more relevant and more useful (for example, getting directions or finding restaurants near you). It's all optional - Firefox doesn't share your location without your permission - and is done with the utmost respect for your privacy.</p>
+			</div>
+			<div class="feature" id="password-manager">
+			<h4>Password Manager</h4>
+			<p>We’ve seamlessly integrated this feature into your surfing experience. Choose to remember site passwords without intrusive pop-ups. Now you’ll see the “remember password” notification integrated into your view at the top of the site page.</p>
+			</div>
+			<div class="feature" id="form-complete">
+			<h4>Form Complete</h4>
+			<p>It’s like the Awesome Bar, but for forms. Now, when you’re filling out an online form like your shipping address, Firefox will suggest information for each field based on your most common answers for similar fields in other forms (rather than just showing you an alphabetical list). Instead of typing out the same answers over and over, you’ll be zipping through the forms in no time.</p>
+			</div>
+			<div class="feature" id="download-manager">
+			<h4>Download Manager</h4>
+			<p>Download files seamlessly and securely! A pause and resume feature means there’s no need to wait for a download to finish before you disconnect. So, if you’re halfway through the latest White Stripes album and it’s time to catch the bus, just pause and pick up downloading when you get home. The resume function also works if your system crashes or is forced to restart. The manager shows your download progress and lets you search your files by name or the Web address where the download came from.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/download-manager.png', 'Download Manager screenshot')?>
+			</div>
+			<div class="feature" id="smart-keywords">
+			<h4>Smart Keywords</h4>
+			<p>Search the Web in record time with smart keywords. With a few clicks you can assign keywords to search engines, and then simply enter your key and search words in the location bar. With this feature, typing “book home building” can search Amazon.com, and take you right to books about home building without ever pausing at the homepage.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/search-suggestions.png', 'Search Suggestions screenshot')?>
+			</div>
+			<div class="feature" id="auto-update">
+			<h4>Automated Update</h4>
+			<p>Our open-source security strategy lets us find—and fix—security issues in record time, making Firefox the safest way to surf. Install upgrades when you receive automatic notification or wait until you’re ready.</p>
+			</div>
+			<div class="feature" id="tags">
+			<h4>Tags</h4>
+			<p>Label a site with names or categories that are meaningful to you. For example, you can label the site <a href="http://www.bbc.co.uk/">www.bbc.co.uk</a> with the “news” tag as well as the “foreign investments” tag, plus give <a href="http://www.nytimes.com/">www.nytimes.com</a> the “news” tag, too. When you enter “news” into the location bar, both sites will be shown as results. A single site can have multiple tags, and there’s no limit to the number of tags you can create. You may not remember the exact name of a site, but with a tag, you’ll be able to find it in a way that makes sense to you.</p>
+			</div>
+			<div class="feature" id="live-support">
+			<h4>Live Support</h4>
+			<p>We have Firefox experts waiting on stand-by to help you with questions that simply demand a live person and a real conversation. Now you can chat with knowledgeable Firefox community members who troubleshoot via our live chat site. You won’t be put on hold or have to wait for a response—solve your problem on the spot.</p>
+			</div>
+		</div>
+		
+		<div class="column2">
+			<div class="feature" id="reopen-tabs">
+			<h4>Reopen Closed Tabs and Windows</h4>
+			<p>If you accidentally close a tab or window, you can reopen it in one click. Just view Recently Closed Tabs or Recently Closed Windows in the History menu and select the tab or window you’d like to reopen.</p>
+			</div>
+			<div class="feature" id="bookmarking">
+			<h4>One-Click Bookmarking</h4>
+			<p>Manage your bookmarks a lot or a little. One click on the star icon at the end of the location bar bookmarks a site. Two clicks and you can choose where to save it and whether to tag it. File bookmarked sites in easy-to-access folders and organize according to theme (like “job search” or “favorite shopping”). Find your bookmarked sites in a flash by entering the tag, page or bookmark name into the location bar. The more you use your tags and bookmark names in the location bar, the more the system will adapt to your preferences.</p>
+			<p><a href="/<?=$lang?>/firefox/video/?video=bookmarks" class="video">View the video</a></p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/bookmarks.png', 'One-Click Bookmarking screenshot')?>
+			</div>
+			<div class="feature" id="session-restore">
+			<h4>Session Restore</h4>
+			<p>Restart the browser without losing your place after you install an add-on or software update. And, if Firefox or your computer unexpectedly closes, you don’t have to spend time recovering data or retracing your steps through the Web. If you’re in the middle of typing an email, you’ll pick up where you left off, even down to the last word you typed. Session Restore instantly brings back your windows and tabs, restoring text you entered and any in-progress downloads, and we’ve updated it to make sure you get back to what you were doing even more quickly than before.</p>
+			</div>
+			<div class="feature" id="search-suggestions">
+			<h4>Search Suggestions</h4>
+			<p>Start typing in the search bar and it will prompt you with a drop down of filled-in suggestions, plus you can use the search bar as a calculator, converter and more.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/integrated-web-search.png', 'Integrated Web Search screenshot')?>
+			</div>
+			<div class="feature" id="popup-blocker">
+			<h4>Pop-Up Blocker</h4>
+			<p>Banish pop-ups (and pop-under windows) from your surfing experience once and for all. Or, find a happy medium—choose to view blocked pop-ups or create an “allow” list of sites whose pop-ups you’re okay with seeing.</p>
+			</div>
+			<div class="feature" id="spell-checking">
+			<h4>Spell Checking</h4>
+			<p>A built-in spell checker lets you enter text directly into Web pages&mdash;like blog posts and Web-based email—without worrying about typos and misspellings. Work directly with the Web and save yourself a step.</p>
+			<img src="/en-US/img/covehead/features/spell-checking.png" alt="Spell Checking screenshot" />
+			</div>
+			<div class="feature" id="library">
+			<h4>Library</h4>
+			<p>Make your browser as efficient as you can imagine. Your browsing history (all the websites you’ve seen) and your bookmarks (all the websites you’ve saved) are archived in the Library, where they can be easily searched and organized. You can also save your frequent searches in dynamic smart folders that automatically update as your bookmark list and history grow.</p>
+			</div>
+		</div>
+		
+		<div class="column3">
+			<div class="feature" id="offline-browsing">
+			<h4>Offline Browsing</h4>
+			<p>Take your computer offline and still have information at your fingertips. Certain enabled sites may allow applications&mdash;like your Web-based email&mdash;to stay with you at all times.</p>
+			</div>
+			<div class="feature" id="smart-folders">
+			<h4>Smart Bookmark</h4>
+			<p>Find things fast with Smart Bookmarks. Click on the Bookmarks menu for quick access to sites organized by most visited, recently bookmarked and recently tagged.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/smart-bookmarks.png', 'Smart Bookmarks screenshot')?>
+			</div>
+			<div class="feature" id="feed-reader">
+			<h4>RSS Feed Reader</h4>
+			<p>You can read feeds using an online Web service, a client-side feed reader or by creating a Firefox Live Bookmark. So there’s no need to comb the Web for the latest news and updates. See the latest headlines in the toolbar or menu and go directly to the articles that catch your eye.</p>
+			</div>
+			<div class="feature" id="smooth-scrolling">
+			<h4>Smooth Scrolling</h4>
+			<p>Like to have all 20 of your favorite pages open at once? An elegant new feature lets you scroll through tabs easily to see them all and access the one you want quickly.</p>
+			</div>
+			<div class="feature" id="find">
+			<h4>Find</h4>
+			<p>The find feature appears in a keystroke. Search for a word or phrase on an open Web page. Highlight text before using the feature and finder opens pre-filled with your selection. See all instances of your search at once, or scroll backwards and forwards through the appearances of the word on the page.</p>
+			</div>
+			<div class="feature" id="integrated-search">
+			<h4>Integrated Web Search</h4>
+			<p>Searching the Web is a breeze with the search box inline, just to the right of your location bar. Select the search engine of your choice and type what you want to find directly into the box. The width is adjustable so you can make it bigger if you need more space.</p>
+			</div>
+			<div class="feature" id="search-engines">
+			<h4>Hundreds of Search Engines</h4>
+			<p>Access your favorite search engines quickly from the integrated search bar. You can use a new engine for each search, or stick to your favorite. Choose from a preset dropdown list of engines or select “manage search engines” from the same list to browse search engine options offered as add-ons. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:4">Check out your choices now</a>.</p>
+			<?=buildPlatformImage('/en-US/img/covehead/features/find.png', 'Find screenshot')?>
+			</div>
+			<div class="feature" id="full-zoom">
+			<h4>Full Zoom</h4>
+			<p>Visit your favorite news page and read the caption under the picture—or view the picture itself in a size you can see. An elegant new zoom feature lets you swoop in and see entire web pages. They scale in the way you’d expect them to, with all the elements of a page’s layout expanding equally, so you can zero in on what matters.</p>
+			</div>
+			<div class="feature" id="native">
+			<h4>Platform-Native Look &amp; Feel</h4>
+			<p>The Firefox platform looks and feels like home. Think of it as a Firefox who’s really good at making friends. Whether you use Windows 7, Mac or Linux, the browser seamlessly integrates into your computer’s environment. A native look makes for a flawless interface that never gives you pause.</p>
+			</div>
+		</div>
+		
+		<div class="feature" id="firefox-support">
+		<h4>Firefox Support</h4>
+		<p>Help is right where you would expect it, as well as a few places you might not. A link at the top of your browser takes you to a support site with the answers you’ll need. Want to dig deeper—or have a really tough question?</p>
+		<?=buildPlatformImage('/en-US/img/covehead/features/help.png', 'Firefox Support screenshot')?>
+		<p><a href="http://support.mozilla.com/">Firefox’s support website</a> has a searchable knowledge base of articles, plus forums and tutorials full of solutions and tips for a better experience.</p>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+	<div id="cuttingedge" class="features-box"><div class="features-container">
+
+		<h3>The <span>Cutting Edge</span></h3>
+
+		<div class="column1">
+			<div class="feature" id="graphics">
+			<h4>Next-Generation Graphics</h4>
+			<p>You have to see it to believe it. The rendering of text and graphics, including SVG and Canvas, is faster and sharper than ever before, thanks to our upgraded graphics engine. Firefox automatically color corrects images that have the color profile data included (like your digital photos) to make sure the colors are exactly as intended.</p>
+			</div>
+			<div class="feature" id="application-integration">
+			<h4>Web Application Integration</h4>
+			<p>Expand the power of Web-based applications. In the past you’d click on an email address in a Web site and your computer’s default email application would open up to send a message to the linked address&mdash;even if you never email through the program. Now you can choose a Web mail clients (like Hotmail, Gmail or Yahoo! Mail) to launch when you click on that email address.</p>
+			</div>
+		</div>
+
+		<div class="column2">
+			<div class="feature" id="newest-technologies">
+			<h4>Newest Web Technologies</h4>
+			<p>Brand new and enhanced functionalities enable Web site authors and developers to create advanced content and applications. Support is now available for:</p>
+			<ul>
+				<li>CSS2.1</li>
+				<li>CSS3</li>
+				<li>HTML5</li>
+				<li>SVG Filters</li>
+				<li>Ogg Vorbis</li>
+				<li>Ogg Theora</li>
+				<li>Native JSON</li>
+				<li>MathML</li>
+				<li>Animated Portable Network Graphics</li>
+				<li>Cross-Site XMLHttpRequest</li>
+				<li>Microformats</li>
+				<li>Web Worker Threads</li>
+			</ul>
+			</div>
+		</div>
+
+		<div class="column3">
+			<div class="feature" id="open-video">
+			<h4>Open Video and Audio</h4>
+			<p>Introducing the future of online media! Firefox is the first browser to support open video and audio formats, allowing practically limitless new ways for sites to display rich content. The open formats also allow modern web pages to display media without requiring a plugin or a proprietary software download.</p>
+			</div>
+			<div class="feature" id="color-profile">
+			<h4>Color Profile Support</h4>
+			<p>Do you tweak your photos or Web designs to get the colors exactly right? Now Web pages and photos appear just the way they should, thanks to improvements to our graphics engine.</p>
+			</div>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+	<div id="universal" class="features-box"><div class="features-container">
+
+		<h3>Universal <span>Access</span></h3>
+
+		<div class="column1">
+			<div class="feature" id="text-rendering">
+			<h4>Improved Text Rendering</h4>
+			<p>Read your language as it’s written—more like real life. With a new graphics engine, Arabic, Persian, Punjabi and other script languages now render in a remarkably seamless way.</p>
+			<h4>Downloadable Fonts</h4>
+			<p>View a wider variety of fonts on Web sites while you surf. Site designers and developers can create custom fonts that will be displayed and rendered properly even if you don’t have the font installed on your computer.</p>
+			</div>
+			<div class="feature" id="fonts-image">
+			<img src="<?=$config['static_prefix']?>/img/covehead/features/text-rendering.png" alt="Improved Text Rendering screenshot" />
+			</div>
+		</div>
+
+		<div class="column2">
+			<div class="feature" id="accessibility">
+			<h4>Emphasis on Accessibility</h4>
+			<p>By minimizing keystrokes, allowing users to zoom in on Web pages and supporting screen readers, Firefox is that much easier to use for those with mobility disabilities and visual impairments.</p>
+			</div>
+			<div class="feature" id="universal-customization">
+			<h4>Universal Customization</h4>
+			<p>Go beyond translation and experience the web in a way that makes sense to you. Local developers who know what’s best for their community have customized your Firefox browsing experience with local dictionaries, search providers, live bookmarks and Web feeds. Depending on where you live, you’ll see things like BBC headlines tailored to your region or experience features that work with Baidu, the Chinese search engine.</p>
+			</div>
+		</div>
+
+		<div class="column3">
+			<div class="feature" id="language">
+			<h4>The Language of Firefox</h4>
+			<p>Firefox speaks your language like no other browser on earth. Because the Web is a worldwide resource and we believe that resource belongs to the people, we’ve made our browser available in as many local languages as possible. We have over 70 different translations, from French and Chinese to Finnish and Czech. <a href="/<?=$lang?>/firefox/all.html">Find your language</a>.</p>
+			</div>
+		</div>
+
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+	</div></div>
+
+</div><!-- end #content div -->
+
+
+<?php
+	$extra_footers = <<<EXTRA_FOOTERS
+<!-- script src="/js/mozilla-platform-images.js"></script-->
+<script src="/js/firefox-features.js"></script>
+
+EXTRA_FOOTERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

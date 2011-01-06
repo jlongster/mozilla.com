@@ -1,0 +1,313 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'محصولات موزیلا | نکته‌ها و ترفندها';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript">// <![CDATA[
+    Mozilla.Pager.NEXT_TEXT        = 'بعدی';
+    Mozilla.Pager.PREV_TEXT        = 'قبلی';
+    Mozilla.Pager.PAGE_NUMBER_TEXT = '%s از %s';
+    // ]]></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>نکته‌ها و ترفندها</h2>
+    <p>چه یک کاربر مبتدی، متوسط یا پیشرفته باشید، این میان‌برها و پیشنهادات به شما کمک می‌کنند بیشترین استفاده را از فایرفاکس ۳ ببرید.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">محصولات</a> / <a href="/<?=$lang?>/firefox/">فایرفاکس</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">امکانات</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">امنیت</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">سفارشی‌سازی</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">نرم‌افزار ۱۰۰٪ طبیعی</a></li>
+    <li><span>نکته‌ها و ترفندها</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">یادداشت‌های انتشار</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">سیستم‌عامل‌ها و زبان‌های دیگر</a></li>
+</ul>
+
+<div id="content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>مبتدی</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'تصویر بزرگ‌نمایی، کوچک‌نمایی', '362', '225', 'right')?>
+
+                <h4>بزرگ‌نمایی، کوچک‌نمایی</h4>
+                <p>از متن‌های بسیار کوچک خسته شده‌اید؟ می‌خواهید تصاویر را کمی بزرگ‌تر به صورتی که مایل هستید ببینید؟ اکنون می‌توانید به سادگی صفحات وب را بزرگ یا کوچک کنید.</p>
+
+                <div class="key-combo">
+                    بزرگ‌نمایی
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'مهار + + (مک: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    کوچک‌نمایی
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'مهار + - (مک: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'تصویر ترفندهای زبانه', '343', '117', 'right')?>
+
+                <h4>این ترفندهای زبانه‌ها را امتحان کنید</h4>
+                <p>اگر جزء افرادی هستید که دوست دارند تعداد زیادی صفحهٔ وب را هم‌زمان باز نگه دارند، حتماً از مرور با زبانه بهره خواهید برد. تعدادی میان‌بر صفحه کلید که به شما کمک می‌کنند بهترین استفاده را از زبانه‌ها ببرید در زیر ذکر شده‌اند:</p>
+
+                <div class="key-combo key-combo-1">
+                    باز کردن یک زبانهٔ خالی جدید
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'مهار + T (مک: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    باز کردن یک پیوند در زبانه‌ای جدید
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + کلیک بر روی پیوند</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">کلیک با دکمهٔ وسط موشی روی پیوند</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">کلیک با دکمهٔ وسط موشی روی پیوند (مک: ⌘ + کلیک بر روی پیوند)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    بستن یک زبانه
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'مهار + W (مک: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    بازآوردن مجدد زبانهٔ بسته شده
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'مهار + shift + T (مک: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'تصویر نشانک', '389', '250', 'right')?>
+
+                <h4>ایجاد نشانک با یک کلیک</h4>
+                <p>با نشانک‌گذاری با یک کلیک وب‌گاه‌های مورد علاقهٔ خود را بهتر نگه‌داری کنید (و در وقت صرفه‌جویی نمایید). هنگامی که از صفحه‌ای بازدید می‌کنید که مایل به یاد داشتن آن هستید، تنها کافی است بر روی شمایل ستاره درون نوار مکان گلیک کنید. فایرفاکس آن صفحه را به فهرست نشانک‌های شما اضافه می‌کند تا در آینده بتوانید آن را به سادگی پیدا کنید.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'شمایل امنیت', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        وب‌گاه اطلاعات تأیید شده‌ای در مورد هویت خود فراهم می‌کند و اطلاعات شما را از استراق سمع محافظت می‌کند.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'شمایل امنیت', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        وب‌گاه اطلاعات اولیه‌ای در مورد هویت خود فراهم می‌کند و اطلاعات شما را از استراق سمع محافظت می‌کند.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'شمایل امنیت', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        وب‌گاه هیچ اطلاعات امنیتی فراهم نمی‌کند.
+                    </li>
+                </ul>
+
+                <h4>بدانید با چه کسی سر و کار دارید</h4>
+                <p>یک روش معمول فریب‌کاران در وب برپایی وب‌گاه‌های جعلی که به نام حقه‌های ماهی‌گیری نیز شناخته می‌شوند، است، که ظاهری شبیه وب‌گاه بانک یا خرید الکترونیکی شما دارند. خوشبختانه فایرفاکس تشخیص این که آیا وب‌گاه همان وب‌گاهی است که ظاهرش نشان می‌دهد را ساده می‌کند – کافی است بر روی شمایل وب‌گاه کلیک کنید تا بلافاصله خلاصه‌ای از اطلاعات هویتی وب‌گاه را مشاهده نمایید.</p>
+                <p id="forgery">یک وب‌گاه حمله یا جعلی؛ وارد کردن اطلاعات شخصی یا حتی بازدید از این وب‌گاه ممکن است زیان‌بخش باشد.
+                <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-mac.png" alt="تصویر جعل" />');
+                } else if (gPlatform == PLATFORM_LINUX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-linux.png" alt="تصویر جعل" />');
+                } else if (gPlatformVista) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-vista.png" alt="تصویر جعل" />');
+                } else {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-xp.png" alt="تصویر جعل" />');
+                }
+            // ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="تصویر جعل" /></div></noscript>
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            حرکت صفحه به سمت پایین
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="کلید فاصله" />
+                        </div>
+                        <div class="key-combo">
+                            حرکت صفحه به سمت بالا
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="تبدیل + کلید فاصله" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            بازآوری صفحه
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'مهار + R (مک: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            عقب
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'مهار + ← (مک: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            جلو
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'مهار + → (مک: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>راه میان‌بر به سوی موفقیت</h4>
+                <p>فایرفاکس مملو از میان‌برهای صفحه کلید است که برای ساده‌تر کردن کار شما طراحی شده‌اند. در زیر برخی از پراستفاده‌ترین‌ها را ملاحظه می‌کنید:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        انتقال مکان‌نما به نوار مکان
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'مهار + L (مک: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        انتقال مکان‌نما به جعبهٔ جست‌وجو
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'مهار + K (مک: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>متوسط</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'تصویر نشانک‌ها', '387', '220', 'right')?>
+
+                <h4>بازی با برچسب‌ها</h4>
+                <p>هنگامی که تعداد زیادی نشانک ایجاد کنید، مدیریت همهٔ آنها کاری دشوار خواهد بود. برای مرتب نگه داشتن نشانک‌ها، می‌توانید به نشانک‌ها برچسب اختصاص دهید: کافی است بر روی شمایل ستاره دو بار کلیک کنید و برچسب‌های مورد نظر خود را وارد کنید.</p>
+                <p>می‌توانید به یک وب‌گاه هر تعداد برچسب که مایل باشید اختصاص دهید (باید بین برچسب‌ها ویرگول قرار دهید)، و سپس برای به سادگی پیدا کردن مجدد وب‌گاه، برچسب آن را در نوار مکان وارد کنید. مثلاً، وارد کردن کلمهٔ «مسافرت» در نوار مکان تمام وب‌گاه‌هایی را که به آنها برچسب مربوط به مسافرت اختصاص داده‌اید نشان می‌دهد.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'تصویر افزودنی‌ها', '364', '256', 'right')?>
+
+                <h4>همه چیز دربارهٔ افزودنی‌ها</h4>
+                <p>نسخهٔ معمولی فایرفاکس مملو از امکانات است، ولی چرا خود را به آن محدود کنیم؟ بیش از ۵٬۰۰۰ افزودنی (برنامه‌های اضافی کوچکی که فایرفاکس را سفارشی می‌کنند) وجود دارد که می‌توانید آنها را دریافت کنید تا تقریباً هر امر قابل تصور را گسترش بخشید. برای باز کردن مدیریت افزودنی‌ها به منوی ابزارها ← افزودنی‌ها بروید و به اکتشاف تمام راه‌های موجود برای تغییر فایرفاکس به صورتی که مایل هستید بپردازید.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'تصویر جست‌وجو', '371', '233', 'right')?>
+
+                <h4>باهوش‌تر جست‌وجو کنید</h4>
+                <p>شما از قبل با نوار جست‌وجو موجود در فایرفاکس آشنا هستید. ولی آیا می‌دانستید که می‌توانید تقریباً هر موتور جست‌وجوی دلخواه خود را در آن انتخاب کنید؟ کافی است بر روی شمایل سمت راست نوار جستجو کلیک کنید تا منویی با گزینه‌های پیش‌فرض ظاهر شود.</p>
+                <p>علاوه بر آن می‌توانید با کلیک کردن مدیریت موتورهای جست‌وجو… ترتیب فهرست را تغییر دهید، گزینه‌های جدیدی اضافه کنید، یا حتی به موتورهای جست‌وجوی دلخواه‌تان کلید میان‌بر اختصاص دهید. مثلاً می‌توانید به جست‌وجوی Google میان‌بر «G» را اختصاص دهید - و سپس اگر بخواهید به دنبال دستور پخت شیرینی جست‌وجو کنید، می‌توانید در نوار مکان «G دستور پخت شیرینی» را وارد کنید تا نتایج جستجو ظاهر شود.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'تصویر پیدا کردن', '385', '254', 'right')?>
+
+                <h4>در یک لحظه بیابید</h4>
+                <p>ویژگی پیدا کردن در حین وارد کردن هم باعث صرفه‌جویی در وقت می‌شود. به جای استفاده از نوار پیدا کردن برای جست‌وجو به دنبال یک لغت در یک صفحهٔ وب، کافی است یک جای آن صفحه کلیک کنید و شروع به وارد کردن کلمهٔ مورد نظر کنید. مکان‌نما بلافاصله به اولین مکانی که کلمه در آن ظاهر شده است می‌پرد.</p>
+                <p>می‌توانید از این ویژگی برای پیوندها نیز استفاده کنید.  مثلاً، به جای حرکت دادن مکان‌نما به سوی یک پیوند، کافی است کلمه‌ای موجود در آن را وارد کنید و به محض آن که مکان‌نما کلمه را پیدا کرد، دکمهٔ ورود را فشار دهید.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'تصویر خصوصی', '358', '219', 'right')?>
+
+                <h4>حذف تمام ردپاها</h4>
+                <p>برای دلایل امنیتی و حفظ حریم خصوصی، بهتر است ردپایی از مرور خود به جا نگذارید (مخصوصاً اگر از رایانه‌تان با چند نفر دیگر به صورت اشتراکی استفاده می‌کنید). فایرفاکس به شما امکان می‌دهد که تاریخچهٔ مرور و بارگیری، حافظهٔ نهان و کوکی‌های خود را با یک کلیک حذف نمایید. کافی است به منوی ابزارها ← پاک‌سازی اطلاعات خصوصی… بروید تا این کار را انجام دهید. برای احتیاط هر چه بیشتر، به <span id="trace-platform">ابزارها ← گزینه‌ها ← خصوصی</span> بروید و گزینهٔ «اطلاعات خصوصی همیشه هنگام بستن فایرفاکس پاک شوند» را فعال نمایید.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="فایرفاکس ← گزینه‌ها ← خصوصی";
+                } else if (gPlatform == 2) {
+                    document.getElementById('trace-platform').innerHTML="ویرایش ← گزینه‌ها ← خصوصی";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>پیشرفته</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'تصویر نوار مکان', '392', '245', 'right')?>
+
+                <h4>رفتن مستقیم به وب‌گاه‌های دلخواه‌تان</h4>
+                <p>برای دسترسی ساده‌تر و سریع‌تر به نشانک‌های‌تان می‌توانید به آنها کلیدواژه اختصاص دهید. در پنجرهٔ مخزن، تنها کافی است متن کوتاهی در بخش کلیدواژه وارد کنید. از آن به بعد می‌توانید با وارد کردن آن متن در نوار مکان به آن وب‌گاه بروید. مثلاً می‌توانید به حساب کاربری del.icio.us خود کلیدواژهٔ «پیوندها» را اختصاص دهید، و از آن پس وارد کردن واژهٔ «پیوندها» در نوار مکان شما را به آن صفحه می‌برد.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'تصویر نشانک', '381', '233', 'right')?>
+
+                <h4>ایجاد پوشه‌های هوشمند</h4>
+                <p>اگر کاربر پیشرفته‌ای باشید که اغلب نیاز به ذخیره و زیر نظر قرار دادن تعدادی وب‌گاه خاص داشته باشد، یک راه برای صرفه‌جویی در وقت آن است که به استفاده از مخرن فایرفاکس ۳، می‌توانید جست‌وجوهای مورد نیاز خود را ایجاد کنید و آنها را به صورت پوشه‌هایی که با تغییر محتویات تاریخچه و نشانک‌های‌تان به صورت خودکار به‌هنگام می‌شوند ذخیره سازید.</p>
+                <p>ابتدا مخزن را با کلیک کردن گزینهٔ «سازمان‌دهی نشانک‌ها» از منوی نشانک‌ها باز کنید. سپس، عبارت جست‌وجوی خود را در جعبهٔ جست‌وجو وارد کنید. سپس دکمهٔ ذخیره را فشار دهید تا یک پوشهٔ هوشمند ایجاد کنید.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'تصویر مدیر بارگیری', '387', '271', 'right')?>
+
+                <h4>مدیریت بارگیری‌ها</h4>
+                <p>اگر پرونده‌های زیادی بارگیری می‌کنید، می‌توانید از پنجرهٔ مدیریت بارگیری استفاده کنید تا تمام بارگیری‌های‌تان را زیر نظر داشته باشید. می‌توانید بارگیری‌های خود را متوقف سازید یا از سر گیرید، و با باز کردن مستقیم پرونده‌ها از مدیر بارگیری در وقت خود صرفه‌جویی کنید.</p>
+                <p>اگر نیاز به پیدا کردن یک بارگیری تمام شده دارید، به منوی ابزارها ← بارگیری بروید و از جعبهٔ جست‌وجو برای پیدا کردن پروندهٔ مورد نظر خود استفاده کنید. وقتی پرونده را پیدا کردید، برای باز کردن آن بر روی پرونده دو بار کلیک کنید یا برای رونوشت‌برداری از مکان بارگیری روی آن <span id="manage-downloads-click">کلیک راست</span> کنید و گزینهٔ «رونوشت‌برداری از پیوند بارگیری» را انتخاب کنید.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('manage-downloads-click').innerHTML="مهار-کلیک";
+                }
+                //]]></script>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'تصویر ابزارهای توسعه‌دهندگان', '378', '252', 'right')?>
+
+                <h4>اکتشاف ابزارهای توسعه‌دهندگان</h4>
+                <p>اگر یک توسعه‌دهندهٔ وب هستید، ابزارهای توسعه‌دهندهٔ فایرفاکس کارتان را ساده‌تر می‌سازند. <a href="https://addons.mozilla.org/fa/firefox/browse/type:1/cat:4">وب‌گاه افزودنی‌های موزیلا</a> ابزارهای زیادی برای تسهیل روند توسعه در اختیارتان می‌گذارد. این ابزارها شامل Firebug برای ویرایش، اشکال‌زدایی و بررسی CSS، HTML و جاوا اسکریپت موجود در صفحات وب، Tamper Data برای مشاهده و تغییر سرآیندهای HTTP/HTTPS و پارامترهای POST، و DOM Inspector برای بررسی هر عنصر HTML یا CSS تنها با یک کلیک راست می‌باشند.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'تصویر ترجیحات', '375', '309', 'right')?>
+
+                <h4>تنظیم وب آنگونه که مایل هستید</h4>
+                <p>اکنون می‌توانید از گردانندگان قراردادهای مبتنی بر وب برای ساده کردن دسترسی به برنامه‌های وبی مورد علاقهٔ خود بهره ببرید. مثلاً می‌توانید فایرفاکس را تنظیم نمایید تا کلیک بر روی یک پیوند <span dir="ltr">mailto:</span> در هر وب‌گاهی نوشتن نامهٔ جدید به جای استفاده از برنامهٔ پیش‌فرض پست الکترونیکی رایانه‌تان در فراهم‌کنندهٔ پست الکترونیکی مبتنی بر وب دلخواه‌تان میسر شود. (توجه کنید که این امکان تنها برای خدمات پست الکترونیکی که خود را در فایرفاکس ۳ ثبت کرده‌اند امکان‌پذیر است).</p>
+                <p>برای انتخاب برنامهٔ پیش‌فرض برای هر قرارداد به قسمت <span id="platform-protocol">ابزارها ← گزینه‌ها ← برنامه‌ها</span> بروید. با انتخاب «هر بار پرسیده شود» می‌توانید امکان انتخاب برنامهٔ مورد نظر را به صورت دستی فعال کنید.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="فایرفاکس ← گزینه‌ها ← برنامه‌ها";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="ویرایش ← گزینه‌ها ← برنامه‌ها";
+                }
+                //]]></script>
+                <p>اگر یک توسعه‌دهندهٔ وب هستید، می‌توانید اطلاعات بیشتری دربارهٔ چگونگی افزودن گردانندگان قراردادهای مبتنی بر وب در <a href="http://developer.mozilla.org/">مرکز توسعه‌دهندگان موزیلا</a> بیابید.</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geolocalització en el Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Navegació amb geolocalització integrada</h2>
+    <p>El Firefox pot dir als llocs web on us trobeu per tal que us puguin oferir aquella
+    informació que pugui ser-vos més rellevant i útil. És una qüestió de fer el Web més intel·ligent
+    &ndash; i d'una forma totalment respectuosa amb la vostra privadesa.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Proveu-ho!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Preguntes més freqüents</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Què és la navegació amb geolocalització integrada?</h4>
+    <div class="expander-content">
+        <p>Els llocs web que tenen en compte la geolocalització us demanaran on sou per tal d'oferir-vos la informació més rellevant, o bé estalviar-vos temps quan cerqueu. Posem que estigueu mirant de trobar una pizzeria a la vostra àrea. Un lloc web d'aquestes característiques us demanaria compartir la vostra ubicació perquè simplement cercant «pizza» us faciliti aquelles respostes que pugueu voler… no cal que introduïu més informació o que escriviu res més.</p>
+        <p>O, si mireu de trobar un itinerari en un mapa, el lloc web sabrà d'on comenceu, i per tant, només caldrà que li digueu on heu d'anar.</p>
+        <p>Aquest servei és totalment opcional &ndash; El Firefox no compartirà la vostra ubicació sense el vostre permís &ndash; i es proporciona amb el màxim respecte per la vostra privadesa. I, com tots els elements del Firefox, està creat utilitzant estàndards oberts per a facilitar-ne l'adopció entre els desenvolupadors web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Com funciona?</h4>
+    <div class="expander-content">
+        <p>Quan visiteu un lloc que té en compte la geolocalització, el Firefox us demanarà si voleu compartir la vostra ubicació.</p>
+        <p>Si hi accediu, el Firefox recollirà informació dels punts d'accés sense fil propers i de la adreça IP del vostre ordinador. A continuació, s'enviarà al proveïdor del servei de geolocalització per defecte, Google Location Services, per a obtenir-ne una estimació del vostre lloc. L'estimació de la ubicació es comparteix llavors amb el lloc web que ho sol·licita.</p>
+        <p>Si no hi doneu el vistiplau, el Firefox no farà res.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Com n'és de precís?</h4>
+    <div class="expander-content">
+        <p>La precisió varia enormement d'una ubicació a una altra. En certs llocs, els nostres proveïdors de servei poden oferir una ubicació a l'abast d'uns pocs metres. Però en altres àrees pot ser una distància superior. Totes les ubicacions que ofereixen els nostres proveïdors de servei són només estimacions i no podem garantir-ne precisió. Així doncs, no ho utilitzeu per a emergències. Feu servir sempre el sentit comú.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Quina informació s'envia, i a qui? Com se'n garanteix la privadesa?</h4>
+    <div class="expander-content">
+        <p>La vostra privadesa és extremadament important per a nosaltres, i el Firefox mai compartirà la vostra ubicació sense el vostre permís. Quan visiteu una pàgina que sol·licita la vostra informació, se us demanarà abans de compartir cap informació amb el lloc web que ho sol·licita i el nostre proveïdor de servei extern.</p>
+        <p>Per defecte, el Firefox utilitza Google Location Services per a determinar la vostra ubicació i hi envia:</p>
+        <ul>
+            <li>l'adreça IP del vostre ordinador,</li>
+            <li>informació dels punts d'accés sense fil propers, i</li>
+            <li>un identificador de client aleatori, assignat per Google, que venç cada 2 setmanes.</li>
+        </ul>
+        <p>Per a una descripció completa de la informació que recull i utilitza el Firefox, consulteu la <a href="/<?=$lang?>/legal/privacy/firefox-en.html">política de privadesa del Firefox</a> (en anglès).</p>
+        <p>Google Location Services fa una estimació de la vostra geolocalització (p.ex., latitud i longitud). Per a una descripció completa de la informació que recull i utilitza Google, consulteu la <a href="http://www.google.com/privacy-lsf.html" class="external">política de privadesa de la geolocalització de Google</a> (en anglès).</p>
+        <p>La informació s'intercanvia a través d'una connexió segura per a protegir la vostra privadesa. Una vegada el Firefox té la informació de la vostra ubicació, la passa al lloc web que la demana. En cap moment el nom o ubicació del lloc web que visiteu, o cap galeta, es comparteix mai amb Google Location Services.</p>
+        <p>Ni Mozilla ni Google utilitzaran mai la informació que recullen a través de Google Location Services per a identificar-vos o espiar-vos.</p>
+        <p>Per a més informació sobre què fa el lloc web sol·licitant amb la vostra informació de geolocalització, consulteu la seva pròpia política de privadesa.</p>
+        <p>Per a més informació pel que fa a la vostra privadesa, podeu llegir:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Política de privadesa del Mozilla Firefox</a> (en anglès)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Política de privadesa de Google</a> (en anglès)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Se'm vigila durant la navegació?</h4>
+    <div class="expander-content">
+        <p>No. El Firefox només sol·licita una ubicació quan el lloc web us ho demana, i només comparteix la vostra ubicació quan l'usuari ho aprova. El Firefox no segueix o recorda la vostra ubicació mentre navegueu.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Com es revoquen els permisos que he donat a un lloc?</h4>
+    <div class="expander-content">
+        <p>Si heu donat permís al Firefox per a donar la vostra ubicació a un lloc web, i posteriorment canvieu d'idea, podeu revocar-ho fàcilment així:</p>
+        <ul>
+            <li>Navegueu fins al lloc web al qual heu donat permís</li>
+            <li>Aneu al menú <em>Eines</em>, seleccioneu llavors <em>Informació de la pàgina</em></li>
+            <li>Seleccioneu la pestanya <em>Permisos</em></li>
+            <li>Canvieu la configuració de <em>Compartir la ubicació</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Com es neteja el «número d'identificació de client aleatori»?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Aneu al menú <em>Eines</em>, seleccioneu llavors <em>Neteja l'historial recent</em></li>
+            <li>Feu clic a la fletxa de <em>Detalls</em></li>
+            <li>Assegureu-vos que <em>Galetes</em> està seleccionat</li>
+            <li>Feu clic a <em>Neteja-ho ara</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Com es pot desactivar la geolocalització integrada de forma permanent?</h4>
+    <div class="expander-content">
+        <p>La navegació amb geolocalització integrada al Firefox funciona sempre que ho decidiu. No s'envia mai cap informació sense el vostre permís. Si voleu inhabilitar aquesta característica completament, seguiu els passos següents:</p>
+        <ul>
+            <li>A la barra d'ubicació, escriviu <code>about:config</code></li>
+            <li>Escriviu-hi <code>geo.enabled</code></li>
+            <li>Feu doble clic a la preferència <em>geo.enabled</em></li>
+            <li>A partir d'aquell moment la geolocalització integrada estarà inhabilitada</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">On sóc?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! S'ha produït un error mentre s'intentava determinar la vostra posició.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

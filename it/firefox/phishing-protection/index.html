@@ -1,0 +1,97 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Firefox - Protezione da phishing e malware";
+    $body_id    = 'phishing-protection';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/phishing-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+    <script type="text/javascript">//<![CDATA[
+        function userAgentRedirect(match_string, url) {
+            if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
+                window.location = url;
+        }
+        userAgentRedirect('Firefox/2', '/{$lang}/firefox/phishing-protection/firefox2/');
+    //]]></script>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Protezione da phishing e malware</h2>
+    <p>Firefox 3 e le versioni successive includono un meccanismo integrato di protezione da phishing e malware per garantire la tua sicurezza online. Grazie a questa caratteristica riceverai un avviso ogni volta che visiti una pagina segnalata come tentativo di contraffazione di un sito legittimo (tipo di frode talvolta indicato come “phishing”) o un sito malevolo progettato per danneggiare il tuo computer (altresì noto come malware).</p>
+</div>
+
+<div id="main-content">
+
+<noscript>
+    <p>Se stai usando Firefox 2, consulta la pagina <a href="/<?=$lang?>/firefox/phishing-protection/firefox2/">Protezione dal phishing in Firefox 2</a>.</p>
+</noscript>
+
+<h3>Domande più frequenti</h3>
+
+<div class="expander expander-odd" id="whatisphishing">
+    <h4 class="expander-header">Che cos'è un sito contraffatto? Che cosa significa phishing?</h4>
+    <div class="expander-content">
+        <p>Un sito contraffatto (truffa di tipo “phishing” o “web forgery”) è una forma di furto d'identità che si verifica quando un sito cerca di sostituirsi in modo fraudolento a un sito legittimo, nel tentativo di sottrarre informazioni sensibili quali password, dettagli di un account o numeri di carta di credito. Normalmente questo tipo di attacco avviene tramite messaggi di posta elettronica che cercano di convincere l'utente ad aggiornare i propri dati personali su un sito fasullo ma allo stesso tempo molto simile all'originale. Ulteriori informazioni sul phishing sono disponibili (in inglese) sul sito del <a href="http://www.antiphishing.org/">Gruppo di lavoro anti-phishing</a> oppure sulla pagina dedicata al phishing di <a href="http://it.wikipedia.org/wiki/Phishing">Wikipedia</a>.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Che cos'è un sito malevolo? Che cosa significa malware?</h4>
+    <div class="expander-content">
+        <p>Il malware è un software progettato per danneggiare un computer o sottrarre informazioni personali all'insaputa dell'utente. Un sito malevolo cercherà di infettare il computer del visitatore installando del malware. Questo tipo di attacchi è particolarmente difficile da rilevare: anche un sito all'apparenza sicuro potrebbe cercare di danneggiarti. Spesso un sito web viene attaccato da malintenzionati e trasformato in un sito malevolo senza che il proprietario del sito ne sia consapevole. Ulteriori informazioni su siti malevoli e malware sono disponibili sul sito <a href="http://www.stopbadware.org/home/help">stopbadware.org</a>, frutto di una cooperazione tra università, leader dell'industria tecnologica e volontari al fine di proteggere gli utenti di internet dalle continue minacce alla propria sicurezza e alla propria privacy.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Come funziona la protezione da phishing e malware di Firefox?</h4>
+    <div class="expander-content">
+        <p>La protezione da phishing e malware funziona confrontando i siti visitati con degli elenchi di siti segnalati come contraffatti o malevoli. Se la protezione da phishing e malware è attiva, questi elenchi vengono scaricati e aggiornati automaticamente ogni 30 minuti. I dettagli tecnici sul funzionamento del protocollo safe-browsing sono inoltre <a href="http://code.google.com/p/google-safe-browsing/wiki/Protocolv2Spec">disponibili pubblicamente</a>.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Quali informazioni vengono inviate a Mozilla o ai suoi partner quando la protezione da phishing e malware è attivata?</h4>
+    <div class="expander-content">
+        <p>Ci sono due situazioni in cui Firefox comunica con i partner di Mozilla per l'utilizzo della protezione da phishing e malware. Nel primo caso si tratta dell'aggiornamento degli elenchi di siti segnalati come contraffatti o malevoli. Durante questo aggiornamento non viene inviata alcuna informazione sui siti visitati. Il secondo caso si verifica nel momento in cui si visita un sito segnalato come contraffatto o malevolo. Prima di bloccare il sito, Firefox effettua un controllo per verificare che il sito non sia stato rimosso dagli elenchi successivamente all'ultimo aggiornamento. In entrambi i casi potrebbe verificarsi la trasmissione dei cookie esistenti per google.com, il fornitore dei nostri elenchi.</p>
+        <p>L'<a href="/<?=$lang?>/privacy-policy.html">informativa sulla privacy di Mozilla</a> esclude esplicitamente la possibilità, per Mozilla e i suoi partner, di archiviare tali dati per scopi diversi dal miglioramento dello strumento di Protezione da phishing e malware. L'<a href="http://www.google.com/intl/en/privacypolicy.html">informativa sulla privacy di Google</a> descrive la gestione dei cookie da parte di Google.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Come posso utilizzare la protezione da phishing e malware?</h4>
+    <div class="expander-content">
+        <p>Come impostazione predefinita queste caratteristiche sono già attivate: a meno che le impostazioni di sicurezza siano state modificate, è molto probabile che tu sia già protetto. Le opzioni relative alla protezione da phishing e malware si trovano nel pannello Sicurezza delle opzioni (menu <span id="platform-note">Strumenti &gt; Opzioni… &gt; Sicurezza</span>).</p>
+        <script type="text/javascript">//<![CDATA[
+        if (gPlatform == 3 || gPlatform == 4) {
+            document.getElementById('platform-note').innerHTML="Firefox &gt; Preferenze… &gt; Sicurezza";
+        } else if (gPlatform == 2) {
+            document.getElementById('platform-note').innerHTML="Modifica &gt; Preferenze &gt; Sicurezza";
+        }
+        //]]></script>
+        <noscript><p>In Mac OS X, utilizzare il menu Firefox &gt; Preferenze… &gt; Sicurezza, in Linux Modifica &gt; Preferenze &gt; Sicurezza.</p></noscript>
+        <p>Per verificare il corretto funzionamento della protezione da phishing puoi visitare la nostra <a
+        href="/firefox/its-a-trap.html">pagina di test per il phishing</a>.  Allo stesso modo puoi verificare la protezione da siti malevoli visitando il nostro <a href="/firefox/its-an-attack.html">sito malevolo di test</a>. Con la protezione da phishing e malware attivate, dovrebbe venire interrotto il caricamento di entrambi i siti.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Sono certo che il mio sito è sicuro, come posso rimuoverlo dall'elenco?</h4>
+    <div class="expander-content">
+        <p>Se possiedi un sito che è stato oggetto di attacchi ed è stato sistemato, oppure ritieni che il tuo sito sia stato segnalato per errore, puoi richiedere la rimozione dall'elenco. Invitiamo comunque i gestori a investigare a fondo su queste segnalazioni: spesso un sito può essere trasformato in un sito malevolo senza alcuna modifica visibile.</p>
+        <ul>
+            <li>Per richiedere la rimozione dall'elenco di un sito segnalato come contraffatto, <a href="http://www.google.com/safebrowsing/report_error/?tpl=mozilla
+">utilizza questo modulo</a> fornito da Google.</li>
+            <li>Per richiedere la rimozione dall'elenco di un sito segnalato come malevolo, <a href="http://www.stopbadware.org/home/reviewinfo">utilizza questo modulo</a> fornito da stopbadware.org.</li>
+        </ul>
+    </div>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/footer.inc.php";
+?>

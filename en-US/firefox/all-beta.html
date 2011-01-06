@@ -1,0 +1,96 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox web browser | Help us test the latest beta';
+    $body_id    = 'firefox-all';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/tignish/firefox.css" media="screen" />
+    <link rel="stylesheet" href="/style/tignish/all.css" media="screen" />
+    <link rel="stylesheet" href="/style/tignish/all-beta.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Help test the future of Firefox!</h2>
+    <p>The latest beta version of Firefox is now available as a preview release. Take it for a test drive and let us know what you think!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Important Information</h4>
+        <p class="intro">Please read before downloading</p>
+    </div>
+    <ul>
+        <li>This is pre-release software: you may encounter compatibility problems with some websites and add-ons.</li>
+        <li>If you find a problem please <a href="http://feedback.mozilla.org/">let us know</a> or <a href="https://bugzilla.mozilla.org/">file a bug</a>.</li>
+        <li>For more details, read the <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">release notes</a> and <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">known issues</a>.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div>
+
+<div id="content">
+
+    <script src="/js/download.js"></script>
+
+    <div id="download-button">
+    <script src="/js/download.old.js"></script>
+
+<?php
+// en-US download box is built in js and doesn't offer the flexibility
+// hidePartialLocaleJS() hides unavailable locales for specific platforms
+// include after download.old.js
+hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
+?>
+
+
+
+    <script>
+          <!--
+          // Configure the Firefox download write script
+
+        if (gPlatform == 1) {
+            document.body.className += ' platform-windows';
+        } else if (gPlatform == 3 || gPlatform == 4) {
+            document.body.className += ' platform-mac';
+        } else if (gPlatform == 2) {
+            document.body.className += ' platform-linux';
+        }
+
+
+          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+      // Temporary fix for bug 439792
+      if (gPlatform == PLATFORM_MACOSX) {
+            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.5 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+      }
+          var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+          document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+          writeDownloadItems("fxbeta");
+          document.writeln("<\/ul>");
+          document.writeln("<div class=\"download-other\"><span class=\"other\">");
+          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_DEVEL_VERSION?>\/releasenotes\/\">Release Notes<\/a> - ");
+          document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a> - ");
+          document.writeln("Other systems and languages listed below.");
+          document.writeln("<\/span><\/div>");
+          //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
+  </div>
+  <p id="no-beta">Not looking for a Beta? Get the <a href="/<?=$lang?>/firefox/">latest Firefox</a>.</p>
+  <div id="all-beta">
+    <div id="languages">
+        <h3>Fully Localized Versions</h3>
+      <?php
+        $_options['tweaks'] = array('/>([0-9]{1}\.[0-9]{1,2})b([0-9]{1})</' => '>$1 Beta $2<');
+        echo $firefoxDetails->getDownloadTableForDevelBuilds($_options);
+      ?>
+    </div>
+  <div id="all-beta-footer"></div>
+  </div>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

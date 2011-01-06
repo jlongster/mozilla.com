@@ -1,0 +1,42 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "É um ataque!";
+    $body_id    = 'its-an-attack';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/its-a-trap.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>É um ataque!</h2>
+	<p>Eu sou uma página mal-intencionada tentando infectá-lo com <span lang="en" title="programa malicioso">malware</span>!</p>
+</div>
+
+<div id="main-content">
+
+<p>OK, não é verdade, mas sites maliciosos (também conhecidos como <a href="http://pt.wikipedia.org/wiki/Malware">malware</a>) podem atacar o seu computador sem que você perceba. Esses ataques podem roubar informações pessoais, danificar o seu computador ou usar o seu sistema para atacar outros computadores. Algumas vezes sites nos quais você confia podem tornar-se foco de ataque sem o conhecimento de seu dono. O Firefox 3 conta com um sistema integrado de <a href="/<?=$lang?>/firefox/phishing-protection/">Proteção Antiphishing e Antiataques</a> para ajudar você a identificá-los. Se você estiver usando o Firefox 3 ou uma versão mais recente, você deve ter recebido um aviso sobre um possível ataque nesta página de exemplo.</p>
+
+<h5>Você pode proteger-se de possíveis ataques:</h5>
+
+<ul>
+<li><strong>não baixando programas de sites nos quais você não confia</strong>, mesmo que eles afirmem ser necessário; se um site disser que um plugin é necessário, obtenha-o diretamente da página do plugin;</li>
+<li><strong>mantendo seu sistema atualizado</strong> aplicando correções de segurança do Firefox e outras aplicações, bem como do seu sistema operacional;</li>
+<li><strong>não abrindo arquivos anexos em emails de pessoas que você não conhece</strong>, mesmo que pareçam ter conteúdo inofensivo, como vídeos e proteções de tela.</li>
+</ul>
+
+</div> <!-- end #main-content  -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,35 @@
+<?php
+    // Please also translate the php variable below
+    // TITLE OF THE PAGE
+    $page_title = "Mozilla | Firefox Mobile";
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+  <h1><img src="/img/mobile/m/logo-welcome.png" alt="Welcome to Firefox" /></h1>
+  <p>Take your Firefox anywhere.</p>
+</div>
+
+<div class="download-button">
+  <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>" class="button button-beta">
+    <span>Download for Android <em>Free - Beta version</em></span>
+  </a>
+</div>
+
+<div class="download-button">
+  <a href="<?= mobileDetails::download_url('en-us', mobileDetails::maemo, mobileDetails::beta_version) ?>" class="button button-beta">
+    <span>Download for Maemo <em>Free - Beta version</em></span>
+  </a>
+</div>
+
+<ul class="ancillary">
+  <li><a href="/<?= $lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a></li>
+  <li><a href="/<?= $lang ?>/mobile/platforms/">Supported Devices</a></li>
+</ul>
+
+<?php
+    $link1 = "<a href='/{$lang}/mobile/beta/faq/'>FAQ</a>";
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

@@ -1,0 +1,104 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Firefox Phishing and Malware Protection";
+    $body_id    = 'phishing-protection';
+    $body_class = 'portal-page';
+    $breadcrumbs = array(
+        $l10n->get('Phishing and Malware Protection') => "",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/phishing-page.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+		<script>//<![CDATA[
+		function userAgentRedirect(match_string, url) {
+			if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
+				window.location = url;
+		}
+		userAgentRedirect('Firefox/2', '/{$lang}/firefox/phishing-protection/firefox2/');
+	//]]></script>
+EXTRA_HEADERS;
+		@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Phishing and Malware <span>Protection</span></h2>
+	<p>Firefox 3 or later contains built-in Phishing and Malware Protection to help keep you safe online.  These features will warn you when a page you visit has been reported as a Web Forgery of a legitimate site (sometimes called “phishing” pages) or as an Attack Site designed to harm your computer (otherwise known as malware).</p>
+</div>
+
+<div id="main-content">
+
+<h3>Frequently asked <span>Questions</span></h3>
+
+<noscript>
+	<p>If you are using Firefox 2, please see <a href="/<?=$lang?>/firefox/phishing-protection/firefox2/">Phishing Protection for Firefox 2</a>.</p>
+</noscript>
+
+<div class="expander expander-odd" id="whatisphishing">
+	<h4 class="expander-header">What is a Web Forgery? What is Phishing?</h4>
+	<div class="expander-content">
+		<p>Web Forgery (also known as “Phishing”) is a form of identity theft that occurs when a malicious Web site impersonates a legitimate one in order to trick you into giving up sensitive information such as passwords, account details, or credit card numbers. Phishing attacks usually come from email messages that attempt to lure the recipient into updating their personal information on fake, but very real looking, Web sites.  More information on phishing can be found at the <a href="http://www.antiphishing.org/">Anti-Phishing Working Group</a>, and there are a number of examples and resources available at the <a href="http://en.wikipedia.org/wiki/Phishing">Wikipedia Phishing page</a>.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">What is an Attack Site? What is Malware?</h4>
+	<div class="expander-content">
+		<p>Malware is software designed to infect your computer without your knowledge. Malware is most often used to steal personal information, send junk e-mail (spam), or spread more malware.</p>
+		<p>Attack Sites are Web sites that try to infect your computer with malware when you visit. These attacks can be very difficult to detect; even a site that looks safe may be secretly trying to attack you. Sometimes the Web site’s owner won’t even know that the site has been turned into an Attack Site.</p>
+		<p>You can learn more about malware and Attack Sites from <a href="http://www.stopbadware.org/firefox">StopBadware</a>, a non-profit organization that works with partners like Mozilla to protect users from malware and other dangerous software.</p>
+	</div>
+</div>
+<div class="expander expander-odd">
+	<h4 class="expander-header">How does Phishing and Malware Protection work in Firefox?</h4>
+	<div class="expander-content">
+		<p>Phishing and Malware Protection works by checking the sites that you visit against lists of reported phishing and malware sites.  These lists are automatically downloaded and updated every 30 minutes or so when the Phishing and Malware Protection features are enabled.  The technical details of the safe-browsing protocol are also <a href="http://code.google.com/p/google-safe-browsing/wiki/Protocolv2Spec">publicly available</a>.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">What information is sent to Mozilla or its partners when Phishing and Malware Protection are enabled?</h4>
+	<div class="expander-content">
+		<p>There are two times when Firefox will communicate with Mozilla’s partners while using Phishing and Malware Protection.  The first is during the regular updates to the lists of reporting phishing and malware sites.  No information about you or the sites you visit is communicated during list updates.  The second is in the event that you encounter a reported phishing or malware site.  Before blocking the site, Firefox will request a double-check to ensure that the reported site has not been removed from the list since your last update.  In both cases, existing cookies you have from google.com, our list provider, may also be sent.</p>
+		<p>The <a href="/<?=$lang?>/privacy-policy.html">Mozilla Privacy Policy</a> expressly forbids the collection of this data by Mozilla or its partners for any purpose other than improvement of the Phishing and Malware Protection feature. The <a href="http://www.google.com/intl/en/privacypolicy.html">Google Privacy Policy</a> explains how Google handles user cookies.</p>
+	</div>
+</div>
+<div class="expander expander-odd">
+	<h4 class="expander-header">How do I use the Phishing and Malware Protection features?</h4>
+	<div class="expander-content">
+		<p>These features are turned on by default so unless your security preferences have been changed, you are likely already using them.  Phishing and Malware Protection options can be found on the Security Preferences pane.  <span id="platform-note">Go to Tools &gt; Options… &gt; Security.</span></p>
+		<noscript><p>On Mac OS X, go to Firefox &gt; Preferences… &gt; Security. On Linux, go to Tools &gt; Options &gt; Security.</p></noscript>
+		<p>You can test to see if Phishing Protection is active by trying to visit our <a
+		href="/firefox/its-a-trap.html">phishing test site</a>.  Likewise, you can try to visit our <a href="/firefox/its-an-attack.html">malware test site</a> to confirm that Firefox is blocking Attack Sites as well.  With Phishing and Malware Protection turned on, both sites should be blocked from loading.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">I’ve confirmed that my site is safe, how do I get it removed from the lists?</h4>
+	<div class="expander-content">
+		<p>If you own a site that was attacked and you have since repaired it, or if you feel that your site was reported in error, you can request that it be removed from the lists.  We encourage site owners to investigate any such report thoroughly, though; a site can often be turned into an attack site without any visible change.</p>
+		<ul>
+			<li>To request removal from the list of reported phishing sites, <a href="http://www.google.com/safebrowsing/report_error/?tpl=mozilla">use this form</a> provided by Google.</li>
+			<li>To request removal from the list of reported malware sites, <a href="http://www.stopbadware.org/home/reviewinfo">use this one</a>, provided by stopbadware.org.</li>
+		</ul>
+	</div>
+</div>
+
+<script>//<![CDATA[
+$(document).ready(function() {
+	if (gPlatform == 3 || gPlatform == 4) {
+		document.getElementById('platform-note').innerHTML="Go to Firefox &gt; Preferences… &gt; Security.";
+	} else if (gPlatform == 2) {
+		document.getElementById('platform-note').innerHTML="Go to Edit &gt; Preferences &gt; Security.";
+	}
+});
+//]]></script>
+
+</div> <!-- end #main -->
+
+
+<?php
+	$extra_footers = <<<EXTRA_FOOTERS
+<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

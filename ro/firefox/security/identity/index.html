@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Despre identificarea saitului printr-un clic";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Identificați saitul printr-un clic</h2>
+    <p>Firefox 3 conține un buton nou pentru a verifica identitatea saitului pentru ca dumneavoastră să puteți verifica dacă saitul nu este o imitație.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Această funcționalitate vă permite să vedeți imediat dacă saitul pe care-l vizitați oferă informații despre identitatea lui, cine a verificat informațiile și dacă datele dumneavoastră personale sunt protejate împotriva fraudei. Puteți vedea identitatea oricărui sait cu un clic pe iconița saitului, aflată în stânga barei de adrese (sau tastând Shift-Tab-Enter).</p>
+
+<h3>Întrebări frecvente</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Ce înseamnă nivelele diferite de informații legate de identitate?</h4>
+    <div class="expander-content">
+        <p>Iconița cu ofițerul de pașapoarte se va schimba pentru a reflecta nivelul informațiilor legate de identitate pe care le furnizează saitul curent.</p>
+        <p class="site-id site-id-1">Saitul nu furnizează informații legate de identitate.</p>
+        <p class="site-id site-id-2">Saitul furnizează informații minimale de identitate și vă protejează datele personale de furt.</p>
+        <p class="site-id site-id-3">Saitul furnizează informații de identitate complete și verificate  și vă protejează datele personale de furt.</p>
+        <p class="site-id site-id-4">Acest sait a fost raportat ca un sait de atac sau o scamatorie. Furnizarea de informații personale sau chiar vizitarea lui vă poate dăuna.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">De ce nu oferă toate saiturile web informații de identitate?</h4>
+    <div class="expander-content">
+        <p>Majoritatea saiturilor web nu cer informații personale sau financiare vizitatorilor și nu au de ce să suporte costul furnizării informațiilor de identitate și al protecției datelor private împotriva furtului.</p>
+        <p>Saiturile care vă cer informații personale sau financiare, sau care pretind că reprezintă afaceri sau entități guvernamentale trebuie să se identifice mereu corect și să vă protejeze datele private împotriva furtului.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Este sigur să faci afaceri pe saituri care nu se identifică corect?</h4>
+    <div class="expander-content">
+        <p>Decizia de a acorda încredere online trebuie să vină după ce aflați cu cine stați de vorbă, dar poate să nu fie suficient. Saiturile care nu oferă informații de identitate și nu vă protejează datele împotriva furtului vă supun unor riscuri și ar trebui să le considerați nesigure. Dar chiar și saiturile care se identifică corect pot avea practici cu care s-ar putea să nu fiți de acord, sau să aibă lipsuri de securitate.</p>
+        <p>Ca și în viața de zi cu zi, ar trebui să procedați cu atenție când interacționați cu saituri pe care nu le cunoașteți și în care nu aveți încredere. A ști că saitul s-a identificat corect e doar o parte din procesul luării deciziei de a acorda încredere.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Verifică Mozilla informațiile pentru fiecare sait?</h4>
+    <div class="expander-content">
+        <p>Informațiile folosite pentru a identifica saiturile nu sunt verificate de Mozilla. Firefox folosește ca și alte navigatoare serviciile unor companii de încredere numite „Autorități de certificare” care verifică identitatea unui sait și emit „certificate” de identitate. Aceste companii trebuie să adere la <a href="http://www.mozilla.org/projects/security/certs/policy/">Politica Mozilla CA Certificate</a> care, printre altele, cere autorităților de certificare să furnizeze audituri făcute de terți care să confirme că certificatele nu sunt atribuite defectuos.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

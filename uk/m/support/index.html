@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Допомога Firefox для мобільних пристроїв";
+    $search_field  = "Пошук у допомозі";
+    $search_button = "Пошук";
+    $link_to_sumo  = "чи <a href=\"%s\">перейдіть на сайт підтримки</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Допомога Firefox <em>для мобільних пристроїв</em></h1>
+
+    <h2>Типові питання</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Як синхронізувати настільну та мобільну версії?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Як оновити Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Як використовувати Вражаючий екран?</a></li>
+    </ul>
+
+    <h2>Типові теми допомоги</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Як змінювати налаштування?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Швидкі клавіші</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Як керувати завантаженнями?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Як відкрити нову вкладку?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Як знаходити та встановлювати додатки?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Як вилучати чи вимикати додатки?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Навігація по сторінкам?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Як додати закладку?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Як збільшувати та зменшувати масштаб?</a></li>
+    </ul>
+
+    <h2>Потрібно щось інше?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

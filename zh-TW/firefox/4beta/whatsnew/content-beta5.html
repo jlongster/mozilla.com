@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />有什麼新鮮事？</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox 正在改變媒體在網路上呈現的方式: 全新的音訊 API 可以讓原始的音訊資料被放在 HTML5 的 <code>&lt;video&gt;</code> 與 <code>&lt;audio&gt;</code> 元素當中。如此一來，開發者就可以很方便的使用 JavaScript 來讀取並儲存音訊資料。看看影片以取得更多資訊。</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">分享意見回饋 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">新鮮事 »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>最新消息</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>圖形加速（只有在 Windows 上）</h4>
+        <p>體驗超速快感，若您有支援 DirectX 10 的硬體，現在將會預設啟用 Direct2D 圖形加速。</p>
+    </div>
+
+    <div id="column-2">
+        <h4>安全伺服器連線</h4>
+        <p>透過 <acronym title="HTTP Strict-Transport-Security ">HSTS</acronym>，各個網站將可以告訴 Firefox 要自動啟用安全連線，保護您避免攻擊者在資料傳輸過程中竊取您的敏感資料。<a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">了解更多資訊 »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

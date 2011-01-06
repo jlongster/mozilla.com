@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync per a mòbil";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Aixequeu-vos i marxeu</h2>
+    <p>Feu-vos amb el Firefox Sync i compartiu el vostre historial de navegació, adreces d'interès,  contrasenyes i pestanyes del vostre ordinador amb el vostre mòbil.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Feu-vos ara amb el complement Firefox Sync</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Per què fer-se amb el Firefox Sync?</h3>
+
+    <h4>Escriure costa</h4>
+    <p>Afrontem-ho, escriure al mòbil és difícil. Acomiadeu-vos d'escriure llargs URLs i termes de cerca quan la barra fantàstica recorda el  vostre historial, adreces d'interès i pestanyes tant del vostre ordinador com del mòbil, tot portant-vos ràpidament allà on voleu anar i sense quasi teclejar.</p>
+
+    <h4>No comenceu de zero</h4>
+    <p>Digueu adéu a esborrar-ho i tornar-ho a escriure. El Firefox Sync sincronitza les vostres contrasenyes i preferències del Firefox, de manera que ja us ho trobareu fet.</p>
+
+    <h4>Aixequeu-vos i marxeu</h4>
+    <p>Emporteu-vos el Firefox amb vosaltres. Navegueu el Web des del vostre ordinador, aixequeu-vos i marxeu, i tingueu-ho tot esperant-vos al vostre mòbil: el vostre historial, pestanyes obertes, adreces d'interès, la barra fantàstica... tot tal com ho havíeu deixat.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Primers passos</h3>
+    <ol>
+    <li>
+        <h4>Instal·leu el complement Firefox Sync al vostre ordinador</h4>
+        <p>Assegureu-vos que el vostre ordinador té el Firefox 3.5 o superior i que el vostre mòbil és un dispositiu provat pel Firefox (actualitzeu el <a href="http://firefox.com/">Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Baixeu el Firefox Sync</a></li>
+            <li>Quan la baixada s'hagi completat, cliqueu a «Reinicia el Firefox» per finalitzar la instal·lació del complement Firefox Sync.</li>
+            <li>Quan el Firefox s'hagi reiniciat. utilitzeu el menú «eines» o la icona del Firefox Sync a la part inferior dreta de la barra d'estat per a obrir el Firefox Sync i iniciar-hi sessió.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>>Instal·leu el complement Firefox Sync al vostre mòbil</h4>
+        <ul>
+            <li>Aneu a preferències, seleccioneu el botó de complements.</li>
+            <li>Cerqueu i seleccioneu el complement Firefox Sync. Inicieu-hi sessió, sincronitzeu-lo, i ja ho teniu.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

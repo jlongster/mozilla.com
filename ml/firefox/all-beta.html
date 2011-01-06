@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'ഫയര്‍ഫോക്സ് വെബ് ബ്രൌസര്‍ | ഏറ്റവും പുതിയ ബീറ്റാ പതിപ്പു് പരീക്ഷിച്ചുനോക്കുന്നതിനായി സഹായിക്കുക';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ഫയര്‍ഫോക്സിന്റെ പരീക്ഷണങ്ങളില്‍ പങ്കാളിയാവുക!</h2>
+        <p>ഫയര്‍‌ഫോക്സിന്റെ ഏറ്റവും പുതിയ ബീറ്റാ പതിപ്പു് ഇപ്പോള്‍ നിങ്ങള്‍ക്കു് ലഭ്യമാണു്. ഇതു് ഒരു ഉപയോഗിച്ചു നോക്കി അഭിപ്രായങ്ങള്‍ ഞങ്ങളെ അറിയിക്കുക!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>പ്രധാന വിവരങ്ങള്‍</h4>
+        <p class="intro">ഡൌണ്‍ലോട് ചെയ്യുന്നതിനു് മുമ്പു് ദയവായി വായിച്ചുനോക്കുക</p>
+    </div>
+    <ul>
+        <li>ഇതു് ഒരു പ്രീ-റിലീസ് സോഫ്റ്റ്‌വെയറാണു്: ചില വെബ്സൈറ്റുകള്‍ക്കും ആഡ്-ഓണുകള്‍ക്കും ഒരു പക്ഷേ പൊരുത്തക്കേടുകള്‍ ഉണ്ടാവാം.</li>
+        <li>നിങ്ങള്‍ക്കു് എന്തെങ്കിലും പ്രശ്നം ഉണ്ടായാല്‍ ദയവായി <a href="http://feedback.mozilla.org/">ഞങ്ങളെ അറിയിക്കുക</a> അല്ലെങ്കില്‍ <a href="https://bugzilla.mozilla.org/">ഒരു ബഗ് രേഖപ്പെടുത്തുക</a>.</li>
+        <li>കൂടുതല്‍ വിവരങ്ങള്‍ക്കായി, <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">പ്രകാശനക്കുറിപ്പുകളും</a> <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">പരിഹരിക്കുവാനുള്ള പ്രശ്നങ്ങളും</a> (ഇംഗ്ലീഷില്‍) വായിക്കുക.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">നിങ്ങള്‍ക്കു് ബീറ്റാ പതിപ്പു് ആവശ്യമുണ്ടോ? <a href="/<?=$lang?>/firefox/">ഏറ്റവും പുതിയ ഫയര്‍ഫോക്സ്</a> ലഭ്യമാക്കുക.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

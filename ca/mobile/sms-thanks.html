@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Gràcies per escollir el Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Gràcies per escollir el Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Seguiu aquests passos per a baixar el Firefox, aprendre més sobre el Firefox Sync, i seguir sol</h3>
+    <ol id="steps">
+        <li>Vegeu a la safata d'entrada de missatges del vostre telèfon mòbil el text que us acabem d'enviar.</li>
+        <li>Obriu el missatge i seleccioneu l'enllaç incrustat per a baixar el Firefox directament al vòstre mòbil.</li>
+    </ol>
+    <p class="small-print">*Emprar el Firefox és gratuït. No obstant, s'aplicaran les tarifes estàndard per a dades de la vostra operadora. Si us plau, comproveu el pla d'accés a la xarxa que teniu.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Mentre espereu…</h3>
+    <ol>
+        <li>Instal·leu el Firefox Sync i emporteu-vos el <em>vostre</em> Firefox allà on aneu. Compartiu el vostre historial de navegació, adreces d'interès,  contrasenyes i pestanyes del vostre ordinador amb el vostre mòbil.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Instal·leu el complement Firefox Sync al vostre ordinador</a> i inicieu-hi sessió. Un cop el Firefox s'hagi baixat al vostre mòbil, seguiu els nostres «propers passos» suggerits i seleccioneu «aconseguiu el complement Firefox Sync» per a completar  la instal·lació. Alternativament, podeu seleccionar manualment el botó de preferències, seleccioneu el botó de complements, i a continuació cerqueu i instal·leu el complement Firefox Sync en el vostre dispositiu mòbil.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

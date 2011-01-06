@@ -1,0 +1,85 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 beta - Giv feedback";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Hvordan fandt du Firefox 4 beta-programmet?";
+$str2       = "Hold dig opdateret";
+$str3       = "Abonner for at modtage Firefox beta-nyheder, begivenheder og invitationer via mail (på engelsk).";
+$str4       = "Din mailadresse";
+$str5       = "Jeg er indforstået med <a href=\"%s\">privatlivspolitikken</a> <span class='footnote'>(vi sender dig kun Mozilla-relateret information).</span>";
+$str6       = "Send af og til også Mozilla-nyheder, Firefox-tips og anden Mozilla-information.";
+$str7       = "Abonner »";
+$str8       = "Tak fordi du abonnerede!";
+$str9       = "Vi ser frem til snart at dele tips og tricks om at få mest muligt ud af Firefox, samt spændende nyheder om Mozilla og hvordan vi arbejder på at bygge et bedre internet.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 beta" /></a></h2>
+        <h3>Hjælp ønskes</h3>
+        <p>Vi er ved at bygge en Firefox, der er hurtigere, lettere og hjælper dig med at surfe på nettet. Men vi kan ikke gøre det uden din feedback.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Feedback</span></li>
+    <li class="more"><h3>Mere information på engelsk</h3></li>
+    <li class="features"><a href="../features/">Funktioner</a> </li>
+    <li class="tech"><a href="../technology/">Teknologi</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Privatlivspolitik for feedback</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Skærmbillede af Feedback-knappen" />
+        <h2>Fortæl os hvad du synes</h2>
+        <h3>Giv øjeblikkelig feedback</h3>
+        <p>Klik på Feedback-knappen for at give os direkte input vedrørende betaen. Så simpelt er det!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Udviklere: Vi har behov for jer</h2>
+        <h3>Del dine ideer</h3>
+        <p>Hvad synes du om de <a href="../features/#under-the-hood">nye udviklerfunktioner</a> i betaen?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Besøg vores feedback-forum.</a></p>
+
+        <h3>Rapporter tekniske bugs</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla-logo" />
+        <p>Er du en Bugzilla-ekspert, kan du rapportere en bug, hvis du støder på specifikke problemer, når du browser.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Rapporter en Firefox 4 beta-bug</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Spred budskabet</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Følg os på Twitter</a> (på engelsk)</li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Besøg os på Facebook</a> (på engelsk)</li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Læs Mozilla-bloggen</a> (på engelsk)</li>
+            <li id="link-blog"><a href="http://blog.mozilladanmark.dk/">Læs den danske Mozilla-blog</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Behov for hjælp?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support-ikon" />Vores supportsider</a> har svar og råd specifikt for Firefox 4 betaen.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

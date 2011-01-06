@@ -1,0 +1,354 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3 | Notas da versão';
+    $body_id    = 'firefox-relnotes';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/release-notes.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+	<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Notas de lançamento do Firefox 3</h2>
+    <p><em>v3.0, lançada em 17 de Junho de 2008</em><br />
+    Veja o que há de novo, problemas conhecidos e dúvidas frequentes em relação à última versão do Firefox. Como sempre, encorajamos você a nos dizer o que pensa, seja usando o <a href="http://feedback.mozilla.org/" hreflang="en">formulário de feedback</a> ou <a href="https://bugzilla.mozilla.org/" hreflang="en">preenchendo um bug no Bugzilla</a>.</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/products/">Produtos</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+	<li><a href="/<?=$lang?>/firefox/features/">Recursos</a></li>
+	<li><a href="/<?=$lang?>/firefox/security/">Segurança</a></li>
+	<li><a href="/<?=$lang?>/firefox/customize/">Personalização</a></li>
+	<li><a href="/<?=$lang?>/firefox/organic/">Software 100% Natural</a></li>
+	<li><a href="/<?=$lang?>/firefox/tips/">Dicas</a></li>
+	<li><span>Notas da versão</span></li>
+	<li><a href="/<?=$lang?>/firefox/all.html">Outros sistemas e idiomas</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="whatsnew" class="expander expander-odd">
+      <h3 class="expander-header">O que há de novo no Firefox&nbsp;3</h3>
+      <div class="expander-content">
+        <p>O Firefox&nbsp;3 é baseado na plataforma de renderização Gecko 1.9, que esteve em desenvolvimento nos últimos 34 meses. Essa nova plataforma inclui mais de 15.000 modificações de melhoria em <a href="#performance">performance</a>, estabilidade, correção de montagem e simplificação e sustentabilidade de código. O Firefox&nbsp;3 foi construído no topo dessa nova plataforma, resultando em um produto <a href="#secure">mais seguro</a>, <a href="easy">fácil de usar</a> e <a href="#personal">pessoal</a> com muito mais <a href="#engine">recursos internos</a> a oferecer aos <a href="http://developer.mozilla.org/pt/docs/Firefox_3_para_desenvolvedores">desenvolvedores de websites e Complementos para o Firefox</a>.</p>
+
+        <dl>
+          <dt id="secure">Mais seguro</dt>
+          <dd>
+            <ul class="spaced">
+              <li>Identidade em um clique: clique no ícone do site (também conhecido como favicon) no campo de endereço para ver quem possui o site e verificar se a sua conexão com o site é protegida contra possíveis interceptadores. A verificação de identidade é exibida com grande destaque e é fácil de entender. Quando um site utilizar Certificados de Validação SSL Estendidos, o botão do ícone do site ficará verde e exibirá o nome da companhia com a qual você está conectado. (<a href="https://www.paypal.com">Experimente aqui!</a>)</li>
+              <li>Proteção antiataques: a proteção antiataques avisa o usuário quando ele entrar em sites que são conhecidos por instalar vírus, programas espiões, cavalos de tróia e outros programas maliciosos. (<a href="/firefox/its-an-attack.html">Experimente aqui!</a>)</li>
+              <li>Nova página de proteção contra fraudes: o conteúdo de páginas suspeitas de serem fraudes não é mais exibido. (<a href="/firefox/its-a-trap.html">Experimente aqui!</a>)</li>
+              <li>Novas páginas de erros SSL:  páginas de erro mais claras e rigorosas são exibidas quando o Firefox encontra um certificado SSL inválido. (<a href="https://mozilla.com">Experimente aqui!</a>)</li>
+              <li>Verificação de versão de Complementos e Plugins: agora o Firefox verifica automaticamente as versões de complementos e plugins e desativará versões antigas e inseguras.</li>
+              <li>Atualizações seguras de Complementos: para aumentar a segurança de atualizações de complementos, complementos que não fornecem atualizações de uma maneira segura serão desativados.</li>
+              <li>Integração com Antivírus: o Firefox informará softwares antivírus ao baixar arquivos executáveis.</li>
+              <li>Controle dos Pais do Vista: agora o Firefox respeita as configurações do Controle dos Pais do Windows Vista para desativar downloads de arquivos.</li>
+	      <li>O serviço de domínio de topo efetivo (<abbr title="Effective top-level domain">eTLD</abbr>) restringe melhor cookies e outros conteúdos restritos a um único domínio.</li>
+              <li>Melhor proteção contra <a href="http://ejohn.org/blog/re-securing-json/" hreflang="en">vazamento de dados JSON</a>.</li>
+            </ul>
+          </dd>
+          <dt id="easy">Mais fácil de usar</dt>
+          <dd>
+            <ul class="spaced">
+              <li>Gerenciamento de senhas facilitado: uma barra de informações substitui o antigo diálogo de memorização de senhas para que você possa salvar a senha após ter certeza de que o login foi bem sucedido.</li>
+              <li>Instalação simplificada de complementos: a lista de domínios foi removida para que você possa instalar extensões de sites de terceiros em poucos cliques.</li>
+              <li>Novo Gerenciador de Downloads: o gerenciador de downloads revisado torna muito mais fácil localizar arquivos baixados, e você pode ver e procurar o nome do site do qual você baixou o arquivo. Além disso, seus downloads ativos e o tempo estimado de conclusão são exibidos na barra de status.</li>
+              <li>Downloads pausáveis: agora usuários podem continuar seus downloads após reiniciar o navegador ou uma queda de conexão.</li>
+              <li>Zoom completo: a partir do menu Exibir ou do teclado, o novo recurso de zoom permite que você aproxime ou afaste páginas inteiras, alterando a escala de texto e imagens, ou somente o texto. Suas configurações serão lembradas sempre que você retornar ao site.</li>
+              <li>Podcasts e Videocasts podem ser associados às suas ferramentas de reprodução de mídia.</li>
+              <li>Rolagem de abas e menu rápido: as abas estão mais fáceis de localizar com a nova rolagem de abas e o menu rápido de abas.</li>
+              <li>Salve o que estiver fazendo: o Firefox perguntará se o usuário deseja salvar suas abas antes de sair.</li>
+              <li>Abrir em abas otimizado: agora abrir uma pasta de favoritos em abas abre novas abas em vez de reutilizar as abas abertas.</li>
+              <li>Os tamanhos dos campos de endereços e pesquisa podem ser personalizados com um simples redimensionador.</li>
+	      <li>Melhoria na seleção de texto: múltiplas seleções de texto podem ser feitas ao pressionar a tecla <kbd>Ctrl/Cmd</kbd>; arrastar o mouse após um clique duplo ativa o modo de seleção palavra-por-palavra; um clique triplo seleciona o parágrafo inteiro.</li>
+              <li>Barra Localizar: agora a barra Localizar abre com a seleção atual.</li>
+              <li>Gerenciamento de Plugins: o usuário pode desativar cada um dos plugins usando o Gerenciador de Complementos.</li>
+              <li>Integração com o Windows: agora o Firefox tem ícones para o Windows melhorados e utiliza componentes da interface com o usuário nativos no navegador e formulários.</li>
+              <li>Integração com o Mac: o novo tema do Firefox traz barras de ferramentas, ícones e outros elementos da interface com o usuário com visual de aplicações do OS&nbsp;X. O Firefox também utiliza componentes da interface com o usuário do OS&nbsp;X e suporta o Growl para notificações de downloads concluídos e atualizações disponíveis. Um controle de Voltar/Avançar combinado torna ainda mais fácil navegar entre as páginas.</li>
+              <li>Integração com o Linux: agora os ícones, botões e estilos de menus padrão do Firefox usam o tema GTK nativo.</li>
+            </ul>
+          </dd>
+          <dt id="personal">Mais pessoal</dt>
+          <dd>
+            <ul class="spaced">
+              <li>Botão Estrela: adicione páginas aos favoritos rapidamente com um único clique; um segundo clique permite que você as organize e adicione marcadores.</li>
+              <li>Marcadores (Tags): associe palavras-chave aos seus favoritos para organizá-los por tópicos.</li>
+              <li>Campo de Endereços Inteligente: digite todo ou parte do título, marcador ou endereço da página que você procura para ver uma lista de páginas correspondentes do seu histórico e favoritos; a nova exibição torna mais fácil buscar a página que você deseja entre as correspondências listadas. Os resultados são exibidos de acordo com a combinação de frequência e datas das últimas visitas à página, assegurando que você verá as correspondências mais relevantes. Um algoritmo de aprendizagem adaptável que afina os resultados aos seus padrões!</li>
+              <li>Pasta de Favoritos Inteligente: acesse rapidamente seus favoritos e marcadores adicionados recentemente, além de suas páginas visitadas com frequência, com a nova pasta de favoritos inteligentes na sua barra de favoritos.</li>
+              <li>Biblioteca: visualize, organize e localize seus favoritos, marcadores e histórico com visualizações múltiplas e pastas inteligentes para armazenar suas buscas frequentes. Crie e restaure cópias de segurança sempre que quiser.</li>
+              <li>Manipuladores de protocolos baseados na web: agora aplicações da web, como seu webmail favorito, podem ser usadas no lugar de aplicações do seu computador para manipular links mailto: de outros sites. Um suporte similar está disponível para outros protocolos (aplicações da web terão que se registrar no Firefox antes de oferecer esse recurso).</li>
+              <li>Baixe e instale complementos: agora o gerenciador de complementos (Ferramentas &gt; Complementos) pode ser usado para baixar e instalar uma personalização do Firefox dentre os milhares de complementos disponíveis no nosso <a href="https://addons.mozilla.org/">site de complementos</a>. Ao abrir pela primeira vez o Gerenciador de Complementos, uma lista de complementos recomendados é exibida.</li>
+              <li>Ações de Downloads fáceis de usar: um novo painel de preferências Programas oferece uma interface melhorada para configurar manipuladores para diversos tipos de arquivos e protocolos.</li>
+            </ul>
+          </dd>
+          <dt id="engine">Plataforma para desenvolvedores melhorada</dt>
+          <dd>
+            <ul class="spaced">
+              <li>Novos manipuladores de fontes e gráficos: novas arquiteturas gráficas e de renderização de texto presentes no Gecko 1.9 fornecem melhorias na interpretação de CSS e SGV, além da exibição melhorada de fontes com ligaduras e escritas caligráficas complexas.</li>
+	      <li>Gerenciamento de cores: agora o Firefox pode ajustar imagens com perfis de cores embutidos (ajuste a preferência <tt>gfx.color_management.enabled</tt> para <tt>true</tt> na página about:config e reinicie o navegador para ativar essa função).</li>
+              <li>Suporte Offline: permite que aplicações da web forneçam funcionalidades offline (websites e autores devem adicionar suporte à navegação offline em seus sites para que esse recurso esteja disponível aos usuários).</li>
+              <li>Uma visão geral completa do <a href="http://developer.mozilla.org/pt/docs/Firefox_3_para_desenvolvedores">Firefox 3 para desenvolvedores</a> está disponível para desenvolvedores de sites e complementos.</li>
+            </ul>
+          </dd>
+          <dt id="performance">Performance melhorada</dt>
+          <dd>
+            <ul class="spaced">
+              <li>Velocidade: melhorias no nosso motor de JavaScript, além de otimizações de perfil, resultaram em melhorias de performance. Comparado ao Firefox 2, aplicações da web como o Yahoo! Mail e o Zoho Office rodam duas vezes mais rápido no Firefox&nbsp;3, e o popular teste SunSpider, da Apple, exibe resultados melhores em relação a versões anteriores.</li>
+              <li>Uso de memória: diversas novas tecnologias trabalham juntas para reduzir a memória utilizada pelo Firefox&nbsp;3 em uma sessão de navegação. Ciclos de memória são quebrados e coletados por um coletor de ciclos automatizado, um novo alocador de memória reduz fragmentações, centenas de vazamentos de memórias foram eliminados e estratégias de cache foram refinadas.</li>
+              <li>Confiabilidade: agora os favoritos, histórico, cookies e preferências do usuário são armazenados em um formato de banco de dados transacional seguro que previne a perda de dados mesmo que o sistema tranque.</li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">Requisitos do Sistema</h3>
+      <div class="expander-content">
+        <p>Antes de instalar, tenha certeza de que seu computador atende aos <a href="/<?=$lang?>/firefox/system-requirements.html">requisitos do sistema</a>.</p>
+      </div>
+    </div>
+
+    <div id="download" class="expander expander-odd">
+      <h3 class="expander-header">Download</h3>
+      <div class="expander-content">
+        <p>A Mozilla fornece o Firefox&nbsp;3 para Windows, Linux e Mac&nbsp;OS&nbsp;X em uma variedade de idiomas. Você pode <a href="/<?=$lang?>/firefox/all.html">obter a última versão do Firefox&nbsp;3 aqui</a>. Para versões para outros sistemas ou versões em outros idiomas não fornecidos pela Mozilla.org, verifique a seção Versões de Colaboradores no fim deste documento.</p>
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Instalação</h3>
+      <div class="expander-content">
+        <p>Por favor, perceba que a instalação do Firefox&nbsp;3 <em>substituirá</em> a sua instalação existente do Firefox. Você não perderá seus favoritos ou histórico de navegação, mas algumas extensões e outros complementos podem não funcionar até que atualizações para eles estejam disponíveis.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Desinstalação</h3>
+      <div class="expander-content">
+        <p>Você pode remover o Firefox&nbsp;3 utilizando  o <tt>Painel de Controle</tt> no Windows, removendo a aplicação <tt>Firefox</tt> no OS X ou apagando a pasta <tt>firefox</tt> no Linux.</p>
+        <p>Desinstalar o Firefox&nbsp;3 não apagará seus dados, como favoritos, histórico de navegação, extensões ou outros complementos, entre outros. Esses dados são armazenados na <em>pasta do seu perfil</em>, que fica localizada em um dos locais a seguir, dependendo do seu sistema:</p>
+
+        <table style="font-size: small;" border="1" cellspacing="0">
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+            <td>Users\&lt;NomeDoUsuário&gt;\AppData\Roaming\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP ou Server 2003</td>
+            <td>Documents and Settings\&lt;NomeDoUsuário&gt;\Dados de aplicativos\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+            <td>~/Library/Application Support/Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux e sistemas Unix</td>
+            <td>~/.mozilla/firefox</td>
+          </tr>
+        </table>
+        <p>Qualquer versão do Firefox que você instalar após remover o Firefox&nbsp;3 continuará usando os dados da pasta do seu perfil.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Extensões e Temas</h3>
+      <div class="expander-content">
+        <p>Extensões instaladas no Firefox 2 podem ser incompatíveis e/ou requerer atualizações para funcionar com o Firefox&nbsp;3. Por favor, reporte qualquer problema ao desenvolvedor da extensão. Quando você instalar o Firefox&nbsp;3, todas as suas extensões e temas serão desativados até que o Firefox&nbsp;3 determine que a) elas são compatíveis com a sua versão do Firefox&nbsp;3 ou b) há novas versões compatíveis disponíveis.</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Problemas conhecidos</h3>
+      <div class="expander-content">
+        <p>Esta lista abrange alguns dos problemas conhecidos do Firefox&nbsp;3. Por favor, leia esta lista antes de reportar qualquer novo bug.</p>
+        <dl>
+        <dt id="allsystems">Todos os sistemas</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Instalar o Firefox 2 na mesma pasta na qual está instalado o Firefox 3 pode causar resultar em instabilidade do Firefox 2 (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=423226" hreflang="en">bug 423226</a>)</li>
+            <li>Se o conteúdo de algum objeto Flash estiver ativo e o Firefox travar, o aplicativo de aviso de travamento (Crash Reporter) pode não ser ativado (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=422308" hreflang="en">bug 422308</a>)</li>
+            <li>Apagar uma entrada no painel Histórico e em seguida ativar o recurso Limpar dados pessoais pode causar o travamento do Firefox (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=426275" hreflang="en">bug 426275</a>)</li>
+	    <li>A ferramenta de edição de métodos de digitação (<abbr lang="en" title="Input Method Editor">IME</abbr>) utilizada para digitar caracteres do Japonês, Coreano, Mandarim e escritas Brahmicas é coberta pelo painel "Adicionar favorito". Os usuários podem usar a ferramenta de digitação na janela Biblioteca clicando em "Organizar favoritos…" no menu Favoritos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=433340" hreflang="en">bug 433340</a>)</li>
+            <li>Alguns complementos que dependem de código obsoleto podem não ser instalados corretamente (ver <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=406807" hreflang="en">bug 406807</a>)</li>
+            <li>Privacidade &gt; Histórico &gt; Manter um histórico de pelo menos "0" dias não tem efeito (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=366075" hreflang="en">bug 366075</a>)</li>
+            <li>Alguns usuários que personalizaram suas barras de ferramentas podem precisar <a href="http://support.mozilla.com/kb/Back+and+forward+or+other+toolbar+buttons+are+missing">restaurar as barras padrão</a> caso os botões Voltar e Avançar estejam ausentes (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=426026" hreflang="en"> bug 426026</a>)</li>
+            <li>Algumas páginas (como mlb.com) não detectam corretamente se o Silverlight está instalado e não funcionarão corretamente (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=432371" hreflang="en">bug 432371</a>)</li>
+            <li>Ao imprimir uma região selecionada de conteúdo do meio de uma página, parte do conteúdo da impressão pode ser perdida (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=433373" hreflang="en">bug 433373</a>)</li>
+            <li>O DOM Inspector foi removido e agora está <a href="https://addons.mozilla.org/firefox/addon/6622">disponível como um complemento</a></li>
+            <li>O suporte a XmlHttpRequest cross-site foi removido até que a especificação se torne mais estável e o modelo de segurança seja melhorado (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=424923" hreflang="en">bug 424923</a>)</li>
+            <li>Após fechar a pergunta "Deseja que o Firefox memorize esta senha?", às vezes não é possível focar campos de formulário a não ser que você atualize a página (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=433942" hreflang="en">bug 433942</a>)</li>
+            <li>Os novos Campo de Endereços, diálogo Adicionar Favorito e popup de notificação de downloads apresentam inconsistências com o Window-Eyes (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=393398" hreflang="en">bug 393398</a>)</li>
+          </ul>
+        </dd>
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+            <li>O plugin do Windows Media Player (WMP) não é fornecido com o Windows Vista e algumas outras versões do Windows. Para visualizar conteúdo Windows Media você deve instalar o plugin seguindo <a href="http://support.mozilla.com/kb/Windows+Media+Player">essas instruções</a>. Após a instalação, você pode precisar instalar atualizações do Windows Update antes que o plugin exiba o conteúdo corretamente.</li>
+            <li>Usuários que tiverem versões antigas do Google Desktop instaladas podem sofrer travamentos ao iniciar; reinstale o Google Desktop para corrigir o problema (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=401513" hreflang="en">bug 401513</a>)</li>
+          </ul>
+        </dd>
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Caracteres do Japonês, Coreano, Mandarim e escritas Brahmicas não podem ser inseridos (usando o IME) em campos de texto de objetos Flash (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=357670" hreflang="en">bug 357670</a>)</li>
+            <li>Se você estiver usando IPv6 a partir de uma rede que não suporta roteamento IPv6, suas buscas DNS podem ser bastante lentas. Ajuste a preferência <tt>network.dns.disableIPv6</tt> para <tt>true</tt> como medida paliativa (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=417689" hreflang="en">bug 417689</a>)</li>
+            <li>Itens no menu "Arquivo" são exibidos como inativos após usar o item "Imprimir" desse menu - mudar para uma nova aba restaura esses itens (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=425844" hreflang="en">bug 425844</a>)</li>
+            <li>Até o momento, o Firefox 3 não pode ser utilizado quando o perfil do usuário está armazenado em um diretório AFP (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=417037" hreflang="en">bug 417037</a>)</li>
+          </ul>
+        </dd>
+        <dt id="linux">Linux e Unix</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Usuários em conexões PPP (discada ou DSL) podem perceber o Firefox iniciando no modo "Offline". Clique em Arquivo &gt; Modo offline para resolver o problema (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=424626" hreflang="en">bug 424626</a>)</li>
+            <li>Usuários do Ubuntu 7.10 podem precisar atualizar seus bancos de dados de certificados para poder enviar avisos de travamentos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=407748" hreflang="en">bug 407748</a> para instruções)</li>
+            <li>A associação de botões do mouse para Voltar e Avançar mudaram; os usuários podem precisar reconfigurar seus dispositivos de apontamento (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=420294" hreflang="en">bug 420294</a>)</li>
+            <li>Incompatibilidades entre drivers NVIDIA e algumas versões do servidor X causam a renderização incorreta de imagens em escala (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=411831" hreflang="en">bug 411831</a>)</li>
+            <li>O software de leitura de tela Orca não lê alguns textos, como a notificação de memorização de senhas, informações de identificação de sites ou o texto padrão de campos de busca - esses são problemas conhecidos do Orca (ver <a   href="http://bugzilla.gnome.org/show_bug.cgi?id=533109" hreflang="en">bug 533109</a> e <a href="http://bugzilla.gnome.org/show_bug.cgi?id=533125" hreflang="en">bug 533125</a> do Gnome)</li>
+          </ul>
+        </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Resolução de problemas</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Extensões incompatíveis ou mal projetadas podem causar problemas ao seu navegador, inclusive fazendo-o travar, tornando-o lento, etc. Caso você encontre algum problema estranho como partes do navegador que deixaram de funcionar, o navegador não abre, janelas com aparência estranha ou distorcida, performance reduzida, etc., você pode estar sofrendo de um problema de Extensões ou Temas. Para resolver esse tipo de problema, reinicie o navegador no Modo de Segurança. No Windows, inicie utilizando o atalho "Modo de Segurança" criado no menu Iniciar ou executando <code>firefox.exe -safe-mode</code>. No Linux, inicie executando <code>./firefox -safe-mode</code> e no Mac&nbsp;OS&nbsp;X execute:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            Ao iniciar no Modo de Segurança, todas as extensões são desativadas e o tema padrão é utilizado. Desative a Extensão/Tema que está causando problema e então reinicie o navegador normalmente.
+          </li>
+          <li>
+            Se você desinstalar uma extensão que estava instalada no seu perfil (i.e. você a instalou de uma página da web) e deseja instalá-la para todos os perfis usando a flag de linha de comando <tt>-install-global-extension</tt>, você deve reiniciar o navegador uma vez para limpar os dados da extensão do seu perfil antes de instalá-la usando essa flag. Se você não fizer isso, a entrada da instalação antiga continuará sendo exibida no gerenciador de complementos, impossibilitando a instalação global da extensão.
+          </li>
+          <li>
+            Se você encontrar problemas estranhos relacionados aos favoritos, downloads, posicionamento de janelas, barras de ferramentas, histórico ou outras configurações, recomenda-se que você crie um novo perfil e tente reproduzir o problema encontrado antes de preencher um bug. Crie um novo perfil executando o Firefox com o argumento de linha de comando <tt>-p</tt> e clicando em "Novo perfil…". Copie seus arquivos de configurações (favoritos, senhas salvas, etc.) um por um, verificando a cada vez se o problema reaparece. Se você encontrar um arquivo em particular do seu perfil que estiver causando o problema, preencha um bug e anexe o arquivo.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Dúvidas frequentes</h3>
+      <div class="expander-content">
+        <ol class="faq">
+
+          <li>
+            O que eu posso fazer para ajudar?
+            <p>Nós precisamos de ajuda de desenvolvedores e da comunidade de testes para fornecer feedback tanto quanto possível para tornar o Firefox ainda melhor. Por favor, leia estas notas e as <a href="http://www.mozilla.org/support/firefox/bugs" hreflang="en">instruções de preenchimento de bugs</a> antes de reportar quaisquer bugs usando o <a href="https://bugzilla.mozilla.org/" hreflang="en">Bugzilla</a>. Você também pode enviar seu feedback com suas críticas ou sugestões usando este <a href="http://feedback.mozilla.org/" hreflang="en">formulário de feedback</a>.</p>
+          </li>
+          <li>
+            Por que vocês não responderam o email que enviei para vocês?
+	    <p>Utilize o <a href="http://groups.google.com/group/mozilla.dev.apps.firefox/topics">grupo de discussão</a>. A equipe do Firefox lê esse grupo com regularidade, e o seu email pode ter sido perdido.</p>
+          </li>
+          <li>
+            Onde posso obter Extensões e Temas (Complementos)?
+            <p><a href="https://addons.mozilla.org/firefox/extensions/">Extensões</a> e <a href="https://addons.mozilla.org/firefox/themes/">Temas</a> podem ser baixados do site <a href="https://addons.mozilla.org/firefox/">Mozilla Add-ons</a>.</p>
+          </li>
+          <li>
+            Quem faz o Firefox&nbsp;3?
+            <p>Muita gente. Veja em Ajuda-&gt;Sobre o Mozilla Firefox &gt; Créditos uma lista de algumas das pessoas que contribuíram com o Firefox&nbsp;3.</p>
+          </li>
+          <li>
+            Onde eu encontro o código-fonte do Firefox&nbsp;3?
+            <p>Um arquivo tarball com o código-fonte do Firefox&nbsp;3 está disponível para <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/source/">download</a>. Os últimos códigos em desenvolvimento podem ser obtidos via <a href="http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>. O código-fonte específico do Firefox está em "mozilla/browser", "mozilla/toolkit" e "mozilla/chrome". Por favor, siga as <a href="http://developer.mozilla.org/en/docs/Build_Documentation" hreflang="en">instruções de compilação</a>.</p>
+          </li>
+          <li>
+            Onde está o cliente de emails?
+            <p>O Firefox&nbsp;3 funciona com qualquer cliente de emails padrão do seu sistema. Entretanto, recomendamos o <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, nosso cliente de emails da próxima geração e o complemento perfeito do Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Versões de Colaboradores</h3>
+      <div class="expander-content">
+        <p>Essas são versões não-oficiais e podem ser configuradas diferentemente das versões oficiais Mozilla. Elas também podem ser otimizadas e/ou testadas para plataformas específicas. Você pode navegar pelas versões de colaboradores disponíveis no <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/">site FTP</a>.</p>
+
+      <h3 id="solarisbuilds">Solaris (contribuição da Equipe Sun Desktop de Pequim)</h3>
+      <p><strong><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/README.txt" hreflang="en" type="text/plain">LEIA-ME</a> (em Inglês)</strong></p>
+      <p><strong>Formato Tarball</strong></p>
+      <ul>
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US-solaris-10-fcs-i386.tar.bz2">firefox-3.0.en-US-solaris-10-fcs-i386.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US-solaris-10-fcs-i386.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US-solaris-10-fcs-sparc.tar.bz2">firefox-3.0.en-US-solaris-10-fcs-sparc.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US-solaris-10-fcs-sparc.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US.opensolaris-i386.tar.bz2">firefox-3.0.en-US.opensolaris-i386.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US.opensolaris-i386.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US.opensolaris-sparc.tar.bz2">firefox-3.0.en-US.opensolaris-sparc.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_tarball/firefox-3.0.en-US.opensolaris-sparc.tar.bz2.cksum">cksum</a>)<br /></li>
+      </ul>
+      <p><strong>Formato Pkgadd</strong></p>
+      <ul>
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US-solaris-10-fcs-i386-pkg.bz2">firefox-3.0.en-US-solaris-10-fcs-i386-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US-solaris-10-fcs-i386-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US-solaris-10-fcs-sparc-pkg.bz2">firefox-3.0.en-US-solaris-10-fcs-sparc-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US-solaris-10-fcs-sparc-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US.opensolaris-i386-pkg.bz2">firefox-3.0.en-US.opensolaris-i386-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US.opensolaris-i386-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US.opensolaris-sparc-pkg.bz2">firefox-3.0.en-US.opensolaris-sparc-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0/contrib/solaris_pkgadd/firefox-3.0.en-US.opensolaris-sparc-pkg.bz2.cksum">cksum</a>)<br /></li>
+      </ul>
+
+    <!-- Put Solaris Builds Here-->
+      </div>
+    </div>
+
+	<div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Outras fontes e links</h3>
+      <div class="expander-content">
+        <p>As fontes a seguir contêm informações úteis adicionais sobre o Firefox&nbsp;3:</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Página de Suporte do Firefox</a></li>
+          <li><a href="http://kb.mozillazine.org/" hreflang="en">Base de Conhecimento do MozillaZine</a></li>
+          <li><a href="http://developer.mozilla.org/pt/docs/Firefox_3_para_desenvolvedores">Informações de desenvolvimento</a></li>
+	  <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html" hreflang="en">Política de privacidade do serviço SafeBrowsing</a> (para recursos de proteção anti-phishing/antiataques)</li>
+		</ul>
+      </div>
+    </div>
+	<div id="release-notes-footer"></div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+	?>
+
+
+	<div id="get-involved">
+		<h3>Envolva-se</h3>
+		<p>Quer fazer parte do projeto Mozilla?</p>
+		<a href="/<?=$lang?>/about/get-involved.html">Descubra como você pode ajudar</a>
+	</div>
+
+	<div id="other-resources">
+		<h4>Outras fontes e links</h4>
+		<p>As fontes a seguir contêm informações úteis adicionais sobre o Firefox 3:</p>
+		<ul>
+          <li><a href="http://support.mozilla.com/">Página de Suporte do Firefox</a></li>
+          <li><a href="http://kb.mozillazine.org/" hreflang="en">Base de Conhecimento do MozillaZine</a></li>
+          <li><a href="http://developer.mozilla.org/pt/docs/Firefox_3_para_desenvolvedores">Informações de desenvolvimento</a></li>
+	  <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html" hreflang="en">Política de privacidade do serviço SafeBrowsing</a> (para recursos de proteção anti-phishing/antiataques)</li>
+		</ul>
+	</div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

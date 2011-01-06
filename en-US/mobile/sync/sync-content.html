@@ -1,0 +1,140 @@
+<?php
+    // please translate the following application variable,
+    // it is used in the Firefox title bar.
+    $page_title = "Firefox Sync for Mobile";
+
+?>
+
+<div id="download" class="top-right mobile">
+    <a class="dl" href="/<?=$lang?>/mobile/download/"><span>Get Firefox <em>on Your Phone</em></span></a>
+    <p class="notes">Or visit <a href="/<?=$lang?>/m/">Firefox.com/m</a> on your phone’s browser</p>
+</div>
+
+<div id="main-feature">
+    <h2>Keep Your Life <span>In Sync</span></h2>
+    <p>Securely access your Firefox history, bookmarks, tabs and passwords across your devices.</p>
+</div>
+
+<?php if($short_mobile_page): ?>
+
+<h2>Get Started with Firefox Sync</h2>
+<ol class="steps">
+    <li>Install the Firefox Sync add-on and set up your account on your PC.</li>
+    <li>Install the Firefox Sync add-on directly to your device.</li>
+    <li>After install, enter your Firefox Sync account info and select &ldquo;Sync Now&rdquo;.</li>
+</ol>
+<hr />
+
+<?php endif; ?>
+
+
+<div id="main-content">
+
+<div id="step1">
+
+    <h3>Step 1. <span>Install</span></h3>
+
+    <div id="download-button" class="step-left">
+        <script src="/js/download.js"></script>
+        <script src="/js/download.old.js"></script>
+
+    <?php
+    // en-US download box is built in js and doesn't offer the flexibility
+    // hidePartialLocaleJS() hides unavailable locales for specific platforms
+    // include after download.old.js
+    hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
+    ?>
+
+
+
+        <script>
+              <!--
+              // Configure the Firefox download write script
+
+            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 4 Beta</span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%&nbsp;%FILE_SIZE%<\/em><\/span><\/span><\/a> <\/li>";
+            var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+            document.writeln("<ul class=\"home-download beta-download " + gCssClass + " \">");
+              writeDownloadItems("fxbeta");
+              document.writeln("<\/ul>");
+            document.writeln("<div class=\"download-other\">");
+            document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-beta.html\">All Systems &amp; Languages<\/a> | ");
+            document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+            document.writeln("<\/div>");
+              //-->
+        </script>
+        <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
+    </div>
+
+    <p class="step-right">Sync is a built-in feature in Firefox 4, so start by downloading the latest beta. Then, restart Firefox and create a Sync account by going to Tools » Setup Sync.</p>
+
+</div>
+
+<div id="step2">
+    <h3>Step 2. <span>Sync Up</span></h3>
+    <p class="step-left">Follow the steps to create a Sync account, providing an email and password. You’ll also be asked to enter a recpatcha to ensure you’re not a robot.  Watch the short setup video for extra assistance.</p>
+    <p class="step-right"><a id="video-sync" href="http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.webm"><img src="<?=$config['static_prefix']?>/img/mobile/sync-video-thumbnail.jpg" alt="Sync video thumbnail"><span>Watch the demo »</span></a></p>
+</div>
+
+<div id="step3">
+    <h3>Step 3. <span>Connect</span></h3>
+    <div class="step-left">
+        <p>Once you have a Sync account, it’s time to connect your devices.</p>
+        <h5>Mobile:</h5>
+        <p>Swipe to Tools » Preferences and tap on Setup Sync. A single-use sync code will appear. Then go to the Firefox menu on your desktop, select Firefox » Preferences » Sync » Activate New Device and enter your sync code.</p>
+        <h5>Firefox Home:</h5>
+        <p>Download and launch Firefox Home. Tap on Setup Firefox Home and a single-use sync code will appear. Then go to the Firefox menu on your desktop, select Firefox » Preferences » Sync » Activate New Device and enter your sync code.</p>
+    </div>
+    <p class="step-right"><img src="<?=$config['static_prefix']?>/img/mobile/screenshot-prefs.png" alt="Firefox Mobile preferences screenshot"></p>
+</div>
+
+</div>
+
+<div id="sidebar">
+
+    <h3>Stay <span>Safe</span></h3>
+    <p class="intro">Firefox Sync works behind the scenes to keep you safe.</p>
+
+    <h4>For Your Eyes Only:</h4>
+    <p>Your data is always protected, so only you have access to information like your passwords and browsing history.</p>
+
+    <h4>Safety First:</h4>
+    <p>Firefox Sync is the only service with end-to-end encyrption. Sync’s advanced security measures mean you’re never vulnerable to online bad guys or companies that will sell your information.</p>
+
+    <h4>Get Up and Go:</h4>
+    <p>Enjoy the benefits of sharing personal info across all your devices will still maintaining military-grade security and privacy.</p>
+
+</div>
+
+<div id="older-versions">
+    <h3>For Older Versions</h3>
+    <p>If you’re still using Firefox 3.5 or 3.6, Sync isn’t a built-in feature but you can still make it work. First, download the add-on to your desktop, then restart Firefox and follow the steps to create a Sync account.</p>
+    <p><a href="https://addons.mozilla.org/en-US/mobile/addon/10868" id="sync-addon-install"><span>Download Sync Add-on</span></a></p>
+</div>
+
+<script>
+// <![CDATA[
+var player_sync = new Mozilla.VideoPlayer(
+    'video-sync',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: 'WebM format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.theora.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: 'Ogg&nbsp;Theora format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.mp4',
+            type:  'video/mp4',
+            title: 'MPEG-4 format'
+        }
+    ],
+    'serv/air_mozilla/SyncSetupDemo_final.mp4'
+);
+// ]]>
+</script>

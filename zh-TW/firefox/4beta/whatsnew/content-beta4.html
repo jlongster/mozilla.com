@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />有什麼新鮮事？</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>隨身帶著走的 Firefox 4 Beta</h3>
+        <p>從辦公室到家裡，再到您的手機！Sync 可以讓您在不同的電腦與行動裝置間無縫地存取包含書籤、密碼、歷史紀錄，以及已開啟的分頁等重要的 Firefox 資料。看看影片了解詳情吧。</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">了解更多關於 Sync 的資訊 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">分享您的回饋 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">新鮮事 »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>最新消息</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>管理您的線上生活:</h4>
+         <?=$tabvideo?>
+        <p>覺得很難整理您開啟的分頁嗎？從混亂的開啟分頁當中重新找回您的瀏覽器！只要簡單的拖放您的分頁到不同的群組當中，您就可以幫它命名，並且用簡單又視覺化的方式進行管理。</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

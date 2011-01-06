@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Przeglądarka Firefox | Pomóż testować najnowszą wersję beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Pomóż testować następnego Firefoksa!</h2>
+        <p>Najnowsza wersja Firefoksa udostępniona została jako wydanie testowe. Wypróbuj ją i&nbsp;daj nam znać, co o niej myślisz!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Ważna informacja</h4>
+        <p class="intro">Prosimy przeczytać przed pobraniem</p>
+    </div>
+    <ul>
+        <li>To jest oprogramowanie w&nbsp;wersji rozwojowej: mogą w&nbsp;niej wystąpić problemy ze zgodnością z&nbsp;niektórymi witrynami i&nbsp;dodatkami.</li>
+        <li>Jeśli znajdziesz problem, <a href="http://feedback.mozilla.org/">daj nam znać</a> lub <a href="https://bugzilla.mozilla.org/">zgłoś błąd</a>.</li>
+        <li>Więcej informacji można znaleźć w&nbsp;<a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">informacjach o&nbsp;wydaniu</a> i&nbsp;na <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">liście znanych problemów</a> (po angielsku).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nie szukasz wersji beta? Pobierz <a href="/<?=$lang?>/firefox/">najnowszego Firefoksa</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Firefox 地理定位功能";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>位置感知的瀏覽體驗</h2>
+    <p>Firefox 可以向網站透露您所在的地理位置，讓他們提供與您更有用的資訊。這讓網路更加
+聰明 —— 而且過程完全尊重您的個人隱私。
+    <a href="#geo-demo" id="try-geolocation" style="display:none">試試看！</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>常見問題</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">什麼是地理定位功能？</h4>
+    <div class="expander-content">
+        <p>使用地理定位功能的網站可以詢問您所在的地理位置，以提供更有用的資訊，或是節省您搜尋的時間。例如，您在找一間附近的比薩店，網站可以直接向您詢問地理位置，這樣您只要搜尋「比薩」就能找到解答 ... 不需輸入更多細節或是其他關鍵字。</p>
+        <p>或是，您在規劃如何到某處的路線，網站會知道您要從哪出發，您只要輸入您要去哪裡即可。</p>
+        <p>這個服務完全是自願性的 —— Firefox 不會沒有得到您的允許就透露您的地理位置 —— 完全尊重您的個人隱私。而且，就像 Firefox 的其他元件一樣，這個功能也是使用開放標準開發，使網站開發者能輕易的採用。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">它如何運作？</h4>
+    <div class="expander-content">
+        <p>當您瀏覽到具有地理感知功能的網站時，Firefox 會向您詢問您是否想要透露您的地理位置。</p>
+        <p>若您同意，Firefox 會收集附近的無線網路狀況與您的電腦的 IP 位址。接著，Firefox 會將此資訊傳送給預設的地理定位服務提供者 Google Location Services 供其估計您的地理位置。估計結果會再傳送給詢問的網站。</p>
+        <p>如果您不同意，Firefox 不會進行任何動作。</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">地理位置估計會有多準確？</h4>
+    <div class="expander-content">
+        <p>準確程度隨著地點不同有很大的差異。在某些地方，地理定位服務可以定位到數公尺的誤差。然而，在其他地方準確度會遠大於此。所有服務提供者所回傳的地理定位資訊都是估計值，且我們不保證它的準確性。請不要使用此服務作為緊急使用。請別忘了用常識保持判斷地點。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">什麼資訊被傳出去，傳給誰？你們怎麼保護我的隱私？
+</h4>
+    <div class="expander-content">
+        <p>您的個人隱私對我們來說至關重要，且 Firefox 不會沒有得到您的允許就透露您的地理位置。當您瀏覽到要求您的個人資訊的網頁，我們會在任何資訊傳送到網站與第三方服務之前就徵求您的同意。</p>
+        <p>根據預設值，Firefox 藉由傳送下列資訊給 Google Location Services 來決定您的地理位置：</p>
+        <ul>
+            <li>您電腦的 IP 位址，</li>
+            <li>鄰近的無線網路 AP 的資訊，以及</li>
+            <li>一個隨機產生、兩個星期後過期的客戶端辨識 ID，由 Google 指定。</li>
+        </ul>
+        <p>要了解 Firefox 如何使用與收集資訊的細節，請閱讀 <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox 隱私權保護政策</a>頁面（英文）。</p>
+        <p>Google Location Services 接著回傳所估計的您的地理定位（例如，經緯度。）要了解 Google如何使用與收集資訊的細節，請閱讀 <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation 隱私權保護政策</a></p>
+        <p>這些資訊會經由加密連線傳送，以保護您的個人隱私。得到您的地理定位資訊後，Firefox 會將此資訊傳送給提出要求的網站。Firefox 決不會將您瀏覽網站的名稱或是網址，或是任何Cookie，傳送給 Google Location Services。</p>
+        <p>Mozilla 與 Google 也絕對不會使用 Google Location Services 收集到的資訊來辨識或是偷窺您。</p>
+        <p>要了解要求您的地理位置資訊的網站如何保護您的個人隱私，請瀏覽該網站的隱私權保護政策。</p>
+        <p>要了解更多關於您的個人隱私保護，您也可以閱讀：</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox 隱私權保護政策
+</a>（英文）</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google 隱私權保護政策</a>（英文）</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">我瀏覽網路的時候會被跟蹤嗎？</h4>
+    <div class="expander-content">
+        <p>不會。Firefox 只有在網站要求地理定位資訊的時候才會向您詢問，且只在使用者同意時才會透露您的地理位置。Firefox 在您瀏覽時，不會追蹤或是記錄您的地理位置。</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">我要如何取消給與某個網站的權限？</h4>
+    <div class="expander-content">
+        <p>如果您曾經給予 Firefox 總是透露您的地理位置給特定網站的權限卻又改變了您的想法，您可以很輕易的撤回那項權限：</p>
+        <ul>
+            <li>開啟您曾經給予權限的網站</li>
+            <li> 開啟<em>工具</em>選單，選擇<em>頁面資訊</em></li>
+            <li>選擇<em>權限</em>頁面</li>
+            <li>修改<em>透露地理位置</em>設定</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">我要如何清除「客戶端辨識 ID」？</h4>
+    <div class="expander-content">
+        <ul>
+            <li>開啟<em>工具選單</em>，選擇<em>清除最近的歷史記錄</em></li>
+            <li>點選<em>細節</em>箭頭</li>
+            <li>確定已選擇<em>Cookie</em>項目</li>
+            <li>點選<em>立即清除</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">如何永久關閉地理定位功能？</h4>
+    <div class="expander-content">
+        <p>地理定位功能在 Firefox 是可取消的選項。在沒有您的同意之前，不會傳送任何地點資訊。如果您想要永久停用此功能，請依以下步驟操作：</p>
+        <ul>
+            <li>在位址列輸入 <code>about:config</code></li>
+            <li>輸入 <code>geo.enabled</code></li>
+            <li>連點兩下 <em>geo.enabled</em> 偏好設定</li>
+            <li>至此，地理定位功能已停用</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">我在哪裡？</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">糟糕！偵測您的地點時發生錯誤。</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,286 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup,sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;}
+
+html { background: #fff; }
+
+
+body {
+    background: url("/img/mobile/support/background.png") repeat-x scroll 0 -640px #FFFFFF;
+    font-family: Georgia,freeserif,serif;
+    font-size: 110%;
+}
+
+a, a:link, a:visited, a:active {
+    color: #447bc4;
+    text-decoration: none;
+}
+
+.wrapper {
+    margin:0 auto;
+    max-width:40em;
+    padding: 0 0.5em;
+}
+
+.button {
+    background: #519d1b;
+    background-image:-moz-linear-gradient(#83c53c, #519d1b);
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#83c53c), to(#519d1b));
+    -moz-box-shadow: 0px 4px 0 #438814;
+    -webkit-box-shadow: 0px 4px 0 #438814;
+    box-shadow: 0px 4px 0 #438814;
+    color: #fff;
+    display:block;
+    font-size: 150%;
+    line-height: 1;
+    padding:0.8em 0 0.7em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0px -1px 0px #4e921d;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+h1 {
+    font-size: 170%;
+    margin: 1em 0;
+    line-height: 1.1;
+}
+
+h1 em {
+    display:block;
+    font-style: italic;
+    font-size: 70%;
+}
+
+h2 {
+    color: #303030;
+    font-size: 140%;
+    font-style: italic;
+    margin: 1.5em 0 0.5em 0.2em;
+    letter-spacing: -0.02em;
+}
+
+h2:first-of-type {
+    margin-top: 0.25em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    line-height: 1.1;
+    margin: 0.75em 0 0.75em 0.75em;
+}
+
+/* header */
+
+#header {
+    background: #3551a1;
+    background-image:-moz-linear-gradient(#3b69b1, #304095);
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#3b69b1), to(#304095));
+    -moz-border-radius:0 0 4px 4px;
+    -webkit-border-radius:0 0 4px 4px;
+    border-radius:0 0 4px 4px;
+    color: #fff;
+    height: 2.3em;
+    -moz-box-shadow: 0px 4px 0 #21366b;
+    -webkit-box-shadow: 0px 4px 0 #21366b;
+    box-shadow: 0px 4px 0 #21366b;
+    position: relative;
+}
+
+
+#firefox-logotype {
+    display: block;
+    padding: 0.65em 0.7em 0.45em;
+    width: 70px;
+}
+
+#view-full-site {
+    border-left: 1px solid #2a3980;
+    color: #FFFFFF;
+    font-style: italic;
+    padding: 0.55em 0.7em 0.6em;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-transform: lowercase;
+    top: 0;
+}
+
+#view-full-site:after {
+    content: " »";
+    font-style: normal;
+}
+
+#view-full-site:before {
+    background-color: #4c6eb3;
+    content: "";
+    height: 2.29em;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 1px;
+    z-index: 2; 
+}
+
+/* title */
+
+#firefox-logo {
+    background: url("/img/mobile/support/firefox-logo.png") no-repeat scroll 10px center;
+    margin: 0.5em 0 0;
+    min-height: 81px;
+    padding: 0.5em 0 0;
+    padding-left: 100px;
+}
+
+/* content */
+
+ul.highlight, #support-search {
+    border: 1px solid #9a9a99;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+ul.highlight li, #support-search {
+    background-color: #f2f2f2;
+    background-image:-moz-linear-gradient(#fff, #ebebeb);
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#ebebeb));
+}
+
+ul.highlight li {
+    border-bottom: 1px solid #9a9a99;
+    margin: 0;
+}
+
+ul.highlight li a {
+    background: url("/img/mobile/support/disclosure-indicator.png") no-repeat scroll right center;
+    color: #4b473f;
+    display: block;
+    padding: 0.75em 34px 0.75em 0.75em;
+}
+
+ul.highlight li:first-child {
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+}
+
+ul.highlight li:last-child {
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    border-bottom: 0px;
+}
+
+
+#support-search form {
+    margin: auto;
+    padding: 4px;
+    width: 300px;
+}
+
+#support-search .wrap {
+    background: url("/img/mobile/support/icon.searchloupe.png") no-repeat scroll 7px center #FFFFFF;
+    border: 1px solid #7d7d7c;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    height: 40px;
+    padding: 2px;
+    width: 222px;
+}
+
+#support-search .text {
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: sans-serif;
+    height: 41px;
+    margin-left: 27px;
+    width: 190px;
+}
+
+#support-search .submit {
+    border: 0 none;
+    float: left;
+    margin-left: 4px;
+    padding: 0;
+    position: relative;
+}
+
+#support-search .ancillary {
+    clear: both;
+    color: #9a9a99;
+    display: block;
+    padding-top: 0.5em;
+    padding-bottom: 0.2em;
+    text-align: center;
+}
+
+/* lower */
+
+#lower {
+    background: url("/img/mobile/support/background.png") repeat-x scroll 0 0 #33559B;
+    margin-top:1.5em;
+    padding-top: 85px;
+}
+
+/* footer */
+
+#footer {
+    padding-bottom: 0.5em;
+}
+
+#lang_form {
+    margin: 1.875em 0;
+}
+
+#footer #lang_form label {
+    color: #fff;
+    display: block;
+    font-family: MetaBlack,"Trebuchet MS",sans-serif;
+    font-size: 120%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+#footer #lang_form select {
+    font-family: sans-serif;
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+#footer p {
+    color: #476FBE;
+    font-size:80%;
+    margin:1.875em 0;
+    text-align:center;
+}
+
+#footer p a {
+    color: #669BE1;
+}
+
+#footer .button {
+    background: #5f92ce;
+    color: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-family: MetaBlack,"Trebuchet MS",sans-serif;
+    letter-spacing: -0.02em;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+
+#footer .button:active {
+    background: #447BC4;
+}

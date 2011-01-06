@@ -1,0 +1,26 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Violating Website Report Sent | Mozilla';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                        'About'         => "/{$lang}/about/",
+                        'Legal'         => "/{$lang}/about/legal.html",
+                        'Violating Website Report' => "/{$lang}/legal/fraud-report/",
+                        'Error' => ""
+                    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Your report has been sent</h2>
+    <p>Thank you for your help.  <br>It’s our community that makes us great.</p>
+</div>
+<div id="content">
+</div>
+    
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

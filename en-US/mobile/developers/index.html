@@ -1,0 +1,73 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Develop for Mobile';
+    $body_id    = 'mobile-developers';
+
+    include_once "{$config['file_root']}/includes/headers/mobile/developers.php";
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/functions.inc.php";
+    include_once "{$config['file_root']}/includes/feeds/mobile-team.php";
+?>
+
+<div id="main-feature">
+    <h2>Develop for Mobile</h2>
+    <p>It’s time to mobilize. Here’s what you can do to help.</p>
+</div>
+
+<?=buildMobileSubPageMenu('en-US','developers')?>
+
+<div id="main-content">
+
+<h4 class="first">Follow our progress</h4>
+
+<p>Get the latest mobile news and updates. <a href="/<?=$lang?>/newsletter/about_mobile/">Subcribe to the about:mobile newsletter</a>.</p>
+
+<h4>Build sites and apps that leverage the latest Web technology</h4>
+
+<h5>Mozilla Developer Center for Mobile</h5>
+<p>Get the docs, tools and code you need to innovate for mobile. <a href="https://developer.mozilla.org/En/Mobile">Learn more</a>.</p>
+
+<h5>Mobile Wiki</h5>
+<p>See requirements and best practies for running and testing Firefox for mobile. <a href="https://wiki.mozilla.org/Fennec">Learn more</a>.</p>
+
+<h5>Location-Aware Applications</h5>
+<p>Put people on the right path and build Geolocation apps. <a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Learn more</a>.</p>
+
+<h4>Develop innovative add-ons</h4>
+<p>Firefox for Maemo and Windows Mobile (beta) both support add-ons. In fact, the same add-ons could be used on both platforms, so get out there and go mobile. Here’s a list of useful resources:</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Extensions Basics</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Extensions Best Practices</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface">User Interface Best Practices</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture">Architecture Overview</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Code Snippets</a></li>
+</ul>
+
+<h4>Help build Firefox for Mobile</h4>
+<p>Your help is vital to the success of Firefox.  Provide feedback on our IRC channel (irc.mozilla.org, #mobile), <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">join our Wednesday development meeting</a>, or even <a href="https://bugzilla.mozilla.org/">file some bugs</a>.</p>
+
+
+</div>
+
+<div id="sidebar">
+
+  <? if ($feed): ?>
+    <div class="striped">
+    <h3>Hear from the team</h3>
+    <dl class="feed">
+    <?php foreach($feed->entries as $entry): ?>
+      <dt><?= linkify($entry->rawBody) ?></dt>
+      <dd><a href="<?= $entry->rawLink ?>"><?= $entry->via->name ?></a></dd>
+    <?php endforeach ?>
+    </dl>
+    <a class="rss-link" href="http://friendfeed.com/firefoxmobile?format=atom">Subscribe</a>
+    </div>
+  <? endif ?>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

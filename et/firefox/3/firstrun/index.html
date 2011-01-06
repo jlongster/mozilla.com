@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Tere tulemast Firefoxi kasutajaks';
+    $extra_feature_text = 'Avalehele minekuks klõpsa aktiivse kaardi sulgemisnupul.';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Tere tulemast Firefox 3 kasutajaks"/></h2>
+    <p>Täname, et laadisid alla turvalisima, kiireima ja kõige paremini kohandatava Firefoxi versiooni üldse. Veebilehtede sirvimise alustamiseks sulge lihtsalt see kaart ülal näidatud viisil.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Loe edasi</h3>
+        <p>Mõtled, mida nüüd teha? Meie alustamisjuhendist leiad soovitatud lehtede nimekirja ja muud kasulikku Firefoxi teavet. <a href="/<?=$lang?>/firefox/central/">Vaata alustamisjuhendit</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Küsimusi?</h3>
+        <p>Meie kasutajatoe lehelt leiad küllaldaselt vastuseid ning lisaks reaalajas vestluse, mis aitab keerukamate kohtade juures. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Külasta kasutajatuge</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

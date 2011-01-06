@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Уеб браузър Firefox | Международни версии: Вземете Firefox на вашия език';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Помогнете в тестването на бъдещето на Firefox!</h2>
+        <p>Последната бета версия на Firefox вече е достъпна като предварително издание. Пробвайте я и я изпитайте, и после ни кажете какво мислите!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Важна информация</h4>
+        <p class="intro">Моля, прочетете преди изтегляне</p>
+    </div>
+    <ul>
+        <li>Това е предварително издание на софтуер: може да се натъкнете на проблеми със съвместимостта с някои сайтове и добавки.</li>
+        <li>Ако намерите проблем, моля <a href="http://feedback.mozilla.org/">кажете ни</a> или <a href="https://bugzilla.mozilla.org/">напишете доклад за грешка</a>.</li>
+        <li>За повече информация прочетете <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">бележките към изданието</a> и <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">известните проблеми</a> (на английски).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Не търсите бета версия? Вземете <a href="/<?=$lang?>/firefox/">последния Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

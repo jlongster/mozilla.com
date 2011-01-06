@@ -1,0 +1,175 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Beta  Frequently Asked Questions';
+    $body_id    = 'firefox-mobile-beta-faq';
+
+    $newsletterSource = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/mobile/beta/title.png" alt="Firefox Beta" /></a></h2>
+        <h3>Frequently Asked Questions</h3>
+    </div>
+
+</div>
+
+<?=buildFirefoxMobileBetaSubPageMenu($lang, 'faq');?>
+
+<div id="main-content">
+
+<h4 class="faq-header">About Firefox</h4>
+<dl class="faq">
+	<dt>How is the Firefox browser different than the mobile browser I have now?</dt>
+	<dd><p>Mozilla is bringing the Firefox experience to mobile devices. Built on the most modern browser engine available, Firefox comes complete with familiar features like Firefox Sync that synchronizes your history, bookmarks, tabs and passwords between your desktop and mobile, the Awesome Screen to help you browse with minimal typing,  add-ons to customize Firefox to you liking, Location-Aware Browsing and much more. Go to the <a href="http://www.mozilla.com/en-US/mobile/beta/">Features</a> page to find out more. </p></dd>
+	
+	<dt>Why a beta version?</dt>
+	<dd><p>Firefox for mobile is built on the same technology platform as Firefox 4 for the desktop, just optimized for browsing on a mobile device. We also want to get as much feedback as possible from you so we can make sure the final product is better than ever. Like any other beta release, it hasn’t been fully tested, and although it is a stable version, you might encounter some crashes. Make sure to send us your feedback and ideas through the <a href="http://firefoxformobile.uservoice.com/forums/70211-firefox-for-mobile-ideas">Mobile Support Forum</a>.</p></dd>
+	
+	<dt>When is the final version going to be available?</dt>
+	<dd><p>Firefox 4 for Android and the Nokia N900 is currently in beta. To test or become further involved in the beta, please visit the Firefox for mobile <a href="http://www.mozilla.com/en-US/mobile/beta/">beta page</a>. The Firefox 4 Beta software will update regularly so you can test new features or changes, and it will eventually update to the final release of Firefox 4.  We’re excited to hear what you think.</p></dd>
+	
+	<dt>Is Firefox available for my mobile phone?</dt>
+	<dd><p>Visit Firefox.com/m/beta on your phone to download Firefox on Android (2.0 and above) and the Nokia N900. See the <a href="https://www.mozilla.com/en-US/mobile/platforms/">Supported Devices and System Requirements</a> page first to ensure your phone is compatible.  For iPhone users, try <a href="http://www.mozilla.com/en-US/mobile/home/">Firefox Home</a>, a free app that brings all your Firefox open tabs, history and bookmarks to your iphone.</p></dd>
+	
+	
+	<dt>Will Firefox ever be available on the following mobile devices or platforms?</dt>
+	<dd>
+		<ul>
+			<li><strong>Apple iPhone</strong>: Try Firefox Home, the free Web companion to Firefox. (link to question below about Firefox Home) We currently do not have plans to build an iPhone browser due to constraints with the OS environment and distribution.</li>
+			<li><strong>Blackberry</strong>: Sorry, no plans. Due to its Java-based operating system, Firefox is not compatible on the Blackberry OS.</li>
+			<li><strong>Symbian phones</strong>: Sorry, no current plans.</li>
+			<li><strong>Feature phones</strong>: We’ve targeted our development for <a href="http://en.wikipedia.org/wiki/Smartphone">smartphones</a>. Standard mobile or feature phones are not powerful enough to support a great Firefox user experience.</li>
+		</ul>
+	</dd>
+	
+	<dt>Does it cost anything?</dt>
+	<dd><p>No. Firefox was created as part of the non-profit Mozilla Foundation’s commitment to providing openness, innovation and opportunity on the Internet. We feel that free and open source software like Firefox is fundamental to maintaining the Internet as a global public resource. <a href="http://www.mozilla.org/foundation/">Learn more</a>.</p></dd>
+	
+	<dt>Who makes Firefox?</dt>
+	<dd><p>Firefox is developed and maintained by the non-profit Mozilla Foundation with the help of our worldwide community. Due to contributions from the community, we’ll be adding new add-ons and upgrades that make Firefox faster, safer and more powerful. Want to help? Visit the <a href="https://developer.mozilla.org/en-US/mobile">Develop for Mobile</a> page.</p></dd>
+	
+	<dt>Why Firefox for mobile phones?</dt>
+	<dd><p>Bringing Firefox to mobile phones is the next step towards fulfilling Mozilla’s mission of providing access to one Web that everyone can access, regardless of device or location. Additionally, Mozilla aims to provide a rich platform for developers to create compelling content and innovative applications. The most advanced Web browser available, Firefox is fast, secure, customizable and syncs perfectly with the Firefox on your desktop.</p></dd>
+	
+	<dt>Is it called Fennec or Firefox?</dt>
+	<dd><p>Fennec is the codename of Mozilla’s mobile project. Firefox is the official product name.</p></dd>
+</dl>
+
+<h4 class="faq-header">Downloading &amp; Devices</h4>
+<dl class="faq">
+	<dt>How do I download Firefox to my phone?</dt>
+	<dd>
+		<p>There are 2 ways to download Firefox. Just choose the one convenient for you.</p>
+		<ul>
+			<li>Go to Firefox.com/m/beta with your current mobile browser and download Firefox directly to your phone. See the <a href="https://www.mozilla.com/en-US/mobile/platforms/">Supported Devices and System Requirements</a> page to ensure your phone is compatible.</li>
+			<li>Scan the Firefox beta QR code on the <a href="http://www.mozilla.com/en-US/mobile/beta/">Beta Page</a>. You need to use a QR reader application. If you don’t already have one, there are plenty of free ones you can download.</li>
+		</ul>
+	</dd>
+
+	<dt>Will Firefox work with my mobile phone?</dt>
+	<dd><p>Firefox is currently compatible with Android 2.0 or higher and the Nokia N900. See the <a href="https://www.mozilla.com/en-US/mobile/platforms/">Supported Devices and System Requirements</a> page to ensure your phone is compatible.</p></dd>
+
+	<dt>Can I still download Firefox to my phone even if it’s not a supported device?</dt>
+	<dd><p>If your phone is not on our list of supported devices we don’t guarantee full functionality. We encourage you try Firefox on a supported device so you can experience its full capabilities.</p></dd>
+
+	<dt>Can I download Firefox to the iPhone?</dt>
+	<dd><p>You can’t download the full Firefox browser on your iPhone, but you can get Firefox Home, a free application which brings all your open tabs, history and bookmarks from your Firefox on your destkop to your iPhone.</p></dd>
+
+	<dt>How can I get Firefox Home?</dt>
+	<dd><p>Vist the Firefox Home landing page for install and setup instructions. Read more on the <a href="http://www.mozilla.com/en-US/mobile/home/faq/">FAQ page</a>.</p></dd>
+</dl>
+
+<h4 class="faq-header">Using Firefox</h4>
+<dl class="faq">
+	<dt>How do I use the Firefox user interface to browse the Web?</dt>
+	<dd><p>To save space on your phone’s display, Firefox browser controls are stowed away to the sides of the screen. They can be accessed by swiping your finger left or right across the screen. Your tabs are on the left side of the screen, while bookmarks and settings are on the right. To let you see more of a given site, the address bar also disappears when you scroll down, but it’s quickly retrieved by swiping up or to the side.</p></dd>
+
+	<dt>How do I zoom in and out?</dt>
+	<dd><p>Pinch to zoom (Android) or double tap the screen with your finger to zoom in and out. On the N900, you can also use the volume rocker located on the top of the device to zoom in and out.</p></dd>
+
+	<dt>How do I bookmark a Web page?</dt>
+	<dd><p>Go to the site you wish to bookmark. Swipe left and Touch the bookmark “star” button on the right side of your display.</p></dd>
+
+	<dt>How do I open a new tab?</dt>
+	<dd><p>Swipe right and touch the new tab "plus" button on the left side of your display screen to open a new tab. Tabs appear as thumbnails so you can easily see which page you’d like to select.</p></dd>
+
+	<dt>How do I share a page?</dt>
+	<dd><p>Tap on the icon on the left of the Awesome Bar to open the Site Menu and click on Share Page. You can choose from Email, Twitter, Google Reader or Facebook.</p></dd>
+
+	<dt>How can I add a search engine?</dt>
+	<dd><p>Go to the search engine you want to add, tap on the icon on the left of the Awesome Bar to open the Site Menu and select “Add Search Engine”.</p></dd>
+</dl>
+
+<h4 class="faq-header">Features</h4>
+<dl class="faq">
+	<dt>What’s so special about the Awesome Bar and the Awesome Screen?</dt>
+	<dd><p>The Awesome Screen gets you where you want to go quickly. Touch the Awesome Bar and begin typing. As you type it will display websites that you frequently or recently have visited or bookmarked. The Awesome Screen learns as you use it, adapting to your preferences and making your browsing more personal. You can also tap the Awesome Bar to enter a URL or search term and start exploring the Web. Or, tap on one of the search engines on the bottom of your display screen to get you to your desired destination. You can customize your Awesome Screen with add-ons.</p></dd>
+
+	<dt>What are Firefox Add-ons and how can I get them on my mobile device?</dt>
+	<dd><p>Add-ons let you customize your Firefox by adding features and customizations that help make your browser your own. Select the settings “gear” button on the bottom right-hand side of your screen, then choose the add-ons “puzzle piece” button and search for and install the add-ons that are most useful to you directly from your phone.</p></dd>
+
+	<dt>What is Firefox Sync?</dt>
+	<dd><p>The Firefox Sync add-on brings your Firefox experience to your mobile phone. First, create a Firefox Sync account on your PC. Then go to Firefox on your mobile and search for and install the Firefox Sync add-on. When you enter your Firefox Sync account info and sync, your Firefox bookmarks, history, saved passwords and open tabs between your PC and your mobile. To learn more, visit the <a href="http://www.mozilla.com/en-US/mobile/sync/">Synchronize</a> page.</p></dd>
+
+	<dt>Do I need to get the Firefox Sync add-on to use Firefox on my phone?</dt>
+	<dd><p>No. Firefox Sync in now a built-in feature within Firefox, but you do not have to set it up or login. Although we think that syncing Firefox between your desktop and mobile with Firefox Sync is super useful, it is an optional service that you can choose to use or not. You can still enjoy the Firefox you trust and expect without it. Firefox Sync allows you to share your history, bookmarks, preferences and more, enhancing your overall browsing experience wherever you are.</p></dd>
+
+	<dt>What is Location-Aware Browsing? Is Firefox tracking where I am?</dt>
+	<dd><p>Location-Aware Browsing saves you time by allowing websites to ask you where you are. If you choose to share your location with a website, it can use that information to find nearby points of interest and return additional, useful data like maps of your area. It’s all optional – Firefox doesn’t share your location without your permission. Learn more about Location-Aware Browsing and view the privacy policy from the Google Location Service.</p></dd>
+
+	<dt>How accurate are the locations?</dt>
+	<dd><p>Accuracy varies greatly from location to location. In some places, our service providers may be able to provide a location within a few meters. However, in other areas it might be much more than that. All locations returned by our service providers are estimates only and we do not guarantee the accuracy of the locations provided.</p></dd>
+</dl>
+
+<h4 class="faq-header">Feedback</h4>
+<dl class="faq">
+	<dt>How can I give feedback?</dt>
+	<dd><p>Share your feedback and improvement suggestions through the <a href="http://firefoxformobile.uservoice.com/forums/70211-firefox-for-mobile-ideas">Mobile Support Forum</a>.</p></dd>
+</dl>
+
+<h4 class="faq-header">Security</h4>
+<dl class="faq">
+	<dt>How will Firefox keep me safe while I browse on my mobile?</dt>
+	<dd><p>Mozilla’s open source process leverages the experience of thousands of security experts around the globe, and Firefox includes features like instant Web site ID that checks on suspicious sites to ensure they’re what they claim to be. Customizable security settings to manage passwords, cookies, loading images and installing add-ons give you complete control over your browsing experience. Learn more.</p></dd>
+</dl>
+
+<h4 class="faq-header">Developer Questions</h4>
+<dl class="faq">
+	<dt>Will a Firefox add-on I built for the PC transfer to mobile? If not, do I need to change it?</dt>
+	<dd><p>Although Firefox for the desktop and mobile are built on the same platform, there are small differences that will require developers to make changes to their add-ons. These changes are usually straightforward, visit the <a href="http://www.mozilla.com/en-US/mobile/developers/">Develop for Mobile</a> page to learn more.</p></dd>
+
+	<dt>What browser engine does Firefox use?</dt>
+	<dd><p>The desktop and mobile versions of Firefox both use the Gecko rendering engine. The mobile version of Firefox uses Gecko version 1.9.2, which is the best performing browser engine Mozilla has ever released and includes exciting features such as radically improved JavaScript performance, geolocation support, worker threads, and much more.</p></dd>
+
+	<dt>What JavaScript engine does Firefox use?</dt>
+	<dd><p>Firefox includes the new “<a href="http://www.mozilla.com/en-US/mobile/developers/">TraceMonkey</a>” JavaScript engine, an advanced JIT (“just in time”) compiler using tracing technology. The TraceMonkey engine makes Web applications faster by compiling code as you execute it, allowing many types of CPU-intensive applications to run at near-native speed.</p></dd>
+
+	<dt>How do I develop a Location-Aware website for Firefox?</dt>
+	<dd><p>Firefox has implemented the first public draft of the <a href="http://www.mozilla.com/en-US/mobile/developers/">Geolocation specification from the W3C</a>. An overview on how to develop Location-Aware websites <a href="http://www.mozilla.com/en-US/mobile/developers/">here</a>.</p></dd>
+
+	<dt>Does Firefox on my mobile support HTML 5?</dt>
+	<dd>
+		<p>HTML 5 is the next major revision of HTML. The HTML 5 specification is an ongoing work, but there are several HTML 5 and related features that will enable Web developers to create more innovative websites and applications. Firefox support includes important features like <a href="http://hacks.mozilla.org/2009/06/geolocation/">Location-Aware browsing</a>, the <code><a href="http://hacks.mozilla.org/2009/06/geolocation/">&lt;canvas&gt;</a></code> , and <code><a href="http://hacks.mozilla.org/2009/06/rendering-svg-canvas-burst/">&lt;svg&gt;</a></code>, <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags, <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">Web workers</a> and <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">offline storage</a> tags.</p>
+	</dd>
+
+	<dt>Does Firefox on my phone support plugins?</dt>
+	<dd><p>Support for plugins in Firefox for mobile has been disabled. On most Web pages that use the Adobe Flash plugin, the performance of the plugin didn't meet our standards, and the interactivity and performance of the entire Web page was negatively impacted. This was especially felt on pages with multiple instances of the plugin. Advanced users can enable plugins for experimentation and testing purposes only. We are working on ways for the user to have control of which sites to enable plugins for, as some sites, like YouTube, do work quite well.</p></dd>
+
+	<dt>How can I get involved?</dt>
+	<dd><p>Check out the <a href="https://developer.mozilla.org/en-US/mobile">Mobile Developer Network</a> page to learn more about how you can contribute to Mozilla’s mobile project. If you’d like to learn more about you can get involved in other mobile-related initiatives, check out our Get Involved page.</p></dd>
+</dl>
+
+    <div id="main-content-footer"></div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

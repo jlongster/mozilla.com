@@ -1,0 +1,55 @@
+<?php
+    // please translate the variable below
+    $page_title = "Merci d'avoir choisi Firefox !";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Merci d'avoir choisi Firefox !</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Suivez ces étapes pour télécharger Firefox, découvrir Firefox Sync, et mettez en route</h3>
+    <ol id="steps">
+        <li>Regardez la boîte de réception de votre mobile pour consulter le SMS que nous venons de
+        vous envoyer.</li>
+        <li>Ouvrez le SMS et sélectionnez le lien qu'il contient pour télécharger Firefox
+        directement sur votre mobile.</li>
+    </ol>
+    <p class="small-print">Firefox est gratuit&nbsp;; cependant, des frais de connexion peuvent vous
+    être facturés par votre fournisseur de réseau. Veuillez vérifier les conditions de votre forfait
+    mobile.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Pendant le téléchargement…</h3>
+    <ol>
+        <li>Paramétrez Firefox Sync et emportez <em>votre</em> Firefox partout avec vous. Partagez votre
+        historique de navigation, vos marque-pages, vos mots de passe, et vos onglets entre votre
+        ordinateur et votre mobile.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Installez le module
+        Firefox Sync sur votre ordinateur</a> et enregistrez-vous sur Firefox Sync. Une fois Firefox
+        téléchargé sur votre mobile, suivez les étapes que nous vous suggérons et sélectionnez
+        <q>Installer le module Firefox Sync</q> pour terminer l'installation. Sinon, vous pouvez
+        également sélectionner manuellement le bouton <q>Préférences</q> puis sélectionnez le bouton
+        <q>Modules</q> pour rechercher et installer le module Firefox Sync sur votre mobile.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,40 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Welcome to Firefox Sync";
+    $body_id    = 'sync';
+    $body_class = 'portal-page secondrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="shortcut icon" type="image/png" href="{$config['static_prefix']}/img/firefox/sync/sync-ico.png"/>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/sync.css" media="screen" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+<div id="main-feature">
+  <h2 id="main-feature-title">Congratulations, you now have Firefox Sync on this
+    device and access to your browsing data!</h2>
+  <p>Be sure to leave Firefox Sync connected so your data will automatically sync everyday.</p>
+</div>
+
+<div id="main-content">
+  <div>
+    <h3>Where's my data?</h3>
+    <p>All your bookmarks, passwords, history and preferences will now be
+    available in their usual places.</p>
+    <p>Your open tabs are available under the History menu. You can also 
+    open them via the 'Tabs from Other Computers' option in the Tab List 
+    menu on your tab bar.</p>
+  </div>
+  <div>
+    <h3>Need more information?</h3>
+    <p>Have a question? Check out our <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">
+      frequently asked questions</a>.</p>
+    <p>Interested in learning more? Read the
+    <a href="https://services.mozilla.com/sync/relnotes/1.4.html">release notes</a>
+    to get all the details of this release.</p>
+  </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

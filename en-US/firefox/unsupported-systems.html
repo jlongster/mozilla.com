@@ -1,0 +1,90 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox - Unsupported Systems';
+    $body_id    = 'firefox-unsupported';
+    $breadcrumbs = array(
+        'Minimum Requirements' => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/unsupported-systems.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Thanks for choosing Firefox!</h2>
+	<p>We’re sorry to report this, but your computer does not meet the minimum system requirements to run this version.</p>
+	<p id="downloadmessage"></p>
+</div>
+
+<script src="/js/download.js"></script>
+<script>// <![CDATA[
+	function parseGETVars()
+	{
+		var qs = location.search.substring(1);
+		if (qs.match(/[^-&=a-zA-Z0-9\.]/))
+			return false;
+
+		var nv = qs.split('&');
+		var url = {};
+		for(i = 0; i < nv.length; i++) {
+			var eq = nv[i].indexOf('=');
+			url[nv[i].substring(0,eq).toLowerCase()] = unescape(nv[i].substring(eq + 1));
+		}
+
+		return url;
+	}
+
+	// Grab vars from URL (PRODUCT, OS, and LANG)
+	var get = parseGETVars();
+
+	var product = (get['product']) ? get['product'] : null;
+	var os      = (get['os'])      ? get['os']      : null;
+	var lang    = (get['lang'])    ? get['lang']    : null;
+
+	if (product != null && os != null && lang != null) {
+
+		// Build download.mozilla.org URL out of those vars.
+		download_url = "http://download.mozilla.org/?product=";
+		download_url += product + '&os=' + os + '&lang=' + lang;
+
+		var downloadmessage = document.getElementById('downloadmessage');
+		downloadmessage.innerHTML = 'Want to download Firefox anyway? <a href="' + download_url + '">Click here</a>.';
+
+	}
+
+// ]]></script>
+
+<div id="main-content">
+
+<div id="sub-features">
+	<div id="help" class="sub-feature">
+		<h3>Need <span>Help?</span></h3>
+		<p>Our Support page has plenty of answers, including full instructions for downloading and installing Firefox and a live chat feature to guide you through any tricky spots.</p>
+		<a class="blocklevel" href="http://support.mozilla.com/en-US/kb/">Visit Firefox Support »</a>
+	</div>
+
+	<div id="supported" class="sub-feature">
+		<h3>For more information on supported systems</h3>
+		<a class="blocklevel" href="/<?=$lang?>/firefox/system-requirements.html">View System Requirements »</a>
+	</div>
+
+
+	<div class="clear">&nbsp;</div>
+
+</div>
+
+<div id="other-browsers">
+	<p>To make your computer more secure, we recommend upgrading your operating system to a newer version as soon as possible (plus, you'll be able to use Firefox!). But, if you can't do so, here are some alternate browsers that should be compatible with your current system:</p>
+	<ul>
+		<li><a href="http://www.opera.com/">Opera</a> for Windows 95 and above and Mac OS 10.3 and above</li>
+		<li><a href="http://www.icab.de/">iCab</a> for Mac OS 10.3 and above</li>
+	</ul>
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

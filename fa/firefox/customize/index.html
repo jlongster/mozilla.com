@@ -1,0 +1,105 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'یک چیز مناسب همه نیست';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+$extra_headers
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>یک چیز مناسب همه نیست</h2>
+    <p>شما به پیتزای خود ادویه اضافه می‌کنید و زنگ تلفن خود را عوض می‌کنید. پس چرا روش کارتان با وب را به میل خود در نیاورید؟</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">محصولات</a> / <a href="/<?=$lang?>/firefox/">فایرفاکس</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">امکانات</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">امنیت</a></li>
+    <li><span>سفارشی‌سازی</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">نرم‌افزار ۱۰۰٪ طبیعی</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">نکته‌ها و ترفندها</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">یادداشت‌های انتشار</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">سیستم‌عامل‌ها و زبان‌های دیگر</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>یک افزودنی برای هر نفر</h3>
+        <p>فایرفاکس بیشترین روش‌های سفارشی‌سازی تجربهٔ اینترنتی شما را مطابق با استفاده‌ای که از وب می‌کنید دارد. بیش از ۵٬۰۰۰ افزودنی (نرم‌افزارهای اضافی کوچکی که برای برآورده ساختن نیازهای خاص شما به فایرفاکس افزوده می‌شوند) برای کمک به شما برای استفادهٔ بهتر، لذت‌بخش‌تر و خلاقانه‌تر از اینترنت وجود دارد.</p>
+        <p>آیا مایل هستید بیشتر بدانید؟ به مثال‌های زیر نگاهی بیاندازید، و سپس <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">از وب‌گاه افزودنی‌ها برای مشاهدهٔ تمام امکانات بازدید کنید.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>هشدارها و به‌هنگام‌سازی‌ها</h4>
+            <p>با افزودنی‌های این دسته، آخرین اطلاعات پیش‌بینی وضع هوا، اخبار ورزشی یا حتی حراج‌های eBay را دریافت می‌کنید. در هر وب‌گاهی که باشید، اطلاعات هر لحظه درون مرورگرتان ظاهر می‌شوند.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">مشاهدهٔ همهٔ افزودنی‌های هشدارها و به‌هنگام‌سازی‌ها.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">مثلاً:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>هر زمان با وب کار می‌کنید نیم‌نگاهی به مبادلات eBay داشته باشید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Firefox eBay Edition را امتحان کنید</a> <span>ایجاد شده توسط eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>تصویر، موسیقی و فیلم</h4>
+            <p>فایرفاکس را به یک ارسال‌کنندهٔ تصویر، پخش‌کنندهٔ موسیقی، و یک کارگاه تمام عیار چندرسانه‌ای تبدیل کنید. تصور کنید در حین مرور، کار، نوشتن نامه یا تحقیق در وب یک صفحهٔ کنترل چندرسانه‌ای در اختیار دارید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">مشاهدهٔ همهٔ افزودنی‌های تصویر، موسیقی و فیلم.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">مثلاً:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>تقریباً تمام پخش‌کننده‌های چندرسانه‌ای را از درون مرورگر خود کنترل کنید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">FoxyTunes را امتحان کنید</a> <span>ایجاد شده توسط Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>اجتماعی و ارتباطی</h4>
+            <p>این افزودنی‌ها به شما کمک می‌کنند که مطالب جالب و تازه در اینترنت پیدا کنید و با دوستانتان از طریق تمام وب‌گاه‌های شبکهٔ اجتماعی بزرگ در تماس بمانید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">مشاهدهٔ همهٔ افزودنی‌های اجتماعی و ارتباطی.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">مثلاً:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>وب‌گاه‌های جدید کشف کنید، سپس با دوستان خود تماس برقرار کنید و آن وب‌گاه‌ها را با آنها به اشتراک بگذارید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">StumbleUpon را امتحان کنید</a> <span>ایجاد شده توسط StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>تم‌ها</h4>
+            <p>تجربهٔ مرور خود را محدود به یک طراحی استاندارد نکنید. رنگ‌های جدید انتخاب کنید، استفاده از مرورگر را (مثلاً با دکمه‌های بزرگ‌تر) ساده‌تر سازید، یا ظاهری مطابق با سلیقهٔ خود انتخاب کنید.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">مشاهدهٔ همهٔ تم‌ها.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">مثلاً:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>تمی برای افرادی که تاریکی را دوست دارند.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">NASA Night Launch را امتحان کنید</a> <span>ایجاد شده توسط mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('fa', $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>افزودنی‌ها</h3>
+            <h5>فایرفاکس را مطابق میل خود سازید</h5>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">مشاهدهٔ همهٔ افزودنی‌ها</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

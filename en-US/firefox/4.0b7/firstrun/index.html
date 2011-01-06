@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html xml:lang="en-US" lang="en-US" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Welcome to Firefox</title>
+    <script src="<?=$config['static_prefix']?>/js/util.js"></script>
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/firefox/4/firstrun-page-beta1.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/video-player.css" media="screen" />
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/container/container_core-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/js/mozilla-video-tools.js"></script>
+</head>
+
+<body id="firstrun" class=" locale-en-US portal-page b7">
+<script>// <![CDATA[
+if (document.body.className == '') {
+    document.body.className = 'js';
+} else {
+    document.body.className += ' js';
+}
+
+if (gPlatform == 1) {
+    document.body.className += ' platform-windows';
+} else if (gPlatform == 3 || gPlatform == 4) {
+    document.body.className += ' platform-mac';
+} else if (gPlatform == 2) {
+    document.body.className += ' platform-linux';
+}
+
+// ]]></script>
+
+<div id="wrapper">
+
+<div id="doc">
+
+<div id="main-feature">
+
+    <h1>Welcome to <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+        <div id="video-launch">
+            <a href="http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.webm" id="tour-video"  onclick="dcsMultiTrack('DCS.dcsuri','/firefox4beta/Firefox_4_beta.webm','WT.ti','Firefox 4 Beta Firstrun Page Video');"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/video-thumbnail.png" alt="Video thumbnail" /><span>Watch the video</span></a>
+            <script>
+            // <![CDATA[
+            var player_french = new Mozilla.VideoPlayer(
+                'tour-video',
+                [
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.webm',
+                        type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                        title: 'Download in WebM format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.theora.ogv',
+                        type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        title: 'Download in Ogg&nbsp;Theora format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.mp4',
+                        type:  'video/mp4',
+                        title: 'Download in MPEG-4 format'
+                    }
+                ],
+                'firefox4beta/Firefox_4_beta.mp4'
+            );
+            // ]]>
+            </script>
+        </div>
+        <p>Thanks for becoming a Firefox 4 beta tester! We’re building something awesome together, so please tell us what you do and don’t like about your experience.</p>
+        <p>We’ll be waiting for your feedback - watch the video to meet some of the people who will be listening to what you have to say!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">New Features »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Release Notes »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Tell Us What You Think</h2>
+        <p>As a beta tester, you’re part of the team making Firefox 4. Tell us when you like or dislike something by clicking on the 
+          <?=buildPlatformImage('/img/firefox/beta/4/feedback-button.png', 'Feedback button screenshot')?>
+          Feedback button. You’ll also be asked to take part in anonymous user studies, or fill out the occasional survey.
+        </p>
+    </div>
+
+    <div id="column-2">
+        <h5>How do the user studies work?</h5>
+        <p>User studies gather anonymous statistics about how you use Firefox, but never about what you’re seeing or doing online. You’re in control, and no data is sent to the Mozilla Test Pilot servers without your permission. The information will be used to help design Firefox 4.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>What if I don’t want to participate?</h5>
+        <p>You’ll be told before any user study begins collecting data, and again before any information is sent to Mozilla. You can choose to opt-out of any study, or to turn off all user studies by clicking the Feedback button to manage your settings.</p>
+    </div>
+
+</div>
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<script src="/includes/min/min.js?g=js_stats"></script>
+<script>
+//<![CDATA[
+var _tag=new WebTrends({"dcsid":"dcst2y3n900000gohmphe66rf_3o6x","rate":5,"fpcdom":"mozilla.com"});
+_tag.dcsGetId();
+//]]>
+</script>
+<script>
+//<![CDATA[
+_tag.dcsCollect();
+//]]>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+
+</body>
+</html>

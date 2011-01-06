@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Tervetuloa käyttämään Firefoxia';
+    $extra_feature_text = 'Palaa aloitussivullesi napsauttamalla välilehden sulkemispainiketta.';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Tervetuloa käyttämään Firefox 3:a" /></h2>
+    <p>Kiitos, kun latasit Firefoxin &ndash; se on turvallisempi, nopeampi ja muokattavampi kuin koskaan. Voit aloittaa selaamisen sulkemalla tämän välilehden sivun yläosassa kuvatulla tavalla.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Lue lisää</h3>
+        <p>Mietitkö, mitä tehdä seuraavaksi? Firefoxin aloitusopas -sivullamme on luettelo suositelluista sivuista ja lisätietoja Firefoxista. <a href="/<?=$lang?>/firefox/central/">Tutustu aloitusoppaaseen</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Kysymyksiä?</h3>
+        <p>Tukisivuillamme on vastauksia moniin tavallisiin kysymyksiin, joiden avulla selviät useimmista hankaluuksista, sekä englanninkielinen live-keskusteluominaisuus.  <a href="http://support.mozilla.com/<?=$lang?>/kb/">Siirry tukisivulle</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

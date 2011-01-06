@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Cyfrannu Adborth";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Sut wnaethoch chi ddod o hyd i raglen Firefox 4 beta?";
+$str2       = "Cadw'n Gyfredol";
+$str3       = "Tanysgrifio i dderbyn gwybodaeth, newyddion a digwyddiadau am Firefox Beta drwy e-bost.";
+$str4       = "Eich Cyfeiriad E-bost";
+$str5       = "Rwy'n cytuno i <a href=\"%s\">Bolisi Preifatrwydd</a> <span class='footnote'>(Byddwn yn anfon gwybodaeth sy'n berthnasol i Mozilla yn unig.</span>";
+$str6       = "Anfonwch newyddion achlysurol am Mozilla, cynhorion Firefox, a gwybodaeth arall am Mozilla.";
+$str7       = "Tanysgrifio »";
+$str8       = "Diolch am Danysgrifio!";
+$str9       = "Rydym yn edrych ymlaen i allu rhannu cynhorion ar sut mae cael y gorau allan o Firefox, yn ogystal â newyddion cyffroes am Mozilla a sut rydym yn gweithio i greu gwell Gwe.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Mae angen Cymorth</h3>
+        <p>Rydym yn adeiladu Firefox sy'n gynt, ysgafnach ac yn llawn o ffyrdd i'ch helpu chi i bori. Ond, does dim modd i ni wneud hynny heb eich adborth chi.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Adborth</span></li>
+    <li class="more"><h3>Rhagor o wybodaeth yn Saesneg</h3></li>
+    <li class="features"><a href="../features/">Nodweddion</a> </li>
+    <li class="tech"><a href="../technology/">Technoleg</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Polisi Preifatrwydd Adborth</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>Dwedwch wrthym beth yw eich Barn</h2>
+        <h3>Darparu Adborth Cyflym</h3>
+        <p>Cliciwch y botwm Adborth i rhoi mewnbwn uniongyrchol am y beta. Mae mor syml â hynny!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Datblygwyr: Mae eich eisiau chi arnom</h2>
+        <h3>Rhannu eich Syniadau</h3>
+        <p>Beth ydych yn ei feddwl am <a href="../features/#under-the-hood">nodweddion datblygwyr newydd</a> sydd yn y beta?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Ymweld â'n Fforymau Adborth.</a></p>
+
+        <h3>Cofnodi Gwallau Technegol</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>Os ydych yn arbenigwr Bugzilla, cofnodwch wall os ydych yn canfod anhawster benodol wrth bori.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Cofnodi Gwall Firefox 4 Beta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Sôn wrth Bawb</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Ein dilyn ar Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Ymweld â ni ar Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Darllen Blog Mozilla</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Angen Cymorth?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Mae gan ein tudalennau cefnogaeth</a> atebion a chyngor penodol ar Firefox 4 beta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

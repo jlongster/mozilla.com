@@ -1,0 +1,212 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Switching to Mozilla Firefox';
+    $body_id    = 'switch';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/switch.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+	<script src="/js/jquery/jquery.min.js"></script>
+	<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Switching is Easy!</h2>
+	<p>&ldquo;There may be no easier upgrade to your Web experience than a switch
+	from Internet Explorer to Firefox&rdquo;</p>
+	<cite>&ndash; Rob Pegoraro, June 2008, Washington Post</cite>
+</div>
+
+<div><!-- empty div = dirty IE6 hack -->
+<?=buildFirefoxSubPageMenu($lang, 'firefox');?>
+</div>
+
+<div id="main-content">
+	<h3>Top 5 Reasons to Switch:</h3>
+	
+	<div id="top5">
+		<div class="top5-row">
+			<div id="top5-speed">
+				<h4>Speed:</h4>
+				<p>going from IE to Firefox is like trading in your minivan for a sports car.</p>
+			</div>
+			<div id="top5-safety">
+				<h4>Safety:</h4>
+				<p>our <a href="/<?=$lang?>/firefox/security/">open-source security</a> process means we address threats faster to keep you safe online.</p>
+			</div>
+			<div id="top5-easy">
+				<h4>Easy to Use:</h4>
+				<p>Firefox's <a href="/<?=$lang?>/firefox/features/">cutting-edge features</a> are so intuitive you won't know how you lived without them.</p>
+			</div>
+		</div>
+		<div class="top5-row bottom">
+			<div id="top5-custom">
+				<h4>Customization:</h4>
+				<p>we offer literally <a href="/<?=$lang?>/firefox/personal.html">thousands of ways</a> for you to adapt Firefox to meet your unique browsing needs.</p>
+			</div>
+			<div id="top5-free">
+				<h4>Free:</h4>
+				<p>they say the best things in life are free, and Firefox is totally, 100% free of charge.</p>
+			</div>
+			<div id="top5-funfact">
+				<h4>Fun Fact:</h4>
+				<p>Four out of five Firefox users say they'd recommend it to a friend.</p>
+				<a href="http://www.spreadfirefox.com/tellafriend">Help spread the word</a>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<div id="sidebar">
+    <script src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+	?>
+
+	<div id="steps3">
+		<h3>Switching in 3 Simple Steps:</h3>
+		<ol>
+			<li>Click the Firefox download button.</li>
+			<li>Follow the steps to install Firefox and import your bookmarks,
+			passwords and other settings from IE.</li>
+			<li>Launch Firefox from the Start menu, launch bar or by clicking
+			on the desktop icon.</li>
+		</ol>
+		
+		<a href="/<?=$lang?>/firefox/video/" id="video">Launch the video</a>
+	</div>
+</div>
+
+<div id="faq">
+	<h3 class="top">Frequently Asked Questions</h3>
+
+	<div id="free" class="expander expander-odd first-expander">
+		<h3 class="expander-header">Is Firefox really free?</h3>
+		<div class="expander-content">
+			<p>Yes! Firefox is 100% free of charge.</p>
+		</div>
+	</div>
+
+    <div id="safe" class="expander">
+		<h3 class="expander-header">Is Firefox safe to download?</h3>
+		<div class="expander-content">
+			<p>Very safe. And, once you download Firefox you’ll be
+			<a href="/<?=$lang?>/firefox/security/">better protected</a> from
+			online bad guys. (Be sure to download Firefox from the official
+			Mozilla.com website.)</p>
+		</div>
+    </div>
+	
+    <div id="compatible" class="expander expander-odd">
+		<h3 class="expander-header">Will my favorite sites and my webmail work with Firefox?</h3>
+		<div class="expander-content">
+			<p>Absolutely. The sites you visit are independent of the browser
+			you choose to use. For example, you don't need to use AOL to access
+			your AOL email and you don't need Internet Explorer to use
+			Microsoft’s Hotmail.</p>
+			<p>You may have installed plug-ins (like
+			<a href="http://support.mozilla.com/<?=$lang?>/kb/Using+the+Flash+plugin+with+Firefox">Flash</a>)
+			in the past to view some sites (like YouTube) with your current browser.
+			You’ll need to reinstall those on Firefox, but they’re free and only
+			take a few seconds to download.</p>
+		</div>
+    </div>
+
+    <div id="easy" class="expander">
+		<h3 class="expander-header">Is it difficult to use Firefox? Will I have to spend time learning how to use it?</h3>
+		<div class="expander-content">
+			<p>No. In fact, we pride ourselves on making Firefox as easy to use
+			as possible. Getting started is quite intuitive, but if you want to
+			learn more we have some online <a href="/<?=$lang?>/firefox/tips/">tips</a>
+			and <a href="/<?=$lang?>/firefox/video/">videos</a> to help you make
+			the most of your new browser. Our support site also has
+			<a href="http://support.mozilla.com/<?=$lang?>/kb/Browsing+basics">a more complete set of instructions</a>
+			if you’d like more detail.</p>
+			<p>When you switch from Internet Explorer, you may notice a few
+			differences in the terminology&mdash;<a href="http://support.mozilla.com/<?=$lang?>/kb/For+Internet+Explorer+Users">we’ve documented them</a>
+			to clear up any confusion.</p>
+		</div>
+    </div>
+	
+    <div id="favorites" class="expander expander-odd">
+		<h3 class="expander-header">Will my favorites and other browser settings be transferred?</h3>
+		<div class="expander-content">
+			<p>Yes. To make the switch as seamless as possible, you can import
+			your favorites (bookmarks), history, saved passwords and other
+			settings during the installation process. Or, if you decide to take
+			care of that later we have
+			<a href="http://support.mozilla.com/<?=$lang?>/kb/Importing+Bookmarks+And+Other+Data+From+Internet+Explorer">detailed instructions</a>
+			to walk you through the simple steps.</p>
+		</div>
+    </div>
+
+    <div id="secure" class="expander">
+		<h3 class="expander-header">What makes Firefox safer?</h3>
+		<div class="expander-content">
+			<p>First of all, Firefox includes the
+			<a href="/<?=$lang?>/firefox/features/#security">most advanced security features available</a>,
+			including anti-phishing and anti-malware protection, instant Web site ID,
+			automated updates and more.</p>
+			<p>Also, our <a href="/<?=$lang?>/firefox/security/">open-source security process</a>
+			means we have thousands of experts around the world checking our
+			code for weak spots. We’re constantly monitoring threats to your
+			online safety and regularly release new Firefox updates with the
+			latest patches and protection. An <a href="/<?=$lang?>/firefox/security/">independent study</a>
+			has verified that Firefox users are at risk for significantly less
+			time during the year than Internet Explorer users.</p>
+		</div>
+    </div>
+	
+    <div id="unsure" class="expander">
+		<h3 class="expander-header">What if I’m not sure about switching?</h3>
+		<div class="expander-content">
+			<p>We’ve made that part as easy as possible, too. You can install
+			Firefox and try it without changing anything else in your computer
+			setup. If you change your mind, you can still go back to your old
+			browser at any time.</p>
+		</div>
+    </div>
+	
+    <div id="non-profit" class="expander expander-odd">
+		<h3 class="expander-header">Is Firefox really made by a non-profit?</h3>
+		<div class="expander-content">
+			<p>Yes. Firefox is made by Mozilla, a public benefit non-profit
+			organization, with the help of contributors from around the world.
+			Our goal is to foster openness, innovation and opportunity on the
+			Web—you can <a href="/<?=$lang?>/about/whatismozilla.html">learn all about us here</a>.</p>
+		</div>
+    </div>
+
+    <div id="users" class="expander">
+		<h3 class="expander-header">Who uses Firefox?</h3>
+		<div class="expander-content">
+			<p>Firefox is the most popular browser in the world behind Internet
+			Explorer and is used by hundreds of millions of people every month.
+			It has received <a href="/<?=$lang?>/press/buzz.html">enthusiastic reviews</a>
+			and has won <a href="/<?=$lang?>/press/awards.html">numerous awards</a>,
+			including both the PC Magazine and CNET Editor’s Choice.</p>
+		</div>
+    </div>
+	
+    <div id="support" class="expander expander-odd">
+		<h3 class="expander-header">How do I get help if I have a problem?</h3>
+		<div class="expander-content">
+			<p>The Mozilla community provides world-class support at
+			<a href="http://support.mozilla.com/">our Support site</a> including
+			an extensive set of <a href="http://support.mozilla.com/<?=$lang?>/kb/">support articles</a>,
+			a <a href="http://support.mozilla.com/<?=$lang?>/kb/Support+Website+Forums">forum</a>
+			and even a <a href="http://support.mozilla.com/<?=$lang?>/kb/Live+Chat?new_chat">live chat area</a>
+			where you can get answers from the experts in real time.</p>
+		</div>
+    </div>
+
+	<div id="faq-footer"></div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "¡Gracias por elegir Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>¡Gracias por elegir Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Sigue estos pasos para descargar Firefox, conoce más sobre Weave, ponte en marcha</h3>
+    <ol id="steps">
+        <li>Busca en los SMS recibidos en tu teléfono el texto que te enviamos.</li>
+        <li>Abre el mensaje y selecciona el enlace incluido para descargar Firefox directamente a tu celular.</li>
+    </ol>
+    <p class="small-print">*Firefox es gratis; sin embargo, puede aplicarse el costo de transferencia de datos de cada carrier. Por favor, verifica tu plan.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Mientras esperas…</h3>
+    <ol>
+        <li>Instala Firefox Sync y llévate <em>su</em> Firefox a donde quiera que vayas. Comparte el historial de navegación, marcadores, contraseñas y pestañas de tu PC con tu dispositivo móvil.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Instala el agregado Firefox Sync en tu PC</a> y regístrate en Weave. Una vez que descargues Firefox en tu dispositivo móvil, sigue los pasos sugeridos y selecciona "Get the Firefox Sync add-on" para completar la instalación. Alternativamente, puedes seleccionar manualmente el botón Opciones, hacer clic en el botón agregados y buscar e instalar Firefox Sync en tu móvil/celular.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,106 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Beta  Frequently Asked Questions';
+    $body_id    = 'firefox-beta-faq';
+
+    $newsletterSource = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Frequently Asked Questions</h3>
+    </div>
+
+</div>
+
+<?=buildFirefoxBetaSubPageMenu($lang, 'faq');?>
+
+<div id="main-content">
+<dl class="faq">
+
+<dt>When will Firefox 4 be available?</dt>
+<dd><p>Firefox 4 is currently in beta. To become a Firefox 4 Beta tester, please visit <a href="/<?=$lang?>/firefox/beta/">the Firefox 4 Beta page</a>. The Firefox 4 Beta software will update every few weeks so you can test new features or changes, and it will eventually update to the final release of Firefox 4. We’re excited to receive your feedback and look forward to hearing from you!</p></dd>
+
+
+<dt>On what platforms is the Firefox 4 Beta available?</dt>
+<dd><p>The Firefox 4 Beta is currently available on Mac, Windows and Linux. Firefox 4 Beta for mobile is currently available on Maemo and Android.</p></dd>
+
+<dt>What’s new in the latest Firefox 4 Beta?</dt>
+<dd><p>The latest version of Firefox 4 Beta includes Firefox Sync, which synchronizes your data across multiple devices, along with Panorama (formerly Tab Candy), the amazing new feature for grouping and organizing your tabs. <a href="/<?=$lang?>/firefox/beta/features/">Read more about the features</a> in the latest beta.</p></dd>
+
+<dt>What is Firefox Sync?</dt>
+<dd><p>Firefox Sync synchronizes browser settings, history, passwords, bookmarks and even open tabs across multiple browser instances. If you have an iPhone you can get access to your Firefox Sync data using the application Firefox Home. Find out <a href="/<?=$lang?>/mobile/sync/">more information on Sync</a>.</p></dd>
+
+<dt>What is Panorama?</dt>
+<dd><p>Panorama is the next evolution of tabbed browsing. With a single keystroke, it gives you an overview of all your open tabs, so you can organize them into groups and switch between them with ease. For example, you might create separate groups for tabs related to vacation, work, recipes, games and social networking – whatever makes sense to you. <a href="http://www.youtube.com/watch?v=5r0TQJ-gGi0">Take a closer look at Panorama.</a></p></dd>
+
+<dt>Why does Firefox look different than it used to?</dt>
+<dd><p>We updated the default look of Firefox to make it easier to focus on Web content and to control the tools in your Web browser. Also, we think it’s prettier looking. <a href="http://www.azarask.in/blog/post/tabcandy/">This blog post</a> explains what we did to streamline the interface and why Tabs are on Top in Firefox 4.</p></dd>
+
+<dt>Can I still customize the user interface?</dt>
+<dd><p>Of course! The Firefox UI remains completely customizable. You can switch the locations of tabs, whether or not a menu bar, bookmark bar or status bar is visible.</p></dd>
+
+<dt>How did stability improve in Firefox 4 Beta?</dt>
+<dd><p>We hate crashes. When Firefox crashes, we try to get you back on your feet as quickly as possible, but we’d much rather you not crash in the first place. Mozilla recognizes that third-party plugins provide important functionality in many of today’s websites. At the same time, plugins can lead to problems for users as they browse. With the ability to alert users when they have out of date plugins, and now crash protection on all operating systems, Firefox allows users to experience all the content they love without any of the hassles.</p></dd>
+
+<dt>How does Firefox 4 Beta protect my privacy?</dt>
+<dd><p>Firefox puts your privacy first. Firefox 4 fixes flaws in the CSS Web standard that allowed your browser history to be exposed. Future releases will provide easy to use tools that let you control your privacy.</p></dd>
+
+<dt>Is the Firefox 4 Beta safe to test?</dt>
+<dd><p>Yes! Mozilla developers have been using Firefox 4 preview builds as their primary Web browser for months.</p></dd>
+
+<dt>My existing Add-ons don’t work with Firefox 4 Beta. What can I do?</dt>
+<dd><p>You can install the <a href="https://addons.mozilla.org/en-US/firefox/addon/15003/">Add-on Compatibility Reporter</a> and test your Add-ons!</p></dd>
+
+<dt>Is Firefox 4 available in my language?</dt>
+<dd><p>Firefox 4 Beta is currently available in more than 50 languages and we will add more soon.</p></dd>
+
+<dt>Where can I get a quick overview of Firefox 4?</dt>
+<dd><p>We’ve created a <a href="/<?=$lang?>/firefox/beta/features">Firefox 4 Beta Features page</a>. This is the best place to learn all about the exciting new and enhanced features in Firefox 4. You can also get a guided video tour of Firefox 4 Beta and see the new features in action.</p></dd>
+
+<dt>Where can I see some cool demos of Firefox 4?</dt>
+<dd><p>You can always check out <a href="http://hacks.mozilla.org">the Mozilla Hacks site</a>.</p></dd>
+
+<dt>Should I expect Firefox 4 to look just like Firefox 4 Beta?</dt>
+<dd><p>Firefox 4 Beta is now feature complete but there will still be some changes as we work to tweak and polish the final product. Your feedback is important to help us get Firefox 4 ready for the final release. Please see the Feedback page for more information on how to participate in the Firefox 4 Beta test.</p></dd>
+
+<dt>How can I give feedback on my experience with Firefox 4 Beta?</dt>
+<dd><p>Using the Feedback button in the upper right corner of the browser. Tell us anytime something makes you happy or sad!</p></dd>
+
+<dt>What is the Feedback Add-on?</dt>
+<dd><p>Firefox 4 Beta comes with the Feedback Add-on, which adds a button in the upper-right corner. You can use this button to provide instant feedback at any time. You will also be notified about user studies (run by Mozilla Test Pilot), which collect information about how you use Firefox, but not which websites you visit. You control your participation, and can choose to opt out of any study or see what data has been collected. You will be asked before any data is sent to Mozilla, and that data is subject to the Feedback and Test Pilot privacy policies.</p></dd>
+
+<dt>When should we expect the next beta?</dt>
+<dd><p>We plan on iterating quickly and shipping new versions of the beta every few weeks. Once you download a beta, it will automatically update whenever a new version is released.</p></dd>
+
+<dt>What can we expect in the next beta?  Or future betas?</dt>
+<dd><p>Firefox 4 Beta is now feature complete. We are still looking at ways to improve performance and user experience as we prepare Firefox 4 for final release.</p></dd>
+
+<dt>How does Firefox 4 Beta improve performance?</dt>
+<dd><p>Firefox 4 Beta includes the enhanced high-performance SpiderMonkey JavaScript engine with TraceMonkey and JägerMonkey JITs. You’ll notice the speed in everything from faster start-up time and improved page-load speed to performance of Web apps. Firefox 4 Beta also has hardware acceleration, which enables websites to load and respond faster to rich and interactive content like Web games, apps or photos. Hardware acceleration is on by default on all supported hardware (<a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">release notes</a>).</p></dd>
+
+<dt>Where can I learn more about Firefox 4 Beta?</dt>
+<dd><p>To learn more about the Firefox 4 Beta:</p>
+<ul><li><a href="/<?=$lang?>/firefox/beta/">Download Firefox 4 Beta</a>
+</li><li><a href="/<?=$lang?>/firefox/beta/features/">Learn more about the features</a>
+</li><li><a href="/<?=$lang?>/firefox/beta/feedback/">Give us feedback</a>
+</li><li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Release notes</a>
+</li></ul>
+</dd>
+
+</dl>
+
+    <div id="main-content-footer"></div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

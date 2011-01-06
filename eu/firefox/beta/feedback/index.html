@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Eman iritzia";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Nola izan duzu Firefox 4 betaren berri?";
+$str2       = "Egunean mantendu";
+$str3       = "Harpidetu eta Firefox Betari buruzko albisteak, ekitaldiak eta informazioa jasoko dituzu postaz.";
+$str4       = "Zure e-posta helbidea";
+$str5       = "Onartzen dut <a href=\"%s\">pribatutasun-politika</a> <span class='footnote'>(Mozillari buruzko informazioa soilik bialduko dizugu).</span>";
+$str6       = "Noizean behin bidali Mozillaren berriak, Firefoxerako trikimailuak eta Mozillaren informazio gehiago ere.";
+$str7       = "Harpidetu »";
+$str8       = "Milesker harpidetzearren!";
+$str9       = "Laster hasiko gara trikimailu eta aholkuak partekatzen Firefoxi zuku dena ateratzeko, eta Mozillari buruzko albisteak bidaltzen, web-a hobetzeko egiten dugun lanari buruz.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Laguntza behar dugu</h3>
+        <p>Firefox bizkorrago, arinago eta erabilerrazago bat eraikitzen ari gara. Baina ezin dugu hau egin zure iritzia jakin gabe.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Eman iritzia</span></li>
+    <li class="more"><h3>Informazio gehiago ingelesez</h3></li>
+    <li class="features"><a href="../features/">Ezaugarriak</a> </li>
+    <li class="tech"><a href="../technology/">Teknologia</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Iritzia emateko pribatutasun-politika</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>Esaiguzu zer deritzozun</h2>
+        <h3>Eman iritzia di-da batean</h3>
+        <p>Klikatu Feedback botoia beta-ri buruzko berehalako iritzia emateko. Benetan erraza!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Garatzaileok: behar zaituztegu</h2>
+        <h3>Partekatu zuen ideiak</h3>
+        <p>Zer iruditzen zaizkizue beta bertsioko <a href="../features/#under-the-hood">garatzaileentzako ezaugarri berriak</a>?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Bisitatu iritzia emateko foroa.</a></p>
+
+        <h3>Eman <em>bug</em> teknikoen berri</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>Bugzilla ezagutzen baduzu, sortu bug bat nabigatzean aurkitzen duzun arazo zehatz bakoitzarekin.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Eman Firefox 4 Beta-ren bug baten berri</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Zabaldu berria</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Jarraitu Twitterren</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Bisitatu Facebooken</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Irakurri gure bloga</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Laguntza bila?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Gure laguntza orriek</a> erantzun eta aholku ugari dituzte zehazki Firefox 4 beta bertsiorako.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

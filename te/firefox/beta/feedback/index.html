@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "ఫైర్‌ఫాక్స్ 4 బీటా - ప్రతిస్పందనని తెలియజేయండి";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "ఫైర్‌ఫాక్స్ 4 బీటా కార్యక్రమం గురించి మీకు ఎలా తెలిసింది?";
+$str2       = "తాజా సమాచారం";
+$str3       = "ఫైర్‌ఫాక్స్ బీటా వార్తలని, సంఘటనలని మరియు సమాచారాన్ని అందుకోడానికి ఈమెయిలు ద్వారా చందా చేరండి.";
+$str4       = "మీ ఈమెయిలు చిరునామా";
+$str5       = "<a href=\"%s\">గోప్యతా విధానాని</a>కి నేను అంగీకరిస్తున్నాను <span class='footnote'>(మేం మీకు మొజిల్లా-సంబంధిత సమాచారాన్ని మాత్రమే పంపిస్తాము).</span>";
+$str6       = "అప్పుడప్పుడూ మొజిల్లా వార్తలని, ఫైర్‌పాక్స్  చిట్కాలు  &amp; మెళకువలని, మరియు ఇతర మొజిల్లా సమాచారాన్ని కూడా నాకు పంపించండి.";
+$str7       = "చందాచేరండి »";
+$str8       = "చందాచేరినందుకు ధన్యవాదాలు!";
+$str9       = "ఫైర్‌ఫాక్స్ నుండి సాధ్యమైనంత ఎక్కువగా పొందడానికి  చిట్కాలు &amp; మెళకువలని , అలానే మొజిల్లా గురించి మరియు మెరుగైన జాలాన్ని సృష్టించడానికి మేం ఎలా పనిచేస్తున్నాం అన్న దానిపై ఉత్సాహభరితమైన సమాచారాన్ని పంచుకోడానికి మేం ఎదురుచూస్తూన్నాం.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="ఫైర్‌ఫాక్స్ 4 బీటా" /></a></h2>
+        <h3>సహాయం కావాలి</h3>
+        <p>మేం వేగవంతమైన, తేలికైన మరియు మీ విహరణలో సహాయపడే మార్గాలతో నిండిన ఫైర్‌ఫాక్స్‌ని తయారుచేస్తూన్నాం. కానీ, మీ ప్రతిస్పందన లేకపోతే అది పరిపూర్ణమవదు.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>ఫైర్‌ఫాక్స్ 4<sup>బీటా</sup></span></h3></li>
+    <li class="feedback"><span>ప్రతిస్పందన</span></li>
+    <li class="more"><h3>మరింత సమాచారం ఆంగ్లంలో</h3></li>
+    <li class="features"><a href="../features/">సౌలభ్యాలు</a> </li>
+    <li class="tech"><a href="../technology/">సాంకేతికత</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">ప్రతిస్పందన గోప్యతా విధానం</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>మీ అభిప్రాయాన్ని మాకు తెలియజేయండి</h2>
+        <h3>ప్రతిస్పందని తక్షణమే తెలియజేయండి </h3>
+        <p>బీటా గురించి మీ సలహాలని తక్షణమే మాకు తెలియజేయడానికి Feedback బొత్తాన్ని నొక్కండి. అంతే, చాలా తేలిక!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">డెవలపర్లూ: మీరు మాకు కావాలి</h2>
+        <h3>మీ ఆలోచనలని పంచుకోండి</h3>
+        <p>బీటా లోని <a href="../features/#under-the-hood">కొత్త డెవలపర్ సౌలభ్యాల</a> గురించి మీరు ఏమి అనుకుంటున్నారు?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">మా ప్రతిస్పందన వేదికని సందర్శించండి.</a></p>
+
+        <h3>సాంకేతిక లోపాలని తెలియజేయండి</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>మీరు బగ్‌జిల్లా నిపుణులైతే, మీ విహరణలో ఏమైనా ప్రత్యేకమైన సమస్యలు ఎదురైతే బగ్గుని నివేదించండి.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">ఫైర్‌ఫాక్స్ 4 బీటా బగ్గుని దాఖలుచేయండి</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>ప్రచారం చేయండి</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">ట్విట్టర్‌లో మమ్మల్ని అనుసరించండి</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">ఫేస్‌బుక్‌లో మమ్మల్ని సందర్శించండి</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">మొజిల్లా బ్లాగుని చదవండి</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>సహాయం కావాలా?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />మా తోడ్పాటు పేజీల</a>లో ఫైర్‌ఫాక్స్ 4 బీటాకై ప్రత్యేకించిన సమాధానాలు మరియు సలహాలు ఉన్నాయి.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

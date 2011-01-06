@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1>Is Geal Gach Nua in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Tá Firefox ag athrú na slí a gcuirtear meáin ar fáil ar leathanaigh Ghréasáin: nochtann an comhéadan nua fuaime na hamhshonraí fuaime ó na heilimintí <code>&lt;video&gt;</code> agus <code>&lt;audio&gt;</code> in HTML5, sa chaoi go mbeidh sé níos éasca d'fhorbróirí sonraí fuaime a léamh agus a scríobh le JavaScript.  Le tuilleadh eolais a fháil, féach ar an bhfíseán.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Tabhair Aiseolas Dúinn »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Nótaí Eisiúna »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>An Nuacht Is Déanaí</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Grafaic Luasghéaraithe (Windows amháin)</h4>
+        <p>Faigh grafaicí fíorthapa le Direct2D, ar fáil de réir réamhshocraithe anois, ar chrua-earraí a dtacaíonn DirectX 10 leo.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Ceangail go Sábháilte</h4>
+        <p>Le <acronym title="HTTP Strict-Transport-Security ">HSTS</acronym>, is féidir le suíomh Gréasán insint do Firefox ceangal sábháilte a bhunú lena fhreastalaí go huathoibríoch, sa chaoi nach mbeidh ionsaitheoirí in ann sonraí íogaire a ghoid nuair a dhéantar cuairt ar an suíomh. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Tuilleadh eolais »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

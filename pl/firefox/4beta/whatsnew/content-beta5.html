@@ -1,0 +1,42 @@
+
+<div id="main-feature">
+
+    <h1>Oto nowy <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox zmienia sposób integracji mediów w&nbsp;Sieci. Nowy interfejs Audio API udostępnia nieprzetworzone dane dźwiękowe zawarte wewnątrz elementów HTML5 <code>&lt;video&gt;</code> i&nbsp;<code>&lt;audio&gt;</code>, ułatwiając programistom zastosowanie JavaScriptu do odczytu i&nbsp;zapisu danych dźwiękowych. Obejrzyj film, by dowiedzieć się więcej na ten temat.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Wyraź swoją opinię »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Informacje o&nbsp;wydaniu »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Najnowsze wiadomości</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Przyspieszenie grafiki (tylko Windows)</h4>
+        <p>Poznaj – teraz domyślnie włączoną – superszybką akcelerację grafiki za pomocą technologii Direct2D na sprzęcie obsługującym DirectX 10.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Bezpieczne połączenia z&nbsp;serwerem</h4>
+        <p>Za pomocą protokołu <acronym title="HTTP Strict-Transport-Security">HSTS</acronym> witryny mogą wymusić na przeglądarce automatyczne nawiązywanie bezpiecznych połączeń ze swoimi serwerami. Uniemożliwia to osobom próbującym dokonać ataku przejęcie wrażliwych danych, które mogłyby być narażone na ryzyko podczas uzyskiwania dostępu do witryny. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Dowiedz się więcej »</a></p>
+    </div>
+</div>
+
+
+<?php endif; ?>

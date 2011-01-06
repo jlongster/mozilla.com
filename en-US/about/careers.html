@@ -1,0 +1,122 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Careers | Mozilla';
+    $body_id    = 'careers';
+    $breadcrumbs = array(
+        $l10n->get('About') => "/{$lang}/about/",
+        $l10n->get('Careers') => "/{$lang}/about/careers",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/careers.css" media="screen" />
+	<script src="/js/mozilla-pager.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="feature-extra"></div>
+<div id="main-feature">
+	<h2><span>Careers</span></h2>
+	<p>Be part of something good</p>
+</div>
+
+<div id="content">
+<div id="careers-feature" class="pager pager-with-tabs">
+
+	<ul id="careers-nav" class="pager-tabs">
+		<li id="meet-link"><a href="#feature-meet">Meet Mozilla</a></li>
+		<li id="team-link"><a href="#feature-team">The Team</a></li>
+		<li id="life-link"><a href="#feature-life">Life at Mozilla</a></li>
+		<li id="first-person-link"><a href="#feature-first-person">First Person</a></li>
+		<li id="apply-link" class="pager-not-tab"><a href="http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vfwa">Jobs</a></li>
+	</ul>
+
+	<div class="pager-content">
+
+		<div class="careers-feature-contents" id="feature-meet">
+			<script>// <![CDATA[
+			document.getElementById('feature-meet').id = 'page-feature-meet';
+			// ]]></script>
+			<h3>Allow us to introduce ourselves.</h3>
+			<p>Mozilla Corporation is part of a vast open-source software development project fueled by a small (but growing) staff and thousands of contributors and volunteers. We’re part of a vibrant community that helps support the openness, innovation and opportunity of the Internet.</p>
+			<p>The award-winning Firefox web browser enables hundreds of millions of people worldwide to explore the Web through an ever-evolving window.</p>
+			<p>Our technology is used as a platform for many of the Web’s most innovative projects. Many people think of us as a key part of what makes the Web tick - and what will keep it ticking in the future.</p>
+		</div>
+
+		<div class="careers-feature-contents" id="feature-team">
+			<script>// <![CDATA[
+			document.getElementById('feature-team').id = 'page-feature-team';
+			// ]]></script>
+			<h3>We’re a nice bunch.</h3>
+			<p>Mozilla employees catch on fast. We’re driven by innovation and freedom, and are comfortable with change. Mozilla’s culture engages employees, encourages collaboration and thrives on ideas and ambitions.</p>
+			<p>Mozilla is all about talented people working to improve the Web - it defines our past, our future and our average workday. Want to join us? Tell us why and send your resume to <em>careers at mozilla dot com</em>.</p>
+		</div>
+		<div class="careers-feature-contents" id="feature-life">
+			<script>// <![CDATA[
+			document.getElementById('feature-life').id = 'page-feature-life';
+			// ]]></script>
+			<div id="hr-info">
+				<h5>Compensation &amp; Benefits</h5>
+				<p>Mozilla offers a competitive compensation and benefits package. Contact our HR department for more details.</p>
+				<p><em>careers at mozilla dot com</em></p>
+			</div>
+			<h3>It’s a totally unique experience.</h3>
+			<p>Working at Mozilla is never dull. As a small, open source organization with a worldwide impact, we count on each employee to innovate and implement ideas that make a difference on a very large scale. In other words, everyone contributes.</p>
+			<p>We like to enjoy ourselves, too. When we’re not building a platform to improve the Web, we’ve been known to take in Giants games, have company kickball matches and throw the occasional backyard BBQ. Not to mention the Wii tennis tournaments, so sharpen up those skills…</p>
+		</div>
+		<div class="careers-feature-contents" id="feature-first-person">
+			<script>// <![CDATA[
+			document.getElementById('feature-first-person').id = 'page-feature-first-person';
+			// ]]></script>
+			<h3>Perspectives from Mozilla employees around the world:</h3>
+			<div class="quote">
+				<p>“Mozilla has all the best parts of a start-up, only instead of the goal being something like going public or being acquired, it’s to help ensure a free and open web.”</p>
+				<div class="quote-source">
+					<div class="name">Sean Alamares</div>
+					<div>Desktop Support Engineer</div>
+				</div>
+				<img src="/img/about/careers/p4_photo1.jpg" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p>“I work at Mozilla because the opportunity to contribute to a community of over 100 million Firefox users worldwide is a unique honor and a significant privilege. Mozilla is unlike other software companies in more ways than can be counted.”</p>
+				<div class="quote-source">
+					<div class="name">Gen Kanai</div>
+					<div>Director of Marketing</div>
+					<div>Mozilla Japan</div>
+				</div>
+				<img src="/img/about/careers/p4_photo2.jpg" class="right" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p>“Mozilla is one of the only places where you can work directly for the public benefit, spend every day in a hotbed of innovation <em>and</em> make a decent living.”</p>
+				<div class="quote-source">
+					<div class="name">Dietrich Ayala</div>
+					<div>Firefox Engineer</div>
+				</div>
+				<img src="/img/about/careers/p4_photo3.jpg" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p>“How many people get the opportunity to work on a cool, interesting technology that impacts millions of people’s daily lives? There’s no set way that things are done here, which keeps the job exciting."</p>
+				<div class="quote-source">
+					<div class="name">Mary Colvig</div>
+					<div>Marketing Manager</div>
+				</div>
+				<img src="/img/about/careers/p4_photo4.jpg" class="right" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p>“Until recently, I ran a small startup. It was the best job in the world: I worked with four of the smartest people out there, my work touched hundreds of thousands, and I got to come in late. Mozilla is a better best job in the world: I work with 150 of the smartest people out there (in addition to a brilliant community), my work touches hundreds of millions, and I still get to come in late.”</p>
+				<div class="quote-source">
+					<div class="name">Aza Raskin</div>
+					<div>Head of User<br />Experience</div>
+					<div>Mozilla Labs</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

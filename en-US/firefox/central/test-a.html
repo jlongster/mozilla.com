@@ -1,0 +1,81 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Getting Started with Firefox';
+    $body_id    = 'central';
+    $body_class = 'portal-page';
+	$extra_headers = <<<EXTRA_HEADERS
+    <style>
+        /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+        @font-face { font-family: 'MetaWebPro-Book'; src: url('/img/fonts/MetaWebPro-Book.woff') format('woff'); }
+        @font-face { font-family: 'MetaWebPro-Bold'; src: url('/img/fonts/MetaWebPro-Bold.woff') format('woff'); }
+    </style>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/getting-started-test-a.css" media="screen" />
+    <script src="/js/jquery/jquery.min.js"></script>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/header-simple.inc.php";
+?>
+
+<div id="main-feature">
+    <h2><img src="/img/ss/firefox/central/test-a/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+    <p>Search our help section, see suggested solutions and get your questions answered.</p>
+</div>
+
+<div id="main-content">
+
+    <form action="<?= $config['url_scheme'] ?>://support.mozilla.com/search.php" id="support_form">
+        <h3>What do you need help with?</h3>
+        <input type="hidden" name="where" value="all" />
+        <input type="hidden" name="locale" value="en-US" />
+        <input id="fsearch-new" name="q" type="text" value="" placeholder="Search Knowledge Base" /><input class="btn-large" id="searchsubmit-new" type="submit" name="sa" value="Search" title="Search" />
+    </form>
+
+    <div id="whatsnew">
+        <h3>What’s new with 3.6?</h3>
+        <ul>
+            <li>Available in more than 70 languages—get your <a href="/<?=$lang?>/firefox/all.html#languages">local version</a>.</li>
+            <li>Support for a new type of theme called <a href="http://www.getpersonas.com/">Personas</a>. Change Firefox’s appearance with a single click.</li>
+            <li>Protection from <a href="http://theunfocused.net/2009/10/06/firefox-3-6-knows-when-your-plugins-are-out-of-date/">out-of-date plugins</a> keeps users safer as they browse.</li>
+            <li>Open, native video can now be displayed <a href="http://mozillalinks.org/wp/2009/10/firefox-3-6-gets-full-screen-native-video/">full screen</a> and supports <a href="https://developer.mozilla.org/En/HTML/Element/Video">poster frames</a>.</li>
+            <li>Faster startup time and improvements in overall browser responsiveness and JavaScript performance.</li>
+            <li>Fewer crashes through improved integrations with third-party software.</li>
+            <li>Faster page load times with functionality for developers to indicate that scripts should run asynchronously.</li>
+            <li>Support for new Web page experiences: gradients, background sizing and pointer events.</li>
+            <li>Continued support for downloadable Web fonts.</li>
+        </ul>
+    </div>
+
+    <div id="extras">
+        <ul>
+            <li><a href="http://twitter.com/firefox"><img src="/img/ss/firefox/central/test-a/twitter.png"></a></li>
+            <li><a href="http://www.facebook.com/Firefox?v=wall"><img src="/img/ss/firefox/central/test-a/facebook.png"></a></li>
+        </ul>
+        <p>The best Web browser bas gone mobile! Learn more about <a href="/<?=$lang?>/mobile/">the future of Firefox on mobile phones</a>.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+	<div id="popular_support"><div>
+		<h3>Popular Support Articles</h3>
+		<ul>
+			<li><a href="http://support.mozilla.com/en-US/kb/How+to+clear+the+cache">How to clear my cache </a></li>
+			<li><a href="http://support.mozilla.com/en-US/kb/Enabling+and+disabling+cookies">How do I enable or disable cookies?</a></li>
+			<li><a href="http://support.mozilla.com/en-US/kb/Deleting+cookies">How do I delete cookies?</a></li>
+			<li><a href="http://support.mozilla.com/en-US/kb/Pop-up+blocker">How do I block pop-up windows?</a></li>
+			<li><a href="http://support.mozilla.com/en-US/kb/Private+Browsing">What is Private Browsing?</a></li>
+		</ul>
+		<p>See <a href="http://support.mozilla.com/en-US/kb/Article+list">more shortcuts and suggestions</a> or <a href="http://support.mozilla.com/en-US/kb/Ask+a+question">get in-depth and personal help</a>.</p>
+	</div></div>
+
+	<div id="tips">
+		<h3>Tips &amp; Tricks</h3>
+		<p>Are you a beginning, intermediate or advanced user?</p>
+        <p><a href="/<?=$lang?>/firefox/tips/">Find shortcuts and suggestions organized by experience</a>.</p>
+	</div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

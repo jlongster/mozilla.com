@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Xeollocalización en Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Navegación según l'allugamientu</h2>
+    <p>Firefox puede dici-yos a les webs au t'allugues, d'esta miente puedes atopar información
+    más importante y útil. Trátase de facer la Web más intelixente
+    &ndash; y faise de mou totalmente priváu.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">¡Pruébalo!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Entrugues frecuentes</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Qué ye la Navegación según l'allugamientu?</h4>
+    <div class="expander-content">
+        <p>Los sitios web qu'usen navegación considerando la llocalización van entrugate au tas pa poder date información más importante, o p'aforrate tiempu mientres guetes. Supongamos qu'andes guetando una sidrería na to redolada. Un sitiu web va pidite que-y informes de la to llocalización pa que, guetando simplemente "sidrería", te dea les rempuestes que necesites... ensin tener qu'escribir o dar más información.</p>
+        <p>O, si andes guetando instrucciones nun mapa p'aportar a dalgún sitiu, el sitiu web va saber d'aú partes, asina que namái vas tener que dicir aú quies dir.</p>
+        <p>Esti serviciu ye totalmente opcional &ndash; Firefox nun comparte la to llocalización ensin el to permisu &ndash; y faise col másimu respetu pola to privacidá. Y, como tolos elementos de Firefox, fízose usando estándares abiertos pa facilitar la adopción por desendolcadores web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Cómo furrula?</h4>
+    <div class="expander-content">
+        <p>Cuando visites un sitiu web que considera la to llocalización, Firefox va entrugate si quies compartir la to posición.</p>
+        <p>Si aceutes, Firefox recopila información sobre los puntos d'accesu inalámbricu cercanos y la direición IP del to equipu. Entós Firefox manda esta información al fornidor de servicios de xeollocalización predetermináu, Google Location Services, pa obtener una estimación del to allugamientu. Esa estimación de la to llocalización unvíase entós al sitiu web que la solicitó.</p>
+        <p>Si nun aceutes, Firefox nun fadrá un res.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Cómo son de precises les llocalizaciones?</h4>
+    <div class="expander-content">
+        <p>La exactitú cimbla considerablemente de llocalización a llocalización. En dalgunos llugares, los nuestros fornidores de serviciu pueden ufrir una llocalización con una precisión d'unos pocos metros. Sicasí, n'otres zones podríen ser munchos más. Toles llocalizaciones devueltes polos fornidores de serviciu son namái estimaciones y nun se garantiza la precisión de les mesmes. Por favor, nun uses esta información pa emerxencies. Úsala siempres con xacíu.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Qué información s'unvia, y a quién? ¿Cómo se protexe la mio privacidá?</h4>
+    <div class="expander-content">
+        <p>La to privacidá ye enforma importante pa nós, y Firefox enxamás comparte la to llocalización ensin el to permisu. Cuando visites una páxina que solicite la to llocalización, va entrugásete enantes de compartir información col sitiu solicitante o el fornidor esternu de serviciu.</p>
+        <p>Por defeutu, Firefox usa Google Location Services pa determinar la to llocalización unviando:</p>
+        <ul>
+            <li>La direición IP del to equipu,</li>
+            <li>Información sobre los puntos d'accesu inalámbricos cercanos,</li>
+            <li>Un identificador de veceru al debalu, asignáu por Google, que caduca cada 2 selmanes.</li>
+        </ul>
+        <p>Pa una descripción completa de la información recopilada y usada por Firefox, por favor, llee la <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Política de Privacidá de Firefox</a> (n'Inglés).</p>
+        <p>Google Location Services devuelve entós la to xeollocalización estimada (p.ex., llatitú y llonxitú). Pa una descripción completa de la información recopilada y usada por Google, por favor llee la <a href="http://www.google.com/privacy-lsf.html" class="external">Política de Privacidá de Xeollocalización de Google</a> (n'Inglés).</p>
+        <p>La información intercámbiase sobre una conexón tapecida pa protexer la to privacidá. Una vegada que Firefox tien la información del to allugamientu, pása-yla al sitiu web que la solicitó. En dengún momentu se comparte'l nome o direición del sitiu web que tas visitando, nin denguna cookie, con Google Location Services.</p>
+        <p>Nin Mozilla nin Google van usar enxamás la información recopilada por Google Location Services pa identificate o acusbate.</p>
+        <p>Pa información sobre lo que fai'l sitiu web solicitante cola información de la to llocalización, por favor, remítete a la política de privacidá del sitiu web.</p>
+        <p>Pa más información sobre la to privacidá, tamién tienes de lleer:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Política de Privacidá de Firefox</a> (n'Inglés)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Política de Privacidá de Google</a> (n'Inglés)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Fáiseme un seguimientu cuando restolo pela web?</h4>
+    <div class="expander-content">
+        <p>Non. Firefox namái solicita una llocalización cuando un sitiu web fai una solicitú, y namái comparte la to llocalización cuando l'usuariu aprobó la solicitú. Firefox nun anova ni remembra la to llocalización mientres restoles pela web.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">¿Cómo torgo un permisu dáu a un sitiu?</h4>
+    <div class="expander-content">
+        <p>Si-y diste permisu a Firefox p'amosar siempre la to llocalización a un sitiu y camudes d'idega más sero, puedes torgar cenciellamente esi permisu. Equí tienes cómo facelo:</p>
+        <ul>
+            <li>Navega fasta'l sitiu al que-y diste permisu</li>
+            <li>Vete al menú <em>Ferramientes</em>, y seleiciona <em>Información de la páxina</em></li>
+            <li>Seleiciona llingüeta <em>Permisos</em></li>
+            <li>Camuda'l valor pa <em>Compartir llocalización</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Cómo desanicio'l “númberu al debalu d'identificación del veceru”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Vete al menú <em>Ferramientes</em>, y seleiciona <em>Llimpiar l'hestorial reciente</em></li>
+            <li>Calca na flecha de <em>Detalles</em></li>
+            <li>Asegúrate de seleicionar les <em>Cookies</em></li>
+            <li>Calca en <em>Llimpiar agora</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Cómo faigo pa desactivar dafechu la Navegación según l'allugamientu?</h4>
+    <div class="expander-content">
+        <p>La navegación según l'allugamientu ye siempres una eleición del usuariu en Firefox. Enxamás s'unvia información d'allugamientu ensin el to permisu. Si quies desactivar la funcionalidá ensembre, por favor, sigui estos pasos:</p>
+        <ul>
+            <li>Na barra de direiciones, escribi <code>about:config</code></li>
+            <li>Escribi <code>geo.enabled</code></li>
+            <li>Calca 2 vegaes na preferencia <em>geo.enabled</em></li>
+            <li>Agora, la navegación según l'allugamientu ta desactivada</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">¿Ú toi?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">¡Ups! Hebo un fallu al intentar determinar la to posición</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

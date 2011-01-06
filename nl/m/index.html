@@ -1,0 +1,43 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Mozilla | Firefox Mobiel";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Welcome to Firefox" /></h1>
+<p>’s Werelds beste webbrowser is mobiel geworden.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Nu downloaden - Gratis</a>
+    <div><a href="/<?= $lang ?>/m/platforms" class="system">Is Firefox in mijn taal verkrijgbaar?</a></div>
+
+  <?php else: ?>
+
+    <p>Uw apparaat wordt niet ondersteund</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Bekijk onze ondersteunde platformen en apparaten</a></p>
+
+  <?php endif; ?>
+</div>
+
+
+<h2 id="features_title">Geniet van uw favoriete Firefox-functies:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Synchroniseren</b> <span>Synchroniseer naadloos het browsen op uw desktop en mobiele apparaat</span></li>
+    <li id="customize"><b>Aanpassen</b> <span>Installeer add-ons om Firefox naar wens aan te passen</span></li>
+    <li id="search"><b>Zoeken</b> <span>Typ minder en benader het web sneller via de Awesome bar</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Meer functies bekijken</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

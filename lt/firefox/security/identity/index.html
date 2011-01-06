@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Apie svetainių tapatybės patikrą vienu mygtuko spustelėjimu";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Apie svetainių tapatybės patikrą vienu mygtuko spustelėjimu</h2>
+    <p>„Firefox 3“ turi naują svetainės tapatybės patikrinimo mygtuką, padėsiantį Jums sužinoti, prie ko jungiatės.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Ši savybė leis akimirksniu įsitikinti, ar lankoma saityno svetainė yra pateikusi duomenų apie savo tapatumą, kas tuos duomenis patikrino ir ar jai perduodami duomenys yra apsaugomi nuo pašalinių. Svetainės tapatumo duomenis pasieksite, spustelėdami jos ženkliuką kairėje adreso juostos pusėje (arba paspausdami klaviatūros klavišus Lyg2-Tab-Įvesti).</p>
+
+<h3>Klausimai ir atsakymai</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Ką reiškia skirtingi tapatumo duomenų lygiai?</h4>
+    <div class="expander-content">
+        <p>Policininką vaizduojantis ženkliukas kinta priklausomai nuo svetainės pateikiamų tapatumo duomenų lygio.</p>
+        <p class="site-id site-id-1">Svetainė nepateikia jokių duomenų apie tapatumą.</p>
+        <p class="site-id site-id-2">Svetainė pateikia bazinius duomenis apie tapatumą ir apsaugo Jūsų asmeninius duomenis nuo pašalinių.</p>
+        <p class="site-id site-id-3">Svetainė pateikia patikrintus duomenis apie savininko tapatumą ir apsaugo Jūsų asmeninius duomenis nuo pašalinių.</p>
+        <p class="site-id site-id-4">Svetainė figūruoja kenkėjiškų arba apgaulingų svetainių sąrašuose. Asmeninių duomenų pateikimas šiai svetainei arba netgi lankymasis joje gali turėti neigiamų pasėkmių.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kodėl ne visos svetainės pateikia patikrintus tapatumo duomenis?</h4>
+    <div class="expander-content">
+        <p>Dauguma saityno svetainių nereikalauja lankytojų įvesti jokių asmeninių ar finansinių duomenų, tad jų savininkams išlaidos, reikalingos patvirtintiems tapatumo duomenims pateikti ir perduodamiems duomenims apsaugoti nuo pašalinių akių, gali atrodyti nebūtinos.</p>
+        <p>Svetainės, kurios prašo pateikti asmeninius ar finansinius duomenis, arba teigia atstovaujančios valstybines ar verslo įstaigas, visada turėtų tinkamai prisistatyti ir apsaugoti perduodamus duomenis.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ar saugu turėti reikalų su svetainėmis, kurios nepateikia duomenų apie tapatumą?</h4>
+    <div class="expander-content">
+        <p>Apsisprendimas pasitikėti yra grindžiamas žinojimu, su kuo bendraujate, bet tai dar ne viskas. Svetainės, nepateikiančios duomenų apie tapatumą ir neapsaugančios Jūsų asmeninių duomenų, kelia grėsmę ir neturėtų būti laikomos saugiomis. Tačiau net ir tvarkingai prisistatančios svetainės gali praktikuoti veiksmus, su kuriais nesutinkate, arba turėti saugumo spragų.</p>
+        <p>Kaip ir realiame pasaulyje, patartina būti atsargiems, bendraujant su saityno svetainėmis, kurių gerai nepažįstate ir kuriomis nepasitikite. Žinojimas, kad svetainė tvarkingai prisistatė, yra sprendimo dėl pasitikėjimo priėmimo dalis.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ar „Mozilla“ patikrina kiekvienos svetainės tapatumo duomenų patikimumą?</h4>
+    <div class="expander-content">
+        <p>„Mozilla“ netikrina duomenų apie saityno svetainių tapatumą. Vietoje to „Firefox“, kaip ir kitos saityno naršykles, pasitiki liudijimų įstaigomis, kurios patikrina svetainių tapatumą ir išduoda svetainėms tapatumo liudijimus. Šios įstaigos privalo laikytis <a href="http://www.mozilla.org/projects/security/certs/policy/" hreflang="en">liudijimų įstaigoms „Mozillos“ keliamų reikalavimų</a>, tarp kurių yra ir reikalavimas atlikti nepriklausomus auditus, kurie patvirtintų, kad liudijimai išduodami laikantis nustatytos tvarkos.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

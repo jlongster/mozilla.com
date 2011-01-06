@@ -1,0 +1,307 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | Tips &amp; tricks to help you get the most out of the Web';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+	<script src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script src="{$config['static_prefix']}/js/mozilla-pager.js"></script>
+	<script>// <![CDATA[
+	Mozilla.Pager.NEXT_TEXT        = 'Next';
+	Mozilla.Pager.PREV_TEXT        = 'Previous';
+	Mozilla.Pager.PAGE_NUMBER_TEXT = '%s of %s';
+	// ]]></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Tips &amp; Tricks</h2>
+	<p>Whether you’re a beginning, intermediate or advanced user, these shortcuts and suggestions will help you get the most out of Firefox.</p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'tips');?>
+
+<div id="content">
+
+	<div id="beginner" class="pager pager-with-nav pager-no-history">
+		<h3>Beginner</h3>
+
+		<div class="pager-content">
+
+			<div class="slide-common" id="beginner-slide01">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '362', '225', 'right')?>
+
+				<h4>Zoom In, Zoom Out</h4>
+				<p>Tired of tiny text? Want to see an image a little more up close and personal? Now you can easily zoom in and out of Web pages.</p>
+
+				<div class="key-combo key-combo-narrow">
+					Zoom In
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+				</div>
+				<div class="key-combo key-combo-narrow">
+					Zoom Out
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+				</div>
+				<div class="key-combo key-combo-narrow">
+					Zoom Reset
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/zoom-reset.png', 'ctrl + 0 (mac: ⌘ + 0)', '107', '37')?>
+				</div>
+
+			</div>
+
+			<div class="slide-common" id="beginner-slide02">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '343', '117', 'right')?>
+
+				<h4>Try These Tab Tricks</h4>
+				<p>If you’re the type of person who likes to have a lot of Web pages open at the same time, you’ll definitely benefit from tabbed browsing. Here are some keyboard shortcuts that will help you master tabs:</p>
+
+				<div class="key-combo key-combo-1">
+					Open a new empty tab
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+				</div>
+				<div class="key-combo">
+					Open a link in a new tab
+					<script>// <![CDATA[
+					if (gPlatform == PLATFORM_MACOSX) {
+						document.write('<div class="key-combo-text">⌘ + click on link</div>');
+					} else {
+						document.write('<div class="key-combo-text">Middle Click on link</div>');
+					}
+					// ]]></script>
+					<noscript>
+					<div class="key-combo-text">Middle Click on link (mac: ⌘ + click on link)</div>
+					</noscript>
+				</div>
+				<div class="key-combo">
+					Close a tab
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+				</div>
+				<div class="key-combo">
+					Reopen a closed tab
+					<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+				</div>
+			</div>
+
+			<div class="slide-common" id="beginner-slide03">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '389', '250', 'right')?>
+
+				<h4>Add Bookmarks With a Single Click</h4>
+				<p>Keep better track of the sites you like (and save time) with one-click bookmarking. When you visit a page you’d like to remember, just click on the star icon in the location bar. Firefox will add it to your bookmarks list so you can easily find it again.</p>
+			</div>
+
+			<div class="slide-common" id="beginner-slide04">
+				<ul>
+					<li>
+						<?=buildPlatformImage($config['static_prefix'].'/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+						The site provides verified identity information and protects your personal data from online eavesdroppers.
+					</li>
+					<li>
+						<?=buildPlatformImage($config['static_prefix'].'/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+						The site provides basic identity information and protects your personal data from online eavesdroppers.
+					</li>
+					<li>
+						<?=buildPlatformImage($config['static_prefix'].'/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+						The site doesn't provide any identity information.
+					</li>
+				</ul>
+
+				<h4>Know Who You’re Dealing With</h4>
+				<p>A common tactic among Web scammers is to set up fake sites, known as phishing sites, that impersonate your bank, your favorite e-commerce site, etc. Luckily, Firefox makes it easy to determine if sites are what they say they are – just click on the site icon for an instant identity overview.</p>
+				<p id="forgery">An attack site or forgery; giving this site your personal information, or even visiting it, may be harmful.</p>
+				<script>// <![CDATA[
+					if (gPlatform == PLATFORM_MACOSX) {
+					document.write('<img src="<?=$config['static_prefix']?>/en-US/img/tignish/tips/forgery-mac.png" alt="Forgery screenshot" />');
+				} else if (gPlatform == PLATFORM_LINUX) {
+					document.write('<img src="<?=$config['static_prefix']?>/en-US/img/tignish/tips/forgery-linux.png" alt="Forgery screenshot" />');
+				} else {
+					document.write('<img src="<?=$config['static_prefix']?>/en-US/img/tignish/tips/forgery-vista.png" alt="Forgery screenshot" />');
+				}
+			// ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" /></div></noscript>
+			</div>
+
+			<div class="slide-common" id="beginner-slide05">
+				<div id="keys-column-right">
+					<div class="clear">
+						<div class="key-combo">
+							Scroll down the page
+							<img src="<?=$config['static_prefix']?>/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+						</div>
+						<div class="key-combo">
+							Scroll up the page
+							<img src="<?=$config['static_prefix']?>/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+						</div>
+					</div>
+					<div class="clear">
+						<div class="key-combo">
+							Refresh the page
+							<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+						</div>
+					</div>
+					<div class="clear">
+						<div class="key-combo">
+							Back
+							<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+						</div>
+
+						<div class="key-combo">
+							Forward
+							<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+						</div>
+					</div>
+				</div>
+
+				<h4>Shortcut Your Way to Success</h4>
+				<p>Firefox is full of keyboard shortcuts designed to make your life easier. Here are a few of our favorites:</p>
+
+				<div id="keys-column-left">
+					<div class="key-combo">
+						Move cursor to the location bar
+						<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+					</div>
+					<div class="key-combo">
+						Move cursor to the search box
+						<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+					</div>
+				</div>
+			</div>
+
+		</div><!-- end pager-content -->
+
+	</div>
+
+	<div id="intermediate" class="pager pager-with-nav pager-no-history">
+		<h3>Intermediate</h3>
+
+		<div class="pager-content">
+
+			<div class="slide-common" id="intermediate-slide01">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '387', '220', 'right')?>
+
+				<h4>Play Tag</h4>
+				<p>Once you build up a large list of bookmarks, keeping track of them all can get a little messy. To stay organized, you can assign tags to your bookmarked sites: just double-click on the star icon and you’ll be prompted to enter your tags.</p>
+				<p>You can tag a site with as many terms as you want (be sure to put a comma between each tag), and then easily find the sites again by typing that tag into the location bar. For example, entering "travel" into the location bar will bring up all the sites you’ve been bookmarking as part of your vacation research.</p>
+			</div>
+
+			<div class="slide-common" id="intermediate-slide02">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '364', '256', 'right')?>
+
+				<h4>Learn All About Add-ons</h4>
+				<p>The standard version of Firefox is full of features, of course, but why stop there? There are more than 5,000 Add-ons — little extras that customize Firefox — that you can download to enhance almost any task you can think of. Go to Tools → Add-ons to open the Add-ons Manager and discover all the ways you can make Firefox your own.</p>
+			</div>
+
+			<div class="slide-common" id="intermediate-slide03">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '371', '233', 'right')?>
+
+				<h4>Search Smarter</h4>
+				<p>You’re already familiar with the search bar built in to Firefox. But did you know you can customize it with just about any search engine you want? Just click on the icon to the left of your search bar to see the menu of default options.</p>
+				<p>Even better, click Manage Search Engines… to rearrange the list, add additional choices and even assign keyboard shortcuts to your favorite search engines. For example, you could give Google the shortcut "G" - then if you wanted to do a search for cookie recipes, simply typing "G cookie recipes" in the location bar would generate the full list.</p>
+			</div>
+
+			<div class="slide-common" id="intermediate-slide04">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '385', '254', 'right')?>
+
+				<h4>Find it in a Flash</h4>
+				<p>The Find As You Type feature is another handy timesaver. Rather than using the “find” bar to search for a word on page, just hit the <kbd>/</kbd> key and start typing the word you want. Your cursor will immediately jump to the first instance of that term.</p>
+				<p>You can use it for links, too. For example, instead of moving your mouse across the page to a "learn more" link, just start typing the word and when the cursor finds it, press enter.</p>
+			</div>
+
+			<div class="slide-common" id="intermediate-slide05">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '358', '219', 'right')?>
+
+				<h4>Eliminate Every Trace</h4>
+				<p>For security and privacy reasons, it's not good to leave a trail behind you as you browse (especially if you’re using a shared computer). Firefox lets you erase your browsing and download history, clear your cache and delete your cookies in a single click. Just go to Tools → Clear Recent History… to make it happen. Or, to be extra careful, go to <span id="trace-platform">Tools → Options → Privacy</span> and select the "Always clear my private data when I close Firefox" option.</p>
+				<script>//<![CDATA[
+				if (gPlatform == 3 || gPlatform == 4) {
+					document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+				} else if (gPlatform == 2) {
+					document.getElementById('trace-platform').innerHTML="Edit → Preferences → Privacy";
+				}
+				//]]></script>
+			</div>
+
+		</div><!-- end pager-content -->
+
+	</div>
+
+	<div id="advanced" class="pager pager-with-nav pager-no-history">
+		<h3>Advanced</h3>
+
+		<div class="pager-content">
+			<div class="slide-common" id="advanced-slide01">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/advanced-01.jpg', 'Location bar screenshot', '392', '245', 'right')?>
+
+				<h4>Go Directly to Your Favorite Sites</h4>
+				<p>You can add keywords to your bookmarks for easier and faster access. From the Library, just add a short keyword in the keyword field, and you’ll be able to access that bookmark by simply typing that keyword into the
+address bar. For example, you could give your del.icio.us account the “links” keyword, and from then on simply typing “links” into the address bar will take you right there.</p>
+			</div>
+
+			<div class="slide-common" id="advanced-slide02">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/advanced-02.jpg', 'Bookmarks screenshot', '381', '233', 'right')?>
+
+				<h4>Create Smart Folders</h4>
+				<p>If you’re an advanced Web surfer who frequently needs to save and track a variety of specific sites, here’s a useful time-saver: using Firefox’s Library, you can create and save searches into folders that are then automatically updated as you add sites to your bookmarks and history.</p>
+				<p>First, open the Library by selecting the "Organize Bookmarks" option from the Bookmarks menu. Then, enter your search terms in the search box. Then click the Save button to create a Smart Folder.</p>
+			</div>
+
+			<div class="slide-common" id="advanced-slide03">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/advanced-03.jpg', 'Download Manager screenshot', '387', '271', 'right')?>
+
+				<h4>Manage Your Downloads</h4>
+				<p>If you’re a frequent downloader, you can use the download manager window to keep track of all your downloads. You can pause and resume downloads, and save yourself time by opening files directly from the manager.</p>
+				<p>If you need to track down a past download, go to Tools → Downloads and use the search box to find your file. Once you’ve found it, double-click on the file to open it, or <span id="manage-downloads-click">right-click</span> and choose "Copy Download Link".</p>
+				<script>//<![CDATA[
+				if (gPlatform == 3 || gPlatform == 4) {
+					document.getElementById('manage-downloads-click').innerHTML="ctrl-click";
+				}
+				//]]></script>
+			</div>
+
+			<div class="slide-common" id="advanced-slide04">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+				<h4>Discover Developer Tools</h4>
+				<p>If you’re a Web developer, Firefox’s developer tools will make your life easier. The <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla Add-ons site</a> offers many tools to streamline the development process, including Firebug to edit, debug, and monitor CSS, HTML, and JavaScript live in any Web page, Tamper Data to view and modify HTTP/HTTPS headers and POST parameters, and the DOM Inspector to examine any HTML or CSS element with a simple right click.</p>
+			</div>
+
+			<div class="slide-common" id="advanced-slide05">
+
+				<?=buildPlatformImage($config['static_prefix'].'/en-US/img/tignish/tips/advanced-05.jpg', 'Preferences screenshot', '375', '309', 'right')?>
+
+				<h4>Set the Web Up Just Like You Like It</h4>
+				<p>Now you can use Web-based protocol handlers to provide quick access to your favorite Web applications. For example, you can set Firefox up so clicking on a mailto: link on any site will open a new message in your preferred webmail provider rather than your computer’s default mail program (note: this feature is only available with webmail services that have registered with Firefox).</p>
+				<p>Go to <span id="platform-protocol">Tools → Options → Applications</span> to select the default application for each protocol or to select “Always Ask” if you prefer to choose the application yourself every time.</p>
+				<script>//<![CDATA[
+				if (gPlatform == 3 || gPlatform == 4) {
+					document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+				} else if (gPlatform == 2) {
+					document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+				}
+				//]]></script>
+				<p>If you’re a Web app developer, check out more about how to add support for Web-based protocol handlers in the <a href="https://developer.mozilla.org/en/Web-based_protocol_handlers">Mozilla Developer Center.</a></p>
+			</div>
+
+		</div><!-- end pager-content -->
+
+	</div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

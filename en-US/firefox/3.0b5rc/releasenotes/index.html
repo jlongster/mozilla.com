@@ -1,0 +1,179 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3 Beta 5 RELEASE CANDIDATE';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox 3 Beta 5 Release Notes</h2>
+	<p>RELEASE CANDIDATE</p>
+	<p>Released: not yet released</p>
+</div>
+
+
+<div id="main-content">
+
+	  <p>This version of Firefox is currently <a href="http://wiki.mozilla.org/Releases/Firefox_3.0b5">
+	     being tested</a> by our <a href="http://quality.mozilla.org/get-involved">Quality Assurance 
+	     team.</a> If you would like to help, please take part in the 
+	     <a href="http://quality.mozilla.org/node/1478">Firefox 3 Beta 5 Test Day</a> on Friday, 
+	     March 28th.</p>
+
+	  <p>Release candidates are <b>not official beta releases</b> and <b>not meant for public use</b>. 
+	     If you're looking for Firefox 3 Beta 5, we recommend you watch 
+		 <a href="http://developer.mozilla.org/devnews">Mozilla Developer News</a> for the official 
+		 release announcement.</p>
+
+      <h2 id="downloadandinstall">Downloading and Installing</h2>
+
+      <h3 id="requirements">System Requirements</h3>
+
+      <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements-v3.html">
+         system requirements</a>.</p>
+
+      <h3 id="download">Downloading Firefox&nbsp;3&nbsp;Beta&nbsp;5</h3>
+      <p>Mozilla provides Firefox&nbsp;3&nbsp;Beta&nbsp;5 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a
+         variety of languages. You can <a href="/<?=$lang?>/firefox/all-beta.html">get the latest version of Firefox&nbsp;3&nbsp;Beta&nbsp;5 here</a>.</p>
+
+      <h3 id="install">Installing Firefox&nbsp;3&nbsp;Beta&nbsp;5</h3>
+      <p>Please note that installing Firefox&nbsp;3&nbsp;Beta&nbsp;5 <em>will overwrite</em> your
+         existing installation of Firefox. You won't lose any of your bookmarks or
+         browsing history, but some of your extensions and other add-ons might not work
+         until updates for them are made available.</p>
+
+      <h3 id="uninstall">Removing Firefox&nbsp;3&nbsp;Beta&nbsp;5</h3>
+
+      <p>You can remove Firefox&nbsp;3&nbsp;Beta&nbsp;5 through the <tt>Control Panel</tt> in the
+         <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on 
+         OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+      <p>Removing Firefox&nbsp;3&nbsp;Beta&nbsp;5 won't remove your bookmarks, web browsing history,
+         extensions or other add-ons. This data is stored in your <em>profile
+         folder</em>, which is located in one of the following locations depending on
+         your operating system:</p>
+
+      <table style="font-size: small;" border="1" cellspacing="0">
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+          <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP</td>
+          <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+          <td>~/Library/Application Support/Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+          <td>~/.mozilla/firefox</td>
+        </tr>
+      </table>
+      <p>Any version of Firefox that you install after removing Firefox&nbsp;3&nbsp;Beta&nbsp;5 will
+         continue to use the data from this profile folder.</p>
+
+      <h3 id="extensions">Extensions and Themes</h3>
+
+      <p>Extensions installed under Firefox 2 may be incompatible and/or require updates to work with Firefox&nbsp;3&nbsp;Beta&nbsp;5. Please report any issues to the maintainer of the extension.  When you install Firefox&nbsp;3&nbsp;Beta&nbsp;5 all of your Extensions and Themes will be disabled until Firefox&nbsp;3&nbsp;Beta&nbsp;5 determines that either a) they are compatible with the Firefox&nbsp;3&nbsp;Beta&nbsp;5 release or b) there are newer versions available that are compatible.</p>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <ul class="spaced">
+        <li>
+          Poorly designed or incompatible extensions can cause problems with your browser, including make it crash, slow down page display, etc. If you encounter strange problems relating to parts of the browser no longer working, the browser not starting, windows with strange or distorted appearance, degraded performance, etc, you may be suffering from Extension or Theme trouble.
+          Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+          Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+          start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+          <p><code>
+            cd /Applications/Firefox.app/Contents/MacOS/<br />
+            ./firefox-bin -safe-mode
+          </code></p>
+
+          When started in Safe Mode all extensions are disabled and the Default theme is used. Disable the Extension/Theme that is causing trouble and then start normally.
+        </li>
+        <li>
+          If you uninstall an extension that is installed with your user profile (i.e.
+          you installed it from a Web page) and then wish to install it for all user profiles
+          using the -install-global-extension command line flag, you must restart the
+          browser once to cleanse the profile extensions datasource of traces of that
+          extension before installing with the switch. If you do not do this you may end
+          up with a jammed entry in the Extensions list and will be unable to install
+          the extension globally.
+        </li>
+        <li>
+          If you encounter strange problems relating to bookmarks, downloads, window
+          placement, toolbars, history, or other settings, it is recommended that you try
+          creating a new profile and attempting to reproduce the problem before filing
+          bugs. Create a new profile by running Firefox with the -P command line
+          argument, choose the "Manage Profiles" button and then choose "Create
+          Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+          one by one, checking each time to see if the problems resurface. If you do
+          find a particular profile data file is causing a problem, file a bug and attach
+          the file.
+        </li>
+      </ul>
+
+      <h2 id="FAQ">Frequently Asked Questions</h2>
+      <ol class="faq">
+        <li>
+          What can I do to help?
+          <p>We need help from developers and the testing community to provide as much
+             feedback as possible to make Firefox even better. Please read these notes and
+             the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+             before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+             also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+        </li>
+        <li>
+          Why haven't you responded to the mail I sent you?
+          <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>. The Firefox team reads them regularly. We all get a lot of email and your email may get lost.</p>
+        </li>
+        <li>
+          Where can I get extensions and themes (add-ons)?
+          <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+        </li>
+        <li>
+          Who makes Firefox&nbsp;3&nbsp;Beta&nbsp;5?
+          <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who have contributed to Firefox&nbsp;3&nbsp;Beta&nbsp;5.</p>
+        </li>
+        <li>
+          Where's the Firefox&nbsp;3&nbsp;Beta&nbsp;5 source code?
+          <p>A tarball of the Firefox&nbsp;3&nbsp;Beta&nbsp;5 source code is available for <a href=
+             "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0b5/source/">download</a>.
+             The latest development code can be obtained by <a href=
+             "http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>.
+             Firefox-specific source is in "mozilla/browser", "mozilla/toolkit",
+             and "mozilla/chrome". Please follow the <a href=
+             "http://developer.mozilla.org/en/docs/Build_Documentation">build instructions</a>.</p>
+        </li>
+        <li>
+          Where is the mail client?
+          <p>Firefox&nbsp;3&nbsp;Beta&nbsp;5 works with whatever mail client is the default on your system. 
+             However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our 
+             next-generation email client and the perfect complement to Firefox.</p>
+        </li>
+      </ol>
+
+      <h2 id="links">Other Resources and Links</h2>  
+      <p>The following resources contain useful information about Firefox&nbsp;3&nbsp;Beta&nbsp;5:</p>
+
+      <ul class="spaced">
+       <li><a href="http://wiki.mozilla.org/Firefox3">Firefox 3 Project Page</a></li>
+        <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+        <li><a href="http://www.mozilla.org/projects/firefox/">Developer Information</a></li>
+      </ul>
+
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

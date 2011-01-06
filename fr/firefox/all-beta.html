@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Navigateur Web Firefox | Aidez-nous à tester la dernière version bêta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Aidez à tester la prochaine version de Firefox&nbsp;</h2>
+        <p>La toute dernière version bêta de Firefox est disponible au téléchargement. Essayez-la dès à présent et dites-nous ce que vous en pensez&nbsp;!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Informations importantes</h4>
+        <p class="intro">À consulter avant le téléchargement</p>
+    </div>
+    <ul>
+        <li>Ceci est un logiciel en pré-version&nbsp;: Il est possible que vous rencontriez des problèmes de compatibilité avec certains sites web et modules complémentaires.</li>
+        <li>Si vous identifiez un problème, merci <a href="http://feedback.mozilla.org/">de nous en faire part</a> ou <a href="https://bugzilla.mozilla.org/">d'ouvrir un rapport de bug</a>.</li>
+        <li>Pour de plus amples informations, veuillez consulter <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">les notes de version</a> ainsi que <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">les problèmes connus</a> (en anglais).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Vous n'êtes pas à la recherche d'une version bêta&nbsp;? Téléchargez ici la <a href="/<?=$lang?>/firefox/">dernière version stable</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

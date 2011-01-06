@@ -1,0 +1,505 @@
+<?php
+
+    $_FLASH_PLAYER_CONTROLS_HEIGHT = 28;
+
+	/**
+	 * Videos data array
+	 *
+	 * Duration is measured in seconds.
+	 *
+	 * @var array
+	 */
+	$_videos = array(
+		'about-firefox' => array(
+			'title'        => 'Conheça o Firefox',
+			'description'  => 'Uma breve introdução sobre o que torna o mais recente navegador da Mozilla tão bom.',
+			'thumbnail'    => '/img/tignish/video/icon-meet-3.5.png',
+			'flv_filename' => 'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 105,
+		),
+		'whatsnew-3.6' => array(
+			'title'        => 'O que há de novo no Firefox 3.6',
+			'description'  => 'Mike Beltzner mostra alguns dos novos recursos do Firefox 3.6.',
+			'thumbnail'    => '/img/tignish/video/icon-whatsnew-3.6.png',
+			'flv_filename' => 'firefox/3.6/whatsnewin36.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 130,
+		),
+		'personas' => array(
+			'title'        => 'Seu Firefox, seu estilo',
+			'description'  => 'Qual é o seu estilo? Torne o Firefox só seu com as Personas.',
+			'thumbnail'    => '/img/tignish/video/icon-personas.png',
+			'flv_filename' => 'firefox/3.6/getpersonas.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4',
+					'type' => 'video/mp4;',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 67,
+		),
+		'choice' => array(
+			'title'        => 'Open to Choice',
+			'description'  => 'John Lilly fala sobre a importância da escolha do seu navegador.',
+			'thumbnail'    => '/img/tignish/video/icon-choice.png',
+			'flv_filename' => 'firefox/3.6/John_Lilly_about_Opentochoice.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/John_Lilly_about_Opentochoice.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/John_Lilly_about_Opentochoice.mp4',
+					'type' => 'video/mp4;',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 102,
+		),
+		'about-mobile' => array(
+			'title'        => 'Conheça o Firefox para dispositivos móveis',
+			'description'  => 'Descubra como o Firefox traz a wab para o seu telefone.',
+			'thumbnail'    => '/img/tignish/video/icon-mobile.png',
+			'flv_filename' => 'serv/mobile/firefox-mobile.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-large.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4',
+					'type' => 'video/mp4;',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 160,
+        ),
+		'performance-3.5' => array(
+			'title'        => 'Desempenho',
+			'description'  => 'Chris Blizzard exibe a velocidade do Firefox 3.6 em um teste lado-a-lado.',
+			'thumbnail'    => '/img/tignish/video/icon-performance-3.5.png',
+			'flv_filename' => 'firefox/3.6/performance/fx36performancedemo.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/performance/fx36performancedemo.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/performance/fx36performancedemo.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 106,
+		),
+		'security' => array(
+			'title'        => 'Segurança',
+			'description'  => 'Johnathan Nightingale exibe os recursos de segurança do Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-security.png',
+			'flv_filename' => 'firefox/3.5/security/security.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/security/security.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/security/security.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 348,
+		),
+		'awesomebar' => array(
+			'title'        => 'Campo de Endereços Inteligente',
+			'description'  => 'Seth Spitzer explica como tirar o máximo de praticidade do Campo de Endereços Inteligente.',
+			'thumbnail'    => '/img/tignish/video/icon-awesome-bar.png',
+			'flv_filename' => 'firefox/3.5/awesomebar/awesomebar.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 53,
+		),
+		'privacy' => array(
+			'title'        => 'Privacidade',
+			'description'  => 'Drew Willcoxon explica os recursos de privacidade presentes no Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-privacy.png',
+			'flv_filename' => 'firefox/3.5/privacy/privacy.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/privacy/privacy.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/privacy/privacy.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 185,
+		),
+		'tabs' => array(
+			'title'        => 'Abas',
+			'description'  => 'Marcia Knous exibe uma série de dicas e truques para aproveitar as abas do Firefox ao máximo.',
+			'thumbnail'    => '/img/tignish/video/icon-tabs.png',
+			'flv_filename' => 'firefox/3.5/tabs/tabs.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/tabs/tabs.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/tabs/tabs.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 184,
+		),
+		'bookmarks' => array(
+			'title'        => 'Favoritos',
+			'description'  => 'Alex Faaborg dá uma visão geral dos Favoritos do Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-bookmarks.png',
+			'flv_filename' => 'firefox/3.5/bookmarks/bookmarks.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 73,
+		),
+		'tour' => array(
+			'title'        => 'Firefox: um breve tour',
+			'description'  => 'Asa Dotzler dá um breve tour pelos diferentes elementos do navegador Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-tour.png',
+			'flv_filename' => 'firefox/3.5/firefoxtour/firefoxtour.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/firefoxtour/firefoxtour.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/firefoxtour/firefoxtour.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 126,
+		),
+		'switch' => array(
+			'title'        => 'Faça a troca',
+			'description'  => 'Asa Dotzler mostra como é fácil mudar para o Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-switch.png',
+			'flv_filename' => 'firefox/3.5/switch/switch.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/switch/switch.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/switch/switch.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 40,
+		),
+		'fastest-clapper' => array(
+			'title'        => 'O mais rápido: batedor de palmas',
+			'description'  => 'O mais rápido batedor de palmas bate palmas para o Firefox',
+			'thumbnail'    => '/img/tignish/video/icon-fastest-clapper.png',
+			'flv_filename' => 'firefox/3.5/fastest/1/fastest-clapper.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/4/fastest-clapper.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/1/fastest-clapper.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 426,
+			'duration'     => 79,
+		),
+		'fastest-sport-stacker' => array(
+			'title'        => 'O mais rápido: empilhador de copos',
+			'description'  => 'Assista ao mais rápido empilhador de copos do mundo em ação.',
+			'thumbnail'    => '/img/tignish/video/icon-fastest-sport-stacker.png',
+			'flv_filename' => 'firefox/3.5/fastest/2/fastest-sportstacker.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/3/fastest-sportstacker.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/2/fastest-sportstacker.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 426,
+			'duration'     => 40,
+		),
+		'fastest-banjo' => array(
+			'title'        => 'O mais rápido: tocador de banjo',
+			'description'  => 'O mais rápido tocador de banjo toca uma veloz melodia para o Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-fastest-banjo.png',
+			'flv_filename' => 'firefox/3.5/fastest/6/fastest-banjo.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/5/fastest-banjo.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/6/fastest-banjo.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 428,
+			'duration'     => 77,
+		),
+		'fastest-users' => array(
+			'title'        => 'Os mais rápidos: fãs',
+			'description'  => 'Pedimos aos fãs do Firefox para nos ajudar a divulgar a incrível velocidade do Firefox.',
+			'thumbnail'    => '/img/tignish/video/icon-fastest-users.png',
+			'flv_filename' => 'firefox/3.5/fastest/fastest-users.m4v',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/fastest-users.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/fastest-users.m4v',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 77,
+		),
+		'thankyou' => array(
+			'title'        => 'Obrigado!',
+			'description'  => 'A comunidade mundial Mozilla agradece o seu suporte.',
+			'thumbnail'    => '/img/tignish/video/icon-thankyou.png',
+			'flv_filename' => 'firefox/3.5/thankyou/thankyou.mp4',
+			'sources'      => array(
+				'ogg' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/thankyou/thankyou.ogv',
+					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+				),
+				'mp4' => array(
+					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/thankyou/thankyou.mp4',
+					'type' => 'video/mp4',
+				),
+			),
+			'width'        => 640,
+			'height'       => 360,
+			'duration'     => 40,
+		)
+	);
+
+	// get selected video and shortname
+	$_selected_shortname = (isset($_GET['video'])) ? $_GET['video'] : key($_videos);
+	if (!array_key_exists($_selected_shortname, $_videos)) {
+		$_selected_shortname = key($_videos);
+	}
+
+	$_selected_video = $_videos[$_selected_shortname];
+
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox | Vídeos do Firefox';
+    $body_id    = 'firefox-videos';
+    $html5      = true;
+    $extra_headers = <<<EXTRA_HEADERS
+
+	<link media="screen" href="{$config['static_prefix']}/style/tignish/video.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+	<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script type="text/javascript" src="/js/mozilla-video-tools.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+
+	<h2>Vídeos</h2>
+	<p>Assista a uma breve revisão do Firefox ou assista aos nossos desenvolvedores explicando recursos específicos em mais detalhes.</p>
+
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'videos');?>
+
+<div id="content">
+
+	<div id="current-video">
+
+		<div id="video-player" class="mozilla-video-control">
+			<video
+				id="video"
+				width="<?php echo $_selected_video['width']; ?>"
+				height="<?php echo $_selected_video['height']; ?>"
+				controls="controls">
+
+<?php
+	foreach ($_selected_video['sources'] as $_source) {
+		echo "\t\t\t\t<source src=\"", $_source['src'], "\"";
+		if ($_source['type']) {
+			echo " type=\"", $_source['type'], "\"";
+		}
+		echo " />\n";
+	}
+?>
+
+				<object type="application/x-shockwave-flash"
+	                style="width: <?php echo $_selected_video['width']; ?>px; height: <?php echo $_selected_video['height'] + $_FLASH_PLAYER_CONTROLS_HEIGHT; ?>px;"
+					data="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=false&amp;msg=Play%20Video">
+
+					<param name="movie" value="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=false&amp;msg=Play%20Video" />
+					<param name="wmode" value="transparent" />
+
+					<div class="video-player-no-flash">
+					Este vídeo requer um navegador com suporte a vídeo aberto:
+					<ul>
+					<li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 ou superior</li>
+					<li><a href="http://www.apple.com/safari/">Safari</a> 3.1 ou superior</li>
+					</ul>
+					ou o <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+					Como alternativa, você pode usar os links de download à direita.
+					</div>
+
+				</object>
+
+			</video>
+		</div>
+
+		<div id="video-details">
+			<h3><?php echo $_selected_video['title']; ?></h3>
+			<div class="video-duration"><?php
+			$minutes = floor($_selected_video['duration'] / 60);
+			$seconds = $_selected_video['duration'] % 60;
+			printf('%dmin %02ds', $minutes, $seconds);
+			?></div>
+			<p><?php echo $_selected_video['description']; ?></p>
+			<ul id="video-download">
+
+<?php
+	foreach ($_selected_video['sources'] as $_key => $_source) {
+		switch ($_key) {
+		case 'ogg':
+			$text = 'Formato de vídeo aberto (Ogg&nbsp;Theora)';
+			break;
+		case 'mp4':
+			$text = 'Formato MPEG-4';
+			break;
+		default:
+			$text = 'Formato '.$_source['type'];
+			break;
+		}
+		echo "\t\t\t\t<li><a href=\"", $_source['src'], "\">", $text, "</a></li>\n";
+	}
+?>
+			</ul>
+		</div>
+
+		<div id="video-footer"></div>
+
+	</div>
+
+	<div id="other-videos">
+		<h3>Outros vídeos</h3>
+	<?php
+	foreach ($_videos as $_shortname => $_video) {
+		echo "\n";
+
+		$_video_href  = '/' . $lang . '/firefox/video?video=' . $_shortname;
+		$_video_class = ($_shortname == $_selected_shortname) ? 'video-preview selected' : 'video-preview';
+
+		echo "\t\t<div class=\"", $_video_class, "\" id=\"", $_shortname, "\">\n";
+
+		if ($_shortname == $_selected_shortname) {
+			echo "\t\t\t<span class=\"active\">\n";
+		} else {
+			echo "\t\t\t<a href=\"", $_video_href, "\">\n";
+		}
+
+		echo "\t\t\t\t<img src=\"", $config['static_prefix'], $_video['thumbnail'], "\" alt=\"", $_video['title'], " thumbnail\" />";
+		echo  "<span>", $_video['title'], "</span>\n";
+
+		if ($_shortname == $_selected_shortname) {
+			echo "\t\t\t</span>\n";
+		} else {
+			echo "\t\t\t</a>\n";
+		}
+
+		echo "\t\t\t<p>", $_video['description'], "</p>\n";
+		echo "\t\t</div>\n";
+	}
+	?>
+	</div>
+
+</div><!-- end #content div -->
+
+
+<div id="sidebar">
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

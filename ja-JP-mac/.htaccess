@@ -1,0 +1,5 @@
+Options +MultiViews
+RewriteEngine On
+RewriteBase /ja-JP-mac/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*)? http://mozilla.jp/$1 [L,R=permanent]

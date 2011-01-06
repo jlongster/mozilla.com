@@ -1,0 +1,148 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'It’s Time to Get Personal';
+    $body_id    = 'get-personal';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/add-ons/get-personal.css" media="screen" />
+	<script src="/js/mozilla-get-personal-page.js"></script>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+    // AMO URLs used on this page
+    $install_url = "https://addons.mozilla.org/services/install.php?addon_id=";
+    $display_url = "https://addons.mozilla.org/{$lang}/firefox/addon/";
+?>
+
+<div id="main-feature">
+		<h2>It’s Time to Get Personal</h2>
+		<p>When it comes to browsing, one size definitely doesn’t fit all. Use these add-ons (and many more) to customize Firefox for the way you use the Web.</p>
+</div>
+
+<div id="content">
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-foxytunes.png" alt="Foxytunes logo" height="100" width="150" /></a>
+
+			<h3>Listen</h3>
+			<h5>Foxytunes</h5>
+			<p>Listen while you surf! Control just about any music player directly from Firefox... no more toggling back and forth between programs.</p>
+			<ul>
+				<li><a href="<?=$install_url?>219">Install Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>219">Learn More</a></li>
+				<li><a href="http://www.foxytunes.com/screencast/">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-ebay.png" alt="eBay logo" height="100" width="150" /></a>
+
+			<h3>Shop</h3>
+			<h5>eBay Companion</h5>
+			<p>Be a better bidder: keep an eye on your eBay trading from wherever you are on the Web.</p>
+			<ul>
+				<li><a href="<?=$install_url?>5202">Install Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>5202">Learn More</a></li>
+				<li><a href="http://pages.ebay.de/firefox/tutorial/">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>2410"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-foxmarks.png" alt="Foxmarks logo" height="100" width="150" /></a>
+
+			<h3>Bookmark</h3>
+			<h5>Foxmarks</h5>
+			<p>A bookmarking add-on that lets you sync across computers, access bookmarks online, and backup automatically.</p>
+			<ul>
+				<li><a href="<?=$install_url?>2410">Install Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>2410">Learn More</a></li>
+				<li><a href="http://www.foxmarks.com/tour">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-stumbleupon.png" alt="StumbleUpon logo" height="100" width="150" /></a>
+
+			<h3>Discover</h3>
+			<h5>StumbleUpon</h5>
+			<p>Find cool stuff on the Web based on your own interests, plus mark your favorite sites and share them with friends!</p>
+			<ul>
+				<li><a href="<?=$install_url?>138">Install Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>138">Learn More</a></li>
+				<li><a href="http://www.stumbleupon.com/firefoxdemo.html">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>5579"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-piclens.png" alt="PicLens logo" height="100" width="150" /></a>
+
+			<h3>View</h3>
+			<h5>PicLens</h5>
+			<p>Go Full-screen 3D! Transform Firefox into a visually stunning experience for
+searching and viewing photos and videos across the web.</p>
+			<ul>
+				<li><a href="<?=$display_url?>5579">Get It Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>5579">Learn More</a></li>
+				<li><a href="http://www.piclens.com/site/firefox/">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>398"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-forecastfox.png" alt="Forecastfox logo" height="100" width="150" /></a>
+
+			<h3>Predict</h3>
+			<h5>Forecastfox</h5>
+			<p>Wondering if you need to bring the umbrella? Get a constantly updated local weather forecast right in your Firefox status bar.</p>
+			<ul>
+				<li><a href="<?=$install_url?>398">Install Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>398">Learn More</a></li>
+				<li><a href="http://ensolis.com/forecastfox/tutorial">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="divider"></div>
+
+		<div class="item-container">
+		<div class="item">
+			<a href="<?=$display_url?>1512"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-linkedin.png" alt="LinkedIn logo" height="100" width="150" /></a>
+
+			<h3>Connect</h3>
+			<h5>LinkedIn Companion</h5>
+			<p>LinkedIn helps you to better manage your professional relationships to maximize your effectiveness.  Companion features powerful people search, profile information for every email you receive, &amp; more.</p>
+			<ul>
+				<li><a href="<?=$display_url?>1512">Get It Now</a></li>
+				<li class="middle"><a href="<?=$display_url?>1512">Learn More</a></li>
+				<li><a href="http://www.linkedin.com/static?key=firefox_toolbar_download&amp;trk=ffref">View the Tutorial</a></li>
+			</ul>
+		</div>
+		</div>
+
+		<div class="get-more">
+			<a href="https://addons.mozilla.org/<?=$lang?>/firefox/"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/getpersonal/icon-more.png" alt="Get More Add-ons" height="100" width="150" /></a>
+
+			<h3>Get More Add-ons</h3>
+			<h5>These add-ons are just the beginning!</h5>
+			<p>Go to Tools → Add-ons above or <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">visit our add-ons site</a> to get thousands of other ways to personalize your Firefox.</p>
+		</div>
+
+		<div class="bottom-divider"></div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Poskytnutí zpětné vazby";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Jak jste se dozvěděli o Firefox 4 beta programu?";
+$str2       = "Zůstaňte v obraze";
+$str3       = "Přihlašte si e-mailový odběr novinek o betaverzi Firefoxu, událostech a souvisejících informací.";
+$str4       = "Vaše e-mailová adresa";
+$str5       = "Souhlasím se <a href=\"%s\">zásadami ochrany soukromí</a> <span class='footnote'>(budeme vám zasílat pouze informace souvisejícíc s Mozillou).</span>";
+$str6       = "Zasílejte mi též příležitostně novinky o Mozille, tipy a triky k Firefoxu či jiné informace související s Mozillou.";
+$str7       = "Odebírat »";
+$str8       = "Děkujeme za přihlášení!";
+$str9       = "Těšíme se, že vám brzy začneme přinášet tipy a triky, které vám pomohou z Firefoxu dostat co nejvíce. Stejně tak vám budeme přinášet novinky o Mozille a o tom, jak pracujeme na vytváření lepšího webu.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Pomozte nám</h3>
+        <p>Pracujeme na Firefoxu, který je rychlejší, jednodušší a plný funkcí, které vám pomohou s prohlížením. To vše však nemůžeme dělat bez vaší zpětné vazby.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Zpětná vazba</span></li>
+    <li class="more"><h3>Více informací v angličtině</h3></li>
+    <li class="features"><a href="../features/">Funkce</a> </li>
+    <li class="tech"><a href="../technology/">Technologie</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Zásady ochrany soukromí funkce Zpětná vazba</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Ukázka tlačítka Zpětná vazba" />
+        <h2>Řekněte nám, co si myslíte</h2>
+        <h3>Pošlete rychlou reakci</h3>
+        <p>Klepněte na tlačítko Zpětná vazba a poskytněte nám okamžitou zpětnou vazbu k betaverzi. Je to tak jednoduché!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Vývojáři: Potřebujeme vás</h2>
+        <h3>Sdílejte své nápady</h3>
+        <p>Co si myslíte o <a href="../features/#under-the-hood">nových možnostech pro vývojáře</a>, které jsou obsaženy v betaverzi?</p>
+        <p><a href="http://forum.mozilla.cz/viewtopic.php?f=3&amp;t=1642">Navštívit fórum zpětné vazby.</a></p>
+
+        <h3>Hlašte chyby</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Logo Bugzilly" />
+        <p>Pokud se přátelíte s Bugzillou, zadejte nový záznam o chybě, pokud jste na nějakou při prohlížení narazili.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Nahlásit chybu ve Firefoxu 4 Beta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Informujte svět</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/MozillaCZ">Sledujte nás na Twitteru</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Navštivte nás na Facebooku</a></li>
+            <li id="link-blog"><a href="http://www.mozilla.cz/">Přečtěte si více na Mozilla.cz</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Potřebujete pomoci?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Ikona podpory" />Naše stránky podpory</a> obsahují odpovědi a rady týkající se speciálně Firefoxu 4 beta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

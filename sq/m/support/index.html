@@ -1,0 +1,67 @@
+<?php 
+$creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <br /><a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", '//creativecommons.org/licenses/by-sa/3.0/');
+
+?>
+<!DOCTYPE html>
+<html lang="<?= $lang ?>">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+    <title>Mozilla.com | Ndihmë Firefox-i për Celularin</title>
+    <link href="<?= $config['static_prefix'] ?>/style/mobile/support.css" rel="stylesheet" media="all" />
+    
+</head>
+<body id="home" class="">
+
+<div class="wrapper">
+    <div id="header">
+        <a href="/<?= $lang ?>/m/" id="firefox-logotype"><img src="<?= $config['static_prefix'] ?>/img/mobile/support/firefox-logotype.gif" alt="Firefox"/></a>
+        <a href="//support.mozilla.com/<?= $lang ?>/mobile" id="view-full-site"><?= $l10n->get("View Full Site") ?></a>
+    </div>
+    <h1 id="firefox-logo">Ndihmë Firefox-i <em>për Celularin</em></h1>
+
+    <h2>Pyetje të Zakonshme</h2>
+    <ul class="highlight">
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/sync-firefox-between-desktop-and-mobile">Si ta njëkohësoj Firefox-in në desktopin tim dhe atë në celularin tim?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/upgrade-firefox">Si ta përmirësoj Firefox-in?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/how-do-i-use-awesome-screen">Si ta përdor Skenën e Papërmbajtshme?</a></li>
+    </ul>
+
+    <h2>Tema Ndihme për Celularin</h2>
+    <ul>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/change-preferences">Si t'i ndryshoj parapëlqimet?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/mobile-keyboard-shortcuts">Cilat janë shkurtoret e tastierës për celularin?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/manage-downloads">Si t'i administroj shkarkimet?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/open-new-tab">Si të hap një skedë të re?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/find-and-install-add-ons">Si të gjej dhe instaloj Shtesa?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/remove-or-disable-add-ons">Si të heq ose çaktivizoj Shtesa?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/surf-web-with-mobile-firefox">Si të shfletoj në web me Firefox-in për celular?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/how-do-i-add-bookmark">si të shtoj një faqerojtës?</a></li>
+        <li><a href="//support.mozilla.com/<?= $lang ?>/kb/zoom-in-and-out">Si ta zmadhoj dhe zvogëloj në ekra një site web?</a></li>
+    </ul>
+
+    <h2>Ju Duhet Më Tepër Ndihmë?</h2>
+    <div id="support-search">
+        <form method="get" action="//support.mozilla.com/<?= $lang ?>/search">
+            <span class="wrap">
+                <input class="text" required="required" placeholder="Search Firefox Help" name="q">
+                <input type="hidden" name="os" value="4">
+                <input type="hidden" name="os" value="5">
+                <input type="hidden" name="fx" value="4">
+            </span>
+            <input type="image" alt="Search" title="Search" src="<?= $config['static_prefix'] ?>/img/mobile/support/btn.mobilesearch.png" class="submit">
+        </form>
+        <span class="ancillary">or <a href="//support.mozilla.com/<?= $lang ?>/mobile">Shfletoni Site-in e Plotë të Ndihmës</a></span>
+    </div>
+</div> <!-- end .wrapper -->
+
+<div id="lower">
+    <div class="wrapper">
+        <div id="footer">
+            <a href="//support.mozilla.com/<?= $lang ?>/mobile" class="button"><?= $l10n->get("View Full Site") ?></a>
+            <p><?= $creative_commons ?></p>
+        </div>
+    </div> <!-- end .wrapper -->
+</div> <!-- end #lower -->
+

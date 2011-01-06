@@ -1,0 +1,160 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion for eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-features';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+	<div class="feature-contents">
+		<div id="feature-header">
+			<h3><img src="/<?=$lang?>/img/add-ons/ebay/features-title.png" height="124" width="490" alt="Features: Highlights of Firefox eBay Edition" /><a href="."><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+		</div>
+		<div id="feature-text">
+			<div id="ebay-download">
+				<script><!--
+					var platform = 'win';
+					var lang = '<?=$lang?>';
+					var product = 'ebaybundle';
+					var downloadpage = 'download.html';
+					var downloadtitle = 'Download Firefox eBay Edition';
+					var downloadtext = 'Includes Mozilla Firefox 3 for Windows, English (6.2&nbsp;MB)';
+
+					if (navigator.platform.indexOf("Win32") != -1) {
+					  downloadtext = 'Includes Mozilla Firefox 3 for Windows, English (6&nbsp;MB)';
+					  platform = 'win';
+					  product = 'ebaybundle';
+					} else if (navigator.platform.indexOf("Linux") != -1) {
+					  downloadtext = 'Includes Mozilla Firefox 3 for Linux, English (10&nbsp;MB)';
+					  platform = 'linux';
+					  product = 'ebaybundle';
+					} else if ((navigator.userAgent.indexOf("Mac OS X") != -1) ||
+					           (navigator.userAgent.indexOf("MSIE 5.2") != -1) ||
+					           (navigator.platform.indexOf("Mac") != -1)) {
+					  downloadtext = 'Includes Mozilla Firefox 3 for Mac OS X, English (19&nbsp;MB)';
+					  platform = 'mac';
+					  product = 'ebaybundle';
+					}
+
+					if ((navigator.userAgent.indexOf("Firefox/2") != -1) ||
+					    (navigator.userAgent.indexOf("BonEcho/2") != -1)) {
+							// If the browser is Firefox...
+							downloadtitle = 'Download Firefox Companion for eBay';
+							downloadtext  = 'Version 1.5 (777Kb)';
+							product = 'ebaystandalone';
+					}
+
+					document.writeln('<a href="' + downloadpage  + '?product=' + product + '&os=' + platform + '&lang=' + lang + '">' );
+					document.writeln('<span><strong>' + downloadtitle  + '<\/strong> <em id="ebay-download-text">');
+					document.writeln(downloadtext);
+					document.writeln('<\/em><\/span>');
+					document.writeln('<\/a>');
+
+				--></script>
+				<noscript>
+				  <div class="download">
+					<a href="download.html"><span><strong>Download</strong></span></a>
+				  </div>
+				</noscript>
+			</div>
+
+			<h3>Enjoy a better eBay experience with Firefox</h3>
+			<p>With Firefox you can get more from the web and eBay. Find out more about how you can get the most from your surfing and be safer online.</p>
+
+			<div class="corner-box">
+			<h4>Drag &amp; Drop Items to Watch List</h4>
+			<p>To add any eBay item to your watch list, simply drag &amp; drop any eBay item link to your companion sidebar.</p>
+			</div>
+
+			<div class="corner-box">
+			<h4>Customize Alerts</h4>
+			<p>You have total control on what alerts you receive and how you receive them. Customize your experience in the preferences section. Audio alerts are provided, and all alerts are directed to your desktop if your browser is minimized (Mac users require Growl).</p>
+			</div>
+
+			<div class="corner-box">
+			<h4>Never miss a bid</h4>
+			<p>You’re always securely signed in so you can check out your eBay progress whenever you like. Customize your alerts and get the heads up when an auction you’re bidding on is about to end.</p>
+			<ul class="features">
+				<li>
+					<img src="/<?=$lang?>/img/add-ons/ebay/features/01-en-button.png" alt="" class="screenshot" />
+					<h5>eBay Button</h5>
+					<p>Once you are signed in, the eBay button in your browser means you’re always only a click away from eBay! The eBay button opens and closes the eBay Companion sidebar and provides quick access to popular eBay bookmarks.</p>
+				</li>
+				<li>
+					<a href="/<?=$lang?>/img/add-ons/ebay/features/02-en-sidebar.png"><img src="/<?=$lang?>/img/add-ons/ebay/features/02-en-sidebar_thumb.png" alt="" class="screenshot" /></a>
+					<h5>eBay Companion Sidebar</h5>
+					<p>The eBay sidebar contains all the information that you need to make your eBay trading super-quick and easy. You can instantly check on your buying, selling and feedback status. Everything you need from My eBay is at your fingertips. Take advantage of the quick search bar and shortcuts to eBay My World, your feedback and popular eBay bookmarks.</p>
+				</li>
+				<li>
+					<a href="/<?=$lang?>/img/add-ons/ebay/features/03-en-alert.png"><img src="/<?=$lang?>/img/add-ons/ebay/features/03-en-alert_thumb.png" alt="" class="screenshot" /></a>
+					<h5>eBay Alert Box</h5>
+					<p>The Alert Box means you get important eBay alerts when you need them. If an item you are watching is about to end or you have been out-bid you’ll be notified  right away by the Alert Box that appears on the bottom right corner of the browser window.</p>
+				</li>
+				<li>
+					<img src="/<?=$lang?>/img/add-ons/ebay/features/04-en-glow.png" alt="" class="screenshot" />
+					<h5>eBay ‘Glow’ Alerts</h5>
+					<p>For less urgent information -- such as eBay bidding up on your behalf -- you’ll enjoy the convenience of ‘Glow’Alerts.  When the eBay logo in the Firefox browser glows, you’ll know instantly that there are changes to your items; open the sidebar to see the items that have changed.</p>
+				</li>
+				<li>
+					<a href="/<?=$lang?>/img/add-ons/ebay/features/05-en-options.png"><img src="/<?=$lang?>/img/add-ons/ebay/features/05-en-options_thumb.png" alt="" class="screenshot" /></a>
+					<h5>Total Control</h5>
+					<p>You have total control on what alerts you receive and how you receive them. Customize your experience in the preferences section.</p>
+				</li>
+			</ul>
+			</div>
+
+			<div class="corner-box">
+			<h4>Stay up-to-date</h4>
+			<p>Never miss the eBay action. No matter where you’re browsing, and whatever you’re doing online, you can get an at-a-glance update on all your eBay activities: watching, buying or selling.</p>
+			<ul class="features">
+				<li>
+					<a href="/<?=$lang?>/img/add-ons/ebay/features/06-en-tooltip.png"><img src="/<?=$lang?>/img/add-ons/ebay/features/06-en-tooltip_thumb.png" alt="" class="screenshot" /></a>
+					<h5>Detailed Tooltip Information</h5>
+					<p>Each item has basic information listed, such as the number of bids and current price it is selling for.  You can get more information about the item by hovering your mouse over the item to get the number of watchers (if you are selling), seller’s feedback (if you are buying) and other critical information.</p>
+				</li>
+				<li>
+					<img src="/<?=$lang?>/img/add-ons/ebay/features/07-en-refresh.png" alt="" class="screenshot" />
+					<h5>Intelligent Refresh</h5>
+					<p>Your eBay information is updated at regular intervals. The refresh rate is increased intelligently as watching, bidding and selling items near their end time.</p>
+				</li>
+				<li>
+					<img src="/<?=$lang?>/img/add-ons/ebay/features/08-en-context.png" alt="" class="screenshot" />
+					<h5>Quick Access to Item Actions</h5>
+					<p>You can quickly access contextual actions for your items by right clicking on any item. For example, you can view a seller’s feedback page, or remove a watched item from My eBay.</p>
+				</li>
+			</ul>
+			</div>
+
+
+			<div class="corner-box">
+			<h4>Safer Browsing</h4>
+			<p>You’re safer with the Firefox Companion. You’ll know you’re on a genuine eBay or Paypal page and not a spoof site or lookalike. When you’re using Firefox you’re also at less risk from pop-up ads, spyware and other web threats.</p>
+			<ul class="features">
+				<li>
+					<img src="/<?=$lang?>/img/add-ons/ebay/features/09-en-verify-ebay.png" alt="" class="screenshot" />
+					<h5>eBay and PayPal Site Verification</h5>
+					<p>eBay and PayPal padlock icons appear on verified eBay and PayPal sites indicating that it is safe for you to sign-in using your eBay username and password.</p>
+				</li>
+				<li>
+					<a href="/<?=$lang?>/img/add-ons/ebay/features/11-en-accountguard.png"><img src="/<?=$lang?>/img/add-ons/ebay/features/11-en-accountguard_thumb.png" alt="" class="screenshot" /></a>
+					<h5>Account Guard</h5>
+					<p>For extra security, you can activate Account Guard, which warns you if you enter your eBay or PayPal passwords on sites that are not verified as being official eBay and PayPal sites.</p>
+				</li>
+			</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

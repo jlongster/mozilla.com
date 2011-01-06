@@ -1,0 +1,53 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Important Security Update for Firefox Available';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/tignish/press-release.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+
+<div id="content">
+      
+
+
+<h2>Important Security Update for Firefox Available</h2>
+<p>October 1, 2004.  The Mozilla Foundation releases an important security update for Firefox.  All users should upgrade to the latest version of the Firefox Preview Release.  A patch is available for current Preview Release users.</p>
+
+<p>Getting the Update:</p>
+<ul>
+<li>Firefox Preview Release (Firefox 0.10) users: To update Firefox, open your <b>Tools</b> -> <b>Options</b> window and go to the <b>Advanced</b> page. In the <b>Software Update</b> section, ensure that the Firefox checkbox is checked and click the <b>Check Now</b> button.  The resulting wizard will guide you through the installation.  <em>If you see the update icon (<img src="http://www.mozilla.org/img/update.png" alt="Update Icon">) appear in the upper right corner of your screen, you can skip the previously described method and simply click on the icon to install the patch.</em> If you are having difficulties with either of those methods, simply <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/0.10.1/patches/259708.xpi">click here</a> to install the patch.  You may need to add www.mozilla.org to your list of trusted web servers.  You will need to restart Firefox after installing the patch.</li>
+<li>For users of versions prior to Prevew Release, visit the <a href="/products/firefox/index.html">Firefox homepage</a> to download the latest version of Firefox Preview Release (Firefox 0.10.1)</li>
+</ul>
+
+<p>Questions &amp; Answers:</p>
+<ul>
+<li><p>How can I verify that I have installed the patch and that I am running the most recent version of the Firefox Preview release?</p>
+<p>Click on the Help menu and select About Mozilla Firefox.  Examine the User Agent information on that page that is displayed, eg
+<div class="example">Mozilla/5.0 (OS Information; Lang. Information; rv:1.7.3) Gecko/20040923 Firefox/0.10.1.</div><p>If you observe that have 0.10.1 installed, you have the patch and are running the most recent version.</p></li>
+
+<li><p>How does this security vulnerability expose the user?</p>
+<p>A malicious hacker who could trick a user into saving a file could delete files from a user's download directory.</p></li>
+
+<li><p>How serious is this vulnerability?</p>
+<p>While this is a potentially severe security vulnerability, user interaction is required to trigger potential harm.  This security update is also another example of the Mozilla Foundation identifying and fixing security vulnerabilities before they are exploited by malicious hackers.  This type of security vulnerability is very different from cases where a hacker could take advantage of a vulnerability to obtain valuable information from a user's computer.</p></li>
+
+<li><p>Doesn't this case illustrate that all browsers are equally insecure?</p>
+<p>The Mozilla Foundation continues to have a very strong track record on security. According to <a href="http://www.secunia.com">Secunia</a>, an independent security monitoring organization, Firefox currently has <a href="http://www.secunia.com/product/3256/">1 open security issue</a>, out of a total of 13 security advisories filed in 2003 and 2004.  0% of these are labeled "extremely critical", 15% are labeled "highly critical".  For the same period, Secunia lists <a href="http://www.secunia.com/product/11/">16 open security issues</a> out of 44 advisories for Internet Explorer 6.0, 14% of which are labeled "extremely critical", 34% are "highly critical".</p></li>
+</ul>
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

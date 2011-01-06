@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Hvað er nýtt í <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Farðu á fætur og ferðastu með Firefox 4 Beta</h3>
+        <p>Farðu úr vinnuni og heim og yfir í farsímann og til baka! Sync gefur þér heildaraðgang að öllum mikilvægu Firefox gögnunum þínum &mdash; þar á meðal bókamerki, lykilorð, feril og opna flipa &mdash; á milli margra tölva og tækja. Horfðu á myndbandið til að byrja.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Fræðast meira um Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Deila viðbrögðum »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Útgáfuupplýsingar »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Nýjustu fréttir</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Skipuleggðu líf þitt á Netinu:</h4>
+         <?=$tabvideo?>
+        <p>Áttu í erfiðleikum með að halda utan um alla opnu flipana? Endurheimtu vafrann frá flipa óreglu! Dragðu og slepptu flipunum á einfaldan hátt og flokkaðu þá í hópa, gefðu þeim nafn og raðaðu á skemmtilegan og sjónrænan hátt.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

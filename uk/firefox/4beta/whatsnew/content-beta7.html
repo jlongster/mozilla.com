@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>Що нового у <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 бета" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Затягніть паски</h3>
+        <p>Firefox 4 відтепер має суттєві покращення швидкодії, включаючи JägerMonkey - наш новий двигун JavaScript. Ви відчуєте різницю миттєво, починаючи з швидшого запуску і обробки графіки до покращеної швидкості завантаження сторінок.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Поділіться враженням »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Примітки до випуску »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Відчуйте різницю »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3D в мережі</h4>
+        <p>WebGL вносить 3D графіку у Firefox, відкриваючи для розробників можливість створювати жваві ігри та візуальні ефекти нового типу.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Вражаючі шрифти</h4>
+        <p>Шрифти OpenType у Firefox 4 надають дизайнерам та розробникам більше можливостей у керуванні виглядом шрифтів, на кшталт, кернингом та лігатурою, для створення вишуканих веб-сайтів.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Оновлені форми</h4>
+        <p>Firefox 4 робить форми як красивими так і дуже легкими у створенні. Нові API форм впроваджують інструменти, такі як нові атрибути автозаповнення та валідація форм HTML5, що залишать у минулому те докучливе створення форм.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Маєте Firefox 4 бета?</h4>
+        <h5>Тепер відзьміть його з собою.</h5>
+        <p>Встановіть Firefox на свій телефон з Android чи Nokia N900. Насолоджуйтесь такими звичними можливостями, як синхронізація, додатки та кмітлива панель адрес де б ви не були.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Мобільна версія</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Потрібна допомога?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Наша сторінка підтримки</a> вміщує відповіді та поради щодо Firefox 4 бета.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

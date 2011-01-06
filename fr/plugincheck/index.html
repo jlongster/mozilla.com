@@ -1,0 +1,195 @@
+<?php
+
+    // translate php variables below please
+    $page_title = "Vérification des plugins";
+
+    $message[0]  = "Vérification avec Mozilla de l'état de vos plugins";
+    $message[1]  = "Chargement des données";
+    $message[2]  = "Voir tous vos plugins";
+    $message[3]  = "Désactiver maintenant";
+    $message[4]  = "Vulnérable sans correction";
+    $message[5]  = "Mettre à jour maintenant";
+    $message[6]  = "Vulnérable";
+    $message[7]  = "Mise à jour";
+    $message[8]  = "Version obsolète";
+    $message[9]  = "Plugin à jour";
+    $message[10] = "Rechercher";
+    $message[11] = "Impossible de détecter la version du plugin";
+    $message[12] = ""; // unused string, keep blank
+    $message[13] = "Plugins obsolètes&nbsp;:";
+    $message[14] = "Plugins vulnérables&nbsp;:";
+    $message[15] = "Plugins potentiellement vulnérables&nbsp;:";
+    $message[16] = "Les plugins cités ci-dessous sont à jour";
+    $message[17] = "Aucun plugin n'a été détecté";
+    $message[18] = "http://www.google.com/search?#hl=fr&q=";
+    $message[19] = "Version actuelle du plugin";
+    $message[20] ="Mettre à jour maintenant";
+    $message[21] ="Potentiellement vulnérable";
+    $message[22] ="Mise à jour";
+    $message[23] ="Version potentiellement obsolète";
+
+    //
+    $tableHeader[1] = "Détails du plugin";
+    $tableHeader[2] = "État";
+    $tableHeader[3] = "Action";
+
+    include_once "{$config['file_root']}/includes/headers/plugincheck-l10n.inc.php";
+    ?>
+
+<div id="main-feature">
+  <h2>Vérification des plugins</h2>
+  <p>Gardez vos plugins à jour&nbsp;!</p>
+</div>
+
+<div id="main-content">
+  <div id="content-left">
+    <div id="legend">
+      <ul>
+          <li id="old_browser" style="display:none"><strong>Warning, a newer version of your browser is available.</strong> Please upgrade your browser.</li>
+          <li id="modern_browsers" style="display:none">This page works best with the latest browsers: Firefox 3.6+, Opera 10.5, Safari 4, Chrome 4, or IE 8</li>
+          <li id="exploder" style="display: none">Plugin Check <strong>support for Internet Explorer is limited</strong>. Also use Tools &gt; Manage Addons</li>
+          <li>Cliquez sur <strong>Mise à jour</strong> pour mettre à jour le plugin.</li>
+          <li><strong>Réalisez toutes les mises à jour recommandées </strong> <em>avant</em> de redémarrer votre navigateur.</li>
+      </ul>
+    </div>
+
+    <noscript>
+      <div>
+        <h3>Note</h3>
+        <p><strong>Vous avez désactivé JavaScript </strong>ou alors vous utilisez un navigateur qui ne supporte pas le JavaScript. Cette page ne peut pas fonctionner sans l'utilisation du <strong>JavaScript</strong>. Activez cette fonctionnalité (dans le menu Préférence) puis rechargez la page.</p>
+      </div>
+    </noscript>
+
+    <?=$PluginTable?>
+
+
+    <div id="error-panel" style="display: none">
+      <h3>Erreur du service de recherche des plugins</h3>
+      <p>Nous subissons actuellement des problèmes. Veuillez réessayer dans quelques instants.</p>
+      <form action="" method="get"><fieldset><button>Réessayer</button></fieldset></form></div>
+    </div>
+
+  <div id="sidebar">
+
+    <div id="information">
+      <h3>Astuces sur les plugins</h3>
+      <ul>
+        <li><a href="#what-plugin">Qu'est-ce qu'un plugin&nbsp;?</a></li>
+        <li><a href="#why-update">Pourquoi est-il nécessaire de mettre à jour ses plugins&nbsp;?</a></li>
+        <li><a href="#firefox-helps">Comment Firefox peut-il m'aider&nbsp;?</a></li>
+        <li><a href="#list-plugins">Quels sont les plugins présents sur mon ordinateur&nbsp;?</a></li>
+        <li><a href="#howto-disable">Comment désactiver un plugin&nbsp;?</a></li>
+      </ul>
+    </div>
+
+    <div id="helpus">
+      <h3>Comment nous aider</h3>
+      <ul>
+        <li><a href="#web-badge">Utiliser les badges</a> pour <strong>promouvoir</strong> le vérificateur de plugins</li>
+        <li>Si vous avez des informations sur les plugins que nous n'avons pas encore, <a href="http://spreadsheets.google.com/viewform?formkey=dGpKQkNuNkNQNjF4RW1FT08yRHRqMWc6MA">n'hésitez pas à nous le faire savoir</a>.</li>
+      </ul>
+    </div>
+
+    <div id="support">
+      <h3>Besoin d'aide</h3>
+      <ul>
+        <li><a href="http://support.mozilla.com">Visitez support.mozilla.com</a></li>
+        <li><a href="http://support.mozilla.com/<?=$lang?>/kb/Troubleshooting+plugins">Lire les articles d'assistance concernant les plugins</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="information-content" class="clearfix">
+    <div class="return-link"><a href="#"><?php echo ___('Return to top');?></a></div>
+
+    <div id="column-one">
+      <h3 id="what-plugin">Qu'est ce qu'un plugin&nbsp;?</h3>
+      <ul>
+        <li>Les plugins offrent des <strong>vidéos, animations et jeux</strong>.</li>
+        <li>Ils sont développés par d'<strong>autres entreprises que Firefox</strong> comme <a href="http://adobe.com/">Adobe Systems</a> et <a href="http://apple.com/">Apple</a>.</li>
+        <li>Les plugins <strong>ne se mettent pas toujours à jour</strong> automatiquement.</li>
+      </ul>
+
+      <h3 id="why-update">Pourquoi dois-je mettre à jour mes plugins&nbsp;?</h3>
+      <ul>
+        <li>Les plugins qui ne sont pas à jour peuvent perturber votre navigation sur Internet et <strong>vous faire perdre du temps</strong>.</li>
+        <li>Les plugins qui ne sont pas à jour <strong>augmentent les risques</strong> d'attaque par des logiciels malveillants, des virus et toute autre menace de sécurité.</li>
+        <li><strong>Des plugins à jour permettent de</strong> rendre Internet <strong>plus sécurisé et performant</strong> pour vous.</li>
+      </ul>
+
+      <img class="screenshot" src="/img/tignish/plugincheck/screenshot.jpg" alt="" />
+    </div>
+
+    <div id="column-two">
+      <h3 id="firefox-helps">Comment Firefox peut-il m'aider&nbsp;?</h3>
+      <p>Dans un futur proche, Firefox mettra automatiquement à jour les plugins. En attendant, vous devez <strong>régulièrement vérifier via cette page</strong> s'ils sont à jour et le cas échéant les mettre à jour afin de préserver votre sécurité sur le Web au maximum.</p>
+
+      <h3 id="list-plugins">Quels sont les plugins installés&nbsp;?</h3>
+      <p>Nous pouvons automatiquement détecter vos plugins, vous pouvez aussi facilement voir <strong>la liste de tous les plugins installés</strong>&nbsp;:</p>
+        <ol>
+          <li>Ouvrir le menu <kbd>Outils</kbd>.</li>
+          <li>Choisir <kbd>Modules complémentaires</kbd>.</li>
+          <li>Cliquer sur <kbd>Plugins</kbd>.</li>
+        </ol>
+
+      <h3 id="howto-disable">Comment désactiver un plugin&nbsp;?</h3>
+        <ol>
+          <li>Ouvrir le menu <kbd>Outils</kbd>.</li>
+          <li>Choisir <kbd>Modules complémentaires</kbd>.</li>
+          <li>Cliquer sur <kbd>Plugins</kbd></li>
+          <li>Cliquer sur un plugin dans la liste.</li>
+          <li>Cliquer sur le bouton <kbd>Désactiver</kbd>.</li>
+        </ol>
+
+      <p><strong>Attention&nbsp;:</strong> désactiver un plugin signifie que vous <strong>ne pourrez plus faire</strong> certaines choses. Par exemple, si vous désactivez Flash, vous ne pourrez plus regarder des vidéos sur YouTube.</p>
+
+      <h3 id="more-questions">Vous avez plus de questions&nbsp;?</h3>
+      <p><a href="http://support.mozilla.com/">Notre site d'assistance</a> peut vous aider à <a href="http://support.mozilla.com/kb/Popular+Plugins">en apprendre plus sur les plugins</a> ou <a href="http://support.mozilla.com/kb/Troubleshooting+Plugins">vous aider à résoudre un problème avec les plugins</a>.</p>
+
+    </div>
+  </div>
+  <img class="divider-bottom" src="/img/tignish/plugincheck/divider-large-bottom.png" alt="" />
+
+  <div id="badge-content" class="clearfix">
+    <div class="return-link"><a href="#"><?php echo ___('Return to top');?></a></div>
+
+    <h3 id="web-badge">Promouvoir le vérificateur avec un badge</h3>
+
+    <img id="web-badge-loading" src="<?=$url_prefix?>/img/tignish/plugincheck/webbadge/loading.png" alt="badge plugincheck" />
+
+    <p>Aidez vos amis à se protéger&nbsp;! Avec un badge sur votre site, vous pouvez&nbsp;:</p>
+    <ul>
+      <li>Utiliser JavaScript pour <strong>détecter les plugins</strong></li>
+      <li><strong>Prévenir vos visiteurs</strong> lorsqu'ils ont <strong>des plugins qui ne sont pas à jour&nbsp;!</strong></li>
+    </ul>
+
+    <h3>Comment utiliser un badge sur votre site</h3>
+    <ol>
+      <li><strong>Copiez le code ci-dessous</strong>.</li>
+      <li><strong>Collez-le</strong> dans votre blog ou votre site Internet.</li>
+    </ol>
+
+    <p><textarea id="web-badge-code" cols="40" rows="6">&lt;a href="<?php echo $url_prefix ?>/<?=$lang?>/plugincheck/"&gt;&lt;img id="mozilla_plugin_checker_badge" src="<?php echo $url_prefix ?>/img/tignish/plugincheck/webbadge/loading.png" width="180" height="150" alt="Nous pouvons vérifier vos plugins" border="0" /&gt;&lt;/a&gt;&lt;script type="text/javascript" src="<?php echo $url_prefix ?>/js/plugincheck_badge.js"&gt;&lt;/script&gt;</textarea></p>
+
+  </div>
+  <img class="divider-bottom" src="/img/tignish/plugincheck/divider-large-bottom.png" alt="" />
+</div>
+
+
+
+<?=$PluginCheckL10n?>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+// dump array vallues in firebug, they should all have FOOBAR appended
+console.log(Pfs_external, Pfs_internal)
+/* ]]> */
+</script>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

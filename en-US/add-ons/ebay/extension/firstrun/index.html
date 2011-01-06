@@ -1,0 +1,55 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion for eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-firstrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+	<div class="feature-contents">
+		<div id="feature-header">
+			<h3><img src="/<?=$lang?>/img/add-ons/ebay/firstrun-extension-title.png" height="124" width="490" alt="Welcome: eBay Companion" /><a href="../../"><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+		</div>
+		<div id="feature-text">
+
+		<p>The Firefox Companion for eBay has been added to your copy of Firefox. You’re almost ready to start searching, bidding, and monitoring eBay items right from within your Firefox web browser.</p>
+
+		<p><strong>To start using your Firefox Companion for eBay, just follow these easy steps:</strong></p>
+
+		<ol id="setup-steps">
+			<li id="setup-steps-1">Click on the eBay icon on your Firefox toolbar and a sidebar will open in your browser.</li>
+			<li id="setup-steps-2">Login to your eBay account by clicking on the “Connect to eBay” button in the sidebar and entering your account information in the main browser window.  If you are a new eBay user, click on the Register button to get started.</li>
+			<li id="setup-steps-3">That’s it!  You’re ready to search and monitor the millions of items available on eBay everyday.</li>
+		</ol>
+
+		<p>For more information about Firefox Companion for eBay features and commonly asked questions, check out the <a href="../../features.html">features page</a> and <a href="../../faq.html">FAQ</a>.</p>
+
+		<p>Feel secure with the eBay companion and Firefox. Our community of more than 10,000 testers is working every day to make sure you’re protected against all the latest online security threats.</p>
+
+		</div>
+
+		<div id="firstrun-sidebar">
+
+			<h3>Make Firefox your default web browser</h3>
+			<p>For the complete experience, click the Preferences option in the Firefox menu above and make sure <strong>“Always check to see if Firefox is the default browser on startup”</strong> is checked. That way you’ll be getting the benefits of Firefox at all times, even when you click a link in an email.</p>
+
+			<h3>Start Firefox up with your favorite sites</h3>
+			<p>Did you know that you can start Firefox up with your favorite sites already open in separate tabs ready for you to browse? Check here <input type="checkbox" id="set-homepage-checbox" value="1" /> to make Firefox start-up with the eBay homepage as your second tab.</p>
+
+		</div>
+
+		<br style="clear: both;" />
+	</div>
+</div>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

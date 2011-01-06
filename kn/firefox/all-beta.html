@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'ಫೈರ್ಫಾಕ್ಸ್ ಜಾಲ ವೀಕ್ಷಕ | ಇತ್ತೀಚಿನ ಬೀಟಾವನ್ನು ಪರೀಕ್ಷಿಸಲು ನೆರವಾಗಿ';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ಫೈರ್ಫಾಕ್ಸಿನ ಭವಿಷ್ಯವನ್ನು ಪರೀಕ್ಷಿಸಲು ನೆರವಾಗಿ!</h2>
+        <p>ಇತ್ತೀಚಿನ ಬೀಟಾ ಆವೃತ್ತಿಯು ಒಂದು ಬಿಡುಗಡೆಯ ಮುಂಚಿನ ಆವೃತ್ತಿಯಾಗಿದೆ. ಇದರೊಂದಿಗೆ ಟೆಸ್ಟ್ ಡ್ರೈವ್ ಮಾಡಿ ಹಾಗು ನಿಮಗೇನನ್ನಿಸಿತು ಎಂದು ನಮಗೆ ತಿಳಿಸಿ!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>ಮುಖ್ಯವಾದ ಮಾಹಿತಿ</h4>
+        <p class="intro">ಡೌನ್‌ಲೋಡ್ ಮಾಡಿಕೊಳ್ಳುವ ಮೊದಲು ದಯವಿಟ್ಟು ಇದನ್ನು ಓದಿ</p>
+    </div>
+    <ul>
+        <li>ಇದೊಂದು ಬಿಡುಗಡೆಯ ಪೂರ್ವದ ತಂತ್ರಾಂಶವಾಗಿದೆ: ಕೆಲವು ಜಾಲತಾಣಗಳೊಂಗೆ ಹಾಗು ಆಡ್‌-ಆನ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿಕೊಳ್ಳುವಲ್ಲಿ ತೊಂದರೆಗಳು ಕಾಣಿಸಿಕೊಳ್ಳಬಹುದು.</li>
+        <li>ನಿಮಗೆ ಏನಾದರೂ ತೊಂದರೆ ಎದುರಾದಲ್ಲಿ ದಯವಿಟ್ಟು <a href="http://feedback.mozilla.org/">ನಮಗೆ ತಿಳಿಸಿ</a> ಅಥವ <a href="https://bugzilla.mozilla.org/">ಒಂದು ದೋಷ ವರದಿಯನ್ನು ಸಲ್ಲಿಸಿ</a>.</li>
+        <li>ವಿವರಗಳಿಗಾಗಿ, <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">ಬಿಡುಗಡೆ ಟಿಪ್ಪಣಿಗಳನ್ನು</a> ಹಾಗು <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">ತಿಳಿದಿರುವ ತೊಂದರೆಗಳನ್ನು</a> (ಇಂಗ್ಲೀಷಿನಲ್ಲಿದೆ) ನೋಡಿ.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">ಒಂದು ಬೀಟಾ ಆವೃತ್ತಿ ಬೇಡವೆ? ಹಾಗಿದ್ದರೆ <a href="/<?=$lang?>/firefox/">ಇತ್ತೀಚಿನ ಫೈರ್ಫಾಕ್ಸ</a>ನ್ನು ಪಡೆದುಕೊಳ್ಳಿ.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

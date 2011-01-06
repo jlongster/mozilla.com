@@ -1,0 +1,92 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | Faster &amp; Safer Internet | Free Download';
+    $body_id    = 'firefox';
+    $body_class = 'ie';
+    $extra_headers = <<<EXTRA_HEADERS
+	<meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Firefox 2, Firefox 3, Foxfire, Fire Fox, browser, web browser, internet browser, web, pop-up blocker, internet, speed, secure, customize, online, add-ons, toolbar, fastest, surfing, download" />
+	<meta name="description" content="The Firefox Web Browser is the faster, more secure, and fully customizable way to surf the web." />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/ie-c.css" media="screen" />
+	<script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
+	<script src="/js/jquery/jquery.min.js"></script>
+    <script src="/js/mozilla-input-placeholder.js"></script>
+	<script src="/js/mozilla-pager.js"></script>
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/header-simple.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/'.LATEST_FIREFOX_VERSION.'/' => LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<script src="/js/download.old.js"></script>
+
+<h1 id="mozilla-logo"><a href="/<?=$lang?>/"><img src="/img/ss/firefox/ie-c/mozilla-header.png" alt="mozilla" height="35" width="82" /></a></h1>
+
+<form action="http://support.mozilla.com/search.php" id="support-form">
+	<h3>Need Help?</h3>
+	<input type="hidden" name="where" value="all" />
+	<input type="hidden" name="locale" value="en-US" />
+	<input id="fsearch-new" name="q" type="text" value="" placeholder="Search Knowledge Base" /><input class="btn-large" id="searchsubmit-new" type="submit" name="sa" value="" title="Search" />
+</form>
+
+<div id="main-feature">
+	<div id="feature-contents">
+    <h2 id="firefox-headline">Meet the World’s Best Web Browser</h2>
+	</div>
+
+	<div class="dl-box">
+	<script>
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+		// Temporary fix for bug 439792
+		if (gPlatform == PLATFORM_MACOSX) {
+        	gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.4 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+		}
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">Release Notes<\/a>");
+        document.writeln("- <a href=\"\/<?=$lang?>\/firefox\/all.html\">Other Systems and Languages<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+	</script>
+	<?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
+	</div>
+
+</div>
+
+<div id="sidebar">
+
+	<?=buildFirefoxSubPageMenu($lang, 'firefox');?>
+
+	<ul id="social">
+		<li id="twitter"><a href="http://twitter.com/Firefox">Follow us on Twitter</a></li>
+		<li id="facebook"><a href="http://www.facebook.com/Firefox">Become a fan on Facebook</a></li>
+	</ul>
+
+</div>
+
+<?php include('panel.inc.php'); ?>
+
+<?php
+    include_once "{$config['file_root']}/includes/footer-simple.inc.php";
+?>

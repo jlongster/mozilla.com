@@ -1,0 +1,292 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'منتجات موزيلا | نصائح و تلميحات';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+     include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>نصائح و تلميحات</h2>
+    <p>مهما كنت مبتدئًا أو متوسطًا أو خبيرًا، ستساعدك هذه الاختصارات و الاقتراحات لتستفيد من فَيَرْفُكْس 3 إلى أقصى حد.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">المنتجات</a> / <a href="/<?=$lang?>/firefox/">فَيَرْفُكْس</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">الميزات</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">الأمن</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">التخصيص</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">برنامج جماهيري 100%</a></li>
+    <li><span>نصائح و تلميحات</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">ملاحظات الإصدار</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">أنظمة و لغات أخرى</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>مبتدئ</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '365', '251', 'right')?>
+
+                <h4>التكبير و التصغير</h4>
+                <p>هل تعبت من النصوص الصغيرة؟ تريد أن ترى صورة بشكل أقرب و شخصي؟ الآن يمكنك بسهولة أن تكبّر و تصغّر صفحات الوب.</p>
+
+                <div class="key-combo">
+                    كبّر
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    صغّر
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '388', '135', 'right')?>
+
+                <h4>جرب تلميحات الألسنة هذه</h4>
+                <p>إذا كنت من نوع الأشخاص الذين يحبون أن يكون لديهم العديد من صفحات الوب المفتوحة في وقت واحد، إذًا أنت ستستفيد بالتأكيد من تصفح الألسنة. إليك ببعض اختصارات لوحة المفاتيح التي ستساعدك على اتقان الألسنة:</p>
+
+                <div class="key-combo key-combo-1">
+                    افتح لسان جديد فارغ
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    افتح رابط في لسان جديد
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middle Click on link</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middle Click on link (mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    أغلق اللسان
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    أعد فتح اللسان المغلق
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>أضف العلامات بنقرة واحدة</h4>
+                <p>ابقى على متابعة أفضل للمواقع التي تحبها و وفر الوقت بإضافة علامة بنقرة واحدة. عندما تزور صفحة ترغب بتذكرها كل ما عليك فعله هو النقر على ايقونة النجمة في شريط العنوان، فَيَرْفُكْس سيضيف الصفحة إلى علاماتك حتى يمكنك ايجادها بسهولة مرة أخرى.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        هذا الموقع يقدم معلومات موثقة عن هويته و يحمي معلوماتك من المتلصصين.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        هذا الموقع يقدم معلومات بسيطة عن هويته، و يحمي معلوماتك الشخصية من المتلصصين.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        هذا الموقع لايقدم أي معلومات عن هويته.
+                    </li>
+                </ul>
+
+                <h4>إعلم مع من تتعامل</h4>
+                <p>إعداد مواقع مزيفة هي استراتيجية شائعة بين محتالي الوب تعرف بمواقع الإحتيال، و هي تنتحل هوية مصرفك أو موقع التجارة الالكتروني المفضل لديك... لحسن الحظ فَيَرْفُكْس يجعل من السهل تحديد فيما إذا كان الموقع هو فعلًا ما يدعيه، انقر على أيقونة الموقع لنظرة فورية على هويته.</p>
+                <p id="forgery">هذا موقع هجومي أو مزيف، تزويد هذا الموقع بمعلومات شخصية أو حتى زيارته قد تكون ضارة.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Forgery screenshot" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            ازلق الصفحة إلى الأسفل
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            ازلق الصفحة إلى الأعلى
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            أعد تحميل الصفحة
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            إرجع
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            اذهب للأمام
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>اختصر طريقك إلى النجاح</h4>
+                <p>فَيَرْفُكْس مليء باختصارات المفاتيح المصممة لتجعل حياتك أسهل. إليك ببعض من المفضلين لدينا:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        حرك المؤشر لشريط العنوان
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        حرك المؤشر إلى صندوق البحث
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>متوسط</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>استخدم الوسوم</h4>
+                <p>عندما تبني قائمة كبيرة من العلامات تصبح متابعتها جميعها صعبة بعض الشيء، يمكنك تحديد وسوم لمواقعك المعلّمة لتبق منظمًا: فقط انقر نقرة مزدوجة على أيقونة النجمة و سيطلب منك أن تدخل وسومك.</p>
+                <p>يمكنك أن توسم موقعًا بأي عدد من المصطلحات التي تريد (تأكد من أن تضع فاصلة بين كل وسم)، و عندها يمكنك بسهولة أن تجد المواقع مجددًا بكتابة هذا الوسم في شريط العنوان. كمثال: إدخال كلمة "ترحال" في شريط العنوان سيعرض لك كل المواقع التي قمت بتعليمها كجزء من خطط العطلة.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '378', '252', 'right')?>
+
+                <h4>تعلم كل شيء عن الإضافات</h4>
+                <p>بالطبع النسخة القياسية من فَيَرْفُكْس مليئة بالميزات و لكن لما نتوقف عند هذا الحد؟ هناك أكثر من 5000 إضافة يمكنك تنزيلها لتحسين أي شيء يمكن أن تفكر به. إذهب إلى الأدوات ← الإضافات لفتح مدير الإضافات و اكتشاف كيف يمكنك جعل فَيَرْفُكْس مخصصا لك وحدك.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '378', '252', 'right')?>
+
+                <h4>بحث أذكى</h4>
+                <p>لابد أنك تعرف شريط البحث الموجود ضمن فَيَرْفُكْس. ولكن، هل تعلم أنه يمكنك تخصيصه ليستخدم أي محرك بحث آخر تقريبا؟ فقط إضغط على الأيقونة على يسار الشريط لترى قائمة بالاختيارات الافتراضية.</p>
+                <p>هناك المزيد، إضغط على "أدر محركات البحث..." لتظهر لك المزيد من الخيارات و حتى اختصارات لوحة المفاتيح لمحركات البحث المفضلة لديك. على سبيل المثال، يمكنك إعطاء محرك بحث Google الاختصار "G" - و بعدها إذا أحببت البحث عن وصفات طبخ، يكفي أن تكتب "G وصفات طبخ" في شريط الموقع لتحصل على قائمة كاملة.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '378', '252', 'right')?>
+
+                <h4>جد ما تريده بلحظة</h4>
+                <p>جد أثناء الكتابة هي ميزة أخرى توفر الكثير من الوقت. بدلاً من استخدام شريط "البحث" لتجد ما تريده، فقط اضغط على أي مكان في الصفحة و إبدأ بالكتابة. سيقفز المؤشر فورا إلى أول ورود للكلمة في الصفحة.</p>
+                <p>يمكنك أيضًا استخدام هذا للوصلات. على سبيل المثال، بدلًا من تحريك المؤشر إلى وصلة "اقرأ المزيد"، ابدأ فقط بكتابة العبارة و عندما يجدها المؤشر، اضغط enter.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '378', '252', 'right')?>
+
+                <h4>تخلص من كل أثر</h4>
+                <p>لأسباب الأمان و الخصوصية، ليس من الجيد ترك آثار تدل على تصفحك (خاصة إذا كنت تستخدم حاسوبًا عموميًا). يتيج لك فَيَرْفُكْس حذف تأريخ التصفح و التنزيلات، مسح الملفات المؤقتة و حذف الكعكات بضغطة زر واحدة. لتقوم بهذا، فقط اذهب إلى الأدوات ← امسح البيانات الشخصية... أو، إذا كنت أكثر حذرًا، اذهب إلى <span id="trace-platform">الأدوات ← الخيارات ← الخصوصية</span> و اختر "امسح دومًا بياناتي الشخصية عندما أغلق فَيَرْفُكْس".</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="فَيَرْفُكْس ← التفضيلات ← الخصوصية";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="تحرير ← التفضيلات ← الخصوصية";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Advanced</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'Location bar screenshot', '378', '252', 'right')?>
+
+                <h4>إذهب مباشرة إلى مواقعك المفضلة</h4>
+                <p>يمكنك إضافة وسوم إلى علاماتك لوصول أسرع و أسهل. من المكتبة، أضف وسما قصيرا في حقل الوسوم، و سيصبح بإمكانك الوصول إلى العلامة ببساطة عن طريق كتابة الوسم في شريط العنوان. على سبيل المثال، يمكنك إعطاء حسابك على del.icio.us وسم “وصلات”، و بعدها اكتب “وصلات” في شريط العنوان لتذهب هناك.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>أنشئ مجلدات ذكية</h4>
+                <p>إذا كنت مستخدما متقدما للوب و تحتاج باستمرار إلى طريق لتذكر مواقع معينة، إليك بتلميحة ستحفظ الكثير من وقتك: استخدم المكتبة في فَيَرْفُكْس، يمكنك إنشاء و حفظ أبحاث تتحدث تلقائيا عندما تضيف مواقع للعلامات و التاريخ.</p>
+                <p>أولا، افتح المكتبة باختيار "أدر العلامات" من قائمة العلامات. ثم أدخل عبارات البحث في مربع البحث. أخيرا، اضغظ زر حفظ لتنشئ مجلدا ذكيا.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'Download Manager screenshot', '378', '252', 'right')?>
+
+                <h4>أدر تنزيلاتك</h4>
+                <p>إذا كنت ممن ينزلون الملفات باستمرار، يمكنك استخدام نافذة مدير التنزيلات لمتابعة تنزيلاتك. يمكنك إيقاف و متابعة التنزيلات، و توفير وقتك عن طريق فتح الملفات من مدير التنزيلات مباشرة.</p>
+                <p>إذا كنت تريد استرجاع تنزيل سابق، إذهب إلى الأدوات ← التنزيلات و استخدم مربع البحث لتجد ملفك. عندما تجده، انقر عليه مرتين، أو انقر بالزر اليمين و اختر "انسخ وصلة التنزيل".</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>اكتشف أدوات للتطوير</h4>
+                <p>إذا كنت مطور وب، ستجعل أدوات التطوير في فَيَرْفُكْس عملك أكثر سهولة. يتضمن <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">موقع إضافات موزيلا</a> العديد من الأدوات لتنظيم عملية التطوير، منها Firebug التي تمكنك من تحرير، إزالة المشاكل و مراقبة الـ CSS، HTML و جافاسكربت مباشرة في أي صفحة. و Tamper Data لعرض و تعديل ترويسات HTTP/HTTPS و متحولات POST، و DOM Inspector لتفحص أي عنصر HTML أو CSS بضغطة من الزر اليمين.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Preferences screenshot', '378', '252', 'right')?>
+
+                <h4>أعد الوب كما تريده</h4>
+                <p>يمكنك الآن استخدام بروتوكوات مبنية على الوب للوصول إلى تطبيقات الوب المفضلة لديك بسرعة. على سبيل المثال، يمكنك إعداد فَيَرْفُكْس بحيث أن الضغط على وصلة mailto: في أي موقع يفتح موقع البريد الإلكتروني المفضل لديك بدلا من برنامج البريد الإلكتروني المكتبي على حاسوبك (ملاحظة: تتوفر هذه الميزة لخدمات البريد الإلكتروني التي اشتركت بفَيَرْفُكْس 3).</p>
+                <p>اذهب إلى <span id="platform-protocol">أدوات ← الخيارات ← التطبيقات</span> لاختيار التطبيق الافتراضي أو “اسألني دوما” إذا كنت تفضل اختيار التطبيق بنفسك في كل مرة.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="فَيَرْفُكْس←التفضيلات←التطبيقات";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="تحرير←التفضيلات←التطبيقات";
+                }
+                //]]></script>
+                <p>إذا كنت مطور وب، انظر كيف يمكنك إضافة الدعم لتطبيقك في <a href="http://developer.mozilla.org/">مركز موزيلا للمطورين.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

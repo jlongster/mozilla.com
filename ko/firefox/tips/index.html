@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla 제품 소개 |자주 쓰는 기능';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>자주 쓰는 기능</h2>
+    <p>Firefox 3를 처음 사용하시는 분에서 부터 고급 사용자까지 아래 기능들을 알아 두시면 즐거운 인터넷 여행에 도움이 되실 것입니다.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">제품 소개</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">보안</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">부가 기능</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% 생명 소프트웨어</a></li>
+    <li><span>사용 방법</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">제품 소개서</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">기타 OS 및 다른 언어</a></li>
+</ul>
+
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>초급 사용자</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Zoom In, Zoom Out screenshot', '365', '251', 'right')?>
+
+                <h4>확대 및 축소</h4>
+                <p>작은 글자 및 이미지 파일에 눈이 피로하실 수 있습니다. 좀더 크게 웹 문서를 볼 수 있도록 문서 확대 및 축소 기능을 제공해 주고 있습니다.</p>
+
+                <div class="key-combo">
+                    문서 확대
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ? + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    문서 축소
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ? + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Tab Tricks screenshot', '388', '135', 'right')?>
+
+                <h4>탭 사용하기</h4>
+                <p>한번에 여러 웹 페이지를 띄우기 원하시는 분들을 위해 탭 브라우징 기능을 제공 합니다. 북마크나 시작 페이지 설정을 통해 한번에 여러개 탭을 열어 웹 브라우징 시간을 단축해 줄 수 있습니다.</p>
+
+                <div class="key-combo key-combo-1">
+                    새 탭 열기
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ? + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    링크를 새 탭으로 열기
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middle Click on link</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middle Click on link (mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    탭 닫기
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ? + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    닫은 탭 다시 열기
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ? + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>한번에 북마크 추가하기</h4>
+                <p>여러분이 방문한 웹 페이지를 또 방문하려고 북마크에 저장하는 시간을 절약해 드립니다. 주소창에 있는 별표 아이콘을 한번만 클릭하면 바로 북마크에 저장합니다. Firefox 북마크 메뉴에서 바로 찾으실 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        이 웹 사이트는 개인 정보에 대한 네트워크 도청을 막기 위해 강력한 신원 정보를 제공하고 있습니다.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        이 웹 사이트는 개인 정보에 대한 네트워크 도청을 막기 위해 기본 신원 정보를 제공하고 있습니다.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+            이 웹 사이트는 신원 정보를 제공하고 있지 않습니다.
+                    </li>
+                </ul>
+
+                <h4>웹 사이트 정보 살펴 보기</h4>
+                <p>웹 상에는 인터넷 뱅킹, 유명 쇼핑몰 등의 가짜 웹 사이트를 만들어 두고 개인 정보를 입력하도록 해 가로채는 악성 업자들이 많이 있습니다. Firefox는 주소창의 신원 정보 아이콘을 통해 웹 사이트가 실제 존재하는 진짜 사이트인지 확인할 수 있는 정보를 제공합니다.</p>
+                <p id="forgery">사기 사이트나 피싱 사이트에 개인 정보를 보내는 것은 매우 위험한 행동입니다.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Forgery screenshot" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            아래로 스크롤 내리기
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            위로 스크롤 올리기
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            새로 고침
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ? + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            뒤로
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ? + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            앞으로
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ? + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>빠른 사용을 위한 단축키</h4>
+                <p>Firefox는 모든 기능을 키보드 단축키로 제공 합니다. 아래 몇 가지를 익혀 두시면 매우 편리하실 것입니다.</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        커서를 주소창으로 옮기기
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ? + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        커서를 검색창으로 옮기기
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ? + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>중급 사용자</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>태그 이용하기</h4>
+                <p>북마크에 자주 가는 사이트를 계속 추가하다 보면 관리하는 일이 매우 힘들어 집니다. 이를 효율적으로 관리하려면 각 사이트에 태그를 붙이는 것이 좋습니다. 주소창 오른쪽 별표를 한번만 누르면 북마크와 동시에 태그를 달 수 있습니다.</p>
+                <p>웹 페이지를 설명하는 키워드를 쉼표로 분리하여 원하는 만큼 입력할 수 있습니다. 나중에 주소창에 태크만 입력하면 북마크한 웹 페이지가 자동 완성으로 추천 됩니다. 예를 들어 "여행"이라고 주소창에 치면 여름 방학에 가려던 관광지를 "여행"이라고 키워드로 태그를 단 웹 사이트를 자동으로 가져 옵니다.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Add-ons screenshot', '378', '252', 'right')?>
+
+                <h4>부가 기능 이용하기</h4>
+                <p>Firefox 기본 버전에는 다양한 기능이 포함되어 있습니다만 여러분만의 특화된 기능을 사용할 수 있는 부가 기능도 제공하고 있습니다. 5,000여가지가 넘는 확장 기능 프로그램은 일반 사용자들이 직접 만들어 배포하는 것으로 여러분이 원하는 기능을 바로 찾으실 수 있습니다. '도구'→'부가 기능'의 부가 기능 관리자를 통해 직접 검색하고 설치함으로서 자기만의 Firefox로 업그레이드 할 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Search screenshot', '378', '252', 'right')?>
+
+                <h4>똑똑한 검색 기능</h4>
+                <p>Firefox 오른쪽 상단에 검색창을 이미 잘 아실 것입니다. 하지만 검색 엔진을 여러분이 원하는 것으로 바꿀 수 있다는 것은 알고 계시나요? 왼쪽 검색 아이콘을 클릭하고 원하는 검색 엔진을 선택하면 기본 설정이 바뀝니다.</p>
+                <p>뿐만 아니라 '검색 사이트 관리…' 메뉴를 통해 검색 엔진 순서 변경 및 추가/삭제 등이 가능 합니다. 특히, 각 검색 엔진의 키워드를 설정하면 주소창에서 바로 검색 결과를 얻을 수 있습니다. 예를 들어, 주소창에서 Google의 검색 결과를 얻으려면  'g'라고 키워드 설정을 하신 후, 주소창에서 'g 요리법'이라고 치면 됩니다.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Find screenshot', '378', '252', 'right')?>
+
+                <h4>향상된 찾기 기능</h4>
+                <p>'빠른 검색'(Find As You Type)은 시간 절약을 위한 또 다른 강력한 기능입니다. 기존의 페이지 찾기 기능이 아니라 문서에서 바로 타이핑하는 순서 대로 문서 내 단어를 찾아줍니다. 커서가 타이핑 하는 단어가 나온 첫번째 위치로 바로 이동 합니다.</p>
+                <p>링크를 찾을 때도 사용할 수 있습니다. 예를 들어 마우스를 이용하지 않고도 바로 링크로 이동 가능 합니다. 이 기능은 '도구→설정→고급'에서 "입력을 시작하면 내용 검색하기"에서 사용 여부를 설정할 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Privacy screenshot', '378', '252', 'right')?>
+
+                <h4>모든 정보 삭제하기</h4>
+                <p>보안이나 개인 정보 보호 문제로 인해, 외부에 있는 공용 PC를 이용하게 된 경우 웹 사이트 이용 기록을 모두 삭제할 필요가 있습니다. Firefox는 웹 이용 기록, 다운로드 기록, 쿠키 및 이용 기록을 한번에 삭제할 수 있습니다. '도구 → 개인 정보 초기화…'를 선택하시면 됩니다. 또는 <span id="trace-platform">도구 → 설정 → 개인 정보</span>에서 "Firefox를 종료할 때 개인 정보 모두 삭제" 설정을 이용하실 수 있습니다.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → 환경 설정 → 개인 정보";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="편집 → 환경 설정 → 개인 정보";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>고급 사용자</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", '주소창 스크린샷', '378', '252', 'right')?>
+
+                <h4>즐겨 찾는 사이트 바로 가기</h4>
+                <p>북마크한 사이트에 바로 접속할 수 있도록 키워드를 설정할 수 있습니다. 북마크 관리에서 각 웹 사이트의 키워드 항목에 간단한 단어를 설정하고 주소창에서 입력만 하면 웹 사이트로 바로 이동 합니다. 예를 들어, www.daum.net 이라는 웹 사이트의 경우 '메일'이라고 키워드를 설정해 바로 접속할 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>스마트 폴더 만들기</h4>
+                <p>여러분이 고급 웹 사용자라면 특정 키워드에 대한 웹 사이트 목록을 보거나 정보 변경을 항상 염두해야 할 필요성이 있을 것입니다. Firefox 3에서 북마크에 웹 사이트가 추가될 때 마다 특정 검색어 포함되어 있으면 자동으로 표시해 주는 스마트 폴더라는 기능이 있습니다.</p>
+                <p>북마크 메뉴에서 '북마크 구성'을 선택 한 후 검색창에 특정 키워드를 입력 한후 저장 버튼을 눌러 스마트 폴더를 만들 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Download Manager screenshot', '378', '252', 'right')?>
+
+                <h4>다운로드 항목 관리</h4>
+                <p>웹 상에서 다운로드를 자주 하신다면 다운로드 관리자를 통해 파일을 관리하실 수 있습니다. 다운로드 진행을 중단하거나 재개할 수도 있고 다운로드한 파일이나 파일의 저장 폴더를 바로 열 수도 있습니다.</p>
+                <p>다운로드 파일을 찾으시려면 도구 → 다운로드에서 관리자 창을 열어 검색창에 파일명 중 일부를 입력하시면 됩니다. 바로 파일을 열거나, PC에서 파일이 삭제된 경우 "다운로드 링크 복사"를 통해 다시 다운로드 가능합니다.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>개발 도구로 사용하기</h4>
+                <p>여러분이 웹 개발자라면 Firefox의 개발 도구를 통해 편하게 개발 하실 수 있습니다. <a href="https://addons.mozilla.org/ko/firefox/browse/type:1/cat:4">Mozilla 부가 기능</a> 사이트에서는 CSS, HTML 및 자바스크립트를 수정 및 디버깅 할 수 있는 Firebug 부가 기능을 비롯 HTTP/HTTPS 헤더 기록을 볼 수 있는 Tamper Data, HTML/CSS 요소를 조사할 수 있는 DOM Inspector 같은 부가 기능을 다운로드하여 사용할 수 있습니다.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Preferences screenshot', '378', '252', 'right')?>
+
+                <h4>자신이 원하는 웹 서비스 이용</h4>
+                <p>웹 기반 프로토콜 핸들러를 이용하여 여러분이 원하는 웹 사이트에서 기능을 이용할 수 있습니다. 예를 들어 Firefox는 mailto: 라는 링크에 이메일 주소가 있을 경우 새로운 메일 작성을 위해 아웃룩 같은 외부 프로그램을 이용하지 않고 웹 메일 서비스 업체에서 바로 메일 쓰기가 가능해졌습니다. Firefox 3 한국어 버전에는 '한메일', '네이버 메일', '지메일', '야후!메일' 중 하나를 선택할 수 있습니다.</p>
+                <p><span id="platform-protocol">도구 → 설정 → 프로그램</span>을 항목에서 각 프로토콜에 해당 하는 실행 방법을 "항상 물어보기" 또는 원하는 프로그램이나 웹 서비스로 바꾸실 수 있습니다. </p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→환경 설정→프로그램";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="편집→환경 설정→프로그램";
+                }
+                //]]></script>
+                <p>여러분이 웹 개발자라면 웹 기반 프로토콜 핸들러를 지원하는 방법을 <a href="http://developer.mozilla.org/">Mozilla 개발자 센터</a>에서 확인 가능 합니다.</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

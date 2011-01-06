@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "ফায়ারফক্স ৪ বেটা - আপনার মতামত জানান";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "ফায়ারফক্স ৪ বেটা প্রোগ্রাম আপনি কিভাবে খুঁজে পাবেন?";
+$str2       = "আপটুডেট থাকুন";
+$str3       = "ইমেইলের মাধ্যমে ফায়ারফক্স বেটা সম্পর্কিত খবর, ইভেন্ট এবং তথ্য গুলো সাবস্ক্রাইব করুন।";
+$str4       = "আপনার ইমেল ঠিকানা দিন";
+$str5       = "আমি <a href=\"%s\">গোপনীয়তার নীতিমালা</a> এর সাথে একমত <span class='footnote'>(আমরা শুধুমাত্র মোজিলা সম্পর্কিত তথ্য পাঠাবো)।</span>";
+$str6       = "অনুগ্রহ করে আমাকে মোজিলার খবর, ফায়ারফক্স টিপস &amp; ট্রিকস, এবং অন্যান্য মোজিলার তথ্য পাঠাবেন।";
+$str7       = "সাবস্ক্রাইব করুন »";
+$str8       = "সাবস্ক্রাইব করার জন্য ধন্যবাদ!";
+$str9       = "ফায়ারফক্সকে আরও ভাল ভাবে জানতে আমরা টিপস &amp; ট্রিকস পাওয়ার অপেক্ষায় থাকবো, এছাড়াও মোজিলার বিভিন্ন খবরাখবর এবং কিভাবে মোজিলা আরও ভাল ওয়েব ব্রাউজার হিসেবে তৈরি হচ্ছে এ সম্পর্কেও জানতে চাই।";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>সহায়তা প্রয়োজন</h3>
+        <p>আমবা আরও দ্রুত, হালকা এবং পূর্ণ সহযোগিতা সম্পন্ন ফায়ারফক্স তেরি করছি যাতে আপনার ব্রাউজ আরও সহজ হয়। কিন্তু, আপনার মূল্যবান মতামত ছাড়া এটি সম্ভব নয়।</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>ফায়ারফক্স ৪ <sup>বেটা</sup></span></h3></li>
+    <li class="feedback"><span>মতামত</span></li>
+    <li class="more"><h3>ইংরেজীতে আরও তথ্য</h3></li>
+    <li class="features"><a href="../features/">বৈশিষ্ট্য</a> </li>
+    <li class="tech"><a href="../technology/">প্রযুক্তি</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">মতামত গোপনীয়তা নীতিমালা</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>আপনার ভাবনাগুলো আমাদেরকে জানান</h2>
+        <h3>তাৎক্ষনিক মতামত দিন</h3>
+        <p>তাৎক্ষনিক মতামত জানাতে "মতামত"  বোতামে ক্লিক করুন। এটি এতটাই সহজ!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">ডেভেলপার: আপনাকে আমাদের প্রয়োজন</h2>
+        <h3>আপনার আইডিয়া শেয়ার করুন</h3>
+        <p>বেটায় আপনি <a href="../features/#under-the-hood">নতুন ডেভেলপার বৈশিষ্ট্য</a> নিয়ে কি ভাবছেন?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">মতামতের ফোরামে ঘুরে আসুন।</a></p>
+
+        <h3>টেকনিক্যাল বাগ ফাইল করুন</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>আপনি যদি বাগজিলা এক্সপার্ট হয়ে থাকেন, ব্রাউজ করার সময় সমস্যা হলে বাগ ফাইল করুন।</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">ফায়ারফক্স ৪ বেটা বাগ ফাইল করুন</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>কথাটি ছড়িয়ে দিন</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">টুইটারে আমাদেরকে অনুসরণ করুন</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">ফেসবুকে আমাদের গ্রুপটি দেখুন</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">মোজিলার ব্লগ পড়ুন</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>সহায়তা প্রয়োজন?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />আমাদের সহায়তা পৃষ্ঠায়</a> বিশেষ ভাবে ফায়ারফক্স ৪ বেটার জন্য সমাধান এবং উপদেশ আছে।</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

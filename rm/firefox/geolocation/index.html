@@ -1,0 +1,118 @@
+<?php
+
+$page_title = "Geolocalisaziun cun Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Navigar cun calcular tia posiziun geografica: Location-Aware Browsing</h2>
+    <p>Firefox po dir a websites nua che ti ta chattas, uschia che ti survegns infurmaziuns pli relevantas e pli utilas. Il web daventa pli raffinà e tia sfera privata vegn tuttina respectada.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Emprova!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Dumondas frequentas</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Tge è Location-Aware Browsing?</h4>
+    <div class="expander-content">
+        <p>Websites che utiliseschan il Location-Aware Browsing vegnan a dumandar tai nua che ti ta chattas cun l’intenziun da pudair porscher a tai infurmaziuns pli relevantas e da ta gidar a spargnar temp da tschertgar. Ti tschertgas per exempel ina pizzeria en tes conturn. Ina website vegn ad esser abla da dumandar tai da communitgar tia posiziun uschia ch’i basta da tschertgar «pizza» per survegnir las respostas che ti dovras – senza ulteriuras infurmaziuns e senza tippar dapli.</p>
+        <p>U sche ti vuls planisar in viadi vegn la website a savair danunder che ti partas. I basta da simplamain inditgar nua che ti vuls ir.</p>
+        <p>Quest servetsch è cumplettamain voluntar – Firefox na vegn mai a communitgar tia posiziun senza tes consentiment  – e tia sfera privata vegn respectada il meglier pussaivel. E sco tut ils elements da Firefox è questa funcziun vegnida creada cun standards averts per simplifitgar l’introducziun per programmaders dal web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Sco funcziuni?</h4>
+    <div class="expander-content">
+        <p>Sche ti visitas ina website Location-Aware, vegn Firefox a dumandar sche ti vuls communitgar tia posiziun. </p>
+        <p>Sche ti es d’accord, rimna Firefox infurmaziuns davart puncts d'access wireless en tia vischinanza e l’adressa IP da tes computer. Lura trametta Firefox questa infurmaziun al purschider da servetschs da geolocalisaziun da standard, Google Location Services, per retschaiver ina calculaziun approximativa da tia posiziun. Questa posiziun stimada vegn lura tramessa a la website.</p>
+        <p>Sche ti dis che ti na sajas betg d’accord, na fa Firefox nagut.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Quant exactas èn las posiziuns?</h4>
+    <div class="expander-content">
+        <p>L’exactadad variescha fermamain d’in lieu a l’auter. En tschertas localitads pon ils purschiders da noss servetschs definir la posiziun fin a paucs meters. En in auter lieu po la stimaziun esser bler pli inexacta. Tut las posiziuns che noss purschiders da servetschs tramettan enavos restan stimaziuns, nus na pudain betg garantir l’exactadad da las indicaziuns. N’utilisescha betg questas infurmaziuns en cas d'urgenza. Dovra adina il saun giudizi.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Tge infurmaziuns vegnan tramessas ed a tgi vegnan ellas tramessas? Sco vegn mia sfera privata protegida?</h4>
+    <div class="expander-content">
+        <p>Tia sfera privata è ordvart impurtanta per nus e Firefox na tradescha mai tia posiziun senza tes consentiment. Sche ti visitas ina pagina che dumonda questa infurmaziun, vegns ti dumandà avant che x-ina infurmaziun vegn tramessa a la website respectiva u a noss purschider da servetschs.</p>
+        <p>Tenor la configuraziun predefinida utilisescha Firefox Google Location Services per determinar tia posiziun cun trametter:</p>
+        <ul>
+            <li>l’adressa IP da tes computer,</li>
+            <li>infurmaziuns davart ils puncts d’access wireless damanaivels, ed</li>
+            <li>in identificatur casual dal client che vegn assegnà da Google e scroda mintga duas emnas.</li>
+        </ul>
+        <p>Legia <a href="/<?=$lang?>/legal/privacy/firefox-en.html">las directivas davart la protecziun da datas da Firefox</a> (per englais) per ina descripziun cumpletta da las infurmaziuns rimnadas ed utilisadas da Firefox.</p>
+        <p>Google Location Services trametta lura enavos tia posiziun geografica stimada (vul dir: grad da ladezza e grad da longhituda). Legia <a href="http://www.google.com/privacy-lsf.html" class="external">la Google Geolocation Privacy Policy</a> (per englais) per ina descripziun cumpletta da las infurmaziuns rimnadas ed utilisadas da Google.</p>
+        <p>L’infurmaziun vegn tramessa cun agid d’ina connexiun criptada per proteger tia sfera privata. Sche Firefox ha retschavì l’infurmaziun davart tia posiziun, vegn quella dada vinavant a la website che l’ha dumandà. Il num, l’adressa da la website che ti visitas u cookies na vegnan mai tradids a Google Location Services.</p>
+        <p>Ni Mozilla ni Google na vegnan era mai ad utilisar las infurmaziuns rimnadas da Google Location Services per identifitgar u spiunar tai.</p>
+        <p>Infurmaziuns davart la dumonda co che tias datas vegnan utilisadas da la website che dumonda tia posiziun geografica chattas ti en las directivas davart la protecziun da datas da la website respectiva.</p>
+        <p>Dapli infurmaziuns davart tia sfera privata survegns ti qua:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox privacy policy</a> (per englais)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google privacy policy</a> (per englais)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Vegn jau registrà, sche jau navighesch en l’internet?</h4>
+    <div class="expander-content">
+        <p>Na. Firefox dumonda mo ina posiziun, sch'ina website dumonda ina tala e tradescha mo tia posiziun sche l’utilisader ha approvà la dumonda. Firefox ni registrescha ni memorisescha tia posiziun, sche ti navigheschas en l’internet.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Co poss jau revocar ina permissiun concedida ad ina website?</h4>
+    <div class="expander-content">
+        <p>Sche ti has permess a Firefox da dar vinavant adina tia posiziun ad ina website e ti midas pli tard l’opiniun, pos ti revocar a moda simpla tia permissiun:</p>
+        <ul>
+            <li>Navighescha a la website pertutgada</li>
+            <li>Clicca sin <em>Utensils</em>, lura sin <em>Infurmaziuns davart la pagina</em></li>
+            <li>Clicca sin il tab <em>Autorisaziuns</em></li>
+            <li>Mida la configuraziun dal punct <em>Communitgar la posiziun</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Co stiz jau «l’identificatur casual dal client» («random client identification number»)?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Clicca sin il menu <em>Utensils</em>, lura sin <em>Stizzar datas privatas…</em></li>
+            <li>Clicca sin la frizza <em>da detagls</em></li>
+            <li>Fa la segira che <em>Cookies</em> è tschernì</li>
+            <li>Clicca sin <em>Stizzar uss</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Co poss jau deactivar permanentamain Location-Aware Browsing?</h4>
+    <div class="expander-content">
+        <p>Location-Aware Browsing pretenda en Firefox adina ina conferma da l’utilisader. Naginas infurmaziuns davart tia posiziun vegnan communitgadas senza tia permissiun. Sche ti vuls deactivar cumplettamain questa funcziun, suonda per plaschair ils suandants pass:</p>
+        <ul>
+            <li>Scriva <code>about:config</code> en la trav d’adressas </li>
+            <li>Endatescha <code>geo.enabled</code></li>
+            <li>Clicca duas giadas sin la preferenza <em>geo.enabled</em></li>
+            <li>Location-Aware Browsing è ussa deactivà</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Nua sun jau?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Oha! L’emprova da determinar tia posiziun ha chaschunà in’errur.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

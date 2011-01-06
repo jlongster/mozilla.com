@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox trebuie actualizat";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Nu, mulțumesc";
+    $no_download_button2 = "(Hai să vă spun de ce...)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Avertisment de securitate:
+        </span>
+</h2>
+<h3>
+        Versiunea de Firefox pe care o folosiți e foarte veche.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Dacă continuați să folosiți această versiune, calculatorul va fi vulnerabil din punct de vedere al securității.</p>
+
+    <p id="main-feature-contents">
+    Vă rugam să <a href="/<?=$lang?>/firefox/">descărcați cea mai nouă versiune de Firefox</a>. E gratuită și veți beneficia de ultimele actualizări de securitate, performanță și funcționalități.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

@@ -1,0 +1,97 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '更多關於外掛程式更新檢查的資訊';
+    $body_id    = 'plugin-check';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/plugin-check-more-info.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+    $url_prefix = $config['url_scheme'] . '://' . $config['server_name'];
+?>
+
+
+<div id="main-feature">
+    <h2>外掛程式更新檢查</h2>
+    <p>關於我們如何進行外掛程式更新檢查，以及支援哪些瀏覽器的資訊。</p>
+</div>
+
+<div id="main-content">
+    <div id="content-left">
+
+        <div id="compatability">
+            <h3>完全支援的瀏覽器</h3>
+            <table class="compat">
+                <tr><th class="emptyth"></th><th  class="nextemptyth">瀏覽器</th><th class="version">版本</th><th>所檢查的外掛程式</th></tr>
+                <tr><td><img src="/img/tignish/plugincheck/moreinfo/Safari60x60.jpg" width="60" height="60" alt="logo" /></td>
+                    <td>Apple Safari</td><td class="version">4</td><td>全部</td></tr>
+                <tr><td><img src="/img/tignish/plugincheck/moreinfo/Chrome60x60.jpg" width="60" height="60" alt="logo" /></td>
+                    <td>Google Chrome</td><td class="version">4</td><td>全部</td></tr>
+                <tr><td><img src="/img/tignish/plugincheck/moreinfo/Firefox60x60.png" width="60" height="60" alt="logo" /></td>
+                    <td>Mozilla Firefox</td><td class="version">3.0+</td><td>全部</td></tr>
+                <tr><td><img src="/img/tignish/plugincheck/moreinfo/Opera60x60.jpg" width="60" height="60" alt="logo" /></td>
+                    <td>Opera</td><td class="version">10.5</td><td>全部</td></tr>
+
+        </table>
+            <h3>部分支援的瀏覽器</h3>
+            <table class="compat">
+                <tr><th></th><th>瀏覽器</th><th>版本</th><th>所檢查的外掛程式</th></tr>
+                <tr class="withnote"><td><img src="/img/tignish/plugincheck/moreinfo/IE60x60.jpg" width="60" height="60" alt="logo" /></td>
+                    <td>Microsoft Explorer</td><td>7+</td><td>部份*</td></tr>
+                <tr class="withnote"><td colspan="4" class="note">* 因為平台的技術限制，將只能對部分的外掛程式 (BrowserPlug, Flash, Java 等) 進行版本檢查。</td></tr>
+        </table>
+        </div>
+        </div>
+
+    <div id="sidebar">
+        <h3>這是如何進行的？</h3>
+        <p>Mozilla Plugin Check 是一個讓瀏覽器的<strong>外掛程式保持在最新版</strong>的<strong>通用工具</strong>。</p>
+        <p>對於完全支援的瀏覽器，將會依照下列步驟進行檢查:</p>
+        <ol>
+            <li>收集每個外掛資訊的描述性資料 (Metadata) 與其他可選的資料</li>
+            <li>透過 MIME 類型向<a href="http://plugins.mozilla.com">外掛程式目錄</a>查詢</li>
+            <li>試著將外掛程式的描述性資料結合我們對外掛程式所瞭解的部分。</li>
+            <li>如果找的到可以對應的資料，就檢查該外掛程式是否已經<strong>過期</strong>或是<strong>安全性問題</strong>。</li>
+        </ol>
+            <p>雖然所支援的版本是網路中比較常被使用的部分，我們仍然還有不少要努力的地方以識別所有的外掛程式。</p>
+        <p>外掛程式<strong>開發商</strong>也可以<a href="http://plugins.mozilla.org/en-us/login">更新他們的發行資訊</a>。</p>
+
+        <h3>為什麼不能完全支援 IE？</h3>
+        <p>不像其他新版瀏覽器，Internet Explorer 缺乏對於外掛程式的 JavaScript 物件支援。IE 只能透過一些 ActiveX 程式碼來檢查一些特定的外掛程式，而不像其他瀏覽器可以動態的檢查外掛程式物件。我們也想要持續開發以檢查更多的外掛程式，歡迎您提供軟體的補釘。</p>
+
+        <h3>開源程式碼，開放的處理程序</h3>
+        <p>取得最完整、最根本的詳情，並到<a href="https://wiki.mozilla.org/Website/Sprints/PluginProblem">計畫共筆系統</a>幫助我們讓使用者更安全。</p>
+    </div>
+
+    <div id="information-content" class="clearfix">
+        <div class="return-link"><a href="#main-feature">回到頁面頂端</a></div>
+
+        <div id="column-one">
+            <h3>我可以幫什麼忙？</h3>
+        <!-- p>您可以到 <a href="http://plugins.mozilla.org/">plugins.mozilla.org</a> 網站幫忙添加未知外掛程式的版本資訊。</p -->
+        <p>有蟲子？<a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=plugins.mozilla.org">送一份臭蟲回報</a>並幫助我們測試這個專案。</p>
+        <h3>更多資訊</h3>
+
+        <p>和全部的 Mozilla 專案一樣，Plugin Check 是開放的開發專案，我們也歡迎任何人參與。</p>
+
+        <p>Hack 一下程式碼:</p>
+        <ul>
+            <li>選一個未支援的外掛程式來撰寫可以透過 ActiveX API 在 Internet Explorer 上偵測版本的 JavaScript 程式碼。所有的前端程式碼都在 <a href="http://github.com/ozten/Perfidies-of-the-Web">Perfidies of the Web</a> 專案。</li>
+            <li>到 <a href="http://github.com/lmorchard/plugindir">Plugindir</a> 專案頁面取得 plugins.mozilla.org 的後端程式碼。</li>
+            </ul>
+
+            <p>上來 IRC 聊聊吧 (irc.mozilla.org, #pfs)</p>
+        </div><!-- /column-one -->
+
+        <div id="column-two">
+            <h3>已知問題</h3>
+        <ul>
+            <li>無法偵測 Mac 與 Linux 版本的 RealPlayer，因為它的外掛沒有在 C++ 程式碼、軟體說明、軟體名稱當中透漏版本資訊。</li>
+            <li>Adobe Reader 只能在 Firefox 3.6 或以後的版本被準確地偵測到，Adobe 可以在外掛程式的說明當中增加版本號碼來解決這個問題。</li>
+        </ul>
+        </div><!-- /column-two -->
+    </div>
+
+
+<?php
+@include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

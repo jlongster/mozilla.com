@@ -1,0 +1,228 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.6 | Notas da versão';
+    $body_id    = 'firefox-relnotes';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/release-notes.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 3.6</h2>
+    <p><em>v.3.6, lançada em 21 de Janeiro de 2010</em><br />
+    Veja o que há de novo, problemas conhecidos e dúvidas frequentes em relação à última versão do Firefox. Como sempre, encorajamos você a nos dizer o que pensa, seja usando o <a href="http://feedback.mozilla.org/" hreflang="en">formulário de feedback</a> ou <a href="https://bugzilla.mozilla.org/" hreflang="en">registrando um bug no Bugzilla</a>.</p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang, 'releasenotes');?>
+
+<div id="main-content">
+
+    <div id="whatsnew2" class="expander expander-odd">
+      <h3 class="expander-header">O que há de novo no Firefox&nbsp;3.6</h3>
+      <div class="expander-content">
+        <p>O Firefox&nbsp;3.6 é baseado na plataforma de renderização Gecko 1.9.2, que esteve em desenvolvimento desde o início de 2009 e contém diversas melhorias para usuários e  desenvolvedores de sites e complementos. Esta versão também é mais rápida e estável que a versão anterior e foi otimizada para ser usada em sistemas operacionais móveis, como o Maemo. Alguns dos recursos mais notáveis são:</p>
+        <ul class="spaced">
+          <li>Disponível em mais de 70 idiomas &mdash; obtenha a sua <a href="/<?=$lang?>/firefox/all.html#languages">versão local</a>.</li>
+          <li>Suporte a um novo tipo de temas chamados <a href="http://www.getpersonas.com/">Personas</a>, que permitem que usuários mudem a aparência do Firefox com um único clique.</li>
+          <li>Proteção contra <a href="http://theunfocused.net/2009/10/06/firefox-3-6-knows-when-your-plugins-are-out-of-date/" hreflang="en">plugins desatualizados</a> para manter os usuários seguros ao navegar.</li>
+          <li>Vídeos abertos nativos agora podem ser exibidos <a href="http://mozillalinks.org/wp/2009/10/firefox-3-6-gets-full-screen-native-video/" hreflang="en">tela cheia</a>.</li>
+          <li>Desempenho de JavaScript, responsividade do navegador e tempo de abertura melhorados.</li>
+          <li>Possibilidade de desenvolvedores indicarem que <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=503481" hreflang="en">scripts devem ser executados assincronamente</a> para diminuir o tempo de carga de páginas.</li>
+          <li>Suporte continuado para fontes baixáveis usando o novo <a href="http://hacks.mozilla.org/2009/10/woff/">formato <abbr title="Web Open Font Format">WOFF</abbr></a>.</li>
+          <li>Suporte a novos atributos CSS como gradientes, tamanho de planos de fundo e eventos de ponteiro.</li>
+          <li>Suporte a novas especificações DOM e HTML5, incluindo as APIs Drag &amp; Drop e File, que possibilitam a criação de sites mais interativos.</li>
+          <li>Alterações na forma como <a href="https://developer.mozilla.org/devnews/index.php/2009/11/16/component-directory-lockdown-new-in-firefox-3-6/">softwares de terceiros podem integrar-se ao Firefox</a> a fim de evitar travamentos.</li>
+        </ul>
+        <p>Desenvolvedores podem encontrar tudo sobre <a href="https://developer.mozilla.org/En/Firefox_3.6_for_developers" hreflang="en">todas as mudanças e novos recursos</a> no <a href="https://developer.mozilla.org/">Mozilla Developer Center</a>.</p>
+      </div>
+    </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">Requisitos do Sistema</h3>
+      <div class="expander-content">
+        <p>Antes de instalar, tenha certeza de que seu computador atende aos <a href="/<?=$lang?>/firefox/system-requirements.html">requisitos do sistema</a>.</p>
+      </div>
+    </div>
+
+    <div id="download" class="expander expander-odd">
+      <h3 class="expander-header">Download</h3>
+      <div class="expander-content">
+        <p>A Mozilla fornece o Firefox&nbsp;3.6 para Windows, Linux e Mac&nbsp;OS&nbsp;X em uma variedade de idiomas. Você pode <a href="/<?=$lang?>/firefox/all.html">obter a última versão do Firefox&nbsp;3.6 aqui</a>. Para versões para outros sistemas ou versões em outros idiomas não fornecidos pela Mozilla, verifique a seção Versões de Colaboradores no fim deste documento.</p>
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Instalação</h3>
+      <div class="expander-content">
+        <p>Por favor, perceba que a instalação do Firefox&nbsp;3.6 <em>substituirá</em> a sua instalação existente do Firefox. Você não perderá seus favoritos ou histórico de navegação, mas algumas extensões e outros complementos podem não funcionar até que atualizações para eles estejam disponíveis. Você poderá reinstalar uma versão antiga do Firefox sempre que desejar.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Desinstalação</h3>
+      <div class="expander-content">
+        <p>Você pode remover o Firefox&nbsp;3.6 utilizando  o <tt>Painel de Controle</tt> no Windows, removendo a aplicação <tt>Firefox</tt> no OS&nbsp;X ou apagando a pasta <tt>firefox</tt> no Linux.</p>
+        <p>Por padrão, desinstalar o Firefox&nbsp;3.6 não apagará seus dados, como favoritos, histórico de navegação, extensões ou outros complementos, entre outros. Esses dados são armazenados na <em>pasta do seu perfil</em>, que pode ser encontrada ao abrir o menu <em>Ajuda</em> e selecionar <em>Dados para solução de problemas…</em>. O botão próximo à linha <em>Pasta do perfil</em> em <em>Informações básicas sobre o aplicativo</em> abrirá a pasta do seu perfil no gerenciador de arquivos do seu sistema.</p>
+        <p>Por favor, perceba que se você mantiver o seu perfil, qualquer versão do Firefox que você instalar após remover o Firefox&nbsp;3.6 continuará usando os dados da pasta do seu perfil, incluindo seus favoritos e complementos.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Extensões e Temas</h3>
+      <div class="expander-content">
+        <p>Extensões instaladas no Firefox&nbsp;3.5 podem ser incompatíveis e/ou requerer atualizações para funcionar com o Firefox&nbsp;3.6. Por favor, reporte qualquer problema ao desenvolvedor da extensão. Quando você instalar o Firefox&nbsp;3.6, todas as suas extensões e temas serão desativados até que o Firefox&nbsp;3.6 determine que <em>a)</em> elas são compatíveis com a sua versão do Firefox&nbsp;3.6 ou <em>b)</em> há novas versões compatíveis disponíveis.</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Problemas conhecidos</h3>
+      <div class="expander-content">
+        <p>Esta lista abrange alguns dos problemas conhecidos do Firefox&nbsp;3.6 que serão corrigidos em novas versões:</p>
+        <dl>
+        <dt id="allsystems">Todos os sistemas</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Otimizações de JavaScript não estão ativadas para Web Workers, resultando em tempos de execução mais lentos que o normal (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=538440" hreflang="en">bug 538440</a>)</li>
+            <li>Ao sair do navegador, se você permitir que alguma página cancele a ação de fechamento alguns recursos do navegador não funcionarão corretamente. O navegador voltará a funcionar corretamente ao ser reiniciado (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=537449" hreflang="en">bug 537449</a>)</li>
+            <li>Alguns GIFs animados podem ser exibidos incorretamente, deixando manchas atrás de si (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=538752" hreflang="en">bug 538752</a>)</li>
+            <li>Se você usar o painel de leitura no Hotmail, a setas de rolagem poderão não funcionar corretamente (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=511075" hreflang="en">bug 511075</a>)</li>
+            <li>Caso o modo FIPS esteja ativado e certos arquivos sejam removidos do sistema, o navegador poderá travar ao iniciar (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=522041" hreflang="en">bug 522041</a>)</li>
+          </ul>
+        </dd>
+<!--
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+          </ul>
+        </dd>
+-->
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Em algumas versões do OS X, o Firefox não será capaz de abrir arquivos locais a partir do Finder caso eles possuam espaços em seus nomes (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=530064" hreflang="en">bug 530064</a>)</li>
+            <li>Se o usuário mudar repetidamente o tamanho da página e abrir a Visualização de Impressão, o Firefox poderá travar (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=495567" hreflang="en">bug 495567</a>)</li>
+          </ul>
+        </dd>
+        <dt id="linux">Linux e Unix</dt>
+        <dd>
+          <ul class="spaced">
+            <li>O Firefox poderá apresentar dificuldades ao reproduzir sons do sistema em algumas distribuições de Linux (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=536996" hreflang="en">bug 536996</a>)</li>
+            <li>Afastar o zoom em alguns sites pode resultar em linhas pretas ou cinzas na tela (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=468496" hreflang="en">bug 468496</a>)</li>
+          </ul>
+        </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Resolução de problemas</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Extensões incompatíveis ou mal projetadas podem causar problemas ao seu navegador, inclusive fazendo-o travar, tornando-o lento, etc. Caso você encontre algum problema estranho como partes do navegador que deixaram de funcionar, o navegador não abre, janelas com aparência estranha ou distorcida, performance reduzida, etc., você pode estar sofrendo de um problema causado por Extensões ou Temas. Para resolver esse tipo de problema, reinicie o navegador no Modo de Segurança. No Windows, inicie utilizando o atalho "Modo de Segurança" criado no menu Iniciar ou executando <code>firefox.exe -safe-mode</code>. No Linux, inicie executando <code>firefox -safe-mode</code> e no Mac&nbsp;OS&nbsp;X execute:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            Ao iniciar no Modo de Segurança, todas as extensões são desativadas e o tema padrão é utilizado. Desative a Extensão/Tema que está causando problema e então reinicie o navegador normalmente.
+          </li>
+          <li>
+            Se você desinstalar uma extensão que estava instalada no seu perfil (i.e. você a instalou de uma página da web) e deseja instalá-la para todos os perfis usando o parâmetro de linha de comando <tt>-install-global-extension</tt>, você deve reiniciar o navegador uma vez para limpar os dados da extensão do seu perfil antes de instalá-la usando esse parâmetro. Se você não fizer isso, a entrada da instalação antiga continuará sendo exibida no gerenciador de complementos, impossibilitando a instalação global da extensão.
+          </li>
+          <li>
+            Se você encontrar problemas estranhos relacionados aos favoritos, downloads, posicionamento de janelas, barras de ferramentas, histórico ou outras configurações, recomenda-se que você crie um novo perfil e tente reproduzir o problema encontrado antes de preencher um bug. Crie um novo perfil executando o Firefox com o argumento de linha de comando <tt>-P</tt> e clicando em "Novo perfil…". Copie seus arquivos de configurações (favoritos, senhas salvas, etc.) um por um, verificando a cada vez se o problema reaparece. Se você encontrar um arquivo em particular do seu perfil que estiver causando o problema, preencha um bug e anexe o arquivo.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Dúvidas comuns</h3>
+      <div class="expander-content">
+        <ol class="faq">
+          <li>
+            O que eu posso fazer para ajudar?
+            <p>Nós precisamos de ajuda de desenvolvedores e da comunidade de testes para fornecer feedback tanto quanto possível para tornar o Firefox ainda melhor. Por favor, leia estas notas e as <a href="https://developer.mozilla.org/en/Bug_writing_guidelines" hreflang="en">instruções de preenchimento de bugs</a> antes de reportar quaisquer bugs usando o <a href="https://bugzilla.mozilla.org/" hreflang="en">Bugzilla</a>. Você também pode enviar seu feedback com suas críticas ou sugestões usando este <a href="http://feedback.mozilla.org/" hreflang="en">formulário de feedback</a>.</p>
+          </li>
+          <li>
+            Onde posso obter Extensões e Temas (Complementos)?
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensões</a> e <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Temas</a> podem ser baixados do site <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Mozilla Add-ons</a>.</p>
+          </li>
+          <li>
+            Quem faz o Firefox&nbsp;3.6?
+            <p>Muita gente. Veja em Ajuda-&gt;Sobre o Mozilla Firefox &gt; Créditos uma lista de algumas das pessoas que contribuíram com o Firefox&nbsp;3.6.</p>
+          </li>
+          <li>
+            Onde eu encontro o código-fonte do Firefox&nbsp;3.6?
+            <p>Um arquivo tarball com o código-fonte do Firefox&nbsp;3.6 está disponível para <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6/source/">download</a>. Os últimos códigos em desenvolvimento podem ser obtidos via <a href="https://developer.mozilla.org/En/Mozilla_Source_Code_(Mercurial)">Mercurial</a>. O código-fonte específico do Firefox está nos diretórios "browser", "toolkit" e "chrome". Por favor, siga as <a href="https://developer.mozilla.org/En/Build_Documentation" hreflang="en">instruções de compilação</a>.</p>
+          </li>
+          <li>
+            Onde está o cliente de emails?
+            <p>O Firefox&nbsp;3.6 funciona com qualquer cliente de emails padrão do seu sistema. Entretanto, recomendamos o <a href="http://www.mozillamessaging.com/thunderbird/">Mozilla Thunderbird</a>, nosso cliente de emails da próxima geração e o complemento perfeito do Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Versões de Colaboradores</h3>
+      <div class="expander-content">
+        <p>Essas são versões não-oficiais e podem estar configuradas diferentemente das versões oficiais Mozilla. Elas também podem ter sido otimizadas e/ou testadas para plataformas específicas. Você pode navegar pelas versões de colaboradores disponíveis no <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6/contrib/">site FTP</a>.</p>
+
+<!-- put contributed builds here -->
+
+      </div>
+    </div>
+
+  <div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Outras fontes e links</h3>
+      <div class="expander-content">
+        <p>As fontes a seguir contêm informações úteis adicionais sobre o Firefox&nbsp;3.6</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Página de Suporte do Firefox</a></li>
+          <li><a href="http://kb.mozillazine.org/" hreflang="en">Base de Conhecimento do MozillaZine</a></li>
+          <li><a href="https://developer.mozilla.org/pt/Firefox_3.6_para_desenvolvedores">Informações de desenvolvimento</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html" hreflang="en">Política de Privacidade do serviço SafeBrowsing</a> (para recursos de proteção antiphishing/antiataques)</li>
+          <li><a href="http://www.google.com/privacy-lsf.html">Política de Privacidade do Google Geolocation</a></li>
+        </ul>
+      </div>
+    </div>
+  <div id="release-notes-footer"></div>
+
+</div>
+
+<div id="sidebar">
+  <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+    ?>
+    <div id="get-involved">
+        <h3>Envolva-se</h3>
+        <p>Quer fazer parte do projeto Mozilla?</p>
+        <a href="/<?=$lang?>/about/get-involved.html">Descubra como você pode ajudar</a>
+    </div>
+
+    <div id="other-resources">
+        <h4>Outras fontes e links</h4>
+        <p>As fontes a seguir contêm informações úteis adicionais sobre o Firefox&nbsp;3.6:</p>
+        <ul>
+          <li><a href="http://support.mozilla.com/">Página de Suporte do Firefox</a></li>
+          <li><a href="http://kb.mozillazine.org/" hreflang="en">Base de Conhecimento do MozillaZine</a></li>
+          <li><a href="https://developer.mozilla.org/pt/Firefox_3.6_para_desenvolvedores">Informações de desenvolvimento</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html" hreflang="en">Política de Privacidade do serviço SafeBrowsing</a> (para recursos de proteção antiphishing/antiataques)</li>
+          <li><a href="http://www.google.com/privacy-lsf.html">Política de Privacidade do Google Geolocation</a></li>
+        </ul>
+    </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

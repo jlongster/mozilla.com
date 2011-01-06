@@ -1,0 +1,769 @@
+/* General Layout */
+#mobile #doc {
+	background: url(/img/mobile/background-mobile.png) 455px 65px no-repeat;
+}
+
+#mobile #main-feature h2 {
+	margin-right: 400px;
+	font-size: 300%;
+	letter-spacing: -1px;
+}
+
+#mobile #main-feature p {
+	margin-right: 280px;
+	margin-top: 20px;
+	font-size: 220%;
+}
+
+#mobile #main-content {
+	margin-top: 65px;
+	margin-bottom: 65px;
+	margin-left: 5px;
+	margin-right: 0;
+	width: auto;
+}
+
+#mobile #main-feature.n900 h2 {
+	margin-right: 450px;
+	font-size: 400%;
+}
+
+#mobile #main-feature.n900 {
+	min-height: 205px;
+}
+
+* html #mobile #main-feature.n900 {
+	height: 205px;
+}
+
+/* {{{ Main Feature area */
+
+#mobile-feature {
+	background: url(/img/mobile/feature-background.png) top left no-repeat;
+	width: 945px;
+	padding-top: 20px;
+}
+
+#mobile-feature-footer {
+	background: url(/img/mobile/feature-background.png) bottom left no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#mobile-feature-intro {
+	float: left;
+	width: 485px;
+	padding: 30px 30px 10px 30px;
+}
+
+#mobile-feature-intro h3 {
+	font-size: 185%;
+}
+
+#mobile-feature-intro p {
+	font-size: 116%
+}
+
+/* }}} */
+/* {{{ Download Options */
+
+#download-options {
+	background: url(/img/mobile/download-background.png) top left no-repeat;
+	margin: 25px 20px 20px 48px;
+	width: 750px;
+	padding: 0 0 20px 90px;
+	float: left;
+}
+
+#download-options h4 {
+	color: #8a8780;
+	font-size: 108%;
+	margin: 0 0 5px 0;
+}
+
+#download-options #download-instructions {
+	color: #625e58;
+	font-size: 137%;
+	margin: 0;
+}
+
+#download-primary {
+	float: left;
+	padding-top: 15px;
+}
+
+#download-beta {
+  padding-top: 20px;
+  font-size: 85%;
+}
+
+#download-other {
+	float: right;
+	width: 315px;
+}
+
+#download-other h5 {
+	color: #8a8780;
+	font-size: 100%;
+}
+
+#download-other ul {
+	margin: 0;
+	font-size: 85%;
+}
+
+#download-other ul li {
+	padding-bottom: 1px;
+}
+
+/* }}} */
+/* {{{ Expander */
+
+#main-feature #download-other p {
+	margin: 10px 0;
+	color: #807970;
+	font-size: 110%;
+}
+
+/* no js */
+
+.expander .expander-content {
+	padding: 10px 0; /* should be the same as expander-padding */
+}
+
+
+/* open */
+
+.expander-open .expander-header {
+	margin: 0;
+}
+
+.expander-open .expander-content {
+	display: block;
+}
+
+
+/* closed */
+
+.expander-closed .expander-header {
+	margin: 0;
+}
+
+.expander-closed .expander-content {
+	display: none;
+}
+
+
+/* open or closed */
+
+.expander-open .expander-header .expander-anchor,
+.expander-closed .expander-header .expander-anchor {
+	outline: none;
+	zoom: 1; /* Fix for full-clickable area in IE6 */
+}
+
+.expander-open .expander-header a.expander-anchor:hover,
+.expander-closed .expander-header a.expander-anchor:hover {
+	color: #0489B7;
+}
+
+.expander-open .expander-content .expander-padding,
+.expander-closed .expander-content .expander-padding {
+	padding: 10px 0;
+}
+
+.expander-open,
+.expander-closed {
+	position: relative; /* IE6 hack */
+}
+
+/* }}} */
+/* {{{ SMS Form */
+
+#mobile-feature-form h4 {
+	font-size: 116%
+}
+
+#mobile-feature-form h5 {
+	font-size: 85%;
+	color: #807970;
+}
+
+#mobile-feature-form p.other {
+	font-size: 75%;
+	font-family: verdana, sans-serif;
+}
+
+#mobile-feature-form .info {
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+}
+
+#mobile-feature-form input,
+#mobile-feature-form select {
+	width: 240px;
+}
+
+#mobile-feature-form .number-field {
+	margin-bottom: 5px;
+}
+
+#mobile-feature-form .button-field span.info {
+	position: relative;
+	top: -8px;
+}
+
+
+#mobile-feature-form button {
+	background: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 265px;
+	position: relative;
+	left: -8px;
+	cursor: pointer;
+}
+
+#mobile-feature-form button span.outer {
+	display: block;
+	width: 265px;
+	padding: 0;
+	height: auto;
+	text-align: left;
+	font-family: verdana, sans-serif;
+	color: #09700b;
+	text-decoration: none;
+	background: url(/img/mobile/send-button.png) 0 0 no-repeat;
+	min-height: 22px;
+	filter: none;
+	border: 0;
+	overflow: visible; /* removes extra side padding in IE */
+}
+
+* html #mobile-feature-form button span { height: 22px; /* min-height hack for IE6 */ }
+
+#mobile-feature-form button span {
+	display: block;
+	background: url(/img/mobile/send-button.png) 0 100% no-repeat;
+	padding: 13px 42px 25px 15px;
+}
+
+#mobile-feature-form button:hover span.outer,
+#mobile-feature-form button:active span.outer {
+	background-position: -300px 0;
+	text-decoration: underline;
+}
+
+#mobile-feature-form button:hover span span,
+#mobile-feature-form button:active span span {
+	background-position: -300px 100%;
+}
+
+#other-download-options {
+	clear: both;
+	background: url(/img/mobile/divider.png) top left no-repeat;
+	margin: 0 30px;
+	padding: 20px 0 10px 0;
+}
+
+/* }}} */
+/* {{{ Mobile Page Footer */
+
+#mobile-footer {
+	clear: left;
+	background: url(/img/mobile/sub-feature-background.png) 5px 0 no-repeat;
+	margin: 40px 0 20px 0;
+	padding: 5px 20px 0 20px;
+	height: 190px;
+	font-size: 110%;
+}
+
+.sub-feature {
+	width: 244px;
+	margin: 0 28px;
+	float: left;
+	display: inline; /* fix IE margin issue */
+}
+
+.sub-feature h4 a {
+	display: block;
+	position: relative;
+}
+
+.sub-feature h4 a:link,
+.sub-feature h4 a:visited {
+	color: #4B4740;
+}
+
+.sub-feature h4 { margin-bottom: 5px; }
+
+.sub-feature p {
+	font-size: 108%;
+	margin-bottom: 15px;
+	margin-right: 15px;
+	color: #afaba3;
+	min-height: 6em;
+}
+
+.sub-feature p.link { min-height: 0; }
+
+#support {
+	clear: left;
+	padding-top: 25px;
+	margin-left: 25px;
+	font-size: 110%;
+}
+
+#footer { margin-top: 40px; }
+
+#video-tour p {
+	margin-right: 100px;
+}
+
+/* }}} */
+/* {{{ SMS Thank You Page */
+
+#mobile-sms-thanks #doc {
+	background: none;
+}
+
+#mobile-sms-thanks #main-feature h2 {
+	font-size: 300%;
+	margin-right: 300px;
+}
+
+#mobile-sms-thanks .small-print {
+	font-size: 85%;
+	color: #898378;
+}
+
+#mobile-sms-thanks #main-content {
+	margin-top: 25px;
+	width: 685px;
+}
+
+#mobile-sms-thanks #thanks-intro,
+#mobile-sms-thanks #weave-info {
+	padding-right: 100px;
+}
+
+#mobile-sms-thanks #weave-info {
+	background: url(/img/mobile/weave-background.png) top right no-repeat;
+	padding-top: 35px;
+}
+
+/* }}} */
+/* {{{ Mobile System Requirements */
+
+#mobile-requirements #main-feature h2 {
+	font-size: 275%;
+	margin-right: 425px;
+}
+
+#mobile-requirements #main-feature p {
+	margin-right: 475px;
+}
+
+#mobile-requirements #main-content {
+	margin-top: 15px;
+	margin-left: 30px;
+	padding-left: 5px;
+	background: url(/img/mobile/requirements-divider.png) top left no-repeat;
+	width: 600px;
+}
+
+#mobile-requirements #main-content ul {
+	left: 5px;
+	font-size: 93%;
+	margin-top: 5px;
+}
+
+#mobile-requirements #main-content h3  {
+	margin-bottom: 3px;
+}
+
+#mobile-requirements #main-content a.download {
+	background: url(/img/tignish/firstrun/link-arrow.png) left 5px no-repeat;
+	display: block;
+	padding-left: 12px;
+	margin-left: 3px;
+}
+
+#list_maemo, 
+#list_android {
+  margin-left: 25px;
+}
+
+#list_other,
+#other_projects {
+	clear: left;
+}
+
+/* }}} */
+/* {{{ Synchronize Page */
+
+#mobile-weave #doc {
+	background: url(/img/mobile/feature-synchronize.png) 465px 85px no-repeat;
+}
+
+#mobile-weave #main-feature h2 {
+	margin-right: 400px;
+	font-size: 450%;
+}
+
+#mobile-weave #main-feature p {
+	margin-right: 465px;
+	margin-top: 20px;
+	font-size: 165%;
+}
+
+#mobile-weave #main-content {
+	margin: 20px;
+	padding: 0;
+	width: 626px;
+	background: url(/img/mobile/synchronize-feature-background.png) top left repeat-y;
+}
+
+#mobile-weave #main-content #main-content-footer {
+	background: url(/img/mobile/synchronize-feature-background.png) bottom left no-repeat;
+	height: 35px;
+}
+
+#mobile-weave #main-content .container {
+	padding: 35px 40px;
+}
+
+#mobile-weave #main-content h3 {
+	font-size: 225%;
+	margin-top: 0;
+	padding: 0 0 20px 5px;
+	position: relative;
+	left: -5px;
+	background: url(/img/mobile/synchronize-divider.png) bottom left no-repeat;
+}
+
+#mobile-weave #main-content h4 {
+	margin-bottom: 5px;
+}
+
+#mobile-weave #main-content p {
+	margin-right: 25px;
+}
+
+/* }}} */
+/* {{{ "Getting Started" sidebars */
+
+#mobile-weave #sidebar,
+#firefox-home #sidebar {
+	width: 260px;
+	margin-top: 25px;
+	margin-right: 15px;
+	background: url(/img/mobile/synchronize-sidebar-background.png) top right no-repeat;
+}
+
+#mobile-weave #sidebar h3,
+#firefox-home #sidebar h3 {
+	margin-bottom: 10px;
+}
+
+#mobile-weave #sidebar ol,
+#firefox-home #sidebar ol {
+	margin-top: 0;
+	margin-left: 1em;
+}
+
+#mobile-weave #sidebar ol p,
+#firefox-home #sidebar ol p {
+	margin-bottom: 0;
+}
+
+#mobile-weave #sidebar ul,
+#firefox-home #sidebar ul {
+	margin: 5px 0;
+	left: 0;
+}
+
+#mobile-weave #sidebar h4,
+#firefox-home #sidebar h4 {
+	font-size: 116%;
+}
+
+/* }}} */
+/* {{{ 'Firefox Home' Page */
+#firefox-home #doc {
+	background: url(/img/mobile/feature-home.png) 510px 75px no-repeat;
+}
+
+#firefox-home #side-menu li.getinvolved {
+    padding-top: 2em;
+}
+#firefox-home #side-menu li.getinvolved h3 {
+    color: #807970;
+}
+#firefox-home #main-feature {
+    background: none;
+    padding-top: 20px;
+}
+
+#firefox-home #main-feature h2 {
+	margin-right: 500px;
+	font-size: 450%;
+}
+
+#firefox-home #main-feature p {
+    margin-bottom: 15px;
+	margin-right: 465px;
+	margin-top: 15px;
+	font-size: 165%;
+}
+
+#firefox-home #main-feature p.dl {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+#firefox-home #main-feature .download-link {
+    line-height: 1.2em;
+    width: 225px;
+}
+#firefox-home #main-feature .download-link strong,
+#firefox-home #main-feature .download-link em {
+    font-weight: normal;
+    font-style: normal;
+}
+#firefox-home #main-feature .download-link strong {
+    display: block;
+    margin-bottom: -.4em;
+}
+#firefox-home #main-feature .download-link em {
+    color: #42A313;
+    font-size: 70%;
+    margin-left: .2em;
+}
+#firefox-home #main-feature span.download-link {
+    background: url("/img/tignish/home/download-button.png") no-repeat top left;
+    color: #535353;
+    display: block;
+    height: 63px;
+    padding: 15px 15px 15px 60px;
+}
+#firefox-home #main-feature span.download-link em {
+    color: #848484;
+}
+
+#firefox-home #main-features li p {
+    font-size: 95%;
+    margin-top: .5em;
+}
+
+#firefox-home #main-content {
+	margin: 20px;
+	padding: 0;
+	width: 626px;
+	background: url(/img/mobile/synchronize-feature-background.png) top left repeat-y;
+}
+
+#firefox-home #main-content #main-content-footer {
+	background: url(/img/mobile/synchronize-feature-background.png) bottom left no-repeat;
+	height: 35px;
+}
+
+#firefox-home #main-content .container {
+	padding: 35px 40px;
+}
+
+#firefox-home #main-content h3 {
+	font-size: 225%;
+	margin-top: 0;
+	padding: 0 0 20px 5px;
+	position: relative;
+	left: -5px;
+	background: url(/img/mobile/synchronize-divider.png) bottom left no-repeat;
+}
+
+#firefox-home #highlights h4,
+#firefox-home #main-content h4 {
+	margin-bottom: 5px;
+}
+
+#firefox-home #main-content p {
+	margin-right: 25px;
+}
+
+#firefox-home #sidebar h3 {
+    margin-top: 1em;
+}
+
+#firefox-home #sidebar li {
+    margin-bottom: 1em;
+}
+
+#firefox-home #sidebar p {
+    margin-top: .5em;
+}
+
+#firefox-home #sync-why-link {
+    font-size: 90%;
+}
+#firefox-home #sync-why-link a {
+    display: block;
+}
+
+#firefox-home #sync-why {
+    position: absolute;
+    left: -10000px;
+    -moz-box-shadow: 2px 2px 10px;
+    -webkit-box-shadow: 2px 2px 10px;
+    box-shadow: 2px 2px 10px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid;
+    padding: .5em;
+}
+
+/* }}} */
+/* {{{ Mobile Customize Page */
+
+#mobile-customize #doc {
+	background: url(/img/mobile/background-customize.png) 0 85px no-repeat;
+}
+
+body#mobile-customize,
+#mobile-customize #wrapper {
+	background-position: 50% -90px;
+}
+
+#mobile-customize #main-feature {
+	margin-left: 180px;
+}
+
+#mobile-customize #main-feature p {
+	margin-right: 285px;
+}
+
+#mobile-customize #main-content {
+	margin-top: 15px;
+	margin-left: 200px;
+	padding-left: 15px;
+	padding-top: 25px;
+	width: 600px;
+}
+
+#mobile-customize #personal-screenshot {
+	float: right;
+	margin: 0 0 2em 1em;
+}
+
+#mobile-customize #dev-promo {
+	background: url(/img/mobile/dev-promo.png) top left no-repeat;
+	position: relative;
+	left: -25px;
+	margin-top: 45px;
+	padding-left: 25px;
+	padding-top: 25px;
+}
+
+#mobile-customize #dev-promo h3 {
+	margin: 0 0 10px 0;
+	color: #807970;
+}
+
+#mobile-customize #dev-promo p {
+	font-size: 108%;
+	color: #898378;
+}
+/* }}} */
+/* {{{ Mobile Develoers Page */
+
+#mobile-developers #doc {
+	background: url(/img/mobile/background-developers.png) 15px 85px no-repeat;
+}
+
+body#mobile-developers,
+#mobile-developers #wrapper {
+	background-position: 50% -65px;
+}
+
+#mobile-developers #main-feature {
+	min-height: 175px;
+}
+
+* html #mobile-developers #main-feature {
+	height: 175px;
+}
+
+#mobile-developers #main-content {
+	margin-top: 0;
+	margin-left: 15px;
+	padding-left: 20px;
+	padding-bottom: 25px;
+	padding-right: 25px;
+  margin-right: 40px;
+	background: url(/img/mobile/developers-footer.png) bottom left no-repeat;
+}
+
+#mobile-developers #main-content h4 {
+	background: url(/img/mobile/divider.png) top left no-repeat;
+	padding: 30px 10px 10px 10px;
+	position: relative;
+	left: -10px;
+	margin: 35px 0 0 0;
+}
+
+#mobile-developers #main-content p {
+	margin-right: 10px;
+}
+
+#mobile-developers #main-content h4.first {
+	background: none;
+}
+
+#mobile-developers #main-content ul {
+	left: 0;
+}
+#mobile-developers #sidebar {
+  padding-top: 40px;
+}
+
+#sidebar a.rss-link  {
+  background:url("/img/tignish/press/rss-icon.png") no-repeat scroll 0 50% transparent;
+  padding-left: 20px;
+}
+#sidebar div.striped {
+    background: url("/img/tignish/firefox/release-notes-sidebar-back.png") no-repeat scroll left top transparent;
+    padding-top: 10px;
+}
+#sidebar div.striped h3 {
+    margin-top: 5px;
+}
+    
+dl.feed,
+dl.feed dt,
+dl.feed dd {
+    margin: 0;
+}
+dl.feed {
+    margin: 15px 0;
+}
+dl.feed dt {
+    font-size: 110%;
+}
+dl.feed dd {
+    font-size: 90%;
+    margin-bottom: 10px;
+}
+#sidebar dl.feed dt a {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 90%;
+    background: none;
+}
+#sidebar dl.feed dd a {
+    font-size: 100%;
+}
+#sms-form .fail { color: red; }
+#sms-form #phone { margin: 5px 0; }
+
+/* }}} */

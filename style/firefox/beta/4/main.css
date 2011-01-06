@@ -1,0 +1,1391 @@
+/* {{{ Firefox Beta Landing Page */
+
+body {
+	background: #78b7d7 url(/img/firefox/beta/4/background.png) top center repeat-x;
+}
+
+body #wrapper {
+	background-image: none;
+}
+
+#main-feature {
+	padding-top: 35px;
+}
+
+#firefox-beta #main-feature {
+	min-height: 200px;
+	padding-bottom: 15px;
+	background: url(/img/firefox/beta/4/screenshot.png) 300px 60px no-repeat;
+}
+
+#firefox-beta.platform-mac #main-feature {
+	background: url(/img/firefox/beta/4/screenshot-mac.png) 300px 60px no-repeat;
+}
+#firefox-beta.platform-linux #main-feature {
+	background: url(/img/firefox/beta/4/screenshot-linux.png) 300px 60px no-repeat;
+}
+
+* html #firefox-beta #main-feature { height: 200px; /* Hack for IE6 */ }
+
+#main-feature h2 {
+	margin-left: 0;
+}
+
+#main-feature h2 img {
+	display: block;
+}
+
+#firefox-beta #main-feature #feature-contents {
+	width: 290px;
+}
+
+#main-feature #feature-contents {
+	margin-left: 35px;
+	width: 600px;
+	line-height: 1.3;
+}
+
+#main-feature h3 {
+	color: #fff;
+	margin: 15px 0 0 0;
+	font-size: 250%;
+}
+
+#main-feature p,
+#main-feature ul {
+	margin: 0;
+	font-size: 145%;
+}
+
+#main-feature ul {
+	left: auto;
+}
+
+#main-feature ul li {
+	background: none;
+	padding: 0;
+}
+
+#beta-sub-features {
+	background: url(/img/firefox/beta/4/sub-feature-background.png) 0 0 no-repeat;
+	margin: 20px 49px;
+}
+
+#beta-sub-feature-footer {
+	height: 25px;
+	clear: both;
+	background: url(/img/firefox/beta/4/sub-feature-background.png) 100% 100% no-repeat;
+}
+
+/* spread the word classes */
+#firefox-beta #beta-sub-features .sub-feature .social-outer {
+    width: 237px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    background: url(/img/mobile/beta/social-bg.png) 0px 0px no-repeat;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner {
+    margin-top: 4px;
+    padding: 0px 0px 5px 8px;
+    font-size: 88%;
+    background: url(/img/mobile/beta/social-bg-bottom.png) 0px bottom no-repeat;
+}
+#firefox-beta #beta-sub-features .sub-feature .tweet-link {
+    min-height: 32px;
+}
+#firefox-beta #beta-sub-features .sub-feature .tweet-form {
+    min-height: 50px;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner .tweet-this {
+    background: url("/img/mobile/beta/twitter-icon.png") no-repeat scroll 0 bottom transparent;
+    color: #0489B7;
+    display: block;
+    /*float: right;*/
+    font-family: georgia,serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 2px 0 0 115px;
+    padding: 2px 0 0 19px;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner .tweet-this:after {
+    content: " \00bb ";
+    font-weight: bold;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner a.tweet-this {
+    margin-right: 5px;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner button.tweet-this {
+    border: none;
+    margin: -4px 2px 0 115px;
+    padding: 2px 0 0 16px;
+    height: 17px;
+    cursor: pointer;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner button.tweet-this:hover {
+    text-decoration: underline;
+}
+#firefox-beta #beta-sub-features .sub-feature .social-inner textarea {
+    height: 2.5em;
+    width: 96%;
+    display: block;
+    margin-bottom: 5px;
+}
+#firefox-beta #beta-sub-features .sub-feature .facebook-block button.update-status {
+    background: url("/img/mobile/beta/facebook-icon.gif") no-repeat scroll 4px bottom transparent;
+    font-family: georgia,serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0489B7;
+    display: block;
+    border: none;
+    margin: -4px 2px 4px 0;
+    padding: 2px 0 4px 19px;
+    height: 17px;
+    cursor: pointer;
+}
+#firefox-beta #beta-sub-features .sub-feature .facebook-block button:after {
+    content: " \00bb ";
+    font-weight: bold;
+}
+#firefox-beta #beta-sub-features .sub-feature .facebook-block button:hover {
+    text-decoration: underline;
+}
+/* end spread the word classes */
+
+.sub-feature {
+	width: 250px;
+	margin: 18px 26px 0 22px;
+	float: left;
+	display: inline; /* fix IE margin issue */
+	position: relative;
+}
+
+#beta-share,
+#firefox-beta #beta-sub-features #beta-spread-the-word,
+#up-to-date {
+	margin-right: 0;
+}
+
+.sub-feature h3 {
+	margin: 0 0 10px 0;
+	font-size: 131%;
+}
+
+#beta-sub-features .sub-feature h3 {
+	margin: 0 0 10px 35px;
+	font-size: 131%;
+}
+
+#firefox-beta .sub-feature p {
+	margin-bottom: 0;
+	clear: both;
+}
+
+.sub-feature p {
+	margin-right: 15px;
+	line-height: 1.4;
+}
+
+.sub-feature img {
+	display: block;
+	margin: 5px auto;
+}
+
+.sub-feature a.bottom {
+	position: absolute;
+	bottom: 30px;
+}
+
+#side-menu {
+	right: 45px;
+}
+
+#side-menu h3 {
+	letter-spacing: -1px;
+	font-size: 17px;
+}
+
+#side-menu h3 span {
+	font-family: inherit;
+	text-transform: none;
+	letter-spacing: inherit;
+	font-weight: normal;
+	font-size: inherit;
+	display: inline;
+}
+
+#side-menu sup {
+	text-transform: lowercase;
+	font-size: 73%;
+}
+
+#firefox-beta .footnote {
+	background: url(/img/firefox/beta/4/disclaimer-panel.png) 0 0 no-repeat;
+	color: #4b4742;
+	margin: 10px 49px;
+	font-size: 110%
+}
+
+#firefox-beta .footnote-footer {
+	display: block;
+	background: url(/img/firefox/beta/4/disclaimer-panel.png) 100% 100% no-repeat;
+	padding: 15px 20px 20px 20px;
+}
+
+#firefox-beta #privacy h4 {
+    margin: 0 0 10px 0;
+}
+
+#firefox-beta .footnote p {
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+}
+
+ul#bubbles {
+	left: auto;
+	margin: 10px 20px;
+	padding: 0;
+}
+
+ul#bubbles li {
+	background: url(/img/firefox/beta/4/bubbles.png) 0 -80px repeat-x;
+	padding: 0;
+	margin: 20px 0 0 0;
+	display: inline-block;
+}
+
+ul#bubbles li.second {
+	margin: 0;
+	float: right;
+}
+
+ul#bubbles li p {
+	margin: 0;
+	padding: 0;
+	background: url(/img/firefox/beta/4/bubbles.png) 0 0 no-repeat;
+}
+
+ul#bubbles li.second p {
+	background-position: 0 -320px;
+}
+
+ul#bubbles li p span {
+	display: block;
+	padding: 10px 20px 0 20px;
+	height: 55px;
+	min-width: 80px;
+	max-width: 180px;
+	overflow: hidden;
+	white-space: nowrap;
+	font-family: verdana, sans-serif;
+	font-size: 16px;
+	color: #4b4740;
+	line-height: 24px;
+	background: url(/img/firefox/beta/4/bubbles.png) 100% -160px no-repeat;
+	text-align: center;
+}
+
+ul#bubbles li.second p span {
+	background-position: 100% -240px;
+	padding-bottom: 10px;
+}
+
+/* }}} */
+/* {{{ Download Button */
+
+ul.download-firefox,
+#sidebar ul.download-firefox {
+	margin: 8px 10px 0 0;
+	left: auto;
+	width: 234px;
+}
+
+ul.download-firefox li {
+	background: none;
+	padding: 0;
+}
+
+ul.download-firefox li a.download-link,
+ul.download-firefox li a.download-link:hover {
+	background: url(/img/firefox/beta/4/download-button.png) top left no-repeat;
+	padding: 50px 10px 10px 69px;
+	height: 30px;
+	font-size: 131%;
+	margin-left: -4px;
+	margin-top: 5px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	filter: none;
+	color: #09700B;
+	margin-bottom: 0;
+}
+
+* html #firefox ul.home-download li {
+	background: none;
+}
+
+.download-other,
+ul.download-firefox em {
+	font-style: normal;
+	display: block;
+	left: auto;
+	margin-left: 0;
+    font-family: verdana, sans-serif;
+    font-size: 85%;
+	text-align: left;
+	width: auto;
+}
+
+ul.download-firefox abbr {
+	border: 0;
+}
+
+ul.download-firefox em {
+	margin: 0;
+	position: relative;
+}
+
+.download-other {
+	margin-bottom: 15px;
+	font-size: 85%;
+}
+
+
+.download-noscript { margin-left: 35px; width: 400px; }
+.download-noscript h3 { font-size: 120%; margin-bottom: 0; }
+.download-noscript h3 span { display: block; font-size: 75%; color: #898378; }
+.download-noscript ul { margin-top: 0.5em; }
+
+/* }}} */
+/* {{{ Feedback Page */
+
+#firefox-beta-feedback #main-feature p {
+	font-size: 131%;
+}
+
+#firefox-beta-feedback #main-feature #feature-contents {
+    width: 585px;
+}
+
+#firefox-beta-feedback #main-content {
+	background: #f9f9f9 url(/img/firefox/beta/4/feedback-panels.png) 0 0 no-repeat;
+	margin: 40px 34px 20px 34px;
+	width: 584px;
+    float: left;
+}
+
+#firefox-beta-feedback #main-content h2 {
+	color: #276787;
+	font-size: 165%;
+    margin: 0 0 10px 0;
+}
+
+#firefox-beta-feedback #main-content h3 {
+	font-size: 119%;
+}
+
+#firefox-beta-feedback #main-content-footer {
+	height: 25px;
+	clear: both;
+	background: url(/img/firefox/beta/4/feedback-panels.png) -884px 100% no-repeat;
+}
+
+#firefox-beta-feedback #main-content .sub-feature {
+	width: auto;
+	float: none;
+	display: block;
+}
+
+#firefox-beta-feedback #main-content #beta-developers {
+    padding-bottom: 25px;
+    margin: 20px 30px 30px 30px;
+    border-bottom: 1px solid #d6d9db;
+}
+
+#firefox-beta-feedback #main-content #beta-developers .last {
+    margin-bottom: 0;
+}
+
+#firefox-beta-feedback .divider {
+    padding-top: 30px;
+    border-top: 1px solid #d6d9db;
+    margin-top: 20px;
+    zoom: 1;
+}
+
+#firefox-beta-feedback #beta-feedback {
+    margin: 0;
+    padding: 30px;
+}
+
+#firefox-beta-feedback #beta-feedback img {
+    float: right;
+    margin: 0 15px 15px 15px;
+}
+
+#firefox-beta-feedback #beta-developers h3 {
+    margin: 15px 0 0 0;
+}
+
+#firefox-beta-feedback #beta-developers p {
+    margin: 0;
+}
+
+#firefox-beta-feedback #beta-developers img {
+    float: right;
+    margin: -15px 15px 15px 15px;
+}
+
+#firefox-beta-feedback .stripes h3,
+#firefox-beta-feedback .stripes h4 {
+    color: #276787;
+}
+
+#firefox-beta-feedback #survey {
+	border-bottom: 1px solid #bbd2dd;
+    margin-bottom: 20px;
+}
+
+#firefox-beta-feedback #survey .intro {
+    color: #276787;
+    margin: 0;
+}
+
+#firefox-beta-feedback .sg-header,
+#firefox-beta-feedback .sg-footer {
+    min-height: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#firefox-beta-feedback .sg-body {
+    padding: 0 !important;
+}
+
+#firefox-beta-feedback .sg-poll-bar {
+    display: none;
+}
+
+#firefox-beta-feedback .sg-poll-result {
+    padding-bottom: 2px;
+	margin-bottom: 5px;
+}
+
+#firefox-beta-feedback .sg-button {
+    background: none;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 5px 0 !important;
+    color: #0489B7;
+}
+
+#firefox-beta-feedback .sg-button:hover {
+    text-decoration: underline;
+}
+
+#firefox-beta-feedback .sg-content {
+    padding: 0;
+}
+
+#firefox-beta-feedback .sg-question-title {
+    color: #276787;
+    font-weight: normal;
+    font-size: 119%;
+    padding: 0;
+}
+
+#firefox-beta-feedback .sg-instructions {
+    margin: 0;
+}
+
+#firefox-beta-feedback .sg-question,
+#firefox-beta-feedback .sg-question-set {
+    margin: 0;
+    color: #4b4742;
+    border: 0;
+	line-height: 1.3;
+}
+
+#firefox-beta-feedback .sg-question-options {
+    padding: 5px 0;
+}
+
+#firefox-beta-feedback .sg-type-radio ul.sg-list-vertical li {
+    overflow: visible;
+    padding-bottom: 5px;
+}
+
+#firefox-beta-feedback .sg-type-radio ul.sg-list input.sg-input-radio {
+    top: 0.2em;
+}
+
+#firefox-beta-feedback #sidebar {
+	background: url(/img/firefox/beta/4/feedback-panels.png) -600px 0 no-repeat;
+	margin: 40px 0 34px 0px;
+	width: 285px;
+    font-size: 100%;
+	float: left;
+}
+
+#firefox-beta-feedback #sidebar .sub-feature {
+    float: none;
+    display: block;
+    width: auto;
+}
+
+#firefox-beta-feedback #sidebar .sub-feature h3 {
+    margin: 0;
+}
+
+#firefox-beta-feedback #sidebar .sub-feature p {
+    margin-right: 0;
+}
+
+#firefox-beta-feedback #sub-content-footer {
+	height: 25px;
+	clear: both;
+	background: url(/img/firefox/beta/4/feedback-panels.png) 100% 100% no-repeat;
+}
+
+#firefox-beta-feedback #main-content #up-to-date,
+#firefox-beta-feedback #main-content #support {
+    float: left;
+    width: 215px;
+    padding: 0 20px 20px 20px;
+    margin-top: 0;
+}
+
+#firefox-beta-feedback #main-content #support {
+    margin-right: 0;
+}
+
+#firefox-beta-feedback #main-content #support img {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+#firefox-beta-feedback #up-to-date ul {
+	margin: 0;
+	padding: 0;
+	left: auto;
+}
+
+#firefox-beta-feedback #up-to-date ul li {
+	margin: 8px 0;
+	background-position: 0 0;
+	background-image: url(/img/firefox/beta/4/link-icons.png);
+	padding: 0 0 0 35px;
+	line-height: 28px;
+	font-size: 110%;
+}
+
+#firefox-beta-feedback #up-to-date ul li#link-facebook { background-position: -250px 0; }
+#firefox-beta-feedback #up-to-date ul li#link-blog     { background-position: -500px 0; }
+
+#firefox-beta-feedback #up-to-date h4,
+#firefox-beta-feedback #support h4 {
+    margin-bottom: 10px;
+    color: #276787;
+}
+
+#beta-updates form input#email {
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+	color: #999;
+	width: 220px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #aaa #cdcdcd #cdcdcd #aaa;
+	padding: 3px;
+	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+	-moz-border-radius: 3px;
+}
+
+#beta-updates form input#email:focus {
+	color: #555;
+}
+
+#beta-updates form input#subscribe {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 10px 0 0;
+  font-weight: normal;
+  font-size: 110%;
+  color: #0489B7;
+  cursor: pointer;
+}
+
+#beta-updates #privacy-field,
+#beta-updates #extra-news-field {
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+	display: block;
+	padding: 4px 0 0;
+  clear: both;
+}
+
+#beta-updates #privacy-field label .title,
+#beta-updates #extra-news-field label .title {
+  margin-left: 25px;
+  padding-top: 4px;
+  display: block;
+}
+
+#beta-updates form input#email.form-error {
+	border-width: 2px;
+	padding: 2px;
+	border-color: #cc4927;
+}
+
+#beta-updates form label span.input {
+	border: 2px solid transparent;
+	-moz-border-radius: 4px;
+  display: block;
+  float: left;
+  padding: 2px;
+  margin: 2px;
+}
+
+* html #beta-updates form label#privacy-check-label span,
+* html #beta-updates form label#extra-news-check-label span {
+	border-color: #d0e6f1;
+}
+
+#beta-updates p.form-error,
+#email-error,
+#privacy-error {
+	display: none;
+	border: 2px solid #cc4927;
+	color: #cc4927;
+	background: #fff;
+	padding: 6px;
+	-moz-border-radius: 4px;
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+}
+
+#beta-updates p.form-error-visible {
+	display: block;
+}
+
+#beta-updates form label#privacy-check-label.form-error span {
+	border-color: #cc4927;
+}
+
+#beta-updates .footnote {
+  display: block;
+}
+
+#beta-updates ul {
+	left: 0;
+  margin: 5px 0 20px 0;
+  padding-bottom: 1px;
+}
+
+#beta-updates ul li {
+	background: 0;
+	padding: 0;
+}
+
+/* }}} */
+/* {{{ Technology Page */
+
+#firefox-beta-tech #main-feature #feature-contents {
+	width: 450px;
+}
+
+#firefox-beta-tech #main-feature p,
+#firefox-beta-tech #main-feature h3 {
+	margin-left: 10px
+}
+
+#firefox-beta-tech #main-feature p {
+	margin-bottom: 15px;
+}
+
+#tech-grid {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 10px auto;
+}
+
+#tech-grid-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#tech-grid-header h3 {
+	padding: 25px 25px 0 25px;
+	margin: 0;
+}
+
+#tech-grid-header p {
+	padding: 5px 25px 15px 25px;
+	font-size: 110%;
+	margin: 0;
+}
+
+#tech-grid-nav {
+	left: 0;
+	position: relative;
+	margin-right: 25px;
+	padding: 5px 0 10px;
+	width: 135px;
+	float: left;
+	list-style-type: none;
+	background: url(/img/firefox/beta/4/tech-table-menu.png) right top no-repeat;
+	-moz-transition: background-position 300ms;
+	-webkit-transition: background-position 300ms;
+	-o-transition: background-position 300ms;
+}
+
+#tech-grid-nav li {
+	background: none;
+	font-size: 110%;
+	padding: 0;
+}
+
+
+#tech-grid-nav li a,
+#tech-grid-nav li a:link,
+#tech-grid-nav li a:visited {
+	display: block;
+	padding: 10px 20px;
+	color: #afaba3;
+	outline: none;
+	position: relative;
+}
+
+#tech-grid-nav li a:focus {
+	text-decoration: underline;
+}
+
+#tech-grid-nav li a.selected,
+#tech-grid-nav li a.selected:link,
+#tech-grid-nav li a.selected:visited {
+	color: #4b4742;
+}
+
+#tech-grid-nav li a.selected:focus {
+	text-decoration: none;
+}
+
+#tech-grid .pager-content {
+	float: left;
+	width: 680px;
+	margin-top: 5px;
+}
+
+#tech-grid table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#tech-grid table th,
+#tech-grid table td {
+	padding: 8px 15px;
+	text-align: center;
+	color: #4b4742;
+	font-weight: normal;
+}
+
+#tech-grid table tbody th {
+	padding: 0;
+}
+
+#tech-grid table thead th {
+	font-size: 123.1%;
+}
+
+#tech-grid table thead th sup {
+	text-transform: lowercase;
+	font-size: 73%;
+}
+
+#tech-grid table tbody td,
+#tech-grid table thead th {
+	border-left: 2px solid #e5e4e0;
+	white-space: nowrap;
+}
+
+#tech-grid table tbody th {
+	width: 100%;
+	text-align: left;
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+}
+
+#tech-grid table tbody td.yes {
+	background: url(/img/firefox/beta/4/check.png) 50% 50% no-repeat;
+	text-indent: -200px;
+	overflow: hidden;
+}
+
+#tech-grid table thead tr th,
+#tech-grid table tbody tr td,
+#tech-grid table tbody tr th {
+	background-color: #f9f9f9;
+}
+
+#tech-grid table tbody tr.odd td,
+#tech-grid table tbody tr.odd th {
+	background-color: #f1f1ef;
+}
+
+#tech-grid table tbody tr th span {
+	color: #666;
+}
+
+#tech-grid table tbody tr th a,
+#tech-grid table tbody tr th span {
+	display: block;
+	padding: 8px 15px;
+	-moz-transition-property: background;
+	-moz-transition-duration: 1s;
+}
+
+#tech-grid table tbody tr.odd th a:hover {
+	background: #e4e4e2;
+	-moz-transition-property: background;
+	-moz-transition-duration: 0.5s;
+}
+
+#tech-grid table tbody tr th a:hover {
+	background: #eaeaea;
+	-moz-transition-property: background;
+	-moz-transition-duration: 0.5s;
+}
+
+#tech-grid ul.footnotes li {
+	background: none;
+	font-family: verdana, sans-serif;
+	font-size: 85%;
+}
+
+/* }}} */
+/* {{{ Features Page */
+
+#firefox-beta-features #main-feature #feature-contents {
+	width: 750px;
+}
+
+#firefox-beta-features #main-feature p,
+#firefox-beta-features #main-feature h3 {
+	margin-left: 10px
+}
+
+#firefox-beta-features #main-feature p {
+	margin-bottom: 15px;
+	font-size: 131%;
+}
+
+#features-pager {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 10px auto;
+	position: relative;
+}
+
+#features-pager .pager-content {
+	background: #f9f9f9;
+}
+
+#features-pager-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 15px;
+	clear: both;
+}
+
+#features-pager-header {
+	padding: 25px 25px 5px 25px;
+}
+
+#features-pager-header h3 {
+	font-size: 245%;
+	margin: 0 0 5px 0;
+}
+
+#features-pager-header p {
+	font-size: 123.1%;
+	width: 600px;
+	margin-bottom: 0;
+	color: #69645c;
+}
+
+#features-pager-nav {
+	left: 0;
+	margin: 10px 0;
+}
+
+#features-pager-nav li {
+	background: none;
+	margin: 0 25px 0 0;
+	padding: 0;
+	font-size: 110%;
+	display: inline;
+}
+
+.platform-mac   #features-pager-nav li.windows-only,
+.platform-linux #features-pager-nav li.windows-only {
+	display: none;
+}
+
+
+#features-pager-nav li a,
+#features-pager-nav li a:link,
+#features-pager-nav li a:visited {
+	color: #0489B7;
+	outline: none;
+	position: relative;
+}
+
+#features-pager-nav li a:focus {
+	text-decoration: underline;
+}
+
+#features-pager-nav li a.selected {
+	color: #4b4742;
+}
+
+#features-pager-nav li a.selected:focus {
+	text-decoration: none;
+}
+
+#features-pager .pager-content {
+	padding: 5px 25px 1px 25px;
+}
+
+#firefox-mobile-beta-features #features-pager .pager-content {
+	min-height: 190px;
+}
+
+#features-pager .pager-content h3 {
+	margin: 0;
+}
+
+#features-pager .pager-content p {
+	font-size: 116%;
+	width: 650px;
+	margin: 5px 0;
+}
+
+#firefox-mobile-beta-features #features-pager .pager-content p {
+	width: 600px;
+}
+
+#features-pager #video-launch {
+	position: absolute;
+	top: 35px;
+	right: 35px;
+	text-align: center;
+	z-index: 999;
+}
+
+#features-pager .pager-content img {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.platform-mac #features-pager #video-launch {
+	display: none;
+}
+
+#features-pager #video-launch img {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#features-pager #video-launch a:hover,
+#features-pager #video-launch a:active {
+	text-decoration: none;
+}
+
+#features-pager #video-launch span {
+	padding-right: 35px;
+	background: url(/img/firefox/beta/4/video-arrow.png) 100% 50% no-repeat;
+	display: inline-block;
+	line-height: 28px;
+	font-size: 116%;
+}
+
+#feature-spotlight {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 5px auto 10px auto;
+}
+
+#feature-spotlight-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#feature-spotlight h2 {
+	margin: 0;
+	padding: 35px 40px 0 40px;
+	font-size: 185%;
+}
+
+#feature-spotlight .feature-spotlight {
+	float: left;
+	width: 235px;
+
+	margin: 20px 0 20px 40px;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#firefox-mobile-beta-features  #feature-spotlight .feature-spotlight {
+	padding-top: 175px;
+}
+
+#spotlight-start { 
+	background: url(/img/firefox/beta/4/spotlight-start-page.png) left top no-repeat;
+}
+
+#spotlight-touch { 
+	background: url(/img/firefox/beta/4/spotlight-touch-friendly.png) left top no-repeat;
+}
+
+#spotlight-share { 
+	background: url(/img/firefox/beta/4/spotlight-mobile-share.png) left top no-repeat;
+}
+
+#spotlight-pdf {
+	background: url(/img/firefox/beta/4/spotlight-save-pdf.png) left top no-repeat;
+}
+
+#feature-spotlight .feature-spotlight h3 {
+	margin: 0 0 10px 0;
+	font-size: 131%
+}
+
+#feature-spotlight .feature-spotlight h3 a,
+#feature-spotlight .feature-spotlight h3 span.title {
+    display: block;
+    padding-top: 175px;
+    color: #4B4740;
+    text-decoration: none;
+}
+
+#feature-spotlight .feature-spotlight h3 a span.new,
+#feature-spotlight .feature-spotlight h3 a:hover span.new {
+    display: inline;
+    padding: 2px 4px 3px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#feature-spotlight .feature-spotlight h3 a:hover span {
+    text-decoration: underline;
+}
+
+#feature-spotlight #spotlight-addons {
+	background-image: url(/img/firefox/beta/4/features/spotlight-addons.png);
+}
+
+.platform-mac #feature-spotlight #spotlight-addons {
+	background-image: url(/img/firefox/beta/4/features/spotlight-addons-mac.png);
+}
+
+.platform-linux #feature-spotlight #spotlight-addons {
+	background-image: url(/img/firefox/beta/4/features/spotlight-addons-linux.png);
+}
+
+#feature-spotlight #spotlight-video {
+	background-image: url(/img/firefox/beta/4/features/spotlight-video.png);
+}
+
+#feature-spotlight #spotlight-privacy {
+	background-image: url(/img/firefox/beta/4/features/spotlight-privacy.png);
+}
+
+#feature-spotlight #spotlight-sync {
+	background-image: url(/img/firefox/beta/4/features/spotlight-sync.png);
+}
+
+.platform-mac #feature-spotlight #spotlight-sync {
+	background-image: url(/img/firefox/beta/4/features/spotlight-sync-mac.png);
+}
+
+#feature-spotlight #spotlight-tabcandy {
+	background-image: url(/img/firefox/beta/4/features/spotlight-tabcandy.png);
+}
+
+#perf-spotlight {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 5px auto 10px auto;
+}
+
+#perf-spotlight-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#perf-spotlight h2 {
+	margin: 0;
+	padding: 35px 40px 0 40px;
+	font-size: 185%;
+}
+
+#perf-graph {
+  margin: 50px 0 20px 40px;
+}
+#perf-spotlight p {
+	margin: 20px 150px 20px 40px;
+}
+
+#under-the-hood {
+	background: #dbeaf2 url(/img/firefox/beta/4/features/under-the-hood-background.png) 0 0 repeat;
+	width: 880px;
+	margin: 10px auto;
+}
+
+#under-the-hood h2 {
+	padding: 15px 40px 25px 40px;
+	margin: 0;
+	clear: both;
+}
+
+#under-the-hood h2 span {
+	display: block;
+	border-top: 1px solid #c4dae6;
+	padding-top: 30px;
+}
+
+#under-the-hood h2.first {
+	padding-top: 35px;
+	background: url(/img/firefox/beta/4/features/under-the-hood-borders.png) 0 0 no-repeat;
+}
+
+#under-the-hood-footer {
+	background: url(/img/firefox/beta/4/features/under-the-hood-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#under-the-hood .hood {
+	float: left;
+	display: inline;
+	width: 365px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+#under-the-hood #crash.hood {
+	width: 90%;
+}
+
+#under-the-hood .odd {
+	clear: left;
+}
+
+#under-the-hood .hood h3 {
+	margin: 0 0 10px 0;
+	font-size: 123.1%;
+}
+
+h3 span.new,
+h3 span.new,
+h3 span.updated,
+h3 span.updated {
+	display: inline;
+	text-transform: none;
+	font-family: inherit;
+	position: relative;
+	top: -2px;
+	left: -4px;
+	color: #fff;
+	font-size: 80%;
+	font-weight: bold;
+	font-style: italic;
+	padding: 2px 4px 3px 4px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+h3 span.new,
+h3 span.new { background-color: #cb44a9; }
+h3 span.updated,
+h3 span.updated { background-color: #65b253; }
+
+/* }}} */
+/* {{{ Privacy Policy Page */
+
+#firefox-beta-feedback-privacy #main-content {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 20px 49px;
+	position: relative;
+}
+
+#firefox-beta-feedback-privacy #main-content-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#firefox-beta-feedback-privacy #privacy-content {
+    padding: 30px 20px;
+}
+
+#firefox-beta-feedback-privacy #main-content h3 {
+    margin-bottom: 5px;
+}
+
+#firefox-beta-feedback-privacy #main-content h3 img {
+    vertical-align: middle;
+}
+
+#firefox-beta-feedback-privacy #main-content address {
+    margin: 1em;
+}
+
+/* }}} */
+/* {{{ Release Notes */
+
+#firefox-relnotes #main-feature p {
+    color: #4B4742;
+    margin-bottom: 10px;
+}
+
+#firefox-relnotes #main-feature em {
+    color: #4B4742;
+}
+
+#firefox-relnotes #main-content {
+    float: left;
+    display: inline;
+    width: 500px;
+    background: none;
+    padding: 0;
+    margin: 10px 0 0 35px;
+}
+
+#release-notes {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 20px auto;
+	padding: 25px 0 0 0;
+}
+
+#release-notes #release-notes-footer {
+	position: static;
+	top: 0;
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#firefox-relnotes div.expander-closed,
+#firefox-relnotes div.expander-open {
+    margin-right: 0;
+}
+
+#firefox-relnotes #sidebar {
+    margin-right: 25px;
+}
+
+#sidebar ul.home-download li a.download-link, * html #sidebar ul.home-download li a.download-link, 
+#sidebar ul.home-download li a.download-link span.download-link-text {
+	background-image: url("/img/firefox/beta/4/download-button-release.png");
+}
+
+/* }}} */
+/* {{{ All Beta Page */
+
+#all-beta {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 25px auto;
+}
+
+#all-beta-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#firefox-all #main-feature {
+	margin-left: 35px;
+}
+
+#download-button .download-other,
+#no-beta {
+	color: #4B4742;
+}
+
+#all-beta #languages {
+	padding: 0 25px;
+}
+
+#all-beta h3 {
+	padding: 25px 0 0;
+}
+
+#firefox-all #languages, #firefox-all #beta_versions, #firefox-all #lang_packs {
+	background: none;
+}
+
+
+/* }}} */
+/* {{{ FAQ Page */
+
+#firefox-beta-faq #main-content,
+#firefox-mobile-beta-faq #main-content {
+	background: #f9f9f9 url(/img/firefox/beta/4/tech-table-borders.png) 0 0 no-repeat;
+	width: 880px;
+	margin: 30px 49px;
+	position: relative;
+}
+
+#firefox-beta-faq #main-content-footer,
+#firefox-mobile-beta-faq #main-content-footer {
+	background: url(/img/firefox/beta/4/tech-table-borders.png) 100% 100% no-repeat;
+	height: 30px;
+	clear: both;
+}
+
+#firefox-beta-faq dl {
+    padding: 30px 20px;
+	margin: 2em;
+}
+
+#firefox-beta-faq dt,
+#firefox-mobile-beta-faq dt {
+	font-size: 119%;
+	margin: 0 0 0.2em;
+	color: #4b4740;
+}
+
+#firefox-beta-faq dd,
+#firefox-mobile-beta-faq dd {
+	margin: 0 0 1em;
+}
+
+#firefox-mobile-beta-faq dl {
+	padding: 0 20px;
+}
+
+#firefox-mobile-beta-faq .faq-header {
+	margin-left: 2em;
+	margin-top: 2em;
+}
+#format-field {
+  padding-top: 10px;
+}
+#format-field input,
+#format-field label {
+  padding: 5px;
+}
+/* }}} */

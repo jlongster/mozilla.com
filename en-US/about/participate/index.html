@@ -1,0 +1,65 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Participate | Mozilla';
+    $body_id    = 'participate';
+    $breadcrumbs = array(
+        'About'       => "/{$lang}/about/",
+        'Participate' => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/about.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Love Firefox? <span>Spread the Word!</span></h2>
+	<p>Fans around the world make Firefox and Mozilla a success! Get in on the action by taking a minute to help. Here’s how:</p>
+</div>
+
+<div id="sidebar">
+	<div id="share">
+		<h3>Share it!</h3>
+		<p class="twitter">
+		  <em>#Firefox rocks. Get it. Love it. Thank me.</em> 
+		  <a href="http://twitter.com/home/?status=%23Firefox%20rocks.%20Get%20it.%20Love%20it.%20Thank%20me.%20http://mzl.la/tryfirefox">Tweet this</a><a href="http://twitter.com/">Write your own</a>
+		</p>
+		<p class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmzl.la%2Ftryfirefox&amp;t=Get+Firefox!">Sign in &amp; write your own message</a></p>
+	</div>
+
+	<div id="newsletter">
+    <h3>Get the Monthly News</h3>
+    <p>Don't miss our newsletter featuring new products, Firefox tips &amp; tricks, events and more!</p>
+    <p><a href="/<?= $lang ?>/newsletter/">Sign me up &raquo;</a></p>
+	</div>
+</div>
+
+<div id="main-content">
+  <h3>Take action!</h3>
+
+  <div class="action one">
+    <div><h4><a href="/<?=$lang?>/firefox/beta/">Join the <span>Firefox 4 Beta Program</span></a></h4></div>
+    <p>Get a look at tomorrow’s web &ndash; try Firefox 4. Provide feedback to help make it even better.</p>
+    <p class="start"><a href="/<?=$lang?>/firefox/beta/">Get Started</a></p>
+  </div>
+
+  <div class="action two">
+    <div><h4><a href="http://www.spreadfirefox.com/affiliates">Tell <span>All Your Friends</span></a></h4></div>
+    <p>Share Firefox without leaving your computer, get credit and a chance at cool prizes.</p>
+    <p class="start"><a href="http://www.spreadfirefox.com/affiliates">Get Started</a></p>
+  </div>
+
+  <div class="action three">
+    <div><h4><a href="http://support.mozilla.com/army-of-awesome">Help Out <span>a Fellow Firefox User</span></a></h4></div>
+    <p>Help other Firefox users on Twitter &amp; point them in the right direction. Good things come to those who tweet!</p>
+    <p class="start"><a href="http://support.mozilla.com/army-of-awesome">Get Started</a></p>
+  </div>
+
+  <p class="more">Have more time &amp; skill to lend? <a href="http://www.mozilla.org/contribute/">See all the ways you can get involved</a></p>
+</div><!-- end #main-content div -->
+
+<div id="divider"></div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

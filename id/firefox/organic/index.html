@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: Perangkat Lunak Organik 100%';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Jalan Baik, Menuju Web</h2>
+    <p>Dengan kata lain, apa saja yang dapat diperbuat program peramban dari komunitas open source untuk Anda.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produk</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Keamanan</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Kesukaan</a></li>
+    <li><span>Perangkat Lunak Organik 100%</span></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Tips &amp; Trik</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Catatan Rilis</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Bahasa &amp; Sistem Operasi Lainnya</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>Apakah Perangkat Lunak Organik Itu?</h3>
+    <p><strong>Sebagai sebuah perusahaan perangkat lunak, kami sedikit berbeda.</strong> Kami menggunakan istilah ‘perangkat lunak organik’ untuk membedakan cara kami bekerja dengan yang lain:</p>
+    <p>Produk kami yang paling terkenal, Firefox, diciptakan oleh sebuah gerakan internasional yang terdiri dari ribuan orang, hanya sedikit di antara mereka yang menjadi karyawan dalam arti yang sebenarnya.</p>
+    <p>Kami dimotivasi oleh misi kami yakni mempromosikan keterbukaan, inovasi, dan kesempatan yang ada pada web lebih dari hanya sekedar memikirkan masalah bisnis seperti keuntungan atau harga saham (dan kami juga tidak mengeluarkan saham apapun).</p>
+    <p>Serta sebagai sebuah <a href="http://www.mozilla.org/foundation/">organisasi nirlaba dan kepentingan publik</a>, kami mengartikan sukses pada sisi pembangunan komunitas dan pemberdayaan kehidupan masyarakat. Kami percaya pada kekuatan dan potensi Internet dan ingin melihatnya berkembang untuk semua orang, di manapun mereka berada.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Putri Firefox" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>Apakah Open Source Itu?</h3>
+        <p>Sekilas dilihat kedengarannya tidak lazim, tapi percayalah: <strong>kami percaya bahwa semakin banyak orang yang tahu "rahasia" kami, semakin baik artinya.</strong></p>
+        <p>Oleh karena itu, kami membuka kode sumber program kami, setiap pilar yang membuatnya bekerja, kepada semua orang di seluruh dunia. Kami juga mendorong semua orang untuk ikut melihatnya.</p>
+        <p>Beberapa orang melihat hal-hal yang dapat diperbaiki dan membuat perbaikan. Beberapa yang lain mempunyai gagasan fitur baru dan membuatnya tersedia. Yang lainnya juga telah ikut mengambil kode sumber program kami dan membuat inovasi baru menjadi sebuah produk yang benar-benar baru dan hebat.</p>
+        <p>Pelajaran yang bisa diambil adalah dengan keterbukaan, kebaikan akan terjadi. Semua orang dapat mengintip rahasia dapur kami. Pada kenyataannya, kami sama sekali tidak memiliki rahasia.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>Mengapa Anda Juga Harus Memberi Perhatian?</h3>
+        <p>Kami mungkin bukan perusahaan biasa, tapi <strong>kami masih sadar bagaimana cara memfokuskan diri pada hal mendasar: membuat web menjadi lebih baik untuk Anda</strong>.</p>
+        <p>Menjadi terbuka berarti gagasan besar dapat datang dari seluruh penjuru dunia daripada hanya bergantung kepada sekelompok karyawan dari kantor kami. Jika Anda memandang situasi dari sisi ini, mengapa harus menggunakan cara lainnya?</p>
+        <p>Semua hal tentang perangkat lunak organik dan open source berujung pada program peramban yang lebih baik untuk Anda dan untuk lebih dari 150 juta pengguna Firefox lainnya. Ini juga berarti inovasi, kebebasan, dan untuk mendukung Internet yang dapat diakses oleh semua orang.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Apakah Mozilla itu?</h3>
+            <h5>Kami adalah komunitas global, organisasi untuk kepentingan publik, dan juga proyek perangkat lunak open source.</h5>
+            <p><a href="/<?=$lang?>/about/">Dapatkan informasi lebih lanjut tentang kami</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

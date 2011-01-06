@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Hunaniaeth Gwefan Un Clic";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Hunaniaeth Gwefan Un Clic</h2>
+    <p>Mae Firefox 3 yn cynnwys botwm hunaniaeth gwefan newydd i'ch helpu i wybod at bwy rydych wedi cysylltu pan rydych ar-lein.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Mae'r nodwedd yn caniatáu i chi weld p'un ai yw'r wefan wedi darparu gwybodaeth amdanynt eu hunain, pwy sydd wedi dilysu'r wybodaeth, ac a ydynt yn diogelu eich gwybodaeth chi rhag cael ei gipio. Mae modd cael mynediad at hunaniaeth y wefan drwy glicio ar ymyl chwith y bar lleoliad (neu drwy deipio Shift-Tab-Enter).</p>
+
+<h3>Cwestiynau</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Beth yw ystyr y gwahanol lefelau o wybodaeth hunaniaeth</h4>
+    <div class="expander-content">
+        <p>Bydd eicon y swyddog pasbort yn newid i adlewyrchu lefel y wybodaeth hunaniaeth a ddarparwyd gan y Wefan.</p>
+        <p class="site-id site-id-1">Nid yw'r wefan yn darparu unrhyw wybodaeth am ei hunaniaeth.</p>
+        <p class="site-id site-id-2">Mae'r wefan wedi darparu gwybodaeth hunaniaeth elfennol, ac mae'n diogelu eich gwybodaeth rhag cael ei gipio.</p>
+        <p class="site-id site-id-3">Mae'r wefan yn darparu gwybodaeth hunaniaeth wedi ei ddilysu'n llawn am ei berchennog, ac mae'n diogelu eich gwybodaeth bersonol rhag ei gipio.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Pam nag yw pob Gwefan yn darparu gwybodaeth hunaniaeth?</h4>
+    <div class="expander-content">
+        <p>Nid yw'r rhan fwyaf o wefannau ar y rhyngrwyd yn gofyn am unrhyw wybodaeth bersonol neu ariannol gan ymwelwyr, ac nad oes angen ymgymryd â'r gost o ddarparu gwybodaeth hunaniaeth gwiriedig na diogelwch rhag cipio gwybodaeth bersonol.</p>
+        <p>Dylai pob gwefan sydd am i chi ddarparu gwybodaeth bersonol neu gyllidol, neu sy'n honni i gynrychioli endidau llywodraeth neu fusnes, ddarparu gwybodaeth amdanynt eu hunain a diogelu eich gwybodaeth bersonol rhag cael ei gipio. </p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">A yw hi'n ddiogel gwneud busnes gyda gwefannau sydd ddim yn darparu gwybodaeth amdanynt eu hunain?</h4>
+    <div class="expander-content">
+        <p>Mae penderfynu pwy i ymddiried ynddynt ar-lein yn cychwyn gyda gwybod pwy rydych yn delio gyda nhw, ond nid dyna'r stori i gyd. Ni ddylech ystyried gwefannau sydd ddim yn darparu gwybodaeth amdanynt eu hunain nac yn diogelu eich gwybodaeth bersonol, fel rhai diogel. Ond gall gwefannau sydd yn darparu gwybodaeth amdanynt eu hunain fod ag arferion anaddas a diogelwch gwe llac.</p>
+        <p>Fel yn y byd go iawn, rhaid ymarfer gofal wrth ymwneud â gwefannau nad ydych yn eu hadnabod nac ymddiried ynddynt. Mae gwybod fod gwefan wedi eich hysbysu amdano'i hun yn rhan o'r broses o godi ymddiriedaeth.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">A yw Mozilla yn dilysu'r wybodaeth ar bob gwefan?</h4>
+    <div class="expander-content">
+        <p>Nid yw'r wybodaeth sy'n cael ei ddarparu i'ch hysbysu am wefan yn cael ei dilysu gan Mozilla. Yn lle hynny mae Firefox, fel porwyr eraill yn dibynnu ar gwmnïau penodol sy'n cael eu disgrifio fel Awdurdodau Tystysgrifo sy'n dilysu gwefan ac yn cyhoeddi tystysgrif o hunaniaeth am y wefan. Rhaid i'r cwmniau hyn gadw at <a href="http://www.mozilla.org/projects/security/certs/policy/">Bolisi Tystysgrifo Mozilla</a>, sydd, ymlhith pethau eraill, yn gofyn i'r Awdurdod ddarparu awdit trydydd parti sy'n cadarnhau nad ydynt yn ryddhau tystysgrifau ar gam.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

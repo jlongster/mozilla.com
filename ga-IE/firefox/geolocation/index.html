@@ -1,0 +1,118 @@
+<?php
+
+$page_title = "Suí Domhanda i bhFirefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Brabhsáil Logánaithe</h2>
+    <p>Is féidir le Firefox insint do shuímh Ghréasáin cá bhfuil tú lonnaithe sa chaoi gur féidir leat faisnéis atá níos tairbhí agus níos áisiúla a aimsiú. Déanann sé seo an Gréasán níos cliste &ndash; agus i slí a chosnaíonn do phríobháideacht go hiomlán.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Bain triail as!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Ceisteanna Coitianta</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cad é atá ann go díreach?</h4>
+    <div class="expander-content">
+        <p>Nuair a bhaineann suíomh Gréasáin úsáid as an ngné seo, fiafróidh sé díot cá bhfuil tú, i dtreo go mbeidh sé in ann faisnéis níos tairbhí a thabhairt duit agus do chuardach a bhrostú. Mar shampla, má tá tú ag lorg bialainne phizza i do cheantar, níl ort ach “pizza” a chur isteach sa suíomh chun an fhaisnéis atá uait a fháil... níl aon eolas ná clóscríobh breise de dhíth.</p>
+        <p>Nó, má tá tú ag dul áit éigin agus níl eolas an bhealaigh agat, beidh a fhios ag an suíomh Gréasáin an áit a bhfuil tú ag tosú uaithi agus níl ort ach do cheann scríbe a chur isteach.</p>
+        <p>Seirbhís roghnach í seo &ndash; ní scaipfidh Firefox do láthair gan chead &ndash; agus tá meas mór againn ar do phríobháideacht.  Agus, go díreach cosúil le gach uile pháirt de Firefox, baineann sé úsáid as caighdeáin oscailte, rud a dhéanann sé níos fusa d'fhorbróirí Gréasáin an teicneolaíocht seo a úsáid.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Conas a oibríonn sé?</h4>
+    <div class="expander-content">
+        <p>Nuair a thugann tú cuairt ar shuíomh Gréasáin a úsáideann an ghné seo, fiafróidh Firefox díot más mian leat do láthair a nochtadh.</p>
+        <p>Má aontaíonn tú leis seo, baileoidh Firefox faisnéis faoi phointí rochtana gan sreang i ngar duit agus seoladh IP do ríomhaire.  Ansin, seolfaidh Firefox an fhaisnéis seo chuig soláthraí seirbhísí suite domhanda, Google Location Services de réir réamhshocraithe, a dhéanfaidh meastachán ar do láthair.  Beidh an meastachán seo roinnte leis an suíomh Gréasán a d'iarr é.</p>
+        <p>Mura n-aontaíonn tú leis, ní dhéanfaidh Firefox faic.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cé chomh beacht is atá na torthaí?</h4>
+    <div class="expander-content">
+        <p>Is mór an difríocht sa bheachtas ó cheantar go ceantar.  In áiteanna áirithe, is féidir lenár soláthraithe seirbhíse do láthair a dhéanamh amach faoi chúpla méadar.  Ach, in áiteanna eile beidh sé i bhfad níos mó ná sin.  Ní dhéanann ár soláthraithe seirbhísí ach meastachán ar do láthair, agus ní théimid i mbannaí ar bheachtas na dtorthaí. Ná húsáid an fhaisnéis seo i gcás éigeandála. Bíodh ciall agat i gcónaí!</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cad iad na sonraí a sheolfar?  Cé a gheobhas í? Conas a chosnaítear mo phríobháideacht?</h4>
+    <div class="expander-content">
+        <p>Is í do phríobháideacht an chloch is mó ar ár bpaidrín, agus ní scaipeann Firefox do láthair gan chead riamh. Nuair a thugann tú cuairt ar shuíomh Gréasáin a iarrann ort d'fhaisnéis a roinnt, fiafrófar díot sula roinnfear aon fhaisnéis lenár soláthraí seirbhísí nó leis an suíomh Gréasáin a d'iarr é.</p>
+        <p>De réir réamhshocraithe, is é Google Location Services an soláthraí seirbhísí a úsáideann Firefox chun do láthair a fháil, tríd an fhaisnéis seo a leanas a sheoladh:</p>
+        <ul>
+            <li>seoladh IP do ríomhaire,</li>
+            <li>faisnéis faoi phointí rochtana gan sreang i ngar duit, agus</li>
+            <li>aitheantóir randamach cliaint, sannta ag Google, a théann as feidhm gach coicís.</li>
+        </ul>
+        <p>Chun cur síos iomlán ar an bhfaisnéis a bhailíonn Firefox a fháil, féach ar <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Pholasaí Príobháideachta Mozilla Firefox</a> (i mBéarla).</p>
+        <p>Ansin, déanann Google Location Services meastachán ar do shuíomh domhanda (.i. domhanleithead agus domhanfhad). Chun cur síos iomlán ar an bhfaisnéis a bhailíonn Google a fháil, féach ar <a href="http://www.google.com/privacy-lsf.html" class="external">Pholasaí Príobháideachta Google Geolocation</a> (i mBéarla).</p>
+        <p>Malartaíonn an fhaisnéis go léir trí cheangal criptithe chun do phríobháideacht a chosaint. Nuair a bheidh an fhaisnéis faoi do láthair ag Firefox, seolfaidh sé í chuig an suíomh Gréasáin a d'iarr í. Ní roinntear ainm nó láthair an tsuímh Ghréasáin a bhfuil tú ag déanamh cuairt air, nó aon fhianáin, le Google Location Services riamh.</p>
+        <p>Ní úsáidfidh Mozilla ná Google an fhaisnéis a bhailíonn Google Location Services chun thú a shainaithint, nó spiaireacht a dhéanamh ort.</p>
+        <p>Chun tuilleadh eolais a fháil faoi conas a úsáideann an suíomh Gréasáin faisnéis faoi do láthair, féach ar pholasaí phríobháideacht an tsuímh sin.</p>
+        <p>Chun tuilleadh eolais a fháil faoi do phríobháideacht, ba chóir duit na leathanaigh seo a léamh freisin:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Polasaí Príobháideachta Mozilla Firefox</a> (i mBéarla)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Polasaí Príobháideachta Google</a> (i mBéarla)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">An bhfuil tú ag coinneáil súil orm agus mé ag brabhsáil?</h4>
+    <div class="expander-content">
+        <p>Níl. Ní iarrann Firefox do láthair go dtí go n-iarrann suíomh Gréasáin é, agus ní nochtann sé do láthair gan chead. Ní mheabhraíonn Firefox do láthair le linn duit a bheith ag brabhsáil.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Cad is féidir a dhéanamh dá n-athróinn m'intinn faoi shuíomh ar thug mé cead dó?</h4>
+    <div class="expander-content">
+        <p>Má thug tú cead do Firefox do láthair a roinnt le suíomh Gréasáin ach d'athraigh tú d'intinn, is féidir an cead a chur ar ceal gan stró:</p>
+        <ul>
+            <li>Téigh go dtí an suíomh ar thug tú cead dó</li>
+            <li>Téigh go dtí an roghchlár <em>Uirlisí</em>, agus roghnaigh <em>Sonraí an Leathanaigh</em></li>
+            <li>Roghnaigh an cluaisín <em>Ceadanna</em></li>
+            <li>Athraigh an luach faoi <em>Ceadaigh</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Conas is féidir liom “an t-aitheantóir randamach cliaint” a ghlanadh?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Téigh go dtí an roghchlár <em>Uirlisí</em>, agus roghnaigh <em>Glan an Stair Is Déanaí</em></li>
+            <li>Cliceáil ar an tsaighead <em>Mionsonraí</em></li>
+            <li>Bí cinnte go bhfuil <em>Fianáin</em> roghnaithe</li>
+            <li>Cliceáil ar <em>Glan Anois</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Conas is féidir liom Brabhsáil Logánaithe a dhíghníomhachtú go brách?</h4>
+    <div class="expander-content">
+        <p>Tá Brabhsáil Logánaithe roghnach i gcónaí i bhFirefox. Ní scaoilfear aon fhaisnéis faoi do láthair gan chead. Más mian leat an ghné seo a dhíchumasú go hiomlán, ba chóir duit na treoracha seo a leanas a leanúint:</p>
+        <ul>
+            <li>Clóscríobh <code>about:config</code> sa bharra URL</li>
+            <li>Clóscríobh <code>geo.enabled</code></li>
+            <li>Déchliceáil ar an rogha <em>geo.enabled</em></li>
+            <li>Tá Brabhsáil Logánaithe díchumasaithe anois</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Cá bhfuil mé?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Úps! Tharla earráid agus do shuíomh á aimsiú.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Vítá vás Firefox';
+    $extra_feature_text = 'Pro přechod na vaši domovskou stránku klepněte na zavírací tlačítko na tomto panelu.';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Vítá vás Firefox 3" /></h2>
+    <p>Děkujeme, že jste si stáhli nejbezpečnější, nejrychlejší a nejvíce upravitelnou verzi Firefoxu. Pro začátek prohlížení klepněte na zavírací tlačítko výše na tomto panelu.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Dozvědět se více</h3>
+        <p>Chcete vědět, jak pokračovat? Naše startovací stránka obsahuje seznam doporučených stránek a další informace o Firefoxu. <a href="/<?=$lang?>/firefox/central/">Navštívit startovací stránku</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Otázky?</h3>
+        <p>Naše stránky podpory obsahují řadu odpovědí a živý chat, kde se můžete dozvědět ještě více. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Navštívit stránky podpory</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

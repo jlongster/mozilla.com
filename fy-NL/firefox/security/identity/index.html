@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Oer Ien-Klik Webstee ID";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Oer Ien-Klik Webstee ID</h2>
+    <p>Firefox 3 hat in nije webstee-identiteitsknop dy't jo helpt út te finen mei wa't jo ferbining meitsje as jo online binne.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Mei dizze eigenskip kinne jo yn ien eachopslach sjen oft it webstee dat jo besykje ynformaasje jout oer har identiteit, wa't dy ynformaasje ferifiearre hat en oft se jo ynformaasje beskermje foar meiharkers. Jo kinne tagong krije ta de identiteit fan elk webstee troch te klikken op it webstee-ikoantsje links fan de lokaasjebalke (of troch Shift-Tab-Enter te typen).</p>
+
+<h3>Faak Stelde Fragen</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Wat betsjutte de ferskate nivo's fan identiteitsynformaasje?</h4>
+    <div class="expander-content">
+        <p>It “paspoart offisier”-ikoantsje sil wizigje, om it nivo fan identiteitsynformaaasje oanjûn troch it webstee wer te jaan.</p>
+        <p class="site-id site-id-1">De side jout gjin identiteitsynformaasje.</p>
+        <p class="site-id site-id-2">De side jout basis-identiteitsynformaasje, en beskermt jo persoanlike ynformaasje tsjin meiharkers.</p>
+        <p class="site-id site-id-3">De side jout folslein ferifearre identiteitsynformaasje oer syn eigner en beskermet jo persoanlike ynformaasje foar meiharkers.</p>
+        <p class="site-id site-id-4">Dizze side is registrearre as in oanfalwebstee of as in ferfalsking. Persoanlike ynformaasje jaan op dizze side, of sels it besykjen derfan, kin skealik wêze.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Werom jouwe net alle websteeën ferifiearre identiteitsynformaasje?</h4>
+    <div class="expander-content">
+        <p>De measte websteeën op it ynternet freegje net om persoanlike of finansjele ynformaasje fan besikers en fine it net needsaaklik om kosten te meitsjen foar it jaan fan ferifiearre identiteitsynformaasje en beskerming foar meiharkers.</p>
+        <p>Websteeën dy't jo wol freegje om persoanlike of finansjele ynformaasje, of dy't sizze dat se fan de oerheid of in bedriuw binne, soenen harsels hieltyd kreas identifisearje moatte en jo ynformaasje beskerme foar meiharkers.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Is it feilich om saken te dwaan mei siden dy't harsels net identifisearje?</h4>
+    <div class="expander-content">
+        <p>It neigean fan wa't jo online fertrouwe begjint dermei dat jo witte mei wa't jo prate, mar dat is net it hiele ferhaal. Siden dy't gjin identiteitsynformaasje jouwe en jo persoanlike ynformaasje net beskermje bringe jo yn gefaar en moatte beskôge wurde as ûnfeilich. Mar sels websteeën dy't harsels goed identifisearje, kinne der noch hieltyd praktiken op nei hâlde dêr't jo it net mei iens binne, of gjin feilich webstee hawwe.</p>
+        <p>Krekt as yn de echte wrâld, moatte jo omsichtich wêze mei siden dy’t jo kenne en fertrouwe. Witte dat de side himsels goed identifisearre hat is ûnderdiel fan it meitsjen fan sokke fertrouwensbesluten.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ferifiearret Mozilla dy ynformaasje foar elke webstee?</h4>
+    <div class="expander-content">
+        <p>De ynformaasje dy't brûkt wurdt om websteeën te identifisearjen is net ferifearre troch Mozilla. Yn stee dêrfan fertrout Firefox, lykas oare browsers, op in list fan fertroude bedriuwen dy't “Sertifikaat Autoriteiten” neamd wurde, dy't de identiteit fan websteeën ferifiearje en “identiteitsertifikaten” útjouwe. Dy bedriuwen moatte foldwaan oan it <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA Sertifikaat Belied</a> dat, neist oare saken, SA's nedich hat om tredden audits te jaan sadat se gjin ferkearde sertifikaten útjouwe.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

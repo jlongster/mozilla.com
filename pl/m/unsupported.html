@@ -1,0 +1,26 @@
+<?php
+    // please translate the variable below
+    $page_title = "Mozilla | Twoja platforma nie jest obsługiwana";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/m-unsupported.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+  <h1>O-o!</h1>
+  <p>Houston, mamy problem. Poniżej kilka możliwych przyczyn niedostępności Firefoksa dla Twojego urządzenia przenośnego.</p>
+</div>
+
+<div id="content">
+  <ul>
+    <li>Twoje urządzenie nie jest obsługiwane przez Maemo. W przypadku innych platform i urządzeń - sprawdź ponownie wkrótce.</li>
+    <li>Twoje urządzenie może nie mieć wystarczającej pamięci (przynajmniej 128 MB) potrzebnej do uruchomienia Firefoksa.</li>
+    <li>Nie przetestowaliśmy, ani nie zoptymalizowaliśmy jeszcze Firefoksa dla Twojego urządzenia!</li>
+  </ul>
+</div>
+
+<p><a href="/m/" class="button">Powrót</a></p>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

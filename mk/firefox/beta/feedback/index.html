@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 бета - кажете што мислите?";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Како дознавте за програмата за Firefox 4 бета?";
+$str2       = "Останете во тек";
+$str3       = "Претплатете се со е-пошта на важни вести, настани и информации за Firefox 4 бета.";
+$str4       = "Вашата адреса за е-пошта";
+$str5       = "Се согласувам со <a href=\"%s\">Политиката за приватност</a> <span class='footnote'>(ќе испраќаме само информации поврзани со Mozilla).</span>";
+$str6       = "Исто така праќајте ми вести за Mozilla, совети и трикови за Firefox и други информации за Mozilla.";
+$str7       = "Претплати се »";
+$str8       = "Благодариме што се претплативте!";
+$str9       = "Наскоро очекувајте совети и трикови за подобрување на Firefox, како и возбудливи вести за Mozilla и што работиме за да креираме подобар Интернет.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Потребна е помош</h3>
+        <p>Го правиме новиот Firefox да биде побрз, помал и полн со можности за лесно сурфрање. Но, не можеме да направиме сѐ без да ни помогнете.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>бета</sup></span></h3></li>
+    <li class="feedback"><span>Мислење</span></li>
+    <li class="more"><h3>Повеќе информации на англиски</h3></li>
+    <li class="features"><a href="../features/">Можности</a> </li>
+    <li class="tech"><a href="../technology/">Технологија</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Политика за приватност</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>Кажете ни што мислите</h2>
+        <h3>Испратете веднаш</h3>
+        <p>Кликнете на копчето за мислење за да ни испратите што мислите за бетата.Полесно здравје!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Програмери: потребни ни сте</h2>
+        <h3>Споделете ги вашите идеи</h3>
+        <p>Што мислите за <a href="../features/#under-the-hood">новите можности за програмери</a> во бетата?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Посетете го форумот.</a></p>
+
+        <h3>Пријавете технички грешки</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>Ако сте експерт за Bugzilla, пријавете бубачка за специфични проблеми на кои сте наишле додека сурфате.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">File a Firefox 4 Beta Bug</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Раширете ја веста</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Следее нѐ на Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Посетете нѐ на Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Читајте го блогот на Mozilla</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Ви треба помош?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Нашите страници за поддршка</a> имаат одговори и совети специфични за бетата на Firefox 4.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

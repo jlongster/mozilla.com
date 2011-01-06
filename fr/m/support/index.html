@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Assistance Firefox pour mobile";
+    $search_field  = "Rechercher dans l'aide de Firefox";
+    $search_button = "Rechercher";
+    $link_to_sumo  = "Ou <a href=\"%s\">rechercher dans tout le site</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Assistance Firefox <em>pour Mobile</em></h1>
+
+    <h2>Questions courantes</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Comment synchroniser Firefox entre mon ordinateur et mon téléphone&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Comment mettre à jour Firefox&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Comment utiliser les résultats de recherche&nbsp;?</a></li>
+    </ul>
+
+    <h2>Sujets d'aide pour Mobile</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Comment changer mes préférences&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Quels sont les raccourcis clavier&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Comment gérer les téléchargements&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Comment ouvrir un nouvel onglet&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Comment trouver et installer des modules complémentaires&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Comment supprimer ou désactiver des modules complémentaires&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Comment naviguer sur le Web avec Firefox&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Comment ajouter un marque-page&nbsp;?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Comment zoomer sur un site Web&nbsp;?</a></li>
+    </ul>
+
+    <h2>Besoin de plus d'aide&nbsp;?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

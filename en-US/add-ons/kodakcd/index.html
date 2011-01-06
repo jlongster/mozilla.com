@@ -1,0 +1,93 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox with Kodak EasyShare Gallery Companion';
+    $body_id    = 'fotofox';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/add-ons/kodak.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+	<div class="feature-contents">
+	<span>Upload pictures to your Kodak EasyShare Gallery right from your browser. It’s as easy as 1…2…3</span>
+	</div>
+</div>
+</div>
+
+<hr class="hide" />
+
+<div id="content">
+  
+	<div id="fotofox-download">
+		<script><!--
+			var platform = 'win';
+			var product = 'kodakbundle';
+			var downloadpage = '../kodak/bundle/download.html';
+			var lang = 'en-US';
+			var downloadtext = 'Includes Mozilla Firefox 2 for Windows, English (6.2&nbsp;MB)';
+
+			if (navigator.platform.indexOf("Win32") != -1) {
+			  platform = 'win';
+			  downloadtext = 'Includes Mozilla Firefox 2 for Windows, English (6.2&nbsp;MB)';
+			} else if (navigator.platform.indexOf("Linux") != -1) {
+			  platform = 'linux';
+			  downloadtext = 'Includes Mozilla Firefox 2 for Linux, English (9.9&nbsp;MB)';
+			} else if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+			  platform = 'mac';
+			  downloadtext = 'Includes Mozilla Firefox 2 for Mac OS X, English (19&nbsp;MB)';
+			} else if (navigator.userAgent.indexOf("MSIE 5.2") != -1) {
+			  platform = 'mac';
+			  downloadtext = 'Includes Mozilla Firefox 2 for Mac OS X, English (19&nbsp;MB)';
+			} else if (navigator.platform.indexOf("Mac") != -1) {
+			  platform = 'mac';
+			  downloadtext = 'Includes Mozilla Firefox 2 for Mac OS X, English (19&nbsp;MB)';
+			}
+
+			if (navigator.userAgent.indexOf("Firefox") != -1) {
+				// If the browser is Firefox...
+				downloadtext = 'Standalone Add-on for Firefox 2, English (236Kb)';
+				product = 'kodakextension';
+				downloadpage = '../kodak/extension/download.html';
+			}
+
+			document.writeln('<a href="' + downloadpage  + '?product=' + product + '&os=' + platform + '&lang=' + lang + '">' );
+			document.writeln('<span><strong>Free Download</strong> <em id="fotofox-download-text">');
+			document.writeln(downloadtext);
+			document.writeln('</em></span>');
+			document.writeln('</a>');
+
+		--></script>
+		<noscript>
+		  <div class="download">
+			<a href="http://releases.mozilla.com/kodak/2.0.0.1/win32/en-US/Firefox%20Setup%202.0.0.1.exe"><span><strong>Download for Windows</strong></span></a><br />
+			<a href="http://releases.mozilla.com/kodak/2.0.0.1/mac/en-US/Firefox%202.0.0.1.dmg"><span><strong>Download for Mac</strong></span></a><br />
+			<a href="http://releases.mozilla.com/kodak/2.0.0.1/linux-i686/en-US/firefox-2.0.0.1.tar.gz"><span><strong>Download for Linux</strong></span></a><br />
+			<a href="http://releases.mozilla.org/pub/mozilla.org/extensions/kodak_easyshare_gallery_companion/kodak_easyshare_gallery_companion-1.0.8-fx.xpi"><span><strong>Download Extension Only</strong></span></a>
+		  </div>
+		</noscript>
+	</div>
+
+	<img src="<?=$config['static_prefix']?>/img/add-ons/kodak/snap.jpg" alt="screenshot" class="fotofox-screenshot" />
+
+	<h3>A NEW, EASY WAY TO UPLOAD YOUR PHOTOS.</h3>
+
+	<p>Organizing and sharing your pictures is easier than ever with Firefox Companion for Kodak EasyShare Gallery.  Upload photos directly to your Kodak EasyShare Gallery, all within your browser, and have more time to do the things that really matter.</p>
+
+	<ul class="fotofox-list">
+	<li>Downloads in minutes, installs in seconds, bringing you a completely new experience in photo sharing, and faster, more secure, fully customizable browsing.</li>
+	<li>Drag, drop and arrange pictures adding photo titles, and create albums by multi-selecting photos - all of this without interrupting your Internet browsing.</li>
+	<li>Firefox Companion for Kodak EasyShare Gallery is just one of the <a href="http://addons.mozilla.org">thousands of add-ons</a> available with Firefox to customize your browsing experience - see the weather, get news, listen to music-all tools to make your life easier.</li>
+	<li>Choose from other leading photo services.</li>
+	<li><a href="/en-US/press/mozilla-2007-02-07.html">Read the press release</a></li>
+	<li><a href="../kodak/releasenotes.html">Release Notes</a></li>
+    <li><a href="../kodak/faq.html">FAQ</a></li>
+	</ul>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

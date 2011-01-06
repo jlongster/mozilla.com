@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'متصفح الوب فَيَرفُكس | الإصدارات العالمية: احصل على فَيَرفُكس بلغتك';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ساعد في اختبار فَيَرفُكس المستقبليّ!</h2>
+        <p>آخر إصدارة تجريبية من فَيَرفُكس متاحة الآن للمعاينة. جرّبها وأخبرنا برأيك فيها!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>معلومات مهمة</h4>
+        <p class="intro">نرجو منك قراءة التالي قبل التنزيل</p>
+    </div>
+    <ul>
+        <li>هذا برنامج في مرحلة ما قبل الإصدار، أي أنك قد تواجه مشكلات في التوافقية مع بعض مواقع الوب والإضافات.</li>
+        <li><a href="http://feedback.mozilla.org/">أخبرنا رجاءً</a> إن صادفتك مشكلة، أو <a href="https://bugzilla.mozilla.org/">بلّغ عن العلة</a>.</li>
+        <li>للمزيد من التفاصيل، اقرأ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">ملاحظات الإصدار</a> و <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">المشكلات المعروفة</a> (باللغة الإنجليزية).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">لا تريد إصدارة تجريبية؟ إليك <a href="/<?=$lang?>/firefox/">آخر إصدارات فَيَرفُكس</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,97 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Mobile Press Kit';
+    $body_id    = 'press-kits';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about/",
+		'Press Center' => "/{$lang}/press/",
+		'Press Kits' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/covehead/press-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Firefox <span>Press Kits</span></h2>
+    <p>An Easy Guide to All Things Firefox</p>
+</div>
+
+<div id="content">
+
+<ul id="press-kit-menu">
+    <li id="press-kit-desktop"><a href="/<?=$lang?>/press/kits/desktop/">Desktop</a></li>
+    <li id="press-kit-mobile"><span>Mobile</span></li>
+</ul>
+
+<div id="kit-nokia" class="kit-first">
+
+    <h2>Nokia N900</h2>
+
+    <h4>Announcements</h4>
+    <ul>
+        <li><a href="http://blog.mozilla.com/blog/2010/01/29/firefox-for-maemo-now-available/">Firefox for the Nokia N900 Announcement</a></li>
+    </ul>
+
+    <h4>Useful Links</h4>
+    <ul>
+    <li><a href="/<?= $lang ?>/mobile/faq/">Frequently Asked Questions</a></li>
+    <li><a href="/<?= $lang ?>/mobile/features/">Features</a></li>
+    <li><a href="/<?= $lang ?>/mobile/sync/">Synchronize</a></li>
+    <li><a href="/<?= $lang ?>/mobile/developers/">For Developers</a></li>
+    <li><a href="/<?= $lang ?>/firefox/video/?video=about-mobile">Meet Mobile for Firefox</a></li>
+    </ul>
+
+    <h4>Reference Materials</h4>
+    <ul>
+    <li><a href="http://static.mozilla.com/moco/en-US/pdf/mobile-n900-v1.1-reviewers-guide.pdf">Firefox for the Nokia N900 Reviewer's Guide</a></li>
+    <li><a href="/<?= $lang ?>/press/media/screenshots/">Product Images</a></li>
+    <li><a href="/<?= $lang ?>/press/image-library/browsing-without-borders.jpg">Browsing Without Borders</a></li>
+    </ul>
+
+    </div>
+
+<div id="kit-android" class="kit-second">
+
+    <h2>Android</h2>
+
+    <h4>Announcements</h4>
+    <ul>
+        <li><a href="http://blog.mozilla.com/blog/2010/10/07/firefox-4-beta-for-android-and-maemo/">Firefox 4 beta for Android and Nokia N900 announcement</a></li>
+    </ul>
+
+    <h4>Useful Links</h4>
+    <ul>
+    <li><a href="/<?= $lang ?>/mobile/beta/">Go Mobile with Firefox 4 beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/beta/features">Features - Beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/beta/faq">FAQ - Beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/sync/">Synchronize</a></li>
+    <li><a href="/<?= $lang ?>/mobile/">Develop for mobile</a></li>
+    <li><a href="/<?= $lang ?>/mobile/getinvolved">Meet Mobile for Firefox</a></li>
+    <li><a href="https://blog.mozilla.com/mobile/">Blog</a></li>
+    </ul>
+
+    <h4>Reference Materials</h4>
+    <ul>
+    <li><a href="http://static.mozilla.com/moco/en-US/pdf/mobile-n900-v1.1-reviewers-guide.pdf">Firefox for the Nokia N900 Reviewer's Guide</a></li>
+    <li><a href="/<?= $lang ?>/press/images.html#mobile-images">Product Images</a></li>
+    <li><a href="/<?= $lang ?>/press/image-library/browsing-without-borders.jpg">Browsing Without Borders</a></li>
+    </ul>
+
+</div>
+
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

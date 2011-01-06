@@ -1,0 +1,317 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Phoenix 0.1 (Pescadero) release Notes and FAQ';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Phoenix 0.1 (Pescadero) Release Notes and FAQ</h2>
+
+<p>Phoenix is a redesign of the Mozilla browser component, similar to Galeon, 
+K-Meleon and Chimera, but written using the XUL user interface language and 
+designed to be cross-platform. More information about Phoenix is available at
+the <a href="http://www.mozilla.org/projects/phoenix/">Phoenix Project Page</a>.</p>
+
+</div>
+
+<div id="main-content">
+<p>This document covers <a href="#new">what's new</a>, <a href="#install">download 
+and installation instructions</a>, <a href="#issues">known issues</a> and 
+<a href="#FAQ">frequently asked questions</a> for the Phoenix 0.1 (Pescadero) 
+release. Please read these notes before reporting any bugs to Bugzilla. 
+Thanks.</p>
+
+<h2 id="new">What's New</h2>
+
+<p>Phoenix is not your father's Mozilla browser. It's a lean and fast 
+browser that doesn't skimp on features. A few of the features 
+<a href="http://bugzilla.mozilla.org/buglist.cgi?product=Phoenix&amp;target_milestone=Phoenix0.1">
+new to this release</a> include:</p>
+<ul>
+<li>Customizable toolbar
+<p>The Phoenix toolbar is easily and quickly re-configured. Users can re-order
+the buttons and addressbar, can show large or small icons, and can chose to 
+display buttons and text, text only of buttons only. The feature, available
+from the View|Customize Toolbar... dialog is a convenient way for the user, 
+not the application, to determine what works best for her.</p></li>
+<li>earch for Bookmarks and History
+<p>The Bookmarks and History managers contain a quicksearch bar for quickly 
+and easily filtering the list of bookmarks or history items. Quicksearch 
+makes managing these lists faster and much more convenient.</p></li>
+<li>Speed, Speed, and Speed
+<p>Phoenix was designed with performance as a primary goal. The XUL experts 
+built a browser that starts in nearly half the time of Mozilla and its 
+commercial derivatives. New windows also snap into existence almost twice as 
+fast as Mozilla and commercial derivatives.</p></li>
+<li>Overhauled Bookmarks Manager
+<p>Phoenix fixes lots of common problems with the bookmarks manager, and adds new undo/redo capability.</p></li>
+<li>New Look
+<p>The Phoenix browser has a fresh new look that combines the stylish icons 
+of the Orbit theme with respect for the system colors/skins/fonts of the 
+Mozilla Classic theme.</p></li>
+<li>Reasonable Default Settings
+<p>The Phoenix developers believe that the browser should just "do the right 
+thing". They have configured behaviors for pop-up blocking, tabbed browsing, 
+and other features to simply "do the right thing".</p></li>
+</ul>
+<p>And this is just the beginning. The Phoenix team are already hard at work 
+on the Phoenix 0.2 release, targetted for October 1st, in which they plan to deliver 
+<a href="http://bugzilla.mozilla.org/buglist.cgi?product=Phoenix&amp;target_milestone=Phoenix0.2">
+more great features</a> including:</p>
+<ul>
+<li>Satchel
+<p>Satchel is a replacement for Mozilla's Wallet functionality. Satchel 
+includes major usability improvements like the often-requested inline 
+autocomplete of webforms.</p></li>
+<li>Plug-in and Add-on Manager
+<p>With the scores of great plug-ins, add-ons and other extensions that 
+are being developed at mozdev.org and elsewhere the need for a 
+mechanism to selectively enable and disable these plug-ins as well as 
+conveniently uninstall XPI extensions has become quite obvious. Phoenix
+developers see this need and are working to address it.</p></li>
+<li>Download Manager
+<p>The Mozilla download manager provides a convenient way to see all 
+of your downloads in one place but is short on power and looks. The 
+next Phoenix release will sport a new and improved Download Manager.</p></li>
+<li>Prefs
+<p>All your favorite prefs will be back.</p></li>
+</ul>
+
+<h2 id="install">Download, Install and Uninstall</h2>
+
+<p>Phoenix binaries are available for Windows and Linux.</p>
+
+<p>Windows: <a href=
+"http://ftp.mozilla.org/pub/phoenix/releases/0.1/phoenix-0.1-win32.zip">
+http://ftp.mozilla.org/pub/phoenix/releases/0.1/phoenix-0.1-win32.zip</a></p>
+
+<p>Linux: <a href=
+"http://ftp.mozilla.org/pub/phoenix/releases/0.1/phoenix-0.1-i686-pc-linux-gnu.tar.gz">
+http://ftp.mozilla.org/pub/phoenix/releases/0.1/phoenix-0.1-i686-pc-linux-gnu.tar.gz</a></p>
+
+<p>Once you have downloaded the binary, use winzip or gzip to
+unpzip Phoenix to an empty directory. Do not unzip Phoenix to a
+directory that already contains a binary. Either delete the
+existing directory completely, move it out of the way or create a
+new directory. If you install Phoenix on top of an existing Phoenix
+or Mozilla directory you <strong>will</strong> have problems.</p>
+
+<p>To uninstall Phoenix simply delete the Phoenix directory. This
+will leave your profile in place for use by future Phoenix
+installs. If you wish to remove your Phoenix profile you can delete
+the Phoenix dir from your Windows Application Data directory or
+remove the .phoenix dir from your linux home directory.</p>
+
+<h2 id="issues">Known Issues</h2>
+
+<p>This is an 0.1 release. If you expect everything to work
+perfectly then you will surely be let down. This list covers some
+of the known problems with Phoenix 0.1. Please read this before
+reporting any new bugs to Bugzilla.</p>
+
+<ul>
+<li>Phoenix utilizes large hunks of Mozilla code. Many of the
+problems you may experience in Phoenix are actually problems in
+this Mozilla core code. If you find a problem with page content or
+connectivity then it is probably a Mozilla problem and should be
+reported to the Browser product in Bugzilla and not to the Phoenix
+product.</li>
+
+<li>Preferences are in the middle of a massive overhaul. The
+current state of preferences is not the final state. If your
+favorite or most important pref isn't available don't panic. We're
+working on it. See the <a href="#FAQ">FAQ</a> for more information.</li>
+
+<li>Bookmarks functionality has recently been overhauled as well.
+There is a known hang when managing bookmarks which is reported as
+bug <a href="http://bugzilla.mozilla.org/show_bug.cgi?id=167167"
+title="manage bookmarks causes hang">167167</a></li>
+
+<li>In the Customize Toolbar dialog the addressbar is a bit tricky
+to drag. To drag the addressbar click and drag the little
+downward-point arrow on the right end of the addressbar.</li>
+
+<li>Dropping an item in empty space on the right side of the
+toolbar is also a tricky. To drop something right of the rightmost
+item on the toolbar move the mouse left until you see a drop marker
+appear.</li>
+
+<li>Quicksearch in bookmarks and history are new and still have a 
+couple of issues. We don't yet support deleting filtered results 
+for bookmarks and history filtering is case sensitive. We expect 
+to have these issues fixed in future releases.</li>
+
+<li>Tabbing through forms on Linux is broken pretty badly.</li>
+
+</ul>
+
+<h2 id="FAQ">Frequently Asked Questions</h2>
+
+<ol>
+<li>
+<p><em>Are the rest of the preferences coming back?</em></p>
+
+<p>Yes. Mostly.</p>
+</li>
+
+<li>
+<p><em>You said this is a lean, lightweight browser, but it's 8MB! I laugh at your silly lies!</em></p>
+<p>Take it easy, sport.  Phoenix has many files that override those in Mozilla, but it <i>also</i> has a new set of files.  These files render a ton of files in Mozilla unnecessary, but we haven't yet stopped packaging the old files.  It also still contains the modern theme and all the composer UI.  In short, we haven't done any work yet to minimize the size, but we expect to be able to hit 6MB with a little work. </p></li>
+<li>
+<p><em>Who is working on Phoenix?</em></p>
+<p>The developers are <a href="mailto:blaker@netscape.com">Blake Ross</a>, <a href="mailto:hyatt@apple.com">Dave Hyatt</a>, <a href="mailto:chanial@noos.fr">Pierre Chanial</a> and <a href="mailto:hewitt@netscape.com">Joe Hewitt</a>, with <a href="mailto:asa@mozilla.org">Asa Dotzler</a> providing tremendous help with bug triage, the website, and other odds and ends, and <a href="mailto:bryner@netscape.com">Brian Ryner</a> providing build expertise.  It is supported by mozilla.org staff.</p></li>
+
+<li>
+<p><em>Phoenix is going to get old and outdated. It sucks.</em></p>
+<p>No.  Phoenix is <i>not</i> a branch; it builds right atop the Mozilla trunk.  Each milestone contains code that was literally checked in the day before -- we're risky like that ;)  It's the latest and greatest.</p></li>
+
+<li>
+<p><em>Okay, so where's the phoenix source?</em></p>
+<p>Mozilla trunk + mozilla/browser + mozilla/toolkit.</p></li>
+
+<li>
+<p><em>Where's the mac version?</em></p>
+<p>There is no mac version.  While Phoenix could be made to run on Mac without much trouble, we see no point in competing with Chimera.  Chimera is the lightweight, standalone Mozilla browser solution for Mac OS X.  We have received requests for a Mac classic version, and are considering the idea.</p></li>
+
+<li>
+<p><em>Why did you put the reload and stop buttons in the wrong 
+place and where's my throbber?</em></p>
+
+<p>View | Customize Toolbar...</p>
+</li>
+
+<li>
+<p><em>How do I set up my proxy without a prefs panel?</em></p>
+
+<p>You can manually edit your prefs.js file. Simply copy the values
+from your Mozilla profile prefs.js.
+<br /><br />
+<b>Update</b>: Yes, we realize that manual proxy isn't working in 0.1.  Unfortunately, it got broken in Mozilla right before we spun up the final builds.  We're targetted 0.2 for 1-2 weeks from now, and it will correct the problem.</p>
+</li>
+
+<li>
+<p><em>What a bunch of idiots.  Why didn't they call it, say, Mozilla Lite?  Don't they know the importance of brand recognition?</em></p>
+
+<p>Oh, where to begin.  First of all, it's not "lite."  Not only does Phoenix aim to match the featureset of Mozilla -- subtracting features deemed geeky and better offered as add-ons -- but it <i>extends</i> it.  For example, it adds customizable toolbars and quicksearch in bookmarks and history.  It will soon offer an add-on manager, a better wallet, and a new downloads sidebar pane.</p>
+<p>Second, it's not Mozilla.  It's backed by mozilla.org, sure, but with each milestone you'll see it diverge more and more from Mozilla.</p>
+<p>Third, "Mozilla" is not the name of an application; it is the name of a monolithic suite containing a browser, a mail client, an irc client, and an indoor skating rink (we hear that's coming, anyways.)  Even if we did decide to call this browser Mozilla, we'd still have to call the standalone mail client (see below) something else.  We also believe Mozilla, in general, is going in the wrong direction in terms of bloat and UI, and see no reason for our releases to carry those connotations.</p></li>
+<li>
+<p><em>Did you say something about a standalone mail client?</em></p>
+
+<p>Yes.  We did.  Thank you for listening.  It's called <a href="http://www.mozilla.org/mailnews/minotaur/">Minotaur</a>, but it's a little stagnant right now.  There are plans to pick it up again in the not-too-distant future.  Just to whet your appetite, the speed improvements in Minotaur will be comparable to those in Phoenix.</p></li>
+
+<li>
+<p><em>Will all of the Mozdev (and other) themes and add-ons work
+with Phoenix?</em></p>
+
+<p>Most will not. XUL Add-ons and themes will probably need to be
+tweaked by their authors to work with Phoenix; we are working with authors of popular add-ons to get them compatible. Plugins like flash
+and real should work.</p>
+</li>
+</ol>
+
+<h2 id="feedback">Feedback and Bug Reports</h2>
+
+<p>(shamelessly ripped from the <a href="../chimera/">Chimera
+project page</a>)</p>
+
+<p>Phoenix bugs are tracked in the <a href=
+"http://bugzilla.mozilla.org/">Bugzilla</a> bug system. With
+Bugzilla, you can query for existing bugs, add comments to bugs,
+and file new bugs.</p>
+
+<p>If you find a problem that you think might be a bug in Phoenix,
+please don't jump in and file it right away. Having
+low-quality and duplicate bugs in the bug system simply wastes the
+time of developers and QA. Instead, follow these steps.</p>
+
+<ol>
+<li>First, try the most recent <a href=
+"http://ftp.mozilla.org/pub/phoenix/nightly/latest-trunk/">nightly
+build</a>, to see if the problem still exists.</li>
+
+<li>Next, try to reproduce the bug with a recent <a href=
+"http://www.mozilla.org/releases/">Mozilla build</a>, to see if the
+bug happens there. If so, the bug should be filed as a <a href=
+"http://bugzilla.mozilla.org/enter_bug.cgi?product=Browser&amp;format=guided">
+Mozilla bug</a> (only, of course, after searching to see if the bug
+has already been filed). Bugs related to how pages are laid out are
+almost always Mozilla bugs, and are highly likely to have been
+filed already.</li>
+
+<li>
+<p>Now you can go ahead and search the Phoenix bugs to see if
+someone has already reported your problem.</p>
+</li>
+
+<li><a href=
+"http://bugzilla.mozilla.org/query.cgi?product=Phoenix&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED">
+Search the open Phoenix bugs</a>, but be aware that your
+terminology might not match that of others (e.g. "URL
+bar" vs. "Location bar"), so you might not find
+what you are looking for the first time. Be diligent!</li>
+
+<li>Look at Phoenix bugs reported in the <a href=
+"http://bugzilla.mozilla.org/buglist.cgi?product=Phoenix&amp;changedin=1&amp;chfield=%5BBug+creation%5D">
+last day</a>.</li>
+
+<li>Look at the <a href=
+"http://bugzilla.mozilla.org/buglist.cgi?product=Phoenix">list all Phoenix bugs</a> to see if your issue has already been
+filed (and possibly already fixed).</li>
+
+<li>
+<p>If you didn't find an existing bug for your problem, and
+you're sure that it's a problem with Phoenix, then you
+can go ahead and file the bug.</p>
+
+<p>If you are new to Bugzilla, please read the <a href=
+"http://www.mozilla.org/quality/bug-writing-guidelines.html">bug
+writing</a> guidelines first. To be able to file and comment on
+bugs, you'll need to <a href=
+"http://bugzilla.mozilla.org/createaccount.cgi">make yourself an
+account</a>. Note that accounts can, and will, be revoked if
+abused.</p>
+</li>
+
+<li>Report a new Phoenix bug <a href=
+"http://bugzilla.mozilla.org/enter_bug.cgi?product=Phoenix&amp;format=guided">
+using the Bugzilla helper</a>, or <a href=
+"http://bugzilla.mozilla.org/enter_bug.cgi?product=Phoenix">using
+the advanced bug entry form</a></li>
+
+<li>
+<p>Put as much relevant detail into the bug report as you can. 
+If Phoenix crashes be sure to specify if you were on a certain page 
+when it crashed, give the URL. Mention whether the page contains
+plugins. Try to find the simplest way of causing the crash that you
+can. If it crashes when you are supplying data to Phoenix (e.g.
+importing bookmarks), attach the relevant data (in this case, the
+bookmarks file being imported). The better your bug report, the
+more chance there is of a developer taking note, and fixing it.</p>
+</li>
+</ol>
+
+<p>We do not yet have newsgroups and mailing lists set up for
+feedback. We hope to have this set up soon.</p>
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

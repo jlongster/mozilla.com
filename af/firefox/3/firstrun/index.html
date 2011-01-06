@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Welkom by Firefox';
+    $extra_feature_text = 'Klik op die sluit-knoppie van hierdie oortjie om na u tuisblad te gaan';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Welkom by Firefox 3"/></h2>
+    <p>Dankie dat u hierdie weergawe van Firefox afgelaai het. Dis die veiligste en vinnigste weergawe van Firefox, en dit kan op baie maniere gedoelmaak word. Om te begin blaai, sluit hierdie oortjie soos hier bo aangedui.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Leer meer</h3>
+        <p>Wonder u wat om verder te doen? Ons 'Hoe om te begin'-bladsy bevat 'n lys aanbevole webwerwe en ander inligting oor Firefox. <a href="/<?=$lang?>/firefox/central/">Besoek 'Hoe om te begin'</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Enige vrae?</h3>
+        <p>Ons Steundiens-bladsy bevat baie antwoorde, en 'n mens kan regstreeks met iemand gesels wat u help met ingewikkelder sake. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Besoek die Steundiens</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

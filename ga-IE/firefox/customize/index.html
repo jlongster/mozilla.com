@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Tá Do Stíl Féin Agat';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Tá Do Stíl Féin Agat</h2>
+    <p>Is féidir leat barráin a chur ar do phizza, agus toin bhuailte a chur ar d'fhón.  Cad chuige nach ndéanfá saincheapadh ar do bhrabhsálaí Gréasáin?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Táirgí</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Slándáil</a></li>
+    <li><span>Saincheapadh</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">Bogearra le leas an phobail</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Leideanna agus Cleasa</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Nótaí Eisiúna</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Teangacha agus Córais Eile</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Breiseáin do Chách</h3>
+        <p>Le Firefox is féidir do chuairt ar líne a shaincheapadh ar a lán bealaí a oiriúnaíonn don tslí a n-úsáideann tú an Gréasán.  Tá níos mó ná 5000 Breiseán (ríomhchláir bheaga is féidir cur le Firefox) ann, a chabhróidh leat a bheith níos táirgiúla agus níos cruthaithí ar líne - i mbeagán focal, chun níos mó sult a bhaint as an nGréasán.</p>
+        <p>Ar mhaith leat na mionsonraí? Féach ar na samplaí seo a leanas, ansin <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">tabhair cuairt ar shuíomh na mBreiseán chun na féidearthachtaí go léir a fheiceáil.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Fógraí agus Nuashonruithe</h4>
+            <p>Le breiseáin sa chatagóir seo, gheobhaidh tú réamhaisnéis na haimsire, nuacht spóirt, nó eolas faoi cheantálacha eBay.  Taispeánfar faisnéis fhíor-ama go díreach i do bhrabhsálaí, cuma cén suíomh a bhfuil tú air ag an am.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Féach ar na breiseáin sa chatagóir seo anois.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Mar Shampla:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" />Coimeád súil ar cheantálacha eBay aon uair atá tú ar líne.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Bain Triail As Firefox eBay Edition</a> <span>le hEBay</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Grianghraif, Ceol agus Físeáin</h4>
+            <p>Úsáid Firefox le do chuid grianghraf a uasluchtú, ceol a sheinm, nó mar uirlis chumhachtach ilmheán. Is cosúil go bhfuil painéal rialúcháin ilmheán in aice láimhe nuair a bhíonn tú ag déanamh oibre, taighde, nó brabhsáil ar an nGréasán.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Féach ar na breiseáin sa chatagóir seo anois.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Mar Shampla:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" />Rialaigh beagnach seinnteoir meán ar bith go díreach ó do bhrabhsálaí.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Bain Triail As FoxyTunes</a> <span>le hAlex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Sóisialta agus Cumarsáid</h4>
+            <p>Cabhraíonn na breiseáin seo leat stuif nua a aimsiú ar an nGréasán agus do chuid teachtaireachtaí meandaracha a bhainistiú.  Nó fan i dteagmháil le cairde ar na suímh shóisialta is faiseanta.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Féach ar na breiseáin sa chatagóir seo anois.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Mar Shampla:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" />Aimsigh suímh nua, téigh i dteagmháil le cairde, agus roinn na rudaí a aimsíonn tú.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Bain Triail As StumbleUpon</a> <span>le StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Téamaí agus Snas</h4>
+            <p>Ná cuir srian le do chuairt ar líne le dearadh gan anam.  Roghnaigh dathanna nua nó téama lena mbeidh an brabhsálaí níos fusa a úsáid (le cnaipí níos mó mar shampla). Nó roghnaigh aon mhaisiúcháin a thaitníonn leat.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Féach ar na breiseáin sa chatagóir seo anois.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Mar Shampla:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" />Téama do dhaoine ar breá leo an dorchadas.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Bain Triail As NASA Night Launch</a> <span>le mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>Breiseáin</h3>
+            <h5>Saincheap Firefox</h5>
+            <p><a href="https://addons.mozilla.org/firefox/">Féach ar na breiseáin go léir</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

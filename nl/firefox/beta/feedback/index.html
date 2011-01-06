@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Bèta - Feedback geven";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Hoe hebt u het Firefox 4 bèta-programma ontdekt?";
+$str2       = "Blijf op de hoogte";
+$str3       = "Abonneer u om nieuws over Firefox Bèta, gebeurtenissen en informatie te ontvangen via e-mail.";
+$str4       = "Uw e-mailadres";
+$str5       = "Ik ga akkoord met het <a href=\"%s\">privacybeleid</a> <span class='footnote'>(we sturen u alleen Mozilla-gerelateerde informatie).</span>";
+$str6       = "Stuur mij af en toe ook nieuws over Mozilla, tips en trucs voor Firefox en andere Mozilla-informatie.";
+$str7       = "Abonneren »";
+$str8       = "Bedankt voor het abonneren!";
+$str9       = "We kijken uit naar een spoedige uitwisseling van tips en trucs om het meeste uit Firefox te halen, evenals opwindend nieuws over Mozilla en hoe we samenwerken om een beter internet te maken.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Bèta" /></a></h2>
+        <h3>Hulp gevraagd</h3>
+        <p>We bouwen een Firefox dat sneller en lichter is en diverse manieren bevat om u te helpen bij het browsen. Maar we kunnen dit niet zonder uw feedback.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>bèta</sup></span></h3></li>
+    <li class="feedback"><span>Feedback</span></li>
+    <li class="more"><h3>Meer informatie in het Engels</h3></li>
+    <li class="features"><a href="../features/">Functies</a> </li>
+    <li class="tech"><a href="../technology/">Technologie</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Feedback-privacybeleid</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Schermafbeelding Feedback-knop" />
+        <h2>Vertel ons uw bevindingen</h2>
+        <h3>Directe feedback indienen</h3>
+        <p>Klik op de knop Feedback om ons directe input over de bèta te geven. Zo eenvoudig is het!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Ontwikkelaars: we hebben u nodig</h2>
+        <h3>Uw ideeën uitwisselen</h3>
+        <p>Wat denkt u van de <a href="../features/#under-the-hood">nieuwe ontwikkelaarsfuncties</a> in de bèta?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Bezoek ons Feedback-forum</a></p>
+
+        <h3>Technische bugs indienen</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla-logo" />
+        <p>Als u een Bugzilla-expert bent, dien dan een bug in als u bepaalde problemen tegenkomt tijdens het browsen.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Dien een bug in voor Firefox 4 Bèta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Vertel het rond</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Volg ons op Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Bezoek ons op Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Lees de Mozilla-blog</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Hulp nodig?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Ondersteuningspictogram" />Onze ondersteuningspagina’s</a> bevatten specifieke antwoorden en adviezen voor Firefox 4 bèta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

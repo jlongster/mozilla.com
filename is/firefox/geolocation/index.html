@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Hnattstaðsetning í Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Vafrastaðsetning</h2>
+    <p>Firefox hefur þann möguleika að geta gefið vefsvæðum upp hvar þú ert staddur þannig að þú getir fundið þær upplýsingar
+    sem skipta máli og eru gagnlegar. Þetta snýst um að gera vefinn gáfaðri
+    &ndash; en er samt gert þannig að friðhelgi sé virt.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Prófaðu bara!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Oft spurðar spurningar</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvað er vafrastaðsetning?</h4>
+    <div class="expander-content">
+        <p>Vefsvæði sem nota vafrastaðsetningu geta spurt þig hvar þú ert staddur til þess að geta sýnt nákvæmari upplýsingar, eða til að spara tíma við leit. Segjum að þú sért að leita að pizzastað í nágrenninu. Tiltekið vefsvæði getur þá beðið þig um deila með sér staðsetningu þinni þannig að ef þú leitar t.d. að “pizza” þá færðu nákvæmlega þær niðurstöður sem þig vantar... án þess að gefa upp eða slá inn fleiri upplýsingar.</p>
+        <p>Eða, ef þú ert að kortleggja ferðaleiðbeiningar, getur vefsvæðið vitað hvar byrjunin er þannig að það eina sem þú þarft að gefa upp er hvert þú vilt fara.</p>
+        <p>Þessi þjónusta er algerlega valfrjáls &ndash; Firefox gefur ekki upp hvar þú ert staddur án þín leyfis &ndash; og þetta er gert með algerri virðingu fyrir þinni friðhelgi. Og, eins og allir hlutir í Firefox, er þetta gert með opnum stöðlum til að hjálpa með notkun hjá vefþróunaraðilum.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvernig virkar þetta?</h4>
+    <div class="expander-content">
+        <p>Þegar þú heimsækir vefsvæði sem býður upp á vafrastaðsetningu, getur Firefox spurt þig hvort þú viljir deila þinni staðsetningu.</p>
+        <p>Ef þú samþykkir, mun Firefox safna saman upplýsingum um þá þráðlausa tengipunkta sem eru nálægir og IP tölu tölvunnar. Síðan sendir Firefox þessar upplýsingar á sjálfgefinn þjónustuaðila, Google staðsetningarþjónustu, til að fá áætlaða staðsetningu. Þessari staðsetningu er svo deilt með vefsvæðinu.</p>
+        <p>Ef þú samþykkir ekki, mun Firefox ekkert gera.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvað eru staðsetningarnar nákvæmar?</h4>
+    <div class="expander-content">
+        <p>Nákvæmni er breytileg á milli staða.  Á sumum stöðum, geta þjónustuaðilar gefið upp staðsetningu sem er nákvæm upp á nokkra metra.  Hinsvegar getur þetta verið ónákvæmara á öðrum svæðum.  Allar staðsetningar frá þjónustuaðila eru aðeins áætlaðar og við ábyrgjumst ekki nákvæmni þessara staðsetninga.  Vinsamlega ekki nota þessar upplýsingar fyrir neyðartilfelli. Notaðu alltaf heilbrigða skynsemi.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvaða upplýsingar eru sendar, og til hverra? Hvernig er friðhelgi mín vernduð?</h4>
+    <div class="expander-content">
+        <p>Við teljum friðhelgi þína mjög mikilvæga, og Firefox mun aldrei deila þinni staðsetningu án leyfis. Þegar þú heimsækir vefsíðu sem biður um staðsetningu, muntu verða beðin um leyfi áður en nokkrar upplýsingar eru sendar til vefsvæðisins og þjónustuaðila.</p>
+        <p>Sjálfgefið notar Firefox Google staðsetningarþjónustuna til að finna staðsetningu með því að senda:</p>
+        <ul>
+            <li>IP tölu tölvunnar,</li>
+            <li>upplýsingar um þráðlausa tengipunkta í nágrenninu, og</li>
+            <li>slembitölu auðkenni, sem er úthlutað af Google, og fellur úr gildi eftir 2 vikur.</li>
+        </ul>
+        <p>Fyrir frekari upplýsingar um hvaða upplýsingum er safnað og eru notaðar af Firefox, kíktu á <a href="/<?=$lang?>/legal/privacy/firefox-en.html">persónuverndarstefnu Firefox</a> (á ensku).</p>
+        <p>Staðsetningarþjónusta Google skilar þá til baka áætlaðri staðsetningu (t.d., breiddargráðu og lengdargráðu). Ef þú vilt sjá heildarlýsingu á því hvaða upplýsingar eru sóttar og notaðar af Google, kíktu á <a href="http://www.google.com/privacy-lsf.html" class="external">persónuverndarstefnu staðsetningarþjónustu Google</a> (á ensku).</p>
+        <p>Upplýsingarnar eru sendar dulkóðaðar til þess að vernda þína friðhelgi. Um leið og Firefox hefur fundið staðsetningu, sendir Firefox hana áfram á vefsvæðið sem bað um hana. Á engum tímapunkti er nafn eða staðsetning vefsvæðisins sem þú ert á eða smákökur sendar til staðsetningarþjónustu Google.</p>
+        <p>Mozilla eða Google mun aldrei nota upplýsingar sem eru fengnar með staðsetningarþjónustu Google, til að njósna um þig.</p>
+        <p>Fyrir meiri upplýsingar um hvað viðkomandi vefsvæði ætlar að nota staðsetninguna þína fyrir, kíktu á persónuverndarstefnu vefsvæðisins.</p>
+        <p>Fyrir meiri upplýsingar um þína friðhelgi, ættirðu einnig að lesa:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Persónuverndarstefna Mozilla Firefox</a> (á ensku)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Persónuverndarstefna Google</a> (á ensku)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Er verið að fylgjast með mér þegar ég vafra á vefnum?</h4>
+    <div class="expander-content">
+        <p>Nei. Firefox biður aðeins um staðsetningu þegar vefsvæði biður um það, og deilir því aðeins ef notandi samþykkir beiðnina. Firefox fylgist ekki með þér eða geymir þína staðsetningu þegar þú ert að vafra.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hvernig afturkalla ég heimild sem ég hef þegar gefið vefsvæði?</h4>
+    <div class="expander-content">
+        <p>Ef þú hefur gefið Firefox leyfi til að senda alltaf staðsetningu til ákveðins vefsvæðis en skiptir svo um skoðun, geturðu auðveldlega afturkallað þá heimild. Svona ferðu að því:</p>
+        <ul>
+            <li>Farðu yfir á það vefsvæði sem þú hefur þegar gefið leyfið fyrir</li>
+            <li>Farðu í <em>Verkfæri</em> valmyndina, veldu svo <em>síðuupplýsingar</em></li>
+            <li>Veldu <em>Heimildir</em> flipann</li>
+            <li>Breyttu stillingunni fyrir <em>Deila staðsetningu</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvernig hreinsa ég “slembitölu auðkenni”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Farðu í <em>Verkfæri</em> valmyndina, veldu svo <em>Hreinsa nýlega ferla</em></li>
+            <li>Smelltu á <em>Nánar</em> örina</li>
+            <li>Gakktu úr skugga um að <em>Smákökur</em> sé valið</li>
+            <li>Smelltu á <em>Hreinsa núna</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvernig slekk ég á vafrastaðsetningu fyrir fullt og allt?</h4>
+    <div class="expander-content">
+        <p>Vafrastaðsetning er alltaf valfrjáls í Firefox. Engar staðsetningar eru sendar án þín leyfis. Ef þú vilt hinsvegar slökkva á þessari aðgerð fyrir fullt og allt, fylgdu þá þessum skrefum:</p>
+        <ul>
+            <li>Í staðsetningarslánni, sláðu inn <code>about:config</code></li>
+            <li>Sláðu inn <code>geo.enabled</code></li>
+            <li>Tvísmelltu á <em>geo.enabled</em> stillinguna</li>
+            <li>Vafrastaðsetning er þá ekki lengur virk</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Hvar er ég?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="Bíddu"/>
+    <p id="geodemo-error">Ææ! Upp kom villa við að reyna að finna staðsetningu.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

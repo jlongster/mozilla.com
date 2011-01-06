@@ -1,0 +1,323 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firebird 0.6.1 Release Notes and FAQ';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Mozilla Firebird 0.6.1 - Release Notes</h2>
+
+<p>Mozilla Firebird, formerly known as Phoenix, is a redesign of the Mozilla browser component, similar to Galeon, 
+K-Meleon and Camino&trade;, but written using the <abbr title="XML-based User Interface Language">XUL</abbr> user interface language and 
+designed to be cross-platform. <a href="http://texturizer.net/firebird/index.html">More information</a> about Mozilla Firebird is available.</p>
+</div>
+
+<div id="main-content">
+<p>This document covers <a href="#new">what's new</a>, <a href="#install">download 
+and installation instructions</a>, <a href="#issues">known issues</a> and 
+<a href="#FAQ">frequently asked questions</a> for the Mozilla Firebird 0.6.1
+release. Please read these notes and the <a href="http://texturizer.net/firebird/bugs.html">bug filing instructions</a> before reporting any bugs to Bugzilla. 
+</p>
+
+<p>We want to hear your feedback about Mozilla Firebird. Please join us in the 
+<a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird forums</a>, 
+kindly hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p>
+
+
+
+<h2 id="new">What's New</h2>
+<p>Mozilla Firebird 0.6.1 is a <em>minor bug-fix release</em> fixing a few critical issues in Mozilla Firebird 0.6, as well as some other minor bug fixes and changes, including:</p>
+<ul class="news">
+<li>Fix for the auto-complete crash bug</li>
+
+<li>Fix for the DOM security restriction bug that broke many bookmarklets</li>
+<li><a href="http://www.mozilla.org/editor/midas-spec.html">Rich Text Editing</a> support</li>
+<li>Toolbar buttons for cut, copy and paste</li>
+<li>Brushed up default theme, including updated toolbar icons</li>
+<li>New application icon</li>
+</ul>
+
+<h3>News in Mozilla Firebird 0.6</h3>
+<ul class="news">
+<li>New default theme
+<p>Mozilla Firebird now sports a crisp, fresh and attractive theme, based on the amazing Qute theme by Arvid Axelsson. Also, the new theme has icons for the Bookmark Manager toolbar.</p></li>
+
+<li>Redesigned Preferences window
+<p>The new Options window puts the most often used preferences into seven convenient panels, each with a descriptive icon selector.</p></li>
+
+<li>Improved Privacy Options
+<p>With a single click (and a confirmation) you can clear all privacy data including form data, history, cache, cookies, etc.</p></li>
+
+<li>Improved Bookmarks
+<p>Among other bookmark enhancements, the Bookmarks menu now features a context menu. Try it by right-clicking on a bookmark in the menu.</p></li>
+
+<li>Talkback enabled
+<p>You are now able to submit Talkback information when Mozilla Firebird crashes, which makes it much easier for developers to fix critical bugs. For more information read about Talkback in the <a href="http://texturizer.net/firebird/faq.html#1.11">FAQ</a>.</p></li>
+
+<li>Automatic Image Resizing
+<p>With this feature, Mozilla Firebird shrinks any image that is bigger than the window to make the whole image visible. When this is done, the cursor over the image changes to tell you that if you click, the image is restored to full size. Instructions are available telling how to <a href="http://texturizer.net/firebird/tips.html#beh_imageresizing">disable this feature</a>.</p></li>
+
+<li>Smooth Scrolling
+<p>Instructions are available telling how to <a href="http://texturizer.net/firebird/tips.html#beh_smoothscroll">disable this feature</a>.</p></li>
+
+<li>Access to more preferences
+<p>You are now able to edit lots of advanced preferences that are not exposed in the Options window by entering <code>about:config</code> in the location bar and press <kbd>Enter</kbd>.</p></li>
+
+<li>Profile Chrome
+<p>You can now install Mozilla Firebird extensions in your own profile folder instead of in the actual program folder. This means that you will be able to upgrade to new versions of Mozilla Firebird without losing all your extensions. Note that it's up to the extension authors to allow their extensions to use this functionality. Some extensions may not offer this as an option yet.</p></li>
+
+<li>Mac OS X
+<p>Mozilla Firebird is available for Mac OS X. It's still quite rough around the edges but it's a start.</p></li>
+
+<li>Lots of bug fixes
+<p>There have been too many bug fixes since Phoenix 0.5 to keep track of them all. It's better. Trust us ;-)</p></li>
+</ul>
+
+<h2 id="install"></a>Download, Install and Uninstall</h2>
+<p style="border: medium dotted black; padding: 0.5em; background-color: rgb(255, 255, 180);">
+<strong style="background-color: rgb(255, 204, 51);">PLEASE NOTE: You 
+should create a new profile for Mozilla Firebird 0.6.1</strong>.
+To create a new profile, start Mozilla Firebird by running <code>MozillaFirebird.exe
+-p</code> and click on the "Create Profile" button.<br /><br />
+ <strong style="background-color: rgb(255, 204, 51);">You must also delete 
+your old Mozilla Firebird directory rather than just overwriting the files there.</strong> 
+Not doing so WILL result in problems and you should not file any bugs on 
+Mozilla Firebird unless you've first done a clean install and tested on a new profile. 
+As Mozilla Firebird stabilizes more this will not be necessary but until then these 
+steps are absolutely necessary.</p>
+
+<p>mozilla.org provides Mozilla Firebird binaries for Windows, Linux, and Mac OS X.</p>
+
+<p><strong>Windows</strong>: <a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-win32.zip">
+http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-win32.zip</a></p>
+
+<p><strong>Linux</strong>: <a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-i686-pc-linux-gnu.tar.gz">
+http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-i686-pc-linux-gnu.tar.gz</a></p>
+
+<p><strong>Mac OS X</strong>: <a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-mac.dmg.gz">
+http://ftp.mozilla.org/pub/firebird/releases/0.6.1/MozillaFirebird-0.6.1-mac.dmg.gz</a></p>  
+
+
+<!-- Build contributors, please put your builds under
+ pub/firebird/<version>/contributed and include a README explaining
+ any build peculiarities and identifying yourself as the contributor.
+ Thanks. 
+-->
+
+<div style="border: 1px solid #cccccc; background-color: #f8f8f8; padding: 4px;">
+<p>
+<b>Contributed builds</b> (These are unofficial builds and may be configured differently than the mozilla.org builds.)</p>
+
+<!--
+<p><strong>OS/2</strong>:<br />
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-os2.zip">
+http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-os2.zip</a>
+</p>
+
+<p><strong>Solaris</strong>:<br />
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.7.tar.gz">
+http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.7.tar.gz</a>
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.7.readme"> (readme)</a>
+<br />
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.8.tar.gz">
+http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.8.tar.gz</a>
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-sparc-sun-solaris2.8.readme"> (readme)</a>
+</p>
+
+<p><strong>BeOS</strong>:<br />
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-i586-beos.zip">
+http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-i586-beos.zip</a>
+</p>
+
+<p><strong>AIX</strong>:<br />
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-powerpc-ibm-aix4.3.3.0.tar.gz">
+http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-powerpc-ibm-aix4.3.3.0.tar.gz</a>
+<a href=
+"http://ftp.mozilla.org/pub/firebird/releases/0.6/contrib/MozillaFirebird-0.6-powerpc-ibm-aix4.3.3.0.readme"> (readme)</a>
+</p>
+-->
+
+<p><b>Localized builds</b>. Contributed by the volunteers of the <a href="../l10n/mlp_otherproj.html#firebird" title="Mozilla Localization Project">MLP</a>:</p>
+<script>
+<!-- // Mozilla Firebird language pack installation startup JS
+function instWarning(xpi, lastinstalledlocale)
+{
+ if (navigator.userAgent.indexOf('Gecko') == -1)
+     alert ("This package is designed to be installed on Mozilla Gecko "+
+            "compatible browsers. "+
+            "Browse to ftp.mozilla.org to download locally this file and "+
+            "install it later on a Mozilla Gecko compatible browser.");
+ else if (!InstallTrigger.enabled())
+     alert ("The installation of this package requres you to enable "+
+            "online installations from the preferences.");
+ else {
+      document.cookie = 'lastinstalledlocale=' + escape(lastinstalledlocale) +
+                        ';PATH=/projects/l10n';
+      InstallTrigger.install(xpi);
+      }
+}
+//-->
+</script>
+
+<ul>
+<li>Arabic:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-lang-arSA.zip">Arabic localized UI</a>
+   (unzip and replace the English UI resources).</li>
+<li>Asturian:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-astES.zip">Win32 zip</a>.</li>
+<li>Chinese, Simplified (China):
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-zhCN.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-zhCN.zip">Win32 zip</a>.</li>
+<li>Chinese, Traditional (Taiwan):
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-zhTW.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-os2-zhTW.zip">OS/2 zip</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-zhTW-installer.exe">Win32 full installer</a>.</li>
+<li>French:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-frFR.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-ctl-svg-xft-frFR.tar.gz">Linux x86 SVG tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-frFR.zip">Win32 zip</a>.</li>
+<li>German:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-deDE.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-mac-deDE.dmg.gz">Mac OS X gzipped dmg</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-deDE-installer.exe">Win32 full installer</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-deDE.zip">Win32 zip</a>.</li>
+<li>Hungarian:
+ <a href="http://www.mozilla.org/projects/l10n/postinst-notes/fb061.html" onclick="javascript:
+    xpi = {'Hungarian Mozilla Firebird Language Pack': 'http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-huHU-langpack.xpi'};
+    instWarning(xpi,'huHU');">installable language pack</a></li>
+<li>Italian:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-itIT.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-itIT.zip">Win32 zip</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-itIT-installer.exe">Win32 full installer</a>.</li>
+<li>Japanese:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-mac-jaJP.dmg.gz">Mac OS X gzipped disk img</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-jaJP-installer.exe">Win32 full installer</a>.</li>
+<li>Polish:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-plPL.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-plPL-installer.exe">Win32 full installer</a>.</li>
+<li>Slovenian:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-slSI.tar.gz">Linux x86 tar.gz</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-slSI-installer.exe">Win32 full installer</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-slSI.zip">Win32 zip</a>.</li>
+<li>Spanish (Argentina):
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-i686-pc-linux-gnu-esAR-SEA.bin">Linux x86 self extracting archive</a>,
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-esAR-installer.exe">Win32 full installer</a>.</li>
+<li>Welsh:
+ <a href="http://ftp.mozilla.org/pub/firebird/releases/0.6.1/contrib-localized/MozillaFirebird-0.6.1-win32-cyGB.zip">Win32 zip</a>.</li>
+</ul>
+
+</div>
+
+
+
+<p>Once you have downloaded the binary, use Winzip or gzip to unzip Mozilla Firebird to 
+an empty directory, then run <code>MozillaFirebird.exe</code>.</p>
+
+<p>To uninstall Mozilla Firebird, simply delete the Mozilla Firebird directory. This will leave 
+your profile in place for use by future Mozilla Firebird installations. If you wish to remove 
+your Mozilla Firebird <a href="http://texturizer.net/firebird/edit.html#profile">profile folder</a> you can delete the <code>Phoenix</code> folder from your Windows Application Data directory or remove the <code>.phoenix</code> dir from your Linux home directory.</p>
+
+<h2 id="issues">Known Issues</h2>
+
+<p>This list covers some of the known problems with 
+Mozilla Firebird 0.6.1. Please read this before reporting any new bugs, and watch it regularly (we'll update it as new bugs are found in the release).</p>
+
+<ul>
+<li>Mozilla Firebird utilizes large chunks of Mozilla Application Suite code. Many of the problems you may 
+experience in Mozilla Firebird are actually problems in this Mozilla core code. If you 
+find a problem with page content or connectivity then it is probably a Mozilla 
+problem and should be reported to the Browser product in Bugzilla, not to 
+the Mozilla Firebird product.</li>
+
+<li>Menus and folders on the bookmark toolbar do not always collapse correctly for Mozilla Firebird users on Windows.</li>
+
+<li>The "Don't ask at startup" checkbox in the Profile Manager is not working.</li>
+
+<li>"Use this theme" checkbox in theme install doesn't function properly and you may have to switch themes by going to <code>Tools > Options > Themes</code>. Also, some themes will not completely switch without a restart.</li>
+
+<li>Disabling of form auto-completion is not working.</li>
+
+<li>Firebird on Mac OS X is new and still very rough around the edges. Expect platform inconsistencies.</li>
+
+</ul>
+
+<p>For additional issues, FAQs, Tips and Tricks plus general Mozilla Firebird help be sure to 
+check out David Tenser's very useful <a href="http://texturizer.net/firebird/">
+Mozilla Firebird</a> help site and the 
+<a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird 
+forums</a> hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p> 
+
+<h2 id="FAQ">Frequently Asked Questions</h2>
+
+<ol class="faq">
+<li>What can I do to help?
+<p>We need all the exposure we can get.  Make it your mission to convert 5 friends, family members or coworkers.  If you're a student, get it distributed at 
+your college. Submit a story to <a href="http://www.slashdot.org/">Slashdot</a> and other news sites about the release. Make some 
+noise on your blog. Mass distribution via the Internet is possible--look at Kazaa. Spread the word!</p></li>
+
+<li>I use another browser because...
+<p>If you're not using Mozilla Firebird, tell the development team why.  We read the feedback at the  
+<a href="http://forums.mozillazine.org/index.php?c=4">Mozilla Firebird forums</a>.</p></li>
+
+<li>Why haven't you responded to the mail I sent you?
+<p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>.  The Firebird team reads them regularly.  E-mails are likely to be ignored.</p></li>
+
+<li>Where can I get themes and add-ons (extensions)?
+<p><a href="http://texturizer.net/firebird/extensions.html">Extensions</a> and <a href="http://texturizer.net/firebird/themes.html">Themes</a>.</p></li>
+
+<li>Who is working on Mozilla Firebird?
+<p>The main developers include Dave Hyatt, Blake Ross, Pierre Chanial, noririty, Ben Goodger, Dean Tessman,
+Mike Kaply, Jan Varga and Brian Ryner.
+Asa Dotzler provides help doing 
+releases, bug triage, the website, and other odds and ends. David Tenser helps with documentation, the website and releases. Arvid Axelsson maintains the default theme. Notes of appreciation, offers to help and most other inquiries should be directed to the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>.</p></li>
+
+<li>Where's the Mozilla Firebird source?
+<p>cvs.mozilla.org.  Mozilla trunk + mozilla/browser + mozilla/toolkit.</p></li>
+
+<li>Is Mozilla Firebird just Mozilla with a couple UI tweaks?
+<p>The 40,000+ lines of code already added or changed from Mozilla beg to differ.</p></li>
+
+<li>What happened with the name Phoenix?
+<p>It had to change because of trademark issues. The new name is Mozilla Firebird.</p></li>
+
+<li>Where is the mail client?
+<p>Many of the current users of the full Mozilla Application Suite are also using it for mail and news. This isn't possible in Mozilla Firebird since it's a browser only. However, you don't have to give up Mozilla's mail client by switching to Mozilla Firebird. You can download builds of the new <a href="http://www.mozilla.org/projects/thunderbird/index.html">Mozilla Thunderbird</a> mail application, the perfect complement to the Mozilla Firebird browser.</p></li>
+
+</ol>
+
+<small>
+Previous versions of the Release notes: <a href="0.1.html">0.1</a> | <a href="0.2.html">0.2</a> | <a href="0.3.html">0.3</a> | <a href="0.4.html">0.4</a> | <a href="0.5.html">0.5</a> | <a href="0.6.html">0.6</a>
+</small>
+
+
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

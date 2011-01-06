@@ -1,0 +1,33 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Bem-vindo ao Firefox Sync";
+    $body_id    = 'sync';
+    $body_class = 'portal-page secondrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="shortcut icon" type="image/png" href="{$config['static_prefix']}/img/firefox/sync/sync-ico.png"/>
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/sync.css" media="screen" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+<div id="main-feature">
+  <h2 id="main-feature-title">Parabéns, você possui o Firefox Sync instalado nesta máquina e acesso aos seus dados de navegação!</h2>
+  <p>Mantenha o Firefox Sync conectado para que seus dados sejam sincronizados diariamente.</p>
+</div>
+
+<div id="main-content">
+  <div>
+    <h3>Onde estão os meus dados?</h3>
+    <p>Todos os seus favoritos, senhas, histórico e preferências estarão disponíveis em seus locais habituais.</p>
+    <p>Suas abas abertas estarão disponíveis no menu Histórico. Você também poderá abri-las usando o ícone <insert_remote_tab_icon_here> na sua barra de abas.</p>
+  </div>
+  <div>
+    <h3>Precisa de mais informações?</h3>
+    <p>Tem alguma dúvida? Dê uma olhada em nossas <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">Dúvidas comuns</a>.</p>
+    <p>Interessado em aprender mais? Leia as <a href="https://services.mozilla.com/sync/relnotes/1.4.html">notas da versão</a> para obter todos os detalhes desta versão.</p>
+  </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

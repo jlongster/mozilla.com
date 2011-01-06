@@ -1,0 +1,224 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+
+    $page_title = 'Mozilla | Firefox web browser &amp; Thunderbird email client';
+    $body_id    = 'home';
+
+    $fonts      = ' '; // Remove fonts cause IE will download them anyway
+    $styles     = ' ';
+    $all_css    = min_inline_css('css');
+    $home_css   = min_inline_css('css_home');
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <!-- Please do not ever remove this comment. -->
+    <meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Thunderbird, Thunderbird 2, Thunderbird email, email, Firefox 2, Foxfire, Fire Fox, browser, web browser, internet browser, web, pop-up blocker, internet, speed, secure, customize, online, add-ons, fastest, download Firefox" />
+    <meta name="description" content="Mozilla is a global community dedicated to building free, open source products like the award winning Firefox web browser and Thunderbird email software." />
+    {$all_css}
+    {$home_css}
+    <style>
+    #home #main-feature {
+        background: none;
+        min-height: 250px;
+        position: relative;
+    }
+    #home #main-feature #upgrade {
+        width: 595px;
+        margin-left: 10px;
+        margin-top: 8px;
+        padding-bottom: 35px;
+        float: left;
+        letter-spacing: -0.02em;
+    }
+    #home #main-feature #upgrade p {
+        font-size: 30px;
+        padding-top: 10px;
+        text-align: right;
+    }
+    #home #main-feature #upgrade h3 {
+        font-size: 50px;
+    }
+    #home #main-feature h3 b {
+        font-size: 88px;
+        font-weight: normal;
+        position: relative;
+        top: 17px;
+        left: -5px;
+    }
+    #home #home-download {
+        float: left;
+        margin-top: 100px;
+        margin-left: 10px;
+    }
+    #home #promo {
+        position: relative;
+        height: 335px;
+        clear: both;
+    }
+    #home #promo img.screenshot {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #home #promo #promo-text {
+        font-style: italic;
+        line-height: 32px;
+        position: absolute;
+        top: 118px;
+        font-size: 19px;
+        right: 0;
+        width: 330px;
+    }
+    #home #promo #promo-text span {
+        white-space: nowrap;
+        display: block;
+    }
+    #home #promo #promo-text span.first  { margin-left: 50px; }
+    #home #promo #promo-text span.second { margin-left: 115px; }
+    #home #promo #promo-text span.download-count {
+        font-size: 30px;
+        padding-top: 8px;
+    }
+    #home #promo #promo-text span.download-count,
+    #home #promo #promo-text span.download-text {
+        text-align: center;
+    }
+    #home #main-content {
+        margin-top: 0;
+    }
+    #download-counter {
+        margin-left: 475px;
+        margin-bottom: 15px;
+        font-style: italic;
+        font-size: 20px;
+        color: #393939;
+    }
+    #download-counter span {
+        color: #57a21f;
+    }
+    #home #sub-firefox.sub-feature {
+        width: 200px;
+    }
+    </style>
+EXTRA_HEADERS;
+
+    $head_scripts = min_inline_js('js_utils');
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/'.LATEST_FIREFOX_VERSION.'/' => LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<div id="main-feature" class="new-creatures">
+    <div id="upgrade">
+        <h3>Upgrade to <b>Firefox</b></h3>
+        <p>Your web, the way you like it.</p>
+    </div>
+    <div id="home-download">
+    <script><?php include $config['file_root'] . '/js/download.old.js';?></script>
+    <script>
+        <!--
+        // Configure the Firefox download write script
+
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+        document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+        document.writeln("<\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
+    </div>
+
+    <div id="promo">
+        <?= buildPlatformImage($config['static_prefix'].'/img/test/bug620574/creatures-bottom.png', 'Firefox screenshot', null, null, 'screenshot', array('mac'))?>
+        <p id="promo-text"><span class="first">advanced security,</span> <span class="second">easy customization,</span> <span class="third">high performance,</span> <span class="download-count">740,700,295</span> <span class="download-text">downloads and counting!</span></p>
+    </div>
+
+</div>
+
+<hr class="hide" />
+
+<div id="main-content">
+    <div class="sub-feature" id="sub-firefox">
+        <h3>Meet Firefox</h3>
+        <p>Get a closer look at the world’s best browser.</p>
+        <a href="/<?=$lang?>/firefox/central/">Take the Tour <span>»</span></a>
+    </div>
+
+    <div class="sub-feature" id="sub-security">
+        <h3>Firefox Helps You <span>Stay Safe</span></h3>
+        <p>Worried about online security? We’ve got your back.</p>
+        <a href="/<?=$lang?>/firefox/security/">Learn More <span>»</span></a>
+    </div>
+
+    <div class="sub-feature" id="sub-performance">
+        <h3>Get Ready To <span>Go Fast</span></h3>
+        <p>Firefox is built to accelerate the way you use the Web.</p>
+        <a href="/<?=$lang?>/firefox/underthehood/">Learn More <span>»</span></a>
+    </div>
+
+    <div class="sub-feature" id="sub-customize">
+        <h3>Easy Ways To <span>Personalize</span></h3>
+        <p>When it comes to browsing, one size doesn’t fit all.</p>
+        <a href="/<?=$lang?>/firefox/customize/">Learn More <span>»</span></a>
+    </div>
+
+</div>
+
+<script>
+// Includes jquery and then nav-main.js after onload
+(function () {
+    var head = document.head || document.getElementsByTagName("head")[0];
+
+    function load_nav_main() {
+        var scriptElem = document.createElement("script");
+        scriptElem.src = "<?php echo $config['static_prefix'];?>/js/nav-main.js";
+        head.insertBefore(scriptElem, head.firstChild);
+    }
+
+    function load_jquery () {
+        var scriptElem = document.createElement("script");
+        var scriptdone = false;
+        scriptElem.onload = scriptElem.onreadystatechange = function () {
+            if ((scriptElem.readyState && scriptElem.readyState !== "complete" && scriptElem.readyState !== "loaded") || scriptdone) {
+                return false;
+            }
+            scriptElem.onload = scriptElem.onreadystatechange = null;
+            scriptdone = true;
+            load_nav_main();
+        };
+        scriptElem.src = "<?php echo $config['static_prefix'];?>/js/jquery/jquery.min.js";
+        head.insertBefore(scriptElem, head.firstChild);
+    };
+
+    var old_onload = window.onload;
+    if (old_onload)
+    {
+        window.onload = function() { old_onload(); load_jquery(); };
+    }
+    else
+    {
+        window.onload = load_jquery;
+    }
+    
+})();
+</script>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

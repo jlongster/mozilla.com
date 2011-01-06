@@ -1,0 +1,120 @@
+<?php
+
+    // translate The variables below please
+
+    // Page title (the browser title bar)
+    $page_title = "iPhone 上的 Firefox Home ";
+
+    // Video player extra variables
+    $video_title  = "看看 Firefox Home 的影片";
+    $music_credit = "由 Kate Earl 配樂";
+
+    include_once "{$config['file_root']}/includes/l10n/firefoxhome-page.inc.php";
+
+?>
+
+
+<div id="main-feature">
+  <h2>行動首頁帶著走</h2>
+  <p>在您的 iPhone 上同步存取您 Firefox 的歷史資訊、書籤、密碼，以及開啟分頁。</p>
+  <p class="dl">
+    <a href="<?=$ituneslink;?>" class="download-link">
+      <strong>下載</strong>
+      <em>立刻從 iTunes 下載 &ndash; 完全免費</em>
+    </a>
+  </p>
+</div>
+
+<?=$sidemenu;?>
+
+
+<div class="features-divider top"><hr /></div>
+  <ul id="main-features">
+    <li class="onthego">
+
+      <h4>隨身帶著走</h4>
+      <p>直接存取您在電腦上打開的分頁清單</p>
+
+    </li>
+    <li class="less">
+
+      <h4>輕輕一碰</h4>
+      <p>不需要輸入冗長的網址，直接透過手指觸摸書籤就可以開啟您最愛的網站</p>
+
+    </li>
+    <li class="search">
+
+      <h4>智慧搜尋</h4>
+      <p>直接在智慧位址列（Awesome Bar）輸入關鍵字，開啟您的最愛與重要網站</p>
+
+    </li>
+
+    <?=$video;?>
+  </ul>
+  <div class="features-divider"><hr /></div>
+
+<div id="main-content">
+  <div class="container">
+
+    <h3>為什麼要在您的 iPhone 上使用 Firefox Home？</h3>
+
+    <h4>隨身帶著走</h4>
+    <p>隨時隨地讓您喜歡的網站在 iPhone 上等著您：您的歷史資訊、開啟分頁，以及書籤。用法就和您習慣的智慧位址列一模一樣。</p>
+
+    <h4>不用從頭開始</h4>
+    <p>不需要輸入冗長的網址，或是浪費時間來搜尋您最愛的網站。就讓 Firefox 的歷史紀錄在您打開 iPhone 的時候幫您代勞吧。</p>
+
+    <h4>甜蜜的家</h4>
+    <p>家是很重要的，所以您需要保全來保護您的私密資料。Firefox Home 也一樣，您的加密金鑰可以保證只讓您存取您所儲存的資訊。</p>
+
+  </div>
+  <div id="main-content-footer"></div>
+
+</div>
+
+<div id="sidebar">
+
+    <h3>開始使用</h3>
+    <ol>
+      <li>
+
+        <h4>在您的電腦安裝 <a href="/<?=$lang?>/firefox/sync/">免費的 Firefox Sync 附加元件</a>。</h4>
+        <p>Firefox Home 使用了 Firefox Sync 附加元件的同步功能以存取您的瀏覽器資訊，並安全地將這些資訊傳送到您的 iPhone。</p>
+
+      </li>
+      <li>
+
+        <h4>重新啟動 Firefox 之後，請依照畫面的說明輸入密碼、加密金鑰來建立您的帳號。</h4>
+        <p>Firefox Home 使用您的加密金鑰在本地端進行加密，保護您的資訊。</p>
+
+      </li>
+      <li>
+
+        <h4>Firefox Sync 將會開始安全地同步您的資料。第一次的同步可能需要最多二十分鐘。</h4>
+        <p>Firefox Sync 將只會在您不在私密瀏覽模式時工作。當您完成第一次同步時，您會在工具選單當中的 Sync 選單看到最後更新時間。</p>
+
+      </li>
+      <li>
+
+        <h4>要完成設定，請在您 iPhone 上的 Firefox Home 也輸入帳號、密碼、加密金鑰，並且按下「完成」。</h4>
+        <p>如果您登入時發生問題，請 <a href="<?=$sumolink1?>">點一下這裡以取得幫助</a>。</p>
+
+      </li>
+      <li>
+
+        <h4>當您完成設定之後，您將可以在 iPhone 上存取您電腦的書籤、歷史資訊，以及開啟的分頁。</h4>
+        <p>如果您的資料沒有出現，請 <a href="<?=$sumolink2?>">點一下這裡以取得幫助</a>。</p>
+
+      </li>
+    </ol>
+
+    <p><a href="<?=$sumolink3?>">更多詳細步驟</a></p>
+    <p><a href="/<?=$lang?>/mobile/home/faq/">常見問題集</a></p>
+    <p><small>* 請注意：在您建立 Firefox Sync 帳號後，第一次的同步可能需要比較多的時間完成。完成第一次同步之後，您就可以透過您 iPhone 上的 Firefox Home 存取您的資料。</small></p>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

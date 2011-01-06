@@ -1,0 +1,50 @@
+<?php
+    // please translate the variable below
+    $page_title = "Personnaliser votre navigateur";
+
+    $pageid = "mobile-customize";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Personnaliser votre navigateur</h2>
+    <p>Personnalisez Firefox et appréciez le premier navigateur à offrir des modules complémentaires
+    pour mobile.</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>Votre navigateur vous ressemble.</h5>
+<p>Les <a href="https://addons.mozilla.org/firefox/mobile">modules complémentaires pour
+mobile</a> vous facilitent la vie lors de vos déplacements. Installez des modules pour partager des
+informations avec vos réseaux sociaux, corriger des URL ou traduire des phrases dans une langue
+étrangère, et tout cela à portée de main avec votre mobile. Les modules complémentaires sont
+gratuits et faciles à installer sur votre mobile, alors essayez-les.</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="Captures d'écran des modules complémentaires"
+id="personal-screenshot" />
+
+<h5>Personnaliser directement depuis votre mobile.</h5>
+<p>Personnalisez votre Firefox en recherchant et en installant des modules complémentaires depuis
+votre mobile. Glissez simplement votre doigt sur l'écran et sélectionnez le bouton «&nbsp;Outils&nbsp;» sur la
+droite de votre écran. Tapez sur le bouton modules complémentaires pour débuter la
+personnalisation.</p>
+
+<div id="dev-promo">
+<h3>Vous voulez développer un module pour téléphone portable&nbsp;?</h3>
+<p>Vos innovations sont essentielles au succès de Firefox. Nous avons facilité le développement de
+modules complémentaires pour mobile. Visitez la page <a href="../developers/">Développer pour
+mobile</a> pour en savoir plus.</p>
+</div>
+
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

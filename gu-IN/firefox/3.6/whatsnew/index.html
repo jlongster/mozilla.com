@@ -1,0 +1,70 @@
+<?php
+
+/* translate the page title below */
+$page_title = "Firefox ની આવૃત્તિ સુધારાઈ ગઈ";
+
+
+/*
+l10n note: there are 3 cases we have to deal with in the Whatsnew page:
+#1: The visitor is using the latest version of Firefox ($latestVersion)
+#2: The visitor is using an old version of Firefox ($oldVersion)
+#3: The visitor is using a version of Firefox that we can't identify ($unknownVersion)
+
+The text at the top of the page changes depending on the version we detect
+*/
+
+include_once "{$config['file_root']}/includes/headers/3.6/whatsnew-l10n.inc.php";
+
+?>
+
+
+
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+      <p>વેબ પર શોધ, સ્વતંત્રતા અને તકોને મદદ કરવાના <a href="/<?=$lang?>/about/whatismozilla.html">Mozilla ના મીશનમાં</a> ફાળો આપવા બદલ તમારો આભાર!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>તમે હમણાં Firefox <?=$_version?> વાપરી રહ્યા છો.</h2>
+
+  <p id="main-feature-contents">સુરક્ષા કારણોસર, અમે <a href="/<?=$lang?>/firefox/">તાજેતરની અને મોટી આવૃત્તિ</a> ડાઉનલોડ કરવાનો આગ્રહ રાખીએ છીએ.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>તમે Firefox ની અજ્ઞાત આવૃત્તિ વાપરી રહ્યા છો.</h2>
+
+  <p id="main-feature-contents">સુરક્ષા કારણોસર, અમે <a href="/<?=$lang?>/firefox/">તાજેતરની અને મોટી આવૃત્તિ</a> ડાઉનલોડ કરવાનો આગ્રહ રાખીએ છીએ.</p>
+
+</div>
+
+
+
+
+<?php
+
+endif;
+include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
+include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

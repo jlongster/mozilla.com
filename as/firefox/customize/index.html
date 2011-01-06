@@ -1,0 +1,104 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'সকলোৰে একেই আকাৰ নহয়';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>সকলোৰে একেই আকাৰ নহয়</h2>
+    <p>আপুনি পিজ্জাত ট'পিং দিয়া আৰু ম'বাইল ফ'নত ৰিংট'ন দিয়ে । তেতিয়াহ'লে আপুনি ৱেব চোৱা ধৰণত কিয় সলনি নকৰে ?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">উৎপাদন</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">গুণ</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">সুৰক্ষা</a></li>
+    <li><span>নিজৰ মতে পছন্দ কৰি সজোৱা</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">১০০% জৈৱ চালনাজ্ঞান</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">সঙ্কেত &amp; কায়দা</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">মুক্তিৰ টোকা</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">অন্য ব্যৱস্থাপ্ৰণালী আৰু ভাষা</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>সকলোৰে কাৰণে এটা এড-অ'ন</h3>
+        <p>আপুনি ৱেব ব্যৱহাৰ কৰাৰ মতে আপোনাৰ অন-লাইন অভিজ্ঞতা নিজৰ পছন্দৰ মতে সজাবলৈ Firefox ৰে সৰ্বাধিক উপায় আছে । ৫,০০০ তকৈও অধিক এড-অ'ন (সৰু-সুৰা উপৰঞ্চি যি আপোনাৰ অনন্য প্ৰয়োজনৰ কাৰণে Firefox ক বৃদ্ধি কৰে) আপোনাৰ কাৰণে অপেক্ষা কৰি আছে আপোনাক আৰু অধিক সহায় কৰিবলৈ, আৰু অধিক আমোদ দিবলৈ আৰু অধিক অন-লাইন ৰূপে সৃষ্টিশীল হ'বলৈ ।</p>
+        <p>কিছু তথ্য লাগে ? তলৰ উদাহৰণ চাওক, তাৰ পিছত <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/">সম্ভাৱনাৰ সম্পূৰ্ণ তালিকাৰ কাৰণে আমাৰ এড-অ'নৰ ছাইট চাওক ।</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>সতৰ্কবাৰ্তা &amp; উন্নয়ন</h4>
+            <p>এই বিভাগৰ এড-অ'নেৰে, আপুনি বতৰ, খেলা আৰু eBay নিলামৰো শেহতীয়া খবৰ পাব । প্ৰকৃত সময়ৰ তথ্য আপোনাৰ চৰকত দেখা যাব, আপুনি যি ছাইটে চাই নাথাকক ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">সকলো সতৰ্কবাৰ্তা &amp; উন্নয়ন এড-অ'ন চাওক ।</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">উদাহৰণ:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>আপুনি ৱেব থাকিলেই আপোনাৰ eBay বিক্ৰয়ত চকু দি থাকিব ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/5202">Firefox eBay সংস্কৰণ ব্যৱহাৰ কৰি চাওক</a> <span>by eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>ফ'টো, সঙ্গীত &amp; ভিডিঅ'</h4>
+            <p>আপোনাৰ Firefox ক এটা ফ'টো আপ-ল'ড কৰা সৰঞ্জামলৈ, এটা সঙ্গীত প্লেয়াৰ আৰু এটা সৰ্ব গুণ সম্পন্ন মাল্টিমিডিয়া পাৱাৰ্হাউচলৈ পৰিবৰ্ত্তন কৰক । ছাৰ্ফ কৰোঁতে, কাম কৰোঁতে, ঈ-মেইল কৰোঁতে বা ৱেবত গৱেষণা কৰোঁতে আপোনাৰ আঙুলিৰ আগতে এটা মিডিয়া নিয়ন্ত্ৰণ পেনেল থকাৰ নিচিনা ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">সকলো ফ'টো, সঙ্গীত &amp; ভিডিঅ' এড-অ'ন চাওক ।</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">উদাহৰণ:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>আপোনাৰ চৰকৰ পৰা যিকোনো মিডিয়া প্লেয়াৰ নিয়ন্ত্ৰণ কৰক ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/219">FoxyTunes ব্যৱহাৰ কৰি চাওক</a> <span>by Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>সামাজিক &amp; যোগাযোগ</h4>
+            <p>এই এড-অ'নসমূহে আপোনাক ৱেবত আমোদময় নতুন বস্তু বিচাৰি দিয়ে, আপোনাৰ তৎক্ষণাৎ সম্বাদ পঠিওৱা বৃদ্ধি কৰে আৰু সকলো উচ্চমানৰ সামাজিক সংযোগৰ ছাইটেৰে আপোনাৰ বন্ধু বৰ্গৰ সৈতে যোগাযোগ ৰাখিবলৈ সহায় কৰে ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">সকলো সামাজিক &amp; যোগাযোগ এড-অ'ন চাওক ।</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">উদাহৰণ:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>নতুন ছাইট আৱিষ্কাৰ কৰক, তাৰ পিছত বন্ধুৰ সৈতে শেয়াৰ কৰক আৰু নিজৰ আৱিষ্কাৰৰ কথা কওক ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/138">StumbleUpon ব্যৱহাৰ কৰি চাওক</a> <span>by StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>থিম</h4>
+            <p>এটা মানসন্মত পৰিকল্পনালৈকে আপোনাৰ চৰণ কৰা অভিজ্ঞতা সীমিত নকৰিব । নতুন ৰং নিৰ্ব্বাচন কৰক, চৰকক ব্যৱহাৰৰ কাৰণে আৰু সহজ কৰক(যেনে, ডাঙুৰ আকাৰৰ বুটাম) বা আপোনাৰ পছন্দৰ মতে কোনো চেহেৰা বাচি লওক ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">সকলো থিম চাওক ।</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">উদাহৰণ:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>এন্ধাৰ ভাল পোৱা সকলৰ কাৰণে থিম ।</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/4908">NASA Night Launch ব্যৱহাৰ কৰি চাওক</a> <span>mcdavis941 ৰ</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('en-GB', $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>এড-অ'নসমূহ</h3>
+            <h5>Firefox ক নিজৰ কৰি লওক</h5>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/">সকলো এড-অ'ন চাওক</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

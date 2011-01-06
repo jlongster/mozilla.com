@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "À propos de l'identification des sites en un clic";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>À propos de l'identification des sites en un clic</h2>
+    <p>Firefox 3 contient un nouveau bouton d'identité de site pour vous aider à savoir sur quel site vous vous connectez.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Cette fonctionnalité vous permet de voir en un coup d'œil si le site Web que vous visitez a fourni des informations sur son identité, l'organisme qui a vérifié cette information et si le site protège vos données personnelles des escrocs. Vous pouvez atteindre l'identité du site pour n'importe quel site Web en cliquant sur l'icône du site à l'extrémité gauche de la barre d'adresse (ou en tapant Ctrl+L puis Maj+Tab+Entrée).</p>
+
+<h3>Foire aux questions</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Que signifient les différents niveaux d'informations d'identité&nbsp;?</h4>
+    <div class="expander-content">
+        <p>L'icône de «&nbsp;douanier&nbsp;» changera pour modifier le niveau des informations d'identité fournies par le site Web.</p>
+        <p class="site-id site-id-1">Le site Web ne fournit pas d'informations d'identité.</p>
+        <p class="site-id site-id-2">Le site Web fournit des informations d'identité basiques et protège vos données personnelles des escrocs.</p>
+        <p class="site-id site-id-3">Le site Web fournit des informations d'identité dûment vérifiées sur son propriétaire et protège vos données personnelles des escrocs.</p>
+        <p class="site-id site-id-4">Le site Web a été classé comme site malveillant ou contrefaçon. Donner des informations personnelles sur ce site, ou même seulement le visiter, peut être dangereux.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Pourquoi tous les sites Web ne fournissent-ils pas d'informations d'identité vérifiées&nbsp;?</h4>
+    <div class="expander-content">
+        <p>La plupart des sites Web sur Internet ne demandent pas d'informations personnelles ou financières à leurs visiteurs, et peuvent ne pas ressentir le besoin de prendre en charge le coût pour la fourniture des informations d'identité vérifiées et pour la protection contre les escrocs.</p>
+        <p>Les sites Web vous demandant de fournir des informations personnelles ou financières, ou qui revendiquent être des sites gouvernementaux ou de sociétés, doivent toujours s'identifier clairement et protéger vos données personnelles des escrocs.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Est-il sûr de faire des transactions avec des sites qui ne s'identifient pas&nbsp;?</h4>
+    <div class="expander-content">
+        <p>Pour décider à qui vous pouvez faire confiance en ligne, vous devez savoir à qui vous vous adressez, mais cela ne suffit pas. Les sites qui ne fournissent pas d'informations d'identité et qui ne protègent pas vos données personnelles vous mettent en danger, et ne devraient pas être considérés comme sûrs. Mais même les sites qui s'identifient correctement pourraient cependant utiliser des pratiques que vous désapprouvez ou une sécurité de leur site Web laxiste.</p>
+        <p>Tout comme dans la vie de tous les jours, vous devez être prudent lorsque vous traitez avec des sites que vous ne connaissez pas et auxquels vous ne faites pas confiance. Savoir qu'un site s'est identifié correctement fait partie du processus pour prendre ses décisions.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mozilla vérifie-t-elle les informations pour chaque site Web&nbsp;?</h4>
+    <div class="expander-content">
+        <p>Les informations utilisées pour identifier les sites Web ne sont pas vérifiées par Mozilla. Firefox, comme les autres navigateurs, s'appuie sur un ensemble de tiers de confiance appelés «&nbsp;Autorités de Certification&nbsp;» (AC) qui vérifient l'identité d'un site et délivrent des «&nbsp;certificats&nbsp;» d'identité. Ces sociétés doivent adhérer à la <a href="http://www.mozilla.org/projects/security/certs/policy/">politique de certificat des AC de Mozilla</a> qui, entre autres choses, nécessite que les AC fournissent des audits de tiers confirmant qu'ils ne délivrent pas de certificats indûment.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

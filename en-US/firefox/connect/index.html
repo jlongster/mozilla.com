@@ -1,0 +1,92 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Stay Connected';
+    $body_id    = 'stay-connected';
+    $breadcrumbs = array(
+        'Stay Connected'  => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/email-form.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/connect.css" media="screen">
+    <script src="{$config['static_prefix']}/js/newsletter-form.js" type="text/javascript"></script>
+    <script src="{$config['static_prefix']}/js/mozilla-input-placeholder.js" type="text/javascript"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+		<h2>Stay <span>Connected</span></h2>
+		<p>Firefox is on your favorite social media sites. Connect with us and join the conversation!</p>
+</div>
+
+<div id="sidebar">
+	<div id="newsletter-sidebar">
+    <?php 
+        $open_pane_content = <<<OPEN_CONTENT
+            <h3>Get the Monthly News</h3>
+            <p>Don't miss our newsletter featuring new products, Firefox tips &amp; tricks, events and more!</p>
+            <p><a href="/{$lang}/newsletter/">Sign me up &raquo;</a></p>
+OPEN_CONTENT;
+        include "{$config['file_root']}/en-US/newsletter-form.html"; 
+    ?>
+	</div>
+	<div id="share">
+		<h3>Spread the Word!</h3>
+		<p>Love Firefox? Get in on the action by taking a minute to help. <a href="/<?=$lang?>/about/participate/">Get started »</a></p>
+	</div>
+</div>
+
+<div id="content">
+	<div class="top-row">
+		<div class="item" id="facebook">
+			<a href="http://www.facebook.com/Firefox?v=wall">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-facebook.png" width="42" height="41" />
+			</a>
+
+			<h3>Facebook</h3>
+			<p><a href="http://www.facebook.com/Firefox?v=wall">Become a fan »</a></p>
+		</div>
+
+		<div class="item" id="twitter">
+			<a href="http://twitter.com/firefox">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-twitter.png" width="42" height="41" />
+			</a>
+
+			<h3>Twitter</h3>
+			<p><a href="http://twitter.com/firefox">Follow our tweets »</a></p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="item" id="youtube">
+			<a href="http://www.youtube.com/firefoxchannel">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-youtube.png" width="40" height="56"/>
+			</a>
+
+			<h3>YouTube</h3>
+			<p><a href="http://www.youtube.com/firefoxchannel">View cool videos<br />&amp; demos »</a></p>
+		</div>
+
+		<div class="item" id="flickr">
+			<a href="http://www.flickr.com/photos/firefox_community">
+				<img class="network_icon" src="/img/tignish/firefox/connect/icon-flickr.png" width="57" height="41"/>
+			</a>
+
+			<h3>Flickr</h3>
+			<p><a href="http://www.flickr.com/photos/firefox_community">See our pool of<br /> community photos »</a></p>
+		</div>
+	</div>
+</div><!-- end #content div -->
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

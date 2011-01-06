@@ -1,0 +1,251 @@
+/* {{{ Main Features */
+
+#mobile-features #main-feature { 
+	position: relative;
+	min-height: 200px;
+}
+
+* html #mobile-features #main-feature { height: 200px; /* Hack for IE6 */ }
+
+#main-feature h2,
+#main-feature p {
+	margin-bottom: 0;
+	margin-right: 200px;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 1em;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+/* }}} */
+/* {{{ Top Features */
+
+.feature-links {
+	float: left;
+	background: url(/img/covehead/features/dottedline-background.png) top left no-repeat;
+	height: 220px;
+	margin: 0;
+	padding: 0;
+}
+
+.feature-links li {
+	text-align: center;
+	display: inline;
+	float: left;
+	list-style-type: none;
+	margin: 0 5px 0 0;
+	padding: 60px 1px 30px;
+}
+
+.feature-links li a {
+	background: url(/img/mobile/features/icon-featurelinks.png) 50% 0 no-repeat;
+	display: block;
+	width: 110px;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 16px;
+	text-align: center;
+	padding: 90px 25px 40px;
+}
+
+.feature-links li a span {
+	display: block;
+}
+
+.feature-links li#menu-sync a { background-position: 50% 0; }
+.feature-links li#menu-browse a { background-position: 50% -200px; }
+.feature-links li#menu-customize a { background-position: 50% -400px; }
+.feature-links li#menu-action a { background-position: 50% -600px; }
+
+#top-features {
+	zoom: 1;
+	float: right;
+	display: inline;
+	width: 175px;
+	padding: 20px 20px 15px 20px;
+	margin-right: 5px;
+	background: #cce2f3;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-top: -85px;
+}
+
+#top-features h3 {
+	font-size: 18px;
+	margin: 0;
+	color: #3a4692;
+	line-height: 1;
+}
+
+#main-feature #top-features p {
+	font-size: 12px;
+	margin: 0;
+}
+
+#top-features ul {
+	margin: 5px 0 0 0;
+	line-height: 40px;
+	zoom: 1;
+}
+
+#top-features ul li {
+	position: relative;
+	list-style: none;
+	zoom: 1;
+}
+
+#top-features ul li a {
+	display: inline;
+	zoom: 1;
+}
+
+/* IE whitespace hack */
+#top-features ul li a {
+	display: inline-block\9
+}
+
+#top-features .top-feature-hover {
+	display: none;
+	position: absolute;
+	bottom: -23px;
+	left: -224px;
+	padding: 20px 30px 28px 35px;
+	width: 154px;
+	height: 84px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	background: url(/img/firefox/features/bubble.png);
+	background: url(/img/firefox/features/bubble-256.png)\9; /* IE8 and below */
+}
+
+#top-features .top-feature-hover p {
+	font-size: 11px;
+	color: #fff;
+}
+
+#top-features .top-feature-hover h3 {
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0 0 6px 0;
+	color: #fff;
+}
+
+/* }}} */
+/* {{{ Features */
+
+.features-box {
+	clear: left;
+	padding: 30px 0 0 0;
+	position: relative;
+}
+
+.features-container {
+	background:url("/img/covehead/divider-main.jpg") no-repeat scroll 50% 0 transparent;
+	padding: 10px 0 30px 0;
+}
+
+/* }}} */
+/* {{{ Features Top Link */
+
+.features-top-link {
+	background: url(/img/covehead/features/return-to-top.png) bottom left no-repeat;
+	text-indent: -99999px;
+	clear: both;
+	display: block;
+	width: 15px;
+	margin: 10px 10px 0 0;
+	padding: 10px 0 0 0;
+	outline: none;
+}
+
+/* }}} */
+/* {{{ Columns */
+
+.column1,
+.column2,
+.column3 {
+	float: left;
+	display: inline;
+	width: 290px;
+	margin-right: 35px;
+	position: relative;
+}
+.column3 { margin-right: 0; }
+
+.zoom .column1,
+.zoom .column2,
+.location .column1,
+.location .column2  {
+	width: 425px;
+}
+
+.support .column1 {
+	width: 200px;
+}
+
+/* }}} */
+/* {{{ Features */
+
+#sync {
+	margin-top: 30px;
+}
+	
+.features-box {
+	width: 100%;
+}
+
+.features-box .features-container {
+	padding: 30px 0 0 0;
+}
+
+.features-box h4 {
+	font-size: 20px;
+	margin-top: 0;
+}
+
+.features-box ul {
+	margin-top: 4px;
+}
+
+.features-box li {
+	margin: 15px 10px;
+}
+
+.features-divider hr { display: none; }
+.features-divider {
+	background: transparent url(/img/covehead/divider-hr.png) center center repeat-x;
+	height: 8px;
+	clear: both;
+	padding: 30px 0;
+	margin-left: 10px;
+}
+.features-divider.top {
+    padding-bottom: 0;
+}
+
+.features-footer { clear: both; }
+
+
+/* }}} */
+/* {{{ Clearfix */
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.clearfix { display: inline-block; }
+
+html[xmlns] .clearfix { display:block; }
+
+* html .clearfix { height:1%; }
+
+/* }}} */

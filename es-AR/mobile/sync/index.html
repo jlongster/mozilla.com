@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync para dispositivos móviles";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Levántate y anda</h2>
+    <p>Descargá Firefox Sync y compartí tu historial, marcadores, pestañas y mucho más entre tu PC y tu teléfono celular.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/<?=$lang;?>/mobile/addon/10868">Descargá la extensión Weave</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>¿Por qué instalar Weave?</h3>
+
+    <h4>Escribir es difícil</h4>
+    <p>Aceptémoslo, escribir en tu dispositivo móvil es difícil. Olvidate de escribir largas URLs y términos de búsqueda, la Barra asombrosa recuerda tu historial, marcadores y pestañas entre la PC y el celular, llevándote rápidamente donde querés ir al escribir las primeras letras.</p>
+
+    <h4>No empieces desde cero</h4>
+    <p>Decile adiós a reconfigurar y reescribir. Firefox Sync sincroniza tus preferencias y contraseñas de Firefox, para que no tengas que hacerlo nuevamente en cada dispositivo.</p>
+
+    <h4>Levántate y anda</h4>
+    <p>Llevate Firefox con vos dondequiera que vayas. Navegá por Internet en tu PC, y si tenés que salir, tendrás todo esperándote en tu dispositivo móvil: tu historial, las pestañas que tenés abiertas, marcadores, la barra asombrosa, exactamente como acabás de dejarlo.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Cómo empezar</h3>
+    <ol>
+    <li>
+        <h4>Instalá Firefox Sync en tu PC</h4>
+        <p>Asegurate de usar Firefox 3.5 o superior en tu PC y que tu teléfono o dispositivo móvil sea un dispositivo compatible con Firefox (actualizá <a href="http://firefox.com/">Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/<?=$lang;?>mobile/addon/10868">Descargá Weave</a></li>
+            <li>Cuando la descarga haya sido completada, haz clic en “Reiniciar Firefox” para terminar de instalar la extensión Weave.</li>
+            <li>Cuando se reinicie Firefox, usá el menú “Herramientas” o el ícono de Firefox Sync que está en la parte inferior derecha de la barra de estado para abrir Firefox Sync e inscribirte.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Instalá la extensión Firefox Sync en tu dispositivo móvil</h4>
+        <ul>
+            <li>Abrí las Preferencias, seleccioná el botón Extensiones.</li>
+            <li>Buscá y seleccioná la extensión Weave. Ingresá, sincronizá y ya estás listo para irte.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

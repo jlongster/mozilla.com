@@ -1,0 +1,42 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Mozilla | Firefox mobiilile";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Tere tulemast Firefoxi kasutama" /></h1>
+<p>Maailma parim veebilehitseja on nüüd saadaval ka mobiilile.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Laadi kohe alla, tasuta</a>
+    <div><a href="platforms.html" class="system">Kas Firefox on saadaval ka minu emakeeles?</a></div>
+
+  <?php else: ?>
+
+    <p>Sinu seade ei ole toetatud</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Vaata toetatud platvorme ja seadmeid</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">Naudi oma lemmikuid Firefoxi võimalusi:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Sünkroniseerimine</b> <span>Sünkroniseeri veebilehitsemine arvuti ja mobiili vahel sujuvalt</span></li>
+    <li id="customize"><b>Kohandamine</b> <span>Paigalda lisasid ja muuda Firefox täpselt selliseks nagu sulle meeldib</span></li>
+    <li id="search"><b>Otsingud</b> <span>Trüki vähem ja sirvi veebi kiiremini Awesome Bar'i abil</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Rohkem võimalusi</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Geolocation i Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Stedsavhengig nettlesing</h2>
+    <p>Firefox kan fortelle nettsider hvor du befinner deg, slik at du kan finne info
+    som er mer relevant og nyttig. Det handler om å gjøre nettet smartere
+    &ndash; og det gjøres på en måte som respekterer personvernet ditt.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Prøv det!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Ofte stilte spørsmål</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hva er stedsavhengig nettlesing?</h4>
+    <div class="expander-content">
+        <p>Nettsider som bruker stedsavhengig nettlesing spør deg om hvor du er, for å kunne gi deg mer relevant informasjon, eller for å spare deg bryet med å søke. For eksempel, dersom du leter etter en pizzarestaurant i området ditt. Et nettsted vil kunne spørre deg om å dele informasjon om hvor du er, slik at dersom du bare søker etter «pizza» så får du opp resultatet du leter etter... ingen annen informasjon eller skriving er nødvendig.</p>
+        <p>Eller dersom du planlegger en reiserute, så vil nettstedet automatisk vite hvor du starter fra. Alt du trenger å oppgi er hvor du ønsker reise til.</p>
+        <p>Denne tjenesten er helt valgfri &ndash; Firefox deler ikke informasjon om hvor du er uten at du gir tillatelse til det &ndash; og dette gjøres med den høyeste respekt for ditt personvern. Og, som med alle delene av Firefox, er denne funksjonen bygd på åpne standarder for å den enkel å ta i bruk for nettstedsutviklere.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvordan virker det?</h4>
+    <div class="expander-content">
+        <p>Når du besøker et stedsavhengig nettsted vil Firefox spørre deg om du ønsker å dele informasjon om hvor du befinner deg.</p>
+        <p>Dersom du godtar dette, henter Firefox inn informasjon om trådløse tilgangspunkter i nærheten og datamaskinens IP-adresse. Firefox sender denne informasjonen til en geolocation-tjenestetilbyder (Google Location Services) for å finne et estimat på hvor du er. Denne informasjonen deles deretter med nettstedet som forespurte den.</p>
+        <p>Dersom du ikke godtar forespørselen fra nettstedet vil ikke Firefox gjøre noe.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvor nøyaktig er stedsangivelsene?</h4>
+    <div class="expander-content">
+        <p>Nøyaktigheten varierer mye fra sted til sted. I noen steder vil tjenestetilbyderene våre være i stand til å gi en posisjon innenfor noen få meter. I noen områder vil nøyaktigeten være mye dårligere. Alle stedsangivelsene som gis fra tjenestetilbyderne våre er bare estimater, og vi garanterer ikke for nøyaktigheten til stedsangivelsene. Ikke bruk denne informasjonen i krisesituasjoner. Alltid bruk sunn fornuft.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvilken informasjon sendes, og til hvem? Hvordan beskyttes personvernet mitt?</h4>
+    <div class="expander-content">
+        <p>Ditt personvern er ekstremt viktig for oss, og Firefox gir aldri informasjon om hvor du er uten at du tillater det. Når du besøker et nettsted som spør etter informasjon vil du bli spurt før informasjonen deles med nettstedet og vår tredjeparts tjenesteleverandør.</p>
+        <p>Som standard bruker Firefox tjenesten Google Location Services for å finne ut hvor du er ved å sende:</p>
+        <ul>
+            <li>datamaskinens IP-adresse,</li>
+            <li>informasjon om trådløse aksesspunkter i nærheten, og</li>
+            <li>en tilfeldig valgt klientidentifikator som tildeles av Google, som utløper annenhver uke.</li>
+        </ul>
+        <p>For en fullstendig beskrivelse av informasjonen som samles inn og brukes av Firefox, se <a href="/<?=$lang?>/legal/privacy/firefox-en.html">personvernerklæringen for Firefox</a> (engelsk).</p>
+        <p>Google Location Services returnerer din estimerte posisjon (f.eks. lengde- og breddegrad).  For en komplett beskrivelse av informasjonen som samles sammen og brukes av Google, se <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation-personvernbestemmelser</a> (engelsk).</p>
+        <p>Informasjonen overføres over en kryptert tilkobling for å beskytte personvernet ditt. Når Firefox har stedsinformasjonen din, sender den informasjonen til nettstedet som forespurte den. Navnet og adressen til nettstedet som forespør stedsinformasjonen, og eventuelt infokapsler, gis aldri til Google Location Services.</p>
+        <p>Verken Mozilla eller Google vil noensinne bruke informasjonen som Google Location Services samler opp til å spionere på deg.</p>
+        <p>For informasjon om hva nettsteder som forespør stedsinformasjon gjør med den, les nettstedenes egne personvernerklæringer.</p>
+        <p>For mer informasjon om personvernet ditt, les også:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox personvernerklæring</a> (engelsk)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google personvernerklæring</a> (engelsk)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Spores jeg når jeg bruker nettet?</h4>
+    <div class="expander-content">
+        <p>Nei. Firefox spør alltid om å innhente stedsinformasjon bare når et nettsted ber om den, og gir ut informasjonen bare når brukeren har godtatt forespørselen. Firefox sporer ikke og husker ikke stedsinformasjonen når du bruker nettet.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hvordan trekker jeg tilbake tillatelser gitt til et nettsted?</h4>
+    <div class="expander-content">
+        <p>Dersom du har gitt Firefox tillatelse til å alltid oppgi stedsinformasjon til et nettsted, og senere endrer du mening, kan du enkelt oppheve den tilgangen. Her er hvordan:</p>
+        <ul>
+            <li>Gå til nettstedet som du har gitt tilgangen til</li>
+            <li>Gå til <em>Verktøy</em>-menyen og velg <em>Sideinformasjon</em></li>
+            <li>Velg <em>Tillatelser</em>-fanen</li>
+            <li>Forandre innstillingen for <em>Tillat stedsangivelse</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hvordan sletter jeg “tilfeldig valgt klientidentifikator”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Gå til <em>Verktøy</em>-menyen, og velg <em>Slett nylig historikk</em></li>
+            <li>Trykk på <em>Detaljer</em>-pilen</li>
+            <li>Kontroller at <em>Infokapsler</em> er valgt</li>
+            <li>Trykk på <em>Slett nå</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hvordan slår jeg av stedsavhengig nettlesing permanent?</h4>
+    <div class="expander-content">
+        <p>Stedsavhengig nettlesing er alltid en funksjon du må slå på selv i Firefox. Ingen stedsinformasjon sendes uten at du gir tillatelse til det. Dersom du ønsker å slå av funksjonen fullstendig kan du gjøre følgende:</p>
+        <ul>
+            <li>I adresselinjen, skriv inn <code>about:config</code></li>
+            <li>Skriv inn <code>geo.enabled</code></li>
+            <li>Dobbeltklikk på innstillingen <em>geo.enabled</em></li>
+            <li>Stedsavhengig nettlesing er nå avslått</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Hvor er jeg?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Oops! En feil oppstod ved forsøk på å avgjøre hvor du er.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

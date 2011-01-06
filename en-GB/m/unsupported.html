@@ -1,0 +1,26 @@
+<?php
+    // please translate the variable below
+    $page_title = "Mozilla | Your Platform Is Not Supported";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/m-unsupported.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+  <h1>Uh Oh&hellip;</h1>
+  <p>Houston, we have a problem. Here are some possible reasons why Firefox could not download to your mobile device.</p>
+</div>
+
+<div id="content">
+  <ul>
+    <li>Your mobile device is not supported by Maemo. Check back soon for other supported platforms and devices.</li>
+    <li>Your mobile device may not have sufficient RAM (128MB or more) to run Firefox.</li>
+    <li>We haven't tested and optimized Firefox for your mobile device yet!</li>
+  </ul>
+</div>
+
+<p><a href="/m/" class="button">Go Back</a></p>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

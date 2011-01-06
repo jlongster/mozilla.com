@@ -1,0 +1,42 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Мозила | Мобилни фајерфокс";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Добродошли на фајерфокс" /></h1>
+<p>Најбољи веб прегледач на свету, сада и за мобилне уређаје.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Преузмите одмах - бесплатно</a>
+    <div><a href="platforms.html" class="system">Да ли постоји фајерфокс на мом језику?</a></div>
+
+  <?php else: ?>
+
+    <p>Ваш мобилни уређај није подржан</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Погледајте подржане уређаје и платформе</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">Уживајте у новим могућностима фајерфокса:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Синхронизација</b> <span>Тренутна синхронизација рачунара и мобилног уређаја</span></li>
+    <li id="customize"><b>Прилагођавање</b> <span>Инсталирајте додатке да бисте прилагодили фајефокс себи</span></li>
+    <li id="search"><b>Претрага</b> <span>Куцајте мање и сурфујте вебом брже уз помоћ Awesome Bar-а</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Видите све могућности</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /> 주요 기능</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>엄청난 속도 향상</h3>
+        <p>Firefox 4는 주요 성능 향상을 가져왔습니다. 새롭게 개발된 JägerMonkey 자바스크립트 엔진과 함께 더 빨라진 구동 속도, 페이지 로딩 속도와 그래픽 표현 등 바로 느끼실 수 있을 것입니다.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Feedback 알리기 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">제품 소개서(영문) »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">성능 향상 데모 보기 »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>웹 기반 3D 기술</h4>
+        <p>WebGL은 Firefox에 3D 기술을 제공합니다. 웹 개발자들이 새로운 시각효과를 만들고 멋진 3D 게임을 개발할 수 있습니다.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>글꼴을 자유자재로</h4>
+        <p>Firefox 4의 OpenType 글꼴 기능은 웹 개발자들이 글꼴 크기나 장평들을 자유롭게 조절하여 더 미려한 웹 사이트로 만들 수 있습니다.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>새로운 웹 폼</h4>
+        <p>Firefox 4는 웹 폼 양식에 목록 기능을 제공하여 자동 완성을 제공하고, 전화번호 이메일 주소와 같은 경우 웹 브라우저가 직접 유효성 확인을 해주는 HTML5 Webform의 일부 기능을 제공하여 웹 개발자들의 개발 시간을 단축해 줍니다.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Firefox 4 모바일 베타</h4>
+        <h5>지금 사용하세요!</h5>
+        <p>Firefox 4를 여러분의  안드로이드폰 혹은 Nokia N900에서 테스트 해 볼 수 있습니다. 동기화 기능, 부가 기능, 스마트 주소록 등의 기능이 모두 제공됩니다.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">모바일 버전 - 무료</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>도움이 필요하세요?</h4>
+        <p><a href="http://forums.mozilla.org"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />커뮤니티 포럼</a>에서 Firefox 4에 대한 질문을 해주세요.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

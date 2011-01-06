@@ -1,0 +1,108 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Om webbplats-ID";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Om webbplats-ID</h2>
+    <p>Firefox 3 har en ny knapp för webbplatsidentitet som hjälper dig att veta
+    vem du ansluter till på nätet.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Den här funktionen gör att du snabbt kan se om webbplatsen du
+besöker har lämnat några uppgifter om dess identitet, vem som har verifierat
+dessa uppgifter, och om information om dig är skyddad från avlyssning. Du kan
+få information om en webbplats identitet genom att klicka på platsikonen till
+vänster i Adressfältet (eller genom att trycka Skift+Tabb+Enter).</p>
+
+<h3>Vanliga frågor</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Vad betyder de olika nivåerna av identitetsuppgifter?</h4>
+    <div class="expander-content">
+        <p>Ikonen för ”passpolisen” kommer att ändras för att spegla nivån på
+        identitetsuppgifterna som webbplatsen har lämnat.</p>
+        <p class="site-id site-id-1">Platsen har inte presenterat några
+        identitetsuppgifter.</p>
+        <p class="site-id site-id-2">Platsen har presenterat grundläggande
+        identitetsuppgifter och skyddar dina personliga uppgifter från avlyssning.</p>
+        <p class="site-id site-id-3">Platsen har presenterat fullt verifierade
+        identitetsuppgifter om ägaren och skyddar dina personliga uppgifter från avlyssning.</p>
+        <p class="site-id site-id-4">Den här platsen är listad som en angreppsplats
+        eller förfalskning. Att ge den här platsen dina personliga uppgifter, eller
+        att ens besöka den, kan vara skadligt.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Varför presenterar inte alla webbplatser verifierade identitetsuppgifter?</h4>
+    <div class="expander-content">
+        <p>De flesta webbplatser på internet efterfrågar inga personliga eller finansiella
+        uppgifter från besökaren, och ser det kanske inte som nödvändigt att ta på
+        sig kostnaden för att tillhandahålla verifierade identitetsuppgifter och
+        skydd mot avlyssning.</p>
+        <p>Webbplatser som vill att du uppger personliga eller finansiella uppgifter,
+        eller som påstår sig representera en myndighet eller ett affärsintresse, bör
+        alltid identifiera sig ordentligt och skydda dina uppgifter från avlyssning.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Är det säkert att göra affärer med webbplatser som inte har identifierat
+    sig?</h4>
+    <div class="expander-content">
+        <p>Beslut om tillit på nätet börjar med att ta reda på vem du kommunicerar
+        med, men det stannar inte där. Webbplatser som inte presenterar några
+        identitetsuppgifter och som inte skyddar dina personliga uppgifter utsätter
+        dig för risker och bör inte anses som säkra. Men även webbplatser som
+        identifierat sig ordentligt kan ändå agera på ett tveksamt sätt, eller ha en
+        svag säkerhet på webbplatsen.</p>
+        <p>Precis som i den verkliga världen bör du vara försiktig när du interagerar
+        med webbplatser som du inte känner igen och litar på. Att veta att webbplatsen
+        har identifierat sig ordentligt är en del i beslutet om du ska ha tillit till
+        webbplatsen.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Verifierar Mozilla dessa uppgifter för varje webbplats?</h4>
+    <div class="expander-content">
+        <p>Uppgifterna som används för att identifiera webbplatser verifieras inte av
+        Mozilla. I stället sätter Firefox, liksom andra webbläsare, sin tillit till
+        betrodda företag som agerar ”Certifikatutfärdare” (CA) och som verifierar webbplatsers
+        identitet och utfärdar ”certifikat” till dessa. Dessa företag måste rätta sig
+        efter <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozillas policy
+        för CA-certifikat</a>, som bland annat kräver att CA:er uppvisar en granskning
+        gjord av en oberoende part som bekräftar att utfärdande av certifikat inte
+        sker på ett olämpligt sätt.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

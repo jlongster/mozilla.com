@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Nápověda k Firefoxu pro mobily";
+    $search_field  = "Vyhledat v nápovědě";
+    $search_button = "Vyhledat";
+    $link_to_sumo  = "nebo <a href=\"%s\">přejděte přímo na stránky podpory</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Nápověda Firefoxu <em>pro mobily</em></h1>
+
+    <h2>Časté otázky</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Jak synchronizovat Firefox mezi svým počítačem a telefonem?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Jak aktualizovat Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Jak používat chytrou plochu?</a></li>
+    </ul>
+
+    <h2>Témata nápovědy</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Jak si změním předvolby?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Jaké jsou klávesové zkratky?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Jak mohu spravovat stažené soubory?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Jak otevřu nový panel?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Jak naleznu a nainstaluji doplňky?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Jak odstraním či zakážu doplňky?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Jak mohu pomocí Firefoxu prohlížet web?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Jak přidám záložku?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Jak si zvětším či zmenším webovou stránku?</a></li>
+    </ul>
+
+    <h2>Potřebujete stále poradit?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

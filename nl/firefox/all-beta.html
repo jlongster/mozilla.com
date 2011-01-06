@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox web browser | Help ons de laatste bèta te testen';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Help met het testen van de toekomst van Firefox!</h2>
+        <p>De laatste bètaversie van Firefox is nu beschikbaar als preview. Maak een testrit en laat ons weten wat u er van vindt!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Belangrijke informatie</h4>
+        <p class="intro">Lees dit voor u gaat downloaden</p>
+    </div>
+    <ul>
+        <li>Dit is een pre-release programma: u kunt compatibiliteitsproblemen tegenkomen met sommige websites en add-ons.</li>
+        <li>Als u een probleem ontdekt <a href="http://feedback.mozilla.org/">laat het ons alstublieft weten</a> of <a href="https://bugzilla.mozilla.org/">maak een bug aan</a>.</li>
+        <li>Voor meer details, lees de <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">uitgave-opmerkingen</a> en <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">bekende problemen</a> (in het Engels).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Zoekt u geen bèta? Download de <a href="/<?=$lang?>/firefox/">laatste Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

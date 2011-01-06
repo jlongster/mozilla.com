@@ -1,0 +1,51 @@
+<?php
+/*  translate the page title below */
+$page_title = "Bienvenido a Firefox";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1>Bienvenido a <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>¡Gracias por convertirte en un beta tester de Firefox 4! Estamos creando juntos algo increíble, así que contanos qué te gusta y qué no de tu experiencia.</p>
+       <p>Esperamos tus comentarios. ¡Mirá el video para conocer a algunas de las personas que estarán escuchando lo que tenés para decir!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Nuevas funcionalidades »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Compartí tu opinión »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Notas de la versión »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Contanos qué te parece</h2>
+        <p>Como beta tester, sos parte del equipo que realiza Firefox&nbsp;4. Podés decirnos si algo te gusta o disgusta al hacer clic en el botón <img src="<?=$screencap;?>" alt="Captura del botón de Feedback" /><em>Opinión</em>. También te pediremos que participes en estudios de usuario anónimos, u ocasionalmente que contestes una encuesta.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>¿Cómo funcionan los estudios de usuarios?</h5>
+        <p>Los estudios de usuarios obtienen estadísticas anónimas sobre cómo se usa Firefox, pero nunca sobre lo que estás viendo o haciendo. Tenés el control, y ninguna información se envía a los servidores de Test Pilot sin tu permiso. Estos datos serán usados como ayuda en el diseño de Firefox&nbsp;4.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>¿Qué pasa si no quiero participar?</h5>
+        <p>Te avisaremos antes de que un estudio comience a obtener información, y nuevamente antes de que esa información sea enviada a Mozilla. Podés elegir no participar en cualquier estudio o descartar todos los estudios de usuario al hacer clic en el botón <em>Opinión</em> para administrar tu configuración.</p>
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

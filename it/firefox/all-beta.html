@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox, il browser web | Aiutaci a testare l\'ultima beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Aiutaci a testare il futuro di Firefox</h2>
+        <p>È disponibile per il download l'ultima versione beta di Firefox. Scopri in anteprima le nuove funzioni e facci sapere cosa ne pensi.</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Informazione importante</h4>
+        <p class="intro">Prima di iniziare il download</p>
+    </div>
+    <ul>
+        <li>Si tratta di software in versione <em>pre-release</em>: è possibile che si verifichino problemi di compatibilità con alcuni siti e componenti aggiuntivi.</li>
+        <li>Se riscontri dei problemi inviaci una <a href="http://feedback.mozilla.org/">segnalazione</a> oppure apri un <a href="https://bugzilla.mozilla.org/">bug</a>.</li>
+        <li>Per ulteriori dettagli consulta le <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">note di versione</a> e l'elenco dei <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">problemi noti</a> (in inglese).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Non stavi cercando una beta? Scarica la <a href="/<?=$lang?>/firefox/">versione stabile più recente di Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

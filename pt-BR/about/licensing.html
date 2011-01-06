@@ -1,0 +1,48 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Licenças e Uso de Marcas Mozilla | Mozilla';
+    $body_id    = 'about-licensing';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/about.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Licenças e Uso de Marcas Mozilla</h2>
+</div>
+
+
+<ul id="side-menu">
+        <li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a></h3></li>
+        <li><a href="/<?=$lang?>/about/whatismozilla.html">O que é a Mozilla?</a></li>
+        <li><a href="/<?=$lang?>/about/get-involved.html">Envolva-se</a></li>
+        <li><a href="/<?=$lang?>/press/">Área de Imprensa</a></li>
+        <li><a href="/<?=$lang?>/about/careers.html">Carreiras</a></li>
+        <li><a href="/<?=$lang?>/about/partnerships.html">Parcerias</a></li>
+	<li><span>Licenças</span></li>
+        <li><a href="http://blog.mozilla.com/" class="external">Blog</a></li>
+        <li><a href="http://store.mozilla.org/" class="external">Loja</a></li>
+        <li><a href="/<?=$lang?>/about/contact.html">Entre em contato</a></li>
+</ul>
+
+<div id="content">
+
+<p>O software da Mozilla é de codigo aberto. Isto significa que o software não é somente disponível sem custos, mas também permite que você tenha acesso ao código fonte e possa modificar e redistribuir nosso software de acordo com certas restrições detalhadas no documento <a href="http://www.mozilla.org/MPL/" hreflang="en">Mozilla Public License</a> (em Inglês). A Mozilla Foundation disponibiliza versões oficiais dos executáveis nos termos do <a href="/<?=$lang?>/legal/eula/">Acordo de Licença de Software para o Usuário Final Mozilla</a> (EULA).</p>
+
+<p>Embora nosso código seja livre, é muito importante a execução dos nossos direitos sobre as marcas para que as mesmas continuem válidas. Nossas marcas incluem, entre outras, os nomes Mozilla, Firefox, Thunderbird, Bugzilla e XUL, assim como os logotipos Mozilla, Firefox, Thunderbird e Red Lizard. Isso significa que, enquanto você tem uma considerável liberdade em redistribuir e modificar nosso software, existem restrições importantes na utilização dos nomes ou logotipos da Mozilla, mesmo quando esses estiverem incorporados nos executáveis que disponibilizamos.</p>
+
+<p>Para maiores informações, veja abaixo:</p>
+
+<ul>
+<li><a href="http://www.mozilla.org/foundation/trademarks/" class="external" hreflang="en">Políticas de Utilização de Logotipos e Marcas da Mozilla Foundation</a> (em Inglês)</li>
+<li><a href="/<?=$lang?>/legal/eula/">Acordo de Licença de Software para o Usuário Final Mozilla</a></li>
+<li><a href="http://www.mozilla.org/MPL/" class="external" hreflang="en">Termos de Licença do Código Fonte</a> (em Inglês)</li>
+<li><a href="http://www.mozilla.org/foundation/licensing/website-markup.html" class="external" hreflang="en">Política de Utilização do Conteúdo do Site</a> (em Inglês)</li>
+</ul>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

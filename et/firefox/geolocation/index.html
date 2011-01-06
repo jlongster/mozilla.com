@@ -1,0 +1,118 @@
+<?php
+
+$page_title = "Geolokatsioon Firefoxis";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Asukohapõhine veebilehitsemine</h2>
+    <p>Firefox oskab veebilehtedele öelda, kus sa asud, võimaldades sul asjakohasemat ja kasulikumat infot leida. See muudab veebi nutikamaks ja on teostatud viisil, mis austab sinu privaatsust.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Proovi järele!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Korduma kippuvad küsimused</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Mis on asukohapõhine veebilehitsemine?</h4>
+    <div class="expander-content">
+        <p>Veebilehed, mis kasutavad asukohapõhise veebilehitsemise võimalusi, küsivad sinu asukohta selleks, et sulle asjakohasemat informatsiooni pakkuda või otsingul aega säästa. Ütleme, et otsid pitsarestorani, mis ei oleks liiga kaugel. Veebileht saab sinult asukohainfo edastamist paluda, nii et sinul on vaja vaid “pitsa” otsingusse sisestada... rohkem infot ei lähegi tarvis.</p>
+        <p>Teekonna planeerimisel teab veebileht marsruudi alguspunkti ja sul jääb üle vaid sihtpunkt öelda.</p>
+        <p>Teenus on täiesti valikuline &ndash; Firefox ei edasta asukohainfot sinu loata ja arvestab privaatsusega. Ja nagu teisedki Firefoxi osad, on ka see teostatud avatud standardeid kasutades, lihtsustades niiviisi kasutuselevõttu veebiarendajate poolt.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kuidas see töötab?</h4>
+    <div class="expander-content">
+        <p>Asukohapõhist veebilehte külastades küsib Firefox, kas soovid asukohainfot edastada.</p>
+        <p>Kui sa nõusoleku annad, kogub Firefox infot lähedal asuvate traadita võrgu levialade ja arvuti IP-aadressi kohta. Seejärel saadab Firefox selle info vaikimisi geolokatsiooni teenusepakkujale Google Location Services asukohahinnagu saamiseks. See asukohahinnang saadetakse veebilehele, mis infot päris.</p>
+        <p>Kui sa info edastamisega ei nõustu, ei tee Firefox midagi.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kui täpne on asukoht?</h4>
+    <div class="expander-content">
+        <p>Täpsus varieerub asukohast asukohta. Mõnes kohas suudavad teenusepakkujad asukoha määrata mõne meetri täpsusega. Sellest hoolimata võib täpsus mujal palju väiksem olla. Kõik teenusepakkujate edastatud asukohad on vaid hinnangud ja me ei garanteeri asukohtade täpsust. Palun ära kasuta seda teavet hädaolukorras. Kasuta alati tervet mõistust.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kellele ja millist infot saadetakse? Kuidas kaitstakse minu privaatsust?</h4>
+    <div class="expander-content">
+        <p>Sinu privaatsus on meile äärmiselt oluline ja Firefox ei edasta kunagi asukohainfot sinu nõusolekuta. Kui külastad veebilehte, mis asukohainfot pärib, küsitakse enne veebilehele ja meie kolmandast osapoolest teenusepakkujale info edastamist sinult luba.</p>
+        <p>Vaikimisi kasutab Firefox Google Location Services teenuseid ja saadab selleks:</p>
+        <ul>
+            <li>sinu arvuti IP-aadressi,</li>
+            <li>lähedal asuvate traadita võrgu levialade info ja</li>
+            <li>juhusliku kliendiidentifikaatori, mille määrab Google ja mis aegub kahe nädalaga.</li>
+        </ul>
+        <p>Kogu Firefoxi poolt kogutud ja töödeldava informatsiooni kirjelduse leiad <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefoxi privaatsuspoliitikast</a> (inglise keeles).</p>
+        <p>Google Location Services tagastab seejärel sinu hinnangulise asukoha (pikkus- ja laiuskraadi). Kogu Google'i poolt kogutud ja töödeldava informatsiooni kirjelduse leiad <a href="http://www.google.com/privacy-lsf.html" class="external">Google'i geolokatsiooni privaatsuspoliitikast</a> (inglise keeles).</p>
+        <p>Informatsiooni vahetatakse sinu privaatsuse kaitsmiseks üle krüptitud ühenduse. Asukohainfo kättesaamise järel saadab Firefox selle infot pärinud veebilehele. Ühelgi ajahetkel ei jagata infot külastatava veebilehe või küpsiste kohta Google Location Services'iga.</p>
+        <p>Ei Mozilla ega Google ei kasuta kunagi Google Location Services'i poolt kogutud infot sinu identifitseerimiseks ega sinu järel nuhkimiseks.</p>
+        <p>Kui soovid teada saada, milleks infot küsiv veebileht asukohainfot kasutab, vaata selle veebilehe privaatsuspoliitikat.</p>
+        <p>Rohkem teavet privaatsuse kohta leiad, kui loed:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefoxi privaatsuspoliitikat</a> (inglise keeles)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google'i privaatsuspoliitikat</a> (inglise keeles)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kas minu veebilehitsemist jälgitakse?</h4>
+    <div class="expander-content">
+        <p>Ei. Firefox pärib asukohainfot vaid siis, kui veebileht seda küsib, ja edastab info vaid siis, kui kasutaja sellega nõustub. Firefox ei jälgi ega säilita veebilehitsemise ajal sinu asukohta.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kuidas ma saan veebilehele antud nõusoleku tühistada?</h4>
+    <div class="expander-content">
+        <p>Kui oled Firefoxil lubanud mõnele veebilehele alati asukohainfot edastada, kuid mõtled hiljem ümber, siis saad hõlpsasti loa tühistada. Selleks:</p>
+        <ul>
+            <li>Liigu veebilehele, millele oled loa andnud</li>
+            <li>Ava <em>Tööriistade</em> menüü ja vali <em>Veebilehe info</em></li>
+            <li>Liigu <em>Õiguste</em> kaardile</li>
+            <li>Muuda valikut <em>Asukoht avaldatakse</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kuidas saab “juhusliku kliendiidentifikaatori” kustutada?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Ava <em>Tööriistad</em> menüü ja vali <em>Hiljutise ajaloo kustutamine</em></li>
+            <li>Vajuta <em>Üksikasjade</em> noolele</li>
+            <li>Veendu, et <em>Küpsised</em> on valitud</li>
+            <li>Klõpsa <em>Kustuta</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kuidas ma saan asukohapõhise veebilehitsemise täielikult välja lülitada?</h4>
+    <div class="expander-content">
+        <p>Asukohapõhine veebilehitsemine on Firefoxis alati vabatahtlik. Asukohainfot ei edastata kunagi sinu loata. Kui soovid selle täielikult keelata, tee nii:</p>
+        <ul>
+            <li>Kirjuta aadressiribale <code>about:config</code></li>
+            <li>Kirjuta <code>geo.enabled</code></li>
+            <li>Tee <em>geo.enabled</em> valikul topeltklõps</li>
+            <li>Asukohapõhine veebilehitsemine on edaspidi keelatud</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Kus ma asun?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! Sinu asukoha tuvastamisel tekkis viga.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

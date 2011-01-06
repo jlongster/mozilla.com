@@ -1,0 +1,167 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Getting Started with Firefox';
+    $body_id    = 'central';
+    $body_class = 'portal-page';
+	$extra_headers = <<<EXTRA_HEADERS
+    <style>
+        /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+        @font-face { font-family: 'MetaWebPro-Book'; src: url('/img/fonts/MetaWebPro-Book.woff') format('woff'); }
+        @font-face { font-family: 'MetaWebPro-Bold'; src: url('/img/fonts/MetaWebPro-Bold.woff') format('woff'); }
+    </style>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/getting-started-test-b.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+	<script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script src="/js/mozilla-video-tools.js"></script>
+    <script src="/js/jquery/jquery.min.js"></script>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/header-simple.inc.php";
+?>
+
+<div id="main-feature">
+    <h2><img src="/img/ss/firefox/central/test-b/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+    <p>Experience the Web with features that work for you.</p>
+</div>
+
+<div id="main-content">
+
+<div id="current-video">
+
+		<div id="video-player" class="mozilla-video-control">
+			<video
+				id="video"
+				width="640"
+				height="360"
+				controls="controls">
+
+				<source src="http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+
+				<source src="http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4" type="video/mp4" />
+
+				<object type="application/x-shockwave-flash"
+	                style="width: 640px; height: 388px;"
+					data="/includes/flash/playerWithControls.swf?flv=firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+					<param name="movie" value="/includes/flash/playerWithControls.swf?flv=firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+					<param name="wmode" value="transparent" />
+
+					<div class="video-player-no-flash">
+					This video requires a browser with support for open video:
+					<ul>
+					<li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+
+					<li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+					</ul>
+					or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+					Alternatively, you may use the video download links to the right.
+					</div>
+
+				</object>
+
+			</video>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div id="sidebar">
+
+	<div id="tips">
+		<h3>Tips &amp; Tricks</h3>
+		<p>Are you a beginning, intermediate or advanced user?</p>
+        <p><a href="/<?=$lang?>/firefox/tips/">Find shortcuts and suggestions organized by experience</a>.</p>
+	</div>
+
+	<h3 id="need_help">Need Help?</h3>
+    <form action="<?= $config['url_scheme'] ?>://support.mozilla.com/search.php" id="support_form">
+        <h3>Search support:</h3>
+        <input type="hidden" name="where" value="all" />
+        <input type="hidden" name="locale" value="en-US" />
+        <input id="fsearch-new" name="q" type="text" value="" placeholder="Search Knowledge Base" /><input class="btn-large" id="searchsubmit-new" type="submit" name="sa" value="" title="Search" />
+    </form>
+
+</div>
+
+<div id="content">
+
+	<div id="features">
+
+		<a href="/<?=$lang?>/firefox/features/" class="all-top">See all Top Features</a>
+
+		<h3>Firefox 3.6 Top Features</h3>
+
+		<div class="column1">
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#location-bar">Awesome Bar</a></h4>
+			<p>Find the sites you love in seconds (and without having to remember clunky URLs).</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#private-browsing">Private Browsing</a></h4>
+			<p>Surf the Web without leaving a single trace.</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#personalization">Add-ons</a></h4>
+			<p>Over 6,000 Firefox Add-ons make your browser work your way. Try add-ons by topic: travel, web development or social networking.</p>
+			</div>
+
+		</div>
+
+		<div class="column2">
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#bookmarking">One-Click Bookmarking</a></h4>
+			<p>Bookmark, search and organize Web sites quickly and easily.</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="https://mozillalabs.com/weave/">Weave</a></h4>
+			<p>Share your history, bookmarks, tabs and more between your PC and your mobile phone.</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#look-and-feel">Personas</a></h4>
+			<p>Instantly change the look of your Firefox with thousands of easy-to-install themes.</p>
+			</div>
+
+		</div>
+
+		<div class="column3">
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#super-speed">Super Speed</a></h4>
+			<p>View Web pages way faster, using less of your computer’s memory.</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#tabs">Tabs</a></h4>
+			<p>Do more at once with tabs you can organize with the drag of a mouse.</p>
+			</div>
+
+			<div class="feature">
+			<h4><a href="/<?=$lang?>/firefox/features/#anti-phishing">Anti-Phishing &amp; Anti-Malware</a></h4>
+			<p>Enjoy the most advanced protection against online bad guys.</p>
+			</div>
+
+		</div>
+
+		<div class="features-footer"></div>
+
+	</div>
+</div>
+
+<div id="extras">
+	<ul>
+		<li><a href="http://www.facebook.com/Firefox?v=wall"><img src="/img/ss/firefox/central/test-a/twitter.png"></a></li>
+		<li><a href="http://twitter.com/firefox"><img src="/img/ss/firefox/central/test-a/facebook.png"></a></li>
+	</ul>
+	<p>The best Web browser bas gone mobile! Learn more about <a href="/<?=$lang?>/mobile/">the future of Firefox on mobile phones</a>.</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

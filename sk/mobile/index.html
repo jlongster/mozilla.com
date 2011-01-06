@@ -1,0 +1,42 @@
+<?php
+
+    // please translate the 3 variables below
+    $page_title         = "Firefox Mobile";
+    $form_field         = "Zadajte číslo mobilného telefónu";
+    $chooseYourCountry  = "Zvoľte vaše umiestnenie";
+
+	$pageid = 'mobile-home';
+  	include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+<div id="main-feature">
+    <h2>Znovu ste objavili web. Teraz si ho môžete vziať so&nbsp;sebou.</h2>
+    <p>Firefox sa stal mobilným.</p>
+</div>
+
+<?=$mobilesubmenu;?>
+<?=$smsformblock;?>
+
+<div id="mobile-footer" class="sub-features">
+    <div class="sub-feature" id="video-tour">
+        <h4>Video prehliadka</h4>
+        <p>Pozrite sa, ako Firefox prenesie celý web do vášho mobilného zariadenia.</p>
+        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">Prehrať video</a></p>
+    </div>
+    <div class="sub-feature" id="developers-wanted">
+        <h4>Zapojte sa</h4>
+        <p>Spoliehame sa na globálnu komunitu ľudí, ktorí nám pomáhajú zostaviť, testovať a rozširovať Firefox.</p>
+        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">Pozrite sa, ako môžete pomôcť</a></p>
+    </div>
+
+    <div class="sub-feature" id="questions-comments">
+        <h4>Otázky? Komentáre?</h4>
+        <p>Dajte nám možnosť odpovedať na vaše otázky alebo nám povedzte, čo si o Firefoxe myslíte.</p>
+        <p class="link"><a href="http://mobile.support.mozilla.com/">Získať pomoc</a></p>
+    </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

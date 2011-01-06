@@ -1,0 +1,38 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Bem-vindo ao Firefox Sync";
+    $body_id    = 'sync';
+    $body_class = 'portal-page firstrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="shortcut icon" type="image/png" href="/img/firefox/sync/sync-ico.png"/>
+    <link rel="stylesheet" type="text/css" href="/style/tignish/sync.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+<div id="main-feature">
+  <h2 id="main-feature-title">Parabéns, os dados do seu Firefox já estão sendo sincronizados!</h2>
+  <p>Mantenha o Firefox Sync conectado para que seus dados sejam sincronizados diariamente.</p>
+</div>
+
+<div id="main-content">
+  <div>
+    <h3>Saindo do seu computador?</h3>
+    <p>Instale o Firefox Sync em todos os seus dispositivos, digite suas informações e <span lang="fr" dir="ltr">voilà</span>, você terá acesso aos seus dados de navegação em cada um deles.</p>
+    <p>Para instruções detalhadas sobre como configurar o Firefox Sync no seu N900, visite a página <a href="/mobile/sync/">Firefox Sync Móvel</a>.</p>
+  </div>
+  <div>
+    <h3>Esqueceu a sua senha?</h3>
+    <p>As informações da sua conta são armazenadas no Gerenciador de Senhas do Firefox para que você possa recuperá-la quando precisar.</p>
+    <p>Não esqueça que a sua Frase Secreta assegura que seus dados estão protegidos e sob controle o tempo todo.</p>
+  </div>
+  <div>
+    <h3>Precisa de mais informações?</h3>
+    <p>Tem alguma dúvida? Dê uma olhada em nossas <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">Dúvidas comuns</a>.</p>
+    <p>Interessado em aprender mais? Leia as <a href="https://services.mozilla.com/sync/relnotes/1.4.html">notas da versão</a> para obter todos os detalhes desta versão.</p>
+  </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

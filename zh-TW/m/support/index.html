@@ -1,0 +1,45 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Firefox 行動版輔助說明";
+    $search_field  = "搜尋 Firefox 輔助說明";
+    $search_button = "搜尋";
+    // $link_to_sumo  = "瀏覽完整的技術支援網站";
+    $link_to_sumo  = "或 <a href=\"%s\">瀏覽完整的技術支援網站</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Firefox <em>行動版</em>輔助說明</h1>
+
+    <h2>常見問題</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">如何在桌面版和行動版 Firefox 之間進行同步？</a></li>
+        <li><a href="<?=$sumo_links[2]?>">如何升級 Firefox？</a></li>
+        <li><a href="<?=$sumo_links[3]?>">如何使用智慧畫面 (Awesome Screen)？</a></li>
+    </ul>
+
+    <h2>行動版輔助說明主題</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">如何修改偏好設定？</a></li>
+        <li><a href="<?=$sumo_links[5]?>">有什麼手機鍵盤上的快速鍵？</a></li>
+        <li><a href="<?=$sumo_links[6]?>">如何管理下載好的檔案？</a></li>
+        <li><a href="<?=$sumo_links[7]?>">如何開啟一個新的分頁？</a></li>
+        <li><a href="<?=$sumo_links[8]?>">如何搜尋並安裝附加元件？</a></li>
+        <li><a href="<?=$sumo_links[9]?>">如何移除或停用附加元件？</a></li>
+        <li><a href="<?=$sumo_links[10]?>">如何使用行動版 Firefox 瀏覽網頁？</a></li>
+        <li><a href="<?=$sumo_links[11]?>">如何新增一筆書籤？</a></li>
+        <li><a href="<?=$sumo_links[12]?>">如何放大或縮小某個網站？</a></li>
+    </ul>
+
+    <h2>需要更多幫助？</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

@@ -1,0 +1,118 @@
+<?php
+
+$page_title = "Lleoli Daearyddol yn Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Pori Sy'n Gwybod dy Leoliad</h2>
+    <p>Mae Firefox yn gallu dweud wrth wefannau lle rwyt ti wedi dy leoli fel bod modd i ti ddod o hyd i wybodaeth sy'n fwy perthnasol a defnyddiol. Mae hyn yn gwneud y We'n fwy clyfar &ndash; ac mae'n cael ei wneud gan barchu dy breifatrwydd yn llwyr.
+        <a href="#geo-demo" id="try-geolocation" style="display:none">Rho gynnig arni!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Cwestiynnau Cyffredin</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Beth yw Pori Sy'n Gwybod dy Leoliad?</h4>
+    <div class="expander-content">
+        <p>Gall wefannau sy'n defnyddio pori sy'n medru lleoli pobl ofyn lle'r wyt ti er mwyn darparu gwybodaeth mwy perthnasol, neu arbed amser i ti wrth chwilio. Efallai dy fod yn chwilio am fwyty pizza yn dy ardal. Gall gwefan ofyn i ti ddatgelu dy leoliad daearyddol fel bod chwilio am “pizza” yn darparu'r atebion rwyt ti eu hangen... does dim angen rhagor o wybodaeth na theipio mwy.</p>
+        <p>Neu, os wyt ti'n mapio cyfeiriadau i fynd i rywle, bydd y wefan yn gwybod o ble rwyt ti'n cychwyn felly yr unig beth sydd angen ei ddweud yw i le rwy ti eisiau mynd.</p>
+        <p>Mae'r gwasanaeth yma'n gwbl ddewisol &ndash; Nid yw Firefox yn rhannu dy leoliad heb dy ganiatâd &ndash; ac mae'n cael ei wneud gan barchu dy breifatrwydd yn llwyr. Fel pob elfen o Firefox, mae'n cael ei greu gan ddefnyddio safonau agored er mwyn hwyluso ei fabwysiadu gan ddatblygwyr y We.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Sut mae'n gweithio?</h4>
+    <div class="expander-content">
+        <p>Wrth ymweld â gwefan sy'n gwybod dy leoliad, bydd Firefox yn gofyn a wyt ti eisiau datgelu dy leoliad.</p>
+        <p>Os wyt yn cytuno, bydd Firefox yn casglu gwybodaeth am bwyntiau mynediad diwyfr lleol a chyfeiriad IP dy gyfrifiadur. Yna bydd Firefox yn anfon y wybodaeth at y darparwr gwybodaeth lleoli daearyddol rhagosodedig, Google Location Services, er mwyn cael bras amcan o dy leoliad. Bydd y bras amcan o dy leoliad yn cael ei rannu gyda'r wefan sy'n gofyn amdano.</p>
+        <p>Os nad wyt yn cydsynio, bydd Firefox yn gwneud dim.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Pa mor gywir yw'r lleoli?</h4>
+    <div class="expander-content">
+        <p>Mae cywirdeb yn amrywio'n fawr o leoliad i leoliad.  Mewn rhai mannau mae ein darparwr gwasanaeth yn gallu darparu lleoliad o fewn ychydig fetrau. Er hynny, mewn ardaloedd eraill gall fod yn llawer iawn mwy bras na hynny.  Bras amcan yw'r holl leoliadau sy'n cael eu dychwelyd gan ein darparwyr gwasanaethau ac nid ydym yn gwarantu cywirdeb y lleoliadau sy'n cael eu darparu.  Paid, os gweli di'n dda a defnyddio'r wybodaeth yma mewn argyfwng. Defnyddia dy synnwyr cyffredin bob tro.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Pa wybodaeth sy'n cael ei hanfon, ac i bwy? Sut mae fy mrheifatrwydd yn cael ei ddiogelu?</h4>
+    <div class="expander-content">
+        <p>Mae dy breifatrwydd yn bwysig iawn i ni, ac ni fydd Firefox yn rhannu dy leoliad gyda neb heb dy ganiatâd. Pan fyddi'n ymweld â thudalen sy'n gofyn am dy wybodaeth, byddi'n derbyn cais cyn i unrhyw wybodaeth gael ei rannu gyda'r wefan sy'n gofyn a'n darparwr gwasanaeth trydydd parti.</p>
+        <p>Mae Firefox yn defnyddio Google Location Services i bennu dy leoliad drwy anfon:</p>
+        <ul>
+            <li>cyfeiriad IP dy gyfrifiadur,</li>
+            <li>gwybodaeth am bwyntiau mynediad diwifr lleol, a</li>
+            <li>dynodwr cleient ar hap, sy'n cael ei bennu gan Google, a ddaw i ben o fewn pythefnos.</li>
+        </ul>
+        <p>Am ddisgrifiad llawn o'r wybodaeth sy'n cael ei chasglu a'i defnyddio gan Firefox, mae modd darllen (yn Saesneg) <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Polisi Preifatrwydd Firefox</a>.</p>
+        <p>Bydd Google Location Services yn dychwelyd yr amcan o dy leoliad (h.y., hydred a lledred).  Am ddisgrifiad llawn o'r wybdaeth sy'n cael ei chasglu a'i defnyddio gan Google, mae modd darllen(yn Saesneg) <a href="http://www.google.com/privacy-lsf.html" class="external">Polisi Preifatrwydd Google Geolocation</a>.</p>
+        <p>Mae'r wybodaeth yn cael ei chyfnewid ar draws cysylltiad amgryptiedig er mwyn diogelu dy breifatrwydd. Unwaith y bydd Firefox wedi derbyn manylion dy leoliad, bydd yn ei anfon yn ei flaen i'r wefan sy'n gofyn amdano. Ni fydd enw neu leoliad y wefan rwyt ti'n ymweld â hi nac unrhyw cwcis yn cael eu rhannu gyda Google Location Services.</p>
+        <p>Ni fydd Mozilla na Google yn defnyddio'r wybodaeth sy'n cael ei chasglu gan Google Location Services i geisio dy adnabod nac ysbïo arnat.</p>
+        <p>Am wybodaeth am beth fydd y wefan sy'n gofyn am dy wybodaeth lleoliad yn ei wneud ag ef, darllenna bolisi preifatrwydd y wefan.</p>
+        <p>Am ragor o wybodaeth am dy breifatrwydd dylet hefyd ddarllen:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Polisi preifatrwydd Mozilla Firefox</a> (yn Saesneg)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Polisi preifatrwydd Google</a> (yn Saesneg)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">A ydw i'n cael fy nilyn wrth i mi bori'r We?</h4>
+    <div class="expander-content">
+        <p>Na. Dim ond pan fydd gwefan yn gwneud cais y bydd Firefox yn gofyn am leoliad, a dim ond yn rhannu'r lleoliad gyda chaniatâd y defnyddiwr. Ni fydd Firefox yn dilyn na chofio dy leoliad wrth i ti bori.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Sut ydw i'n dadwneud caniatâd roddwyd i wefan?</h4>
+    <div class="expander-content">
+        <p>Os wyt ti wedi rhoi caniatâd i Firefox i ddarparu dy leoliad bob tro i wefan ac yna newid dy feddwl, mae'n hawdd dadwneud y caniatâd hwnnw. Dyma sut mae gwneud:</p>
+        <ul>
+            <li>Mynd i'r wefan lle rwyt ti wedi rhoi dy ganiatâd</li>
+            <li>Mynd i'r ddewislen <em>Offer</em>, yna dewis <em>Gwybodaeth am y Dudalen</em></li>
+            <li>Dewis y tab <em>Caniatâd</em> </li>
+            <li>Newid y gosodiadau <em>Rhannu Lleoliad</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Sut ydw i'n clirio'r "rhif adnabod client ar hap"?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Mynd i'r ddewislen <em>Offer</em> , yna dewis <em>Clirio'r Hanes Diweddar</em></li>
+            <li>Click the <em>Details</em> arrow</li>
+            <li>Diogelu fod <em>Cwcis</em> wedi ei ddewis</li>
+            <li>Clicio ar <em>Clirio Nawr</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Sut mae diffodd Lleoli Daearyddol yn barhaol?</h4>
+    <div class="expander-content">
+        <p>Rhaid ymuno â Phori Lleoli Daearyddol yn Firefox. Ni fydd gwybodaeth am leoliad yn cael ei anfon heb dy ganiatâd. Os wyt ti eisiau diffodd y nodwedd yn llwyr, dilynna'r camau canlynol:</p>
+        <ul>
+            <li>Yn y bar URL, teipio <code>about:config</code></li>
+            <li>Teipio <code>geo.enabled</code></li>
+            <li>Rho glic dwbl i ddewisiadau <em>geo.enabled</em></li>
+            <li>Mae Pori Lleoli Daearyddol wedi ei ddiffodd</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Lle'r ydw i?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Wps! Digwyddodd gwall werth geisio pennu dy leoliad.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

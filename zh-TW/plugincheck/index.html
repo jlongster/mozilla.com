@@ -1,0 +1,254 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '外掛程式更新檢查';
+    $body_id    = 'plugin-check';
+
+    $message[0]="正在向 Mozilla 檢查您的外掛程式狀態";
+    $message[1]="正在讀取資料";
+    $message[2]="檢視您所有的外掛程式";
+    $message[3]="立即停用";
+    $message[4]="有安全性漏洞，且無修正程式";
+    $message[5]="立即更新";
+    $message[6]="有安全性漏洞";
+    $message[7]="更新";
+    $message[8]="已過時的版本";
+    $message[9]="最新版本";
+    $message[10]="更多資料";
+    $message[11]="無法偵測外掛程式版本";
+    $message[12]="/";
+    $message[13]="個外掛程式有已知的安全性漏洞，但目前沒有修正程式可更新";
+    $message[14]="個外掛程式有已知的安全性漏洞";
+    $message[15]="個外掛程式有可能的安全性漏洞";
+    $message[16]="以下列出的外掛程式已為最新版本";
+    $message[17]="未偵測到任何外掛程式";
+    $message[18]="http://www.google.com/search?hl=zh-TW&q=";
+    $message[19]="目前的外掛程式版本";
+    $message[20]="立即更新";
+    $message[21]="有潛在的安全性漏洞";
+    $message[22]="更新";
+    $message[23]="可能為已過時的版本";
+
+    $tableHeader[1] = "外掛程式詳情";
+    $tableHeader[2] = "狀態";
+    $tableHeader[3] = "動作";
+
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/plugin-check.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+    $url_prefix = $config['url_scheme'] . '://' . $config['server_name'];
+
+function display_badge($size, $code_class='')
+{
+    global $url_prefix;
+    global $lang;
+    list($width, $height) = explode('_', $size);
+?>
+        <div>
+            <img class="web-badge-loading" src="<?php echo $url_prefix ?>/img/tignish/plugincheck/wb/<?php echo $lang ?>/<?php echo $size ?>/loading.png" alt="清楚的圖片告訴使用者關於 PluginChecker 的內容" />
+            <p><textarea class="web-badge-code <?php echo $code_class ?>" cols="40" rows="6">&lt;a href="<?php echo $url_prefix ?>/<?php echo $lang ?>/plugincheck/"&gt;&lt;img id="mozilla_plugin_checker_badge" src="<?php echo $url_prefix ?>/img/tignish/plugincheck/wb/<?php echo $lang ?>/<?php echo $size ?>/loading.png" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="我們可以檢查您的外掛元件與其他類似的東西" border="0" /&gt;&lt;/a&gt;&lt;script type=&quot;text/javascript&quot;&gt;var pfsNextImage = &quot;<?php echo $url_prefix ?>/img/tignish/plugincheck/wb/<?php echo $lang ?>/<?php echo $size ?>/safe.png&quot;;var pfsUpdateImage = &quot;<?php echo $url_prefix ?>/img/tignish/plugincheck/wb/<?php echo $lang ?>/<?php echo $size ?>/upyourplug.png&quot;;&lt;/script&gt;&lt;script type="text/javascript" src="<?php echo $url_prefix ?>/js/plugincheck_badge.js"&gt;&lt;/script&gt;</textarea></p>
+        </div>
+<?php
+}
+?>
+<div id="main-feature">
+    <h2>外掛程式更新檢查</h2>
+    <p>使用最新的外掛程式！</p>
+</div>
+
+<div id="main-content">
+    <div id="content-left">
+
+        <div id="legend">
+            <ul>
+        <li id="old_browser" style="display:none"><strong>請注意，您所使用的瀏覽器有更新的版本。</strong> 請升級您的瀏覽器。</li>
+        <li id="modern_browsers" style="display:none">這個頁面在最新的瀏覽器上會有最好的效果，請使用: Firefox 3.6+、Opera 10.5、Safari 4、Chrome 4，或是 IE 8</li>
+        <li id="exploder" style="display: none">外掛程式更新檢查<strong>對於 Internet Explorer 僅有部分支援</strong>。請您也要使用工具 &gt; 管理附加元件</li>
+                <li>點擊<strong>立刻更新</strong>以更新外掛程式。</li>
+                <li>請在重新啟動瀏覽器<em>之前</em><strong>完成所有建議的更新</strong>。</li>
+            </ul>
+        </div>
+        <noscript>
+        <div>
+        <h3>注意</h3>
+        <p><strong>您已經停用 JavaScript</strong> ，或是您正在使用一個不支援 JavaScript 的瀏覽器。這個 Plugin Check 頁面
+           若沒有 <strong>JavaScript</strong> 的強大能力就無法使用，請啟用 JavaScript 並重新載入這個頁面。</p>
+        <p>或是停用您所有的外掛程式，也停用 JavaScript... 這樣就不用擔心了，這就是 <a href="http://lwn.net/Articles/262570/">RMS 了不起的地方</a>。</p>
+        </div>
+        </noscript>
+
+        <table class="status">
+            <thead>
+                <tr>
+                    <th>外掛程式詳情</th>
+                    <th>狀態</th>
+                    <th class="action">動作</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr class="link-row">
+                    <td colspan="3"></td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr class="link-row">
+                    <td id="pfs-status" colspan="3"></td>
+                </tr>
+                <tr id="plugin-template" style="display: none">
+                    <td>
+                        <img class="icon" src="" alt="外掛程式圖示" />
+                        <h4 class="name"><a href="#"></a></h4><span class="version"></span>
+                    </td>
+                    <td class="status"></td>
+                    <td class="action"><a class="button"><span></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="error-panel" style="display: none">
+            <h3>Plugin Finding Service 錯誤</h3>
+            <p>我們遇到了錯誤，請稍候重試一次。</p>
+            <form action="" method="get"><fieldset><button>重試</button></fieldset></form></div>
+    </div>
+
+    <div id="sidebar">
+        <div id="information">
+            <h3>外掛程式小秘訣</h3>
+            <ul>
+                <li><a href="#what-plugin">外掛程式是什麼？</a></li>
+                <li><a href="#why-update">為什麼我應該更新我的外掛程式？</a></li>
+                <li><a href="#firefox-helps">Firefox 可以幫我做什麼？</a></li>
+                <li><a href="#my-plugins">我的電腦裡有哪些外掛程式？</a></li>
+                <li><a href="#howto-disable">我要如何停用外掛程式？</a></li>
+            </ul>
+        </div>
+        <div id="helpus">
+            <h3>幫助我們</h3>
+            <ul>
+                <li>用<a href="#web-badge">網頁徽章</a>來<strong>推廣</strong>關於外掛程式的資訊</li>
+                <!-- li>若您有我們沒有的外掛程式資訊，<a href="http://plugins.mozilla.org">請讓我們知道</a>。</li -->
+        <li>取得這個計畫的<a href='more_info.html'>更多資訊</a></li>
+            </ul>
+        </div>
+        <div id="support">
+            <h3>還需要幫忙嗎？</h3>
+            <ul>
+                <li><a href="http://support.mozilla.com">逛逛 support.mozilla.com</a></li>
+                <li><a href="http://support.mozilla.com/<?php echo $lang ?>/kb/Troubleshooting+plugins">閱讀關於外掛程式的支援文章</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="information-content" class="clearfix">
+        <div class="return-link"><a href="#">回到頁面頂端</a></div>
+
+        <div id="column-one">
+            <h3 id="what-plugin">外掛程式是什麼？</h3>
+            <ul>
+                <li>外掛程式提供您<strong>影片、動畫、遊戲</strong>等功能。</li>
+                <li>他們是由<strong>與 Firefox 無關的公司</strong>，像是 <a href="http://adobe.com/">Adobe Systems</a> 與 <a href="http://apple.com/">Apple</a> 所建立的。</li>
+                <li>外掛程式<strong>不見得會被自動更新</strong>。</li>
+            </ul>
+
+            <h3 id="why-update">為什麼我應該更新我的外掛程式？</h3>
+            <ul>
+                <li>舊版的外掛程式可能會干擾您上網，甚至<strong>浪費您的時間</strong>。</li>
+                <li>舊版的外掛程式會<strong>增加您被惡意軟體、病毒所攻擊的風險</strong>。</li>
+                <li><strong>新版的外掛程式所作的改進</strong>可以讓您上網的時候<strong>更快、更安全</strong>。</li>
+            </ul>
+
+            <img class="screenshot" src="/img/tignish/plugincheck/screenshot.jpg" alt="" />
+        </div>
+
+        <div id="column-two">
+            <h3 id="firefox-helps">Firefox 可以幫我做什麼？</h3>
+            <p>未來，Firefox 將會替您更新外掛程式。但在那之前，您仍應<strong>時常看看這個頁面</strong>並更新您的外掛程式以保持安全。</p>
+
+            <h3 id="list-plugins">我的電腦裡有哪些外掛程式？</h3>
+            <p>如上，我們自動偵測了您電腦當中的外掛程式，但您可以用以下的方法簡單的<strong>檢視您所有已安裝的外掛程式</strong>：</p>
+            <ol>
+                <li>開啟<kbd>工具</kbd>選單。</li>
+                <li>選擇<kbd>附加元件</kbd>。</li>
+                <li>點擊<kbd>外掛程式</kbd>分頁。</li>
+            </ol>
+
+            <h3 id="howto-disable">我要如何停用外掛程式？</h3>
+            <ol>
+                <li>開啟<kbd>工具</kbd>選單。</li>
+                <li>選擇<kbd>附加元件</kbd>。</li>
+                <li>點擊<kbd>外掛程式</kbd>分頁。</li>
+                <li>點擊列表當中的外掛程式。</li>
+                <li>點擊<kbd>停用</kbd>按鈕。</li>
+            </ol>
+            <p><strong>注意:</strong> 停用外掛程式代表您將<strong>無法作某些事</strong>。舉例，若您停用了 Flash，您將無法看到 YouTube 上的影片。</p>
+
+            <h3 id="more-questions">還有更多問題？</h3>
+            <p><a href="http://support.mozilla.com/">我們的技術支援站</a>可以幫助您<a href="http://support.mozilla.com/kb/Popular+Plugins">得知有關外掛程式的消息</a>或是<a href="http://support.mozilla.com/kb/Troubleshooting+Plugins">解決外掛程式的問題</a>。</p>
+        </div>
+    </div>
+    <img class="divider-bottom" src="/img/tignish/plugincheck/divider-large-bottom.png" alt="" />
+
+<div id="web-badge" class="badge-content" class="clearfix">
+    <div class="return-link"><a href="#">回到頁面頂端</a></div>
+    <div class="left-column">
+        <h3 class="web-badge">用徽章宣傳下去</h3>
+
+        <p>幫忙保護你的朋友們！如果在您的網站上加上一個徽章，您可以:</p>
+        <ul>
+            <li>使用 JavaScript 來<strong>偵測外掛程式</strong></li>
+            <li>如果其他人也有<strong>不是最新版的外掛程式，就告訴他們吧！</strong></li>
+        </ul>
+
+    </div><!-- /left-column -->
+    <div class="right-column">
+        <h3>如何在您的網站上使用徽章</h3>
+        <ol>
+        <li>從下面不同大小的版本當中<strong>挑一個</strong>。</li>
+            <li><strong>複製徽章底下的原始碼</strong>。</li>
+            <li><strong>貼到</strong>您的部落格或是其他網站。</li>
+        </ol>
+    </div><!-- /right-column -->
+
+    <div class="left-column clearfix">
+      <?php display_badge('180_150'); ?>
+    </div><!-- /left-column -->
+    <div class="right-column">
+      <?php display_badge('300_250'); ?>
+    </div><!-- /right-column -->
+</div>
+
+<div class="clearfix">
+<?php display_badge('728_90', 'code728'); ?>
+</div>
+
+    <img class="divider-bottom" src="/img/tignish/plugincheck/divider-large-bottom.png" alt="" />
+</div>
+
+
+<?php
+/* Bug#535030 TODO: Order we include footer-portal-pages and our plugincheck is sensative.
+                    Work on no-conflict jQuery for web badge and no jQuery for moco
+   Bug#560762 - jQuery pulled out of stats
+*/
+$extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/includes/min/min.js?g=js"></script>
+<script type="text/javascript" src="/js/plugincheck.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+Pfs.$(document).ready(function(){
+    checkPlugins('
+EXTRA_FOOTERS;
+$extra_footers .= $config['pfs_endpoint'];
+$extra_footers .= <<<EXTRA_FOOTERS
+');
+    //TODO make this based on classes AND ids for clearning event handlers
+    Pfs.$('.web-badge-code').bind('click.badge', function(){
+      Pfs.$(this).select().unbind('click.badge');
+    });
+});
+/* ]]> */
+</script>
+EXTRA_FOOTERS;
+
+@include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

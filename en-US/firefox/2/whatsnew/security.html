@@ -1,0 +1,38 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Updated';
+    $body_id    = 'whatsnew';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/dalvay/portal-page.css" media="screen" title="Dalvay"/>
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/portal-page-transitional.css" media="screen" title="Dalvay"/>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div class="portal-box">
+<div class="portal-box-interior">
+
+<div class="portal-box-header">
+	<h1><img src="/img/portal-page/whatsnew-title.png" alt="You've Been Updated to the Latest Version of Firefox" height="65" width="451" /></h1>
+	<p>This update will make you safer online.</p>
+</div>
+
+<div class="portal-box-contents">
+
+
+<div class="corner-box">
+	<img src="/img/portal-page/lock.png" alt="" />
+	<p style="margin-left: 35px;"><strong>Firefox: The Safest Way to Surf</strong><br />
+	A worldwide community of thousands of experts is working every day to help us identify and defeat the latest threats to your online security. This open process ensures that Firefox is updated with security fixes faster than any other web browser. Keeping you safe is our top priority.</p>
+</div>
+
+<p class="small-print">For details on what's included in this update, please see the <a href="../releasenotes/">release notes</a>.</p>
+
+</div> <!-- end .portal-box-contents  -->
+</div> <!-- end .portal-box-interior  -->
+</div> <!-- end .portal-box  -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,59 @@
+<?php
+    // please translate the variable below
+    $page_title = "Támogatott platformok és rendszerkövetelmények";
+
+    $pageid = "mobile-platforms";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+<div id="main-feature">
+  <div id="feature-contents">
+        <h2>Támogatott platformok és rendszerkövetelmények</h2>
+        <p>A Firefox elérhető Maemo és Windows Mobile mobil platformon.</p>
+  </div>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang, 'platforms')?>
+</div>
+
+<div id="main-content">
+
+    <h3>Támogatott eszközök</h3>
+    <p>Az alábbiakban olvasható a Firefox böngészővel kompatibilis és tesztelt készülékek listája.</p>
+
+    <div id="list_maemo">
+        <h4>Maemo</h4>
+        <ul>
+            <li>Nokia N900</li>
+            <li>Nokia N810</li>
+        </ul>
+    </div>
+
+ <?php /* hide winmo
+    <div id="list_winmo">
+        <h4>Windows Mobile</h4>
+        <p><a href="../?platform=winmo" class="download">Firefox letöltése Windows Mobile platformhoz</a></p>
+        <ul>
+            <li>AT&amp;T Tilt</li>
+            <li>HTC Touch Diamond Pro</li>
+            <li>Palm Treo Pro</li>
+            <li>Samsung Omnia</li>
+        </ul>
+    </div>
+ end hide */ ?>
+
+    <h4 id="list_other">Nem találja a telefonját a támogatott eszközök között?</h4>
+    <p>Ha a telefonja nincs a támogatott készülékek között, attól még letöltheti és használhatja rajta a Firefox böngészőt. A mobil eszköznek a Firefox futtatásához megfelelő mennyiségű memóriával kell rendelkeznie (legalább 128 MB). Azonban azt javasoljuk, hogy a teljes funkcionalitás érdekében tesztelt eszközön használja a Firefox böngészőt.</p>
+    <p>Ugyanakkor kísérletezhet a Firefox használatával, küldhet visszajelzést, fejleszthet kiegészítőt és részt vehet a projektben a Firefox számítógépre történő telepítésével is:</p>
+    <ul>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+    </ul>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

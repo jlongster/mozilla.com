@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox 웹 브라우저 | 테스트 버전';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Firefox 베타 버전</h2>
+    <p>Firefox 최신 베타버전은 개발자 및 커뮤니티의 테스트 용도로 제공하고 있습니다.</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>중요 정보</h4>
+        <p class="intro">다운로드 전 읽어 보세요</p>
+    </div>
+    <ul>
+        <li>현재 버전은 테스트용으로 제공되며 특정 부가 기능이나 웹 사이트가 동작하지 않을 수 있습니다.</li>
+        <li>문제가 있으시면 <a href="http://feedback.mozilla.org/">고객 센터</a>나 <a href="https://bugzilla.mozilla.org/">버그리포트</a>를 이용해 주세요.</li>
+        <li>더 자세한 사항은 <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">제품 소개서</a>와 <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">알려진 문제점</a>(영문)을 참고하세요.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">베타 버전이 아닌 <a href="/<?=$lang?>/firefox/">최신 버전</a>을 이용하실 수 있습니다.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

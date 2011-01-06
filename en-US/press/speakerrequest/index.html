@@ -1,0 +1,382 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Speaker Request Form | Mozilla';
+    $body_id    = 'speaker-request';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about",
+		'Press Center' => "/{$lang}/press",
+		'Speaker Request Forms' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+<link media="screen" href="{$config['static_prefix']}/style/covehead/press-page.css" rel="stylesheet"/>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    @include_once "{$config['file_root']}/includes/recaptcha/recaptcha.lib.php";
+?>
+
+<script>
+    String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g,"");
+    }
+
+    //client-side form validation
+    function validate(form) {
+
+        //clear any existing form errors
+        clearErrors(form);
+
+        var valid = true;
+
+        var event_name = form.event_name.value.trim();
+        //require the event_name field
+        if (event_name == "") {
+            window.scrollTo(0, $('#event_name_field').offset().top - 20);
+            setError('event_name', "Please enter the event name.");
+            valid = false;
+        }
+
+        var event_url = form.event_url.value.trim();
+        //require the event_url field
+        if (event_url == "") {
+			if (valid) {
+            	window.scrollTo(0, $('#event_url_field').offset().top - 20);
+			}
+
+            setError('event_url', "Please enter the event URL.");
+            valid = false;
+        }
+
+		// require date
+		var inputs = document.getElementById('event_date_time_field').getElementsByTagName('select');
+		for (var i = 0; i < inputs.length; i++) {
+			if (inputs[i].selectedIndex == 0) {
+				if (valid) {
+            		window.scrollTo(0, $('#event_date_time_field').offset().top - 20);
+				}
+
+				setError('event_date_time', "Please enter the full date and time of the event.");
+				valid = false;
+				break;
+			}
+		}
+
+        var contact_name = form.contact_name.value.trim();
+        //require the contact_name field
+        if (contact_name == "") {
+			if (valid) {
+            	window.scrollTo(0, $('#contact_name_field').offset().top - 20);
+			}
+
+            setError('contact_name', "Please enter the contact name.");
+            valid = false;
+        }
+
+        var contact_email = form.contact_email.value.trim();
+        //require the contact_email field
+        if (contact_email == "") {
+			if (valid) {
+            	window.scrollTo(0, $('#contact_email_field').offset().top - 20);
+			}
+
+            setError('contact_email', "Please enter the contact email.");
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    // set a form field's error state and message
+    // @param id - element id string
+    // @param msg - error string to set
+    function setError(id, msg) {
+        //set <div>'s class to error
+        var elem = document.getElementById(id + '_field');
+        if (elem.className.search(/error/) == -1) {
+            elem.className += " error";
+        }
+
+        //find message <p> and set error message
+        var elems = elem.getElementsByTagName('p');
+        for (var i = 0; i < elems.length; i++) {
+            if (elems[i].className.search(/msg/) != -1) {
+                elems[i].innerHTML = msg;
+            }
+        }
+    }
+
+    //clear any error classes and messages
+    function clearErrors(form) {
+        var elems = form.getElementsByTagName('div');
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].className = elems[i].className.replace(/error/, '');
+        }
+        var elems = form.getElementsByTagName('p');
+        for (var i = 0; i < elems.length; i++) {
+            if (elems[i].className.search(/msg/) != -1) {
+                elems[i].innerHTML = '';
+            }
+        }
+    }
+</script>
+
+
+<div id="main-feature">
+	<h2>Mozilla <span>Speaker Request Form</span></h2>
+	<p>Please complete and submit the form below to request a speaker from Mozilla for your upcoming event.</p>
+</div>
+
+<div id="main-content">
+
+<form action="/includes/speaker_request.php" method="post" id="request-form" enctype="multipart/form-data" onsubmit="return validate(this);">
+
+<div id="required-text"><span class="required">*</span> Required Fields</div>
+
+<div class="field" id="event_name_field">
+	<label for="event_name"><span class="required">*</span> Event Name:</label>
+	<input class="inputs" type="text" name="event_name" id="event_name" />
+	<p class="msg"></p>
+</div>
+
+<div class="field" id="event_url_field">
+	<label for="event_url"><span class="required">*</span> Event URL:</label>
+	<input class="inputs" type="text" name="event_url" id="event_url" />
+	<p class="msg"></p>
+</div>
+
+<div class="field" id="event_date_time_field">
+	<label for="event_month"><span class="required">*</span> Date/Time:</label>
+	<div class="inputs">
+		<p>
+			<select name="event_month" id="event_month">
+				<option value=""></option>
+				<option value="January">January</option>
+				<option value="February">February</option>
+				<option value="March">March</option>
+				<option value="April">April</option>
+				<option value="May">May</option>
+				<option value="June">June</option>
+				<option value="July">July</option>
+				<option value="August">August</option>
+				<option value="September">September</option>
+				<option value="October">October</option>
+				<option value="November">November</option>
+				<option value="December">December</option>
+			</select>
+			<select name="event_day">
+				<option value=""></option>
+				<? for ($i = 1; $i <= 31; $i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
+			</select>
+			<select name="event_year">
+				<option value=""></option>
+				<? for ($i = date('Y'); $i <= (date('Y') + 10); $i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
+			</select>
+		</p>
+		<p>
+			<select name="event_hour">
+				<option value=""></option>
+				<? for ($i = 1; $i <= 12; $i++) { echo '<option value="'.$i.'">'.$i.'</option>'; } ?>
+			</select>:
+			<select name="event_minute">
+				<option value=""></option>
+				<? for ($i = 0; $i <= 59; $i++) { echo '<option value="'.str_pad($i, 2, '0', STR_PAD_LEFT).'">'.str_pad($i, 2, '0', STR_PAD_LEFT).'</option>'; } ?>
+			</select>
+			<select name="event_meridiem">
+				<option value=""></option>
+				<option value="am">AM</option>
+				<option value="pm">PM</option>
+			</select>
+		</p>
+	</div>
+	<p class="msg"></p>
+</div>
+
+<h4>Guest Speaker:</h4>
+<div class="field" id="speaker_1_field">
+	<label for="speaker_1">Choice #1</label>
+	<input class="inputs" type="text" name="speaker_1" id="speaker_1" />
+</div>
+<div class="field" id="speaker_2_field">
+	<label for="speaker_2">Choice #2</label>
+	<input class="inputs" type="text" name="speaker_2" id="speaker_2"  />
+</div>
+
+<h3>Contact Information</h3>
+<div class="field" id="contact_name_field">
+	<label for="contact_name"><span class="required">*</span> Name:</label>
+	<input class="inputs" type="text" name="contact_name" id="contact_name" />
+	<p class="msg"></p>
+</div>
+
+<div class="field" id="contact_title_field">
+	<label for="contact_title">Title:</label>
+	<input class="inputs" type="text" name="contact_title" id="contact_title" />
+</div>
+
+<div class="field" id="contact_company_field">
+	<label for="contact_company">Company:</label>
+	<input class="inputs" type="text" name="contact_company" id="contact_company" />
+</div>
+
+<div class="field" id="contact_phone_field">
+	<label for="contact_phone">Phone:</label>
+	<input class="inputs" type="text" name="contact_phone" id="contact_phone" />
+</div>
+
+<div class="field" id="contact_email_field">
+	<label for="contact_email"><span class="required">*</span> Email:</label>
+	<input class="inputs" type="text" name="contact_email" id="contact_email" />
+	<p class="msg"></p>
+</div>
+
+<div class="field" id="contact_url_field">
+	<label for="contact_url">Company URL:</label>
+	<input class="inputs" type="text" name="contact_url" id="contact_url" />
+</div>
+
+<h3>Event Details</h3>
+
+<div class="field" id="event_venue_field">
+	<label for="event_venue">Venue:</label>
+	<input class="inputs" type="text" name="event_venue" id="event_venue" />
+</div>
+
+<div class="field" id="event_theme_field">
+	<label for="event_theme">Theme:</label>
+	<input class="inputs" type="text" name="event_theme" id="event_theme" />
+</div>
+
+<div class="field" id="event_goal_field">
+	<label for="event_goal">Goal:</label>
+	<input class="inputs" type="text" name="event_goal" id="event_goal" />
+</div>
+
+<div class="field" id="event_format_field">
+	<label for="event_format">Format:</label>
+	<input class="inputs" type="text" name="event_format" id="event_format" />
+</div>
+
+<div class="field" id="event_audience_size_field">
+	<label for="event_audience_size">Expected Audience Size:</label>
+	<input class="inputs" type="text" name="event_audience_size" id="event_audience_size" />
+</div>
+
+<div class="field" id="event_audience_demographics_field">
+	<label for="event_audience_demographics">Audience Demographics:</label>
+	<input class="inputs" type="text" name="event_audience_demographics" id="event_audience_demographics" />
+</div>
+
+<div class="field" id="event_confirmed_speakers_field">
+	<label for="event_confirmed_speakers">Confirmed Speakers:</label>
+	<textarea class="inputs" name="event_confirmed_speakers" id="event_confirmed_speakers"></textarea>
+</div>
+
+<div class="field" id="event_invited_speakers_field">
+	<label for="event_invited_speakers">Invited Speakers:</label>
+	<textarea class="inputs" name="event_invited_speakers" id="event_invited_speakers"></textarea>
+</div>
+
+<div class="field" id="event_past_speakers_field">
+	<label for="event_past_speakers">Past Speakers:</label>
+	<textarea class="inputs" name="event_past_speakers" id="event_past_speakers"></textarea>
+</div>
+
+<div class="field" id="event_media_coverage_field">
+	<label for="event_media_coverage">Media Coverage:</label>
+	<input class="inputs" type="text" name="event_media_coverage" id="event_media_coverage" />
+</div>
+
+<div class="field" id="event_sponsors_field">
+	<label for="event_sponsors">Event Sponsors:</label>
+	<textarea class="inputs" name="event_sponsors" id="event_sponsors"></textarea>
+</div>
+
+<div class="field" id="event_confirmation_deadline_field">
+	<label for="event_confirmation_deadline">Confirmation Deadline:</label>
+	<input class="inputs" type="text" name="event_confirmation_deadline" id="event_confirmation_deadline" />
+</div>
+
+<h3>Presentation Details</h3>
+
+<div class="field" id="presentation_type_field">
+	<label>Type of Presentation:</label>
+	<div class="inputs">
+		<input type="checkbox" id="presentation_keynote" name="presentation_type[]" value="presentation_keynote" />
+		<label for="presentation_keynote">Keynote</label><br />
+
+		<input type="checkbox" id="presentation_presentation" name="presentation_type[]" value="presentation_presentation" />
+		<label for="presentation_presentation">Presentation</label><br />
+
+		<input type="checkbox" id="presentation_chat" name="presentation_type[]" value="presentation_chat" />
+		<label for="presentation_chat">Fireside Chat</label><br />
+
+		<input type="checkbox" id="presentation_panel" name="presentation_type[]" value="presentation_panel" />
+		<label for="presentation_panel">Panel</label><br />
+
+		<input type="checkbox" id="presentation_other" name="presentation_type[]" value="presentation_other" />
+		<label for="presentation_other">Other</label>
+	</div>
+</div>
+
+<div class="field" id="presentation_panelists_field">
+	<label for="presentation_panelists">Please list other panelists:</label>
+	<textarea class="inputs" name="presentation_panelists" id="presentation_panelists"></textarea>
+</div>
+
+<div class="field" id="presentation_topic_field">
+	<label for="presentation_topic">Topic of Presentation:</label>
+	<textarea class="inputs" name="presentation_topic" id="presentation_topic"></textarea>
+</div>
+
+<div class="field" id="presentation_length_field">
+	<label for="presentation_length">Expected Length:</label>
+	<input class="inputs" type="text" name="presentation_length" id="presentation_length" />
+</div>
+
+<h3>Additional Information</h3>
+<div class="field" id="attachment_field">
+	<label for="attachment">PDF Attachments: <span>(Agenda, media list, etc.)</span></label>
+	<input class="inputs" type="file" name="attachment" id="attachment" />
+</div>
+
+<script>
+	var RecaptchaOptions = {
+		theme: 'clean'
+	};
+</script>
+
+<h3>Are you human?</h3>
+<div class="field" id="recaptcha">
+	<label></label>
+	<div class="inputs">
+		<a href="javascript: Recaptcha.showhelp();" style="font-size: .8em">What's this?</a>
+		<script
+			src="http://api.recaptcha.net/challenge?k=<?= $config['recaptcha_pub_key'] ?>">
+		</script>
+	</div>
+</div>
+
+<noscript>
+   <iframe src="http://api.recaptcha.net/noscript?k=<?= $config['recaptcha_pub_key'] ?>"
+	   height="300" width="500"></iframe><br>
+   <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+   </textarea>
+   <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+</noscript>
+
+<div id="form-footer">
+	<input type="submit" id="submit-form" name="submit_form" value="Submit this form »">
+</div>
+
+</form>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

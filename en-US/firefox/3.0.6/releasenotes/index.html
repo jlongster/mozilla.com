@@ -1,0 +1,345 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.0.6 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+	
+	<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 3 Release Notes</h2>
+    <p><em>v3.0.6, released February 3, 2009</em>
+    Check out what’s new, the known issues and frequently asked questions
+    about the latest version of Firefox. As always, you’re encouraged to
+    tell us what you think, either using <a href="http://feedback.mozilla.org/">
+    this feedback form</a> or by <a href="https://bugzilla.mozilla.org/">
+    filing a bug in Bugzilla</a>.</p>
+</div>
+
+
+<div id="main-content">
+
+  <div id="whatsnew" class="expander expander-odd">
+    <h3 class="expander-header">What’s New in Firefox&nbsp;3.0.6</h3>
+    <div class="expander-content">
+      <p>Firefox&nbsp;3.0.6 fixes several issues found in Firefox 3.0.5:</p>
+      <ul class="spaced">
+        <li>Fixed <a
+            href="http://www.mozilla.org/security/known-vulnerabilities/firefox30.html#firefox3.0.6">several
+            security issues</a>.</li>
+        <li>Fixed several stability issues.</li>
+        <li>In previous versions of Firefox, some users experienced a problem
+            where parts of the screen were not properly displaying after
+            Firefox was open for long periods of time.</li>
+        <li>Improved the ability for scripted commands (including those
+            included in popular extensions like Adblock Plus) to work properly
+            with plugins. (<a
+            href="https://bugzilla.mozilla.org/show_bug.cgi?id=438830">bug 438830</a>)</li>
+        <li>Removed the client user ID from crash reports.</li>
+        <li>Fixed issues with the display of some Indic scripts.</li>
+        <li>See the <a href="/<?=$lang?>/firefox/3.0.5/releasenotes/">Firefox 3.0.5
+            release notes</a> for changes in previous releases.</li>
+      </ul>
+      <p>See the <a 
+         href="https://bugzilla.mozilla.org/buglist.cgi?keywords_type=anywords&amp;keywords=fixed1.9.0.6+verified1.9.0.6">complete
+         list of bugs fixed</a>.</p>
+    </div>
+  </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">System Requirements</h3>
+      <div class="expander-content">
+        <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements.html">
+           system requirements</a>.</p>
+      </div>
+    </div>
+
+    <div id="download" class="expander expander-odd">
+      <h3 class="expander-header">Downloading</h3>
+      <div class="expander-content">
+        <p>Mozilla provides Firefox&nbsp;3 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a
+           variety of languages. You can <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/latest-3.0/">get the latest version 
+           of Firefox&nbsp;3 here</a>. For builds for other systems and languages not 
+           provided by Mozilla.org, see the Contributed Builds section at the end of this document.</p>
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Installing</h3>
+      <div class="expander-content">
+        <p>Please note that installing Firefox&nbsp;3 <em>will overwrite</em> your
+           existing installation of Firefox. You won’t lose any of your bookmarks or
+           browsing history, but some of your extensions and other add-ons might not work
+           until updates for them are made available.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Uninstalling</h3>
+      <div class="expander-content">
+        <p>You can remove Firefox&nbsp;3 through the <tt>Control Panel</tt> in the
+           <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on 
+           OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+        <p>Removing Firefox&nbsp;3 won’t remove your bookmarks, web browsing history,
+           extensions or other add-ons. This data is stored in your <em>profile
+           folder</em>, which is located in one of the following locations depending on
+           your operating system:</p>
+
+        <table style="font-size: small;" border="1" cellspacing="0">
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+            <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP, Server 2003</td>
+            <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+            <td>~/Library/Application Support/Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+            <td>~/.mozilla/firefox</td>
+          </tr>
+        </table>
+        <p>Any version of Firefox that you install after removing Firefox&nbsp;3 will
+           continue to use the data from this profile folder.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Extensions and Themes</h3>
+      <div class="expander-content">
+        <p>Extensions installed under Firefox 2 may be incompatible and/or require updates to work with 
+           Firefox&nbsp;3. Please report any issues to the maintainer of the extension. 
+           When you install Firefox&nbsp;3 all of your Extensions and Themes will be 
+           disabled until Firefox&nbsp;3 determines that either a) they are compatible 
+           with the Firefox&nbsp;3 release or b) there are newer versions available that 
+           are compatible.</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Known Issues</h3>
+      <div class="expander-content">
+        <p>This list covers some of the known problems with Firefox&nbsp;3. Please read 
+           this before reporting any new bugs.</p>
+        <dl>
+        <dt id="allsystems">All Systems</dt>
+        <dd>
+          <ul class="spaced">
+            <li>If Flash content is active when Firefox crashes, the Crash Reporter may not 
+                activate (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=422308">bug 422308</a>).
+                This issue is fixed in Flash 10.</li>
+            <li>Deleting an entry from the history sidebar, then invoking the Clear Private Data
+                tool can result Firefox crashing (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=426275">bug 426275</a>)</li>
+            <li>Some add-ons that depend on deprecated code may not install properly (see 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=406807">bug 406807</a>)</li>
+            <li>Privacy &gt; History &gt; Remember visited pages to "0" has no effect
+                (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=366075">bug
+                366075</a>)</li>
+            <li>Some Web pages (such as mlb.com) do not properly detect if Silverlight is installed
+                and will not function properly (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=432371">bug 432371</a>) 
+				This issue is fixed by the Silverlight 2.0 beta.</li>
+            <li>The DOM Inspector has been removed and is now <a 
+                href="https://addons.mozilla.org/en-US/firefox/addon/6622">available as an
+                add-on</a>.</li>
+            <li>Support for Cross-Site XmlHttpRequest has been removed until the specification 
+                becomes more stable and the security model is improved (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=424923">bug 424923</a>)</li>
+            <li>After dismissing the "Do you want Firefox to remember this password" prompt, it
+                is sometimes not possible to focus form fields unless you reload the page (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=433942">bug 433942</a>)</li>
+            <li>The new Location Bar, Add Bookmark dialog, and Download Manager information popup
+                behave inconsistently with Window-Eyes (<a 
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=393398">bug 393398</a>).
+                This is fixed in an upcoming Window-Eyes release.</li>
+          </ul>
+        </dd>
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+            <li>A Windows Media Player (WMP) plugin is not provided with Windows Vista and some
+              other versions of Windows. To view Windows Media content, you must install this
+              plugin by following <a 
+              href="http://support.mozilla.com/kb/Windows+Media+Player">these 
+              instructions</a>. After installing you may need to check for Windows Updates 
+              before the plugin will show content properly.</li>
+            <li>Users who have older installations of Google Desktop Search may experience
+                crashes on startup; reinstalling Google Desktop Search fixes the problem
+                (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=401513">bug 401513</a>)</li>
+          </ul>
+        </dd>
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>If you are using IPv6 from a network location that doesn't support IPv6 routing
+                your DNS lookups may be very slow. Set <tt>network.dns.disableIPv6</tt> to
+                <tt>true</tt> as a workaround (bug <a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=417689">417689</a>)</li>
+            <li>Items in the "File" menu show as inactive after using the "Print" item from
+                that menu - switching to a new tab restores them (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=425844">bug 425844</a>)</li>
+          </ul>
+        </dd>
+        <dt id="linux">Linux and Unix</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Users running Ubuntu 7.10 may need to update their certificate databases in
+                order to submit crash reports (<a 
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=407748">bug 407748</a> for
+                instructions)</li>
+            <li>The mouse button assignments for Back and Forward have changed, users may
+                need to reconfigure their pointing devices (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=420294">bug 420294</a>)</li>
+            <li>Incompatibilities between NVIDIA drivers and some versions of the X server 
+                cause scaled images to render incorrectly (<a
+                href="https://bugzilla.mozilla.org/show_bug.cgi?id=411831">bug 411831</a>)</li>
+            <li>The Orca screen reading software does not read some text, such as the save
+                password notification, site identity information, or the default prompt text
+                in search fields - these are known problems with Orca (see <a 
+                href="http://bugzilla.gnome.org/show_bug.cgi?id=533109">Gnome bug 533109</a>
+                and <a href="http://bugzilla.gnome.org/show_bug.cgi?id=533125">533125</a>).
+                This issue will be fixed in an upcoming Orca release.</li>
+          </ul>
+        </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Troubleshooting</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Poorly designed or incompatible extensions can cause problems with your browser, including make it crash, slow down page display, etc. If you encounter strange problems relating to parts of the browser no longer working, the browser not starting, windows with strange or distorted appearance, degraded performance, etc, you may be suffering from Extension or Theme trouble.
+            Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+            Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+            start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            When started in Safe Mode all extensions are disabled and the Default theme is used. Disable the Extension/Theme that is causing trouble and then start normally.
+          </li>
+          <li>
+            If you uninstall an extension that is installed with your user profile (i.e.
+            you installed it from a Web page) and then wish to install it for all user profiles
+            using the -install-global-extension command line flag, you must restart the
+            browser once to cleanse the profile extensions datasource of traces of that
+            extension before installing with the switch. If you do not do this you may end
+            up with a jammed entry in the Extensions list and will be unable to install
+            the extension globally.
+          </li>
+          <li>
+            If you encounter strange problems relating to bookmarks, downloads, window
+            placement, toolbars, history, or other settings, it is recommended that you try
+            creating a new profile and attempting to reproduce the problem before filing
+            bugs. Create a new profile by running Firefox with the -P command line
+            argument, choose the "Manage Profiles" button and then choose "Create
+            Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+            one by one, checking each time to see if the problems resurface. If you do
+            find a particular profile data file is causing a problem, file a bug and attach
+            the file.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Frequently Asked Questions</h3>
+      <div class="expander-content">
+        <ol class="faq">
+          <li>
+            What can I do to help?
+            <p>We need help from developers and the testing community to provide as much
+               feedback as possible to make Firefox even better. Please read these notes and
+               the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+               before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+               also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+          </li>
+          <li>
+            Why haven’t you responded to the mail I sent you?
+            <p>Use the <a href="http://groups.google.com/group/mozilla.dev.apps.firefox/topics">newsgroup</a>. The Firefox team reads it regularly, and your email may have gotten lost.</p>
+          </li>
+          <li>
+            Where can I get extensions and themes (add-ons)?
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+          </li>
+          <li>
+            Who makes Firefox&nbsp;3?
+            <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who have contributed to Firefox&nbsp;3.</p>
+          </li>
+          <li>
+            Where’s the Firefox&nbsp;3 source code?
+            <p>A tarball of the Firefox&nbsp;3 source code is available for <a href=
+               "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0.6/source/">download</a>.
+               The latest development code can be obtained by <a href=
+               "http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>.
+               Firefox-specific source is in "mozilla/browser", "mozilla/toolkit",
+               and "mozilla/chrome". Please follow the <a href=
+               "http://developer.mozilla.org/en/docs/Build_Documentation">build instructions</a>.</p>
+          </li>
+          <li>
+            Where is the mail client?
+            <p>Firefox&nbsp;3 works with whatever mail client is the default on your system. 
+               However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our 
+               next-generation email client and the perfect complement to Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Contributed Builds</h3>
+      <div class="expander-content">
+        <p>These are unofficial builds and may be configured differently than the official 
+           Mozilla builds. They may also be optimized and/or tested for specific 
+           platforms. You can browse through the available contributed builds on the
+           <a 
+           href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0.6/contrib/">FTP
+           site</a>.</p>
+  
+<!-- Put Solaris and other contributed builds here; copy content from previous version's release notes -->
+
+      </div>
+    </div>
+
+	<div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Other Resources and Links</h3>
+      <div class="expander-content">
+        <p>The following resources contain useful information about Firefox&nbsp;3:</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+          <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+          <li><a href="http://developer.mozilla.org/docs/Firefox_3_for_developers">Developer Information</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+        </ul>
+      </div>
+    </div>
+	<div id="release-notes-footer"></div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

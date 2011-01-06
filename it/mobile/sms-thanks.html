@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Grazie per aver scelto Firefox";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Grazie per aver scelto Firefox</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Segui queste istruzioni per scaricare Firefox, scopri ulteriori informazioni su Firefox Sync e mettiti in marcia</h3>
+    <ol id="steps">
+        <li>Verifica sul tuo telefono cellulare se hai ricevuto il messaggio di testo SMS che ti abbiamo appena inviato.</li>
+        <li>Apri il messaggio e seleziona il collegamento incluso per scaricare Firefox direttamente dal tuo telefono.</li>
+    </ol>
+    <p class="small-print">*Firefox è gratuito, ma per scaricarlo verranno applicate le tariffe standard per la connessione dati del tuo operatore. Verifica con il tuo gestore le tariffe applicate alle connessioni dati.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Mentre aspetti…</h3>
+    <ol>
+        <li>Installa Firefox Sync e porta con te il <em>tuo</em> Firefox, ovunque tu vada. Condividi la cronologia di navigazione, i segnalibri, le password e le schede tra il tuo computer e il tuo dispositivo mobile.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Installa il componente aggiuntivo Firefox Sync sul tuo computer</a> e iscriviti a Firefox Sync. Una volta scaricato Firefox sul tuo dispositivo mobile, segui i “Passi successivi" suggeriti e seleziona "Installa Firefox Sync" per completare l'installazione. In alternativa, puoi selezionare manualmente il pulsante Preferenze, premere il pulsante Componenti aggiuntivi, cercare e installare il componente aggiuntivo Firefox Sync per il tuo dispositivo.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

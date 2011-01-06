@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Co je nového v <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Buďte s Firefox 4 Beta mobilní</h3>
+        <p>Přecházejte snadno mezi PC v práci a doma! Synchronizace vám dává snadný přístup k vašim důležitým datům Firefoxu, které zahrnují záložky, hesla, historii či otevřené panely, napříč několika počítači či zařízeními. Pro informace, jak začít, shlédněte následující video.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Dozvědět se více o synchronizaci »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Napsat svou reakci »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Poznámky k vydání »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Poslední novinky</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organizujte si svůj online život:</h4>
+         <?=$tabvideo?>
+        <p>Je pro vás obtížné orientovat se ve všech otevřených panelech? Osvoboďte svůj prohlížeč od změti panelů! Jednoduše organizujte své panely do snadno spravovatelných skupin, které můžete vizuálně organizovat, pojmenovávat a uspořádávat.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

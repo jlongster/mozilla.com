@@ -1,0 +1,74 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "אודות זהות אתרים בלחיצת כפתור";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+<div id="main-feature">
+    <h2>אודות זהות אתרים בלחיצת כפתור</h2>
+    <p>Firefox 3 כולל כפתור חדש לזיהוי אתרים כדי לעזור לכם לדעת למי אתם באמת מחוברים.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">התכונה הזאת מאפשרת לכם לראות במבט אחד האם האתר שאתם גולשים בו סיפק מידע לגבי הזהות האמיתית שלו, מי אימת את המידע הזה, והאם האתר מגן על המידע האישי שלכם מפני האזנות. תוכלו לגשת למידע על זהות האתר על-ידי לחיצה על צלמית האתר שנמצאת משמאל לכתובת שלו (או על-ידי הקשת צירוף המקשים Shift-Tab ואחר-כך Enter)</p>
+
+<h3>שאלות נפוצות</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">מה ההבדל בין רמות ההזדהות השונות?</h4>
+    <div class="expander-content">
+        <p>צלמית &quot;ביקורת הדרכונים&quot; תשתנה בהתאם לרמת ההזדהות שנמסרה ע"י האתר.</p>
+        <p class="site-id site-id-1">האתר אינו מספק מידע על זהותו.</p>
+        <p class="site-id site-id-2">האתר מספק מידע בסיסי על זהותו, ומגן על המידע האישי שלכם מפני האזנות.</p>
+        <p class="site-id site-id-3">האתר מספק מידע מלא ומאומת על זהותו ועל מפעיליו, ומגן על המידע האישי שלכם מפני האזנות.</p>
+        <p class="site-id site-id-4">האתר הזה רשום כאתר תוקפני או אתר הונאה. מסירת מידע אישי באתר זה, או אפילו ביקור באתר, עלולים להזיק לכם.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">למה לא כל האתרים מספקים מידע מאומת על זהותם?</h4>
+    <div class="expander-content">
+        <p>רוב האתרים באינטרנט לא מבקשים מידע אישי או פיננסי מהמבקרים בהם, ולכם אינם מרגישים צורך לשאת בהוצאות הכרוכות באישור הזהות שלהם ובמניעת האזנות.</p>
+        <p>אתרים שכן מבקשים ממך לספק מידע אישי או פיננסי, או שטוענים שהם מייצגים גופי ממשל או גופים עסקיים, צריכים תמיד להזדהות כראוי, ולהגן על המידע שלך מפני האזנות.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">האם זה בטוח לבצע עסקאות עם אתרים שלא מזהים את עצמם?</h4>
+    <div class="expander-content">
+        <p>ההחלטה למי אפשר להאמין ברשת מתחילה בלדעת מי מדבר איתך, אבל זה לא סוף הסיפור. אתרים שאינם מספקים מידע על זהותם ולא מגינים על המידע האישי שלך מסכנים אותך, ואי אפשר להתיחס אליהם כאל בטוחים. אבל אפילו אתרים שכן מזדהים באופן נאות עלולים לנהוג במידע שלך בצורה שלא מתאימה לך, או שאבטחת האתר שלהם רשלנית.</p>
+        <p>כמו בעולם האמיתי, צריך להיזהר כאשר מתחברים לאתרים לא מוכרים, או כאלה שאי אפשר לבטוח בהם. הידיעה שהאתר הזדהה כיאות היא חלק מקבלת ההחלטה על האמון שניתן לתת לו.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">האם Mozilla מאמתת את המידע הזה לכל אתר?</h4>
+    <div class="expander-content">
+        <p>המידע המשמש לזיהוי אתרים לא מאומת ע"י Mozilla. במקום זה Firefox, בדומה לשאר הדפדפנים, מסתמך על קבוצת חברות אמינות שנקראות &quot;רשויות חתימה&quot; אשר מוודאות את זהות האתר ומנפיקות לו &quot;תעודות זהות&quot;. החברות האלה חייבות לדבוק ב<a href="http://www.mozilla.org/projects/security/certs/policy/">מדיניות רשויות החתימה של Mozilla</a> אשר, בין היתר, דורשת מרשויות החתימה לבצע ביקורת ע"י צד שלישי שמוודא שהן אינן מספקות תעודות בלתי כשרות.</p>
+    </div>
+</div>
+
+</div>
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,82 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 2 | Requisitos do Sistema';
+    $body_id    = 'firefox-requirements';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="/style/tignish/system-requirements.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Requisitos do Sistema do Firefox&nbsp;2</h2>
+</div>
+
+<div id="main-content">
+
+ <h2>Windows</h2>
+  <h6>Sistemas Operacionais</h6>
+  <ul>
+    <li>Windows 98</li>
+    <li>Windows 98 SE</li>
+    <li>Windows ME</li>
+    <li>Windows NT 4.0</li>
+    <li>Windows 2000</li>
+    <li>Windows XP</li>
+    <li>Windows Server 2003</li>
+    <li>Windows Vista</li>
+  </ul>
+  <h6>Hardware Mínimo</h6>
+  <ul>
+    <li>Pentium 233 MHz (<em>recomendado:</em> Pentium 500MHz ou superior)</li>
+    <li>64 MB RAM (<em>recomendado:</em> 128 MB RAM ou superior)</li>
+    <li>52 MB de espaço em disco</li>
+  </ul>
+
+  <h2>Mac</h2>
+  <h6>Sistemas Operacionais</h6>
+  <ul>
+    <li>Mac OS X 10.2.x e posteriores</li>
+  </ul>
+  <h6>Hardware Mínimo</h6>
+  <ul>
+    <li>Computador Macintosh com processador Intel x86 ou PowerPC G3, G4 ou G5</li>
+    <li>128 MB RAM (<em>recomendado:</em> 256 MB RAM ou superior)</li>
+    <li>200 MB de espaço em disco</li>
+  </ul>
+
+  <h2>Linux</h2>
+  <h6>Requisitos de Software</h6>
+  Por favor, perceba que distribuidores de Linux podem fornecer pacotes para sua distribuição com requisitos diferentes.
+  <ul>
+    <li>Linux kernel - 2.2.14 ou superior com as seguintes bibliotecas ou pacotes mínimos:
+      <ul>
+        <li>glibc 2.3.2</li>
+        <li>gtk+2.0</li>
+        <li>XFree86-3.3.6</li>
+        <li>fontconfig (também conhecido como xft)</li>
+        <li>libstdc++5</li>
+      </ul>
+    </li>
+  </ul>
+  <h6>Hardware Mínimo</h6>
+  <ul>
+    <li>CPU Intel Pentium II ou AMD K6-III+ 233 MHz (<em>recomendado:</em> 500MHz ou superior)</li>
+    <li>64 MB RAM (<em>recomendado:</em> 128 MB RAM ou superior)</li>
+    <li>52 MB de espaço em disco</li>
+  </ul>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

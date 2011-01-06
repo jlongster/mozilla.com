@@ -1,0 +1,25 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+<meta http-equiv="Refresh" content="0;url=http://www.mozilla.org/products/firefox/releases/1.5beta2.html">
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+    <div id="content">
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

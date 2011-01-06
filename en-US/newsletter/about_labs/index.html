@@ -1,0 +1,98 @@
+<?php
+    /*
+        <iframe frameborder="0" scrolling="no" allowtransparency="true" style="width: 100%; height: 145px" src="http://www.mozilla.com/en-US/newsletter/about_labs/"></iframe>
+    */
+    require_once "{$config['file_root']}/includes/email/forms.php";
+    $form = new NewsletterForm('ABOUT_LABS', $_POST);
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error-'. $form->error;
+    } else {
+        $status = '';
+    }
+?>
+<html>
+    <head>
+        <style type="text/css">
+            body { 
+                margin: 0; padding: 0; background: transparent; 
+                font: 10px Arial, sans-serif;
+                color: rgba(255, 255, 255, 0.6);
+                font: 14px/1.8 "trebuchet ms",sans-serif;
+            }
+            a { color: #FFFFFF; }
+            .signup { margin: 1em 0 0 0; width: 180px; }
+            .signup .field { margin: 0em 0 0.5em 0; }
+            .signup label {
+                display: block; font-weight: bold; 
+                line-height: 1em; margin: 0.3em 0;
+            }
+            .signup input#privacy { float: left; margin-right: 1em; }
+            .signup label.privacy { display: block; font-size: 80%; line-height: 1.5em; }
+            .signup label.privacy a { white-space: nowrap; }
+            .signup input.email {
+                background-color: rgba(0, 0, 0, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 1em 1em 1em 1em;
+                box-shadow: 0 1px 24px rgba(0, 0, 0, 0.3) inset;
+                color: #FFFFFF;
+                height: 28px;
+                margin: 0 5px 0 -2px;
+                padding: 2px 4px 0 10px;
+                text-shadow: 0 1px black;
+                width: 150px;
+            }
+            .signup .messages { font-size: 80%; width: 90%; margin: 0pt 0; }
+            .signup .messages p { padding: 0.25em 0.5em 0.25em 0.5em; }
+            .signup .messages .error { background: #925214; color: #FBE3E4; }
+            .signup .messages .success { background: #529214; color: #E3FBE4; }
+            .signup .field-radios label,
+            .signup .field-radios input {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="signup" action="" method="POST">
+            <input type="hidden" name="submit" value="submit" />
+            <div class="field">
+                <input type="text" id="email" name="email" class="required email" 
+                    placeholder="Email address"
+                    value="<?php echo ('success' == $status) ? '' : $form->get('email') ?>"/>
+                <input type="image" src="http://mozillalabs.com/wp-content/themes/labs2.0/img/submit-arrow.png" value="»">
+            </div>
+            <div class="field" id="format-field">
+              <?php
+                  $html_format = 'checked="checked"';
+                  $text_format = '';
+                  if ($form->get('format') == 'text') {
+                      $text_format = 'checked="checked"';
+                      $html_format = '';
+                  }
+              ?>
+              <div class="field-radios">
+                <input type="radio" name="format" id="html-format" value="html" <?= $html_format?>>
+                <label for="html-format">HTML</label>
+                <input type="radio" name="format" id="text-format" value="text" <?= $text_format?>>
+                <label for="text-format">Text</label>
+              </div>
+            </div>
+            <div class="field">
+                <input type="checkbox" id="privacy" name="privacy" class="required" />
+                <label for="privacy" class="privacy">I agree to the <a href="http://www.mozilla.com/en-US/privacy-policy">Mozilla Privacy Policy</a></label>
+            </div>
+            <div class="messages">
+                <?php if ('error-email' == $status): ?>
+                    <p class="error error-email">Please enter a valid email
+                    address.</p>
+                <?php elseif ('error-privacy' == $status): ?>
+                    <p class="error error-privacy">You must agree to the
+                    Mozilla Privacy Policy to subscribe.</p>
+                <?php elseif ('success' == $status): ?>
+                    <p class="success">Subscription request accepted.</p>
+                <?php endif ?>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html xml:lang="en-US" lang="en-US" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Firefox Updated</title>
+    <script src="<?=$config['static_prefix']?>/js/util.js"></script>
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/firefox/4/firstrun-page-beta3.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/video-player.css" media="screen" />
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/container/container_core-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/js/mozilla-video-tools.js"></script>
+</head>
+
+<body id="whatsnew" class=" locale-en-US portal-page">
+<script>// <![CDATA[
+if (document.body.className == '') {
+    document.body.className = 'js';
+} else {
+    document.body.className += ' js';
+}
+
+if (gPlatform == 1) {
+    document.body.className += ' platform-windows';
+} else if (gPlatform == 3 || gPlatform == 4) {
+    document.body.className += ' platform-mac';
+} else if (gPlatform == 2) {
+    document.body.className += ' platform-linux';
+}
+
+YAHOO.util.Event.onDOMReady(function() {
+	document.body.offsetLeft;
+	document.getElementById('sub-feature').className = 'loaded';
+});
+
+// ]]></script>
+
+<div id="wrapper">
+<div id="doc">
+
+<div id="main-feature">
+    <h1>What’s New in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+        <div id="video-launch">
+            <a href="http://videos-cdn.mozilla.net/serv/firefox4beta/multitouch-640x360.webm" id="tour-video"  onclick="dcsMultiTrack('DCS.dcsuri','/serv/firefox4beta/multitouch-640x360.webm','WT.ti','Firefox 4 Beta 3 Whats New Page Video');"><div id="video-launch-border"><img id="video-launch-thumbnail" src="/img/firefox/beta/4/video-frame.png" /></div><div id="video-launch-text">Watch the video</div></a>
+            <script>
+            // <![CDATA[
+            var player_french = new Mozilla.VideoPlayer(
+                'tour-video',
+                [
+                    {
+                        url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/multitouch-640x360.webm',
+                        type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                        title: 'Download in WebM format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/multitouch-640x360.theora.ogv',
+                        type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        title: 'Download in Ogg&nbsp;Theora format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/multitouch-640x360.mp4',
+                        type:  'video/mp4',
+                        title: 'Download in MPEG-4 format'
+                    }
+                ],
+                'serv/firefox4beta/multitouch-640x360.mp4'
+            );
+            // ]]>
+            </script>
+        </div>
+        <h3>Multi-touch for Windows 7</h3>
+        <p>Firefox now integrates multi-touch support for Windows 7, enabling you to interact with Web content in the most intuitive way—with your hands. Multi-touch, takes full advantage of Firefox ready, touch-enabled devices to give you a more enjoyable browsing experience. Watch the video to learn more.</p>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en/DOM/Touch_events">Learn more about Multi-touch »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b3/releasenotes/">Release Notes »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Latest News</h2>
+    </div>
+
+    <div id="column-1">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/feedback-button.png" alt="Feedback button" />
+        <h4>Born to Beta</h4>
+        <p>Who knew? Our beta users are 96% male. Less than a quarter of you were alive when the US put a man on the moon. And most use the internet to communicate. So…why not communicate a bit and help us get newbies testing Firefox?! We need feedback from women, non-techies and people who spend less time online, like baristas, elephant trainers, teachers, surfers or acupuncturists… <span id="tell">Tell your friends!</span></p>
+    </div>
+
+    <div id="column-2">
+        <h4>Smoother, Faster Browsing</h4>
+        <p><a href="http://blog.mozilla.com/rob-sayre/2010/08/02/mozillas-new-javascript-value-representation/">New JS Values</a> mean that Firefox can execute heavily numeric code more efficiently, resulting in smoother graphics, less memory usage, and a faster browsing experience.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <h4>Need Help?</h4>
+    <p><a href="https://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Our support pages</a> have answers and advice specifically for the Firefox 4 beta.</p>
+
+</div>
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<script src="/includes/min/min.js?g=js_stats"></script>
+<script>
+//<![CDATA[
+var _tag=new WebTrends({"dcsid":"dcst2y3n900000gohmphe66rf_3o6x","rate":5,"fpcdom":"mozilla.com"});
+_tag.dcsGetId();
+//]]>
+</script>
+<script>
+//<![CDATA[
+_tag.dcsCollect();
+//]]>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+
+</body>
+</html>

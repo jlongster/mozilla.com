@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "關於網站身份";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>關於網站身份</h2>
+    <p>Firefox 3 有一個新的的網站身份按鈕，幫助您了解您正在瀏覽的網站身份。</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">這個功能能讓您得知目前正瀏覽的網站所提供的身份資訊、驗證此資訊的資料以及該網站如何防範您的資訊被他人竊取。你可以按一下網址列前的網站圖示以開啟網站資訊視窗（或按 Shift-Tab-Enter 鍵）。</p>
+
+<h3>常見問題集</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">不同等級的身份資訊代表什麼意義？</h4>
+    <div class="expander-content">
+        <p>「海關人員」圖示會隨著網站所提供的等級資訊而變更。</p>
+        <p class="site-id site-id-1">這個網站沒有提供任何身份識別資訊。</p>
+        <p class="site-id site-id-2">這個網站提供基本的身份識別資訊，並且能夠防止您的個人資料被竊取。</p>
+        <p class="site-id site-id-3">這個網站提供了完整且經過驗證的網站所有者身份識別資訊，並且能夠防止您的個人資料被竊取。</p>
+        <p class="site-id site-id-4">這個網站被列入有害或偽造網站的清單中。若在此網站上提供個人資料、甚至只是瀏覽也可能帶來危險。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">為什麼不是所有的網站都有提供經過驗證的身份資訊？</h4>
+    <div class="expander-content">
+        <p>大部分的網站不太需要訪客留下個人資料或財務資訊，所以就不太需要提供經過驗證的身份資訊或防止資料竊取的技術。</p>
+        <p>某些需要您提供個人或財務資訊，或是政府、企業的官方網站，才需要提供其網站身份資訊，並提供保護資料不被竊取的技術。</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">在沒有提供網站身份的網站上進行商業行為安全嗎？</h4>
+    <div class="expander-content">
+        <p>您可以用該網站是否提供身份識別資訊來決定要不要信任該網站，但身份識別資訊並不代表一切。沒有提供身份資訊或未能保護您個人資料的網站會讓您陷入險境，想當然不是一個安全的網站；但是有提供正確身份資訊的網站，也可能做出一些您不同意的事，或因疏於維護網站安全性而使您的資料外洩。</p>
+        <p>和真實世界一樣，您必須小心接觸一個您不知道或不信任的網站。但是有提供經過驗證身份資訊的網站，和未提供身份資訊的網站相比更值得您信任。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mozila 會對所有網站驗證其身份資訊嗎？</h4>
+    <div class="expander-content">
+        <p>網站的身份資訊並非是由 Mozilla 驗證。Firefox 跟其他的瀏覽器一樣依賴驗證網站身份並發行『憑證』的『憑證機構』來提供資訊。這些憑證機構必須遵守 <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla 憑證機構憑證政策</a>，憑證機構必須經過第三方機構認可，確保機構並未濫發憑證。</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

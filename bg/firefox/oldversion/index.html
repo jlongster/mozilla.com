@@ -1,0 +1,42 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox е обновен";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Не, благодаря";
+    $no_download_button2 = "(Нека да ви кажа защо)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Предупреждение свързано със сигурността:
+        </span>
+</h2>
+<h3>
+        Това е остаряла версия на Firefox.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Ако използвате тази версия на Firefox може да бъдете подложени на заплахи свързани с вашата онлайн сигурност.</p>
+
+    <p id="main-feature-contents">
+    Моля <a href="/<?=$lang?>/firefox/">изтеглете последната версия ня Firefox</a>. Тя е безплатна и ще ви даде повече сигурност, по-добра работа и бъдещи обновявания.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+
+

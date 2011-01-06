@@ -1,0 +1,30 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla | Supported Platforms &amp; System Requirements';
+    $body_id    = 'requirements';
+
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+
+?>
+<div id="head">
+<h1>Supported Platforms &amp; Languages</h1>
+<p>Fennec is available for mobile devices on the Android platform and the Maemo platform.</p>
+</div>
+<div id="content">
+<h2>Supported Devices</h2>
+<h3>Maemo</h3>
+<ul>
+<li>Nokia N900</li>
+</ul>
+<h3><a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">Android</a></h3>
+<ul>
+<li>Google Nexus One</li>
+<li>Motorola Droid</li>
+</ul>
+
+<? include_once "{$config['file_root']}/includes/mobile-alpha-downloads.inc.php"; ?>
+
+</div>
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

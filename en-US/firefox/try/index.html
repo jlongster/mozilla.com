@@ -1,0 +1,64 @@
+<?php
+
+$page_title = 'Tired of IE Crashing? Try Firefox!';
+$body_id    = 'firefox-try';
+$extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefox-try.css" media="screen" />
+EXTRA_HEADERS;
+
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Tired of IE Crashing? <span>Try Firefox!</span></h2>
+    <p>It’s time for a change. Upgrade to the fastest, safest, smartest Firefox yet and leave the headaches of Internet Explorer behind.</p>
+
+    <div id="home-download">
+    <script src="/js/download.old.js"></script>
+	<script>
+        <!--
+        // Configure the Firefox download write script
+
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%&nbsp;%FILE_SIZE%<\/em><\/span><\/span><\/a> <\/li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+        document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox-en.html\">Privacy Policy<\/a>");
+        document.writeln("<\/div>");
+        //-->
+	</script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US'); ?>
+    </div>
+</div>
+
+<div id="main-content">
+<div id="sub-features">
+    <div class="sub-feature" id="faster">
+        <h3>It’s <span>Faster…</span></h3>
+        <p class="first">Firefox is the browser that moves with you, with faster page loads, better memory management and the time-saving Awesome bar, it’s hard to beat.</p>
+        <p><a href="/<?=$lang?>/firefox/performance/">Learn more about Firefox’s real-world performance.</a></p>
+    </div>
+    <div class="sub-feature" id="safer">
+        <h3>It’s <span>Safer…</span></h3>
+        <p class="first">Firefox offers the safest browsing experience yet, with constant security updates, Instant Web site ID, Private Browsing and pop-up blockers, you’ll never have to “deal” with security again.</p>
+        <p><a href="/<?=$lang?>/firefox/security/">Learn more about how Firefox keeps you safe.</a></p>
+    </div>
+    <div class="sub-feature" id="smarter">
+        <h3>It’s <span>Smarter…</span></h3>
+        <p class="first">Firefox gives you the tools to make it your own. With thousands of Add-ons and other customizable settings, you have the tools to make your browser work for you—not the other way around.</p>
+        <p><a href="/<?=$lang?>/firefox/features/">Learn more about how Firefox works for you.</a></p>
+    </div>
+    <div class="clear"></div>
+</div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,317 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 4 Beta Features';
+    $body_id    = 'firefox-beta-features';
+
+    $extra_headers = <<<EXTRA_HEADERS
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+  <script charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+  <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+  <script charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
+  <script src="/js/mozilla-video-tools.js"></script>
+  <script src="/js/mozilla-pager.js"></script>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Meet the New Firefox</h3>
+        <p>Featuring a new interface, more developer tools and other goodness.</p>
+    </div>
+</div>
+
+<?=buildFirefoxBetaSubPageMenu($lang, 'features');?>
+
+<div id="features-pager" class="pager pager-with-tabs">
+
+    <div id="video-launch">
+        <a href="http://videos-cdn.mozilla.net/firefox4beta/userInterface-beta1-720.webmvp8.webm" id="tour-video" onclick="dcsMultiTrack('DCS.dcsuri','/firefox4beta/userInterface-beta1-720.webmvp8.webm','WT.ti','Firefox Beta Features Page Video');"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/features/video-thumb.png" alt="Video thumbnail" /><span>Watch the video</span></a>
+        <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'tour-video',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox4beta/userInterface-beta1-720.webmvp8.webm',
+                    type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                    title: 'WebM format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox4beta/userInterface-beta1-720.theora.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Ogg&nbsp;Theora format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/firefox4beta/userInterface-beta1-720.mp4',
+                    type:  'video/mp4',
+                    title: 'MPEG-4 format'
+                }
+            ],
+            'firefox4beta/userInterface-beta1-720.mp4'
+        );
+        // ]]>
+        </script>
+    </div>
+
+    <div id="features-pager-header">
+        <h3>Episode 4: A New Look</h3>
+        <p>Firefox 4 Beta includes an updated interface for all platforms that’s sleeker and easier to use.</p>
+        <ul id="features-pager-nav" class="pager-tabs">
+            <li><a href="#feature-tab-location">New Tab Location</a></li>
+            <li><a href="#feature-switch">Switch to Tab</a></li>
+            <li class="windows-only"><a href="#feature-firefox-button">Firefox Button</a></li>
+            <li><a href="#feature-app-tabs">App Tabs</a></li>
+        </ul>
+    </div>
+
+    <div class="pager-content">
+
+        <div class="features-pager-contents default-page" id="feature-tab-location">
+            <script>// <![CDATA[
+            document.getElementById('feature-tab-location').id = 'page-feature-tab-location';
+            // ]]></script>
+
+            <h3>New Tab Location</h3>
+            <p>Tabs are given top visual priority for more efficient and intuitive browsing.</p>
+
+            <?=buildPlatformImage('/img/firefox/beta/4/features/screen-tab-location.png', 'New Tab Location screenshot', null, null, null, array('mac', 'linux')) ?>
+
+        </div>
+
+        <div class="features-pager-contents default-page" id="feature-switch">
+            <script>// <![CDATA[
+            document.getElementById('feature-switch').id = 'page-feature-switch';
+            // ]]></script>
+
+            <h3>Switch to Tab</h3>
+            <p>Navigate more easily by switching to open tabs from your Awesome Bar.</p>
+
+            <?=buildPlatformImage('/img/firefox/beta/4/features/screen-switch-to-tab.png', 'Switch to Tab screenshot', null, null, null, array('mac', 'linux')) ?>
+
+        </div>
+
+        <div class="features-pager-contents default-page" id="feature-firefox-button">
+            <script>// <![CDATA[
+            document.getElementById('feature-firefox-button').id = 'page-feature-firefox-bottom';
+            // ]]></script>
+
+            <h3>Firefox Button</h3>
+            <p>All your menu items are in a single button for easy access and reduced clutter.</p>
+
+            <?=buildPlatformImage('/img/firefox/beta/4/features/screen-firefox-button.png', 'Firefox Button screenshot') ?>
+
+        </div>
+
+        <div class="features-pager-contents default-page" id="feature-apps-tab">
+            <script>// <![CDATA[
+            document.getElementById('feature-apps-tab').id = 'page-feature-apps-tab';
+            // ]]></script>
+
+            <h3>App Tabs</h3>
+            <p>Take sites you always keep open—like Web mail--off your tab bar and give them a permanent home in your browser.</p>
+
+            <?=buildPlatformImage('/img/firefox/beta/4/features/screen-apps-tab.png', 'Firefox App Tabs screenshot', null, null, null, array('mac', 'linux')) ?>
+
+        </div>
+    </div>
+    <div id="features-pager-footer"></div>
+
+</div>
+
+<div id="feature-spotlight">
+
+    <h2>Feature Spotlight</h2>
+
+    <div class="feature-spotlight" id="spotlight-sync">
+        <h3><a href="http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.webm" id="video-sync"><span>Stay in Sync</span></a></h3>
+        <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'video-sync',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.webm',
+                    type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                    title: 'WebM format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.theora.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Ogg&nbsp;Theora format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/air_mozilla/SyncSetupDemo_final.mp4',
+                    type:  'video/mp4',
+                    title: 'MPEG-4 format'
+                }
+            ],
+            'serv/air_mozilla/SyncSetupDemo_final.mp4'
+        );
+        // ]]>
+        </script>
+
+        <p>Synchronize your settings, passwords, bookmarks, history, open tabs and other customizations across multiple devices so you can take Firefox with you wherever you go.</p>
+    </div>
+
+    <div class="feature-spotlight" id="spotlight-tabcandy">
+        <h3><a href="http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm" id="video-overview"><span>Organize Your Tabs</span></a></h3>
+        <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'video-overview',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm',
+                    type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                    title: 'WebM format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.theora.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Ogg&nbsp;Theora format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.mp4',
+                    type:  'video/mp4',
+                    title: 'MPEG-4 format'
+                }
+            ],
+            'serv/firefox4beta/grouptabs.mp4'
+        );
+        // ]]>
+        </script>
+        <p>Reclaim your browser from tab clutter! Drag and drop your tabs into manageable groups that you can organize, name and arrange in a fun and visual way.</p>
+    </div>
+
+    <div class="feature-spotlight" id="spotlight-addons">
+        <h3><span class="title">Manage Your Add-ons</span></h3>
+        <p>An easier way to manage your add-ons and discover new options for personalizing your browsing.</p>
+    </div>
+
+    <div id="feature-spotlight-footer"></div>
+
+</div>
+
+<div id="perf-spotlight">
+
+    <h2>Fasten your Seatbelts</h2>
+
+    <div class="perf-spotlight-content">
+      <p>Firefox 4 Beta contains huge performance enhancements, including our brand new JägerMonkey JavaScript engine. From faster start up times and graphics rendering to improved page load speed, you'll notice the difference instantly.</p>
+
+      <p id="perf-graph"><img src="<?= $config['static_prefix'] ?>/img/firefox/beta/4/perf-graph.png" alt="Performance comparison" />
+      <p><em>Tests performed on a Dell Optiplex 760 (Intel Core2 Duo), Windows 7 Professional.</em></p>
+    </div>
+
+    <div id="perf-spotlight-footer"></div>
+</div>
+
+<div id="under-the-hood">
+
+    <h2 class="first">Under the Hood</h2>
+
+    <div class="hood odd">
+        <h3>WebM and HD Video </h3>
+        <p>As pioneers of HTML5 video standards, Firefox also supports the <a href="http://www.webmproject.org/">WebM</a> format so you can watch open HD quality video.</p>
+    </div>
+
+    <div class="hood">
+        <h3>Protecting Your Privacy</h3>
+        <p>Firefox puts your privacy first, <a href="http://hacks.mozilla.org/2010/03/privacy-related-changes-coming-to-css-vistited/">fixing flaws in some web standards</a> that allow bad guys to snoop around and expose your browser history.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>New JS values</h3>
+        <p>Changes to  the C++ representation of JavaScript values allow Firefox to execute heavy, numeric code more efficiently, resulting in cleaner graphics and a better browsing experience.</p>
+    </div>
+
+    <div class="hood">
+        <h3>Multi-touch Support</h3>
+        <p>Firefox now integrates multi-touch support for Windows 7, enabling you to interact with your browser in a whole new way.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>3D on the Web</h3>
+        <p>WebGL brings 3D graphics to Firefox, opening the door for developers to create vivid games and new kinds of visualizations and experiences for the Web.</p>
+    </div>
+
+    <div class="hood">
+        <h3>Audio API</h3>
+        <p>Firefox is changing the way media is integrated on the web: exposing the raw audio data housed within the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> elements in HTML5 makes it easy for developers to use JS to read and write audio data.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Retained layers</h3>
+        <p>Experience super fast scrolling on complex web pages. Simply awesome. </p>
+    </div>
+
+    <div class="hood">
+        <h3>XPCOM</h3>
+        <p>Firefox starts up even faster thanks to XPCOM module improvements that pave the way to a better extensions framework.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Stylin’ Pages with CSS3</h3>
+        <p>Support for new CSS3 features like Transitions and Transformations makes it easy to add elegant animations to Web pages. <a href="https://developer.mozilla.org/en/CSS/CSS_transitions">Learn more</a></p>
+    </div>
+
+    <div class="hood">
+        <h3>Fabulous Fonts</h3>
+        <p>Firefox 4’s OpenType font features gives designers and developers more control over a variety of font features—like kerning or ligatures—to create gorgeous websites.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Upgrading Forms</h3>
+        <p>Firefox integrated Form features like list attributes and HTML5 validation provide the tools to make annoying form implementation development a thing of the past.</p>
+    </div>
+
+    <div class="hood">
+        <h3>HTML5 Support</h3>
+        <p>A new HTML5 parser and full support for web video, audio, drag &amp; drop, and file handling means Firefox 4 is ready to run the best web apps of both today and tomorrow.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Web Console</h3>
+        <p>With this experimental analysis tool for modern sites, Firefox allows you to peek under the hood of dynamic web pages.</p>
+    </div>
+
+    <div class="hood">
+        <h3>JetPack SDK (Making Add-on Development Easier)</h3>
+        <p>Add-ons can be installed without restarting the browser, and can be developed more easily using the new JetPack SDK and js-ctypes.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Full Hardware Acceleration</h3>
+        <p>Experience super-fast graphics acceleration with Direct2D and Direct3D on Windows, XRender on Linux and OpenGL on Mac, now enabled by default, on all supported hardware.</p>
+    </div>
+
+    <div class="hood">
+        <h3>SVG as Images</h3>
+        <p>SVG files can now be used as images and backgrounds in Firefox, meaning that developers and designers can have stunning, performance-conscious websites with lighter, resolution-independent image files.</p>
+    </div>
+
+    <div class="hood odd">
+        <h3>Compartments</h3>
+        <p>Firefox can now better manage JavaScript objects with Compartments, offering improved cache utilization and garbage collection mechanisms for better security, memory management and overall performance.</p>
+    </div>
+
+    <div class="hood">
+        <h3>Crash Protection</h3>
+        <p>Firefox provides uninterrupted browsing for Windows, Linux, and now Mac when there is a crash in the Adobe Flash, Apple Quicktime or Microsoft Silverlight plugins. If one of these commonly-used plugins crashes or freezes, it won’t affect the rest of Firefox. Instead, you can simply reload the page to restart the plugin and try again. <a href="/en-US/plugincheck/#what-plugin">Learn more about plugins.</a></p>
+    </div>
+
+    <div class="hood odd">
+        <h3>HSTS</h3>
+        <p>Sites can now keep attackers from intercepting sensitive data while accessing the site by telling Firefox to automatically establish secure connections to their servers (https).</p>
+    </div>
+
+    <div id="under-the-hood-footer"></div>
+
+</div>
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

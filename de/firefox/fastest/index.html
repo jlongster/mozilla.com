@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Fastest Firefox - der schnellste Firefox";
+
+    // Video controls strings to translate
+    $download_ogg       = "Im offenen Video-Format (Ogg Theora) herunterladen";
+    $download_mp4       = "Im MPEG-4-Format herunterladen";
+    $check_back         = "Kommen Sie bald wieder, um das nächste Video anzusehen.";
+
+    $play               = "Video abspielen";
+    $fallback_l1        = "Dieses Video erfordert einen Browser mit Open-Video-Unterstützung:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 oder höher';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 oder höher';
+    $fallback_l4        = 'oder den <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Schnell, schneller, Firefox!
+    </h2>
+
+    <p>Wir haben Firefox-Fans gebeten, von der erstaunlichen Geschwindigkeit von Firefox 3.5 zu erzählen. Sehen Sie sich die Ergebnisse an:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Videovorschau" /><span>
+
+            Beobachten Sie Kent French in seinem Video als schnellster Klatscher der Welt
+
+            </span></a></p>
+
+            <p class="secondary">
+            Der schnellste Klatscher der Welt, Kent “Toast” French, applaudiert Firefox als Guinness-Weltrekordhalter. Kent kombiniert seinen eigenen Stil mit Gewandtheit und Ausdauer und schafft bis zu 12 Schläge pro Sekunde. Er plant in Kürze seinen eigenen Rekord zu übertreffen.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Erfahren Sie mehr über Kent.</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Videovorschau" /><span>
+
+            Beobachten Sie Steven Purugganan in seinem Video als schnellster Sportstapler der Welt
+
+            </span></a></p>
+
+            <p class="secondary">
+            Der Guinness-Weltrekordhalter Steven Purugganan mag Firefox so sehr, dass er dafür ein paar Becher schnell aufstapelt - nur für uns. Steven, Mitglied der World Sport Stacking Association, ist zwar erst 11 Jahre alt, aber seine schnellen Hände bauen eine Pyramide aus Bechern in nur 5,93 Sekunden.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Erfahren Sie mehr über Sportstapeln.</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Videovorschau" /><span>
+
+            Beobachten Sie Todd Taylor in seinem Video als schnellster Banjo-Spieler der Welt
+
+            </span></a></p>
+            <p class="secondary">
+            Der Guinness-Weltrekordhalter Todd Taylor ist glücklich, für Firefox schnell Banjo spielen zu dürfen. Todd spielte Bluegrass, Country, Pop und Rock &amp; Roll. Er spielt weiterhin in und für Filme, das Fernsehen und mehr.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Erfahren Sie mehr über Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,44 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '404: Không Tìm Thấy Trang';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="/style/tignish/404-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Hừm, chúng tôi gặp vấn đề khi tìm cái đó.</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+	<h3>Mặc dù không thích nói điều này, nhưng thật sự là chúng tôi không thể tìm thấy trang hoặc tập tin mà bạn đang tìm kiếm.</h3>
+
+	<ul class="spaced">
+		<li>Nếu do bạn tự gõ địa chỉ, hãy thử kiểm tra lại chính tả.</li>
+		<li>Nếu do bạn đã đi theo liên kết ở đâu đó, vui lòng cho chúng tôi biết tại <em>webmaster TẠI mozilla CHẤM com</em>. Hãy nhớ nói cho chúng tôi biết bạn đến từ đâu và đang tìm kiếm cái gì, chúng tôi sẽ cố hết sức để sửa lại.</li>
+	</ul>
+</div>
+
+<div id="error-suggestions">
+	<h3>Nếu bạn thật sự bị mắc kẹt, sau đây là vài tùy chọn khác:</h3>
+
+	<ul class="spaced">
+		<li>Có phải bạn đang tìm kiếm thông tin về <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
+		<li>Hay là chương trình email của chúng tôi, <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+		<li>Có thể tốt nhất là nên bắt đầu tại <a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+	</ul>
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    $disable_js_stats = true;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,46 @@
+<?php
+    // please translate the variable below
+    $page_title = "Bedankt voor het kiezen van Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Bedankt voor het kiezen van Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Volg deze stappen om Firefox te downloaden, leer meer over Firefox Sync en u bent er klaar voor</h3>
+    <ol id="steps">
+        <li>Bekijk de inkomende berichten op uw mobiele telefoon om ons bericht te vinden.</li>
+        <li>Open het tekstbericht en selecteer de link om Firefox direct naar uw mobiele telefoon te downloaden.</li>
+    </ol>
+    <p class="small-print">*Firefox is gratis te gebruiken, maar de normale kosten voor gegevensoverdracht gelden wel. Dit is afhankelijk van uw mobiele abonnement.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Terwijl u wacht&hellip;</h3>
+    <ol>
+        <li>Stel Firefox Sync in en neem <em>uw</em> Firefox met zich mee waar u ook gaat. Deel uw geschiedenis, bladwijzers, wachtwoorden en tabbladen op uw PC met uw mobiel.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Installeer de Firefox Sync add-on op uw PC</a> en log in op Firefox Sync.
+        Zodra Firefox naar uw mobiele telefoon gedownload wordt, volgt dan de voorgestelde Volgende Stappen en selecteer "de Firefox Sync add-on ophalen" om de installatie te voltooien.
+        Als alternatieve methode kunt u ook handmatig de Instellingen-knop gebruiken, de knop add-ons selecteren en dan de Firefox Sync add-on opzoeken en op uw mobiel installeren.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>Is Geal Gach Nua in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Béite" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Firefox ar Luas Lasrach</h3>
+        <p>Tá feabhsúcháin thábhachtacha feidhmíochta ar fáil i bhFirefox 4, ár n-inneall úrnua JavaScript (darb ainm JägerMonkey) san áireamh. Tabharfaidh tú faoi deara é láithreach! Beidh gach rud níos sciobtha: tosú an bhrabhsálaí, taispeáint grafaice, agus luchtú leathanach.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Tabhair Aiseolas dúinn »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Nótaí Eisiúna »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Féach ar an taispeántas »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3T ar an nGréasán</h4>
+        <p>Is teicneolaíocht nua é WebGL a chuireann grafaicí 3T ar fáil i bhFirefox. Le WebGL, beidh forbróirí in ann ríomhchluichí beoga agus taispeántais nuálaíocha grafacha a chruthú ar an nGréasán.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Clófhoirne Iontacha</h4>
+        <p>Tugann na gnéithe nua OpenType i bhFirefox 4 smacht níos fearr ar ghnéithe éagsúla clófhoirne - mar shampla coirneáil agus nasclitreacha - do dhearthóirí agus d'fhorbróirí atá ag iarraidh suímh Ghréasáin níos áille a chruthú.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Foirmeacha Feabhsaithe</h4>
+        <p>Beidh foirmeacha níos áille i bhFirefox 4, agus beidh siad i bhfad níos éasca a chruthú.  Cuireann an API nua uirlisí ar fáil - mar shampla aitreabúidí liosta a chumasaíonn uath-chomhlíonadh agus bailíochtú foirmeacha HTML5 - a chuirfidh deireadh leis na fadhbanna a chuireadh isteach ar fhorbróirí roimhe seo.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Deilbhín Firefox Soghluaiste" />
+        <h4>An bhfuil Firefox 4 béite agat?</h4>
+        <h5>Beir leat é.</h5>
+        <p>Faigh Firefox ar d'fhón Android nó Nokia N900. Bain taitneamh as na gnéithe go léir: Firefox Sync, Breiseán, agus an Sárbharra, in aon áit.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Firefox Soghluaiste - Saor in Aisce</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Cabhair uait?</h4>
+        <p>Gheobhaidh tú comhairle agus cabhair le Firefox 4 béite ar <a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Deilbhín tacaíochta" />ár leathanaigh tacaíochta</a>.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

@@ -1,0 +1,68 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox Lorentz';
+    $body_id    = 'firefox-all';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/all-beta.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/whatsnew-page-lorentz.css" media="screen" />
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<div id="feature-contents">
+		<h2>Firefox Lorentz</h2>
+		<p>The latest Firefox beta prevents plugin crashes from crashing your browser.</p>
+	</div>
+
+	<script src="/js/download.js"></script>
+	<div id="download-button">
+    <script src="/js/download.old.js"></script>
+    <script>
+          <!--
+          // Configure the Firefox download write script
+          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+      // Temporary fix for bug 439792
+      if (gPlatform == PLATFORM_MACOSX) {
+            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.4 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+      }
+          var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+          document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+          writeDownloadItems("fxbeta");
+          document.writeln("<\/ul>");
+          document.writeln("<div class=\"download-other\"><span class=\"other\">");
+          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_DEVEL_VERSION?>\/releasenotes\/\">Release Notes<\/a>");
+          document.writeln("- <a href=\"\/<?= $lang ?>\/firefox\/all-beta.html\">Other Systems and Languages<\/a>");
+          document.writeln("<\/span><\/div>");
+          //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang, array('devel_version' => true)); ?>
+  </div>
+
+</div>
+
+<div id="lorentz-feature">
+	<div class="content">
+		<h3>Keep Plugin Crashes Under Control</h3>
+		<p class="sample"><img src="/img/firefox/lorentz-crash-pleasesend.png"/></p>
+		<p>Firefox "Lorentz" provides uninterrupted browsing for Windows and Linux users when there is a crash in the Adobe Flash, Apple Quicktime or Microsoft Silverlight plugins.</p>
+		<p>If a plugin crashes or freezes, it will not affect the rest of Firefox. You will be able to reload the page to restart the plugin and try again.</p>
+		<p>Firefox Lorentz will become part of a future release of Firefox 3.6.</p>
+	</div>
+	<div class="footer"></div>
+</div>
+
+<div id="lorentz-help">
+	<h3>Help Test Lorentz</h3>
+	<p>You can help Mozilla by downloading and using a <a href="/<?= $lang ?>/firefox/all-beta.html">Lorentz beta build</a>. Then take care to visit websites which use plugins. If you encounter a crash, please submit a crash report. If you notice any other problems while you browse with this beta, please let Mozilla know by <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Firefox&amp;format=guided">filing a bug</a> or <a href="http://feedback.mozilla.org/">sending us feedback</a>.</p>
+
+	<p>For more information on known issues, please see the <a href="/<?= $lang ?>/firefox/<?= LATEST_FIREFOX_DEVEL_VERSION ?>/releasenotes/">release notes</a>.</p>
+</div>
+
+<?php
+  @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

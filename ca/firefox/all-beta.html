@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Navegador web Firefox | Ajudeu-nos a provar la darrera beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Ajudeu-nos a provar el futur del Firefox!</h2>
+        <p>La darrera versió beta del Firefox ja és disponible de forma preliminar. Proveu-la i digueu-nos què en penseu!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Informació important</h4>
+        <p class="intro">Si us plau, llegiu-ho abans de baixar-la</p>
+    </div>
+    <ul>
+        <li>Això és una versió provisional del programa: podríeu trobar problemes d'incompatibilitat amb alguns llocs web i complements.</li>
+        <li>Si detecteu algun problema, si us plau <a href="http://feedback.mozilla.org/">feu-nos-ho saber</a> o <a href="https://bugzilla.mozilla.org/">ompliu-ne un informe d'error</a>.</li>
+        <li>Per a més informació, podeu consultar les <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">notes de la versió</a> i els <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">problemes coneguts</a> (en anglès).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">No cercàveu una beta? Obtingueu el <a href="/<?=$lang?>/firefox/">darrer Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

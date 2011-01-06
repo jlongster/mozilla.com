@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Acerca do ID do sitio cun só click";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Acerca do ID do sitio cun só click</h2>
+    <p>Firefox 3 dispón dun novo botón de identidade de sitios que axuda a saber a quen se está a conectar.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Esta funcionalidade permite saber nunha vista de ollos se o sitio que se está a visitar forneceu información sobre a súa identidade, quen verificou esa información e se protexen de curiosos a información de quen se conecta. Pódese acceder á identidade premendo a icona do sitio visíbel no bordo esquerdo da barra de localización (ou premendo MAIÚS-TAB-INTRO)</p>
+
+<h3>Preguntas frecuentes</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Que significan os diferentes niveis da información sobre a identidade?</h4>
+    <div class="expander-content">
+        <p>A icona do axente muda conforme o nivel de información fornecida polo sitio.</p>
+        <p class="site-id site-id-1">O sitio non fornece ningunha información.</p>
+        <p class="site-id site-id-2">O sitio fornece información básica sobre a súa identidade e protexe a do usuario dos curiosos.</p>
+        <p class="site-id site-id-3">O sitio fornece información cotexada acerca do propietario e protexe a información persoal do usuario dos curiosos.</p>
+        <p class="site-id site-id-4">Este sitio foi considerado como de ataque ou falsificación. Proporcionar a este sitio información persoal ou mesmo visitalo pode ser daniño.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Por que non fornecen todos os sitios información cotexada sobre a súa identidade?</h4>
+    <div class="expander-content">
+        <p>A maioria dos sitios da Internet non solicitan ningún tipo de información persoal ou financeira a quen os visita e poden considerar innecesario asumir o custo tanto de proporcionar información cotexada sobre a súa identidade como da protección contra curiosos.</p>
+        <p>Os sitios que solicitan información de tipo persoal ou financeiro ou que representan entidades gobernamentais ou empresariais deben sempre identificarse adecuadamente e protexer dos curiosos a información do usuario.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">É seguro facer negocios con sitios que non se identifican?</h4>
+    <div class="expander-content">
+        <p>Para decidir en quen confiar na rede, o primeiro é saber con quen se fala, mais o asunto non acaba aí. Os sitios que non fornecen información sobre a súa identidade e non protexen a información persoal do usuario póñeno nunha situación de risco e non deben ser considerados seguros. Porén, até os sitios que se identifican axeitadamente poden levar a cabo prácticas con que talvez non concorde ou ter un sistema de seguranza de baixo nivel.</p>
+        <p>Como na vida mesma, teña coidado ao interaccionar con sitios en que non confía ou que non coñece. Saber que o sitio se identificou adecuadamente axuda a decidir se confiar nel.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Verifica Mozilla a información de cada un dos sitios da Internet?</h4>
+    <div class="expander-content">
+        <p>A información utilizada para identificar sitios na Internet non é verificada por Mozilla. No seu lugar, Firefox, como outros navegadores, conta cun grupo de empresas de confianza denominadas Autoridades Certificadoras que verifican a identidade dos sitios e emiten certificados de identidade. Estas empresas deben adherir á <a href="http://www.mozilla.org/projects/security/certs/policy/">Política de certificados de AC de Mozilla</a> que, entre outras cousas, exixe das autoridades certificadoras que fornezan auditorías de terceiros que confirmen que non emiten certificados inapropiadamente.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

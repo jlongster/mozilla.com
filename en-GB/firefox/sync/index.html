@@ -1,0 +1,25 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+
+    $body_id       = 'firefox-sync';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/sync.css" media="screen" />
+EXTRA_HEADERS;
+    $amo_url       = 'https://addons.mozilla.org/'.$lang.'/firefox/addon/10868';
+    $sumo_url      = 'http://support.mozilla.com/kb/What+is+Firefox+Sync';
+    $_options      = array('ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+    $download_box  = '<script type="text/javascript" src="/js/download.js"></script>';
+    $download_box .= $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+
+    // get content
+    ob_start();
+    include_once "{$config['file_root']}/{$lang}/firefox/sync/maincontent.inc.php";
+    $page_content = ob_get_contents();
+    ob_clean();
+
+    // build page
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+    echo $page_content;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+    unset($page_content);
+?>

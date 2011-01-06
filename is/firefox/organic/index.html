@@ -1,0 +1,77 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% náttúrulegur hugbúnaður';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Betri upplifun á vefnum</h2>
+    <p>Hvað getur samfélagsknúinn vafri gert fyrir þig?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Vörur</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">Eiginleikar</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Öryggi</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Sérsnið</a></li>
+    <li><span>100% Náttúrulegur hugbúnaður</span></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Ábendingar og snjallræði</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Útgáfuupplýsingar</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Önnur kerfi og tungumál</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>Hvað er náttúrulegur hugbúnaður?</h3>
+    <p><strong>Sem hugbúnaðarfyrirtæki, erum við dálítið óvenjulegir.</strong> Við
+    notum hugtak eins og ‘náttúrulegur hugbúnaður’ til að skilgreina betur hvernig við erum öðruvísi en aðrir:</p>
+    <p>Okkar þekktasta vara, Firefox, er búinn til af alþjóðlegri hreyfingu þúsund manna, og aðeins lítill hluti af því eru raunverulegir starfsmenn.</p>
+    <p>Verkefni okkar er að stuðla að hreinskilni, nýjungum og tækifærum á vefnum frekar en viðskiptalegum hlutum eins og gróða eða verð hlutabréfa (Við erum ekki einu sinni með hlutabréf).</p>
+    <p>Sem <a href="http://www.mozilla.org/foundation/">almenningsfélag sem er ekki rekið í hagnaðarskyni</a>, skilgreinum við velgengni hjá okkur sé það að byggja upp samfélag og bæta líf fólks. Við trúum á mátt og möguleika Internetsins og viljum sjá það blómstra fyrir alla, alls staðar.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Firefox stúlka" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>Hvað er opinn hugbúnaður?</h3>
+        <p>Þetta gæti hljómað í fyrstu sem fásinna, en bíddu aðeins: <strong>við trúum því að því fleira fólk sem þekkir “leyndarmál” okkar, því betra.</strong></p>
+        <p>Þannig að við afhjúpuðum Firefox frumkóðann - það sem er á bakvið þetta allt saman - fyrir alla í heiminum og hvöttum alla til að kíkja á.</p>
+        <p>Sumir sáu hluti sem hægt var að laga og gerðu lagfæringar. Aðrir höfðu hugmyndir um nýja hluti og gerðu það mögulegt. Enn aðrir tóku kóðann, bættu við eigin nýjungum og bjuggu til algerlega nýjar (og ótrúlegar) vörur.</p>
+        <p>Boðskapur sögunnar? Að vera opinn þýðir að góðir hlutir gerast. Hver sem er getur kíkt á bakvið tjöldin…í rauninni, eru alls engin tjöld til staðar.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>Af hverju ætti þér ekki að vera sama?</h3>
+        <p>Við erum kannski ekki venjulegt fyrirtæki, en <strong>við vitum hvað það er sem skiptir máli: að gera vefinn betri fyrir þig</strong>.</p>
+        <p>Að vera opinn þýðir að næsta góða hugmynd getur komið hvaðan að frá í heiminum frekar en bara frá nokkrum starfsmönnum í fyrirtækinu okkar. Ef þú lítur á þetta út frá þessu þessu sjónarhorni, hvers vegna ætti að gera þetta á einhvern annan hátt?</p>
+        <p>Allt þetta tal um náttúrulegan opinn hugbúnað þýðir bara í rauninni betri vafra fyrir þig og hina 150 milljón Firefox notendur. Þetta þýðir meiri gæði og öruggari hugbúnað. Þetta þýðir nýsköpun, frelsi og að styðja við net sem er aðgengilegt fyrir alla.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('is', $_options);
+    ?>
+
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Hvað er Mozilla?</h3>
+            <h5>Við erum alheims-samfélag, almenningsheilla fyrirtæki og erum með opinn hugbúnað.</h5>
+            <p><a href="/<?=$lang?>/about/">Meiri upplýsingar um okkur</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

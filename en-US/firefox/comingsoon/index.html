@@ -1,0 +1,91 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 3.6 is coming soon!';
+    $body_id    = 'video-3-5';
+    $html5      = true;
+	$breadcrumbs = array(
+                            'Video' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+
+<link media="screen" href="{$config['static_prefix']}/style/tignish/video.css" rel="stylesheet"/>
+<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+<style>
+    #main-feature { padding-bottom: 75px; }
+    #video-player { width: 640px;  padding: 10px; background: #fff; border: 1px solid #ccc; }
+    #video-links {
+        margin: 0 0 0 11px;
+        padding: 10px 0 0 0;
+        left: 0;
+    }
+    #video-links li {
+        float: left;
+        width: 213px;
+        padding: 0;
+        margin: 0;
+        background: none;
+    }
+    #video-links li.second { text-align: center; }
+    #video-links li.third { text-align: right; }
+    #main-feature p { margin-right: 300px; }
+    #main-content { width: 680px; margin-right: 0; margin-top: 0; }
+    #sidebar { padding-left: 35px; }
+</style>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+
+	<h2>Firefox 3.6 is coming soon!</h2>
+	<p>We still have a few things left to do before it's ready. Here's a short video to show you what's new. If you can't wait, download a <a href="/<?=$lang?>/firefox/all-rc.html">release candidate</a> for a sneak peek!</p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang);?>
+
+<div id="main-content">
+
+<div id="video-player">
+<video width="640" height="360" controls="controls" autoplay="true">
+    <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.ogv" type="video/ogg" />
+    <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4" type="video/mp4" />
+    <object width="640" height="385" type="application/x-shockwave-flash" data="http://www.youtube.com/v/04Q9tuSaCYA">
+        <param name="movie" value="http://www.youtube.com/v/04Q9tuSaCYA" />
+
+        <!--[if gt IE 6]>
+        <object width="640" height="375" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B">
+            <param name="src" value="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.ogv" />
+            <param name="autoplay" value="true" /><!
+        [endif]-->
+        <!--[if gt IE 6]><!-->
+        <object width="640" height="375" type="video/quicktime" data="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4"
+            controller="true" autoplay="true"
+        >   <param name="src" value="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4" />
+            <param name="autoplay" value="true" />
+        <!--<![endif]-->
+            <p>
+                <strong>No video playback capabilities detected. <a href="http://www.youtube.com/watch?v=04Q9tuSaCYA">See the video on YouTube.</a></strong>
+            </p>
+
+        <!--[if gt IE 6]><!--></object><!--<![endif]-->
+        <!--[if gt IE 6]></object><![endif]-->
+    </object>
+</video>
+</div>
+<ul id="video-links">
+    <li class="first"><a href="http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.ogv">Download as Ogg Video</a></li>
+    <li class="second"><a href="http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4">Download as MP4</a></li>
+    <li class="third"><a href="http://www.youtube.com/watch?v=04Q9tuSaCYA">Link to YouTube</a></li>
+</ul>
+
+</div><!-- end #content div -->
+
+
+<div id="sidebar">
+
+    <p>Firefox 3.6 will be available for download at <a href="http://www.firefox.com">www.firefox.com</a> on Thursday, January 21st at 9:30am Pacific Standard Time.</p>
+
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

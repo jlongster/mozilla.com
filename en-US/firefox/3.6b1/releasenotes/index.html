@@ -1,0 +1,320 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.6 Beta Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+	
+	<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+  <h2>Firefox 3.6 Beta <span>Release Notes</span></h2>
+    <p><em>Beta revision 1: released October 30th, 2009</em>
+    This is a <em>beta version</em> of the next feature release of the Firefox
+    web browser. The Mozilla community appreciates your feedback and assistance
+    in testing this preview of the next version of Firefox. Your beta software
+    will update itself periodically, and eventually will be updated to the final
+    release itself.</p>
+    <p>Please read below for more detailed information about what is new in this revision of the beta release.</p>
+</div>
+
+
+<div id="main-content">
+
+    <div id="whatsnew" class="expander">
+      <h3 class="expander-header">About this release</h3>
+      <div class="expander-content">
+        <p>Firefox&nbsp;3.6&nbsp;Beta (revision 1) is the latest development
+          milestone of the next version of the Firefox web browser.
+          As beta software, this release is considered to be stable and safe to 
+          use for daily web browsing, though the features and content may change
+          before the final product release. At this time many 
+          <a href="http://addons.mozilla.org">Add-ons</a> may not yet have been
+          tested by their authors to ensure that they are compatible with this
+          release. If you wish to help test Add-on compatibility, please
+          <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your
+          favorite Add-on author will appreciate it!</p>
+        <p>Check out what’s new, the known issues and frequently asked questions
+          about the latest version of Firefox. Please tell us what you think, either by using <a 
+          href="http://feedback.mozilla.org/">this feedback form</a> or by <a 
+          href="https://bugzilla.mozilla.org/">filing a bug in Bugzilla</a>. We appreciate your input!
+        </p>
+      </div>
+    </div>
+
+    <div id="whatsnew2" class="expander expander-odd">
+      <h3 class="expander-header">What’s New in Firefox&nbsp;3.6 Beta (revision 1)</h3>
+      <div class="expander-content">
+        <p>Firefox&nbsp;3.6&nbsp;Beta is built on Mozilla's Gecko 1.9.2
+        web rendering platform, which has been under development for several
+        months and contains many improvements for web developers, Add-on
+        developers and users. This version is also faster and more responsive
+        than previous versions, and has been optimized to run on small device
+        operating systems such as Windows CE and Maemo.</p>
+        <ul class="spaced">
+          <li>This beta is available in more than 50 languages - get your <a href="/<?=$lang?>/firefox/all-beta.html#languages">local version</a>.</li>
+          <li>Users can now change their browser's appearance with a single click, with built in support for <a href="http://www.getpersonas.com">Personas</a>.</li>
+          <li>Firefox 3.6 will <a href="http://theunfocused.net/2009/10/06/firefox-3-6-knows-when-your-plugins-are-out-of-date/">alert users about out of date plugins</a> to keep them safe.</li>
+          <li>Open, native video can now be displayed <a href="http://mozillalinks.org/wp/2009/10/firefox-3-6-gets-full-screen-native-video/">full screen</a>, and supports <a href="https://developer.mozilla.org/En/HTML/Element/Video">poster frames</a>.</li>
+          <li>Support for the <a href="http://hacks.mozilla.org/2009/10/woff/">WOFF font format</a>.</li>
+          <li>Improved JavaScript performance, overall browser responsiveness and startup time.</li>
+          <li>Support for new CSS, DOM and HTML5 web technologies.</li>
+        </ul>
+        <p>Developers can find out about <a href="https://developer.mozilla.org/En/Firefox_3.6_for_developers">all the changes and
+           new features</a> at the <a href="https://developer.mozilla.org/">Mozilla Developer Center</a>.</p>
+      </div>
+    </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">System Requirements</h3>
+      <div class="expander-content">
+        <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements.html">
+           system requirements</a>.</p>
+      </div>
+    </div>
+
+    <div id="download" class="expander expander-odd">
+      <h3 class="expander-header">Downloading</h3>
+      <div class="expander-content">
+        <p>Mozilla provides Firefox&nbsp;3.6&nbsp;Beta for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a
+           variety of languages. You can <a href="/<?=$lang?>/firefox/all-beta.html">get the latest version 
+           of the Firefox&nbsp;3.6 Beta here</a>. For builds for other systems and languages not provided by Mozilla.org, see the Contributed Builds section at the end of this document.</p>
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Installing</h3>
+      <div class="expander-content">
+        <p>Please note that installing Firefox&nbsp;3.6 Beta will not overwrite your existing installation of Firefox. 
+        You won’t lose any of your bookmarks or browsing history, 
+        but some of your extensions and other add-ons might not work
+        until updates for them are made available.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Uninstalling</h3>
+      <div class="expander-content">
+        <p>You can remove Firefox&nbsp;3.6&nbsp;Beta through the <tt>Control Panel</tt> in the <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+        <p>Removing Firefox&nbsp;3.6&nbsp;Beta won’t remove your bookmarks, web browsing history, extensions or other add-ons. This data is stored in your <em>profile folder</em>, which is located in one of the following locations depending on your operating system:</p>
+
+        <table style="font-size: small;" border="1" cellspacing="0">
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+            <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP, Server 2003</td>
+            <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+            <td>~/Library/Application Support/Firefox</td>
+          </tr>
+          <tr>
+            <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+            <td>~/.mozilla/firefox</td>
+          </tr>
+        </table>
+        <p>Any version of Firefox that you install after removing Firefox&nbsp;3.6 (Beta) will
+           continue to use the data from this profile folder.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Add-ons and Themes</h3>
+      <div class="expander-content">
+        <p>Add-ons installed with previous versions of Firefox may not yet have
+        been updated by their authors to work with Firefox&nbsp;3.6&nbsp;Beta. If you wish to help test Add-ons, please <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your favorite Add-on author will appreciate it!</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Known Issues</h3>
+      <div class="expander-content">
+        <p>This list covers some of the known problems with Firefox&nbsp;3.6&nbsp;Beta which will be resolved in future versions:</p>
+        <dl>
+        <dt id="allsystems">All Systems</dt>
+        <dd>
+          <ul class="spaced">
+            <li>The default position of tabs opened using the "Open in New Tab"
+            control has changed to be to the immediate right of the current tab (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=465673">bug 465673</a>)</li>
+            <li>The "Enable Java" checkbox has been removed from the Content
+            panel of Options/Preferences. Instead, users can disable Java 
+            through the Add-ons Manager, available in the Tools menu (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=506985">bug 506985</a>)</li>
+            <li>The "Properties" item in the context menu has been removed; for
+            image properties, a new "Image Info" item will be added (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=513147">bug 513147</a>)</li>
+            <li>If FIPS mode is enabled and certain files have been removed
+            from the system, the browser may crash on startup (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=522041">bug 522041</a>)</li>
+          </ul>
+        </dd>
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+            <li>When restoring a browsing session, windows that were minimized
+            may at times appear off the screen (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=520178">bug 520178</a>)</li>
+          </ul>
+        </dd>
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Disabling the Java plugin will only apply to new windows until Firefox is restarted (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=521818">bug 521818</a>)</li>
+          </ul>
+        </dd>
+<!--
+        <dt id="linux">Linux and Unix</dt>
+        <dd>
+          <ul class="spaced">
+          </ul>
+        </dd>
+-->
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Troubleshooting</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Poorly designed or incompatible extensions can cause problems with your browser,
+            including make it crash, slow down page display, etc. If you encounter strange
+            problems relating to parts of the browser no longer working, the browser not
+            starting, windows with strange or distorted appearance, degraded performance, etc,
+            you may be suffering from Extension or Theme trouble.
+            Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+            Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+            start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            When started in Safe Mode all extensions are disabled and the Default theme is
+            used. Disable the Extension/Theme that is causing trouble and then start normally.
+          </li>
+          <li>
+            If you uninstall an extension that is installed with your user profile (i.e.
+            you installed it from a Web page) and then wish to install it for all user profiles
+            using the -install-global-extension command line flag, you must restart the
+            browser once to cleanse the profile extensions datasource of traces of that
+            extension before installing with the switch. If you do not do this you may end
+            up with a jammed entry in the Extensions list and will be unable to install
+            the extension globally.
+          </li>
+          <li>
+            If you encounter strange problems relating to bookmarks, downloads, window
+            placement, toolbars, history, or other settings, it is recommended that you try
+            creating a new profile and attempting to reproduce the problem before filing
+            bugs. Create a new profile by running Firefox with the -P command line
+            argument, choose the "Manage Profiles" button and then choose "Create
+            Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+            one by one, checking each time to see if the problems resurface. If you do
+            find a particular profile data file is causing a problem, file a bug and attach
+            the file.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Frequently Asked Questions</h3>
+      <div class="expander-content">
+        <ol class="faq">
+          <li>
+            What can I do to help?
+            <p>We need help from developers and the testing community to provide as much
+               feedback as possible to make Firefox even better. Please read these notes and
+               the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+               before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+               also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+          </li>
+          <li>
+            Why haven’t you responded to the mail I sent you?
+            <p>Use the <a href="http://groups.google.com/group/mozilla.dev.apps.firefox/topics">newsgroup</a>.
+              The Firefox team reads it regularly, and your email may have gotten lost.</p>
+          </li>
+          <li>
+            Where can I get extensions and themes (add-ons)?
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+          </li>
+          <li>
+            Who makes Firefox&nbsp;3.6&nbsp;Beta?
+            <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who
+              have contributed to Firefox&nbsp;3.6&nbsp;Beta.</p>
+          </li>
+          <li>
+            Where’s the Firefox&nbsp;3.6&nbsp;Beta source code?
+            <p>A tarball of the Firefox&nbsp;3.6&nbsp;Beta (revision 1) source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6b1/source/">download</a>.
+               The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
+               Firefox-specific source is in mozilla-central's "browser", "toolkit",
+               and "chrome" directories. Please follow the <a href=
+               "http://developer.mozilla.org/en/Build_Documentation">build instructions</a>.</p>
+          </li>
+          <li>
+            Where is the mail client?
+            <p>Firefox&nbsp;3.6&nbsp;Beta works with whatever mail client is the default on your system. 
+               However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our 
+               next-generation email client and the perfect complement to Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Contributed Builds</h3>
+      <div class="expander-content">
+        <p>These are unofficial builds and may be configured differently than the official 
+           Mozilla builds. They may also be optimized and/or tested for specific 
+           platforms. You can browse through the available contributed builds on the
+           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6b1/contrib/">FTP
+           site</a>.</p>
+
+<!-- put contributed builds here -->
+
+      </div>
+    </div>
+
+	<div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Other Resources and Links</h3>
+      <div class="expander-content">
+        <p>The following resources contain useful information about Firefox&nbsp;3.6&nbsp;Beta</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+          <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+          <li><a href="http://developer.mozilla.org/en/Firefox_3.6_for_developers">Developer Information</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
+            Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+        </ul>
+      </div>
+    </div>
+	<div id="release-notes-footer"></div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

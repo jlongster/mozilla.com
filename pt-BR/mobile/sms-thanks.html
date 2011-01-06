@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Obrigado por escolher o Firefox!";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Obrigado por escolher o Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Siga estes passos para baixar o Firefox e saber mais sobre o Firefox Sync</h3>
+    <ol id="steps">
+        <li>Verifique a caixa de entrada de mensagens SMS do seu aparelho e procure pela mensagem que acabamos de enviar para você.</li>
+        <li>Abra a mensagem e selecione o link para baixar o Firefox direto para o seu aparelho.</li>
+    </ol>
+    <p class="small-print">*O Firefox é gratuito; entretanto taxas de transferência de dados podem ser aplicáveis. Consulte a sua operadora.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Enquanto aguarda…</h3>
+    <ol>
+        <li>Configure o Firefox Sync e tenha o <em>seu</em> Firefox com você onde quer que vá. Sincronize seu histórico de navegação, favoritos, senhas e abas do seu computador com o seu dispositivo móvel.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Instale o complemento Firefox Sync no seu computador</a> e inscreva-se no Firefox Sync. Uma vez que o Firefox terminar de ser baixado para o seu aparelho, siga os próximos passos sugeridos por nós e selecione "Get the Firefox Sync add-on" para completar a instalação. Alternativamente, você pode selecionar manualmente o botão "engrenagem", selecionar o botão "peça de quebra-cabeças" e então procurar e instalar o complemento Firefox Sync no seu aparelho.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,44 @@
+<?php
+
+    // translate $page_title below
+    $page_title       = "Грешка 404: Страна није нађена";
+
+
+    include_once "{$config['file_root']}/includes/l10n/404.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <h2>Хм, имамо проблема са налажењем стране коју сте тражили.</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+    <h3>Не волимо што ово кажемо, али нисмо могли да нађемо страну или датотеку коју сте тражили.</h3>
+
+    <ul class="spaced">
+        <li>Ако сте укуцали адресу, проверите да ли сте је правилно унели.</li>
+        <li>Ако сте пратили везу са неког другог сајта, молимо пошаљите поруку на <em>webmaster at mozilla dot com</em>. Молимо да нам кажете са ког сајта или програма је веза која Вас је довела до овде, а ми ћемо урадити све што је у нашој могућности да то поправимо.</li>
+    </ul>
+</div>
+
+<div id="error-suggestions">
+    <h3>Ако сте баш у неприлици, ево још неких могућности:</h3>
+
+    <ul class="spaced">
+        <li>Да ли сте тражили неке информације о <a href="/<?=$lang?>/firefox/">фајефоксу</a>?</li>
+        <li>Или можда о нашем програму за електронску пошту, <a href="/<?=$lang?>/thunderbird/">тандерберду</a>?</li>
+        <li>Можда је ипак најбољете да почнете са <a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+    </ul>
+</div>
+
+</div><!-- end #content div -->
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

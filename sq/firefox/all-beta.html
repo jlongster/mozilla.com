@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Shfletuesi web Firefox | Na ndihmoni duke provuar versionin më të fundit beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Na ndihmoni duke provuar të ardhmen e Firefox-it!</h2>
+        <p>Versioni i fundit beta i Firefox-it mund të kihet tashmë si qarkullim paraprak. Merreni për një provë dhe na tregoni se si ju duket!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Informacion i Rëndësishëm</h4>
+        <p class="intro">Ju lutem lexojeni, para se të shkarkoni</p>
+    </div>
+    <ul>
+        <li>Ky është program para-qarkullim: mund të hasni probleme përputhshmërie me disa site-e web dhe shtesa.</li>
+        <li>Nëse gjeni ndonjë problem, ju lutem <a href="http://feedback.mozilla.org/">na e bëni të ditur</a> ose <a href="https://bugzilla.mozilla.org/">raportoni një të metë</a>.</li>
+        <li>Për më tepër hollësi, lexoni <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">shënime versioni</a> dhe <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">probleme të njohura</a> (në Anglisht).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nuk ju interesojnë Beta-t? Merrni <a href="/<?=$lang?>/firefox/">Firefox-in e fundit</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

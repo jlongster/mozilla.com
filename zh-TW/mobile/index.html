@@ -1,0 +1,42 @@
+<?php
+
+    // please translate the 3 variables below
+    $page_title         = "Firefox Mobile";
+    $form_field         = "輸入您的行動電話號碼";
+    $chooseYourCountry  = "選擇您的地點";
+
+	$pageid = 'mobile-home';
+  	include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+<div id="main-feature">
+    <h2>您體驗了網際本色；<br />不如就隨身帶著吧！</h2>
+    <p>Firefox 登上手機與行動裝置了。</p>
+</div>
+
+<?=$mobilesubmenu;?>
+<?=$smsformblock;?>
+
+<div id="mobile-footer" class="sub-features">
+    <div class="sub-feature" id="video-tour">
+        <h4>觀看影片介紹</h4>
+        <p>看看 Firefox 如何將網路完整的收納在您的掌中。</p>
+        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">播放影片</a></p>
+    </div>
+    <div class="sub-feature" id="developers-wanted">
+        <h4>參與我們</h4>
+        <p>參加我們的全球社群，一同設計、測試與推廣 Firefox。</p>
+        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">了解您能做些什麼</a></p>
+    </div>
+
+    <div class="sub-feature" id="questions-comments">
+        <h4>問題與建議？</h4>
+        <p>尋求您疑問的解答，或者告訴我們您對於 Firefox 的想法。</p>
+        <p class="link"><a href="http://mobile.support.mozilla.com/">尋求協助</a></p>
+    </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,476 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Mobile funkciói";
+
+    $pageid = "mobile-features";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+  <h2>Firefox funkciói</h2>
+  <p>Hogyan hozza el a Firefox az internetet a telefonra?</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang, 'features');?>
+
+<div id="main-content">
+
+  <div id="new-features"><div class="features-container">
+
+    <h3 id="top-new-features">Legfontosabb funkciók</h3>
+
+    <div class="column1">
+
+      <div class="feature">
+      <h4><a href="#newest-technologies">Igazi megoldás</a></h4>
+      <p>A Firefox az elvárható teljesítményen és biztonságon felül, a már megismert és megszeretett funkciókat nyújtja.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#site-for">Kellemes látvány</a></h4>
+      <p>Most megjelenik mindaz, ami eddig elrejtőzött, így láthatja a teljes weboldal. Élvezze a kilátást.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature">
+      <h4><a href="#genius">Géniusz érintése</a></h4>
+      <p>Tegye az oldalakat a könyvjelzők közé, váltson a lapok között és használja a nagyítás vagy kicsinyítés funkciót egyetlen érintéssel.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#awesome-bar">Intelligens címsor</a></h4>
+      <p>Felejtse el a hosszú URL-ek beírását, és hagyja, hogy az intelligens címsor egy pillanat alatt megkeresse és elindítsa kedvenc weboldalát.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#get-personal">Személyre szabva</a></h4>
+      <p>Az első böngésző, amely kiegészítőket kínál, így testreszabhatja böngészőjét bárhol és bármikor.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature">
+      <h4><a href="#password-manager">Jelszókezelő</a></h4>
+      <p>A jelszók megadása a telefonon nem egyszerű feladat. Miért tenné ezt egynél többször?</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#location-aware">Legyen helybéli… bárhol is jár</a></h4>
+      <p>Tudja meg a bennfentes információkat és használja a térképeket a helymeghatározó böngészéssel.</p>
+      </div>
+
+      <div class="feature">
+      <h4><a href="#weave">Már indulhat is</a></h4>
+      <p>Ne menjen el otthonról Firefox nélkül. Tegye fel a Firefox Sync kiegészítőt és szinkronizálja össze számítógépét és telefonját.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+  <div id="sidebar-menu">
+    <h4>Kategóriánként</h4>
+    <ul>
+      <li><a href="#security">Biztonság és adatvédelem</a></li>
+      <li><a href="#customization">Testreszabás</a></li>
+      <li><a href="#productivity">Hatékonyság</a></li>
+      <li><a href="#search">Keresés</a></li>
+      <li><a href="#access">Elérhetőség</a></li>
+      <li><a href="#cutting-edge">Legújabb technológia</a></li>
+      <li><a href="#help">Segítség</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="content">
+
+  <div id="security" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Biztonság és adatvédelem</h3>
+
+    <img src="/img/mobile/features/site-id.jpg" alt="Azonnali weboldal-azonosítás" />
+
+    <div id="security1" class="features-row">
+
+      <div class="feature" id="instant-id">
+      <h4>Azonnali weboldal-azonosítás</h4>
+      <p>Biztos szeretne lenni annak a weboldalnak a valódiságában, ahol éppen vásárolni készül? Az oldal azonosítójának megtekintéséhez érintse meg a címsor jobb oldalán található ikont. Második érintésre további információ jelenik meg: Hány alkalommal látogatta meg az oldalt? Biztos benne, hogy a jelszó el van mentve? Nézzen szét a gyanús oldalak között, tartsa távol magát a hamis oldalaktól és győződjön meg róla, hogy a weboldal valóban az, aminek mondja magát.</p>
+      </div>
+
+    </div>
+
+    <div class="column1">
+
+      <div class="feature" id="password-manager">
+      <h4>Jelszókezelés</h4>
+      <p>A jelszavak megadása a telefonon nem egyszerű feladat. Miért kellene ezt egynél többször megtenni? Csak ki kell választani az oldal jelszavának megjegyzését és el lehet felejteni, hogy mennyire nehézkes volt ezt beírni.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="forget-site">
+      <h4>Előzmények törlése</h4>
+      <p>Törölheti a személyes adatait vagy csak az elmúlt néhány órában végzett tevékenységének nyomait. Szabadon dönthet arról, hogy mit töröl és a kérdéses adatok mindörökre törlődnek – a számítógépéről vagy csak az előzményekből. Ez ilyen egyszerű.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="custom-security">
+      <h4>Testreszabott biztonsági beállítások</h4>
+      <p>Állítsa be a weboldalakra vonatkozó biztonsági szintet és adja meg ezek kivételeit. Testreszabhatja a jelszavak, a sütik, a betöltött képek és a telepített kiegészítők beállításait, hogy teljes mértékben tudja élvezni a mobilböngészést.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="automated-update">
+      <h4>Automatikus frissítés</h4>
+      <p>Nyílt forrású biztonsági stratégiánk a következő: rekordidő alatt megtaláljuk és kijavítjuk a hibákat, hogy a Firefox az internetezés legbiztonságosabb eszköze legyen. Ezért szükséges, hogy telepítse a legújabb verziót, amint arról automatikus figyelmeztetést kap.</p>
+      </div>
+
+    </div>
+
+    <div class="column2" id="pop-up-blocker-shot">
+
+      <img src="/img/mobile/features/pop-up-blocker.jpg" alt="Felugró ablakok tiltása" />
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="pop-up-blocker">
+      <h4>Felugró ablakok tiltása</h4>
+      <p>Egyszer és mindenkorra száműzheti a felugró (és a háttérben felugró) ablakokat, hogy valóban az internetezésre tudjon koncentrálni. De van egy köztes megoldás is: engedélyezheti a megadott oldalakról felugró ablakok megjelenését.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="customization" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Testreszabhatóság</h3>
+
+    <div id="customization1" class="features-row">
+
+      <div class="feature" id="get-personal">
+      <img src="/img/mobile/features/personal.jpg" alt="Kiegészítők kezelése" />
+      <h4>Személyre szabva</h4>
+      <p>A kiegészítők útra kelnek. A böngésző igény szerint alakítható, út közben lehet kiegészítőket keresni és telepíteni. Információ osztható meg a közösségi hálózatokon, weboldal címeinek elgépelése javítható vagy beépített szótára lehet a következő utazáshoz, és mindez a mobilon.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="weave">
+      <img src="/img/mobile/features/weave.jpg" alt="Firefox Sync" />
+      <h4>Már indulhat is</h4>
+      <p>A Firefox Sync használatával internetezzen a számítógépén, majd induljon útnak és minden a telefonjára kerül: az előzmények, a nyitott lapok, a könyvjelzők és az intelligens címsor &ndash; pontosan úgy, ahogy hagyta. A Firefox Sync ezzel a nap hőse lehet. <a href="../sync/">Tovább…</a></p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="bookmarking">
+      <h4>Gyors könyvjelzőkezelés</h4>
+      <p>Kezelheti a könyvjelzőket sokat vagy keveset. Ha egy olyan oldalra ér, amelyet a könyvjelzők közé kíván tenni, akkor egyszerűen érintse meg a csillag ikont. Hagyja jóvá a könyvjelző mentését és ha szeretné, adjon hozzá címkét. A könyvjelzők között eltárolt oldal egy pillanat alatt megtalálhatja a címke, az oldal vagy a könyvjelző nevének beírásával. Minél többet használja a címkét vagy a könyvjelző címét, a Firefox beépíti ezeket a javaslataiba.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="awesome-bar">
+      <h4>Intelligens címsor</h4>
+      <p>Kezdjen gépelni és hagyja, hogy intelligens címsor megkezdje a keresést. Az intelligens címsor emlékszik a könyvjelzők közé eltett, címkével ellátott és korábban meglátogatott oldalakra. Tulajdonképpen úgy találja meg amit keres, hogy nem is kell igazán gépelnie. (Most már tudja, hogy miért hívjuk ezt intelligens címsornak).</p>
+      <img src="/img/mobile/features/awesome-bar.jpg" alt="Intelligens címsor" />
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="productivity" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Hatékonyság</h3>
+
+    <div id="productivity1" class="features-row">
+
+      <img src="/img/mobile/features/bookmarking.jpg" alt="Könyvjelzőkezelés" />
+
+      <div class="feature" id="genius">
+      <h4>Géniusz érintése</h4>
+      <p>Egyetlen érintéssel a kedvenc weboldala a könyvjelzők közé tehető. Az ujj végighúzásával a képernyőn a lapok elérhetők lesznek vagy lehetőség nyílik a kiegészítők telepítésére. Dupla érintéssel nagyítani lehet. Ez a megoldás okos és egyszerű.</p>
+      </div>
+
+    </div>
+
+    <div class="column1">
+
+      <div class="feature" id="download-manager">
+      <h4>Letöltéskezelő</h4>
+      <p>Töltse le a fájlokat zökkenőmentesen és biztonságosan! Töltse le a fájlokat könnyedén. A letöltéskezelőben figyelemmel kísérhető az összes letöltés folyamata, ahol rá lehet keresni az adott fájlnévre vagy a weboldal címére, ahonnan a letöltés indult.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="spell-checking">
+      <h4>Helyesírás-ellenőrző</h4>
+      <p>A beépített helyesírás-ellenőrző használatával folyamatosan gépelheti a szöveget a weboldalakon, — blogbejegyzésekhez és webes levelezőprogramhoz — anélkül, hogy különösebb gondot okozna az elütés, vagy a tévesztés. A helyesírás-ellenőrző közvetlenül a weboldalon működik, amivel megspórol magának egy lépést.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+      <div class="feature" id="memory-management">
+      <h4>Memóriakezelés</h4>
+      <p>A Firefox kevés memóriát használ, tökéletesen kézben tartja a mobiltelefon memóriakezelését. Az új memóriakezelő segítségével szabadon és gyorsan böngészhet kedvenc oldalai között.</p>
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <img src="/img/mobile/features/tabs.jpg" alt="Lapok" />
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="tabs">
+      <h4>Fantasztikus lapok</h4>
+      <p>A lapok kézközelben vannak. Az ujj jobbra húzásával az összes megnyitott lap gyorsnézete megjelenik, hogy gyorsan meg lehessen találni a keresett weboldalt.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+  <div id="search" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Search</h3>
+
+    <div id="search1" class="features-row">
+
+      <img src="/img/mobile/features/search.jpg" alt="Keresés" />
+
+      <div class="feature" id="search-engines">
+      <h4>Keresőszolgáltatások</h4>
+      <p>Használja kedvenc keresőszolgáltatását könnyedén a keresősávból. Ha akarja, minden kereséshez különböző keresőszolgáltatást használhat, vagy maradhat kedvencénél. Válasszon az előre beállítottak közül</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="access" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Univerzális hozzáférés</h3>
+
+    <div id="access1" class="features-row">
+
+      <div class="feature" id="text-rendering">
+      <h4>Továbbfejlesztett szövegmegjelenítés</h4>
+      <p>Olvasson úgy anyanyelvén, ahogy azt nap, mint nap teszi. Az új grafikai háttérrendszer minden eddiginél szebben és olvashatóbban jeleníti meg az arab, perzsa és egyéb nyelvek rajzolt írásjeleit.</p>
+
+      <h4>Letölthető betűkészletek</h4>
+      <p>A Meamo eszközökön internetezés közben különböző betűkészletek használhatók. Az oldal készítői és fejlesztői egyedi betűkészleteket készíthetnek és jeleníthetnek meg tökéletesen.</p>
+      </div>
+
+      <div class="feature" id="fonts-image">
+      <img src="/img/tignish/features/text-rendering.png" alt="Továbbfejlesztett szövegmegjelenítés" />
+      </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="universal-customization">
+      <h4>Univerzális testreszabás</h4>
+      <p>Túl a honosításon és az internet használatának megismerésén, a helyi fejlesztők, akik a legjobban ismerik az egyes közösségi csoportok igényeit, igyekeznek szótárakkal, keresőszolgáltatásokkal, élő könyvjelzőkkel és hírcsatornákkal testreszabni a Firefox böngészőt. Attól függően, hogy hol él, a régió BBC híreit olvashatja, vagy használhatja a magyar Wikipedia keresőszolgáltatást.</p>
+      </div>
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="language">
+      <h4>A Firefox nyelvei</h4>
+      <p>A Firefox, egyedülálló módon támogatja az anyanyelvét. Mivel az internet egy világméretű információforrás és mi úgy gondoljuk, hogy ez mindenkié, ezért annyi nyelven tesszük elérhetővé böngészőnket, amennyin csak lehetséges. A Firefox több mint 30 különböző nyelven érhető el a franciától a portugálon át egészen a magyarig.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="cutting-edge" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Legújabb technológia</h3>
+
+    <div id="cutting-edge1" class="features-row">
+
+      <img src="/img/mobile/features/location.jpg" alt="Helymeghatározó böngészés" />
+
+            <div class="feature" id="location-aware">
+            <h4>Helymeghatározó böngészés</h4>
+            <p>A város legjobb koncertjét keresi? Egy helyet, ahol autentikus ételeket ehet? Egy kerülőútvonalat az autópályához? Legyen helybéli, bárhol is jár a helymeghatározó böngésző segítségével. Így megkaphatja a helyzetének megfelelő térképet és információkat. Ez a szolgáltatás választható &ndash; a Firefox engedély nélkül nem oszt meg semmilyen információt.</p>
+            </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <img src="/img/mobile/features/ui.jpg" alt="Kellemes látvány" />
+
+    </div>
+
+    <div class="column2">
+
+      <div class="feature" id="site-for">
+      <h4>Kellemes látvány</h4>
+      <p>A lapok és a böngésző vezérlőgombjai a képernyő oldalán rejtőznek el, így most megjelenik mindaz, ami eddig megbújt &ndash; a teljes weboldal. Élvezze a kilátást.</p>
+      </div>
+
+    </div>
+
+    <div class="column3">
+
+            <div class="feature" id="offline">
+            <h4>Kapcsolat nélküli böngészés</h4>
+            <p>Ha telefonján éppen nincs internetkapcsolat, szabadon folytathatja a böngészést. Vannak olyan weboldalak és webalkalmazások, amelyek már használják ezt a technológiát, azonban többségében ezek még nincsenek felkészítve erre a lehetőségre.</p>
+            </div>
+
+    </div>
+
+    <div class="features-divider"><hr /></div>
+
+    <div class="column1">
+
+      <div class="feature" id="graphics">
+      <h4>Következő generációs grafika</h4>
+      <p>Látnia kell, hogy elhiggye. A szöveg és a képek megjelenése, — beleértve az SVG formátumot és a hátteret —, gyorsabb, élesebb és életszerűbb, mint valaha. Mindez nem másnak, mint az új grafikus háttérrendszernek köszönhető. A Firefox a színprofillal rendelkező képek (ilyenek a digitális fotók) színeit automatikusan kiigazítja.</p>
+      </div>
+
+    </div>
+
+    <div class="column2" id="new-tech-column">
+
+      <div class="feature" id="newest-technologies">
+      <div>
+        <h4>Legújabb webes technológiák</h4>
+        <p>A legújabb és továbbfejlesztett funkciók lehetővé teszik a webszerkesztők és a webfejlesztők számára, hogy fejlett vagy bonyolult tartalmat, illetve alkalmazást készítsenek. A Firefox a következő technológiákat támogatja:</p>
+        <table>
+          <tr>
+            <td>
+              <ul>
+                <li>CSS2.1</li>
+                <li>CSS3</li>
+                <li>HTML5</li>
+                <li>SVG Filters</li>
+                <li>Native JSON</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>MathML</li>
+                <li>Animated Portable Network Graphics (APNG)</li>
+                <li>Cross-Site XMLHttpRequest</li>
+                <li>Web Worker Threads</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <p><a href="https://developer.mozilla.org/En/Firefox_3.5_for_developers">Tekintse meg a támogatott technológiák teljes listáját.</a></p>
+      </div>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+  <div id="help" class="features-box"><div class="features-container">
+
+    <a href="#top-new-features" class="features-top-link"><?php echo ___('Vissza a tetejére');?></a>
+
+    <h3>Segítség</h3>
+
+    <div class="column1">
+
+      <div class="feature" id="live-support">
+      <h4>Nem hagyjuk magára</h4>
+      <p>Kérdése van? Látogassa meg a kereshető <a href="http://mobile.support.mozilla.com/">Tudásbázis</a> leírásait, a fórumokat és leírásokat, ahol választ kaphat kérdéseire.</p>
+      </div>
+
+    </div>
+
+    <div class="features-footer"></div>
+
+  </div></div>
+
+</div><!-- end #content div -->
+
+
+
+
+<?php
+  $extra_footers = <<<EXTRA_FOOTERS
+<!-- script type="text/javascript" src="/js/mozilla-platform-images.js"></script-->
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

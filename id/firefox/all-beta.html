@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Peramban web Firefox | Yuk, mari menguji coba versi beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Yuk, bantu menguji coba <br/>Firefox generasi baru!</h2>
+        <p>Kini telah tersedia versi beta terbaru Firefox, tersedia sebagai rilis pratinjau. Mari uji bersama di medan maya dan Mari menguji bersama di medan maya dan kabari kami pendapat Anda!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Informasi Penting</h4>
+        <p class="intro">Mohon dibaca sebelum mengunduh</p>
+    </div>
+    <ul>
+        <li>Perangkat lunak ini masih dalam tahap prarilis: Anda mungkin mengalami masalah kompatibilitas dengan beberapa situs web dan pengaya.</li>
+        <li>Jika Anda menemukan masalah, mohon <a href="http://feedback.mozilla.org/">kabari kami</a> atau <a href="https://bugzilla.mozilla.org/">masukkan laporan bug</a>.</li>
+        <li>Detail selengkapnya dapat dibaca pada <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">catatan rilis</a> dan <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">masalah yang diketahui</a> (dalam Bahasa Inggris).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Tidak ingin menjajal versi Beta? Dapatkan <a href="/<?=$lang?>/firefox/">Firefox versi terbaru</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

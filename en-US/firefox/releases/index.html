@@ -1,0 +1,123 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox Release Notes';
+    $body_id    = 'mozilla-com';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/releases.css" media="screen" />
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox <span>Releases</span></h2>
+    <p>
+      Firefox release notes are specific to each version of the application.
+      Select your version from the list below to see the release notes for it.
+    </p>
+</div>
+
+<div id="main-content">
+
+    <ul class="releases">
+      <li><a href="../3.6/releasenotes/">3.6</a></li>
+      <li><a href="../3.5.7/releasenotes/">3.5.7</a></li>
+      <li><a href="../3.5.6/releasenotes/">3.5.6</a></li>
+      <li><a href="../3.5.5/releasenotes/">3.5.5</a></li>
+      <li><a href="../3.5.4/releasenotes/">3.5.4</a></li>
+      <li><a href="../3.5.3/releasenotes/">3.5.3</a></li>
+      <li><a href="../3.5.2/releasenotes/">3.5.2</a></li>
+      <li><a href="../3.5.1/releasenotes/">3.5.1</a></li>
+      <li><a href="../3.5/releasenotes/">3.5</a></li>
+      <li><a href="../3.0.17/releasenotes/">3.0.17</a></li>
+      <li><a href="../3.0.16/releasenotes/">3.0.16</a></li>
+      <li><a href="../3.0.15/releasenotes/">3.0.15</a></li>
+      <li><a href="../3.0.14/releasenotes/">3.0.14</a></li>
+      <li><a href="../3.0.13/releasenotes/">3.0.13</a></li>
+      <li><a href="../3.0.12/releasenotes/">3.0.12</a></li>
+      <li><a href="../3.0.11/releasenotes/">3.0.11</a></li>
+      <li><a href="../3.0.10/releasenotes/">3.0.10</a></li>
+      <li><a href="../3.0.9/releasenotes/">3.0.9</a></li>
+      <li><a href="../3.0.8/releasenotes/">3.0.8</a></li>
+      <li><a href="../3.0.7/releasenotes/">3.0.7</a></li>
+      <li><a href="../3.0.6/releasenotes/">3.0.6</a></li>
+      <li><a href="../3.0.5/releasenotes/">3.0.5</a></li>
+      <li><a href="../3.0.4/releasenotes/">3.0.4</a></li>
+      <li><a href="../3.0.3/releasenotes/">3.0.3</a></li>
+      <li><a href="../3.0.2/releasenotes/">3.0.2</a></li>
+      <li><a href="../3.0.1/releasenotes/">3.0.1</a></li>
+      <li><a href="../3.0/releasenotes/">3.0</a></li>
+    </ul>
+    <ul class="releases">
+      <li><a href="../2.0.0.20/releasenotes/">2.0.0.20</a></li>
+      <li><a href="../2.0.0.19/releasenotes/">2.0.0.19</a></li>
+      <li><a href="../2.0.0.18/releasenotes/">2.0.0.18</a></li>
+      <li><a href="../2.0.0.17/releasenotes/">2.0.0.17</a></li>
+      <li><a href="../2.0.0.16/releasenotes/">2.0.0.16</a></li>
+      <li><a href="../2.0.0.15/releasenotes/">2.0.0.15</a></li>
+      <li><a href="../2.0.0.14/releasenotes/">2.0.0.14</a></li>
+      <li><a href="../2.0.0.13/releasenotes/">2.0.0.13</a></li>
+      <li><a href="../2.0.0.12/releasenotes/">2.0.0.12</a></li>
+      <li><a href="../2.0.0.11/releasenotes/">2.0.0.11</a></li>
+      <li><a href="../2.0.0.10/releasenotes/">2.0.0.10</a></li>
+      <li><a href="../2.0.0.9/releasenotes/">2.0.0.9</a></li>
+      <li><a href="../2.0.0.8/releasenotes/">2.0.0.8</a></li>
+      <li><a href="../2.0.0.7/releasenotes/">2.0.0.7</a></li>
+      <li><a href="../2.0.0.6/releasenotes/">2.0.0.6</a></li>
+      <li><a href="../2.0.0.5/releasenotes/">2.0.0.5</a></li>
+      <li><a href="../2.0.0.4/releasenotes/">2.0.0.4</a></li>
+      <li><a href="../2.0.0.3/releasenotes/">2.0.0.3</a></li>
+      <li><a href="../2.0.0.2/releasenotes/">2.0.0.2</a></li>
+      <li><a href="../2.0.0.1/releasenotes/">2.0.0.1</a></li>
+      <li><a href="../2.0/releasenotes/">2.0</a></li>
+    </ul>
+    <ul class="releases">
+      <li><a href="1.5.0.12.html">1.5.0.12</a></li>
+      <li><a href="1.5.0.11.html">1.5.0.11</a></li>
+      <li><a href="1.5.0.10.html">1.5.0.10</a></li>
+      <li><a href="1.5.0.9.html">1.5.0.9</a></li>
+      <li><a href="1.5.0.8.html">1.5.0.8</a></li>
+      <li><a href="1.5.0.7.html">1.5.0.7</a></li>
+      <li><a href="1.5.0.6.html">1.5.0.6</a></li>
+      <li><a href="1.5.0.5.html">1.5.0.5</a></li>
+      <li><a href="1.5.0.4.html">1.5.0.4</a></li>
+      <li><a href="1.5.0.3.html">1.5.0.3</a></li>
+      <li><a href="1.5.0.2.html">1.5.0.2</a></li>
+      <li><a href="1.5.0.1.html">1.5.0.1</a></li>
+      <li><a href="1.5.html">1.5</a></li>
+      <li><a href="1.0.8.html">1.0.8</a></li>
+      <li><a href="1.0.7.html">1.0.7</a></li>
+      <li><a href="1.0.6.html">1.0.6</a></li>
+      <li><a href="1.0.5.html">1.0.5</a></li>
+      <li><a href="1.0.4.html">1.0.4</a></li>
+      <li><a href="1.0.3.html">1.0.3</a></li>
+      <li><a href="1.0.2.html">1.0.2</a></li>
+      <li><a href="1.0.1.html">1.0.1</a></li>
+      <li><a href="1.0.html">1.0</a></li>
+      <li><a href="0.10.html">1.0 Preview Release</a></li>
+    </ul>
+    <ul class="releases">
+      <li><a href="0.9.3.html">0.9.3</a></li>
+      <li><a href="0.9.1.html">0.9.1/0.9.2</a></li>
+      <li><a href="0.9.html">0.9</a></li>
+      <li><a href="0.8.html">0.8</a></li>
+      <li><a href="0.7.1.html">0.7.1</a></li>
+      <li><a href="0.7.html">0.7</a></li>
+      <li><a href="0.6.1.html">0.6.1</a></li>
+      <li><a href="0.6.html">0.6</a></li>
+      <li><a href="0.5.html">0.5</a></li>
+      <li><a href="0.4.html">0.4</a></li>
+      <li><a href="0.3.html">0.3</a></li>
+      <li><a href="0.2.html">0.2</a></li>
+      <li><a href="0.1.html">0.1</a></li>
+    </ul>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

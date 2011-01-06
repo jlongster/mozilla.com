@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Products | Tips &amp; Tricks';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Tips &amp; trúks</h2>
+    <p>Of jo no in begjinner binne, in gewoane of betûfte brûker, dizze toetskombinaasjes en foarstellen sille jo helpe om it measte út Firefox 3 te heljen.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produkten</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Feilichheid</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Oanpassings</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% Organysk programma</a></li>
+    <li><span>Tips &amp; Trúks</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Utjefte opmerkings</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Oare systemen &amp; talen</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Begjinner</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Zoom yn, zoom út skermôfbylding', '365', '251', 'right')?>
+
+                <h4>Zoom yn, zoom út</h4>
+                <p>Wurch fan lytse tekst? Wolle jo in ôfbylding in bytsje tichter by en persoanlik? No kinne jo maklik yn- en útzoome op Websiden.</p>
+
+                <div class="key-combo">
+                    Ynzoome
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Utzoome
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Ljepblêd Trúks skermôfbylding', '388', '135', 'right')?>
+
+                <h4>Probearje dizze ljepblêd trúks</h4>
+                <p>As jo it type persoan binne dy't graach in protte websiden iepen stean hat, sille jo seker foardiel hawwe fan blêdzjen mei ljepblêden. Hjir binne in pear toetsboerd fluchtoetsen dy't jo helpe ljepblêden te bestjoeren:</p>
+
+                <div class="key-combo key-combo-1">
+                    Iepenje in nij leech ljepblêd
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Iepenje in keppeling yn in nij ljepblêd
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middelklik op keppeling</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middelklik op keppeling (mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    Slút in ljepblêd
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    In sluten ljepblêd op 'e nij iepenje
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Blêdwizers skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Foegje mei ien klik blêdwizers ta</h4>
+                <p>Hâld websteeën dy't jo graach besykje better yn 'e gaten (en sparje tiid) troch blêdwizers mei ien klik ta te foegjen. As jo in side besykje dy’t jo graach bewarje wolle, klik gewoan op it stjerikoantsje yn de lokaasjebalke. Firefox sil it tafoegje oan jo blêdwizerslist sadat jo it maklik werom fine kinne.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Feilichheidsikoantsje', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        De side jout ferifiearre identiteitsynformaasje en beskermet jo persoanlike gegevens fan online meiharkers.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Feilichheidsikoantsje', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        De side jout basis identiteitsynformaasje en beskermet jo persoanlike gegevens fan online meiharkers.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Feilichheidsikoantsje', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        De side jout gjin identiteitsynformaasje.
+                    </li>
+                </ul>
+
+                <h4>Wit wêr't jo mei te dwaan hawwe</h4>
+                <p>In faak brûkte taktyk ûnder webskammers is om in ferrifelwebstee te meitsjen, bekend as phishing siden, dy't lykje op dy fan jo bank, jo favoryt winkelwebstee, ensfh. Lokkigernôch makket Firefox it maklik om út te finen oft siden binne wat se sizze dat se binne – klik gewoan op it side-ikoantsje foar in direkt identiteitsoersjoch.</p>
+                <p id="forgery">In oanfalside of ferfalsking; jo persoanlike ynformaasje jaan, of allinnich al it besykjen fan de side, kin skeadlik wêze.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Ferfalsking skermôfbylding" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Skow de side nei ûnder
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="spaasjebalke" />
+                        </div>
+                        <div class="key-combo">
+                            Skow de side nei boppe
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + spaasjebalke" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            De side op 'nij lade
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Tebek
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Foarút
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Fluchtoets jo paad nei súkses</h4>
+                <p>Firefox sit fol mei toetskombinaasjes dy't makke binne om jo libben makliker te meitsjen. Hjir binne in pear fan ús favoriten:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Ferpleats kursor nei de lokaasjebalke
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Ferpleats kursor nei it sykfak
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>Gewoane brûker</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Blêdwizers skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Brûk labels</h4>
+                <p>Sa gau as jo in grutte list mei blêdwizers hawwe, kin it byhâlden wat dreger wurde. Om it each der wat oer te hâlden, kinne jo labels takenne oan jo blêdwizers: dûbelklik op it stjerikoantsje en jo wurde frege om jo labels yn te foljen.</p>
+                <p>Jo kinne in side labelje mei sa folle termen as jo wolle (wês wis dat jo in komma efter elk label sette), en dan maklik de sides weromfine troch it typen fan dy labels yn de lokaasjebalke. Bygelyks, as jo "reis" ynfolje yn de lokaasjebalke, ktije jo in list te sjen mei alle siden dy't jo yn 'e blêdwizers hawwe as ûnderdiel fan jo fakânsje ûndersyk.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Tafoegings skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Lear alles oer tafoegings</h4>
+                <p>De standertferzje fan Firefox sit fol mei eigenskippen, fansels, mar werom der ophâlde? Der binne mear as 5000 tafoegings, lytse ekstra's dy't Firefox oanpasse — dy't jo ynlade kinne foar hast elke taak dy't jo betinke kinne. Gean nei Ekstra → Tafoegings om de Tafoegingsbehearder te iepenjen en ûntdek alle manieren heo't jo jo eigen Firefox meitsje kinne.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Sykje skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Sykje tûker</h4>
+                <p>Jo binne al bekend mei de ynboude sykbalke yn Firefox. Mar witte jo dat jo it oanpasse kinne mei elke sykmasine dy't jo ek wolle? Klik gewoan op it ikoantsje links fan jo sykbalke om it menu te sjen mei standert opsjes.</p>
+                <p>Noch better, klik Behear sykmasines om de list te reorganisearjen, ekstra keuzes ta te foegjen en sels toetskombinaasjes ta te kennen oan jo favorite sykmasinen. Bygelyks, jo kinne Google de fluchtoets "G" jaan - as jo dan in sykopdracht dwaan wolle foar frykse dúmkes, typje gewaon "G fryske dúmkes" yn de lokaasjebalke en jo krije in folsleine list.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Fyn skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Fyn it yn in flits</h4>
+                <p>De Fyn-wylst-jo-type eigenskip is in oare handige tiidsbesparring. Yn stee fan it gebrûk fan de sykbalke om in wurd op de side te finen, klik gewoan earne op dy side en begjin mei it wurd te typen dat jo sykje. Jo kursor sil daliks springe nei it earste foarkommen fan dat wurd.</p>
+                <p>Jo kinne it ek foar keppelings brûke. Bygelyks, yn stee fan jo mûs oer it skerm te beweegjen nei in "lear mear" keppeling, start mei it typjen fan it wurd en as de kursor it fynt, druk op enter.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Privacy skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Wiskje elk spoar</h4>
+                <p>Fanwege feilichheids- en privacyredenen is it net goed om spoaren efter te litten as jo sneupe (foaral as jo in dielde kompjûter brûke). Mei Firefox kinne jo jo sneup- en ynlaadskiednis wiskje, jo buffer leechmeitsje en jo cookies fuortsmite mei ien klik. Gean nei Ekstra → Privee-gegevens opskjinje om dat te dwaan. Of, om ekstra foarsichtich te wêzen, gean nei <span id="trace-platform">Ekstra → Opsjes → Privacy</span> en selektearje de "Altyd myn privee-gegevens opskjinje as ik Firefox ôfslút" opsje.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Foarkarren → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Bewurkje → Foarkarren → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Betûft</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", 'Lokaasjebalke skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Gean daliks nei jo favorite siden</h4>
+                <p>Jo kinne kaaiwurden tafoegje oan jo blêdwizers foar makliker en fluggere tagong. Ut de bibleteek, foegje in koart kaaiwurd ta yn it kaaiwurd fjild, en sa kinne jo dy blêdwizer besykje troch gewoan it kaaiwurd yn de
+adresbalke. Bygelyks, jo kinne www.fryskesoftware.nl it kaaiwurd "frysk" jaan, en fan dat momint ôf sille jo troch “frysk” te typjen yn de adresbalke der daliks hinne gean.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Blêdwizers skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Meitsje tûke mappen</h4>
+                <p>As jo in betûfte websneuper binne dy't faak in grut oantal siden bewarje en besjen moat, is hjir in brûkbere tiidsbesparring: brûk de Bibleteek fan Firefox 3. Jo kinne sykopdrachten meitsje en bewarje yn mappen dy't dan automatysk fernijd wurde as jo sides tafoegje oan jo blêdwizers en skiednis.</p>
+                <p>Iepenje earst de bibleteek troch de opsje "Organisearje blêdwizers" te selektearjen út it Blêdwizersmenu. Folje dernei jo syktermen yn it sykfak yn. Klik dan de Bewarje knop om in Tûke map te meitsjen.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Ynlaad behearder skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Behear jo ynladen bestannen</h4>
+                <p>As jo faak bestannen ynlade, kinne jo de ynlaadbehearder brûke om jo ynladen bestannen te behearen. Jo kinne ynlaadaksjes pausearje en trochgean litte en josels tiid besparje troch bestannen daliks te iepenjen út de behearder.</p>
+                <p>As jo in earder ynladen bestân weromfine wolle, gean nei Ekstra → Ynladen bestannen en brûk it sykfak om jo bestân te finen. Sa gau as jo it fûn hawwe, dûbelklik dan op it bestân om it te iepenjen, of Ctrl-klik en kies "Kopiearje ynlaad keppeling".</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Untwikkelark skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Untdek ûntwiklersark</h4>
+                <p>As jo in webûntwikkeler binne, sil it ûntwiklersark fan Firefox jo libben makliker meitsje. It <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla tafoegings webstee</a> jout in protte ark om it ûntwikler proses te begeliedzjen, ynklusief Firebug om CSS, HTML, en JavaScript te bewurkjen, debuggen en monitoarjen direkt yn elke webside, wizigje gegevens om HTTP/HTTPS koppen en POST parameters te besjen en oan te pasjen en de DOM Ynspektor om elk HTML of CSS elemint te ûndersykjen mei in simpele rjochter mûsklik.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Opsjes skermôfbylding', '378', '252', 'right')?>
+
+                <h4>Stel it web yn krekt sa't jo it graach wolle</h4>
+                <p>No kinne jo op it web basearre protokolhandlers brûke om fluch tagong te krijen ta jo favorite Webapplikaasjes. Bygelyks, jo kinne Firefox sa ynstelle dat as jo in mailto: keppeling oanklikke der in nij berjocht iepene wurde sil yn de troch jo winske webmailprovider, yn stee fan it standert emailprogramma fan jo kompjûter (notysje: dit is allinnich beskikber mei webmailtsjinsten dy't registrearre binne by Firefox 3).</p>
+                <p>Gean nei <span id="platform-protocol">Ekstra→Opsjes→Applikaasjes</span> om de standert applikaasje foar elk protokol yn te stellen of selektearje “Altyd freegje” as jo leaver hieltyd de applikaasje sels kieze wolle.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Foarkarren→Applikaasjes";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Bewurkje→Foarkarren→Applikaasjes";
+                }
+                //]]></script>
+                <p>As jo in Web app ûntwikkeler binne, sjoch foar mear stipe oer Web-basearre protokol handlers yn it <a href="http://developer.mozilla.org/">Mozilla Developer Center.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

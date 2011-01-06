@@ -1,0 +1,85 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - jūsu atsauksmes";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Kā jūs uzzinājāt par Firefox 4 beta programmu?";
+$str2       = "Nepalaid garām jaunāko";
+$str3       = "Pierakstieties, lai saņemtu Firefox Beta jaunumus savā e-pastā.";
+$str4       = "Jūsu e-pasta adrese";
+$str5       = "Es piekrītu <a href=\"%s\">privātuma politikai</a> <span class='footnote'>(Mēs sūtīsim tikai ar Mozilla saistītu informāciju).</span>";
+$str6       = "Atsūtiet man laiku pa laikam arī Mozilla jaunumus, Firefox padomus un viltības, kā arī citu aktuālu informāciju.";
+$str7       = "Pierakstīties »";
+$str8       = "Paldies, ka pierakstījāties!";
+$str9       = "Mēs ļoti gaidām, kad varēsim padalīties ar padomiem un ieteikumiem par to, kā izmantot visas Firefox sniegtās iespējas, kā arī ziņas par to, kā mēs kopā padarām tīmekli labāku.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Mums nepieciešama palīdzība</h3>
+        <p>Mēs veidojam Firefox, lai tas būtu ātrāks un vienkāršāks, kā arī pilns ar vērtīgām iespējām. To nav iespējams izdarīt bez jūsu atsauksmēm.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Atsauksmes</span></li>
+    <li class="more"><h3>Vairāk informācijas angļu valodā</h3></li>
+    <li class="features"><a href="../features/">Iespējas</a> </li>
+    <li class="tech"><a href="../technology/">Tehnoloģijas</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Atsauksmju privātuma politika</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback poga" />
+        <h2>Pastāstiet mums ko jūs domājat</h2>
+        <h3>Sniedziet zibenīgu atsauksmi</h3>
+        <p>Klikšķiniet uz Atsauksmju pogas, lai zibenīgi nosūtītu mums jūsu viedokli. Tas ir ļoti vienkārši!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Izstrādātāji: Jūs mums esat nepieciešami</h2>
+        <h3>Dalieties ar idejām</h3>
+        <p>Ko jūs domājat par <a href="../features/#under-the-hood">jaunajām izstrādātāju iespējām</a> jaunajā beta?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Apmeklēt atsauksmju forumu.</a></p>
+
+        <h3>Ziņojiet par tehniskām kļūdām</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>Ja esat pazīstami ar Bugzilla, ziņojiet par kļūdām, kas jums rodas lietojot Firefox.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Ziņojiet par Firefox 4 Beta blusām</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Izplatiet informāciju</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Sekojiet mums Twitterī</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Apmeklējiet mūsu Facebook lapu</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Lasiet Mozilla Blogu</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Nepieciešama palīdzība?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Palīdzības ikona" />Mūsu palīdzības lapās</a> ir tieši jums nepieciešamās atbildes un padomi par Firefox 4 beta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>
+

@@ -1,0 +1,313 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla-র উৎপাদন | হরেক রকম কায়দা কৌশল';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript">// <![CDATA[
+    Mozilla.Pager.NEXT_TEXT        = 'Next';
+    Mozilla.Pager.PREV_TEXT        = 'Previous';
+    Mozilla.Pager.PAGE_NUMBER_TEXT = '%s of %s';
+    // ]]></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>হরেক রকম কায়দা কৌশল</h2>
+    <p>নতুন, অভিজ্ঞ অথবা অল্পবিস্তর ওয়াকিবহাল, সর্বধরনের ব্যবহারকারীদের ক্ষেত্রে নীচে উপস্থিত শর্টকাট ও প্রস্তাবগুলি Firefox 3 ব্যবহারের জন্য সহায়ক হবে।</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">উৎপাদন</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">বৈশিষ্ট্য</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">নিরাপত্তা</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">স্বনির্ধারিত বৈশিষ্ট্য</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">১০০% বিশুদ্ধ সফ্টওয়্যার</a></li>
+    <li><span>হরেক রকম কায়দা কৌশল</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">রিলিজ নোট</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">অন্যান্য সিস্টেম ও ভাষা</a></li>
+</ul>
+
+<div id="content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>নবীন ব্যবহারকারী</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '362', '225', 'right')?>
+
+                <h4>বড় অথবা ছোট মাপে প্রদর্শন</h4>
+                <p>ক্ষুদ্র মাপের অক্ষর পড়তে না পেরে অতিষ্ঠ? ছবিগুলি আরেকটু বড় করে দেখতে ইচ্ছুক? এখন অতি সহজেই ওয়েব পেজগুলি বড় অথবা ছোট মাপে দেখা যাবে।</p>
+
+                <div class="key-combo">
+                    বড় মাপে প্রদর্শন
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    ছোট মাপে প্রদর্শন
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '343', '117', 'right')?>
+
+                <h4>ট্যাব সম্বন্ধীয় নিম্নলিখিত কায়দাগুলি প্রয়াস করুন</h4>
+                <p>আপনি যদি সাধারণত একাধিক ওয়েব পেজ একসাথে পরিদর্শন করে থাকেন তাহলে ট্যাব-ভিত্তিক ব্রাউজিং আপনার জন্য শ্রেয়। ট্যাব ব্যবহারের প্রক্রিয়া আয়ত্ত করার জন্য নীচে কয়েকটি কি-বোর্ড শর্টকাট উল্লেখ করা হয়েছে:</p>
+
+                <div class="key-combo key-combo-1">
+                    একটি নতুন ফাঁকা ট্যাব খুলুন
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    লিঙ্ক দ্বারা নির্দিষ্ট কোনো পেজ একটি নতুন ট্যাবে খুলুন
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middle Click on link</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">লিঙ্কের উপর মাউজের মাঝের বাটন সহযোগে ক্লিক করুন (mac: ⌘ + লিঙ্কের উপর ক্লিক করুন)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    একটি ট্যাব বন্ধ করুন
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    বন্ধ করা কোনো ট্যাব পুনরায় খুলুন
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '389', '250', 'right')?>
+
+                <h4>একটি ক্লিক সহযোগে বুকমার্ক যোগ করুন</h4>
+                <p>পছন্দসই সাইটগুলি সহজে প্রাপ্ত করার জন্য (ও সময় সাশ্রয়ের জন্য) একটি ক্লিক দ্বারা বুকমার্ক নির্ধারণের পদ্ধতি ব্যবহার করুন। কোনো পরিদর্শিত পেজ চিহ্নিত করার জন্য, ঠিকানা নির্দেশক বারের মধ্যে উপস্থিত তারা চিহ্নটি ক্লিক করুন। এর ফলে, Firefox দ্বারা সংশ্লিষ্ট পেজটি বুকমার্ক তালিকায় যোগ করা হবে ও আপনি অতিসহজেই সেটি পুনরায় পরিদর্শন করতে পারবেন।</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        চিহ্নিত সাইটের পরিচয় উপলব্ধ রয়েছে এবং সেটির যথার্থতা প্রমাণিত হয়েছে। ব্যবহারকারীদের ব্যক্তিগত তথ্যও এই সাইট দ্বারা গোপন রাখা হয়।
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        চিহ্নিত সাইটের পরিচয় সম্পর্কে সাধারণ কিছু তথ্য উপলব্ধ রয়েছে এবং ব্যবহারকারীদের ব্যক্তিগত তথ্য এই সাইট দ্বারা গোপন রাখা হয়।
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        সাইটের পরিচয় সংক্রান্ত কোনো তথ্য উপলব্ধ করা হয় না।
+                    </li>
+                </ul>
+
+                <h4>তথ্য বিনিময়কালে অন্য পক্ষের পরিচয় জেনে নিন</h4>
+                <p>ওয়েবের মাধ্যমে জালিয়াতির জন্য সাধারণত ফিশিং সাইট নির্মাণ করা হয়। এই সাইটগুলি সাধারণত বিভিন্ন ব্যাঙ্ক, ই-বাণিজ্যিক সাইট প্রভৃতির নকল সাইট স্থাপন করে ব্যবহারকারীদের প্রতারণা করার প্রেচষ্টা করে। সৌভাগ্যবসত, Firefox-র সাহায্যে সহজেই কোনো ওয়েব-সাইটের যথার্থতা জানা সম্ভব হবে – অবস্থাসূচক বারের মধ্যে  প্রদর্শিত সাইটের প্রতীকচিহ্নের উপর ক্লিক করুন ও সাইটের পরিচয় সংক্রান্ত সংক্ষিপ্ত তথ্য প্রাপ্ত করুন।</p>
+                <p id="forgery">একটি আক্রমণকারী সাইট অথবা নকল সাইট; এই সাইট পরিদর্শন অথবা এখানে নিজের ব্যক্তিগত তথ্য লেখার ফলে ক্ষয়ক্ষতি হতে পারে।
+                <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-mac.png" alt="Forgery screenshot" />');
+                } else if (gPlatform == PLATFORM_LINUX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-linux.png" alt="Forgery screenshot" />');
+                } else if (gPlatformVista) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-vista.png" alt="Forgery screenshot" />');
+                } else {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" />');
+                }
+            // ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" /></div></noscript>
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            পেজের নীচের অংশে স্ক্রোল করুন
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            পেজের উপরের অংশে স্ক্রোল করুন
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            পেজ নতুন করে লোড করুন
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            পূর্ববর্তী
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            পরবর্তী
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>শর্ট-কাট সহযোগে কার্যসিদ্ধি</h4>
+                <p>Firefox-র ব্যবহার সহজ করার জন্য অনেকগুলি কি-বোর্ড শর্ট-কাট উপস্থিত করা হয়েছে। জনপ্রিয় কয়েকটি শর্ট-কাটের উদাহরণ নীচে প্রস্তুত করা হয়েছে:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        অবস্থান চিহ্নকারী বাক্সে কার্সার স্থানান্তরণ
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        অনুসন্ধানের বাক্সে কার্সার স্থানান্তরণ
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>মধ্যম ক্ষমতাধারী ব্যবহারকারী</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '387', '220', 'right')?>
+
+                <h4>শ্রেণী নির্ধারণ করুন</h4>
+                <p>বুকমার্কের বিশাল তালিকা একত্রিত করা হলে সেগুলির হদিশ পেতে সমস্যা হতে পারে। এই সমস্যা সমাধানের জন্য বুকমার্কগুলির জন্য ট্যাগ অর্থাৎ শ্রেণী নির্ধারণ করা যাবে: তারা চিহ্নটির উপর দুইবার ক্লিক করা হলে, ট্যাগ লেখার অনুরোধ জানানো হবে।</p>
+                <p>কোনো সাইটের জন্য একাধিক ট্যাগ ব্যবহার করা যাবে (এই ক্ষেত্রে প্রতিটি ট্যাগের মধ্যে একটি কমা চিহ্ন লেখা আবশ্যক), ও ঠিকানা নির্দেশক বারের মধ্যে ট্যাগ টাইপ করা হলে সংশ্লিষ্ট সাইটগুলি সহজেই অনুসন্ধান করা যাবে। উদাহরণস্বরূপ, ভ্রমণ সংক্রান্ত সকল সাইটের জন্য "travel" ট্যাগ ব্যবহার করা হলে, ঠিকানা নির্দেশক বারের মধ্যে "travel" লেখা হলে এই সাইটগুলির তালিকা প্রদর্শন করা হবে।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '364', '256', 'right')?>
+
+                <h4>অতিরিক্ত সামগ্রী সম্পর্কে সর্বধরনের তথ্য জেনে নিন</h4>
+                <p>Firefox-র প্রমিত সংস্করণের মধ্যে বিভিন্ন ধরনের বৈশিষ্ট্য উপস্থিত থাকলেও, ৫০০০-র বেশি উপলব্ধ অতিরিক্ত সামগ্রী ডাউনলোড ও ব্যবহার করে Firefox-কে নিজের প্রয়োজন অনুযায়ী সাজিয়ে নিয়ে অধিক সুবিধাজনকভাবে কর্ম সঞ্চালন করা যাবে। প্রধান মেনু থেকে সরঞ্জাম → অতিরিক্ত সামগ্রী নির্বাচন করে অতিরিক্ত সামগ্রী পরিচালনার ডায়লগ বক্সটি খুলুন ও নিজের পছন্দ অনুযায়ী Firefox-র জন্য উন্নত বৈশিষ্ট্য নির্ধারণ করুন।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '371', '233', 'right')?>
+
+                <h4>Search Smarter</h4>
+                <p>আপনি সম্ভবত Firefox-এ উপলব্ধ অনুসন্ধানের বার সম্পর্কে ওয়াকবহাল। কিন্তু জানেন কি, আপনি আপনার পছন্দসই সার্চ ইঞ্জিনগুলি এর সাথে যুক্ত করতে পারেবন? অনুসন্ধানের বারের বাঁদিকে উপস্থিত প্রতীকচিহ্নটি ক্লিক করা হলে ডিফল্ট বিকল্পগুলি একটি মেনু রূপে প্রদর্শন করা হবে।</p>
+                <p>সার্চ ইঞ্জিন পরিচালনা… ক্লিক করে সার্চ ইঞ্জিনের তালিকা সুবিন্যস্ত করুন অথবা নতুন সার্চ ইঞ্জিন যোগ করুন। প্রয়োজনে, আপনার পছন্দসই সার্চ ইঞ্জিনগুলির জন্য কি-বোর্ড শর্টকাটও নির্ধারণ করা যাবে। উদাহরণস্বরূপ, Google-র শর্টকাট রূপে "G" নির্ধারণ করা হয়ে থাকলে - মাছের বিভিন্ন রান্নার প্রণালী অনুসন্ধান করার জন্য ঠিকানা নির্দেশক বারের মধ্যে "G fish recipes" লিখে অনুসন্ধান করা হলে সর্বধরনের মাছের পদ সংক্রান্ত প্রাপ্ত ফলাফলের তালিকা প্রদর্শিত হবে।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '385', '254', 'right')?>
+
+                <h4>অনতিবিলম্বে প্রয়োজনীয় সামগ্রী অনুসন্ধান করে নিন</h4>
+                <p>টাইপ করার সময় অনুসন্ধানের বৈশিষ্ট্য উপলব্ধ রয়েছে। এই বৈশিষ্ট্যের সাহায্যে, সময় ও পরিশ্রম সাশ্রয় করা সম্ভব হবে। পেজের মধ্যে কোনো শব্দ অনুসন্ধানের জন্য অনুসন্ধানের বার ব্যবহারের পরিবর্তে পেজের মধ্যে মাউজ দ্বারা ক্লিক করুন ও প্রয়োজনীয় শব্দটি লেখা আরম্ভ করুন। পেজের মধ্যে সংশ্লিষ্ট শব্দটির প্রথম উপস্থিতিটি তৎক্ষনাৎ প্রদর্শন করা হবে।</p>
+                <p>লিঙ্কের জন্যও এটি ব্যবহার করা যাবে। উদাহরণস্বরূপ, পেজের মধ্যে উপস্থিত "learn more" শীর্ষক কোনো লিঙ্ক অবধি যাওয়ার জন্য মাউজ ব্যবহারের প্রয়োজন হবে। প্রয়োজনীয় শব্দটি লেখা আরম্ভ করার পরে কার্সার দ্বারা তা চিহ্নিত হলে, Enter টিপে দিন।</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '358', '219', 'right')?>
+
+                <h4>সব চিহ্ন মুছে ফেলুন</h4>
+                <p>নিরাপত্তা ও গোপনীয়তার কারণে, ব্রাউজ করার সময় কোনো ধরনের ব্যক্তিগত তথ্য অথবা চিহ্ন উন্মুক্ত রাখা উচিত নয় (যৌথরূপে ব্যবহৃত কম্পিউটারের ক্ষেত্রে এটি বিশেষভাবে প্রযোজ্য)। Firefox ব্যবহার করে ওয়েব ব্রাউজ ও তথ্য ডাউনলোড করার ফলে সংরক্ষিত তথ্য, ক্যাশে অথবা কুকিগুলি একটি ক্লিকের সাহায্যে মুছে ফেলার সুবিধা উপলব্ধ করা হয়। এটি করার জন্য সরঞ্জাম → ব্যক্তিগত তথ্য মুছে ফেলুন… শীর্ষক মেনুতে ক্লিক করুন। অথবা অতিরিক্ত নিরাপত্তার জন্য <span id="trace-platform">সরঞ্জাম → বিবিধ বৈশিষ্ট্য → গোপনীয়তা</span> শীর্ষক ট্যাবে গিয়ে "বন্ধ করার সময় সর্বদা ব্যক্তিগত তথ্য মুছে ফেলা হবে" নির্বাচন করুন।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('trace-platform').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>অভিজ্ঞ ব্যবহারকারী</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'Location bar screenshot', '392', '245', 'right')?>
+
+                <h4>আপনার পছন্দসই সাইটগুলি সরাসরি দেখুন</h4>
+                <p>সহজ ও দ্রুত ব্যবহারের জন্য বুকমার্কের ক্ষেত্রে বিষয় নির্দেশক অভিব্যক্তি যোগ করা যাবে। লাইব্রেরির মধ্যে অভিব্যক্তি শীর্ষক ক্ষেত্রের মধ্যে একটি প্রাসঙ্গিক অভিব্যক্তি যোগ করুন ও ঠিকানা লেখার বারের মধ্যে এই অভিব্যক্তিটি লেখা হলে সংশ্লিষ্ট বুকমার্কটি প্রদর্শিত হবে। উদাহরণস্বরূপ, আপনার del.icio.us অ্যাকাউন্টের ক্ষেত্রে “links” অভিব্যক্তিটি প্রয়োগ করা হলে, ঠিকানা নির্দেশক বারের মধ্যে “links” লেখা হলে প্রযোজ্য del.icio.us সাইটের পেজ প্রদর্শিত হবে।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'Bookmarks screenshot', '381', '233', 'right')?>
+
+                <h4>বিশেষ বৈশিষ্ট্যযুক্ত ফোল্ডার নির্মাণ করুন</h4>
+                <p>অভিজ্ঞ ওয়েব সার্ফারদের ক্ষেত্রে বিভিন্ন ধরনের সাইট সংক্রান্ত তথ্য সংরক্ষণ ও অনুসরণ করা আবশ্যক হয়ে থাকে। এই ধরনের ব্যবহারকারীদের জন্য একটি সুবিধাজনক বৈশিষ্ট্য: Firefox 3-র লাইব্রেরি প্রয়োগ করে স্বনির্ধারিত অনুসন্ধান তৈরি করে পৃথক ফোল্ডারে সংরক্ষণ করতে পারবেন। বুকমার্ক ও পূর্ববর্তী তথ্যের মধ্যে নতুন সাইটের তথ্য যোগ হলে এই ফোল্ডারগুলির স্বয়ংক্রিয়ভাবে আপডেট করা হবে।</p>
+                <p>প্রথমত, বুকমার্ক মেনু থেকে "বুকমার্ক সুবিন্যস্ত করুন" বিকল্পটি বেছে নিন। এর পরে, অনুসন্ধানের বারের মধ্যে অনুসন্ধানযোগ্য তথ্য লিখুন ও সংরক্ষণ করুন বাটন টিপে একটি স্মার্ট ফোল্ডার নির্মাণ করুন।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'Download Manager screenshot', '387', '271', 'right')?>
+
+                <h4>ডাউনলোড করা সামগ্রীর ব্যবস্থাপনা</h4>
+                <p>নিয়মিত ডাউনলোড করা হলে, ডাউনলোড পরিচালনার উইন্ডো থেকে সকল ডাউনলোডের তালিকা দেখা যাবে।  এই উইন্ডোর সাহায্যে ডাউনলোড স্থগিত অথবা পুনরারম্ভ করা যাবে এবং প্রয়োজনে সরাসরি ফাইলগুলি খোলা যাবে।</p>
+                <p>কোনো পুরোনো ডাউনলোড সংক্রান্ত তথ্য প্রাপ্ত করার জন্য সরঞ্জাম → ডাউনলোড-এ চলুন ও প্রদর্শিত অনুসন্ধানের বক্সের সাহায্যে আপনার প্রয়োজনীয় ফাইল খুঁজে নিন। ফাইল সনাক্ত হলে সেটির উপর দুইবার ক্লিক করে সেটি খুলুন অথবা ফাইলের উপর মাউসের <span id="manage-downloads-click">ডান দিকের বাটন</span> ক্লিক করে "ডাউনলোডের লিঙ্ক কপি করুন" নির্বাচন করুন।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('manage-downloads-click').innerHTML="ctrl-click";
+                }
+                //]]></script>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>ডিভেলপরদের জন্য উপলব্ধ সরঞ্জাম</h4>
+                <p>ওয়েব ডিভেলপরদের সুবিধার্থে, Firefox দ্বারা বেশ কয়েকটি সরঞ্জাম উপস্থিত করা হয়েছে। Mozilla Add-on-র সাইটের মধ্যে ডিভেলপমেন্ট প্রণালী সরল করার জন্য উপলব্ধ সামগ্রীর মধ্যে হয়েছে Firebug, Tamper Data ও DOM Inspector। Firebug-র সাহায্যে যে কোনো ওয়েব পেজের মধ্যে সরাসরি CSS, HTML ও JavaScript সম্পাদনা, ডিবাগ ও নিরীক্ষণ করা যাবে। Tamper Data সহযোগে HTTP/HTTPS হেডার ও POST পরামিতি প্রদর্শন ও পরিবর্তন করা সম্ভব হবে। DOM Inspector-র মাধ্যমে মাউসের ডান দিকের বাটনের একটি ক্লিকের সাহায্যে যে কোনো HTML ও CSS বস্তু পরীক্ষা করা যাবে।</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Preferences screenshot', '375', '309', 'right')?>
+
+                <h4>আপনার নিজস্ব পছন্দ অনুযায়ী ওয়েব প্রস্তুত করে নিন</h4>
+                <p>আপনার পছন্দসই অ্যাপ্লিকেশনগুলি সহজে প্রয়োগ করার জন্য বর্তমানে ওয়েব-ভিত্তিক প্রোটোকল হ্যান্ডলার ব্যবহারের সুবিধা উপলব্ধ করা হয়েছে। উদাহরণস্বরূপ, Firefox-এ নির্ধারিত বৈশিষ্ট্য অনুযায়ী যে কোনো সাইটে উপস্থিত mailto: লিঙ্কে ক্লিক করা হলে, কম্পিউটারের ডিফল্ট ই-মেইল প্রোগ্রামের পরিবর্তে ব্যবহারকারী দ্বারা নির্দিষ্ট পছন্দসই ওয়েব-মেইলের মধ্যে একটি নতুন বার্তা উপস্থাপন করা হবে (উল্লেখ্য: শুধুমাত্র Firefox 3-র সাথে  নিবন্ধিত ওয়েব মেইল পরিসেবাগুলির জন্য এই বৈশিষ্ট্যটি প্রয়োগ করা যাবে)।</p>
+                <p>প্রতিটি প্রোটোকলের জন্য ডিফল্ট অ্যাপ্লিকেশন নির্ধারণের জন্য মেনু থেকে <span id="platform-protocol">সরঞ্জাম → বিবিধ বিকল্প → অ্যাপ্লিকেশন</span> নির্বাচন করুন। অথবা, যদি প্রতিবার অ্যাপ্লিকেশন বাছাই করতে ইচ্ছুক হলে "সর্বদা জিজ্ঞাসা করা হবে" নির্বাচন করুন।</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>ওয়েব অ্যাপ্লিকেশন ডিভেলপরদের জন্য দ্রষ্টব্য: ওয়েব-ভিত্তিক প্রোটোকল হ্যান্ডলারের জন্য সমর্থন যোগ করার প্রণালী সম্পর্কে অধিক জানতে <a href="http://developer.mozilla.org/">Mozilla Developer Center</a>-এ দেখুন।</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

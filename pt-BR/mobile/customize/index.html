@@ -1,0 +1,39 @@
+<?php
+    // please translate the variable below
+    $page_title = "Torne pessoal";
+
+    $pageid = "mobile-customize";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Torne pessoal</h2>
+    <p>Personalize o Firefox e aproveite o primeiro navegador móvel a oferecer complementos.</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>Torne o navegador só seu.</h5>
+<p><a href="https://addons.mozilla.org/firefox/mobile">Complementos Mobile</a> ajudam a tornar a vida mais fácil ao navegar. Instale complementos para compartilhar informações em redes sociais, corrigir erros de digitação de URL ou traduzir um texto qualquer para outro idioma, tudo da conveniência do seu telefone. Complementos são gratuitos e fáceis de instalar direto do seu aparelho, então não perca tempo!</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="Tela Complementos" id="personal-screenshot" />
+
+<h5>Personalize direto do seu aparelho.</h5>
+<p>Personalize o seu Firefox procurando e instalando complementos direto do seu dispositivo móvel. Deslize seu dedo sobre a tela e selecione o botão "engrenagem" no lado direito da tela. Toque no botão "peça de quebra-cabeças" e inicie sua personalização.</p>
+
+<div id="dev-promo">
+<h3>Quer desenvolver um complemento para mobile?</h3>
+<p>Suas inovações são essenciais para o sucesso do Firefox. Nós tornamos fácil desenvolver complementos para mobile. Visite a página <a href="../developers/">Desenvolver para dispositivos móveis</a> para saber mais.</p>
+</div>
+
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

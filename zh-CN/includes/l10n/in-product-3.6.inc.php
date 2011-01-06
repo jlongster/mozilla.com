@@ -1,0 +1,59 @@
+
+<div id="main-content">
+
+  <div class="sub-feature" id="intro">
+
+    <h2>选择你的炫彩风格。</h2>
+  <p id="try">鼠标指点可预览，单击即可应用。</p>
+
+    <a href="http://www.getpersonas.com/en-US/gallery/" id="personas-image-link">炫彩风格</a>
+    <iframe
+        src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+        width="320"
+        height="200">
+    </iframe>
+
+    <ul id="personas-link" class="link">
+      <li>
+          <a href="http://www.getpersonas.com/en-US/gallery/" id="see-all-personas">查看全部<?=$personasnumber?>余个</a>
+      </li>
+    </ul>
+</div>
+
+  <div class="sub-feature" id="sidebar">
+    <h2>保持联系</h2>
+    <ul class="link">
+      <li id="connect-t-sina"><a href="http://t.sina.com.cn/firefox/?c=spr_sw_bd_firefox_weibo">上 "新浪微博" 关注我们</a></li>
+      <li id="connect-renren"><a href="http://www.renren.com/profile.do?id=311745290&v=feed">登录 "人人网" 成为粉丝</a></li>
+      <li id="connect-blog"><a href="http://blog.mozillaonline.com/">访问官方博客进行阅读</a></li>
+    </ul>
+  </div>
+
+  <div class="sub-feature<?=$oop_class;?>" id="personalize"><div>
+    <h2>更多个性化方法</h2>
+    <p>通过数以千计的免费附加组件调整 Firefox 适应你的浏览方式。</p>
+    <ul class="link">
+      <li>
+          <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">浏览附加组件</a>
+      </li>
+    </ul>
+  </div></div>
+
+<?=$oop;?>
+</div>
+<div id="footer">
+    <div id="connect" class="sub-feature">
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+  <p id="sub-links">
+      <a href="/<?=$lang?>/firefox/features/" id="features-link">Firefox 3.6 的更多特性</a>
+      <a href="http://support.mozilla.com" id="support-link">Firefox 支持</a>
+  </p>
+
+</div>

@@ -1,0 +1,502 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 4 beta 1 for Android and Maemo Release Notes';
+    $body_id    = 'firefox-relnotes';
+    $breadcrumbs = array(
+		"Mobile" => "/{$lang}/mobile",
+        "Release Notes" => "",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 4 Beta 1 for Android and Maemo <span>Release Notes</span></h2>
+    <p>
+      Take your Firefox anywhere. Firefox 4 Beta 1 for Android and Maemo is
+      built on the same technology platform as Firefox 4 for desktop computers, just
+      optimized for browsing on a mobile device.  Check out the new
+      and improved features, known issues and frequently asked questions.
+      As always, you’re encouraged to <a
+      href="http://firefoxformobile.uservoice.com/forums/70211-firefox-for-mobile-ideas">provide
+      suggestions</a> to improve Firefox for
+      mobile or <a href="https://bugzilla.mozilla.org/">file a bug in Bugzilla</a>. If you need help, visit the <a href="https://support.mozilla.com/en-US/questions?tagged=mobile">Firefox
+      Mobile Support Forum</a>.
+    </p>
+</div>
+
+<div id="main-content">
+
+	<div id="sidebar">
+		<div id="get-involved">
+			<h3>Get Involved</h3>
+			<p>Want to become part of the Mozilla project?</p>
+			<a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
+		</div>
+	</div>
+
+      <div id="whatsnew2" class="expander expander-odd">
+        <h3 class="expander-header">What's new in Firefox 4 Beta 1 for Android and Maemo</h3>
+        <div class="expander-content">
+          <p><em>Fennec is the codename of Mozilla’s mobile project, however,
+          the official product name is Firefox.</em></p>
+
+          <p>Shipping with many of your favorite Firefox desktop features
+          like Firefox Sync, Add-ons and the Awesome Bar, this beta release
+          brings Firefox to the Android platform, the fastest growing
+          smartphone platform in the world.</p>
+
+          <p>The foundation of this release is based on enhanced
+          performance and responsiveness, specifically around a technology
+          called “Layers” that greatly improves performance in graphic intensive
+          actions like scrolling, zooming and animations. Enhanced
+          responsiveness, in conjunction with new and improved features that
+          help customize your Firefox, make this release a user
+          friendly and personalized experience.</p>
+
+          <em>Get Up and Go</em>
+          <p>
+          Shipping with the Firefox Sync feature built-in, Firefox 4 beta 1 synchronizes
+          your Firefox history, bookmarks, open tabs, passwords and form data
+          between your desktop and mobile. Just login with your Firefox Sync
+          account info and Firefox gets to know you right away, taking you to
+          your favorite parts of the Web with barely any typing. Don't worry
+          about switching to a new phone, or having to type long URLs or
+          passwords again. You can even leave your desktop in a moment’s notice
+          and pick up right where you left off on your mobile phone.
+          </p>
+
+          <em>Add-ons</em>
+          <p>
+          Firefox 4 Beta 1 offers add-ons;
+          pieces of software that let you change or add features, functionality
+          and the look of your Firefox to fit your browsing lifestyle. You can
+          search for and install add-ons directly to your Android phone or
+          Nokia N900 from the Add-ons Manager located in your browser tools.  We
+          look forward to offering more add-ons in future releases.
+          </p>
+
+          <em>Personalized Start Page</em>
+          <p>
+          Pick up where you left off with your new personalized Start page. Get
+          instant access to your Firefox desktop tabs, the tabs you had open
+          last time you were browsing on your phone, the Awesome Bar, and get
+          suggestions for useful add-ons.
+          </p>
+
+          <em>Awesome Screen</em>
+          <p>
+          The Awesome Screen pops up just by tapping on the Awesome Bar
+          (location bar). It gets to know you and instantly brings up a smart
+          list of your favourite history items and bookmarks and lets you
+          easily select a search engine for your desired search. You can also
+          customize your search engine list for maximum efficiency.
+          </p>
+
+          <em>Touch Friendly UI</em>
+          <p>
+          Swipe to the left or right of your screen to access your tabs,
+          browser controls and tools, which are stowed out of the way while you
+          browse the Web. Typing on a phone is hard, that's why you can
+          bookmark a site with one tap, view tabs as thumbnails to easily see
+          and open the page you want, and use the Awesome Screen to get to
+          where you want to go in just a few a keystrokes.
+          </p>
+
+          <em>Responsiveness</em>
+          <p>
+          Speed and responsiveness is one of the major focuses of this release.
+          This has been implemented using two major technologies, “Electrolysis”
+          and “Layers.”  Electrolysis allows the browser interface to run in a
+          separate process from the one rendering Web content, reacting much
+          faster to user input while pages are loading or CPU intensive
+          JavaScript is running. This release has taken advantage of Layers to
+          improve performance in graphic intensive actions like
+          scrolling, zooming and animations.
+          </p>
+
+          <p>More personalized than ever before, Firefox 4 beta 1 is packed with
+          your favorite features and great improvements. Other highlights
+          include:</p>
+          <ul>
+            <li>Pinch-to-zoom (Android), double-tap, or use the volume rocker
+            (Nokia N900) to zoom in and out</li>
+            <li>Tabbed browsing in thumbnail view lets you easily see and open
+            the site you want</li>
+            <li>Location-Aware Browsing gives you content and info relevant to
+            your location</li>
+            <li>Find in Page in the Site Menu lets you quickly find text on the
+            webpage</li>
+            <li>Share Page in the Site Menu lets you send content to email,
+            Facebook, Twitter and Google Reader</li>
+            <li>Forget Password in the Site Menu tells a website you no longer
+            trust to forget your private data</li>
+            <li>Add Search Engine in the Site Menu lets you quickly add a new
+            search engine to your Awesome Screen</li>
+            <li>Context Menu lets you Open in New Tab and Share by long tapping
+            and holding a link</li>
+            <li>Smart Tapping lets you tap on links, widgets and other Web
+            content with accuracy</li>
+            <li>Password Manager lets you choose to remember site password to
+            avoid typing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="for-developers" class="expander expander-even">
+        <h3 class="expander-header">For Developers</h3>
+        <div class="expander-content">
+          <p>
+          Firefox is an easy and open development platform to build fast,
+          powerful and beautiful mobile web apps and add-ons. Use the latest web
+          technologies like HTML5, CSS and JavaScript to innovate faster, more
+          easily and extend your reach. You can build great sites and apps by
+          tapping into the device capabilities of the phone, as well as create
+          game changing add-ons. Visit the <a
+          href="https://developer.mozilla.org/en-US/mobile">Mobile Developer
+          Network</a> to learn more about how you
+          can build and showcase your innovations on millions of devices. 
+          </p>
+
+          <em>Build add-ons for mobile</em>
+          <p>
+          Although Firefox for the desktop and mobile are built on the same
+          technology platform, there are differences that will require
+          developers to make changes to their add-ons in order to become
+          compatible with Firefox for Android and the Nokia N900. 
+          Visit the <a
+          href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/Electrolysis">Electrolysis
+          and Add-ons wiki</a> page to learn more.
+          </p>
+
+          <em>What’s under the hood</em>
+          <ul>
+            <li>The same browser engine as Firefox 4.0 beta for desktop</li>
+            <li>Fast JavaScript engine, using Mozilla’s “JaegerMonkey”
+            just-in-time compiler</li>
+            <li>Leading Web compatibility</li>
+            <li>Engine optimized for ARM processors</li>
+            <li>Location-Aware Browsing</li>
+          </ul>
+
+          <em>HTML5 Technologies:</em>
+          <ul>
+            <li>Web workers<li>
+            <li>Offline storage<li>
+            <li>&lt;canvas&gt;<li>
+            <li>&lt;svg&gt;<li>
+          </ul>
+
+          <em>Native JSON</em>
+            <ul>
+                <li>&lt;audio&gt;</li>
+                <li>&lt;video&gt;</li>
+            </ul>
+        </div>
+      </div>
+        <div id="known-issues" class="expander expander-odd">
+          <h3 class="expander-header">Known Issues</h3>
+          <div class="expander-content">
+            <ul>
+              <li>Firefox 4 beta 1 requires around 40 MB of internal storage. We have
+              plans to reduce this to 20 MB or less. Like all Android NDK apps,
+              Firefox must copy its native libraries out of the APK file before
+              loading them, so they end up installed twice. We have plans to
+              work around this problem and reduce the installation size (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=588607">bug
+              588607</a>).</li>
+              <li>Major changes to Firefox for mobile have been made which have resulted in
+              multiple add-ons to break. Developers, please see the
+              <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/Electrolysis">Electrolysis and Add-ons wiki</a>
+              as a guide to help you make your add-on compatible with Firefox 
+              </li>
+              <li>Adobe Flash and other plugins are not supported yet.
+                  Automatic updates do not work in Android 2.1 or
+                  earlier (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=596662">bug
+              596662</a>).
+              </li>
+            </ul>
+              <p>User Interface:</p>
+                <ul>
+                  <li>Text does not wrap to fit the screen after zooming in,
+                  as it does in the Android browser (<a
+                  href="https://bugzilla.mozilla.org/show_bug.cgi?id=578179">bug
+                  578179</a>). The <a
+                  href="https://addons.mozilla.org/en-US/mobile/addon/157099/">Easy
+                  Reading add-on</a> has some proof-of-concept code to do
+                  this.</li>
+                </ul>
+              <p>Known Bugs:</p>
+                <ul>
+                  <li>Firefox's JIT compiler is disabled on Samsung Galaxy S phones because of stability problems.  JavaScript performance in Firefox 4 beta 1 will be slower on Galaxy S phones than on other devices (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=601222">bug 601222</a>).</li>
+                  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=575950">575950</a> - SSL certs are not confirmed for secure webpages</li>
+                  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=590865">590865</a> - “Share your Location” can hang Fennec</li>
+                </ul>
+          </div>
+        </div>
+      <div id="system-requirements" class="expander expander-even">
+        <h3 class="expander-header">System Requirements</h3>
+        <div class="expander-content">
+          <p>
+            Firefox 4 beta 1 is available for download on the Android platform and on the
+            Nokia N900.
+          </p>
+          <p>
+          Before installing Firefox 4 beta 1 on your Android phone, visit the
+          <a
+          href="https://www.mozilla.com/en-US/mobile/platforms/">Platforms and
+          Device Requirements page</a> to make sure your phone meets the
+            <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">Android system requirements</a>.
+          </p>
+          <p>See a full list of supported and unsupported devices by visiting
+          our <a
+          href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">System Requirements</a> wiki.
+        </div>
+      </div>
+        <div id="downloading" class="expander expander-odd">
+          <h3 class="expander-header">Downloading</h3>
+          <div class="expander-content">
+            <p>
+            Download Firefox 4 beta 1 by visiting <a
+            href="http://www.mozilla.com/en-US/m/beta">Firefox.com/m/beta</a> on your
+            Android phone, or Nokia N900. Visit the <a
+            href="https://www.mozilla.com/en-US/mobile/platforms/">Platforms and Device
+            Requirements</a> page to make sure your phone meets the Android system
+            requirements.
+            </p>
+
+            <p>
+              Developers: You can download a version of Firefox for mobile to your desktop in order to test, provide feedback, and build add-ons. Desktop builds are for development purposes only and don't have full functionality:
+            </p>
+
+            <ul>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="faq" class="expander expander-even">
+          <h3 class="expander-header">Frequently Asked Questions</h3>
+          <div class="expander-content">
+              <dl class="faq">
+                <dt>Is Firefox 4 beta available for my phone?</dt>
+                <dd>
+                  Firefox 4 beta is available for Android (2.0 and above) phones, and
+                  for the Nokia N900. See the <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">Android System Requirements</a> to
+                  see if Firefox 4 beta is compatible with you Android device. You can
+                  download the Firefox 4 beta <a
+                  href="http://firefox.com/m/beta">here</a> or, you can download Firefox 1.1 for
+                  the Nokia N900 <a href="http://firefox.com/m">here</a>.
+                  If Firefox for mobile is not available
+                  for your device or platform, we're continuing to investigate
+                  ways to bring parts of the Firefox experience to you.
+                  <a href="https://wiki.mozilla.org/Mobile/Platforms#About_Firefox_for_Mobile">Learn more about our mobile projects</a>.
+                </dd>
+                <dt>Is it called Fennec or Firefox?</dt>
+                <dd>
+                Fennec is the codename of Mozilla’s mobile project, however, the
+                official product name is Firefox. For
+                pre-beta releases of Firefox, we call it by the project's name,
+                Fennec.
+                </dd>
+                <dt>How will Firefox keep me safe while I browse on my mobile?</dt>
+                <dd>
+                  Mozilla’s open source process leverages the experience of
+                  thousands of security experts around the globe,
+                  and Firefox includes features like instant Web site ID
+                  that checks on suspicious sites to ensure they’re what
+                  they claim to be. Customizable security settings to
+                  manage passwords, cookies, loading images and installing
+                  add-ons give you complete control over your browsing experience.
+                  <a href="/<?= $lang ?>/firefox/security/">Learn more</a>.
+                </dd>
+                <dt>How do I use the Firefox user interface to browse the Web?</dt>
+                <dd>
+                  To save space on your phone’s display, Firefox browser
+                  controls are stowed away to the sides of the screen. Swipe
+                  right to access your tabs on the left side of the screen.
+                  Swipe left to view one-touch bookmarking, back and forward,
+                  and access your browser tools. To let you see more of the Web
+                  site, your browser controls and Awesome Bar get stowed away
+                  out of view. when you scroll down a Web page, but they
+                  instantly reappear if you pan to either side. Tap on the on
+                  Web site ID to the left of the Awesome Bar to open the Site
+                  Menu to further manage your relationship with the Web page
+                  you are on.
+                </dd>
+                <dt>What is the Awesome Screen?</dt>
+                <dd>
+                The Awesome Screen pops up just by tapping on the location bar.
+                It instantly brings up a smart list of your favourite history
+                items and bookmarks and lets you easily select a search engine
+                for your desired search. You can also customize your search
+                engine list for maximum efficiency.
+                </dd>
+                <dt>How do I zoom in and out?</dt>
+                <dd>
+                  For Android phones, pinch-to-zoom in and out or double tap.
+                  For the Nokia N900, you can use the volume button on the top
+                  of your phone, or double tap the screen with your finger to
+                  zoom in and out. Also, on the Nokia N900, Ctrl-up and
+                  Ctrl-down arrows will zoom in and out.
+                </dd>
+                <dt>How do I bookmark a Web page?</dt>
+                <dd>
+                  Go to the site you wish to bookmark. Touch the bookmark “star” button on the right side of your display.
+                </dd>
+                <dt>How do I open a new tab?</dt>
+                <dd>
+                  Touch the new tab "plus" button on the left side of your display screen to open a new tab. Tabs appear as thumbnails so you can easily see which page you’d like to select.
+                </dd>
+                <dt>What are Firefox Add-ons and how can I get them on my mobile device?</dt>
+                <dd>
+                Add-ons are small
+                pieces of software that let you add or change the look or
+                functionality of Firefox. Install add-ons directly to your
+                Firefox by swiping to the left and tapping on the browser tools
+                "gear" button on the bottom right-hand side of your screen, then
+                choosing the add-ons “puzzle piece” button to discover and
+                install the add-ons that are most useful to you.
+                </dd>
+                <dt>How can I share my Firefox bookmarks, history, tabs, and passwords between my desktop and my mobile?</dt>
+                <dd>
+                   Firefox Sync is a built-in feature of Firefox 4 beta that lets you
+                   synchronize your desktop and mobile data. To use this
+                   feature, you must first <a href="https://addons.mozilla.org/en-US/firefox/addon/10868/">install the Firefox Sync add-on</a>  on
+                   your desktop and create a Firefox Sync account. Then go to
+                   Firefox on your mobile phone, tap on the browser tools,
+                   Add-ons Manager and select Firefox Sync. Tap "Connect," and
+                   enter your Firefox Sync login info to begin synchronizing.
+                   To learn more about setting up Firefox Sync on your mobile,
+                   <a href="http://www.youtube.com/watch?v=yWlsUNsluJM">watch this video</a>.
+                </dd>
+                <dt>Do I need to setup Firefox Sync to use Firefox 4 beta on my phone?</dt>
+                <dd>
+                  No. Although we think Firefox Sync is highly useful, it is
+                  feature that you can choose to use or not. The Awesome Screen
+                  will start to get to know you and take you to your favorite
+                  parts of the Web with minimal typing, even without Firefox
+                  Sync.  If you do wish to start using Firefox Sync on your
+                  mobile phone, remember you must first install the Firefox
+                  Sync add-on to your desktop and create an account.
+                </dd>
+                <dt>What is Location-Aware Browsing? Is Firefox tracking where I am?</dt>
+                <dd>
+                  Location-Aware Browsing saves you time by allowing websites
+                  to ask you where you are. If you choose to share your
+                  location with a website, it can use that information to
+                  find nearby points of interest and return additional,
+                  useful data like maps of your area. It’s all optional –
+                  Firefox doesn’t share your location without your permission.
+                  Learn more about <a href="/<?= $lang ?>/firefox/geolocation/">Location-Aware Browsing</a>.
+                </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="developer-questions" class="expander expander-odd">
+          <h3 class="expander-header">Developer Questions</h3>
+          <div class="expander-content">
+            <dl class="faq">
+                <dt>Will a Firefox add-on I built for the PC work on mobile?  If not, do I need to change it?</dt>
+                <dd>
+                  Although Firefox for the desktop and mobile are built on the
+                  same technology platform, there are differences that will
+                  require developers to make changes to their add-ons in order
+                  to be compatible with Firefox for mobile.
+                  Visit the <a
+                  href="https://developer.mozilla.org/en-US/mobile">Mobile
+                  Developer Network</a>
+                  and <a
+                  href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/Electrolysis">Electrolysis
+                  and Add-ons</a> wiki to learn more.
+                </dd>
+                <dt>What browser engine does Firefox use?</dt>
+                <dd>
+                  The desktop and mobile versions of Firefox both use the Gecko rendering engine.
+                  The mobile version of Firefox uses Gecko version 2.0b7pre,
+                  which is the best performing browser engine Mozilla has ever
+                  released and includes exciting features such as radically improved JavaScript performance,
+                  geolocation support, worker threads, and much more.
+                  
+                <dt>What JavaScript engine does Firefox use?</dt>
+                <dd>
+                  Firefox includes the new “<a href="http://hacks.mozilla.org/category/jagermonkey/">JaegerMonkey</a>”
+                  JavaScript engine, an advanced JIT (“just in time”) compiler using tracing technology.
+                  The JaegerMonkey engine makes Web applications faster by compiling code as you execute it,
+                  allowing many types of CPU-intensive applications to run at near-native speed.
+                </dd>
+                <dt>How do I develop a Location-Aware website for Firefox?</dt>
+                <dd>
+                  Firefox has implemented the first public draft of the
+                  <a href="http://www.w3.org/TR/geolocation-API/">Geolocation specification from the W3C</a>.
+                  An overview on how to develop Location-Aware websites
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/" hreflang="en">here</a>.
+                </dd>
+                <dt>Does Firefox on my mobile support HTML 5?</dt>
+                <dd>
+                  HTML 5 is the next major revision of HTML.
+                  The HTML 5 specification is ongoing,
+                  but there are several HTML 5 and related features
+                  that will enable Web developers to create more innovative
+                  websites and applications. Firefox includes important features like
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/">Location-Aware browsing</a>,
+                  the <a href="http://hacks.mozilla.org/2009/06/pushing-pixels-with-canvas/">&lt;canvas&gt;</a>
+                  and <a href="http://hacks.mozilla.org/2009/06/rendering-svg-canvas-burst/">&lt;svg&gt;</a> tags,
+                  <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">Web workers</a>
+                  and <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">offline storage</a>.
+                </dd>
+                <dt>Does Firefox on my phone support plugins?</dt>
+                <dd>
+                  There is no plugin support in Firefox 4 beta 1 for Android and Nokia
+                  N900. On most Web pages that use the Adobe Flash plugin, the
+                  performance of the plugin didn't meet our standards, and the
+                  interactivity and performance of the entire Web page was
+                  negatively impacted. This was especially felt on pages with
+                  multiple instances of the plugin. Advanced users can enable
+                  plugins for experimentation and testing purposes only. We are
+                  working on ways for the user to have control of which sites
+                  to enable plugins for, as some sites, like YouTube, do work
+                  quite well.
+                </dd>
+                <dt>How can I get involved?</dt>
+                <dd>
+                Help spread the word, test and improve Firefox 4 beta and <a
+                href="http://www.mozilla.com/en-US/mobile/beta">Go
+                Mobile</a>. If you’d like to learn more about ways you can get
+                involved in other mobile-related initiatives, check out our <a
+                href="https://www.mozilla.com/en-US/mobile/getinvolved/">Get
+                Involved page</a>. As always, your input is welcome.
+                </dd>
+            </dl>
+
+            <p><a href="/<?=$lang?>/mobile/faq/">View the Firefox 4 beta FAQ</a>.</p>
+          </div>
+        </div>
+        <div id="other-resources-links" class="expander expander-even">
+          <h3 class="expander-header">Other Resources and Links</h3>
+          <div class="expander-content">
+            <p>
+              The following resources contain useful information about Firefox for mobile:
+            </p>
+            <ul>
+              <li><a href="http://mobile.support.mozilla.com/en-US/kb/">Firefox for Mobile Support Articles</a></li>
+              <li><a href="https://support.mozilla.com/en-US/questions?tagged=mobile">Firefox for Mobile Support Forum</a></li>
+              <li><a href="http://firefoxformobile.uservoice.com/forums/70211-firefox-for-mobile-ideas">Have an idea for Firefox for mobile?</a></li>
+            </ul>
+          </div>
+        </div>
+    <div id="release-notes-footer"></div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

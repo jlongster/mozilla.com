@@ -1,0 +1,89 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% תוכנה אורגנית';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+<div id="main-feature">
+    <h2>גישה טובה יותר לרשת</h2>
+    <p>או - מה יכול דפדפן קוד פתוח קהילתי לעשות עבורך.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">מוצרים</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">אבטחה</a></li>
+    <li><a href="/<?=$lang?>/firefox/addons/">התאמה אישית</a></li>
+    <li><span>100% תוכנה אורגנית</span></li>
+    <li><a href="/<?=$lang?>/firefox/features/">תכונות</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">טיפים וטריקים</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">הערות שחרור</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">מערכות ושפות אחרות</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>מהי תוכנה אורגנית?</h3>
+    <p><strong>אנחנו קצת שונים מחברות תוכנה רגילות.</strong> אנחנו משתמשים במונח &quot;תוכנה אורגנית&quot; כדי להסביר את ההבדלים בנינו לבין החבר'ה האחרים: </p>
+    <p>המוצר המוכר ביותר שלנו, Firefox, נוצר בידי תנועה בינלאומית של אלפים, רק אחוז זעום מהם הם אכן מועסקים אצלנו.</p>
+    <p>אנו מתמרצים את המשימה שלנו לקידום הפתיחות, החדשנות וההזדמנויות ברשת ללא שיקולים עסקיים כגון רווחים או מחיר המניה שלנו (נחשו מה: אפילו אין לנו מניה).</p>
+    <p>ובדומה ל<a href="http://www.mozilla.org/foundation/">ארגון לטובת הכלל ללא מטרות רווח</a>, אנו מצהירים על ההצלחות שלנו במושגים של בניית קהילות והעשרת תנאי המחיה. אנו מאמינים בכוח ובפוטנציאל של הרשת ורוצים לראות אותה משגשגת עבור כל אחד, בכל מקום.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="נערת Firefox" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>מה זה קוד פתוח?</h3>
+        <p>זה אולי ישמע מופרע בהתחלה, אז בבקשה תסלחו לנו: <strong>אנו מאמינים שככל שיותר אנשים ידעו את &quot;הסודות&quot; שלנו, כך יהיה טוב יותר.</strong></p>
+        <p>ולכן, אנו חושפים את קוד המקוד של Firefox – את כל מה שמתחבא מתחת למכסה המנוע וגורם לעסק לעבוד - לעולם, ומעודדים כל אחד לבוא ולהסתכל.</p>
+        <p>היו אנשים שראו דברים שאפשר לשפר וביצעו את התיקונים. לאחרים היו רעיונות לתכונות חדשות והם גרמו להם להתממש. והיו גם כאלה שלקחו את הקוד, הוסיפו לו טוויסט, ויצרו מוצר חדש (ומדהים) משלהם.</p>
+        <p>מה מוסר ההשכל של הסיפור? להיות פתוח גורם לדברים טובים לקרות. כל אחד יכול להציץ דרך התריסים שלנו... בעצם, אין לנו בכלל תריסים.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>למה זה צריך לעניין אתכם?</h3>
+        <p>אנחנו אולי לא חברה טיפוסית, אבל <strong>אנחנו בכל זאת יודעים להתמקד על השורה התחתונה: לגרום לרשת להיות טובה יותר עבורכם</strong>.</p>
+        <p>להיות פתוחים אומר שהרעיון הגדול הבא יכול להגיע מכל אחד בעולם במקום להסתמך על כמה עשרות עובדים במשרדי החברה שלנו. כאשר מסתכלים ככה על המצב, למה לעשות את זה אחרת?</p>
+        <p>כל הדיבורים האלה על תוכנה אורגנית וקוד פתוח מתורגמים בסופו של דבר לדפדפן טוב יותר עבורכם ועבור 150 מליון המשתמשים הקבועים ב Firefox. זה אומר מוצר מוגן יותר ובאיכות גבוהה יותר. זה אומר חדשנות, חופש, ותמיכה ברשת נגישה לכולם</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.old.js"></script>
+    <script type="text/javascript">
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <h3>Get Firefox 3<\/h3><div>%VERSION% for %PLATFORM_NAME%<br \/> %LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/div><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\">להורדת פיירפוקס<span> - חינם<\/span><\/a></li>";
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 וגרסאוות קודמות אינן נתמכות<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">הורדה בחינם<\/a>"
+
+        document.writeln("<ul class=\"download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">הערות הפצה<\/a>");
+        document.writeln("| <a href=\"\/<?=$lang?>\/firefox\/all.html\">מערכות ושפות אחרות<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+    </script>
+    <?php echo $firefoxDetails->getNoScriptBlockForLocale('he'); ?>
+
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>מה זה Mozilla?</h3>
+            <h5>אנחנו קהילה בין-לאומית, ארגון לרווחת הציבור ופרויקט תוכנה בקוד פתוח</h5>
+            <p><a href="/<?=$lang?>/about/">מידע נוסף אודותנו</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>

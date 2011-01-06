@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "De allerfluchste Firefox";
+
+    // Video controls strings to translate
+    $download_ogg       = "Laad yn yn Open Fideo formaat (Ogg Theora)";
+    $download_mp4       = "Laad yn yn MPEG-4 formaat";
+    $check_back         = "Kom gau op 'e nij del om de folgjende fideo te besjen.";
+
+    $play               = "Spilje fideo";
+    $fallback_l1        = "Dizze fideo hat in browser nedich mei stipe foar iepen fideo:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 of heger';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 of heger';
+    $fallback_l4        = 'or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Tink fluch
+    </h2>
+
+    <p>Wy hawwe Firefox fans frege om ús te helpen alles oer Firefox 3.5 syn bjusterbaarlike faasje fierder te fertellen. Sjoch hjir nei de resultaten:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Video preview" /><span>
+
+            Besjoch de film fan Kent French: de fluchste klapper fan 'e wrâld
+
+            </span></a></p>
+
+            <p class="secondary">
+            De fluchste klapper fan 'e wrâld, Kent 'Toast' French, applaudissearret foar Firefox. Kent kombinearret syn eigen styl mei fluchheid en úthâlding om te klappen mei in topfaasje fan 12 klappen per sekonde. Hy rekkent der op syn eigen rekôr gau te ferbetterjen.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Lês mear oer Kent</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Video preview" /><span>
+
+            Besjoch de film fan Steven Purugganan: de fluchste stapelaar fan 'e wrâld
+
+            </span></a></p>
+
+            <p class="secondary">
+            Mei-wrâldrekôrhâlder Steven Purugganan hâldt genôch fan Firefox om hiel fluch bekerkes te stapeljen, inkeld foar ús. As dielnimmer oan de World Sport Stacking Association set Steven, as 11-jierige, mei syn flugge hannen in stapel bekerkes op it plak yn 5,93 sekonden.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Lês mear oer Sport Stacking</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Video preview" /><span>
+
+            Besjoch de film fan Todd Taylor: de fluchste banjospiler fan 'e wrâld
+
+            </span></a></p>
+            <p class="secondary">
+            Banjoman Todd Taylor wol graach fluch spylje foar Firefox en sich ek mei-wrâldrekôrhâlder neame. Todd spilet bluegrass, country, pop en rock &amp; roll. Hy bliuwt opnimme en spylje foar films, tv en mear.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Lês mear oer Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

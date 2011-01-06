@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync mobilhoz";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Útra fel</h2>
+    <p>Töltse le a Firefox Sync kiegészítőt és ossza meg a böngészés előzményeit, a könyvjelzőket. a lapokat és az egyéb beállításokat a számítógépe és a mobil telefonja között.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Töltse le a Firefox Sync kiegészítőt</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Miért kell a Firefox Sync?</h3>
+
+    <h4>Gépelni nehéz</h4>
+    <p>Nézzünk szembe a tényekkel: a telefonon való gépelés nehézkes. Intsen búcsút a hosszú URL-ek, keresések begépelésének, mikor az intelligens címsor emlékszik az előzményekre, a könyvjelzőkre a lapokra a számítógépen és a telefonon egyaránt, és a legkevesebb gépeléssel, gyorsan arra a weboldalra vezeti, ahova menni kíván.</p>
+
+    <h4>Ne kezdje az elejéről</h4>
+    <p>Mondjon búcsút az beállítgatásoknak és az újragépelésnek. A Firefox Sync szinkronizálja a Firefox jelszavait és beállításait, így egyből munkához láthat.</p>
+
+    <h4>Induljon útnak</h4>
+    <p>Vigye magával a Firefox böngészőt bárhova, ahol csak jár. Internetezzen a számítógépén, majd induljon útnak, és minden a telefonon várja: az előzmények, a nyitott lapok, a könyvjelzők, az intelligens címsor - pont, ahogy hagyta.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Az első lépések</h3>
+    <ol>
+    <li>
+        <h4>Telepítse a Firefox Sync kiegészítőt a számítógépre</h4>
+        <p>Győződjön meg róla, hogy a számítógépen legalább a Firefox 3.5-ös verziója telepítve van és a telefonja a Firefox által tesztelt készülék (frissítse a <a href="http://firefox.com/">Firefox</a> böngészőt).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Firefox Sync letöltése</a></li>
+            <li>A letöltés befejeztével, nyomja meg a "Firefox újraindítása" gombot a Firefox Sync kiegészítő telepítésének befejezéséhez.</li>
+            <li>A Firefox újraindításakor használja az “Eszközök” menüt, vagy az állapotsor jobb alsó sarkában található Firefox Sync ikon segítségével jelentkezzen be a Firefox Sync szolgáltatásba.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Telepítse a Firefox Sync kiegészítőt a telefonjára</h4>
+        <ul>
+            <li>Menjen a Beállításokhoz és válassza ki a Kiegészítők gombot.</li>
+            <li>Keresse meg és válassza ki a Firefox Sync kiegészítőt. Jelentkezzen be, szinronizáljon és már indulhat is.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

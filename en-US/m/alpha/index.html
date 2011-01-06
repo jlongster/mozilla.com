@@ -1,0 +1,40 @@
+<?php
+    // Please also translate the php variable below
+    // TITLE OF THE PAGE
+    $page_title = "Fennec | Mozilla";
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/fennec.png" alt="Welcome to Fennec" /></h1>
+<p>
+  Try Fennec alpha for Android phones (2.0 and above) and the Nokia N900.
+  <a href="platforms">Other versions</a>
+</p>
+</div>
+
+<?php if (true): // bug 589892, temp. disable device detection ?>
+  <div id="download">
+  <a href="<?= mobileDetails::download_url('en-us', $mobile_platform, mobileDetails::alpha_version) ?>" class="button button-beta">
+    <span>
+      Download Alpha - Free
+      <em>for <?= mobileDetails::$platform_names[$mobile_platform] ?></em>
+    </span>
+  </a>
+  </div>
+
+<?php else: ?>
+  <div id="download">
+    <p>Your device is not supported</p>
+    <p><a href="/<?=$lang?>/mobile/2.0a1/releasenotes/">Release Notes</a></p>
+    <p><a href="http://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">Android System Requirements</a></p>
+  </div>
+<?php endif ?>
+
+
+<?php
+    $link1 = " ";
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

@@ -1,0 +1,37 @@
+<?php
+
+/*
+ * localization note: translate the 3 variables below, $page_title is for the page title bar, the others are for browsers with javascript off
+ *
+ * you can see the page on the staging server here : http://www-trunk.stage.mozilla.com/en-GB/firefox/mu-survey/
+ *
+ */
+
+$page_title             = "Encuesta de actualización de Firefox";
+$noscript_explanation   = "La encuesta de actualización de Firefox está creada con <a href=\"http://www.surveygizmo.com\">la aplicación online de encuestas</a> de SurveyGizmo.";
+$noscript_takesurvey    = "Hacer la encuesta ahora.";
+
+
+include_once "{$config['file_root']}/includes/headers/firefox/surveygizmo.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+
+    <h2 id="main-feature-title">
+    Encuesta de actualización de Firefox
+    </h2>
+
+    <p id="main-feature-contents">
+    Sentimos que no quieras actualizar
+    a Firefox 3.6. Por favor, rellena esta sencilla encuesta para ayudarnos
+    a comprender por qué has elegido no actualizar.
+    </p>
+
+</div>
+
+
+<?php
+include_once "{$config['file_root']}/includes/firefox/3.0-eol-surveygizmo.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

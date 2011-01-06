@@ -1,0 +1,101 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter';
+    $body_class    = 'newsletter-aboutmozilla';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+    <style>
+        #newsletter #doc {
+          background-image: url('/img/newsletter/about_mozilla/preview.png');
+        }
+    </style>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('ABOUT_MOZILLA', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error-'. $form->error;
+    }
+?>
+
+<div id="main-feature">
+    <h2>Subscribe to <span>about:mozilla!</span></h2>
+    <p>Our about:mozilla newsletter brings you the latest and greatest news from the Mozilla contributor community.</p>
+</div>
+
+<div id="content">
+
+<ul id="email-form" class="<?= $status ?>">
+    <li id="form-pane">
+      <form action="" method="post">
+        <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
+        <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+
+        <div class="field required" id="email-field">
+          <label for="email">Your email address</label>
+          <span class="error-wrapper"><input name="email" type="email" id="email" value="<?= $form->get('email') ?>"></span>
+        </div>
+
+        <div class="field" id="country-field">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select country</option>
+            <?= regionsAsOptions($lang, $form->get('country')) ?>
+          </select>
+        </div>
+
+        <div class="field" id="format-field">
+          <?php
+              $html_format = 'checked="checked"';
+              $text_format = '';
+              if ($form->get('format') == 'text') {
+                  $text_format = 'checked="checked"';
+                  $html_format = '';
+              }
+          ?>
+          <span class="field-label">Format</span>
+          <div class="field-radios">
+            <label for="html-format">HTML</label>
+            <input type="radio" name="format" id="html-format" value="html" <?= $html_format?>>
+            <label for="text-format">Text</label>
+            <input type="radio" name="format" id="text-format" value="text" <?= $text_format?>>
+          </div>
+        </div>
+      
+        <div class="field" id="privacy-field">
+          <label for="privacy-check" id="privacy-check-label">
+            <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+            <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?>></span>
+            <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <div class="field" id="submit-field">
+          <input name="submit" type="submit" value="Sign me up!" id="subscribe">
+        </div>
+
+        <p id="disclaimer">We will only send you Mozilla-related information.</p>
+      </form>
+    </li>
+
+    <li id="success-pane">
+      <h3>Thanks for Subscribing!</h3>
+      <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
+      <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
+    </li>
+</ul>
+
+
+</div><!-- end #content div -->
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

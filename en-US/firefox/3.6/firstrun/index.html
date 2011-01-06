@@ -1,0 +1,89 @@
+<?php
+$page_title = 'Welcome to Firefox';
+
+include_once "{$config['file_root']}/includes/headers/3.6/firstrun.inc.php";
+
+include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h1><img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/title.png')?>" alt="Firefox 3.6" id="title-logo" /></h1>
+</div>
+
+<div id="main-content">
+
+    <div id="intro">
+        <h2>Welcome!</h2>
+        <p>Firefox is created by Mozilla, a non-profit organization dedicated to promoting openness, innovation and opportunity on the Web. Simply put, we want to make the Web better for everyone (including you, of course).</p>
+        <p>Thanks for your support, and happy browsing!</p>
+    </div>
+
+    <div id="sidebar">
+
+        <p>Here are some really easy things you can do to get started:</p>
+
+        <ul>
+            <li id="sidebar-personas">
+                <a href="http://www.getpersonas.com/gallery?source=fxfirstrun"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com', 'DCS.dcsuri', '/gallery', 'WT.ti', 'Personas');">
+                    Decorate your Firefox with <span class="highlight">Personas <span class="arrow">»</span></span>
+                </a>
+            </li>
+            <li id="sidebar-addons">
+                <a href="https://addons.mozilla.org/en-US/firefox/?src=fxfirstrun"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org', 'DCS.dcsuri', '/en-US/firefox/', 'WT.ti', 'Addons');">
+                    Browse better with <span class="highlight">Add-ons <span class="arrow">»</span></span>
+                </a>
+            </li>
+            <li id="sidebar-mobile">
+                <a href="/<?=$lang?>/mobile/?source=firstrun"
+                   onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/mobile/', 'WT.ti', 'Mobile');">
+                    Get Firefox on your <span class="highlight">mobile <span class="arrow">»</span></span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+<div id="footer">
+
+    <div class="sub-feature" id="connect">
+        <?php 
+          $newsletter_wt_subscribe_uri = '/button/firstrun/newsletter_subscribe.html';
+          $newsletter_wt_subscribe_ti = 'First%20Run%20Newsletter%20Subscribe';
+          $newsletter_wt_blade_uri = '/button/firstrun/newsletter_blade.html';
+          $newsletter_wt_blade_ti = 'First%20Run%20Newsletter%20Blade';
+          include "{$config['file_root']}/en-US/newsletter-form.html" 
+        ?>
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">// <![CDATA[
+    // Add a class to the body tag to alternate promo features
+    var class_options = new Array( "default", "thunderbird", "reminderfox", "rockyourfirefox", "live", "participate" );
+
+    if (Math.random) {
+        var choice = Math.floor(Math.random() * (class_options.length));
+
+        // Just in case javascript gets carried away...
+        choice = ( (choice < class_options.length)  && choice >= 0) ? choice : 0;
+
+		if (document.body.className == '') {
+			document.body.className = class_options[choice];
+		} else {
+			document.body.className += ' '+class_options[choice];
+		}
+    }
+// ]]></script>
+
+<?php
+
+include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% Software orgánico';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+
+$extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>La mejor forma de navegar en Internet</h2>
+    <p>O, qué puede hacer por vos un navegador producido por una comunidad.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Productos</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Seguridad</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Personalización</a></li>
+    <li><span>100% Software orgánico</span></li>
+    <li><a href="/<?=$lang?>/firefox/features/">Características</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Consejos y trucos</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Notas del lanzamiento</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Otros sistemas e idiomas</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>¿Qué significa software orgánico?</h3>
+    <p><strong>Somos bastante diferentes al resto de compañías de software.</strong> Usamos el concepto de ‘software orgánico’ para resumir la forma en que nos diferenciamos:</p>
+    <p>Nuestro producto más conocido, Firefox, es desarrollado por una comunidad internacional de miles de personas. Sólo unos pocos son actualmente empleados de la compañía.</p>
+    <p>Nos motiva la idea de promover una web abierta en la que estén presentes la innovación y las oportunidades. No nos preocupamos por los temas relacioneados con el negocio, como las ganancias o el valor de nuestras acciones (adivina qué: ni siquiera tenemos acciones).</p>
+    <p>Y como una <a href="http://www.mozilla.org/foundation/">organización sin fines de lucro y de beneficio público</a>, definimos el éxito en términos de construir comunidades y enriquecer la vida de las personas. Creemos en el potencial de Internet y queremos que su crecimiento beneficie a todas las personas, en cualquier lugar del mundo.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Firefox girl" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>¿Qué es el código abierto?</h3>
+        <p>Esto puede sonar descabellado al principio, pero te pedimos paciencia: <strong>creemos que cuanta más gente conozca nuestros "secretos", será mejor.</strong></p>
+        <p>Por lo tanto, exponemos el código fuente de Firefox –los engranajes que hacen que todo funcione– al mundo y alentamos a que todos le den una mirada.</p>
+        <p>Algunas personas ven cosas que se pueden mejorar y hacen los arreglos. Otros tienen ideas para nuevas funcionalidades y las hacen realidad. Y otros toman ese código, aplican sus innovaciones y construyen productos completamente nuevos (e increíbles).</p>
+        <p>¿La moraleja del cuento? Ser abiertos significa que pasarán cosas buenas. Cualquiera puede mirar detrás de nuestro telón… de hecho, no hay ningún telón.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>¿Por qué te tendría que importar?</h3>
+        <p>Podemos no ser una típica compañía, pero <strong>todavía sabemos cómo enfocarnos en lo más importante: hacer Internet mejor para vos</strong>.</p>
+        <p>Ser abiertos significa que la próxima gran idea puede llegar desde cualquier lugar del mundo, en lugar de confiar en una pequeña cantidad de empleados en las oficinas de nuestra compañía. Cuando miras la situación desde este punto de vista, ¿por qué lo harías de alguna otra?</p>
+        <p>Toda esta charla acerca del software orgánico y de código abierto en última instancia significa un mejor navegador para vos y otros 130 millones de usuarios regulares de Firefox. Significa un producto de la más alta calidad y más seguro. Significa innovación, libertad y hace posible que Internet sea accesible para todos.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="what-is-mozilla">
+        <li>
+             <h3>¿Qué es Mozilla?</h3>
+             <p>Somos una comunidad global, una organización de bien público y un proyecto de software de código abierto. <span><a href="/<?=$lang?>/about/">Aprendé más acerca de nosotros</a></span></p>
+         </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

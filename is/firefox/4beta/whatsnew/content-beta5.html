@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1>Hvað er nýtt í <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox er að breyta því hvernig margmiðlun er á vefnum: nýja hljóðviðmótið opnar fyrir hljóðið sem er í <code>&lt;video&gt;</code> og <code>&lt;audio&gt;</code> einindunum í HTML5 sem gerir það að verkum að auðvelt er fyrir forritara að nota JS til að lesa og skrifa hljóðgögn. Horfðu á myndbandið til að fræðast meira.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Deila viðbrögðum »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Útgáfuupplýsingar »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Nýjustu fréttir</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Skjáhröðun (Aðeins í Windows)</h4>
+        <p>Upplifðu geðveikt hraða skjáhröðun með Direct2D, sem er nú sjálfgefið, á DirectX 10 studdum vélbúnaði.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Öruggar nettengingar</h4>
+        <p>Með því að nota <acronym title="HTTP Strict-Transport-Security ">HSTS</acronym>, geta vefsvæði núna beðið Firefox um að nota sjálfkrafa öruggar tengingar við vefsvæðin, og komið þannig í veg fyrir að vafasamir aðilar geti hlustað á viðkvæm gögn sem gætu verið í hættu þegar vefsvæðið er heimsótt. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Fræðast meira »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

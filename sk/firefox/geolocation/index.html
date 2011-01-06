@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geolokalizácia vo Firefoxe";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Prehliadanie s&nbsp;lokalizáciou</h2>
+    <p>Firefox môže povedať webovým serverom, kde sa nachádzate, a tak vám umožní nájsť informácie,
+    ktoré sú pre vás dôležitejšie a&nbsp;užitočnejšie. Web sa tým stane inteligentnejším
+    &ndash; a&nbsp;je to spravené spôsobom, ktorý úplne rešpektuje vaše súkromie.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Skúste to!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Často kladené otázky</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Čo znamená Prehliadanie s&nbsp;lokalizáciou?</h4>
+    <div class="expander-content">
+        <p>Servery, používajúce prehliadanie so zisťovaním polohy, si zistia, kde ste, aby vám mohli poskytnúť relevantnejšie informácie, alebo aby vám ušetrili čas strávený vyhľadávaním. Povedzme, že zháňate najbližšiu taliansku reštauráciu v&nbsp;okolí. Stránkam bude umožnené spýtať sa na vašu polohu, takže keď vyhľadáte „pizza“, dostanete odpovede, ktoré potrebujete&hellip; nebude treba písať žiadne ďalšie informácie.</p>
+        <p>Alebo ďalší príklad, ak si pomocou&nbsp;mapy plánujete cestu, stránky budú vedieť odkiaľ štartujete, takže vy musíte len zadať, povedať kam chcete ísť.</p>
+        <p>Tieto služby sú úplne voliteľné &ndash; Firefox neodovzdá vašu polohu bez vášho povolenia &ndash; a&nbsp; úplne rešpektuje vaše súkromie. Samozrejme, ako všetky ostatné prvky Firefoxu, je táto funkcia vytvorená s&nbsp;ohľadom na otvorené štandardy, čo zjednodušuje prácu webovým vývojárom.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ako to funguje?</h4>
+    <div class="expander-content">
+        <p>Keď navštívite stránky, ktoré podporujú určenie polohy, Firefox sa vás opýta, či chcete so serverom zdieľať informácie o svojej polohe.</p>
+        <p>Ak súhlasíte, Firefox zozbiera informácie o&nbsp;najbližších prístupových bodoch bezdrôtových sietí a&nbsp; IP adresu vášho počítača. Potom tieto informácie pošle predvolenému poskytovateľovi geolokalizačných služieb, Google Location Services, aby z&nbsp;nich mohol odhadnúť vašu polohu. Tento odhad sa potom pošle stránke, ktorá o&nbsp;to požiadala.</p>
+        <p>Ak nebudete súhlasiť, Firefox žiadne informácie neodošle.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ako presné je určenie polohy?</h4>
+    <div class="expander-content">
+        <p>Presnosť je na rôznych miestach rôzna. Niekde môžu poskytovatelia určiť polohu s&nbsp;presnosťou aj na niekoľko metrov. V&nbsp;iných oblastiach to však môže byť oveľa viac. Všetky určenia polohy dodávané našimi poskytovateľmi služieb sú odhadmi a&nbsp;my nezaručujeme ich presnosť. Prosím, nepoužívajte tieto informácie napríklad v&nbsp;prípade hroziaceho nebezpečenstva, radšej použite obvyklý zdravý rozum.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Aké informácie sa posielajú, a&nbsp;kam? Ako je chránené moje súkromie?</h4>
+    <div class="expander-content">
+        <p>Vaše súkromie je pre nás veľmi dôležité a&nbsp;Firefox nebude nikdy posielať informácie o&nbsp;vašej polohe bez vášho súhlasu. Ak navštívite stránky, ktoré vyžadujú informácie o&nbsp;vás, opýta sa vás ešte predtým, ako budú akékoľvek údaje zdieľané so serverom a&nbsp;našim poskytovateľom služieb (tretia strana), ktorý ich požaduje.</p>
+        <p>Štandardne Firefox používa na určenie vašej polohy služby Google Location Services, a to zaslaním:</p>
+        <ul>
+            <li>adresy IP vášho počítača,</li>
+            <li>informácií o&nbsp;okolitých prístupových bodoch bezdrôtových sietí,</li>
+            <li>a&nbsp;náhodného identifikátora klienta, ktorý je pridelený spoločnosťou Google, a&nbsp;ktorého platnosť vyprší každé 2 týždne.</li>
+        </ul>
+        <p>Ak chcete získať popis všetkých informácií zozbieraných a&nbsp;používaných prehliadačom Firefox, prosím, prečítajte si <a href="/<?=$lang?>/legal/privacy/firefox-en.html">zásady ochrany súkromia Firefoxu</a> (v&nbsp;angličtine).</p>
+        <p>Google Location Services potom vráti vašu odhadovanú polohu (teda zemepisnú šírku a&nbsp;dĺžku). Kompletné informácie o&nbsp;informáciách, ktoré zozbiera a&nbsp;použije Google, popisuje dokument <a href="http://www.google.com/privacy-lsf.html" class="external">zásady ochrany súkromia lokalizácie Google</a> (v&nbsp;angličtine).</p>
+        <p>Vaše súkromie je chránené tým, že informácie sú posielané prostredníctvom zabezpečeného spojenia. Keď už má Firefox informácie o&nbsp;vašej polohe, odošle ich webovému serveru, ktorý o&nbsp;ne požiadal. Počas toho nikdy nie je s&nbsp;lokalizačnou službou Google zdieľaný názov ani umiestnenie stránok, ktoré ste navštívili, ani nie sú nastavené žiadne cookies.</p>
+        <p>Ani Mozilla ani Google nikdy nebudú informácie zozbierané prostredníctvom Google Location Services používať na vašu identifikáciu či sledovanie.</p>
+        <p>Ak chcete získať informácie, ako stránky vyžadujúce informácie o&nbsp;vašej polohe nakladajú s&nbsp;týmito údajmi, prosím, vyhľadajte na príslušných stránkach príslušné zásady v&nbsp;oblasti ochrany súkromia.</p>
+        <p>Ak chcete získať ďalšie informácie o&nbsp;vašej bezpečnosti, mali by ste si tiež prečítať:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Zásady ochrany súkromia Mozilla Firefox</a> (v&nbsp;angličtine)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Zásady ochrany súkromia spoločnosti Google</a> (v&nbsp;angličtine)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Som počas prehliadania webu sledovaný?</h4>
+    <div class="expander-content">
+        <p>Nie. Firefox zisťuje vašu polohu iba keď ju webové stránky požadujú, a&nbsp;oznámi ju iba ak túto požiadavku používateľ schváli. Firefox nestopuje ani neukladá vašu polohu počas prehliadania webu.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Ako odoberiem oprávnenie udelené nejakému serveru?</h4>
+    <div class="expander-content">
+        <p>Ak ste Firefoxu udelili povolenie odovzdávať vašu polohu vždy, keď stránky o&nbsp;ňu požiadajú, a&nbsp;neskôr si to rozmyslíte, môžete toto povolenie jednoducho odvolať. Tu je postup:</p>
+        <ul>
+            <li>Prejdite na stránku, ktorej ste dali povolenie.</li>
+            <li>Z&nbsp;ponuky <em>Nástroje</em> vyberte <em>Informácie o&nbsp;stránke</em>.</li>
+            <li>Zvoľte panel <em>Povolenia</em>.</li>
+            <li>Zmeňte nastavenie <em>Prezradenie polohy</em>.</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ako zmažem „náhodné identifikačné číslo klienta“?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Z&nbsp;ponuky <em>Nástroje</em> zvoľte <em>Vymazať nedávnu históriu</em>.</li>
+            <li>Kliknite na šípku <em>Podrobnosti</em>.</li>
+            <li>Ubezpečte sa, že voľba <em>Cookies</em> je aktivovaná.</li>
+            <li>Kliknite na <em>Odstrániť</em>.</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ako vypnem prehliadanie s&nbsp;lokalizáciou natrvalo?</h4>
+    <div class="expander-content">
+        <p>Prehliadanie so zisťovaním polohy je vo Firefoxe vždy len voliteľná funkcia. Žiadne informácie sa nikdy nepošlú bez vášho povolenia. Ak chcete túto funkciu úplne vypnúť, prosím urobte tieto kroky:</p>
+        <ul>
+            <li>Do panelu s&nbsp;adresou napíšte <code>about:config</code>.</li>
+            <li>Napíšte <code>geo.enabled</code></li>
+            <li>Dvakrát kliknite na položku <em>geo.enabled</em>.</li>
+            <li>Prehliadanie so zisťovaním polohy je vypnuté.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Kde som?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ejha! Pri zisťovaní vašej pozície nastala chyba.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

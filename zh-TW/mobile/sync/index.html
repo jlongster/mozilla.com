@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "供 Mobile 使用的 Firefox Sync";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>起而行！</h2>
+    <p>使用 Firefox Sync，在您的 PC 與行動裝置之間共用瀏覽記錄、書籤、分頁與更多資訊。</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">立刻下載 Firefox Sync 附加元件</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>為什麼要使用 Firefox Sync？</h3>
+
+    <h4>手機不易輸入文字</h4>
+    <p>無論怎樣，在手機上輸入文字向來麻煩至極。向輸入落落長的網址和搜尋關鍵字說聲再會，讓 Awesome Bar 記得來自於您 PC 的瀏覽記錄、書籤、分頁與更多資訊，讓智慧位址列指引您快速到達想去的網站。</p>
+
+    <h4>別再砍掉重練</h4>
+    <p>在重置後別再費時重新輸入資料了。Firefox Sync 會將您的 Firefox 設定檔與密碼同步、恢復至手機，讓您立刻能開始工作。</p>
+
+    <h4>起而行！</h4>
+    <p>帶著 Firefox 一起去旅行！使用安裝 Firefox Sync 的 PC 來上網吧，當你離開電腦時，最新的瀏覽記錄、分頁、書籤以及網址列紀錄，在行動裝置上都會為您備齊。</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>新手上路</h3>
+    <ol>
+    <li>
+        <h4>在您的個人電腦上安裝 Firefox Sync</h4>
+        <p>請確定您個人電腦上的 Firefox 是 3.5 或者更高版本（<a href="http://firefox.com/">在此升級 Firefox</a>），且您的行動裝置相容於 Firefox Mobile。
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">下載 Firefox Sync</a></li>
+            <li>下載完成之後，點選「重開 Firefox」完成 Firefox Sync 附加元件安裝。</li>
+            <li>重新啟動 Firefox 後，選擇「工具」選單或是右下角狀態列上的 Firefox Sync 圖示，啟動 Firefox Sync 並登入。</li>
+        </ul>
+    </li>
+    <li>
+        <h4>在您的行動裝置上安裝 Firefox Sync</h4>
+        <ul>
+            <li>開啟設定頁面，選擇附加元件按鈕。</li>
+            <li>搜尋然後選擇 Firefox Sync 附加元件。登入，選擇同步之後就完成了。</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,39 @@
+<?php
+    // please translate the variable below
+    $page_title = "Personalizalo";
+
+    $pageid = "mobile-customize";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Personalizalo</h2>
+    <p>Modificá Firefox y disfrutá del primer navegador para celulares que ofrece extensiones.</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>Hacé propio tu navegador.</h5>
+<p>Las <a href="https://addons.mozilla.org/firefox/mobile">extensiones en el celular</a> ayudan a facilitarte la vida cuando estás fuera. Instala extensiones que permitan compartir tu información con redes sociales, corregir errores de tipeo en las URL o que traduzcan tu pregunta a diferentes idiomas, todo desde la conveniencia de tu dispositivo móvil. Las extensiones son gratis y fáciles de instalar directamente desde tu dispositivo móvil, así que andá a buscarlas.</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="Captura de las extensiones" id="personal-screenshot" />
+
+<h5>Personalizá directamente desde tu dispositivo móvil.</h5>
+<p>Personalizá tu Firefox buscando e instalando extensiones directamente desde tu dispositivo móvil. Sólo desplazá tu dedo a través de la pantalla y seleccioná el botón Herramientas en el costado derecho de la pantalla. Tocá el botón de extensiones y empezá a personalizarlo.</p>
+
+<div id="dev-promo">
+<h3>¿Querés desarrollar una extensión para móviles?</h3>
+<p>Tus innovaciones son esenciales para el éxito de Firefox. Facilitamos el desarrollo de extensiones para dispositivos móviles. Visitá la página de <a href="../developers/">Desarrollo para móviles</a> para saber más.</p>
+</div>
+
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

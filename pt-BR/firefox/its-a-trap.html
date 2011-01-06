@@ -1,0 +1,42 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "É uma cilada!";
+    $body_id    = 'its-a-trap';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/its-a-trap.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>É uma cilada!</h2>
+	<p>Bu! Eu sou uma página mal-intencionada tentando roubar seus dados pessoais!</p>
+</div>
+
+<div id="main-content">
+
+<p>OK, não é verdade, mas sites fraudulentos (também conhecidos como <a href="http://pt.wikipedia.org/wiki/Phishing">phishing</a>) estão espalhados pela Internet, e você deve sempre ter cuidado antes de informar seus dados pessoais a uma página da web. O Firefox 2 e seus sucessores contam com um sistema integrado de <a href="/<?=$lang?>/firefox/phishing-protection/">Proteção Antiphishing</a> para ajudá-lo a identificar sites fraudulentos. Se você estiver usando o Firefox 2 ou uma versão mais recente, você deve ter recebido um aviso sobre uma possível fraude nesta página de exemplo.</p>
+
+<h5>Você também pode proteger-se de possíveis fraudes:</h5>
+
+<ul>
+<li><strong>não clicando em links de emails dizendo ser do seu banco</strong> ou sites comerciais; em vez disso, utilize seus favoritos ou digite o endereço manualmente;</li>
+<li><strong>utilizando o Gerenciador de Senhas</strong> para lembrar as suas senhas em vez de digitá-las manualmente;</li>
+<li><strong>utilizando um cliente de emails como o <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a></strong>, que detecta e alerta o usuário sobre links para possíveis fraudes no seus emails.</li>
+</ul>
+
+</div> <!-- end #main-content  -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+	<?php
+		$_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

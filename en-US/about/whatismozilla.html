@@ -1,0 +1,68 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'What is Mozilla?';
+    $body_id    = 'what-is-mozilla';
+    $breadcrumbs = array(
+        $l10n->get('About') => "/{$lang}/about/",
+        $l10n->get('What is Mozilla?') => "/{$lang}/about/whatismozilla",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/about.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+
+	<h2>What is <span>Mozilla?</span></h2>
+
+	<h3>We’re a global community</h3>
+	<p>of thousands who sincerely believe in the power of technology to enrich people’s lives.</p>
+	<h3>We’re a public benefit organization</h3>
+	<p>dedicated not to making money but to improving the way people everywhere experience the Internet.</p>
+	<h3>And we’re an open source software project</h3>
+	<p>whose code has been used as a platform for some of the Internet’s most innovative projects.</p>
+
+</div>
+
+<div id="main-content">
+
+	<p>The common thread that runs throughout Mozilla is our belief that, as the most significant social and technological development of our time, the Internet is a public resource that must remain open and accessible to all. With this in mind, our efforts are ultimately driven by our mission of encouraging choice, innovation and opportunity online.</p>
+
+	<p>To achieve these goals, we use a highly transparent, extremely collaborative process that brings together thousands of dedicated volunteers around the world with our small staff of employees to coordinate the creation of products like the Firefox web browser. This process is supported by the Mozilla Corporation, which is a wholly-owned subsidiary of the non-profit <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a>.</p>
+
+	<p>In the end, the Mozilla community, organization and technology is all focused on a single goal: <strong>making the Internet better for everyone.</strong></p>
+
+</div>
+
+<div id="sidebar">
+
+	<div class="sidebar-section">
+	<h3>Learn more about:</h3>
+	<ul>
+		<li><a href="/<?=$lang?>/firefox/">The Mozilla Firefox web browser</a></li>
+		<li><a href="/<?=$lang?>/thunderbird/">The Mozilla Thunderbird email application</a></li>
+    <li><a href="http://www.mozilla.org/foundation/" class="external">The Mozilla Foundation</a></li>
+		<li><a href="http://www.mozilla.org/about/mission.html" class="external">The Mozilla Mission</a></li>
+		<li><a href="http://www.mozilla.org/projects/" class="external">Other Mozilla-based software</a></li>
+	</ul>
+	</div>
+
+	<div class="sidebar-section">
+	<h4>Mozilla Corporation Board of Directors</h4>
+	<ul>
+		<li><a href="http://blog.lizardwrangler.com">Mitchell Baker</a>, Chair</li>
+		<li><a href="http://www.linkedin.com/in/reidhoffman">Reid Hoffman</a></li>
+		<li><a href="http://www.linkedin.com/profile/view?id=3934558">Gary Kovacs</a></li>
+		<li><a href="http://john.jubjubs.net">John Lilly</a></li>
+		<li><a href="http://www.shmoop.com/public/management">Ellen Siminoff</a></li>
+	</ul>
+	</div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

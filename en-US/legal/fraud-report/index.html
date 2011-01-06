@@ -1,0 +1,271 @@
+<?php
+
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Violating Website Report | Mozilla';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                        'About'         => "/{$lang}/about/",
+                        'Legal'         => "/{$lang}/about/legal.html",
+                        'Violating Website Report' => ""
+                    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+<style>
+    label {
+       display: block;
+       font-weight: bold;
+    }
+    .small {
+       font-size: .9em;
+       font-weight: normal;
+    }
+    #report-form div {
+	padding: 5px;
+        margin-bottom: 5px;
+    }
+    #report-form p {
+        margin: 0;
+    }
+    .desc {
+        padding-top: 4px;
+        margin: 0;
+        font-size: .8em;
+    }
+    .error {
+        background-color: #ffc5c5;
+        padding: 10px;
+    }
+    .error .msg {
+        margin: 0;
+        color: black;
+        font-weight: bold;
+        margin-top: 3px;
+    }
+    #errors {
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-bottom: 1em !important;
+        text-align: center;
+    }
+    .hidden {
+       display: none;
+    }
+</style>
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    @include_once "{$config['file_root']}/includes/recaptcha/recaptcha.lib.php";
+?>
+
+
+<script>
+    //used to test the URL field for a properly formatted URL
+    var valid_url = /^(http|https|ftp)\:\/\/[a-z0-9\-\.]+\.[a-z]{2,3}(:[a-z0-9]*)?\/?([a-z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~])*$/i;
+
+    String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g,"");
+    }
+
+    //client-side form validation
+    function validate(form) {
+
+        //clear any existing form errors
+        clearErrors(form);
+
+        var valid = true;
+
+        var url = form.url.value.trim();
+        //require the URL field
+        if (url == "") {
+            setError('url', "Please enter the URL of the violating website.");
+            valid = false;
+        } else {
+            //if the user left out the protocol (HTTP, HTTPS, FTP), prefix it for them
+            if (url.search(/^(http|https):\/\//) == -1) {
+                url = "http://" + url;
+            }
+            //if the URL still isn't properly formatted, set a form error
+            if (!valid_url.test(url)) {
+                setError('url', "Please enter a valid website URL.  Valid URLs look like http://www.example.com");
+                valid = false;
+            }
+        }
+        form.url.value = url;
+
+        //if the user selected an option with (specify) but they didn't name a specific product, set a form error
+        if (form.product.value.search(/specify/) != -1 && form.specific_product.value.trim() == "") {
+            setError('specific_product', "Please name the specific product.");
+            valid = false;
+        }
+
+        //if the user is uploading an attachment, make them describe what it is
+        if ((form.attachment.value != "") && (form.attachment_desc.value == "")) {
+            setError('attachment_desc', "Please describe what you are attaching to the report.");
+            valid = false;
+        }
+
+        if (!valid) {
+            document.getElementById('errors').className = 'error';
+            window.scrollTo(0, form.offsetTop);
+        }
+
+        return valid;
+    }
+
+    // set a form field's error state and message
+    // @param id - element id string
+    // @param msg - error string to set
+    function setError(id, msg) {
+        //set <div>'s class to error
+        var elem = document.getElementById(id);
+        if (elem.className.search(/error/) == -1) {
+            elem.className += " error";
+        }
+        //find message <p> and set error message
+        var elems = elem.getElementsByTagName('p');
+        for (var i = 0; i < elems.length; i++) {
+            if (elems[i].className.search(/msg/) != -1) {
+                elems[i].innerHTML = msg;
+            }
+        }
+    }
+
+    //clear any error classes and messages
+    function clearErrors(form) {
+        var elems = form.getElementsByTagName('div');
+        for (var i = 0; i < elems.length; i++) {
+            elems[i].className = elems[i].className.replace(/error/, '');
+        }
+        var elems = form.getElementsByTagName('p');
+        for (var i = 0; i < elems.length; i++) {
+            if (elems[i].className.search(/msg/) != -1) {
+                elems[i].innerHTML = '';
+            }
+        }
+    }
+</script>
+<div id="main-feature">
+    <h2>Protect the Fox (and More!)</h2>
+    <p>Help us safeguard Mozilla’s trademarks by reporting misuse.</p>
+</div>
+<div id="content">
+
+    <div id="intro">
+        <p>The Firefox name or logo on a product or webpage tells you that you are getting a free, high quality, open source browser that has been tested and released by Mozilla. In order to make sure others are not using our trademarks to mislead users into downloading malware, paying for the software, or providing personal information, we need your help.</p>
+        <p><strong>Please use this form to report any websites or mobile app stores that are:</strong></p>
+        <ol>
+            <li>Distributing harmful products under Mozilla brands such as Firefox.</li>
+            <li>Charging for Firefox, Thunderbird, or any of the Mozilla products.
+3. Collecting personal information as a condition to download any of the Mozilla software (registration requirement).</li>
+            <li>Using the Mozilla trademarks to mislead the public into thinking the site is an official Mozilla site or sponsored by Mozilla.</li>
+            <li>Distributing modified versions of Firefox, or any of our Mozilla software, and still using the trademark. Note: anyone may modify Mozilla software, but once modified, it may no longer use Mozilla trademark(s) (e.g., be called Firefox) without a license.</li>
+            <li> Using the Mozilla trademarks (including logos) in any other way that violates our  <a href="http://www.mozilla.org/foundation/trademarks/" target="_blank" title="Mozilla Trademark Policy">Trademark Policy</a> (e.g., trademark is modified or used for commercial purposes).</li>
+        </ol>
+
+        <p>While the uses of our trademarks described above are not allowed, there are lots of ways our community members can use our trademarks without requesting permission. For more information, please review our <a href="http://www.mozilla.org/foundation/trademarks/faq.html">Trademark FAQs</a> or visit <a href="http://www.spreadfirefox.com/">Spreadfirefox.com</a>.</p>
+
+        <p>Once you have reported a website or mobile app, we will analyze it and, if necessary, take the appropriate action. If you would like to provide your email address so that we can follow up with you if we have questions, there is an optional email address field in the form below. We will only use your email address in connection with this report. Please see our privacy policy for more information.</p>
+
+        <p>This form is only for reporting websites that misuse Mozilla trademarks. If you need to contact us about a different trademark matter, please instead send an <a href="mailto:trademarks@mozilla.com">email</a>. If you need to contact Mozilla about anything else, please visit our <a href="http://www.mozilla.com/en-US/about/contact.html">Contacts page</a> for the right way to do so. If you have concerns about non-Mozilla sites engaging in bad activities unrelated to Mozilla trademarks, please don’t use this form and instead contact the owner of that website directly. If you are reporting a site distributing malware or engaged in phishing, please also report the site to the <a href="http://www.google.com/safebrowsing/report_badware/">Google Safe Browsing Team</a>.
+
+        <p>Thank you for your help!</p>
+    </div>
+
+    <form action="/includes/fraud_report.php" method="post" name="reportForm" id="reportForm" enctype="multipart/form-data" onsubmit="return validate(this);">
+        <input name="MAX_FILE_SIZE" type="hidden" value="5242880" />
+        <input name="lang" type="hidden" value="<?= $lang ?>" />
+
+        <p id="errors" class="hidden">There are some errors on the form</p>
+        
+        <div id="url">
+            <label for="fm-url">URL</label>
+            <input size="40" name="url" id="fm-url" type="text" />
+            <p class="desc">The URL of the violating website e.g. http://www.example.com/</p>
+            <p class="msg"></p>
+        </div>
+
+        <div id="category">
+            <label for="fm-category">Category</label>
+            <select name="category" id="fm-category">
+                <option value="0">Charging for software</option>
+                <option value="1">Collecting personal information</option>
+                <option value="2">Domain name violation</option>
+                <option value="3">Logo misuse/modification</option>
+                <option value="4">Distributing modified Firefox/malware</option>
+            </select>
+            <p class="msg"></p>
+        </div>
+        <div id="product">
+            <label for="fm-product">Product</label>
+            <select name="product" id="fm-product">
+                <option value="0">Firefox</option>
+                <option value="2">SeaMonkey</option>
+                <option value="1">Thunderbird</option>
+                <option value="specify-1">Other Mozilla Product/Project (specify)</option>
+            </select>
+            <p class="msg"></p>
+        </div>
+        <div id="specific_product">
+            <label for="fm-specific_product">Name a more specific product, if needed</label>
+            <input size="40" name="specific_product" id="fm-specific_product" type="text" />
+            <p class="msg"></p>
+        </div>
+        <div id="details">
+            <label for="fm-details">Please provide additional details:</label>
+            <textarea cols="70" rows="5" name="details" id="fm-details"></textarea>
+            <p class="msg"></p>
+        </div>
+        <div id="attachment">
+            <label for="fm-attachment">Attachment</label>
+            <input name="attachment" id="fm-attachment" type="file" />
+            <p class="desc">Max. file size is 5 MB</p>
+            <p class="msg"></p>
+        </div>
+        <div id="attachment_desc">
+            <label for="fm-attachment_desc">Attachment Description</label>
+            <input size="40" name="attachment_desc" id="fm-attachment_desc" type="text" />
+            <p class="desc">Please describe what you are attaching.</p>
+            <p class="msg"></p>
+        </div>
+
+        <div id="email">
+            <label for="fm-url">Email address (optional)</label>
+            <input size="40" name="email" id="fm-email" type="email" />
+            <p class="desc">If you choose to provide it, your email address will only be used to contact you about this report. Please see our Privacy Policy for more information.</p>
+            <p class="msg"></p>
+        </div>
+
+        <script>
+            var RecaptchaOptions = {
+                theme: 'clean',
+            };
+        </script>
+
+        <div id="recaptcha">
+            <label>Are you human?</label>
+            <a href="javascript: Recaptcha.showhelp()" style="font-size: .8em">What's this?</a>
+            <script
+                src="http://api.recaptcha.net/challenge?k=<?= $config['recaptcha_pub_key'] ?>">
+            </script>
+        </div>
+
+        <noscript>
+           <iframe src="http://api.recaptcha.net/noscript?k=<?= $config['recaptcha_pub_key'] ?>"
+               height="300" width="500"></iframe><br>
+           <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+           </textarea>
+           <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+        </noscript>
+
+        <div>
+            <input name="submit_form" value="Send Report" type="submit" />
+            <p class="msg"></p>
+        </div>
+        
+    </form>
+
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

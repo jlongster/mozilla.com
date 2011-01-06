@@ -1,0 +1,81 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta – Palikite atsiliepimą";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Kaip sužinojote apie „Firefox 4“ beta programą?";
+$str2       = "Neatsilikite nuo naujienų";
+$str3       = "Užsiprenumeruokite naujienas apie „Firefox“ betą ir kitus su ja susijusius pranešimus el. paštu.";
+$str4       = "Jūsų el. pašto adresas";
+$str5       = "Sutinku su <a href=\"%s\">Privatumo nuostatais</a> <span class='footnote'>(mes Jums siųsime tik informaciją, susijusią su „Mozilla“).</span>";
+$str6       = "Taip pat noriu retkarčiais gauti „Mozillos“ naujienas, patarimus apie darbą su „Firefox“ ir kitą „Mozillos“ informaciją.";
+$str7       = "Prenumeruoti »";
+$str8       = "Ačiū, kad užsiprenumeravote!";
+$str9       = "Netrukus pradėsime Jums siųsti patarimus ir gudrybes, padėsiančias iš „Firefox“ „išspausti“ kuo duagiau, o taip pat – įdomias naujienas apie „Mozillą“ ir mūsų darbus.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Reikia pagalbos</h3>
+        <p>Mes stengiamės paversti „Firefox“ greitesne, lengvesne ir visapusiškai patogesne naudotis naršykle. Tačiau šiam tikslui pasiekti reikia Jūsų pagalbos.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Atsiliepimai</span></li>
+    <li class="more"><h3>Daugiau informacijos anglų kalba</h3></li>
+    <li class="features"><a href="../features/">Savybės</a> </li>
+    <li class="tech"><a href="../technology/">Technologijos</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Atsiliepimų privatumo nuostatai</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Mygtukas „Atsiliepti“" />
+        <h2>Pasidalinkite savo nuomone</h2>
+        <h3>Negaišdami išsakykite, ką galvojate</h3>
+        <p>Tiesiog spustelėkite mygtuką „Atsiliepti“ ir parašykite mums, ką galvojate apie naująją betą. Tai paprasta kaip dukart du!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Jeigu Jūs programuojate…</h2>
+        <h3>Pasidalinkite savo mintimis</h3>
+        <p>Ką manote apie <a href="../features/#under-the-hood">naujas technologines galimybes</a> betoje?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Aplankykite atsiliepimų forumą.</a></p>
+
+        <h3>Registruokite technines problemas</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="„Bugzillos“ logotipas" />
+        <p>Jeigu gerai mokate naudotis „Bugzilla“, praneškite mums apie specifines problemas, kurias aptiksite naršydami.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Užregistruokite klaidą „Firefox 4“ betoje.</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Skleiskite žinią</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Sekite mus „Twitter’yje“</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Tapkite gerbėju „Facebook’e“</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Skaitykite „Mozillos“ tinklaraštį</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Reikia pagalbos?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Mūsų pagalbos svetainėje</a> jau yra atsakymų ir patarimų būtent apie „Firefox 4“ betą.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

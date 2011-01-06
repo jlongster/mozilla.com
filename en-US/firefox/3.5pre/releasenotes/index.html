@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3.5 Preview';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+	
+	<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 3.5 Preview<br/></h2>
+    <p><em>released June 8th, 2009</em>
+    This is a preview of Firefox 3.5, the upcoming version of the
+    Firefox web browser. It has not yet gone through a full set of
+    quality assurance tests, and should not be considered as a 
+    release candidate. However, we appreciate your time and help in
+    testing it by using it as your regular browser.</p>
+    <p>We expect that the Firefox 3.5 Release Candidate to be issued
+    shortly. At that time you will be automatically upgraded to that
+    version.</p>
+    <p>As always, you’re encouraged to tell us what you think, either 
+    using <a href="http://feedback.mozilla.org/">this feedback form</a>
+    or by <a href="https://bugzilla.mozilla.org/">filing a bug in 
+    Bugzilla</a>.</p>
+</div>
+
+
+<div id="main-content">
+
+    <div id="whatsnew" class="expander">
+      <h3 class="expander-header">About this Preview</h3>
+      <div class="expander-content">
+        <p>While this preview release has not undergone a full
+           set of quality assurance tests, it has proven to be
+           stable for the daily use of our nightly user audience,
+           and we expect it to function properly. It is intended 
+           for developers and members of our testing community to
+           use for early evaluation and feedback. Users of the <a
+           href="http://getfirefox.com/">latest released version 
+           of Firefox</a> should not expect all of their add-ons
+           to work properly with this preview.</p>
+      </div>
+    </div>
+
+	<div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Other Resources and Links</h3>
+      <div class="expander-content">
+        <p>The following resources contain useful information about Firefox&nbsp;3.5:</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+          <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+          <li><a href="http://developer.mozilla.org/en/Firefox_3.5_for_developers">Developer Information</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
+            Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+        </ul>
+      </div>
+    </div>
+	<div id="release-notes-footer"></div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

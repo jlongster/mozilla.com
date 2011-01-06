@@ -1,0 +1,106 @@
+<?php
+
+    // translate The variables below please
+
+    // Page title (the browser title bar)
+    $page_title = "아이폰용 Firefox Home";
+
+    // Video player extra variables
+    $video_title  = "Firefox Home 바로 알기";
+    $music_credit = "음악: Kate Earl";
+
+    include_once "{$config['file_root']}/includes/l10n/firefoxhome-page.inc.php";
+
+?>
+
+
+<div id="main-feature">
+  <h2>어디서나<br/>편리하게</h2>
+  <p>Firefox 북마크, 방문기록, 탭 정보를 iPhone에서 사용하세요!</p>
+  <p class="dl">
+    <a href="<?=$ituneslink;?>" class="download-link">
+      <strong>다운로드</strong>
+      <em>iTunes로 연결 &ndash; 무료</em>
+    </a>
+  </p>
+</div>
+
+<?=$sidemenu;?>
+
+
+<div class="features-divider top"><hr /></div>
+  <ul id="main-features">
+    <li class="onthego">
+      <h4>어디서나 바로 이용</h4>
+      <p>PC에서 사용했던 최근 탭 목록을 바로 아이폰에서 사용할 수 있습니다.</p>
+    </li>
+    <li class="less">
+      <h4>편리한 접속</h4>
+      <p>URL을 모두 입력할 필요 없이 북마크 및 방문 기록으로 바로 연결이 가능합>니다.</p>
+    </li>
+    <li class="search">
+      <h4>빠른 검색</h4>
+      <p>스마트 주소창으로 입력을 시작하자 마자 추천 사이트가 나타납니다.</p>
+    </li>
+
+    <?=$video;?>
+  </ul>
+  <div class="features-divider"><hr /></div>
+
+<div id="main-content">
+  <div class="container">
+
+    <h3>왜 아이폰에서 Firefox Home을 써야 하나요?</h3>
+
+    <h4>이동 시 편리한 환경</h4>
+    <p>여러분이 자리에서 일어나서 이동을 할 때 아이폰에서 기다림 없이 편안히 바>로 하던 작업을 계속 할 수 있습니다. 북마크, 방문기록, 탭 정보, 스마트 주소창 등>을 바로 이용할 수 있기 때문입니다.</p>
+
+    <h4>편리한 입력 환경</h4>
+    <p>휴대폰에서 또 다시 정보를 저장할 필요가 없습니다. PC에서 작업하던 그대로 바로 하고 싶은 일을 할 수 있습니다.</p>
+
+    <h4>안전하고 편리한 서비스</h4>
+    <p>여러분의 개인 정보를 철저하게 보호할 보안 서비스를 갖추고 있으며 암호 및 암호키를 이용하여 이중으로 암호화 합니다.</p>
+
+  </div>
+  <div id="main-content-footer"></div>
+
+</div>
+
+<div id="sidebar">
+
+<div id="sidebar">
+    <h3>시작하기</h3>
+    <ol>
+    <li>
+      <h4>무료 <a href="/<?=$lang?>/firefox/sync/">Firefox Sync</a> 부가 기능을 PC에 설치한다.</h4>
+      <p>Firefox Home은 Firefox Sync 부가 기능의 동기화 기능을 이용하여 여러 디바이스로 부터 같은 데이터를 이용할 수 있도록 해 줌으로서 여러분의 iPhone에서도 이용 가능합니다.</p>
+    </li>
+    <li>
+      <h4>Firefox를 재시작 하여 아이디, 계정을 만들어서 암호 및 암호키를 입력하여 로그인한다.</h4>
+		<p>Firefox Home은 암호키를 이용하여 정보 보호를 위해 모든 정보를 암호화 합니다.</p>
+    </li>
+    <li>
+      <h4>Firefo Sync는 서비스간 동기화를 시작합니다. 초기 작업일 경우 약 20분 정도가 소요됩니다.</h4>
+	   <p>Firefox Sync는 사생활 보호 모드를 제외하고 항상 동작합니다. 초기 동기화가 완료된 후 도구 &gt; Sync 메뉴에 최근 업데이트를 보실 수 있습니다.</p>
+    </li>
+
+     <li>
+        <h4>PC 설치를 완료하면 아이폰에 설치된 프로그램에 사용자명, 암호 및 암호키를 입력하고 완료를 선택합니다.</h4>
+        <p>만약 로그인 시 문제가 있으시면 <a href="<?=$sumolink1?>">도움말</a>을 보시기 바랍니다.</p>
+      </li>
+
+    <li>
+      <h4>설정이 완료되면 아이폰에서 PC의 북마크, 방문 기록, 탭 정보를 보실 수 있습니다.</h4>
+      <p>테이터가 보이지 않으신다면 <a href="<?=$sumolink2?>">도움말</a>을 참고하시기 바랍니다.</p>
+	</li>
+    </ol>
+
+      <p><a href="<?=$sumolink3?>">기술 지원 정보</a>(영문)</p>
+      <p><a href="/<?=$lang?>/mobile/home/faq/">자주 묻는 질문</a></p>
+      <p>* 주의: Firefox Sync 계쩡을 만든 후에, 첫 동기화는 시간이 약간 걸립니다. 동기화가 완료된 후에 Firefox Home을 이용할 수 있습니다. 현재는 영어 버전만 제공하고 있으며 향후 다국어 버전으로도 제공할 예정입니다.</p>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

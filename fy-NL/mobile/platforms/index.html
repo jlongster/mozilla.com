@@ -1,0 +1,59 @@
+<?php
+    // please translate the variable below
+    $page_title = "Firefox Mobile Systeemeasken";
+
+    $pageid = "mobile-platforms";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+<div id="main-feature">
+  <div id="feature-contents">
+        <h2>Stipe platfoarms en systeemeasken</h2>
+        <p>Firefox is beskikber foar de mobyl op Maemo en Windows Mobile platfoarms. </p>
+  </div>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang, 'platforms')?>
+</div>
+
+<div id="main-content">
+
+    <h3>Stipe modellen</h3>
+    <p>Hjirûnder is in list mei teste modellen kompatibel mei Firefox.</p>
+
+    <div id="list_maemo">
+        <h4>Maemo</h4>
+        <ul>
+            <li>Nokia N900</li>
+            <li>Nokia N810</li>
+        </ul>
+    </div>
+
+ <?php /* hide winmo
+    <div id="list_winmo">
+        <h4>Windows Mobile</h4>
+        <p><a href="../?platform=winmo" class="download">Laad Firefox foar Windows Mobile yn</a></p>
+        <ul>
+            <li>AT&amp;T Tilt</li>
+            <li>HTC Touch Diamond Pro</li>
+            <li>Palm Treo Pro</li>
+            <li>Samsung Omnia</li>
+        </ul>
+    </div>
+ end hide */ ?>
+
+    <h4 id="list_other">Stiet jo telefoan hjir net tusken?</h4>
+    <p>As jo telefoan net yn de list stiet, kinne jo noch hieltyd Firefox ynlade en brûke op jo mobyl. Jo mobyl moat genôch RAM hawwe (128 MB of mear) om Firefox te brûken. Wy moedigje jo oan om Firefox te brûken op in stipe model sa't jo de folsleine mooglikheden ûnderfine kinne.</p>
+    <p>Jo kinne ek eksperimentearje mei Firefox, kommentaar jaan, tafoegings meitsje en meidwaan troch in ferzje fan Firefox te ynstallearjen op jo PC:</p>
+    <ul>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+    </ul>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

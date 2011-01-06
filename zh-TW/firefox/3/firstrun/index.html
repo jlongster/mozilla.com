@@ -1,0 +1,43 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '歡迎使用 Firefox';
+    $body_id    = 'firstrun';
+    $body_class = 'portal-page';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firstrun-page.css" media="screen" />
+EXTRA_HEADERS;
+    $extra_feature = <<<EXTRA_FEATURE
+<div id="tab-close"><p>Click on the close button on this tab to go to your home page</p></div>
+EXTRA_FEATURE;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+        <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="歡迎使用 Firefox 3"/></h2>
+        <p>感謝您下載 Firefox，這是目前最快、最安全、也最能方便您自訂功能的一版。只要關閉這個分頁，就可以開始瀏覽網路。</p>
+</div>
+
+<div id="main-content">
+        <div class="sub-feature" id="learn_more">
+                  <h3>進一步瞭解</h3>
+                <p>不知道接下來該怎麼做嗎？「新手上路」裡有我們推薦的網站及其他 Firefox 相關資訊。<a href="/<?=$lang?>/firefox/central/">前往「新手上路」</a></p>
+        </div>
+        <div class="sub-feature" id="questions">
+                <h3>碰到問題？</h3>
+                <p>我們的「說明文件」網站中有許多資源，也有英文的線上同步聊天功能，帶你解決問題。<a href="http://support.mozilla.com/<?=$lang?>/kb/">前往「說明文件」</a></p>
+        </div>
+        <div class="sub-feature hide" id="esun">
+                <h3>用 Firefox 線上繳費</h3>
+                <p>現在您也能以 Firefox 使用 WebATM，<a href="https://netbank.esunbank.com.tw/webatm/">玉山銀行 WebATM</a>領先支援 Firefox !</p>
+        </div>
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script type="text/javascript" src="/zh-TW/js/esun.js"></script>
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

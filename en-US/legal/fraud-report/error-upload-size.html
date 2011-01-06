@@ -1,0 +1,43 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Violating Website Report Sent | Mozilla';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                        'About'         => "/{$lang}/about/",
+                        'Legal'         => "/{$lang}/about/legal.html",
+                        'Violating Website Report' => "/{$lang}/legal/fraud-report/",
+                        'Error' => ""
+                    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<script>
+    window.onload = setGoBack;
+    function setGoBack() {
+        var el = document.getElementById('goback');
+        var content = el.innerHTML;
+        el.innerHTML = "<a href='javascript:history.go(-1)'>"+ content +"</a>";
+    }
+</script>
+
+<div id="main-feature">
+    <h2>Error</h2>
+    <p>Sorry, your attachment is too big.<br>
+       Please <span id="goback">go back</span> and choose a smaller file.</p>
+</div>
+<div id="content">
+    <p>Attachment size is limited to 5MB.  If you need to send a file larger than the limit, you could...</p>
+    <ul>
+        <li>try compressing the file,</li>
+        <li>or post the file elsewhere and give us a link there,</li>
+        <li>or leave us a note (by sending the report without the attachment) 
+            including your email, and we'll work something out.</li>
+    </ul>
+</div>
+    
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

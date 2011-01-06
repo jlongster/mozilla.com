@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Веб-браузер Firefox | Помогите нам протестировать последнюю бета-версию';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Помогите протестировать будущий Firefox!</h2>
+        <p>Вышла последняя бета-версия Firefox. Проведите её тест-драйв и дайте нам знать, что вы о ней думаете!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Важная информация</h4>
+        <p class="intro">Пожалуйста, прочтите следующую информацию перед загрузкой</p>
+    </div>
+    <ul>
+        <li>Это программное обеспечение является пре-релизом: вы можете столкнуться с проблемами совместимости с некоторыми веб-сайтами и дополнениями.</li>
+        <li>Если вы столкнетесь с проблемой, пожалуйста <a href="http://feedback.mozilla.org/">дайте нам о ней знать</a> или <a href="https://bugzilla.mozilla.org/">отправьте сообщение об ошибке</a>.</li>
+        <li>Для получения более подробной информации, прочтите <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">примечания к выпуску</a> и <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">перечень известных проблем</a> (на английском языке).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Не интересуетесь бета-версией? Загрузите <a href="/<?=$lang?>/firefox/">последнюю стабильную версию Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

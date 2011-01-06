@@ -1,0 +1,1047 @@
+/* {{{ Fonts */
+
+body {
+	font-size: 15px;
+	line-height: 1.3;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: georgia, serif;
+	color: #2a2a2a;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #2a2a2a;
+	text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:link span,
+a:visited span,
+a:hover span,
+a:active span {
+	-moz-transition: all 0.1s ease-in;
+	-webkit-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+
+a:hover,
+a:active {
+	color: #111;
+}
+
+a:hover span,
+a:active span,
+a:hover,
+a:active {
+	-moz-transition: all 0.1s ease-out;
+	-webkit-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+}
+
+/* }}} */
+/* {{{ Header and Template */
+
+html {
+	background: #fff;
+	overflow-x; hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	background-position: 0 0;
+	background-repeat: repeat-x;
+	background-image: url(/img/firefox/3.6/firstrun/background.png);
+}
+
+#wrapper {
+	min-height: 600px;
+	padding: 0 10px;
+}
+
+#doc {
+	margin: 0 auto;
+	width: 913px;
+}
+
+h1 {
+	margin: 0;
+	padding-top: 124px;
+}
+
+#title-logo {
+	display: block;
+	height: 130px;
+}
+
+p {
+	margin: 0 0 10px 0;
+}
+
+/* }}} */
+/* {{{ Main Content */
+
+#main-content {
+	margin-top: -15px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	float: left;
+	width: 100%;
+	background-color: #e5f1fe;
+	background-position: 100% 100%;
+	background-repeat: repeat-x;
+	background-image: url(/img/firefox/3.6/firstrun/background-content.png);
+}
+
+#intro {
+	float: left;
+	width: 450px;
+	padding: 40px 50px;
+}
+
+#intro a {
+	text-decoration: underline;
+}
+
+h2 {
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	font-size: 65px;
+	margin: 0;
+}
+
+/* }}} */
+/* {{{ Sidebar */
+
+#sidebar {
+	float: left;
+	width: 273px;
+	min-height: 270px;
+	padding: 20px 45px;
+	margin-bottom: -20px;
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/yeti-top.png);
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar ul li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#sidebar ul li a,
+#sidebar ul li a:link,
+#sidebar ul li a:visited {
+	display: block;
+	font-style: italic;
+	padding: 15px 0 15px 70px;
+	min-height: 36px;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/sidebar-icons.png);
+	line-height: 16px;
+} 
+
+#sidebar ul li a:hover,
+#sidebar ul li a:active {
+	text-decoration: none;
+}
+
+#sidebar ul li#sidebar-addons a { background-position: -400px 0; }
+#sidebar ul li#sidebar-mobile a { background-position: -800px 0; }
+
+#sidebar ul li a span {
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	font-size: 20px;
+	color: #669be1;
+	white-space: nowrap;
+}
+
+#sidebar ul li a:hover span {
+	text-shadow:
+		1px 1px 0 rgba(255,255,255,0.8),
+		0 0 10px rgba(83,141,219,0.5);
+}
+
+#sidebar ul li a span span {
+	font-family: georgia, serif;
+	font-weight: normal;
+	font-size: 28px;
+}
+
+/* }}} */
+/* {{{ Footer */
+
+#footer {
+	float: left;
+	width: 100%;
+	clear: both;
+	margin: 20px 0; 
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #f2f8fe;
+	background-position: 100% 0, 0 0;
+	background-repeat: no-repeat, repeat;
+	background-image:
+	                  url(/img/firefox/3.6/firstrun/yeti-bottom.png),
+	                  url(/img/firefox/3.6/firstrun/background-footer.png);
+}
+
+#connect li {
+	list-style-type: none;
+}
+
+#connect #email-form {
+	width: 400px;
+	float: left;
+}
+
+#connect #email-form #open-pane a,
+#connect #email-form #open-pane a:link,
+#connect #email-form #open-pane a:visited {
+    display: block;
+    padding: 5px 0 5px 50px;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 20px;
+    background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/icon-email.png);
+}
+
+#connect #email-form #open-pane a:hover,
+#connect #email-form #open-pane a:active {
+    text-decoration: none; 
+}
+
+#connect #email-form a span,
+#connect #email-form a:link span,
+#connect #email-form a:visited span {
+    display: block;
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	font-size: 20px;
+	color: #669be1;
+	white-space: nowrap;
+}
+
+#connect #email-form a:hover span,
+#connect #email-form a:active span {
+	text-shadow:
+		1px 1px 0 rgba(255,255,255,0.8),
+		0 0 10px rgba(83,141,219,0.5);
+}
+
+#connect p {
+	margin: 0;
+}
+
+#connect ul.social {
+	float: right;
+	margin-right: 40px;
+}
+
+#connect ul.social li {
+	float: left;
+	list-style-type: none;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+
+#connect ul.social li a,
+#connect ul.social li a:link,
+#connect ul.social li a:visited {
+	display: block;
+	width: 80px;
+	padding: 45px 0 0 0;
+	font-family: georgia, serif;
+	font-weight: normal;
+	line-height: 18px;
+	font-style: italic;
+	font-size: 13px;
+	text-align: center;
+	background-position: 50% 5px;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/icon-social.png);
+}
+
+#connect ul.social li a:hover,
+#connect ul.social li a:active {
+	text-shadow:
+		1px 1px 0 rgba(255,255,255,0.8),
+		0 0 10px rgba(83,141,219,0.8);
+	background-position: 50% 1px;
+}
+
+#connect ul.social li#connect-facebook a,
+#connect ul.social li#connect-facebook a:link,
+#connect ul.social li#connect-facebook a:visited
+ { background-position: 50% -188px; }
+#connect ul.social li#connect-facebook a:hover { background-position: 50% -192px; }
+
+/* }}} */
+/* {{{ Newsletter Form */
+
+#email-form #form-pane {
+  display: none;
+}
+
+#email-form.error #form-pane {
+  display: block;
+}
+#email-form.error #open-pane {
+  display: none;
+}
+
+#form-pane form,
+#success-pane p {
+	padding: 10px 0;
+	color: #555;
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+#form-pane,
+#success-pane {
+	position: relative;
+}
+
+#success-pane h3 {
+    font-weight: normal;
+    font-style: italic;
+    margin: 0;
+}
+
+#success-pane h3 img {
+	position: absolute;
+	top: -12px;
+	right: 0;
+}
+
+#form-pane p.intro {
+	margin-bottom: 10px;
+}
+
+#form-pane p.footnote {
+	color: #999
+}
+
+#form-pane form select#country,
+#form-pane form input#email {
+	color: #999;
+    background: #fff;
+	width: 218px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #aaa #cdcdcd #cdcdcd #aaa;
+	padding: 3px;
+	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+	-moz-border-radius: 3px;
+}
+
+#form-pane #country-field {
+    padding: 10px 0 0 0;
+}
+
+#form-pane form select#country {
+	width: 225px;
+	font-size: 14px;
+	color: #555;
+	-moz-box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1);
+	border-color: #cdcdcd #aaa #aaa #cdcdcd;
+}
+
+#form-pane form input#email:focus {
+	color: #555;
+}
+
+#form-pane form input#subscribe {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	font-size: 20px;
+	color: #669be1;
+	white-space: nowrap;
+}
+
+#form-pane form input#subscribe:hover {
+	text-shadow:
+		1px 1px 0 rgba(255,255,255,0.8),
+		0 0 10px rgba(83,141,219,0.8);
+
+}
+
+#form-pane form label {
+	display: block;
+	padding: 10px 0 0 0;
+}
+
+#form-pane form label input {
+	vertical-align: middle;
+}
+
+#form-pane form .form-error input#email {
+	border-width: 2px;
+	padding: 2px;
+	border-color: #cc4927;
+}
+
+#form-pane form label#privacy-check-label span {
+	border: 2px solid #fff;
+	display: inline-block;
+	padding: 2px;
+	-moz-border-radius: 4px;
+	line-height: 0.8;
+}
+
+#form-pane form label#privacy-check-label a {
+	text-decoration: underline;
+}
+
+#connect p.form-error {
+	display: none;
+	border: 2px solid #cc4927;
+	color: #cc4927;
+	background: #fff;
+	font-family: MetaWebPro-Book,sans-serif;
+	font-size: 14px;
+	padding: 6px;
+	-moz-border-radius: 4px;
+	width: 150px;
+    float: right;
+}
+
+#connect p.form-error-visible {
+	display: block;
+}
+
+#form-pane form label#privacy-check-label.form-error span {
+	border-color: #cc4927;
+}
+
+
+/* }}} */
+/* {{{ What's New */
+
+#whatsnew #main-content {
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-image: url(/img/firefox/3.6/firstrun/background-content-whatsnew.png);
+}
+
+#whatsnew #personas {
+    position: relative;
+    margin: 40px 40px 30px 50px;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+
+#whatsnew #personas h3 {
+	font-family: georgia, serif;
+	font-weight: normal;
+    font-style: italic;
+    color: #303030;
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+    margin-right: 325px;
+}
+
+#whatsnew #personas h3 span {
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+    font-size: 42px;
+    display: block;
+    letter-spacing: -0.02em;
+}
+
+#whatsnew #personas p {
+    margin: 10px 0;
+    font-style: italic;
+    margin-right: 325px;
+}
+
+#whatsnew #personas ul.link {
+    margin-right: 325px;
+    float: left;
+}
+
+#whatsnew #personas iframe {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+	border: 0;
+	display: block;
+	margin: 0 auto;
+}
+
+#whatsnew ul.link {
+    margin: 0;
+    padding: 0;
+}
+
+#whatsnew ul.link li {
+	margin: 10px 0 0 0;
+	padding: 0;
+    list-style-type: none;
+	line-height: normal;
+	line-height: 24px;
+	-moz-border-radius: 12px;
+	background: #fff -moz-linear-gradient(top,#fff 50%, #fcfcfc 0%);
+	-moz-box-shadow: 0 2px rgba(0,0,0,0.05), inset 0 -2px rgba(0,0,0,0.05);
+	border: 1px solid rgba(0,0,0,0.15);
+}
+
+#whatsnew ul.link li a {
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAMAAADUOCSZAAAAM1BMVEU4AADB2fjv9f2SvPSpy/bg7Pyxz/eawfS51PiixvXY5/vJ3vn3+v7Q4vro8f2Kt/ODs/LKfzhhAAAAAXRSTlMAQObYZgAAAHZJREFUGNNt0EESgCAIBVBMzSyVf//TBrJpIDbO8AYEaNyksQb5ODH1yXl5OXjTAw40san8UAFOosHg6kRyShVW/A3NCV0/pLlFowEcf1KRrjlMh7TdjScbaf8ZgPoGcQ/JJupoDpYtmND8TZP1yC0e+7BDBHgBPWIGKLbjNQIAAAAASUVORK5CYII=);
+	display: block;
+	padding: 5px 35px 7px 10px;
+	text-shadow: 0 1px #e2f2fa;
+	text-decoration: none;
+	font-size: 16px;
+	min-height: 0;
+    font-style: italic;
+}
+
+#whatsnew #main-feature {
+    padding-top: 50px;
+	height: 125px;
+    position: relative;
+    z-index: 10;
+}
+
+#whatsnew #main-feature img {
+	float: left;
+	height: 128px;
+	width: 128px;
+}
+
+#whatsnew #main-feature h2 {
+	float: none;
+	font-size: 38px;
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+	margin: 15px 80px 0 145px;
+}
+
+#whatsnew #main-feature p a {
+    text-decoration: underline;
+}
+ 
+#whatsnew #main-feature.flash-warning h2 {
+	font-size: 220%;
+}
+
+#whatsnew.whatsnew-3-6-2 #main-feature.latest-version h2 {
+	font-size: 320%;
+	margin-top: 0;
+	letter-spacing: -0.025em;
+}
+
+#whatsnew #main-feature h2.unknown-version {
+	font-size: 32px;
+}
+
+#whatsnew #main-feature p {
+	margin: 0 55px 10px 145px;
+    font-size: 14px;
+}
+
+#main-feature.flash-warning p,
+#main-feature.flash-warning h2 {
+	margin-left: 200px;
+}
+
+
+#whatsnew #main-content.flash-warning {
+	min-height: 180px;
+	height: auto;
+	background: url(/img/firefox/out-of-date/flash-warning.png) 10px 65px no-repeat;
+}
+
+#main-feature.flash-warning #title-logo {
+	display: none;
+}
+
+#wrapper.flash-warning {
+	background-position: 50% -80px;
+	background-repeat: no-repeat;
+}
+
+#main-content.flash-warning #flash-warning {
+	display: block;
+	background: #fee5bf url(/img/firefox/out-of-date/flash-warning.png) 12px 50% no-repeat;
+	border: 1px solid #f9ae64;
+	padding: 45px 45px 45px 200px;
+	position: relative;
+	-moz-border-radius: 10px;
+	-moz-box-shadow: 0 2px rgba(0,0,0,0.05), inset 0 -2px rgba(0,0,0,0.05);
+}
+
+#main-content.flash-warning #flash-warning h2 {
+	font-size: 42px;
+}
+
+#main-content.flash-warning #flash-warning p {
+	color: #cd6400;
+	font-family: MetaWebPro-Book, sans-serif;
+	line-height: 1.2;
+	margin: 10px 0 0 0;
+}
+
+#main-content.flash-warning #flash-warning h2,
+#main-content.flash-warning #flash-warning a:link,
+#main-content.flash-warning #flash-warning a:visited,
+#main-content.flash-warning #flash-warning a:hover,
+#main-content.flash-warning #flash-warning a:active {
+	color: #a0560d;
+	text-decoration: underline;
+}
+
+#main-content.flash-warning #flash-warning h2 {
+	text-decoration: none;
+}
+
+#whatsnew #sub-links {
+    clear: both;
+	font-style: italic;
+	text-align: right;
+	padding-top: 20px;
+	font-size: 14px;
+}
+
+#whatsnew #sub-links a {
+	margin-left: 20px;
+}
+
+#whatsnew #sub-links a span {
+	color: #669be1;
+}
+
+#whatsnew #sidebar {
+	background: none;
+	padding: 20px 0;
+	width: 913px;
+	min-height: 150px;
+}
+
+#whatsnew #sidebar ul li a,
+#whatsnew #sidebar ul li a:link,
+#whatsnew #sidebar ul li a:visited {
+	line-height: 24px;
+}
+
+#whatsnew #sidebar ul li a:hover,
+#whatsnew #sidebar ul li a:active {
+	text-shadow:
+		1px 1px 0 rgba(255,255,255,0.8),
+		0 0 15px rgba(83,141,219,1);
+}
+
+
+#whatsnew #sidebar .sub-feature {
+	float: left;
+	height: 120px;
+	width: 250px;
+	padding: 10px 20px;
+	margin-right: 20px;
+	background-color: #e3f0fe;
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-image: url(/img/firefox/3.6/firstrun/background-sidebar-whatsnew.png);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#whatsnew #sidebar .sub-feature:last-child {
+	margin-right: 0;
+}
+
+#whatsnew #sidebar .sub-feature h3 {
+	margin: 0;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 18px;
+    min-height: 30px;
+}
+
+#whatsnew #sidebar .sub-feature p {
+	color: #414141;
+	font-size: 14px;
+	margin-right: 85px;
+}
+
+#whatsnew #sidebar #add-ons.sub-feature {
+    position: relative;
+}
+
+#whatsnew #sidebar #personalize.sub-feature .container,
+#whatsnew #sidebar #add-ons.sub-feature .container {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    padding: 20px 20px 10px 20px;
+	background-position: 100% 0;
+	background-repeat: no-repeat;
+}
+
+#whatsnew #sidebar #newsletter.sub-feature .container {
+	background-position: 100% 3px;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/icon-newsletter.png);
+}
+
+#whatsnew #sidebar #social.sub-feature ul.link li {
+	border: 0;
+	-moz-box-shadow: none;
+	margin: 0;
+	background: transparent;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-image: url(/img/firefox/3.6/firstrun/icons-social.png);
+}
+
+#whatsnew #sidebar #social.sub-feature ul.link li#connect-facebook { background-position: -300px 50%; }
+#whatsnew #sidebar #social.sub-feature ul.link li#connect-participate { background-position: -600px 50%; }
+
+#whatsnew #sidebar #social.sub-feature ul.link li a {
+	padding-left: 40px;
+}
+
+#personalize { position: relative; }
+
+#personalize h3 {
+	margin-right: 45px;
+    min-height: 30px;
+}
+
+#personalize ul.link a {
+	width: 200px;
+}
+
+#personalize #personalize-thunderbird {
+	display: none;
+	background-image: url(/img/firefox/3.6/firstrun/icon-thunderbird.png);
+}
+
+body.thunderbird #personalize #default { display: none; }
+body.thunderbird #personalize #personalize-thunderbird { display: block; }
+
+#personalize #personalize-rockyourfirefox {
+	display: none;
+	background-image: url(/img/firefox/3.6/firstrun/icon-rock.png);
+}
+
+body.rockyourfirefox #personalize #personalize-rockyourfirefox h3 img {
+	height: 29px;
+	border: 0;
+    display: block;
+}
+
+body.rockyourfirefox #personalize {
+	background: #e9f2f5 url(/img/firefox/3.6/firstrun/rockyourfirefox/background.png) top right no-repeat;
+}
+body.rockyourfirefox #personalize #default { display: none; }
+body.rockyourfirefox #personalize #personalize-rockyourfirefox { display: block; }
+
+#personalize #personalize-live {
+	background: url(/img/firefox/3.6/firstrun/icon-live.png) top right no-repeat;
+}
+
+.live #personalize #personalize-live h3 a span {
+    color: #d54727;
+	text-transform: uppercase;
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+.live #personalize #default { display: none; }
+.live #personalize #personalize-live { display: block; }
+
+#personalize #personalize-participate {
+  display: none;
+}
+body.participate #personalize #default { display: none; }
+body.participate #personalize #personalize-participate { display: block; }
+
+body.participate #personalize-participate {
+  background-image: url(/img/firefox/3.6/firstrun/icon-participate.png);
+}
+
+#whatsnew .beta-promo#main-content {
+    background: url(/img/firefox/3.6/firstrun/beta-background.jpg) 0 0 no-repeat;
+    height: 238px;
+}
+
+#whatsnew .beta-promo h3,
+#whatsnew .beta-promo ul,
+#whatsnew .beta-promo ul.link,
+#whatsnew .beta-promo p {
+    margin-left: 638px;
+}
+
+#whatsnew .beta-promo h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+#whatsnew .beta-promo ul {
+    padding-left: 15px;
+    margin-top: 10px;
+}
+
+#whatsnew .beta-promo ul.link {
+    padding: 0;
+    margin-right: 15px;
+}
+
+/* }}} */
+/* {{{ What's New Tests */
+
+#whatsnew.nova-c #wrapper {
+    background-image: none;
+}
+
+#whatsnew.nova-c #main-content {
+    background-image: url(/img/firefox/3.6/firstrun/background-content-whatsnew.png);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    position: relative;
+}
+
+.nova-c #footer {
+    background-repeat: repeat;
+    background-image: url(/img/firefox/3.6/firstrun/background-footer.png);
+}
+
+#whatsnew.nova-c #whatsnew-creature {
+    position: absolute;
+    top: -95px;
+    right: -36px;
+    height: 401px;
+    width: 325px;
+    background-image: url(/img/firefox/3.6/firstrun/background-creature-nova-c.png);
+}
+
+#whatsnew.nova-c #main-feature.latest-version p {
+	font-size: 14px;
+}
+
+
+#whatsnew.nova-b #doc {
+    width: 925px;
+}
+
+#whatsnew.nova-b #wrapper {
+    background-position: 50% 0;
+    background-image: url(/img/firefox/3.6/firstrun/background-creature-nova-b.png);
+}
+
+#whatsnew.nova-b #main-feature {
+    padding-top: 70px;
+}
+
+#whatsnew.nova-b #main-content {
+    width: 630px;
+    height: 365px;
+    margin-right: 20px;
+    clear: both;
+    background-image: url(/img/firefox/3.6/firstrun/background-content-whatsnew.png);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    position: relative;
+}
+
+#whatsnew.nova-b #whatsnew-creature {
+    position: absolute;
+    top: -95px;
+    right: -36px;
+    height: 401px;
+    width: 325px;
+    background-image: url(/img/firefox/3.6/firstrun/background-creature-nova-b.png);
+}
+
+#whatsnew.nova-b #sidebar {
+    width: 275px;
+    padding: 0;
+    margin-top: -15px;
+}
+
+#whatsnew.nova-b #sidebar h4 {
+	font-family: georgia, serif;
+	font-weight: normal;
+    font-style: italic;
+    color: #303030;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+
+#whatsnew.nova-b #sidebar h4  span {
+	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-style: normal;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+#whatsnew.nova-b #sidebar .sub-feature {
+    float: none;
+    width: auto;
+    margin: 0;
+    height: auto;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+#whatsnew.nova-b #sidebar #social.sub-feature {
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height: 155px;
+	background-position: 100% 0, 0 0;
+	background-repeat: no-repeat, repeat;
+	background-image:
+        url(/img/firefox/3.6/firstrun/background-creature-nova-b-front.png),
+        url(/img/firefox/3.6/firstrun/background-sidebar-whatsnew.png);
+}
+
+#whatsnew.nova-b #sidebar #social.sub-feature ul.link {
+    margin-left: 10px;
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature {
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 0;
+    background-color: #d1e6fd;
+    background-repeat: repeat-x;
+    background-image: url(/img/firefox/3.6/firstrun/background-sidebar-nova-b.png);
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature .container {
+    position: relative;
+    left: 7px;
+    padding: 20px;
+    min-height: 150px;
+    background-position: 100% 15px;
+    background-repeat: no-repeat;
+    background-image: url(/img/firefox/3.6/firstrun/stumbleupon/su-logo.png);
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature h3,
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature p {
+    margin: 0 75px 5px 0;
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature p {
+    margin-bottom: 50px;
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature  ul.link {
+    position: absolute;
+    bottom: 17px;
+    right: 25px;
+}
+
+#whatsnew.nova-b #sidebar #stumbleupon.sub-feature  ul.link a {
+    font-size: 15px;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+}
+
+#whatsnew.nova-b #personas {
+    margin-top: 60px;
+}
+
+#whatsnew.nova-b #personas h3 {
+    padding-top: 50px;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+#whatsnew.nova-b #personas h3 span {
+    font-size: 50px;
+}
+
+#whatsnew.nova-b #personas p {
+    position: absolute;
+    top: 185px;
+    right: 10px;
+    margin: 0;
+    text-align: center;
+    width: 310px;
+}
+
+#whatsnew.nova-b #personas ul.link {
+    position: absolute;
+    top: 240px;
+    right: 10px;
+    margin: 0;
+}
+
+#whatsnew #sidebar #social.sub-feature ul.link li#connect-newsletter { background-position: -900px 50%; }
+
+#whatsnew.nova-b #sub-links {
+	text-align: left;
+}
+
+#whatsnew.nova-b #main-feature.latest-version p {
+	width: 255px;
+	right: 140px;
+	font-size: 14px;
+	top: 95px;
+}
+
+#whatsnew.nova-b #main-feature.unknown-version h2 {
+	font-size: 28px;
+}
+
+/* }}} */

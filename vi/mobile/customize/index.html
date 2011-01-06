@@ -1,0 +1,39 @@
+<?php
+    // please translate the variable below
+    $page_title = "Tạo Phong Cách Riêng";
+
+    $pageid = "mobile-customize";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Tạo Phong Cách Riêng</h2>
+    <p>Tùy biến Firefox và tận hưởng trình duyệt đầu tiên có tiện ích cho di động.</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>Biến trình duyệt thành của riêng bạn.</h5>
+<p><a href="https://addons.mozilla.org/firefox/mobile">Tiện ích Di động</a> giúp cuộc sống dễ thở hơn khi bạn đi khắp nơi. Cài đặt các tiện ích để chia sẻ thông tin của bạn với mạng xã hội, sửa lỗi gõ URL, hoặc dịch câu hỏi sang một ngôn ngữ khác, tất cả đều thực hiện được trên điện thoại di động của bạn. Tiện ích miễn phí và có thể cài đặt dễ dàng ngay trên di động của bạn, hãy thử nhé.</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="Ảnh chụp tiện ích" id="personal-screenshot" />
+
+<h5>Tùy biến ngay trên điện thoại của bạn.</h5>
+<p>Tùy biến Firefox bằng cách tìm kiếm và cài đặt các tiện ích ngay trên di động của bạn. Chỉ cần lướt qua màn hình và chọn nút 'Công cụ' ở bên phải. Chọn nút tiện ích và bắt đầu tùy biến.</p>
+
+<div id="dev-promo">
+<h3>Muốn phát triển một tiện ích cho di động?</h3>
+<p>Sáng tạo của bạn là yếu tố quan trọng cho sự thành công của Firefox. Chúng tôi đã làm cho việc phát triển tiện ích cho di động trở nên dễ dàng hơn. Hãy vào trang <a href="../developers/">Phát triển cho Di động</a> để tìm hiểu thêm.</p>
+</div>
+
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

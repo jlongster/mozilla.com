@@ -1,0 +1,51 @@
+<?php
+/*  translate the page title below */
+$page_title = "Tervetuloa Firefoxiin";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1>Tervetuloa! <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Kiitos, että ryhdyit Firefox&nbsp;4:n beetatestaajaksi! Olemme tekemässä jotakin hienoa yhdessä, joten anna toki ruusuja ja risuja kokemuksistasi Firefoxin kanssa.</p>
+        <p>Odotamme palautettasi&nbsp;&ndash; katso video, ja tapaa joitakin palautteesi kuuntelijoita.</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Uudet ominaisuudet »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Jaa palautetta »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Julkaisutiedot »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Kerro mielipiteesi</h2>
+        <p>Beetatestaajana olet osa Firefox&nbsp;4:ää tekevää tiimiä. Kerro, jos pidät tai et pidä jostakin napsauttamalla <img src="<?=$screencap;?>" alt="Palaute-painikkeen kuva" /><em>Palaute</em>-painiketta. Voit myös ottaa osaa nimettömiin käyttäjätutkimuksiin tai vastata ajoittaisiin kyselyihin.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>Kuinka käyttäjätutkimukset toimivat?</h5>
+        <p>Käyttäjätutkimukset keräävät nimettömiä tilastoja siitä, kuinka käytät Firefoxia, mutteivät koskaan paljasta, mitä teet verkossa. Saat itse päättää osallistumisesta, eikä mitään tietoja lähetetä Mozillan testipilottipalvelimille ilman lupaasi. Tietoja käytetään apuna Firefox&nbsp;4:n suunnittelussa.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>Entä jos en halua osallistua?</h5>
+        <p>Sinulle kerrotaan ennen kuin yksikään tutkimus alkaa kerätä tietoja sekä lisäksi ennen kuin tiedot lähetetään Mozillalle. Voit jättää minkä tahansa tutkimuksen väliin tai kytkeä ne kokonaan pois päältä. Voit hallita tutkimusten asetuksia <em>Palaute</em>-painikkeen kautta.</p>
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

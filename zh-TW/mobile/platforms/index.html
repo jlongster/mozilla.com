@@ -1,0 +1,59 @@
+<?php
+    // please translate the variable below
+    $page_title = "Firefox Mobile 系統需求";
+
+    $pageid = "mobile-platforms";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+<div id="main-feature">
+  <div id="feature-contents">
+        <h2>支援作業系統與系統需求</h2>
+        <p>Firefox Mobile 可在 Maemo 與 Windows Mobile (beta 中) 作業系統的行動裝置上使用。感謝我們來自世界各地的在地團隊，Maemo 版 Firefox 提供 30 種以上不同的語言版本。</p>
+  </div>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang, 'platforms')?>
+</div>
+
+<div id="main-content">
+
+    <h3>支援裝置</h3>
+    <p>以下是測試過與 Firefox 相容的行動裝置。</p>
+
+    <div id="list_maemo">
+        <h4>Maemo</h4>
+        <ul>
+            <li>Nokia N900</li>
+            <li>Nokia N810</li>
+        </ul>
+    </div>
+
+ <?php /* hide winmo
+    <div id="list_winmo">
+        <h4>Windows Mobile</h4>
+        <p><a href="../?platform=winmo" class="download">下載 Windows Mobile 版 Firefox</a></p>
+        <ul>
+            <li>AT&amp;T Tilt</li>
+            <li>HTC Touch Diamond Pro</li>
+            <li>Palm Treo Pro</li>
+            <li>Samsung Omnia</li>
+        </ul>
+    </div>
+ end hide */ ?>
+
+    <h4 id="list_other">沒有列出您的手機嗎？</h4>
+    <p>如果您的手機或行動裝置不在上面的列表上，您還是可以試著下載安裝 Firefox。您的行動裝置必須要有足夠的 RAM（128MB 以上）以執行 Firefox。即便如此，我們還是建議您下載 Firefox 到已測試過的行動裝置以體驗完整功能。</p>
+    <p>您也可以在 PC 上面安裝測試 Firefox Mobile 以提供建議、製作附加元件、或者參與協助：</p>
+    <ul>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+    </ul>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

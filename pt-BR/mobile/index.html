@@ -1,0 +1,43 @@
+<?php
+
+    // please translate the 3 variables below
+    $page_title         = "Firefox Móvel";
+    $form_field         = "Digite o número do seu telefone";
+    $chooseYourCountry  = "Escolha a sua localização";
+
+	$pageid = 'mobile-home';
+  	include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+<div id="main-feature">
+    <h2>Você já redescobriu a web. Agora leve-a com você!</h2>
+    <p>O Firefox tornou-se móvel.</p>
+</div>
+
+<?=$mobilesubmenu;?>
+<?=$smsformblock;?>
+
+
+<div id="mobile-footer" class="sub-features">
+    <div class="sub-feature" id="video-tour">
+        <h4>Assista ao Tour</h4>
+        <p>Aprenda como o Firefox coloca a web inteira no seu aparelho móvel.</p>
+        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">Assistir ao vídeo</a></p>
+    </div>
+    <div class="sub-feature" id="developers-wanted">
+        <h4>Envolva-se</h4>
+        <p>Contamos com uma comunidade global de pessoas como você para ajudar a construir, testar e divulgar o Firefox.</p>
+        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">Descubra o que você pode fazer</a></p>
+    </div>
+
+    <div class="sub-feature" id="questions-comments">
+        <h4>Dúvidas? Comentários?</h4>
+        <p>Deixe-nos responder as suas perguntas, ou diga o que você pensa sobre o Firefox.</p>
+        <p class="link"><a href="http://mobile.support.mozilla.com/">Obter ajuda</a></p>
+    </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

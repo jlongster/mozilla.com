@@ -1,0 +1,130 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Central do Firefox | Mozilla';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+<style type="text/css">
+	#breadcrumbs {
+		padding-bottom: 20px;
+	}
+	#footer { display: none; }
+	#central-frame h1 { border: 0; }
+	#central-frame h1 img { margin-top: 14px; }
+	h2 { clear: both; }
+	#front-search {
+		float: right;
+		padding: 1em;
+		margin: 0 0 1em 1em;
+		background: #eee;
+		-moz-border-radius: 5px;
+	}
+	img.product-logo {
+		float: left;
+		padding: 0 10px 10px 0;
+	}
+	li { margin-bottom: 0.3em; }
+	img.feature-image {
+		float: right;
+		margin: 0.5em 0 1em 1em;
+	}
+	p.intro {
+		font-size: 130%;
+		color: #777;
+	}
+	#central-frame {
+		margin: 10px 40px;
+	}
+	#start-link {
+		text-align: right;
+	}
+	.central-contents p,
+	.central-contents h3 {
+		border-bottom: none;
+		padding-left: 20px;
+	}
+	.central-contents h3 a { text-decoration: none; }
+	.central-contents h3 a:link    { color: #cd3f16; text-decoration: none; }
+	.central-contents h3 a:visited { color: #cd3f16; }
+	.central-contents h3 a:hover   { color: #333333; }
+	.central-contents h3 a:active  { color: #000000; }
+</style>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="central-frame">
+
+	<h1><img src="/firefox/central/firefox-central-title.png" alt="Bem-vindo ao Firefox" height="28" width="289" /></h1>
+	<p class="first intro">Pronto para sentir a diferença do Firefox?</p>
+
+<div class="central-contents">
+
+<!-- MODULE BEGIN -->
+
+<h2>Iniciando</h2>
+
+<img src="/<?=$lang?>/firefox/central/firefox-search.png" alt="Pesquisa do Firefox" class="feature-image" height="95" width="140" />
+<h3><a href="/<?=$lang?>/firefox/search.html">Pesquisa Integrada</a></h3>
+<p class="first">Beneficie-se do poder dos mecanismos de busca mais populares com o <a href="http://www.mozilla.com/firefox/search.html">Campo de pesquisa</a> integrado, localizado no canto superior direito do Firefox. <a href="http://www.mozilla.com/firefox/search.html">Saiba mais.</a></p>
+
+<h3><a href="https://addons.mozilla.org/">Personalize o Firefox</a></h3>
+<p class="first">Insira novos botões nas suas barras de ferramentas, <a href="https://addons.mozilla.org/">instale extensões</a> para adicionar mais recursos ou mude o visual do seu navegador com novos <a href="https://addons.mozilla.org/firefox/themes/">temas</a> - você tem o controle da aparência e funcionamento do Firefox. Explore as centenas de personalizações gratuitas disponíveis em <a href="https://addons.mozilla.org/">Mozilla Add-ons</a>.</p>
+
+<!-- MODULE END -->
+
+
+<!-- MODULE BEGIN -->
+<h2>Saiba mais...</h2>
+
+<h3><a href="http://opensourcearticles.com/introduction_to_firefox_euportugese" hreflang="pt-PT">Tutoriais</a></h3>
+<p class="first">Um passo-a-passo completo do Firefox pode ser encontrado no <a href="http://opensourcearticles.com/introduction_to_firefox_euportugese" hreflang="pt-PT">tutorial passo-a-passo</a>, de Nidelven IT, além de uma seleção de <a href="http://store.mozilla.org/category.php?catid=1" hreflang="en">guias</a> disponíveis na Loja Mozilla.</p>
+
+<h3><a href="http://www.mozilla.com/support/">Ajuda</a></h3>
+<p class="first">A melhor maneira de começar é clicando em "<span id="help-menu">Conteúdo da ajuda</span>" no menu Ajuda. Além da Ajuda, a <a href="http://www.mozilla.org/community/" hreflang="en">Comunidade</a> Mozilla mantém uma documentação online, <a href="http://forums.mozillazine.org/viewforum.php?f=38" hreflang="en">fóruns de suporte</a>, <a href="http://www.mozilla.com/support/#newsgroups" hreflang="en">newsgroups</a> e salas de <a href="http://www.mozilla.com/support/#chat" hreflang="en">bate-papo</a> de suporte em tempo real.</p>
+<p>Você também poderá encontrar ajuda e documentação em português em <a href="http://br.mozdev.org/suporte/">br.mozdev.org</a> e fóruns de suporte em <a href="http://www.guiadohardware.net/comunidade/v-f/38">Guia do Hardware</a>.</p>
+
+<script type="text/javascript">//<![CDATA[
+	if (gPlatform == 3 || gPlatform == 4)
+		document.getElementById('help-menu').innerHTML="Ajuda do Firefox";
+//]]></script></script>
+
+<!-- MODULE END -->
+
+<p id="start-link">
+<!--script type="text/javascript">
+  var language = "";
+  if (navigator.language)
+    language = navigator.language;
+  else if (navigator.userLanguage)
+    language = navigator.userLanguage;
+  else if (navigator.systemLanguage)
+    language = navigator.systemLanguage;
+  
+  // Convert "en" to "en-US" as well since en-US build is the canonical
+  // translation, and thus better tested.
+  if (language == "" || language == "en")
+    language = "en-US";
+  
+  document.write('<a href="');
+  document.write('http://www.google.com/firefox?client=firefox-a&rls=org.mozilla:'+language);
+  document.write('">');
+</script-->
+<script type="text/javascript">
+<!--
+  document.write('<a href="javascript:window.home();">' +
+                 '<img src="/img/go-to-home.png" ' +
+                 'alt="Ir para a minha página inicial" height="32" width="255"><\/a>');
+//-->
+</script>
+</p>
+
+</div>
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

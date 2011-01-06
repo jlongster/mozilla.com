@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geolocatie in Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Locatiebewust navigeren</h2>
+    <p>Firefox kan websites laten weten waar u zich bevindt, zodat u informatie
+    kunt vinden die relevanter en waardevoller is. Het gaat erom het web slimmer te
+    maken &ndash; en vindt plaats op een manier die uw privacy volledig respecteert.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Probeer het eens!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Veelgestelde vragen</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Wat is Locatiebewust navigeren?</h4>
+    <div class="expander-content">
+        <p>Websites die locatiebewust navigeren gebruiken zullen u vragen waar u zich bevindt, zodat deze u relevantere informatie kunnen aanbieden of u tijd besparen tijdens het zoeken. Stel dat u op zoek bent naar een pizzeria in uw omgeving. Een website kan u vragen uw locatiegegevens te delen, zodat eenvoudig zoeken naar “pizza” u de benodigde antwoorden geeft… zonder dat verdere informatie of extra typewerk nodig is.</p>
+        <p>Of een website zal, als u routes plant om ergens te komen, weten waar vandaan u start, zodat u deze alleen hoeft te vertellen waar u naartoe wilt gaan.</p>
+        <p>Deze service is volledig optioneel &ndash; Firefox deelt uw locatie niet zonder uw toestemming &ndash; en wordt met het uiterste respect voor uw privacy gehanteerd. Tevens wordt, zoals alle onderdelen in Firefox, de service gecreëerd door gebruikmaking van open standaarden om toepassen ervan door webontwikkelaars te vergemakkelijken.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hoe werkt het?</h4>
+    <div class="expander-content">
+        <p>Zodra u een locatiebewuste website bezoekt, zal Firefox u vragen of u uw locatiegegevens wilt doorgeven.</p>
+        <p>Als u akkoord gaat, verzamelt Firefox informatie over draadloze toegangspunten in uw omgeving en het IP-adres van uw computer. Firefox verstuurt deze informatie vervolgens naar de standaard geolocatieserviceprovider, Google Location Services, om een inschatting van uw locatie te bepalen. Deze geschatte locatie wordt vervolgens gedeeld met de website die erom vraagt.</p>
+        <p>Als u zegt dat u niet akkoord gaat, zal Firefox niets doen.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hoe nauwkeurig zijn de locaties?</h4>
+    <div class="expander-content">
+        <p>Nauwkeurigheid varieert enorm van locatie tot locatie. Op sommige posities kunnen onze serviceproviders een locatie tot op enkele meters nauwkeurig bepalen. In andere gebieden kan dit echter veel meer zijn. Alle door onze serviceproviders teruggegeven locaties zijn slechts schattingen en de nauwkeurigheid van de gegeven locaties wordt niet gegarandeerd. Gebruik deze informatie niet voor noodgevallen. Gebruik altijd uw gezond verstand.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Welke informatie wordt er verstuurd, en naar wie? Hoe wordt mijn privacy beschermd?</h4>
+    <div class="expander-content">
+        <p>Uw privacy is voor ons van het grootste belang, en Firefox deelt uw locatie nooit zonder uw toestemming. Wanneer u een pagina bezoekt die om uw informatie vraagt, zal u hiernaar worden gevraagd voordat er enige informatie met de verzoekende website en onze serviceprovider van derden wordt gedeeld.</p>
+        <p>Standaard gebruikt Firefox Google Location Services om uw locatie te bepalen door het volgende te versturen:</p>
+        <ul>
+            <li>het IP-adres van uw computer,</li>
+            <li>informatie over de draadloze toegangspunten in de buurt, en</li>
+            <li>een willekeurige client-identificator, die wordt toegewezen door Google en die elke 2 weken verloopt.</li>
+        </ul>
+        <p>Zie voor een volledige beschrijving van door Firefox verzamelde en gebruikte informatie de <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox Privacy Policy</a> (in het Engels).</p>
+        <p>Google Location Services geeft vervolgens uw geschatte geolocatiegegevens terug (bv. breedte- en hoogtegraad). Zie voor een volledige beschrijving van door Google verzamelde en gebruikte informatie de <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation Privacy Policy</a> (in het Engels).</p>
+        <p>Om uw privacy te beschermen wordt de informatie over een versleutelde verbinding uitgewisseld. Als Firefox uw geolocatie-informatie eenmaal heeft, geeft het dit door aan de website die hierom vroeg. De naam of locatie van de website die u bezoekt of bepaalde cookies zullen op geen enkel moment met Google Location Services worden gedeeld.</p>
+        <p>Noch Mozilla noch Google zal de door Google Location Services verzamelde informatie ooit gebruiken om u te identificeren of te bespioneren.</p>
+        <p>Wend u voor informatie over wat de verzoekende website met uw locatie-informatie doet tot het privacybeleid van de betreffende website.</p>
+        <p>Lees voor meer informatie over uw privacy ook het volgende:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox privacy policy</a> (in het Engels)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google privacy policy</a> (in het Engels)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Word ik gevolgd terwijl ik over het web navigeer?</h4>
+    <div class="expander-content">
+        <p>Nee. Firefox vraagt alleen een locatie op zodra een website een verzoek doet, en deelt uw locatie alleen wanneer de gebruiker het verzoek heeft goedgekeurd. Firefox traceert of onthoudt uw locatie niet tijdens het navigeren.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hoe kan ik aan een website gegeven toestemming ongedaan maken?</h4>
+    <div class="expander-content">
+        <p>Als u Firefox toestemming hebt gegeven om altijd uw locatie aan een website door te geven en zich later bedenkt, kunt u die toestemming makkelijk intrekken. Dit doet u zo:</p>
+        <ul>
+            <li>Navigeer naar de website die u toestemming hebt gegeven</li>
+            <li>Ga naar het menu <em>Extra</em> en selecteer vervolgens <em>Pagina-info</em></li>
+            <li>Selecteer het tabblad <em>Toestemmingen</em></li>
+            <li>Wijzig de instelling voor <em>Locatie doorgeven</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hoe wis ik het “willekeurige client-identificatienummer”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Ga naar het menu <em>Extra</em> en selecteer vervolgens <em>Recente geschiedenis wissen</em></li>
+            <li>Klik op het pijltje <em>Details</em></li>
+            <li>Zorg ervoor dat <em>Cookies</em> is geselecteerd</li>
+            <li>Klik op <em>Nu wissen</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hoe schakel ik Locatiebewust navigeren permanent uit?</h4>
+    <div class="expander-content">
+        <p>Locatiebewust navigeren wordt altijd op aanvraag gebruikt in Firefox. Er wordt nooit informatie verzonden zonder uw toestemming. Als u de functie volledig wilt uitschakelen, volg dan de volgende stappen:</p>
+        <ul>
+            <li>Typ <code>about:config</code> in de URL-balk</li>
+            <li>Typ <code>geo.enabled</code></li>
+            <li>Dubbelklik op de voorkeursinstelling <em>geo.enabled</em></li>
+            <li>Locatiebewust navigeren is nu uitgeschakeld</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Waar ben ik?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Oeps! Er is een fout opgetreden tijdens het bepalen van uw positie.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

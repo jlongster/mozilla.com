@@ -1,0 +1,139 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion für eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-features';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+    <div class="feature-contents">
+        <div id="feature-header">
+            <h3><img src="/en-US/img/add-ons/ebay/features-title.png" height="124" width="490" alt="Features: Highlights of Firefox eBay Edition" /><a href="."><img src="/en-US/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+        </div>
+        <div id="feature-text">
+            <div id="ebay-download">
+                <script type="text/javascript"><!--
+                    var platform = 'win';
+                    var lang = '<?=$lang?>';
+                    var product = 'ebaybundle';
+                    var downloadpage = 'download.html';
+                    var downloadtitle = 'Download Firefox eBay Edition';
+                    var downloadtext = 'Mit Mozilla Firefox 3 für Windows, Deutsch (6.2&nbsp;MB)';
+
+                    if (navigator.platform.indexOf("Win32") != -1) {
+                      downloadtext = 'Mit Mozilla Firefox 3 für Windows, Deutsch (6&nbsp;MB)';
+                      platform = 'win';
+                      product = 'ebaybundle';
+                    } else if (navigator.platform.indexOf("Linux") != -1) {
+                      downloadtext = 'Mit Mozilla Firefox 3 für Linux, Deutsch (10&nbsp;MB)';
+                      platform = 'linux';
+                      product = 'ebaybundle';
+                    } else if ((navigator.userAgent.indexOf("Mac OS X") != -1) ||
+                               (navigator.userAgent.indexOf("MSIE 5.2") != -1) ||
+                               (navigator.platform.indexOf("Mac") != -1)) {
+                      downloadtext = 'Mit Mozilla Firefox 3 für Mac OS X, Deutsch (19&nbsp;MB)';
+                      platform = 'mac';
+                      product = 'ebaybundle';
+                    }
+
+                    if ((navigator.userAgent.indexOf("Firefox/2") != -1) ||
+                        (navigator.userAgent.indexOf("BonEcho/2") != -1)) {
+                            // If the browser is Firefox...
+                            downloadtitle = 'Download Firefox Companion für eBay';
+                            downloadtext  = 'Version 1.5 (777Kb)';
+                            product = 'ebaystandalone';
+                    }
+
+                    document.writeln('<a href="' + downloadpage  + '?product=' + product + '&os=' + platform + '&lang=' + lang + '">' );
+                    document.writeln('<span><strong>' + downloadtitle  + '<\/strong> <em id="ebay-download-text">');
+                    document.writeln(downloadtext);
+                    document.writeln('<\/em><\/span>');
+                    document.writeln('<\/a>');
+
+                --></script>
+                <noscript>
+                  <div class="download">
+                    <a href="download.html"><span><strong>Download</strong></span></a>
+                  </div>
+                </noscript>
+            </div>
+
+            <h3>Mehr Spaß im Internet mit dem Firefox Browser</h3>
+            <p>Mit Firefox haben Sie mehr vom Internet und von eBay. Finden Sie heraus, wie Sie optimal und sicher surfen können und Ihre Aktivitäten auf eBay immer im Blick haben.</p>
+
+            <div class="corner-box">
+            <h4>Schneller Zugriff auf eBay</h4>
+            <img src="/en-US/img/add-ons/ebay/features/01-en-button.png" alt="" class="screenshot" />
+            <p>Sobald Sie eingeloggt sind, sind Sie durch das eBay-Logo in Ihrem Browser nur einen Mausklick von eBay entfernt. Über das eBay-Logo öffnet und schließt sich die Sidebar und gewährt Ihnen schnellen Zugang zu Verlinkungen auf die eBay-Seite.</p>
+            <ul class="features">
+                <li>
+                    <a href="/en-US/img/add-ons/ebay/features/02-en-sidebar.png"><img src="/en-US/img/add-ons/ebay/features/02-en-sidebar_thumb.png" alt="" class="screenshot" /></a>
+                    <h5>Sidebar</h5>
+                    <p>Die Sidebar der eBay-Edition enthält alle wichtigen Informationen aus Mein eBay. Sie können Ihren Verkaufs-, Kauf- und Bewertungsstatus sofort überprüfen. Nutzen Sie die Vorteile der Schnellsuchleiste und der Verknüpfung mit Meine eBay Welt. </p>
+                </li>
+                <li>
+                    <h5>Erinnerungen</h5>
+
+                    <p>Erinnerungsmeldungen machen Sie rechtzeitig auf Angebote aufmerksam, die Sie beobachten bzw. auf die Sie geboten haben.</p>
+                    <ol>
+                        <li>
+                        <a href="/en-US/img/add-ons/ebay/features/03-en-alert.png"><img src="/en-US/img/add-ons/ebay/features/03-en-alert_thumb.png" alt="" class="screenshot" /></a>
+                        <img src="/en-US/img/add-ons/ebay/features/04-en-glow.png" alt="" class="screenshot" />
+                        In einem kleinen Fenster oder in der Sidebar
+Diese Erinnerung dient dazu, dass Sie wichtige Meldungen zum richtigen Zeitpunkt erhalten. Wenn ein Angebot, das Sie beobachten, dem Ende entgegengeht oder wenn Sie überboten wurden, werden Sie sofort von dem Meldungsfeld, das in der unteren rechten Ecke Ihres Browserfensters erscheint, benachrichtigt.</li>
+                        <li>
+                        Bei weniger wichtigen Erinnerungen – wenn zum Bespiel Ihr Gebot automatisch erhöht wurde – leuchtet das eBay-Logo in der Firefox Toolbar (eBay-Logo) auf, um Sie auf eine Statusänderung aufmerksam zu machen.  Sie können dann die Sidebar öffnen, um die Veränderungen anzeigen zu lassen.</li>
+                    </ol>
+                    <a href="/en-US/img/add-ons/ebay/features/05-en-options.png"><img src="/en-US/img/add-ons/ebay/features/05-en-options_thumb.png" alt="" class="screenshot" /></a>
+                    <p>Sie können selbst bestimmen, welche Meldungen Sie erhalten möchten. Nehmen Sie die Einstellungen dazu unter „Optionen“ vor.</p>
+                </li>
+            </ul>
+            </div>
+
+            <div class="corner-box">
+            <h4>Kein Auktionsende mehr verpassen </h4>
+            <p>Ganz gleich, auf welchen Seiten Sie sich im Internet bewegen Sie haben Ihre eBay-Aktivitäten jederzeit im Blick: Beobachten, Kaufen oder Verkaufen.</p>
+            <ul class="features">
+                <li>
+                    <a href="/en-US/img/add-ons/ebay/features/06-en-tooltip.png"><img src="/en-US/img/add-ons/ebay/features/06-en-tooltip_thumb.png" alt="" class="screenshot" /></a>
+                    <h5>Ausführliche Informationen in der Sidebar</h5>
+                    <p>Sie sehen die wichtigsten Informationen zu allen Angeboten, wie zum Beispiel die Anzahl der Gebote und der aktuelle Preis. Weitere Informationen zu einem Angebot erhalten Sie, indem Sie mit Ihrer Maus darüber fahren.</p>
+                </li>
+                <li>
+                    <img src="/en-US/img/add-ons/ebay/features/07-en-refresh.png" alt="" class="screenshot" />
+                    <h5>Intelligente Aktualisierung</h5>
+                    <p>Die Informationen werden in regelmäßigen Abständen aktualisiert. Die Aktualisierungsabstände werden immer kürzer, je näher das Angebotsende des Artikels, den Sie beobachten, auf den Sie geboten haben oder den Sie verkaufen, rückt.</p>
+                </li>
+                <li>
+                    <img src="/en-US/img/add-ons/ebay/features/08-en-context.png" alt="" class="screenshot" />
+                    <h5>Schneller Zugriff auf wichtige Funktionen</h5>
+                    <p>Mit einem Klick auf die rechte Maustaste können Sie beispielsweise die Bewertungsseite eines Verkäufers aufrufen oder einen beobachteten Artikel aus „Mein eBay“ entfernen.</p>
+                </li>
+            </ul>
+            </div>
+
+
+            <div class="corner-box">
+            <img src="/en-US/img/add-ons/ebay/features/09-en-verify-ebay.png" alt="" class="screenshot" />
+            <h4>Sicherer Surfen </h4>
+            <p>Mit dem Sicherheits-Check der eBay-Edition des Mozilla Firefox-Browsers schützen Sie Ihre eBay- und PayPal-Mitgliedsdaten. Der Sicherheits-Check warnt Sie, wenn Sie im Begriff sind, Ihr eBay- oder PayPal-Passwort auf einer Webseite einzugeben, die zwar aussieht wie eine eBay- oder PayPal-Seite, jedoch nicht von eBay oder PayPal ist.</p>
+            <a href="/en-US/img/add-ons/ebay/features/11-en-accountguard.png"><img src="/en-US/img/add-ons/ebay/features/11-en-accountguard_thumb.png" alt="" class="screenshot" /></a>
+<p>Mit dem Firefox Browser schützen Sie sich ebenfalls vor Popup-Fenstern, Spyware und anderen Gefahren im Internet.</p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

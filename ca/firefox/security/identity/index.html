@@ -1,0 +1,108 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Quant a la identificació de llocs web amb un sol clic";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Quant a la identificació de llocs web amb un sol clic</h2>
+    <p>El Firefox 3 conté un nou botó d'identificació de llocs web per a ajudar-vos a saber on us connecteu quan esteu en línia.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Aquesta característica us permet comprovar d'un cop d'ull si el
+lloc web que esteu visitant proporciona informació de la seua identitat,
+qui l'ha verificada, i si es protegeixen les vostres dades d'escoltes no autoritzades.
+Podeu accedir a la identificació de qualsevol lloc web
+fent clic a la icona al marge esquerre de la
+barra d'ubicació (o prement Maj-Tab-Retorn).</p>
+
+<h3>Preguntes més freqüents</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Què signifiquen els diferents nivells d'informació d'identitat?</h4>
+    <div class="expander-content">
+        <p>La icona d'«oficial de passaports» canviarà per a reflectir el nivell de la informació d'identitat que es proporciona amb el lloc web.</p>
+        <p class="site-id site-id-1">El lloc no proporciona cap informació d'identitat.</p>
+        <p class="site-id site-id-2">El lloc proporciona informació d'identitat bàsica, i protegeix les vostres dades personals d'escoltes no autoritzades.</p>
+        <p class="site-id site-id-3">El
+lloc proporciona informació d'identitat plenament verificada pel que fa al seu propietari, i
+protegeix les vostres dades personals d'escoltes no autoritzades.</p>
+        <p class="site-id site-id-4">S'ha
+llistat el lloc com a atacant o com a falsificació. Proporcionar-hi
+cap mena de dada personal, o fins i tot visitar-lo, podria ser perniciós.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Per què no tots els llocs web proporcionen informació verificada de llur identitat?</h4>
+    <div class="expander-content">
+        <p>La
+majoria de llocs web de la xarxa no soŀliciten cap tipus d'informació personal
+o financera dels visitants, i tampoc deuen trobar necessari d'assumir el
+cost de proporcionar verificació de la identitat i protecció d'escoltes
+no autoritzades.</p>
+        <p>Els llocs web que volen que proporcioneu informació personal o
+financera, o que diuen representat entitats governamentals o
+empresarials, haurien sempre d'identificar-se adequadament i
+protegir la vostra informació d'escoltes no autoritzades.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">És segur fer negocis amb llocs que no s'identifiquen?</h4>
+    <div class="expander-content">
+        <p>Decidir
+en qui confiar a la xarxa comença sabent amb qui esteu parlant, però
+això no és tota la història. Els llocs que proporcionen informació
+d'identitat i no protegeixen les vostres dades personals us posen en
+risc, i no haurien de considerar-se segurs. Però també els llocs que s'identifiquen
+adequadament podrien tenir pràctiques de les quals podeu estar en desacord, o bé
+desatendre'n la seguretat.</p>
+        <p>Com en el món real, aneu amb
+compte quan interaccioneu amb els llocs els quals no coneixeu o hi confieu.
+Saber que el lloc s'ha identificat adequadament és un primer pas per a
+decidir en qui confiar.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mozilla verifica la informació de tots els llocs web?</h4>
+    <div class="expander-content">
+        <p>La
+informació que s'utilitza per a identificar els llocs web no la verifica Mozilla.
+El Firefox, com altres navegadors, confia en un conjunt de companyies que
+s'anomenen «Autoritats certificadores», que verifiquen la identitat del lloc
+i n'emeten «certificats» d'identitat. Aquestes companyies s'han d'adherir a la <a href="http://www.mozilla.org/projects/security/certs/policy/">política de certificats de CA de Mozilla</a>
+que, entre altres punts, demana a les CA (autoritats certificadores) que proporcionin auditories de tercers parts
+que confirmin que no emeten certificats de forma inapropiada.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

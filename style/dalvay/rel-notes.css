@@ -1,0 +1,60 @@
+/* Hack for old release notes menus */
+
+#content { position: relative; }
+
+#side {
+	position: absolute;
+	top: 0;
+	right: 50px;
+}
+
+#smartDownloadLink ul.home-download a {
+	height: auto;
+	width: auto;
+	background: #EDF2F2 none repeat scroll 0%;
+	margin: 0;
+	padding: 8px 10px;
+}
+#smartDownloadLink ul.home-download a:hover { background: #E0E9E9 none repeat scroll 0%; }
+
+#smartDownloadLink ul.home-download a strong {
+	height: auto;
+	width: auto;
+	background: none;
+	font-size: 100%;
+	font-weight: bold;
+	color: #003399;
+}
+
+#smartDownloadLink ul.home-download a span {
+	height: auto;
+	width: auto;
+	background: none;
+	margin: 0;
+	padding: 0;
+	min-height: 0;
+}
+* html #smartDownloadLink ul.home-download a span { height: auto; }
+
+#smartDownloadLink ul.home-download a em {
+	height: auto;
+	width: auto;
+	background: none;
+	color: #666;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Show linux download only */
+#nav ul.os_linux li.os_windows,
+#nav ul.os_linux li.os_osx { display: none;}
+
+/* Show windows download only */
+#nav ul.os_windows li.os_linux,
+#nav ul.os_windows li.os_osx { display: none;}
+
+/* Show mac download only */
+#nav ul.os_osx li.os_linux,
+#nav ul.os_osx li.os_windows { display: none;}

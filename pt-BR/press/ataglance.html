@@ -1,0 +1,101 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla de perto';
+    $body_id    = 'ataglance';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/press-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Mozilla de perto</h2>
+	<p>Uma rápida ideia sobre quem somos e o que queremos.</p>
+</div>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="main-content">
+	<div class="ataglance-items">
+        <h4>Sobre a Mozilla</h4>
+        <ul>
+            <li>A Mozilla é uma organização de benefício público sem fins lucrativos com pouco mais de 250 funcionários</li>
+            <li>Somos suportados por uma comunidade de milhares de pessoas dedicadas a nos ajudar a construir uma Internet melhor</li>
+            <li>Nossa missão é manter a Internet livre, promovendo abertura, inovação e oportunidade na web</li>
+            <li><a href="/<?=$lang?>/about/whatismozilla.html">Saiba mais sobre a Mozilla</a></li>
+        </ul>
+    </div>
+	<div class="ataglance-items">
+        <h4>Comunidade Mozilla</h4>
+        <ul>
+            <li>Mais de 1.000 voluntários contribuíram com o código do Firefox</li>
+            <li>20.000 pessoas baixam e testam atualizações diárias do Firefox, e perto de 1 milhão de pessoas baixaram e testaram o Firefox 3.5 beta</li>
+            <li>400.000 pessoas contribuíram com a Mozilla usando nosso sistema de registro de falhas e sugestões <a href="http://bugzilla.mozilla.org/" hreflang="en">Bugzilla</a></li>
+            <li><a href="http://support.mozilla.org/">SUMO</a>, o site de suporte da Mozilla construído pela comunidade, ajuda uma média de 10.000 usuários do Firefox por semana</li>
+            <li>Estudantes de mais de 600 instituições em 57 países divulgam o Firefox como representantes do programa Mozilla Campus</li>
+        </ul>
+    </div>
+	<div class="ataglance-items ataglance-items-last">
+        <h4>O que aconteceu quando</h4>
+        <ul>
+            <li>31 de Março de 1998: o Projeto Mozilla toma forma como um projeto de código livre na Netscape e lança seu código</li>
+            <li>5 de Junho de 2002: lançado o Mozilla 1.0</li>
+            <li>Julho de 2003: fundada a Mozilla Foundation</li>
+            <li>Fevereiro de 2004: fundada a Mozilla Europe</li>
+            <li>Agosto de 2004: fundada a Mozilla Japan</li>
+            <li>9 de Novembro de 2004: lançado o Mozilla Firefox 1.0</li>
+            <li>4 de Março de 2005: fundada a Mozilla China Foundation</li>
+            <li>Agosto de 2005: a Mozilla Foundation cria a Mozilla Corporation</li>
+            <li>29 de Novembro de 2005: lançado o Mozilla Firefox 1.5</li>
+            <li>24 de Outubro de 2006: lançado o Mozilla Firefox 2.0</li>
+            <li>17 de Junho de 2008: a Mozilla lança o Firefox 3 e <a href="http://www.spreadfirefox.com/pt-BR/worldrecord">estabelece um Recorde Mundial no Guiness Book</a> pelo maior número de downloads de um programa em 24 horas</li>
+            <li>30 de Junho de 2009: lançado o Firefox 3.5</li>
+            <li>21 de Janeiro de 2010: lançado o Firefox 3.6</li>
+        </ul>
+    </div>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+	<div class="ataglance-items">
+        <h4>O Firefox em números</h4>
+        <ul>
+            <li>Mais de 330 milhões de pessoas ao redor do mundo usam o Firefox</li>
+            <li>O Firefox é um programa livre e de código aberto com aproximadamente 40% do seu código escrito por voluntários</li>
+            <li>A fatia de mercado global do Firefox é de 24,07% (Net Applications, Outubro de 2009)</li>
+            <li>Até Agosto de 2009, o Firefox foi baixado mais de um bilhão de vezes</li>
+        </ul>
+    </div>
+
+	<div class="ataglance-items">
+        <h4>O navegador global</h4>
+        <ul>
+            <li>O Firefox está disponível em mais de 70 idiomas (cobrindo mais de 97% da população mundial online)</li>
+            <li>Firefox é usado em todos os países do mundo</li>
+            <li>Quase todas as versões em idiomas diferentes do Inglês foram localizadas por voluntários da comunidade Mozilla</li>
+            <li>Mais de 50% dos usuários globais do Firefox usam versões em idiomas diferentes do Inglês</li>
+        </ul>
+    </div>
+	<div class="ataglance-items">
+        <h4>O poder da personalização</h4>
+        <ul>
+            <li>Mais de 6.000 complementos gratuitos desenvolvidos pela comunidade disponíveis para o Firefox - mais do que para qualquer outro navegador</li>
+            <li>7 milhões de downloads de <a href="http://www.getpersonas.com" hreflang="en">Personas</a> com 20.000 Personas oferecidas por 10.000 artistas (Agosto de 2009)</li>
+        </ul>
+    </div>
+	<div class="ataglance-items">
+        <h4>Alcançando a mobilidade</h4>
+        <ul>
+            <li>A iniciativa móvel da Mozilla, de codinome Fennec, é baseada na crença de que, independente do dispositivo do qual você a acessa, a web é uma só</li>
+            <li>Construído com a mesma tecnologia do núcleo do Firefox, o Fennec tem boa parte dos excelentes recursos da versão desktop</li>
+        </ul>
+	</div>
+
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

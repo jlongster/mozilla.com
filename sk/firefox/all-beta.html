@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Webový prehliadač Firefox | Pomôžte nám otestovať najnovšiu verziu beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Pomôžte otestovať nový Firefox!</h2>
+        <p>Najnovšia testovacia beta verzia Firefoxu je teraz dostupná ako ukážkové vydanie. Vyskúšajte ju a dajte nám vedieť, čo si myslíte!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Dôležitá informácia</h4>
+        <p class="intro">Prečítajte pred inštaláciou</p>
+    </div>
+    <ul>
+        <li>Toto je testovacia verzia: pri jej používaní môžete naraziť na problémy s kompatibilitou niektorých stránok alebo doplnkov.</li>
+        <li>Ak natrafíte na problém, <a href="http://feedback.mozilla.org/">dajte nám vedieť</a> alebo <a href="https://bugzilla.mozilla.org/">založte nový bug</a>.</li>
+        <li>Viac informácií nájdete v&nbsp;<a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">poznámkach k vydaniu</a> a <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">zozname známych chýb</a> (v angličtine).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nehľadáte testovaciu verziu? Prevezmite si <a href="/<?=$lang?>/firefox/">najnovšiu verziu Firefoxu</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

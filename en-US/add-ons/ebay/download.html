@@ -1,0 +1,147 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Download';
+    $body_id    = 'download';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+	<style>
+		#store_promo {
+			margin: 2em;
+			line-height: 1.5;
+			width: 35em;
+		}
+		#store_promo img { padding-bottom: 2em; }
+		#content { line-height: 1.5; }
+		.product-note { margin-top: 1em; font-size: 80%; display: block; color: #666; }
+		p.waiting-message { font-size: 120%; color: #666; margin-top: 0; }
+		#download .main-feature-thunderbird #main-feature-background {
+			background-image: url(/img/download/main-feature-thunderbird.jpg);
+		}
+		#main-feature h2 { margin-right: 350px; margin-left: 35px; font-size: 250%; }
+	</style>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+	<div id="download_message">
+
+<script>
+<!--//--><![CDATA[//><!--
+	function parseGETVars()
+	{
+		var qs = location.search.substring(1);
+		if (qs.match(/[^-&=a-zA-Z0-9\.]/))
+			return false;
+		var nv = qs.split('&');
+		var url = new Object();
+		for(i = 0; i < nv.length; i++) {
+			eq = nv[i].indexOf('=');
+			url[nv[i].substring(0,eq).toLowerCase()] = unescape(nv[i].substring(eq + 1));
+		}
+
+		return url;
+	}
+
+
+	var download_url = '';
+
+	function initDownload()
+	{
+		// 1. Grab vars from URL (PRODUCT, OS, and LANG)
+		var get = parseGETVars();
+
+		var product = (get['product']) ? get['product'] : null;
+		var os= (get['os']) ? get['os'] : null;
+		var lang = (get['lang']) ? get['lang'] : null;
+		
+		var div = document.getElementById('download_message');
+
+		if (!product || !os || !lang) {
+			div.innerHTML = '<h3>Invalid URL Variables<\/h3>';
+			return;
+		}
+
+		switch (product) {
+			case 'ebaybundle' :
+				product_title = 'Firefox eBay Edition';
+				switch (os) {
+					case 'win' :
+						download_url = 'https://partnerbuilds.mozilla.com/ebay/3.6.8/win32/en-US/Firefox%20Setup%203.6.8.exe';
+						break;
+					case 'mac' :
+						download_url = 'https://partnerbuilds.mozilla.com/ebay/3.6.8/mac/en-US/Firefox%203.6.8.dmg';
+						break;
+					case 'linux' :
+						download_url = 'https://partnerbuilds.mozilla.com/ebay/3.6.8/linux-i686/en-US/firefox-3.6.8.tar.bz2';
+						break;
+					default:
+						download_url = 'https://partnerbuilds.mozilla.com/ebay/3.6.8/win32/en-US/Firefox%20Setup%203.6.8.exe';
+				}
+				break;
+			case 'ebaystandalone' :
+				product_title = 'eBay Sidebar';
+				download_url = 'https://addons.mozilla.org/en-US/firefox/downloads/latest/5202/platform:5/addon-5202-latest.xpi?src=external-ebay\" onclick=\"window.location.href=\'https://addons.mozilla.org/services/install.php?addon_id=5202&src=mozilla-en-US\'\; return false\;';
+				download_onclick = 'https://addons.mozilla.org/services/install.php?addon_id=5202&src=mozilla-en-US';
+				break;
+		}
+
+		// 3. display the download URL as a manual fall-back link
+		var msg = '<div id="main-feature" class="main-feature-' + product + '"><div id="main-feature-background"><div class="feature-contents">';
+		msg += '<h2>Thank you for downloading ' + product_title + '<\/h2>';
+		msg += '<\/div><\/div><\/div>';
+		msg += '<div id="content">';
+		msg += '<p class="waiting-message">Your download will begin shortly...<br />';
+		msg += 'If your download does not start after a few seconds, use this ';
+		var link_text = 'link';
+		msg += link_text.link(download_url) + '.';
+
+		msg += '<\/div>';
+
+		div.innerHTML = msg;
+	}
+
+	function downloadURL()
+	{
+		// 5. automatically start the download of the file at the constructed download.mozilla.org URL
+                var get = parseGETVars();
+                var product = (get['product']) ? get['product'] : null;
+		switch (product) {
+			case 'ebaybundle' :
+				window.location = download_url;
+				break;
+			case 'ebaystandalone' :
+				window.location = download_onclick;
+				break;
+		}			
+	}
+
+	initDownload();
+
+	if (download_url.length != 0)
+		window.onload = downloadURL;
+//--><!]]></script>
+<noscript>
+
+	<div id="main-feature">
+	<div id="main-feature-background">
+		<div class="feature-contents">
+			<h2>Download Firefox eBay Edition</h2>
+		</div>
+	</div>
+	</div>
+
+	<div id="content">
+
+	<div>
+		<a href="https://partnerbuilds.mozilla.com/ebay/3.6.8/win32/en-US/Firefox%20Setup%203.6.8.exe"><span><strong>Download for Windows</strong></span></a><br />
+		<a href="https://partnerbuilds.mozilla.com/ebay/3.6.8/mac/en-US/Firefox%203.6.8.dmg"><span><strong>Download for Mac</strong></span></a><br />
+		<a href="https://partnerbuilds.mozilla.com/ebay/3.6.8/en-US/firefox-3.6.8.tar.bz2"><span><strong>Download for Linux</strong></span></a><br />
+		<a href="https://addons.mozilla.org/en-US/firefox/downloads/latest/5202/platform:5/addon-5202-latest.xpi?src=mozilla-en-US" onclick="window.location.href='https://addons.mozilla.org/services/install.php?addon_id=5202&src=mozilla-en-US'; return false;"><span><strong>Download Extension Only</strong></span></a>
+	</div>
+	</div> <!-- end .content  -->
+</noscript>
+
+</div> <!-- end #download_message -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

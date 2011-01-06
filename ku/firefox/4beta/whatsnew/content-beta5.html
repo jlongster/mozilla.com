@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1>Di <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />yê de çi tiştên nû hene</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox rêbaza deng û vîdeoyan a di webê de diguherîne: APIya nû ya Audioyê daneyên audioyê bi elementên <code>&lt;vîdeo&gt;</code> û <code>&lt;audio&gt;</code> ên HTML5ê pêşkêş dike; bi vê rêbazê pêşdebir dikarin JSê bi hêsanî bi kar bînin û daneyên audiyonê bi hêsanî bixwînin û binivîsin. Ji bo zêdetir agahiyan wergirî, li vîdeoyê temaşe bike.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Ramanên Xwe Parve Bike »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Têbiniyên Weşanê »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Nûçeyên Dawî</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Grafîkan Dide Lezandin (Tenê Paceyan)</h4>
+        <p>Bi Direct2Dê lezkara super-lezgîn a grafîkan biceribîne, niha li ser reqalava bi piştgiriya DiretX10ê standard e.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Têkiliyên Pêşkêşkara Ewle</h4>
+        <p>Bikaranîna <acronym title="HTTP Strict-Transport-Security ">HSTS</acronym>ê, niha malper dikarin bi awayekî xweber ji Firefoxê re têkiliyên ewle yên pêşkêşkara xwe, êrîşkarên ji daneyên bihîstiyar û rîskan ragihînin. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Zêdetir fêr bibe »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

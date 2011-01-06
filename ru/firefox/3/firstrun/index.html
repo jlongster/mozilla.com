@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Добро пожаловать в Firefox';
+    $extra_feature_text = 'Для перехода на свою домашнюю страницу щёлкните по кнопке закрытия вкладки';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Добро пожаловать в Firefox 3"/></h2>
+    <p>Спасибо за то, что загрузили самую безопасную, быструю и гибко настраиваемую версию Firefox на сегодняшний день. Для начала просмотра веб-страниц просто закройте эту вкладку, как показано выше.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Узнайте больше</h3>
+        <p>Любопытно, что делать дальше? Начальная страница содержит список рекомендуемых нами сайтов, а также дополнительную информацию о Firefox. <a href="/<?=$lang?>/firefox/central/">Посетить начальную страницу</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Есть вопросы?</h3>
+        <p>На сайте поддержки есть ответы на множество вопросов, чат в реальном времени, который поможет вам выйти из любой затруднительной ситуации, и многое другое. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Посетить сайт поддержки</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

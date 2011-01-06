@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>מה חדש ב־<img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>נא להדק חגורות</h3>
+        <p>Firefox 4 כולל שיפור ביצועים, כולל מנוע ה־JavaScript החדש שלנו JägerMonkey. אתה תבחין באופן מיידי בזמני טעינה קצרים יותר ותצוגה גרפית מהירה יותר, שישפרו את מהירות עלית הדפים.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">שתף משוב »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">הערות שחרור »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">בחן את ההדגמה בעצמך »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>תלת ממד ברשת</h4>
+        <p>WebGL מביא גרפיקה תלת ממדית ל־Firefox, ופותח את הדלת בפני מפתחים לייצר משחקים וצורות חדשות להצגת מידע ולשפר את הרשת.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>גופנים נהדרים</h4>
+        <p>תכונות ה־OpenType החדשות של Firefox 4 מאפשרות למעצבים ולמפתחים שליטה טובה יותר על תכונות הגופנים — כגון kerning או ligatures — וזאת כדי לאפשר בניית אתרים מרשימים.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>שדרוג טפסים</h4>
+        <p>Firefox 4 מאפשר יצירת טפסים יפים ובצורה פשוטה למימוש. עם תכונות כגון מאפיינים חדשים לרשימות המאפשרות מילוי אוטומטי ובדיקת תקינות הטופס של HTML5, ממשק הטפסים החדש מאפשר למימושי הטפסים המטרידים להיות נחלת העבר.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Got Firefox 4 beta?</h4>
+        <h5>מעכשיו תוכל לקחת אותו איתך.</h5>
+        <p>קבל את Firefox על מכשירי Android או Nokia N900. תהנה מכל התכונות האהובות כמו Sync, תוספות ושורת הכתובת החכמה של Firefox בכל מקום שאתה הולך.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Go Mobile!‎ — חינם</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>צריך עזרה?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />דפי התמיכה שלנו</a> כוללים תשובות והמלצות במיוחד ל־Firefox 4 beta.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

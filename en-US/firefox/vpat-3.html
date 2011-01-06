@@ -1,0 +1,1257 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'VPAT for Firefox 3.0, 3.5 and 3.6 | Mozilla';
+    $body_id    = 'vpat';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/firefox-vpat.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="content">
+
+<h2>Voluntary Product Accessibility Template</h2>
+<ul>
+<li><strong>Date: 2009/07/13</strong></li>
+
+<li><strong>Name of Product: Firefox 3.0, 3.5 and 3.6 </strong></li>
+<li><strong>General Comments:</strong> Information in this VPAT is
+relevant to Firefox 3.0, 3.5  and 3.6 running on a
+Windows 2000, Server 2003, XP, or Vista operating system. Additional
+developer tools exist in this product that are not installed
+by default. These optional tools have not been tested.
+</li>
+</ul>
+
+<table summary="This table provides a more detailed view of Section 1194.21. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.21 Software Applications and Operating Systems - Detail<br />
+Voluntary Product Accessibility Template</th>
+
+    </tr>
+    <tr class="temphead">
+      <th id="tph1" style="width: 30%;">Criteria</th>
+
+      <th id="tph2" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3">Remarks
+and explanations</th>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1">(a)
+When software is designed to run on a system that has a keyboard,
+product functions shall be executable from a keyboard where the
+function itself or the result of performing a function can be discerned
+textually.</td>
+      <td headers="tph2">Supports
+with exceptions through equivalent facilitation:<br />
+
+Keyboard equivalents for all actions are provided. </td>
+      <td headers="tph3">Firefox supports all standard
+keyboard operation of the user interface. Java and in-page plugins for
+content such as Flash cannot be used with the keyboard so they must not
+be installed for keyboard-only users. The tab order skips over them
+completely, so form controls within them cannot be used without a mouse.<br />
+      <br />
+The "customize toolbar" dialog relies on drag-and-drop operations and
+is therefore not accessible to keyboard-only users.  In practice, this
+is not a problem, since toolbar buttons are not in the tab order.
+All toolbar buttons have equivalent menu items which provide the
+same functionality.<br />
+      <br />
+
+Full page plugins such as PDFs can be used if the option "Open with
+default application" is used for each full page plugin type under Tools
+-&gt; Options -&gt; Downloads -&gt; View and Edit actions. The "Open
+with default application" preference is automatically set for screen
+reader users.<br />
+
+<br />
+Special keyboard features in Firefox:
+<ol>
+<li>"Search for text when I start typing" allows for quick navigation to links and text
+searching without opening a separate dialog.  This allows more
+convenient use by screen magnification users because there is a single
+point of regard for the search. It also assists users of input aids
+because there are far fewer keys to type to get the desired location.
+For example, it is possible to navigate to the desired link by pressing
+2 letter keys rather than tabbing through many links to get there. </li>
+<li>"Always use the cursor keys to navigate within web pages" allows
+users to select arbitrary content with the
+keyboard and move through web content as if inside a read-only editor. This
+allows copying arbitrary pieces of text to the clipboard. The F7 key
+toggles this feature on/off.</li>
+<li>Tabbed browsing helps keyboard users by putting all of the browsed
+documents in one Firefox application window rather than cluttering the
+Alt+Tab order which makes keyboard navigation within the entire Windows
+OS much simpler.</li>
+
+<li>Both history and bookmarks can be searched with a "quick search"
+field that quickly narrows the list down via a substring search.</li>
+<li>Integrated web search (accessed by <kbd>Ctrl+K</kbd>) is much faster to use than
+going to the search tool's web site. Custom searches can be added to
+this quick search bar and the user can switch between them by choosing
+from a dropdown by pressing F4 or Alt+DownArrow.  Web sites can define
+their own search interfaces, which appear in the dropdown while the user
+is navigating the site.  The user can add these custom search
+engines permanently by selecting "Add &lt;site-provided name&gt;" from
+the dropdown.</li>
+
+<li>Bookmarks can have a keyword assigned to them which can be typed
+into the address bar to bring up the bookmark. A "smart keywords"
+feature enhances this even further by allowing custom searches from the
+command line such as "word punditry" to look up the word "punditry" in an online
+dictionary. These smart keywords can be setup via the context menu for
+the search field on the desired website.</li>
+<li>The built-in full-page zoom feature can be accessed with the <kbd>Ctrl+plus</kbd>
+and <kbd>Ctrl+minus</kbd> hotkeys.  <kbd>Ctrl+0</kbd> restores the text size to the default
+author-provided size. Optionally, a text-only zoom can be enabled by selecting View -&gt; Zoom -&gt; Text Only.</li>
+
+<li>The accessibility extension may be installed on top of Firefox,
+allowing keyboard access to document structure.</li>
+</ol>
+</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1">(b)
+Applications shall not disrupt or disable activated features of other
+products that are identified as accessibility features, where those
+features are developed and documented according to industry standards.
+Applications also shall not disrupt or disable activated features of
+any operating system that are identified as accessibility features
+where the application programming interface for those accessibility
+features has been documented by the manufacturer of the operating
+system and is available to the product developer.</td>
+      <td headers="tph2">Supports:<br />
+The product does not interfere with keyboard accessibility features
+built into the operating system. </td>
+
+      <td headers="tph3">
+
+Does not interfere with Mouse Keys, Sticky Keys, Filter Keys or Toggle
+Keys.</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1">(c)
+A well-defined on-screen indication of the current focus shall be
+provided that moves among interactive interface elements as the input
+focus changes. The focus shall be programmatically exposed so that
+Assistive Technology can track focus and focus changes.</td>
+      <td headers="tph2">Supports:<br />
+A visual focus indicator that moves among interactive objects as in the
+input focus changes is provided. The focus indicator is
+programmatically exposed to assistive technology. </td>
+
+      <td headers="tph3">
+The focus is programmatically exposed via Microsoft Active
+Accessibility (MSAA) as well as via DOM APIs in-process. <br />
+
+      <br />
+Additional features: the focus appearance can also be changed by
+modifying the about:config setting
+<samp>browser.display.use_focus_colors</samp> to <samp>true</samp> and
+modifying the settings
+<samp>browser.display.focus_background_color</samp>,
+<samp>browser.display.focus_text_color</samp>.
+The about:config advanced settings can be reached by
+entering "about:config" in the address bar and pressing <kbd>Enter</kbd>.<br />
+
+      <br />
+
+The focus appearance can also be further enhanced by installing the
+Accessibar extension for Firefox. This extension provides additional
+accessibility features for Firefox and can be downloaded from the
+Mozilla Add-ons site at
+<a href="https://addons.mozilla.org/firefox/addon/4242">
+https://addons.mozilla.org/firefox/addon/4242</a>.
+After installing the extension, a thick rounded blue outline will be
+displayed around the currently focused area. The focus outline's width
+and color can also be configured by selecting the preferred settings
+from the toolbar's Options dialog.</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1">(d)
+Sufficient information about a user interface element including the
+identity, operation and state of the element shall be available to
+Assistive Technology. When an image represents a program element, the
+information conveyed by the image must also be available in text.</td>
+      <td headers="tph2">Supports with exceptions:<br />
+
+Semantic information about user interface objects is provided. Labels
+are associated with controls, objects, icons, and images.</td>
+      <td headers="tph3">
+Provided via MSAA. Additional features: the ISimpleDOM* interfaces
+provide additional information such as element tag names, attributes
+and
+computed style. IAccessible2 support allows for access to all content without having to use video hooking technology within an assistive technology.<br />
+      <br />
+Text labels are associated with all controls,<br />
+objects, icons and significant images in the Firefox user interface.<br />
+      <br />
+Exception: Firefox offers automatic spellchecking in text that users
+type in <code>&lt;textarea&gt;</code> elements.  If a word is misspelled,
+it appears with a red underline, and you can click the word to bring up
+a context menu with spelling suggestions.  The spelling suggestions are
+accessible by moving the caret to the word and pressing <kbd>Shift+F10</kbd> to
+bring up the context menu, but the fact that a word is misspelled in
+the first place is not exposed to assistive technologies.</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1">(e)
+When bitmap images are used to identify controls, status indicators, or
+other programmatic elements, the meaning assigned to those images shall
+be consistent throughout an application's performance.</td>
+      <td headers="tph2">Supports:<br />
+Labels are associated with controls, objects, icons and images.</td>
+      <td headers="tph3">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+
+      <td headers="tph1">(f)
+Textual information shall be provided through operating system
+functions for displaying text. The minimum information that shall be
+made available is text content, text input caret location, and text
+attributes.</td>
+      <td headers="tph2">Supports
+with exceptions:<br />
+Text through standard system function calls or through an API
+(application programming interface) which supports interaction with
+assistive technology is provided. </td>
+      <td headers="tph3">
+Provided via MSAA for content with a defined mapping to MSAA, including
+HTML, XHTML, DHTML and XUL. Firefox provides additional information
+about the
+structure, position and format of text via the ISimpleDOMText and
+ISimpleDOMNode interfaces. Firefox also utilizes the ISimpleDOMNode and
+ISimpleDOMText interfaces to expose MathM and SVG, which has no
+defined
+mapping to MSAA mapping (caveat: no screen reader currently utilizes
+the SVG information exposed by Firefox). Information is also available through IAccessible2 interfaces.</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1">(g)
+Applications shall not override user selected contrast and color
+selections and other individual display attributes.</td>
+      <td headers="tph2">Supports
+with exceptions:<br />
+System settings for high contrast for all user interface controls and
+client area content are supported. System settings for font, size, and
+color for all user interface controls are inherited. </td>
+      <td headers="tph3">
+Firefox supports the current theme being used in the operating system.<br />
+      <br />
+
+When the high contrast flag is set, Firefox obeys the current operating
+system theme for the HTML content area as well as the UI, with the
+following exceptions:
+
+<ul>
+<li>Setup screens don't obey the system font size.  Once installation is
+complete, this is no longer an issue for end users.</li>
+<li>The preferences window uses icons to select different "panes", and
+the icon for the selected pane is always highlighted with a specific
+color.  However, the text below the selected icon is visible.</li>
+<li>The button icons in the in-page search bar are not always visible
+in certain high contrast themes.  However, each button has text beside
+the icon, and the text is always visible.</li>
+<li>The buttons for next and previous page in the print preview window
+are not always visible in certain high contrast themes.</li>
+<li>In the "Add Bookmark" dialog, the button icon to toggle the
+display of bookmark folders is not always visible in certain high contrast
+themes.</li>
+<li>If multiple browser tabs are opened in a single browser window,
+a button appears on the right side of the tab strip.  Clicking this
+button drops down a menu to select a tab.  The button's icon is not
+always visible in certain high contrast themes.</li>
+</ul>
+	</td>
+    </tr>
+
+    <tr class="tempinfo">
+
+      <td headers="tph1">(h)
+When animation is displayed, the information shall be displayable in at
+least one non-animated presentation mode at the option of the user.</td>
+      <td headers="tph2">Supports:<br />
+An option to provide to display animation in a non-animated
+presentation mode is provided. </td>
+      <td headers="tph3">
+Firefox does not use animation in its user interface.<br />
+      <br />
+
+Additional related features: Firefox can be configured to turn off
+animation in images used in web content via the about:config setting
+called "image.animation_mode". The default value is "normal" and it can
+be change to either "once" (loop through animation once) or "none" (for
+no animation). The about:config advanced settings can be reached by
+entering "about:config" in the address bar and pressing <kbd>Enter</kbd>.</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1">(i)
+Color coding shall not be used as the only means of conveying
+information, indicating an action, prompting a response, or
+distinguishing a visual element.</td>
+      <td headers="tph2">Supports:<br />
+Color is used only as an enhancement, not as the only way to convey
+information or indicate an action. </td>
+
+      <td headers="tph3">Certain events may trigger a
+non-modal "notification bar" at the top of the window, for example when
+Firefox blocks a popup window from opening automatically.  Each
+notification has a defined importance level, for example "informational",
+"warning", or "error".  The background of the notification bar indicates
+the importance level.  The notification bar also includes an icon appropriate
+for the importance level.  Furthermore, these notification bars and their
+importance level are exposed to assistive technologies as an alert
+(ROLE_SYSTEM_ALERT in MSAA), so an assistive technology can
+programmatically determine the importance of the notification and
+decide how to convey the text to the user.<br />
+<br />
+
+      Additional features: A distinction
+between visited and unvisited links on web pages can be made without relying
+on colors when using the Accessibar extension. Accessibar is an accessibility
+toolbar extension for Firefox which can be downloaded from the Mozilla Add-ons
+site at <a href="https://addons.mozilla.org/firefox/addon/4242">
+https://addons.mozilla.org/en-US/firefox/addon/4242</a>. Once installed,
+the user can choose to have a dashed underline displayed under visited links
+by selecting the preference from the toolbar's Options dialog.</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1">(j)
+When a product permits a user to adjust color and contrast settings, a
+variety of color selections capable of producing a range of contrast
+levels shall be provided.</td>
+
+      <td headers="tph2">Supports:<br />
+When color customization is supported, the product provides a variety
+of color selections capable of producing a range of contrast levels </td>
+      <td headers="tph3">
+Firefox provides color customization options that support a variety of
+contrast levels.</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1">(k)
+Software shall not use flashing or blinking text, objects, or other
+elements having a flash or blink frequency greater than 2 Hz and lower
+than 55 Hz.</td>
+
+      <td headers="tph2">Supports:<br />
+The use of blinking text, objects or other elements has been avoided </td>
+      <td headers="tph3">
+Firefox does not have any blinking elements in its user interface.<br />
+      <br />
+Additional related features:<br />
+<ol>
+
+<li>When pages use the HTML <code>&lt;blink&gt;</code> tag,
+Firefox uses a 1 Hz duty cycle
+with the text visible for 3/4 of each cycle.</li>
+
+<li>It is possible to turn off blinking in web content by changing
+the about:config setting called "browser.blink_allowed" to <samp>false</samp>.
+The about:config
+advanced settings can be reached by entering "about:config" in the
+address bar and pressing <kbd>Enter</kbd>.</li>
+</ol>
+</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1">(l)
+When electronic forms are used, the form shall allow people using
+Assistive Technology to access the information, field elements, and
+functionality required for completion and submission of the form,
+including all directions and cues.</td>
+      <td headers="tph2">Supports:<br />
+
+The application provides a format that allows access via assistive
+technology to information, field elements, and functionality required
+for completion and submission of the form. </td>
+      <td headers="tph3">
+Dialog boxes are accessible to assistive technology users by meeting
+the other applicable requirements.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.22. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+
+      <th colspan="3">Section
+1194.22 Web-based Internet information and applications - Detail<br />
+Voluntary Product Accessibility Template</th>
+    </tr>
+    <tr class="temphead">
+      <th id="tph1b">Criteria</th>
+
+      <th id="tph2b" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3b" style="width: 30%;">Remarks
+and explanations</th>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(a)
+A text equivalent for every non-text element shall be provided (e.g.,
+via "alt", "longdesc", or in element content).</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1b">(b)
+Equivalent alternatives for any multimedia presentation shall be
+synchronized with the presentation.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(c)
+Web pages shall be designed so that all information conveyed with color
+is also available without color, for example from context or markup.</td>
+
+      <td headers="tph2b">Not
+applicable</td>
+
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(d)
+Documents shall be organized so they are readable without requiring an
+associated style sheet.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1b">(e)
+Redundant text links shall be provided for each active region of a
+server-side image map.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(f)
+Client-side image maps shall be provided instead of server-side image
+maps except where the regions cannot be defined with an available
+geometric shape.</td>
+
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(g)
+Row and column headers shall be identified for data tables.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(h)
+Markup shall be used to associate data cells and header cells for data
+tables that have two or more logical levels of row or column headers.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1b">(i)
+Frames shall be titled with text that facilitates frame identification
+and navigation.</td>
+
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(j)
+Pages shall be designed to avoid causing the screen to flicker with a
+frequency greater than 2 Hz and lower than 55 Hz.</td>
+      <td headers="tph2b">Not
+applicable</td>
+
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(k)
+A text-only page, with equivalent information or functionality, shall
+be provided to make a web site comply with the provisions of this part,
+when compliance cannot be accomplished in any other way. The content of
+the text-only page shall be updated whenever the primary page changes.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1b">(l)
+When pages utilize scripting languages to display content, or to create
+interface elements, the information provided by the script shall be
+identified with functional text that can be read by Assistive
+Technology.</td>
+
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(m)
+When a web page requires that an applet, plug-in or other application
+be present on the client system to interpret page content, the page
+must provide a link to a plug-in or applet that complies with
+Â§1194.21(a) through (l).</td>
+
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(n)
+When electronic forms are designed to be completed on-line, the form
+shall allow people using Assistive Technology to access the
+information, field elements, and functionality required for completion
+and submission of the form, including all directions and cues. </td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1b">(o)
+A method shall be provided that permits users to skip repetitive
+navigation links. </td>
+
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1b">(p)
+When a timed response is required, the user shall be alerted and given
+sufficient time to indicate more time is required.</td>
+      <td headers="tph2b">Not
+applicable</td>
+      <td headers="tph3b">&nbsp;</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.23. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.23 Telecommunications Products - Detail<br />
+Voluntary Product Accessibility Template</th>
+    </tr>
+
+    <tr class="temphead">
+      <th id="tph1c">Criteria</th>
+      <th id="tph2c" style="width: 30%;">Supporting
+Features</th>
+
+      <th id="tph3c" style="width: 30%;">Remarks
+and explanations</th>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(a)
+Telecommunications products or systems which provide a function
+allowing voice communication and which do not themselves provide a TTY
+functionality shall provide a standard non-acoustic connection point
+for TTYs. Microphones shall be capable of being turned on and off to
+allow the user to intermix speech with TTY use.</td>
+
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1c">(b)
+Telecommunications products which include voice communication
+functionality shall support all commonly used cross-manufacturer non
+proprietary standard TTY signal protocols.</td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(c)
+Voice mail, auto-attendant, and interactive voice response
+telecommunications systems shall be usable by TTY users with their TTYs.</td>
+
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(d)
+Voice mail, messaging, auto-attendant, and interactive voice response
+telecommunication systems that require a response from a user within a
+time interval, shall give an alert when the time interval is about to
+run out, and shall provide sufficient time for the user to indicate
+more time is required. </td>
+
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(e)
+Where provided, caller identification and similar telecommunications
+functions shall also be available for users of TTYs and for users who
+cannot see displays.</td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1c">(f)
+For transmitted voice signals, telecommunications products shall
+provide a gain adjustable up to a minimum of 20 dB. For incremental
+volume control, at least one intermediate step of 12 dB of gain shall
+be provided. </td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(g)
+If the telecommunications product allows a user to adjust the receiver
+volume, a function shall be provided to automatically reset the volume
+to the default level after every use.</td>
+
+      <td headers="tph2c">Not
+applicable</td>
+
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(h)
+Where a telecommunications product delivers output by an audio
+transducer which is normally held up to the ear, a means for effective
+magnetic wireless coupling to hearing technologies shall be provided.</td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1c">(i)
+Interface to hearing technologies (including hearing aids, cochlear
+implants, and assistive listening devices) shall be reduced to the
+lowest possible level that allows a user of hearing technologies to
+utilize the telecommunications product. </td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(j)
+Products that transmit or conduct information or communication, shall
+pass through cross-manufacturer, non-proprietary, industry-standard
+codes, translation protocols, formats or other information necessary to
+provide the information or communication in usable format. Technologies
+which use encoding, signal compression, format transformation, or
+similar techniques shall not remove information needed for access or
+shall restore it upon delivery.</td>
+
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(k)(1)
+Products which have mechanically operated controls or keys shall comply
+with the following: Controls and Keys shall be tactilely discernible
+without activating the controls or keys. </td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(k)(2)
+Products which have mechanically operated controls or keys shall comply
+with the following: Controls and Keys shall be operable with one hand
+and shall not require tight grasping, pinching, twisting of the wrist.
+The force required to activate controls and keys shall be 5 lbs.
+(22.2N) maximum</td>
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1c">(k)(3)
+Products which have mechanically operated controls or keys shall comply
+with the following: If key repeat is supported, the delay before repeat
+shall be adjustable to at least 2 seconds. Key repeat rate shall be
+adjustable to 2 seconds per character. </td>
+
+      <td headers="tph2c">Not
+applicable</td>
+      <td headers="tph3c">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1c">(k)(4)
+Products which have mechanically operated controls or keys shall comply
+with the following: The status of all locking or toggle controls or
+keys shall be visually discernible, and discernible either through
+touch or sound. </td>
+      <td headers="tph2c">Not
+applicable</td>
+
+      <td headers="tph3c">&nbsp;</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.24. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.24 Video and Multi-media Products - Detail<br />
+
+Voluntary Product Accessibility Template</th>
+    </tr>
+
+    <tr class="temphead">
+      <th id="tph1d">Criteria</th>
+      <th id="tph2d" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3d" style="width: 30%;">Remarks
+and explanations</th>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1d">(a)
+All analog television displays 13 inches and larger, and computer
+equipment that includes analog television receiver or display
+circuitry, shall be equipped with caption decoder circuitry which
+appropriately receives, decodes, and displays closed captions from
+broadcast, cable, videotape, and DVD signals. As soon as practicable,
+but not later than July 1, 2002, widescreen digital television (DTV)
+displays measuring at least 7.8 inches vertically, DTV sets with
+conventional displays measuring at least 13 inches vertically, and
+stand-alone DTV tuners, whether or not they are marketed with display
+screens, and computer equipment that includes DTV receiver or display
+circuitry, shall be equipped with caption decoder circuitry which
+appropriately receives, decodes, and displays closed captions from
+broadcast, cable, videotape, and DVD signals.</td>
+
+      <td headers="tph2d">Not
+applicable</td>
+      <td headers="tph3d">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1d">(b)
+Television tuners, including tuner cards for use in computers, shall be
+equipped with secondary audio program playback circuitry. </td>
+
+      <td headers="tph2d">Not
+applicable</td>
+      <td headers="tph3d">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1d">(c)
+All training and informational video and multimedia productions which
+support the agency's mission, regardless of format, that contain speech
+or other audio information necessary for the comprehension of the
+content, shall be open or closed captioned.</td>
+      <td headers="tph2d">Supports:<br />
+Accessible alternatives to significant audio are provided.</td>
+
+      <td headers="tph3d">
+The find toolbar's sound also has a visual rendering on the find bar
+itself.</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1d">(d)
+All training and informational video and multimedia productions which
+support the agency's mission, regardless of format, that contain visual
+information necessary for the comprehension of the content, shall be
+audio described.</td>
+      <td headers="tph2d">Supports:<br />
+Accessible alternatives to significant video are provided.</td>
+
+      <td headers="tph3d">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1d">(e)
+Display or presentation of alternate text presentation or audio
+descriptions shall be user-selectable unless permanent.</td>
+
+      <td headers="tph2d">Not
+applicable</td>
+      <td headers="tph3d">&nbsp;</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.25. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.25 Self-Contained, Closed Products - Detail<br />
+
+Voluntary Product Accessibility Template</th>
+    </tr>
+
+    <tr class="temphead">
+      <th id="tph1z">Criteria</th>
+      <th id="tph2z" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3z" style="width: 30%;">Remarks
+and explanations</th>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1z">(a)
+Self contained products shall be usable by people with disabilities
+without requiring an end-user to attach Assistive Technology to the
+product. Personal headsets for private listening are not Assistive
+Technology.</td>
+
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(b)
+When a timed response is required, the user shall be alerted and given
+sufficient time to indicate more time is required.</td>
+
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(c)
+Where a product utilizes touchscreens or contact-sensitive controls, an
+input method shall be provided that complies with Â§1194.23 (k)
+(1) through (4).</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1z">(d)
+When biometric forms of user identification or control are used, an
+alternative form of identification or activation, which does not
+require the user to possess particular biological characteristics,
+shall also be provided.</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(e)
+When products provide auditory output, the audio signal shall be
+provided at a standard signal level through an industry standard
+connector that will allow for private listening. The product must
+provide the ability to interrupt, pause, and restart the audio at
+anytime.</td>
+
+      <td headers="tph2z">Not
+applicable</td>
+
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(f)
+When products deliver voice output in a public area, incremental volume
+control shall be provided with output amplification up to a level of at
+least 65 dB. Where the ambient noise level of the environment is above
+45 dB, a volume gain of at least 20 dB above the ambient level shall be
+user selectable. A function shall be provided to automatically reset
+the volume to the default level after every use.</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1z">(g)
+Color coding shall not be used as the only means of conveying
+information, indicating an action, prompting a response, or
+distinguishing a visual element.</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(h)
+When a product permits a user to adjust color and contrast settings, a
+range of color selections capable of producing a variety of contrast
+levels shall be provided.</td>
+
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(i)
+Products shall be designed to avoid causing the screen to flicker with
+a frequency greater than 2 Hz and lower than 55 Hz.</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1z">(j)
+(1) Products which are freestanding, non-portable, and intended to be
+used in one location and which have operable controls shall comply with
+the following: The position of any operable control shall be determined
+with respect to a vertical plane, which is 48 inches in length,
+centered on the operable control, and at the maximum protrusion of the
+product within the 48 inch length on products which are freestanding,
+non-portable, and intended to be used in one location and which have
+operable controls.<br />
+      <br />
+(j)(2) Products which are freestanding, non-portable, and intended to
+be used in one location and which have operable controls shall comply
+with the following: Where any operable control is 10 inches or less
+behind the reference plane, the height shall be 54 inches maximum and
+15 inches minimum above the floor.<br />
+      <br />
+(j)(3) Products which are freestanding, non-portable, and intended to
+be used in one location and which have operable controls shall comply
+with the following: Where any operable control is more than 10 inches
+and not more than 24 inches behind the reference plane, the height
+shall be 46 inches maximum and 15 inches minimum above the floor.<br />
+      <br />
+
+(j)(4) Products which are freestanding, non-portable, and intended to
+be used in one location and which have operable controls shall comply
+with the following: Operable controls shall not be more than 24 inches
+behind the reference plane.</td>
+      <td headers="tph2z">Not
+applicable</td>
+      <td headers="tph3z">&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.26. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+
+    <tr class="table-title">
+
+      <th colspan="3">Section
+1194.26 Desktop and Portable Computers - Detail<br />
+Voluntary Product Accessibility Template</th>
+    </tr>
+    <tr class="temphead">
+      <th id="tph1e">Criteria</th>
+      <th id="tph2e" style="width: 30%;">Supporting
+Features</th>
+
+      <th id="tph3e" style="width: 30%;">Remarks
+and explanations</th>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1e">(a)
+All mechanically operated controls and keys shall comply with
+Â§1194.23 (k) (1) through (4).</td>
+      <td headers="tph2e">Not
+applicable</td>
+      <td headers="tph3e">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1e">(b)
+If a product utilizes touchscreens or touch-operated controls, an input
+method shall be provided that complies with Â§1194.23 (k) (1)
+through (4).</td>
+
+      <td headers="tph2e">Not
+applicable</td>
+      <td headers="tph3e">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1e">(c)
+When biometric forms of user identification or control are used, an
+alternative form of identification or activation, which does not
+require the user to possess particular biological characteristics,
+shall also be provided.</td>
+
+      <td headers="tph2e">Not
+applicable</td>
+      <td headers="tph3e">&nbsp;</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1e">(d)
+Where provided, at least one of each type of expansion slots, ports and
+connectors shall comply with publicly available industry standards.</td>
+      <td headers="tph2e">Not
+applicable</td>
+      <td headers="tph3e">&nbsp;</td>
+
+    </tr>
+  </tbody>
+</table>
+
+<br />
+<br />
+<table summary="This table provides a more detailed view of Section 1194.31. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.31 Functional Performance - Detail<br />
+Voluntary Product Accessibility Template</th>
+
+    </tr>
+    <tr class="temphead">
+      <th id="tph1y">Criteria</th>
+
+      <th id="tph2y" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3y" style="width: 30%;">Remarks
+and explanations</th>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1y">(a)
+At least one mode of operation and information retrieval that does not
+require user vision shall be provided, or support for assistive
+technology used by people who are blind or visually impaired shall be
+provided.</td>
+      <td headers="tph2y">Supports:<br />
+See the following for supporting features:<br />
+
+      <br />
+- 1194.21 a, b, c, d, e, f, h, i, l <br />
+- 1194.22 all <br />
+- 1194.23 k1, k4 <br />
+
+- 1194.24 d <br />
+- 1194.25 a, b, c, e, f, g <br />
+- 1194.26 b, d </td>
+      <td headers="tph3y">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1y">(b)
+At least one mode of operation and information retrieval that does not
+require visual acuity greater than 20/70 shall be provided in audio and
+enlarged print output working together or independently, or support for
+assistive technology used by people what are visually impaired shall be
+provided.</td>
+      <td headers="tph2y">Not
+applicable<br />
+
+See the following for supporting features:<br />
+      <br />
+- 1194.21 c, g, i, j, l<br />
+- 1194.22 n<br />
+- 1194.25 h<br />
+
+- 1194.26 d</td>
+      <td headers="tph3y">&nbsp;</td>
+    </tr>
+
+    <tr class="tempinfo">
+      <td headers="tph1y">(c)
+At least one mode of operation and information retrieval that does not
+require user hearing shall be provided, or support for assistive
+technology used by people who are deaf or hard of hearing shall be
+provided.</td>
+      <td headers="tph2y">Supports:<br />
+Software provides the option to display a visual cue for audio alerts. <br />
+      <br />
+
+Also, see the following for other supporting features:<br />
+      <br />
+
+- 1194.22 b, m <br />
+- 1194.23 k4 <br />
+- 1194.24 c <br />
+- 1194.25 e, f </td>
+      <td headers="tph3y">
+Software support may be provided by allowing operating system features
+to work without interference.<br />
+      <br />
+
+Firefox respects the operating system setting that provides this
+function.</td>
+
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1y">(d)
+Where audio information is important for the use of the product, at
+least one mode of operation and information retrieval shall be provided
+in an enhanced auditory fashion, or support for assistive hearing
+devices shall be provided.</td>
+      <td headers="tph2y">Supports:<br />
+Software provides an option to adjust the volume.<br />
+      <br />
+See the following for other supporting features:<br />
+
+- 1194.23 k4<br />
+- 1194.25 e, f</td>
+      <td headers="tph3y">
+Software support may be provided by allowing operating system features
+to work without interference.<br />
+      <br />
+Firefox respects the operating system setting that provides this
+function.</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1y">(e)
+At least one mode of operation and information retrieval that does not
+require user speech shall be provided, or support for assistive
+technology used by people with disabilities shall be provided.</td>
+
+      <td headers="tph2y">Not
+applicable</td>
+      <td headers="tph3y">&nbsp;</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1y">(f)
+At least one mode of operation and information retrieval that does not
+require fine motor control or simultaneous actions and that is operable
+with limited reach and strength shall be provided. </td>
+      <td headers="tph2y">Not
+applicable<br />
+See the following for other supporting features:<br />
+
+      <br />
+- 1194.21 a, b<br />
+- 1194.22 l, p<br />
+- 1194.23 k1, k2, k3<br />
+- 1194.25 b, j<br />
+- 1194.26 d </td>
+      <td headers="tph3y">&nbsp;</td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<table summary="This table provides a more detailed view of Section 1194.41. The first column contains the lettered paragraphs of the subsection">
+  <tbody>
+    <tr class="table-title">
+      <th colspan="3">Section
+1194.41 Information, Documentation, and Support - Detail<br />
+Voluntary Product Accessibility Template</th>
+    </tr>
+
+    <tr class="temphead">
+      <th id="tph1f">Criteria</th>
+
+      <th id="tph2f" style="width: 30%;">Supporting
+Features</th>
+      <th id="tph3f" style="width: 30%;">Remarks
+and explanations</th>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1f">(a)
+Product support documentation provided to end-users shall be made
+available in alternate formats upon request, at no additional charge.</td>
+
+      <td headers="tph2f">Supports:<br />
+Documentation in an accessible format is available in the help system.</td>
+
+      <td headers="tph3f">
+Available through built-in online help. Help text can be copied as HTML
+into the clipboard from the help viewer. From there it can be brought
+into a word processor or text editor for reading or conversion into
+alternate formats.</td>
+    </tr>
+    <tr class="tempinfo">
+      <td headers="tph1f">(b)
+End-users shall have access to a description of the accessibility and
+compatibility features of products in alternate formats or alternate
+methods upon request, at no additional charge. </td>
+
+      <td headers="tph2f">Supports;<br />
+A description of the accessibility and compatibility features of
+products in alternate formats or alternate methods is available in the
+help system. </td>
+      <td headers="tph3f">
+
+Documentation for features related that augment accessibility exists in
+the built-in online help system.
+<ul>
+<li>A specific help topic labeled "Accessibility Features" describes all
+accessibility features of Firefox, including
+keyboard shortcuts, mouse shortcuts, navigating with cursor keys, searching
+for text in the current page,
+overriding page fonts, setting a minimum font size, resizing page text,
+overriding page colors, and compatibility with "high contrast"
+themes.</li>
+<li>Documentation that is important for using Firefox with a particular
+assistive technology is provided by assistive technology vendors.
+The "Accessibility Features" help topic links to these vendor statements.</li>
+</ul>
+Help text can be copied as HTML into the clipboard from the help
+viewer. From there it can be brought into a word processor or text
+editor for reading or conversion into alternate formats.<br />
+
+      <br />
+In addition, this VPAT describes what accessibility and compatibility
+features are available in Firefox, and is available in HTML on the
+Mozilla Foundation website.</td>
+    </tr>
+    <tr class="tempinfo">
+
+      <td headers="tph1f">(c)
+Support services for products shall accommodate the communication needs
+of end-users with disabilities. </td>
+      <td headers="tph2f">Supports</td>
+      <td headers="tph3f">
+
+Support options are listed at <a href="http://www.mozilla.org/support/">http://www.mozilla.org/support/</a>.<br />
+Web-based support forums are available on <a href="http://forums.mozillazine.org/">http://forums.mozillazine.org/</a>.</td>
+    </tr>
+
+  </tbody>
+</table>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

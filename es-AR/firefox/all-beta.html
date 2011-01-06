@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox web browser | Ayudanos a probar la nueva beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>¡Ayudá a probar el futuro de Firefox!</h2>
+        <p>Ya está disponible la versión Beta más reciente de Firefox. ¡Descargala, usala y contanos qué te parece!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Información importante</h4>
+        <p class="intro">Leer antes de descargar</p>
+    </div>
+    <ul>
+        <li>Esta es una versión de prueba de la aplicación, por lo tanto podés encontrar problemas de compatibilidad con algunos sitios web y extensiones.</li>
+        <li>Si encontrás algún problema, por favor <a href="http://feedback.mozilla.org/">avisanos</a> o <a href="https://bugzilla.mozilla.org/">informanos del bug</a>.</li>
+        <li>Si querés más detalles, podés leer las <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">notas de la versión</a> y <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">los problemas ya conocidos</a> (en inglés).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">¿No buscabas una versión Beta? Descargá la versión de <a href="/<?=$lang?>/firefox/">Firefox más reciente</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,302 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 1.1 beta for Nokia N900 Release Notes';
+    $body_id    = 'firefox-relnotes';
+    $breadcrumbs = array(
+		"Mobile" => "/{$lang}/mobile",
+        "Release Notes" => "",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 1.1 beta for Nokia N900 <span>Release Notes</span></h2>
+    <p>
+      <em>v.1.1b1, released April 28, 2010</em><br />
+      The world's best Web browser has gone mobile.
+    </p>
+    <p>
+      Learn how we're bringing the Firefox experience to mobile devices. 
+      Check out the features, known issues and frequently asked questions 
+      about Firefox 1.1 beta for the Nokia N900. 
+      As always, you’re encouraged to 
+      <a href="https://app.sgizmo.com/preview_survey.php?id=200909">give feedback</a>
+      and tell us what you think, 
+      <a href="https://mobile.support.mozilla.com/tiki-view_forum.php?locale=en-US&amp;forumId=5">ask a question</a>, or 
+      <a href="https://bugzilla.mozilla.org/">file a bug</a> in Bugzilla.
+    </p>
+</div>
+
+<div id="main-content">
+
+	<div id="sidebar">
+		<div id="get-involved">
+			<h3>Get Involved</h3>
+			<p>Want to become part of the Mozilla project?</p>
+			<a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
+		</div>
+	</div>
+
+      <div id="whatsnew2" class="expander expander-odd">
+        <h3 class="expander-header">What's new in Firefox 1.1 beta for the Nokia N900</h3>
+        <div class="expander-content">
+          <p>Firefox 1.1 beta is built on the same browser engine as Firefox 3.6 for desktop computers with extensive under the hood work to optimize for mobile. For the 1.1 release, we've listened to your feedback to help improve the browsing experience. As a result, polishing the user interface and improving UI responsiveness and performance is at the heart of this beta release. Secure, powerful and customizable, Firefox 1.1 beta for the Nokia N900 is packed with your favorite features and great improvements. Highlights include:</p>
+          <ul>
+            <li>Use volume rocker to zoom in and out on the Nokia N900</li>
+            <li>Download, First Run and Start page redesign to help you find and use your favorite Firefox features</li>
+            <li>Add-ons now auto update and view full add-on gallery from the Add-ons Manager</li>
+            <li>Portrait mode support on the Nokia N900</li>
+            <li>Form assistant improvements, including autocomplete</li>
+            <li>Context Menu with Open in New Tab and Save Image</li>
+            <li>Manage site preferences (clearing passwords and others)</li>
+            <li>Site Menu improvements and additions including Save to PDF, Forget Password and Add Search Engine</li>
+            <li>Web content theme update</li>
+          </ul>
+          <p>These improvements build upon the features and additions in the <a href="/<?= $lang ?>/mobile/1.0/releasenotes/">last major Firefox for mobile release</a>.</p>
+        </div>
+      </div>
+
+      <div id="system-requirements" class="expander expander-even">
+        <h3 class="expander-header">System Requirements</h3>
+        <div class="expander-content">
+          <p>
+            Before installing, make sure your phone meets the 
+            <a href="/<?= $lang ?>/mobile/platforms/">system requirements</a>.
+          </p>
+        </div>
+      </div>
+        <div id="downloading" class="expander expander-odd">
+          <h3 class="expander-header">Downloading</h3>
+          <div class="expander-content">
+            <p>
+              Download Firefox 1.1 beta for the Nokia N900 by visiting <a href="/<?= $lang ?>/m/beta">Firefox.com/m/beta</a>. You can also go to <a href="/<?= $lang ?>/mobile">Firefox.com/mobile</a> and send an SMS text message that contains the download link directly to your Nokia N900. If you don't have an N900 you can download a build of Firefox for mobile to your desktop in order to test, provide feedback, and build add-ons. Desktop builds are for development purposes only and don't have full functionality: 
+            </p>
+            <ul>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+              <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="extensions" class="expander expander-even">
+          <h3 class="expander-header">Add-ons</h3>
+          <div class="expander-content">
+            <p>
+              There are currently over 60 Firefox add-ons available. 
+              View the catalog <a href="https://addons.mozilla.org/mobile" title="here">here</a>, 
+              or search for and install add-ons directly from the 
+              Add-ons Manager. We encourage you to install the add-ons 
+              listed in the Firefox Mobile Starter Kit collection 
+              as well as the recommended add-ons in the 
+              Add-ons Manager to get the most out of your Firefox.  
+            </p>
+          </div>
+        </div>
+        <div id="known-issues" class="expander expander-odd">
+          <h3 class="expander-header">Known Issues</h3>
+          <div class="expander-content">
+            <h5>Important: for Ovi Store customers</h5>
+            <p>
+              If you installed Firefox 1.0 from the Ovi Store, you will not be able to
+              upgrade to Firefox 1.1 Beta 1 (either from the N900 Application Manager or by
+              downloading the software from Mozilla). We are working to solve this for future
+              releases so that anyone can participate in our Beta programs. Don't worry,
+              though, if you got Firefox 1.0 from either the Ovi store or directly from
+              Mozilla, you <em>will</em> be updated to Firefox 1.1 (final) when it is released.
+            </p>
+
+            <ul>
+              <li>
+                Stretched images can show black lines and dots near to bottom and side of content 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=468496">bug 468496</a>
+              </li>
+              <li>
+                Youtube Enabler is not compatible with Firefox 1.1 beta 1 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=559908">bug 559908</a>
+              </li>
+              <li>
+                Vertical white line on tab thumbnails when on About:home 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=556046">bug 556046</a>
+              </li>
+              <li>
+                Text is hard to read due to light gray background color on buttons with new web content theme 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=556650">bug 556650</a>
+              </li>
+              <li>
+                Scrolling to bottom of a long Web page cannot be reached using the keyboard 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=547307">bug 547307</a>
+              </li>
+              <li>
+                Switching from portrait to landscape mode while page is zoomed always displays tab sidebar 
+                <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=559868">bug 559868</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="faq" class="expander expander-even">
+          <h3 class="expander-header">Frequently Asked Questions</h3>
+          <div class="expander-content">
+              <dl class="faq">
+                <dt>My mobile device is not a Nokia N900 or N810. When can I expect to use Firefox on my phone?</dt>
+                <dd>
+                  Firefox is in early development for the Android platform. 
+                  We continue to investigate ways to bring the Firefox experience to users, 
+                  regardless of their device or platform. 
+                  <a href="/<?= $lang ?>/mobile/platforms/">Learn more about our mobile projects</a>.
+                </dd>
+                <dt>Is it called Fennec or Firefox?</dt>
+                <dd>
+                  Fennec is the codename of Mozilla’s mobile project, however, 
+                  the official product name is Firefox.  Same as the desktop.
+                  Enjoy the same Firefox experience that you’ve come 
+                  to know and trust on the desktop, now available for mobile.
+                </dd>
+                <dt>How will Firefox keep me safe while I browse on my mobile?</dt>
+                <dd>
+                  Mozilla’s open source process leverages the experience of 
+                  thousands of security experts around the globe, 
+                  and Firefox includes features like instant Web site ID 
+                  that checks on suspicious sites to ensure they’re what 
+                  they claim to be. Customizable security settings to 
+                  manage passwords, cookies, loading images and installing 
+                  add-ons give you complete control over your browsing experience. 
+                  <a href="/<?= $lang ?>/firefox/security/">Learn more</a>.
+                </dd>
+                <dt>How do I use the Firefox user interface to browse the Web?</dt>
+                <dd>
+                  To save space on your phone’s display, Firefox browser controls are stowed away to the sides of the screen. Swipe right to access your tabs on the left side of the screen. Swipe left to view one-touch bookmarking, back and forward, and access your browser tools. To let you see more of the Web site, your browser controls and Awesome Bar get stowed away out of view. when you scroll down a Web page, but they instantly reappear if you pan to either side.
+                </dd>
+                <dt>How do I zoom in and out?</dt>
+                <dd>
+                  Double tap the screen with your finger to zoom in and out. On the Nokia N900, you can also now use the volume rocker on the top of the device to zoom in and out. Also, on the Nokia N900, Ctrl-up and Ctrl-down arrows will zoom in and out.
+                </dd>
+                <dt>How do I bookmark a Web page?</dt>
+                <dd>
+                  Go to the site you wish to bookmark. Touch the bookmark “star” button on the right side of your display.
+                </dd>
+                <dt>How do I open a new tab?</dt>
+                <dd>
+                  Touch the new tab "plus" button on the left side of your display screen to open a new tab. Tabs appear as thumbnails so you can easily see which page you’d like to select.
+                </dd>
+                <dt>What are Firefox Add-ons and how can I get them on my mobile device?</dt>
+                <dd>
+                  Add-ons let you customize your Firefox by adding features and customizations that help make your browser your own. Select the Tools “gear” button on the bottom right-hand side of your screen, then choose the add-ons “puzzle piece” button and search for and install the add-ons that are most useful to you directly from your phone.
+                </dd>
+                <dt>How can I share my Firefox bookmarks, history, tabs, and passwords between my desktop and my mobile?</dt>
+                <dd>
+                   The Weave Sync add-on brings your Firefox experience to your mobile phone. First, create a Weave Sync account on your desktop. Then go to Firefox on your mobile and search for and install the Weave Sync add-on. Enter your Weave Sync account info and select "sync" to share your Firefox bookmarks, history, passwords and open tabs between your desktop and your mobile.
+                </dd>
+                <dt>Do I need to get the Weave Sync add-on to use Firefox on my phone?</dt>
+                <dd>
+                  No. Although we think that syncing Firefox between your desktop and mobile with Weave Sync is highly useful, it is an optional service that you can choose to use or not. You will still be able to break in your Firefox mobile Web browser with the Awesome Bar, which remembers where you go and how often, getting to your favorite sites very quickly.
+                </dd>
+                <dt>What is Location-Aware Browsing? Is Firefox tracking where I am?</dt>
+                <dd>
+                  Location-Aware Browsing saves you time by allowing websites 
+                  to ask you where you are. If you choose to share your 
+                  location with a website, it can use that information to 
+                  find nearby points of interest and return additional, 
+                  useful data like maps of your area. It’s all optional – 
+                  Firefox doesn’t share your location without your permission. 
+                  Learn more about <a href="/<?= $lang ?>/firefox/geolocation/">Location-Aware Browsing</a>.
+                </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="developer-questions" class="expander expander-odd">
+          <h3 class="expander-header">Developer Questions</h3>
+          <div class="expander-content">
+            <dl class="faq">
+                <dt>Will a Firefox add-on I built for the PC work on mobile?  If not, do I need to change it?</dt>
+                <dd>
+                  Although Firefox for the desktop and mobile are built on the same platform, 
+                  there are small differences that will require developers to make changes to their add-ons. 
+                  These changes are usually straightforward, 
+                  visit the <a href="/<?= $lang ?>/mobile/developers/">Develop for Mobile</a> 
+                  page to learn more.
+                </dd>
+                <dt>What browser engine does Firefox use?</dt>
+                <dd>
+                  The desktop and mobile versions of Firefox both use the Gecko rendering engine. 
+                  The mobile version of Firefox uses Gecko version 1.9.2,
+                  which is the best performing browser engine Mozilla has ever 
+                  released and includes exciting features such as radically improved JavaScript performance, 
+                  geolocation support, worker threads, and much more.What JavaScript engine does Firefox use?
+                  Firefox includes the new “<a href="http://hacks.mozilla.org/2009/07/tracemonkey-overview/">TraceMonkey</a>” 
+                  JavaScript engine, an advanced JIT (“just in time”) compiler using tracing technology. 
+                  The TraceMonkey engine makes Web applications faster by compiling code as you execute it, 
+                  allowing many types of CPU-intensive applications to run at near-native speed.
+                </dd>
+                <dt>How do I develop a Location-Aware website for Firefox?</dt>
+                <dd>
+                  Firefox has implemented the first public draft of the 
+                  <a href="http://www.w3.org/TR/geolocation-API/">Geolocation specification from the W3C</a>. 
+                  An overview on how to develop Location-Aware websites 
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/" hreflang="en">here</a>.
+                </dd>
+                <dt>Does Firefox on my mobile support HTML 5?</dt>
+                <dd>
+                  HTML 5 is the next major revision of HTML. 
+                  The HTML 5 specification is an ongoing work, 
+                  but there are several HTML 5 and related features 
+                  that will enable Web developers to create more innovative 
+                  websites and applications. Firefox includes important features like 
+                  <a href="http://hacks.mozilla.org/2009/06/geolocation/">Location-Aware browsing</a>, 
+                  the <a href="http://hacks.mozilla.org/2009/06/pushing-pixels-with-canvas/">&lt;canvas&gt;</a> 
+                  and <a href="http://hacks.mozilla.org/2009/06/rendering-svg-canvas-burst/">&lt;svg&gt;</a> tags, 
+                  <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">Web workers</a> 
+                  and <a href="http://hacks.mozilla.org/2009/07/working-smarter-not-harder/">offline storage</a>.
+                </dd>
+                <dt>Does Firefox on my phone support plugins?</dt>
+                <dd>
+                  Support for plugins in Firefox for Maemo has been disabled. On most Web pages that use the Adobe Flash plugin, the performance of the plugin didn't meet our standards, and the interactivity and performance of the entire Web page was negatively impacted. This was especially felt on pages with multiple instances of the plugin. Advanced users can enable plugins for experimentation and testing purposes only. We are working on ways for the user to have control of which sites to enable plugins for, as some sites, like YouTube, do work quite well. We plan to provide a browser add-on that will enable you to selectively enable plugins on certain sites, because some sites, like YouTube, work well.
+                </dd>
+                <dt>How can I get involved?</dt>
+                <dd>
+                  Check out our <a href="/<?= $lang ?>/mobile/developers/">Develop for Mobile</a> 
+                  page to learn more about how you can contribute to Mozilla’s mobile project. 
+                  If you’d like to learn more about you can get involved in other mobile-related initiatives, 
+                  check out our <a href="http://www.mozilla.org/contribute/">Get Involved</a> page.
+                  As always, your input is welcome. Please 
+                  <a href="https://mobile.support.mozilla.com/tiki-view_forum.php?forumId=5">provide your feedback</a>
+                  using Firefox for mobile.
+                </dd>
+            </dl>
+          </div>
+        </div>
+        <div id="other-resources-links" class="expander expander-even">
+          <h3 class="expander-header">Other Resources and Links</h3>
+          <div class="expander-content">
+            <p>
+              The following resources contain useful information about Firefox for mobile:
+            </p>
+            <ul>
+              <li>
+                <a href="http://mobile.support.mozilla.com/en-US/kb/" title="Firefox for Mobile Support Page">Firefox for Mobile Support Page</a>
+              </li>
+              <li>
+                <a href="https://developer.mozilla.org/En/Mobile" title="Mobile Developer Center">Mobile Developer Center</a>
+              </li>
+              <li>
+                <a href="https://addons.mozilla.org/en-US/mobile" title="Mobile Add-ons for Firefox">Mobile Add-ons for Firefox</a>
+              </li>
+              <li>
+                <a href="/<?= $lang ?>/legal/privacy/firefox/mobile/" title="Mozilla Firefox for Mobile Devices Privacy Policy">Mozilla Firefox for Mobile Devices Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    <div id="release-notes-footer"></div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

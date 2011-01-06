@@ -1,0 +1,36 @@
+﻿<?php
+    // Translate the page title below
+    $page_title = 'Firefox web browser | Помозите нам да тестирамо најновије бета издање';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Помозите да тестирамо будућност фајерфокса!</h2>
+        <p>Најновија бета издање фајерфокса је сада доступно као прелиминарно издање. Испробајте најновије издање и реците нам своје мишљење!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Битне информације</h4>
+        <p class="intro">Молимо Вас прочитајте пре преузимања</p>
+    </div>
+    <ul>
+        <li>Ово је прелиминарно издање: можете имати проблема око компатибилности са одређеним додацима и веб-сајтовима.</li>
+        <li>Ако наиђете на неки проблем, молимо Вас да нас <a href="http://feedback.mozilla.org/">обавестите о томе</a> или <a href="https://bugzilla.mozilla.org/">нам пошаљете грешку</a>.</li>
+        <li>За више информација, прочитајте <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">информације о овом издању</a> и <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">познате проблеме</a> (на енглеском).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Не желите Beta издање? Преузмите <a href="/<?=$lang?>/firefox/">најновији фајерфокс</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

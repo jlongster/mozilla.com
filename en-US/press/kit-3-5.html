@@ -1,0 +1,58 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 3.5 Press Kit';
+    $body_id    = 'press-kit';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/tignish/press-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Press Kit</h2>
+    <p>An Easy Guide to All Things Firefox 3.5</p>
+</div>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="content">
+
+<div id="press-releases">
+    <h4>Press Releases</h4>
+    <ul>
+        <li><a href="/<?=$lang?>/press/mozilla-2009-06-30.html">Firefox 3.5 Announcement</a></li>
+    </ul>
+</div>
+
+<div id="links">
+    <h4>Useful Links</h4>
+    <ul>
+        <li><a href="/<?=$lang?>/press/mozilla-2009-06-30-faq.html">Frequently Asked Questions</a></li>
+        <li><a href="/<?=$lang?>/firefox/features/">Features</a></li>
+        <li><a href="/<?=$lang?>/firefox/tips/">Tips &amp; Tricks</a></li>
+        <li><a href="/<?=$lang?>/firefox/video/">Overview Video</a></li>
+        <li><a href="/<?=$lang?>/firefox/fastest/">Fastest Firefox Campagin</a></li>
+        <li><a href="/<?=$lang?>/firefox/3.5/firstrun/">Open Video Demo on First Run Page</a></li>
+    </ul>
+</div>
+
+<div id="reference">
+    <h4>Reference Materials</h4>
+    <ul>
+        <li><a href="http://static.mozilla.com/moco/en-US/pdf/firefox-3.5-reviewers-guide.pdf">Firefox 3.5 Reviewer’s Guide</a> (PDF)
+            <div class="commons-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/></a> (<a href="guide-license.html">What’s this?</a>)</div>
+        </li>
+        <li><a href="http://videos-cdn.mozilla.net/firefox3/b-roll/MozillaFirefox3.0-BRoll.mov">Mozilla B-Roll</a> (58MB MPEG4 Video)</li>
+        <li><a href="/<?=$lang?>/press/images.html#firefox-images">Product Images</a></li>
+    </ul>
+</div>
+
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

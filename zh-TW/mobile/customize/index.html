@@ -1,0 +1,39 @@
+<?php
+    // please translate the variable below
+    $page_title = "個人化的瀏覽體驗";
+
+    $pageid = "mobile-customize";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>個人化的瀏覽體驗</h2>
+    <p>自訂您的 Firefox，第一個在行動裝置上提供擴充能力的瀏覽器。</p>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'customize')?>
+</div>
+
+<div id="main-content">
+
+<h5>親手打造屬於您個人的瀏覽器</h5>
+<p><a href="https://addons.mozilla.org/firefox/mobile">Mobile 附加元件網站</a>幫助您在移動時也能方便使用網路。您可以安裝附加元件，透過社群網站分享您的最新消息、自動修正打錯的網址、或者安裝附加元件提供翻譯功能……等等，就在您的行動裝置上。附加元件免費且易於安裝，所以現在就試試看吧！</p>
+
+<img src="/img/mobile/personal-screenshot.jpg" alt="附加元件螢幕畫面截圖" id="personal-screenshot" />
+
+<h5>直接在手機上安裝</h5>
+<p>您可以直接在手機上搜尋並且安裝 Firefox Mobile 附加元件。選擇螢幕右下側的設定按鈕（齒輪），並選擇附加元件按鈕（拼圖）即可。</p>
+
+<div id="dev-promo">
+<h3>想要開發 Mobile 附加元件嗎？</h3>
+<p>您的創新帶領 Firefox 邁向成功。我們已試著讓開發 Mobile 附加元件的方法更加簡單。想了解更多資訊，請閱讀 <a href="../developers/">Mobile 開發</a>網頁。</p>
+</div>
+
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

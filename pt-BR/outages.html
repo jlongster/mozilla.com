@@ -1,0 +1,22 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Serviço indisponível';
+    $body_id    = 'outages';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="/style/tignish/outages-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    header('HTTP/1.1 503 Service Temporarily Unavailable');
+    header("Retry-After: 120");
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+<div id="main-feature">
+	<h2>Em manutenção</h2>
+	<p>O serviço que você está procurando está indisponível no momento. Estaremos de volta em breve; por favor, tente mais tarde. Agradecemos a sua paciência!</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

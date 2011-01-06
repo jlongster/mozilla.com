@@ -1,0 +1,26 @@
+<?php
+    $page_title = "Mozilla | Firefox";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/m-home.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+
+<div id="head">
+  <h1>I rikthyet vetes Web-in. Tani merreni me vete.</h1>
+  <p>Shfletuesi Web më i përparuar që mund të kihet, Firefox-i është i shpejtë, i sigurt, i përshtatshëm dhe njëkohësohet përsosmërisht me Firefox-in në desktopin tuaj. Merreni dhe bëjeni Firefox-in tuajin.</p>
+</div>
+
+<ul id="nav">
+  <li class="download">
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Shkarkim</a>
+    <a class="system" href="requirements.html">Sistem i Nevojshëm</a>    
+  </li>
+  <li><a href="features.html">Veçori</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+  <li><a href="privacy.html">Rregulla Vetësie</a></li>
+</ul>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

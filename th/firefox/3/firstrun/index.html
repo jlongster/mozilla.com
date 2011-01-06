@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'ยินดีต้อนรับสู่ Firefox';
+    $extra_feature_text = 'คลิกปุ่มปิดบนแท็บนี้เพื่อไปยังหน้าตั้งต้นของคุณ';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Welcome to Firefox 3"/></h2>
+    <p>ขอบคุณสำหรับการดาวน์โหลด Firefox เว็บเบราว์เซอร์ที่ปลอดภัยที่สุด เร็วที่สุดและปรับแต่งได้มากที่สุด เพียงแค่ปิดแท็บที่แสดงอยู่ข้างบน</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>เรียนรู้เพิ่มเติม</h3>
+        <p>งงอยู่ว่าจะทำอะไรต่อ? หน้าแนะนำมือใหม่มีรายการของเว็บไซต์ที่เราแนะนำ รวมไปถึงข้อมูลเพิ่มเติมของ Firefox <a href="/<?=$lang?>/firefox/central/">เข้าดูหน้าแนะนำมือใหม่</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>มีคำถามเพิ่มเติม?</h3>
+        <p>หน้าช่วยเหลือของเรามีคำตอบให้อย่างเหลือเฟือ รวมไปถึง ระบบแชทสด ๆ เพื่อช่วยเหลือคุณให้เข้าใจบางจุดที่ยาก <a href="http://support.mozilla.com/<?=$lang?>/kb/">เข้าดูหน้าช่วยเหลือ</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

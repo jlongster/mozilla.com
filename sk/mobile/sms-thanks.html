@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Ďakujeme, že ste si zvolili Firefox!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Ďakujeme, že ste si zvolili Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Pomocou nasledovných krokov si prevezmite Firefox, pozrite sa, čo je Firefox Sync a vyberte sa na cesty</h3>
+    <ol id="steps">
+        <li>Medzi doručenými textovými správami vyhľadajte správu, ktorú sme Vám odoslali.</li>
+        <li>Otvorte textovú správu a pomocou v nej uvedeného odkazu si prevezmite Firefox do svojho mobilného zariadenia.</li>
+    </ol>
+    <p class="small-print">*Firefox je zadarmo. Avšak prenos dát môže byť spoplatnený. Skontrolujte si tarifu vášho poskytovateľa pripojenia k internetu.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Počas čakania…</h3>
+    <ol>
+        <li>Nastavte si Firefox Sync a zoberte si <em>svoj</em> Firefox so sebou všade, kam idete. Zdieľajte históriu prehliadania, históriu, záložky, heslá a karty medzi vašim počítačom a mobilným telefónom.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Nainštalujte si doplnok Firefox Sync vo vašom počítači</a> a prihláste sa k účtu Firefox Sync. Po prevzatí Firefoxu do mobilného telefónu postupujte podľa našich odporúčaných krokov a kliknite na "Získať doplnok Firefox Sync" a dokončite inštaláciu. Prípadne môžete manuálne kliknúť na tlačidlo nastavení, zvoliť Doplnky a vyhľadať a nainštalovať si doplnok Firefox Sync na svoje mobilné zariadenie.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

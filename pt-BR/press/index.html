@@ -1,0 +1,71 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Central de Imprensa Mozilla';
+    $body_id    = 'press';
+
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/press-page.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.mozilla.com/brasil/feed/" />
+    <script type="text/javascript" src="http://w.sharethis.com/button/sharethis.js#publisher=24928a16-4c8b-4e88-8e9e-abd7e9668971&amp;type=website"></script>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Central de Imprensa</h2>
+    <p>Notícias, notas de imprensa e mais</p>
+</div>
+
+<?php 
+    $page_title = "Imprensa";
+    include "includes/side-menu.php"; 
+?>
+
+<div id="main-content">
+
+    <div id="press-releases">
+        <h3>Notas de imprensa</h3>
+        <a class="rss-link rss-link-top" href="http://blog.mozilla.com/brasil/feed/">Assinar feed RSS</a>
+
+        <ul class="feed-items">
+            <?php 
+                $feed_items = array();
+                @include "includes/feed.php"; 
+            ?>
+            <?php foreach ($feed_items as $item): ?>
+                <li>
+                    <div class="title"><a href="<?=$item['link']?>"><?=$item['title']?></a></div>
+                    <p class="summary"><?=$item['summary']?></p>
+                    <div class="meta">
+                        <span class="date"><?=$item['date']?></span>
+                        <span class="share">
+                            <script type="text/javascript">
+                                SHARETHIS.addEntry(<?=json_encode(array(
+                                    'title' => $item['title'],
+                                    'url' => $item['link'],
+                                    'summary' => $item['summary'],
+                                    'published' => $item['dateISO8601']
+                                    //'icon' => ''           
+                                ))?>, {button:true} );
+                            </script>
+                        </span>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+
+		<p>
+			<a href="http://blog.mozilla.com/">Blog Mozilla</a> &nbsp;|&nbsp; 
+			<a href="http://blog.mozilla.com/brasil/">Blog Mozilla no Brasil</a> &nbsp;|&nbsp; 
+            <a href="http://blog.mozilla.com/brasil/feed/" class="rss-link">Assinar feed RSS</a>
+		</p>
+	</div>
+
+</div><!-- end #main-content div -->
+
+<?php include "includes/sidebar.php"; ?>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

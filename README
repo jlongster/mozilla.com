@@ -1,0 +1,82 @@
+Mozilla.com
+===========
+
+Testing/Reviewing
+-----------------
+This is a special section that will be removed once the code is released. 
+Also, the scope of this project is limited to just "in-project pages"
+as defined on http://wiki.mozilla.org/Firefox2/In-Product_Web_Pages .
+
+
+Description
+-----------
+
+This is the main mozilla.com site, now supporting many languages.  In it's first revision, it will only
+support "in-product pages" in multiple languages ( defined here: http://wiki.mozilla.org/Firefox2/In-Product_Web_Pages ).
+
+
+Requirements
+------------
+- Make sure name-based virtual hosting is enabled.  In apache, check for this line in httpd.conf:
+
+    NameVirtualHost *:80
+
+- DNS entries for any languages you will be supporting.  (For testing, pointing *.name.com -> name.com will work well).
+
+- There is an .htaccess that must run on page requests
+
+    AllowOverride All
+
+- You must enable the following Apache Modules
+
+    a2enmod expires 
+    a2enmod actions
+    a2enmod headers
+
+How To Install
+--------------
+
+
+1) (Assuming apache) create a virutal host for your site that supports all DNS
+entries you made.  Also be sure to add the Rewrite rules below.
+Example:
+
+        <VirtualHost *:80>
+            ServerName www.mozilla.com
+            ServerAlias *.www.mozilla.com
+            DocumentRoot /data/www.mozilla.com
+            AddType application/x-httpd-php .php .html
+            DirectoryIndex index.php index.html
+            Options -Indexes
+
+            RewriteEngine On
+            RewriteMap toupper int:toupper
+        </VirtualHost>
+
+Notice that we're parsing html as php - this is for backwards compatibility with the stuff we migrated from mozilla-europe.
+
+
+2) Check out the code from svn.mozilla.org/projects/mozilla.com/trunk/ to your webroot
+
+3) Copy /includes/config.inc.php-dist to /includes/config.inc.php, and fill out all variables.
+
+
+Testing
+-------
+
+Make sure the following URLs load without errors:
+
+/firefox/2.0/firstrun
+/firefox/2.0/whatsnew
+/firefox/central
+/firefox/help
+/firefox/customize
+/firefox/community
+/firefox/about
+/firefox/contact
+
+
+Questions?
+----------
+
+Email: Wil Clouser <clouserw@mozilla.com>

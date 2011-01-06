@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Pri identigado de retejoj per unu alklako";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Pri identigado de retejoj per unu alklako</h2>
+    <p>Firefox 3 havas novan butonon por helpi vin scii kun kiu vi konektiĝas dum retumado.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Tiuj trajto permesas al vi rapide kontroli ĉu la retejo kiun vi vizitas provizis informon pri sia identeco, kiu kontrolis tiun informon kaj ĉu ĝi protektas sian datumtrafikon kontraŭ legado de aliaj. Vi povas ricevi la informon pri identeco por iu ajn loko per alklakado de la bildsimbolo de la retejo en la maldekstra flanko de la adreso strio (aŭ per tajpado de Stir-Tabo-Eniro).</p>
+
+<h3>Oftaj demandoj</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Kion signifas la malsamaj niveloj de informo pri identeco?</h4>
+    <div class="expander-content">
+        <p>La bildsimbolo de "pasporta oficiisto" ŝanĝiĝos spegulante la nivelon de la identeca informo provizita de la retejo.</p>
+        <p class="site-id site-id-1">La retejo provizas neniun identecan informon.</p>
+        <p class="site-id site-id-2">La retejo provizas nur bazan identecan informon, kaj protektas viajn personajn datumojn kontraŭ legado de aliaj.</p>
+        <p class="site-id site-id-3">La retejo provizas plene kontrolitan identecan informon pri sia posedanto kaj protektas viajn persojajn datumon kontraŭ legado de aliaj.</p>
+        <p class="site-id site-id-4">La retejo aperas en listo kiel ataka retejo aŭ reta falsaĵo. Sendi personajn informojn al tiu ĉi retejo, aŭ eĉ viziti ĝin, povas esti difekta.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kial ne ĉiuj retejoj provizas kontrolitan identecan informon?</h4>
+    <div class="expander-content">
+        <p>La plejmulto de la retejoj en la reto ne petas al vizitantoj ian ajn personan aŭ financan informon kaj do ili povas taksi nenecesa la strebon kaj koston provizi kontrolitan identecan informon kaj protektadon de sia datumtrafiko kontraŭ legado de aliaj.</p>
+        <p>Retejoj kiuj volas ke vi sendu personan aŭ financan informon, aŭ tiuj kiuj sin deklaras ŝtataj aŭ entreprenaj, ĉiam devus taŭge provizi sian identecon kaj protekti vian informadon kontraŭ la legado de aliaj..</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ĉu estas sekura negoci kun retejoj kiuj ne provizas identecan informon?</h4>
+    <div class="expander-content">
+        <p>Antaŭ ol decidi ĉu fidi je iu vi devas scii kun kiu vi parolas, sed tio ne estas ĉio. Retejoj kiuj ne provizas identecan informon kaj ne protektas vian personan informon riskigas vin kaj ne devus esti konsiderataj sekuraj. Sed eĉ retejoj kiuj provizas identecan informon taŭge kaj bone povus havi praktikojn kiujn vi ne konsentas, aŭ manki la necesan servilan sekurecon.</p>
+        <p>Ĝuste kiel en la vera mondo, vi devus singarde interagi kun retejoj kiujn vi ne konas aŭ je kiuj vi ne vidas. Scii ĉu la retejo provizis identecan informon estas parto de la decido fidi.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ĉu Mozilla kontrolas tiun informon por ĉiu retejo?</h4>
+    <div class="expander-content">
+        <p>La informo uzata por identigi retejojn ne estas kontrolata de Mozilla. Anstataŭ tio, Firefox, kiel aliaj retesploriloj fidas je aro de fidindaj entreprenoj kiuj nomiĝas "Atestilaj aŭtoritatoj" kaj kontrolas la identencon de retejo kaj eldonas identecajn "atestilojn". Tiuj entreprenoj devas sekvi la <a href="http://www.mozilla.org/projects/security/certs/policy/">Politikon de Mozilla por atestiloj de atestilaj aŭtoritatoj</a> kiu, inter aliaj aĵoj, postulas ke atestilaj aŭtoritatoj devigas sin esti reviziataj de aliaj por konfirmi ke ili ne disdonas atestilojn netaŭge.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

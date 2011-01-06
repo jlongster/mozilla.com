@@ -1,0 +1,117 @@
+<?php
+    header('Expires: ' . gmdate("D, d M Y H:i:s", floor((time() + 60) / 60) * 60) . ' GMT'); 
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox web browser | International versions: Get Firefox in your language';
+    $body_id    = 'firefox-all';
+    $breadcrumbs = array(
+        'Features'      => "/{$lang}/firefox/features/",
+        'Languages'       => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
+    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="/js/mozilla-language-search.js"></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array( '/firefox-'.LATEST_FIREFOX_VERSION.'([^"]*)en-US/' => 'firefox-'.LATEST_FIREFOX_VERSION.$config['funnelcake_suffix'].'$1en-US');
+    }
+?>
+
+<div id="feature-header"></div>
+<div id="main-feature">
+	<h2>Download a Firefox that <span>speaks your language</span></h2>
+	<p>Firefox is available in over 70 languages, thanks to the contributions from Mozilla community members around the world.</p>
+</div>
+
+
+<div id="main-content">
+
+    <script src="/js/download.js"></script>
+
+<?php
+// lang-search specified, filter languages
+if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
+    $filtered_keywords = htmlspecialchars($_GET['lang-search']);
+?>
+    <?php
+        $_results_table = $firefoxDetails->getFilteredDownloadTableForPrimaryBuilds($_product_details_options, $_GET['lang-search']);
+        $_beta_results_table = $firefoxDetails->getFilteredDownloadTableForBetaBuilds($_product_details_options, $_GET['lang-search']);
+        if (empty($_results_table) && empty($_beta_results_table)) {
+    ?>
+    <h2 class="results no-results">No Search Results for: <em><?php echo $filtered_keywords; ?></em> <a href="all.html" class="clear">Clear Search</a></h2>
+    <?php } else { ?>
+    <h2 class="results">Language Search Results for: <em><?php echo $filtered_keywords; ?></em> <a href="all.html" class="clear">Clear Search</a></h2>
+    <?php if (!empty($_results_table)) { ?>
+    <div id="languages">
+        <h3>Fully Localized Versions</h3>
+        <?php echo $_results_table; ?>
+    </div>
+    <?php } ?>
+    <?php if (!empty($_beta_results_table)) { ?>
+    <div id="beta_versions">
+        <h3>New Localized Builds</h3>
+        <p>These localized builds are in beta and may contain translation errors.</p>
+        <?php echo $_beta_results_table; ?>
+    </div>
+    <?php } ?>
+    <?php } ?>
+
+<?php
+    // no lang-search, show all languages
+    } else {
+?>
+
+    <div id="languages">
+        <h3 class="lang-title">Fully Localized Versions</h3>
+    <?php echo $firefoxDetails->getDownloadTableForPrimaryBuilds($_product_details_options); ?>
+    </div>
+
+    <?php
+        $_beta_table = $firefoxDetails->getDownloadTableForBetaBuilds();
+
+        if (!empty($_beta_table)) {
+    ?>
+    <div id="beta_versions">
+        <h3 class="lang-title">New Localized Builds</h3>
+        <p>These localized builds are in beta and may contain translation errors.</p>
+        <?=$_beta_table?>
+    </div>
+
+    <?php } // end beta-table conditional ?>
+<?php } // end lang-search conditional ?>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+	<div id="sidebar-search">
+		<h3>Search Language</h3>
+		<form method="get" action="all.html" id="search-form">
+			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+		</form>
+		<script>// <![CDATA[
+		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
+		var language_search = new Mozilla.LanguageSearch(
+			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
+		// ]]>
+		Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
+		Mozilla.LanguageSearch.download_text = 'download';
+		</script>
+	</div>
+	<div id="other-versions">
+		<h3>Other Firefox Downloads</h3>
+		<ul>
+			<li><a href="all.html#beta_versions">New languages still in beta</a></li>
+			<li><a href="all-older.html">Firefox <?=LATEST_FIREFOX_OLDER_VERSION?></a></li>
+		</ul>
+	</div>
+</div>
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

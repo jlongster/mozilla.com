@@ -1,0 +1,25 @@
+Nutch-Interface
+---------------
+
+This is a library that is designed to be checked out as an SVN External for your
+project.  When checking out, use a specific revision instead of HEAD as there are no
+trunk/tag versions.
+
+This library provides a simple interface to a running instance of Nutch.  To use this 
+library include the class and create an instance of it.  This should get you started:
+
+try {
+
+    $nutch = new mozNutch('http://nutch.server.com/');
+    $results = $nutch->query('test', 10, 0);
+
+    echo $nutch->transformXmlToHtml($results);
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+The class is well documented.  Please read it for additional details.  This library
+requires php5 compiled with DOM support.
+
+Questions?  Email clouserw at mozilla

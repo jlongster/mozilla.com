@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Ģeok lokācija Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Vietu zinoša sērfošana</h2>
+    <p>Firefox var pastāstīt interneta lapām, kur jūs atrodaties, lai jūs saņemtu
+    sev aktuālāku informāciju. Šis tiek darīts, lai padarītu tīmekli gudrāku un pilnībā ievērojot jūsu privātumu.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Izmēģināt šo!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Biežāk uzdotie jautājumi</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kas ir vietu zinoša sērfošana?</h4>
+    <div class="expander-content">
+        <p>Mājas lapas, kas izmanto vietu zinošo sērfošanu jautās jūsu atrašanās vietu, lai piedāvātu jums aktuālāku saturu un aiztaupītu laiku meklējot. Piemēram, ja jūs meklējat picēriju savā rajonā. Mājas lapa varēs pateikt, kur jūs atrodaties un meklējot vārdu “pica” jums parādīs picērijas jūsu rajonā... nekāda papildus informācija nebūs jāievada, nekas vairāk nebūs jāraksta.</p>
+        <p>Vai, ja jūs meklējat kā nokļūt uz kādu vietu, mājas lapa zinās no kurienes jūs varētu sākt savu ceļojumu un jums būs jāievada vienīgi tas uz kurieni gribat nokļūt.</p>
+        <p>Šis pakalpojums ir absolūti neobligāts &ndash; Firefox neizpaudīs jūsu atrašanās vietu bez jūsu piekrišanas, turklāt tas tiek darīts ar visdziļāko cieņu pret jūsu privātumu. Tāpat kā citas Firefox daļas arī šis tiek veidots balstoties uz atvērtiem standartiem, lai atvieglotu šīs iespējas ieviešanu mājas lapās.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kā tas strādā?</h4>
+    <div class="expander-content">
+        <p>Ieejot vietu zinošā mājas lapā, Firefox jautās vai vēlaties atklāt savu atrašanās vietu.</p>
+        <p>Ja piekritīsiet, Firefox apkopos informāciju par bezvadu tīkliem jūsu apkaimē un jūsu datora IP adresi. Apkopotā informācija tiks nosūtīta noklusētajam ģeolokācijas pakalpojumu sniedzējam, Google Location Services, lai noskaidrotu jūsu atrašanās vietu. Atrašanās vietas dati pēc tam tiks piedāvāti atveramajai mājas lapai.</p>
+        <p>Ja napiekritīsiet atklāt savu atrašanās vietu, Firefox nedarīs neko.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cik precīzi var noteikt atrašanās vietu?</h4>
+    <div class="expander-content">
+        <p>Precizitāte dažādām vietām atšķiras. Labākajos gadījumos vietu var noteikt ar dažu metru precizitāti. Citos gadījumos neprecizitāte būs lielāka par dažiem metriem. Vietas noteikšana negarantē precizitāti, tas ir tikai minējums. Lūdzu neizmantojiet šo informāciju ārkārtas gadījumos, vienmēr paļaujieties uz veselo saprātu.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kādu informāciju sūta un kam? Kā tiek aizsargāts mans privātums?</h4>
+    <div class="expander-content">
+        <p>Jūsu privātums mums ir ļoti svarīgs, Firefox nekad neizpaudīs jūsu atrašanās vietu bez jūsu piekrišanas. Apmeklējot lapu, kas pieprasa informāciju par jūsu atrašanās vietu, mēs jums pārjautāsim, vai vēlaties citiem darīt zināmu savu atrašanās vietu.</p>
+        <p>Pēc noklusējuma Firefox izmanto Google Location Services lai noteiktu jūsu atrašanās vietu un sūta sekojošo:</p>
+        <ul>
+            <li>jūsu datora IP adresi,</li>
+            <li>informāciju par apkaimē esošajiem bezvadu tīkliem un</li>
+            <li>speciālu klienta identifikatoru, ko piešķir Google un kura derīgums beidzas katras 2 nedēļas.</li>
+        </ul>
+        <p>Sīkāku informāciju par to kādus datus apkopo un izmanto Firefox var iegūt <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox privātuma politikas</a> aprakstā (Angļu valodā).</p>
+        <p>Google Location Services atgriež jūsu atrašanās vietas minējumu (t.i., ģeogrāfisko platumu un garumu).  Sīkāku informāciju par Google apkopotajiem un izmantotajiem datiem var iegūt <a href="http://www.google.com/privacy-lsf.html" class="external">Google ģeolokācijas privātuma politikas</a> aprakstā (Angļu valodā).</p>
+        <p>Lai aizsargātu jūsu privātumu, informācijas apmaiņa notiek izmantojot šifrētu savienojumu. Kolīdz Firefox ir uzzinājis jūsu atrašanās vietu, tā tiek nodota mājas lapai, kura pieprasīja to. Nedz dati par to kuru lapu jūs apmeklējat, nedz jebkādas sīkdatnes nekad netiek izpaustas Google Location Services.</p>
+        <p>Ne Mozilla, ne arī Google nekad neizmantos informāciju par jūsu atrašanās vietu, lai identificētu vai izspiegotu jūs.</p>
+        <p>Lai iegūtu papildus informāciju par to, ko ar jūsu atrašanās vietas datiem dara mājas lapa, kas pieprasa šo informāciju, iepazīstieties ar šīs lapas privātuma politiku.</p>
+        <p>Papildus informācija par privātumu pieejama:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox privātuma politikā</a> (Angļu valodā)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google privātuma politikā</a> (Angļu valodā)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Vai sērfojot internetā kāds man seko līdz?</h4>
+    <div class="expander-content">
+        <p>Nē. Firefox apkopo informāciju un pieprasa atrašanās vietas noteikšanu vienīgi tad, kad kāda lapa jautā to un jūs piekrītat sniegt šo informāciju. Vienkārši sērfojot Firefox nenosaka un neatceras jūsu atrašanās vietu.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kā es varu atcelt kādas lapas atļauju iegūt manu atrašanās vietu?</h4>
+    <div class="expander-content">
+        <p>Ja esat ļāvuši kādai lapai iegūt jūsu atrašanās vietas informāciju, bet vēlāk pārdomājat, jūs varat vienkārši atcelt savu atļauju iegūt jūsu atrašanās vietu. To var izdarīt šādi:</p>
+        <ul>
+            <li>Atveriet lapu, kurai ļāvāt iegūt datus</li>
+            <li>Ejiet uz <em>Rīki</em> izvēlni un izvēlieties <em>Informācija par lapu</em></li>
+            <li>Izvēlieties cilni <em>Atļaujas</em></li>
+            <li>Izmainiet <em>Atrašanās vietas iestatījumus</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kā notīrīt “speciālo klienta identifikācijas numuru”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Ejiet uz <em>Rīki</em> izvēlnes <em>Notīrīt neseno vēsturi</em> sadaļu</li>
+            <li>Klikšķiniet uz  <em>Papildus informācija</em></li>
+            <li>Pārliecinieties, ka ir izvēlēts <em>Sīkdatnes</em></li>
+            <li>Klikšķiniet uz <em>Notīrīt tagad</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kā pilnībā izslēgt vietu zinošo pārlūkošanu?</h4>
+    <div class="expander-content">
+        <p>Vietu zinošā pārlūkošana vienmēr ir kā papildus iespēja Firefox. Bez jūsu piekrišanas nekāda informācija nekad netiek sūtīta. Ja vēlaties pilnībā deaktivizēt šo iespēju, rīkojieties šādi:</p>
+        <ul>
+            <li>Adreses laukā ierakstiet <code>about:config</code></li>
+            <li>Ierakstiet <code>geo.enabled</code></li>
+            <li>Uzklikšķiniet ar dubultklikšķi uz <em>geo.enabled</em> iestatījumi</li>
+            <li>Vietu zinošā pārlūkošana tagad ir deaktivizēta</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Kur es esmu?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! Nosakot jūsu atrašanās vietu notikusi kļūda.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

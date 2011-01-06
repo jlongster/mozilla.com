@@ -1,0 +1,105 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    // the $page_title string should be translated
+    $page_title = 'Addas i Bawb';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Addas i Bawb</h2>
+    <p>Byddwch yn ychwanegu cynhwysion ar ben eich pizza a thonau i'ch ffôn symudol. Felly, pam nad addasu'r ffordd rydych yn trin y we?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Cynnyrch</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="cy">Nodweddion</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Diogelwch</a></li>
+    <li><span>Addasu</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">Meddalwedd Organig 100%</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Triciau Firefox</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Nodiadau Ryddhau</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Systemau ac Ieithoedd Eraill</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Ychwanegion ar gyfer Pawb</h3>
+        <p>Mae gan Firefox lawer o ffyrdd o addasu eich profiad ar-lein i gyd-fynd â'r ffordd rydych yn defnyddio'r we. Mae yna fwy na 5,000 o Ychwanegion (er mwyn addasu Firefox i'ch ffordd chi o bori) yn aros i'ch helpu i wneud mwy, cael mwy o hwyl a bod yn fwy creadigol ar-lein.</p>
+        <p>Eisiau dysgu rhagor? Edrychwch ar yr enghreifftiau isod ac yna <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">mynd i'n gwefan Ychwanegion i weld ystod y posibiliadau.</a> </p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Rhybuddio a Diweddaru</h4>
+            <p>Gydag Ychwanegion o'r categori yma, mae modd cael y diweddaraf ar y tywydd, chwaraeon a hyd yn oed y prynu a'r gwerthu ar eBay. Bydd gwybodaeth fyw yn ymddangos yn eich porwr, pa bynnag wefan rydych arni.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Gweld Pob Ychwanegyn Rhybuddio a Diweddaru</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Er enghraifft:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>Cadw eich llygad ar eich masnachu ar eBay lle bynnag rydych ar y We.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Defnyddio'r Firefox eBay Edition</a> <span>gan yr eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Lluniau, Cerddoriaeth a Fideo</h4>
+            <p>Troi eich Firefox yn fodd i lwytho i fyny lluniau, chwarae cerddoriaeth a chanolfan aml gyfrwng grymus. Mae'n union fel cael panel rheoli wrth law wrth i chi bori, gweithio, e-bostio neu ymchwilio ar y we.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Gweld Ychwanegion Lluniau, Cerddoriaeth a Fideo</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Er enghraifft:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>Rheoli bron bob chwaraewr cyfrwng o'ch porwr.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Defnyddiwch FoxyTunes</a> <span>gan Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Cymdeithasol a Chyfathrebu</h4>
+            <p>Mae'r Ychwanegion yn eich helpu i ddod o hyd i ddeunydd defnyddiol ar y We, gwella eich negeseua chwim a chadw mewn cysylltiad â'ch ffrindiau drwy'r prif rwydweithiau cymdeithasol.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Gweld yr holl Ychwanegion Cymdeithasol a Chyfathrebu</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Er enghraifft:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>Canfod gwefannau newydd, cysylltu â ffrindiau a rhannu eich darganfyddiadau.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Defnyddio StumbleUpon</a> <span>gan StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Themâu</h4>
+            <p>Peidio cyfyngu eich profiad o bori i'r profiad safonol Dewiswch liwiau newydd, gwneud y porwr yn haws i'w ddefnyddio (botymau mwy, i gychwyn) neu ddewis golwg sy'n edrych yn well.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Gweld yr holl Themâu</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Er enghraifft:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>Y thema i bobl sy'n hoffi pethau tywyll.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Defnyddiwch NASA Night Launch</a> <span>gan mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>Ychwanegion</h3>
+            <h5>Creu eich Firefox eich Hun</h5>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Gweld yr holl Ychwanegion</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

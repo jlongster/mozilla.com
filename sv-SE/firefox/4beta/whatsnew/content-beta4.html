@@ -1,0 +1,46 @@
+
+<div id="main-feature">
+
+    <h1>Vad är nytt i <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Börja rör på dig med Firefox 4 Beta</h3>
+        <p>Från jobbet till hemmet till mobilen och tillbaka! Firefox Sync ger 
+        dig obruten tillgång till all viktig Firefoxdata - såsom bokmärken, 
+        lösenord, historik och öppna flikar - på flera datorer och enheter. Se 
+        videon som hjälper dig att komma igång.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Läs mer om Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Ge Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Versionsfakta »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Senaste nytt</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organisera ditt nätliv:</h4>
+         <?=$tabvideo?>
+        <p>Har du svårt att hålla reda på alla dina öppna flikar? Ta kontrollen  
+        över fliktrasslet! Dra och släpp dina flikar i hanterbara grupper som 
+        du kan organisera, namnge och arrangera på ett kul och lättöverskådligt 
+        sätt.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

@@ -1,0 +1,49 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Atualizado';
+    $body_id    = 'whatsnew';
+    $body_class = 'portal-page';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/whatsnew-page.css" media="screen" />
+	<script type="text/javascript" src="/js/whats-new-page.js"></script>
+EXTRA_HEADERS;
+    $extra_feature = <<<EXTRA_FEATURE
+<div id="tab-close"><p>Clique no botão Fechar desta aba para ir para sua página inicial</p></div>
+EXTRA_FEATURE;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2 id="main-feature-title">O Firefox atualizou-se para a sua versão mais recente.</h2>
+	<p id="main-feature-contents">Esta atualização tornará sua navegação mais segura.</p>
+	<script type="text/javascript">// <![CDATA[
+	//localization note: message 1 will display the version number at the end of the string, hence the trailing space
+	//ex: You’re now running Firefox 3.1
+
+	var userversion = '<?=LATEST_FIREFOX_VERSION?>';
+	var message1 = 'Você está usando o Firefox&nbsp;';
+	var message2 = 'Por razões de segurança, recomendamos que você baixe a <a href="/<?=$lang?>/firefox/">última e melhor versão</a>.';
+
+	whatsNewMessage();
+	// ]]></script>
+</div>
+
+<div id="main-content">
+	<div>
+		<h3>A forma mais segura de navegar</h3>
+		<p>Uma comunidade de milhares de experts espalhada pelo mundo está trabalhando todos os dias para ajudar-nos a identificar e remover as mais recentes ameaças à sua segurança online. Manter você protegido é a nossa maior prioridade. <a href="/<?=$lang?>/firefox/security/">Saiba mais sobre nosso processo de segurança</a>.</p>
+	</div>
+	<div>
+		<h3>Faça mais com o Firefox</h3>
+		<p>Visite nossa página <em>Começando a usar o Firefox</em> para saber como aproveitar ainda mais o seu Firefox. <a href="/<?=$lang?>/firefox/central/">Faça mais com o Firefox</a>.</p>
+	</div>
+
+	<p class="changelog">O que há de novo nessa atualização? <a href="../releasenotes/">Veja as notas da versão</a>.</p>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

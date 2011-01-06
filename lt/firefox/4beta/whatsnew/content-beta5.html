@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="„Firefox 4“ betos" /> naujovės</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Naujoji Audio API sąsaja suteikia priėjimą prie HTML5 <code>&lt;video&gt;</code> ir <code>&lt;audio&gt;</code> elementuose esančių daugialypės terpės elementų neapdorotų audio duomenų. Naudodami „JavaScript“, programuotojai juos gali tiek skaityti tiek rašyti. Šios technologijos galimybės pristatomos filmuke.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Pasidalinkite savo nuomone »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Laidos apžvalga »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Naujienos</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Aparatinis grafikos spartinimas (tik „Windows“ sistemose)</h4>
+        <p>Pamatykite skirtumą patys – dabar visoje su „DirectX 10“ suderinamoje įrangoje yra automatiškai naudojamas „Direct2D“ aparatinis grafikos spartinimas.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Saugus ryšys su serveriais</h4>
+        <p>Naudodamos <acronym lang="en" title="HTTP Strict-Transport-Security ">HSTS</acronym> antraštę, svetainės gali „Firefox“ naršyklei liepti automatiškai prie jų jungtis šifruotu ryšiu, taip išvengiant galimo šnipinėjimo ar duomenų nutekėjimo. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html" hreflang="en">Plačiau (anglų k.) »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

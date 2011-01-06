@@ -1,0 +1,44 @@
+<?php
+
+    // translate $page_title below
+    $page_title       = "404: Laman Tidak Ditemukan";
+
+
+    include_once "{$config['file_root']}/includes/l10n/404.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <h2>Hmmm, kami agak susah menemukan yang Anda cari.</h2>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+    <h3>Sebenarnya, kami juga tidak suka hal seperti ini terjadi, tetapi kami benar-benar tidak dapat menemukan laman atau berkas yang Anda cari.</h3>
+
+    <ul class="spaced">
+        <li>Jika Anda mengetik alamatnya secara manual, coba periksa lagi tulisannya.</li>
+        <li>Jika Anda mengikuti tautan dari laman dari tempat lain, silakan hubungi kami lewat <em>webmaster at mozilla dot com</em>. Pastikan Anda mencantumkan informasi lewat mana Anda datang dan apa yang ingin Anda cari, kami akan berusaha sebaik mungkin untuk memperbaikinya.</li>
+    </ul>
+</div>
+
+<div id="error-suggestions">
+    <h3>Jika benar-benar buntu, berikut beberapa pilihan yang disarankan:</h3>
+
+    <ul class="spaced">
+        <li>Anda mencari informasi tentang <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
+        <li>Atau aplikasi email kami, <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+        <li><em>Kayaknya</em>, lebih baik memulai lagi lewat <a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+    </ul>
+</div>
+
+</div><!-- end #content div -->
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

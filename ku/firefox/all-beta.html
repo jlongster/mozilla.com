@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Geroka Firefoxê | Ji bo ceribandina betaya dawî alîkariyê bide me';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Ji bo ceribandina pêşdeçûnên Firefoxê alîkariyê bide!</h2>
+        <p>Guhertoya betaya dawî ya Firefox niha amade ye. NIha biceribîne û ji me re ragihîne ka der barê wê de çi difikirî!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Agahiyên Girîng</h4>
+        <p class="intro">Ji kerema xwe re beriya daxistinê bixwîne</p>
+    </div>
+    <ul>
+        <li>Ev gi,uhertoyeke ne-qediyayî ye: dibe ku di vekirina hin maperan de û bikaranîna hin pêvekan de pirsgirêk derkevin.</li>
+        <li>Heke te pirsgirêkek dît ji kerema xwe re <a href="http://feedback.mozilla.org/">ji me re ragihîne</a> an jî <a href="https://bugzilla.mozilla.org/">bugekê bişîne</a>.</li>
+        <li>Ji bo zêdetir agahî, <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">têbiniyên guhertoyê</a> bixwîne û <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">pirsgirêkan nas bike</a> (bi înglîzî).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Guhertoya Beta naxwazî? Derbasî <a href="/<?=$lang?>/firefox/">guhertoya dawî ya Firefoxê</a> bibe.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

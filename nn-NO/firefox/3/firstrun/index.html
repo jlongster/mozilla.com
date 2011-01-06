@@ -1,0 +1,31 @@
+﻿<?php
+    // strings to translate
+    $page_title = 'Velkomen til Firefox';
+    $extra_feature_text = 'Trykk på Lat att-knappen på denne fana for å gå til startsida';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Velkomen til Firefox 3"/></h2>
+    <p>Takk for at du lasta ned den sikraste, raskaste og mest brukarvennlege versjonen av Firefox til no. No er det berre å late att denne fana som vist ovanfor, og så er du i gang.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Finn ut meir</h3>
+        <p>Lurer du på kva du skal gjere no? <i>Kom i gang</i>-sida vår har ei liste over tilrådde nettsider, og meir informasjon om Firefox. <a href="/<?=$lang?>/firefox/central/">Gå til Kom i gang-sida</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Spørsmål?</h3>
+        <p>Brukarstøttesida vår har ei mengde med svar og ein direkte tekstprat-funkjon som kan hjelpe deg med dei tekniske bitane. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Gå til brukarstøttesida</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,120 @@
+<?php
+
+    // translate The variables below please
+
+    // Page title (the browser title bar)
+    $page_title = "El Firefox Home per a l'iPhone";
+
+    // Video player extra variables
+    $video_title  = "Vegeu el Firefox Home en acció";
+    $music_credit = "Música de Kate Earl";
+
+    include_once "{$config['file_root']}/includes/l10n/firefoxhome-page.inc.php";
+
+?>
+
+
+<div id="main-feature">
+  <h2>Emporteu-vos a sobre<br/>la vostra llar</h2>
+  <p>Tingueu l'historial del Firefox, les adreces d'interès i les pestanyes obertes al vostre iPhone</p>
+  <p class="dl">
+    <a href="<?=$ituneslink;?>" class="download-link">
+      <strong>Baixeu-lo</strong>
+      <em>de l'iTunes &ndash; de franc</em>
+    </a>
+  </p>
+</div>
+
+<?=$sidemenu;?>
+
+
+<div class="features-divider top"><hr /></div>
+  <ul id="main-features">
+    <li class="onthego">
+
+      <h4>A tot arreu</h4>
+      <p>Tingueu accés al moment a la llista de pestanyes que tingueu obertes al vostre ordinador</p>
+
+    </li>
+    <li class="less">
+
+      <h4>Escriviu menys</h4>
+      <p>No cal que escriviu més URL llargs. Les adreces d'interès us porten als vostres llocs preferits amb un simple cop de dit</p>
+
+    </li>
+    <li class="search">
+
+      <h4>Cerca</h4>
+      <p>Comenceu a escriure i la barra fantàstica us portarà a aquells llocs que desitgeu</p>
+
+    </li>
+
+    <?=$video;?>
+  </ul>
+  <div class="features-divider"><hr /></div>
+
+<div id="main-content">
+  <div class="container">
+
+    <h3>Per què voleu tenir el Firefox Home al vostre iPhone?</h3>
+
+    <h4>Aixequeu-vos i aneu-vos-en</h4>
+    <p>Aixequeu-vos i aneu-vos-en amb la seguretat de tenir allò que és la vostra xarxa esperant-vos a l'iPhone: el vostre historial, les pestanyes obertes, les adreces d'interès, la barra fantàstica &mdash; tal com us agrada, tal com ho heu deixat.</p>
+
+    <h4>No comenceu del no res</h4>
+    <p>No cal que perdeu temps escrivint URL llargs o cercant els vostres llocs preferits. Feu que l'historial del Firefox us faci la feina en engegar l'iPhone.</p>
+
+    <h4>Llar, dolça llar</h4>
+    <p>La nostra llar és important. Per això, cal un sistema d'alarma per protegir les vostres dades privades. Amb la frase secreta es garanteix que ningú més pugui accedir a la vostra informació.</p>
+
+  </div>
+  <div id="main-content-footer"></div>
+
+</div>
+
+<div id="sidebar">
+
+    <h3>Primers passos</h3>
+    <ol>
+      <li>
+
+        <h4>Instal·leu el <a href="/<?=$lang?>/firefox/sync/">complement gratuït del Firefox Sync</a> al vostre escriptori.</h4>
+        <p>El Firefox Home utilitza les capacitats de sincronització del complement Firefox Sync per accedir a la informació del vostre navegador Firefox i enviar-la de forma segura al vostre iPhone.</p>
+
+      </li>
+      <li>
+
+        <h4>Un cop hàgiu reiniciat el Firefox, seguiu les instruccions per crear un compte amb una contrasenya i una frase secreta.</h4>
+        <p>El Firefox Home fa servir la vostra frase secreta per xifrar localment la vostra informació i així protegir-la.</p>
+
+      </li>
+      <li>
+
+        <h4>El Firefox Sync començarà a sincronitzar de forma segura les vostres dades amb el nostre servei. La sincronització inicial pot trigar fins a 20 minuts.</h4>
+        <p>El Firefox Sync només funcionarà si no esteu en mode de navegació privada. Un cop hagi acabat la sincronització inicial, podreu comprovar l'hora de la darrera actualització al menú Eines &gt; Sync.</p>
+
+      </li>
+      <li>
+
+        <h4>Per completar la instal·lació, introduïu el vostre compte, la contrasenya i la frase secreta al vostre iPhone al camp que es proporciona i premeu «Fet» al teclat.</h4>
+        <p>Si teniu cap problema en iniciar una sessió, <a href="<?=$sumolink1?>">feu clic aquí per obtenir ajuda</a>.</p>
+
+      </li>
+      <li>
+
+        <h4>Un cop hàgiu acabat, podreu accedir a les adreces d'interès del vostre ordinador, a l'historial i a les pestanyes obertes des de l'iPhone.</h4>
+        <p>Si no es mostren les vostres dades, <a href="<?=$sumolink2?>">feu clic aquí per obtenir ajuda</a>.</p>
+
+      </li>
+    </ol>
+
+    <p><a href="<?=$sumolink3?>">Instruccions més detallades</a></p>
+    <p><a href="/<?=$lang?>/mobile/home/faq/">Preguntes més freqüents</a></p>
+    <p><small>* Nota: Després de crear un compte del Firefox Sync, la sincronització inicial pot trigar més temps del normal en acabar. Després de completar-se, tindreu accés a la vostres dades a través del Firefox Home del vostre iPhone.</small></p>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

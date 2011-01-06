@@ -1,0 +1,58 @@
+<?php
+
+@include_once "{$config['file_root']}/includes/headers/3.6.2-3/firstrun.inc.php";
+$page_title = 'Welcome to Firefox';
+@include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+    <p>Thanks for supporting <a href="http://www.mozilla.org/about/mission.html">Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
+</div>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="personas">
+        <h3>Choose Your Persona.</h3>
+        <p id="try">Roll over to try, click to apply</p>
+        <a href="http://www.getpersonas.com/gallery?source=moz.com_firstrun" id="personas-image-link">Personas</a>
+        <iframe
+            src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+            width="320"
+            height="200">
+            </iframe>
+        <p id="what-are-personas"><a href="http://www.getpersonas.com/?source=moz.com_firstrun">Watch the video.</a></p>
+        <ul id="personas-link" class="link"><li><a href="http://www.getpersonas.com/gallery?source=moz.com_firstrun" id="see-all-personas">See all 30,000+</a></li></ul>
+    </div>
+
+    <div class="sub-feature" id="help">
+        <div>
+        <h3>Need Help Getting Started?</h3>
+        <p>Visit our support page for answers and advice about using Firefox.</p>
+        <ul class="link">
+            <li><a href="https://support.mozilla.com/<?=$lang?>/kb/Windows+start+page">Get Firefox Help</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <div class="sub-feature" id="connect">
+        <h3>Stay Connected</h3>
+        <ul class="link">
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Follow us on Twitter</a></li>
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Become a Fan on Facebook</a></li>
+            <li id="connect-blog"><a href="http://blog.mozilla.com/">Read our Blog</a></li>
+        </ul>
+    </div>
+
+    <p id="sub-links">
+        <a href="/<?=$lang?>/firefox/features/">More Firefox 3.6 Features</a>
+        <a href="http://support.mozilla.com/">Firefox Support</a>
+    </p>
+
+</div>
+
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

@@ -1,0 +1,50 @@
+<div id="main-feature">
+
+    <h1>Quoi de neuf dans <img src="<?=$titleimglk?>" alt="Firefox 4 Bêta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Expanded WebGL Support</h3>
+        <p>Firefox now supports WebGL for a larger number of built-in graphics cards on Mac and Windows, allowing more people to experience vivid games and new 3D graphic visualizations on the Web. Watch the video to see it in action, or <a href="<?=$videolink1;?>">try it for yourself</a> (works with most modern hardware).</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Partagez vos impressions »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=$version?>/releasenotes/">Notes de version »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b8/ants/">Essayez la démo par vous-même »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+    <?=$movie2;?>
+        <h4>A Sleeker Sync Set-Up Interface</h4>
+        <p>The new Sync interface makes it easier than ever to bring Firefox with you
+        anywhere you go, whether you're on your desktop, laptop or your mobile phone.
+        Sync gives you secure and seamless access to your Firefox data - including
+        history, bookmarks, passwords and open tabs - across all your devices. Watch
+        the video to learn more.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>A Smarter, Polished Add-on Manager</h4>
+        <p>The Firefox Add-ons Manager now looks and feels more polished compared to the
+        first beta release, with automatic add-on updates and a smarter interface that
+        makes it even easier to manage your add-ons and discover awesome new options
+        for personalizing the way you browse.</p>
+    </div>
+</div>
+
+<?=$sidebar?>
+
+
+
+
+<?php endif; ?>

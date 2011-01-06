@@ -1,0 +1,56 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Parcerias | Mozilla';
+    $body_id    = 'about-partnerships';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="/style/tignish/mozilla-expanders.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/tignish/about.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Parcerias</h2>
+	<p>Ajude a definir o futuro da Web</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a></h3></li>
+	<li><a href="/<?=$lang?>/about/whatismozilla.html">O que é a Mozilla?</a></li>
+	<li><a href="/<?=$lang?>/about/get-involved.html">Envolva-se</a></li>
+	<li><a href="/<?=$lang?>/press/">Área de Imprensa</a></li>
+	<li><a href="/<?=$lang?>/about/careers.html">Carreiras</a></li>
+	<li><span>Parcerias</span></li>
+	<li><a href="/<?=$lang?>/about/licensing.html">Licenças</a></li>
+	<li><a href="http://blog.mozilla.com/" class="external" hreflang="en">Blog</a> / <a href="http://blog.mozilla.com/brasil/" class="external">Blog Brasil</a></li>
+	<li><a href="http://communitystore.mozilla.org/" class="external" hreflang="en">Loja da Comunidade</a></li>
+	<li><a href="/<?=$lang?>/about/logo/">Guia de Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/contact.html">Entre em contato</a></li>
+</ul>
+
+<div id="content">
+
+<p>Na Mozilla, nos dedicamos ao desenvolvimento de aplicações e tecnologias de Internet com padrão internacional, de código aberto e completamente baseadas em padrões abertos, permitindo que as pessoas tenham opções na escolha do navegador Web, aplicações de e-mail e mais.</p>
+
+<p>Nós não podemos alcançar essas metas sozinhos; assim, estabelecemos parcerias com organizações que compartilham da nossa visão.</p>
+
+<p>A Mozilla tem desenvolvido parcerias com uma variedade de organizações, destacando-se parceiros na comunidade open-source, novas empresas que estão construindo negócios a partir de tecnologias Mozilla e empresas de TI líderes como IBM, Sun Microsystems e Red Hat. </p>
+
+<p>Antes de entrar em contato sobre possíveis parcerias, aqui estão algumas considerações importantes:</p>
+
+<ul>
+<li><strong>A Mozilla Corporation é uma subsidiária com controle total</strong> da <a href="http://www.mozillafoundation.org/" hreflang="en">Mozilla Foundation</a>, uma fundação sem fins lucrativos, e não é uma companhia de capital aberto;</li>
+<li><strong>Para suporte ao consumidor</strong>, visite nossa <a href="http://support.mozilla.com/">página de suporte</a>;</li>
+<li><strong>Nós não fazemos acordos de troca de links</strong>;</li>
+<li><strong>Se você quer ver um produto no seu idioma</strong>, por favor, visite nosso <a href="http://www.mozilla.org/projects/l10n/mlp.html">Projeto de Localização</a>;</li>
+<li><strong>Se você quer sugerir um novo recurso para nossos produtos</strong>, por favor, cadastre sua sugestão como um <a href="https://bugzilla.mozilla.org/">bug de melhoria</a> (enhancement bug).</li>
+</ul>
+
+<p>Por favor, envie um email para <em>partners [arroba] mozilla [ponto] com</em> para informações sobre parcerias com a corporação Mozilla. Você também poderá encontrar mais na <a href="/en-US/about/partnerships.html" hreflang="en">versão em Inglês</a> desta página.</p>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
+

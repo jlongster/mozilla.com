@@ -1,0 +1,59 @@
+
+<div id="main-content">
+
+  <div class="sub-feature" id="intro">
+
+    <h2>Chọn Persona của Bạn.</h2>
+    <p id="try">Rê chuột lên để thử, nhấn chuột để áp dụng</p>
+
+    <a href="http://www.getpersonas.com/<?=$lang?>/gallery/" id="personas-image-link">Personas</a>
+    <iframe
+        src="http://www.getpersonas.com/<?=$lang?>/external/mozilla/firstrun.php"
+        width="320"
+        height="200">
+    </iframe>
+
+    <ul id="personas-link" class="link">
+      <li>
+          <a href="http://www.getpersonas.com/<?=$lang?>/gallery/" id="see-all-personas">Xem tất cả hơn <?=$personasnumber?></a>
+      </li>
+    </ul>
+</div>
+
+  <div class="sub-feature" id="sidebar">
+    <h2>Luôn kết nối</h2>
+    <ul class="link">
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Theo đuôi chúng tôi trên Twitter</a></li>
+      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Trở thành một Người hâm mộ trên Facebook</a></li>
+      <li id="connect-blog"><a href="http://blog.mozilla.com/">Đọc blog của chúng tôi</a></li>
+    </ul>
+  </div>
+
+  <div class="sub-feature<?=$oop_class;?>" id="personalize"><div>
+    <h2>Các cách khác để Cá nhân hóa</h2>
+    <p>Điều chỉnh Firefox phù hợp với cách thức bạn duyệt web với hơn 1.000 tiện ích miễn phí.</p>
+    <ul class="link">
+      <li>
+          <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Khám phá Tiện ích</a>
+      </li>
+    </ul>
+  </div></div>
+
+<?=$oop;?>
+</div>
+<div id="footer">
+    <div id="connect" class="sub-feature">
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+  <p id="sub-links">
+      <a href="/<?=$lang?>/firefox/features/" id="features-link">Tính năng Firefox 3.6 khác</a>
+      <a href="http://support.mozilla.com" id="support-link">Hỗ Trợ Firefox</a>
+  </p>
+
+</div>

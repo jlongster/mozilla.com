@@ -1,0 +1,82 @@
+<?php
+    $page_title = 'Firefox Mobile';
+    $body_id    = 'mobile-home';
+    $breadcrumbs = array(
+        $l10n->get('Mobile') => "/{$lang}/mobile/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<!--script>// <![CDATA[
+    // Add a class to the body tag to alternate background features
+    var feature_class_options = new Array( "trapeze", "rhino" );
+
+    if (Math.random) {
+        var choice = Math.floor(Math.random() * (feature_class_options.length));
+
+        // Just in case javascript gets carried away...
+        choice = ( (choice < feature_class_options.length)  && choice >= 0) ? choice : 0;
+
+        if (document.body.className == '') {
+            document.body.className = 'feature-'+feature_class_options[choice];
+        } else {
+            document.body.className += ' feature-'+feature_class_options[choice];
+        }
+    }
+// ]]></script-->
+
+<div id="feature-header"></div>
+<div id="main-feature">
+    <div id="intro">
+        <h3>Firefox is <span>Mobile</span></h3>
+        <p>Bring Your Web with You</p>
+    </div>
+
+    <div id="home-download">
+        <a href="/<?=$lang?>/mobile/download/" class="download-link"><span class="download-content"><span class="download-title">Get Firefox</span> on Your Phone</span></a>
+    </div>
+    <div class="download-other">Or visit <a href="http://Firefox.com/m">Firefox.com/m</a> on your phone’s browser.</div>
+
+    <div id="button">
+        <p><a href="/<?=$lang?>/mobile/download/">It’s Your Web, <span>Anywhere you go</span></a></p>
+    </div>
+</div>
+
+<hr class="hide" />
+
+<div id="main-content">
+
+    <div class="sub-feature" id="sub-video">
+        <h3>See It <span>In Action</span></h3>
+        <p><a href="/<?=$lang?>/firefox/video/?video=about-mobile">
+            <img src="<?=$config['static_prefix']?>/img/mobile/mobile-video-thumbnail.jpg" alt="Video thumbnail"><span>Take the Tour <span>»</span></span></a></p>
+    </div>
+
+    <div class="sub-feature" id="sub-sync">
+        <h3>Your Life <span>In Sync</span></h3>
+        <p>Go from desktop to mobile without interruption.</p>
+        <a href="/<?=$lang?>/mobile/sync/">Learn More <span>»</span></a>
+    </div>
+
+    <div class="sub-feature" id="sub-addons">
+        <h3>Personalize With <span>Add-ons</span></h3>
+        <p>Customize Firefox to be exactly the way you like it.</p>
+        <a href="https://addons.mozilla.org/mobile/">Learn More <span>»</span></a>
+    </div>
+
+    <div class="sub-feature" id="sub-speed">
+        <h3>Browse More, <span>Type Less</span></h3>
+        <p>Get where you need to go quickly and easily.</p>
+        <a href="/<?=$lang?>/mobile/features/#your-start">Learn More <span>»</span></a>
+    </div>
+
+</div>
+
+<!-- Please do not ever remove this comment. -->
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

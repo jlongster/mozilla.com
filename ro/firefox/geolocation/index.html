@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Geolocație în Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Navigare conștientă de locație</h2>
+    <p>Firefox poate spune saiturilor web unde vă aflați pentru ca acestea să vă ofere informații cât mai relevante și mai utile.
+    E un pas către un web mai inteligent &ndash; și totul cu respect pentru intimitatea dumneavoastră.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Încercați acum!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Întrebări frecvente</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ce este navigarea conștientă de locație?</h4>
+    <div class="expander-content">
+        <p>Saiturile care folosesc servicii de detectare a locației dumneavoastră vă vor întreba unde vă aflați pentru a vă oferi informații mai relevante sau pentru a micșora timpul de căutare. Să zicem că vreți să găsiți o pizzerie în zona în care vă aflați. Un sait vă va întreba unde vă aflați pentru ca printr-o simplă căutare după „pizza” să găsiți cele mai apropiate pizzerii și nu pizzerii de pe alt continent.</p>
+        <p>Sau, dacă căutați direcții către un loc anume, saitul va ști de unde veți pleca așa că nu trebuie decât să-i spuneți încotro mergeți. Ca un GPS.</p>
+        <p>Acest serviciu este totalmente opțional &ndash; Firefox nu va dezvălui locația dumneavoastră fără permisiunea dumneavoastră &ndash; totul este gândit astfel încât intimitatea dumneavoastră să fie respectată mereu. Și ca toate elementele din Firefox acest serviciu este creat folosind standarde deschise pentru a ușura adoptarea lor de către dezvoltatorii de web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cum funcționează?</h4>
+    <div class="expander-content">
+        <p>Când vizitați un sait care poate folosi locația dumneavoastră, Firefox vă va întreba dacă doriți ca saitul să primească informații despre locația dumneavoastră.</p>
+        <p>Dacă permiteți, Firefox adună informații despre puncte de acces radio din apropiere și despre adresa dumneavoastră IP. Apoi firefox trimite aceste informații către furnizorul serviciului de geolocație, Google Location Services, pentru a obține o estimare a locației dumneavoastră. Apoi, această estimare este împărtășită cu saitul care a cerut informația.</p>
+        <p>Dacă nu permiteți, Firefox nu va face nimic.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cât de precise sunt informațiile?</h4>
+    <div class="expander-content">
+        <p>Acuratețea variază în mare măsură în funcție de locația dumneavoastră. În unele locuri, furnizorii noștri de servicii pot furniza datele cu o precizie de câțiva metri. În alte situații însă, poate fi o precizie mult mai mică. Toate pozițiile returnate de furnizorii de servicii sunt estimări și noi nu putem garanta acuratețea lor. Vă recomandăm să nu vă bazați pe aceste informații pentru urgențe. Folosiți serviciul cu băgare de seamă.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ce informații sunt trimise și către cine? Cum este protejată intimitatea mea?</h4>
+    <div class="expander-content">
+        <p>Intimitatea dumneavoastră este extrem de importantă pentru noi. Firefox nu va furniza date despre locația dumneavoastră fără a vă cere permisiunea. Când vizitați o pagină care cere aceste informații, veți fi întrebat înainte ca orice informație să fie împărtășită cu saitul care o cere sau cu furnizorul de servicii de geolocație.</p>
+        <p>Implicit, Firefox folosește serviciile Google Location pentru a determina locația dumneavoastră trimițând:</p>
+        <ul>
+            <li>adresa IP a calculatorului dumneavoastră,</li>
+            <li>informații despre puncte de acces prin unde radio din apropiere și</li>
+            <li>un identificator generat aleator de către Google care expiră în două săptămâni.</li>
+        </ul>
+        <p>Pentru o descriere completă a informațiilor colectate de Firefox, vă rugăm să vedeți <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox Privacy Policy</a> (în enleză).</p>
+        <p>Pe baza informațiilor trimise, serviciile Google Location întorc geolocația estimată (latitudine și longitudine). Pentru o descriere completă a informațiilor colectate și folosite de Google, vă rugăm să consultați <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation Privacy Policy</a> (în engleză).</p>
+        <p>Schimbul de informații se face printr-o conexiune criptată pentru a vă proteja intimitatea. De îndată ce Firefox cunoaște locația dumneavoastră o va da mai departe saitului care le-a cerut. Nu se vor trimite către Google în niciun moment informații despre saitul pe care-l vizitați sau orice alte informații.</p>
+        <p>Nici Mozilla, nici Google nu vor folosi vreodată informații colectate de serviciile Google Location pentru a vă identifica sau pentru a vă spiona.</p>
+        <p>Pentru mai multe informații despre ce face saitul pe care-l vizitați cu informațiile primite, vă rugăm să consultați politica de confidențialiate a saitului respectiv.</p>
+        <p>Pentru mai multe informații despre intimitatea dumneavoastră, vă sugerăm să citiți și:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox privacy policy</a> (în engleză)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google privacy policy</a> (în engleză)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Mă urmărește cineva în timp ce navighez pe internet?</h4>
+    <div class="expander-content">
+        <p>Nu. Firefox vă cere permisiunea de a împărtăși aceste informații doar când saiturile web o cer la rândul lor. Firefox nu memorează locația dumneavoastră în timp ce navigați pe internet.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Cum anulez o permisiune acordată unui sait?</h4>
+    <div class="expander-content">
+        <p>Dacă ați permis prin intermediul Firefox unui sait să primească întotdeauna informații despre locația dumneavoastră și ulterior vă răzgândiți, puteți revoca foarte ușor acea permisiune. Iată cum:</p>
+        <ul>
+            <li>Navigați către saitul căruia i-ați acordat permisiunea</li>
+            <li>Mergeți în meniul <em>Unelte</em> de unde selectați <em>Informații despre pagină</em></li>
+            <li>Selectați fila <em>Permisiuni</em></li>
+            <li>Schimbați setarea pentru <em>Împărtășește locația</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cum scap de identificatorul generat aleator?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Mergeți în meniul <em>Unelte</em> de unde selectați <em>Curăță istoricul recent</em></li>
+            <li>Clic pe săgeata <em>Detalii</em></li>
+            <li>Asigurați-vă că <em>Cookie-urile</em> este selectat</li>
+            <li>Clic pe <em>Curăță acum</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cum opresc pentru totdeauna navigarea conștientă de locație?</h4>
+    <div class="expander-content">
+        <p>Navigarea conștientă de locație este opțională în Firefox. Nu este trimisă nicio informație despre locație fără permisiunea dumneavoastră. Dacă doriți să dezactivați complet această funcționalitate, vă rugăm urmați acești pași:</p>
+        <ul>
+            <li>În bara adresei, tastați <code>about:config</code></li>
+            <li>Tastați <code>geo.enabled</code></li>
+            <li>Faceți clic dublu pe preferința <em>geo.enabled</em></li>
+            <li>Navigarea conștientă de locație este acum dezactivată</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Unde sunt?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Hopa! A intervenit o eroare în timp ce se încerca determinarea poziției dumneavoastră.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

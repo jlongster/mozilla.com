@@ -1,0 +1,73 @@
+<?php
+
+$page_title = 'Firefox Updated';
+
+@include_once "{$config['file_root']}/includes/headers/3.5/whatsnew.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+$_version       = getVersionBySelf();
+$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
+
+// check if there is a version
+if ($_version !== null && $_valid_version) {
+    // check if we're running the latest version
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+        ?>
+        <div id="main-feature" class="latest-minor-version">
+            <h2>You’ve been updated to the latest version of Firefox.</h2>
+            <p>Thanks for your time! This update will make you safer on the web.</p>
+            <p class="more-details"><a href="../releasenotes/">For more details, read the release notes.</a></p>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div id="main-feature" class="old-version">
+            <h2 id="main-feature-title">You’re now running Firefox <?=$_version?>.</h2>
+            <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+        </div>
+        <?php
+    }
+} else {
+    ?>
+    <div id="main-feature" class="unknown-version">
+            <h2 id="main-feature-title">You’re running an unknown version of Firefox.</h2>
+            <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+    </div>
+    <?php
+}
+?>
+
+<div id="main-content">
+<div id="sub-features">
+        <div class="sub-feature" id="security">
+                <h3>You Just Made the Web Better</h3>
+                <p>Every Firefox download supports the Mozilla Foundation's mission of supporting openness, innovation and opportunity on the Web. Thanks for your help! <a href="http://www.mozilla.org/about/mission.html" class="blocklevel">Learn More</a></p>
+        </div>
+        <!--
+        <div class="sub-feature" id="features">
+                <h3>Dress Up Your Browser</h3>
+                <p>Give your Firefox the look you want in under 60 seconds. Thousands of Personas to choose from!
+                    <img src="/en-US/img/tignish/whatsnew/sub-feature-personas.png" width="255" height="105" alt="Firefox Personas" />
+                    <a href="http://www.getpersonas.com" class="blocklevel">Try Personas</a>
+                </p>
+        </div>
+        -->
+        <div class="sub-feature" id="sumo">
+                <h3>Need Help?</h3>
+                <p>Our community-powered Support page has plenty of answers, plus a live chat feature to guide you through any tricky spots as you browse. <a href="http://support.mozilla.com/<?=$lang?>/kb/" class="blocklevel">Visit Firefox Support</a></p>
+        </div>
+
+    <div class="clear"></div>
+</div>
+<p id="follow"><p id="follow">Be the difference! Learn how you can help Mozilla better our communities during <a href="http://mozillaservice.org/">Mozilla Service Week.</a></p>
+</p>
+
+</div>
+
+<script src="/js/detect-flash.js"></script>
+
+<?php
+
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+
+?>

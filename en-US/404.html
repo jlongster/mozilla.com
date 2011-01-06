@@ -1,0 +1,44 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '404: Page Not Found';
+    $body_id    = 'mozilla-404';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/covehead/404-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2><span>Oops!</span></h2>
+    <p>We hate to say it, but we couldn’t find that page or file you’re looking for.</p>
+</div>
+
+<div id="content">
+
+<div id="error-reasons">
+    <h4>Here are some suggestions:</h4>
+	<ul class="spaced">
+		<li>If you typed in the address, try double-checking the spelling.</li>
+		<li>If you followed a link from somewhere, please let us know at <em>webmaster at mozilla dot com</em>. Be sure to tell us where you came from and what you were looking for, and we’ll do our best to fix it.</li>
+	</ul>
+</div>
+
+<div id="error-suggestions">
+	<h4>If you’re really stuck, here are some other options:</h4>
+
+	<ul class="spaced">
+		<li>Were you looking for information about <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
+		<li>Or maybe our email program, <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+		<li>It might just be best to start at <a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+	</ul>
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    $disable_js_stats = true;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,8 @@
+<?php
+    // Redirect to latest release notes.  Bug 475328
+    $latest = LATEST_FIREFOX_VERSION;
+    header("Location: {$config['url_scheme']}://{$config['server_name']}/firefox/{$latest}/releasenotes/");
+    header('Pragma: no-cache');
+    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
+    exit;
+?>

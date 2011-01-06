@@ -1,0 +1,63 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Updated';
+    $body_id    = 'whatsnew';
+    $body_class = 'portal-page';
+        $extra_headers = <<<EXTRA_HEADERS
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/dalvay/portal-page.css" media="screen" title="Dalvay"/>
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/portal-page-transitional.css" media="screen" title="Dalvay"/>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div class="portal-box">
+<div class="portal-box-interior">
+
+<div class="portal-box-header">
+	<h1><img src="/img/portal-page/whatsnew-title.png" alt="You've Updated To The Latest Version of Firefox" height="65" width="451" /></h1>
+	<p>Over <strong>10,000</strong> people test Firefox every day to help keep you safe on the Web.</p>
+</div>
+
+<div class="portal-box-contents">
+
+    <h1>Firefox Community Beta Program</h1>
+
+    <p>You’re part of the Firefox Community Beta Program! During the
+       run up to Firefox 2, we released beta builds and 
+       release candidates for wide testing and feedback as part of 
+       a community beta program. Anyone who downloaded and installed 
+       these pre-release versions of Firefox became part of this beta 
+       program and was automatically updated to the Firefox 2 final
+       release.</p>
+
+    <p>To ensure the continued quality of Firefox 2, we have updated
+       your Firefox to the latest pre-release version of the next
+       security and stability update. We consider this release stable
+       but are actively looking for new issues.</p>
+
+    <p>If you are participating in this program, thanks for your 
+       continued help. Please report any problems or issues at our
+       community feedback web site at
+       <a href="http://feedback.mozilla.org/">http://feedback.mozilla.org</a> 
+       or through the <a href="http://groups.google.com/group/mozilla.feedback.firefox.prerelease">
+       mozilla.feedback.firefox.prerelease</a> newsgroup.</p>
+
+    <p>The final release of this version of Firefox will take place shortly
+       after we complete wide testing through this program. All
+       press inquiries should be directed to
+       <a href="mailto:press@mozilla.com">press@mozilla.com</a>.</p>
+
+    <p>To exclude yourself from the beta program, simply download and  
+       install the latest stable production release of Firefox from
+       <a href="http://www.getfirefox.com/">http://getfirefox.com</a>.</p>
+
+      <p class="small-print">For details on what's included in this update,
+         please see the <a href="../releasenotes/">release notes</a>.</p>
+
+</div> <!-- end .portal-box-contents  -->
+</div> <!-- end .portal-box-interior  -->
+</div> <!-- end .portal-box  -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

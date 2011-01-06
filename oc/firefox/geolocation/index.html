@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Geolocacion dins Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Una navigacion que depen de vòstre emplaçament geografic</h2>
+    <p>Firefox pòt dire als sits web ont vos trobatz per que poscat cercar d'entresenhas mai pertinentas e mai utilas. Vos balha un web mai intelligent e se fa d'un biais que respecta complètament vòstra vida privada.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Ensajatz-lo !</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Questions frequentas</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">De que es una navigacion que depen de vòstre emplaçament geografic ?</h4>
+    <div class="expander-content">
+        <p>Los sits web qu'utilizan la navigacion que depen de vòstre emplaçament geografic vos demandaràn ont vos trobatz per vos balhar d'entresenhas mai pertinentas o per vos far ganhar de temps de recèrca. Anam dire que cercatz un restaurant prèp d'en çò vòstre. Un sit serà capable de vos demandar que partejètz vòstre emplaçament per qu'una simplòta recèrca de “restaurant” vos balhe las responsas que volètz... sens que d'autras entresenhas o de causas en mai a picar vos sián demandadas.</p>
+        <p>Autre cas : se cercatz una carta cap a un endrech, lo sit web vos dirà d'ont partissètz ; tot çò qu'auretz a far es doncas de dire ont volètz anar.</p>
+        <p>Aqueste servici es complètament opcional (Firefox parteja pas vòstre emplaçament sens que siatz d'acòrdi) e se fa amb lo maximum de respècte de vòstra vida privada. Coma totes los elements de Firefox, l'avèm creat en utilizant las nòrmas estàndard per que los desvolopaires de sits web lo pòscan adoptar aisidament.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cossí fonciona ?</h4>
+    <div class="expander-content">
+        <p>Quand visitatz un sit web que la navigacion depen de vòstre emplaçament geografic, Firefox vos demanda se volètz partejar vòstre emplaçament.</p>
+        <p>Se acceptatz, Firefox collecta las entresenhas suls punts d'accès inalambrics e l'adreça IP de vòstre ordenador. Firefox manda aquestas entresenhas al gestionari de geolocalizacion per defaut, Google Location Services, per obténer una estimacion de vòstre emplaçament. Un còp fach, aquesta aproximacion es partejada amb lo sit que lo demanda.</p>
+        <p>Se acceptatz pas de partejar aquelas donadas, Firefox mandarà pas res.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Quina precision an los emplaçaments ?</h4>
+    <div class="expander-content">
+        <p>La precision càmbia bravament d'un emplaçament a l'autre. Dins d'unes endreches, podèm èsser precises a d'unes mètres. Ça que la, dins d'autres endreches, pòt èsser mai qu'aquò. Totas las estimacions que nos son tornadas son pas que d'estimacions e ne garantissam pas la precision. Utilizètz pas aquelas entresenhas dins de situacions d'urgéncia, utilizatz totjorn lo bon sens.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Quinas entresenhas son mandadas e a qual ? Cossí protegissètz ma vida privada ?</h4>
+    <div class="expander-content">
+        <p>Vòstra vida privada es bravament importanta per nosautres e Firefox parteja pas jamai vòstre emplaçament geografic sens que siatz d'acòrdi. Quand visitatz una pagina que demanda d'entresenhas sus vos, Firefox vos demanda abans de partejar quina entresenha que siá amb lo sit que lo demanda e lo servici tèrç.</p>
+        <p>Per defaut, Firefox utiliza Google Location Services per trobar vòstre emplaçament en mandant :</p>
+        <ul>
+            <li>l'adreça IP de vòstre ordenador,</li>
+            <li>d'entresenhas suls punts d'accès inalambric prèp d'en çò vòstre,</li>
+            <li>un identificaire de client aleatòri, balhat per Google, que càmbia cada 2 setmanas.</li>
+        </ul>
+        <p>Per avar una descripcion complèta de las entresenhas que Firefox collecta e utiliza, legissètz la <a href="/<?=$lang?>/legal/privacy/firefox-en.html">politica de Firefox sus las donadas privadas</a> (en anglés).</p>
+        <p>Google Location Services tòrna l'estimacion de vòstre emplaçament geografic (es a dire latitud e longitud). Per avar una descripcion complèta de las entresenhas que Google collecta e utiliza, legissèt la <a href="http://www.google.com/privacy-lsf.html" class="external">la politica de Google Geolocation sus las donadas privadas</a> (en anglés).</p>
+        <p>Las entresenhas s'escàmbian per una connexion criptada per protegir vòstra vida privada. Un còp que Firefox a vòstras entresenhas d'emplaçament, las manda al sit que las demanda. Lo nom o l'emplaçament del sit que visitatz, o quin cookie que siá, serà jamai partejat amb Google Location Services.</p>
+        <p>Ni Mozilla ni Google utilizarà las entresenhas collectadas per Google Location Services per vos identificar o vos espiar.</p>
+        <p>Per mai d'entresenhas sus çò que lo sit que las demanda fa de vòstras entresenhas d'emplaçament, legissètz la politica de vida privada del sit web.</p>
+        <p>Per mai d'entresenhas sus vòstra vida privada, podètz tanben legir la :</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">politica de vida privada de Mozilla Firefox</a> (en anglés)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">politica de vida privada de Google</a> (en anglés)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Soi seguit quand navigui sus internet ?</h4>
+    <div class="expander-content">
+        <p>Non. Firefox demanda un emplaçament sonque quand un sit ne fa la demanda e lo parteja sonque quand l'utilizaire es d'acòrdi. Firefox seguís pas e memoriza pas vòstre emplaçament quand navigatz.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Cossí anullar la permission balhada a un sit ?</h4>
+    <div class="expander-content">
+        <p>Se avètz balhar l'autorizacion a Firefox de balhar totjorn vòstre emplaçament a un sit e que cambiatz de vejaire pus tard, podètz aisidament anullar vòstra permission. Vaquí cossí cal far :</p>
+        <ul>
+            <li>navigatz sul sit qu'a la permission que volètz anullar</li>
+            <li>anatz dins lo menut <em>Espleches</em>, puèi seleccionatz <em>Entresenhas sus la pagina</em></li>
+            <li>seleccionatz l'onglet <em>Permissions</em></li>
+            <li>cambiatz lo paramètre de <em>Partejar l'emplaçament</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Cossí pòdi voidar lo "numèro aleatòri d'identificacion del client” ?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Anatz dins lo menut <em>Espleches</em> puèi seleccionatz <em>Voidar l'istoric recent</em></li>
+            <li>Clicatz sus la sageta <em>Detalhs</em></li>
+            <li>Asseguratz-vos que <em>Cookies</em> es seleccionat</li>
+            <li>clicatz sus <em>Voidar ara</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cossí pòdi desactivar per totjorn la navigacion que depen de l'emplaçament geografic ?</h4>
+    <div class="expander-content">
+        <p>La navigacion que depen de l'emplaçament geografic es totjorn opcionala dins Firefox. Pas cap d'entresenha d'emplaçament es mandada sens que siatz d'acòrdi. Se volètz desactivar aquesta foncion, seguissètz las etapas seguentas :</p>
+        <ul>
+            <li>dins la barra d'adreças, picatz <code>about:config</code></li>
+            <li>picatz <code>geo.enabled</code></li>
+            <li>fasètz un doble clic sus la preferéncia <em>geo.enabled</em></li>
+            <li>La navigacion que depen de l'emplaçament geografic es ara desactivada.</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Ont soi ?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Oops ! I a aguda una error al moment d'ensajar de trobar vòstre emplaçament geografic.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

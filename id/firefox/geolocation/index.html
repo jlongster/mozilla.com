@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Geolocation in Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Penjelajahan Berbasis-Lokasi</h2>
+    <p>Firefox dapat memberitahukan kepada situs web lokasi tempat Anda
+    berada agar informasi yang cari dapat lebih sesuai dan cocok untuk Anda.
+    Hal ini bertujuan untuk membuat dunia Web menjadi lebih pintar &ndash; dan
+    bekerja tanpa mengurangi privasi Anda.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Cobalah!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Pertanyaan yang Sering Diajukan (FAQ)</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Apakah Penjelajahan Berbasis-Lokasi?</h4>
+    <div class="expander-content">
+        <p>Situs web yang menggunakan fitur penjelajahan berbasis-lokasi akan menanyakan lokasi Anda agar informasi yang diberikan lebih sesuai atau untuk menghemat waktu Anda dalam pencarian informasi. Misalnya Anda sedang mencari warung sate di sekitar Anda. Situs web akan dapat menanyakan kepada Anda untuk berbagi informasi lokasi Anda dengan hanya mencari kata "sate". Anda dapat mendapatkan informasi yang dibutuhkan... tanpa perlu mengetik terlalu banyak atau informasi tambahan lainnya.</p>
+        <p>Atau, jika Anda ingin mengetahui arah ke suatu tempat, situs web dapat mengetahui lokasi Anda berada sehingga Anda hanya perlu memberikan informasi ke mana Anda ingin pergi.</p>
+        <p>Layanan ini benar-benar opsional &ndash; Firefox tidak memberikan informasi lokasi tanpa seizin Anda &ndash; dan layanan ini bekerja dengan cara yang benar-benar menghormati privasi Anda. Seperti halnya semua bagian Firefox, fitur ini diciptakan dengan menggunakan standard terbuka untuk mempermudah penggunaannya oleh pengembang web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Bagaimana cara kerjanya?</h4>
+    <div class="expander-content">
+        <p>Ketika Anda mengunjungi situs web yang menggunakan fitur penjelajahan berbasis lokasi, Firefox akan menanyakan apakah Anda ingin berbagi informasi lokasi Anda.</p>
+        <p>Jika Anda setuju, maka Firefox akan mengumpulkan informasi mengenai <em>wireless access point</em> dan alamat IP komputer Anda. Setelah itu Firefox mengirimkan informasi ini ke penyedia layanan geolokasi yaitu Layanan Lokasi Google (Google Location Services) untuk mendapatkan perkiraan tentang lokasi Anda berada. Lokasi perkiraan ini akan diberitahukan kepada situs web yang memintanya.</p>
+        <p>Jika Anda tidak setuju, Firefox tidak akan melakukan hal apapun.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Seberapa akurat informasi lokasi ini?</h4>
+    <div class="expander-content">
+        <p>Akurasi informasi lokasi sangat berbeda antara lokasi yang satu dengan lainnya. Di beberapa tempat, penyedia layanan kami mungkin dapat menyediakan informasi lokasi dengan tingkat keakuratan beberapa meter. Akan tetapi pada lokasi lainnya, mungkin tidak terlalu akurat. Semua informasi lokasi yang didapatkan dari layanan penyedia ini hanya merupakan perkiraan dan kami tidak menjamin tingkat akurasi tersebut. Mohon tidak menggunakan informasi ini untuk keadaan darurat. Selalu gunakan akal sehat.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Informasi apa yang dikirimkan? Kepada siapa? Bagaimana cara perlindungan privasi saya?</h4>
+    <div class="expander-content">
+        <p>Privasi Anda sangat penting bagi kami dan Firefox tidak pernah berbagi informasi lokasi Anda tanpa seizin Anda. Ketika Anda mengunjungi situs web yang meminta informasi ini, terlebih dulu Anda akan ditanya sebelum informasi apapun akan dibagi-pakai oleh situs web yang meminta dan pihak ketiga penyedia layanan ini.</p>
+        <p>Tanpa mengubah pengaturan apapun, Firefox akan menggunakan Penyedia Lokasi Google untuk menentukan lokasi Anda dengan menggunakan:</p>
+        <ul>
+            <li>alamat IP komputer Anda,</li>
+            <li>informasi tentang <em>wireless access point</em> terdekat, dan</li>
+            <li>penanda pengenal acak (<em>random client identifier</em>), yang diatur oleh Google, yang akan kedaluwarsa setiap 2 minggu.</li>
+        </ul>
+        <p>Untuk keterangan lengkap tentang informasi yang dikumpulkan dan digunakan oleh Firefox, silakan baca <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Kebijakan Privasi Firefox</a> (dalam Bahasa Inggris).</p>
+        <p>Penyedia Lokasi Google akan memberitahukan lokasi perkiraan tempat Anda berada (misalnya lintang dan bujur tempat Anda). Untuk keterangan lengkap tentang informasi yang dikumpulkan dan digunakan oleh Google, silakan baca <a href="http://www.google.com/privacy-lsf.html" class="external">Kebijakan Privasi Layanan Lokasi Google</a> (dalam Bahasa Inggris).</p>
+        <p>Pertukaran informasi dilakukan melalui sambungan terenkripsi untuk melindungi privasi Anda. Segera setelah Firefox mendapatkan informasi lokasi, Firefox akan mengirimkannya kepada situs web yang membutuhkan. Nama, lokasi, dan kuki dari situs web yang sedang Anda kunjungi tidak akan pernah diberitahukan kepada Layanan Lokasi Google.</p>
+        <p>Mozilla ataupun Google tidak akan pernah menggunakan informasi yang terkumpul dari Layanan Lokasi Google untuk mengidentifikasi atau memata-matai Anda.</p>
+        <p>Untuk keterangan tentang apa yang dilakukan oleh situs web pada informasi lokasi Anda, silakan merujuk kepada kebijakan privasi masing-masing situs web.</p>
+        <p>Untuk keterangan lebih lanjut tentang privasi Anda, kami sarankan untuk membaca:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">kebijakan privasi Mozilla Firefox</a> (dalam Bahasa Inggris)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">kebijakan privasi Google</a> (dalam Bahasa Inggris)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Apakah jejak penjelajahan web saya dimata-matai?</h4>
+    <div class="expander-content">
+        <p>Tidak. Firefox hanya meminta satu informasi lokasi ketika sebuah situs web memintanya serta hanya membagi informasi lokasi Anda jika pengguna mengizinkan permintaan tersebut. Firefox tidak menyimpan riwayat lokasi atau mengikuti jejak lokasi Anda ketika sedang menjelajah.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Bagaimana cara menarik izin untuk sebuah situs web?</h4>
+    <div class="expander-content">
+        <p>Jika Anda mengizinkan Firefox untuk selalu memberikan informasi lokasi Anda pada sebuah situs web dan kemudian Anda berubah pikiran, Anda dapat dengan mudah menarik izin tersebut. Caranya adalah:</p>
+        <ul>
+            <li>Buka alamat situs yang telah pernah Anda izinkan</li>
+            <li>Buka menu <em>Alat</em>, kemudian pilih <em>Informasi Halaman</em></li>
+            <li>Pilih tab <em>Hak Akses</em></li>
+            <li>Ubah pengaturan <em>Berbagi Data Lokasi</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Bagaimana cara membersihkan "penanda identifikasi pengguna acak" ("<em>random client identification number</em>")?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Buka menu <em>Alat</em> kemudian pilih <em>Bersihkan Riwayat Terakhir</em></li>
+            <li>Klik pada tombol panah di sebelah <em>Detail</em></li>
+            <li>Pastikan item <em>Kuki</em> terpilih</li>
+            <li>Klik pada <em>Bersihkan Sekarang</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Bagaimana cara mematikan fitur Penjelajahan Berbasis Lokasi secara tetap?</h4>
+    <div class="expander-content">
+        <p>Penjelajahan Berbasis Lokasi selalu dapat diatur pada Firefox. Tidak ada informasi lokasi yang akan dikirim tanpa seizin Anda. Jika Anda ingin mematikan fitur ini, silakan ikuti petunjuk berikut:</p>
+        <ul>
+            <li>Pada bar alamat URL, ketikkan <code>about:config</code></li>
+            <li>Ketikkan <code>geo.enabled</code></li>
+            <li>Klik ganda pada nilai item <em>geo.enabled</em></li>
+            <li>Fitur Penjelajahan Berbasis Lokasi telah dimatikan</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Di manakah saya?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! Kesalahan terjadi saat mencoba menentukan lokasi Anda.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

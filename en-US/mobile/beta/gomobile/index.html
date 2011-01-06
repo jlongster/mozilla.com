@@ -1,0 +1,197 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+
+    $page_title = 'Firefox Beta for mobile';
+    $body_id    = 'firefox-gomobile';
+
+    $current_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+    $extra_headers = <<<EXTRA_HEADERS
+<meta name="title" content="{$page_title}" />
+<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/mobile/beta/gomobile.css"  />
+
+<!--[if lte IE 8]><link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/mobile/beta/ie.css"  /><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/mobile/beta/ie7.css"  /><![endif]-->
+<!--[if lte IE 6]><link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/mobile/beta/ie6.css"  /><![endif]-->
+
+<script src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
+<script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
+
+<script src="{$config['static_prefix']}/js/mobile/beta/main.js"></script>
+<script src="{$config['static_prefix']}/js/mobile/beta/gomobile.js"></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/mobile/beta/title.png" alt="Firefox Beta" width="252" height="71" /></a></h2>
+        <h3>Help Us Go Mobile!</h3>
+        <p>Try 3 quick ways to get Firefox on your friends' mobile phones.</p>
+        <img class="surfer" alt="Help Us Go Mobile!" src="<?=$config['static_prefix']?>/img/mobile/beta/mobile-carpet.png" />
+    </div>
+</div>
+
+<?=buildFirefoxMobileBetaSubPageMenu($lang, 'gomobile');?>
+
+<div id="main-content">
+    <div id="main-content-inner">
+
+        <div class="section first" id="video">
+            <h3>Share the video</h3>
+            <div class="column">
+              <div style="padding: 5px 10px 30px 10px;"><a href="#video" class="video" id="gomobile-video">
+                  <img src="<?=$config['static_prefix']?>/img/mobile/beta/video-thumb-lg.png" alt="Watch Firefox beta for mobile in action" />
+          </a></div>
+            </div>
+            <div class="column">
+                <p>The beta is here and you're invited to give it a try! Share this video with your friends and social networks and show them some of the features of Firefox on mobile.</p>
+                <p><a class="fancy-button" id="share-the-video">Share the Video</a></p>
+            </div>
+            <div id="share-overlay">
+                <a href="#" id="close-share-overlay">X</a>
+                <form id="share-url-form">
+                    <?php
+                        $share_url = htmlspecialchars('http://' . $_SERVER['HTTP_HOST'].
+                            '/en-US/mobile/beta/gomobile/?showvideo');
+                        // http://www.mozilla.com/en-US/mobile/beta/gomobile/?showvideo
+                        $short_share_url = 
+                            htmlspecialchars('http://mzl.la/cAhyTK');
+                        $msg = htmlspecialchars(
+                            "I'd like to invite you to the Firefox 4 for mobile beta. " . 
+                            "First, watch it in action!");
+                    ?>
+                    <span id="share-url"><input type="text" name="share_url" value="<?=$share_url?>" /></span>
+                    <span id="share-short-url"><input type="checkbox" id="share_short_url" name="share_short_url" value="<?=$short_share_url?>" /><label for="share_short_url">Short URL</label></span>
+                </form>
+                <div class="share-options">
+                    <form class="share" id="share-twitter" action="http://twitter.com/home/" target="_new" method="GET">
+                        <input type="hidden" name="status" value="<?=htmlspecialchars($msg)?> <?=htmlspecialchars($short_share_url)?>" />
+                        <button><span>Twitter</span></button>
+                    </form>
+                    <form class="share" id="share-facebook" action="http://www.facebook.com/sharer.php" target="_new" method="GET">
+                        <input type="hidden" name="u" value="<?=htmlspecialchars($share_url)?>" />
+                        <input type="hidden" name="t" value="<?=htmlspecialchars($msg)?>" />
+                        <button><span>Facebook</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="materials">
+            <h3>Get a Firefox Mobile Kit</h3>
+            <div class="column">
+                <img src="<?=$config['static_prefix']?>/img/mobile/beta/mobile-kit-shirt.png" id="shirt" />
+                <p class="caption">Every day we will be sending one special package with a limited edition Firefox Mobile T-shirt.</p> 
+            </div>
+            <div class="column">
+                <p>Mail us a postcard showing us where you’re from or a cool place you're visiting and we'll send you a Firefox Mobile Kit that includes stickers, buttons, mobile covers and more to share with your friends. Make sure to include your email address on your postcard so we can contact you and send you a Kit.</p>
+                <p><em>You can <strong>send your postcard</strong> to one of the following addresses:</em></p>
+                <div class="column">
+                    <p>
+                        <strong>Mozilla</strong><br/>
+                        650 Castro Street<br/>
+                        Suite 300<br/>
+                        Mountain View, CA 94041-2021<br/>
+                        USA
+                    </p>
+                </div>
+                <div class="column">
+                    <p>
+                        <strong>Mozilla</strong><br/>
+                        28 Boulevard Poissonnière<br/>
+                        75009 Paris<br/>
+                        France
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="postcards">
+            <div id="preview_lightbox">
+                <a href="#" class="preview_close">X Close</a>
+                <iframe name="postcard_form_target" id="postcard_form_target"></iframe>
+            </div>
+            <form method="POST" action="/includes/mobile-beta-send-postcard.php" target="postcard_form_target">
+                <input type="hidden" name="mode" value="" />
+                <h3>Send a Custom Postcard</h3>
+                <div class="column">
+                    <?php 
+                        $choices = buildFirefoxMobileBetaPostcardChoices(); 
+                        $idx = 0;
+                    ?>
+                    <ul class="postcard-choices">
+                        <?php foreach ($choices as $choice=>$imgs): ?>
+                            <li class="<?= (0==$idx) ? 'selected' : '' ?>">
+                                <input type="radio" name="postcard" value="<?=$choice?>" id="postcard-<?=$choice?>"<?= (0==$idx) ? ' checked="checked"' : '' ?> />
+                                <label for="postcard-<?=$choice?>"><img src="<?=$config['static_prefix']?>/img/mobile/beta/postcards/<?=$imgs['thumb']?>" /></label>
+                            </li>
+                            <?php $idx++ ?>
+                        <?php endforeach ?>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p>Pick a postcard and write a personalized message to share the news about Firefox for mobile.</p>
+                    <ul class="fields">
+                        <li>
+                            <label for="message">Your message:</label>
+                            <textarea id="message" name="message" rows="7" cols="50"></textarea>
+                        </li>
+                        <li class="required">
+                            <label for="to_name">* Send postcard to (full name):</label>
+                            <input id="to_name" name="to_name" type="text" />
+                        </li>
+                        <li class="required">
+                            <label for="to_addr">* Send postcard to (email):</label>
+                            <input id="to_addr" name="to_addr" type="text" />
+                        </li>
+                        <li class="required">
+                            <label for="from_name">* From (full name):</label>
+                            <input id="from_name" name="from_name" type="text" />
+                        </li>
+                        <li class="required">
+                            <label for="from_addr">* From (email):</label>
+                            <input id="from_addr" name="from_addr" type="text" />
+                        </li>
+                        <li class="required">
+                            <script>
+                                var RecaptchaOptions = {
+                                    theme: 'white'
+                                };
+                            </script>
+                            <label>* Are you human? <a href="javascript: Recaptcha.showhelp()" style="font-size: .8em">What's this?</a></label>
+                            
+                            <script
+                                src="http://api.recaptcha.net/challenge?k=<?= $config['recaptcha_pub_key'] ?>">
+                            </script>
+                            <noscript>
+                               <iframe src="http://api.recaptcha.net/noscript?k=<?= $config['recaptcha_pub_key'] ?>"
+                                   height="300" width="500"></iframe><br>
+                               <textarea name="recaptcha_challenge_field" rows="3" cols="40">
+                               </textarea>
+                               <input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+                            </noscript>
+                        </li>
+                        <li class="notes">
+                            <span>* = required</span>
+                        </li>
+                        <li class="buttons">
+                            <button name="preview" value="preview" class="fancy-button preview">Preview</button>
+                            <button name="send" value="send" class="fancy-button send">Send postcard</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="main-content-footer"><div id="main-content-footer-inner"></div></div>
+
+</div>
+
+<?php include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php"; ?>
+

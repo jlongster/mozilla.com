@@ -1,0 +1,59 @@
+
+<div id="main-content">
+
+  <div class="sub-feature" id="intro">
+
+    <h2>ඔබේ Persona තෝරාගන්න.</h2>
+    <p id="try">මතින් ගෙනයන්න, පිහිටු වීමට ක්ලික් කරන්න</p>
+
+    <a href="http://www.getpersonas.com/en-US/gallery/" id="personas-image-link">Personas</a>
+    <iframe
+        src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+        width="320"
+        height="200">
+    </iframe>
+
+    <ul id="personas-link" class="link">
+      <li>
+          <a href="http://www.getpersonas.com/en-US/gallery/" id="see-all-personas"><?=$personasnumber?>කට අධික සියල්ල බලන්න</a>
+      </li>
+    </ul>
+</div>
+
+  <div class="sub-feature" id="sidebar">
+    <h2>සම්බන්ධිතව ඉන්න</h2>
+    <ul class="link">
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitterයේ අපිව ලුහුබඳින්න</a></li>
+      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook එකේ ලෝලියෙක් වෙන්න</a></li>
+      <li id="connect-blog"><a href="http://blog.mozilla.com/">අපගේ බ්ලොගය කියවන්න</a></li>
+    </ul>
+  </div>
+
+  <div class="sub-feature<?=$oop_class;?>" id="personalize"><div>
+    <h2>ඔබට රිසිලෙස සැකසීමට බොහෝ ආකාර ඇත</h2>
+    <p>ඇඩෝන දහස් ගණනකින් ඔබේ Firefox දියුණු කරන්න.</p>
+    <ul class="link">
+      <li>
+          <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">ඇඩෝන ගවේශනය කරන්න</a>
+      </li>
+    </ul>
+  </div></div>
+
+<?=$oop;?>
+</div>
+<div id="footer">
+    <div id="connect" class="sub-feature">
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+  <p id="sub-links">
+      <a href="/<?=$lang?>/firefox/features/" id="features-link">තවත් Firefox 3.6 ගුණාංග</a>
+      <a href="http://support.mozilla.com" id="support-link">Firefox සහය</a>
+  </p>
+
+</div>

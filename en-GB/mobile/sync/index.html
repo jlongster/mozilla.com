@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync for Mobile";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Get Up and Go</h2>
+    <p>Get Firefox Sync and share your history, bookmarks, tabs and more between your PC and your mobile phone.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Get the Firefox Sync Add-on Now</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Why Get Firefox Sync?</h3>
+
+    <h4>Typing is hard</h4>
+    <p>Let’s face it, typing on your mobile is difficult. A bid farewell to typing long URLs and search terms when the Awesome Bar remembers your history, bookmarks and tabs from both your PC and mobile, quickly getting you where you want to go and with very little typing.</p>
+
+    <h4>Don’t start from scratch</h4>
+    <p>Say goodbye to resetting and retyping. Firefox Sync syncs your Firefox passwords and preferences, so you can hit the ground running.</p>
+
+    <h4>Get up and go</h4>
+    <p>Take your Firefox with you wherever you go. Surf the Web on your PC, get up and go, and have everything waiting for you on your phone: your history, open tabs, bookmarks, the Awesome Bar - just as you had left it.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Getting Started</h3>
+    <ol>
+    <li>
+        <h4>Install Firefox Sync on your PC</h4>
+        <p>Make sure your PC runs Firefox 3.5 or higher and your phone is a Firefox-tested device (upgrade <a href="http://firefox.com/">Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Download Firefox Sync</a></li>
+            <li>After the download is complete, click “Restart Firefox” to finish installing the Firefox Sync Add-on.</li>
+            <li>When Firefox restarts, use the “Tools” menu or the Firefox Sync icon on the bottom-right of the status-bar to open Firefox Sync and sign in.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Install the Firefox Sync add-on on your mobile</h4>
+        <ul>
+            <li>Go your Preferences, select the add-ons button.</li>
+            <li>Search for and select the Firefox Sync add-on. Sign in, sync, and away you go.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

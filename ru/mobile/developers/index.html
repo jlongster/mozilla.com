@@ -1,0 +1,54 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Разработка для мобильных устройств";
+
+    $pageid = "mobile-developers";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Разработка для мобильных устройств</h2>
+    <p>Пришло время для мобилизации. Вот что вы можете сделать, чтобы помочь.</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang,'developers')?>
+
+<div id="main-content">
+
+<h4 class="first">Следите за нашим прогрессом</h4>
+
+<p>Будьте в курсе последних мобильных новостей и обновлений. <a href="/<?=$lang?>/newsletter/about_mobile/">Подпишитесь на новостной бюллетень about:mobile</a>.</p>
+
+<h4>Создавайте сайты и приложения, использующие новейшие веб-технологии</h4>
+
+<h5>Центр разработки Mozilla для мобильных устройств</h5>
+<p>Получите документацию, инструменты и код, необходимый вам для разработки инноваций для мобильных устройств. <a href="https://developer.mozilla.org/En/Mobile">Подробнее</a>.</p>
+
+<h5>Mobile Wiki</h5>
+<p>Просмотрите требования и рекомендации для запуска и тестирования Firefox на мобильных устройствах. <a href="https://wiki.mozilla.org/Fennec">Подробнее</a>.</p>
+
+<h5>Приложения использующие определение местоположения</h5>
+<p>Направьте людей на правильный путь и создавайте приложения, использующие Геолокацию. <a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Подробнее</a>.</p>
+
+<h4>Разрабатывайте инновационные дополнения</h4>
+<p>Как Firefox для Maemo, так и Firefox для Windows Mobile (beta), поддерживают дополнения. По правде говоря, одни и те же дополнения могут быть использованы на обоих платформах, так что выбирайтесь из-за стола и становитесь мобильным. Ниже приведён список полезных ресурсов:</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Extensions Basics</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Extensions Best Practices</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface">User Interface Best Practices</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture">Architecture Overview</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Code Snippets</a></li>
+</ul>
+
+<h4>Помогите в создании Firefox для мобильных устройств</h4>
+<p>Ваша помощь жизненно важна для успеха Firefox. Оставляйте отзывы на нашем IRC-канале (irc.mozilla.org, #mobile), <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">присоединяйтесь к собраниям наших разработчиков по средам</a>, или даже <a href="https://bugzilla.mozilla.org/">создавайте сообщения об ошибках</a>.</p>
+
+
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html xml:lang="en-US" lang="en-US" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Welcome to Firefox</title>
+    <script src="<?=$config['static_prefix']?>/js/util.js"></script>
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/firefox/4/firstrun-page-beta2.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/video-player.css" media="screen" />
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/container/container_core-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="<?=$config['static_prefix']?>/js/mozilla-video-tools.js"></script>
+</head>
+
+<body id="whatsnew" class=" locale-en-US portal-page">
+<script>// <![CDATA[
+if (document.body.className == '') {
+    document.body.className = 'js';
+} else {
+    document.body.className += ' js';
+}
+
+if (gPlatform == 1) {
+    document.body.className += ' platform-windows';
+} else if (gPlatform == 3 || gPlatform == 4) {
+    document.body.className += ' platform-mac';
+} else if (gPlatform == 2) {
+    document.body.className += ' platform-linux';
+}
+
+YAHOO.util.Event.onDOMReady(function() {
+	document.body.offsetLeft;
+	document.getElementById('sub-feature').className = 'loaded';
+});
+
+// ]]></script>
+
+<div id="wrapper">
+<div id="doc">
+
+<div id="main-feature">
+    <h1>What’s New in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+        <div id="video-launch">
+            <a href="http://videos-cdn.mozilla.net/firefox4beta/appTabs-480.webmvp8.webm" id="tour-video"  onclick="dcsMultiTrack('DCS.dcsuri','/firefox4beta/appTabs-480.webmvp8.webm','WT.ti','Firefox 4 Beta 2 Whats New Page Video');"><div id="video-launch-border"><img id="video-launch-thumbnail" src="/img/firefox/beta/4/video-frame.png" /></div><div id="video-launch-text">Watch the video</div></a>
+            <script>
+            // <![CDATA[
+            var player_french = new Mozilla.VideoPlayer(
+                'tour-video',
+                [
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/appTabs-480.webmvp8.webm',
+                        type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                        title: 'Download in WebM format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/appTabs-480.theora.ogv',
+                        type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        title: 'Download in Ogg&nbsp;Theora format'
+                    },
+                    {
+                        url:   'http://videos-cdn.mozilla.net/firefox4beta/appTabs-480.mp4',
+                        type:  'video/mp4',
+                        title: 'Download in MPEG-4 format'
+                    }
+                ],
+                'firefox4beta/appTabs-480.mp4'
+            );
+            // ]]>
+            </script>
+        </div>
+        <p>Cut down on tab crowding and enjoy a simpler browsing experience. Meet App Tabs, persistent tabs that get you to your to favorite Web apps in an instant.</p>
+        <p>App Tabs takes sites you always keep open—like Web mail or internet radio—and gives them a more permanent role in your browser. Watch the video and see what we mean.</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b2/releasenotes/">Release Notes »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Feature Showcase</h2>
+       <p>Firefox 4 is off to a great start. Here are some other key features you don’t want to miss:</p>
+    </div>
+
+    <div id="column-1">
+        <h4>Get Stylin’ with CSS3</h4>
+        <p>Support for new CSS3 features like Transitions and Transformations makes it easy to add animations to Web pages &mdash;<span id="css3-like-this-one">like this one!</span>Hover over text areas on this page and see if you can find <strong>all five transformations</strong>… <a href="https://developer.mozilla.org/en/CSS/CSS_transitions">Learn more</a></p>
+    </div>
+    
+    <div id="column-2">
+        <h4>XPCOM</h4>
+        <p>Firefox starts up <span>e</span><span>v</span><span>e</span><span>n</span> <span>f</span><span>a</span><span>s</span><span>t</span><span>e</span><span>r</span> thanks to XPCOM module improvements that pave the way to a better extensions framework.</p>
+    </div>
+    
+    <div id="column-3">
+        <h4>Retained Layers</h4>
+        <p>Experience super fast scrolling on complex web pages. <span id="simply-awesome">Simply awesome</span>.</p>
+        <p><a href="/<?=$lang?>/firefox/beta/features/">More Features »</a></p>
+    </div>
+
+
+
+</div>
+
+<div id="sidebar">
+
+    <h4>Need Help?</h4>
+    <p><a href="https://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Our support pages</a> have answers and advice specifically for the Firefox 4 beta.</p>
+
+</div>
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<script src="/includes/min/min.js?g=js_stats"></script>
+<script>
+//<![CDATA[
+var _tag=new WebTrends({"dcsid":"dcst2y3n900000gohmphe66rf_3o6x","rate":5,"fpcdom":"mozilla.com"});
+_tag.dcsGetId();
+//]]>
+</script>
+<script>
+//<![CDATA[
+_tag.dcsCollect();
+//]]>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+
+</body>
+</html>

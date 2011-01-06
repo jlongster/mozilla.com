@@ -1,0 +1,51 @@
+<?php
+/*  translate the page title below */
+$page_title = "Firefox'a hoş geldiniz";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />'ya hoş geldiniz</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox 4 beta testine katıldığınız için teşekkür ederiz! Bu muhteşem tarayıcıyı hep birlikte yaratıyoruz. O yüzden, beta deneyiminiz boyunca beğendiklerinizi ve beğenmediklerinizi lütfen bizimle paylaşın.</p>
+        <p>Geri bildiriminizi bekliyor olacağız. Söylemek istediklerinizi dinleyecek kişilerden bazılarıyla tanışmak için yandaki videoyu izleyin!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Yeni özellikler »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Geri bildirim paylaş »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Sürüm notları »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Fikirlerinizi bizimle paylaşın</h2>
+        <p>Beta testçisi olarak, siz de Firefox&nbsp;4'ü yaratan ekibin bir parçasısınız. <img src="<?=$screencap;?>" alt="Geri bildirim düğmesinin ekran görüntüsü" /><em>Geri bildirim</em> düğmesine tıklayarak, hoşunuza gidenleri ya da gitmeyenleri bize bildirebilirsiniz. Ayrıca, zaman zaman, anonim kullanıcı araştırmalarımıza katılmanızı ya da anketlerimizi doldurmanızı da rica edeceğiz.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>Kullanıcı araştırmaları nasıl çalışır?</h5>
+        <p>Kullanıcı araştırmaları, Firefox'u nasıl kullandığınıza dair anonim istatistikler toplar; ancak internette gördükleriniz ya da yaptıklarınız asla kaydedilmez. Kontrol sizdedir; izniniz olmadan Mozilla Test Pilotu sunucularına hiçbir veri gönderilmez. Gönderdiğiniz bilgiler Firefox&nbsp;4'ün tasarlanmasına yardımcı olmak için kullanılacaktır.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>Ya katılmak istemezsem?</h5>
+        <p>Herhangi bir kullanıcı araştırması veri toplamaya başlamadan önce ve herhangi bir bir bilgi Mozilla'ya gönderilmeden önce size haber verilir. Herhangi bir araştırmaya katılmamayı seçebilir ya da <em>Geri bildirim</em> düğmesine tıklayarak tüm kullanıcı araştırmalarını kapatacak şekilde ayarlarınızı değiştirebilirsiniz.</p>
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

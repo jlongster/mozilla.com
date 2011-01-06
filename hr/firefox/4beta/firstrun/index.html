@@ -1,0 +1,51 @@
+<?php
+/*  translate the page title below */
+$page_title = "Dobrodošli u Firefox";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1>Dobrodošli u <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Hvala vam što ste odlučili postati Firefox 4 beta tester! Zajedno radimo na nečemu posebnom, stoga vas molimo da nam kažete što vam se sviđa ili ne sviđa kod vašeg iskustva.</p>
+        <p>Očekivat ćemo vaše povratne informacije - pogledajte video i upoznajte neke od ljudi koji će slušati ono što imate za reći!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Nove mogućnosti »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Podijelite povratne informacije »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Bilješke izdanja »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Recite nam što mislite</h2>
+        <p>Kao beta tester, dio ste ekipe koja stvara Firefox&nbsp;4. Recite nam ako Vam se nešto sviđa ili ne sviđa klikom na tipku <img src="<?=$screencap;?>" alt="Prikaz zaslona povratne informacije" /><em>Feedback</em>. Također, bit ćete upitani za sudjelovanje u anonimnom istraživanju korisnika ili ispunjavanje poneke ankete.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>Kako funkcioniraju istraživanja korisnika?</h5>
+        <p>Istraživanja korisnika prikupljaju anonimne statističke informacije o tome kako koristite Firefox, ali nikada ne prikupljaju informacije o tome što vidite ili radite dok surfate. Vi kontrolirate sve i nikakvi podaci se ne prenose na Mozilla Test Pilot poslužitelje bez vašeg dopuštenja. Prikupljene informacije će se iskoristiti za dizajniranje Firefoxa&nbsp;4.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>Što ako ne želim sudjelovati?</h5>
+        <p>Prije početka bilo kakvog istraživanja korisnika ili slanja informacija u Mozillu, bit ćete obaviješteni. Ako ne želite biti dijelom bilo kakvog istraživanja, možete odbiti upit ili možete isključiti sva istraživanja korisnika klikom na tipku <em>Feedback</em> i promjenom svojih postavki.</p>
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

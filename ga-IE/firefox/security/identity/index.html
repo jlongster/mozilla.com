@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Maidir le hAitheantas Suímh le Cliceáil Amháin";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Maidir le hAitheantas Suímh le Cliceáil Amháin</h2>
+    <p>Tá cnaipe nua le haghaidh aitheantais suímh i Firefox 3 a chabhróidh leat bheith cinnte faoin té lena mbeidh tú ceangailte agus tú ar líne.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Leis an ngné seo, tig leat feiceáil d’aonamharc ar sholáthraigh suíomh ar a bhfuil tú ag féachaint faisnéis aitheantais, cé a d’fhíoraigh an fhaisnéis sin, agus an gcosnaíonn an suíomh do chuid faisnéise féin ó chúléisteoirí. Is féidir leat aitheantas suímh ar bith a fheiceáil trí chliceáil ar dheilbhín an tsuímh ar thaobh clé an bharra suímh (nó trí Iomlaid-Táb-Iontráil a chlóscríobh).</p>
+
+<h3>Ceisteanna Coitianta</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Cad is ciall leis na leibhéil éagsúla d’fhaisnéis aitheantais?</h4>
+    <div class="expander-content">
+        <p>Athróidh an deilbhín “an t-oifigeach pasanna” chun an leibhéal d’fhaisnéis aitheantais atá arna sholáthrú ag an suíomh a thaispeáint.</p>
+        <p class="site-id site-id-1">Ní sholáthraíonn an suíomh faisnéis aitheantais ar bith.</p>
+        <p class="site-id site-id-2">Soláthraíonn an suíomh faisnéis bhunúsach aitheantais, agus cosnaíonn sé do chuid faisnéise pearsanta ó chúléisteoirí.</p>
+        <p class="site-id site-id-3">Soláthraíonn an suíomh faisnéis lánfhíoraithe  aitheantais faoina úinéir, agus cosnaíonn sé do chuid faisnéise pearsanta ó chúléisteoirí.</p>
+        <p class="site-id site-id-4">Tá an suíomh seo liostáilte mar shuíomh ionsaithe nó falsaíochta. D’fhéadfadh sé a bheith díobhálach faisnéis phearsanta a thabhairt don suíomh seo, nó fiú féachaint air.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Cén fáth nach soláthraíonn gach suíomh Gréasáin faisnéis fhíoraithe aitheantais?</h4>
+    <div class="expander-content">
+        <p>Ní iarann formhór na suíomhanna ar an Idirlíon faisnéis phearsanta nó airgeadais óna gcuairteoirí, agus dá bhrí sin ní fiú dóibh íoc as faisnéis fhíoraithe aitheantais agus cosaint chúléisteachta a chur ar fáil.</p>
+        <p>Suíomhanna atá ag lorg faisnéise aitheantais nó airgeadais uait, nó atá ag maíomh gur eagrais rialtais nó gnó iad, ba cheart dóibh a n-aitheantais a chur in iúl go ceart agus do chuid faisnéise a chosaint ó chúléisteoirí.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">An bhfuil sé slán bheith ag déileáil le suíomhanna nach soláthraíonn faisnéis aitheantais fúthu féin?</h4>
+    <div class="expander-content">
+        <p>Tús maith é bheith cinnte cé leis a bhfuil tú ag caint agus tú ag cinneadh cé as a bhfuil muinín agat ar líne, ach ní leor é sin. Tá tú i mbaol ó shuíomhanna nach soláthráionn faisnéis aitheantais agus nach gcosnaíonn do chuid faisnéise pearsanta, agus ní ceart breathnú orthu mar shlán. Ach d'fhéadfadh cleachtais nach dtaitníonn leat, nó slándáil lag, a bheith ag suíomhanna a chuireann faisnéis chruinn aitheantais ar fáil.</p>
+        <p>Díreach mar a dhéantar sa ghnáthshaol, ba cheart duit bheith cúramach agus tú ag déileáil le suíomhanna nach bhfuil aithne agat orthu agus muinín agat astu. Is cuid den chinneadh muiníne sin é eolas a bheith agat go bhfuil faisnéis chruinn aitheantais tugtha duit ag suíomh.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">An fhíoraíonn Mozilla an fhaisnéis seo le haghaidh gach suíomh Gréasáin?</h4>
+    <div class="expander-content">
+        <p>Ní fhíoraíonn Mozilla an fhaisnéis a úsáidtear le suíomhanna a aithint. Braitheann Firefox, faoi mar a dhéanann brabhsálaithe eile, ar chomhlachtaí iontaofa ar a dtugtar “údárais teastais”. Fíoraíonn siad aitheantais na suíomhanna agus eisíonn siad “teastais” aitheantais. Caithfidh na comhlachtaí seo cloí leis an <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA Certificate Policy</a> (.i. Polasaí Mozilla um Teastais na nÚdarás Teastais) ina bhfuil sé de dhualgas, chomh maith le rudaí eile, ar na húdaráis iniúchtaí neamhspleácha a chur ar fáil a chruthaíonn nach n-eisíonn siad teastais go neamhchuí.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

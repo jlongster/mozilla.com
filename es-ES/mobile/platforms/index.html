@@ -1,0 +1,59 @@
+<?php
+    // please translate the variable below
+    $page_title = "Requisitos de sistema para Firefox Móvil";
+
+    $pageid = "mobile-platforms";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+<div id="main-feature">
+  <div id="feature-contents">
+        <h2>Plataformas disponibles y requisitos del sistema</h2>
+        <p>Firefox está disponible para dispositivos móviles en la plataforma Maemo.  Firefox para Maemo está disponible en más de 30 idiomas, gracias a la colaboración de miembros de la comunidad Mozilla a lo largo del mundo.</p>
+  </div>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang, 'platforms')?>
+</div>
+
+<div id="main-content">
+
+    <h3>Dispositivos disponibles</h3>
+    <p>Debajo está la lista de dispositivos comprobados y compatibles con Firefox.</p>
+
+    <div id="list_maemo">
+        <h4>Maemo</h4>
+        <ul>
+            <li>Nokia N900</li>
+            <li>Nokia N810</li>
+        </ul>
+    </div>
+
+<!--
+    <div id="list_winmo">
+        <h4>Windows Mobile</h4>
+        <p><a href="../?platform=winmo" class="download">Descarga Firefox para Windows Mobile</a></p>
+        <ul>
+            <li>AT&amp;T Tilt</li>
+            <li>HTC Touch Diamond Pro</li>
+            <li>Palm Treo Pro</li>
+            <li>Samsung Omnia</li>
+        </ul>
+    </div>
+-->
+
+    <h4 id="list_other">¿No ves tu teléfono/dispositivo aquí?</h4>
+    <p>Si tu teléfono no aparece en la lista, todavía puedes descargar y usar Firefox en tu dispositivo móvil. Tu dispositivo debe tener suficiente memoria RAM (128 MB o más) para ejecutar Firefox. Dicho esto, te sugerimos descargar Firefox en un dispositivo probado para experimentar completamente su funcionalidad.</p>
+    <p>También puedes experimentar con Firefox Móvil, escribir extensiones e involucrarte en el desarrollo instalando una versión de Firefox Móvil (Fennec) en tu PC de escritorio:</p>
+    <ul>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>">Windows</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>">Mac OS X</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>">Linux</a></li>
+    </ul>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

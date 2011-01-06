@@ -1,0 +1,76 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync pour mobile";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Soyez dynamique</h2>
+    <p>Installez Firefox Sync et partagez votre historique, vos marque-pages, vos onglets et plus
+    encore, entre votre ordinateur et votre téléphone portable.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Installer le module
+        Firefox Sync maintenant</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Pourquoi utiliser Firefox Sync ?</h3>
+
+    <h4>Saisir du texte est difficile</h4>
+    <p>Soyons franc, saisir du texte sur un mobile est difficile. Oubliez la saisie de longues URL
+    ou à la recherche de termes avec la barre intelligente qui retient votre historique, vos
+    marque-pages et vos onglets depuis votre ordinateur et votre mobile, vous emmenant rapidement
+    n'importe où avec un minimum de frappe.</p>
+
+    <h4>Ne partez pas de zéro</h4>
+    <p>Dites adieu aux remises à zéro et aux ressaisies. Firefox Sync synchronise vos mots de passe et vos
+    préférences Firefox, et vous permet d'utilisez votre temps pour surfer.</p>
+
+    <h4>Soyez dynamique</h4>
+    <p>Emportez votre Firefox partout avec vous. Surfez sur Internet depuis votre ordinateur, partez
+    en balade, et tout vous attend sur votre téléphone portable : historique, onglets ouverts,
+    marque-pages, barre intelligente - comme si vous veniez de le quitter.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Premiers pas</h3>
+    <ol>
+    <li>
+        <h4>Installez Firefox Sync sur votre ordinateur</h4>
+        <p>Vérifiez que Firefox 3.5 ou supérieur est installé sur votre ordinateur et que votre
+        téléphone est dans la liste des périphériques pris en charge par Firefox (mettre à jour
+        <a href="http://firefox.com/">Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Téléchargez
+            Firefox Sync</a></li>
+            <li>Une fois le téléchargement complété, cliquez sur <q>Redémarrer Firefox</q> pour
+            terminer l'installation de Firefox Sync.</li>
+            <li>Après le redémarrage de Firefox, utilisez le menu <q>Outils</q> ou l'icône Weave
+            Sync en bas à droite de la barre d'état pour ouvrir Firefox Sync et vous identifier.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Installer le module compémentaire Firefox Sync sur votre mobile</h4>
+        <ul>
+            <li>Aller dans les préférences, sélectionnez le bouton <q>Modules</q>.</li>
+            <li>Rechercher et sélectionnez Firefox Sync. Identifiez-vous, synchronisez et c'est tout.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

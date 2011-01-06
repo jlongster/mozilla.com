@@ -1,0 +1,32 @@
+<?php
+    // strings to translate
+    $page_title = 'Welcome to Firefox';
+    $extra_feature_text = 'A fülön lévő bezárás gombra kattintva a böngészőn beállított kezdőlap töltődik be.';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Üdvözöljük a Firefox 3 böngészőben!"/></h2>
+    <p>Köszönjük, hogy letöltötte az eddigi legbiztonságosabb, leggyorsabb és a legjobban testreszabható Firefox böngészőt. A felül megjelent fül bezárásával megkezdheti a böngészést.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Tudjon meg többet!</h3>
+        <p>Nem tudja, hogyan tovább? A Bevezető oldalon megtalálhatja a Mozilla által javasolt weboldalak listáját, valamint a Firefox böngészővel kapcsolatos további információkat. <a href="/<?=$lang?>/firefox/central/">Látogassa meg a Bevezető oldalt</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Kérdése van?</h3>
+        <p>A Támogatói oldalon számtalan válasz található, valamint a csevegő használatával segítséget kaphat problémái megoldására. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Látogassa meg a Támogatói oldalt</a></p>
+
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

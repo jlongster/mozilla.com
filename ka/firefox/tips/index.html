@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla-ს პროდუქტები | რჩევები და ეშმაკობები';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+     include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>რჩევები და ეშმაკობები</h2>
+    <p>ეს რჩევები და ეშმაკობები დაეხმარება როგორც დამწყებ, ისე გამოცდილ და სპეციალისტ მომხმარებელელსაც მაქსიმალური ეფექტიანობით გამოიყენოს ბრაუზერი Firefox 3.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">პროდუქტები</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">კომპონენტები</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">უსაფრთხოება</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">მორგება</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% ორგანული პროგრამა</a></li>
+    <li><span>რჩევები და ეშმაკობები</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">ვერსიის მონაცემები</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">სხვა სისტემები და ენები</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>დამწყებთათვის</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'გაზრდის, შემცირების ანაბეჭდი', '365', '251', 'right')?>
+
+                <h4>გაზრდა, შემცირება</h4>
+                <p>დაგღალათ მცირე ზომის ტექსტმა? გნებავთ უკეთესად დაინახოთ გამოსახულება? უკვე იოლად შეგიძლიათ გაზარდოთ და შეამციროთ ვებგვერდი.</p>
+
+                <div class="key-combo">
+                    გაზრდა
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    შემცირება
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'დაფებთან მუშაობის ეკრანის ანაბეჭდი', '388', '135', 'right')?>
+
+                <h4>სცადეთ დაფებთან მუშაობის ხრიკები</h4>
+                <p>თუ იმ ადამიანთა ჯგუფს ეკუთვნით, რომლებსაც ერთდროულად ბევრი ვებგვერდის გახსნა უყვარს, დაფები თქვენთვის ნამდვილად სასარგებლო იქნება. ქვემოთ მოტანილია ღილაკების რამდენიმე კომბინაცია დაფებთან სამუშაოდ:</p>
+
+                <div class="key-combo key-combo-1">
+                    ახალი, ცარიელი დაფის გახსნა
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    ბმის ახალ დაფაზე გახსნა
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">თაგუნას შუა ღილაკის დაწკაპვა ბმაზე</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">თაგუნას შუა ღილაკის დაწკაპვა ბმაზე (mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    დაფის დახურვა
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    დახურული დაფის ხელახლა გახსნა
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'სანიშნეების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>სანიშნის დამატება ერთი დაწკაპვით</h4>
+                <p>სასურველი საიტების სანიშნეების შენახვა (და დროის დაზოგვა) ერთი დაწკაპვით შეგიძლიათ. თუ საიტის დამახსოვრება გსურთ, უბრალოდ დაწკაპეთ ვარსკვლავი მისამართების პანელში. Firefox ბრაუზერი მას სანიშნეებში დაამატებს, სადაც მისი ხელახლა მოძებნა ადვილად შეგეძლებათ.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'უსაფრთხოების ხატულა', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        საიტი იძლევა წარმომავლობის გადამოწმებულ ინფორმაციას და იცავს თქვენს პირად მონაცმებს მოთვალთვალეებისგან.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        საიტი იძლევა წარმომავლობის ძირითად ინფორმაციას და იცავს თქვენს პირად მონაცმებს მოთვალთვალეებისგან.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        საიტი არ იძლევა ინფორმაციას წარმომავლობის შესახებ.
+                    </li>
+                </ul>
+
+                <h4>იცოდეთ ვისთან გაქვთ საქმე</h4>
+                <p>ვებ ყალთაბანდების ზოგადი ტაქტიკა ყალბი საიტების შექმნაა, რომლებიც საკუთარი თავის ბანკის ან კომერციულ ან სხვა სახის საიტებად გასაღებად ცდილობენ. საბედნიეროდ, Firefox ბრაუზერი აიოლებს ასეთი სახის საიტების დადგენას – არიან თუ არა ისინი რადაც თავი მოაქვთ. ამისათვის უბრალოდ დაწკაპეთ საიტის ხატულა წარმომავლობის მყისიერად დასადგენად.</p>
+                <p id="forgery">მოიერიშე ან ყალთაბანდი საიტი; ამ საიტებისთვის პირადი ინფორმაციის მიწოდება ან თუნდაც სტუმრობა შესაძლოა სახიფათო აღმოჩნდეს.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="ყალთაბანდობის ეკრანის ანაბეჭდი" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            გვერდის წინ გადახვევა
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="შორისი" />
+                        </div>
+                        <div class="key-combo">
+                            გვერდის უკან გადახვევა
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + შორისი" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            გვერდის განახლება
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            უკან
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            წინ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>კლავიშების კომბინაცია - წარმატების საწინდარი</h4>
+                <p>Firefox ბრაუზერს კლავიშების უამრავი კომბინაცია გააჩნია, რომლებიც მუშაობას ძალიან გაგიიოლებთ. ქვემოთ მოტანილია რამდენიმე მაგალითი:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        კურსორის გადატანა მისამართების პანელზე
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        კურსორის გადატანა ძიების დაფაზე
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>გამოცდილთათვის</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'სანიშნეების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>დაჭდევება</h4>
+                <p>თუ ბევრი სანიშნე დაგიგროვდათ, მათი თვალმიდევნება გართულდება. დასახარისხებლად შეგიძლიათ მათთვის ჭდეების მინიჭება: ორმაგად დაწკაპეთ ვარსკვლავის ხატულა და მიუთითეთ სასურველი ჭდეები.</p>
+                <p>საიტისთვის იმდენი ჭდის მინიჭება შეგიძლიათ, რამდენსაც ისურვებთ (არ დაგავიწყდეთ მათი მძიმეებით დაყოფა) და შემდეგ იოლად მოძებნოთ საიტები მისამართების პანელში ჭდის მითითებით. მაგალითად, თუ მისამართების პანელში მიუთითებთ ჭდეს "მოგზაურობა", თქვენ მიიღებთ ყველა საიტს, რომლებსაც შესაბამის ჭდე მიანიჭეთ.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'მოდულების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>ყველაფერი მოდულების შესახებ</h4>
+                <p>Firefox ბრაუზერის სტანდარტულ ვერსიას უამრავი კომპონენტი გააჩნია, მაგრამ ღირს ამაზე გაჩერება? არსებობს 5,000-ზე მეტი მოდული (მცირე პაკეტები სხვადასხვა დანიშნულებით), რომლის საშუალებითაც თითქმის ნებისმიერი ამოცანის გადაჭრა შეგიძლიათ. პაკეტების მმართველის გასახსნელად შეარჩიეთ მენიუდან ხელსაწყოები → პაკეტები და აღმოაჩენთ უამრავ გზას, Firefox ბრაუზერის თქვენი მოთხოვნილებისამებრ გასამართად.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'ძიების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>სხარტი ძიება</h4>
+                <p>თქვენ უკვე იცნობთ Firefox ბრაუზერის საძიებო პანელს. მაგრამ იცით თუ არა, რომ საძიებო სისტემების მორგებაც შეგიძლიათ? დაწკაპეთ ხატულა საძიებო პანელის მარცხნივ ნაგულისხმები პარამეტრების მენიუს გამოსატანად.</p>
+                <p>მეტიც - დაწკაპეთ «საძიებო სისტემების მართვა» სიის დასახარისხებლად, ახლების დასამატებლად და კლავიშების კომბინაციის მისათითებლად თქვენი რჩეული საძიებო სისტემების გამოსაძახებლად. მაგალითად, Google საძიებო სისტემისთვის შეგიძლიათ მიუთითოთ "G" - შემდეგ, თუ გსურთ მაგალითად, კულინარიული რეცეპტების მოძებნა, მისამართების პანელში უბრალოდ მიუთითეთ "G კულინარიული რეცეპტები" შესაბამისი საიტების სრული სიის მისაღებად.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'პოვნის ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>იპოვნეთ მყისიერად</h4>
+                <p>პოვნა ტექსტის შეტანისას დროის დაზოგვის კიდევ ერთი საშუალებაა. ძიების პანელით სარგებლობის ნაცვლად, სიტყვის გვერდზე მოსაძებნად დაწკაპეთ ნებისმიერ გვერდის ადგილას და დაიწყეთ საძიებო სიტყვის შეტანა. თქვენი კურსორი დაუყოვნებლივ გადაადგილდება ამ სიტყვის პირველივე თანხვედრაზე.</p>
+                <p>იგივე წარმატებით შეგიძლიათ ბმების მოძებნაც. მაგალითად, თაგუნას კურსორის ბმაზე "დაწვრილებით" გადაადგილების ნაცვლად, უბრალოდ დაიწყეთ სიტყვის შეტანა და როცა კურსორი მას მიადგება დააჭირეთ კლავიშს Enter.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'პრივატულობის ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>ყველა კვალის წაშლა</h4>
+                <p>უსაფრთხოებისა და კონფიდენციალობის უზრუნველსაყოფად ინტერნეტში მოგზაურობის კვალის დატოვება (განსაკუთრებით საზიარო კომპიუტერზე) რეკომენდებული არაა. Firefox ბრაუზერი საშუალებას გაძლევთ წაშალოთ მონახულებული საიტებისა და ჩამოტვირთვების ისტორია, გაასუფთავოთ ბუფერი და წაშალოთ ნაჭდევები ერთი დაწკაპვით. ამისათვის მენიუდან შეარჩიეთ ხელსაწყოები → პირადი მონაცემების წაშლა. ან, მეტისმეტად ფრთხილებისთვის, გადადით <span id="trace-platform">ხელსაწყოები → პარამეტრები → პრივალტულობა</span> და ჩართეთ პარამეტრი "ჩემი პირადი მონაცემების ყოველთვის წაშლა Firefox ბრაუზერის დახურვისას".</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → პარამეტრები → პრივატულობა";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="რედაქტირება → პარამეტრები → პრივატულობა";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>სპეციალისტებისთვის</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'მისამართების პანელის ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>უშუალოდ თქვენს რჩეულ საიტებზე გადასვლა</h4>
+                <p>სწრაფი და იოლი წვდომის უზრუნველსაყოფად სანიშნეებს შეგიძლიათ საკვანძო სიტყვებიც დაუმატოთ. დაუმატეთ მოკლე საკვანძო სიტყვა შესაბამის ველში და ამ სანიშნის გამოძახებაა საკვანძო სიტყვის მისამართების პანელში აკრეფით შეძლებთ.
+მაგალითად, მაგალითად თქვენს del.icio.us ანგარიშს შეგიძლიათ მიანიჭოთ საკვანძო სიტყვა “ბმები”. ამის შემდეგ მისამართების პანელზე სიტყვა “ბმები”-ს აკრეფა უშუალოდ ამ გვერდზე გადაგიყვანთ.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'სანიშნეების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>სხარტი დასტების შექმნა</h4>
+                <p>თუ ინტერნეტის გამოცდილი მომხმარებელი ხართ, რომელსაც ხშირად სჭირდება გარკვეული სახის საიტების თვალმიდევნება, თქვენთვის არსებობს სასარგებლო და დროის დასაზოგი ფუნქცია : Firefox 3-ის ბიბლიოთეკაში შეგიძლიათ ძიების შედეგების დასტების შექმნა და შენახვა, რომლებიც ავტომატურად განახლდება საიტების სანიშნეებსა და ისტორიაში შეტანისას.</p>
+                <p>თავდაპირველად გახსენით ბიბლიოთეკა სანიშნეების მენიუს პარამეტრიდან "სანიშნეების მართვა". შემდეგ საძიებო დაფაზე მიუთითეთ საზიებო კონტექსტი. შემდეგ დაწკაპეთ ღილაკი შენახვა სხარტი დასტის შესაქნელად.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'ჩამოტვირთვის მმართველის ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>თქვენი ჩამოტვირთვების მართვა</h4>
+                <p>თუ ჩამოტვირთვებს ხშირად ახორციელებთ, მათ თვალმისადევნებლად ჩამოტვირთვების მმართველის სარკმლით სარგებლობა შეგიძლიათ. შეგიძლიათ ჩამოტვირთვების შეჩერება და დროის დაზოგვა ფაილების უშუალოდ მმართველიდან გახსნით.</p>
+                <p>თუ ძველი ჩამოტვირთვის მოძებნა გსურთ გადადით მენიუდან პუნქტზე ხელსაწყოები→ჩამოტვირთვები და ფაილის მოსაძებნად ძიების დაფა გამოიყენეთ. პოვნის შემდეგ ორმაგად დაწკაპეთ ფაილი გასახსნელად ან Ctrl-დაწკაპვით შეარჩიეთ "ჩამოტვირთვის ბმის კოპირება".</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'პროგრამისტების ხელსაწყოთა ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>აღმოაჩინეთ თქვენთვის პროგრამისტის ხელსაწყოები</h4>
+                <p>თუ ვებ პროგრამისტი ხართ, Firefox ბრაუზერის პროგრამისტის ხელსაწყოები ბევრად გაგიადვილებთ ცხოვრებას. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla მოდულების საიტი</a> გთავაზობთ ხელსაწყოების ფართო არჩევანს პროგრამირებისთვის. მათ შორისაა: Firebug რომელიც ვებსაიტების CSS, HTML და JavaScript კოდების რედაქტირების, გამართვისა და და თვალმისადევნებად გამოიყენება, Tamper Data გამოიყენება HTTP/HTTPS თავსართებისა და POST პარამეტრების საჩვენებლად და შესაცვლელად, ხოლო DOM ინსპექტორი ამოწმებს ნებისმიერ HTML ან CSS ელემენტს მარჯვენა ღილაკზე დაწკაპვით.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Pპარამეტრების ეკრანის ანაბეჭდი', '378', '252', 'right')?>
+
+                <h4>გამართეთ ქსელი თქვენი გემოვნებით</h4>
+                <p>ახლა უკვე შეგიძლიათ ინტერნეტ ოქმების სამარჯვებით სარგებლობა თქვენი რჩეული ვებ პროგრამების მხარდაჭერის უზრუნველსაყოფად. მაგალითად, შეგიძლიათ გამართოთ Firefox ბრაუზერი ისე, რომ ნებისმიერ საიტზე mailto: ბმაზე დაწკაპვისას გაიხსნება სარკმელი სასურველი ელფოსტის პროვაიდერისთვის ნაცვლად ელფოსტის ადგილობრივი საფოსტო პროგრამისა თქვენს კომპიუტერში (შენიშვნა: ეს კომპონენტი მისაწვდომია მხოლოდ Firefox 3 ბრაუზერში რეგისტრირებული ელფოსტის მომსახურებებისთვის).</p>
+                <p>თითოეული ოქმისთვის ნაგულისხმები პროგრამის შესარჩევად გადადით <span id="platform-protocol">ხელსაწყოები→პარამეტრები→პროგრამები</span> ან თუ პროგრამის შერჩევა თავად გსურთ, მიუთითეთ პარამეტრი “ყოველთვის დამეკითხე”.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→პარამეტრები→პროგრამები";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="რედაქტირება→პარამეტრები→პროგრამები";
+                }
+                //]]></script>
+                <p>თუ ვებ პროგრამისტი ხართ, თქვენთვის სასარგებლო იქნება გაეცნოთ თუ როგორ შეიძლება ინტერნეტ ოქმების სამარჯვების მხარდაჭერის დამატება <a href="http://developer.mozilla.org/">Mozilla პროგრამირების ცენტრში.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

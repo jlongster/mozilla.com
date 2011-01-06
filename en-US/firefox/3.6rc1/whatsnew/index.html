@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Welcome to the Firefox 3.6 Release Candidate!</title>
+	<script src="/js/util.js"></script>
+	<link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/firstrun-3-6-b1.css" media="screen" />
+	<link rel="icon" href="<?=$config['static_prefix']?>/img/ff3beta/firstrun/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+<div id="frame">
+
+<div id="content">
+	<h1>Your beta has been updated!</h1>
+	
+	<div class="box">
+     <h2>This is a release candidate!</h2>
+     This latest update contains the <a href="https://bugzilla.mozilla.org/buglist.cgi?quicksearch=ALL%20status1.9.2:final-fixed">final set of changes</a> to be included in Firefox 3.6. Please help us test this release candidate. 
+     <ul style="margin-bottom: 20px;">
+       <li>Select a new persona from the <a href="http://www.getpersonas.com/">Personas Gallery</a>.</li>
+       <li>If you find a crash, please report it!</li>
+       <li>More than 75% of Add-ons work. <a href="https://addons.mozilla.org/addon/15003?src=external-fxfirstrun">Test your favorites</a>!</li>
+       <li>Try watching a <a href="http://www.spreadfirefox.com/5years">video</a> in <a href="http://mozillalinks.org/wp/2009/10/firefox-3-6-gets-full-screen-native-video/">full screen mode</a>.</li>
+       <li>Have you seen websites using <a href="http://hacks.mozilla.org/2009/10/woff/">WOFF fonts</a>?</li>
+       <li>Kick the tires with improved JavaScript performance, browser responsiveness, and startup time.</li>
+       <li>See the <a href="../releasenotes/">release notes</a> for more details.</li>
+     </ul>
+  </div>
+	
+	<div class="bottom">
+    <div class="left box">
+      <h2>Be sure to tell us what you think!</h2>
+	    <p>Drag this button to your bookmarks toolbar and click it anytime to let us know what you think: <a href="http://feedback.mozilla.org"><img align="top" width="99" height="25" alt="Send Feedback" src="/en-US/img/ff3beta/firstrun/ff3b-btn-feedback.png"/></a></p>
+      <ul>
+        <li>Let Add-on developers know if their Add-ons work by installing the <a href="https://addons.mozilla.org/addon/15003?src=external-fxfirstrun">Add-on Compatibility Reporter</a>.</li>
+        <li>Join the <a href="https://wiki.mozilla.org/QA/Community/Betatesters_Mailing_List">beta tester mailing list</a>.</li>
+      </ul>
+    </div>
+
+    <div class="right box">
+      <h2>Are you a web developer?</h2>
+    	<ul>
+    	<li>Visit <a href="http://hacks.mozilla.org">hacks.mozilla.org</a> for cool demos and tutorials, and follow <a href="http://www.twitter.com/mozhacks">@mozhacks</a> on Twitter.</li>
+    	<li>Check out the <a href="https://developer.mozilla.org/en/Firefox_3.6_for_developers">Mozilla Developer Center</a> for documentation on what's new in Firefox 3.6.</li>
+    	</ul>
+   </div>
+	</div>
+    
+    <p dir="ltr" id="footer">Copyright © 2009 Mozilla. All rights reserved.</p>
+</div>
+
+</div>
+
+<?php
+require "{$config['file_root']}/includes/js_stats.inc.php";
+echo $stats_js;
+?>
+
+</body>
+</html>

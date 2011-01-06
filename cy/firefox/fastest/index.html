@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Y Firefox Cyflymaf";
+
+    // Video controls strings to translate
+    $download_ogg       = "Llwytho i lawr yn fformat Open Video (Ogg Theora)";
+    $download_mp4       = "Llwytho i lawr yn fformat MPEG-4";
+    $check_back         = "Tyrd yn ôl yn fuan i weld y fideo nesaf.";
+
+    $play               = "Chwarae'r fideo";
+    $fallback_l1        = "Mae'r fideo angen porwr sy'n cynnal fideo agored:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 neu well';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 neu well';
+    $fallback_l4        = 'neu <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Meddwl Cyflym
+    </h2>
+
+    <p>Rydym wedi gofyn i gefnogwyr Firefox i'n cynorthwyo i rannu'r gair am gyflymder anhygoel Firefox 3.5. Edrychwch ar y canlyniadau:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Video preview" /><span>
+
+            Gwylio fideo Kent French, Clapiwr Cyflyma'r Byd.
+
+            </span></a></p>
+
+            <p class="secondary">
+            Mae Kent “Toast” French, clapiwr cyflyma'r byd, yn cymeradwyo Firefox fel un sy'n dal record cyflymder. Mae Kent yn cyfuno ei arddull ei hun gyda dyfalbarhad ac ystwythder er mwyn clapio ar gyflymder hyd at 12 clap yr eiliad. Mae'n bwriadu torri ei record ei hun cyn bo hir.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Dysgu mwy am Kent</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Video preview" /><span>
+
+            Gwylio fideo Steven Purugganan, y Chwaraewr Stacio Cyflymaf
+
+            </span></a></p>
+
+            <p class="secondary">
+            Mae Deilydd Record Byd Guinness, Steven Purugganan mor hoff o Firefox fel ei fod yn barod i wneud rhywfaint o stacio cwpannau cyflym i ni. Fel rhan o'r World Sport Stacking Association, ac er mai dim ond ll mlwydd oed ydyw, mae dwylo cyflym Steven yn gallu gosod pentwr o gwpannau yn eu lle mewn dim ond 5.93 eiliad.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Dysgu mwy am Chwaraeon Stacio.</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Video preview" /><span>
+
+            Gwylio fideo Todd Taylor, y Chwaraewr Banjo Cyflymaf
+
+            </span></a></p>
+            <p class="secondary">
+            Mae'r dyn banjo, Todd Taylor yn hapus i chwarae'n gyflym ar gyfer Firefox, ac i alw ei hun yn gyd-ddeiliad Record Byd Guinness. Mae Todd wedi chwarae bluegrass, canu gwlad, pop a roc a rôl. Mae'n para i recordio a chwarae mewn ffilmiau, ar y teledu a mwy.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Dysgu mwy am Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

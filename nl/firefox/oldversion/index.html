@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox is bijgewerkt";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Nee bedankt";
+    $no_download_button2 = "(Laat me zeggen waarom)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Beveiligingswaarschuwing:
+        </span>
+</h2>
+<h3>
+        Deze versie van Firefox is verouderd.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Het gebruik van deze versie van Firefox maakt u kwetsbaar voor online beveiligingsbedreigingen.</p>
+
+    <p id="main-feature-contents">
+    <a href="/<?=$lang?>/firefox/">Download de nieuwste versie van Firefox</a>. Dit is gratis, en u profiteert van de meest recente updates voor beveiliging, prestaties en functionaliteiten.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Ans dà tes resun";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Co has ti chattà il program da beta da Firefox 4?";
+$str2       = "Ta lascha infurmar";
+$str3       = "Abunnescha il newsletter per retschaiver novitads ed infurmaziuns davart Firefox Beta per e-mail.";
+$str4       = "Tia adressa d'e-mail";
+$str5       = "Jau acceptesch las <a href=\"%s\">directivas davart la protecziun da datas</a> <span class='footnote'>(nus ta tramettain be infurmaziuns davart Mozilla).</span>";
+$str6       = "Ma tramettai per plaschair era mintgatant novitads davart Mozilla, tips &amp; tricks da Firefox ed autras infurmaziuns da Mozilla.";
+$str7       = "Abunar »";
+$str8       = "Engraziel per abunar!";
+$str9       = "Nus ans legrain da bainprest ta trametter tips &amp; tricks per optimar Firefox ed novitads interessantas davart Mozilla e sco che nus vulain crear in meglier web.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Nus duvrain Agid</h3>
+        <p>Nus essan londervi da crear in Firefox ch'è pli spert, pli lev e plain pussaivladads per ta gidar da navigar. Nus na pudain dentant betg far quai senza tes resun.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Resun</span></li>
+    <li class="more"><h3>Dapli infurmaziuns per englais</h3></li>
+    <li class="features"><a href="../features/">Funcziuns</a> </li>
+    <li class="tech"><a href="../technology/">Tecnologia</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Directivas per la protecziun da datas per resuns</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Screenshot dal buttun da resun" />
+        <h2>Ans raquinta tge che ti pensas</h2>
+        <h3>Ans dà directamain resuns</h3>
+        <p>Clicca sin il buttun Resun ed ans di immediatamian tia opiniun davart la beta. Uschè simpel è quai!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Sviluppaders: Nus duvrain vus</h2>
+        <h3>Communitgescha tias ideas</h3>
+        <p>Tge pensas ti da las <a href="../features/#under-the-hood">novas funcziuns per sviluppaders</a> en la beta?</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">Visita noss forum per resuns.</a></p>
+
+        <h3>Rapporta sbagls da programmar</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Logo da Bugzilla" />
+        <p>Sche ti ès in expert da Bugzilla, lura rapporta in sbagl sche ti urtas in problem specific durant navigar.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Rapportar in sbagl en Firefox 4 Beta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Derasa il pled</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Ans suonda sin Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Ans visita sin Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Legia il blog da Mozilla</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Dovras agid?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Icona da l'agid" />Nossas paginas d'agid</a> han respostas ed recumandaziuns specificas per Firefox 4 beta.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

@@ -1,0 +1,59 @@
+
+<div id="main-content">
+
+  <div class="sub-feature" id="intro">
+
+    <h2>Elige tu Persona.</h2>
+    <p id="try">Haz pasar el mouse por encima de cada diseño para probarlo, haz click para aplicarlo</p>
+
+    <a href="http://www.getpersonas.com/en-US/gallery/" id="personas-image-link">Personas</a>
+    <iframe
+        src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+        width="320"
+        height="200">
+    </iframe>
+
+    <ul id="personas-link" class="link">
+      <li>
+          <a href="http://www.getpersonas.com/en-US/gallery/" id="see-all-personas">Mira los más de <?=$personasnumber?> que hay</a>
+      </li>
+    </ul>
+</div>
+
+  <div class="sub-feature" id="sidebar">
+    <h2>Sigue conectado</h2>
+    <ul class="link">
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Síguenos en Twitter</a></li>
+      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Hazte fan en Facebook</a></li>
+      <li id="connect-blog"><a href="http://blog.mozilla.com/">Lee nuestro Blog</a></li>
+    </ul>
+  </div>
+
+  <div class="sub-feature<?=$oop_class;?>" id="personalize"><div>
+    <h2>Otras formas de personalizar</h2>
+    <p>Haz que Firefox se adapte a tu forma de navegar con miles de agregados gratis.</p>
+    <ul class="link">
+      <li>
+          <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Explorar agregados</a>
+      </li>
+    </ul>
+  </div></div>
+
+<?=$oop;?>
+</div>
+<div id="footer">
+    <div id="connect" class="sub-feature">
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+  <p id="sub-links">
+      <a href="/<?=$lang?>/firefox/features/" id="features-link">Más características de Firefox 3.6</a>
+      <a href="http://support.mozilla.com" id="support-link">Soporte de Firefox</a>
+  </p>
+
+</div>

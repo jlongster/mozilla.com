@@ -1,0 +1,37 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'First Security Bug Bounty Payments Awarded';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/tignish/press-release.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+
+<div id="content">
+      
+<h2>MOZILLA FOUNDATION ANNOUNCES FIRST PAYMENTS OF SECURITY BUG BOUNTY PROGRAM, FURTHER STRENGTHENS BROWSER SECURITY</h2>
+
+<p>MOUNTAIN VIEW, Calif. - September 14, 2004 - One month after announcing its Security Bug Bounty Program, the Mozilla Foundation is showing the first positive results from this initiative to enlist the help from the open source developer community to make its browsers even more secure.  The Mozilla Foundation today released updates to its Firefox and Mozilla 1.7 browsers and Thunderbird email client that include a number of security enhancements and address several potential security vulnerabilities, taking a proactive leadership role in protecting Internet users from malicious attacks.</p>
+
+<p>The Mozilla project announced the first payments awarded as part of its Security Bug Bounty Program to Marcel Boesch, Gael Delalleau, Georgi Guninski, and Mats Palmgren, the first researchers and security experts to find and report qualifying vulnerabilities.  After learning about the Security Bug Bounty Program, Mr. Delalleau, a security expert for Zencom Secure Solutions, inspected the Mozilla source code for security vulnerabilities, eventually finding a potential problem in Mozilla's email component.  Commented Mr. Delalleau: "I found that the overall quality of the code is quite good.  I audited other parts of Mozilla's tree without finding anything, before focusing on the POP3 code."  For each critical security issue identified, the Mozilla Foundation paid out a $500 bounty.  One of the award winners, Mr. Palmgren, has generously donated his award back to the Foundation to support future bounty payments.</p>
+
+<p>The initial response to the Security Bug Bounty Program confirms that the transparency of Mozilla's open source model makes applications such as Firefox more secure. The open source community is able to expose potential security vulnerabilities and quickly fix them, before they are exploited by malicious hackers.</p>
+
+<p>More than 400 community members have contributed over $10,000 in donations to the Security Bug Bounty Program since it was announced on August 2, supplementing start-up funding by Mark Shuttleworth and Linspire.</p>
+
+<p>The Mozilla Foundation is inviting researchers and security experts to audit its software for security vulnerabilities on an ongoing basis, and is encouraging its users to continue to make donations to support this important effort.  More information about the Security Bug Bounty Program is available at <a href="http://www.mozilla.org/security/index.html">www.mozilla.org/security/</a>.</p>
+
+
+                  
+	  
+      
+    </div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

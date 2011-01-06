@@ -1,0 +1,82 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 베타 - 의견 보내기";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Firefox 4 베타 프로그램을 어디에서 접하셨습니까?";
+$str2       = "최신 정보 받기";
+$str3       = "Firefox 베타 소식지, 이벤트 및 관련 정보를 메일로 받아보세요.";
+$str4       = "이메일 주소";
+$str5       = "<a href=\"%s\">개인 정보 정책</a> 동의 <span class='footnote'>(Mozilla 관련 정보에 대해서만 보내 드립니다.)</span>";
+$str6       = "Mozilla 소식 및 Firefox정 보 및 팁 등 다른 소식도 보내 주십시오.";
+$str7       = "구독하기 »";
+$str8       = "신청해 주셔서 감사합니다!";
+$str9       = "우리는 Mozilla 뉴스 및 웹을 더 나은 곳으로 만들려는 각종 노력 및 여러분이 사용하시는 Firefox에 대한 다양한 정보를 공유하고자 합니다.";
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>의견 보내기</h3>
+        <p>Firefox를 좀 더 빠르고 가볍고 최적화된 프로그램으로 만들고자 합니다. 여러분의 의견이 없이는 불가능합니다.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>베타</sup></span></h3></li>
+    <li class="feedback"><span>의견 보내기</span></li>
+    <li class="more"><h3>영문 정보 더보기</h3></li>
+    <li class="features"><a href="../features/">주요 기능</a> </li>
+    <li class="tech"><a href="../technology/">웹 기술</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">개인 정보 정책</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>의견 보내기</h2>
+        <h3>작은 이야기도 듣겠습니다!</h3>
+        <p>의견 보내기 버튼을 누르시고 지금 베타 버전에 대한 의견을 보내 주십시오.</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">웹 개발자: 여러분이 도와 주세요!</h2>
+        <h3>아이디어를 공유해 주십시오.</h3>
+        <p>Firefox 4에 탑재되는 <a href="../features/#under-the-hood">새로운 개발자 기능</a>에 대한 의견을 주십시오.</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">웹 개발자 의견 보내기</a>를 통해 하실 수 있습니다.</p>
+
+        <h3>기술적 버그 제출 하기</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla logo" />
+        <p>여러분이 Bugzilla를 사용하실 수 있다면, 발견한 문제점을 보고해 주시면 감사하겠습니다.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Firefox 4 베타 버그 제출</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>베타 버전 알리기</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Twitter 구독</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Facebook 팬되기</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Mozilla 블로그 읽기</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>도움이 필요하세요?</h4>
+        <p><a href="http://forums.mozilla.or.kr/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />한국 Mozilla 사용자 포럼</a>에서 관련 문제점을 알려 주시기 바랍니다.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

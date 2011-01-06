@@ -1,0 +1,77 @@
+﻿<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Om nettstadsidentifikasjon";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Om nettstadsidentitet</h2>
+    <p>Firefox 3 har ein ny identitetsknapp som kan hjelpe deg å finne ut kven du er tilkopla når du brukar nettet.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Denne funksjonen lar deg enkelt sjå om nettstaden du vitjar har informasjon om identiteten sin, om kven som har kontrollert informasjonen, og om informasjon du overfører frå og til nettstaden er verna mot avlytting. Du kan sjå identitetsinformasjon til ein nettstad ved å trykkje på ikonet åt nettstaden på venstre side av adresselinja (eller ved å trykkje Skift-Tab-Enter).</p>
+
+<h3>Vanlege spørsmål</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Kva tyder dei ulike nivåa av identitetsinformasjon?</h4>
+    <div class="expander-content">
+        <p>Nivået av identitetsinformasjon på nettstaden vil speglast att i «passkontrollør»-ikonet.</p>
+        <p class="site-id site-id-1">Nettstaden har ingen identitetsinformasjon.</p>
+        <p class="site-id site-id-2">Nettstaden har enkel identitetsinformasjon, og vernar personleg informasjon mot avlytting.</p>
+        <p class="site-id site-id-3">Eigaren av nettstaden er stadfesta, og nettstaden vernar personleg informasjon mot avlytting.</p>
+        <p class="site-id site-id-4">Nettstaden er rapportert som ein åtaksnettstad eller nettsvindel. Å gje opp personleg informasjon på nettstaden, eller til og med å besøkje han, kan vere skadeleg.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kvifor har ikkje alle nettstader stadfesta identitet?</h4>
+    <div class="expander-content">
+        <p>Dei fleste nettstadene på Internett spør ikkje om personleg eller finansiell informasjon frå brukarane, og synest kanskje det er unødvendig å gjennomføre tiltaka som er nødvendig for å tilby ein stadfesta identitet og vern mot avlytting.</p>
+        <p>Ein nettstad som ønskjer at du gjev opp personleg eller finansiell informasjon, eller nettstader som er representert av statlege byrå eller firma, bør alltid identifisere seg skikkeleg og ha vern mot avlytting.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Er det trygt å handle med nettsider som ikkje identifiserer seg sjølve?</h4>
+    <div class="expander-content">
+        <p>Å avgjere kven du skal stole på på nettet startar med å vite kven du snakker med, men det er vanskelegare enn det. Nettstader som ikkje har identitetsinformasjon og samtidig ikkje vernar den personlege informasjonen din, gjer at du sjølv vert utsett for fare for svindel. Sjølv om nettstader identifiserer seg rett, kan det hende at dei har sikkerheitsrutiner du er usamde i, eller har dårleg sikkerheit på nettsidene sine.</p>
+        <p>Akkurat som i den verkelege verda, bør du vise varsemd når du er innom nettsider du ikkje kjenner eller stolar på. Dersom du veit at nettstaden har identifisert seg rett, er det ein del av avgjerda om du skal stole på det.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kontrollerer Mozilla denne identitetsinformasjonen for kvar nettstad?</h4>
+    <div class="expander-content">
+        <p>Informasjonen som identifiserer nettstader er ikkje kontrollert av Mozilla. Firefox, som andre nettlesarar, baserer seg på tiltrudde selskap, såkalla «sertifikatutskrivarar» som kontrollerer identiteten til nettstader og skriv ut «sertifikat». Desse selskapa må følgje reglane i <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA Certificate Policy</a>, som mellom anna krev at utskrivarane har tredjeparts revisjonar som kontrollerer at dei ikkje skriv ut sertifikat til uvedkomande.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

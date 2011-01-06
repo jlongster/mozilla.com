@@ -1,0 +1,37 @@
+<?php
+    // Translate the page title below
+    $page_title = 'דפדפן Firefox | עזור לנו לבדוק את גירסת הבטא';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>עזור לנו לבחון את העתיד של Firefox!</h2>
+        <p>גירסת הבטא האחרונה של Firefox זמינה בתור שחרור לצפייה מוקדמת קח אותו לנסיעת מבחן וספר לנו מה דעתך!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>מידע חשוב</h4>
+        <p class="intro">אנא קרא לפני ההורדה</p>
+    </div>
+    <ul>
+        <li>זוהי תוכנה בגירסת טרום שחרור: אתה עשוי להיתקל בבעיות של חוסר תאימות עם מספר אתרים ותוספות.</li>
+        <li>במידה ואתה מוצא בעיות, בבקשה <a href="http://feedback.mozilla.org/">ספר לנו על כך</a> או <a href="https://bugzilla.mozilla.org/">דווח על באג</a>.</li>
+        <li>לפרטים נוספים, קרא את <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">הערות השחרור</a> וגם את <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">הבעיות הידועות</a> (אנגלית).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">לא מעוניין בגירסת בטא? הורד את <a href="/<?=$lang?>/firefox/">הגירסה האחרונה של Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

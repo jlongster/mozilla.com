@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% organska programska oprema';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Na boljši strani spleta</h2>
+    <p>Ali kaj lahko odprtokodni brskalnik s podporo skupnosti stori za vas.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Izdelki</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Varnost</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Razširljivost</a></li>
+    <li><span>100% organsko</span></li>
+
+    <li><a href="/<?=$lang?>/firefox/tips/">Nasveti in zvijače</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Opombe k izdaji</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Drugi sistemi in jeziki</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>Kaj je organska programska oprema?</h3>
+    <p><strong>V primerjavi z drugimi programskimi podjetji smo nekoliko nenavadni.</strong> Izraz ‘organska programska oprema’ uporabljamo za ponazoritev različnih področij, na katerih se razlikujemo od drugih:</p>
+    <p>Naš najbolj znan izdelek je Firefox, ki ga ustvarja mednarodno gibanje tisočev, med katerimi je le peščica zaposlenih.</p>
+    <p>Spodbuja nas poslanstvo razširjanja odprtosti, inovativnosti in priložnosti na spletu in ne poslovni motivi, kot sta dobiček ali vrednost naše delnice (verjemite ali ne, delnic sploh nimamo).</p>
+    <p>Kot <a href="http://www.mozilla.org/foundation/">neprofitna organizacija, ki skrbi za javno dobro</a>, vidimo uspeh v ustvarjanju skupnosti in bogatenju človeških življenj. Verjamemo v moč in potencial interneta, zato si želimo, da bi zacvetel kjerkoli in kadarkoli.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Firefoxovo dekle" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>Kaj je odprta koda?</h3>
+        <p>Morda se na prvi pogled sliši neumno, vendar nam lahko zaupate: <strong>verjamemo, da več ljudi kot pozna naše "skrivnosti", boljše je.</strong></p>
+        <p>Zato smo razkrili izvorno kodo Firefoxa, njegove "matice in vijake", ki skrbijo za celotno delovanje, tako da si jih lahko vsakdo ogleda.</p>
+        <p>Nekateri so odkrili reči, ki potrebujejo izboljšave, in pripravili popravke zanje. Drugi so dobili ideje za nove zmogljivosti in jih uresničili. Tretji pa so našo kodo združili s svojimi inovacijami in razvili popolnoma nove (in izjemno dobre) izdelke.</p>
+        <p>In nauk zgodbe? Biti odprt pomeni, da se dogajajo dobre stvari. Vsakdo lahko pogleda za zavese ... no, zaves pravzaprav sploh ni več!</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>Zakaj bi vas moralo zanimati?</h3>
+        <p>Morda res nismo običajno podjetje, vendar <strong>še vedno vemo, kako se osredotočiti na osnovno clij: narediti splet boljši za vas</strong>.</p>
+        <p>Biti odprt pomeni, da lahko najboljšo idejo prispeva kdorkoli iz celega sveta in ne le nekaj deset zaposlednih v pisarnah našega podjetja. Ko si na ta način ogledate naš položaj, se lahko vprašate, zakaj bi se naloge sploh lotili na drugačen način?</p>
+        <p>Vso to govorjenje o organski programski opremi in odprti kodi na koncu privede do boljšega brskalnika za vas in za 130 milijonov rednih uporabnikov Firefoxa. Pomeni večjo kakovost in bolj varen izdelek. Poleg tega pa še inovativnost, svobodo in podporo internetu, ki je dostopen za vse.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Kaj je Mozilla?</h3>
+            <p>Smo globalna skupnost, ki skrbi za javno dobro, in odprtokodni programski projekt. <span><a href="/<?=$lang?>/about/">Odkrijte več o nas</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

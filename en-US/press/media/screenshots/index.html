@@ -1,0 +1,241 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Media Library';
+    $body_id    = 'images';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about",
+		'Press Center' => "/{$lang}/press",
+		'Mozilla Media Library' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+<div id="main-feature">
+	<h2>Mozilla <span>Media Library</span></h2>
+</div>
+
+<div id="main-content">
+
+	<ul id="media-menu">
+		<li id="media-logo"><a href="/<?=$lang?>/press/media/logos/">Logos</a></li>
+		<li id="media-screenshots"><span>Product Screenshots</span></li>
+		<li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Staff Headshots</a></li>
+		<li id="media-videos"><a href="/<?=$lang?>/press/media/videos/">Videos</a></li>
+	</ul>
+	
+	<div id="content">
+	
+		<p>Below are Mozilla product screenshots that you may use for print, Web and broadcast. Please note that screenshots and related product images must be unaltered, they cannot be annotated or modified in any way. If you have questions or need more details, please <a href="mailto:press@mozilla.com">email our press team</a>.</p>
+	
+		<h3>Firefox Desktop</h3>
+		<div class="screenshots">
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-windows7.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-windows7-small.png" height="72" width="100" alt="Firefox Screenshot Windows 7" /></a>
+				<h5>Firefox Screenshot<br />Windows 7</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-windows7.png">597Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-windows7.tif">3Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-mac.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-mac-small.png" height="72" width="100" alt="Firefox Screenshot Macintosh" /></a>
+				<h5>Firefox Screenshot<br />Macintosh</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-mac.png">534Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-mac.tif">2.7Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-linux.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-linux-small.png" height="72" width="100" alt="Firefox Screenshot Linux" /></a>
+				<h5>Firefox Screenshot<br />Linux</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-linux.png">450Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-linux.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-awesomebar.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-awesomebar-small.png" height="72" width="100" alt="Firefox Awesomebar" /></a>
+				<h5>Firefox web browser<br />Awesomebar</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-awesomebar.png">642Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-awesomebar.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-geolocation.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-geolocation-small.png" height="72" width="100" alt="Firefox Geolocation" /></a>
+				<h5>Firefox Screenshot<br />Geolocation</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-geolocation.png">260Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-geolocation.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-private.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-private-small.png" height="72" width="100" alt="Firefox Private Browsing" /></a>
+				<h5>Firefox web browser<br />Private Browsing</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-private.png">78Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-private.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-sessionrestore.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-sessionrestore-small.png" height="72" width="100" alt="Firefox Session Restore" /></a>
+				<h5>Firefox web browser<br />Session Restore</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-sessionrestore.png">78Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-sessionrestore.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-phishing.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-phishing-small.png" height="72" width="100" alt="Firefox Phishing Protection" /></a>
+				<h5>Firefox web browser<br />Phishing Protection</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshot-firefox-phishing.png">82Kb PNG (72dpi)</a></li>
+					<li><a href="http://static.mozilla.com/moco/en-US/images/screenshot-firefox-phishing.tif">2.4Mb TIFF (300dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-personas.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-personas-small.png" height="80" width="100" alt="Firefox Personas" /></a>
+				<h5>Firefox Personas</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-personas.png">406Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-plugin.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-plugin-small.png" height="80" width="100" alt="Firefox Personas" /></a>
+				<h5>Plugin Checker</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-plugin.png">332Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-woff.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-woff-small.png" height="80" width="100" alt="Web Open Font Format (WOFF)" /></a>
+				<h5>Web Open Font Format<br/>(WOFF)</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-3.6-woff.png">181Kb PNG</a></li>
+				</ul>
+			</div>
+		</div>
+		<h3>Firefox for the N900 Product Images</h3>
+		<div class="screenshots">
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/addons.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-addons-thumb.jpg" alt="Add-ons Manager" width="100" /></a>
+				<h5>Add-ons Manager</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/addons.png">111Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/controls.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-controls-thumb.jpg" alt="Browser Controls" width="100" /></a>
+				<h5>Browser Controls</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/controls.png">234Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/bookmarking.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-bookmarking-thumb.jpg" alt="One Touch Bookmarking" width="100" /></a>
+				<h5>One Touch Bookmarking</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/bookmarking.png">282Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/preferences.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-preferences-thumb.jpg" alt="Preferences" width="100" /></a>
+				<h5>Preferences</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/preferences.png">83Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/awesome-bar.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-awesomebar-thumb.jpg" alt="Awesome Bar" width="100" /></a>
+				<h5>Awesome Bar</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/awesome-bar.png">131Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/sync.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-sync-thumb.jpg" alt="Open Tabs with Firefox Sync" width="100" /></a>
+				<h5>Open Tabs with Firefox Sync</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/sync.png">132Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/youtube-enabler.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/mobile-youtubeenabler-thumb.jpg" alt="YouTube Enabler Add-on" width="100" /></a>
+				<h5>YouTube Enabler Add-on</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/youtube-enabler.png">89Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/browsing-without-borders.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/browsing-without-borders-preview.jpg" alt="Browsing Without Borders" width="100" /></a>
+				<h5>Browsing Without Borders</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/browsing-without-borders.jpg">89Kb PNG</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-thumb.jpg" alt="Firefox for N900" width="100" /></a>
+				<h5>Firefox for N900</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-web.jpg">156Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900.jpg">2.5Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-front-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-front-thumb.jpg" alt="Firefox for N900, front view" width="100" /></a>
+				<h5>Firefox for N900, front view</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-front-web.jpg">184Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-front.jpg">3Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-open-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-open-thumb.jpg" alt="Firefox for N900, open" width="100" /></a>
+				<h5>Firefox for N900, open</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-open-web.jpg">180Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900.jpg">2.9Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents" style="clear: left;">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-touch-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-touch-thumb.jpg" alt="Firefox for N900, touch screen" width="100" /></a>
+				<h5>Firefox for N900, touch screen</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-touch-web.jpg">192Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-touch.jpg">4.3Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-keyboard-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-keyboard-thumb.jpg" alt="Firefox for N900, keyboard" width="100" /></a>
+				<h5>Firefox for N900, keyboard</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-keyboard-web.jpg">264Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-keyboard.jpg">6.3Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+			<div class="screenshot-contents">
+				<a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-weave-sync-web.jpg"><img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/firefox-n900-weave-sync-thumb.jpg" alt="Synchronize with Firefox Sync" width="100" /></a>
+				<h5>Synchronize with Firefox Sync</h5>
+				<ul>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-weave-sync-web.jpg">280Kb JPEG (72dpi)</a></li>
+					<li><a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/press/image-library/mobile/firefox-n900-weave-sync.jpg">4.5Mb JPEG (240dpi)</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div><!-- end #content div -->
+<div id="sidebar">
+	<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

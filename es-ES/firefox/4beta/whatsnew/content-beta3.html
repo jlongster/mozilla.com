@@ -1,0 +1,47 @@
+<div id="main-feature">
+
+    <h1>Qué hay de nuevo en <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+    <h3>Sync está incluido en Firefox&nbsp;4 Beta </h3>
+
+<p>¡Del trabajo a casa, al móvil y de vuelta! Sync te da acceso fácil a tu información más importante en Firefox, incluyendo marcadores, contraseñas, historial y pestañas abiertas, entre varios equipos y dispositivos. Mira el video para comenzar a usarlo.</p>
+
+    <ul>
+           <li><a href="/<?=$lang?>/firefox/sync/">Aprende más sobre Sync »</a></li>
+           <li><a href="/<?=$lang?>/firefox/beta/feedback/">Comparte tu opinión »</a></li>
+           <li><a href="/<?=$lang?>/firefox/4.0b3/releasenotes/">Notas de la versión »</a></li>
+       </ul>
+    </div>
+
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+      <h2>Galería de funcionalidades</h2>
+
+<p>Firefox&nbsp;4 destinado a un gran comienzo. Aquí encontrarás otras características clave que no querrás perderte:</p>
+    </div>
+
+    <div id="column-1">
+    <h4>Graficos suavizados</h4>
+       <p>Nuevos valores en Javascript, quiere decir que Firefox puede ejecutar un código numérico pesado más eficientemente, resultando en graficos más suaves.</p>
+    </div>
+
+    <div id="column-2">
+       <h4>SQLite 3.7.0</h4>
+       <p>La barra asombrosa (alucinante), el administrador de descargas y las características de IndexedDB ahora son más rápidas gracias a una actualización de SQLite, un motor de bases de datos SQL.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

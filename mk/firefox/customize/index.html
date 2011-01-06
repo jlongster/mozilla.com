@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Нема универзален вкус';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Нема универзален вкус</h2>
+    <p>Луѓето додаваат различни зачини на храната и мелодии на телефонот. Зошто да не сурфате на Интернет на свој начин?</p>
+</div>
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Производи</a> / <a href="/<?=$lang
+?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Безбедност</a></li>
+    <li><span>Прилагодување</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% органски софтвер</a></li>
+
+    <li><a href="/<?=$lang?>/firefox/tips/">Совети и трикови</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Белешки кон изданието</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Други системи и јазици</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Додатоци за секого</h3>
+        <p>Firefox нуди најмногу начини за да го прилагодите Вашето искуство на Интернет, посебно во делот како ја користите мрежата. Постојат повеќе од 5.000 додатоци (мали програмчиња кои го дополнуваат Firefox да биде поблизок до Вашите лични потреби) кои можат да Ви помогнат да направите повеќе, да се забавувате повеќе или да бидете покреативни на Интернет.</p>
+        <p>Сакате детали? Видете ги примерите подолу, и потоа <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">посетете го местото со додатоци за да ги истражите сите можности.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Известувања и новости</h4>
+            <p>Со додатоците од оваа категорија, можете да ги добивате најновите информации за временската прогноза, спортските резултати или аукциите на eBay. Информациите се прикажуваат во Вашиот прелистувач во реално време, без разлика на која страница сурфате во моментот.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Сите додатоци за известувања и новости.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">На пример:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" />Следете го Вашето тргување на eBay секогаш кога сте на Интернет.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Пробајте го изданието на Firefox од eBay</a> <span>од корпорацијата eBay</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Фотографии, музика и видео</h4>
+            <p>Претворете го Вашиот Firefox во менаџер на фотографии и музика или сеопфатна мултимедијална машина. Со Firefox можете да имате мултимедијален центар, на дофат на прстите, додека сурфате, работите, праќате пораки или истражувате на Интернет.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Сите додатоци за фотографии, музика и видео.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">На пример:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" />Контролирајте го речиси секој плеер преку Вашиот прелистувач.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Пробајте го FoxyTunes</a> <span>од Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Вмрежување и комуникации</h4>
+            <p>Овие додатоци ќе Ви помогнат да најдете нови, интересни работи на Интернет, ќе ги подобрат Вашите инстант комуникации и ќе Ви помогнат да останете во контакт со сите Ваши пријатели на местата за вмрежување.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Сите додатоци за вмрежување и комуникации.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">На пример:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" />Откријте нови места, поврзете се со пријатели и споделете ги Вашите откритија.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Пробајте го StumbleUpon</a> <span>од StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Теми и изглед</h4>
+            <p>Не го ограничувајте Вашето искуство на стандардниот дизајн. Одберете нови бои, направете го прелистувачот полесен за користење (на пример, со поголеми копчиња) или само одберете нов изглед што Ви се допаѓа повеќе.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Сите додатоци за теми и изглед.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">На пример:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" />Тема за луѓето кои сакаат темнина.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Пробајте ја NASA Night Launch</a> <span>од mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>Додатоци</h3>
+            <h5>Firefox по Ваша мерка</h5>
+            <p><a href="https://addons.mozilla.org/firefox/">Сите додатоци на едно место</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

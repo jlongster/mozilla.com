@@ -1,0 +1,27 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Licença do Guia do Firefox 3.5';
+    $body_id    = 'guide-license';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="/style/tignish/press-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="main-content">
+<h2>Licença do <a href="http://static.mozilla.com/moco/pt-BR/pdf/firefox-3.5-reviewers-guide-BR.pdf" type="application/pdf">Guia do Firefox 3.5</a></h2>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/"><img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/br/88x31.png"/></a></p>
+
+<p>O Guia do Firefox 3.5 ("a Obra") é licenciado sob a Licença de Atribuição-Uso Não-Comercial-Compartilhamento 2.5 Brasil da Creative Commons. Para exibir uma cópia dessa licença, visite <a href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/">http://creativecommons.org/licenses/by-nc-sa/2.5/br/</a>. As marcas comerciais da Mozilla, logotipos e gráficos, incluindo sem limitação os logotipos Mozilla e Firefox ("as Marcas") pertencem à Mozilla Foundation. Em adição às Marcas incluídas na Obra, nenhum direito de uso das Marcas é fornecido e elas não são licenciadas sob esta licença Creative Commons.</p>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

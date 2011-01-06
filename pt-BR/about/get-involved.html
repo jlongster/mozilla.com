@@ -1,0 +1,66 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Envolva-se | Mozilla';
+    $body_id    = 'about-get-involved';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/tignish/about.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Envolva-se com a Mozilla</h2>
+	<p>Somos uma comunidade global trabalhando em conjunto para tornar a web um espaço melhor para todos.</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a></h3></li>
+	<li><a href="/<?=$lang?>/about/whatismozilla.html">O que é a Mozilla?</a></li>
+	<li><span>Envolva-se</span></li>
+	<li><a href="/<?=$lang?>/press/">Área de Imprensa</a></li>
+	<li><a href="/<?=$lang?>/about/careers.html">Carreiras</a></li>
+	<li><a href="/<?=$lang?>/about/partnerships.html">Parcerias</a></li>
+	<li><a href="/<?=$lang?>/about/licensing.html">Licenças</a></li>
+	<li><a href="http://blog.mozilla.com/" class="external" hreflang="en">Blog</a> / <a href="http://blog.mozilla.com/brasil/" class="external">Blog Brasil</a></li>
+	<li><a href="http://communitystore.mozilla.org/" class="external" hreflang="en">Loja da Comunidade</a></li>
+	<li><a href="/<?=$lang?>/about/logo/">Guia de Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/contact.html">Entre em contato</a></li>
+</ul>
+
+<div id="content">
+
+<h4 class="content-intro">E então, gostaria de ajudar? Ótimo! Não precisa ser um expert em C++ (ou sequer saber o que isto significa!) e nem precisa gastar muito tempo.</h4>
+
+<div id="easy" class="get-involved-list">
+	<h5>Maneiras fáceis de participar</h5>
+	<ul>
+	<li><a href="/<?=$lang?>/products/">Divulgue os produtos Mozilla entre seus familares, amigos e colegas</a></li>
+	<li><a href="http://support.mozilla.com/<?=$lang?>/kb/">Ajude outras pessoas em nossos fóruns de discussão</a></li>
+	<li><a href="http://www.spreadfirefox.com/" class="external" hreflang="en">Junte-se à equipe de marketing da comunidade e ajude em nossas campanhas de divulgação</a></li>
+	<li><a href="http://www.mozilla.org/quality/qfa.html" class="external" hreflang="en">Entenda como enviar dados sobre possíveis travamentos ao time de desenvolvimento</a></li>
+	<li><a href="http://www.mozilla.org/projects/tech-evangelism/" class="external" hreflang="en">Entre em contato com sites que não funcionam corretamente com os produtos Mozilla</a></li>
+	<li><a href="http://www.mozilla.org/foundation/donate.html" class="external" hreflang="en">Faça uma doação à Fundação Mozilla</a></li>
+        <li><a href="https://testpilot.mozillalabs.com" class="external" hreflang="en">Ajude a testar novos recursos do Firefox e seu uso unido-se ao time do Test
+Pilot</a></li>
+	</ul>
+</div>
+
+<div id="tech" class="get-involved-list">
+	<h5>Para usuários mais experientes</h5>
+	<ul>
+	<li><a href="http://quality.mozilla.org" class="external" hreflang="en">Junte-se à equipe de controle de qualidade e informe todos os problemas e bugs que precisem ser corrigidos</a></li>
+	<li><a href="https://developer.mozilla.org/Project:pt/Como_Ajudar" class="external">Ajude a escrever ou editar documentação de ajuda para desenvolvedores</a></li>
+	<li><a href="http://support.mozilla.com/pt-BR/kb/How+to+contribute" class="external">Ajude a escrever ou editar documentação de ajuda para usuários</a></li>
+	<li><a href="http://developer.mozilla.org/Pt/docs/Extens%C3%B5es" class="external">Contribua para a riqueza do ecossistema do Firefox desenvolvendo extensões</a></li>
+	<li><a href="http://www.mozilla.org/hacking/" class="external" hreflang="en">Corrija um bug ou contribua com código para o projeto</a></li>
+	<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions" class="external">Lidere a inovação móvel e desenvolva para o primeiro navegador móvel a oferecer Complementos</a></li>
+	</ul>
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

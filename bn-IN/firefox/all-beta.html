@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox ওয়েব ব্রাউজার | সর্বশেষ বিটা সংস্করণ পরীক্ষা করতে আমাদের সাহায্য করুন';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Firefox-র ভবিষ্যৎ পরীক্ষায় সাহায্য করুন!</h2>
+        <p>Firefox-র সর্বশেষ বিটা সংস্করণের প্রি-ভিউ রিলিজ বর্তমানে উপলব্ধ রয়েছে। এটি ব্যবহার করে দেখুন ও আমাদেরকে আপনার মতামত জানান!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>গুরুত্বপূর্ণ তথ্য</h4>
+        <p class="intro">ডাউনলোড করার পূর্বে পড়া আবশ্যক</p>
+    </div>
+    <ul>
+        <li>এটি একটি প্রাক-রিলিজ সফ্টওয়্যার: কিছু ওয়েব-সাইট ও অতিরিক্ত সামগ্রী ব্যবহারকালে বিসংগতি দেখা দিতে পারে।</li>
+        <li>কোনো সমস্যা দেখা দিলে অনুগ্রহ করে <a href="http://feedback.mozilla.org/">আমাদের সূচিত করুন</a> অথবা <a href="https://bugzilla.mozilla.org/">একটি বাগ ফাইল করুন</a>।</li>
+        <li>অধিক বিবরণের জন্য <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">রিলিজ নোট</a> ও <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">জ্ঞাত সমস্যা</a> (ইংরাজিতে উপলব্ধ) সম্বন্ধে পড়ুন।</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">বিটা অনুসন্ধান না করে থাকলে, <a href="/<?=$lang?>/firefox/">Firefox-র সাম্প্রতিকতম সংস্করণ</a> প্রাপ্ত করুন।</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

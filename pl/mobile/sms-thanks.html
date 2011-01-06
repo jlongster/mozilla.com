@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Dziękujemy za wybranie Firefoksa!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Dziękujemy za wybranie Firefoksa!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Skorzystaj z&nbsp;tych kroków, aby pobrać Firefoksa i&nbsp;dowiedzieć się więcej na temat dodatku Firefox Sync</h3>
+    <ol id="steps">
+        <li>Sprawdź przychodzące SMS-y, aby znaleźć wiadomość, którą wysłaliśmy do Ciebie.</li>
+        <li>Otwórz wiadomość i&nbsp;wybierz odnośnik, który pozwoli Ci pobrać Firefoksa prosto na Twój telefon.</li>
+    </ol>
+    <p class="small-print">*Firefox jest darmowy, ale obowiązują standardowe opłaty nałożone przez Twojego operatora. Sprawdź swoją taryfę lub abonament.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Podczas gdy czekasz…</h3>
+    <ol>
+        <li>Przygotuj sobie dodatek Firefox Sync i&nbsp;zabierz <em>swojego</em> Firefoksa ze sobą gdziekolwiek się wybierasz. Dziel swoją historię przeglądania, zakładki, hasła i&nbsp;karty pomiędzy swoim komputerem a&nbsp;telefonem komórkowym.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Zainstaluj dodatek Firefox Sync na swoim komputerze</a> i&nbsp;zaloguj się. Jak tylko pobierzesz Firefoksa na komórkę, postępuj zgodnie ze wskazówkami i&nbsp;wybierz opcję &bdquo;Pobierz dodatek Firefox Sync&rdquo;, aby dokończyć instalację. Możesz też ręcznie wybrać przycisk ustawień, przejść do dodatków, a&nbsp;następnie znaleźć i&nbsp;zainstalować dodatek Firefox Sync na swoim telefonie.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

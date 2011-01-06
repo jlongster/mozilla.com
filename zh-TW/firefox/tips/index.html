@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla 產品 | 使用技巧';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>使用技巧</h2>
+    <p>無論您是電腦新手、略通一二或是超強高手，下面這些使用技巧都能幫助您活用 Firefox 3。</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">產品</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">安全性</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">自訂性</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% 純天然有機軟體</a></li>
+    <li><span>使用技巧</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">版本資訊</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">其他系統 &amp; 語言</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>電腦新手</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", '放大縮小螢幕抓圖', '365', '251', 'right')?>
+
+                <h4>放大、縮小</h4>
+                <p>對那些密密麻麻的螞蟻字感到厭倦了嗎？想對那些圖片說：你可以再靠近一點嗎？現在您可以輕輕鬆鬆地放大和縮小網頁囉！</p>
+
+                <div class="key-combo">
+                    放大
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    縮小
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", '分頁技巧螢幕抓圖', '388', '135', 'right')?>
+
+                <h4>試試看這些分頁技巧</h4>
+                <p>如果您習慣同時開啟很多很多網頁，你就會發現分頁功能是多麼棒了。這些組合鍵或許可以讓您輕鬆的打理這些分頁：</p>
+
+                <div class="key-combo key-combo-1">
+                    開啟新空白分頁
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    於新分頁開啟鏈結
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + 於鏈結上按左鍵</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">於鏈結上按中鍵</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">於鏈結上按中鍵 (mac: ⌘ + 於鏈結上按左鍵)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    關閉分頁
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    復原已關閉分頁
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', '書籤功能螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>一指書籤法</h4>
+                <p>只要點一下就能用書籤功能把您喜歡的網站留下來。當您在瀏覽網頁時，只要點一下瀏覽工具列上的星星，就可以把您喜歡的網站加入書籤。這樣一來，您就不必擔心下次找不到它了！</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', '安全圖示', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        這個網站提供了驗證過的識別資訊，並且保護你的個人資料在傳輸中免受竊取。
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', '安全圖示', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        這個網站提供了基本的識別資訊，並且保護你的個人資料在傳輸中免受竊取。
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', '安全圖示', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                         這個網站沒有提供任何識別資訊。
+                    </li>
+                </ul>
+
+                <h4>看看是誰在對付您</h4>
+                <p>網路詐騙最常用的技倆就是做一個假的網站，最常被模仿的網站就是網路銀行、拍賣網站等等。這類網站又稱為「偽造網站」。還好 Firefox 很容易就能驗明網站真身－只要按一下網站提示就能顯現網站身份。</p>
+                <p id="forgery">惡意或偽造網站：只要連到該網站或於網站上留下個人資料，資料就有被竊取的危險。
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="偽造網站螢幕抓圖" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            向下捲動網頁
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="空白鍵" />
+                        </div>
+                        <div class="key-combo">
+                            向上捲動網頁
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + 空白鍵" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            重新載入網頁
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            回到上一頁
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            前往下一頁
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>邁向成功的快捷鍵</h4>
+                <p>Firefox 有許多能讓您使用更加方便的鍵盤快速鍵。以下是我們的精選：</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        將游標移動到網址列
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        移動游標到搜尋列
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>略通一二</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", '書籤功能螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>玩樂標籤</h4>
+                <p>當您收集了一大堆書籤，要整理它們就變成是相當困擾的一件事。要維持書籤的整齊，您可以對每個書籤下標籤：只要在星星上點兩下就能輸入您想設定的標籤了。</p>
+                <p>您可以同時下多個標籤（每個標籤用逗點分隔），未來在網址列直接輸入標籤就能直接找到該書籤。例如，在網址列輸入「旅行」就能找到所有您之前計畫旅遊行程時所儲存的書籤。</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", '擴充套件螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>了解附加元件</h4>
+                <p>標準版的 Firefox 含有常用的一切功能，但功能永遠不嫌多，不是嗎？超過 5000 種附加元件（能讓您自訂 Firefox 的附加小程式）可供您下載，只要是您想的到的需求幾乎都有對應的元件可用。請到「工具＞附加元件」開啟「附加元件管理員」，探索 Firefox 的無限可能。</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", '搜尋功能螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>聰明搜尋</h4>
+                <p>或許您已經熟知 Firefox 內建的搜尋功能，但是您知道可以自訂搜尋列，加上任何您想要的搜尋引擎嗎？只要按搜尋列左邊的圖示，就能看到預設引擎供您選擇。</p>
+                <p>更棒的是，按「管理搜尋引擎」還可以重排搜尋引擎順序、新增其他搜尋引擎，甚至幫你常用的搜尋引擎設定快捷鍵。例如：你可以為 Google 指定快捷鍵「G」－若之後您想搜尋餅乾食譜，只要在位址列打「G 餅乾食譜」就能搜尋。</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", '尋找功能螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>如閃電般尋找文字</h4>
+                <p>「隨打即找」功能是另一個省時間的絕技。除了用尋找列尋找網頁上的文字外，只要在網頁空白處輕按一下，就能直接輸入您想尋找的文字。游標會馬上跳到該詞第一次出現的位置。</p>
+                <p>您也可以用「隨打即找」功能搜尋鏈結。例如：直接輸入「Learn More」後按 Enter 就能直接開啟，再也不需要花時間拉捲軸、移動滑鼠尋找鏈結。</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", '隱私螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>走過不留痕跡</h4>
+                <p>由於安全性和保護個人隱私之故，當您瀏覽時留下足跡是不太好的（特別是您正在用多人共用的電腦時。）在 Firefox 裡，只要一個按鈕就能清除瀏覽記錄、下載記錄、網頁快取以及 Cookie。只要按「工具＞清除隱私資料」即可。若您還是放不下心，到「<span id="trace-platform">工具＞選項＞個人隱私</span>」後選擇「結束 Firefox 時清除隱私資料」。</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox ＞偏好設定＞個人隱私";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="編輯＞偏好設定＞個人隱私";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>超強高手</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", '網址列螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>直達您最愛的網站</h4>
+                <p>您可以在書籤上加入關鍵字，如此一來您就可以更方便、更快速地使用書籤。您只要在收藏庫中輸入關鍵字，您就可以通過在網址列輸入關鍵字直達網站。例如，您可以給您的「del.icio.us」書籤的關鍵字欄中打上「links」，那麼下次您只要在網址列打上「links」，您就可以直達「del.icio.us」。</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", '書籤螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>建立智慧書籤夾</h4>
+                <p>如果您是一位時常需要儲存和紀錄各式各樣網頁的重度上網者，那麼這裡有一個節省時間的好功能：Firefox 3 的收藏庫。您可以建立和儲存各種搜尋條件為智慧書籤夾，如此一來，每當您增加網頁到您的書籤或瀏覽記錄的同時，資料夾也會根據搜尋條件自動更新。</p>
+                <p>首先，從書籤選單中選取「顯示所有書籤…」開啟收藏庫。然後，在搜尋欄打上搜尋條件。最後按一下儲存，智慧書籤夾就完成了。</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", '下載管理員螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>管理您的下載</h4>
+                <p>如果您時常下載檔案，請利用下載管理員追蹤所有下載項目。您可以直接在下載管理員裡暫停、續傳或開啟下載檔案。</p>
+                <p>如果您需要找出之前的下載項目，請到「工具＞下載管理員」中，於搜索列尋找您的檔案。一但您找到想找的檔案，您可以按兩下開啟該檔案或按 Ctrl+左鍵後選擇「複製下載鏈結」。</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', '開發者工具螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>探索開發者工具</h4>
+                <p>如果您是網頁設計者，Firefox 的開發者工具會讓您的生活更輕鬆。<a href="https://addons.mozilla.org/zh-TW/firefox/browse/type:1/cat:4">Mozilla 附加元件網站</a> 提供許多工具使開發過程更為流暢，例如：Firebug 可以在任何網站即時編輯、除錯、查看 CSS、HTML 與 JavaScript；Tamper Data 可以查看 HTTP/HTTPS 檔頭與 POST 參數；DOM Inspector 可以透過簡單的右鍵點擊檢查任何的 HTML 或 CSS 元件。</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", '偏好設定螢幕抓圖', '378', '252', 'right')?>
+
+                <h4>依您喜好設定網路</h4>
+                <p>現在您可以透過網路程式協定處理器提供您快速存取您喜好的網路應用程式。例如：您可以設定 Firefox 點選 mailto: 連結時開啟您喜好的電子郵件網站，而非電腦上預設的郵件處理程式。（附註：此功能只能選用已在 Firefox 3 中註冊的電子郵件網站）</p>
+                <p>打開 <span id="platform-protocol">「工具＞偏好設定＞應用程式」</span> 以選擇各種通訊協定預設的應用程式，若選擇「每次詢問」則您每次都需要選擇要以何種程式處理。</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="「Firefox＞偏好設定＞應用程式」";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="「編輯＞偏好設定＞應用程式」";
+                }
+                //]]></script>
+                <p>如果您是網路應用程式設計者，可以到 <a href="http://developer.mozilla.org/">Mozilla 開發者中心</a> 看看有關如何支援網頁通訊協定的詳細資訊。</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,61 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion for eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-firstrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/dalvay/feature.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/dalvay/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+    <div class="feature-contents">
+        <div id="feature-header">
+            <h3><img src="/<?=$lang?>/img/add-ons/ebay/firstrun-bundle-title.png" height="124" width="490" alt="Welcome: Firefox - eBay Edition" /><a href="../../"><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+        </div>
+        <div id="feature-text">
+
+        <p>Vous venez de télécharger l’édition Firefox eBay et vous pouvez à présent vous lancer dans la recherche, les enchères et suivre les affaires sur eBay directement depuis votre navigateur Web Firefox.</p>
+
+        <p>Des millions de personnes à travers le monde ont choisi Firefox, séduits par une meilleure expérience en ligne, plus rapide et plus sûre. Firefox est développé et distribué par Mozilla, une communauté mondiale dont l’objectif est de faire du Web un espace plus ouvert  optimisé pour tous.</p>
+
+        <p><strong>Pour lancer l’utilisation du Firefox Companion pour eBay, il vous suffit simplement de reproduire  les étapes suivantes:
+</strong></p>
+
+        <ol id="setup-steps">
+            <li id="setup-steps-1">Cliquer sur l’icône eBay sur votre barre d’outils Firefox. Une barre latérale apparaît dans votre navigateur.</li>
+            <li id="setup-steps-2">Connectez-vous sur votre compte eBay en cliquant sur le bouton "Ouvrir une session " dans la barre latérale, puis entrez votre pseudo et votre mot de passe dans la fenêtre principale du navigateur.</li>
+            <li id="setup-steps-3">Si vous êtes un nouvel utilisateur eBay, cliquez sur le bouton d’inscription pour commencer.</li>
+            <li id="setup-steps-4">Vous y êtes !  Vous allez maintenant pouvoir rechercher ce que vous voulez parmi les millions d'objets disponibles sur eBay.</li>
+
+        </ol>
+
+        <p>Pour plus de renseignements sur les fonctionnalités et les questions fréquentes sur Firefox Companion pour eBay, consultez la page sur les fonctionnalités et la foire aux questions.</p>
+
+        <p>Grâce à eBay Companion et Firefox, vous vous sentez en sécurité. Notre communauté et les 10 000 volontaires pour les tests qui la composent, travaillent chaque jour pour vous protéger contre toutes les dernières menaces du  Web.</p>
+
+        </div>
+
+        <div id="firstrun-sidebar">
+
+            <h3>Choisir Firefox comme navigateur Web par défaut</h3>
+            <p>Afin que l'expérience soit optimale, cliquez sur  « Outils, puis option » dans le menu Firefox de votre navigateur et assurez-vous que l'option "Toujours vérifier au démarrage que Firefox est le navigateur par défaut" est sélectionnée. Vous profiterez ainsi de tous les avantages de Firefox à tout moment</p>
+
+            <h3>Démarrer Firefox sur vos sites préférés</h3>
+            <p>Savez-vous que vous pouvez démarrer Firefox avec vos sites préférés déjà ouverts dans des onglets séparés, tout prêts pour la navigation ? Cliquez ici <input type="checkbox" id="set-homepage-checbox" value="1" /> pour que Firefox démarre avec la page d’accueil d’eBay en deuxième onglet.</p>
+
+        </div>
+
+        <br style="clear: both;" />
+    </div>
+</div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,42 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "موزيلا | فَيَرفُكس الجوّال";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="مرحبًا في فَيَرفُكس" /></h1>
+<p>أفضل متصفح وب في العالم صار متاحًا على جوّالك.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">نزّل الآن - مجانًا</a>
+    <div><a href="platforms.html" class="system">هل فَيَرفُكس متاح في لغتي؟</a></div>
+
+  <?php else: ?>
+
+    <p>جهازك غير مدعوم</p>
+    <p><a href="/<?= $lang ?>/m/platforms">تعرّف على المنصات والأجهزة المدعومة</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">استمتع بمزايا فَيَرفُكس المفضلة لديك:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>زامِن</b> <span>زامِن ما بين تصفحك في الجوّال وعلى الحاسوب بكل سلاسة</span></li>
+    <li id="customize"><b>خصّص</b> <span>ثبّت الإضافات لتجعل فَيَرفُكس تمامًا كما تحب</span></li>
+    <li id="search"><b>ابحث</b> <span>اكتب أقل واحصل على الوب بشكل أسرع باستخدام الشريط الرائع</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">شاهد المزيد من المزايا</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "About One-Click Site ID";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>About One-Click Site ID</h2>
+    <p>Firefox 3 rendelkezik a weboldal azonosítására szolgáló gombbal, amelynek segítségével ellenőrizhető, hogy valójában kihez is kapcsolódik a böngészőn keresztül.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Ezen funkció segítségével egy pillanat alatt eldönthető, hogy a meglátogatott weboldal  biztosít-e valamilyen információt magáról, ki ellenőrizte ezt az információt és milyen módon védi a személyes adatokat az információkat lehallgatni vágyók ellen. Az oldal azonosításához szükséges információk a címsor bal oldalán található, oldalikonra kattintva (vagy a Shift-Tab-Enter billentyűkombinációt megnyomva) jelennek meg.</p>
+
+<h3>Gyakran Ismételt Kérdések</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Mit jelentenek a különböző szintű azonosító információk?</h4>
+    <div class="expander-content">
+        <p>Az “útlevélvizsgáló” ikon a weboldal által adott azonosítóinformáció szerint változik.</p>
+        <p class="site-id site-id-1">Ez a webhely nem szolgáltat magáról azonosító információkat.</p>
+        <p class="site-id site-id-2">Ez a weboldal alapvető azonosító információkat szolgáltat és megvédi személyes adatait a kommunikációt figyelők elől.</p>
+        <p class="site-id site-id-3">Ez a weboldal ellenőrzött azonosító információkat szolgáltat és megvédi személyes adatait a kommunikációt figyelők elől.</p>
+        <p class="site-id site-id-4">Ez a weboldal valószínűleg hamis vagy megtámadták. Az oldal számára veszélyes személyes adatokat átadni, vagy akár csak meglátogatni is.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Miért nem ad magáról minden oldal ellenőrzött információkat?</h4>
+    <div class="expander-content">
+        <p>Az interneten a weboldalak többsége nem kér semmilyen személyes vagy pénzügyi információt a látogatóktól, ezért nem tartja fontosnak, hogy ellenőrzött azonosító információt adjon magáról vagy védekezzen az információtolvajok elől.</p>
+        <p>Azok a weboldalak, amelyek személyes vagy pénzügyi adatokat kérnek, vagy állami, esetleg üzleti szereplőként jelennek meg az interneten, azok számára elengedhetetlen, hogy megfelelően azonosítsák magukat és védekezzenek az információtolvajok ellen.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Biztonságos olyan oldalon üzeletelni, amely nem azonosítja magát?</h4>
+    <div class="expander-content">
+        <p>Annak eldöntéséhez, hogy kiben bízunk az interneten, ahhoz előbb tudnunk kell, hogy kivel is folytatunk kommunikációt. Potenciális kockázatot hordoznak azok az oldalak, amelyek nem közölnek magunkról azonosító információkat és nem védik a személyes adatokat, ezért nem tekinthetők biztonságosnak. De azok a weboldalak, amelyek megfelelően azonosítják magukat, követhetnek olyan gyakorlatot, amely biztonsági szempontból nem megfelelő.</p>
+        <p>Ahogyan a való életben is, óvatosnak kell lenni olyan kommunikáció során, ahol nem tudni pontosan, hogy kivel tartjuk a kapcsolatot és hogy bízhatunk-e benne. Ismerve ezt a tényt egy oldal, ha megfelelően azonosítja magát, az csupán a bizalmi döntés meghozásához szükséges információ egy része.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">A Mozilla minden egyes weboldalon ellenőrzi ezt?</h4>
+    <div class="expander-content">
+        <p>Az információt, amelynek a alapján a weboldal ellenőrzése történik a Mozilla nem ellenőrzi. Ehelyett a Firefox, csakúgy, mint más böngészők olyan cégek adatai alapján dolgoznak, amelyeket Tanúsítóközpontoknak nevezünk. Ezek végzik az oldal azonosítását és adják ki a tanúsítványokat. ezeknek a cégeknek be kell tartaniuk a <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA Certificate Policy</a> dokumentumban leírtakat, amely többek között megkövetel egy harmadik fél által elkészített audit vizsgálatot, amely garantálja, hogy a cég nem ad ki jogtalanul tanúsítványt.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

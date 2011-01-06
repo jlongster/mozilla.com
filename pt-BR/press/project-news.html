@@ -1,0 +1,138 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Notícias do Projeto Mozilla';
+    $body_id    = 'press';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/press-page.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" href="feed.php" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Notícias do Projeto Mozilla</h2>
+</div>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="main-content">
+
+    <div id="press-sources">
+        <h3>Fontes de notícias da Mozilla</h3>
+
+        <h4>Blogs</h4>
+        <p>Se você precisa de comentários para uma notícia, simplesmente envie um email para o time de imprensa utilizando o canal de contato de imprensa ao lado.</p>
+
+        <dl>
+            <dt>
+                <a href="http://blog.mozilla.com/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-blog.png" alt="Logotipo Mozilla Blog" />Blog da Mozilla</a>
+                <a href="http://blog.mozilla.com/feed/" class="feed">feed</a>
+            </dt>
+            <dd>Notícias e notas do projeto Mozilla.</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/brasil/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-blog.png" alt="Logotipo Mozilla Blog" />Blog da Mozilla no Brasil</a>
+                <a href="http://blog.mozilla.com/brasil/feed/" class="feed">feed</a>
+            </dt>
+            <dd>Tudo sobre a comunidade brasileira e o projeto Mozilla no Brasil.</dd>
+
+            <dt>
+                <a href="http://developer.mozilla.org/pt/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-developer.png" alt="Logotipo Mozilla Developer Center" />Mozilla Developer Center</a>
+            </dt>
+            <dd>O canal online para tudo relacionado com desenvolvimento do Firefox, Thunderbird, outros produtos Mozilla e padrões abertos na Web.</dd>
+
+            <dt>
+                <a href="http://planet.mozilla.org/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-planet-mozilla.png" alt="Logotipo Planet Mozilla" />Planet Mozilla</a>
+                <a href="http://planet.mozilla.org/atom.xml" class="feed">feed</a>
+            </dt>
+            <dd>Central constantemente atualizada com informações de RSS e blogs da comunidade Mozilla em geral.</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/security" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-security.png" alt="Logotipo Blog de Segurança" />Mozilla Security Blog</a>
+                <a href="http://blog.mozilla.com/security/feed/" class="feed">feed</a>
+            </dt>
+            <dd>Últimas informações e discussões sobre segurança nos produtos Mozilla.</dd>
+
+        </dl>
+
+        <h4>Outras fontes Mozilla</h4>
+        <p>Os links abaixos também trazem informações úteis sobre projetos Mozilla.</p>
+
+        <dl>
+            <dt>
+                <a href="http://air.mozilla.com/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-air-mozilla.png" alt="Logotipo Air Mozilla" />Air Mozilla</a>
+            </dt>
+            <dd>Canal multimídia com entrevistas, novidades e mais.</dd>
+
+            <dt>
+                <a href="http://wiki.mozilla.org/About:mozilla" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-about-mozilla.png" alt="Logotipo About:Mozilla" />About: Mozilla</a>
+                <a href="http://blog.mozilla.com/about_mozilla/feed/" class="feed">feed</a>
+            </dt>
+            <dd>A newsletter de projetos da comunidade Mozilla.<br/><br/></dd>
+
+            <dt>
+                <a href="http://static.mozilla.com/moco/en-US/pdf/firefox-3-6-reviewers-guide.pdf" type="application/pdf" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-reviewers-guide.png" alt="Logotipo Reviewer’s Guide" />Reviewer’s Guide</a> (PDF)
+            </dt>
+            <dd>O Guia Oficial do Firefox&nbsp;3.6 para a imprensa.
+            <div class="commons-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/></a> (<a href="/en-US//press/guide-license.html">O que é isso?</a>)</div></dd>
+
+            <dt>
+                <a href="http://static.mozilla.com/moco/pt-BR/pdf/firefox-3.5-reviewers-guide-BR.pdf" type="application/pdf"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-reviewers-guide.png" alt="Logotipo Guia do Firefox" />Guia do Firefox 3.5</a> (PDF)
+            </dt>
+            <dd>O Guia Oficial do Firefox&nbsp;3.5 para a imprensa. (em Português)
+            <div class="commons-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/"><img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/br/80x15.png"/></a> (<a href="guide-license.html">O que é isso?</a>)</div></dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/ftr/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-for-the-record.png" alt="Logotipo For the Record" />For the Record</a>
+            </dt>
+            <dd>Um canal da comunidade para descobrir, catalogar e responder ao que é dito sobre a Mozilla.</dd>
+
+            <dt>
+                <a href="http://blog.mozilla.com/news/"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-above-the-fold.png" alt="Logotipo Above the Fold" />Above the Fold</a>
+                <a href="http://blog.mozilla.com/news/feed/" class="feed">feed</a>
+            </dt>
+            <dd>Registra a cobertura da imprensa sobre a Mozilla e outras tendências da indústria.</dd>
+        </dl>
+
+        <h4>Notícias na Comunidade</h4>
+        <p>Para notícias, comentários e discussões sobre a Mozilla, também recomendamos conferir os sites abaixo:</p>
+
+        <dl>
+            <dt>
+                <a href="http://planeta.mozillabrasil.org/"><img src="/pt-BR/img/tignish/press/sources-planeta-moz-br.png" alt="Logotipo Moz/BR" />Planeta Moz/BR</a>
+                <a href="http://planeta.mozillabrasil.org/atom.xml" class="feed">feed</a>
+            </dt>
+            <dd>Central com informações de feeds RSS e blogs da comunidade Mozilla no Brasil.</dd>
+
+            <dt>
+                <a href="http://www.mozillazine.org/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozillazine.png" alt="Logotipo Mozillazine" />Mozillazine</a>
+            </dt>
+            <dd>O site original e independente de notícias sobre Mozilla e comunidade.</dd>
+
+            <dt>
+                <a href="http://mozillalinks.org/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-mozilla-links.png" alt="Logotipo Mozilla Links" />Mozilla Links</a>
+            </dt>
+            <dd>Um blog que tem de tudo relacionado com a Mozilla e os seus produtos.</dd>
+
+            <dt>
+                <a href="http://www.firefoxfacts.com/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-firefox-facts.png" alt="Logotipo Firefox Facts" />Firefox Facts</a>
+            </dt>
+            <dd>Dicas, temas, novidades e mais para Firefox.</dd>
+
+            <dt>
+                <a href="http://www.foxiewire.com/" hreflang="en"><img src="<?=$config['static_prefix']?>/img/tignish/press/sources-foxiewire.png" alt="Logotipo Foxiewire" />Foxiewire</a>
+            </dt>
+            <dd>Notícias Mozilla organizadas pela comunidade.</dd>
+        </dl>
+    </div>
+
+
+</div><!-- end #main-content div -->
+
+<?php include "includes/sidebar.php"; ?>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

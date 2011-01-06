@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% 有机软件';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>浏览网络的更好方式</h2>
+    <p>或者，一个由社区提供动力的开源浏览器能够为您做些什么。</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">产品</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/security/">安全性</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">定制</a></li>
+    <li><span>100% 有机软件</span></li>
+
+    <li><a href="/<?=$lang?>/firefox/tips/">提示与技巧</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">发行说明</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">其他操作系统与语言</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>什么是有机软件？</h3>
+    <p><strong>与其他软件公司相比，我们有一些独特的地方。</strong>我们把自己的产品称作“有机软件（Organic Software）”，以此概括我们与他们的各种不同之处：</p>
+    <p>作为我们最为知名的产品，Firefox 通过数以万计的国际间合作产生，而其中只有很少一部分的正式员工。</p>
+    <p>激励我们的是推广开源的责任、创新以及网络提供的机会，而不是像利润、股价（要知道：我们甚至没有股票）这样的商业利益。</p>
+    <p>并且，作为一个<a href="http://www.mozilla.org/foundation/">非盈利的公益组织</a>，对我们来说，成功的定义是建立沟通的渠道和丰富人们的生活。我们深信因特网的力量和潜能，并希望看到它为任何地方的任何一个人繁荣发展。</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Firefox girl" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>什么是开源（Open Source）？</h3>
+        <p>这一开始听起来可能有些疯狂，但请您耐心听我们解释。<strong>我们相信越多的人懂得我们的“奥秘”，情况也会随之变得越来越好。</strong></p>
+        <p>我们将 Firefox 的源代码——它们工作的最基本细节——向世界公布，并鼓励任何人查看。</p>
+        <p>有的人看到有待改进的地方并进行修复，有的人拥有对新功能的构想进而实现它们，也有的人拿到那些代码，用于他们自己的创新，产生完全崭新的（而且出色的）产品。</p>
+        <p>这些的意义是什么？开放必然带来益处。任何人都可以看到我们幕后的东西...事实上，根本不存在任何屏障。</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>您为什么应该关注？</h3>
+        <p>我们可能不是一个典型的企业，但是<strong>我们依然懂得怎样关注我们的底线：带给您更好的网络体验</strong>。</p>
+        <p>开放意味着下一个巨大的构想会是来自世界范围内的任何一个人，而不是仅仅依靠我们公司办公室里的几十个员工。当您看到在这种条件下做事的情形，还会选择其他方式吗？</p>
+        <p>所有这些关于 Organic Software 和 Open Source 的讨论，最终意味着您和 Firefox 的其他一亿三千万固定用户能够使用到更好的浏览器；意味着一个质量更好、更安全的产品；意味着创新、自由以及维持一个所有人都能进入的因特网。</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Mozilla 是什么？</h3>
+            <p>我们是一个全球社区，一个公益组织，一个开源软件项目。<span><a href="/<?=$lang?>/about/">了解关于我们的更多信息</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

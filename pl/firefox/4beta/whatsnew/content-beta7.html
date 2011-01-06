@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>Oto nowy <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Zapnij pasy</h3>
+        <p>Firefox 4 ma teraz większą wydajność, dzięki naszemu nowemu silnikowi JavaScriptu JägerMonkey. Krótszy czas uruchamiania, szybsze renderowanie grafiki i&nbsp;większa szybkość ładowania stron &ndash; wszystko to sprawia, że różnicę widać od razu.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Wyraź swoją opinię »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Informacje o&nbsp;wydaniu »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Zobacz demo na własne oczy »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3D na WWW</h4>
+        <p>Trójwymiarowa grafika od teraz w&nbsp;Firefoksie &ndash; dzięki technologii WebGL. Pozwala to programistom na tworzenie zapierających dech w&nbsp;piersiach gier i&nbsp;nowych rodzajów wizualizacji na stronach WWW.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Niesamowite czcionki</h4>
+        <p>Firefox&nbsp;4 obsługuje nowe funkcjonalności czcionek OpenType, pozwalając programistom i&nbsp;projektantom na wykorzystanie kerningu, ligatur i&nbsp;innych technik do stworzenia jeszcze ładniejszych stron.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Formularze na nowo</h4>
+        <p>Firefox 4 pozwala na tworzenie zarówno ładniejszych jak i&nbsp;łatwiejszych w&nbsp;implementacji formularzy. Nowe możliwości, takie jak atrybuty HTML5 pozwalające na automatyczne uzupełnianie oraz weryfikację poprawności, sprawiają, że implementacja formularzy dzięki nowemu Form API jest prostsza niż kiedykolwiek dotąd.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Masz już Firefoksa 4 beta?</h4>
+        <h5>Teraz zabierz go ze sobą.</h5>
+        <p>Pobierz Firefoksa dla telefonów z&nbsp;Androidem lub dla Nokii N900. Korzystaj ze swoich ulubionych funkcji, takich jak Sync, dodatki i&nbsp;niesamowity pasek adresu, gdziekolwiek jesteś.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Pobierz Firefoksa Mobile — za darmo</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Potrzebujesz pomocy?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Nasze strony wsparcia technicznego</a> zawierają porady dotyczące wersji beta Firefoksa 4.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

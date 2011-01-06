@@ -1,0 +1,59 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Guia de Logotipos | Mozilla';
+    $body_id    = 'logo';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/logo.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>O seu guia de estilo do Firefox</h2>
+	<p>Se você está em busca do logotipo correto para o seu projeto ou tem dúvidas sobre seu uso correto, você veio ao lugar certo.</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a> / <span>Logotipos <sup>(beta)</sup></span></h3></li>
+	<li><a href="/<?=$lang?>/about/logo/use.html">Uso de Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/logo/stop.html">Crueldade com Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/logo/style.html">Elementos de Estilo</a></li>
+	<li><a href="/<?=$lang?>/about/logo/legal.html">Considerações legais</a></li>
+	<li><a href="/<?=$lang?>/about/logo/download.html">Download</a></li>
+</ul>
+
+<div id="main-content">
+
+	<p>Bem-vindo ao guia de estilo do Firefox, o seu recurso acessível para cuidado e alimentação do logotipo de Firefox. Como tudo mais na Mozilla, o logotipo do Firefox está aberto à comunidade. Ele está disponível para todos, mas com essa abertura vem a responsabilidade de usá-lo sabiamente… E é aí que este guia entra.</p>
+
+	<p>O objetivo é dar a você as ferramentas necessárias para criar o seu mais inspirado e criativo trabalho. Qualquer uso do logotipo representa o esforço de todos que contribuíram para tornar o Firefox o que ele é hoje, por isso prezamos por sua apresentação. Além disso, devido ao fato de nossa política de marcas equilibrar a legislação vigente com nosso desejo de compartilhar nossas marcas com a comunidade, há algumas considerações legais.</p>
+
+	<p>O logotipo do Firefox é um das marcas mais conhecidas no mundo da tecnologia. É um símbolo poderoso de tudo que a Mozilla representa, então use-o com sabedoria e aproveite!</p>
+
+</div><!-- end #main-content div -->
+
+
+<div id="sidebar">
+
+	<div id="download">
+		<h3>Download</h3>
+		<p>Precisa de um logotipo? Este é o lugar certo.</p>
+		<a href="/<?=$lang?>/about/logo/download.html">Ver todos os logotipos do Firefox</a>
+	</div>
+
+	<div id="related">
+		<h3>Relacionados</h3>
+		<ul>
+			<li><a href="http://www.mozilla.org/foundation/trademarks/policy.html" hreflang="en">Política de marcas Mozilla</a></li>
+			<li><a href="http://www.spreadfirefox.com/node/3036" hreflang="en">Fórum de discussão do logotipo do Firefox</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<div id="divider"></div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

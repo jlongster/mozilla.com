@@ -1,0 +1,270 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Downloads Mozilla';
+    $body_id    = 'download';
+    $body_class = 'portal-page';
+    $breadcrumbs = array(
+                            'Início'   => "/{$lang}/",
+                            'Produtos' => "/{$lang}/products/",
+                            'Download' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="/style/tignish/download-page.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+	<div id="download-message">
+
+<noscript id="download-noscript">
+	<div id="main-feature">
+		<h2>Obrigado por escolher o Firefox</h2>
+	</div>
+
+	<div id="content">
+		<h3>Downloads do Firefox (Português do Brasil)</h3>
+    <?php 
+      $_temp_locales = $firefoxDetails->has_transition_download_page;
+      // This will make all links go directly to download.mozilla.org
+      $firefoxDetails->has_transition_download_page = array();
+      $thunderbirdDetails->has_transition_download_page = array();
+      echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', array('include_js' => false)); 
+    ?>
+
+		<h3>Downloads do Thunderbird (Português do Brasil)</h3>
+    <?php 
+      echo $thunderbirdDetails->getDownloadBlockForLocale('pt-BR', array('include_js' => false)); 
+      $firefoxDetails->has_transition_download_page = $_temp_locales;
+      $thunderbirdDetails->has_transition_download_page = $_temp_locales;
+      unset($_temp_locales);
+    ?>
+	</div> <!-- end #content  -->
+</noscript>
+<div id="download-fallback">
+	<div id="main-feature">
+		<h2>Obrigado por escolher o Firefox</h2>
+	</div>
+
+	<div id="content">
+		<h3>Downloads do Firefox (Português do Brasil)</h3>
+    <?php 
+      $_temp_locales = $firefoxDetails->has_transition_download_page;
+      // This will make all links go directly to download.mozilla.org
+      $firefoxDetails->has_transition_download_page = array();
+      $thunderbirdDetails->has_transition_download_page = array();
+      echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', array('include_js' => false)); 
+    ?>
+
+		<h3>Downloads do Thunderbird (Português do Brasil)</h3>
+    <?php 
+      echo $thunderbirdDetails->getDownloadBlockForLocale('pt-BR', array('include_js' => false)); 
+      $firefoxDetails->has_transition_download_page = $_temp_locales;
+      $thunderbirdDetails->has_transition_download_page = $_temp_locales;
+      unset($_temp_locales);
+    ?>
+	</div> <!-- end #content  -->
+</div>
+
+<script type="text/javascript" src="/js/download.js"></script>
+<script type="text/javascript">// <![CDATA[
+
+    /**
+     * Over-ride this function that's originally setup in /js/download.js
+     * We don't want to spawn the pop-up download hack if we're already
+     * on the download page, since it will result in two downloads (the
+     * href is already a direct link).
+     *
+     */
+    function init_download() {
+    }
+
+	function parseGETVars()
+	{
+		// validate query according to RFC 3986
+		var qs = location.search.substring(1);
+		if (qs.match(/[^a-zA-Z0-9\-\._~%!$&'()*+,;=:@\/\?]/))
+			return false;
+
+		var nv = qs.split('&');
+		var url = {};
+		for(i = 0; i < nv.length; i++) {
+			var eq = nv[i].indexOf('=');
+			url[nv[i].substring(0,eq).toLowerCase()] = unescape(nv[i].substring(eq + 1));
+		}
+
+		return url;
+	}
+
+	function validateDownloadVar(value)
+	{
+		// validate download vars to prevent XSS
+		if (value.match(/[^\-\.A-Za-z0-9]/))
+			return false;
+
+		return true;
+	}
+
+	var download_url = '';
+
+	function initDownload()
+	{
+		// 1. Grab vars from URL (PRODUCT, OS, and LANG)
+		var get = parseGETVars();
+
+		var product = (get['product']) ? get['product'] : null;
+		var os      = (get['os'])      ? get['os']      : null;
+		var lang    = (get['lang'])    ? get['lang']    : null;
+
+		var div = document.getElementById('download-message');
+
+		if (   !product || !os || !lang
+			|| !validateDownloadVar(product)
+			|| !validateDownloadVar(os)
+			|| !validateDownloadVar(lang)
+		) {
+			// No vars were specified, just display the fallback content.
+		    document.getElementById('download-fallback').style.display = 'block';
+            return;
+		}
+
+		var product_split = product.split('-');
+		var product_name = product_split[0];
+		var product_version = product_split[1];
+		var product_title = '';
+		var promotion_msg = '';
+
+		switch (product_name) {
+			case 'thunderbird' :
+				product_title = 'Thunderbird';
+				promotion_msg = '<div id="store_promo"><a href="http://intlstore.mozilla.org/"><img src="/img/store-thunderbird-tshirt.png" alt="Loja Mozilla" height="150" width="150" style="float: left; margin: 0 1em 0 0;"></a>';
+				promotion_msg += '<br />&nbsp;<br />Mostre seu apoio à Mozilla! Obtenha camisetas do Thunderbird na <a href="http://intlstore.mozilla.org/" hreflang="en">Loja Mozilla</a>.</div>';
+				break;
+			case 'firefox' :
+				product_title = 'Firefox';
+
+				// Check for known unsupported platforms and redirect to the
+				// unsupported platform page.
+				if (gPlatformUnsupported) {
+					var uri = location.protocol + '//' + location.host + '/<?=$lang?>/firefox/unsupported-systems.html' + location.search;
+					window.location = uri;
+					return;
+				}
+
+				switch (os) {
+					case 'win' :
+						var at_least_xp = /Windows NT (5\.[1-9]|[6-9]\.|[1-9][0-9]+\.)/.test(navigator.userAgent);
+						if (YAHOO.env.ua.ie && at_least_xp) {
+							promotion_msg = '<h3>Siga esses passos para iniciar:</h3>' +
+								'<ol class="install-steps">' +
+								'<li class="one">' +
+								'<img src="/img/tignish/download/vista/step1.png" alt="1º Passo" height="182" width="263" />' +
+								'<p>Inicie o processo clicando em Executar.</p>' +
+								'<p class="note">O download poderá demorar alguns minutos, dependendo da velocidade da sua conexão. Obrigado por sua paciência… valerá a pena esperar!</p>' +
+								'</li>' +
+								'<li class="two">' +
+								'<img src="/img/tignish/download/vista/step2.png" alt="2º Passo" height="212" width="270" />' +
+								'<p>Clique em Executar para iniciar o Assistente de Instalação do Mozilla Firefox.</p>' +
+								'<p class="note">Em seguida, siga as instruções de instalação (nós fizemos o processo o mais simples possível).</p>' +
+								'</li>' +
+								'<li class="three">' +
+								'<img src="/img/tignish/download/vista/step3.jpg" alt="3º Passo" height="213" width="258" />' +
+								'<p class="note">Agora você está pronto para saltar para uma nova era de navegação na Web.</p>' +
+								'<p>Clique duas vezes no ícone do Firefox sempre quiser entrar na rede.</p>' +
+								'</li>' +
+								'<li class="clear"></li>' +
+								'</ol>';
+						} else {
+							document.body.className += ' default-download';
+						}
+						break;
+					case 'osx' :
+						promotion_msg = '<h3>Siga esses passos para iniciar:</h3>' +
+							'<ol class="install-steps">' +
+							'<li class="one">' +
+							'<img src="/img/tignish/download/osx/step1.png" alt="1º Passo" height="148" width="277" />' +
+							'<p>O seu download deverá iniciar automaticamente em alguns segundos.</p>' +
+							'<p class="note">O download poderá demorar alguns minutos, dependendo da velocidade sua conexão. Obrigado por sua paciência… valerá a pena esperar!</p>' +
+							'</li>' +
+							'<li class="two">' +
+							'<img src="/img/tignish/download/osx/step2.jpg" alt="2º Passo" height="202" width="261" />' +
+							'<p>Quando solicitado, arraste o ícone do Firefox para dentro da imagem da pasta Aplicações.</p>' +
+							'</li>' +
+							'<li class="three">' +
+							'<img src="/img/tignish/download/osx/step3.jpg" alt="3º Passo" height="211" width="250" />' +
+							'<p>Arraste o ícone do Firefox da pasta Aplicações até o dock.</p>' +
+							'<p class="note">Agora basta clicar no Firefox sempre que quiser navegar na Web!</p>' +
+							'</li>' +
+							'<li class="clear"></li>' +
+							'</ol>';
+							break;
+					default:
+							document.body.className += ' default-download';
+					}
+				break;
+			default:
+				product_title = '';
+				promotion_msg = '';
+		}
+
+		// 2. Build download.mozilla.org URL out of those vars.
+		download_url = "http://download.mozilla.org/?product=";
+		download_url += product + '&os=' + os + '&lang=' + lang;
+
+		// 3. display the download URL as a manual fall-back link
+		var msg = '<div id="main-feature" class="main-feature-' + product_name + '">';
+		msg += '<h2>Obrigado por escolher o ' + product_title + '!</h2>';
+
+		// 4. display a promotional box with content based on the PRODUCT variable
+		msg += '<p class="manual-download">O seu download deverá iniciar automaticamente em alguns segundos. Caso não inicie, ';
+		var link_text = 'clique aqui';
+		msg += link_text.link(download_url) + '.</p>';
+		msg += '</div>';
+		msg += '<div id="content">';
+		msg += promotion_msg;
+		msg += '</div>';
+
+		div.innerHTML = msg;
+	}
+
+    initDownload();
+
+    function downloadURL() {
+        // Only start the download if we're not in IE.
+        if (download_url.length != 0 && navigator.appVersion.indexOf('MSIE') == -1) {
+            // 5. automatically start the download of the file at the constructed download.mozilla.org URL
+            window.location = download_url;
+        }
+    }
+
+    // If we're in Safari, call via setTimeout() otherwise use onload.
+    if ( navigator.appVersion.indexOf('Safari') != -1 ) {
+        window.setTimeout(downloadURL, 2500);
+    } else {
+        window.onload = downloadURL;
+    }
+
+// ]]></script>
+
+	<ul id="download-footer">
+		<li class="one">
+			<h3>Precisa de ajuda?</h3>
+			<p>Nossa página de Suporte contém inúmeras respostas.</p>
+			<a href="http://support.mozilla.com/">Visitar o Suporte do Firefox</a>
+		</li>
+		<li class="two">
+			<h3>Dicas</h3>
+			<p>Obtenha dicas úteis para usuários iniciantes, itermediários e avançados do Firefox.</p>
+			<a href="/<?=$lang?>/firefox/tips/">Aprenda novos segredos</a>
+		</li>
+		<li class="three">
+			<h3>Sobre o Firefox</h3>
+			<p>O Firefox é feito pela Mozilla, uma organização de benefício público.</p>
+			<a href="/<?=$lang?>/about/whatismozilla.html">O que é a Mozilla?</a>
+		</li>
+	</ul>
+
+</div> <!-- end #download_message -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

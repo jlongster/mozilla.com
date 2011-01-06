@@ -1,0 +1,43 @@
+<?php
+    // Please translate the php variables below
+    // TITLE OF THE PAGE
+    $page_title = "Mozilla | Мобильный Firefox";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Добро пожаловать в Firefox" /></h1>
+<p>Лучший в мире веб-браузер стал мобильным.</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Загрузить сейчас — бесплатно</a>
+    <div><a href="platforms.html" class="system">Доступен ли Firefox на моем языке?</a></div>
+
+  <?php else: ?>
+
+    <p>Ваше устройство не поддерживается</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Узнайте о поддерживаемых нами платформах и устройствах</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">Насладитесь вашими любимыми возможностями Firefox:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>Синхронизация</b> <span>Легко и удобно синхронизируйте ваш настольный и мобильный браузеры</span></li>
+    <li id="customize"><b>Настройка</b> <span>Установите дополнения и сделайте Firefox точно таким, каким вам хочется</span></li>
+    <li id="search"><b>Поиск</b> <span>Используйте умную строку адреса, чтобы быстро открывать сайты минимальным количеством нажатий на клавиши</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Узнать о других возможностях</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    // Source en-GB reference file at rev 66448:
+    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
+?>

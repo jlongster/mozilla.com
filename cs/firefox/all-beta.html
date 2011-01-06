@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Webový prohlížeč Firefox | Pomozte nám otestovat poslední betaverzi';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Pomozte otestovat nový Firefox!</h2>
+        <p>Poslední betaverze Firefoxu je nyní dostupná jako ukázková verze. Vyzkoušejte ji a&nbsp;dejte nám vědět, co si myslíte!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Důležité informace</h4>
+        <p class="intro">Před stažením prosím čtěte</p>
+    </div>
+    <ul>
+        <li>Jedná se o&nbsp;software ve vývoji: můžete zaznamenat problémy s&nbsp;kompatibilitou s&nbsp;některými webovými stránkami a&nbsp;doplňky.</li>
+        <li>Pokud narazíte na problém, <a href="http://feedback.mozilla.org/">dejte nám vědět</a> nebo prosím <a href="https://bugzilla.mozilla.org/">nahlašte chybu</a>.</li>
+        <li>Pro více informací si přečtěte <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">poznámky k vydání</a> a <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">přehled známých problémů</a> (v&nbsp;angličtině).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Nehledáte betaverzi? Stáhněte si <a href="/<?=$lang?>/firefox/">poslední verzi Firefoxu</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

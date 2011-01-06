@@ -1,0 +1,121 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Plugin Check More Info';
+    $body_id    = 'plugin-check';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/plugin-check.css" media="screen">
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/plugin-check-more-info.css" media="screen">
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+    $url_prefix = $config['url_scheme'] . '://' . $config['server_name'];
+?>
+
+
+<div id="feature-header"></div>
+<div id="main-feature">
+    <h2>Check Your <span>Plugins</span></h2>
+    <p>More Info on how we do plugin checking and which browsers are supported.</p>
+</div>
+
+<div id="main-content">
+    <div id="content-left">
+
+        <div id="compatability">
+            <h3>Fully Supported Browsers</h3>
+            <table class="compat">
+                <thead>
+                    <tr>
+                        <th class="emptyth"></th>
+                        <th class="browser">Browser</th>
+                        <th class="ver">Version</th>
+                        <th>Plugin Checking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr><td><img src="/img/covehead/plugincheck/moreinfo/Safari60x60.png" width="60" height="60" alt="logo"></td>
+                    <th>Apple Safari</th><td class="ver">4</td><td>Full</td></tr>
+                <tr><td><img src="/img/covehead/plugincheck/moreinfo/Chrome60x60.jpg" width="60" height="60" alt="logo"></td>
+                    <th>Google Chrome</th><td class="ver">4</td><td>Full</td></tr>
+                <tr><td><img src="/img/covehead/plugincheck/moreinfo/Firefox60x60.png" width="60" height="60" alt="logo"></td>
+                    <th>Mozilla Firefox</th><td class="ver">3.0+</td><td>Full</td></tr>
+                <tr><td><img src="/img/covehead/plugincheck/moreinfo/Opera60x60.jpg" width="60" height="60" alt="logo"></td>
+                    <th>Opera</th><td class="ver">10.5</td><td>Full</td></tr>
+                </tbody>
+            </table>
+            <h3>Limited Support</h3>
+            <table class="compat">
+                <thead>
+                    <tr>
+                        <th class="emptyth"></th>
+                        <th class="browser">Browser</th>
+                        <th class="ver">Version</th>
+                        <th>Plugin Checking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr class="withnote"><td><img src="/img/covehead/plugincheck/moreinfo/IE60x60.jpg" width="60" height="60" alt="logo"></td>
+                <th>Microsoft Explorer</th><td class="ver">7+</td><td>Limited*</td></tr>
+                <tr class="withnote"><td colspan="4" class="note">* Plugin Version checking is only done for a limited list of plugins (BrowserPlug, Flash, Java, etc) due to technical limitations of the platform.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    
+    </div>
+
+    <div id="sidebar">
+        <h3>How does it work?</h3>
+        <p>The Mozilla Plugin Check page is a <strong>general tool</strong> for keeping web browser <strong>plugins up to date</strong>.</p>
+        <p>Fully supported browsers do the following:</p>
+        <ol>
+            <li>Gathers every plugin's metadata and optionally its live data</li>
+            <li>Check with the Plugin Directory by mime-type</li>
+            <li>Try to match the plugin metadata with information we know about plugins.</li>
+            <li>If there is a match, then check to see if the version is <strong>outdated</strong> or has a <strong>security vulnerable</strong>.</li>
+        </ol>
+        <p>Although the supported top plugins are a healthy portion of the traffic on the internet, we have a long way to go in terms of covering all plugins.</p>
+        <p>Plugin <strong>vendors</strong> can <a href="mailto:plugindir@mozilla.com">update their release information</a>.</p>
+
+        <h3>Why is IE Support Limited?</h3>
+        <p>Unlike other modern browsers, Internet Explorer lacks a plugins JavaScript object. Instead of dynamically checking the plugins object to discover installed plugins, with IE plugin version checking is done with specific ActiveX code against a limited list of plugins. We'd love to check more plugins, patches welcome here.</p>
+        
+        <h3>Open Source, Open Processes</h3>
+        <p>Get the full nitty gritty details and help us keep users safe with <a href="https://wiki.mozilla.org/Website/Sprints/PluginProblem">the project wiki page</a>.</p>
+        
+        
+        
+    </div>
+    
+    <div id="information-content" class="clearfix">
+        <div class="return-link"><a href="#main-feature">Return to Top</a></div>
+
+        <div id="column-one">
+            <h3>How <span>can I help?</span></h3>
+        <p>Find a bug? <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Websites&amp;component=plugins.mozilla.org">Write a Bug Report</a> and help us test this project.</p>
+        <h3>Want to <span>Dig Deeper?</span></h3>
+
+        <p>As with all Mozilla projects, Plugin Check  is developed in the  open, and we welcome participation from everyone.</p>
+
+        <p>Hack on the project sources:</p>
+        <ul>
+            <li>Pick an unsupported plugin and write JavaScript code for detecting its version on Internet Explorer using ActiveX APIs. All front end code is at the <a href="http://github.com/ozten/Perfidies-of-the-Web">Perfidies of the Web</a> project.</li>
+            <li>Hack on the back end code for plugins.mozilla.org by grabbing the code from the <a href="http://github.com/lmorchard/plugindir">Plugindir</a> project.</li>
+            </ul>
+
+            <p>Chat with us on IRC (irc.mozilla.org, <a href="irc://irc.mozilla.org/pfs">#pfs</a>)</p>
+        </div><!-- /column-one -->
+
+        <div id="column-two">
+            <h3>Known <span>Issues</span></h3>
+        <ul>
+            <li>RealPlayer on Mac and Linux cannot be detected because it doesn't expose version information in the name, description, or via C++ code.</li>
+            <li>Adobe Reader can only be accurately detected by Firefox 3.6+. Adobe can add a version number to their Plugin Description to fix this for modern browsers.</li>
+        </ul>
+        </div><!-- /column-two -->
+    </div>
+    </div>
+    
+
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

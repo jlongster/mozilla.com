@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'مرورگر وب فایرفاکس | به ما برای آزمایش جدیدترین نسخهٔ بتا کمک کنید';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>در آزمایش آیندهٔ فایرفاکس کمک کنید!</h2>
+        <p>جدیدترین نسخهٔ بتای فایرفاکس هم‌اکنون به عنوان یک نسخهٔ پیش‌نمایش منتشر شده است. آن را کمی آزمایش کنید و نظرتان را به ما بگویید!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>اطلاعات مهم</h4>
+        <p class="intro">لطفاً پیش از بارگیری این نکات را مطالعه کنید</p>
+    </div>
+    <ul>
+        <li>این یک نرم‌افزار پیش‌نمایشی است و ممکن است با همهٔ وب‌گاه‌ها یا افزودنی‌ها مطابقت نداشته باشد.</li>
+        <li>اگر به مشکلی برخوردید، لطفاً <a href="http://feedback.mozilla.org/">به ما اطلاع دهید</a> یا <a href="https://bugzilla.mozilla.org/">یک گزارش اشکال ثبت کنید</a>.</li>
+        <li>برای جزئیات بیشتر، <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">یادداشت‌های انتشار</a> و <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">اشکالات موجود</a> را (به زبان انگلیسی) بخوانید.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">به دنبال نسخه‌ای آزمایشی نمی‌گردید؟ <a href="/<?=$lang?>/firefox/">جدیدترین فایرفاکس</a> را دریافت کنید.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

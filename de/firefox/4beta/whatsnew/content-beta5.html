@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1>Was ist neu in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox ändert die Art und Weise, wie Medien in das Internet integriert werden: Die neue Audio-API zeigt die Audio-Rohdaten, die sich in den <code>&lt;video&gt;</code>- und <code>&lt;audio&gt;</code>-Elementen in HTML5 befinden, was es Entwicklern erleichtert, JavaScript zu verwenden, um Audiodaten zu lesen und zu schreiben. Sehen Sie sich das Video an, um mehr zu erfahren.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Sagen Sie uns Ihre Meinung »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Versionshinweise »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Aktuelle Neuerungen</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Beschleunigte Darstellung<br/>(nur Windows)</h4>
+        <p>Erleben Sie superschnelle Grafikbeschleunigung mit Direct2D, die nun auf von DirectX 10 unterstützter Hardware standardmäßig aktiviert ist.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Sichere Verbindung zu Servern</h4>
+        <p>Mit <acronym title="HTTP Strict-Transport-Security ">HSTS</acronym> können Websites Firefox nun mitteilen, dass automatisch eine sichere Verbindung zu diesem Server aufgebaut werden soll, was Angreifer daran hindert, sensible Daten abzufangen, die beim Zugriff auf diese Seite gefährdet sein können. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Erfahren Sie mehr »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

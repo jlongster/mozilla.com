@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Geolocalización en Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Navegación considerando la ubicación</h2>
+    <p>Firefox puede decirle a los sitios web donde estás ubicado de manera que puedas encontrar información
+     más útil y relevante. Se trata de hacer una web más inteligente, siempre respetando tu privacidad.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">¡Pruébalo!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Preguntas frecuentes</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿En qué consiste la navegación considerando la ubicación?</h4>
+    <div class="expander-content">
+        <p>Los sitios web que puedan consultar tu ubicación física y saber dónde estás, podrán entregarte información más relevante, o ahorrarte tiempo mientras haces una búsqueda. Por ejemplo, digamos que quieres una pizza y buscas un restaurant cercano a tu comuna o ciudad. Un sitio web podrá pedir tu ubicación para que, con sólo buscar por “pizza” tengas la respuesta que necesitas... sin pedirte más información o datos adicionales.</p>
+        <p>O, si buscas cómo llegar a una dirección en un mapa, el sitio web sabría el punto donde estás ahora y sólo faltaría que indicaras a qué lugar quieres ir.</p>
+        <p>Este servicio es completamente opcional y se ofrece respetando al máximo tu privacidad. Firefox no compartirá tu ubicación sin tu permiso. Y, al igual que los elementos de Firefox, está creado con estándares abiertos de manera de facilitar su adopción por parte de los desarrolladores web..</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Cómo funciona?</h4>
+    <div class="expander-content">
+        <p>Cuando visites un sitio web que pueda hacer uso de tu ubicación, Firefox te preguntará si la quieres compartir.</p>
+        <p>Si estás de acuerdo, Firefox recopila información sobre los puntos de acceso inalámbrico a Internet cercanos y la dirección IP de tu computador. Entonces Firefox envía esta información al proveedor de servicios de geolocalización por defecto, Google Location Services, para obtener una estimación de tu ubicación. Esa estimación de tu ubicación se envía entonces al sitio web que la solicitó.</p>
+        <p>Si no estás de acuerdo, Firefox no hará nada.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Qué tan precisas son las ubicaciones?</h4>
+    <div class="expander-content">
+        <p>La precisión varía bastante dependiendo del lugar.  En algunos lugares, nuestros proveedores de servicio pueden proporcionar una ubicación con una precisión de unos pocos metros. Sin embargo, en otras áreas puede ser menor. Todas las ubicaciones devueltas por los proveedores de servicio son sólo estimaciones y no garantizamos la exactitud de las mismas. Por favor, no uses esta información para emergencias. Utiliza siempre el sentido común</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Qué información es enviada, y a quién? ¿Cómo se protege mi privacidad?</h4>
+    <div class="expander-content">
+        <p>Tu privacidad es muy importante para nosotros, y Firefox nunca comparte tu ubicación sin tu permiso. Cuando visitas una página que pide tu ubicación, se te preguntará antes de compartir información con el sitio solicitante o el proveedor externo de servicio.</p>
+        <p>Por defecto, Firefox usa Google Location Services para determinar tu ubicación enviando:</p>
+        <ul>
+            <li>la dirección IP de tu computador,</li>
+            <li>información sobre los puntos de acceso inalámbricos cercanos, y</li>
+            <li>un identificador de cliente aleatorio, asignado por Google, que vence cada 2 semanas.</li>
+        </ul>
+        <p>Para una descripción completa de la información recopilada y usada por Firefox, por favor, lee la <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Política de privacidad de Mozilla Firefox</a> (en inglés).</p>
+        <p>Google Location Services devuelve entonces tu geolocalización estimada (p.e., latitud y longitud). Para una descripción completa de la información recopilada y usada por Google, por favor lee la  <a href="http://www.google.com/privacy-lsf.html" class="external">Política de privacidad de Google</a> (en inglés).</p>
+        <p>La información se intercambia sobre una conexión cifrada para proteger tu privacidad. Una vez que Firefox tiene la información de tu ubicación, se la pasa al sitio web que la solicitó. En ningún momento el nombre o dirección del sitio web que estás visitando, ni ninguna cookie, se comparten con Google Location Services.</p>
+        <p>Ni Mozilla ni Google usarán nunca la información recopilada por Google Location Services para identificarte o espiarte.</p>
+        <p>Para información sobre lo que hace el sitio web solicitante con la información de tu ubicación, por favor, revisa la política de privacidad del sitio web.</p>
+        <p>Para más información respecto a tu privacidad, también deberías leer:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Política de privacidad de Mozilla Firefox</a> (en inglés)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Política de privacidad de Google</a> (en inglés)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Me realizan un seguimiento mientras navego por la web?</h4>
+    <div class="expander-content">
+        <p>o. Firefox sólo solicita una ubicación cuando un sitio web hace una solicitud, y sólo comparte tu ubicación cuando el usuario ha aprobado la solicitud. Firefox no actualiza ni recuerda tu ubicación mientras navegas.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">¿Cómo puedo quitar el permiso asignado a un sitio?</h4>
+    <div class="expander-content">
+        <p>Si le has dado permiso a Firefox para facilitar siempre tu ubicación a un sitio y después cambias de opinión, puedes quitar fácilmente ese permiso. Para aquello realiza lo siguiente:</p>
+        <ul>
+            <li>Visita el sitio que posee el permiso</li>
+            <li>Anda al menú <em>Herramientas</em>, luego elige <em>Información de la página</em></li>
+            <li>Selecciona la pestaña <em>Permisos</em></li>
+            <li>Cambia la configuración de <em>Compartir ubicación</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">¿Cómo puedo borrar a mano el “número de identificación aleatorio”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Anda al menú <em>Herramientas</em>, luego selecciona <em>Limpiar historial reciente</em></li>
+            <li>Haz click en la flecha <em>Detalles</em></li>
+            <li>Asegúrate que <em>Cookies</em> haya sido seleccionado</li>
+            <li>Haz click en <em>Limpiar ahora</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">¿Cómo puedo desactivar para siempre la opción para compartir mi ubicación?</h4>
+    <div class="expander-content">
+        <p>Esta característica es opcional en Firefox y ninguna información es enviada sin tu permiso. Pero si lo deseas puedes desactivarla por completo, para ello realiza lo siguiente:</p>
+        <ul>
+            <li>En la barra de direcciones, escribe <code>about:config</code></li>
+            <li>Escribe <code>geo.enabled</code></li>
+            <li>Haz doble click en la preferencia <em>geo.enabled</em></li>
+            <li>Ahora la opción para compartir tu ubicación está desactivado</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">¿Dónde estoy?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">¡Ay! Ocurrió un error al tratar de determinar tu ubicación.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,292 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Táirgí Mozilla | Leideanna agus Cleasa';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Leideanna agus Cleasa</h2>
+    <p>Is cuma tú a bheith i d'úsáideoir ar an mbunleibhéal, ar an meánleibhéal nó ar an ardleibhéal, cabhróidh na haicearraí agus na moltaí seo a leanas leat tairbhe níos mó a bhaint as Firefox 3.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Táirgí</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Slándáil</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Saincheapadh</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">Bogearra le leas an phobail</a></li>
+    <li><span>Leideanna agus Cleasa</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Nótaí Eisiúna</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Córais agus Teangacha Eile</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Bunleibhéal</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Scáilghraf Súmáil Isteach, Súmáil Amach', '365', '251', 'right')?>
+
+                <h4>Súmáil Isteach, Súmáil Amach</h4>
+                <p>An bhfuil tú bréan de théacs beag? An dteastaíonn uait íomhá a fheiceáil níos mó agus níos soiléire? Anois tá sé furasta súmáil isteach agus amach ar leathanaigh Ghréasáin.</p>
+
+                <div class="key-combo">
+                    Súmáil isteach
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Súmáil amach
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Scáilghraf Cleasa Cluaisíní', '388', '135', 'right')?>
+
+                <h4>Cleasa Cluaisíní</h4>
+                <p>Más maith leat neart leathanach a bheith ar oscailt le chéile agat, beidh brabhsáil le cluaisíní úsáideach duit. Seo roinnt aicearraí a chabhróidh leat na cluaisíní a smachtú:</p>
+
+                <div class="key-combo key-combo-1">
+                    Oscail cluaisín folamh nua
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Oscail nasc i gcluaisín nua
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + cliceáil ar an nasc</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Lárchliceáil ar an nasc</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Lárchliceáil ar an nasc (mac: ⌘ + cliceáil ar an nasc)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    Dún cluaisín
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Oscail cluaisín dúnta arís
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Scáilghraf Leabharmharcanna', '378', '252', 'right')?>
+
+                <h4>Cruthaigh Leabharmharcanna le Cliceáil Amháin</h4>
+                <p>Úsáid leabharmharcanna cliceála amháin chun na suímh a thaitníonn leat a mheabhrú go furasta. Nuair a theastaíonn uait an leathanach atá romhat a mheabhrú, níl le déanamh ach cliceáil ar an réiltín sa bharra suímh. Cuirfidh Firefox é le do liosta leabharmharcanna agus beidh tú in ann é a aimsiú arís gan stró.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Deilbhín Slándála', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Cuireann an suíomh faisnéis fhíoraithe aitheantais ar fáil agus cosnaíonn sé do shonraí pearsanta ó chúléisteoirí ar líne.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Deilbhín Slándála', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Cuireann an suíomh faisnéis bhunúsach aitheantais ar fáil agus cosnaíonn sé do shonraí pearsanta ó chúléisteoirí ar líne.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Deilbhín Slándála', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Ní chuireann an suíomh faisnéis aitheantais ar bith ar fáil.
+                    </li>
+                </ul>
+
+                <h4>Bí Cinnte Cé Leis a bhfuil tú ag Déanamh Tráchta</h4>
+                <p>Is cleas é atá go forleathan i measc lucht na gcamscéimeanna suímh bhréaga a chruthú, ar a dtugtar suímh iascaireachta nó bréagbhrandála, a dhéanann aithris ar do bhanc, ar shuímh thrachtála, srl. Tráthúil go leor, tá sé furasta a fháil amach le Firefox an bhfuil suíomh dáiríre – cliceáil ar dheilbhín an tsuímh le haghaidh forbhreathnaithe aitheantais ar an bpointe.</p>
+                <p id="forgery">Suíomh ionsaithe nó falsaíochta; d'fhéadfadh sé dochar a dhéanamh duit do chuid faisnéise pearsanta a thabhairt don suíomh seo, nó fiú cuairt a thabhairt air.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Scáilghraf falsaíochta" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Scrollaigh síos an leathanach
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            Scrollaigh suas an leathanach
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Athluchtaigh an leathanach
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Siar
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Ar Aghaidh
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Bua na nAicearraí</h4>
+                <p>Tá neart aicearraí méarchláir ag Firefox lena úsáid a chur chun fusachta. Seo cuid de na cinn is mó a thaitníonn linn:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Bog an cúrsóir chuig an mbarra suímh
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Bog an cúrsóir chuig an mbosca cuardaigh
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>Meánleibhéal</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Scáilghraf leabharmharcanna', '378', '252', 'right')?>
+
+                <h4>Oibrigh go hÉifeachtach le Clibeanna</h4>
+                <p>Má tá liosta fada de leabharmharcanna agat, éiríonn sé deacair iad a choimeád in ord. Is féidir leat clibeanna a chur le do chuid nasc: déchliceáil ar an réiltín agus iarrtar ort do chlibeanna a chur isteach.</p>
+                <p>Is féidir cibé téarmaí a theastaíonn uait a úsáid mar chlibeanna ar shuíomh (bí cinnte go gcuireann tú camóg idir na clibeanna) agus ansin níl le déanamh agat ach an chlib sin a chur isteach sa bharra suímh chun na suímh a aimsiú go furasta. Mar shampla, má chuireann tú “taisteal” sa bharra suímh taispeánfar na suímh atá marcáilte agat agus tú ag pleanáil do laethanta saoire.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Scáilghraf na mbreiseán', '378', '252', 'right')?>
+
+                <h4>Gach Eolas Maidir le Breiseáin</h4>
+                <p>Dar ndóigh, tá neart gnéithe sa ghnáthleagan de Firefox, ach ní gá stopadh ansin. Tá níos mó ná 5,000 Breiseán — uirlisí beaga a chuireann le Firefox — le fáil trí íosluchtú a chabhróidh le beagnach aon obair ar bith. Téigh chuig Uirlisí→Breiseáin le Bainisteoir na mBreiseán a oscailt agus foghlaim faoi na modhanna inar féidir leat Firefox a chur in oiriúint duit féin.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Scáilghraf cuardaigh', '378', '252', 'right')?>
+
+                <h4>Cuardach Níos Cliste</h4>
+                <p>Tá taithí agat cheana féin ar bharra cuardaigh Firefox. Ach an raibh a fhios agat gur féidir leat é a shaincheapadh le beagnach aon inneall cuardaigh a theastaíonn uait? Cliceáil ar an deilbhín atá ar chlé an bharra cuardaigh leis an roghchlár a fheiceáil.</p>
+                <p>Níos fearr fós, cliceáil ar “Bainistigh Innill Chuardaigh” leis an liosta a chur in eagar, roghanna breise a chur leis, agus fiú aicearraí méarchláir a chruthú le haghaidh na hinnill is fearr leat. Mar shampla, d'fhéadfá an t-aicearra “A” a thabhairt ar aimsigh.com — ansin d'fhéadfá “A oideas briosca” a chur sa bharra suímh chun oidis le haghaidh brioscaí a chuardach.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Scáilghraf cuardaigh', '378', '252', 'right')?>
+
+                <h4>Aimsigh Rudaí go Sciobtha</h4>
+                <p>Is cleas úsáideach eile é an ghné “Aimsigh agus mé ag clóscríobh”. In áit an barra “Aimsigh” a úsáid le focal a lorg i leathanach, cliceáil áit ar bith ar an leathanach agus tosaigh ag clóscríobh an fhocail atá uait. Léimfidh do chúrsóir láithreach go dtí an chéad áit ina bhfuil an focal sin.</p>
+                <p>Is féidir é seo a úsáid le naisc freisin. Mar shampla, in áit an luch a bhogadh trasna an leathanaigh go nasc “Tuilleadh Eolais”, níl le déanamh ach tosú ag clóscríobh an fhocail agus an eochair iontrála a bhrú nuair a aimsíonn an cúrsóir é.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Scáilghraf príobháideachais', '378', '252', 'right')?>
+
+                <h4>Scrios Gach Rian</h4>
+                <p>De bharr cúiseanna slándála agus príobháideachais, ní maith an rud é rianta a fhágáil agus tú ag brabhsáil (go háirithe má úsáideann daoine eile an ríomhaire céanna). Cuireann Firefox ar do chumas do stair bhrabhsála agus íosluchtaithe a scriosadh, do thaisce a ghlanadh agus do chuid fianán a scriosadh trí aon chliceáil amháin. Téigh chuig Uirlisí→Bánaigh Sonraí Príobháideacha... leis sin a dhéanamh. Nó le bheith níos cúramaí fós, téigh chuig <span id="trace-platform">Uirlisí→Roghanna→Príobháideachas</span> agus roghnaigh “Glan sonraí príobháideacha agus Firefox á dhúnadh”.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Ardleibhéal</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", 'Scáilghraf an bharra suímh', '378', '252', 'right')?>
+
+                <h4>Téigh Díreach Chuig na Suímh is Fearr Leat</h4>
+                <p>Is féidir eochairfhocail a chur le do chuid leabharmharcanna le haghaidh rochtana níos tapúla agus níos fusa. Sa Leabharlann, cuir eochairfhocal gairid sa réimse eochairfhocail agus beidh tú in ann an leabharmharc sin a fháil trín eochairfhocal sin a chlóscríobh sa bharra seolta. Mar shampla, d'fhéadfá an t-eochairfhocal “naisc” a thabhairt ar do chuntas del.icio.us, agus as sin amach rachaidh tú díreach ann má chlóscríobhann tú “naisc” sa bharra seolta.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Scáilghraf leabharmharcanna', '378', '252', 'right')?>
+
+                <h4>Cruthaigh Fillteáin Chliste</h4>
+                <p>Más scimeálaí cumasach tú ar ghá duit suímh áirithe a shábháil agus súil a choimeád orthu, seo cleas úsáideach: is féidir Leabharlann Firefox 3 a úsáid chun cuardaigh a chruthú agus a shábháil i bhfillteáin a dhéanfar nuashonrú orthu go huathoibríoch nuair a chuireann tú suímh le do chuid leabharmharcanna agus do stair.</p>
+                <p>Oscail an Leabharlann ar dtús trín rogha “Eagraigh Leabharmharcanna...” a roghnú ón roghchlár Leabharmharcanna. Ansin cuir do théarmaí cuardaigh sa bhosca cuardaigh agus cliceáil ar an gcnaipe “Sábháil” le Fillteán Cliste a chruthú.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Scáilghraf Bhainisteoir na nÍosluchtuithe', '378', '252', 'right')?>
+
+                <h4>Bainistiú na nÍosluchtuithe</h4>
+                <p>Más minic tú ag íosluchtú, is féidir leat fuinneog Bhainisteoir na nÍosluchtuithe a úsáid chun do chuid íosluchtuithe a smachtú. Is féidir íosluchtú a chur ar shos agus é a atosú, agus an t-am a laghdú trí chomhaid a oscailt go díreach ón mbainisteoir.</p>
+                <p>Más gá sean-íosluchtú a aimsiú, téigh chuig Uirlisí→Íosluchtú agus bain úsáid as an mbosca cuardaigh le do chomhad a aimsiú. Agus é aimsithe, déchliceáil ar an gcomhad le hé a oscailt, nó Ctrl-cliceáil agus roghnaigh “Cóipeáil Nasc Íosluchtaithe”.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Scáilghraf uirlisí forbartha', '378', '252', 'right')?>
+
+                <h4>Uirlisí Forbartha</h4>
+                <p>Má tá tú i d'fhorbróir Gréasáin, cabhróidh uirlisí forbartha Firefox go mór leat. Cuireann <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Suíomh Breiseán Mozilla</a> neart uirlisí ar fáil leis an bpróiseas forbartha a shimpliú, ina measc Firebug chun CSS, HTML, agus JavaScript a chur in eagar, a dhífhabhtú agus chun monatóireacht a dhéanamh orthu beo i leathanach Gréasáin ar bith; Tamper Data chun ceanntásca HTTP/HTTPS agus paraiméadair POST a thaispeáint agus a athrú, agus an DOM Inspector chun eilimintí HTML nó CSS a scrúdú le deaschliceáil shimplí.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Scáilghraf roghanna', '378', '252', 'right')?>
+
+                <h4>Cuir Feist ar an nGréasán Díreach mar a Thaitníonn Leat</h4>
+                <p>Is féidir leat láimhseálaithe prótacail Ghréasáin a úsáid chun rochtain tapaidh a chur ar fáil ar na feidhmchláir Ghréasáin is fearr leat. Mar shampla, is féidir Firefox a chumrú sa chaoi go n-osclófar teachtaireacht nua leis an gcóras ríomhphoist Ghréasáin is fearr leat nuair a chliceálann tú ar nasc mailto: ar shuíomh ar bith, seachas i bhfeidhmchlár ríomhphoist réamhshocraithe do chórais (tabhair faoi deara nach bhfuil an ghné seo ar fáil ach le seirbhísí ríomhphoist Ghréasáin atá cláraithe le Firefox 3).</p>
+                <p>Téigh chuig <span id="platform-protocol">Uirlisí→Roghanna→Feidhmchláir</span> chun an feidhmchlár réamhshocraithe le haghaidh gach prótacal a roghnú, nó roghnaigh “Fiafraigh díom i gcónaí” más fearr leat an feidhmchlár a roghnú tú féin i gcónaí.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>Má tá tú i d'fhorbróir d'fheidhmchláir Ghréasáin, faigh tuilleadh eolais faoi conas tacaíocht le haghaidh láimhseálaithe prótacail Ghréasáin a chruthú sa <a href="http://developer.mozilla.org/">Mozilla Developer Center.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

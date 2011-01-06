@@ -1,0 +1,37 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Complementos bloqueados | Mozilla';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/add-ons/blocklist.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Complementos bloqueados</h2>
+	<p>Esta página contém uma lista de complementos que não devem ser utilizados com produtos Mozilla.</p>
+</div>
+
+<div id="content">
+	<ul>
+		<li>Internet Download Manager, v2.1-3.3 para Firefox 3.0a1 e mais recentes. Motivo: causava travamentos ao iniciar (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=382356">ver bug 382356</a>).</li>
+		<li>Free Download Manager, v1.0-1.3.1 para Firefox 3.0a1 e mais recentes. Motivo: alto volume de travamentos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=408445">ver bug 408445</a>).</li>
+		<li>Yahoo Application State Plugin, v1.0.0.5 ou anteriores para Firefox 3.0a1 e mais recentes.  Motivo: alto volume de travamentos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=419127">ver bug 419127</a>).</li>
+		<li>Pacote de idioma Vietnamita, v2.0 para todas as aplicações.  Motivo: arquivos corrompidos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=432406">ver bug 432406</a>).</li>
+		<li>Apple QuickTime Plugin, v7.1.*, para todas as versões do Firefox 3 no Windows. Motivo: execução de código remoto em várias versões (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=430826">ver bug 430826</a>).</li>
+		<li>Crawler Toolbar, para Firefox 3.0a1 e mais recentes. Motivo: alto volume de travamentos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=441649">ver bug 441649</a>).</li>
+		<li>Daemon Tools Toolbar, versões anteriores a 1.0.0.5, para todas as aplicações. Motivo: alto volume de travamentos (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=459850">ver bug 459850</a>).</li>
+		<li>AVG SafeSearch, versões anteriores a 8.5 para todas as aplicações. Motivo: travamento de um método do núcleo de navegação (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=479095">ver bug 479095</a>).</li>
+		<li>Skype extension, versões anteriores a 3.3.0.3971, para todas as versões do Firefox. Motivo: alto volume de travamentos e outros problemas de estabilidade (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=448768">ver bug 448768</a>). Os usuários devem <a href="http://skype.com/">atualizar o Skype</a>.</li>
+        <li>Enigmail, versões anteriores a 0.97a, para Thunderbird 3.0pre e mais recentes. Motivo: alto volume de travamentos e outros problemas de estabilidade (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=531047">ver bug 531047</a>). Os usuários devem <a href="https://addons.mozilla.org/thunderbird/addon/71">atualizar o Enigmail</a>.</li>
+        <li>YSlow, v2.0.5, para Firefox 3.5.7 e mais recentes. Motivo: alto volume de travamentos e outros problemas de estabilidade (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=542686">ver bug 542686</a>). Os usuários devem <a href="https://addons.mozilla.org/firefox/addon/5369">atualizar o YSlow para a versão 2.0.6</a>.</li>
+        <li>Viewpoint Media Player, todas as versões, para Firefox 3.0 e mais recentes. Motivo: fabricante afirma haver incompatibilidade com a versão 3.0 e superiores, alto volume de travamentos e outros problemas de estabilidade (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=539282">ver bug 539282</a>). Para mais informações, <a href="http://www.viewpoint.com/technologies/viewpoint-media-player.shtml#system-requirements" hreflang="en">visite a página do fabricante</a>.</li>
+        <li>Java Deployment Toolkit, versão 6.0.200.0 ou anteriores. Motivo: vulnerabilidades de segurança (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=558584">ver bug 558584</a>). Para mais informações, <a href="http://java.com/en/download/help/firefox_addons.xml">visite a página do fabricante</a>.</li>
+        <li>Internet Download Manager, versões 6.9.8 e anteriores, para Firefox 3.7a1pre e mais recentes. Motivo: alto volume de travamentos e outros problemas de estabilidade (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578443">ver bug 578443</a>).</li>
+	</ul>
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

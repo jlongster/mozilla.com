@@ -1,0 +1,513 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 3 Beta 3 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox 3 Beta 3 Release Notes</h2>
+	<p>Released: February 12, 2008</p>
+</div>
+
+
+<div id="main-content">
+
+      <p>Firefox&nbsp;3&nbsp;Beta&nbsp;3 is a developer preview release of Mozilla's
+         next generation Firefox browser and is being made available for <b>testing
+         purposes only</b>.</p>
+
+      <p>These beta releases are targeted to Web developers and our testing community
+         to gain feedback before advancing to the next stage in the release process. The
+         final version of Firefox 3 will be released when we qualify the product as
+         fully ready for our users. Users of the <a
+         href="http://www.getfirefox.com">latest released version of Firefox</a> should
+         not expect their add-ons to work properly with this beta.</p>
+
+      <p>This beta will give you a taste of what's coming in Firefox 3, but there's 
+         still more to come, and much of what you'll see may still be a bit rough around 
+         the edges.</p>
+
+      <p>Please see below for an extensive list of <a href="#whatsnew">features and
+         enhancements</a> found in Firefox&nbsp;3&nbsp;Beta&nbsp;3, as well as
+         <a href="#issues">known issues</a> and <a href="#FAQ">frequently asked
+         questions</a>.</p>
+
+      <p>As always, we appreciate your feedback either through this <a
+         href="http://feedback.mozilla.org">feedback form</a> or by filing a bug in <a
+         href="https://bugzilla.mozilla.org">Bugzilla</a>.</p>
+
+      <h2 id="whatsnew">What's New in Firefox&nbsp;3</h2>
+
+      <p>Firefox&nbsp;3 is based on the new Gecko 1.9 Web rendering platform, which has
+         been under development for the past 30 months and includes nearly 2 million
+         lines of code changes, fixing more than 12,000 issues. Gecko 1.9 includes some
+         major re-architecting for <a href="#performance">performance</a>, stability,
+         correctness, and code simplification and sustainability. Firefox&nbsp;3
+         has been built on top of this new platform resulting in a <a
+         href="#secure">more secure</a>, <a href="#easy">easier to use</a>, <a
+         href="#personal">more personal</a> product with a lot <a href="#engine">under
+         the hood</a> to offer website and Firefox add-on developers.</p>
+         
+      <p><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+         Firefox&nbsp;3&nbsp;Beta&nbsp;3 includes approximately 1300 individual changes from
+         the previous beta, including fixes for stability, performance, memory usage,
+         platform enhancements and user interface improvements. Many of these improvements
+         were based on community feedback from the previous beta.</p>
+
+      <dl>
+        <dt id="secure">More Secure</dt>
+        <dd>
+          <ul class="spaced">
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                One-click site info: Click the site favicon in the location bar to
+                see who owns the site and to check if your connection is protected
+                from eavesdropping. Identity verification is prominently displayed
+                and easier to understand. When a site uses Extended Validation (EV)
+                SSL certificates, the site favicon button will turn green and show
+                the name of the company you're connected to. (<a 
+                href="https://www.britishairways.com">Try it here!</a>)</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Malware Protection: malware protection warns users when they arrive
+                at sites which are known to install viruses, spyware, trojans or other
+                malware. (<a href="/firefox/its-an-attack.html">Try it here!</a>)</li>
+            <li>New Web Forgery Protection page: the content of pages suspected as
+                web forgeries is no longer shown. (<a
+                href="/firefox/its-a-trap.html">Try it here!</a>)</li>
+            <li>New SSL error pages: clearer and stricter error pages are used when
+                Firefox encounters an invalid SSL certificate. (<a 
+                href="https://mozilla.com">Try it here!</a>)</li>
+            <li>Add-ons and Plugin version check: Firefox now automatically checks
+                add-on and plugin versions and will disable older, insecure versions.</li>
+            <li>Secure add-on updates: to improve add-on update security, add-ons
+                that provide updates in an insecure manner will be disabled.</li>
+            <li>Anti-virus integration: Firefox will inform anti-virus software when
+                downloading executables.</li>
+            <li>Vista Parental Controls: Firefox now respects the Vista system-wide
+                parental control setting for disabling file downloads.</li>
+            <li>Effective top-level domain (eTLD) service better restricts cookies and 
+                other restricted content to a single domain.</li>
+            <li>Better protection against <a href="http://ejohn.org/blog/re-securing-json/">
+                cross-site JSON data leaks</a>.</li>
+          </ul>
+        </dd>
+        <dt id="easy">Easier to Use</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Easier password management: an information bar replaces the old
+                password dialog so you can now save passwords after a successful login.</li>
+            <li>Simplified add-on installation: the add-ons whitelist has been removed
+                making it possible to install extensions from third-party sites in fewer
+                clicks.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                New Download Manager: the revised download manager makes it much
+                easier to locate downloaded files, and you can see and search on the
+				name of the website where a file came from. Your active downloads and 
+				time remaining are always shown in the status bar as your files download.</li>
+            <li>Resumable downloading: users can now resume downloads after
+                restarting the browser or resetting your network connection.</li>
+            <li>Full page zoom: from the View menu and via keyboard shortcuts, the
+                new zooming feature lets you zoom in and out of entire pages, scaling the
+                layout, text and images.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Podcasts and Videocasts can be associated with your media playback tools.</li>
+            <li>Tab scrolling and quickmenu: tabs are easier to locate with the new
+                tab scrolling and tab quickmenu.</li>
+            <li>Save what you were doing: Firefox will prompt users to save tabs on
+                exit.</li>
+            <li>Optimized Open in Tabs behavior: opening a folder of bookmarks in
+                tabs now appends the new tabs rather than overwriting.</li>
+            <li>Location and Search bar size can now be customized with a simple
+                resizer item.</li>
+            <li>Text selection improvements: multiple text selections can be made
+                with Ctrl/Cmd; double-click drag selects in "word-by-word" mode;
+                triple-clicking selects a paragraph.</li>
+            <li>Find toolbar: the Find toolbar now opens with the current
+                selection.</li>
+            <li>Plugin management: users can disable individual plugins in the Add-on
+                Manager.</li>
+            <li>Integration with Vista: Firefox's menus now display using Vista's
+                native theme.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Integration with the Mac: the new Firefox theme makes toolbars, icons, and 
+                other user interface elements look like a native OS&nbsp;X application.
+                Firefox also uses OS&nbsp;X widgets and spell-checker in web forms and
+                supports Growl for notifications of completed downloads and available
+                updates.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Integration with Linux: Firefox's default icons, buttons, and menu
+                styles now use the native GTK theme.</li>
+          </ul>
+        </dd>
+        <dt id="personal">More Personal</dt>
+        <dd>
+          <ul class="spaced">
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Star button: quickly add bookmarks from the location bar with a
+                single click; a second click lets you file and tag them.</li>
+            <li>Tags: associate keywords with your bookmarks to sort them by
+                topic.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Location bar &amp; auto-complete: type in all or part of the title, tag or 
+                address of a page to see a list of matches from your history and bookmarks;
+                a new display makes it easier to scan through the matching results and find
+                that page you're looking for. New in Beta 3 is an improved search algorithm
+                which calculates the <i>recency</i> and <i>frequency</i> of a visit to come
+                up with a <i>frecency</i> score that is used to determine the most relevant
+                results.</li>
+            <li>Smart Bookmarks Folder: quickly access your recently bookmarked and
+                tagged pages, as well as your more frequently visited pages with the new smart
+                bookmarks folder on your bookmark toolbar.</li>
+            <li>Places Organizer: view, organize and search through all of your bookmarks,
+                tags, and browsing history with multiple views and smart folders to store 
+                your frequent searches.</li>
+            <li>Web-based protocol handlers: web applications, such as your favorite
+                webmail provider, can now be used instead of desktop applications for handling
+                mailto: links from other sites. Similar support is available for other
+                protocols (Web applications will have to first enable this by registering as
+                handlers with Firefox).</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Download &amp; Install Add-ons: the Add-ons Manager (Tools > Add-ons) can
+                now be used to download and install a Firefox customization from the thousands
+                of Add-ons available from our <a href="https://addons.mozilla.org/">community
+                add-ons website</a>. When you first open the Add-ons Manager, a list of
+                recommended Add-ons is shown.</li>
+            <li>Easy to use Download Actions: a new Applications preferences pane
+                provides a better UI for configuring handlers for various file types and
+                protocol schemes.</li>
+          </ul>
+        </dd>
+        <dt id="engine">Improved Platform for Developers</dt>
+        <dd>
+          <ul class="spaced">
+            <li>New graphics and font handling: new graphics and text rendering
+                architectures in Gecko 1.9 provides rendering improvements in CSS, SVG as well
+                as improved display of fonts with ligatures and complex scripts.</li>
+            <li>Color management: (set gfx.color_management.enabled on in
+                about:config and restart the browser to enable.) Firefox can now adjust images
+                with embedded color profiles.</li>
+            <li>Offline support: enables web applications to provide offline
+                functionality (website authors must add support for offline browsing to their
+                site for this feature to be available to users).</li>
+            <li>A more complete overview of <a
+                href="http://developer.mozilla.org/en/docs/Firefox_3_for_developers">Firefox 3
+                for developers</a> is available for website and add-on developers.</li>
+          </ul>
+        </dd>
+        <dt id="performance">Improved Performance</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Reliability: A user's bookmarks, history, cookies, and preferences
+                are now stored in a transactionally secure database format which will prevent
+                data loss even if their system crashes.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Speed: Major architectural changes (such as the move to Cairo and a
+                rewrite to how reflowing a page layout works) put foundations in place for
+                major performance tuning which have resulted in speed increases that continue
+                to increase page drawing speed in Beta 3. This release also features over 90 
+                changes that improve performance over the previous beta.</li>
+            <li><span style="font-size: 80%; font-weight: bold;">[Improved in Beta 3!]</span>
+                Memory usage: Over 350 individual memory leaks have been plugged, and
+                a new <a
+                href="http://developer.mozilla.org/en/docs/Interfacing_with_the_XPCOM_cycle_collector">XPCOM
+                cycle collector</a> completely eliminates many more. Developers are continuing
+                to work on optimizing memory use (by releasing cached objects more quickly) and
+                reducing fragmentation. Beta 3 includes more than 50 improvements to memory use
+                over the previous beta.</li>
+          </ul>
+        </dd>
+      </dl>
+
+<!--      <p>A more complete, yet "unofficial" list of <a
+         href="http://www.squarefree.com/burningedge/releases/trunk-for-firefox-3.html">Firefox
+         3 changes with their bug numbers</a> is available at the Burning Edge
+         website.</p>
+ -->
+	
+      <h2 id="downloadandinstall">Downloading and Installing</h2>
+
+      <h3 id="requirements">System Requirements</h3>
+
+      <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements-v3.html">
+         system requirements</a>.</p>
+
+      <h3 id="download">Downloading Firefox&nbsp;3&nbsp;Beta&nbsp;3</h3>
+      <p>Mozilla provides Firefox&nbsp;3&nbsp;Beta&nbsp;3 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a
+         variety of languages. You can <a href="/<?=$lang?>/firefox/all-beta.html">get the latest version 
+         of Firefox&nbsp;3&nbsp;Beta&nbsp;3 here</a>. For builds for other systems and languages not 
+         provided by Mozilla.org, see the Contributed Builds section at the end of this document.</p>
+
+      <h3 id="install">Installing Firefox&nbsp;3&nbsp;Beta&nbsp;3</h3>
+      <p>Please note that installing Firefox&nbsp;3&nbsp;Beta&nbsp;3 <em>will overwrite</em> your
+         existing installation of Firefox on Mac&nbsp;OS&nbsp;X and Linux. On Windows,  
+         Firefox&nbsp;3&nbsp;Beta&nbsp;3 installs in a new folder. For all systems, you won't lose 
+         any of your bookmarks or browsing history, but some of your extensions and other add-ons might 
+         not work until updates for them are made available.</p>
+
+      <h3 id="uninstall">Removing Firefox&nbsp;3&nbsp;Beta&nbsp;3</h3>
+
+      <p>You can remove Firefox&nbsp;3&nbsp;Beta&nbsp;3 through the <tt>Control Panel</tt> in the
+         <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on 
+         OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+      <p>Removing Firefox&nbsp;3&nbsp;Beta&nbsp;3 won't remove your bookmarks, web browsing history,
+         extensions or other add-ons. This data is stored in your <em>profile
+         folder</em>, which is located in one of the following locations depending on
+         your operating system:</p>
+
+      <table style="font-size: small;" border="1" cellspacing="0">
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows Vista</td>
+          <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-win.png" alt="" /> Windows 2000, XP, Server 2003</td>
+          <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-osx-uni.png" alt="" /> Mac&nbsp;OS&nbsp;X</td>
+          <td>~/Library/Application Support/Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="<?=$config['static_prefix']?>/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+          <td>~/.mozilla/firefox</td>
+        </tr>
+      </table>
+      <p>Any version of Firefox that you install after removing Firefox&nbsp;3&nbsp;Beta&nbsp;3 will
+         continue to use the data from this profile folder.</p>
+
+      <h3 id="extensions">Extensions and Themes</h3>
+
+      <p>Extensions installed under previous versions of Firefox may be incompatible and/or require 
+         updates to work with Firefox&nbsp;3&nbsp;Beta&nbsp;3. Please report any issues to the 
+         maintainer of the extension.</p>
+      <p>When you install Firefox&nbsp;3&nbsp;Beta&nbsp;3 all of your Extensions and Themes will be 
+         disabled until Firefox&nbsp;3&nbsp;Beta&nbsp;3 determines that either a) they are compatible 
+         with the Firefox&nbsp;3&nbsp;Beta&nbsp;3 release or b) there are newer versions available that 
+         are compatible.</p>
+
+      <h2 id="issues">Known Issues</h2>
+
+      <p>This list covers some of the known problems with Firefox&nbsp;3&nbsp;Beta&nbsp;3. Please read 
+         this before reporting any new bugs.</p>
+      <dl>
+      <dt id="allsystems">All Systems</dt>
+      <dd>
+        <ul class="spaced">
+          <li>Windows Live Mail will not work; users must use Hotmail Classic Mail
+              (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=396259">bug
+              396259</a>)</li>
+          <li>GMail (new version) conversation labels appear on their own row in the
+              message list, and names don't show in the contacts manager (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=415252">bug 415252</a>)</li>
+          <li>Yahoo! Mail (new version) is being updated, and may not work for all users 
+              right away. Until it does, users can use Yahoo! Classic Mail (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=398381">bug 398381</a>)</li>
+          <li>Cannot drag and drop folders in the Places Organizer. For now, users must
+              use cut and paste (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=405198">bug 405198</a>)</li>
+          <li>MathML does not render properly in Firefox&nbsp;3&nbsp;Beta&nbsp;3 (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=324857">bug 324857</a> and <a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=363240">bug 363240</a>)</li>
+          <li>The new Location Bar, Add Bookmark dialog, and Download Manager information popup
+              behave inconsistently with Window-Eyes. JAWS 8.0 or better is recommended
+              for this beta. (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=393398">bug
+              393398</a>)</li>
+          <li>Resuming downloads can result in an error message if the server doesn't allow
+              a reconnection (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=401846">bug
+              401846</a>)</li>
+          <li>Web feeds served as <tt>text/html</tt> won't load properly (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=381357">bug 381357</a>)</li>  
+          <li>After installing some add-ons, the "Restart" button will not appear (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=414936">bug 414936</a>)</li>
+          <li>In some cases add-ons will be loaded after they've been blocked or disabled (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=406118">bug 406118</a>)</li>
+          <li>Using the Internet Download Manager add-on will cause Firefox to crash; it should
+              be disabled or uninstalled (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=382356">bug 382356</a>)</li>
+          <li>Privacy &gt; History &gt; Remember visited pages to "0" has no effect
+              (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=366075">bug
+              366075</a>)</li>
+        </ul>
+      </dd>
+      <dt id="windows">Microsoft Windows</dt>
+      <dd>
+        <ul class="spaced">
+          <li>A Windows Media Player (WMP) plugin is not provided with Windows Vista and some
+              other versions of Windows. To view Windows Media content, you must install this
+              plugin by following <a 
+              href="http://kb.mozillazine.org/Windows_Media_Player#Missing_plugin">these 
+              instructions</a>. After installing you may need to check for Windows Updates 
+              before the plugin will show content properly.</li>
+          <li>Folders on the Bookmark Toolbar don't open when an object is dragged over them 
+              (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=337761">bug
+              337761</a>)</li>
+          <li>Downloading multiple files at the same time on a system running the AVG Virus 
+              Scanner can cause Firefox to crash (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=412565">bug
+              412565</a>)</li>
+        </ul>
+      </dd>
+      <dt id="osx">Mac OS X</dt>
+      <dd>
+        <ul class="spaced">
+          <li>Firefox will frequently stop responding to keystrokes when using Google Documents,
+              Spreadsheets, and Presentations (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=413882">bug 413882</a>)</li>
+          <li>The drop-down menus on the Back and Forward buttons do not work properly (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=415444">bug 415444</a>)</li>
+          <li>Several problems exist when drawing content using Flash Player r60 or higher  
+              (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=395983">bug
+              395983</a>)</li>
+          <li>When creating a new profile, migrating data from Internet Explorer is an option.
+              After migrating data from Safari, bookmarks are stored in an "Imported IE 
+              Favorites" folder (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=413021">bug 413021</a>)</li>
+          <li>The Applications folder icon is missing from the DMG of all non en-US builds (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=416055">bug 416055</a>)</li>
+        </ul>
+      </dd>
+      <dt id="linux">Linux and Unix</dt>
+      <dd>
+        <ul class="spaced"> 
+          <li>Printing is broken on many distributions for many websites (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=414314">bug 414314</a>)</li>
+          <li>Users running older distributions will need to update their certificates 
+              in order to submit crash reports (see instructions in <a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=407748#c4">bug 407748</a>)</li>
+          <li>Browsing SMB shares using older versions of Gnome VFS won't list files with 
+              non-ASCII names (<a 
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=255949">bug 255949</a>)</li>
+          <li>The AT-SPI event is not fired when focus is returned to Firefox, which will
+              affect screen readers (<a
+              href="https://bugzilla.mozilla.org/show_bug.cgi?id=415919">bug 415919</a>)</li>
+        </ul>
+      </dd>
+      </dl>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <ul class="spaced">
+        <li>
+          Poorly designed or incompatible extensions can cause problems with your browser, including make it crash, slow down page display, etc. If you encounter strange problems relating to parts of the browser no longer working, the browser not starting, windows with strange or distorted appearance, degraded performance, etc, you may be suffering from Extension or Theme trouble.
+          Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+          Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+          start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+          <p><code>
+            cd /Applications/Firefox.app/Contents/MacOS/<br />
+            ./firefox-bin -safe-mode
+          </code></p>
+
+          When started in Safe Mode all extensions are disabled and the Default theme is used. Disable the Extension/Theme that is causing trouble and then start normally.
+        </li>
+        <li>
+          If you uninstall an extension that is installed with your user profile (i.e.
+          you installed it from a Web page) and then wish to install it for all user profiles
+          using the -install-global-extension command line flag, you must restart the
+          browser once to cleanse the profile extensions datasource of traces of that
+          extension before installing with the switch. If you do not do this you may end
+          up with a jammed entry in the Extensions list and will be unable to install
+          the extension globally.
+        </li>
+        <li>
+          If you encounter strange problems relating to bookmarks, downloads, window
+          placement, toolbars, history, or other settings, it is recommended that you try
+          creating a new profile and attempting to reproduce the problem before filing
+          bugs. Create a new profile by running Firefox with the -P command line
+          argument, choose the "Manage Profiles" button and then choose "Create
+          Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+          one by one, checking each time to see if the problems resurface. If you do
+          find a particular profile data file is causing a problem, file a bug and attach
+          the file.
+        </li>
+      </ul>
+
+      <h2 id="FAQ">Frequently Asked Questions</h2>
+      <ol class="faq">
+        <li>
+          What can I do to help?
+          <p>We need help from developers and the testing community to provide as much
+             feedback as possible to make Firefox even better. Please read these notes and
+             the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+             before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+             also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+          <p>If you're interested in helping us test pre-release builds, you might want to join our <a 
+             href="http://wiki.mozilla.org/QA/Community/Betatesters_Mailing_List">beta test mailing list</a>.</p>
+        </li>
+        <li>
+          Why haven't you responded to the mail I sent you?
+          <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>. The Firefox team reads them regularly. We all get a lot of email, and your email may get lost.</p>
+        </li>
+        <li>
+          Where can I get extensions and themes (add-ons)?
+          <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+        </li>
+        <li>
+          Who makes Firefox&nbsp;3&nbsp;Beta&nbsp;3?
+          <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who have contributed to Firefox&nbsp;3&nbsp;Beta&nbsp;3.</p>
+        </li>
+        <li>
+          Where's the Firefox&nbsp;3&nbsp;Beta&nbsp;3 source code?
+          <p>A tarball of the Firefox&nbsp;3&nbsp;Beta&nbsp;3 source code is available for <a href=
+             "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0b3/source/">download</a>.
+             The latest development code can be obtained by <a href=
+             "http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>.
+             Firefox-specific source is in "mozilla/browser", "mozilla/toolkit",
+             and "mozilla/chrome". Please follow the <a href=
+             "http://developer.mozilla.org/en/docs/Build_Documentation">build instructions</a>.</p>
+        </li>
+        <li>
+          Where is the mail client?
+          <p>Firefox&nbsp;3&nbsp;Beta&nbsp;3 works with whatever mail client is the default on your system. 
+             However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our 
+             next-generation email client and the perfect complement to Firefox.</p>
+        </li>
+      </ol>
+
+      <h2 id="contributedbuilds">Contributed Builds</h2>
+
+      <p>Many localized builds are now produced and distributed by Mozilla.org 
+         on behalf of <a href="http://wiki.mozilla.org/L10n:Localization_Teams" title="Mozilla Localization Teams">their authors</a>.
+         These are available on the <a href="/<?=$lang?>/firefox/all-beta.html">Firefox&nbsp;3&nbsp;Beta&nbsp;3 download page</a>.
+      </p>
+         
+      <p>Builds that have not yet been certified as official Firefox&nbsp;3&nbsp;Beta&nbsp;3 localizations are available by browsing the 
+         <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.0b3/contrib-localized/">FTP site</a>.</p>
+
+      <p>These are unofficial builds and may be configured differently than the official 
+         Mozilla.org builds. They may also be optimized and/or tested for specific 
+         platforms.</p>
+ 
+      <!-- Put Solaris Builds Here-->
+ 
+        <!--
+            Build contributors, please put your builds under:
+              pub/mozilla.org/firefox/releases/<version>/contrib/
+
+            Your build file name should match the pattern set by official builds and include a README explaining any build peculiarities and identifying yourself as the contributor. Thanks.
+          -->
+
+      <h2 id="links">Other Resources and Links</h2>  
+      <p>The following resources contain useful information about Firefox&nbsp;3&nbsp;Beta&nbsp;3:</p>
+
+      <ul class="spaced">
+        <li><a href="http://mozillalinks.org/wp/2008/02/a-deep-look-to-firefox-3-beta-3/">MozillaLinks Overview of Firefox 3 Beta 3</a></li>
+        <li><a href="http://wiki.mozilla.org/Firefox3">Firefox 3 Project Page</a></li>
+        <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+        <li><a href="http://www.mozilla.org/projects/firefox/">Developer Information</a></li>
+        <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+      </ul>
+
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

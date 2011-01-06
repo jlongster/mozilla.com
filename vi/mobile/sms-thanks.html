@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Cảm ơn bạn đã chọn Firefox!";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Cảm ơn bạn đã chọn Firefox!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>Làm theo các bước sau để tải xuống Firefox, tìm hiểu thêm về Firefox Sync, và sẵn sàng lên đường</h3>
+    <ol id="steps">
+        <li>Kiểm tra hộp tin đến trên điện thoại để tìm tin SMS mà chúng tôi đã gửi cho bạn.</li>
+        <li>Mở tin nhắn và chọn liên kết được nhúng trong đó để tải Firefox xuống trực tiếp vào di động của bạn.</li>
+    </ol>
+    <p class="small-print">*Firefox thì miễn phí; tuy nhiên, cước dữ liệu có thể bị tính tiền. Vui lòng kiểm tra thông tin gói cước mạng của bạn trước.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Trong khi chờ đợi…</h3>
+    <ol>
+        <li>Cài đặt Firefox Sync và mang Firefox <em>của bạn</em> tới bất kì đâu mà bạn đến. Chia sẻ lược sử duyệt web, trang đánh dấu, mật khẩu và thẻ trên PC và di động của bạn.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Cài đặt tiện ích Firefox Sync trên PC của bạn</a> và đăng nhập vào Firefox Sync. Một khi Firefox được tải xuống di động của bạn, hãy làm theo Các bước Kế tiếp của chúng tôi và chọn “Tải xuống tiện ích Firefox Sync” để hoàn tất việc cài đặt. Hoặc, bạn có thể thủ công chọn nút thiết lập, chọn nút tiện ích, rồi tìm và cài đặt tiện ích Firefox Sync trên di động của mình.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

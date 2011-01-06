@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = "ปรับรุ่น Firefox";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "ไม่ล่ะ ขอบคุณมาก";
+    $no_download_button2 = "(ทำไมล่ะ)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        คำเตือนด้านความปลอดภัย:
+        </span>
+</h2>
+<h3>
+        Firefox รุ่นนี้เก่าเกินไปแล้ว
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>การใช้งาน Firefox รุ่นนี้จะทำให้คุณเสี่ยงต่อการคุกคามทางความปลอดภัยบนอินเทอร์เน็ต</p>
+
+    <p id="main-feature-contents">
+    โปรด<a href="/<?=$lang?>/firefox/">ดาวน์โหลด Firefox รุ่นใหม่ล่าสุด</a> ซึ่งไม่มีค่าใช้จ่ายและคุณยังได้รับความปลอดภัยสูงสุด ประสิทธิภาพที่ดีที่สุด และการปรับปรุงความสามารถต่างๆ
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

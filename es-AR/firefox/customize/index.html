@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Un tamaño no le entra a todo el mundo';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Un tamaño no le entra a todo el mundo</h2>
+    <p>Le agregás ingredientes a tu pizza y ringtones a tu teléfono. Entonces, ¿por qué no personalizar la forma en la que mirás la web?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Productos</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">Seguridad</a></li>
+    <li><span>Personalización</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% Software orgánico</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Consejos y trucos</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Notas de la versión</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Otros sistemas e idiomas</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Un agregado para cada uno</h3>
+        <p>Firefox tiene las mejores formas de personalizar tu experiencia mientras navegás, específicamente para tu forma de usar la web. Hay más de 5.000 agregados (pequeños extras que aumentan a Firefox para que se ajuste a tus requerimientos) esperando para ayudarte, divertirte y para que seas más creativo.</p>
+        <p>¿Querés ejemplos? Mirá los ejemplos que están debajo, después <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">visitá nuestro sitio de agregados para ver el rango completo de posibilidades.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Alertas y actualizaciones</h4>
+            <p>Con los agregados de esta categoría, tendrás la última información sobre el tiempo, deportes o subastas en eBay. La información en tiempo real se muestra directamente en tu navegador, no importa en qué sitio estés.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Mirá todos los agregados de Alertas y actualizaciones.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por ejemplo:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" />Controlá tu transacción en eBay dondequiera que estés en Internet.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Probá la versión eBay de Firefox</a> <span>realizada por la Corporación eBay</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Fotos, música y video</h4>
+            <p>Convertí a Firefox en un cargador de fotos, un reproductor de música o en un centro multimedia. Es como tener un control de medios al alcance de tus dedos mientras navegás por la web, trabajás, escribís correo o buscás en Internet.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Mirá todos los agregados de fotos, música y video.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por ejemplo:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" />Controlá casi cualquier reproductor de medios directamente desde tu navegador.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Probá FoxyTunes</a> <span>realizado por Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Sociedad y comunicaciones</h4>
+            <p>Estos agregados te ayudarán a encontrar cosas nuevas en Internet, mejorar tu comunicación instantánea y estar en contacto con tus amigos a través de los sitios más importantes de la web social.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Mirá todos los agregados de Sociedad y comunicaciones.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por ejemplo:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" />Descubrí nuevos sitios, después conectate con amigos y compartí tus descubrimientos.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Probá StumbleUpon</a> <span>realizado por StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Temas y apariencia</h4>
+            <p>No limites tu experiencia de navegación a un diseño estándar. Elegí nuevos colores, hacé el navegador más facil de usar (con botones más grandes, para principiantes) o elegí una apariencia que se ajuste a tu gusto.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Mirá todos los agregados de Temas y apariencia.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por ejemplo:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" />El tema para la gente que lo prefiere oscuro.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Probá NASA lanzamiento nocturno</a> <span>realizado por mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>Agregados</h3>
+            <h5>Hacé un Firefox propio</h5>
+            <p><a href="https://addons.mozilla.org/firefox/">Mirá todos los agregados</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Webbrowseren Firefox | Hjælp os med at teste den seneste beta';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Hjælp os med at teste fremtiden for Firefox!</h2>
+        <p>Den seneste betaversion af Firefox er nu tilgængelig. Giv den en prøvetur og fortæl os hvad du synes!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Vigtig information</h4>
+        <p class="intro">Læs før du downloader</p>
+    </div>
+    <ul>
+        <li>Dette er ikke færdig software: du kan støde på kompatibilitetsproblemer med nogle hjemmesider og tilføjelser.</li>
+        <li>Hvis du finder et problem, beder vi dig <a href="http://feedback.mozilla.org/">fortælle os om det</a> eller <a href="https://bugzilla.mozilla.org/">oprette en bug</a>.</li>
+        <li>For mere information se <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">udgivelsesnoter</a> og <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">kendte problemer</a> (på engelsk).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Leder du ikke efter en betaudgave? Hent den <a href="/<?=$lang?>/firefox/">nyeste Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

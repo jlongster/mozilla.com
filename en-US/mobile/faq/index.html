@@ -1,0 +1,34 @@
+<?php
+    //various variables used in the page
+    $top            = '';
+    $dev_link       = '../developers/';
+    $mobile_link    = '../';
+    $platforms_link = '../platforms/';
+    $privacy_link   = '../privacy/';
+    $require_link   = '../requirements/';
+    $involved_link  = '../getinvolved/';
+    $sync_link      = '../sync/';
+    $mobile_menu    = "<div>\n".buildMobileSubPageMenu($lang,'faq')."</div>";
+    $body_id        = 'mobile-faq';
+    $breadcrumbs = array(
+        $l10n->get('Mobile') => "/{$lang}/mobile/",
+        $l10n->get('FAQ') => "/{$lang}/mobile/faq/",
+    );
+    $extra_headers  = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/mobile-faq.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+EXTRA_HEADERS;
+
+    // get content
+    ob_start();
+    @include_once "{$config['file_root']}/{$lang}/mobile/faq/faq-content.html";
+    $page_content = ob_get_contents();
+    ob_clean();
+
+    // build page
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    echo $page_content;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    unset($page_content);
+?>

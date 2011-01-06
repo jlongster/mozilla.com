@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "感謝您選擇 Firefox！";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>感謝您選擇 Firefox！</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>請依照下列步驟下載 Firefox，了解更多關於 Firefox Sync 的資訊，將網路帶著走</h3>
+    <ol id="steps">
+        <li>檢查您手機的 SMS 簡訊收件匣，尋找我們剛剛傳送的簡訊。</li>
+        <li>打開簡訊並且選擇文中的下載鏈結，直接下載 Firefox 至您的手機。</li>
+    </ol>
+    <p class="small-print">* Firefox 是不需付費的軟體：然而，瀏覽網路時會可能會產生數據傳輸費用。請先行確認您的行動網路數據資費方案。</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>在您等待 Firefox 下載安裝的同時…</h3>
+    <ol>
+        <li>安裝 Firefox Sync 以將<em>屬於您的</em> Firefox 帶著走。在您的 PC 與行動裝置之間共用瀏覽紀錄、書籤、密碼與分頁。</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">在 PC 上安裝 Firefox Sync 附加元件</a>並登入 Firefox Sync。Firefox 安裝到您的手機之後，閱讀我們建議的下一步且點選「下載 Firefox Sync 附加元件」以完成安裝。或是，您也可以選擇設定按鈕然後選擇附加元件按鈕，接著搜尋並安裝 Firefox Sync 附加元件至您的行動裝置。</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

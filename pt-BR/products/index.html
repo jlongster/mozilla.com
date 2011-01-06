@@ -1,0 +1,56 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox &amp; Thunderbird | Produtos Mozilla';
+    $body_id    = 'products';
+	$breadcrumbs = array(
+                            'Início' => "/{$lang}/",
+                            'Produtos' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/products-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Produtos Mozilla</h2>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><span>Produtos</span></h3></li>
+	<li><a href="/<?=$lang?>/firefox/">Firefox</a></li>
+	<li><a href="/<?=$lang?>/mobile/">Firefox Móvel</a></li>
+	<li><a href="/<?=$lang?>/thunderbird/">Thunderbird</a></li>
+</ul>
+
+<div id="main-content">
+
+	<div class="product" id="product_firefox"><div>
+		<h3><a href="/<?=$lang?>/firefox/"><img src="/img/tignish/products/firefox.png" alt="Logotipo Firefox" height="100" width="100" />Firefox</a></h3>
+		<p>O premiado navegador Firefox tem segurança, velocidade e novos recursos que mudarão a forma como você utiliza a web. Não aceite menos que isso. <a href="/<?=$lang?>/firefox/">Saiba mais</a>.</p>
+	</div></div>
+
+	<div class="product" id="product_firefox_mobile"><div>
+		<h3><a href="/<?=$lang?>/mobile/"><img src="/img/tignish/products/firefox.png" alt="Logotipo Firefox" height="100" width="100" />Firefox Móvel</a></h3>
+		<p>Ao adicionar o Firefox ao seu dispositivo móvel, você poderá acessar o mesmo conteúdo e disfrutar dos mesmos grandes recursos do Firefox onde quer que vá. <a href="/<?=$lang?>/mobile/">Saiba mais</a>.</p>
+	</div></div>
+
+	<div class="thunderbird" id="product_thunderbird"><div>
+		<h3><a href="/<?=$lang?>/thunderbird/"><img src="/img/tignish/products/thunderbird.png" alt="Logotipo Thunderbird" height="100" width="100" />Thunderbird</a></h3>
+		<p>Seus emails de forma fácil, rápida e segura no estilo Mozilla. O cliente de emails Thunderbird inclui filtros inteligentes de spam, um poderoso sistema de busca e visualizações personalizáveis. <a href="/<?=$lang?>/thunderbird/">Saiba mais</a>.</p>
+	</div></div>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+	<h3>Outros produtos</h3>
+	<p>Veja outros <a href="http://www.mozilla.org/projects/" hreflang="en">produtos de código aberto</a> da Comunidade Mozilla.</p>
+	<p>Veja os <a href="http://labs.mozilla.com/" hreflang="en">projetos avançados</a> sendo desenvolvidos nos Laboratórios Mozilla.</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

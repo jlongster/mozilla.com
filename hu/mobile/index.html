@@ -1,0 +1,43 @@
+<?php
+
+    // please translate the 3 variables below
+    $page_title         = "Firefox Mobile";
+    $form_field         = "Adja meg a telefonszámát";
+    $chooseYourCountry  = "Válassza ki, hogy hol van";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/home.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+
+
+<div id="main-feature">
+    <h2>Az internet már az Öné, most vigye magával.</h2>
+    <p>A Firefox útra kel.</p>
+</div>
+
+<?=$mobilesubmenu;?>
+<?=$smsformblock;?>
+
+<div id="mobile-footer" class="sub-features">
+    <div class="sub-feature" id="video-tour">
+        <h4>Tekintse meg a filmet</h4>
+        <p>Ismerje meg, hogyan hozza el a teljes internetet a Firefox a telefonjára.</p>
+        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">Film indítása</a></p>
+    </div>
+    <div class="sub-feature" id="developers-wanted">
+        <h4>Közreműködés</h4>
+        <p>Mi bízunk a globális közösségben, az Önhöz hasonló emberekben, akik segítenek fejleszteni, tesztelni és terjeszteni a Firefox böngészőt.</p>
+        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">Tekintse meg, hogyan segíthet</a></p>
+    </div>
+
+    <div class="sub-feature" id="questions-comments">
+        <h4>Kérdése vagy megjegyzése van?</h4>
+        <p>Engedje meg, hogy válaszoljunk kérdéseire, vagy mondja el véleményét a Firefox böngészővel kapcsolatban.</p>
+        <p class="link"><a href="http://mobile.support.mozilla.com/">Segítségkérés</a></p>
+    </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

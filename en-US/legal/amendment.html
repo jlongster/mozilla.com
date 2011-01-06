@@ -1,0 +1,45 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'ARTICLES OF INCORPORATION OF M. F. TECHNOLOGIES';
+    $body_id    = 'legal-articles';
+	$breadcrumbs = array(
+                            'About'                                                 => "/{$lang}/about/",
+                            'Certificate of Amendment of Articles of Incorporation' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>CERTIFICATE OF AMENDMENT OF ARTICLES OF INCORPORATION OF M.F. TECHNOLOGIES</h2>
+</div>
+
+<div id="main-content">
+
+<p>The undersigned certify that:</p>
+
+<ol>
+<li><p>They are the president and the secretary, respectively, of M.F. Technologies, a California corporation.</p></li>
+<li><p>Article 1. of the Articles of Incorporation is amended to read as follows: "The name of the Corporation is Mozilla Corporation (the "Corporation")."</p></li>
+<li><p>The foregoing amendment of Articles of Incorporation has been duly approved by the board of directors.</p></li>
+<li><p>The foregoing amendment of Articles of Incorporation has been duly approved by the required vote of shareholders in accordance with Section 902, California Corporations Code. The total number of outstanding shares of the corporation is 1,000 shares of Common Stock. The number of shares voting in favor of the amendment equaled or exceeded the vote required. The percentage vote required was more than 50%.</p></li>
+</ol>
+
+<p>We further declare under penalty of perjury under the laws of the State of California that the matters set forth in this certificate are true and correct of our own knowledge.</p>
+
+<p>DATE: August 2, 2005</p>
+
+<p>Mitchell Baker, President</p>
+
+<p>Christopher Blizzard, Secretary</p>
+
+</div>
+
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

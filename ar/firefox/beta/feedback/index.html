@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "فَيَرفُكس 4 بيتا - أسمِعنا تعليقاك";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "كيف عرفت بوجود برنامج فَيَرفُكس 4 بيتا؟";
+$str2       = "ابقَ مع التحديث";
+$str3       = "اشترك لتصلك أخبار فَيَرفُكس بيتا وأحداثه ومعلوماته عبر البريد الإلكتروني.";
+$str4       = "بريدك الإلكتروني";
+$str5       = "أوافق على <a href=\"%s\">سياسة الخصوصية</a> <span class='footnote'>(سنرسل لك فقط معلومات متعلقة بموزيلا).</span>";
+$str6       = "أرسلوا لي رجاءً أخبار موزيلا وتلميحات فَيَرفُكس وأي معلومات أخرى عن موزيلا بين الحين ةالآخر.";
+$str7       = "اشترك »";
+$str8       = "شكرًا لك على اشتراكك!";
+$str9       = "نتطلع قريبًا لبدء مشاركة تلميحات وأسرار فَيَرفُكس الذي يمتلئ بها، بالإضافة إلى أخبار مثيرة عن موزيلا وعن كيفية بنائنا لوب أفضل.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="فَيَرفُكس 4 بيتا" /></a></h2>
+        <h3>المساعدة مطلوبة</h3>
+        <p>نصنع فَيَرفُكس سيكون أسرع وأخف على موارد النظام ومليئًا بالوسائل التي تسهّل عليك التصفح. ولكن لا يمكننا فعل ذلك من دون ردودك وتعليقاتك.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>فَيَرفُكس 4<sup>بيتا</sup></span></h3></li>
+    <li class="feedback"><span>التعليقات</span></li>
+    <li class="more"><h3>مزيد من المعلومات بالإنجليزية</h3></li>
+    <li class="features"><a href="../features/">المزايا</a> </li>
+    <li class="tech"><a href="../technology/">التقنية</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">سياسة خصوصية التعليقات</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="لقطة زر التعليقات" />
+        <h2>أخبرنا برأيك</h2>
+        <h3>أعلِمنا بتعليقاتك على الفور</h3>
+        <p>انقر على زر التعليقات لإبلاغنا برأيك مباشرة عن إصدارة البيتا. الأمر بهذه البساطة فحسب!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">إلى المطوّر: نحن نحتاجك</h2>
+        <h3>شاركنا أفكارك</h3>
+        <p>ما رأيك <a href="../features/#under-the-hood">بمزايا المطوّرين الجديدة</a> في البيتا؟</p>
+        <p><a href="https://firefox.uservoice.com/" onclick="UserVoice.Popin.show(uservoiceOptions); return false;">زُر منتدانا للتعليقات.</a></p>
+
+        <h3>بلّغ عن العلل التقنية</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="شعار بغزيلا" />
+        <p>إن كنت خبيرًا في بغزيلا، بلغ عن علة حين تواجه مشاكل معينة في التصفح.</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">بلّغ عن علة في فَيَرفُكس 4 بيتا</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>انشر الخبر</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">تابعنا على تويتر</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">زُرنا في فيسبوك</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">اقرأ مدونة موزيلا</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>أتحتاج المساعدة؟</h4>
+        <p><a href="http://support.mozilla.com/ar"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="أيقونة الدعم" />صفحات الدعم</a> تحتوي أجوبة ونصائح خصيصًا لفَيَرفُكس 4 بيتا.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

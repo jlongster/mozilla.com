@@ -1,0 +1,61 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Careers Buttons | Mozilla';
+    $body_id = 'careers-buttons';
+    $body_class = 'careers-buttons';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/tignish/about.css" media="screen" />
+	<link rel="stylesheet" href="/style/tignish/careers.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Careers Buttons</h2>
+	<p>Help us spread the word!</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">About</a></h3></li>
+	<li><a href="/<?=$lang?>/about/whatismozilla.html">What is Mozilla?</a></li>
+	<li><a href="http://www.mozilla.org/contribute/">Get Involved</a></li>
+	<li><a href="/<?=$lang?>/press/">Press Center</a></li>
+	<li><span>Careers</span></li>
+	<li><a href="/<?=$lang?>/about/partnerships.html">Partnerships</a></li>
+	<li><a href="http://www.mozilla.org/foundation/licensing.html" class="external">Licensing</a></li>
+	<li><a href="http://blog.mozilla.com/" class="external">Blog</a></li>
+	<li><a href="http://store.mozilla.org/" class="external">Mozilla Marketplace</a></li>
+	<li><a href="/<?=$lang?>/about/logo/">Logo Guide</a></li>
+	<li><a href="/<?=$lang?>/about/contact.html">Contact Us</a></li>
+</ul>
+
+<div id="content">
+<p>Copy the source below onto your blog or website to help us change the web!</p>
+
+<?php
+$buttons = array(
+    array('width'=>120, 'height'=>240),
+    array('width'=>160, 'height'=>280),
+    array('width'=>468, 'height'=>60),
+    array('width'=>860, 'height'=>60),
+    array('width'=>120, 'height'=>90),
+    array('width'=>180, 'height'=>150)
+);
+
+foreach ($buttons as $button) {
+    $buf = trim(htmlspecialchars("<a href=\"http://www.mozilla.com/{$lang}/careers/?button=1\"><img src=\"http://www.mozilla.com/{$lang}/about/buttons/MoCo_{$button['width']}x{$button['height']}.png\" alt=\"Join Mozilla!\" title=\"Join Mozilla and help make the internet better!\" width=\"{$button['width']}\" height=\"{$button['height']}\" border=\"0\"/></a>"));
+    echo <<<BUTTONLOVE
+<p class="page-careers-button">
+<img src="/{$lang}/about/buttons/MoCo_{$button['width']}x{$button['height']}.png" alt="Join Mozilla!" title="Join Mozilla and help make the internet better!" width="{$button['width']}" height="{$button['height']}"/>
+<textarea class="page-careers-button-copy" cols="30" rows="4">{$buf}</textarea>
+</p>
+BUTTONLOVE;
+}
+
+?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

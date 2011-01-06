@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" />'da Neler Yeni?</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox, çoklu ortamın web'le entegre olma şeklini değiştiriyor: Yeni Ses API'ı, HTML5'te yer alan <code>&lt;video&gt;</code> ve <code>&lt;audio&gt;</code> öğeleri içindeki ham ses verilerini ortaya çıkarıyor. Böylece geliştiricilerin JS kullanarak ses verilerini okuyup yazması kolaylaşıyor. Daha fazla bilgi almak için videoyu izleyin.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Geri Bildiriminizi Paylaşın »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Sürüm Notları »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Yenilikler</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Grafik Hızlandırma (Yalnızca Windows'ta)</h4>
+        <p>DirectX 10 destekli donanımlarda, artık varsayılan olarak açık gelen Direct2D sayesinde çok daha hızlı grafik hızlandırmanın tadını çıkarın.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Güvenli Sunucu Bağlantıları</h4>
+        <p><acronym title="HTTP Strict-Transport-Security (HTTP Sıkı Aktarım İlkesi)">HSTS</acronym> kullanarak, siteler artık Firefox'un kendi sunucularına otomatik olarak güvenli bağlantı kurmasını isteyebiliyor. Bu da siteye erişirken başkasının eline geçmesi riskli verilerinizin saldırganların eline geçmesini engelliyor. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Daha fazla bilgi alın »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

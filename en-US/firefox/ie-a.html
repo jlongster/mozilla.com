@@ -1,0 +1,86 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | Faster &amp; Safer Internet | Free Download';
+    $body_id    = 'firefox';
+    $body_class = 'ie';
+    $extra_headers = <<<EXTRA_HEADERS
+	<meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Firefox 2, Firefox 3, Foxfire, Fire Fox, browser, web browser, internet browser, web, pop-up blocker, internet, speed, secure, customize, online, add-ons, toolbar, fastest, surfing, download" />
+	<meta name="description" content="The Firefox Web Browser is the faster, more secure, and fully customizable way to surf the web." />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/ie-a.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<?php
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array('/'.LATEST_FIREFOX_VERSION.'/' => LATEST_FIREFOX_VERSION.$config['funnelcake_suffix']);
+        echo <<<FUNNEL
+<script>// <![CDATA[
+  var gDownloadFunnelCake = '{$config['funnelcake_suffix']}';
+// ]]></script>
+FUNNEL;
+    }
+?>
+
+<script src="/js/download.old.js"></script>
+
+<div id="main-feature">
+	<div id="feature-contents">
+    <h2 id="firefox-headline">Meet the World’s Best Web Browser</h2>
+    <p id="firefox-intro">Switching to Firefox is quick and easy - a safer, faster, more advanced Web is only a few clicks away!</p>
+	<div class="dl-box">
+	<script>
+        <!--
+        // Configure the Firefox download write script
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+		// Temporary fix for bug 439792
+		if (gPlatform == PLATFORM_MACOSX) {
+        	gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.4 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+		}
+        var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+        var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+
+        document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
+        writeDownloadItems("fx");
+        document.writeln("<\/ul>");
+        document.writeln("<div class=\"download-other\"><span class=\"other\">");
+        document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_VERSION?>\/releasenotes\/\">Release Notes<\/a>");
+        document.writeln("- <a href=\"\/<?=$lang?>\/firefox\/all.html\">Other Systems and Languages<\/a>");
+        document.writeln("<\/span><\/div>");
+        //-->
+	</script>
+	<?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
+	</div>
+
+	</div>
+
+</div>
+
+    <div><!-- empty div = dirty IE6 hack -->
+        <?=buildFirefoxSubPageMenu($lang, 'firefox');?>
+    </div>
+
+<div id="feature-list">
+    <ul>
+        <li id="list-fast">
+            <h3>It’s Fast</h3>
+            <p>Real world performance loads Web pages and content instantly.</p>
+        </li>
+        <li id="list-secure">
+            <h3>It’s Secure</h3>
+            <p>Add-ons make Firefox look and work the way you want it to.</p>
+        </li>
+        <li id="list-personal">
+            <h3>It’s Personal</h3>
+            <p>Regular security upgrades keep you safe as you surf the Web.</p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

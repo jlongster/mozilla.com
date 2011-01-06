@@ -1,0 +1,45 @@
+
+<div id="main-feature">
+
+    <h1>Is Geal Gach Nua in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Béite" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Insuite sa leagan béite de Firefox&nbsp;4: Sync</h3>
+        <p>Ón mbaile go dtí an oifig go dtí do ghléas soghluaiste agus ar ais!  Tugann Sync rochtain láithreach duit ar do chuid sonraí tábhachtacha Firefox &mdash; leabharmharcanna, focail fhaire, stair agus cluaisíní oscailte san áireamh &mdash; ar ríomhairí agus gléasanna éagsúla.  Chun tuilleadh eolais a fháil, féach ar an bhfíseán ar dheis.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Tuilleadh eolais faoi Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Aiseolas »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b3/releasenotes/">Nótaí Eisiúna »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Gnéithe ar Taispeáint</h2>
+       <p>Tá Firefox&nbsp;4 ag dul ó neart go neart. Seo iad cúpla gné thábhachtach eile nach mór duit a fheiceáil:</p>
+    </div>
+
+    <div id="column-1">
+        <h4>Mínghrafaic</h4>
+        <p>Le Luachanna Nua JavaScript, is féidir le Firefox cód dianuimhriúil a chur i bhfeidhm níos tapúla, agus beidh grafaicí níos míne mar thoradh air seo.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>SQLite 3.7.0</h4>
+        <p>Beidh an Sárbharra, Bainisteoir na nÍosluchtuithe, agus gnéithe IndexedDB níos tapúla anois mar gheall ar nuashonrú ar SQLite, inneall bunachair sonraí SQL.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

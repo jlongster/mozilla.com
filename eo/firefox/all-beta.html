@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Retesplorilo Firefox | Helpu nin testi la lastan betan version';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Helpu nin testi la estontecon de Firefox!</h2>
+        <p>La lasta beta versio de Firefox haveblas kiel antaŭmontra eldono. Uzu ĝin iom kaj sciigu nin pri viaj impresoj!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Grava informo</h4>
+        <p class="intro">Bonvolu legi antaŭ ol elŝuti</p>
+    </div>
+    <ul>
+        <li>Tiu ĉi programo estas liverita kiel antaŭmontra eldono: vi povus renkonti problemojn pri kongrueco kun kelkaj retejoj kaj kromprogramoj.</li>
+        <li>Se vi trovas problemon bonvolu <a href="http://feedback.mozilla.org/">sciigi nin</a> aŭ <a href="https://bugzilla.mozilla.org/">raporti cimon</a>.</li>
+        <li>Por plia informo legu la <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">notojn de la eldono</a> kaj la <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">konatajn problemojn</a> (en la angla).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Ĉu vi ne serĉis betan version? Akiru la <a href="/<?=$lang?>/firefox/">lastan Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

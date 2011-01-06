@@ -1,0 +1,36 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Bem-vindo ao Firefox Sync";
+    $body_id    = 'sync';
+    $body_class = 'portal-page updated';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="shortcut icon" type="image/png" href="/img/firefox/sync/sync-ico.png"/>
+    <link rel="stylesheet" type="text/css" href="/style/tignish/sync.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+<div id="main-feature">
+  <h2 id="main-feature-title">O Firefox Sync foi atualizado para sua versão mais recente.</h2>
+  <p>Mantenha o Firefox Sync conectado para que seus dados sejam sincronizados diariamente.</p>
+</div>
+
+<div id="main-content">
+  <div>
+    <h3>O que há de novo nesta versão?</h3>
+    <ul>
+      <li>Disponibilidade em mais de 15 idiomas, incluindo Francês, Espanhol, Italiano e Português.</li>
+      <li>Processo de registro e configuração simplificados.</li>
+      <li>Botão único para acessar todas as suas abas remotas.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Precisa de mais informações?</h3>
+    <p>Tem alguma dúvida? Dê uma olhada em nossas <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">Dúvidas comuns</a>.</p>
+    <p>Interessado em aprender mais? Leia as <a href="https://services.mozilla.com/sync/relnotes/1.4.html">notas da versão</a> para obter todos os detalhes desta versão.</p>
+  </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,40 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Violating Website Report Sent | Mozilla';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                        'About'         => "/{$lang}/about/",
+                        'Legal'         => "/{$lang}/about/legal.html",
+                        'Violating Website Report' => ""
+                    );
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<script>
+    window.onload = setGoBack;
+    function setGoBack() {
+        var el = document.getElementById('goback');
+        var content = el.innerHTML;
+        el.innerHTML = "<a href='javascript:history.go(-1)'>"+ content +"</a>";
+    }
+</script>
+<div id="main-feature">
+    <h2>Error</h2>
+    <p>Sorry, we couldn't upload your attachment.<br>
+       Please <span id="goback">go back</span> and try again.</p>
+</div>
+<div id="content">
+    <strong>Are you stuck here?</strong>
+    <ul>
+       <li>It's possible that your file was too large.  There is a 5MB size limit.  Is your file larger than 5MB?</li>
+       <li>Also, it's possible we have a server problem.  If so, we're probably working on it right now.</li>
+       <li>If all else fails, try sending your report without any attachment.  Leave us a note about what happened,<br> 
+           include your email, and we'll work something out.</li>
+    </ul>
+    <p>Thank you for being patient.</p>
+</div>
+    
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,84 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - 提供回饋";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "您如何得知 Firefox 4 beta 的消息？";
+$str2       = "掌握最新消息";
+$str3       = "立刻訂閱關於最新 Firefox Beta 消息、活動，以及最新資訊的電子郵件。";
+$str4       = "您的 Email 地址";
+$str5       = "我同意 <a href=\"%s\">隱私權保護政策</a> <span class='footnote'>（我們將只會傳送與 Mozilla 有關的資訊給您）。</span>";
+$str6       = "也請送給我 Mozilla 的消息、Firefox 的使用技巧，以及其他關於 Mozilla 的最新資訊。";
+$str7       = "訂閱 »";
+$str8       = "感謝您的訂閱！";
+$str9       = "我們迫不及待地想要分享 Firefox 的使用技巧，以及關於 Mozilla 致力於建立更好的網際網路的消息。";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>請幫幫我們</h3>
+        <p>我們正在開發更快、更輕盈，以及可以幫助您更方便瀏覽網頁的新版瀏覽器。但若沒有您的幫助，我們無法開發出最完美的作品。</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>使用者回饋</span></li>
+    <li class="more"><h3>更多消息（英文）</h3></li>
+    <li class="features"><a href="../features/">功能</a> </li>
+    <li class="tech"><a href="../technology/">技術</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">使用者回饋的隱私權保護政策</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="回饋按鈕擷圖" />
+        <h2>告訴我們您覺得如何</h2>
+        <h3>提供即時回饋</h3>
+        <p>點一下回饋按鈕即可立刻給我們關於測試版的回饋，一切就是這麼簡單！</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">開發者: 我們需要您的幫忙</h2>
+        <h3>分享您的想法</h3>
+        <p>您覺得 <a href="../features/#under-the-hood">全新的開發者功能</a> 如何？</p>
+        <p><a href="http://forum.moztw.org/viewforum.php?f=18">請逛逛討論區。</a></p>
+
+        <h3>送交臭蟲報告</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla 圖示" />
+        <p>若您用過 Bugzilla，當您瀏覽網站時遇到問題的話，也可以送一份臭蟲報告給我們。</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">送交一份 Firefox 4 Beta 的臭蟲報告</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>口耳相傳</h4>
+        <ul>
+            <li id="link-plurk"><a href="http://www.plurk.com/foxmosa">追蹤 MozTW 小莎的 Plurk</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">加入 Facebook 粉絲團</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">閱讀我們的部落格文章</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>需要幫忙？</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support 圖示" />我們的技術支援頁面</a> 有關於 Firefox 4 beta 測試的一些答案與建議。</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

@@ -1,0 +1,504 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 1.0 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/release-notes.css" media="screen" />
+	<script>
+//	<![CDATA[
+
+		function userAgentRedirect(match_string, url) {
+			if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
+			window.location = url;
+		}
+
+		userAgentRedirect('Firefox/1.4', 'http://www.mozilla.org/products/firefox/releases/1.5beta1.html');
+	// ]]>
+	</script>
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Firefox Release Notes</h2>
+          <!-- Introduction -->
+          <p>Firefox is a fast, full-featured browser that makes browsing more efficient 
+             than ever before. <a href="../index.html">More information</a> about Firefox 
+             is available.</p>
+</div>
+
+<div id="main-content">
+          <p>These Release Notes cover <a href="#new">what's new</a>, <a href="#download">download</a>
+             and <a href="#install">installation instructions</a>, <a href="#issues">known 
+             issues</a> and <a href="#FAQ">frequently asked questions</a> for the Firefox 
+             1.0 release. Please read these notes and the <a href="http://www.mozilla.org/">
+             bug filing instructions</a> before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>.</p>
+          <p>We want to hear your feedback about Firefox. Please join us in the <a href="http://forums.mozillazine.org/index.php?c=4">
+             Firefox forums</a>, hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p>
+
+      <!-- What's New -->
+      <h2 id="new">What's New</h2>
+      <p><strong>November 9, 2004</strong>  Here's what's new in this release of Firefox:</p>
+      <ul class="news">
+        <li>Better Tabbed Browsing Controls
+            <p>You can now make links opened by other applications open into a new tab, reuse 
+               an existing tab, or open a new window.</p>
+        </li>
+        <li>Firefox is available today in <a href="../all.html">many languages</a>.</li>
+        <li>And <a href="http://www.squarefree.com/burningedge/releases/1.0.html">a horde of other bug fixes...</a></li>
+      </ul>
+
+      <p>&nbsp;</p>
+      <h2 id="downloadandinstall">Downloading and Installing</h2>
+
+      <h3 id="requirements">System Requirements</h3>
+      <p>Before installing, make sure your computer meets the <a href="/firefox/system-requirements.html">
+         system requirements</a>.</p>
+
+      <h3 id="download">Downloading Firefox</h3>
+      <p>Mozilla.org provides Firefox for Windows, Linux, and Mac OS X in a
+         variety of languages. To get the latest version of Firefox, visit 
+         <a href="http://getfirefox.com/">GetFirefox.com</a> or browse the 
+         <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/">FTP site</a>.
+         For builds for other systems and languages not provided by Mozilla.org, see
+         the Contributed Builds section at the end of this document.</p>
+
+      <h3 id="install">Installing Firefox</h3>
+      <p>Once you have downloaded a Firefox, follow these instructions to
+         install:</p>
+      <h3>Windows</h3>
+      <p>Double click the <code class="filename">Firefox Setup 1.0.exe</code> installer to 
+         start the install.</p>
+      <h3>Mac OS X</h3>
+      <p>Double click the Firefox 1.0.dmg.gz Disk Image to uncompress and mount it. 
+         Your browser may have already done this for you. Double click the Firefox 
+         Disk Image to open it in Finder and drag the Firefox application onto your 
+         hard disk. <strong>Do not double click the icon in the disk image!</strong>
+         Be sure to drag the Firefox application out of the disk image and onto your
+         Hard Disk before running it. Drag the icon to your Dock if you want it to 
+         appear there.</p>
+      <h3>Linux/GTK2</h3>
+      <p>Extract the tarball and run the installer like so:</p>
+      <p>
+        <code>
+          tar -xzvf firefox-1.0.installer.tar.gz<br />
+          cd firefox-installer<br />
+          ./firefox-installer
+        </code></p>
+      <p>If you have Nautilus set up to run Executable Text Files you can just 
+         double click firefox-installer to run.</p>
+      <h3>Other Platforms</h3>
+      <p>Extract the compressed archive and run <code>firefox</code></p>
+
+      <h3 id="uninstall">Uninstalling Firefox</h3>
+      <p>To uninstall Firefox, follow these instructions:</p>
+      <h3>Windows</h3>
+      <p>From the <kbd>Start</kbd> menu, choose <kbd>Control Panel</kbd>. When the 
+         Control Panel appears, double click <kbd>Add/Remove Programs</kbd>. Find 
+         "Mozilla Firefox (1.0)" in the list and click <kbd>Remove</kbd> to uninstall.</p>
+      <h3>Mac OS X</h3>
+      <p>Drag the <code class="filename">Firefox</code> application to the Trash.</p>
+      <h3>Others</h3>
+      <p>Remove the <code class="filename">firefox</code> folder.</p>
+      <p>These instructions leave your profile in place in case you install Firefox 
+         again in the future. If you wish to remove your profile folder, remove 
+         the location described below in the <strong>"Profile Folder"</strong> section. 
+         Note that by doing this you are destroying all of your Bookmarks, saved passwords,
+         settings and other information and should you decide to use Firefox again you
+         will be starting with a clean profile.</p>
+         
+      <p>&nbsp;</p>
+      <h2>Other Information</h2>
+      <h3 id="profilefolder">Profile Folder</h3>
+      <p>Firefox stores your user data in one of the following locations:</p>
+      <table style="font-size: smaller;" >
+        <tr>
+          <td><img src="/img/ico-win.png" alt="" /> Windows 2000, XP</td>
+          <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="/img/ico-win.png" alt="" /> Windows NT</td>
+          <td>WINNT\Profiles\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="/img/ico-win.png" alt="" /> Windows 98, ME</td>
+          <td>Windows\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="/img/ico-osx.png" alt="" /> Mac OS X</td>
+          <td>~/Library/Application Support/Firefox</td>
+        </tr>
+        <tr>
+          <td><img src="/img/ico-tux.png" alt="" /> Linux and Unix systems</td>
+          <td>~/.mozilla/firefox</td>
+        </tr>
+      </table>
+
+      <p>If you were using Firefox 0.8 as your default browser prior to upgrading to 
+         Firefox 1.0, data from your profile will be copied into the new location. You 
+         can remove the old "Phoenix" folder at your leisure.</p>
+
+      <h3 id="extensions">Extensions and Themes</h3>
+      <p>When you upgrade to a new version of Firefox all of your Extensions and Themes
+         will be disabled until Firefox determines that either a) they are compatible
+         with the new release or b) there are newer versions available that are 
+         compatible. This is because Firefox changes from release to release and as such
+         the ways in which some extensions integrate changes, meaning there can be problems
+         when running an older extension with a newer version of Firefox. If you find
+         that your favorite Extension or Theme has not been updated to be compatible with
+         this release of Firefox, write the author and encourage them to update it.</p>
+      <p>This automatic updating of Extensions and Themes does not apply to users of
+         Firefox 0.8 or below who upgrade to Firefox 1.0. Those Extensions will be 
+         disabled when 1.0 starts, and users will have to download and install 1.0 
+         compatible versions manually.    
+      </p>
+      <p>To prevent the kind of problems we had with the 0.8 release (users were having 
+         the browser not start with "No XBL Binding for Browser" errors, and finding 
+         that their theme was broken), all of your extensions will be disabled when you
+         move to 1.0. If you were using 0.9 or 1.0PR, when you first run 1.0, Firefox will
+         try and connect to update.mozilla.org to look for newer, compatible versions
+         of your Extensions, and if they are available it will download and install them.
+         If you were using 0.8, you will have to find newer compatible versions yourself.
+      </p>
+      
+      <h3 id="otherchanges">Other Changes</h3>
+      <ul>
+        <li>
+          On Linux, Firefox now follows GTK's setting for textbox keybindings, so pressing 
+          Ctrl+letters triggers application shortcuts instead of readline-like text-editing 
+          shortcuts. For details, see <a href="http://kb.mozillazine.org/Emacs_Keybindings_%28Firefox%29">this document</a>.
+        </li>
+      </ul>
+
+      <p>&nbsp;</p>
+      <h2 id="issues">Known Issues</h2>
+      <p>This list covers some of the known problems with Firefox 1.0. Please read this
+         before reporting any new bugs, and watch it regularly (we'll update it as new 
+         bugs are found in the release).</p>
+        
+      <h3>All Systems</h3>
+      <ul>
+        <li>
+          If you install Firefox on a multi-user system in an area in which there is
+          restricted access privileges, you must run Firefox as a user with access to
+          that location upon installation so that all initial startup files are generated.
+          If this is not done, when a user without write access to the install location
+          attempts to start Firefox, they will not have sufficient privileges to allow
+          Firefox to generate the initial startup files it needs to.
+        </li>
+        <li>
+          When upgrading, all your Extensions and Themes will be disabled. This is not
+          an issue, but it may appear to be one (hence its listing here). For rationale,
+          see "Extension and Themes" above.
+        </li>
+        <li>
+          Software Update does not request proxy authentication and will fail if you
+          are behind a proxy server. (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=259429">bug</a>)
+          The workaround is to visit a web page in the browser and log in to the proxy
+          server and then perform Software Update. 
+        </li>
+        <li>
+          Software Update will not work if Firefox is installed to a location that you
+          do not have write access to, since Software Update needs to replace or create
+          files in this location.
+        </li>
+        <li>
+          The Help documentation refers to "Single Window Mode" options
+          regarding "Force links opened in new windows to open in [New Tab, Same Tab]."
+          This function was disabled at the last minute due to problems we were experiencing
+          with it, so ignore this section of Help. To re-enable the Single Window Mode
+          options (at your own risk - there may be crashes), use the Configuration Console
+          (accessed by entering "about:config" in the Location bar and pressing Enter)
+          to set <code>browser.tabs.showSingleWindowModePrefs</code> to <strong>true</strong>.
+        </li>
+      </ul>
+      
+      <h3>Windows</h3>
+      <ul>
+        <li>
+          When installing as a restricted access user on a shared machine into a location
+          that you can write to, there may still be negative side effects (default 
+          browser/other keys not being set correctly). The browser should still function 
+          however. When installing as a restricted access user do <strong>not</strong>
+          attempt to install over an installation in a restricted-access/shared location 
+          as this may destroy that installation.
+        </li>
+        <li>
+          Firefox may hang when closing after viewing a PDF file in some older versions 
+          of the Adobe Acrobat Reader plug in. If you experience this make sure you are
+          using the <a href="http://www.adobe.com/products/acrobat/readstep2.html">newest 
+          version</a> of the plug in.
+        </li>
+        <li>
+          On Windows 98 systems, the Application icon may appear as a Windows icon.
+        </li>
+      </ul>
+          
+      <h3>Mac OS X</h3>
+      <ul>
+        <li>
+          <strong>Do NOT run Firefox from the Disk Image!</strong> - doing this will
+          cause an infinite restart loop (the symptom of which is a Firefox icon that
+          bounces briefly in the Dock then disappears and reappears, bounces and 
+          disappears, over and over). To break Firefox out of this loop, open a 
+          Terminal and type "killall firefox-bin" and press enter. Install Firefox to
+          a location you have write access to and try again. When installing on a multi-
+          user limited access system, install it into a shared location as administrator,
+          run it once and then all users should be able to access it. 
+        </li>
+        <li>
+          <strong>If Firefox does not display a browser window</strong>, quit Firefox 
+          using Cmd+Q and open <code>~/Library/Application Support/Firefox/Profiles/&lt;garble&gt;.default/</code>
+          and remove <code>localstore.rdf</code>. Restart Firefox. Any toolbar 
+          customizations you have made or window placement will be lost
+        </li>
+      </ul>
+
+      <h3>Linux and Unix systems</h3>
+      <ul>
+        <li>
+          If Firefox is installed to a location with spaces in the path, Firefox
+          may not be able to set itself as Default browser and may keep prompting at
+          startup. The work around is to install into a path without spaces.
+        </li>
+        <li>
+          GNOME integration does not work properly with Fedora Core 3. 
+          Users of Fedora Core 3 will need to download and install
+          <a href="http://download.fedora.redhat.com/pub/fedora/linux/core/2/i386/os/Fedora/RPMS/linc-1.0.3-3.1.i386.rpm">linc-1.0.3-3.1.i386.rpm</a>.
+          After installing the RPM, perform the following command in the directory you 
+          installed Firefox into (you will need write permission):
+          <p>
+            <code>touch .autoreg</code>
+          </p>
+          <p>The next time you start Firefox, GNOME integration should be functional.</p>
+        </li>
+      </ul>
+      
+      <h3>Web Page Rendering</h3>
+      <ul>
+        <li>
+          Firefox is powered by the same Gecko layout engine as other Mozilla software. 
+          If you encounter a problem with a website that does not correctly display
+          then it is usually a problem with Gecko, not Firefox itself. Such problems
+          should be reported in the Browser product (not the Firefox product) in 
+          <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. If you are technically 
+          minded, try and create a reduced test case and this will help get your bug
+          more attention.
+        </li>    
+      </ul>
+      
+      <p>For additional issues, FAQs, Tips and Tricks plus general Firefox help be sure 
+         to check out <a href="http://www.mozilla.org/support/firefox/">Firefox 
+         Help</a> and the <a href="http://forums.mozillazine.org/index.php?c=4">Firefox 
+         forums</a> hosted by <a href="http://www.mozillazine.org/">MozillaZine</a>.</p>
+         
+      <p>The Configuration Console (accessed by entering "about:config" in the Location
+         bar and pressing Enter) gives advanced/experienced users direct control over
+         Firefox's preferences. This system is for use by people who know what they are
+         doing only, by changing a value incorrectly you may damage or destroy your
+         Firefox installation! Look to Help sites for handy preferences to tweak to 
+         customize Firefox further.</p>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <ul>
+        <li>
+          Poorly designed or incompatible Extensions can cause problems with your browser,
+          including make it crash, slow down page display, etc. 
+          If you encounter strange problems relating to parts of the browser no longer
+          working, the browser not starting, windows with strange or distorted appearance,
+          degraded performance, etc, you may be suffering from Extension or Theme trouble. 
+          Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+          Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+          start with <code>./firefox -safe-mode</code> and on Mac OS X, run:
+          <p><code>
+            cd /Applications/Firefox.app/Contents/MacOS/<br />
+            ./firefox-bin -safe-mode
+          </code></p>
+          When started in Safe Mode all extensions are disabled and the Default theme
+          is used. Disable the Extension/Theme that is causing trouble and then start
+          normally.
+        </li>
+      </ul>
+      <p>If you uninstall an extension that is installed with your user profile (i.e. 
+         you installed it from a web page) and then wish to install it for all user 
+         profiles using the -install-global-extension command line flag, you must 
+         restart the browser once to cleanse the profile extensions datasource of 
+         traces of that extension before installing with the switch. If you do not do
+         this you may end up with a jammed entry in the Extensions list and will be
+         unable to install the extension globally.</p>
+      <p>If you encounter strange problems relating to bookmarks, downloads, window 
+         placement, toolbars, history, or other settings, it is recommended that you try 
+         creating a new profile and attempting to reproduce the problem before filing 
+         bugs. Create a new profile by running Firefox with the -P command line 
+         argument, choose the "Manage Profiles" button and then choose "Create 
+         Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over 
+         one by one, checking each time to see if the problems resurface. If you do find 
+         a particular profile data file is causing a problem, file a bug and attach the 
+         file.</p>
+
+      <p>&nbsp;</p>
+      <h2 id="FAQ">Frequently Asked Questions</h2>
+      <ol class="faq">
+        <li>
+          What can I do to help?
+          <p>We need all the exposure we can get. Make it your mission to convert as many 
+             of your friends, family members and coworkers as possible. If you're a student, 
+             get it distributed at your college. Submit a story to <a href="http://www.slashdot.org/">
+             Slashdot</a> and other news sites about the release. Make some noise on your 
+             blog. Mass distribution via the Internet is possible -- look at Kazaa. 
+             <a href="http://www.spreadfirefox.com/">Spread the word!</a></p>
+        </li>
+        <li>
+          I use another browser because...
+          <p>If you're not using Firefox, tell the development team why. We read the 
+             feedback at the <a href="http://forums.mozillazine.org/index.php?c=4">Firefox 
+             forums</a>.</p>
+        </li>
+        <li>
+          Why haven't you responded to the mail I sent you?
+          <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>. The 
+             Firefox team reads them regularly. We all get a lot of email and your email may 
+             get lost.</p>
+        </li>
+        <li>
+          Where can I get themes and add-ons (extensions)?
+          <p><a href="https://addons.mozilla.org/extensions/?application=firefox">Extensions</a> and
+             <a href="https://addons.mozilla.org/themes/?application=firefox">themes</a> can be downloaded from
+             <a href="https://addons.mozilla.org/?application=firefox">Mozilla Update</a>.</p>
+        </li>
+        <li>
+          Who is working on Firefox?
+          <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people
+             who have contributed to Firefox.</p>
+        </li>
+        <li>
+          Where's the Firefox source code?
+          <p>A tarball of the 1.0 source code is available for
+             <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/source/firefox-1.0-source.tar.bz2">download</a>. The latest development
+             code can be obtained by <a href="http://www.mozilla.org/cvs.html">cvs</a>.
+             Firefox-specific source is in "mozilla/browser", "mozilla/toolkit",
+             and "mozilla/chrome". Please follow the <a href="http://www.mozilla.org/projects/firefox/build.html">build instructions</a>.</p>
+        </li>
+        <li>
+          Where is the mail client?
+          <p>Firefox works with whatever mail client is the default on your system. 
+             However, we recommend <a href="../../thunderbird/">Mozilla Thunderbird</a>, our 
+             next generation email client and the perfect complement to Firefox.</p>
+        </li>
+        <li>
+          How do I spell Firefox? How do I abbreviate it?
+          <p>Firefox is spelled F-i-r-e-f-o-x - only the first letter capitalized
+             (i.e. not FireFox, not Foxfire, FoxFire or whatever else a number of
+             folk seem to think it to be called.) The preferred abbreviation is
+             "Fx" or "fx".</p></li>
+      </ol>
+
+      <p>&nbsp;</p>
+      <h2 id="links">Other Resources and Links</h2>  
+      <p>The following resources contain useful information about Firefox:</p>
+      
+      <ul>
+        <li><a href="http://www.mozilla.org/support/firefox/">Firefox Help</a></li>
+        <li><a href="http://kb.mozillazine.org/Mozilla_Firefox">MozillaZine's Knowledge Base</a></li>
+        <li><a href="http://www.mozilla.org/projects/firefox/">Developer Information</a></li>
+      </ul>
+      
+      <p>&nbsp;</p>
+      <h2>Contributed Builds</h2>
+      <p>These are unofficial builds and may be configured differently than the official 
+         Mozilla.org builds. They may also be optimized and/or tested for specific 
+         platforms.</p>
+
+      <h3 id="othersystems">Other Systems</h3>
+      <p>Builds for platforms other than the trio officially offered by Mozilla.org can
+         be found on the <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/">FTP site</a>.</p>
+        <!--
+            Build contributors, please put your builds under:
+              pub/mozilla.org/firefox/releases/<version>/contrib/
+
+            Your build file name should match the pattern set by official builds 
+            and include a README explaining any build peculiarities and identifying
+            yourself as the contributor. Thanks.
+          -->
+
+        <p><strong>Solaris x86<br />
+          All 32 Bit x86 processors including AMD Opteron in 32 bit. Tested on AMD64 BETA!</strong><br />
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i386-pc-solaris2.8.tar.gz">firefox-1.0-i386-pc-solaris2.8.tar.gz
+ - Sun Contributed SunOne Studio 8 Build</a> 
+<a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i386-pc-solaris2.8.tar.gz.README">
+          (README)</a>
+<a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i386-pc-solaris2.8.tar.gz.MD5SUM">
+          (MD5SUM)</a></p>
+
+        <p><strong>Solaris SPARC</strong>:<br />
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-sparc-sun-solaris2.8.tar.gz">firefox-1.0-sparc-sun-solaris2.8.tar.gz - Sun Contributed SunOne Studio 8 Build</a>
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-sparc-sun-solaris2.8.tar.gz.README"> (README)</a>
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-sparc-sun-solaris2.8.tar.gz.MD5SUM"> (MD5SUM)</a></p>
+
+        <p><strong>JDS: Sun Contributed Java Desktop for Linux version 2 and 3)</strong><br />
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i686-pc-linux-jds2.tar.gz">firefox-1.0-i686-pc-linux-jds2.tar.gz
+ - Sun Contributed Java Desktop for Linux version 2 and 3</a> <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i686-pc-linux-jds2.tar.gz.README">
+          (README)</a> <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-1.0-i686-pc-linux-jds2.tar.gz.MD5SUM">
+          (MD5SUM)</a></p>
+
+
+        <p><strong>OS/2</strong>:<br />
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-os2-1.0.zip">http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-os2-1.0.zip</a>, 
+(Requires a libc0.5 based version of the 
+          <a href="http://www.innotek.de/products/gccos2/download/gccos2download_e.html" class="ex-ref">GCC runtime library</a>.)
+</p>
+        <!--
+          <a href="http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-os2.zip">http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-os2.zip</a></p>
+        <p><strong>Solaris</strong>:<br />
+          <a href="http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-sparc-sun-solaris2.7.tar.gz">http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-sparc-sun-solaris2.7.tar.gz</a>
+          <a href="http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-sparc-sun-solaris2.7.readme"> (readme)</a><br /> 
+        <p><strong>BeOS</strong>:<br />
+          <a href="http://ftp.mozilla.org/pub/firefox/releases/0.10/contrib/firefox-1.0PR-i586-beos.zip">i586-beos.zip</a></p>
+        -->
+        <p><strong>AIX</strong>:<br />
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-powerpc-ibm-aix5.1.0.0-1.0.tar.gz">http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-powerpc-ibm-aix5.1.0.0-1.0.tar.gz</a>
+          <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-powerpc-ibm-aix4.3.3.0-1.0.tar.gz">http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-powerpc-ibm-aix4.3.3.0-1.0.tar.gz</a></p>
+        <p>&nbsp;</p>
+        
+        <p><strong>Solaris (Contributed by SUN Beijing team) </strong>:<br />
+          <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8-gtk2.tar.bz2">ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8-gtk2.tar.bz2</a>
+         <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8-gtk2.readme"> (readme)</a>
+          <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8.tar.bz2">ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8.tar.bz2</a>
+         <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-sparc-sun-solaris2.8.readme"> (readme)</a>
+          <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8-gtk2.tar.bz2">ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8-gtk2.tar.bz2</a>
+         <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8-gtk2.readme"> (readme)</a>
+          <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8.tar.bz2">ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8.tar.bz2</a>
+         <a href="ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib/firefox-i386-pc-solaris2.8.readme"> (readme)</a></p>
+        <p>&nbsp;</p>
+        
+      <h3 id="otherlanguages">Localized Builds</h3>
+      <p>Many localized builds are now produced and distributed by Mozilla.org 
+         on behalf of <a href="http://www.mozilla.org/projects/l10n/mlp_otherproj.html#firefox" title="Mozilla Localization Project">their authors</a>. 
+         Visit <a href="http://getfirefox.com/">GetFirefox.com</a>
+         or <a href="../all.html">view All Systems and Languages</a> to see the set of
+         official builds that we offer.</p> 
+          
+      <p>Builds that have not yet been certified as official Firefox 1.0 
+         localizations are available by browsing the 
+         <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0/contrib-localized/">FTP site</a>. </p>
+
+      <p>&nbsp;</p>         
+      
+      <small>Previous versions of the Release notes: <a href="0.1.html">0.1</a> | <a href="0.2.html">
+          0.2</a> | <a href="0.3.html">0.3</a> | <a href="0.4.html">0.4</a> | <a href="0.5.html">
+          0.5</a> | <a href="0.6.html">0.6</a> | <a href="0.6.1.html">0.6.1</a> | <a href="0.7.html">
+          0.7</a> | <a href="0.7.1.html">0.7.1</a> | <a href="0.8.html">0.8</a> | <a href="0.9.html">
+          0.9</a> | <a href="0.9.1.html">0.9.1/0.9.2</a> | <a href="0.9.3.html">0.9.3</a> | 
+          <a href="0.10.html">1.0 Preview Release</a></small>
+    </div><!-- close #mainContent -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

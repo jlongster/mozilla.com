@@ -1,0 +1,53 @@
+#main-feature h2 {
+	color: #BD1D01;
+	font-size: 180%;
+	font-weight: bold;
+}
+#lang-pack-install {
+	float: right;
+	width: 230px;
+	margin: 0 20% 2em 2em;
+	background: #eee;
+	border: 1px solid #ccc;
+	padding: 10px;
+	display: inline;
+	-moz-border-radius: 8px;
+}
+#content #lang-pack-install p {
+	font-weight: bold;
+	margin: 0;
+}
+#lang-pack-install ul,
+#lang-pack-install ul li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+#lang-pack-install ul a,
+#lang-pack-install ul span {
+	background: #A8ED2D url(/img/firefox/lang-packs/install-button.png) no-repeat scroll left top;
+	color: #005825;
+	display: block;
+	text-decoration: none;
+	width: 230px;
+	margin-top: 5px;
+}
+#lang-pack-install ul span {
+	background-image: url(/img/firefox/lang-packs/install-button-disabled.png);
+}
+#lang-pack-install ul a span,
+#lang-pack-install ul span span {
+	background: transparent url(/img/firefox/lang-packs/install-button.png) no-repeat scroll left bottom;
+	display: block;
+	min-height: 20px;
+	padding: 10px 38px 10px 10px;
+	width: auto;
+}
+* html #lang-pack-install ul a span,
+* html #lang-pack-install ul span span { height: 20px; } /* For IE6 */
+#lang-pack-install ul span span {
+	background-image: url(/img/firefox/lang-packs/install-button-disabled.png);
+	color: #666;
+}
+#lang-pack-install ul a:hover      { background-position: -299px 0; }
+#lang-pack-install ul a:hover span { background-position: -299px 100%; }

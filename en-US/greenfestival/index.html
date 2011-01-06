@@ -1,0 +1,39 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% Organic Software';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/tignish/greenfestival.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Enjoy your Web connection courtesy of Mozilla Firefox, the 100% Organic browser</h2>
+</div>
+
+<div id="main-content">
+<div class="whatis">
+    <h3>What is organic software, exactly?</h3>
+    <p>It's a better way to the Web, for starters. <a href="/<?=$lang?>/firefox/organic/" title="Learn more about Firefox">Learn more</a> about what an open source, community-powered browser can do for you!</p>
+</div>
+
+<div id="accrc-logo">
+    <img src="/img/greenfestival/accrc_logo.png" width="48" height="60" alt="ACCRC Logo" /><p>Refurbished computers in the Green Web Pavilion were saved from landfills courtesy of Alameda County Computer Resource Center.</p>
+</div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <div id="sitebadges">
+        <h3>Help spread Firefox with our new site badges!</h3>
+        <p><a href="http://www.spreadfirefox.com/affiliates/homepage?category=43&amp;locale=41#getbuttons" title="Spread Firefox">See more badges</a>
+            <img src="/img/greenfestival/site-button.png" width="240" height="120" alt="Site Button" />
+        </p>
+    </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

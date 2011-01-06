@@ -1,0 +1,156 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+	$page_title = 'Kiểm tra Phần bổ trợ';
+	$body_id    = 'plugin-check';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/plugin-check.css" media="screen" />
+EXTRA_HEADERS;
+	@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Kiểm tra Phần bổ trợ</h2>
+	<p>Hãy giữ cho Phần bổ trợ của bạn luôn được cập nhật!</p>
+</div>
+
+<div id="main-content">
+	<div id="content-left">
+
+        <div id="legend">
+            <ul>
+                <li>Nhấn <strong>Cập nhật Ngay</strong> để cập nhật một phần bổ trợ.</li>
+                <li><strong>Hãy hoàn thành tất cả các bản cập nhật khuyến nghị</strong> <em>trước khi</em> khởi động lại trình duyệt của bạn.</li>
+            </ul>
+        </div>
+		<noscript>
+		<div>
+		<h3>Ghi chú</h3>
+		<p><strong>Bạn đã tắt JavaScript</strong> hoặc đang dùng một trình duyệt không có JavaScript. Trang Kiểm tra Phần bổ trợ này
+		   không thể làm việc nếu không có sức mạnh của <strong>JavaScript</strong>. Vui lòng bật nó lên trong Tùy chỉnh Nội dung
+		   và tải lại trang này.</p>
+		<p>Hoặc vô hiệu hóa tất cả các phần bổ trợ và cứ để tắt JavaScript... bạn cũng sẽ ổn thôi,
+		   đó là lí do <a href="http://lwn.net/Articles/262570/">RMS xảy ra</a>.</p>
+		</div>
+		</noscript>
+
+		<table class="status">
+			<thead>
+				<tr>
+					<th>Chi tiết Phần bổ trợ</th>
+					<th>Trạng thái</th>
+					<th class="action">Thao tác</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr class="link-row">
+					<td colspan="3"></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr class="link-row">
+					<td id="pfs-status" colspan="3"></td>
+				</tr>
+				<tr id="plugin-template" style="display: none">
+					<td>
+						<img class="icon" src="" alt="Biểu tượng Phần bổ trợ" />
+						<h4 class="name"><a href="#"></a></h4><span class="version"></span>
+					</td>
+					<td class="status"></td>
+					<td class="action"><a class="button"><span></span></a></td>
+				</tr>				
+			</tbody>
+		</table>
+        <div id="error-panel" style="display: none">
+			<h3>Lỗi của Dịch vụ tìm Phần bổ trợ</h3>
+			<p>Chúng tôi đã gặp phải một lỗi. Vui lòng thử lại yêu cầu của bạn sau.</p>
+			<form action="" method="get"><fieldset><button>Thử lại</button></fieldset></form></div>
+    </div>
+
+	<div id="sidebar">
+		<div id="information">
+			<h3>Mẹo cho Phần bổ trợ</h3>
+			<ul>
+				<li><a href="#what-plugin">Phần bổ trợ là gì?</a></li>
+				<li><a href="#why-update">Tại sao tôi nên cập nhật Phần bổ trợ của mình?</a></li>
+				<li><a href="#firefox-helps">Firefox có thể giúp tôi như thế nào?</a></li>
+				<li><a href="#my-plugins">Tôi có các Phần bổ trợ nào?</a></li>
+				<li><a href="#howto-disable">Tôi có thể vô hiệu hóa một Phần bổ trợ bằng cách nào?</a></li>
+			</ul>
+		</div>
+        <div id="helpus">
+            <h3>Giúp Chúng Tôi</h3>
+            <p id="missed-plugins">Nếu bạn có thông tin về phần bổ trợ mà chúng tôi không có, <a href="http://spreadsheets.google.com/viewform?formkey=dGpKQkNuNkNQNjF4RW1FT08yRHRqMWc6MA">vui lòng cho chúng tôi được biết</a>.</p>
+        </div>
+		<div id="support">
+			<h3>Cần Trợ Giúp?</h3>
+            <ul>
+				<li><a href="http://support.mozilla.com">Vào support.mozilla.com</a></li>
+				<li><a href="http://support.mozilla.com/kb/Troubleshooting+plugins">Đọc bài viết hỗ trợ về Phần bổ trợ</a></li>
+            </ul>
+		</div>
+	</div>
+	
+	<div id="information-content" class="clearfix">
+		<div class="return-link"><a href="#">Trở lên Đầu</a></div>
+
+		<div id="column-one">
+			<h3 id="what-plugin">Phần bổ trợ là gì?</h3>
+			<ul>
+                <li>Phần bổ trợ tiếp sức mạnh cho <strong>các đoạn phim, hình ảnh động và trò chơi</strong>.</li>
+                <li>Chúng được xây dựng <strong>bên ngoài Firefox bởi các công ty</strong> như <a href="http://adobe.com/">Adobe Systems</a> và <a href="http://apple.com/">Apple</a>.</li>
+                <li>Phần bổ trợ <strong>thường không cập nhật</strong> tự động.</li>
+            </ul>
+
+			<h3 id="why-update">Tại sao tôi nên cập nhật Phần bổ trợ của mình?</h3>
+			<ul>
+                <li>Phần bổ trợ cũ có thể làm gián đoạn việc duyệt web và <strong>làm phí thời gian của bạn</strong>.</li>
+                <li>Phần bổ trợ cũ <strong>làm tăng nguy cơ khiến bạn bị tấn công</strong> bởi phần mềm ác ý, virút, và các mối đe dọa khác.</li>
+                <li><strong>Phần bổ trợ được cập nhật sẽ có các cải tiến</strong> để làm web <strong>tốt hơn và an toàn hơn</strong> cho bạn.</li>
+            </ul>
+
+			<img class="screenshot" src="/img/tignish/plugincheck/screenshot.jpg" alt="" />
+
+		</div>
+
+		<div id="column-two">
+			<h3 id="firefox-helps">Firefox có thể giúp tôi như thế nào?</h3>
+			<p>Trong tương lai, Firefox sẽ cập nhật phần bổ trợ cho bạn.  Cho đến lúc đó, bạn nên <strong>thường xuyên kiểm tra trang này</strong> và cập nhật Phần bổ trợ để được an toàn.</p>
+
+			<h3 id="list-plugins">Tôi có các Phần bổ trợ nào?</h3>
+			<p>Chúng tôi tự động dò tìm Phần bổ trợ của bạn ở trên, nhưng bạn cũng có thể dễ dàng <strong>xem tất cả Phần bổ trợ đã cài của mình</strong>:</p>
+            <ol>
+                <li>Mở trình đơn <kbd>Công cụ</kbd>.</li>
+                <li>Chọn <kbd>Tiện ích</kbd>.</li>
+                <li>Nhấn lên thẻ <kbd>Phần bổ trợ</kbd>.</li>
+            </ol>
+
+			<h3 id="howto-disable">Tôi có thể vô hiệu hóa một Phần bổ trợ bằng cách nào?</h3>
+            <ol>
+                <li>Mở trình đơn <kbd>Công cụ</kbd>.</li>
+                <li>Chọn <kbd>Tiện ích</kbd>.</li>
+                <li>Nhấn lên thẻ <kbd>Phần bổ trợ</kbd>.</li>
+                <li>Nhấn lên một phần bổ trợ trong danh sách.</li>
+                <li>Nhấn lên nút <kbd>Vô hiệu hóa</kbd>.</li>
+            </ol>
+			<p><strong>Cẩn trọng:</strong> vô hiệu hóa một Phần bổ trợ có nghĩa là bạn sẽ <strong>không còn làm được</strong> một số thứ nào đó. Ví dụ, nếu vô hiệu hóa Flash, bạn sẽ không thể xem các đoạn phim trên YouTube.</p>
+
+			<h3 id="more-questions">Có câu hỏi khác?</h3>
+			<p><a href="http://support.mozilla.com/">Trang hỗ trợ của chúng tôi</a> có thể giúp bạn <a href="http://support.mozilla.com/kb/Popular+Plugins">tìm hiểu về Phần bổ trợ</a> hoặc <a href="http://support.mozilla.com/kb/Troubleshooting+Plugins">gỡ rối các vấn đề về Phần bổ trợ</a>.</p>
+		</div>
+	</div>
+	<img class="divider-bottom" src="/img/tignish/plugincheck/divider-large-bottom.png" alt="" />
+</div>
+<script type="text/javascript" src="/js/plugincheck.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+$(document).ready(function(){
+	checkPlugins('<?php echo $config['pfs_endpoint']; ?>');
+});
+/* ]]> */
+</script>
+<?php
+
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+
+?>

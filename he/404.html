@@ -1,0 +1,49 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '404: Page Not Found';
+    $body_id    = 'mozilla-com';
+    $breadcrumbs = array(
+                            'Page Not Found' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="/style/rustico/errors.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+    <div id="content">
+
+
+
+<div class="error-notice">
+
+<h3>אנו מצטערים, אבל לא מצאנו את מה שחיפשת.</h3>
+
+<p>הדף או הקובץ שחיפשת לא קיים עם האתר שלנו. אפשרי שלחצת על קישור שאיננו עדכני או שהקלדת כתובת בצורה שגוייה.</p>
+
+<ul class="spaced">
+<li>אם הקלדת את הכתובת בדוק שוב את האיות.</li>
+<li>אם לחצת על קישור ממקום אחר, בבקשה דווח לנו על כך ב־<a href="mailto:webmaster@mozilla.org" title="Page Not Found on Mozilla.com">webmaster@mozilla.com</a> (באנגלית). ספר לנו מאיפה הגעת ומה חיפשת, ואנחנו נעשה את המירב כדי לתקן זאת.</li>
+</ul>
+
+<p>לחילופין, אתה יכול לקפוץ לאחד מהדפים הפופולרים באתר שלנו.</p>
+
+<ul class="spaced">
+<li>האם חיפשת מידע על <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
+<li>או תוכנת הדוא"ל שלנו, <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
+<li>יכול להיות וכדאי להתחיל ב־<a href="/<?=$lang?>/">www.mozilla.com</a>.</li>
+</ul>
+
+</div>
+
+
+
+
+
+
+    </div><!-- end #content div -->
+<?php
+    $disable_js_stats = true;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

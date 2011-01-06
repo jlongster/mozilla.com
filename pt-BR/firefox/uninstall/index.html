@@ -1,0 +1,28 @@
+<?php
+$page_title = 'Pesquisa de desinstalação do Firefox';
+
+@include_once "{$config['file_root']}/includes/headers/firefox/uninstall.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2 id="main-feature-title">Pesquisa de desinstalação do Firefox</h2>
+    <p id="main-feature-contents">Obrigado por oferecer um retorno para ajudar a melhorar o Firefox! Por favor, perceba que os resultados desta pesquisa serão tornados públicos, incluindo quaisquer comentários que você escrever.</p>
+</div>
+
+<div id="main-content">
+<?php
+// JavaScript-based Firefox uninstall survey
+$uninstall_survey_options = array(
+    'noscript_explanation' => 'A Pesquisa de desinstalação do Firefox é fornecida por '
+        .'SurveyGizmo\'s <a href="http://www.surveygizmo.com">online survey '
+        .'software</a>.',
+    'noscript_takesurvey' => 'Ir para a pesquisa.'
+);
+@include_once "{$config['file_root']}/includes/firefox/uninstall-survey.inc.php";
+?>
+</div>
+
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

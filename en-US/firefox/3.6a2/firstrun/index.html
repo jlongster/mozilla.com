@@ -1,0 +1,38 @@
+<?php
+
+$page_title = 'Welcome to Firefox';
+
+@include_once "{$config['file_root']}/includes/headers/3.5/firstrun.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><span>Welcome to</span> <img src="/<?=$lang?>/img/tignish/firstrun/welcome-3-5.png" alt="Welcome to Firefox 3.5" id="main-title" /></h2>
+     <p>Thanks for supporting <a href="http://www.mozilla.org/about/mission.html">Mozilla's mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
+</div>
+
+<div id="main-content">
+<div id="sub-features">
+    <div class="sub-feature" id="open-video">
+        <h3>Time to Get Personal</h3>
+        <p class="first">There are thousands of totally free ways to customize your Firefox to fit exactly what you like to do online.</p>
+        <p><a href="https://addons.mozilla.org" class="blocklevel">Explore Add-ons</a></p>
+    </div>
+    <div class="sub-feature" id="sumo">
+        <h3>Need Help?</h3>
+        <p class="first">Our Support site has plenty of answers, plus a live chat feature to guide you through any tricky spots.</p>
+        <p><a href="http://support.mozilla.com/" class="blocklevel">Visit Firefox Support</a></p>
+    </div>
+    <div class="sub-feature" id="addons">
+    </div>
+    <div class="clear"></div>
+</div>
+
+<p id="follow">Be the difference! Learn how you can help Mozilla better our communities during <a href="http://mozillaservice.org/">Mozilla Service Week.</a></p>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

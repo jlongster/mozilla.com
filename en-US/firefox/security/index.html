@@ -1,0 +1,143 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Browser | The Safest Web Browser | Free Download';
+    $body_id    = 'security';
+    $breadcrumbs = array(
+        $l10n->get('Features') => "/{$lang}/firefox/features/",
+        $l10n->get('Security') => "/{$lang}/firefox/security/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/security.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+    <h2>Firefox Helps You <span>Stay Safe</span></h2>
+    <p>Worried about online security? We’ve got your back.</p>
+    <ul>
+        <li id="security-secure"><a href="#secure">Built-In <span>Security</span></a></li>
+        <li id="security-privacy"><a href="#privacy">Protect Your <span>Privacy</span></a></li>
+        <li id="security-control"><a href="#control">Stay In <span>Control</span></a></li>
+        <li id="security-mission"><a href="#mission">It’s Part of Our <span>Mission</span></a></li>
+    </ul>
+</div>
+
+<div id="main-content">
+
+<div id="secure" class="section">
+    <div class="section-content">
+        <h3>Built-In <span>Security</span></h3>
+        <p>Whether it’s buying a gift, paying your bills or simply signing in to Facebook, it’s important keep your personal info out of the hands of any online bad guys who might be snooping around. Fortunately, Firefox is packed with advanced security features to help you stay safe.</p>
+        <p class="top-link"><a href="#main-feature"><img src="<?=$config['static_prefix']?>/img/firefox/page-top.png" alt="Return to Top"></a></p>
+    </div>
+    <div class="section-image">
+        <?=buildPlatformImage('/en-US/img/firefox/security/screenshot-anti-malware.jpg', 'Anti-Malware screenshot')?>
+    </div>
+    <ul class="section-list">
+        <li>
+            <h4>Instant Website ID</h4>
+            <p>A color-coded system makes it easy to check on suspicious sites and avoid Web forgeries.</p>
+        </li>
+        <li>
+            <h4>Anti-Phishing & Anti-Malware</h4>
+            <p>Firefox protects you from trojan horses and spyware, and warns you away from fraudulent sites.</p>
+        </li>
+        <li>
+            <h4>Secure Software Installation</h4>
+            <p>A secure connection is required before you can install add-ons and other 3rd party software.</p>
+        </li>
+        <li>
+            <h4>Anti-Virus Integration</h4>
+            <p>Firefox integrates elegantly with your computer’s anti-virus software whenever you download.</p>
+        </li>
+    </ul>
+</div>
+
+<div id="privacy" class="section">
+    <div class="section-content">
+        <h3>Protect Your<span>Privacy</span></h3>
+        <p>When you browse, you leave a trail of data that potentially contains all sorts of personal information. We believe this info belongs to you and you alone (and least of all to overzealous advertisers), and have built in features to ensure that’s the case.</p>
+        <p class="top-link"><a href="#main-feature"><img src="<?=$config['static_prefix']?>/img/firefox/page-top.png" alt="Return to Top"></a></p>
+    </div>
+    <div class="section-image">
+        <?=buildPlatformImage('/en-US/img/firefox/security/screenshot-privacy.jpg', 'Private Browsing screenshot')?>
+    </div>
+    <ul class="section-list">
+        <li>
+            <h4>Private Browsing</h4>
+            <p>Sometimes it’s nice to go undercover, so turn this feature on and protect your browsing history.</p>
+        </li>
+        <li>
+            <h4>Clear Recent History</h4>
+            <p>Clear all your private data or just your most recent activity with a few quick clicks.</p>
+        </li>
+        <li>
+            <h4>Forget This Site</h4>
+            <p>Having second thoughts about having visited a certain site? Remove every trace of ever having been there!</p>
+        </li>
+    </ul>
+</div>
+
+<div id="control" class="section">
+    <div class="section-content">
+        <h3>Stay In <span>Control</span></h3>
+        <p>The online world is always changing, which is why we give you easy-to-use tools to let you adapt and make smart choices as you go.</p>
+        <p class="top-link"><a href="#main-feature"><img src="<?=$config['static_prefix']?>/img/firefox/page-top.png" alt="Return to Top"></a></p>
+    </div>
+    <div class="section-image">
+        <?=buildPlatformImage('/en-US/img/firefox/security/screenshot-plugins.jpg', 'Plugins screenshot')?>
+    </div>
+    <ul class="section-list">
+        <li>
+            <h4>Plugin Check</h4>
+            <p>Outdated 3rd party plugins can be a major risk, so we made it easy to find out what to update. <a href="/<?=$lang?>/plugincheck/">Check your plugins.</a></p>
+        </li>
+        <li>
+            <h4>Parental Controls</h4>
+            <p>Enforce parental control settings you’ve entered on Windows 7 to stop unwanted downloads and more.</p>
+        </li>
+        <li>
+            <h4>Customized Security Settings</h4>
+            <p>Control the level of scrutiny you’d like Firefox to give a site with a variety of customized settings.</p>
+        </li>
+    </ul>
+</div>
+
+<div id="mission" class="section">
+    <div class="section-content">
+        <h3>It’s Part of Our <span>Mission</span></h3>
+        <p>Mozilla is a non-profit organization with the goal of making the Web better for everyone. We’re not trying to make money off our users – we just want you to have the best possible experience online, and that includes keeping you and your personal information safe and private.</p>
+        <p class="top-link"><a href="#main-feature"><img src="<?=$config['static_prefix']?>/img/firefox/page-top.png" alt="Return to Top"></a></p>
+    </div>
+    <div class="section-image">
+        <img alt="Communtity icon" src="/img/firefox/security/community.png">
+    </div>
+    <ul class="section-list">
+        <li>
+            <h4>Commitment to Your Privacy</h4>
+            <p>Firefox adheres to a strict privacy policy that prevents us from tracking who you are or what you do online. <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Read the policy.</a></p>
+        </li>
+        <li>
+            <h4>The Mission Matters</h4>
+            <p>Our mission guides the way we make Firefox, meaning we always make decisions based on your needs first. <a href="http://www.mozilla.org/about/mission.html">Learn more.</a></p>
+        </li>
+    </ul>
+</div>
+
+
+</div><!-- end #main-content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

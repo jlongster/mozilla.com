@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "关于“一键获取站点标识信息”";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>关于“一键获取站点标识信息”</h2>
+    <p>Firefox 3 提供了一个按钮，能帮助您知道当前所连接站点的标识信息。</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">此特性允许用户浏览当前浏览的网站是否提供了标识信息、验证者是谁、以及该网站是否保护用户信息免受窃听。您只需要点击地址栏左边的站点图标（或者同时按下  Shift-Tab-Enter），就可以访问这个网站的标识信息。</p>
+
+<h3>常见问题</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">标识信息的不同级别是什么意思？</h4>
+    <div class="expander-content">
+        <p>通过“passport officer” 图标的改变来标识该站点提供的标识信息的级别。</p>
+        <p class="site-id site-id-1">此网站未提供标识信息。</p>
+        <p class="site-id site-id-2">此网站提供了基本的标识信息，并且保护你的私人信息免受窃听。</p>
+        <p class="site-id site-id-3">此网站提供了全部并且经过验证了的关于所有者的标识信息，并且保护你的私人信息免受窃听。</p>
+        <p class="site-id site-id-4">此网站已经被列为攻击或伪造的站点。提供私人信息，甚至访问，都可能给你造成伤害。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">为什么不是所有的网站都提供验证过的标识信息？</h4>
+    <div class="expander-content">
+        <p>互联网上的大多数网站并不要求访问者提供私人或财务信息，并且认为没有必要来承担提供核实身份信息和窃听保护的成本。</p>
+        <p>要求用户提供私人或财务信息，或者生成是政府或商业机构的网站，应该始终严格证明自己，并且保护用户信息免受窃听。</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">与没有标识自己的网站发生商务活动安全吗？</h4>
+    <div class="expander-content">
+        <p>决定相信谁首先要知道你在和谁谈话，但这并不是一切。没有提供标识信息，没有保护用户信息的网站让你产生风险，应该被认为是不安全的；但是即使严格证明自己的网站仍然可能与你有害，或者宽松的网站安全。</p>
+        <p>就像在现实世界中，与不了解和不信任的网站产生交互时应该保持谨慎。了解网站已经严格证明自己后，会成为您作出信任决定的一个因素。</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mozilla 是否验证每一个网站的信息？</h4>
+    <div class="expander-content">
+        <p>标识网站的信息并不是 Mozilla 验证的。Firefox，和其他浏览器一样，依靠一批值得信赖的，称为“证书颁发机构”，验证网站信息并颁发标识证书的公司。 这些公司必须接受 <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA 证书政策</a>。除此之外，还需要证书颁发机构提供第三方审计，以确认他们没有颁发不适当的证书。</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

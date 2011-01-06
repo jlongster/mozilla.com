@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Geolociranje u Firefoxu";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Geolokacijsko pretraživanje</h2>
+    <p>Kako biste pronašli relevantnije i korisnije informacije, Firefox može javiti web stranicama gdje se nalazite.
+    Cilj je učiniti Web još pametnijim &ndash; a sve se obavlja na način koji u potpunosti poštuje vašu privatnost.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Isprobajte sami!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Često postavljana pitanja</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kakvo je to geolokacijsko pretraživanje?</h4>
+    <div class="expander-content">
+        <p>Web stranice koje koriste geolokacijsko pretraživanje će vas upitati gdje se nalazite, kako bi vam isporučile relevantnije informacije ili uštedjele vrijeme dok ih tražite. Pretpostavimo da tražite pizzu u restoranu u vašem području. Web stranica će vas moći upitati da joj otkrijete svoju lokaciju kako bi vam pretraživanjem pojma “pizza” mogla dati konkretne odgovore, bez unosa dodatnih informacija.</p>
+        <p>Ili, ako izrađujete plan puta do određenog mjesta, web stranica će znati otkuda krećete, stoga jedino što trebate učiniti jest upisati vaše odredište.</p>
+        <p>Ova usluga je u potpunosti opcionalna &ndash; Firefox ne otkriva vašu lokaciju bez vašeg odobrenja &ndash; a sve funkcionira na način koji u potpunosti poštuje vašu privatnost. Kao i svi ostali elementi Firefoxa, usluga se temelji na otvorenim standardima, kako bi se razvojnim programerima olakšalo njezino usvajanje.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kako to funkcionira?</h4>
+    <div class="expander-content">
+        <p>Kada posjetite geolokacijsku web stranicu, Firefox će vas upitati želite li otkriti svoju lokaciju.</p>
+        <p>Ako odobrite otkrivanje, Firefox će prikupiti informacije o obližnjim bežičnim pristupnim točkama i IP adresu vašeg računala. Nakon toga, Firefox te informacije šalje zadanom pružatelju geolokacijskih usluga, Google Location Servicesu, kako bi se približno odredila vaša lokacija, koja se kasnije šalje web stranici koju ste posjetili.</p>
+        <p>Ako ne odobrite otkrivanje lokacije, Firefox neće učiniti ništa.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Koliko je precizno određivanje lokacije?</h4>
+    <div class="expander-content">
+        <p>Preciznost uvelike varira od lokacije do lokacije. Na nekim će mjestima naši pružatelji usluga biti u mogućnosti odrediti vašu točnu lokaciju unutar nekoliko metara. Međutim, na nekim drugim mjestima, vašu će lokaciju teže odrediti. Sve lokacije koje odrede naši pružatelji usluga su tek procijene, stoga ne jamčimo preciznost određenih lokacija. Molimo vas da ove informacije ne koristite u hitnim slučajevima. Uvijek upotrijebite zdrav razum.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Koje se informacije šalju i kome se šalju? Kako je moja privatnost zaštićena?</h4>
+    <div class="expander-content">
+        <p>Vaša privatnost nam je iznimno važna, stoga Firefox nikad ne otkriva vašu lokaciju bez prethodnog odobrenja. Kad posjetite stranicu koja traži vaše informacije, prije bilo kakvog otkrivanja informacija toj stranici ili našim pružateljima usluga, bit ćete upitani za potvrdu.</p>
+        <p>Prema zadanim postavkama, Firefox koristi Google Location Services za određivanje vaše lokacije, šaljući pritom:</p>
+        <ul>
+            <li>IP adresu vašeg računala,</li>
+            <li>informacije o obližnjim bežičnim pristupnim točkama i</li>
+            <li>nasumični klijentski identifikator, kojeg dodijeljuje Google i koji istječe svaka 2 tjedna.</li>
+        </ul>
+        <p>Za potpuni opis informacija koje Firefox prikuplja i koristi, molimo vas da pogledate <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefoxovu politiku privatnosti</a> (na engleskom jeziku).</p>
+        <p>Google Location Services tada vraća procijenjenu geolokaciju (na primjer, geografsku širinu i dužinu).  Za potpuni opis informacija koje Google prikuplja i koristi, molimo vas da pogledate <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation politiku privatnosti</a> (na engleskom jeziku).</p>
+        <p>Da bi se zaštitila vaša privatnost, informacije se šalju putem šifrirane veze. Kad Firefox dobije informacije o vašoj lokaciji, šalje ih web stranici koja ih je zatražila. U niti jednom trenutku se kolačići, te naziv ili lokacija web stranice koju posjećujete, ne otkrivaju Google Location Servicesu.</p>
+        <p>Mozilla i Google neće nikad iskoristiti informacije prikupljene putem Google Location Servicesa da bi vas identificirali ili špijunirali.</p>
+        <p>Za dodatne informacije o tome što određena web stranica čini s vašim lokacijskim informacijama, molimo vas da pogledate politiku privatnosti te stranice.</p>
+        <p>Za dodatne informacije o vašoj privatnosti, također biste trebali pročitati:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Politiku privatnosti Mozille Firefox</a> (na engleskom jeziku)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Googleovu politiku privatnosti</a> (na engleskom jeziku)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Prati li me netko dok pretražujem Web?</h4>
+    <div class="expander-content">
+        <p>Ne. Firefox traži lokaciju samo kad ju zatraži web stranica, a lokaciju otkriva samo uz odobrenje korisnika. Firefox ne prati niti pamti vašu lokaciju dok pretražujete Web.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kako mogu poništiti dopuštenje dano nekoj stranici?</h4>
+    <div class="expander-content">
+        <p>Ako ste Firefoxu dali dopuštenje da uvijek otkriva vašu lokaciju određenoj stranici, te se kasnije predomislili, dopuštenje možete veoma lako poništiti. Evo kako:</p>
+        <ul>
+            <li>Otvorite stranicu kojoj ste dali dopuštenje</li>
+            <li>Otvorite izbornik <em>Alati</em>, potom odaberite <em>Informacije o stranici</em></li>
+            <li>Označite karticu <em>Dopuštenja</em> tab</li>
+            <li>Promijenite postavku u <em>Dijeli lokaciju</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kako mogu obrisati “nasumični identifikacijski broj klijenta”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Otvorite izbornik <em>Alati</em>, potom odaberite <em>Očisti skorašnju povijest</em></li>
+            <li>Kliknite na strelicu <em>Detalji</em></li>
+            <li>Provjerite da je stavka <em>Kolačići</em> označena</li>
+            <li>Kliknite na <em>Očisti odmah</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kako mogu trajno isključiti geolokacijsko pretraživanje?</h4>
+    <div class="expander-content">
+        <p>Geolokacijsko pretraživanje u Firefoxu je uvijek opcionalno. Nikakve lokacijske informacije se ne šalju bez vašeg dopuštenja. Ako želite trajno isključiti ovu mogućnost, molimo vas da pratite sljedećih nekoliko koraka:</p>
+        <ul>
+            <li>U adresnoj traci upišite <code>about:config</code></li>
+            <li>Upišite <code>geo.enabled</code></li>
+            <li>Dvaput kliknite na osobitost <em>geo.enabled</em></li>
+            <li>Geolokacijsko pretraživanje je sada isključeno</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Gdje se nalazim?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! Došlo je do greške prilikom određivanja vaše pozicije.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

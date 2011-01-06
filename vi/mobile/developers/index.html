@@ -1,0 +1,54 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Phát triển cho Di động";
+
+    $pageid = "mobile-developers";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Phát triển cho Di động</h2>
+    <p>Đã đến lúc 'di động hóa'. Đây là những thứ mà bạn có thể giúp.</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang,'developers')?>
+
+<div id="main-content">
+
+<h4 class="first">Theo dõi tiến trình của chúng tôi</h4>
+
+<p>Nhận cập nhật và thông tin mới nhất về di động. <a href="/<?=$lang?>/newsletter/about_mobile/">Đăng kí theo dõi thư tin about:mobile</a>.</p>
+
+<h4>Xây dựng các trang và chương trình thúc đẩy công nghệ Web mới nhất</h4>
+
+<h5>Trung tâm Nhà phát triển Mozilla cho Di động</h5>
+<p>Lấy các tài liệu, công cụ và mã nguồn mà bạn cần để sáng tạo cho di động. <a href="https://developer.mozilla.org/En/Mobile">Tìm hiểu thêm</a>.</p>
+
+<h5>Wiki Di động</h5>
+<p>Xem các yêu cầu và bài tập thực tế tốt nhất cho việc chạy và thử nghiệm Firefox cho di động. <a href="https://wiki.mozilla.org/Fennec">Tìm hiểu thêm</a>.</p>
+
+<h5>Chương trình Nhận biết Vị trí</h5>
+<p>Đặt mọi người ở đúng đường đi và xây dựng các chương trình Định vị Địa lí. <a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Tìm hiểu thêm</a>.</p>
+
+<h4>Phát triển các tiện ích sáng tạo</h4>
+<p>Firefox cho Maemo và Windows Mobile (beta) đều hỗ trợ tiện ích. Thật ra, các tiện ích đó có thể đều dùng được trên cả hai nền tảng. Do đó, hãy ra ngoài và 'di động' đi nào! Đây là danh sách các tài nguyên hữu ích:</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Cơ bản về Phần mở rộng</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Bài tập Thực tế Tốt nhất cho Phần mở rộng</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface">Bài tập Thực tế Tốt nhất cho Giao diện Người dùng</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture">Tổng quan Cấu trúc</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Ví dụ Mã nguồn</a></li>
+</ul>
+
+<h4>Giúp xây dựng Firefox cho Di động</h4>
+<p>Sự trợ giúp của bạn là yếu tố sống còn cho sự thành công của Firefox.  Hãy cung cấp phản hồi trên kênh IRC của chúng tôi (irc.mozilla.org, #mobile), <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">tham gia những buổi gặp mặt các nhà phát triển của chúng tôi vào mỗi thứ Tư</a>, hay thậm chí nếu có thì vui lòng <a href="https://bugzilla.mozilla.org/">báo cáo lỗi</a>.</p>
+
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

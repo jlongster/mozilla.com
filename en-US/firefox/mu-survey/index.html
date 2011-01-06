@@ -1,0 +1,32 @@
+<?php
+$page_title = 'Firefox Upgrade Survey';
+
+@include_once "{$config['file_root']}/includes/headers/firefox/surveygizmo.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2 id="main-feature-title">Firefox Upgrade Survey</h2>
+    <p id="main-feature-contents">We're sorry you don't want to upgrade 
+    to Firefox 3.6.  Please fill out this simple survey to help us 
+    understand why you're choosing not to upgrade.</p>
+</div>
+
+<div id="main-content">
+<?php
+// JavaScript-based SurveyGizmo
+$surveygizmo = array(
+    'js_src' => 'http://app.sgizmo.com/s/survey_js2.php?id=CFK48L4HTMRYW39MRC4N8JPY0IZ5CP-177507',
+    'noscript_href' => 'http://www.surveygizmo.com/s/177507/cfk48',
+    'noscript_explanation' => 'The Firefox Update Survey is powered by '
+        .'SurveyGizmo\'s <a href="http://www.surveygizmo.com">online survey '
+        .'software</a>.',
+    'noscript_takesurvey' => 'Please take my survey now.'
+);
+@include_once "{$config['file_root']}/includes/firefox/surveygizmo.inc.php";
+?>
+</div>
+
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>Kio estas nova en <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Riglu vian sekurzonon</h3>
+        <p>Firefox 4 inkluzivas grandajn efikecajn plibonigojn, inter kiuj troviĝas nia tute nova motoro de JavaScript JägerMonkey.  Pli rapida starto, bildigo kaj ŝargado de paĝoj estas trajtoj kiujn vi tuj rimarkos.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Dividi impresojn »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Notoj pri livero »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Sperti mem la montradon »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3D en la reto</h4>
+        <p>WebGL alportas 3Dajn grafikojn al Firefox, malfermante por disvolvigantoj la pordon al kreado de vivoplenaj ludoj, al novaj spertoj kaj manieroj montri aferojn en la reto.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Fabelaj tiparoj</h4>
+        <p>La kapabloj de OpenType de Firefox 4 donas al fasonistoj kaj disvolvigantoj pli da kontrolo super aro de tiparaj trajtoj, kiel kunŝovo aŭ ligado, por povi krei sorĉe belajn retejojn.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Plibonigado de formularoj</h4>
+        <p>Firefox 4 igas formularojn ne nur belaj, sed ankaŭ permesas krei ilin ege simple.  Trajtoj kiel la nova listo de atributoj kiuj ebligas aŭtoplenigadon kaj validigadon de formularoj de HTML5 kune kun la nova Formulara API kadukigas la ĝenan disvolvigadon kaj kreadon de formularoj.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Poŝtelefona bildsimbolo" />
+        <h4>Ĉu vi jam havas Firefox 4 betan?</h4>
+        <h5>Nun portu ĝin kun vi.</h5>
+        <p>Elŝuti Firefox en via Android aŭ Nokia N900 poŝtelefonoj. Ĝuu viajn plej ŝatatajn trajtojn, ekzemple Sync, Aldonaĵojn kaj la Mirindan strion kien ajn vi iras.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">En la poŝtelefono! — Senpage</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Ĉu vi bezonas helpon?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Niaj helpopaĝoj</a> enhavas respondojn kaj konsilojn specifajn por Firefox 4 beta.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

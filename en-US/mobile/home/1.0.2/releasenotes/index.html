@@ -1,0 +1,216 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Home 1.0.2 for iPhone Release Notes';
+    $body_id    = 'firefox-home-relnotes';
+    $breadcrumbs = array(
+		"Mobile" => "/{$lang}/mobile",
+        "Release Notes" => "",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    <script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox Home 1.0.2 for iPhone <span>Release Notes</span></h2>
+    <p><em>v.1.0.2, released September 18, 2010</em></p>
+    <p>
+      Firefox Home, a free application for the iPhone and iPod touch, provides
+      access to your desktop history, bookmarks and open tabs on your iPhone.
+      It's not a Web browser itself, but with it you can get up and go and have
+      everything waiting for you on your iPhone. Firefox Home is secure from
+      end-to-end so your data is always safe. And, of course, it's free.
+    </p>
+    <p>
+      Learn how we're bringing parts of the Firefox experience to mobile
+      devices. Check out the features, known issues and
+      <a href="/<?=$lang?>/mobile/home/faq/">frequently asked questions</a>
+      about Firefox Home 1.0.2 for the iPhone and iPod touch. As
+      always, you’re encouraged to
+      <a href="http://support.mozilla.com/en-US/questions?tagged=FxHome">ask a
+      question</a>, or
+      <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Weave&amp;component=Firefox+Home">file a bug</a> in Bugzilla.
+    </p>
+</div>
+
+<div id="main-content">
+
+	<div id="sidebar">
+		<div id="get-involved">
+			<h3>Get Involved</h3>
+			<p>Want to become part of the Mozilla project?</p>
+			<a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
+		</div>
+	</div>
+
+      <div id="whatsnew2" class="expander expander-odd">
+        <h3 class="expander-header">What’s new in Firefox Home 1.0.2</h3>
+        <div class="expander-content">
+          <p>For devices or platforms where we’re unable to provide the full
+          Firefox browser (either technically or due to policy), Firefox Home
+          aims to provide users part of the Firefox experience with on-the-go
+          instant access to their personal Firefox history, bookmarks and open tabs on their iPhone or iPod touch.</p>
+          <p>Firefox Home is built upon open, simple and powerful REST APIs that you can use for your own applications! The <a href="https://wiki.mozilla.org/Labs/Weave/User/1.0/API">User API</a> enables account creation, authentication and other account-related actions. The <a href="https://wiki.mozilla.org/Labs/Weave/Sync/1.0/API">Sync API</a> handles data storage and retrieval. These APIs work hand-in-hand to provide a complete end-to-end synchronization service. All of our code is open source, including that for the server, which means you can even run your own servers if you want.</p>
+          <p>For more information about Firefox Home, check out our progress
+          and updates <a href="https://wiki.mozilla.org/Mobile/firefoxhome">here</a>.</p>
+          <p>Highlights include:</p>
+          <ul>
+            <li>Use Firefox Home in 16 different languages, including French,
+            German, Japanese, Polish and Spanish. <a href="https://wiki.mozilla.org/Mobile/firefoxhome#Supported_Languages">See all supported languages</a></li>
+            <li>Want to visit a website that’s not in your bookmarks or
+            history? Only remember part of the URL? You can now type in the
+            site’s URL into the Search Bar and Firefox Home will help you get
+            there</li>
+            <li>For advanced users running their own Firefox Sync server, you
+            can now set up Firefox Home to connect to your custom server</li>
+            <li>One-way refresh of your Firefox desktop history, bookmarks and open tabs to your iPhone or iPod touch</li>
+            <li>Instant access to your open tabs, just the way you left them on your PC</li>
+            <li>Awesome Bar Search to get you to your recently and frequently visited sites with minimal typing</li>
+            <li>Instant access to your bookmarks to get you to important sites by tapping instead of typing</li>
+            <li>End-to-end encryption so only you have access to your Firefox data</li>
+            <li>Access to your Settings to see what data has been ported, as well as the option to Refresh at any time</li>
+            <li>Useful Help button on the login page for additional
+            support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="system-requirements" class="expander expander-even">
+        <h3 class="expander-header">System Requirements</h3>
+        <div class="expander-content">
+          <p>You must have a <a href="/<?=$lang?>/firefox/sync/">Firefox
+          Sync</a> account to set up and use Firefox Home on your iPhone.
+          <a href="http://www.youtube.com/watch?v=ZL7DA82Lyhk">Watch the Firefox Sync setup video</a>
+          for additional instructions. You must have an Apple iPhone or Apple
+          iPod touch to use Firefox Home. Firefox Home requires OS 3.1 or
+          higher.</p>
+        </div>
+      </div>
+        <div id="downloading" class="expander expander-odd">
+          <h3 class="expander-header">Downloading</h3>
+          <div class="expander-content">
+            <p>Download Firefox Home directly from your iPhone or iPod touch,
+            or by visiting the <a
+            href="http://itunes.com/apps/firefoxhome">iTunes Store</a>. You can
+            also go to the <a href="/<?=$lang?>/mobile/home/">Firefox Home webpage</a> to download, get Setup instructions and learn more about the features and benefits of Firefox Home for the iPhone.</p>
+          </div>
+        </div>
+        <div id="known-issues" class="expander">
+          <h3 class="expander-header">Known Issues</h3>
+          <div class="expander-content">
+            <ul>
+              <li>It may take a few moments for Firefox Sync to sync your
+              desktop data with Firefox Home.
+              <a href="http://www.youtube.com/watch?v=ZL7DA82Lyhk">Watch the setup video for more details</a></li>
+              <li>Firefox Home does not sync activity back from the iPhone to the cloud. It currently does a one-way sync of your data from the cloud to the iPhone.</li>
+              <li>Firefox Home provides you with your Firefox desktop history, bookmarks and open tabs. It does not provide you with passwords that you might have stored on your desktop.</li>
+              <li>Firefox Home works on older devices, but the experience won't be as awesome as it would on a 3G or 3GS</li>
+              <li>Those who use Firefox Home on an iPhone 3G, 1st or 2nd generation iPod touch device that have more than 2000 bookmarks may cause the app to run out of memory</li>
+            </ul>
+          </div>
+        </div>
+        <div id="faq" class="expander expander-even">
+          <h3 class="expander-header">Frequently Asked Questions</h3>
+          <div class="expander-content">
+            <h4>About Firefox Home</h4>
+            <ol>
+              <li><h5>What is Firefox Home?</h5>
+                <p><a href="/<?=$lang?>/mobile/home/">Firefox Home</a> is a free application that lets you have access to your Firefox desktop history, bookmarks and open tabs on your iPhone.</p></li>
+              <li><h5>Does this mean Firefox will be available on the iPhone?</h5>
+                <p>No. We do not have plans to ship the full Firefox browser for the iPhone. Due to constraints with the OS environment and distribution, we cannot provide users Firefox for the iPhone.</p></li>
+              <li><h5>What happened to Weave Sync?</h5>
+                <p>The "Weave Sync" project from Mozilla Labs has been renamed to Firefox Sync and is now being incorporated into the Firefox roadmap. See <a href="http://mozillalabs.com/blog/2010/06/firefox-sync-graduates-from-mozilla-labs/">this blog post</a> for more details.</p></li>
+              <li><h5>What is the difference between Firefox Sync and Firefox Home?</h5>
+                <p>Firefox Home is a native iPhone application that does a one-way data refresh of your Firefox history, bookmarks and open tabs to your iPhone, whereas <a href="https://addons.mozilla.org/en-US/mobile/addon/10868/">Firefox Sync</a> is an add-on for Firefox that does a two-way sync of a user’s Firefox
+history, bookmarks, open tabs and saved passwords between their desktop and Firefox mobile-enabled devices. Learn more about their functions, similarities and differences <a href="http://blog.mozilla.com/blog/2010/06/16/your-firefox-in-the-cloud-firefox-sync-and-firefox-home/">here</a>.</p></li>
+              <li><h5>How does the viewer in Firefox Home work?</h5>
+                <p>The integrated Web viewer uses the native iPhone webview capability. Alternatively, you can also open any link in Safari.</p></li>
+              <li><h5>Is all of my Firefox history synced to the iPhone? If not, how much of it?</h5>
+                <p>We sync the 2000 most frequently or recently visited history items every 24 hours. In the interim, we tack on any history changes within that period.</p></li>
+              <li><h5>How often is the data synced to my iPhone?</h5>
+                <p> Data is synced to the phone every time you launch the app. We currently do not auto-sync as the most common use case is a launch-use-quit scenario, especially in the predominantly single-tasking world of apps on the iPhone. Users always have the option of forcing a refresh from the Settings tab.</p></li>
+              <li><h5>Does it sync efficiently? I donct have an unlimited data plan for my iPhone.
+Should I be concerned?</h5>
+                <p>We only sync changes since the last update for bookmarks and open tabs. And history is limited to about 2000 items. And there is no auto-sync. The median disk space used by Sync users is about 2-3 MB total for all of their Sync data and Home only has a subset of that.</p></li>
+              <li><h5>How is Firefox Home licensed?</h5>
+                <p>
+<a href="/<?=$lang?>/mobile/home/">Firefox Home</a> is licensed under the <a href="http://www.mozilla.org/MPL/">MPL</a>.</p></li>
+              <li><h5>I am having issues with Firefox Home. How do I troubleshoot?</h5>
+                <p>Please visit the the <a href="http://support.mozilla.com/1/firefox-home/1.0/iPhone/en-US/">Firefox Home Support</a> page.</p></li>
+              <li><h5>Why is Firefox Home rated 17+?</h5>
+                <p>Apple rates applications worldwide based on their content,
+                and determines what age group each is appropriate for.
+                According to the
+                <a href="http://en.wikipedia.org/wiki/IPhone_OS_version_history">iPhone OS 3.0</a> launch event, the iPhone will
+                allow blocking of objectionable apps in the iPhone's settings.
+                Apple rates all applications that provide users access to the
+                Web 17+, due to content accessible on the internet. For this
+                reason, certain applications with little or no objectionable
+                content, such as Firefox Home, have a 17+ rating.</p></li>
+            </ol>
+
+            <h4>Security</h4>
+            <ul>
+              <li><h5>How is my data protected?</h5>
+                <p>Your information is encrypted and stored in the Mozilla servers. Only you can access data with your <a href="http://support.mozilla.com/en-US/kb/What+is+Firefox+Sync#What_s_the_secret_phrase_">Secret Phrase</a>. Firefox puts security as a top priority and syncing is no exception. Learn more about this and see a diagram <a href="http://blog.mozilla.com/blog/2010/06/16/your-firefox-in-the-cloud-firefox-sync-and-firefox-home/">here</a>.</p></li>
+              <li><h5>What is the secret phrase for?</h5>
+                <p>The secret phrase is used to encrypt/decrypt all of your data on your clients. This ensures that your data is only ever accessible to you and all that the server stores is an encrypted block of data.</p></li>
+              <li><h5>What encryption algorithm do Firefox Home and Firefox Sync use? Is it proven to be secure?</h5>
+                <p>Firefox Home and Firefox Sync use the AES encryption algorithm with a 256 bit key in a mode that requires an initialization vector for every decryption. Additionally, all client server communications are over SSL. The cryptography we use is in compliance with NIST requirements.</p>
+            </ul>
+
+            <h4>Downloading &amp; Devices</h4>
+            <ul>
+              <li><h5>How do I setup the Firefox Home app?</h5>
+                <p>Follow these simple steps located on the <a href="http://support.mozilla.com/1/firefox-home/1.0/iPhone/en-US/">Firefox Home Support</a> page.</p></li>
+              <li><h5>Why do I need a Firefox Sync account to install Firefox Home?</h5>
+                <p><a href="/<?=$lang?>/mobile/home/">Firefox Home</a> uses the sync capabilities from the <a href="https://addons.mozilla.org/en-US/mobile/addon/10868/">Firefox Sync add-on</a> to access your Firefox browser information and sends it to the cloud, where it is accessed from your iPhone.</p></li>
+              <li><h5>What platforms and devices will it be available for?</h5>
+                <p>Firefox Home has currently been developed for all generations of Apple iPhone and Apple iPod touch. Although it works on older devices, the experience won’t be as awesome as it is on 3G or 3GS.</p></li>
+              <li><h5>What about an iPad version?</h5>
+                <p>Firefox Home 1.0 for the iPhone will work on the iPad, but it is not optimized for the iPad.</p></li>
+              <li><h5>How does it work with iPhone 4.0 / iOS 4.0? Does it take advantage of
+multi-taksing? Will it sync in the background?</h5>
+                <p>Home works on both iPhone 4.0 and iOS 4.0. However, as with any new technology (in this case both h/w and s/w), we should expect to learn more about the platform quirks with more adoption. Home currently does not take advantage of multi-tasking. It currently does not sync in the background either.</p></li>
+            </ul>
+
+            <h4>Using Firefox Home</h4>
+            <ul>
+              <li><h5>How do I know what data is available on my iPhone?</h5>
+                <p>Go to your Settings tab to see your bookmarks, tabs and history entries that have been brought over to your iPhone. You can refresh your data by tapping the Refresh button.</p></li>
+            </ul>
+
+            <h4>Features</h4>
+            <ul>
+              <li><h5>What are the main features of Firefox Home?</h5>
+                <p>Get up and go and have exactly what you’re looking for
+                waiting on your iPhone: Your Firefox history, bookmarks, open
+                tabs, Awesome Bar -- just the way you left it on your desktop.
+                With Firefox Home, you’ll never have to retype long and painful
+                URLs or spend time searching for your favorite websites. You
+                can even send these links to friends via email. In the event
+                that you do stumble upon something new, you can type in and
+                visit a URL you've never been to before on your desktop. All of
+                your data is encrypted. Your Secret Phrase ensures that only you
+                have access to your data.</p></li>
+             </ul>
+
+            <h4>Developer Questions</h4>
+            <ul>
+              <li><h5>What is the technology platform that powers Firefox Home?</h5>
+                <p>Like Firefox Sync, Firefox Home is built on an open, simple and powerful set of REST APIs that you can use for your own applications. The <a href="https://wiki.mozilla.org/Labs/Weave/User/1.0/API">User API</a> enables account creation, authentication and other account-related actions. The <a href="https://wiki.mozilla.org/Labs/Weave/Sync/1.0/API">Sync API</a> handles data storage and retrieval. These APIs work hand-in-hand to provide a complete end-to-end synchronization service. All of our code is open source, including that for the server, which means you can even run your own servers if you want.</p></li>
+             </ul>
+          </div>
+        </div>
+    <div id="release-notes-footer"></div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

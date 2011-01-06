@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>A <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /> újdonságai</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Kösse be a biztonsági öveket</h3>
+        <p>A Firefox 4 komoly teljesítménynövekedést biztosít a legújabb JägerMonkey JavaScript háttérrendszerrel. A gyors indulástól és grafikus megjelenítéstől egészen a felgyorsított oldalbetöltésig azonnal észrevető a sebességnövekedés.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Visszajelzés »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Kiadási megjegyzések »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Tapasztalja meg »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3D az interneten</h4>
+        <p>A WebGL elhozza a 3D grafikát a Firefox böngészőre, amellyel megnyitja a lehetőséget a fejlesztők számára, hogy újszerű megjelenésű és élénk játékok készülhessenek az internetre.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Elbűvölő betűkészletek</h4>
+        <p>A Firefox 4 OpenType betűkészletek támogatása és az olyan funkciók, mint például az alávágás vagy a ligatúrák, nagyobb szabadságot biztosítanak a designereknek és a fejlesztőknek, hogy gyönyörű weboldalakat készíthessenek.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Fejlődő űrlapok</h4>
+        <p>A Firefox 4 segítségével tetszetős űrlapok készíthető rendkívül egyszerűen. Az új lista attribútum lehetőséget biztosít az automatikus kiegészítésre és a HTML5 űrlap-ellenőrzésre. Az új Form API olyan eszköztárat biztosít, amellyel a bosszantó űrlapfejlesztések elfelejthetőek.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Firefox 4 beta böngészőt használ?</h4>
+        <h5>Most akár magával is viheti!</h5>
+        <p>Töltse le a Firefox böngészőt Android vagy Nokia N900 telefonra. Használja és élvezze kedvenc funkcióit amerre csak jár: a Sync-ket, a Kiegészítőket és az Intelligens címsort.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Gyerünk Mobile! — ingyenes</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Segítségre van szüksége?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />A támogatói oldalunkon</a> válaszokat és tanácsokat kaphat a Firefox 4 beta verziójával kapcsolatos kérdéseire.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

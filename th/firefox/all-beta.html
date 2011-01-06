@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'เว็บเบราว์เซอร์ Firefox | ช่วยพวกเราทดสอบรุ่นทดลองล่าสุด';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>ช่วยทดสอบอนาคตของ Firefox!</h2>
+        <p>Firefox รุ่นทดลองล่าสุดได้เปิดให้ทดสอบแล้ว ลองทดลองใช้ดูแล้วบอกให้เรารู้ว่าคุณคิดอย่างไร!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>ข้อมูลสำคัญมาก</h4>
+        <p class="intro">กรุณาอ่านก่อนดาวน์โหลด</p>
+    </div>
+    <ul>
+        <li>นี่คือซอฟต์แวร์รุ่นทดลอง: คุณอาจจะพบปัญหาความเข้ากันได้กับบางเว็บไซต์และบางส่วนเสริม</li>
+        <li>ถ้าคุณเจอปัญหาใด ๆ กรุณา <a href="http://feedback.mozilla.org/">บอกให้เรารู้</a> หรือ <a href="https://bugzilla.mozilla.org/">รายงานปัญหา</a></li>
+        <li>สำหรับรายละเอียดเพิ่มเติม คุณสามารถอ่าน <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">บันทึกประจำรุ่น</a> และ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">ปัญหาที่ทราบอยู่แล้ว</a> (ภาษาอังกฤษ)</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">คุณไม่ได้สนใจในรุ่นทดลอง? ใช้ <a href="/<?=$lang?>/firefox/">Firefox รุ่นล่าสุด</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

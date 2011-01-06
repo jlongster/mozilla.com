@@ -1,0 +1,40 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox 已升级";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "不，谢谢！";
+    $no_download_button2 = "(让我告诉您原因)";
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        安全警告:
+        </span>
+</h2>
+<h3>
+        这是一个过时的 Firefox 版本。
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>使用这个版本的 Firefox 将会让您更容易遭受网络安全的威胁。</p>
+
+    <p id="main-feature-contents">
+    请<a href="/<?=$lang?>/firefox/">下载最新版本的 Firefox</a>。 它是免费的，而且拥有最新的安全机制，更好的性能和特性。
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

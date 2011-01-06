@@ -1,0 +1,48 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Vörur | Öryggi';
+    $pageid = 'security';
+    
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Öruggasti vafrinn</h2>
+    <p>Firefox verndar persónuupplýsingar þínar og áhugamál frá vonda fólkinu.</p>
+</div>
+
+<?=$fx_dl_box?>
+
+<div id="main-content">
+
+    <div class="security-intro">
+        <h3>Hvernig er það gert?</h3>
+        <p>Hvað gerir Firefox öðruvísi? Í fyrsta lagi erum við með opinn hugbúnað. Það þýðir að hver sem er í heiminum (og við erum með þúsund sérfræðinga sem fylgjast með okkur) getur skoðað kóðann hjá okkur og fundið hvern mögulega veikan blett sem gæti verið í öryggi okkar.</p>
+        <p>Og þegar við fréttum af einhverju vandamáli, þá tökum við til höndunum og lögum það strax. Það er best fyrir þig (og okkur) að laga vandamálið, jafnvel þótt það þýði að við þurfum að viðurkenna að við séum ekki fullkomnir.</p>
+        <p>Einfaldlega þýðir þetta að, <strong>þitt öryggi er í hæsta forgangi hjá okkur.</strong></p>
+    </div>
+
+    <div class="method-madness">
+        <img src="<?=$config['static_prefix']?>/img/tignish/security/key.png" alt="Það er skynsemi í okkar geðveiki" width="150" height="151" />
+        <h3>Það er skynsemi í okkar geðveiki</h3>
+        <p>Enginn elskar Netið meira en við. En svikarar, amagaurar og skotglaðir vírusar eru raunverulegar hættur, þannig að þegar þú ert á vefnum þarftu að geta verndað þig.</p>
+    </div>
+
+    <div class="firefox-comes-in">
+        <h3>Þar kemur Firefox sterkur inn.</h3>
+        <p>Að nota hann er öruggasta leiðin til að vafra á vefnum því:</p>
+        <ul>
+            <li><strong>Við reynum ekki að takast einir á við vandamálið.</strong> Alþjóðlegt samfélag af öryggissérfræðingum eru að vinna dag og nótt við að gera vöfrun þína örugga (þetta er því að þakka því að við erum opinn hugbúnaður). Þetta er líkt því ef hverfisvaktinni væri stjórnað af vel þjálfuðum Ninjum.</li>
+            <li><strong>Við hugsum um þitt öryggi í hverju skrefi.</strong> Öryggissérfræðingar okkar byrja strax að hugsa um og laga hugsanleg vandamál áður en svo mikið sem ein lína af kóða er skrifaður.</li>
+            <li><strong>Við höldum utan um málið.</strong> Við erum sífellt að athuga hættur og gefum út nýjar útgáfur af Firefox til að vera alltaf einu skrefi á undan. Að vinna með opinn hugbúnað þýðir að hver sem er getur hjálpað okkur að finna og laga hugsanlegar veikar hliðar hjá okkur.</li>
+        </ul>
+        <p>Fyrir meiri upplýsingar um hvernig Firefox heldur þér öruggum á netinu, <a href="http://blog.mozilla.com/security" class="external">heimsæktu öryggisbloggið okkar.</a></p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="divider"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

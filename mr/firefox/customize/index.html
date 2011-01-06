@@ -1,0 +1,103 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'एकच आकार सर्वांना लागू होत नाही';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>एकच आकार सर्वांना लागू होत नाही</h2>
+    <p>तुम्ही ज्याप्रमाणे पीज्जा वर टॉपींग करता व फोन मध्ये रींगटोन टाकता. त्याचप्रमाणे वेब मध्ये इच्छिक बदलही करू शकता?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">उत्पादन</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">सुरक्षा</a></li>
+    <li><span>इच्छिक बदल</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% ऑरगॅनीक सॉफ्टवेअर</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">टिप &amp; युक्ति</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">प्रकाशन टिप</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">इतर प्रणाली &amp; भाषा</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>सगळ्यांकरीता ऍड-ऑन</h3>
+        <p>Firefox कडे तुमचा ऑनलाइन अनुभव व तुम्ही ज्याप्रमाणे वेबचा वापर करता ते सुलभ करण्याकरीता अनेक पर्याय आहे. 5,000 पेक्षा जास्त ऍड-ऑन आहेत (अगाऊ ऍड-ऑन जे Firefox ला तुमच्या आवश्यकता पुरविण्यास मदत करते) ज्यामुळे तुमचा फायदा होईल, व ऑनलाइन वापरही आणखी लाभदायी ठरेल.</p>
+        <p>ठराविक सांगायचे झाल्यास? खालिल उदाहरण तपासल्यावर, <a href="https://addons.mozilla.org/<?=$lang?>/firefox/"> संभाव्य कारणास्तव ऍड-ऑन स्थळावर जा.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>सतर्कता &amp; अद्ययावत</h4>
+            <p>या विभागातील ऍड-ऑन पासून, तुम्हाला दिवसभरातील हवामान, खेळ किंवा eBay वरील लिलाव विषयी ताजी बातमी प्राप्त होईल. तुम्ही कुठल्याही स्थळावर असल्यास, रीयल टाईम माहिती तुमच्या ब्राऊजर मध्ये सहज दिसेल.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">सर्व सतर्कता &amp; अद्ययावत ऑड-ऑन करीता भेट द्या.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">उदाहरणार्थ:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" />तुम्ही वेब वर असल्यास eBay व्यापारावर लक्ष ठेवू शकता.</p>
+            <p><span>eBay कॉरपोरेशनचे</span><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Firefox eBay आवृत्ती वापरून पहा</a></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>फोटो, संगीत &amp; चलचित्र</h4>
+            <p>Firefox ला फोटो अपलोडर, संगीत वादक व सर्वगुण संपन्न मल्टिमिडीया वादक या मध्ये रूपांतरीत करा. या सगळ्यांचा अर्थ वेब वर संचार, कार्य, इमेल किंवा शोध करतेवेळी मिडीया नियंत्रण पटलास इच्छिक करणे आहे.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">सर्व फोटो, संगीत &amp; चलचित्र ऍड-ऑन पहा.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">उदाहरणार्थ:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" />ब्राऊजर वरून जवळपास कुठलेही मिडीया वादक नियंत्रीत करा.</p>
+            <p><span>Alex Sirota द्वारे निर्मीत</span><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">FoxyTunes वापरून पहा</a></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>सामाजीक &amp; संपर्क</h4>
+            <p>हे ऍड-ऑन तुम्हाला वेब वरील नविन गोष्टी शोधण्यास मदत करते, ज्यामुळे तुम्ही सर्व उच्च सामाजिक संपर्क स्थाळावर नोंदणीकृत मित्र/मैत्रीणींशी संदेश आदानप्रदान करू शकाल व त्यांच्या संपर्कातही राहु शकाल .</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">सर्व सामाजिक &amp; संपर्क ऍड-ऑन पहा.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">उदाहरणार्थ:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" />नविन स्थळ शोधा, व मित्र/मैत्रीणींशी जुळवणी करून तुमचे विचार व शोध सहभागीय करा.</p>
+            <p><span>StumbleUpon द्वारे निर्मीत</span><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">StumbleUpon वापरून पहा</a></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>सुत्रयोजना &amp; दर्शन</h4>
+            <p>तुमचे संचार फक्त मानक रचना करीता मर्यादीत ठेवू नका. नविन रंग निवडा, ब्राऊजरला वापरणी करीता सोपे करा (मोठे बटण, प्रारंभ करायचे असल्यास) किंवा तुम्हाला हवे तसे पेहराव निवडा.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">सर्व सूत्रयोजना &amp; प्रदर्शन ऍड-ऑन पहा.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">उदाहरणार्थ:</span> <img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" />ज्या वापरकर्त्यांना काळसर सूत्रयोजना आवडते.</p>
+            <p><span>mcdavis941 द्वारे निर्मीत</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">NASA रात्र प्रक्षेपण सूत्रयोजना वापरून पहा</a></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+    $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar', 'download_product' => 'Free Download');
+    echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+    <ul class="add-ons">
+        <li>
+            <h3>ऍड-ऑन</h3>
+            <h5>Firefox स्वतः बनवा</h5>
+            <p><a href="https://addons.mozilla.org/firefox/">सर्व ऍड-ऑन पहा</a></span></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

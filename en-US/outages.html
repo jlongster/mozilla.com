@@ -1,0 +1,22 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Service Outages';
+    $body_id    = 'outages';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/covehead/outages-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    header('HTTP/1.1 503 Service Temporarily Unavailable');
+    header("Retry-After: 120");
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+?>
+<div id="main-feature">
+	<h2>Repairs in Progress</h2>
+	<p>The service you’re looking for is unavailable at the moment. We’ll be back up and running again before long, so please try again soon. Thanks for your patience!</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

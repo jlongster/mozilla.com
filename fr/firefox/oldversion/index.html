@@ -1,0 +1,39 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox a été mis à jour";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Non merci";
+    $no_download_button2 = "Laissez-moi vous dire pourquoi&hellip;";
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Avertissement de sécurité&nbsp;:
+        </span>
+</h2>
+<h3>
+        Votre version de Firefox est obsolète.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>En utilisant cette version, vous êtes vulnérable face aux nouvelles menaces sur le Web.</p>
+
+    <p id="main-feature-contents">
+    Téléchargez <a href="/<?=$lang?>/firefox/">une version récente de Firefox</a>. Rapide et gratuite, elle vous fera bénéficier des toutes dernières améliorations en matière de sécurité et de fonctionnalités.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

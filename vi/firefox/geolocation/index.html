@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Định vị Địa lí trong Firefox";
+
+@include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Duyệt Web Kèm Nhận Biết Vị Trí</h2>
+    <p>Firefox có thể cho các trang web biết vị trí của bạn để bạn có thể tìm các thông tin
+    phù hợp và hữu ích hơn. Đó là cách làm cho Web thông minh hơn
+    &ndash; và được thực hiện theo một cách thức hoàn toàn tôn trọng sự riêng tư của bạn.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Hãy thử ngay!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Câu Hỏi Thường Gặp</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Duyệt Web Kèm Nhận Biết Vị Trí là gì?</h4>
+    <div class="expander-content">
+        <p>Các trang web sử dụng tính năng duyệt web kèm nhận biết vị trí sẽ hỏi bạn đang ở đâu để mang đến cho bạn các thông tin phù hợp hơn, hoặc để giúp bạn tiết kiệm thời gian tìm kiếm. Chẳng hạn như bạn đang tìm một nhà hàng bán phở trong vùng. Một trang web có thể sẽ đề nghị bạn chia sẻ vị trí để chỉ cần gõ "phở" cũng sẽ mang lại câu trả lời mà bạn cần... không cần phải gõ dài dòng hoặc cung cấp thêm thông tin nào nữa.</p>
+        <p>Hoặc, nếu bạn đang tìm đường đi trên bản đồ, trang web sẽ biết bạn đang bắt đầu từ đâu, và tất cả những gì bạn cần làm chỉ là cho trang đó biết nơi bạn muốn đến.</p>
+        <p>Dịch vụ này hoàn toàn là tùy chọn &ndash; Firefox không chia sẻ vị trí của bạn nếu chưa được phép &ndash; và được thực hiện với sự tôn trọng tuyệt đối dành cho sự riêng tư của bạn. Và, cũng như tất cả các thành phần khác của Firefox, nó được tạo ra bằng các chuẩn mở để làm nhẹ bớt phần việc của những nhà phát triển Web.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Nó hoạt động như thế nào?</h4>
+    <div class="expander-content">
+        <p>Khi bạn vào một trang web có nhận biết vị trí, Firefox sẽ hỏi liệu bạn có muốn chia sẻ vị trí hay không.</p>
+        <p>Nếu bạn đồng ý, Firefox sẽ tập hợp thông tin về các điểm truy cập không dây gần đó và địa chỉ IP của bạn. Rồi Firefox sẽ gửi thông tin này tới một nhà cung cấp dịch vụ định vị địa lí mặc định, Dịch vụ Vị trí Google, để ước tính vị trí của bạn. Vị trí ước tính đó sẽ được chia sẻ với trang web trên.</p>
+        <p>Nếu bạn không đồng ý, Firefox sẽ không làm gì cả.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Các vị trí có độ chính xác tới mức nào?</h4>
+    <div class="expander-content">
+        <p>Độ chính xác có thể biến đổi rất lớn.  Ở một vài nơi, nhà cung cấp dịch vụ của chúng tôi có thể cung cấp một vị trí chỉ trong vòng vài mét.  Tuy nhiên, trong các khu vực khác, sai số có thể lớn hơn.  Tất cả các vị trí được trả lại bởi nhà cung cấp dịch vụ chỉ là những ước tính, và chúng tôi không đảm bảo cho độ chính xác của các vị trí được cung cấp đó.  Vui lòng đừng dùng thông tin này cho các tình huống khẩn cấp. Hãy luôn sử dụng theo kinh nghiệm thông thường.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Những thông tin nào được gửi, và gửi tới ai? Sự riêng tư của tôi được bảo vệ như thế nào?</h4>
+    <div class="expander-content">
+        <p>Sự riêng tư của bạn đặc biệt quan trọng đối với chúng tôi, và Firefox không bao giờ chia sẻ vị trí của bạn khi chưa được phép. Khi vào một trang có yêu cầu thông tin, bạn sẽ được hỏi trước khi có bất kì thông tin nào được chia sẻ với trang web đó và nhà cung cấp dịch vụ bên ngoài của chúng tôi.</p>
+        <p>Mặc định, Firefox sử dụng Dịch vụ Vị trí Google để xác định vị trí của bạn bằng cách gửi:</p>
+        <ul>
+            <li>địa chỉ IP của bạn,</li>
+            <li>thông tin về các điểm truy cập không dây gần đó, và</li>
+            <li>một máy định vị ngẫu nhiên, được Google chỉ định, sẽ hết hạn sau mỗi 2 tuần.</li>
+        </ul>
+        <p>Để đọc mô tả đầy đủ về thông tin được thu thập và sử dụng bởi Firefox, vui lòng xem <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Chính sách Riêng tư của Firefox</a> (tiếng Anh).</p>
+        <p>Dịch vụ Vị trí Google sau đó sẽ trả lại vị trí địa lí ước tính của bạn (vd., kinh độ và vĩ độ).  Để đọc mô tả đầy đủ về thông tin được thu thập và sử dụng bởi Google, vui lòng xem <a href="http://www.google.com/privacy-lsf.html" class="external">Chính sách Riêng tư về Định vị Địa lí của Google</a> (tiếng Anh).</p>
+        <p>Thông tin được trao đổi trên một kết nối được mã hóa để bảo vệ sự riêng tư của bạn. Một khi Firefox có thông tin vị trí của bạn, nó sẽ chuyển tới trang web đã yêu cầu. Tên hay địa chỉ của trang web mà bạn vào, cũng như bất kì cookie nào, không bao giờ bị chia sẻ với Dịch vụ Vị trí Google.</p>
+        <p>Cả Mozilla lẫn Google sẽ không bao giờ dùng thông tin được thu thập bởi Dịch vụ Vị trí Google để nhận diện hoặc theo dõi bạn.</p>
+        <p>Để biết thông tin về những gì trang web làm với thông tin vị trí của bạn, vui lòng xem chính sách riêng tư của trang web đó.</p>
+        <p>Để biết thông tin về quyền riêng tư của bạn, vui lòng đọc thêm:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">chính sách riêng tư của Mozilla Firefox</a> (tiếng Anh)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">chính sách riêng tư của Google</a> (tiếng Anh)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Tôi có đang bị theo dõi khi duyệt web không?</h4>
+    <div class="expander-content">
+        <p>Không. Firefox chỉ hỏi vị trí khi có trang web yêu cầu, và chỉ chia sẻ vị trí khi người dùng chấp thuận yêu cầu đó. Firefox không theo dõi hoặc nhớ vị trí của bạn khi bạn duyệt web.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Làm thế nào để tôi hủy bỏ quyền hạn đã trao cho một trang?</h4>
+    <div class="expander-content">
+        <p>Nếu bạn đã cho Firefox quyền luôn cung cấp vị trí của bạn cho một trang nào đó, và sau đó đổi ý, thì bạn có thể dễ dàng hủy bỏ quyền hạn đó. Cách làm như sau:</p>
+        <ul>
+            <li>Đi tới trang mà bạn đã trao quyền</li>
+            <li>Vào trình đơn <em>Công cụ</em>, rồi chọn <em>Thông tin về Trang</em></li>
+            <li>Chọn thẻ <em>Quyền hạn</em></li>
+            <li>Thay đổi thiết lập của <em>Chia sẻ Vị trí</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Làm thế nào để tôi xóa “số định danh ngẫu nhiên”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Vào trình đơn <em>Công cụ</em>, rồi chọn <em>Xóa các Lược sử Gần đây</em></li>
+            <li>Nhấn lên mũi tên <em>Chi tiết</em></li>
+            <li>Hãy chắc chắn rằng <em>Cookie</em> đã được chọn</li>
+            <li>Nhấn lên nút <em>Xóa Ngay</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Làm thế nào để tôi tắt Duyệt Web Kèm Nhận Biết Vị Trí vĩnh viễn?</h4>
+    <div class="expander-content">
+        <p>Duyệt Web Kèm Nhận Biết Vị Trí luôn có trong Firefox. Không có thông tin vị trí nào được chia sẻ khi chưa được phép của bạn. Nếu bạn muốn vô hiệu hóa tính năng này hoàn toàn, vui lòng làm theo các bước sau:</p>
+        <ul>
+            <li>Trong thanh URL, gõ <code>about:config</code></li>
+            <li>Gõ <code>geo.enabled</code></li>
+            <li>Nhấp đôi lên tùy chọn <em>geo.enabled</em></li>
+            <li>Duyệt Web Kèm Nhận Biết Vị Trí bây giờ đã bị vô hiệu hóa</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Tôi đang ở đâu?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ôi! Một lỗi đã xảy ra khi đang cố gắng xác định vị trí của bạn.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+@include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /> ਵਿੱਚ ਨਵਾਂ ਕੀ ਹੈ</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>ਫਾਇਰਫਾਕਸ ਵੈੱਬ ਉੱਤੇ ਮੀਡਿਆ ਰੱਖਣ ਦੇ ਢੰਗ ਨੂੰ ਬਦਲ ਰਿਹਾ ਹੈ: ਨਵੀਂ ਆਡੀਓ API ਨੇ HTML5 ਵਿੱਚ  <code>&lt;video&gt;</code> ਤੇ <code>&lt;audio&gt;</code> ਐਂਟੀਮੈਂਟ ਵਿੱਚੋਂ ਨਾ-ਸੋਧੇ ਆਡੀਓ ਡਾਟੇ ਨੂੰ ਉਪਲੱਬਧ ਕਰਵਾ ਦਿੱਤਾ ਹੈ, ਜਿਸ ਨਾਲ ਡਿਵੈਲਪਰ ਆਡੀਓ ਡਾਟੇ ਨੂੰ ਸੌਖੀ ਤਰ੍ਹਾਂ ਪੜ੍ਹ ਤੇ ਲਿਖ ਸਕਦੇ ਹਨ। ਹੋਰ ਜਾਣਨ ਲਈ ਵਿਡੀਓ ਵੇਖੋ।</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">ਸੁਝਾਅ ਸਾਂਝੇ ਕਰੋ »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">ਰੀਲਿਜ਼ ਨੋਟਿਸ »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Latest News</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>ਗਰਾਫਿਕਸ ਐਕਸਲੇਟ ਕਰਨਾ (ਕੇਵਲ ਵਿੰਡੋਜ਼ ਲਈ)</h4>
+        <p>Direct2D ਨਾਲ ਸਭ ਤੋਂ ਤੇਜ਼ ਗਰਾਫਿਕਸ ਐਕਸਰਲੇਸ਼ਨ ਦਾ ਤਜਰਬਾ ਕਰੋ, ਹੁਣ DirectX 10 ਸਹਾਇਕ ਹਾਰਡਵੇਅਰ ਉੱਤੇ ਮੂਲ ਰੂਪ 'ਚ ਹੀ ਚਾਲੂ ਹੈ।</p>
+    </div>
+
+    <div id="column-2">
+        <h4>ਸੁਰੱਖਿਅਟ ਸਰਵਰ ਕੁਨੈਕਸ਼ਨ</h4>
+        <p><acronym title="HTTP Strict-Transport-Security ">HSTS</acronym> ਦੀ ਵਰਤੋਂ ਨਾਲ, ਸਾਈਟਾਂ ਹੁਣ ਫਾਇਰਫਾਕਸ ਨੂੰ ਆਪੇ ਹੀ ਆਪਣੇ ਸਰਵਰਾਂ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕੁਨੈਕਸ਼ਨ ਬਣਾਉਣ ਲਈ ਦੱਸ ਸਕਦੀਆਂ ਹਨ, ਜਿਸ ਨਾਲ ਹਮਲਾਵਰਾਂ ਨੂੰ ਸੰਵੇਦਨਸ਼ੀਲ ਡਾਟੇ ਨਾਲ ਛੇੜ-ਛਾੜ ਤੋਂ ਬਚਿਆ ਜਾ ਸਕਦਾ ਹੈ, ਜਿਸਦਾ ਸਾਈਟ ਵਰਤਣ ਦੌਰਾਨ ਖਤਰਾ ਹੋ ਸਕਦਾ ਹੈ। <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">ਹੋਰ ਜਾਣੋ »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

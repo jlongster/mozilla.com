@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1>What’s New in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Fasten your Seatbelts</h3>
+        <p>Firefox 4 now includes major performance enhancements, including our brand new JägerMonkey JavaScript engine. From faster start up times and graphics rendering to improved page load speed, you'll notice the difference instantly.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">Release Notes »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">Experience the demo for yourself »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>3D on the Web</h4>
+        <p>WebGL brings 3D graphics to Firefox, opening the door for developers to create vivid games and new kinds of visualizations and experiences for the Web.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Fabulous Fonts</h4>
+        <p>Firefox 4’s OpenType font features gives designers and developers more control over a variety of font features—like kerning or ligatures—to create gorgeous websites.</p>
+    </div>
+
+    <div id="column-3">
+        <h4>Upgrading Forms</h4>
+        <p>Firefox 4 makes forms both beautiful and super-easy to implement. With features like new list attributes enabling auto-complete and HTML5 form validation, the new Form API provides the tools to make annoying form implementation development a thing of the past.</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Got Firefox 4 beta?</h4>
+        <h5>Now take it with you.</h5>
+        <p>Get Firefox on your Android phone or Nokia N900. Enjoy all your favorite features like Sync, Add-ons and the Awesome Bar anywhere you go.</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">Go Mobile! — Free</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>Need Help?</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Our support pages</a> have answers and advice specifically for the Firefox 4 beta.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

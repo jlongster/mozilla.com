@@ -1,0 +1,69 @@
+<?php
+
+/* translate the page title below */
+$page_title = "ഫയര്‍ഫോക്സ് പരിഷ്കരിച്ചിരിക്കുന്നു";
+
+
+/*
+l10n note: there are 3 cases we have to deal with in the Whatsnew page:
+#1: The visitor is using the latest version of Firefox ($latestVersion)
+#2: The visitor is using an old version of Firefox ($oldVersion)
+#3: The visitor is using a version of Firefox that we can't identify ($unknownVersion)
+
+The text at the top of the page changes depending on the version we detect
+*/
+
+include_once "{$config['file_root']}/includes/headers/3.6/whatsnew-l10n.inc.php";
+
+?>
+
+
+
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="ഫയര്‍ഫോക്സ് 3.6" id="title-logo" /></h2>
+     <p><a href="/<?=$lang?>/firefox/about/">മോസിലയ്ക്കു് </a> നല്‍കൂന്ന എല്ലാവിധ സഹായ സഹകരണങ്ങള്‍ക്കും പ്രോത്സാഹനങ്ങള്‍ക്കും വളരെ നന്ദി!</p>
+</div>
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>നിങ്ങളിപ്പോള്‍ ഉപയോഗിക്കുന്നതു് ഫയര്‍ഫോക്സ് <?=$_version?> ആണു്.</h2>
+
+  <p id="main-feature-contents">സുരക്ഷാ കാരണങ്ങള്‍കൊണ്ടു്, ദയവായി ഫയര്‍ഫോക്സിന്റെ <a href="/<?=$lang?>/firefox/">ഏറ്റവും പുതിയ പതിപ്പു് ഡൌണ്‍ലോഡ് ചെയ്യുക</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>ഫയര്‍ഫോക്സിന്റെ അപരിചിതമായ പതിപ്പാണു് നിങ്ങള്‍ ഉപയോഗിക്കുന്നതു്.</h2>
+
+  <p id="main-feature-contents">സുരക്ഷാ കാരണങ്ങള്‍കൊണ്ടു്, ദയവായി ഫയര്‍ഫോക്സിന്റെ <a href="/<?=$lang?>/firefox/">ഏറ്റവും പുതിയ പതിപ്പു് ഡൌണ്‍ലോഡ് ചെയ്യുക</a>.</p>
+
+</div>
+
+
+
+
+<?php
+
+endif;
+include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
+include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

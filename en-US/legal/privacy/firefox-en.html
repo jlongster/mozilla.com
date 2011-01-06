@@ -1,0 +1,15 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Privacy Policy';
+    $body_id    = 'firefox-privacy-policy';
+    $breadcrumbs = array(
+        'Privacy' => "/{$lang}/legal/privacy/",
+        'Firefox Privacy Policy' => ""
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once  "firefox-en-content.html";
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

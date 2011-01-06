@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = "Firefox is opgedateer";
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Nee dankie";
+    $no_download_button2 = "(Laat ek verduidelik hoekom)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Sekuriteitswaarskuwing:
+        </span>
+</h2>
+<h3>
+        Hierdie is ’n verouderde weergawe van Firefox.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Met dié weergawe van Firefox is mens kwesbaar vir sekuriteitsbedreigings aanlyn.</p>
+
+    <p id="main-feature-contents">
+    Laai gerus <a href="/<?=$lang?>/firefox/">die jongste weergawe van Firefox</a> af. Dit is gratis, en bevat die jongste opdaterings vir sekuriteit, werkverrigting en funksionaliteit.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Last ned Firefox 4 Beta";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Alt begynner her:</h3>
+        <p>Hjelp til å lage neste versjon av verdens beste nettleser.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Funksjoner</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Teknologi</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Tilbakemelding</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Personvern i tilbakemeldinger</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Installer betaen</h3>
+
+        <?=$download_link_2;?>
+
+        <p>Firefox 4 Beta inneholder en tilbakemelding-utvidelse som gjør at du deltar i brukerundersøkelser. Ingen data sendes til Mozilla uten at du gir ditt samtykke til det. <a href="#privacy">Les mer</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Gi tilbakemelding</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Tilbakemeldingsskjermbilde" /></p>
+
+        <p>Trykk på Tilbakemelding-knappen når som helst for å fortelle oss hva du synes. Les mer om <a href="https://testpilot.mozillalabs.com/faq">Testpiloten</a>.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Fortell vennene dine</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hei…</span></p></li>
+            <li class="second"><p><span>Woah!</span></p></li>
+        </ul>
+
+        <p>Spre ryktet: Jo flere beta-brukere vi har som hjelper oss å lage Firefox 4, desto bedre vil det ferdige produktet bli. <a href="/<?=$lang?>/firefox/beta/features/">Les mer om betaen.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>Firefox 4 Beta inneholder tilbakemelding-utvidelsen som er basert på Mozilla Test Pilot</h4>
+
+    <p>Når du installerer Firefox 4 Beta vil du se Tilbakemelding-utvidelsen i hjørnet øverst til høyre. Du kan bruke denne for å gi umiddelbar tilbakemelding når som helst. Du vil også få informasjon om brukerstudier (som utføres av Mozilla&nbsp;Test&nbsp;Pilot) som samler inn informasjon om hvordan du bruker Firefox, men ikke hvilke nettsider du besøker. Du har full kontroll over deltakelsen din, og kan velge å melde deg ut av hvilket som helst studie, eller se hvilke data som er samlet inn. Du vil få spørsmål før data sendes til Mozilla. Se også <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Personvernbestemmelse for Tilbakemelding-utvidelsen</a> for mer info.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

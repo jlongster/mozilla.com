@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Webbrowser Firefox | Testen Sie für uns die aktuelle Beta-Version';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Helfen Sie uns, indem Sie den zukünftigen Firefox testen!</h2>
+        <p>Die aktuelle Beta-Version von Firefox ist jetzt als Vorab-Version verfügbar. Testen Sie sie ausgiebig und teilen Sie uns bitte mit, was Sie darüber denken!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Wichtige Informationen</h4>
+        <p class="intro">Bitte lesen Sie Folgendes, bevor Sie die Version herunterladen:</p>
+    </div>
+    <ul>
+        <li>Dies ist eine Vorab-Version: Kompatibilitätsprobleme mit einigen Websites und Add-ons können auftreten.</li>
+        <li>Sollten Sie auf Probleme stoßen, <a href="http://feedback.mozilla.org/">informieren</a> Sie uns bitte darüber oder erstellen Sie einen <a href="https://bugzilla.mozilla.org/">Fehlerbericht</a>.</li>
+        <li>Weitere Informationen finden Sie in den <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Versionshinweisen</a> und in der Liste der <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">bekannten Probleme</a> <?php echo ___('(in English)'); ?>.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Sie möchten keine Beta-Version verwenden? Holen Sie sich den <a href="/<?=$lang?>/firefox/">aktuellen Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

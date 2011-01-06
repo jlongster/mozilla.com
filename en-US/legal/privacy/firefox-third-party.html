@@ -1,0 +1,63 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Third-Party Service Providers for Firefox';
+    $body_id    = 'third-party-service-providers';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Third-Party Service Providers for Firefox</h2>
+  <p>This page describes the third-party services providers used by Mozilla to provide the features in its Firefox® web browser. We will try to keep this information updated, but may sometimes fall behind. If you have questions about who provides services for a Firefox feature, please email us at privacy at mozilla dot com.</p>
+
+  <p>Each of our third-party providers are under licensing agreements with Mozilla that (1) prohibit the release of Personal or Potentially Personal Information to the public, (2) allow use of this information only in conjunction with the service(s) they are providing, and (3) prohibit the correlation of any Firefox user data with any other data collected through other products, services or web properties of that provider. Each third-party provider has its own privacy policy that is linked below.</p>
+</div>
+
+<div id="content">
+
+<ol style="list-style-type: upper-roman;">
+	<li style="list-style-type: upper-roman;">
+		<h4>Interactive Product Features</h4>
+		<h5><em>Location-Aware Feature provided by</em> Google Inc.</h5>
+		<ul>
+			<li><a href="http://www.google.com/privacy-lsf.html">Google Geolocation Privacy Policy</a></li>
+		</ul>
+	</li>
+	<li style="list-style-type: upper-roman;">
+		<h4>Security Features</h4>
+		<h5><em>Protection Against Suspected Forgery and Attack Sites Feature provided by</em> <a href="http://www.google.com/intl/en/privacy.html">Google Inc.</a></h5>
+		<ul>
+			<li><a href="http://www.code.google.com/apis/safebrowsing/firefox3_privacy.html">Google Safe Browsing Service in Mozilla Firefox Version 3</a></li>
+			<li><a href="http://www.code.google.com/apis/safebrowsing/firefox3_privacy_faq.html">FAQ for Google Safe Browsing Service in Mozilla Firefox Version 3</a></li>
+		</ul>
+	</li>
+  <li>
+    <h4>Search Features</h4>
+    <p>As a convenience, Mozilla Firefox includes third party search functionality in the search bar and location bar (keyword searches) at the top of the screen. Using these features by entering search terms or keywords may send the information outlined in the "Information Firefox Sends to Websites" section of the Firefox privacy policy as well as your search terms and/or keywords to the 3rd party provider. In some cases, such as search suggestions in the search bar, information can be sent to the 3rd party provider without pressing the &lt;Enter&gt; key to submit a search.</p>
+    <h5><em>Search feature in the US English language version of Firefox provided by:</em></h5>
+    <ul>
+      <li>Google: <a href="http://www.google.com/intl/en/privacy.html">Google Privacy Center</a></li>
+      <li>Yahoo!: <a href="http://info.yahoo.com/privacy/us/yahoo/details.html">Yahoo! Privacy Center</a></li>
+      <li>Amazon.com: <a href="http://www.amazon.com/gp/help/customer/display.html/ref=hp_lnav_dyn?ie=UTF8&amp;nodeId=468496">Amazon.com Privacy Notice</a></li>
+      <li>Answers.com: <a href="http://wiki.answers.com/about/legal_notices.html">Answers.com Privacy Policy</a></li>
+      <li>Creative Commons: <a href="http://creativecommons.org/privacy">CC Privacy Policy</a></li>
+      <li>eBay: <a href="http://pages.ebay.com/help/policies/privacy-policy.html">eBay Privacy Policy</a></li>
+      <li>Wikipedia: <a href="http://wikimediafoundation.org/wiki/Privacy_policy">Wikipedia Privacy Policy</a></li>
+    </ul>
+    <br>
+    <p>We will add the providers for other versions of Firefox as soon as we are able.</p> 
+  </li>
+</ol>
+
+<h4>For More Information</h4>
+
+<p>If you have feedback or questions about the Firefox Privacy Policy or these providers, please contact Mozilla at: <em>privacy at mozilla dot com</em>.</p>
+
+<p>Last updated March, 2010</p>
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

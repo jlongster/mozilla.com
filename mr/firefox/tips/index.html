@@ -1,0 +1,292 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla उत्पादन | टिप &amp; युक्ति';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>टिप &amp; युक्ति</h2>
+    <p>तुम्ही प्रारंभक, मध्य किंवा प्रगत वापरकर्ता असाल, तर हे शार्टकट व उपदेश तुम्हाला Firefox 3 च्या वापरणी विषयी आणखी अवगत करेल.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">उत्पादन</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">सुरक्षा</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">इच्छिक बदल</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% ऑरगॅनीक सॉफ्टवेअर</a></li>
+    <li><span>टिप &amp; युक्ति</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">प्रकाशन टिप</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">इतर प्रणाली &amp; भाषा</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>प्रारंभक</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Zoom In, Zoom Out screenshot', '365', '251', 'right')?>
+
+                <h4>मोठे करा, लहान करा</h4>
+                <p>लहान पाठ्य वाचण्यास अडचण? प्रतिमा आणखी जवळून पाहायची? आता तुम्ही वेब पान सहज मोठे व लहान करू शकता.</p>
+
+                <div class="key-combo">
+                    Zoom In
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Zoom Out
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Tab Tricks screenshot', '388', '135', 'right')?>
+
+                <h4>ही टॅब युक्ति वापरून पहा</h4>
+                <p>एकाच वेळी एकापेक्षा जास्त वेब पान पहायची सवय असल्यास, तुम्हाला टॅब संचार पासून प्रत्यक्षरित्या फायदा होईल. येथिल काहिक कळफलक शार्टकट तुम्हाला टॅब कुशलतेने कसे वापरायचे या विषयक माहिती पुरविते:</p>
+
+                <div class="key-combo key-combo-1">
+                    नविन रिकामे टॅब उघडा
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    नविन टॅब मध्ये लिंक उघडा
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">लिंक वर ⌘ + क्लिक् करा</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">लिंक वर मध्य क्लिक् करा</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">लिंक वर मध्य क्लिक् करा (mac: लिंक वर ⌘ + क्लिक् करा)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    टॅब बंद करा
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    बंद टॅब पुन्हा उघडा
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>एक क्लिक सक्षम ओळखचिन्ह जोडा</h4>
+                <p>तुमच्या आवडीचे एक-क्लिक ओळखचिन्ह सक्षम स्थळ नियंत्रीत करा (व वेळ वाचवा). स्मरणीस ठवण्याजोगी पानास भेट देतेवेळी, स्थान पट्टीवरील स्टार चिन्हावर क्लिक करा. शोध कार्य पटकन कार्यान्वीत करण्याकरीता Firefox तुमचे ओळखचिन्ह यादीत समाविष्ठ करतो.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        स्थळ तुम्हाला तपासणीपूर्ण ओळखी विषयी माहिती पुरवितो व तुमची व्यक्तिगत माहिती ऑनलाइन चोरून ऐकणाऱ्यांपासून वाचवितो.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        स्थळ मुळ ओळखी विषयी माहिती पुरवितो व तुमची व्यक्तिगत माहिती ऑनलाइन चोरून ऐकणाऱ्यांपासून वाचवितो.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        हे स्थळ ओळखी विषयी कुठलिही माहिती पुरवित नाही.
+                    </li>
+                </ul>
+
+                <h4>तुम्ही कुणाशी संपर्क करीत आहात याची जान ठेवा</h4>
+                <p>वेब स्कॅमर नकली स्थळ, म्हणजेच फिशींग स्थळ निश्चित करतात, ज्यामुळे तुमची  बँक, आवडती ई-कॉमर्स स्थळं, इत्यादी यांवर गोपणीय नजर ठेवली जाते. संभाव्यरित्या, Firefox <p id="forgery"> दोषी स्थळ किंवा फसवणूक करणारी संकेतस्थळ सहज ओळखतो; अशा स्थळांना व्यक्तिगत माहिती पुरविणे, किंवा त्यांस भेट देणे, घातक ठरू शकते.</p>
+
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Forgery screenshot" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            पान खाली सरकवा
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            पान वर सरकवा
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            पान पुन्ह दाखल करा
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            पाठी
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            पुढे
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>यशस्वी होण्याचे शॉर्टकट</h4>
+                <p>Firefox पूर्णतया कळफलक शार्टकटचा संग्रह आहे जे तुमचा संचार सुलभ करते. येथे आमचे काहिक आवडते स्थळ समाविष्ठीत आहे:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        कर्सरला स्थान पट्टीकडे हलवा
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        कर्सरला शोध चौरसकडे हलवा
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>मध्य</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>टॅग चालवा</h4>
+                <p>एकदा ओळखचिन्हाची लांब यादी बनविल्यावर, त्यास नियंत्रीत करणे थोडे कठिण जाऊ शकते. एकत्रीत राखण्याकरीता, तुम्ही ओळखचिन्हकृत स्थळ करीता टॅग नोंदवू शकता: फक्त स्टार चिन्हावर दोनवेळा क्लिक करा व तुम्हास टॅग प्रविष्ठ करण्यास विचारले जाईल.</p>
+                <p>तुम्ही स्थळास शक्य तेवढे घटकांशी टॅग करू शकता (प्रत्येक टॅग अंतर्गत स्वल्पविराम प्रविष्ट करायला विसरू नका), व त्यानंतर टॅग टाईप करून स्थळ पट्टीत स्थळ शोधू शकता. उदाहरणार्थ, स्थानपट्टीत  "प्रवास" प्रविष्ट केल्यास तुम्हाला सुट्टी चिन्हाकृत सर्व स्थळ दिसून पडतील.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Add-ons screenshot', '378', '252', 'right')?>
+
+                <h4>ऍड-ऑन विषयी सर्वकाही शिका</h4>
+                <p>Firefox च्या मानक आवृत्तीत सर्व गुणविशेष समाविष्ठीत आहे, तरी येथेच का थांबावे? येथे 5,000 पेक्षा जास्त ऍड-ऑन आहेत —थोडे अगाऊ जे Firefox मध्ये इच्छिक बदल करण्यास परवानगी देते—ज्यांस कार्य मध्ये प्रभूत्व प्राप्त करण्याकरीता तुम्ही त्यांस डाऊनलोड करू शकता. ऍड-ऑन व्यस्थापक उघडण्याकरीता व Firefox मध्ये आणखी इच्छिक बदल करण्याकरीता साधन →ऍड-ऑन वर जा.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Search screenshot', '378', '252', 'right')?>
+
+                <h4>हुशारपणे शोधा</h4>
+                <p>तुम्ही आधिपासूनच Firefox मधिल अंतर्भूतीत शोध पट्टीसह परिचीत आहात. पण  इच्छिक बदल करीता तुम्ही त्यास कुठल्याही शोध इंजीनसह बदलवू शकता या पर्यायसह परिचीत आहात का? मुलभूत पर्यायचा  मेन्यु पहाण्याकरीता शोध पट्टीवरील डाव्या बाजूच्या चिन्हावर क्लिक करा.</p>
+                <p>त्यापेक्षाही चांगला पर्याय, म्हणजे यादी पुन्हस्थीत करीता शोध इंजीन नियंत्रण पर्याय,  आणखी पर्याय जोडा व तुमच्या आवडत्या शोध इंजीन करीता कळफलक शॉर्टकटही जोडा. उदाहरणार्थ, तुम्ही Google ला शार्टकट "G" देऊ शकता - व तुम्हाला कुकी रेसिपी करीता शोध घ्याचे असल्यास, फक्त स्थान पट्टीत "G कुकी रेसिपी" प्रविष्ट केल्यास पूर्ण यादी निर्माण होते.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Find screenshot', '378', '252', 'right')?>
+
+                <h4>थोडक्यात माहिती करून घ्या</h4>
+                <p>टाईप कराल तसे शोधा गुणविशेष एक वेळ वाचविणारे गुणविशेष आहे. पानावरील शब्द  शोधण्याकरीता "शोध" पट्टी वापरण्यापेक्षा, पानावर कुठेही क्लिक करा व तुम्हाला हवा असलेला शब्द टाईप करायला सुरू करा. कर्सर त्या घटकाच्या प्राथमिक घटनेवर जाईल.</p>
+                <p>वरील वापर तुम्ही लिंक करीता, सुध्दा करू शकता. उदाहरणार्थ, माउसला "आणखी शिका" या पानावरील लिंकवर हलविण्यापेक्षा, शब्द लिहायला सुरूवात करा व कर्सरला ते आढळल्यास, enter दाबा.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Privacy screenshot', '378', '252', 'right')?>
+
+                <h4>प्रत्येक शोध काढूण टाका</h4>
+                <p>सुरक्षा व गोपणीय कारणास्तव, तुम्ही संचार करतेवेळी छाप सोडू नका (खासकरून  सहभागीय संगणक वापरतेवेळी). Firefox एका क्लिक मध्ये तुमचा संचार व डाऊनलोड इतिहास काढूण टाकण्यास, कॅश पुसूण्यास व कुकीज काढूण टाकण्यास मदत करतो. हे कार्यान्वीत करण्यसाठी साधन → व्यक्तिगत माहिती पुसून टाका येथे जा. किंवा, आणखी काळजीपूर्वकरित्या, <span id="trace-platform">साधन → पर्याय → गोपणीय येथे जा</span> व "Firefox बंद केल्यावर नेहमी व्यक्तिगत माहिती काढूण टाका" पर्याय निवडा.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>प्रगत</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", 'Location bar screenshot', '378', '252', 'right')?>
+
+                <h4>तुमच्या आवडत्या स्थळांवर प्रत्यक्षरूपी जा</h4>
+                <p>सोपे व जलद प्रवेश करीता तुम्ही ओळखचिन्हा करीता मुळशब्द जोडू शकता. लायब्ररी मधिल मुख्यशब्द गुणविशेष मध्ये मुख्यशब्द जोडा, व पत्ता पट्टी मध्ये मुळशब्द टाईप करून ओळखचिन्ह साठी प्रवेश प्राप्ती करू शकाल. उदाहरणार्थ, तुम्ही तुमच्या del.icio.us खाते करीता “लिंक” मुळशब्द देऊ शकता, व त्यानंतर फक्त पत्ता पट्टी मध्ये “लिंक” टाईप केल्यास तुम्ही लगेच स्थळाशी जुळले जाल.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>हुशार संचयीका बनवा</h4>
+                <p>तुम्ही प्रगत वेब सर्फर असल्यास व सहसा संचयन व अनेक विशिष्ट स्थळ संचयीत करायची आवड असल्यास, हे एक उपयोगी वेळ-संचयक ठरू शकते: जे Firefox 3 लायब्ररीचा वापर करते, तुम्ही घटक शोधू शकाल व संचयीका मध्ये शोध संचयीतही करू शकाल, हे तुम्ही ज्याप्रमाणे स्थळावरील ओळखचिन्ह व इतिहास जसे संचयीत करता त्याप्रमाणे जोडले जाते.</p>
+                <p>पहिले, ओळखचिन्ह मेन्यू पासून "ओळखचिन्ह नियंत्रीत करा" पर्याय निवडा. त्यानंतर, शोध चौरस मध्ये तुमचे शोध घटक प्रविष्ट करा. शेवटी हुशार संचयीका बनविण्यासाठी संचयीत करा या बटणावर क्लिक करा.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Download Manager screenshot', '378', '252', 'right')?>
+
+                <h4>तुमचे डाऊनलोड नियंत्रीत करा</h4>
+                <p>तुम्ही डाउनलोडर असल्यास, तुम्ही डाऊनलोड नियंत्रण करीता डाऊनलोड व्यवस्थापक चौकटचा वापरू शकता. व्यवस्थापक पासून फाइल्स प्रत्यक्षरित्या उघडल्यास तुम्ही डाऊनलोड स्तब्ध व पुन्हसुरू करू शकता, व स्वतसाठी वेळ संचयीत करू शकता.</p>
+                <p>पूर्वीचे डाउनलोड नियंत्रीत करायचे असल्यास, साधन→डाउनलोड वर जा व तुमची फाइल शोधण्याकरीता शोध चौरसचा वापर करा. एकदाचे तुम्ही त्यास शोधून काढल्यास, उघडण्याकरीता दोनवेळा क्लिक करा, किंवा Ctrl-क्लिक व "डाउनलोड लिंक प्रतिकृत करा" निवडा.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>डेव्हलपर साधन शोधा</h4>
+                <p>तुम्ही वेब डेव्हलपर असल्यास, Firefox चे डेव्हलपर साधन वापरून पहा. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla ऍड-ऑन स्थळ</a> प्रगती क्रिया स्थिर करण्याकरीता बरेच साधन उपलब्ध करते, व कुठल्याही वेब पानावरील CSS, HTML, व JavaScript संपादन, डीबग, व नियंत्रण करीता बग दाखलनसाठी डेव्हलपरला सुविधा पुरवितो, HTTP/HTTPS हेड्डर व POST घटक संपादन व माहिती संपादीत करण्यास मदत करतो, उजव्या क्लिक वरून  कुठल्याही HTML किंवा CSS घटक साठी DOM Inspector हे साधन पुरवितो.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Preferences screenshot', '378', '252', 'right')?>
+
+                <h4>वेबला तुम्हाला हवे तसे निश्चित करा</h4>
+                <p>आवडत्या वेब अनुप्रयोगच्या प्रवेश करीता तुम्ही आता वेब-आधारीत शिष्टाचार हँन्डलरचा वापर करू शकता. उदाहरणार्थ, तुम्ही Firefox ला प्रति मेल पाठवा असे निश्चित करू शकता: कुठल्याही स्थळावरील लिंक संगणकातील मुलभूत मेल कार्यक्रम मध्ये न उघढता प्राधान्यकृत वेबमेल पुरवठाकर्ता मध्ये उघडेल (टिप: हे  गुणविशेष फक्त Firefox 3 पंजीकृत वेबमेल सेवा करीताच उपलब्ध आहे).</p>
+                <p>प्रत्येक शिष्टाचार करीता मुलभूत अनुप्रयोग निवडायचे असल्यास <span id="platform-protocol">साधन→पर्याय→अनुप्रयोग</span> येथे जा, किंवा दरवेळी अनुप्रयोग निवडायचे  असल्यास “नेहमी विचारा” हा पर्याय निवडा.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>तुम्ही वेब अनुप्रयोग डेव्हलपर असल्यास, वेब-आधारीत शिष्टाचार हँडलर करीता समर्थन पुरविण्याकरीता <a href="http://developer.mozilla.org/">Mozilla डेव्हलपर केंद्र.</a> पहा</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

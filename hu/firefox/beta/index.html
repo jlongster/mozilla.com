@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Firefox 4 Beta letöltése";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Minden itt kezdődik:</h3>
+        <p>Segítsen, hogy a következő verzió a világ legjobbja legyen.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Funkciók</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Technológia</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Visszajelzés</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Visszajelzés adatvédelmi irányelvek</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>A Beta telepítése</h3>
+
+        <?=$download_link_2;?>
+
+        <p>A Firefox 4 Beta tartalmaz egy Visszajelzés kiegészítőt, amellyel részt vehet a felmérésben. A Mozillához semmilyen adat nem jut el az Ön engedélye nélkül. <a href="#privacy">További információ</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Küldjön visszajelzést</h3>
+
+        <p><img src="<?=$screencap;?>" alt="visszajelzés gomb képernyőképe" /></p>
+
+        <p>Nyomja meg a Visszajelzés gombot és mondja el, hogy mit gondol. Tudjon meg többet a <a href="https://testpilot.mozillalabs.com/faq">Test Pilot</a>-ról.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Mondja el barátainak</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hé…</span></p></li>
+            <li class="second"><p><span>Húúú!</span></p></li>
+        </ul>
+
+        <p>Beszéljen róla: minél többen vesznek részt a a Firefox&nbsp;4 tesztelésében, annál jobb lesz a végleges verzió. <a href="/<?=$lang?>/firefox/beta/features/">Ismerje meg a beta verziót.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>A Firefox 4 Beta tartalmaz Mozilla Test Pilot-ra épülő Visszajelzés kiegészítőt</h4>
+
+    <p>A Firefox&nbsp;4 Beta telepítése után egy Visszajelzés gomb látható a böngésző jobb felső sarkánál, amit bármikor használhat visszajelzés küldésére. A Visszajelzés kiterjesztés használatakor ugyancsak értesítést kapnak a felhasználó felmérésekről (ezt a Mozilla&nbsp;Test&nbsp;Pilot futtatja), amelyek információt gyűjtenek a böngésző használatával kapcsolatban, azonban semmilyen adatot nem gyűjt a meglátogatott weboldalakkal kapcsolatban. Minden felmérésről a felhasználó eldöntheti, hogy részt kíván-e venni benne, vagy elutasíthatja az összes felmérésben való részvételt. Az adatok elküldése előtt azok megtekinthetők és nem kívánt esetben elküldésük megtagadható. Olvassa el a <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Visszajelzés kiegészítő adatkezelési irányelvét</a>.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Guida di Firefox per dispositivi portatili";
+    $search_field  = "Cerca nella guida";
+    $search_button = "Cerca";
+    $link_to_sumo  = "o <a href=\"%s\">apri il sito completo del supporto</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Guida di Firefox <em>per dispositivi portatili</em></h1>
+
+    <h2>Domande frequenti</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Come sincronizzare Firefox tra computer e dispositivo portatile?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Come aggiornare Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Come utilizzare la barra di ricerca intelligente?</a></li>
+    </ul>
+
+    <h2>Articoli specifici per dispositivi portatili</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Come modificare le preferenze?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Quali sono le scorciatoie da tastiera su un dispositivo portatile?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Come gestire i download?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Come aprire una nuova scheda?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Come trovare e installare i componenti aggiuntivi?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Come rimuovere o disattivare i componenti aggiuntivi?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Come navigare con Firefox su un dispositivo portatile?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Come aggiungere un segnalibro?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Come aumentare o diminuire lo zoom su un sito web?</a></li>
+    </ul>
+
+    <h2>Ti serve ulteriore aiuto?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

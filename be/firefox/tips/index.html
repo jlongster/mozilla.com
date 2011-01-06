@@ -1,0 +1,293 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Прадукты Mozilla | Парады і хітрыкі';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+     include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Парады і хітрыкі</h2>
+    <p>Ці вы пачатковец, ці вы сярэдні або нават дасведчаны карыстальнік, гэтыя выклічнікі і парады дапамогуць вам атрымаць усё магчымае з Firefox 3.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Прадукты</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">Асаблівасці</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Бяспека</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Уладкаванне</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">На 100% арганічнае праграмнае забеспячэнне</a></li>
+    <li><span>Парады і хітрыкі</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Заўвагі пра выданне</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Іншыя сістэмы і мовы</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Пачатковец</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/beginner-01.jpg', 'Здымкі павялічэнне, памяншэння', '365', '251', 'right')?>
+
+                <h4>Павялічэнне, памяншэнне</h4>
+                <p>Дробны тэкст стамляе вас? Хочаце бачыць малюнкі больш блізкімі? Цяпер вы можаце лёгка павялічваць і паменшаць старонкі Сеціва.</p>
+
+                <div class="key-combo">
+                    Павялічэнне
+                    <?=buildPlatformImage('/be/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Памяншэнне
+                    <?=buildPlatformImage('/be/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/beginner-02.jpg', 'Здымак хітрыкаў з устаўкамі', '388', '135', 'right')?>
+
+                <h4>Паспрабуйце гэтыя хітрыкі з устаўкамі</h4>
+                <p>Калі вы тая асоба, якая любіць адначасова мець шмат адкрытых старонак Сеціва, вам абавязкова спадабаецца азіранне з устаўкамі. Тут некалькі клавіятурных выклічнікаў, якія дапамогуць вам авалодаць устаўкамі:</p>
+
+                <div class="key-combo key-combo-1">
+                    Адкрыццё новай пустой устаўкі
+                    <?=buildPlatformImage('/be/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Адкрыццё спасылкі ў новай устаўцы
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Сярэд-пстрык па спасылцы</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Сярэд-пстрык па спасылцы</div>
+                    </noscript>
+
+                </div>
+                <div class="key-combo">
+                    Закрыццё ўстаўкі
+                    <?=buildPlatformImage('/be/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Адкрыццё закрытай ўстаўкі
+                    <?=buildPlatformImage('/be/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/beginner-03.jpg', 'Здымак закладак', '378', '252', 'right')?>
+
+                <h4>Даданне закладак адным пстрыкам</h4>
+                <p>Захоўвайце адрасы пляцовак, якія вам падабаюцца, (і ваш час) з дапамогаю закладвання адным пстрыкам. Калі вы наведваеце старонку, якую вы хочаце запомніць, пстрыкніце значок зоркі на паліцы месцазнаходжання. Firefox дадасць адрас старонкі ў спіс вашых закладак і вы лёгка адшукаеце яе ізноў.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Значок бяспекі', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Гэтае пляцоўка мае пацверджаныя звесткі пра яе адмету і ахоўвае вашы асабістыя здаткі ад сеткавых падслухачоў.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Значок бяспекі', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Гэтае пляцоўка мае базавыя звесткі пра яе адмету і ахоўвае вашы асабістыя здаткі ад сеткавых падслухачоў.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Значок бяспекі', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        Гэтая пляцоўка не мае ніякіх звестак пра яе адмету.
+                    </li>
+                </ul>
+
+                <h4>Ведайце тых, з кім вы маеце справу</h4>
+                <p>Звычайная тактыка сеткавых ашуканцаў – стварэнне падробных пляцовак, вядомых як лоўлявыя пляцоўкі, якія выдаюць сябе за ваш банк, вашу улюбёную пляцоўку э-камерцыі, і інш. На шчасце, Firefox дапамагае лёгка вызначыць, ці з'яўляюцца пляцоўкі тымі, за якія сябе выдаюць, – пстрыкніце значок пляцоўкі для прагляду падрабязных звестак пра яе адмету.</p>
+                <p id="forgery">Нападная пляцоўка або падробка; падача гэтай пляцоўцы асабістых звестак або нават яе наведванне можа быць шкодным.
+                <img src="/be/img/tignish/tips/forgery.png" alt="Здымак падробкі" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Пракрутка старонкі ўніз
+                            <img src="/be/img/tignish/tips/scroll-down.png" alt="клавіша прагалу" />
+                        </div>
+                        <div class="key-combo">
+                            Пракрутка старонкі ўверх
+                            <img src="/be/img/tignish/tips/scroll-up.png" alt="shift + клавіша прагалу" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Абнаўленне старонкі
+                            <?=buildPlatformImage('/be/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Назад
+                            <?=buildPlatformImage('/be/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Наперад
+                            <?=buildPlatformImage('/be/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Выклічнік – ваш шлях да поспеху</h4>
+                <p>Firefox мае шмат клавіятурных выклічнікаў, якія зробяць ваша жыццё лягчэйшым. Ніжэй некалькі нашых улюбёных:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Перамясціць паказальнік на паліцу месцазнаходжання
+                        <?=buildPlatformImage('/be/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Перамясціць паказальнік у скрынку пошуку
+                        <?=buildPlatformImage('/be/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>Сярэдні карыстальнік</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/intermediate-01.jpg', 'Здымак закладак', '378', '252', 'right')?>
+
+                <h4>Гульня з тэгамі</h4>
+                <p>Аднойчы, калі назбіраеце процьму закладак, іх спіс можа зрабіцца даволі бязладным. Каб упарадкаваць іх, вы можаце прызначыць тэгі вашым закладзеным пляцоўкам: двойчы пстрыкніце значок зоркі і вам прапануюць увесці вашы тэгі.</p>
+                <p>Вы можаце дадаць столькі тэгаў, колькі хочаце (але памятайце падзяляць іх коскамі). Тады вы лёгка адшукаеце пляцоўкі, калі набераце тэг на паліцы месцазнаходжання. Напрыклад: увядзенне "вандроўка" на паліцы месцазнаходжання выцягне наверх усе пляцоўкі, якія вы заклалі падчас пошуку месца для адпачынку.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/intermediate-02.jpg', 'Здымак дадаткаў', '378', '252', 'right')?>
+
+                <h4>Усё пра дадаткі</h4>
+                <p>Вядома, стандартная версія Firefox мае шмат асаблівасцяў, але чаму абмяжоўвацца імі? Існуе больш чым 5 000 дадаткаў, невялікіх пашырэнняў, якія ўдасканальваюць Firefox, якія вы можаце загрузіць і ўсталяваць, каб мець магчымасць выканаць любую патрэбную вам задачу. Выберыце пункт меню "Прылады" → "Дадаткі", каб адкрыць кіраўнік дадаткаў і даведацца пра ўсе шляхі, якімі вы можаце ўладкаваць Firefox для сябе.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/intermediate-03.jpg', 'Здымак пошуку', '378', '252', 'right')?>
+
+                <h4>Кемлівы пошук</h4>
+                <p>Вы ўжо знаёмыя з паліцай пошуку, убудаванай у Firefox. Але ці ведалі вы, што яе можна наладзіць, дадаць на яе любую машыну пошуку, якую хочаце? Пстрыкніце значок злева ад паліцы пошуку, каб пабачыць змоўчныя.</p>
+                <p>Яшчэ лепш, пстрыкніце "Наладзіць машыны пошуку...", каб уладкаваць спіс машынаў, дадаць іншыя і нават дадаць клавіятурныя выклічнікі вашым улюбёным машынам. Напрыклад: вы можаце дадаць выклічнік "G" Google - тады, калі захочаце адшукаць кулінарныя рацэпты, вам будзе дастаткова набраць "G кулінарны рацэпт" на паліцы месцазнаходжання, каб атрымаць спіс вынікаў пошуку.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/intermediate-04.jpg', 'Здымак пошуку', '378', '252', 'right')?>
+
+                <h4>Імгненны пошук</h4>
+                <p>Асаблівасць "Пошук тэксту, які набіраецца" - іншы зручны ратавальнік часу. Лепш, чым шукаць слова з дапамогаю паліцы "Знайсці", пстрыкніце дзесьці старонку і пачніце набіраць патрэбнае слова. Ваш паказальнік неадкладна скокне да першага асобніку тэрміна.</p>
+                <p>Таксама вы можаце выкарыстоўваць яго для спасылак. Напрыклад: замест таго, каб перамяшчаць паказальнік па старонцы да спасылкі "падрабязней", пачніце набіраць слова і, калі паказальнік знойдзе яго, націсніце клавішу "Увод".</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/intermediate-05.jpg', 'Здымак адасаблення', '378', '252', 'right')?>
+
+                <h4>Пазбаўленне ад усякіх слядоў</h4>
+                <p>Дзеля захавання бяспекі і адасаблення не вельмі добра пакідаць пасля сябе сляды (асабліва калі вы карыстаецеся супольным кампутарам). Firefox дазваляе вам знішчыць гісторыі азірання і загрузак, ачысціць запаснік і выдаліць вашы біркі адным пстрыкам. Выберыце ў меню "Прылады" → "Ачысціць прыватныя даныя...", каб зрабіць гэта. Ці, для большай надзейнасці, адкрыйце <span id="trace-platform">"Прылады" → "Наладкі" → "Адасабленне"</span> і пазначце скрынку "Заўсёды ачышчаць мае прыватныя даныя перад закрыццём Firefox".</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML='"Firefox" → "Перавагі" → "Адасабленне"';
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML='"Праўка" → "Перавагі" → "Адасабленне"';
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>Дасведчаны карыстальнік</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/advanced-01.jpg', 'Здымак паліцы месцазнаходжання', '378', '252', 'right')?>
+
+                <h4>Просты пераход да ўлюбёных пляцовак</h4>
+                <p>Вы можаце дадаць ключавыя словы да вашых закладак для прасцейшага і хутчэйшага доступу. У Бібліятэцы ўвядзіце кароткае ключавое слова ў адпаведнае поле. Тады вы будзеце здольныя знайсці застаўку, калі набераце гэтае слова на паліцы месцазнаходжання. Напрыклад: вы можаце дадаць ключавое слова "спасылкі" для вашага рахунку del.icio.us і тады вы зможаце даступіцца да яго, калі набераце "спасылкі" на паліцы месцазнаходжання.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/advanced-02.jpg', 'Здымак закладак', '378', '252', 'right')?>
+
+                <h4>Стварэнне кемлівых папак</h4>
+                <p>Калі вы дасведчаны сеціўны коўзальнік, якому часта патрабуецца захоўваць і сачыць за шэрагам асаблівых пляцовак, для вас існуе карысны ратавальнік часу: з дапамогаю Бібліятэкі Firefox вы можаце ствараць і захоўваць пошукі ў папках, якія будуць самастойна абнаўляцца, калі вы будзеце дадаваць пляцоўкі ў вашы закладкі і гісторыю.</p>
+                <p>Спачатку адкрыйце Бібліятэку. Для гэтага выберыце ў меню закладак пункт "Уладкаваць закладкі". Потым увядзіце тэрміны для пошуку ў скрынку пошуку. Пстрыкніце кнопку "Захаваць", каб стварыць кемлівую папку.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/advanced-03.jpg', 'Здымак кіраўніка загрузак', '378', '252', 'right')?>
+
+                <h4>Кіраванне загрузкамі</h4>
+                <p>Калі вам даводзіцца часта рабіць загрузкі, вы можаце скарыстаць акно кіраўніка загрузак для сачэння за вашымі загрузкамі. Вы можаце спыніць і працягнуць загрузкі, захаваць ваш час, адкрываючы файлы адразу з кіраўніка.</p>
+                <p>Калі вы хочаце знайсці былую загрузку, перайдзіце ў "Прылады" → "Загрузкі" і скарыстайце скрынку пошуку, каб адшукаць ваш файл. Калі вы адшукаеце яго, двойчы пстрыкніце па файлу, каб адкрыць яго, ці зрабіце Ctrl-пстрык і выберыце "Капіяваць спасылку загрузкі".</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/advanced-04.jpg', 'Здымак прыладаў распрацоўцаў', '378', '252', 'right')?>
+
+                <h4>Адкрыйце для сябе прылады распрацоўцаў</h4>
+                <p>Калі вы сеціўны распрацоўца, прылады распрацоўцаў Firefox зробяць ваша жыццё прасцейшым. Пляцоўка <a href="https://addons.mozilla.org/be/firefox/browse/type:1/cat:4">Дадаткі Mozilla</a> прапаноўвае шмат прыладаў для паскарэння распрацоўкі, у тым ліку Firebug, які дазваляе правіць, наладжваць, і назіраць CSS, HTML і JavaScript ужывую на любой старонцы Сеціва, Tamper Data для прагляду і змянення загалоўкаў HTTP/HTTPS і параметраў POST, Наглядчык DOM, каб вывучаць усякую адзінку HTML або CSS адным правым пстрыкам.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/be/img/tignish/tips/advanced-05.jpg', 'Здымак перавагаў', '378', '252', 'right')?>
+
+                <h4>Наладзьце працу ў Сеціве так, як вам патрэбна</h4>
+                <p>Цяпер вы можаце ўжываць апрацаўнікі пратаколаў Сеціва, каб мець хуткі доступ да вашых улюбёных прыстасаванняў Сеціва. Напрыклад: вы можаце наладзіць Firefox так, што пстрыканне па спасылцы mailto: на любой пляцоўцы адкрые новы ліст у вашым дастаўшчыку паслугаў сеціўнай пошты, а не ў вашай змоўчнай паштовай праграме на кампутары. Заўвага: гэтая асаблівасць даступна толькі для сеціўных паштовых службаў, зарэгістраваных у Firefox 3.</p>
+                <p>Адкрыйце <span id="platform-protocol">"Прылады" → "Наладкі" → "Прыстасаванні"</span>, каб вылучыць змоўчнае прыстасаванне для кожнага пратаколу або выберыце “Заўсёды пытацца”, калі вы хочаце выбіраць прыстасаванне кожны раз.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML='"Firefox" → "Перавагі" → "Прыстасаванні"';
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML='"Праўка" → "Перавагі" → "Прыстасаванні"';
+                }
+                //]]></script>
+                <p>Калі вы распрацовец сеціўных прыстасаванняў, вы можаце даведацца больш пра даданне падтрымкі апрацаўнікоў сеціўных пратаколаў у <a href="http://developer.mozilla.org/">Цэнтры распрацоўцаў Mozilla.</a></p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

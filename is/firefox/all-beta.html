@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox vafri | Hjálpaðu okkur að prófa nýjustu beta útgáfuna';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Hjálpaðu til við að prófa framtíð Firefox!</h2>
+        <p>Nýjasta beta útgáfan af Firefox er nú aðgengileg sem prófunarútgáfa. Prófaðu að reynslukeyra þessa útgáfu og láttu okkur svo vita hvað þér finnst!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Mikilvægar upplýsingar</h4>
+        <p class="intro">Lestu þetta áður en þú niðurhalar</p>
+    </div>
+    <ul>
+        <li>Þessi hugbúnaður er prófunarútgáfa: Þú gætir hugsanlega lent í vandræðum með samhæfni á sumum vefsíðum og viðbótum.</li>
+        <li>Ef þú rekst á vandamál vinsamlega <a href="http://feedback.mozilla.org/">láttu okkur vita</a> eða <a href="https://bugzilla.mozilla.org/">skráðu villu</a>.</li>
+        <li>Fyrir meiri upplýsingar, lestu <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">útgáfuupplýsingar</a> og <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">þekkt vandamál</a> (á ensku).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Ertu ekki að leita að beta útgáfunni? Náðu í <a href="/<?=$lang?>/firefox/">nýjustu útgáfuna af Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

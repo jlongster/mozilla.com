@@ -1,0 +1,123 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Privacy Policy - Opt-Out Procedures';
+    $body_id    = 'opt-out';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/legal.css" media="screen">
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Opt-Out Procedures</h2>
+</div>
+
+<div id="content">
+
+<h3>Omniture</h3>
+
+<p>This section describes the procedure for opting out of Omniture-based web site analytics
+tracking as used on Mozilla web sites. There are two basic methods that can be used
+independently or in combination.</p>
+
+<div class="corner-box">
+<h4>Using cookies</h4>
+<p>In order to opt out of Mozilla's Omniture-based analytics programs, you must install an "opt-out
+cookie". Mozilla's web sites detect the presence of this "opt-out cookie" and disable tracking.</p>
+<ul>
+<li>Please visit <a href="http://ostats.mozilla.com/optout.html">this page</a> to enable or disable
+the Mozilla "opt-out cookie"</li>
+</ul>
+<p>Note that if you clear your cookies, delete the opt-out cookie, or if you change computers or Web browsers,
+you will need to perform the opt-out procedure again. Otherwise, the cookie is good for a 2-year period
+from the moment you "install" it.</p>
+</div>
+
+<div class="corner-box">
+<h4>Using Hosts files </h4>
+
+Another method to disable web site analytics is to block communications with the analytics servers. This
+can be achieved by adding some lines to your <a href="http://en.wikipedia.org/wiki/Hosts_file">hosts
+file</a>. This will disable communications to the Omniture servers.
+
+<p>
+In order to use this method, your local machine's
+<a href="http://en.wikipedia.org/wiki/Hosts_file">hosts file</a> must be modified.
+To find the location of your hosts file on a particular platform,
+see <a href="http://en.wikipedia.org/wiki/Hosts_file">this article</a>. Open the file in a text
+editor.</p>
+
+<p>Add the following lines to disable Omniture analytics for Mozilla properties:</p>
+<p><code>
+127.0.0.1 ostats.mozilla.com<br />
+127.0.0.1 sostats.mozilla.com<br />
+127.0.0.1 mozilla.com.112.2o7.net
+</code></p>
+
+<p>Note that this only disables Omniture on Mozilla properties and not on every web site where Omniture
+may be used.</p>
+</div>
+
+<h3>Webtrends</h3>
+
+<p>This section describes the procedure for opting out of Webtrends-based web site analytics tracking as used on Mozilla web sites. There are two basic methods that can be used independently or in combination.</p>
+
+<h4>Using cookies</h4>
+
+<p>In order to opt out of Mozilla's Webtrends-based analytics programs, you must install an "opt-out cookie". Mozilla's web sites detect the presence of this "opt-out cookie" and disable tracking.</p>
+
+<ul>
+  <li>Please visit <a href='http://ondemand.webtrends.com/support/optout.asp?action=out&amp;status=completed'>this page</a> to enable or disable the Mozilla "opt-out cookie"</li>
+</ul>
+
+<p>Note that if you clear your cookies, delete the opt-out cookie, or if you change computers or Web browsers, you will need to perform the opt-out procedure again. Otherwise, the cookie is good for a 10-year period from the moment you "install" it.</p>
+
+<h4>Opting out of Tracking Cookies</h4>
+
+<p>Webtrends is dedicated to providing privacy on the Internet. In addition to developing an industry-leading privacy policy, we have designed our services to provide the opportunity to opt out of future cookies. In order to identify you as someone who has elected to opt out of receiving future cookies from Webtrends On Demand, we will place a cookie on your machine. The format of this cookie is as follows:</p>
+
+<p><code>
+  WTLOPTOUT  <em>The name, value and domain of the cookie (This cookie can ONLY be read from our site.)</em><br>
+  yes<br>
+  webtrendslive.com/<br>
+  0  <em>The date and time the cookie will expire. (Dec 31, 2020)</em><br>
+  4025417728<br>
+  30859082<br>
+  3974387648<br>
+  29367562<br>
+  *<br>
+</code></p>
+
+<p>The only purpose of this cookie is to let our servers know that you have opted out of receiving future cookies. You must accept this cookie in order to opt out. This cookie is created at the time you opt-out of and is then never modified. If you later delete this cookie, Webtrends On Demand will automatically resume sending cookies.</p>
+
+<p><a href='https://ondemand.webtrends.com/support/optout.asp?action=out'>Click here</a> to set the cookie indicating that you opt out of future cookies for all sites using Webtrends On Demand tracking services.</p>
+
+<h4>Using Hosts files</h4>
+
+<p>Another method to disable web site analytics is to block communications with the analytics servers. This can be achieved by adding some lines to your <a href='http://en.wikipedia.org/wiki/Hosts_file'>hosts file</a>. This will disable communications to the Webtrends servers.</p>
+
+<p>In order to use this method, your local machine's <a href='http://en.wikipedia.org/wiki/Hosts_file'>hosts file</a> must be modified. To find the location of your hosts file on a particular platform, see <a href='http://en.wikipedia.org/wiki/Hosts_file'>this article</a>. Open the file in a text editor.</p>
+
+<p>Add the following lines to disable Webtrends analytics for Mozilla properties:</p>
+
+<p><code>
+127.0.0.1 statse.webtrendslive.com
+</code></p>
+
+<p>Note that this disables Webtrends on every web site where Webtrends may be used.</p>
+
+<div class="corner-box">
+<h4>For More Information</h4>
+<p>If you have feedback or questions about the <a href="privacy-policy.html">Mozilla privacy policy</a> or these procedures, please contact
+Mozilla&nbsp;at:&nbsp;privacy@mozilla.com.</p>
+</div>
+
+<p class="small-print">April, 2010</p>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+
+?>

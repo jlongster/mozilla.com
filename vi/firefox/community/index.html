@@ -1,0 +1,46 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    // the $page_title string should be translated
+    $page_title = 'Tham Gia';
+    
+    $pageid = "community";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Tham Gia với Mozilla</h2>
+    <p>Chúng tôi là một cộng đồng toàn cầu làm việc cùng nhau để biến Web trở thành một nơi tốt hơn cho mọi người.</p>
+</div>
+
+<div id="content">
+
+<p class="content-intro">Vậy là bạn muốn giúp? Tuyệt vời! Bạn không cần phải giỏi C++ (hoặc cần biết cái đó là gì!) và bạn không cần phải tốn nhiều thời gian.</p>
+
+<div class="get-involved-list" id="easy">
+<h3>Các Cách Mà Bạn Có Thể Tham Gia Dễ Dàng</h3>
+<ul>
+<li><a href="/<?=$lang?>/products/">Nói với gia đình, bạn bè và đồng nghiệp về các sản phẩm của Mozilla</a></li>
+<li><a href="http://support.mozilla.com/<?=$lang?>/kb/">Giúp đỡ người khác trên các diễn đàn hỗ trợ của chúng tôi</a></li>
+<li><a href="http://www.spreadfirefox.com/" class="external">Tham gia đội ngũ quảng cáo cộng đồng và giúp đỡ các chiến dịch mang tính quần chúng của chúng tôi</a></li>
+<li><a href="http://www.mozilla.org/quality/qfa.html" class="external">Chắc chắn rằng bạn sẽ gửi dữ liệu đổ vỡ đến cho nhóm phát triển</a></li>
+<li><a href="http://www.mozilla.org/projects/tech-evangelism/" class="external">Liên hệ các trang web không hoạt động tốt trên các sản phẩm của Mozilla</a></li>
+<li><a href="http://www.mozilla.org/foundation/donate.html" class="external">Đóng góp tài chính cho Quỹ Mozilla</a></li>
+</ul>
+</div>
+
+<div class="get-involved-list" id="tech">
+<h3>Những Việc Mang Tính Kĩ Thuật Hơn</h3>
+<ul>
+<li><a href="http://www.mozilla.org/quality/help/" class="external">Tham gia nhóm đảm bảo chất lượng và báo cáo những lỗi và vấn đề nên được khắc phục</a></li>
+<li><a href="http://developer.mozilla.org/en/docs/MDC:How_to_Help" class="external">Giúp viết và chỉnh sửa các tài liệu dành cho nhà phát triển</a></li>
+<li><a href="http://support.mozilla.com/en-US/kb/Contributor+Home+Page" class="external">Giúp viết và chỉnh sửa các tài liệu dành cho người dùng cuối</a></li>
+<li><a href="http://developer.mozilla.org/en/docs/Extensions" class="external">Đóng góp vào sự phong phú của hệ sinh thái Firefox bằng việc phát triển một tiện ích</a></li>
+<li><a href="http://www.mozilla.org/hacking/" class="external">Sửa một lỗi hoặc đóng góp mã nguồn cho dự án</a></li>
+</ul>
+</div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

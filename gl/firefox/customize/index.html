@@ -1,0 +1,104 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Cadaquén á súa maneira';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Cadaquén á súa maneira</h2>
+    <p>Se encarga a empanada cos ingredientes que mellor lle parece e personaliza o seu móbil con novos tons, por que non personaliza tamén o modo de visualizar a web?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produtos</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">Funcionalidades</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Seguranza</a></li>
+    <li><span>Personalización</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">Software 100% orgánico</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Suxestións e trucos</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Notas de lanzamento</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Outros sistemas e idiomas</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Un complemento para todo o mundo</h3>
+        <p>Firefox dispón de máis opcións que calquera outra aplicación para personalizar a navegación de forma que se adapte da mellor maneira a como o usuario utiliza a web. Dispón de máis de 5.000 complementos con que poderá mellorar Firefox en función das súas necesidades. Obterá así máis funcionalidades, máis diversión e a posibilidade de desenvolver a súa creatividade.</p>
+        <p>Procura algo en particular? Vexa os seguintes exemplos ou <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">visite o noso sitio de complementos, onde encontrará a gama completa de posibilidades.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Alertas e actualizacións</h4>
+            <p>Con este tipo de complementos, poderá estar a par da información máis recente sobre o tempo, os deportes ou as poxas de eBay. Independentemente do sitio en que se encontre, a información mostrada no seu navegador é en tempo real.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Vexa todos os complementos deste tipo.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por exemplo:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>Non perda de vista as súas operacións de eBay cando estea na Internet.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/5202">Probe Firefox eBay Edition</a> <span>de eBay Corporation</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Fotos, música e vídeo</h4>
+            <p>Converta o seu Firefox nun álbum de fotos, un reprodutor de música e unha central completa de elementos multimedia. É como ter un panel de control multimedia ao alcance da súa man para cando navega, traballa, envia correos electrónicos ou fai buscas na rede.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Vexa todos os complementos deste tipo.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por exemplo:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>Controle case calquera reprodutor multimedia desde o seu navegador.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/219">Probe FoxyTunes</a> <span>de Alex Sirota</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Sociedade e comunicacións</h4>
+            <p>Estes complementos serven para encontrar novidades na rede, mellorar as mensaxes instantáneas e manter o contacto cos amigos dos mellores sitios de redes sociais.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Vexa todos os complementos deste tipo.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por exemplo:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>Descubra novos sitios, conéctese cos seus amigos e comparta as súas descubertas.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/138">Probe StumbleUpon</a> <span>de StumbleUpon</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Temas</h4>
+            <p>Non reduza a súa experiencia de navegación a un deseño estándar. Escolla novas cores, facilite o uso do navegador (con botóns maiores para quen se inicia) ou simplemente seleccione a aparencia que mellor lle pareza.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Vexa todos os temas.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Por exemplo:</span> <a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="nasa" /></a>O tema para a xente a que lle gusta en negro.</p>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/addon/4908">Probe NASA Night Launch</a> <span>de mcdavis941</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('gl', $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>Complementos</h3>
+            <h5>Fai Firefox teu</h5>
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Ver todos os complementos</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

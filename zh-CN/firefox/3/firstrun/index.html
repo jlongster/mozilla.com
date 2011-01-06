@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = '欢迎来到 Firefox 的世界';
+    $extra_feature_text = '请单击位于此标签页的 关闭 按钮转到您的主页。';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="欢迎来到 Firefox 3 的世界"/></h2>
+    <p>感谢您下载 Firefox 目前最安全，最快速以及可定制性最强的版本。请根据上述信息关闭本标签页即可开始网上冲浪。</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>学习更多</h3>
+        <p>有些迷茫吗？我们的新手上路页推荐了一些网站，也包含更多关于 Firefox 的信息。<a href="/<?=$lang?>/firefox/central/">访问新手上路</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>遇到了问题？</h3>
+        <p>我们的支持页提供了许多问题的答案，另外提供了一个在线聊天功能，指导您解决难题。<a href="http://support.mozilla.com/<?=$lang?>/kb/">访问支持页</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

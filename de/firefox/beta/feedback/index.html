@@ -1,0 +1,85 @@
+<?php
+
+// translate page title
+$page_title = "Firefox 4 Beta - Sagen Sie uns Ihre Meinung";
+
+// those strings below are for a dynamic survey displayed in the sidebar
+$str1       = "Wie haben Sie vom Beta-Programm von Firefox 4 erfahren?";
+$str2       = "Bleiben Sie auf dem neuesten Stand";
+$str3       = "Melden Sie sich an, um per E-Mail Neuigkeiten über Firefox Beta und Ereignisse sowie weitere Informationen zu erhalten.";
+$str4       = "Ihre E-Mail-Adresse";
+$str5       = "Ich erkläre mich mit der <a href=\"%s\">Datenschutzerklärung</a> einverstanden <span class='footnote'>(wir werden Ihnen nur Informationen mit Bezug zu Mozilla senden).</span>";
+$str6       = "Bitte senden Sie mir von Zeit zu Zeit auch Neuigkeiten über Mozilla, Tipps &amp; Tricks zu Firefox und andere Informationen über Mozilla.";
+$str7       = "Anmelden »";
+$str8       = "Danke für Ihre Anmeldung!";
+$str9       = "Wir freuen uns, Ihnen bald Tipps &amp; Tricks, wie Sie das Meiste aus Firefox herausholen, sowie aufregende Neuigkeiten über Mozilla und über unsere Arbeit für ein besseres Internet schicken zu dürfen.";
+
+
+
+include_once "{$config['file_root']}/includes/l10n/4-beta-feedback.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Wir brauchen Hilfe</h3>
+        <p>Wir erschaffen einen Firefox, der schneller, leichter und voller Möglichkeiten ist, Ihnen beim Surfen zu helfen. Aber wir schaffen das nicht ohne Ihre Rückmeldungen.</p>
+    </div>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li class="feedback"><span>Rückmeldungen</span></li>
+    <li class="more"><h3>Weitere Informationen auf Englisch</h3></li>
+    <li class="features"><a href="../features/">Funktionen</a> </li>
+    <li class="tech"><a href="../technology/">Technologie</a></li>
+    <li class="policy"><a href="../feedbackprivacypolicy/">Datenschutzerklärung des Add-ons &ldquo;Feedback&rdquo;</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div class="sub-feature" id="beta-feedback">
+        <img src="<?=$screencap?>" alt="Feedback button screenshot" />
+        <h2>Sagen Sie uns, was Sie denken</h2>
+        <h3>Geben Sie direkt Rückmeldungen</h3>
+        <p>Klicken Sie auf die Schaltfläche &ldquo;Feedback&rdquo;, um uns sofort Ihre Meinung zur Beta zu sagen. So einfach ist das!</p>
+    </div>
+
+    <div class="sub-feature" id="beta-developers">
+        <h2 class="divider">Entwickler: Wir brauchen Sie</h2>
+        <h3>Teilen Sie Ihre Ideen mit uns</h3>
+        <p>Was halten Sie von den <a href="../features/#under-the-hood">neuen Entwickler-Funktionen</a> in der Beta?</p>
+        <p><a href="http://www.camp-firefox.de/forum/viewforum.php?f=19">Besuchen Sie unser Forum für Rückmeldungen.</a></p>
+
+        <h3>Melden Sie technische Programmfehler</h3>
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/bugzilla.png" alt="Bugzilla-Logo" />
+        <p>Wenn Sie sich mit Bugzilla auskennen, tragen Sie dort einen Programmfehler für ein konkretes Problem ein, auf das Sie stoßen.
+</p>
+
+        <p class="last"><a href="<?=$fx4betabugurl;?>">Melden Sie einen Programmfehler in der Firefox 4 Beta</a></p>
+    </div>
+
+    <div id="up-to-date" class="sub-feature">
+        <h4>Verbreiten Sie die Botschaft</h4>
+        <ul>
+            <li id="link-twitter"><a href="http://twitter.com/firefox">Folgen Sie uns auf Twitter</a></li>
+            <li id="link-facebook"><a href="http://www.facebook.com/Firefox?v=wall">Besuchen Sie uns auf Facebook</a></li>
+            <li id="link-blog"><a href="http://blog.mozilla.com/">Lesen Sie das Mozilla-Blog</a></li>
+        </ul>
+    </div>
+
+    <div id="support" class="sub-feature">
+        <h4>Brauchen Sie Hilfe?</h4>
+        <p><a href="http://support.mozilla.com/"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Symbol: Hilfe" />Unsere Hilfe-Seiten</a> liefern Antworten und Hinweise speziell zur Beta-Version von Firefox 4.</p>
+    </div>
+
+    <div id="main-content-footer"></div>
+</div>
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/feedback-footer-pages.inc.php";
+?>

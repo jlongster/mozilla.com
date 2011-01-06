@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Čo je nové <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>S Firefoxom 4 Beta ste mobilní</h3>
+        <p>Teraz môžete mať svoj Firefox stále so sebou! Služba Firefox Sync vám dáva prístup k dôležitým údajom Firefoxu - záložkám, heslám, histórii prehliadania a otvoreným kartám - a to z viacerých počítačov a zariadení. Ďalšie informácie nájdete vo videu.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Ďalšie informácie synchronizácii »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Povedzte nám váš názor »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Poznámky k vydaniu »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Posledné novinky</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Spravujte svoj život online:</h4>
+         <?=$tabvideo?>
+        <p>Máte problém orientovať sa v množstve otvorených kariet? Osloboďte svoj prehliadač od zmesy kariet! Jednoducho presuňte svoje karty do skupín, ktoré môžete spravovať, pomenovať a usporiadať presne tak, ako chcete.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

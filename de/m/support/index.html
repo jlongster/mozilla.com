@@ -1,0 +1,45 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Firefox-Hilfe für Mobilgeräte";
+    $search_field  = "Firefox-Hilfe durchsuchen";
+    $search_button = "Suchen";
+    //$link_to_sumo  = "Gesamte Hilfeseite durchsuchen";
+    $link_to_sumo  = "oder <a href=\"%s\">durchsuchen Sie die vollständige Firefox-Hilfe</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Firefox-Hilfe <em>für Mobilgeräte</em></h1>
+
+    <h2>Häufige Fragen</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Wie Sie Firefox-Einstellungen zwischen Desktop-Rechner und Mobilgerät synchronisieren</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Wie Sie Firefox aktualisieren</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Wie Sie die Intelligente Adressleiste in Firefox auf Mobilgeräten benutzen</a></li>
+    </ul>
+
+    <h2>Hilfethemen für Mobilgeräte</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Wie Sie Einstellungen ändern</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Welche Tastaturkürzel Sie verwenden können</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Wie Sie Downloads verwalten</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Wie Sie einen neuen Tab öffnen</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Wie Sie Add-ons finden und installieren</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Wie Sie Add-ons entfernen oder deaktivieren</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Wie Sie auf Webseiten navigieren</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Wie Sie ein Lesezeichen hinzufügen</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Wie Sie hinein- und herauszoomen</a></li>
+    </ul>
+
+    <h2>Benötigen Sie weitere Hilfe?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

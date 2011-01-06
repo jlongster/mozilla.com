@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync cho Mobile";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Đứng dậy và Đi</h2>
+    <p>Tải Firefox Sync và chia sẻ lược sử, trang đánh dấu, thẻ và nhiều thứ khác giữa PC và điện thoại di động của bạn.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Tải xuống Tiện ích Firefox Sync ngay</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Tại sao lại Firefox Sync?</h3>
+
+    <h4>Gõ thật là khó</h4>
+    <p>Chúng ta hãy đối diện thực tế, gõ chữ trên di động quả là khó khăn. Hãy nói chia tay với việc gõ các URL dài ngoằng và các từ khóa tìm kiếm, khi mà Thanh Kì Diệu có thể ghi nhớ lược sử, trang đánh dấu và thẻ trên PC và di động của bạn, giúp nhanh chóng đưa bạn tới nơi mình muốn mà chỉ phải gõ rất ít.</p>
+
+    <h4>Đừng bắt đầu từ đầu</h4>
+    <p>Hãy nói tạm biệt với việc thiết lập lại và gõ lại. Firefox Sync đồng bộ các mật khẩu và tùy chỉnh của bạn, để bạn có thể chạy loanh quanh khắp nơi.</p>
+
+    <h4>Đứng dậy và đi</h4>
+    <p>Mang theo Firefox tới bất kì nơi nào bạn đến. Lướt Web trên PC, đứng dậy và đi, và có mọi thứ đang chờ sẵn trên điện thoại của bạn: lược sử, thẻ đang mở, trang đánh dấu, Thanh Kì Diệu - y nguyên như lúc bạn rời máy tính.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Bắt đầu</h3>
+    <ol>
+    <li>
+        <h4>Cài đặt Firefox Sync trên PC của bạn</h4>
+        <p>Hãy chắc chắn rằng PC của bạn chạy Firefox 3.5 hoặc cao hơn và điện thoại của bạn là một thiết bị đã được thử nghiệm với Firefox (nâng cấp <a href="http://firefox.com/">Firefox</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Tải xuống Firefox Sync</a></li>
+            <li>Sau khi việc tải xuống hoàn tất, hãy nhấn “Khởi động lại Firefox” để hoàn thành việc cài đặt Tiện ích Firefox Sync.</li>
+            <li>Khi Firefox khởi động lại, hãy dùng trình đơn “Công cụ” hoặc biểu tượng Firefox Sync ở góc dưới bên phải thanh trạng thái để mở Firefox Sync và đăng nhập.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Cài đặt tiện ích Firefox Sync trên di động của bạn</h4>
+        <ul>
+            <li>Vào “Tùy chỉnh” của bạn, chọn nút tiện ích.</li>
+            <li>Tìm và chọn tiện ích Firefox Sync. Đăng nhập, đồng bộ, và lên đường.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

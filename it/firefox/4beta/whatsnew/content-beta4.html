@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Le novità di <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Alzati e vai con Firefox 4 Beta</h3>
+        <p>Passa dall'ufficio al computer di casa o al tuo cellulare senza nemmeno rendertene conto. Grazie a Sync puoi accedere in modo semplice ai dati importanti di Firefox (segnalibri, password, cronologia e schede aperte) da tutti i tuoi dispositivi. Guarda il filmato per iniziare.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Altre informazioni su Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Condividi le tue impressioni »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Note di versione »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Ultime notizie</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organizza la tua vita online</h4>
+         <?=$tabvideo?>
+        <p>Quanto è complicato mantenere in ordine tutte le schede aperte? Regala una nuova efficiente organizzazione alle schede del tuo browser! Trascina le schede in gruppi che puoi organizzare, identificare con un nome e gestire grazie a un'interfaccia visuale semplice e divertente.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

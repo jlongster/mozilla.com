@@ -1,0 +1,54 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Updated | Mozilla';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+<script>
+
+var knownLangs = {"en-US":1,"ar":1,"bg":1,"ca":1,"cs":1,"da":1,"de":1,"el":1,
+"en-GB":1,"es-AR":1,"es-ES":1,"eu":1,"fi":1,"fr":1,"ga-IE":1,"gu-IN":1,"he":1,
+"hu":1,"hy-AM":1,"it":1,"ja":1,"ko":1,"mk":1,"mn":1,"nb-NO":1,"nl":1,"nn-NO":1,
+"pa-IN":1,"pl":1,"pt-BR":1,"ro":1,"ru":1,"sk":1,"sl":1,"sq":1,"sv-SE":1,"tr":1,
+"zh-CN":1,"zh-TW":1};
+
+function userAgentRedirect(match_string, url) {
+	if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
+		window.location = url;
+}
+
+function customAgentNote(match_string, url) {                         
+	if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
+		document.write(url)
+}
+
+function redirLang(lang) {
+	if (navigator.userAgent && navigator.userAgent.indexOf('Firefox/1.5.') != -1)
+		window.location = "http://www.mozilla.com/firefox/updated";
+	else
+		window.location = "http://www.mozilla.com/firefox/central/";
+}
+
+userAgentRedirect('Firefox/2.0b1', 'http://www.mozilla.org/projects/bonecho/');
+
+var lang = navigator.language;
+if (lang == "ja-JP-mac")
+	lang = "ja";
+if (lang in knownLangs)
+	redirLang(lang);
+else
+	redirLang("en-US");
+
+</script>
+<META HTTP-EQUIV=REFRESH CONTENT="1; URL=http://en-US.start.mozilla.com/firefox">
+
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+<div id="content">
+
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

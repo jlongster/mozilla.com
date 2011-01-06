@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geolokacija v Firefoxu";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Brskanje z upoštevanjem lokacije</h2>
+    <p>Firefox lahko spletnim stranem sporoči, kje se nahajate, zato da lahko najdete
+    informacije, ki so za vas bolj pomembne in uporabne. Splet tako postaja pametnejši,
+    obenem pa v celoti spoštuje vašo zasebnost.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Poskusite ga!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Pogosta vprašanja in odgovori</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kaj je brskanje z upoštevanjem lokacije?</h4>
+    <div class="expander-content">
+        <p>Nekatere spletne strani upoštevajo lokacijo, zato jih zanima, kje se nahajate, da bi vam lahko postregle s primernejšimi vsebinami ali vam skrajšale čas iskanja. Recimo da bi radi šli na pico v okolici. Spletna stran vas bo vprašala po trenutni lokaciji in zgolj z iskanjem s ključno besedo "pica" boste dobili odgovore, ki jih potrebujete. Brez dodatnega klikanja in tipkanja.</p>
+        <p>Ali drug primer: če iščete pot med dvema krajema, bo spletna stran že vedela, kje se nahajate, vi pa boste morali podati le cilj vašega potovanja.</p>
+        <p>Storitev je na voljo po izbiri, zato Firefox lokacije ne deli brez vašega dovoljenja, obenem pa v celoti spoštuje vašo zasebnost. Tako kot vsi deli Firefoxa je bil tudi ta ustvarjen z odprtimi standardi, da bi olajšal delo spletnim razvijalcem.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kako deluje?</h4>
+    <div class="expander-content">
+        <p>Ko obiščete spletno stran, ki upošteva vašo lokacijo, vas bo Firefox vprašal, ali dovolite njeno objavo.</p>
+        <p>Če soglašate, bo Firefox zbral podatke o bližnjih brezžičnih dostopnih točkah in naslovu IP vašega računalnika. Poslal jih bo privzetemu ponudniku storitev geolokacije, Google Location Services, in pridobil oceno vaše lokacije. Le-to bo nazadnje posredoval še spletni strani.</p>
+        <p>Če ne soglašate z objavo, Firefox ne bo storil ničesar.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kako natančne so lokacije?</h4>
+    <div class="expander-content">
+        <p>Natančnost se spreminja od lokacije do lokacije.  V nekaterih mestih lahko naši ponudniki storitev ugotovijo lokacijo na nekaj metrov natančno, ponekod pa je natačnost bistveno manjša.  Vse lokacije, ki jih vračajo ponudniki storitev, so zgolj ocene, zato vam ne moremo zagotoviti njihove pravilnosti.  Teh podatkov se ne poslužujte v izrednih primerih, ampak uporabite zdravo pamet.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kateri podatki se pošiljajo in komu? Kako je zaščitena moja zasebnost?</h4>
+    <div class="expander-content">
+        <p>Vašo zasebnost postavljamo na prvo mesto, zato Firefox nikoli ne pošilja lokacije brez vašega dovoljenja. Ko obiščete spletno stran, ki zahteva vaše podatke, boste morali dati dovoljenje preden se podatki pošljejo spletni strani ali neodvisnemu ponudniku storitev.</p>
+        <p>Firefox za določanje lokacije privzeto uporablja ponudnika Google Location Services, ki mu pošlje:</p>
+        <ul>
+            <li>naslov IP vašega računalnika,</li>
+            <li>podatke o bližnjih brezžičnih dostopnih točkah in </li>
+            <li>naključno identifikacijo odjemalca, ki jo dodeli Google in poteče vsaka 2 tedna.</li>
+        </ul>
+        <p>Za celoten opis podatkov, ki jih zbira in uporablja Firefox, si oglejte <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Politiko zasebnosti Firefoxa</a> (v angleščini).</p>
+        <p>Google Location Services potem vrne ocenjeno geolokacijo (npr. zemljepisno dolžino in širino).  Za celoten opis podatkov, ki jih zbira in uporablja Google, si oglejte <a href="http://www.google.com/privacy-lsf.html" class="external">Politiko zasebnosti storitve Google Geolocation</a> (v angleščini).</p>
+        <p>Podatki se pošiljajo po šifrirani povezavi, tako da je poskrbljeno za vašo zasebnost. Ko Firefox dobi podatek o vaši lokaciji, ga posreduje spletni strani, ki ga je zahtevala. Google Location Services v nobenem primeru ne prejme imena, naslova ali piškotov spletne strani, ki jo obiskujete.</p>
+        <p>Niti Mozilla niti Google ne bosta nikoli uporabljala podatkov storitve Google Location Services za vašo identifikacijo ali vohunjenje.</p>
+        <p>Za več informacij o uporabi geolokacijskih podatkov na spletnih straneh, si oglejte politiko zasebnosti posamezne spletne strani.</p>
+        <p>Za več informacij o vaši zasebnosti, preberite tudi:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Politika zasebnosti Mozilla Firefoxa</a> (v angleščini)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Politika zasebnosti Googla</a> (v angleščini)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ali mi kdo sledi medtem ko brskam po spletu?</h4>
+    <div class="expander-content">
+        <p>Ne. Firefox zahteva lokacijo samo takrat, ko to zahteva spletna stran, in jo ponudi v uporabo šele, ko uporabnik odobri zahtevo. Firefox ne sledi vaši lokaciji, niti si je ne shranjuje med vašim brskanjem.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kako razveljavim dovoljenja za določeno stran?</h4>
+    <div class="expander-content">
+        <p>Če ste Firefoxu dovolili, da podatke o vaši lokaciji vedno posreduje spletni strani, kasneje pa ste si premislili, lahko takšno dovoljenje umaknete na preprost način:</p>
+        <ul>
+            <li>Pojdite na spletno stran, ki ste ji dali dovoljenje</li>
+            <li>V meniju <em>Orodja</em> izberite <em>Podatki o strani</em></li>
+            <li>Izberite zavihek <em>Dovoljenja</em></li>
+            <li>Spremenite nastavitev <em>Uporaba lokacije</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kako počistim "naključno identifikacijsko številko odjemalca"?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>V meniju <em>Orodja</em> izberite <em>Počisti nedavno zgodovino</em></li>
+            <li>Kliknite na puščico <em>Podrobnosti</em></li>
+            <li>Prepričajte se, da so izbrani <em>Piškoti</em></li>
+            <li>Kliknite <em>Počisti zdaj</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kako trajno izključim brskanje z upoštevanjem lokacije?</h4>
+    <div class="expander-content">
+        <p>Brskanje z upoštevanjem lokacije je v Firefoxu vedno na voljo, vendar se brez vašega dovoljenja ne pošiljajo nikakršni podatki o lokaciji. Če želite to možnost v celoti izključiti, sledite naslednjim korakom:</p>
+        <ul>
+            <li>V vrstico z naslovom vnesite <code>about:config</code></li>
+            <li>Vnesite <code>geo.enabled</code></li>
+            <li>Dvokliknite na zapis <em>geo.enabled</em></li>
+            <li>Brskanje z upoštevanjem lokacije je zdaj izključeno</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Kje se nahajam?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Ups! Med ugotavljanjem vašega trenutnega položaja je prišlo do napake.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

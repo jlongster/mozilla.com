@@ -1,0 +1,181 @@
+<?php
+
+$page_title = "Geolokalisering i Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Positionsbestämd webbläsning</h2>
+    <p>Firefox kan berätta för webbplatser var du befinner dig så att du
+    lättare hittar information som är relevant och användbar. Det gör webben
+    smartare &ndash; och det på ett sätt som fullständigt respekterar din
+    personliga integritet.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Prova själv!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Vanliga frågor</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Vad är positionsbestämd webbläsning?</h4>
+    <div class="expander-content">
+        <p>Webbplatser som använder positionsbestämd webbläsning kommer att
+        fråga dig om var du är för att kunna ge dig mer relevant information,
+        eller för att du ska spara tid när du söker något. Låt säga att du
+        letar efter en pizzeria i närheten. En webbplats kommer att kunna fråga
+        om din position så att en sökning efter ”pizza” ger dig svaret du
+        behöver &ndash; ingen annan information eller ytterligare åtgärder
+        behövs.</p>
+        <p>Ett annat exempel är att om du vill räkna ut en rutt för att ta dig
+        någonstans så vet webbplatsen varifrån du startar, det enda du behöver
+        göra är att berätta vart du vill ta dig.</p>
+        <p>Den här tjänsten är helt frivillig &ndash; Firefox avslöjar inte din
+        position utan ditt medgivande &ndash; och det görs med den största
+        respekt för din personliga integritet. Liksom övriga delar av Firefox har
+        den skapats enligt öppna standarder för att förenkla införandet för
+        webbutvecklare.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hur fungerar det?</h4>
+    <div class="expander-content">
+        <p>När du besöker en webbplats som använder positionsbestämning kommer
+        Firefox att fråga dig om du vill uppge din position.</p>
+        <p>Om du samtycker kommer Firefox att samla in information om närbelägna
+        trådlösa accesspunkter och din dators IP-adress. Firefox skickar sedan
+        dessa uppgifter till den ordinarie leverantören av
+        geolokaliseringstjänsten, Google Location Services, för att få en
+        beräkning av din position. Denna positionsberäkning delas sedan
+        med webbplatsen som efterfrågat den.</p>
+        <p>Om du inte ger ditt medgivande kommer Firefox inte att göra
+        någonting.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hur exakt är postionsbestämningen?</h4>
+    <div class="expander-content">
+        <p>Noggrannheten varierar mycket från plats till plats. På vissa
+        ställen kan vår tjänsteleveratör kanske ge en position på några meter
+        när. På andra ställen kan det röra sig om betydligt större avvikelse.
+        Alla positioner som ges av vår tjänsteleverantör är endast
+        uppskattningar och vi garanterar inte någon precision i den uppgivna
+        positionen. Du bör inte använda dessa positionsuppgifter vid
+        nödsituationer. Använd alltid ditt sunda förnuft.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Vilka uppgifter skickas, och till vem? Hur
+    skyddas min personliga integritet?</h4>
+    <div class="expander-content">
+        <p>Din personliga integritet är extremt viktig för oss och Firefox
+        uppger aldrig din position utan ditt medgivande. När du besöker en
+        webbplats som efterfrågar sådana uppgifter kommer du att tillfrågas
+        innan några uppgifter skickas till webbplatsen eller vår
+        tredjepartsleverantör.</p>
+        <p>Som standard använder Firefox tjänsten Google Location Services för
+        att bestämma din position. Det görs genom att skicka:</p>
+        <ul>
+            <li>din dators IP-adress,</li>
+            <li>information om närbelägna trådlösa accesspunkter</li>
+            <li>och en slumpmässig klientidentifierare, som tilldelats av
+            Google och som förfaller var fjortonde dag.</li>
+        </ul>
+        <p>För en fullständig beskrivning av information som samlas in och
+        används av Firefox, se <a
+        href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox Privacy
+        Policy</a> (på engelska).</p>
+        <p>Google Location Services skickar sedan tillbaka din beräknade
+        geografiska position (med andra ord, latitud och longitud). För en
+        fullständig beskrivning av information som samlas in och används av
+        Google, se <a href="http://www.google.com/privacy-lsf.html"
+        class="external">Google Geolocation Privacy Policy</a> (på engelska).</p>
+        <p>Uppgifterna skickas via en krypterad anslutning för att skydda din
+        personliga integritet. När Firefox har fått din position bestämd
+        skickas den vidare till webbplatsen som efterfrågat den. Inte någon
+        gång avslöjas namnet eller adressen, eller några kakor, för Google
+        Location Services.</p>
+        <p>Varken Mozilla eller Google kommer någonsin att använda
+        uppgifterna som samlats in av Google Location Services för att identifiera
+        dig eller för att spionera på dig.</p>
+        <p>Information om vad den förfrågande webbplatsen gör med dina
+        positionsuppgifter får du söka i webbplatsens sekretesspolicy.</p>
+        <p>För ytterligare information om skyddet av din personliga integritet
+        kan du också läsa:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla
+            Firefox privacy policy</a> (på engelska)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html"
+            class="external">Google privacy policy</a> (på engelska)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Spåras jag när jag surfar på webben?</h4>
+    <div class="expander-content">
+        <p>Nej. Firefox frågar endast efter din position när en webbplats har
+        gjort en förfrågan, och uppger den endast när du har godkänt förfrågan.
+        Firefox varken spårar eller sparar din position när du surfar.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hur ändrar jag ett tillstånd jag givit till en
+    webbplats?</h4>
+    <div class="expander-content">
+        <p>Om du har gett Firefox tillstånd att uppge din position till en
+        webbplats och senare ändrar dig, kan du enkelt återkalla tillståndet.
+        Så här gör du:</p>
+        <ul>
+            <li>Gå till webbplatsen som du har gett ditt tillstånd till</li>
+            <li>Öppna <em>Verktyg</em>-menyn och välj <em>Sidinfo</em></li>
+            <li>Välj fliken <em>Rättigheter</em></li>
+            <li>Ändra inställningarna för <em>Uppge position</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hur raderar jag den ”slumpmässiga
+    klientidentifieraren”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Öppna <em>Verktyg</em>-menyn och välj <em>Rensa ut tidigare
+            historik</em></li>
+            <li>Klicka på pilen <em>Detaljer</em></li>
+            <li>Kontrollera att <em>Kakor</em> är markerat</li>
+            <li>Klicka på <em>Ta bort</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hur stänger jag av positionsbestämd webbläsning
+    helt och hållet?</h4>
+    <div class="expander-content">
+        <p>Positionsbestämd webbläsning är alltid frivillig i Firefox.
+        Inga positionsuppgifter skickas någonsin utan ditt medgivande. Om du
+        vill inaktivera funktionen helt och hållet, följ dessa steg:</p>
+        <ul>
+            <li>I Adressfältet, skriv in <code>about:config</code>, tryck Enter</li>
+            <li>Skriv in <code>geo.enabled</code></li>
+            <li>Dubbelklicka på inställningen <em>geo.enabled</em></li>
+            <li>Positionsbestämd webbläsning är nu inaktiverad</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Var är jag?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Hoppsan! Ett fel uppstod vid försöket att bestämma
+    din position.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

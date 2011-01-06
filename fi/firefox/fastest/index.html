@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Vauhdikkain Firefox";
+
+    // Video controls strings to translate
+    $download_ogg       = "Lataa avoimessa videomuodossa (Ogg Theora)";
+    $download_mp4       = "Lataa MPEG-4-muodossa";
+    $check_back         = "Seuraava video on pian esillä.";
+
+    $play               = "Katso video";
+    $fallback_l1        = "Video vaatii selaimen, joka tukee avoimia tiedostomuotoja:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 tai uudempi';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 tai uudempi';
+    $fallback_l4        = 'tai käytä <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Playeriä</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Ajattele vikkelästi
+    </h2>
+
+    <p>Pyysimme Firefox-faneja levittämään sanaa Firefox 3.5:n uskomattomasta nopeudesta. Tässä tulos:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Videon esikatselu" /><span>
+
+            Katso maailman nopeimman taputtajan Kent Frenchin video
+
+            </span></a></p>
+
+            <p class="secondary">
+            Maailman nopein taputtaja Kent ”Toast” French antaa suosionosoituksensa Firefoxille kunnon ennätyksenhaltijakollegan tapaan. Kentin tyylissä yhdistyvät ketteryys ja kestävyys: hän taputtaa jopa 12 iskua sekunnissa. Kent suunnittelee oman ennätyksensä rikkomista pian.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Lue lisää Kentistä</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Videon esikatselu" /><span>
+
+            Katso maailman nopeimman pinoajan Steven Puruggananin video
+
+            </span></a></p>
+
+            <p class="secondary">
+            Ennätyksenhaltijakollega Steven Purugganan pitää Firefoxista niin, että hän haluaa pinota kuppeja pikavauhtia aivan meidän iloksemme. Steven on maailman pinoamisyhdistys World Sport Stacking Associationin jäsen ja 11-vuotias, mutta hän pinoaa kupit paikalleen vain 5,93 sekunnissa.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Lue lisää pinoamisesta</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Videon esikatselu" /><span>
+
+            Katso maailman nopeimman banjonsoittajan Todd Taylorin video
+
+            </span></a></p>
+            <p class="secondary">
+            Banjonsoittaja Todd Taylor soittaa mielellään Firefoxin kunniaksi ja kutsuu itseään mieluusti ennätyksenhaltijakollegaksi. Todd on soittanut bluegrassia, countrya, popia ja rock and rollia. Todd soittaa nykyään muun muassa elokuvissa ja TV:ssä.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Lue lisää Toddista</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

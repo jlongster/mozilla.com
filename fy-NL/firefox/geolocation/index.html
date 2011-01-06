@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geolokaasje yn Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Lokaasjebewust sneupe</h2>
+    <p>Firefox kin websteeën fertelle wêr't jo binne sadat jo ynformaasje fine kinne
+    dy't mear relevant en mear brûkber is. It is oer it web tûker te meitsjen
+    &ndash; en is dien op in wize dy't hielendal jo privacy respektearret.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Probearje it ris!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Faak stelde fragen</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Wat is lokaasjebewust sneupe?</h4>
+    <div class="expander-content">
+        <p>Websteeën dy't lokaasjebewust sneupe brûke, sille jo freegje wêr't jo binne om jo relevante ynformaasje te jaan, of om tiid te besparjen wylst it sykjen. Sykje jo bygelyks in pizzeria yn jo omjouwing. In webstee kin jo freegje om jo lokaasje, sa dat ienfâldich sykje nei “pizza” jo de antwurden jout dy't jo nedich hawwe... ekstra ynformaasje type is net nedich.</p>
+        <p>Of, as jo in route útsette wolle nei in plak, sil it webstee witte wêr't jo binne als startpunt sa dat alles wat jo dwaan moatte is fertelle wêr't jo hinne wolle.</p>
+        <p>Dizze tsjinst is totaal opsjoneel &ndash; Firefox dielt jo lokaasje net sûnder jo tastimming &ndash; en it wurdt dien mei it grutst mooglike respekt foar jo privacy. En, lykas alle elementen fan Firefox, it wurd makke mei iepen standerts om it maklik te meitsjen foar webûntwikkelers.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hoe wurket it?</h4>
+    <div class="expander-content">
+        <p>As jo in lokaasjebewuste webstee besykje, sil Firefox jo freegje of jo jo lokaasje diele wolle.</p>
+        <p>As jo akkoard geane, sammelt Firefox ynformaasje oer triedleaze tagongspunten yn 'e buert en jo kompjûter syn IP-adres. Dan stjoert Firefox dizze ynformaasje nei de standert geolokaasje-tsjinst-provider, Google Location Services, om in skatting te meitsjen fan jo lokaasje. Die lokaasjeskatting wurdt dan dielt mei it webstee dy't dêrom frege hat.</p>
+        <p>As jo net akkoard geane, sil Firefox neat dwaan.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hoe akkuraat binne de lokaasjes?</h4>
+    <div class="expander-content">
+        <p>Akkuraatheid ferskilt fan lokaasje ta lokaasje. Yn sommige plakken, kinne ús tsjinstproviders yn steat wêze om in lokaasje binnen in pear meters te jaan. Mar yn oare gebieden kin it folle mear wêze. Alle lokaasjes opjûn troch ús tsjinstproviders binne skattings en wy kinne de akkuraatheid fan de lokaasjes net garandearje.  Brûk dizze ynformaasje asjobleaft net foar needtastannen. Brûk altyd jo holle.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hokker ynformaasje wurdt ferstjoerd, en nei wa? Hoe wurdt myn privacy beskerme?</h4>
+    <div class="expander-content">
+        <p>Jo privacy is ekstreem wichtich foar ús en Firefox dielt jo lokaasje noait sûnder jo tastimming. As jo in side besykje dy't ynformaasje freget, sil jo earst frege wurde, eardat ynformaasje dielt wurdt mei it opfreegjende webstee en ús tredde-partij tsjinstprovider.</p>
+        <p>Standert, brûkt Firefox Google Location Services om jo lokaasje te ûntdekken troch it stjoeren fan:</p>
+        <ul>
+            <li>jo kompjûter syn IP-adres,</li>
+            <li>ynformaasje oer de triedleaze tagongspunten yn 'e buert en</li>
+            <li>in wikseljende client identifier, hokker bepaalt is troch Google, dy't elke 2 wiken ferrint.</li>
+        </ul>
+        <p>Foar in folsleine omskriuwing fan ynformaasje sammele en brûkt troch Firefox, sjoch asjobleaft de <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox Privacybetingsten</a> (yn it Ingelsk).</p>
+        <p>Google Location Services jout dan jo skatte geolokaasje werom (byg., lingte- en breedtegraad).  Foar in folsleine omskriuwing fan ynformaasje sammele en brûkt troch Google, sjoch asjobleaft de <a href="http://www.google.com/privacy-lsf.html" class="external">Google Geolocation Privacybetingsten</a> (yn it Ingelsk).</p>
+        <p>De ynformaasje wurdt útwiksele oer in fersifere ferbining om jo privacy te beskermen. Sa gau as Firefox jo lokaasje-ynformaasje hat, wurdt it trochjûn oan it webstee dy't dêrom frege hat. Noait wurdt de namme of lokaasje fan it webstee dy't jo besykje of cookies dielt mei Google Location Services.</p>
+        <p>Sawol Mozilla as Google sille noait de ynformaasje sammele troch Google Location Services brûke om jo te identifisearjen of jo te bespionearjen.</p>
+        <p>Foar ynformaasje oer wat it freegjende webstee docht mei jo lokaasje-ynformaasje, sjoch dêrfoar op de privacybetingsten fan it webstee sels.</p>
+        <p>Foar mear ynformaasje oer jo privacy, lês dan it folgjende troch:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox privacybetingsten</a> (yn it Ingelsk)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google privacybetingsten</a> (yn it Ingelsk)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Wurd ik folge as ik omsneup op it web?</h4>
+    <div class="expander-content">
+        <p>Nee. Firefox freget allinnich om in lokaasje as in webstee yn fersyk docht en dielt allinnich jo lokaasje as de brûker it fersyk tastean hat. Firefox folget of ûnthâld jo lokaasje net as jo ynternette.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Hoe meitsje ik in tastimming ûngedien foar in webstee?</h4>
+    <div class="expander-content">
+        <p>As jo Firefox tastimming jûn hawwe om altyd jo lokaasje op te jaan oan in webstee en letter fan gedachten feroarje, kinne jo ienfâldich die tastimming ynlûke. Hjir is hoe't jo dat dogge:</p>
+        <ul>
+            <li>Navigearje nei it webstee dêr't jo tastimming jûn hawwe</li>
+            <li>Gean nei it <em>Ekstra</em> menu, selektearje dan <em>Side-ynfo</em></li>
+            <li>Selektearje it <em>Tastimmings</em> ljepblêd</li>
+            <li>Wizigje de ynstelling foar <em>Diel Lokaasje</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Hoe wiskje ik it “random-client-identifikaasjenûmer”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Gean nei <em>Ekstra</em>, selektearje dan <em>Wiskje resinte skiednis</em></li>
+            <li>Klik it <em>Details</em> pylkje</li>
+            <li>Wês wis dat <em>Cookies</em> selektearre is</li>
+            <li>Klik op <em>No wiskje</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hoe skeakel ik lokaasjebewust sneupe permanint út?</h4>
+    <div class="expander-content">
+        <p>Lokaasjebewust sneupe is altyd opsjoneel yn Firefox. Der wurdt noait lokaasje-ynformaasje ferstjoerd sûnder jo tastimming. As jo dit ûnderdiel folslein útskeakelje wolle, folgje dan de folgjende stappen:</p>
+        <ul>
+            <li>Yn de adresbalke, typ <code>about:config</code></li>
+            <li>Typ <code>geo.enabled</code></li>
+            <li>Dûbelklik op it <em>geo.enabled</em> foarkar</li>
+            <li>Lokaasjebewust sneupe is no útskeakele</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Wer bin ik?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Oops! Der is in flater makke by it ûntdekken fan jo posysje.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

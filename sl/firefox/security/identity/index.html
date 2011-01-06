@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Identifikacija strani z enim klikom";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Identifikacija strani z enim klikom</h2>
+    <p>Firefox 3 vsebuje nov gumb za identifikacijo spletnih strani, ki vam pomaga odkriti, s kom se povezujete na spletu.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Ta možnost vam razkrije, ali je spletna stran, na kateri se nahajate, objavila podatke o svoji identiteti, kdo jih je overil in ali ščiti vaše podatke pred prisluškovalci. Identiteto vsake strani lahko preverite s klikom na ikono strani na levi strani vrstice z naslovom (ali s kombinacijo tipk Shift-Tab-Enter).</p>
+
+<h3>Pogosto zastavljena vprašanja</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Kaj pomenijo različni nivoji podatkov o identiteti?</h4>
+    <div class="expander-content">
+        <p>Posebna ikona bo odražala nivo podatkov o identiteti, ki jih je objavila spletna stran.</p>
+        <p class="site-id site-id-1">Stran ni objavila podatkov o identiteti.</p>
+        <p class="site-id site-id-2">Stran je objavila osnovne podatke o identiteti in vaše zasebne podatke ščiti pred prisluškovalci.</p>
+        <p class="site-id site-id-3">Stran je objavila v celoti overjene podatke o identiteti svojega lastnika in vaše zasebne podatke ščiti pred prisluškovalci.</p>
+        <p class="site-id site-id-4">Ta stran je na seznamu napadalnih strani in prevar. Zaupanje podatkov tej strani ali zgolj njeno obiskovanje je lahko škodljivo.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Zakaj podatkov o identiteti ne objavljajo vse strani?</h4>
+    <div class="expander-content">
+        <p>Večina spletnih strani na internetu ne zahteva nobenih zasebnih ali finančnih podatkov od obiskovalcev, zato se jim zdi strošek overjanja in objave podatkov o identiteti skupaj z zaščito pred prisluškovanjem odveč.</p>
+        <p>Spletne strani, ki od vas zahtevajo zasebne ali finančne podatke oz. ki se predstavljajo kot vladne ali poslovne enote, pa bi se morale vedno ustrezno predstaviti in zaščititi vaše podatke pred prisluškovalci.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ali je varno poslovati s stranmi, ki ne objavijo podatkov o identiteti?</h4>
+    <div class="expander-content">
+        <p>Odločanje o tem, komu boste zaupali na spletu, se začne s spoznavanjem oseb, s katerimi se pogovarjate, a to še ni vse. Strani, ki ne objavljajo podatkov o identiteti in ki ne ščitijo vaših zasebnih podatkov, vas izpostavljajo tveganju, zato ne veljajo za varne. A tudi strani, ki se pravilno predstavijo, lahko še vedno počnejo opravila, ki jih ne odobravate oz. zmanjšujejo varnost na spletu.</p>
+        <p>Tako kot v resničnem življenju je priporočljivo, da ste previdni pri sodelovanju s stranmi, ki jih ne poznate in ne zaupate. Če se je neka stran ustrezno predstavila, lahko to pripomore k sprejemanju odločitev o zaupanju.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Ali Mozilla overi te podatke za vsako spletno stran?</h4>
+    <div class="expander-content">
+        <p>Mozilla ne overja podatkov, s katerimi se spletne strani predstavljajo. Namesto tega se Firefox, podobno kot drugi brskalniki, zanaša na več podjetij - overiteljev, ki overjajo identiteto spletnih strani in izdajajo certifikate. Podjetja morajo ustrezati <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozillini politiki overiteljev za izdajanje certifikatov</a>, ki od overiteljev med drugim zahtevajo neodvisno potrdilo, da certifikatov ne izdajajo nepravilno.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

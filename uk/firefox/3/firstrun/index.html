@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Ласкаво просимо до Firefox';
+    $extra_feature_text = 'Клацніть на кнопку закриття цієї вкладки, щоб перейти на домашню сторінку';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Ласкаво просимо до Firefox  3"/></h2>
+    <p>Дякуємо що завантажили найбезпечнішу, найшвидшу та найгнучкішу версію Firefox на сьогодні.  Щоб почати подорож мережею просто закрийте цю вкладку як показано вище.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Дізнайтеся більше</h3>
+        <p>Роздумуєте куди йти далі? Наша початкова сторінка містить перелік рекомендованих сайтів, а також додаткову інформацію про Firefox. <a href="/<?=$lang?>/firefox/central/">Перейти на початкову сторінку</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Питання?</h3>
+        <p>Наша сторінка підтримки містить купу відповідей, а на додачу у живому чаті вам допоможуть розібратись з будь-якими хитрими моментами. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Перейти на сторінку підтримки</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

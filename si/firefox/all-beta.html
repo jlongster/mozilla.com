@@ -1,0 +1,37 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox වෙබ් ගවේශකය | නවතම බීටා නිකුතුව පිරික්සීම සඳහා අපට සහාය වන්න';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Firefox අනාගතය පිරික්සීමට සහාය වන්න!</h2>
+        <p>නවතම Firefox බීටා වෙළුම පෙරනිමි නිකුතුවක් ලෙස දැන් භාවිතයට ඇත. මෙය පරික්‍ෂණ දාවනයක් ලෙස භාවිතකර ඔබේ අදහස් අපට දන්වන්න.!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>නවැදගත් තොරතුරු</h4>
+        <p class="intro">ලබාගැනීමට පෙර කියවන්න</p>
+    </div>
+    <ul>
+        <li>මෙය පෙරනිකුතු මෘදුකාංගයකි: ඔබට සමහරක් වෙබ් අඩවි සහ ඇඩෝන සමඟ නොගැලපීම් හමුවිය හැක.</li>
+        <li>ඔබට දෝෂයක් හමුවුවහොත් කරුණාකර <a href="http://feedback.mozilla.org/">අපට දන්වන්න</a> හෝ <a href="https://bugzilla.mozilla.org/">දෝෂයක් සටහන් කරන්න</a>.</li>
+        <li>බොහෝ තොරතුරු සඳහා, <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">නිකුතු සටහන්</a> සහ <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">හදුනාගත් ගැටලු</a> (ඉංග්‍රිසි බසින්) කියවන්න.</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">අවශ්‍ය වන්නේ බීටා නිකුතුව නොවේ ද? <a href="/<?=$lang?>/firefox/">නවතම Firefox නිකුතුව</a> ගන්න.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

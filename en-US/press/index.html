@@ -1,0 +1,86 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Press Center';
+    $body_id    = 'press';
+    $breadcrumbs = array(
+        $l10n->get('About') => "/{$lang}/about/",
+        $l10n->get('Press Center') => "/{$lang}/press/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/press-page.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.mozilla.com/feed/" />
+    <script src="http://w.sharethis.com/button/sharethis.js#publisher=24928a16-4c8b-4e88-8e9e-abd7e9668971&amp;type=website"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Mozilla <span>Press Center</span></h2>
+	<p>Mozilla News, Announcements and More</p>
+</div>
+
+<div id="main-content">
+
+	<div id="press-releases">
+		<h3>Mozilla <span>News</span></h3>
+        <?php
+        ?>
+
+        <ul class="feed-items">
+            <?php 
+                $feed_items = array();
+                @include "includes/feed.php.sample"; 
+                @include "includes/feed.php"; 
+            ?>
+            <?php foreach ($feed_items as $item): ?>
+                <li>
+                    <h4><a href="<?=$item['link']?>"><?=$item['title']?></a></h4>
+                    <span class="date"><?=$item['date']?></span>
+                    <p class="summary"><?=$item['summary']?></p>
+                    <div class="meta">
+                        <span class="share">
+                            <script>
+                                SHARETHIS.addEntry(<?=json_encode(array(
+                                    'title' => $item['title'],
+                                    'url' => $item['link'],
+                                    'summary' => $item['summary'],
+                                    'published' => $item['dateISO8601']
+                                    //'icon' => ''           
+                                ))?>, {button:true} );
+                            </script>
+                        </span>
+                    </div>
+                </li>
+            <?php endforeach ?>
+        </ul>
+
+	</div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+    <?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+
+    <div id="sidebar-box">
+        <h3>Connect <span>with Us</span></h3>
+        <ul class="social">
+            <li class="twitter"><a href="http://twitter.com/Firefox">Twitter »</a></li>
+            <li class="flickr"><a href="http://www.flickr.com/photos/firefox_community">Flickr »</a></li>
+            <li class="facebook"><a href="http://www.facebook.com/Firefox">Facebook »</a></li>
+            <li class="feed"><a href="http://blog.mozilla.com/feed/">Subscribe to RSS feed »</a></li>
+        </ul>
+
+        <h3>Media <span>Contact</span></h3>
+        <p>For interview requests or any other media inquiries, please contact:</p>
+        <p><em>press at mozilla dot com</em></p>
+    </div>
+
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

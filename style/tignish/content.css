@@ -1,0 +1,344 @@
+/* {{{ Text and Links */
+
+body {
+	font-family: georgia, serif;
+	color: #807970;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #0489b7;
+}
+
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: #0489b7;
+}
+
+a.external:link,
+a.external:visited {
+	padding-right: 8px;
+}
+
+a.external:hover,
+a.external:active {
+	padding-right: 8px;
+	background: transparent url(/img/tignish/content/external-link.png) center right no-repeat;
+}
+
+h1 a.external:link,
+h2 a.external:link,
+h3 a.external:link,
+h4 a.external:link,
+h5 a.external:link,
+h6 a.external:link,
+h1 a.external:visited,
+h2 a.external:visited,
+h3 a.external:visited,
+h4 a.external:visited,
+h5 a.external:visited,
+h6 a.external:visited {
+	padding-right: 16px;
+}
+
+h1 a.external:hover,
+h2 a.external:hover,
+h3 a.external:hover,
+h4 a.external:hover,
+h5 a.external:hover,
+h6 a.external:hover,
+h1 a.external:active,
+h2 a.external:active,
+h3 a.external:active,
+h4 a.external:active,
+h5 a.external:active,
+h6 a.external:active {
+	padding-right: 16px;
+	background: transparent url(/img/tignish/content/external-link-large.png) center right no-repeat;
+}
+a.email:link,
+a.email:visited {
+	padding-right: 16px;
+}
+
+a.email:hover,
+a.email:hover {
+	padding-right: 16px;
+	background: transparent url(/img/tignish/content/email-link.png) center right no-repeat;
+}
+
+p,
+dd,
+#content li,
+#main-content li {
+	line-height: 1.5;
+}
+
+#footer a.external:hover,
+#footer a.external:hover {
+	background-image: url(/img/tignish/content/external-link-footer.png);
+}
+
+strong { font-weight: bold; }
+
+em { font-style: italic; }
+
+abbr,
+acronym {
+	border-bottom :1px dotted #000;
+	cursor: help;
+}
+
+p,
+fieldset,
+table,
+pre {
+	margin-bottom: 1em;
+}
+
+/* }}} */
+/* {{{ Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: georgia, serif;
+	font-weight: normal;
+	color: #4b4740;
+}
+
+h1 { font-size: 185%; }
+h2 { font-size: 170%; }
+h3 { font-size: 165%; }
+h4 { font-size: 137%; }
+h5 { font-size: 110%; }
+h6 { font-size: 100%; }
+
+h1, h2, h3 {
+	margin: 1em 0;
+}
+
+/* }}} */
+/* {{{ Lists */
+
+ul {
+	margin: 1em 0 1em 0;
+	padding: 0;
+	position: relative;
+	left: -10px;
+	zoom: 1;
+}
+
+ul li,
+ol li ul li {
+	list-style-type: none;
+	padding: 3px 0 4px 10px;
+	background: url(/img/tignish/content/bullet.png) 0 10px no-repeat;
+}
+
+html[dir=rtl] ul li,
+html[dir=rtl] ol li ul li {
+	padding: 3px 10px 4px 0;
+	background-position: 100% 10px;
+}
+
+blockquote {
+	margin: 1em;
+}
+
+ol,
+dl {
+	margin: 1em;
+}
+
+ol,
+dl {
+	margin-left:2em;
+}
+
+ol li,
+ul li ol li {
+	list-style: decimal outside;
+	background: none;
+}
+
+dl dd {
+	margin-left:1em;
+}
+
+/* }}} */
+/* {{{ Table */
+
+td, th { border: 0; }
+
+table.data-table {
+	border-top: 1px solid #eee;
+}
+
+table.data-table td,
+table.data-table th {
+	padding: 0.5em 0.5em;
+	border-bottom: 1px solid #eee;
+}
+
+/* }}} */
+/* {{{ Download Button */
+
+ul.home-download,
+ul.home-download li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background: none;
+}
+
+ul.home-download {
+	margin-left: 30px;
+	width: 300px;
+	font-family: verdana, sans-serif;
+}
+
+* html ul.home-download { margin-left: 29px; }
+
+a.download-link {
+	display: block;
+	height: 63px;
+	padding: 15px 15px 15px 60px;
+	background: url(/img/tignish/home/download-button.png) 0 0 no-repeat;
+	color: #09700b;
+}
+
+* html a.download-link {
+	background: none;
+	background: url(/img/tignish/home/download-button-ie.png) 0 0 no-repeat;
+}
+
+a.download-link:hover {
+	background-position: -300px 0;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul.home-download li a.download-link span {
+	color: #09700b;
+	position: static;
+	line-height: 1.2;
+}
+
+ul.home-download li a.download-link em {
+	display: block;
+	font-size: 73%;
+	font-style: normal;
+}
+
+ul.home-download li a.download-link em.download-lang {
+	color: #42a313;
+	margin-top: 5px;
+}
+
+.download-noscript { margin-left: 35px; width: 400px; }
+.download-noscript h3 { font-size: 120%; margin-bottom: 0; }
+.download-noscript h3 span { display: block; font-size: 75%; color: #898378; }
+.download-noscript ul { margin-top: 0.5em; }
+
+/* }}} */
+/* {{{ Sidebar Download Buttons */
+
+#sidebar ul.home-download {
+	margin: 0;
+	padding: 0;
+	left: auto;
+	font-family: georgia, serif;
+	width: 265px;
+}
+
+#sidebar ul.home-download li {
+	list-style-type: none;
+	margin: 0;
+	padding: 20px 0 0 0;
+	background: url(/img/tignish/firefox/download-background.png) top left no-repeat;
+}
+
+#sidebar ul.home-download li h3 {
+	margin: 0 80px 5px 10px;
+	color: #69645b;
+	font-size: 175%;
+}
+
+#sidebar ul.home-download li div {
+	font-size: 85%;
+	color: #898378;
+	margin: 0 85px 0 10px;
+}
+
+#sidebar ul.home-download li a.download-link,
+* html #sidebar ul.home-download li a.download-link {
+	display: block;
+	line-height: 1;
+	margin: 12px 0 5px 3px;
+	padding: 0;
+	height: auto;
+	font-family: verdana, sans-serif;
+	color: #09700b;
+	text-decoration: none;
+	background: url(/img/tignish/firefox/download-button.png) 0 0 no-repeat;
+	min-height: 22px;
+	filter: none;
+}
+
+#sidebar ul.home-download li a.download-link span {
+	line-height: 1;
+}
+
+* html #sidebar ul.home-download li a.download-link { height: 22px; /* min-height hack for IE6 */ }
+
+#sidebar ul.home-download li a.download-link span.download-link-text {
+	display: block;
+	background: url(/img/tignish/firefox/download-button.png) 0 100% no-repeat;
+	padding: 13px 15px 26px 42px;
+}
+
+#sidebar ul.home-download  li a.download-link span.free {
+	font-size: 85%;
+	color: #53b156;
+}
+
+#sidebar ul.home-download  li a.download-link:hover,
+#sidebar ul.home-download  li a.download-link:active {
+	background-position: -300px 0;
+	text-decoration: underline;
+}
+
+#sidebar ul.home-download  li a.download-link:hover span.download-link-text,
+#sidebar ul.home-download  li a.download-link:active span.download-link-text {
+	background-position: -300px 100%;
+}
+
+/* Show linux download only */
+ul.os_linux li.os_windows,
+ul.os_linux li.os_osx { display: none;}
+
+/* Show windows download only */
+ul.os_windows li.os_linux,
+ul.os_windows li.os_osx { display: none;}
+
+/* Show mac download only */
+ul.os_osx li.os_linux,
+ul.os_osx li.os_windows { display: none;}
+
+.download-other {
+	font-family: verdana, sans-serif;
+	font-size: 70%;
+	color: #ccc;
+	margin-left: 5px;
+	position: relative;
+	left: 5px;
+}
+
+#sidebar .download-other a {
+	margin-right: 4px;
+}
+
+.home-download abbr { border-bottom: 0; }
+
+/* }}} */

@@ -1,0 +1,272 @@
+/* {{{ Main Features */
+
+#doc { background: none; }
+
+#main-feature {
+	background: url(/img/mobile/background-mobile-home.png) no-repeat 0 10px;
+	padding-bottom: 0;
+}
+
+* html #main-feature {
+	background-image: url(/img/mobile/background-mobile-home-ie.png);
+}
+
+#main-feature-top {
+	min-height: 235px;
+	padding-bottom: 1px;
+}
+
+* html #main-feature-top { height: 235px; /* Hack for IE6 */ }
+
+#main-feature h2 {
+	margin-right: 450px;
+	font-size: 280%;
+}
+
+#main-feature p {
+	margin-bottom: 10px;
+	font-size: 200%;
+}
+
+#main-feature #mobile-story {
+	width: 635px;
+}
+
+#main-feature #mobile-story-footer {
+	background: url(/img/mobile/mobile-story-footer.png) no-repeat top left;
+	clear: both;
+	height: 35px;
+}
+
+* html #main-feature #mobile-story-footer {
+	background-image: url(/img/mobile/mobile-story-footer-ie.png);
+}
+
+#main-feature #mobile-story h3 {
+	margin: 0 0 0 35px;
+}
+
+#main-feature #mobile-story p {
+	margin: 0 10px 0 35px;
+	float: left;
+	clear: left;
+	width: 290px;
+	font-size: 100%;
+	color: #898378;
+	display: inline;
+}
+
+#main-feature #video-player {
+	width: 256px;
+	display: inline;
+	margin-right: 40px;
+	float: right;
+	clear: right;
+}
+
+/* }}} */
+/* {{{ Video */
+
+#current-video #video-player {
+	width: 256px;
+}
+a.mozilla-video-control-overlay {
+  background-color: black;
+}
+
+/* }}} */
+/* {{{ Sidebar */
+
+#sidebar {
+	position: relative;
+	top: -235px;
+	width: 235px;
+}
+
+#sidebar #download-info {
+	padding: 5px 10px 20px 20px;
+	background: url(/img/mobile/background-download.png) top right no-repeat;
+}
+
+#sidebar #download-info p {
+	padding-right: 30px;
+}
+
+#sidebar #download-info p#download-instructions {
+	padding-right: 0;
+}
+
+#sidebar #download-info p#download-instructions a {
+	font-weight: bold;
+}
+
+#sidebar #join ul li {
+	background: none;
+}
+
+#sidebar div {
+	margin-bottom: 10px;
+}
+
+#join a {
+	padding-left: 22px;
+}
+
+#join #getinvolved a {
+	background: url("/img/mobile/icon-chat.png") no-repeat 0 0;
+}
+
+#join #twitter a {
+	background: url("/img/sprite-16.png") no-repeat 0 0;
+}
+
+#join #facebook a {
+	background: url("/img/sprite-16.png") no-repeat 0 -40px;
+}
+
+#join #beta a {
+  background: url("/img/sprite-16.png") no-repeat 0 -232px;
+}
+
+/* }}} */
+/* {{{ Main Content */
+
+#main-content {
+	margin: 10px 0 0 0;
+	width: 615px;
+}
+
+#main-content .sub-feature {
+	margin: 0;
+	padding: 15px 20px 20px 20px;
+	width: 275px;
+	min-height: 300px;
+}
+
+* html #main-content .sub-feature {
+	height: 300px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#main-content .sub-feature h3 {
+	padding-right: 60px;
+	margin-top: 0;
+	padding-top: 20px;
+	padding-bottom: 5px;
+	font-size: 150%;
+}
+
+#main-content .sub-feature p {
+	margin: 0 0 5px 0;
+	font-size: 100%;
+	color: #898378;
+}
+
+#main-content .sub-feature ul {
+	margin: 0;
+	left: 0;
+}
+
+#main-content .sub-feature ul li {
+	background: none;
+	padding: 0;
+}
+
+#main-content #anywhere {
+	background: url(/img/mobile/background-anywhere.png) top right no-repeat;
+	width: 260px;
+}
+
+#main-content #developers {
+	background: url(/img/mobile/background-home-developers.png) top right no-repeat;
+}
+
+#main-content #developers h3 {
+	padding-right: 110px;
+}
+
+#main-content #developers p {
+	padding-right: 15px;
+}
+
+
+
+/* }}} */
+
+#sidebar .spread-block { 
+  background: transparent url(/img/mobile/spread-block-top.png) center top no-repeat;
+  padding: 10px 0 0;
+  margin-left: -10px;
+  width: 225px;
+}
+
+#sidebar .spread-block .in {
+  background: transparent url(/img/mobile/spread-block-btm.png) center bottom no-repeat;
+  padding: 0 12px 10px;
+  overflow: auto;
+  width: 201px;
+}
+
+
+#tweet-this label { display: block; font-size: 93%; }
+#tweet-this #tw-status { width: 95%; }
+
+#tweet-this button {
+  border: 0; 
+  background: transparent url(/img/mobile/icn-twitter.png) 0 50% no-repeat; 
+  padding: 0 0 0 20px;
+  margin: .25em 0;
+  font: 1em georgia, serif;
+  float: right;
+  color: #0489b7;
+  cursor: pointer;
+}
+
+#tweet-this button:focus, #tweet-this button:hover {
+  text-decoration: underline;
+}
+
+#tweet-this button:after, 
+#your-own p.links a:after {
+  content: "\00A0\00BB"; 
+  font-size: 1.25em; 
+  line-height: .75;
+}
+
+#sidebar #your-own p {
+  width: 48%;
+  float: left;
+  margin-bottom: 0;
+}
+
+#sidebar #your-own p.links {
+  text-align: right;
+  float: right;
+}
+
+#your-own p.links a {
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  clear: both;
+  float: right;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+#sidebar #your-own {
+	margin-bottom: 30px;
+}
+
+
+#your-own p.links a.twitter {
+  background-image: url(/img/mobile/icn-twitter.png);
+}
+
+#your-own p.links a.identica {
+  background-image: url(/img/mobile/icn-identica.png);
+}
+.input-placeholder-active { color: #bbb; }
+
+#firefox-mobile #footer { margin-top: 0; }

@@ -1,0 +1,77 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "원클릭 웹 사이트 신원 정보";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>원클릭 웹 사이트 신원 정보</h2>
+    <p>Firefox 3에는 온라인 상에서 접속하는 서버에 대한 상세한 정보를 알려 주는 신원 정보 서비스를 제공하고 있습니다.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">이 기능은 접속 중인 웹 사이트에 대한 정보를 세부적으로 확인함으로서 온라인 사기나 데이터 갈취의 위험 여부를 미리 방지하기 위해 제공 합니다. 여러분은 주소창 왼쪽의 웹 사이트 아이콘을 한번만 클릭해 주거나 Shift-Tab-Enter키를 눌러 신원 정보를 확인할 수 있습니다.</p>
+
+<h3>자주 묻는 질문</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">각 신원 정보에서 주는 정보의 차이는 무엇입니까?</h4>
+    <div class="expander-content">
+        <p>"여권 검사 요원" 처럼 보이는 아이콘은 웹 사이트가 제공하는 정보의 품질에 따라 바뀌게 됩니다.</p>
+        <p class="site-id site-id-1"> 웹 사이트가 신원 정보를 제공하지 않는 경우</p>
+        <p class="site-id site-id-2"> 웹 사이트가 기본 정보를 제공하고 온라인 도청을 막을 수 있을 경우</p>
+        <p class="site-id site-id-3"> 웹 사이트가 상세 정보를 제공하고 온라인 도청을 강력하게 막을 수 있는 경우</p>
+        <p class="site-id site-id-4"> 웹 사이트가 공격 및 위조 사이트 목록에 올라있는 경우 (개인 정보 전송이 위험)</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">왜 모든 웹 사이트가 신원 정보를 제공하지 않나요?</h4>
+    <div class="expander-content">
+        <p>인터넷 상 대부분 웹 사이트는 방문자에게 개인 및 금융 정보를 요구하지 않으며 신원 정보를 제공하고 보안 기능을 제공하기 위해 일정 수준 이상의 비용을 들여야 하기 때문입니다.</p>
+        <p>개인 및 금융 정보를 다루는 웹 사이트나 정부 및 비지니스 기업인 경우 신원 정보를 제공하고 데이터 암호화를 통한 정보 보호에 투자하여야 합니다.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">신원 정보를 제공하지 않고 온라인 사업을 하는 것이 안전한가요?</h4>
+    <div class="expander-content">
+        <p>온라인 상에서 신뢰는 상대방에 대해 아는 것 부터 시작합니다. 신원 정보를 제공하지 않는 사이트라면 위험 시 개인 정보를 보호화는 데도 소홀할 수 있기 때문에 안전하지 않다고 판단하는 게 좋습니다. 물론 신원 정보를 제공하는 사이트라 하더라도 주의할 필요는 있습니다.
+     </p>
+        <p>현실에서 처럼 여러분은 항상 잘 믿지 못하는 웹 사이트와 거래하는 것이 주의해야 합니다. 신원 정보를 제공하기로 결정했다면 많은 사용자를 위해 좋은 영향을 제공해 주시게 되었습니다. </p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mozilla는 모든 웹 사이트에 대한 정보를 검증합니까?</h4>
+    <div class="expander-content">
+        <p>웹 사이트 신원 정보는 Mozilla가 직접 검증하지 않습니다. 다른 웹 브라우저 처럼 사설 SSL 인증 기관이 발급한 인증서 정보를 Firefox가 표시합니다. <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla 인증 기관  정책</a>에 따라 제 3자 회계 자료를 제출해야만 인증 기관으로 선정 됩니다.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,78 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Website-Identifikation mit einem Klick";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Website-Identifikation mit einem Klick</h2>
+    <p>Firefox 3 besitzt eine neue Schaltfläche zur Website-Identifikation, so dass Sie einfach herausfinden können, mit wem Sie sich im Internet verbinden.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Diese Funktion ermöglicht es Ihnen, auf einen Blick zu sehen, ob die Website, die Sie besuchen, Informationen über ihre Identität anbietet, wer diese Informationen überprüft hat und ob sie Ihre Verbindung vor Lauschern schützt. Sie können die Website-Identifikation für jede Seite aufrufen, indem Sie auf das Symbol der Seite am linken Rand der Adressleiste klicken (oder indem Sie Umschalt + Tabulator + Eingabetaste in die Adressleiste eintippen).</p>
+
+<h3>Häufig gestellte Fragen</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Was bedeuten die verschiedenen Stufen der Identitätsdaten?</h4>
+    <div class="expander-content">
+        <p>Das Symbol des “Grenzbeamten” ändert sich und zeigt an, welche Stufe von Identitätsdaten die Website zur Verfügung stellt.</p>
+        <p class="site-id site-id-1">Die Seite bietet keine Informationen über ihre Identität.</p>
+        <p class="site-id site-id-2">Die Seite bietet grundlegende Informationen über ihre Identität und schützt Ihre persönlichen Daten vor Lauschern.</p>
+        <p class="site-id site-id-3">Die Seite bietet vollständig überprüfte Informationen über ihre Identität und schützt Ihre persönlichen Daten vor Lauschern.</p>
+        <p class="site-id site-id-4">Diese Seite steht auf der Liste für vermutete Angriffe oder Fälschungen. Es kann schädlich sein, auf dieser Seite persönliche Daten anzugeben oder sie auch nur zu besuchen.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Warum bieten nicht alle Websites Informationen über ihre Identität?</h4>
+    <div class="expander-content">
+        <p>Die meisten Websites verlangen keine persönlichen oder finanziellen Daten von ihren Besuchern und halten es möglicherweise nicht für notwendig, für überprüfte Informationen über ihre Identität oder Schutz vor Lauschern zu bezahlen.</p>
+        <p>Websites, die persönliche oder finanzielle Informationen von Ihnen verlangen oder die behaupten, Regierungs- oder Geschäftsstellen zu repräsentieren, sollten sich immer korrekt identifizieren und Ihre Daten vor Lauschern schützen.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ist es sicher, mit Seiten, die sich nicht identifizieren, Geschäfte zu machen?</h4>
+    <div class="expander-content">
+        <p>Um im Internet zu entscheiden, wem Sie vertrauen können, müssen Sie zunächst wissen, mit wem Sie es zu tun haben. Das alleine reicht aber noch nicht. Seiten, die keine Daten über ihre Identität bieten und Ihre persönlichen Daten nicht schützen, setzen Sie einem Risiko aus und sollten nicht als sicher angesehen werden. Seiten, die korrekte Daten über ihre Identität zur Verfügung stellen, können immer noch Methoden einsetzen, mit denen Sie nicht einverstanden sind oder eine schwach gesicherte Website haben.</p>
+        <p>Genau wie im echten Leben sollten Sie vorsichtig sein, wenn Sie mit Seiten umgehen, die Sie nicht kennen oder denen Sie nicht vertrauen. Zu wissen, dass sich eine Seite korrekt identifiziert hat, ist Teil der Entscheidung, wem Sie vertrauen.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Überprüft Mozilla diese Daten für jede Website?</h4>
+    <div class="expander-content">
+        <p>Die Informationen, die Websites nutzen, um sich zu identifizieren, werden nicht von Mozilla überprüft. Stattdessen verlässt sich Firefox – wie andere Browser auch – auf eine Gruppe vertrauenswürdiger Unternehmen, “Zertifizierungsstellen” genannt, die die Identität einer Website überprüfen und “Identitäts-Zertifikate” ausstellen. Diese Unternehmen müssen die <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla-Richtlinien für Zertifizierungsstellen</a> befolgen. Die Richtlinien verlangen von den Zertifizierungsstellen Prüfungen
+von dritter Seite, die bestätigen, dass sie Zertifikate nicht unsachgemäß
+ausstellen.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

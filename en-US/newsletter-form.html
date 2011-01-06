@@ -1,0 +1,94 @@
+<?php 
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $newsletter_wt_subscribe_uri = isset($newsletter_wt_subscribe_uri) ? $newsletter_wt_subscribe_uri : '';
+    $newsletter_wt_subscribe_ti = isset($newsletter_wt_subscribe_ti) ? $newsletter_wt_subscribe_ti : '';
+    $newsletter_wt_blade_uri = isset($newsletter_wt_blade_uri) ? $newsletter_wt_blade_uri : '';
+    $newsletter_wt_blade_ti = isset($newsletter_wt_blade_ti) ? $newsletter_wt_blade_ti : '';
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+    $open_pane_content = isset($open_pane_content) ? $open_pane_content : <<<OPEN_PANE
+        <a href="/{$lang}/newsletter/"
+           onclick="dcsMultiTrack('DCS.dcsuri', '/{$lang}/newsletter/', 'WT.ti', 'Newsletter');">
+          Keep in touch! <span>Get Monthly News</span>
+        </a>
+OPEN_PANE;
+
+?>
+
+<ul id="email-form" class="link <?= $status ?>">
+    <li id="open-pane" data-wt_uri="<?= $newsletter_wt_blade_uri ?>" data-wt_ti="<?= $newsletter_wt_blade_ti ?>"><?=$open_pane_content?></li>
+    <li id="form-pane">
+        <form action="" method="post">
+            <p class="intro">Sign up to get our monthly newsletter featuring special Mozilla news, Firefox
+tips & tricks, and more!</p>
+            <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
+            <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+
+            <div id="email-field" class="field">
+              <span class="error-wrapper">
+                <input name="email" type="email" placeholder="Your Email Address" id="email" value="<?= $form->get('email') ?>">
+              </span>
+            </div>
+
+            <div class="field" id="country-field">
+              <select id="country" name="country">
+                <option value="">Select country</option>
+                <?php 
+                    $country = $form->get('country');
+                    if (!$country) {
+                        $country = 'us';
+                    }
+                    echo regionsAsOptions($lang, $country);
+                ?>
+              </select>
+            </div>
+
+            <div class="field" id="format-field">
+              <?php
+                  $html_format = 'checked="checked"';
+                  $text_format = '';
+                  if ($form->get('format') == 'text') {
+                      $text_format = 'checked="checked"';
+                      $html_format = '';
+                  }
+              ?>
+              <div class="field-radios">
+                <input type="radio" name="format" id="html-format" value="html" <?= $html_format?>>
+                <label for="html-format">HTML</label>
+                <input type="radio" name="format" id="text-format" value="text" <?= $text_format?>>
+                <label for="text-format">Text</label>
+              </div>
+            </div>
+
+            <div id="privacy-field">
+              <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+              <label for="privacy-check" id="privacy-check-label">
+                <span class="error-wrapper"><input type="checkbox" id="privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+              </label>
+            </div>
+
+            <p class="footnote">We will only send you Mozilla-related information.</p>
+            <input name="submit" type="submit" value="Subscribe" id="subscribe">
+
+        </form>
+    </li>
+    <li id="success-pane">
+        <h3>Thanks for Subscribing!</h3>
+        <p>We look forward to soon begin sharing tips &amp; tricks on getting the most out of Firefox, as well as exciting news about Mozilla and how we’re working to create a better Web.</p>
+    </li>
+</ul>
+
+<?php if ($status == 'success'): ?>
+  <script type="text/javascript">
+    dcsMultiTrack('DCS.dcsuri', '<?= $newsletter_wt_subscribe_uri ?>', 'WT.ti', '<?= $newsletter_wt_subscribe_ti ?>');
+  </script>
+<?php endif ?>

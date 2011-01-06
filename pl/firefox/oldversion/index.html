@@ -1,0 +1,41 @@
+<?php
+    // Translate the page Title below
+    $page_title = 'Firefox został zaktualizowany';
+
+    // Please translate the two strings below, we may use these two
+    // strings for a survey on this page for some locales
+    $no_download_button1 = "Nie, dziękuję";
+    $no_download_button2 = "(Powiedz nam, dlaczego)";
+
+
+
+    $pageid = 'oldversion';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+
+    <h2>
+        <span>
+        Ostrzeżenie bezpieczeństwa:
+        </span>
+</h2>
+<h3>
+        To jest nieaktualna wersja Firefoksa.
+    </h3>
+</div>
+
+<div id="main-content">
+
+    <p>Korzystając z&nbsp;tej wersji Firefoksa, narażasz się na problemy z bezpieczeństwem.</p>
+
+    <p id="main-feature-contents">
+    Prosimy <a href="/<?=$lang?>/firefox/">pobrać za darmo najnowszą wersję Firefoksa</a>. Dzięki temu skorzystasz z&nbsp;najnowszych poprawek bezpieczeństwa, wydajności i&nbsp;funkcjonalności.
+    </p>
+
+    <?=$downloadbox?>
+
+</div>
+
+

@@ -1,0 +1,44 @@
+<?php
+    // please translate the variable below
+    $page_title = "Köszönjük, hogy a Firefox böngészőt választotta!";
+
+    include_once "{$config['file_root']}/includes/headers/mobile/sms-thanks.php";
+    include_once "{$config['file_root']}/includes/headers/mobile/header-mobile-l10n.inc.php";
+
+?>
+<div id="main-feature">
+    <h2>Köszönjük, hogy a Firefox böngészőt választotta!</h2>
+</div>
+
+<div>
+    <?=buildMobileSubPageMenu($lang,'sms-thanks')?>
+</div>
+
+<div id="main-content">
+
+    <div id="thanks-intro">
+
+    <h3>A Firefox letöltéséhez kövesse az alábbi útmutatót, ismerje meg a Firefox Sync kiegészítőt, és már indulhat is.</h3>
+    <ol id="steps">
+        <li>Nézze meg a bejövő SMS-üzeneteit, közte kell lennie az üzenetnek, amit most küldtünk.</li>
+        <li>Nyissa meg az üzenetet és töltse le a Firefox böngészőt a benne a szereplő hivatkozás segítségével.</li>
+    </ol>
+    <p class="small-print">* A Firefox ingyenesen használható; azonban a normál adatátviteli díjakat ki kell fizetni. Keressen vezeték nélküli hálózatot.</p>
+
+    </div>
+
+    <div id="weave-info">
+
+    <h3>Amíg várakozik…</h3>
+    <ol>
+        <li>Állítsa be a Firefox Sync kiegészítőt és vigye <em>magával</em> a Firefox böngészőt, bármerre is jár. Ossza meg a böngészés előzményeit, a könyvjelzőket, a jelszavakat és a lapokat a számítógép és a telefon között.</li>
+        <li><a href="https://addons.mozilla.org/mobile/addon/10868">Telepítse a Firefox Sync kiegészítőt a számítógépére</a> és jelentkezzen be a Firefox Sync szolgáltatásba. Miután a Firefox letöltődött a telefonjára, kövesse az utasításokat és válassza ki a "Firefox Sync kiegészítő letöltése" lehetőséget a telepítés elvégzéséhez. Alternatív megoldásként válassza ki a Beállítások, majd a Kiegészítők gombot. Ezt követően keressen rá és telepítse a Firefox Sync kiegészítőt a telefonjára.</li>
+    </ol>
+
+    </div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

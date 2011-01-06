@@ -1,0 +1,96 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox 3.6 FAQ';
+    $body_id    = 'mozilla-com';
+	$extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/tignish/press-release.css" media="screen" />
+	<style>
+		#whats-new ul {
+			left: 0;
+		}
+	</style>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+
+<div id="content">
+
+<h1>Firefox 3.6</h1>
+
+<div style="text-align: right;"><a href="http://blog.mozilla.com/blog/2010/01/21/firefox-3-6-release/">View Press Release</a></div>
+
+<dl class="faq">
+
+<dt>Q: When is Firefox 3.6 available?</dt>
+<dd><p>A: Firefox 3.6 is available now for Windows, Linux, and Mac OS X operating systems as a free download from  <a href="http://www.firefox.com/">http://www.firefox.com</a>.</p></dd>
+
+
+<dt>Q: What’s new in Firefox 3.6?</dt>
+<dd id="whats-new"><p>A: With extensive under the hood work to support the way you use the Web with real world performance. The focus for development between 3.5 and 3.6 was improved personalization, security, stability and performance.  The result is a better, more personal Web experience.  Firefox 3.6 includes exciting features like improved JavaScript performance, customizable browser themes called Personas, a ground-breaking Plugin updater, and performance tweaks to familiar favorites like the Awesome Bar for a better, more personal, Web experience.</p>
+<p>What’s new</p>
+<ul>
+    <li>Personas: To personalize the look of Firefox, select new themes called “Personas” in a single click and without a restart</li>
+    <li>Plug-in Updater: To keep you safe from potential security vulnerabilities, Firefox now alerts you about out-of-date Plug-ins</li>
+    <li>Stability improvements: In Firefox 3.6, we significantly decreased crashes by changing the way some third party software hooks into Firefox - all without sacrificing our extensibility in any way</li>
+    <li>Form Complete: When filling out an online form,  Firefox suggests information for fields based on your common answers in similar fields</li>
+</ul>
+<p>What’s improved</p>
+<ul>
+    <li>Performance: We’re constantly optimizing Firefox for the way you use the Web – improving start-up times and responsiveness, making new tabs open up more quickly, and having the Awesome Bar provide results even faster.</li>
+    <li>Open Video and Audio: With the world’s best implementation of HTML 5 audio and video support, now video can be displayed full screen and supports poster frames</li>
+</ul>
+<p>What’s New Under the Hood for Developers</p>
+<ul>
+    <li>Font Support:  In addition to OpenType and TrueType fonts, 3.6 now supports the new Web Open Font Format (WOFF)</li>
+    <li>CSS gradient support for smooth transitions between two or more specified colors</li>
+    <li>A set of new APIs enabling developers to write extensions that access the browser’s geolocation features as well as device orientation</li>
+    <li>It also supports the latest HTML5 specification, including the <a href="http://news.cnet.com/8301-30685_3-10402642-264.html?tag=mncol;txt">File API</a> for local file handling, allowing web apps to access and manipulate files like images without requiring you to upload them to the server first</li>
+</ul>
+<p>To view the full Release Notes go to <a href="http://www.mozilla.com/firefox/3.6/releasenotes/">http://www.mozilla.com/firefox/3.6/releasenotes/</a>.  If you’re a web developer check out the Firefox 3.6 for developers page here: <a href="https://developer.mozilla.org/en/Firefox_3.6_for_developers">https://developer.mozilla.org/en/Firefox_3.6_for_developers</a>.</p>
+
+</dd>
+
+
+<dt>Q: How much faster is Firefox 3.6?</dt>
+<dd><p>A: The TraceMonkey JavaScript engine brings screaming fast performance to Firefox 3.6. With JavaScript that’s 20% faster than Firefox 3.5, it’s all about getting you where you need to go as quickly and easily as possible.</p></dd>
+
+
+<dt>Q: How did stability improve in Firefox 3.6?</dt>
+<dd><p>A: We hate crashes. When Firefox crashes, we try to get you back on your feet as quickly as possible, but we’d much rather you not crash in the first place. In Firefox 3.6, we are changing the way that some third party software hooks into Firefox which should eliminate a good chunk of those crashes without sacrificing our extensibility in any way. In the process, we’ll also be giving you greater control over the code that runs in your browser.  Now Firefox can better handle all of the rich Web applications you have running simultaneously.</p></dd>
+
+
+<dt>Q: How does the Plugin updater work?</dt>
+<dd><p>A: Some Web pages require that you install small applications called Plugins to watch videos, play games or view documents. It can be hard to make sure that all of your Plugins are always up to date. Since outdated Plugins are a security risk, Firefox will let you know when you have a Plugin that’s vulnerable to attack and help you get an updated version. If you want to check your Plugins at any time, just select “Check for Updates” from the Help menu, or click on “Find Updates” in the Plugins page of the Add-ons Manager.</p></dd>
+
+
+<dt>Q: What are Personas?</dt>
+<dd><p>A: New in Firefox 3.6, Firefox themes called “Personas” let you change the look of your Firefox with a single click. Choose anything from an array of colorful designs, beautiful patterns and prints provided by creative community of contributors and artists.   You can even find designs from your favorite brands like Harry Potter, Bob Marley, Lady Gaga, and more. With a gallery of over 35,000 to choose from, you can change your Persona as often as you like. To learn more about Personas, check out this video: <a href="http://www.mozilla.com/firefox/video/?video=personas">http://www.mozilla.com/firefox/video/?video=personas</a></p></dd>
+
+
+<dt>Q: How do I access Personas in Firefox 3.6?</dt>
+<dd><p>A: Go to <a href="http://www.getpersonas.com/">GetPersonas.com</a> to start browsing the galleries of art.  Scroll over the designs you like for a live preview, and click once to apply it.  You can also access and manage your themes through the Add-Ons Manager by clicking on “Tools”, “Add-ons”, and the “Themes” tab.</p></dd>
+
+
+<dt>Q: I use Firefox 3.X - how do I upgrade to Firefox 3.6?</dt>
+<dd><p>A: You can download Firefox 3.6 at <a href="http://www.firefox.com/">http://www.firefox.com</a> and enjoy the new features and faster performance. If you’re using any version of Firefox 3.5 or higher, you can also get Firefox 3.6 by clicking on the Help menu and then selecting Check for Updates.</p></dd>
+
+
+<dt>Q: Will my existing add-ons work with Firefox 3.6?</dt>
+<dd><p>More than 80 percent of top add-ons are already compatible with Firefox 3.6. In Firefox 3.6, add-ons can be installed only if they can be securely updated. Firefox automatically checks the installed versions of add-ons and alerts you if new versions are available. Also, Mozilla can disable add-ons and plugins that are known to introduce a privacy or security concern. </p></dd>
+
+
+<dt>Q: Is Firefox 3.6 available in my language?</dt>
+<dd><p>A: Firefox 3.6 is available in more than 70 languages - more than any other browser. For a complete list of available language versions, please visit: <a href="http://www.mozilla.com/firefox/all.html">http://www.mozilla.com/firefox/all.html</a>.</p></dd>
+
+</dl>
+
+
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

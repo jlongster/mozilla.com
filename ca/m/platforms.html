@@ -1,0 +1,36 @@
+<?php
+    // please translate the variable below
+    $page_title = "Mozilla | Plataformes compatibles i requisits del sistema";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/m-requirements.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+  <h1>Plataformes compatibles i requisits del sistema</h1>
+  <p>El Firefox està disponible en dispositius mòbils a les plataformes Maemo i Windows Mobile (en versió de proves).</p>
+</div>
+<div id="content">
+  <h2>Dispositius compatibles</h2>
+
+  <h3>Maemo</h3>
+
+  <ul>
+    <li>Nokia N900</li>
+    <li>Nokia N810</li>
+  </ul>
+
+<?php /*hide winmo for now
+  <h3>Windows Mobile (en versió de proves)</h3>
+
+  <ul>
+    <li>AT&amp;T Tilt</li>
+    <li>HTC Touch Diamond Pro</li>
+    <li>Palm Treo Pro</li>
+    <li>Samsung Omnia</li>
+  </ul>
+end hide */ ?>
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

@@ -1,0 +1,56 @@
+<?php
+
+    // We want caching to vary the page based on user agent
+    header('Vary: User-Agent');
+
+    // Check if platform is Mac
+    if( isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'], 'Macintosh') !== FALSE ) {
+        $no_plugin = TRUE;
+    }else{
+        $no_plugin = FALSE;
+    }
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Firefox 3.6.4 beta</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<style media="all">@import "/style/tignish/content.css";</style>
+	<style media="all">@import "/style/firefox/3.6/details.css";</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="details-header">
+	<h1>Firefox 3.6.4 Beta Is Available!</h1>
+    <?php
+        if( $no_plugin ) {
+            echo '<p><a href="/firefox/3.6.4rc/releasenotes" target="_blank">Free Upgrade: Get the World’s Best Browser</a></p>';
+        }else{
+            echo '<p><a href="/firefox/3.6.4rc/releasenotes" target="_blank">Firefox, Safe From Plugin Crashes!</a></p>';
+        }
+    ?>
+
+</div>
+
+<div id="details-content">
+
+	<ul>
+        <?php
+            if( $no_plugin ) {
+                echo "<li>Improved security and performance.</li>\n";
+                echo "<li>Please update and help test the beta!</li>\n";
+            }else{
+                echo "<li>Plugin crashes or hangs don't crash Firefox.</li>\n";
+                echo "<li>Please update and help test the beta!</li>\n";
+            }
+        ?>
+	</ul>
+
+</div>
+</div>
+
+</body>
+</html>

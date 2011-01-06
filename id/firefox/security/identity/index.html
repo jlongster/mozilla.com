@@ -1,0 +1,75 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Fitur Identitas Situs dalam Sekali Klik";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>Fitur Identitas Situs dalam Sekali Klik</h2>
+    <p>Firefox 3 memiliki tombol pengenal situs baru yang dapat membantu Anda mengenali dengan siapa Anda berinteraksi saat sedang daring.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Fitur ini memudahkan Anda untuk melihat sekilas apakah situs web sedang dikunjungi menyediakan informasi identitas mengenai diri mereka, pihak mana yang memverifikasi informasi identitas tersebut, serta apakah situs web tersebut melindungi informasi data Anda dicuri dengar oleh pihak lainnya. Anda dapat mengakses identitas untuk setiap situs web dengan mengklik pada ikon situs di sebelah kiri bar lokasi (atau dengan menekan tombol Shift-Tab-Enter sekaligus).</p>
+
+<h3>Tanya Jawab</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">Bagaimana cara mengartikan tingkatan informasi identitas yang berbeda-beda?</h4>
+    <div class="expander-content">
+        <p>Ikon “petugas paspor” akan berubah sesuai dengan tingkat informasi identitas yang disediakan oleh situs web.</p>
+        <p class="site-id site-id-1">Situs tidak menyediakan informasi identitas apapun.</p>
+        <p class="site-id site-id-2">Situs menyediakan informasi identitas dasar dan melindungi informasi pribadi Anda dicuri dengar.</p>
+        <p class="site-id site-id-3">Situs menyediakan informasi identitas yang dapat diverifikasi dengan baik beserta verifikasi tentang identitas pemiliknya dan melindungi informasi pribadi Anda dicuri dengar.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Mengapa tidak semua situs web menyediakan informasi identitas yang telah diverifikasi?</h4>
+    <div class="expander-content">
+        <p>Sebagian besar situs web yang ada di internet tidak meminta informasi pribadi atau keuangan dari para pengunjungnya. Mereka juga mungkin tidak merasa perlu untuk menanggung biaya yang diperuntukkan untuk menyediakan informasi identitas yang dapat diverifikasi serta mendapatkan perlindungan dari para pencuri dengar.</p>
+        <p>Situs web yang benar-benar menginginkan Anda untuk menyediakan informasi pribadi dan informasi keuangan milik Anda atau mengklaim bahwa mereka mewakili pihak pemerintahan atau perusahaan seharusnya dapat menginformasikan identitasnya secara layak dan melindungi informasi Anda dicuri dengan oleh pihak lainnya.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Apakah aman untuk melakukan transaksi bisnis dengan situs yang tidak menyediakan informasi identitas?</h4>
+    <div class="expander-content">
+        <p>Keputusan untuk mempercayai sebuah situs daring dimulai dengan mengetahui dengan siapa Anda berinteraksi, walau bukan hanya dipandang dari sisi ini saja. Situs yang tidak menyediakan informasi identitas dan tidak melindungi informasi pribadi akan meningkatkan resiko keamanan bagi Anda dan sebaiknya tidak dianggap aman. Akan tetapi walau situs telah mengidentifikasikan dirinya dengan layak, situs mungkin masih akan melakukan hal-hal yang tidak Anda sukai atau juga masih memiliki kelemahan keamanan.</p>
+        <p>Seperti halnya di dunia nyata, sebaiknya Anda harus berhati-hati pada saat berinteraksi dengan situs yang tidak diketahui dan dipercayai. Dengan mengetahui bahwa sebuah situs telah mengidentifikasikan dirinya dengan layak dan pantas merupakan salah satu aspek yang perlu diperhatikan pada pengambilan keputusan untuk mempercayai situs tersebut.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Apakah pihak Mozilla ikut memverifikasi informasi identitas untuk setiap situs web?</h4>
+    <div class="expander-content">
+        <p>Informasi yang digunakan untuk mengidentifikasi situs Web tidak diverifikasi oleh Mozilla. Firefox, sebagaimana program peramban lainnya, mengandalkan beberapa perusahaan terpercaya yang disebut sebagai Otoritas Sertifikat (Certificate Authorities/CA) yaitu pihak yang memverifikasi identitas situs dan menerbitkan "sertifikat" identitas. Perusahaan ini diharuskan untuk mengikuti <a href="http://www.mozilla.org/projects/security/certs/policy/">Kebijakan Privasi Otoritas Sertifikat Mozilla (Mozilla CA Certificate Policy)</a> yang diantaranya mewajibkan pihak CA sendiri untuk menyediakan pemeriksaan (audit) oleh pihak ketiga yang menegaskan bahwa mereka tidak mengeluarkan sertifikat secara tidak layak.</p>
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

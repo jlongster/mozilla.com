@@ -1,0 +1,273 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Download';
+    $body_id    = 'download';
+    $breadcrumbs = array(
+                            'Download' => ""
+                        );
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/kampyle/k_button.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/download-page.css" media="screen" />
+    <meta name="WT.si_n" content="DownloadFirefox">
+    <meta name="WT.si_x" content="1">
+    <meta name="WT.si_cs" content="1">
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+	<div id="download-message">
+
+<noscript id="download-noscript">
+	<div id="main-feature">
+		<h2>Thanks for choosing Firefox</h2>
+	</div>
+
+	<div id="content">
+		<h3>Download Firefox (English)</h3>
+    <?php 
+      $_temp_locales = $firefoxDetails->has_transition_download_page;
+      // This will make all links go directly to download.mozilla.org
+      $firefoxDetails->has_transition_download_page = array();
+      echo $firefoxDetails->getDownloadBlockForLocale('en-US', array('include_js' => false)); 
+    ?>
+
+    <?php 
+      $firefoxDetails->has_transition_download_page = $_temp_locales;
+      unset($_temp_locales);
+    ?>
+	</div> <!-- end #content  -->
+</noscript>
+<div id="download-fallback">
+	<div id="main-feature-fallback">
+		<h2>Thanks for choosing Firefox</h2>
+	</div>
+
+    <script src="/js/download.js"></script>
+	<div id="content-fallback">
+		<h3>Download Firefox (English)</h3>
+    <?php 
+      $_temp_locales = $firefoxDetails->has_transition_download_page;
+      // This will make all links go directly to download.mozilla.org
+      $firefoxDetails->has_transition_download_page = array();
+      echo $firefoxDetails->getDownloadBlockForLocale('en-US', array('include_js' => true, 'download_parent_override' => 'content-fallback')); 
+    ?>
+
+    <?php 
+      $firefoxDetails->has_transition_download_page = $_temp_locales;
+      unset($_temp_locales);
+    ?>
+	</div> <!-- end #content  -->
+</div>
+
+<script>// <![CDATA[
+
+    /**
+     * Over-ride this function that's originally setup in /js/download.js
+     * We don't want to spawn the pop-up download hack if we're already
+     * on the download page, since it will result in two downloads (the
+     * href is already a direct link).
+     *
+     */
+    function init_download() {
+    }
+
+	function parseGETVars()
+	{
+		// validate query according to RFC 3986
+		var qs = location.search.substring(1);
+		if (qs.match(/[^a-zA-Z0-9\-\._~%!$&'()*+,;=:@\/\?]/))
+			return false;
+
+		var nv = qs.split('&');
+		var url = {};
+		for(i = 0; i < nv.length; i++) {
+			var eq = nv[i].indexOf('=');
+			url[nv[i].substring(0,eq).toLowerCase()] = unescape(nv[i].substring(eq + 1));
+		}
+
+		return url;
+	}
+
+	function validateDownloadVar(value)
+	{
+		// validate download vars to prevent XSS
+		if (value.match(/[^\-\.A-Za-z0-9]/))
+			return false;
+
+		return true;
+	}
+
+	var download_url = '';
+
+	function initDownload()
+	{
+		// 1. Grab vars from URL (PRODUCT, OS, and LANG)
+		var get = parseGETVars();
+
+		var product = (get['product'])    ? get['product']    : null;
+		var os      = (get['os'])      ? get['os']      : null;
+		var lang    = (get['lang'])    ? get['lang']    : null;
+
+		var div = document.getElementById('download-message');
+
+
+		if ( !os || !lang
+			|| !validateDownloadVar(product)
+			|| !validateDownloadVar(os)
+			|| !validateDownloadVar(lang)
+		) {
+			// No vars were specified, just display the fallback content.
+		    document.getElementById('download-fallback').style.display = 'block';
+            return;
+		}
+
+		var product_split = product.split('-');
+		var product_version = product_split[1];
+		var promotion_msg = '';
+
+		// Check for known unsupported platforms and redirect to the
+		// unsupported platform page.
+		if (gPlatformUnsupported) {
+			var uri = location.protocol + '//' + location.host + '/<?=$lang?>/firefox/unsupported-systems.html' + location.search;
+			window.location = uri;
+			return;
+		}
+
+		switch (os) {
+			case 'win' :
+				var at_least_xp = /Windows NT (5\.[1-9]|[6-9]\.|[1-9][0-9]+\.)/.test(navigator.userAgent);
+				if (jQuery.browser.msie && at_least_xp) {
+					document.body.className += ' win-download';
+
+					promotion_msg =
+						'<ol class="install-steps">' +
+						'<li class="one">' +
+						'<p>Start the process by clicking Run.</p>' +
+						'<p class="note">Depending on your connection speed, the download may take up to a few minutes. Thanks for your patience… it’ll be worth the wait!</p>' +
+						'</li>' +
+						'<li class="two">' +
+						'<p>Click Run to launch the Mozilla Firefox setup wizard.</p>' +
+						'<p class="note">Then, just follow the steps (we’ve made the process as painless as possible).</p>' +
+						'</li>' +
+						'<li class="three">' +
+						'<p>Now you’re ready to leap boldly into a new era of Web surfing.</p>' +
+						'<p class="note">Double-click on the Firefox icon whenever you want to go online.</p>' +
+						'</li>' +
+						'</ol>';
+				} else {
+					document.body.className += ' default-download';
+				}
+				break;
+			case 'osx' :
+				document.body.className += ' osx-download';
+
+				promotion_msg =
+					'<ol class="install-steps">' +
+					'<li class="one">' +
+					'<p>Your file should begin downloading automatically in a few seconds.</p>' +
+					'<p class="note">Depending on your connection speed, the download may take up to a few minutes. Thanks for your patience… it’ll be worth the wait!</p>' +
+					'</li>' +
+					'<li class="two">' +
+					'<p>When prompted, drag the Firefox icon into the image of your Applications folder.</p>' +
+					'</li>' +
+					'<li class="three">' +
+					'<p>Drag the Firefox icon from the Applications folder into the dock.</p>' +
+					'<p class="note">Then, just click on Firefox whenever you want to use the web!</p>' +
+					'</li>' +
+					'</ol>';
+					break;
+			default:
+				document.body.className += ' default-download';
+		}
+
+		// 2. Build download.mozilla.org URL out of those vars.
+		download_url = "http://download.mozilla.org/?product=";
+		download_url += product + '&os=' + os + '&lang=' + lang;
+
+		// 3. Display sidebar
+		var msg = '<div id="blue-sidebar">';
+		msg += '<div id="sidebar-mobile">';
+		msg += '<img src="/img/covehead/download/mobile-icon.png" alt="" />';
+		msg += '<h3>Go <span>Mobile</span></h3>';
+		msg += '<p>Now that you have Firefox on your desktop, get Firefox on your Mobile phone, too. It\'s easy to sync both versions so you\'ll always have Firefox with you. ';
+                msg += "<a href=\"/<?=$lang?>/mobile\" onclick=\"dcsMultiTrack('DCS.dscuri', '/<?=$lang?>/mobile', 'WT.ti', 'Mobile');\">Learn More »</a></p>";
+		msg += '</div>';
+		msg += '<div class="sidebar-divider"></div>';
+		msg += '<div id="sidebar-newsletter">';
+		msg += '<h3>Get <span>Monthly News</span></h3>';
+	        msg += '<p>Love Firefox? Get in on the action by taking a minute to help. ';
+                msg += "<a href=\"/<?=$lang?>/newsletter/\" onclick=\"dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Newsletter');\">Sign me up »</a></p>";
+		msg += '</div>';
+		msg += '</div>';
+
+		// 4. display the download URL as a manual fall-back link
+		msg += '<div id="main-feature" class="main-feature-firefox">';
+		msg += '<h2>Thanks for choosing <span>Firefox!</span></h2>';
+
+		// 5. display a promotional box with content based on the PRODUCT variable
+		msg += '<p class="manual-download">Your download should automatically begin in a few seconds, but if not, ';
+		var link_text = 'click here';
+		msg += link_text.link(download_url) + '.</p>';
+		msg += '</div>';
+
+		if (promotion_msg != '') {
+			msg += '<div id="content">';
+			msg += promotion_msg;
+			msg += '</div>';
+		}
+
+		div.innerHTML = msg;
+	}
+
+    initDownload();
+
+    function downloadURL() {
+        // Only start the download if we're not in IE.
+        if (download_url.length != 0 && navigator.appVersion.indexOf('MSIE') == -1) {
+            // 5. automatically start the download of the file at the constructed download.mozilla.org URL
+
+            window.location = download_url;
+        }
+    }
+
+    // If we're in Safari, call via setTimeout() otherwise use onload.
+    if ( navigator.appVersion.indexOf('Safari') != -1 ) {
+        window.setTimeout(downloadURL, 2500);
+    } else {
+        window.onload = downloadURL;
+    }
+
+// ]]></script>
+
+	<ul id="download-footer">
+		<li class="one">
+		  <h3>Need <span>Download Help?</span></h3>
+		  <p>Our help page has plenty of answers.</p>
+		  <a href="http://support.mozilla.com/"
+                     onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com', 'DCS.dcsuri', '/', 'WT.ti', 'Help');">
+                    Visit Firefox Help »
+                  </a>
+		</li>
+		<li class="two">
+		  <h3>Take the <span>Tour</span></h3>
+		  <p>Explore all the coolest and most helpful features of your new browser.</p>
+		  <a href="/<?=$lang?>/firefox/tips/" 
+                     onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/tips/', 'WT.ti', 'Tour');">
+                    Learn More »
+                  </a>
+		</li>
+		<li class="three">
+		  <h3>About <span>Firefox</span></h3>
+		  <p>Firefox is made by Mozilla, a public benefit organization.</p>
+		  <a href="/<?=$lang?>/about/whatismozilla.html"
+                     onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/whatismozilla.html', 'WT.ti', 'About%20Mozilla');">
+                    What is Mozilla? »
+                  </a>
+		</li>
+	</ul>
+
+</div> <!-- end #download_message -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

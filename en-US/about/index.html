@@ -1,0 +1,92 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'About | Mozilla';
+    $body_id    = 'about';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about/"
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+<link media="screen" href="{$config['static_prefix']}/style/covehead/about.css" rel="stylesheet"/>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+
+	<h2>We’re Building <span>a Better Internet</span></h2>
+	<p>The Firefox browser is created by Mozilla, a non-profit organization whose <a href="http://www.mozilla.org/about/mission.html">mission</a> is to promote openness, innovation and opportunity on the Web. <a href="/<?=$lang?>/about/whatismozilla.html">Learn more.</a></p>
+
+</div>
+
+<div id="sidebar">
+	<div id="newsletter">
+		<h4>Want <span>More Info?</span></h4>
+		<p>Sign up for our monthly newsletter for news, tips, &amp; tricks and more.<a href="/<?=$lang?>/newsletter/">Get Monthly News »</a></p>
+	</div>
+	<div id="spread-the-word">
+		<h3>Spread <span>The Word!</span></h3>
+		<p>Love Firefox? Get in on the action by taking a minute to help. <a href="/<?=$lang?>/about/participate">Get Started »</a></p>
+	</div>
+</div>
+
+<div id="main-content">
+
+	<div class="about-feature" id="get-involved">
+		<h3><a href="/<?=$lang?>/about/participate/"><span></span>Participate</a></h3>
+		<p>Easy ways you can help spread Firefox</p>
+	</div>
+
+	<div class="about-feature" id="press">
+		<h3><a href="/<?=$lang?>/press/"><span></span>Communications</a></h3>
+		<p>Press info, logos and other useful stuff</p>
+	</div>
+	<div class="line-divider"></div>
+	<div class="about-feature" id="careers">
+		<h3><a href="/<?=$lang?>/about/careers.html"><span></span>Careers</a></h3>
+		<p>Want to work on Firefox? Apply today!</p>
+	</div>
+
+	<div class="about-feature" id="partnerships">
+		<h3><a href="/<?=$lang?>/about/partnerships.html"><span></span>Partnerships</a></h3>
+		<p>Details about partnering with us</p>
+	</div>
+	<div class="line-divider"></div>
+	<div class="about-feature" id="licensing">
+		<h3><a href="http://www.mozilla.org/foundation/licensing.html" class="external"><span></span>Legal</a></h3>
+		<p>Privacy policy, trademark info and more</p>
+	</div>
+
+	<div class="about-feature" id="contact">
+		<h3><a href="/<?=$lang?>/about/contact.html"><span></span>Contact Us</a></h3>
+		<p>Addresses, emails, support and feedback forms</p>
+	</div>
+	<div class="line-divider"></div>
+	<div class="about-feature" id="store">
+		<h3><a href="http://store.mozilla.org/" class="external"><span></span>Store</a></h3>
+		<p>T-shirts and other Firefox stuff</p>
+	</div>
+	<div class="about-feature" id="blog">
+		<h3><a href="http://blog.mozilla.com/" class="external"><span></span>Blog</a></h3>
+		<p>News, notes and ramblings</p>
+	</div>
+
+	<div id="bottom-divider" class="divider"></div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

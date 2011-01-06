@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 beeta" /> uuendused</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Ole Firefox 4 beetaga mobiilne</h3>
+        <p>Kasuta Firefoxi vaheldumisi töö- ja koduarvutis ning mobiilis! Firefox Sync võimaldab sulle sujuva ligipääsu tähtsatele Firefoxi andmetele - kaasa arvatud järjehoidjad, paroolid, ajalugu ja avatud veebilehed - korraga mitmest arvutist ja seadmest. Vaata videost, kuidas alustada.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Rohkem teavet Sync'i kohta »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Tagasiside andmine »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Väljalaskemärkmed »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Viimased uudised</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Korralda oma veebielu:</h4>
+         <?=$tabvideo?>
+        <p>Kõigist avatud kaartidest ülevaate omamine on keeruline? Vabasta oma veebilehitseja kaartide virvarrist! Lohista kaardid kergesti hallatavatesse gruppidesse, millele saad ka nime panna. Tee seda lõbusalt ja visuaalselt.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

@@ -1,0 +1,43 @@
+
+<div id="main-feature">
+
+    <h1>Mitä uutta? <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Firefox muuttaa tapaa, jolla mediaa esitetään verkkosivuilla: uudella äänirajapinnalla on mahdollista lukea ja kirjoittaa <code>&lt;video&gt;</code>- ja <code>&lt;audio&gt;</code>-elementtien sisältämää raakaäänidataa JavaScriptin kautta. Lisätietoja saat tutustumalla videoon.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Jaa palautetta »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b5/releasenotes/">Julkaisutiedot »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Uusinta uutta</h2>
+    </div>
+
+    <div id="column-1">
+        <?=$d2dvideo?>
+        <h4>Grafiikkakiihdytys (vain Windows)</h4>
+        <p>Huippunopea Direct2D-grafiikkakiihdytys nyt oletuksena käytössä laitteistoilla, jotka tukevat DirectX 10:ä.</p>
+    </div>
+
+    <div id="column-2">
+        <h4>Turvalliset palvelinyhteydet</h4>
+        <p><acronym title="HTTP Strict-Transport-Security ">HSTS</acronym>-tekniikalla sivustot voivat pyytää selainta muodostamaan turvallisen yhteyden palvelimilleen, mikä estää hyökkääjiä kaappaamasta arkaluontoisia tietoja. <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">Lue lisää »</a></p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

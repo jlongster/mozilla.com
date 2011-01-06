@@ -1,0 +1,62 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /> 有哪些更新</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>系上安全带</h3>
+				<p>Firefox 4 包含了重要的性能改进，包括我们全新推出的 JägerMonkey Javascript 引擎。从更快的启动，图像渲染，到页面载入速度的改进，你马上就会感受到这些改变。</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">分享反馈 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/releasenotes/">发行说明 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b7/ants/">体验为你自己准备的演示 »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h4>网页上的 3D</h4>
+        <p>WebGL 技术为 Firefox 带来了3D图像，使开发者能够创建生动的游戏，全新的视觉效果和网络体验。</p>
+    </div>
+
+    <div id="column-2">
+        <h4>卓越的字体效果</h4>
+        <p>Firefox 4 的 OpenType 字体功能使得设计者和开发者能够控制更多的字体特性——例如字距调整或者合字(ligatures)——从而创建更为华丽的网站。</p>
+    </div>
+
+    <div id="column-3">
+        <h4>升级的表单功能</h4>
+        <p>Firefox 4 让表单既美观又十分易于填写。新的表单 API 工具可以通过列表属性启用自动完成，实现 HTML5 表单验证等功能，使得恼人的表单填写成为过去。</p>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+    <div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="移动版图标" />
+        <h4>已使用 Firefox 4 beta ？</h4>
+        <h5>现在就随身携带它。</h5>
+        <p>在你的 Android 移动电话或者 Nokia N900 上安装 Firefox，随处都可以享用你喜爱的全部功能，例如同步，附加组件和智能地址栏。</p>
+        <p><a href="/<?=$lang?>/m/beta" id="mobile-download">获取移动版! — 免费</a></p>
+    </div>
+
+    <div class="sidebar-section">
+        <h4>需要帮助？</h4>
+        <p><a href="https://support.mozilla.com/<?=$lang?>/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="支持图标" />我们的支持网页</a> 上有针对 Firefox 4 beta 的问题解答和建议。</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

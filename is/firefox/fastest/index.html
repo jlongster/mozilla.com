@@ -1,0 +1,107 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "Hraðasti Firefox";
+
+    // Video controls strings to translate
+    $download_ogg       = "Niðurhala á opnu myndbandasniði (Ogg Theora)";
+    $download_mp4       = "Niðurhala á MPEG-4 sniði";
+    $check_back         = "Líttu við seinna til að sjá næsta myndband.";
+
+    $play               = "Spila myndband";
+    $fallback_l1        = "Þetta myndband þarfnast vafra sem styður opin myndbandasnið:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 eða nýrri';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 eða nýrri';
+    $fallback_l4        = 'eða <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash spilarinn</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Vertu fljótur
+    </h2>
+
+    <p>Við báðum Firefox aðdáendur að hjálpa okkur við að breiða út fagnaðarerindið um hvað Firefox er hraður. Sjáðu niðurstöðurnar:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="Myndbanda sýnishorn" /><span>
+
+            Horfðu á myndband Kent French sem er fljótasti klappari heimsins
+
+            </span></a></p>
+
+            <p class="secondary">
+            Fljótasti klappari heimsins, Kent “Toast” French klappar fyrir Firefox sem er jafn fljótur og hann. Kent sameinar sinn eigin stíl með snerpu og þoli til að geta klappað á hámarkshraða sem er 12 klöpp á sekúndu. Hann er ákveðinn í því að endurbæta mjög fljótlega sitt eigið met
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Fræðast meira um Kent</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="Myndbanda sýnishorn" /><span>
+
+            Horfðu á myndband Steven Purugganan sem er heimsins fljótasti staflari
+
+            </span></a></p>
+
+            <p class="secondary">
+            Guiness heimsmeistarinn Steven Purugganan, er nógu hrifinn af Firefox til að sýna okkur hvað hann er fljótur að stafla. Steven sem er aðeins 11 ára er meðlimur í alþjóðafélagi staflara, en hann er svo fljótur að hann getur staflað bollum á aðeins 5.93 sekúndum.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Fræðast meira um íþróttina að stafla.</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Myndbanda sýnishorn" /><span>
+
+            Horfðu á myndband Todd Taylor sem er heimsins fljótasti banjó spilari
+
+            </span></a></p>
+            <p class="secondary">
+            Banjóspilarinn Todd Tayler hefur gaman að því að spila fyrir Firefox, og segja frá því að hann er Guiness heimsmeistari.
+            Todd hefur spilað blágras, sveitatónlist, popp og rokk. Hann er stöðugt að taka upp og spila í kvikmyndum, sjónvarpi og fleiri stöðum.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Fræðast meira um Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

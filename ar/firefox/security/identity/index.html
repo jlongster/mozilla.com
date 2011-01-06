@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "عن التعرف على هوية الموقع بنقرة واحدة";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+    <h2>عن One-Click Site ID</h2>
+    <p>يحوي فَيَرْفُكْس 3 على زر جديد لتحديد هوية المواقع لمساعدتك على معرفة ما تتصل به خلال تصفحك.</p>
+</div>
+
+<div id="main-content">
+<p class="intro">تتيح لك هذه الميزة أن ترى في نظرة واحدة ما إذا كان الموقع الذي تتصفحه مزودًا بمعلومات عن هويته بالإضافة إلى معرفة الجهة التي تتحقق من معلومات الهوية و ما إذا كان الموقع يحمي معلوماتك من المتلصصين. يمكنك الوصول إلى معلومات الهوية الخاصة بكل موقع بالنقر على أيقونة الموقع في الجانب الأيسر من شريط العنوان (أو من خلال الضغط على Shift-Tab-Enter).</p>
+
+<h3>الأسئلة الأكثر تكرارًا</h3>
+
+<div class="expander expander-odd" id="levels">
+    <h4 class="expander-header">ماذا تعني الدرجات المختلفة من معلومات الهوية؟</h4>
+    <div class="expander-content">
+        <p>الأيقونة ستتغير لتعكس درجة معلومات الهوية المزودة من قبل الموقع.</p>
+        <p class="site-id site-id-1">هذا الموقع لايقدم أي معلومات عن هويته.</p>
+        <p class="site-id site-id-2">هذا الموقع يقدم معلومات بسيطة عن هويته، و يحمي معلوماتك الشخصية من المتلصصين.</p>
+        <p class="site-id site-id-3">هذا الموقع يقدم معلومات موثقة بشكل كامل عن مالكه و يحمي معلوماتك الشخصية من المتلصصين.</p>
+        <p class="site-id site-id-4">هذا الموقع صُنف كموقع هجومي أو مزيف، تزويد هذا الموقع بمعلومات شخصية أو حتى زيارته قد تكون ضارة.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">لماذا لا تقوم كل المواقع بتقديم معلومات موثقة عنها؟</h4>
+    <div class="expander-content">
+        <p>معظم المواقع على الإنترنت لا تطلب أي معلومات شخصية أو مالية من زوارها، و قد لا تجد ضرورة في تحمل تكاليف تقديم معلومات موثقة عن الهوية و الحماية من المتلصصين.</p>
+        <p>المواقع التي تطلب منك تزويدها بمعلومات شخصية أو مالية أو تدعي أنها تمثل هيئات حكومية أو مهنية عليها دائمًا أن تُعرّف بنفسها بشكل مناسب، و أن تحمي معلوماتك من المتلصصين.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">هل من الآمن التعامل مهنيًا مع المواقع التي لا تُعرّف بنفسها؟</h4>
+    <div class="expander-content">
+        <p>القرار فيمن تثق على الإنترنت يبدأ بمعرفة مع منّ تتكلم، و لكن هذا ليس كل شيء. المواقع التي لا تقدم معلومات عن هويتها و لا تحمي معلوماتك الشخصية تعرضك للخطر، و لا يجب اعتبارها آمنة. و لكن حتى المواقع التي تُعرّف بنفسها بشكل مناسب قد تقوم بممارسات تَرفُضها أو تُهمل في أمنها.</p>
+        <p>تمامًا كما في العالم الحقيقي، عليك أن تكون حذرًا عند التعامل مع المواقع التي لا تعرفها و تثق بها، معرفة أن الموقع قد عرّف بنفسه بشكل مناسب هو جزء من اتخاذ القرار بالثقة.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">هل تقوم موزيلا بالتحقق من هذه المعلومات لكل موقع؟</h4>
+    <div class="expander-content">
+        <p>المعلومات التي تستخدم لتحديد هوية الموقع ليست موثقة من قبل موزيلا، بدلًا من ذلك فإن فَيَرْفُكْس كغيره من المتصفحات يعتمد على مجموعة من الشركات الموثوقة تدعى ”سُلطة الشهادات“ و هي تقوم بالتحقق من هوية الموقع و تصدر ”شهادة“ هوية. هذه الشركات عليها الالتزام بـ <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla CA Certificate Policy</a> و التي ضمن أمور اخرى تتطلب من سلطة الشهادات CA تزويد جهة ثالثة سجلات تؤكد أنها لا تعطي الشهادات بشكل غير مناسب</p>
+
+    </div>
+</div>
+
+</div>
+
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,88 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Products | Mozilla';
+    $body_id    = 'shop-search';
+    $extra_headers = <<<EXTRA_HEADERS
+
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/shopping-search.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Quick and easy <span>holiday shopping</span></h2>
+    <p>Simplify your seasonal gift-giving with Firefox</p>
+</div>
+
+<div id="main-content">
+
+    <div id="sidebar">
+
+        <h4>Search Bar tips for the holiday season</h4>
+
+        <h5>Select Search Options</h5>
+        <p>Choose a shopping-related search engine by clicking on the pull-down icon next to the Search Bar and selecting a new Search tool.</p>
+
+        <h5>Add New Search Options</h5>
+        <p>To add a new shopping-related Search tool, click on the icon next to the Search Bar, and select “Manage Search Engines.” Then choose “Get more search engines…” On the Firefox Search Tools Add-ons page select the “Shopping &amp; E-Commerce” link on the sidebar.</p>
+
+        <h5>Drag and Drop Search</h5>
+        <p>Comparing prices on an item? Select text on a Web page, and drag and drop it onto the Search Bar to perform a search with a shopping-related search engine.</p>
+
+    </div>
+
+    <div id="content-intro">
+
+	<h3>Shopping searches, done your way</h3>
+
+    <?=buildPlatformImage($config['static_prefix'].'/img/covehead/firefox/search/shop-search-screenshot.jpg', 'Integrated Search screenshot', '301', '245')?>
+
+	<p>Firefox opens up a world of holiday gift ideas in a single browser window. Tired of chasing seasonal deals across too many search engines and retailer websites? Save time and energy by using the Search Bar. Now you can conveniently find great gift selections from major online stores like eBay and Amazon, quickly swapping one search engine with another. It’s never been easier to shop from your home page, or wherever you are online.</p>
+
+    </div>
+
+    <div id="addons-promo">
+
+        <h3>Check out these great <span>shopping Add-ons</span></h3>
+
+        <ul id="addons-list">
+            <li>
+                <div>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/5202/" class="icon">
+                        <img src="http://addons.mozilla.org/en-US/firefox/images/addon_icon/5202/?modified=1290721509" alt="eBay Sidebar icon" />
+                        eBay Sidebar</a></h4>
+                    <p>Be a better bidder by checking your eBay progress, and customizing your alerts so you stay on top of bids.</p>
+                    <span title="Rated 4 out of 5 stars" class="stars stars-4">Rated 4 out of 5 stars</span>
+                </div>
+                <a class="button" href="https://addons.mozilla.org/en-US/firefox/addon/5202/"><span>Add to Firefox</span></a>
+            </li>
+            <li>
+                <div>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/64761/" class="icon">
+                        <img src="http://addons.mozilla.org/en-US/firefox/images/addon_icon/64761/?modified=1281050098" alt="AmazonAssist icon" />
+                        AmazonAssist</a></h4>
+                    <p>Helps you search Amazon.com as you search the web and delivers product information to your browser.</p>
+                    <span title="Rated 4 out of 5 stars" class="stars stars-4">Rated 4 out of 5 stars</span>
+                </div>
+                <a class="button" href="https://addons.mozilla.org/en-US/firefox/addon/64761/"><span>Add to Firefox</span></a>
+            </li>
+            <li>
+                <div>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/11377/" class="icon">
+                        <img src="/img/firefox/3.6/firstrun/invisible-hand.png" alt="InvisibleHand icon" />
+                        InvisibleHand</a></h4>
+                    <p>Checks for better prices automatically, and shows a discreet notification when you’re browsing a product which is cheaper at another retailer.</p>
+                    <span title="Rated 4 out of 5 stars" class="stars stars-4">Rated 4 out of 5 stars</span>
+                </div>
+            <a class="button" href="https://addons.mozilla.org/en-US/firefox/addon/11377/"><span>Add to Firefox</span></a>
+            </li>
+        </ul>
+			<ul id="addons-link" class="link"><li><a href="https://addons.mozilla.org/en-US/firefox/">Browse More Add-ons</a></li></ul>
+    </div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

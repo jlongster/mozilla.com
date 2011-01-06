@@ -1,0 +1,233 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 2.0.0.19 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox 2 Release Notes</h2>
+</div>
+
+
+<div id="main-content">
+
+  <h1>Firefox Community Beta Program</h1>
+
+  <p>Note: <strong>This is the last planned release of Firefox 2</strong>.
+     All users are encouraged to upgrade to <a
+     href="/<?=$lang?>/firefox/">Firefox 3</a>. Firefox 2.0.0.19
+     does not include Phishing Protection.</p>
+
+  <p>You’re part of the Firefox Community Beta Program! During the
+     run up to Firefox 2, we released beta builds and 
+     release candidates for wide testing and feedback as part of 
+     a community beta program. Anyone who downloaded and installed 
+     these pre-release versions of Firefox became part of this beta 
+     program and was automatically updated to the Firefox 2 final
+     release.</p>
+
+  <p>To ensure the continued quality of Firefox 2, we have updated
+     your Firefox to the latest pre-release version of the next
+     security and stability update. We consider this release stable
+     but are actively looking for new issues.</p>
+
+  <p>If you are participating in this program, thanks for your 
+     continued help. Please report any problems or issues at our
+     community feedback web site at
+     <a href="http://feedback.mozilla.org/">http://feedback.mozilla.org</a> 
+     or through the <a href="http://groups.google.com/group/mozilla.feedback.firefox.prerelease">
+     mozilla.feedback.firefox.prerelease</a> newsgroup.</p>
+
+  <p>The final release of Firefox 2.0.0.19 will take place shortly
+     after we complete wide testing through this program. All
+     press inquiries should be directed to
+     <a href="mailto:press@mozilla.com">press@mozilla.com</a>.</p>
+
+  <p>To exclude yourself from the beta program, simply download and  
+     install the latest stable production release of Firefox from
+     <a href="http://www.getfirefox.com/">http://getfirefox.com</a>.</p>
+
+  <p><b>Technical Note:</b> You can identify if you are part of the 
+     beta program by following these instructions:</p>
+  <ol>
+     <li>Launch Firefox.</li>
+     <li>In the location bar where you usually enter a web address, 
+         type: <tt>about:config</tt></li>
+     <li>In the Filter field, enter: <tt>app.update.channel</tt>
+         then press the enter key.</li>
+     <li>If you see the value <tt>app.update.channel</tt> set to
+         "beta", you are enrolled in the beta program. 
+         (Note: The effective value cannot be changed through about:config.
+         If you wish to exclude yourself from the beta program you must download 
+         and install the latest production release as mentioned above.)</li>
+  </ol>
+  <p><b>Release Date:</b> December 10, 2008</p>
+  <p><b>Version:</b> Firefox 2.0.0.19 Beta</p>
+
+    <!-- What's New -->
+    
+    <h2 id="downloadandinstall">Downloading and Installing</h2>
+
+    <h3 id="requirements">System Requirements</h3>
+    <p>Before installing, make sure your computer meets the Firefox 2 <a href="/<?=$lang?>/firefox/system-requirements-v2.html">system requirements</a>.</p>
+
+    <h3 id="download">Downloading Firefox&nbsp;2</h3>
+    <p>Mozilla provides Firefox&nbsp;2 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a variety of languages. You can <a href="/<?=$lang?>/firefox/all-older.html">get the latest version of Firefox&nbsp;2 here</a>. For builds for other systems and languages not provided by Mozilla.org, see the Contributed Builds section at the end of this document.</p>
+
+    <h3 id="install">Installing Firefox&nbsp;2</h3>
+    <p>Please note that installing Firefox&nbsp;2 <em>will overwrite</em> your existing installation of Firefox. You won't lose any of your bookmarks or browsing history, but some of your extensions and other add-ons might not work until updates for them are made available.</p>
+
+    <h3 id="uninstall">Removing Firefox&nbsp;2</h3>
+    <p>You can remove Firefox&nbsp;2 through the <tt>Control Panel</tt> in the <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+
+    <p>Removing Firefox&nbsp;2 won't remove your bookmarks, web browsing history, extensions or other add-ons. This data is stored in your <em>profile folder</em>, which is located in one of the following locations depending on your operating system:</p>
+
+    <table style="font-size: small;" border="1" cellspacing="0">
+      <tr>
+        <td>Windows Vista</td>
+        <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+      </tr>
+      <tr>
+        <td>Windows 2000, XP, Server 2003</td>
+        <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+      </tr>
+      <tr>
+        <td>Windows NT</td>
+        <td>WINNT\Profiles\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+      </tr>
+      <tr>
+        <td>Windows 98, ME</td>
+        <td>Windows\Application Data\Mozilla\Firefox</td>
+      </tr>
+      <tr>
+        <td>Mac&nbsp;OS&nbsp;X</td>
+        <td>~/Library/Application Support/Firefox</td>
+      </tr>
+      <tr>
+        <td>Linux and Unix systems</td>
+        <td>~/.mozilla/firefox</td>
+      </tr>
+    </table>
+
+    <p>Any version of Firefox that you install after removing Firefox&nbsp;2 will continue to use the data from this profile folder.</p>
+
+    <h2 id="issues">Known Issues</h2>
+    <p>This list covers some of the known problems with Firefox&nbsp;2. Please read this before reporting any new bugs.</p>
+
+    <dl>
+      <dt>All Systems</dt>
+      <dd>
+        <ul class="spaced">
+          <li>Some firewall software may silently block Firefox from running. This often happens immediately after Firefox has been installed or updated from a previous version. There are <a href="http://kb.mozillazine.org/Firewalls">configuration instructions</a> available for most popular firewall programs to help you ensure that Firefox is allowed to connect to the Internet.</li>
+          <li>Dictionaries for several locales can't be packaged with the builds, and must be manually downloaded by right-clicking in a text area and selecting "Add Dictionaries..." from the shortcut menu. New dictionaries are regularly being added to Mozilla Add-ons, so if you don't see the particular dictionary you need, check back later.</li>
+          <li>Access key definitions provided by web pages can now be triggered using Alt+Shift+key on Windows, Ctrl+key on Mac OS X, and Ctrl+Shift+key on Unix.</li>
+          <li>The Session Restore functionality provided in Firefox&nbsp;2 will restore connections to services which use session cookies to maintain login state such as GMail. It is recommended that users with concerns about the privacy implications of this behavior change the value of <tt>browser.sessionstore.resume_from_crash</tt> to false.</li>
+          <li>The option for "Shrink to fit" has been removed in Firefox&nbsp;2. If you wish to change this from the value you had set in your previous version of Firefox, change the value of <tt>browser.enable_automatic_image_resizing</tt>.</li>
+          <li>Software Update will not work if Firefox is installed to a location on your disk to which you do not have write access, since Software Update needs to replace or create files in this location.</li>
+          <li>Some financial institutions use port 563 for secure logins, which results in an error message. If you encounter this error, make sure that <tt>network.security.ports.banned.override</tt> includes 563 in the comma-separated list of banned network ports to override.</li>
+        </ul>
+      </dd>
+      <dt id="vista">Windows &amp; Windows Vista</dt>
+      <dd>
+        <ul class="spaced">
+          <li>The Java Console extension that came with Java SE 6.0u1 (J2SE6.0.01) is incompatible with Firefox <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=364390">as reported in Bugzilla</a>. Java should work as expected, but the menu item "Java Console" will not be available in the Tools menu. This issue has been fixed in Java SE 6.0u2 (J2SE6.0.02) and later versions and is available for download from <a href="http://java.sun.com/javase/downloads/index.jsp">the Java website</a>.</li>
+          <li>Clicking links in some applications (e.g. some instant messaging programs) might not open them in Firefox, even if you have set it as your default browser. To workaround this problem, go to Start -> Default Programs -> Set default programs for this computer, expand custom, select the radio button next to the app you want to set as the system wide default app (e.g. Firefox, etc.), and apply.</li>
+          <li>The Windows Media Player (WMP) plugin is not provided by default in all versions of Windows. If you are having trouble playing Windows Media content in Firefox, <a href="http://port25.technet.com/pages/windows-media-player-firefox-plugin-download.aspx">download and install</a> the Windows Media Player Plugin for Firefox.</li>
+          <li>Vista Parental Controls are not completely honored. In particular, file downloads <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=355554">do not honor</a> Vista's parental control settings. This will be addressed in an upcoming Firefox release.</li>
+          <li>When migrating from Internet Explorer 7 to Firefox, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=369910">cookies</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=369916">saved form history</a> are not imported.</li>
+          <li>Use of the install-global-extension and install-global-theme command line arguments have been restricted to only allow installing add-ons that are on local disks or mapped drives. Installing from a network share directly will no longer succeed.</li>
+        </ul>
+      </dd>
+      <dt id="macosx">Mac OS X</dt>
+      <dd>
+        <ul class="spaced">
+          <li>On OS X 10.5 (Leopard), there are known problems with some media plugins as well as Add-ons that contain binary components.</li>
+          <li>The "Close Other Tabs" action on the shortcut menu of a tab can fail with an error when more than 20 tabs are open.</li>
+          <li>Some users have reported problems viewing Macromedia Flash content on Intel Mac computers. To work around this problem, users can remove or move the PowerPC version of "Flash Player Enabler.plugin from <tt>/Library/Internet Plug-Ins</tt>.</li>
+          <li>After installing a new plug-in, Firefox may continue to display information for the older version of the plug-in in about:plugins. If this happens, quit Firefox, delete the "pluginreg.dat" file from your <a href="http://kb.mozillazine.org/Profile_folder">profile folder</a>, and relaunch Firefox.</li>
+          <li>Java does not run on Intel Core processors under Rosetta.</li>
+          <li>There is no Talkback on Intel-based Macs when running natively or under Rosetta. The Apple Crash report program should launch  in the event of application crashes.</li>
+        </ul>
+      </dd>
+      <dt>Linux and Unix</dt>
+      <dd>
+        <ul class="spaced"> 
+          <li>If Firefox is installed to a location with spaces in the path, it may not be able to set itself as default browser and may keep prompting at startup. The work around is to install into a path without spaces.</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <ul class="spaced">
+      <li>Poorly designed or incompatible extensions can cause problems with your browser, including make it crash, slow down page display, etc. If you encounter strange problems relating to parts of the browser no longer working, the browser not starting, windows with strange or distorted appearance, degraded performance, etc, you may be suffering from Extension or Theme trouble. Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+        <p><code>
+          cd /Applications/Firefox.app/Contents/MacOS/<br />
+          ./firefox-bin -safe-mode
+        </code></p>
+        When started in Safe Mode all extensions are disabled and the Default theme is used. Disable the Extension/Theme that is causing trouble and then start normally.
+      </li>
+      <li>If you uninstall an extension that is installed with your user profile (i.e. you installed it from a Web page) and then wish to install it for all user profiles using the -install-global-extension command line flag, you must restart the browser once to cleanse the profile extensions datasource of traces of that extension before installing with the switch. If you do not do this you may end up with a jammed entry in the Extensions list and will be unable to install the extension globally.</li>
+      <li>If you encounter strange problems relating to bookmarks, downloads, window placement, toolbars, history, or other settings, it is recommended that you try creating a new profile and attempting to reproduce the problem before filing bugs. Create a new profile by running Firefox with the -P command line argument, choose the "Manage Profiles" button and then choose "Create Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over one by one, checking each time to see if the problems resurface. If you do find a particular profile data file is causing a problem, file a bug and attach the file.</li>
+    </ul>
+
+    <h2 id="FAQ">Frequently Asked Questions</h2>
+    <ol class="faq">
+      <li>What can I do to help?
+        <p>We need help from developers and the testing community to provide as much feedback as possible to make Firefox even better. Please read these notes and the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a> before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+      </li>
+      <li>Why haven't you responded to the mail I sent you?
+        <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>. The Firefox team reads them regularly. We all get a lot of email and your email may get lost.</p>
+      </li>
+      <li>Where can I get extensions and themes (add-ons)?
+        <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+      </li>
+      <li>Who makes Firefox&nbsp;2?
+        <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who have contributed to Firefox&nbsp;2.</p>
+      </li>
+      <li>Where's the Firefox&nbsp;2 source code?
+        <p>A tarball of the Firefox&nbsp;2 source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.13/source/">download</a>. The latest development code can be obtained by <a href="http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>. Firefox-specific source is in "mozilla/browser", "mozilla/toolkit", and "mozilla/chrome". Please follow the <a href="http://developer.mozilla.org/en/docs/Build_Documentation">build instructions</a>.</p>
+      </li>
+      <li>Where is the mail client?
+        <p>Firefox&nbsp;2 works with whatever mail client is the default on your system. However, we recommend <a  href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our next-generation email client and the perfect complement to Firefox.</p>
+      </li>
+    </ol>
+
+    <h2 id="contributedbuilds">Contributed Builds</h2>
+    <p>Many localized builds are now produced and distributed by Mozilla.org on behalf of <a href="http://wiki.mozilla.org/L10n:Localization_Teams" title="Mozilla Localization Teams">their authors</a>. These are available on the <a href="/<?=$lang?>/firefox/all-older.html">Firefox&nbsp;2 download page</a>.</p>
+
+    <p>These are unofficial builds and may be configured differently than the official Mozilla.org builds. They may also be optimized and/or tested for specific platforms.</p>
+  
+    <!-- Put Solaris Builds Here-->
+
+        <!--
+            Build contributors, please put your builds under:
+              pub/mozilla.org/firefox/releases/<version>/contrib/
+
+            Your build file name should match the pattern set by official builds and include a README explaining any build peculiarities and identifying yourself as the contributor. Thanks.
+          -->
+
+    <h2 id="links">Other Resources and Links</h2>  
+    <p>The following resources contain useful information about Firefox&nbsp;2:</p>
+
+    <ul class="spaced">
+      <!-- <li>Unofficial <a href="http://www.squarefree.com/burningedge/releases/2.0.0.18.html">list of notable changes since Firefox 2.0</a>.</li> -->
+      <li><a href="http://wiki.mozilla.org/Firefox2">Firefox 2 Project Page</a></li>
+      <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+      <li><a href="http://www.mozilla.org/projects/firefox/">Developer Information</a></li>
+    </ul>
+
+  </div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

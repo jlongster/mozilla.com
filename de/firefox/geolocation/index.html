@@ -1,0 +1,119 @@
+<?php
+
+$page_title = "Geolokalisierung in Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Standortbezogenes Surfen</h2>
+    <p>Firefox kann Websites mitteilen, wo Sie sich befinden, damit Sie Informationen finden können, die für Sie passender und sinnvoller sind. Es geht darum, das Internet intelligenter zu machen
+    &ndash; und das bei voller Achtung Ihrer Privatsphäre.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Probieren Sie es aus!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Häufig gestellte Fragen</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Was ist standortbezogenes Surfen?</h4>
+    <div class="expander-content">
+        <p>Websites, die standortbezogenes Surfen nutzen, werden fragen, wo Sie sich befinden, um Ihnen passendere Informationen liefern zu können oder Ihnen beim Suchen Zeit zu sparen. Wenn Sie beispielsweise nach einem Pizza-Restaurant in Ihrer Nähe suchen, kann eine Website Sie bitten, ihr Ihren Standort mitzuteilen, so dass Sie nur noch nach "Pizza" suchen müssen, um die gewünschten Ergebnisse zu erhalten … ohne dass Sie weitere Daten angeben oder eintippen müssen.</p>
+        <p>Oder wenn Sie eine Reiseroute planen, weiß die Website bereits, von wo Sie starten, so dass Sie nur noch das Ziel angeben müssen.</p>
+        <p>Dieser Dienst ist komplett freiwillig &ndash; Firefox gibt Ihren Standort nicht ohne Ihre Erlaubnis bekannt &ndash; und wird mit äußerster Rücksicht auf Ihre Privatsphäre durchgeführt. Außerdem wurde er, wie alle Elemente von Firefox, unter Verwendung offener Standards programmiert, um es Web-Entwicklern zu erleichtern, diese Funktion in ihre Web-Anwendungen zu integrieren.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Wie funktioniert es?</h4>
+    <div class="expander-content">
+        <p>Wenn Sie eine Website besuchen, die standortbezogenes Surfen unterstützt, wird Firefox nachfragen, ob Sie Ihren Aufenthaltsort bekannt geben möchten.</p>
+        <p>Wenn Sie zustimmen, erfasst Firefox Daten über nahegelegene Funkzugangsknoten und die IP-Adresse Ihres Computers. Dann sendet Firefox diese Daten an den Standardanbieter für den Geolocation-Dienst, Google Location Services, um Ihren ungefähren Standort zu bestimmen. Diese ungefähre Ortsangabe wird dann an die anfragende Website weitergegeben.</p>
+        <p>Wenn Sie nicht zustimmen, wird Firefox gar nichts tun.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Wie genau sind die Ortsangaben?</h4>
+    <div class="expander-content">
+        <p>Die Genauigkeit variiert stark von Standort zu Standort. An einigen Stellen können unsere Dienstleister einen Standort auf wenige Meter genau angeben. An anderen Stellen kann die Ungenauigkeit allerdings deutlich größer sein. Alle von unseren Dienstleistern bestimmten Ortsangaben sind Schätzungen und wir garantieren die Genauigkeit der angegebenen Standorte nicht. Bitte verwenden Sie diese Informationen nicht für Notfälle. Nutzen Sie immer den gesunden Menschenverstand.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Welche Daten werden übermittelt und an wen? Wie wird meine Privatsphäre geschützt?</h4>
+    <div class="expander-content">
+        <p>Ihre Privatsphäre ist uns äußerst wichtig und Firefox gibt Angaben über Ihren Standort nie ohne Ihre ausdrückliche Erlaubnis weiter. Wenn Sie eine Website besuchen, die Ihre Daten anfordert, werden Sie gefragt, bevor irgendwelche Daten an die anfragende Website oder unseren externen Dienstleister weitergegeben werden.</p>
+        <p>Standardmäßig nutzt Firefox Google Location Services, um Ihren Standort zu bestimmen. Hierzu werden folgende Daten übermittelt:</p>
+        <ul>
+            <li>die IP-Adresse Ihres Computers,</li>
+            <li>Informationen über nahegelegene Funkzugangsknoten und</li>
+            <li>eine zufällige Identifikationsnummer für Ihren Computer, die von Google zugeteilt und alle zwei Wochen gelöscht wird.</li>
+        </ul>
+        <p>Eine vollständige Beschreibung der Daten, die von Firefox gesammelt und verwendet werden, finden Sie in der <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox-Datenschutzerklärung</a> (auf Englisch).</p>
+        <p>Google Location Services liefert dann eine ungefähre Position Ihres Standorts (z.B. Längen- und Breitengrad). Eine vollständige Beschreibung der Daten, die von Google gesammelt und verwendet werden, finden Sie in der <a href="http://www.google.com/privacy-lsf.html" class="external">Geolocation-Datenschutzerklärung von Google</a> (auf Englisch).</p>
+        <p>Diese Daten werden über eine verschlüsselte Verbindung ausgetauscht, um Ihre Privatsphäre zu schützen. Sobald Firefox Ihre Daten erhalten hat, gibt er sie an die Website weiter, die sie angefordert hat. Zu keiner Zeit werden Name oder Standort der Website, die Sie besuchen, oder irgendwelche Cookies an Google Location Services weitergegeben.</p>
+        <p>Weder Mozilla noch Google werden jemals die Daten nutzen, die Google Location Services über Sie sammelt, um Sie zu identifizieren oder Sie auszuspionieren.</p>
+        <p>Weitere Informationen darüber, wie die anfragende Website Ihre Ortsangabe verwendet, finden Sie in der Datenschutzerklärung der betreffenden Website.</p>
+        <p>Weitere Informationen über Ihre Privatsphäre finden Sie auch in der:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox-Datenschutzerklärung</a> (auf Englisch)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google-Datenschutzerklärung</a> (auf Englisch)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Werde ich verfolgt, während ich im Internet unterwegs bin?</h4>
+    <div class="expander-content">
+        <p>Nein. Firefox fordert nur dann eine Ortsangabe an, wenn eine Website danach fragt, und gibt Angaben über Ihren Standort nur weiter, wenn der Benutzer dem zugestimmt hat. Firefox verfolgt oder speichert Ihren Standort nicht, während Sie im Web unterwegs sind.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Wie widerrufe ich die Erlaubnis, die ich einer Website gegeben habe?</h4>
+    <div class="expander-content">
+        <p>Wenn Sie Firefox die Erlaubnis gegeben haben, Ihren Standort immer an eine Website weiterzugeben und es sich später anders überlegen, können Sie diese Erlaubnis einfach widerrufen. Und zwar so:</p>
+        <ul>
+            <li>Öffnen Sie die Seite, der Sie die Erlaubnis erteilt haben</li>
+            <li>Öffnen Sie im Menü <em>Extras</em> den Punkt <em>Seiteninformationen</em></li>
+            <li>Wählen Sie den Reiter <em>Berechtigungen</em></li>
+            <li>Ändern Sie die Einstellung für <em>Zugriff auf aktuellen Ort erlauben</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Wie lösche ich die zufällige Identifikationsnummer für meinen Computer?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Öffnen Sie im Menü <em>Extras</em> den Punkt <em>Neueste Chronik löschen</em></li>
+            <li>Klicken Sie auf den Pfeil <em>Details</em></li>
+            <li>Stellen Sie sicher, dass <em>Cookies</em> ausgewählt ist</li>
+            <li>Klicken Sie auf <em>Jetzt löschen</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Wie schalte ich das standortbezogene Surfen dauerhaft ab?</h4>
+    <div class="expander-content">
+        <p>Standortbezogenes Surfen ist in Firefox immer freiwillig. Ohne Ihre Erlaubnis werden keine Daten übermittelt. Wenn Sie die Funktion vollständig abschalten möchten, folgen Sie bitte dieser Anweisung:</p>
+        <ul>
+            <li>Tippen Sie in der Adressleiste <code>about:config</code> ein</li>
+            <li>Tippen Sie <code>geo.enabled</code> in die Filter-Zeile ein</li>
+            <li>Doppelklicken Sie auf die Einstellung <em>geo.enabled</em></li>
+            <li>Standortbezogenes Surfen ist jetzt deaktiviert</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Wo bin ich?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Hoppla! Beim Ermitteln Ihres Standorts ist ein Fehler aufgetreten.
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

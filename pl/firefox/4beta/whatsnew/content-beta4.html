@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Najnowszy <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Przemieszczaj się z Firefoksem 4 Beta</h3>
+        <p>Zmieniaj komputer w pracy na komputer w domu czy urządzenie mobilne i odwrotnie! Firefox Sync umożliwia Ci bezproblemowy dostęp na wielu komputerach i urządzeniach do ważnych danych zapisanych w Firefoksie, takich jak: zakładki, hasła, historia odwiedzanych stron i otwarte karty. Obejrzenie filmu ułatwi Ci początek.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Dowiedz się więcej o Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Przekaż opinię »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Informacje o wydaniu »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Najnowsze wiadomości</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Uporządkuj swoje życie online:</h4>
+         <?=$tabvideo?>
+        <p>Masz problemy ze śledzeniem wszystkich otwartych kart? Uwolnij swoją przeglądarkę od bałaganu w kartach! Po prostu umieść swoje karty w grupach, którymi można zarządzać, porządkować, nazywać je i aranżować w prosty i zabawny sposób.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

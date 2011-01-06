@@ -1,0 +1,390 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 2.0.0.5 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Firefox Release Notes</h2>
+    <p>Firefox&nbsp;2 is the next-generation release of the award-winning Firefox web browser from Mozilla.</p>
+</div>
+
+
+<div id="main-content">
+
+          <p>These Release Notes cover <a href="#whatsnew">what's new</a>, <a href="#download">download</a>
+             and <a href="#install">installation instructions</a>, <a href="#issues">known 
+             issues</a> and <a href="#FAQ">frequently asked questions</a> for Firefox&nbsp;2. 
+             Please read these notes and the <a href="http://www.mozilla.org/support/firefox/bugs">
+             bug filing instructions</a> before reporting any bugs to 
+             <a href="https://bugzilla.mozilla.org/">Bugzilla</a>.</p>
+
+          <p>Give us your feedback through this <a href="http://feedback.mozilla.org">
+             feedback form</a>.</p>
+      <!-- What's New -->
+
+         <h2 id="whatsnew">What's New in Firefox&nbsp;2.0.0.5</h2>
+         <ul class="news spaced">
+             <li><p><b>Release Date:</b> July 17, 2007</p></li>
+             <li><p><b>Security Update:</b> The following <a href="http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.5">security issues</a> have been fixed.</p></li>
+             <li><p><b>Earlier Changes:</b> For information about previous changes, please see the <a href="../../2.0.0.4/releasenotes/">Firefox 2.0.0.4 Release Notes</a>.</p></li>
+             <li><p><b>Firefox&nbsp;2 Features:</b> For an overview, please see <a href="/<?=$lang?>/firefox/features.html">Firefox&nbsp;2 Features</a>.</p></li>
+         </ul>
+	
+      <h2 id="downloadandinstall">Downloading and Installing</h2>
+
+      <h3 id="requirements">System Requirements</h3>
+
+      <p>Before installing, make sure your computer meets the <a href="/<?=$lang?>/firefox/system-requirements.html">
+         system requirements</a>.</p>
+
+      <h3 id="download">Downloading Firefox&nbsp;2</h3>
+      <p>Mozilla provides Firefox&nbsp;2 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a
+         variety of languages. You can <a href="/<?=$lang?>/firefox/all.html">get the latest version of Firefox&nbsp;2 here</a>.
+         For builds for other systems and languages not provided by Mozilla.org, see
+         the Contributed Builds section at the end of this document.</p>
+
+      <h3 id="install">Installing Firefox&nbsp;2</h3>
+      <p>Please note that installing Firefox&nbsp;2 <em>will overwrite</em> your
+         existing installation of Firefox. You won't lose any of your bookmarks or
+         browsing history, but some of your extensions and other add-ons might not work
+         until updates for them are made available.</p>
+
+      <h3 id="uninstall">Removing Firefox&nbsp;2</h3>
+
+      <p>You can remove Firefox&nbsp;2 through the <tt>Control Panel</tt> in the
+         <tt>Start Menu</tt> on Windows, by removing the <tt>Firefox</tt> application on 
+         OS X, or by removing the <tt>firefox</tt> folder on Linux.</p>
+      <p>Removing Firefox&nbsp;2 won't remove your bookmarks, web browsing history,
+         extensions or other add-ons. This data is stored in your <em>profile
+         folder</em>, which is located in one of the following locations depending on
+         your operating system:</p>
+
+      <table style="font-size: small;" border="1" cellspacing="0">
+        <tr>
+          <td>Windows Vista</td>
+          <td>Users\&lt;UserName&gt;\AppData\Roaming\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td>Windows 2000, XP, Server 2003</td>
+          <td>Documents and Settings\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td>Windows NT</td>
+          <td>WINNT\Profiles\&lt;UserName&gt;\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td>Windows 98, ME</td>
+          <td>Windows\Application Data\Mozilla\Firefox</td>
+        </tr>
+        <tr>
+          <td>Mac&nbsp;OS&nbsp;X</td>
+          <td>~/Library/Application Support/Firefox</td>
+        </tr>
+        <tr>
+          <td>Linux and Unix systems</td>
+          <td>~/.mozilla/firefox</td>
+        </tr>
+      </table>
+      <p>Any version of Firefox that you install after removing Firefox&nbsp;2 will
+         continue to use the data from this profile folder.</p>
+
+   <h3 id="extensions">Extensions and Themes</h3>
+
+      <p>Extensions installed under Firefox 1.5 may be incompatible and/or require updates to work with Firefox&nbsp;2. Please report any issues to the maintainer of the extension.  When you install Firefox&nbsp;2 all of your Extensions and Themes will be disabled until Firefox&nbsp;2 determines that either a) they are compatible with the Firefox&nbsp;2 release or b) there are newer versions available that are compatible.</p>
+
+      <h2 id="issues">Known Issues</h2>
+
+      <p>This list covers some of the known problems with Firefox&nbsp;2. Please read this before reporting any new bugs.</p>
+      <dl>
+      <dt>All Systems</dt>
+      <dd>
+      <ul class="spaced">
+      <li>Window bounces and shakes. There have been
+          <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=247116">reports in Bugzilla</a>
+          and MozillaZine forums of windows either bouncing or shaking when no items are
+          in the toolbar and in other cases. As a workaround, there are some
+          instructions at MozillaZine that can help
+          <a href="http://kb.mozillazine.org/Window_shakes">resolve this problem</a>.
+      </li>
+      <li>Some firewall software may silently block Firefox from running. This often happens
+          immediately after Firefox has been installed or updated from a previous version.
+          There are <a href="http://kb.mozillazine.org/Firewalls">configuration instructions</a>
+          available for most popular firewall programs to help you ensure that Firefox is
+          allowed to connect to the Internet.
+      </li>
+      <li>Dictionaries for several locales can't be packaged with the builds, and must be
+          manually downloaded by right-clicking in a text area and selecting "Add
+          Dictionaries..." from the shortcut menu. New dictionaries are regularly being added
+          to Mozilla Add-ons, so if you don't see the particular dictionary you need, check
+          back later.
+      </li>
+      <li>Access key definitions provided by web pages can now be triggered using Alt+Shift+key
+          on Windows, Ctrl+key on Mac OS X, and Ctrl+Shift+key on Unix.
+      </li>
+      <li>The Session Restore functionality provided in Firefox&nbsp;2 will restore connections
+          to services which use session cookies to maintain login state such as GMail. It is
+          recommended that users with concerns about the privacy implications of this behavior
+          change the value of <tt>browser.sessionstore.resume_from_crash</tt> to false.
+      </li>
+      <li>The option for "Shrink to fit" has been removed in Firefox&nbsp;2. If you wish to change
+          this from the value you had set in your previous version of Firefox, change the value
+          of <tt>browser.enable_automatic_image_resizing</tt>.
+      </li>
+      <li>Software Update will not work if Firefox is installed to a location on your disk
+          to which you do not have write access, since Software Update needs to replace or
+          create files in this location.
+      </li>
+      <li>Some financial institutions use port 563 for secure logins, which results in an
+          error message. If you encounter this error, make sure that <tt>network.security.ports.banned.override</tt> includes 563 in the comma-separated list of banned network ports to override.
+      </li>
+      </ul>
+      </dd>
+      <dt id="vista">Windows &amp; Windows Vista</dt>
+      <dd>
+      <ul class="spaced">
+       <li>The Java Console extension that came with Java SE 6.0u1 (J2SE6.0.01) is incompatible with Firefox
+          <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=364390"> as reported in Bugzilla</a>. Java should work as expected,
+          but the menu item "Java Console" will not be available in the Tools menu. This issue has been fixed in Java SE 6.0u2 (J2SE6.0.02) and later versions and is available for download from
+          <a href="http://java.sun.com/javase/downloads/index.jsp">the Java website</a>.
+      </li>
+      <li>Clicking links in some applications (e.g. some instant messaging programs) might not open
+          them in Firefox, even if you have set it as your default browser. To workaround this problem,
+          go to Start -> Default Programs -> Set default programs for this computer, expand custom, 
+          select the radio button next to the app you want to set as the system wide default app
+          (e.g. Firefox, etc.), and apply. 
+      </li>
+      <li>A Windows Media Player (WMP) plugin is not provided with Windows Vista. As a
+          workaround, in order to view Windows Media content, you can
+          follow <a href="http://kb.mozillazine.org/Windows_Media_Player#Missing_plugin">these instructions</a>.
+          Note that after installing you may have to get a security update and apply it before you can
+          see the content in the browser.
+      </li>
+      <li>Vista Parental Controls are not completely honored. In particular, file downloads
+          <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=355554">do not honor</a>
+          Vista's parental control settings. This will be addressed in an upcoming
+          Firefox release.
+      </li>
+      <li>When migrating from Internet Explorer 7 to Firefox,
+          <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=369910">cookies</a>
+          and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=369916">saved form 
+          history</a> are not imported.
+      </li>
+      </ul>
+      </dd>
+      <dt>Mac OS X</dt>
+      <dd>
+      <ul class="spaced">
+      <li>The "Close Other Tabs" action on the shortcut menu of a tab can fail with an error
+          when more than 20 tabs are open.
+      </li>
+      <li>Some users have reported problems viewing Macromedia Flash content on Intel Mac
+          computers. To work around this problem, users can remove or move the PowerPC version
+          of "Flash Player Enabler.plugin from <tt>/Library/Internet Plug-Ins</tt>.
+      </li>
+      <li>After installing a new plug-in, Firefox may continue to display information
+          for the older version of the plug-in in about:plugins. If this happens, quit
+          Firefox, delete the "pluginreg.dat" file from your <a href="http://kb.mozillazine.org/Profile_folder">profile folder</a>, and relaunch Firefox.
+      </li>
+      <li>Java does not run on Intel Core processors under Rosetta.
+      </li>
+      <li>There is no Talkback on Intel-based Macs when running natively or under Rosetta.
+          The Apple Crash report program should launch in the event of application crashes.
+      </li>
+      </ul>
+      </dd>
+      <dt>Linux and Unix</dt>
+      <dd>
+      <ul class="spaced"> 
+      <li>If Firefox is installed to a location with spaces in the path, it
+          may not be able to set itself as default browser and may keep prompting at
+          startup. The work around is to install into a path without spaces.
+      </li>
+      <li>GNOME integration does not work properly with Fedora Core 3.
+          Users of Fedora Core 3 will need to download and install
+          <a href="http://download.fedora.redhat.com/pub/fedora/linux/core/2/i386/os/Fedora/RPMS/linc-1.0.3-3.1.i386.rpm">linc-1.0.3-3.1.i386.rpm</a>.
+          After installing the RPM, perform the following command in the directory in which you
+          installed Firefox (you will need write permission):
+          <p>
+            <code>touch .autoreg</code>
+          </p>
+          The next time you start Firefox, GNOME integration should be functional.
+      </li>
+      </ul>
+      </dd>
+      </dl>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <ul class="spaced">
+        <li>
+          Poorly designed or incompatible extensions can cause problems with your browser, including make it crash, slow down page display, etc. If you encounter strange problems relating to parts of the browser no longer working, the browser not starting, windows with strange or distorted appearance, degraded performance, etc, you may be suffering from Extension or Theme trouble.
+          Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+          Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux, 
+          start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+          <p><code>
+            cd /Applications/Firefox.app/Contents/MacOS/<br />
+            ./firefox-bin -safe-mode
+          </code></p>
+
+          When started in Safe Mode all extensions are disabled and the Default theme is used. Disable the Extension/Theme that is causing trouble and then start normally.
+        </li>
+        <li>
+          If you uninstall an extension that is installed with your user profile (i.e.
+          you installed it from a Web page) and then wish to install it for all user profiles
+          using the -install-global-extension command line flag, you must restart the
+          browser once to cleanse the profile extensions datasource of traces of that
+          extension before installing with the switch. If you do not do this you may end
+          up with a jammed entry in the Extensions list and will be unable to install
+          the extension globally.
+        </li>
+        <li>
+          If you encounter strange problems relating to bookmarks, downloads, window
+          placement, toolbars, history, or other settings, it is recommended that you try
+          creating a new profile and attempting to reproduce the problem before filing
+          bugs. Create a new profile by running Firefox with the -P command line
+          argument, choose the "Manage Profiles" button and then choose "Create
+          Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+          one by one, checking each time to see if the problems resurface. If you do
+          find a particular profile data file is causing a problem, file a bug and attach
+          the file.
+        </li>
+      </ul>
+
+      <h2 id="FAQ">Frequently Asked Questions</h2>
+      <ol class="faq">
+
+        <li>
+          What can I do to help?
+          <p>We need help from developers and the testing community to provide as much
+             feedback as possible to make Firefox even better. Please read these notes and
+             the <a href="http://www.mozilla.org/support/firefox/bugs">bug filing instructions</a>
+             before reporting any bugs to <a href="https://bugzilla.mozilla.org/">Bugzilla</a>. You can
+             also give us your feedback through this <a href="http://feedback.mozilla.org/">feedback form</a>.</p>
+        </li>
+
+        <li>
+          Why haven't you responded to the mail I sent you?
+          <p>Use the <a href="http://forums.mozillazine.org/index.php?c=4">forums</a>. The Firefox team reads them regularly. We all get a lot of email and your email may get lost.</p>
+        </li>
+        <li>
+          Where can I get extensions and themes (add-ons)?
+          <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+             <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+        </li>
+        <li>
+          Who makes Firefox&nbsp;2?
+          <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who have contributed to Firefox&nbsp;2.</p>
+        </li>
+        <li>
+          Where's the Firefox&nbsp;2 source code?
+          <p>A tarball of the Firefox&nbsp;2 source code is available for <a href=
+             "http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/source/">download</a>.
+             The latest development code can be obtained by <a href=
+             "http://developer.mozilla.org/en/docs/Mozilla_Source_Code_Via_CVS">cvs</a>.
+             Firefox-specific source is in "mozilla/browser", "mozilla/toolkit",
+             and "mozilla/chrome". Please follow the <a href=
+             "http://developer.mozilla.org/en/docs/Build_Documentation">build instructions</a>.</p>
+        </li>
+        <li>
+          Where is the mail client?
+          <p>Firefox&nbsp;2 works with whatever mail client is the default on your system. 
+             However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our 
+             next-generation email client and the perfect complement to Firefox.</p>
+        </li>
+      </ol>
+
+      <h2 id="localizedbuilds">Localized Builds</h2>
+
+      <p>Firefox is available in Beta form for the following languages.
+      </p>
+
+      <ul>
+	<li>Georgian (ka) - 
+	<a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=win&amp;lang=ka">Windows</a>, 
+	<a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=linux&amp;lang=ka">Linux</a></li>
+
+	<li>Kurdish (ku) - 
+	<a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=win&amp;lang=ku">Windows</a>, 
+	<a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=osx&amp;lang=ku">Mac</a>, 
+	<a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=linux&amp;lang=ku">Linux</a></li>
+        
+        <li>Romanian (ro) -
+        <a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=win&amp;lang=ro">Windows</a>,
+        <a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=osx&amp;lang=ro">Mac</a>,
+        <a href="/<?=$lang?>/products/download.html?product=firefox-2.0.0.5&amp;os=linux&amp;lang=ro">Linux</a></li>
+      </ul>
+
+      <h2 id="contributedbuilds">Contributed Builds</h2>
+
+      <p>Many localized builds are now produced and distributed by Mozilla.org 
+         on behalf of <a href="http://wiki.mozilla.org/L10n:Localization_Teams" title="Mozilla Localization Teams">their authors</a>.
+         These are available on the <a href="/<?=$lang?>/firefox/all.html">Firefox&nbsp;2 download page</a>.
+      </p>
+         
+      <p>Builds that have not yet been certified as official Firefox&nbsp;2 localizations are available by browsing the 
+         <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib-localized/">FTP site</a>.</p>
+
+      <p>These are unofficial builds and may be configured differently than the official 
+         Mozilla.org builds. They may also be optimized and/or tested for specific 
+         platforms.</p>
+ 
+      <h3 id="solarisbuilds">Solaris (contributed by SUN Desktop Beijing Team)</h3> 
+      <p><strong><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/README.txt">README</a></strong></p> 
+      <p><strong>Tarball format</strong></p> 
+      <ul> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris10-i386.tar.bz2">firefox-2.0.0.5.en-US.solaris10-i386.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris10-i386.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris10-respin-sparc.tar.bz2">firefox-2.0.0.5.en-US.solaris10-respin-sparc.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris10-respin-sparc.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris8-i386-gtk1.tar.bz2">firefox-2.0.0.5.en-US.solaris8-i386-gtk1.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris8-i386-gtk1.tar.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1.tar.bz2">firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1.tar.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_tarball/firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1.tar.bz2.cksum">cksum</a>)<br /></li> 
+      </ul> 
+      <p><strong>Pkgadd format</strong></p> 
+      <ul> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris10-i386-pkg.bz2">firefox-2.0.0.5.en-US.solaris10-i386-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris10-i386-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris10-respin-sparc-pkg.bz2">firefox-2.0.0.5.en-US.solaris10-respin-sparc-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris10-respin-sparc-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris8-i386-gtk1-pkg.bz2">firefox-2.0.0.5.en-US.solaris8-i386-gtk1-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris8-i386-gtk1-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      <li><a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1-pkg.bz2">firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1-pkg.bz2</a> 
+        (<a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.5/contrib/solaris_pkgadd/firefox-2.0.0.5.en-US.solaris8-respin-sparc-gtk1-pkg.bz2.cksum">cksum</a>)<br /></li> 
+      </ul> 
+ 
+      <!-- Put Solaris Builds Here-->
+ 
+        <!--
+            Build contributors, please put your builds under:
+              pub/mozilla.org/firefox/releases/<version>/contrib/
+
+            Your build file name should match the pattern set by official builds and include a README explaining any build peculiarities and identifying yourself as the contributor. Thanks.
+          -->
+
+      <h2 id="links">Other Resources and Links</h2>  
+      <p>The following resources contain useful information about Firefox&nbsp;2:</p>
+
+      <ul class="spaced">
+        <!-- <li>Unofficial <a href="http://www.squarefree.com/burningedge/releases/2.0.0.5.html">list of notable changes since Firefox 2.0</a>.</li> -->
+        <li><a href="http://wiki.mozilla.org/Firefox2">Firefox 2 Project Page</a></li>
+        <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+        <li><a href="http://www.mozilla.org/projects/firefox/">Developer Information</a></li>
+      </ul>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

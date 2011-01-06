@@ -1,0 +1,60 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Sync';
+    $body_id    = 'firefox-sync';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/sync.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Fique em sintonia com o seu Firefox</h2>
+    <p>Acesse seu histórico, senhas, favoritos e até mesmo abas abertas em todos os seus dispositivos.</p>
+    <p class="wide-button">
+        <a href="https://addons.mozilla.org/firefox/addon/10868">Instale o complemento gratuito Firefox Sync agora</a>
+    </p>
+</div>
+
+<?=buildFirefoxSubPageMenu($lang);?>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Por que sincronizar?</h3>
+
+    <h4>Vá e leve tudo consigo</h4>
+    <p>Fazendo pesquisas online no escritório apenas para descobrir que é hora de ir pra casa? Agora você pode voltar para suas abas abertas e seu histórico de navegação e pesquisas em um instante em qualquer PC. O seu Firefox estará como você o deixou, independente de onde você se conecte.</p>
+
+    <h4>Salve suas informações</h4>
+    <p>Todas as suas configurações, senhas, favoritos e outras personalizações são salvas de maneira universal, e não em uma única máquina. Se você substituir a sua máquina, você não perderá o seu Firefox.</p>
+
+    <h4>Segurança</h4>
+    <p>Suas informações são criptografadas para que somente você possa acessá-las ao digitar a sua Frase Secreta. O Firefox tem a segurança como sua maior prioridade e a sincronia de dados não é uma exceção.</p>
+
+    <p><a href="/<?=$lang?>/mobile/sync/">Saiba mais sobre o Firefox Sync no seu telefone.</a></p>
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Primeiros passos</h3>
+    <ol>
+        <li>Instale o complemento gratuito <a href="https://addons.mozilla.org/firefox/addon/10868">Firefox Sync</a>.</li>
+        <li>Reinicie o Firefox e siga os passos para criar uma conta com uma senha e uma frase secreta.</li>
+        <li>Instale o Firefox Sync em todos os dispositivos que você utiliza.</li>
+        <li>Identifique-se e selecione como deseja sincronizar seus dados, e então siga sua navegação de onde parou.</li>
+    </ol>
+
+	<p><a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">Dúvidas comuns</a></p>
+
+    <script type="text/javascript" src="/js/download.js"></script>
+	<?php
+		$_options = array('ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+		echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+	?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

@@ -1,0 +1,292 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla ઉત્પાદનો | ટિપ્પણીઓ અને યુક્તિઓ';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>ટિપ્પણીઓ અને યુક્તિઓ</h2>
+    <p>તમે નવા, થોડો અનુભવવાળા કે નિષ્ણાત વપરાશકર્તા હોય તોપણ, આ ટૂંકાણો અને સૂચનો તમને Firefox 3 માંથી મોટા ભાગનું મેળવવામાં મદદ કરશે.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">ઉત્પાદનો</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+
+    <li><a href="/<?=$lang?>/firefox/security/">સુરક્ષા</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">વૈવિધ્યપણું</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% આંગિક સોફ્ટવેર</a></li>
+    <li><span>ટિપ્પણીઓ અને યુક્તિઓ</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">પ્રકાશન નોંધો</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">અન્ય સિસ્ટમો અને ભાષાઓ</a></li>
+</ul>
+
+<div id="main-content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>નવા વપરાશકર્તા</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-01.jpg", 'Zoom In, Zoom Out screenshot', '365', '251', 'right')?>
+
+                <h4>મોટું કરો, નાનું કરો</h4>
+                <p>શું નાના લખાણથી થાકી ગયા છો? શું તમે થોડું મોટું અને અંગત ચિત્ર જોવા માંગો છો? હવે તમે સરળતાથી વેબ પાનાંઓ મોટા કે અને નાના કરી શકો છો.</p>
+
+                <div class="key-combo">
+                    મોટું કરો
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    નાનું કરો
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/beginner-02.jpg", 'Tab Tricks screenshot', '388', '135', 'right')?>
+
+                <h4>આ વેબ તરકીબોનો પ્રયાસ કરી જુઓ</h4>
+                <p>જો તમે એવા પ્રકારની વ્યક્તિ હોવ કે જેને એક જ સમયે ઘણાબધા વેબ પાનાંઓ એક જ સમયે રાખવા હોય, તો તમને ચોક્કસપણે ટેબવાળા બ્રાઉઝીંગથી લાભ મળશે. અહીં અમુક કીબોર્ડ ટૂંકાણો છે કે જેઓ તમને ટેબો આયોજીત કરવામાં મદદ કરશે:</p>
+
+                <div class="key-combo key-combo-1">
+                    નવી ખાલી ટેબ ખોલો
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    નવી ટેબમાં કડી ખોલો
+                                        <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + click on link</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">Middle Click on link</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middle Click on link (mac: ⌘ + click on link)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    ટેબ બંધ કરો
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    બંધ કરેલ ટેબ ફરી ખોલો
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>એક ક્લિક વડે બુકમાર્કો ઉમેરો</h4>
+                <p>તમને જે સાઈટો ગમતી હોય તેમનો એક-ક્લિક બુકમાર્ક વડે વધુ સારો ટ્રેક રાખો (અને સમય સાચવે છે). જ્યારે તમે પાનાંની મુલાકાત લો કે જેને તમે યાદ રાખવા ઈચ્છો, સ્થાન પટ્ટીમાં ખાલી તારાના ચિહ્ન પર ક્લિક કરો. Firefox તેને તમારી બુકમાર્કોની યાદીમાં ઉમેરશે કે જેથી તમે તેને સરળતાથી શોધી શકો.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        સાઈટ ખાતરી થયેલ ઓળખ જાણકારી પૂરી પાડે છે અને ઓનલાઈન ઘૂંસણખોરોથી તમારી વ્યક્તિગત માહિતીની સુરક્ષા કરે છે.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        સાઈટ મૂળભૂત ઓળખ જાણકારી પૂરી પાડે છે અને ઓનલાઈન ઘૂંસણખોરોથી તમારી વ્યક્તિગત માહિતીની સુરક્ષા કરે છે.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        સાઈટ કોઈપણ ઓળખ જાણકારી પૂરી પાડતું નથી.
+                    </li>
+                </ul>
+
+                <h4>જાણો કે તમે કોની સાથે વ્યવહાર કરી રહ્યા છો</h4>
+                <p>વેબ સ્કેમરોની સામાન્ય તરકીબ એ ખોટી સાઈટો બનાવવાની છે, કે જે તમારી બેંક, મનગમતી ઈ-કૉમર્સ સાઈટો, વગેરે જેવી લાગે. નસીબસંજોગે, Firefox શું સાઈટો ખરેખર સાચી છે કે નહિં તે નક્કી કરવાનું સરળ બનાવે છે - તુરંત ઓળખ ઝાંખી માટે ખાલી સાઈટ ચિહ્ન પર ક્લિક કરો.</p>
+                <p id="forgery">હુમલા સાઈટ કે ગુનાખોરી; આ સાઈટને તમારી વ્યક્તિગત જાણકારી, કે તેની મુલાકાત લેવાનું પર, નુકસાનકારક હોય છે.
+                <img src="/en-US/img/tignish/tips/forgery.png" alt="Forgery screenshot" />
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            પાનું નીચે સરકાવો
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            પાનું ઉપર સરકાવો
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            પાનું પુનઃતાજું કરો
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            પાછળ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            આગળ
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>તમારી સફળતાનો માર્ગ ટૂંકો બનાવો</h4>
+                <p>Firefox એ તમારું જીવન સરળ બનાવવા માટે કીબોર્ડ ટૂંકાણોથી ભરેલું છે. અહીં અમારા મનગમતાઓમાંના થોડાક છે:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        કર્સરને સ્થાન પટ્ટીમાં  ખસેડો
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        કર્સરને શોધ બોક્સમાં ખસેડો
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>થોડા અનુભવવાળા વપરાશકર્તા</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-01.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>ટેગ વગાડો</h4>
+                <p>એકવાર તમે બુકમાર્કોની મોટી યાદી બનાવો, તેમનો બધાનો ટ્રેક રાખવાનું થોડું ગૂંચવણભર્યું હોઈ શકે. આયોજીત રહેવા માટે, તમે તમારી બુકમાર્ક થયેલ સાઈટોને ટેગો સોંપી શકશો: ખાલી તારાના ચિહ્ન પર બેવડું ક્લિક કરો અને તમને તમારા ટેગો દાખલ કરવા માટે પૂછવામાં આવશે.</p>
+                <p>તમને જેટલા પદો સાથે સાઈટને ટેગ આપવો હોય તેટલા ટેગ તમે આપી શકો છો (દરેક ટેગ વચ્ચે અલ્પવિરામ મૂકવાની ખાતરી કરો), અને પછી તે ટેગને સ્થાન પટ્ટીમાં લખીને તમે સાઈટો સરળતાથી શોધી શકો છો. ઉદાહરણ તરીકે, "travel" ટેગને સ્થાન પટ્ટીમાં દાખલ કરવાનું તમારી છુટ્ટીની શોધના ભાગવાળી તમારી બધી બુકમાર્કની સાઈટોને લઈ આવશે.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-02.jpg", 'Add-ons screenshot', '378', '252', 'right')?>
+
+                <h4>એડ-ઓન વિશે બધું શીખો</h4>
+                <p>Firefox ની પ્રમાણભૂત આવૃત્તિ લક્ષણોથી ભરેલી છે, પરંતુ તમારે ત્યાં શા માટે અટકવું પડે? ત્યાં ૫૦૦૦ કરતાં વધુ એડ-ઓન છે કે જે Firefox ને વૈવિધ્યપૂર્ણ બનાવી શકે — કે જેને તમે જે કંઈપણ ક્રિયા વિચારી શકો તે પરિપૂર્ણ કરવા માટે ઉન્નત બનાવવા માટે ડાઉનલોડ કરી શકો. એડ-ઓન વ્યવસ્થાપક ખોલવા માટે અને Firefox ને તમારું પોતાનું બનાવી શકો તેના બધા માર્ગો શોધવા માટે સાધનો → એડ-ઓન પર જાવ.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-03.jpg", 'Search screenshot', '378', '252', 'right')?>
+
+                <h4>ચપળ શોધ</h4>
+                <p>તમે Firefox માં બનેલ શોધ પટ્ટીથી પહેલાથી જ પરિચિત છો. પરંતુ શું તમને ખબર હતી કે તમે તેને કોઈપણ શોધ યંત્રની જેમ તમારી ઈચ્છાનુસાર વૈવિધ્યપૂર્ણ બનાવી શકો? મૂળભૂત વિકલ્પોના મેનુને જોવા માટે તમારી શોધ પટ્ટીની ડાબી બાજુના ચિહ્ન પર ક્લિક કરો.</p>
+                <p>વધુ સારું બનાવવા માટે, યાદીની પુનઃગોઠવણી કરવા માટે શોધ યંત્રોની વ્યવસ્થા કરો ક્લિક કરો, વધારાની પસંદગીઓ ઉમેરો અને તમારા મનગમતા શોધ યંત્રોમાં કીબોર્ડ ટૂંકાણો પણ સોંપો. ઉદાહરણ તરીકે, તમે Google ને "G" ટૂંકાણ આપી શક્યા હોત - તો પછી જો તમે કુકી પ્રત્યુત્તરો માટે શોધ કરવા માંગો, તો ખાલી "G કુકી પ્રત્યુત્તરો" ને સ્થાન પટ્ટીમાં લખવાનું આખી યાદી બનાવી શક્યું હશે.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-04.jpg", 'Find screenshot', '378', '252', 'right')?>
+
+                <h4>તેને Flash માં શોધો</h4>
+                <p>તમે જેમ લખો તેમ શોધો લક્ષણ એ બીજું સરળ સમય બચાવનાર છે. પાનાં પર શબ્દ શોદવા માટે "શોધો" પટ્ટી વાપરવાની જગ્યાએ, ખાલી પાનાં પર કોઈપણ જગ્યાએ ક્લિક કરો અને તમે જે શબ્દ શોધવા માંગો તે લખવાનું શરૂ કરો. તમારું કર્સર આપોઆપ તે પદના પ્રથમ વારા પર કૂદી જશે.</p>
+                <p>તમે તેને કડીઓ માટે પણ વાપરી શકો છો. ઉદાહરણ તરીકે, તમારું માઉસને પાનાં પર ખસેડવાની જગ્યાએ "વધુ શીખો" કડી પર ક્લિક કરો, અને પછી શબ્દ લખવાનું શરૂ કરો અને જ્યારે કર્સર તેને શોધી કાઢે, ત્યારે એન્ટર દબાવો.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/intermediate-05.jpg", 'Privacy screenshot', '378', '252', 'right')?>
+
+                <h4>દરેક ટ્રેસને અવગણી કાઢો</h4>
+                <p>સુરક્ષા અને ખાનગીપણાના કારણોસર, તમારી પાછળ ટ્રેઈલ છોડી મૂકવાનું સારું નથી જેમ તમે બ્રાઉઝ કરો ત્યારે (ખાસ કરીને જો તમે વહેંચાયેલ કમ્પ્યૂટર વાપરી રહ્યા હોય). Firefox તમને તમારું બ્રાઉઝીંગ અને ડાઉનલોડ ઈતિહાસ ભૂંસી નાંખવાની પરવાનગી આપે છે, તમારી કેશ સાફ કરવાની અને કુકીઓને એક ક્લિકથી કાઢી નાંખવાની પરવાનગી આપે છે. આવું કરવા માટે ખાલી સાધનો → તમારી ખાનગી માહિતી સાફ કરો પર ક્લિક કરો. અથવા, વધુ કાળજી દાખવવા માટે, <span id="trace-platform">સાધનો → વિકલ્પો → ખાનગીપણું</span> પર જાવ અને "મારી ખાનગી માહિતી હંમેશા સાફ કરો જ્યારે હું Firefox બંધ કરું" વિકલ્પ પસંદ કરો.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → પસંદગીઓ → ખાનગીપણું";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="ફેરફાર → પસંદગીઓ → ખાનગીપણું";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>નિષ્ણાત વપરાશકર્તા</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-01.jpg", 'Location bar screenshot', '378', '252', 'right')?>
+
+                <h4>તમારી મનગમતી સાઈટો પર સીધા જાવ</h4>
+                <p>સરળ અને ઝડપી વપરાશ માટે તમે તમારી બુકમાર્કોમાં મુખ્ય શબ્દો ઉમેરી શકો છો. લાઈબ્રેરીમાંથી, મુખ્ય શબ્દ ક્ષેત્રમાં ખાલી ટૂંકો મુખ્ય શબ્દ ઉમેરો, અને તમે તે બુકમાર્કને ખાલી સરનામા પટ્ટીમાં લખીને જ વાપરી શકશો. ઉદાહરણ તરીકે, તમે તમારું del.icio.us ખાતું “કડીઓ” મુખ્ય શબ્દમાં આપી શકો, અને ત્યાંથી ખાલી “કડીઓ” ને સરનામા પટ્ટીમાં લખવાનું તમને ત્યાં તરત લઈ જશે.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-02.jpg", 'Bookmarks screenshot', '378', '252', 'right')?>
+
+                <h4>ચપળ ફોલ્ડરો બનાવો</h4>
+                <p>જો તમે નિષ્ણાત વેબ ગોતાખોર હોય કે જેને વિવિધ સાઈટોને સંગ્રહવાની અને ટ્રેક કરવાની વારંવાર જરૂર પડતી હોય, તો અહીં ઉપયોગી સમય બચાવનાર છે: Firefox 3 ની લાઈબ્રેરીની મદદથી, તમે શોધોને ફોલ્ડરોમાં બનાવી શકો અને સંગ્રહી શકો કે જેઓ પછીથી આપોઆપ સુધારાઈ જાય તેમ તમે સાઈટોને તમારી બુકમાર્કો અને ઈતિહાસમાં સંગ્રહો.</p>
+                <p>પ્રથમ, બુકમાર્કો મેનુમાંથી "બુકમાર્કો આયોજીત કરો" વિકલ્પ પસંદ કરીને લાઈબ્રેરી ખોલો. પછી, શોધ બોક્સમાં તમારા શોધ પદો દાખલ કરો. પછી ચપળ ફોલ્ડર બનાવવા માટે સંગ્રહો બટન ક્લિક કરો.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-03.jpg", 'Download Manager screenshot', '378', '252', 'right')?>
+
+                <h4>તમારા ડાઉનલોડની વ્યવસ્થા કરો</h4>
+                <p>જો તમે વારંવાર ડાઉનલોડ કરનાર હોય, તો તમે તમારા બધા ડાઉનલોડનો ટ્રેક રાખવા માટે ડાઉનલોડ વ્યવસ્થાપક વિન્ડો વાપરી શકો છો. તમે ડાઉનલોડ અટકાવી અને ફરી શરૂ કરી શકો છો, અને તમારો પોતાનો સમય તેમને વ્યવસ્થાપકમાંથી સીધા જ ખોલીને બચાવી શકો છો.</p>
+                <p>જો તમને પહેલાંના ડાઉનલોડનો ટ્રેક રાખવો હોય, તો સાધનો→ડાઉનલોડ પર ક્લિક કરો અને તમારી ફાઈલ શોધવા માટે શોધ બોક્સ વાપરો. એક વાર તમને તે મળી જાય, પછી તેને ખોલવા માટે ફાઈલ પર બેવડું ક્લિક કરો, અથવા Ctrl-click કરો અને "ડાઉનલોડ કડીની નકલ કરો" પસંદ કરો.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>વિકાસકર્તા સાધનો ખોળો</h4>
+                <p>જો તમે વેબ વિકાસકર્તા હોય, તો Firefox નું વિકાસકર્તા સાધન તમારું જીવન સરળ બનાવશે. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">Mozilla એડ-ઓન સાઈટ</a> ઘણા સાધનોની તક આપે છે કે જેઓ વિકાસ પ્રક્રિયામાં ખૂબ મદદરૂપ હોય છે,  CSS, HTML, અને JavaScript  જીવંતનો કોઈપણ વેબપાનાંમાં ફેરફાર કરવા માટે, ડિબગ કરવા માટે અને મોનીટર કરવા માટેના Firebug નો પણ સમાવેશ થાય છે, કે જે HTTP/HTTPS હેડરો અને POST પરિમાણો પણ જુએ છે, અને DOM નીરિક્ષકનો કોઈપણ HTML કે CSS ઘટકનો સાદા જમણા ક્લિક સાથે ચકાસણી કરવા માટે.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage("/$lang/img/tignish/tips/advanced-05.jpg", 'Preferences screenshot', '378', '252', 'right')?>
+
+                <h4>તમને જેમ ગમે તેમ વેબ સુયોજીત કરો</h4>
+                <p>હવે તમે વેબ-આધારિત પ્રોટોકોલ સંભાળનારાઓ વાપરી શકો છો તમારા મનગમતા વેબ કાર્યક્રમોનો ઝડપી વપરાશ પૂરો પાડવા માટે. ઉદાહરણ તરીકે, તમે Firefox ને સુયોજીત કરી શકો છો કે જેથી કોઈપણ સાઈટ પર mailto: કડી પર ક્લિક કરવાનું તમારા પ્રાધાન્યવાળા વેબમેઈલ પ્રોવાઈડરમાં નવો સંદેશો ખોલી નાંખે નહિં કે તમારા કમ્પ્યૂટરના મૂળભૂત મેઈલ કાર્યક્રમમાં (નોંધ: આ લક્ષણ એ માત્ર એવી જ વેબમેઈલ સેવાઓ સાથે ઉપલબ્ધ છે કે જેઓ Firefox 3 સાથે રજીસ્ટર થયેલ હોય).</p>
+                <p>દરેક પ્રોટોકોલ માટે મૂળભૂત કાર્યક્રમ પસંદ કરવા માટે કે જો તમે કાર્યક્રમ તમારી પોતાની જાતે દર વખતે પસંદ કરવાનું પસંદ કરવા માંગો તે "હંમેશા પૂછો" પસંદ કરવા માટે <span id="platform-protocol">સાધનો→વિકલ્પો→કાર્યક્રમો</span> પર જાવ.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→પસંદગીઓ→કાર્યક્રમો";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="ફેરફાર→પસંદગીઓ→કાર્યક્રમો";
+                }
+                //]]></script>
+                <p>જો તમે વેબ કાર્યક્રમ વિકાસકર્તા હોય, તો વેબ-આધારિત પ્રોટોકોલ સંભાળનારાઓ માટે કેવી રીતે આધાર ઉમેરવો તે શીખવા માટે <a href="http://developer.mozilla.org/">Mozilla વિકાસ કેન્દ્ર</a> માં ચકાસો.</p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="ruler"></div>
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

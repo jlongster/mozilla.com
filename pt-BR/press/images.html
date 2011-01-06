@@ -1,0 +1,231 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Arquivo de imagens';
+    $body_id    = 'images';
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/press-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Arquivo de imagens</h2>
+    <p>Logotipos, fotos e capturas de tela dos produtos Mozilla</p>
+</div>
+
+<?php include "includes/side-menu.php"; ?>
+
+<div id="content">
+
+<div id="logos">
+
+    <h3>Logotipos</h3>
+
+    <div id="column1">
+    <p>Precisa de imagens ou de um logotipo para sua matéria? Sinta-se à vontade, mas pedimos que você siga algumas regras de utilização.</p>
+    <p class="note">Observação: estes documentos fornecem um conjunto de regras básicas para a utilização dos produtos da Mozilla Foundation. Permissões para utilização das marcas e artes visuais está fora do escopo destes documentos &mdash; leia a <a href="http://www.mozilla.org/foundation/licensing.html" hreflang="en">Política de Licenças Mozilla</a> (em Inglês) para mais informações.</p>
+    </div>
+
+    <div id="column2">
+        <h5>Regras de uso</h5>
+        <ul>
+            <li><a href="http://www.mozilla.org/foundation/identity-guidelines/mozilla-foundation.html" hreflang="en">Regras de Utilização da Identidade Visual da Fundação Mozilla</a> (em Inglês)</li>
+        <li><a href="http://www.mozilla.org/foundation/identity-guidelines/firefox.html" hreflang="en">Regras de Utilização da Identidade Visual do Firefox</a> (em Inglês)</li>
+        <li><a href="http://www.mozilla.org/foundation/identity-guidelines/thunderbird.html" hreflang="en">Regras de Utilização da Identidade Visual do Thunderbird</a> (em Inglês)</li>
+        </ul>
+        <p>Se você preferir um formato diferente ou outro tamanho, por favor envie seu pedido para <em>press [arroba] mozilla.com</em>.</p>
+    </div>
+
+  <h4 id="moz-logos">Logotipos da Fundação Mozilla</h4>
+
+  <table class="logos">
+  <tr>
+    <td>
+      <img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla-small.png" alt="Logotipo Mozilla" height="64" width="96" />
+      <div>Logotipo Mozilla</div>
+      <div><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla.png" type="image/png">(5 kB, PNG)</a><br />
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla.eps" type="application/postscript">(32 kB, EPS)</a></div>
+    </td>
+  </tr>
+  </table>
+
+  <h4>Logotipos do Firefox</h4>
+  <p>Os seguintes logotipos do Firefox estão disponíveis para seu uso. Por favor, certifique-se de ler nossas <a href="/<?=$lang?>/about/logo/use.html">regras de utilização</a>, <a href="/<?=$lang?>/about/logo/stop.html">erros comuns de logotipo</a> e <a href="/<?=$lang?>/about/logo/style.html">outros estilos</a> antes de baixar os arquivos. Além disso, lembre-se que qualquer uso dos logotipos estará sujeito à <a href="http://www.mozilla.org/foundation/trademarks/policy.html">Política de marcas do Firefox</a>.</p>
+  <table class="logos" id="firefox-logos">
+  <tr>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-only.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-only-preview.png" alt="Somente Logotipo do Firefox" height="100" width="100" /></a>
+      <div>Somente Logotipo do Firefox<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-only.png">(361 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-preview.png" alt="Logotipo do Firefox + Texto Mozilla Firefox (marca registrada)" height="100" width="195" /></a>
+      <div>Logotipo do Firefox + Texto Mozilla Firefox (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark.png">(150 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version-preview.png" alt="Texto Mozilla Firefox Horizontal (marca registrada)" height="100" width="250" /></a>
+      <div>Logotipo do Firefox com Versão<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version.png">(110 kB, PNG)</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-vertical.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-vertical-preview.png" alt="Logotipo do Firefox + Texto Mozilla Firefox Vertical (marca registrada)" height="140" width="100" /></a>
+      <div>Logotipo do Firefox + Texto Mozilla Firefox Vertical (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-vertical.png">(319 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version-vertical"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version-vertical-preview.png" alt="Logotipo do Firefox + Texto com Versão Vertical (marca registrada)" height="140" width="100" /></a>
+      <div>Logotipo do Firefox + Texto com Versão Vertical (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/logo-wordmark-version-vertical">(342 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-only"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-only-preview.png" alt="Somente Texto Firefox (marca registrada)" height="140" width="140" /></a>
+      <div>Somente Texto Firefox (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-only">(17 kB, PNG)</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-version"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-version-preview.png" alt="Texto Firefox com Versão (marca registrada)" height="80" width="160" /></a>
+      <div>Texto Firefox com Versão (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/wordmark-version">(18 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/mozilla-wordmark.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/mozilla-wordmark-preview.png" alt="Texto Mozilla Firefox (marca registrada)" height="80" width="165" /></a>
+      <div>Texto Mozilla Firefox (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/tignish/about/logo/download/mozilla-wordmark.png">(27 kB, PNG)</a></div>
+    </td>
+    <td></td>
+  </tr>
+  </table>
+
+  <h4>Logotipos do Thunderbird</h4>
+  <table class="logos">
+  <tr>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-logo.png" type="image/png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-logo_small.png" alt="Logotipo do Mozilla Thunderbird" height="96" width="96" /></a>
+      <div>Logotipo do Thunderbird<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-logo.png" type="image/png">(22 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-vertical.png" type="image/png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-vertical_small.png" alt="Logotipo do Thunderbird + Texto Mozilla Thunderbird Vertical (marca registrada)" height="96" width="76" /></a>
+      <div>Logotipo do Thunderbird + Texto Mozilla Thunderbird Vertical (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-vertical.png" type="image/png">(29 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-horizontal.png" type="image/png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-horizontal_small.png" alt="Logotipo do Mozilla Thunderbird + Texto Mozilla Thunderbird Horizontal (marca registrada)" height="96" width="280" /></a>
+      <div>Logotipo do Thunderbird + Texto Mozilla Thunderbird Vertical (marca registrada)<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/thunderbird-wordmark-horizontal.png" type="image/png">(35 kB, PNG)</a></div>
+    </td>
+  </tr>
+  </table>
+
+  <h4>Logotipos Mozilla Labs</h4>
+  <table class="logos">
+  <tr>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/prism-logo.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/prism-logo_small.png" alt="Logotipo do Prism" height="96" width="96" /></a>
+      <div>Logotipo do Prism<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/prism-logo.png">(40 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/test-pilot-logo.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/test-pilot-logo_small.png" alt="Logotipo do Test Pilot" height="96" width="96" /></a>
+      <div>Logotipo do Test Pilot<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/test-pilot-logo.png">(107 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/weave-logo.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/weave-logo_small.png" alt="Logotipo do Weave" height="96" width="96" /></a>
+      <div>Logotipo do Weave<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/weave-logo.png">(65 kB, PNG)</a></div>
+    </td>
+    <td>
+      <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/personas-logo.png"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/personas-logo_small.png" alt="Logotipo do Personas" height="96" width="96" /></a>
+      <div>Logotipo do Personas<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/personas-logo.png">(28 kB, PNG)</a></div>
+    </td>
+  </tr>
+  </table>
+
+</div>
+
+<div id="photos">
+
+  <h3>Fotos</h3>
+  <table class="people">
+    <tr>
+      <td>
+        <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-mitchell-baker-large.jpg" type="image/jpeg"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-mitchell-baker-thumbnail.jpg" height="173" width="173" alt="foto de Mitchell Baker" /></a>
+        <h5>Mitchell Baker</h5>
+        <div><em>Presidente do Conselho de Administração</em></div>
+        <div><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-mitchell-baker-large.jpg" type="image/jpeg">Alta resolução (243 kB, JPEG)</a><br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-mitchell-baker-small.jpg" type="image/jpeg">Baixa resolução (19 kB, JPEG)</a></div>
+      </td>
+      <td>
+        <a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-john-lilly-large.jpg" type="image/jpeg"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-john-lilly-thumbnail.jpg" height="173" width="173" alt="Foto de John Lilly" /></a>
+        <h5>John Lilly</h5>
+        <div><em>CEO</em></div>
+        <div><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-john-lilly-large.jpg" type="image/jpeg">Alta resolução (246 kB, JPEG)</a><br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/people-john-lilly-small.jpg" type="image/jpeg">Baixa resolução (119 kB, JPEG)</a></div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+<div id="firefox-images">
+
+  <h3>Telas do Firefox</h3>
+  <table class="screenshots">
+    <tr>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-vista.png"><img src="/pt-BR/img/press/screenshot-firefox-vista-small.png" height="72" width="100" alt="Tela Firefox Windows Vista" /></a>
+          <div>Tela Firefox<br />Windows Vista<br /><a href="/pt-BR/img/press/screenshot-firefox-vista.png">672 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-vista.tif">764 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-mac.png"><img src="/pt-BR/img/press/screenshot-firefox-mac-small.png" height="72" width="100" alt="Tela Firefox Macintosh" /></a>
+          <div>Tela Firefox<br />Macintosh<br /><a href="/pt-BR/img/press/screenshot-firefox-mac.png">461 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-mac.tif">740 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-xp.png"><img src="/pt-BR/img/press/screenshot-firefox-xp-small.png" height="72" width="100" alt="Tela Firefox Windows XP" /></a>
+          <div>Tela Firefox<br />Windows XP<br /><a href="/pt-BR/img/press/screenshot-firefox-xp.png">660 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-xp.tif">760 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-linux.png"><img src="/pt-BR/img/press/screenshot-firefox-linux-small.png" height="72" width="100" alt="Tela Firefox Linux" /></a>
+          <div>Tela Firefox<br />Linux<br /><a href="/pt-BR/img/press/screenshot-firefox-linux.png">672 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-linux.tif">768 kB, TIFF (300dpi)</a></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-awesomebar.png"><img src="/pt-BR/img/press/screenshot-firefox-awesomebar-small.png" height="69" width="100" alt="Campo de Endereços Inteligente" /></a>
+          <div>Navegador Firefox<br />Campo de Endereços Inteligente<br /><a href="/pt-BR/img/press/screenshot-firefox-awesomebar.png">559 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-awesomebar.tif">651 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-instantwebsiteid.png"><img src="/pt-BR/img/press/screenshot-firefox-instantwebsiteid-small.png" height="69" width="100" alt="Identidade em um clique" /></a>
+          <div>Navegador Firefox<br />Identidade em um clique<br /><a href="/pt-BR/img/press/screenshot-firefox-instantwebsiteid.png">254 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-instantwebsiteid.tif">337 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-bookmark.png"><img src="/pt-BR/img/press/screenshot-firefox-bookmark-small.png" height="72" width="100" alt="Adicionar Favorito" /></a>
+          <div>Navegador Firefox<br />Adicionar Favorito<br /><a href="/pt-BR/img/press/screenshot-firefox-bookmark.png">640 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-bookmark.tif">737 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-firefox-phishing.png"><img src="/pt-BR/img/press/screenshot-firefox-phishing-small.png" height="69" width="100" alt="Proteção Anti-phishing" /></a>
+          <div>Navegador Firefox<br />Proteção Antiphishing<br /><a href="/pt-BR/img/press/screenshot-firefox-phishing.png">64 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-firefox-phishing.tif">98 kB, TIFF (300dpi)</a></div>
+      </td>
+    </tr>
+     </table>
+
+</div>
+<div id="thunderbird-images">
+
+   <h3>Telas do Thunderbird</h3>
+   <table class="screenshots">
+    <tr>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-thunderbird.png"><img src="/pt-BR/img/press/screenshot-thunderbird_small.png" height="74" width="100" alt="Thunderbird Screenshot" /></a>
+        <div>Aplicação de E-mail Thunderbird<br />janela principal<br /><a href="/pt-BR/img/press/screenshot-thunderbird.png">63 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-thunderbird.tif">123 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-thunderbird-message.png"><img src="/pt-BR/img/press/screenshot-thunderbird-message_small.png" height="80" width="100" alt="Thunderbird Screenshot" /></a>
+        <div>Aplicação de E-mail Thunderbird<br />janela de mensagens<br /><a href="/pt-BR/img/press/screenshot-thunderbird-message.png">48 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/press/screenshot-thunderbird-message.tif">100 kB, TIFF (300dpi)</a></div>
+      </td>
+      <td>
+        <a href="/pt-BR/img/press/screenshot-thunderbird-rss.png"><img src="/pt-BR/img/press/screenshot-thunderbird-rss_small.png" height="74" width="100" alt="Thunderbird Screenshot" /></a>
+        <div>Aplicação de E-mail Thunderbird<br />Notícias &amp; Blogs<br /><a href="/pt-BR/img/press/screenshot-thunderbird-rss.png">77 kB, PNG (72dpi)</a><br /><a href="http://static.mozilla.com/moco/pt-BR/images/screenshot-thunderbird-rss.tif">145 kB, TIFF (300dpi)</a></div>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+</div><!-- end #content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

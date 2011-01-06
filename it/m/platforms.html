@@ -1,0 +1,36 @@
+<?php
+    // please translate the variable below
+    $page_title = "Mozilla | Piattaforme supportate e requisiti di sistema";
+
+    @include_once "{$config['file_root']}/includes/headers/mobile/m-requirements.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+  <h1>Piattaforme supportate e requisiti di sistema</h1>
+  <p>Firefox è disponibile per dispositivi mobili con piattaforma Maemo <!-- e Windows Mobile (beta) -->.</p>
+</div>
+<div id="content">
+  <h2>Dispositivi compatibili</h2>
+
+  <h3>Maemo</h3>
+
+  <ul>
+    <li>Nokia N900</li>
+    <li>Nokia N810</li>
+  </ul>
+
+<?php /*hide winmo for now
+  <h3>Windows Mobile (Beta)</h3>
+
+  <ul>
+    <li>AT&amp;T Tilt</li>
+    <li>HTC Touch Diamond Pro</li>
+    <li>Palm Treo Pro</li>
+    <li>Samsung Omnia</li>
+  </ul>
+end hide */ ?>
+</div>
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

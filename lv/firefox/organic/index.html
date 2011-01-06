@@ -1,0 +1,76 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox: 100% organiska programmatūra';
+    $body_id    = 'firefox-organic';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/organic-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Labāka pieeja Internetam</h2>
+    <p>Jeb, ko atvērtā pirmkoda pārlūks var izdarīt jūsu labā.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Produkti</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/">Iespējas</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Drošība</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">Pielāgojamība</a></li>
+    <li><span>100% organiska programmatūra</span></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Ieteikumi un padomi</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Laidiena piezīmes</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Citas operētājsistēmas un valodas</a></li>
+</ul>
+
+<div id="main-content">
+
+    <h3>Kas ir organiska programmatūra?</h3>
+    <p><strong>Kā programmatūras kompānija, mēs esam nedaudz neparasta.</strong> Ar vārdu ‘organiskā programmatūra’ mēs saprotam visus tos veidus ar kuriem mēs atšķiramies no citiem:</p>
+    <p>Mūsu populārais Interneta pārlūks Firefox ir izveidojies par starptautisku kustību, kurā ir iesaistīti tūkstošiem cilvēku, no kuriem tikai maza daļiņa ir mūsu darbinieki.</p>
+    <p>Mūs motivē mūsu atvērtības misija, inovācijas un iespējas Internetā, nevis tādi tipiski biznesa mērķi kā peļņa vai akciju cena (ziniet ko, mums nemaz nav akciju).</p>
+    <p>Un kā <a href="http://www.mozilla.org/foundation/">bezpeļņas, sabiedriskā labuma organizācija</a>, mēs savus sasniegumus mērām izveidotās lietotāju kopienās un uzlabotas cilvēku dzīvēs. Mēs ticam Interneta spēkam un potenciālam un gribētu redzēt to plaukstam un zeļam visur un visiem.</p>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-02.png" alt="Firefox girl" class="inline-02" />
+
+    <div id="organic-open-source">
+        <h3>Kas ir atvērtais pirmkods?</h3>
+        <p>Pirmajā mirklī tas varētu šķist neprātīgi, taču noklausieties līdz beigām: <strong>mēs uzskatām, ka jo vairāk cilvēku zina mūsu “noslēpumus”, jo labāk.</strong></p>
+        <p>Tāpēc mēs atklājām Firefox pirmkodu jeb recepti, no kā tas ir veidots, ikvienam cilvēkam pasaulē un mudinājām iepazīties ar to.</p>
+        <p>Daži cilvēki redzēja lietas, ko varēja uzlabot, un uzlaboja tās. Citiem bija idejas par to kādas jaunas iespējas varētu izveidot un viņi izveidoja tās. Vēl citi paņēma mūsu kodu un, pieliekot savas idejas, izveidoja pilnīgi jaunus produktus.</p>
+        <p>Kāda ir šī stāsta morāle? Tas, ka esat atvērti ļauj notikt labām lietām. Ikviens var ieskatīties pa mūsu sētas durvīm… kaut gan patiesībā nav nekādu durvju.</p>
+    </div>
+
+    <img src="<?=$config['static_prefix']?>/img/tignish/organic/organic-inline-01.png" alt="" />
+
+    <div id="organic-why-care">
+        <h3>Kāds jums no tā labums?</h3>
+        <p>Mēs varbūt arī neesam tipiska kompānija, taču <strong>mēs tik un tā zinām kā koncentrēties uz galveno, proti, kā padarīt Internetu par labāku vietu jums</strong>.</p>
+        <p>Tas, ka esam atvērti, nozīmē to, ka nākamā lielā ideja nāks no jebkura no kādas negaidītas vietas visā pasaulē. Mums nav jāpaļaujas tikai uz dažiem darbiniekiem mūsu birojos. Ja uz pasauli skatās šādi, tad kāpēc vispār strādāt kaut ka savādāk?</p>
+        <p>Visas šīs runas par organisko programmatūru un atvērtību nozīmē labāku pārlūku jums un pārējiem 150 miljoniem regulāro Firefox lietotāju visā pasaulē. Tas nozīmē augstāku kvalitāti un drošāku produktu. Tas nozīmē inovācijas, brīvību un atbalstu Internetam, kas ir visiem pieejams.</p>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale('lv-LV', $_options);
+    ?>
+
+    <ul class="what-is-mozilla">
+        <li>
+            <h3>Kas ir Mozilla?</h3>
+            <h5>Mēs esam globāla kopiena, sabiedriskā labuma organizācija un atvērtā koda programmatūras projekts.</h5>
+            <p><a href="/<?=$lang?>/about/">Uzziniet vairāk par mums</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,133 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Download Firefox for Mobile';
+    $body_id    = 'mobile-download';
+    $breadcrumbs = array(
+        'Mobile'      => "/{$lang}/mobile/",
+        'Download'    => ""
+    );
+    $html5      = true;
+    $extra_headers = <<<EXTRA_HEADERS
+
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-download.css" media="screen" />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+  <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+  <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+  <script src="/includes/yui/2.5.1/container/container-min.js"></script>
+  <script src="/js/mozilla-video-tools.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+  <h2>Download Firefox to <span>Your Mobile</span></h2>
+  <p>Now available for Android and the Nokia N900!</p>
+</div>
+
+<div id="main-content">
+
+  <div id="platforms">
+    <div id="platforms-divider">
+      <div id="android" class="platform">
+        <h3>Download for <span>Android</span></h3>
+        <p class="dl"><a href="/<?=$lang?>/mobile/beta"><span>Get Firefox for Android</span></a></p>
+        <p class="notes"><a href="/<?=$lang?>/mobile/4.0b2/releasenotes/index.html">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></p>
+      </div>
+      <div id="nokia" class="platform">
+        <h3>Download for <span>Nokia N900</span></h3>
+        <p class="dl"><a href="/<?=$lang?>/mobile/beta"><span>Get Firefox for Nokia N900</span></a></p>
+        <p class="notes"><a href="/<?=$lang?>/mobile/4.0b2/releasenotes/index.html">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></p>
+        <p class="notes">Get Firefox 1.1 by visiting <a href="/<?=$lang?>/m">Firefox.com/m</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="secondary">
+    <div id="ffhome">
+      <h4>Firefox Home for iPhone</h4>
+      <p>Access your Firefox history, bookmarks and open tabs on your iPhone.</p>
+      <ul>
+        <li><a href="/<?=$lang?>/mobile/home/">Learn more</a></li>
+        <li><a href="http://itunes.com/apps/firefoxhome">Get it from iTunes - FREE</a></li>
+      </ul>
+    </div>
+    <div id="desktop">
+      <h4>Download Firefox for mobile to your desktop computer</h4>
+      <p>Developers, you can install the mobile version of Firefox to your desktop computer in order
+      to test, provide feedback and build add-ons. The desktop versions are intended for development
+      purposes only.</p>
+      <ul>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
+        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="feature-boxes">
+    <div id="video-tour" class="feature-box">
+      <h4>Take the <span>Video Tour</span></h4>
+      <p>Learn how Firefox brings your Web to your phone.</p>
+      <p class="go"><a href="/<?=$lang?>/firefox/video/?video=meet-mobile-beta" id="tour-video">Launch the Video »</a></p>
+      <script>
+        // <![CDATA[
+        var player_french = new Mozilla.VideoPlayer(
+            'tour-video',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.webm',
+                    type:  'video/webm',
+                    title: 'Download in WebM format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.theora.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Download in Open Video format (Ogg&nbsp;Theora)'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.mp4',
+                    type:  'video/mp4',
+                    title: 'Download in MPEG-4 format'
+                }
+            ],
+            'serv/mobile/meetFFXmobile2-640x360.mp4'
+        );
+        // ]]>
+      </script>
+    </div>
+    <div id="getinvolved" class="feature-box">
+      <h4>Get <span>Involved</span></h4>
+      <p>We rely on a global community of people like you to help build, test and spread Firefox.</p>
+      <p class="go"><a href="/<?=$lang?>/mobile/getinvolved/">Find Out What You Can Do »</a></p>
+    </div>
+
+    <div id="feedback" class="feature-box">
+      <h4>Questions? <span>Comments?</span></h4>
+      <p>Let us answer your questions, or tell us what you think about Firefox on your phone.</p>
+      <p class="go"><a href="http://support.mozilla.com/kb/Mobile+Help+and+Tutorials">Get Help »</a></p>
+    </div>
+  </div>
+
+</div><!-- /#main-content -->
+
+<script>// <![CDATA[
+  /* Whichever box is taller, make the shorter one the same height */
+	$(document).ready(function(){
+  	h_left = $('#ffhome').height();
+  	h_right = $('#desktop').height();
+
+  	if(h_left >= h_right) {
+  		$('#desktop').height(h_left);
+  	}
+  	if (h_left < h_right) {
+  		$('#ffhome').height(h_right);
+  	}
+	});
+// ]]></script>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
+

@@ -1,0 +1,44 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Справка для мобильного Firefox";
+    $search_field  = "Поиск в справке Firefox";
+    $search_button = "Ищите";
+    $link_to_sumo  = "или <a href=\"%s\">перейдите на полную версию сайта поддержки</a>";
+
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Справка для <em>мобильного</em> Firefox</h1>
+
+    <h2>Общие вопросы</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Как мне синхронизировать Firefox между моим десктопом и мобильником?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Как мне обновить Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Как мне использовать умный экран?</a></li>
+    </ul>
+
+    <h2>Темы мобильной справки</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Как мне изменить настройки?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Что такое горячие клавиши мобильной клавиатуры?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Как мне управлять загрузками?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Как мне открыть новую вкладку?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Как мне найти и установить дополнения?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Как мне удалить или отключить дополнения?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Как мне сёрфить по сети в мобильном Firefox?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Как мне добавить закладку?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Как мне изменить масштаб веб-сайта?</a></li>
+    </ul>
+
+    <h2>Нужна ещё помощь?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

@@ -1,0 +1,259 @@
+#firefox-all #doc {
+    background-image: none;
+}
+
+#firefox-all #main-feature h2 {
+    margin-right: 305px;
+}
+
+#firefox-all #main-feature p,
+#firefox-all #download-button {
+    margin-right: 405px;
+}
+
+#firefox-all #main-feature p {
+    padding-bottom: 25px;
+}
+
+#firefox-all #main-feature { min-height: 155px; }
+* html #firefox-all #main-feature { height: 155px; /* Hack for IE6 */ }
+
+#no-beta {
+    margin: 10px 0 10px 34px;
+}
+
+/* {{{ Download Button */
+
+#firefox-all ul.home-download {
+    width: 365px;
+    margin: 0;
+    left: auto;
+}
+
+#firefox-all ul.home-download li {
+    padding: 0;
+    position: relative;
+    height: 124px;
+}
+
+* html #firefox-all ul.home-download li {
+    background: none;
+}
+
+#firefox-all ul.home-download li a.download-link {
+    background-image: url(/img/tignish/firefox/download-button-beta.png);
+    height: 124px;
+    padding: 0;
+}
+
+#firefox-all ul.home-download li a.download-link span {
+    padding: 55px 20px 20px 128px;
+    height: 49px;
+    display: block;
+    color: #fff;
+}
+
+* html #firefox-all ul.home-download li a.download-link {
+    background: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',src='/img/tignish/firefox/download-button-beta.png',sizingMethod='crop');
+}
+
+#firefox-all ul.home-download li a:hover {
+    background-position: top left;
+}
+
+#firefox-all ul.home-download li a:hover span {
+    background: url(/img/tignish/firefox/download-button-beta.png) top right no-repeat;
+}
+
+* html #firefox-all ul.home-download li a.download-link:hover span {
+    background: none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',src='/img/tignish/firefox/download-button-beta-ie.png',sizingMethod='crop');
+}
+
+#firefox-all ul.home-download li a.download-link span { line-height: 1.1; }
+
+#firefox-all ul.home-download li a.download-link em { color: #fff; }
+
+#firefox-all ul.home-download li a.download-link strong {
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-size: 145%;
+    padding-right: 27px;
+    background: url(/img/tignish/firefox/download-arrow-beta.png) right center no-repeat;
+}
+
+#firefox-all ul.download li a.download-link:hover,
+#firefox-all ul.download li a.download-link:active {
+    text-decoration: none;
+}
+
+#firefox-all .download-other {
+    margin-left: 30px;
+    font-size: 70%;
+    color: #999;
+}
+
+.download-noscript { margin-left: 35px; width: 400px; }
+.download-noscript h3 { font-size: 120%; margin-bottom: 0; }
+.download-noscript h3 span { display: block; font-size: 75%; color: #898378; }
+.download-noscript ul { margin-top: 0.5em; }
+
+/* }}} */
+/* {{{ Side Feature */
+
+#side-feature {
+    position: absolute;
+    top: 100px;
+    right: 25px;
+    margin: 0;
+    width: 280px;
+    font-size: 110%;
+}
+
+#side-feature-header {
+    background: url(/img/tignish/firefox/background-all-beta-box.png) top left no-repeat;
+    padding: 20px 20px 10px 11px;
+}
+
+#side-feature ul {
+    background: url(/img/tignish/firefox/background-all-beta-box-inside.png) top left no-repeat;
+    left: auto;
+    padding: 15px 40px 5px 30px;
+    margin: 0;
+}
+
+#side-feature #side-feature-footer {
+    background: url(/img/tignish/firefox/background-all-beta-box-footer.png) bottom left no-repeat;
+    height: 35px;
+}
+
+* html #side-feature-header {
+    background-image: url(/img/tignish/firefox/background-all-beta-box-ie.png);
+}
+
+* html #side-feature ul {
+    background-image: url(/img/tignish/firefox/background-all-beta-box-inside-ie.png);
+}
+
+* html #side-feature #side-feature-footer {
+    background-image: url(/img/tignish/firefox/background-all-beta-box-footer-ie.png);
+}
+
+#side-feature h4 {
+    color: #fff;
+    padding: 0 15px;
+}
+
+#side-feature p.intro {
+    color: #fff;
+    padding: 0 15px;
+    margin: 0;
+}
+
+
+/* locale specific tweaks */
+
+/* all locales */
+
+#no-beta {
+    margin-right:300px;
+}
+
+
+/* French */
+
+.locale-fr ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+.locale-fr #side-feature ul {
+    padding:15px 30px 5px 20px;
+}
+
+.locale-fr #side-feature-header {
+    padding:20px 5px 10px;
+}
+
+
+/* Greek */
+
+.locale-el #side-feature ul {
+    padding:15px 30px 5px 20px;
+}
+
+.locale-el #side-feature-header {
+    padding:20px 5px 10px;
+}
+
+.locale-el #side-feature-header p.intro {
+font-size: 90%;
+margin: 0;
+padding-left:10px;
+}
+
+
+/* German */
+
+.locale-de ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+
+/* Russian */
+
+.locale-ru ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+.locale-ru #side-feature ul {
+    padding:15px 30px 5px 20px;
+}
+
+.locale-ru #side-feature-header {
+    padding:20px 5px 10px;
+}
+
+
+
+/* Albanian */
+
+.locale-sq #side-feature ul {
+    padding:15px 30px 5px 20px;
+}
+
+.locale-sq #side-feature-header {
+    padding:20px 10px 5px 0px;
+}
+
+
+/* Serbian */
+
+.locale-sr ul.home-download li a.download-link strong {
+    font-size:130% !important;
+}
+
+.locale-sr #side-feature ul {
+    padding:15px 30px 5px 20px;
+}
+
+
+/* arabic */
+
+.locale-ar #main-feature h2, .locale-ar  p#no-beta {
+    margin-right:405px !important;
+}
+
+
+/* Macedonian */
+
+.locale-mk ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}
+
+
+/* Bulgarian */
+
+.locale-bg ul.home-download li a.download-link strong {
+    font-size:120% !important;
+}

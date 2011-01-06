@@ -1,0 +1,104 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Üks suurus ei sobi kõigile';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
+    $extra_headers = <<<EXTRA_HEADERS
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/addons-page.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Üks suurus ei sobi kõigile</h2>
+    <p>Pitsale valid ise katte ja telefonile helinad. Miks mitte seadistada veebilehitseja selle järgi, kuidas veebi kasutad?</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">Tooted</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">Võimalused</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">Turvalisus</a></li>
+    <li><span>Kohandamine</span></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% orgaaniline tarkvara</a></li>
+    <li><a href="/<?=$lang?>/firefox/tips/">Nipid ja trikid</a></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">Väljalaske teave</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">Teised süsteemid ja keeled</a></li>
+</ul>
+
+<div id="main-content">
+    <div class="addon-intro">
+        <h3>Sobilik lisa igaühele</h3>
+        <p>Firefoxil on enim võimalusi seadistada interneti kuvamine täpselt sinu veebikasutusharjumuste järgi. Enam kui 5 000 lisa (täiendavad Firefoxi sinu vajadustele vastavalt), mis ootavad võimalust aidata sul rohkem teha, rohkem lõbutseda ja internetti loovamalt kasutada.</p>
+        <p>Soovid konkreetseid näiteid? Vaata allolevaid näiteid ning <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/">külasta meie lisade lehte kogu valikuga tutvumiseks.</a></p>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-alerts">
+            <h4>Teated ja uuendused</h4>
+            <p>Selle kategooria lisad hoiavad sind kursis ilmaolude, spordi ja isegi eBay oksjonitega. Reaalajas info on veebilehitsejas nähtaval sõltumata sellest, millisel veebilehel parasjagu oled.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:72/sort:popular">Vaata kõiki „Teated ja uuendused” kategooria lisasid.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Näide:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/5202"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/ebay.png" width="75" height="31" alt="ebay" /></a>Hoia veebis olles eBays kauplemisel pilk peal.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/5202">Proovi Firefoxi eBay versiooni</a> <span>eBay Corporationi poolt</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-photos">
+            <h4>Fotod, muusika ja video</h4>
+            <p>Tee Firefoxist fotode üleslaadija, muusikamängija või multifunktsionaalne multimeediakeskus. Siis on multimeedia juhtimine kohe käe-jala juures, samal ajal kui internetis surfad, e-posti saadad, tööd või uurimustööd teed.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:38/sort:popular">Vaata kõiki „Fotod, muusika ja video” kategooria lisasid.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Näide:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/219"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/foxytunes.png" width="51" height="52" alt="foxytunes" /></a>Juhi pea igat meediamängijat otse veebilehitsejast.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/219">Proovi FoxyTunesi</a> <span>Alex Sirota poolt</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-social">
+            <h4>Suhtlus</h4>
+            <p>Need lisad aitavad leida veebist uusi lahedaid asju, parandada kiirsuhtlust ning hoida kontakte sõpradega levinumate sotsiaalvõrgustike abil.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:1/cat:71/sort:popular">Vaata kõiki „Suhtlus” kategooria lisasid.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Näide:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/138"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/stumbleupon.png" width="50" height="50" alt="stumbleupon" /></a>Avasta uusi lehti ning jaga leide sõpradega.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/138">Proovi StumbleUponi</a> <span>StumbleUponi poolt</span></p>
+        </div>
+    </div>
+
+    <div class="addon-feature">
+        <div class="addon-category-themes">
+            <h4>Kujundused</h4>
+            <p>Ära piira oma kasutuskogemust tavapärase disainiga. Vali uued värvid, lihtsusta veebilehitseja kasutamist (alustuseks näiteks suuremate nuppudega) või vali lihtsalt sinu maitsele vastav välimus.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/browse/type:2/cat:all/sort:popular">Vaata kõiki kujundusi.</a></p>
+        </div>
+        <div class="addon-example">
+            <p><span class="example">Näide:</span> <a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/4908"><img src="<?=$config['static_prefix']?>/img/tignish/add-ons/nasa.png" width="54" height="53" alt="NASA" /></a>Kujundus tumedate toonide austajatele.</p>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/addon/4908">Proovi NASA Öist Starti</a> <span>mcdavis941 poolt</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div id="sidebar">
+    <script type="text/javascript" src="/js/download.js"></script>
+    <?php
+        $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
+        echo $firefoxDetails->getDownloadBlockForLocale($lang, $_options);
+    ?>
+
+    <ul class="add-ons">
+        <li>
+            <h3>Lisad</h3>
+            <h5>Muuda Firefox isikupäraseks</h5>
+            <p><a href="https://<?=$lang?>.add-ons.mozilla.com/<?=$lang?>/firefox/">Vaata kõiki lisasid</a></p>
+        </li>
+    </ul>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

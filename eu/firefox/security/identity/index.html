@@ -1,0 +1,80 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Guneak klik bakarrez identifikatzeari buruz";
+    $body_id    = 'oneclick-sideid';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox-identity-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<script type="text/javascript">// <![CDATA[
+
+if (navigator.userAgent.indexOf("Windows NT 6.0") != -1) {
+    document.body.className += ' platform-vista';
+}
+
+// ]]></script>
+
+
+<div id="main-feature">
+  <h2>Guneak klik bakarrez identifikatzeari buruz</h2>
+  <p>Firefox 3k guneak identifikatzeko botoi berria du, linean zaudenean konexioa norekin ezartzen duzun jakiten laguntzeko.</p>
+</div>
+
+<div id="main-content">
+
+<p class="intro">Bisitatzen ari zaren guneak identitateari buruzko argibiderik eman duen, informazio hori nork egiaztatu duen eta ea kuxkuxeroengandik babestuta dagoen ikus dezakezu begi-kolpean ezaugarri honen bitartez. Helbide-barrako ezker ertzeko ikonoan klik eginez (edo Shift-Tab-Sartu sakatuz) atzi dezakezu edozein webguneren identitate informazioa.</p>
+
+<h3>Maiz egindako galderak</h3>
+
+<div class="expander expander-odd" id="levels">
+  <h4 class="expander-header">Zer esanahi dute identitate informazioaren maila ezberdinek?</h4>
+  <div class="expander-content">
+    <p>“Pasaporteen ofiziala”ren ikonoa aldatu egingo da webguneak emandako identitate informazioaren maila islatzeko.</p>
+
+    <p class="site-id site-id-1">Webguneak ez du identitate informaziorik eskaintzen.</p>
+    <p class="site-id site-id-2">Webguneak oinarrizko identitatea eskaintzen du eta zure informazio pertsonala kuxkuxeroengandik babesten du.</p>
+    <p class="site-id site-id-3">Webguneak jabeari buruzko guztiz egiaztatutako identitate informazioa eskaintzen du eta zure informazio pertsonala kuxkuxeroengandik babesten du.</p>
+    <p class="site-id site-id-4">Webgune hau erasogune edo iruzur bezala dago zerrendatuta. Kaltegarria izan daiteke gune honi informazio pertsonala ematea edo are bisitatzea ere.</p>
+  </div>
+</div>
+<div class="expander expander-even">
+  <h4 class="expander-header">Zergatik ez dute webgune guztiek egiaztatutako identitate informazioa eskaintzen?</h4>
+
+  <div class="expander-content">
+    <p>Interneteko webgune gehienek ez dute inolako pertsona nahiz finantza informaziorik eskatzen eta, hortaz, agian ez da beharrezkoa ikusten egiaztatutako identitate informazioa eskaintzeak eta kuxkuxeroengandik babesteko neurriak hartzeak dakartzan kostuak ordaintzea.</p>
+    <p>Pertsona edo finantza informazioa ematea nahi duten edo gobernu edo negozio erakundeak ordezkatzen dituzten webguneek beti identifikatu beharko lituzkete euren buruak eta zure informazioa kuxkuxeroengandik babestu beharko lukete.</p>
+  </div>
+</div>
+<div class="expander expander-odd">
+  <h4 class="expander-header">Segurua al da negozioak egitea euren buruak identifikatzen ez dituzten guneekin?</h4>
+  <div class="expander-content">
+
+    <p>Linean konfiantza nori eman erabakitzeko bidea tratuan norekin ari zaren jakitetik hasten da, baina hori ez da guztia. Identitate informazioa eskaintzen eta informazio pertsonala babesten ez duten guneek arriskuan jartzen zaituzte eta ez lirateke segurutzat hartu behar. Baina, aldi berean, euren buruak ongi identifikatzen dituzten guneek onartzen ez dituzun jardunak edo webgunearen segurtasun biguna izan dezakete.</p>
+    <p>Mundu errealean bezala, tentuz ibili behar zenuke ezagutzen ez dituzun eta fidatzen ez zaren guneekin tratatzean. Guneak bere burua modu egokian identifikatu duela jakitea, konfiantza nori eman erabakitzeko bidean beste urrats bat da beraz.</p>
+  </div>
+</div>
+<div class="expander expander-even">
+  <h4 class="expander-header">Mozillak webgune bakoitzerako egiaztatzen al du informazio hau?</h4>
+  <div class="expander-content">
+    <p>Mozillak ez du egiaztatzen webguneak identifikatzeko erabiltzen den informazioa. Beste nabigatzaileek egiten duten gisan, Firefox “Ziurtagiri Agintariak” deituriko uste oneko enpresa multzoaz fidatzen da, hain zuzen guneen identitateak egiaztatu eta “ziurtagiriak” banatzeaz arduratzen diren horietaz. Enpresa hauek <a href="http://www.mozilla.org/projects/security/certs/policy/">Mozilla ZA Ziurtagiri Politika</a>ra atxiki behar dira, zeinak, besteren artean, ZAk hirugarren enpresen auditoriak ematera behartzen dituen ziurtagiriak modu egokian banatzen direla berresteko.</p>
+
+  </div>
+</div>
+
+</div>
+
+
+<?php
+  $extra_footers = <<<EXTRA_FOOTERS
+<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+
+<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

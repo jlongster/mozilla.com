@@ -1,0 +1,121 @@
+<?php
+
+$page_title = "Geokokapena Firefoxen";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Kokapenaren araberako nabigazioa</h2>
+    <p>Firefoxek webguneei non zauden esan diezaieke, era honetan zuretzat interesgarriagoa
+    eta baliagarriagoa den informazioa bilatzeko. Weba adimentsuago bilakatzeko saiakera bat da
+    &ndash; eta era berean zure pribatutasuna guztiz errespetatzeko moduan eginda dago.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Egin aproba!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Ohiko galderak</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Zer da Kokapenaren araberako nabigazioa?</h4>
+    <div class="expander-content">
+        <p>Kokapenaren araberako nabigazioa darabilten webguneek zure kokapen zehatza eskatzen duten, zuretzako informazio interesgarria eskuratzeko, edo bilaketetan denbora aurrezteko. Demagun inguruko pizza-jatetxe baten bila zabiltzala. Webgune batek zure kokapena partekatzeko eskaria egin ahalko du, "pizza" hitza soilik bilatuz nahi dituzun emaitzak eskuratzeko... ez duzu beste informaziorik idatzi beharko.</p>
+        <p>Edo, bidaiaren antolatzen bazabiltza, webgunean non zauden jakingo du, eta nora joan nahi duzun baino ez diozu esan beharko.</p>
+        <p>Zerbitzu hau guztiz hautazkoa &ndash; Firefoxek ez du zure kokapena partekatuko baimenik gabe &ndash; eta guzti hau zure pribatutasuna osoki errespetatuz egingo da. Noski, Firefoxen elementu guztiak bezala, estandar irekiak erabiliz sortu da, web garatzaileek erraz baliatu dezaten aukera hau.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Nola funtzionatzen du?</h4>
+    <div class="expander-content">
+        <p>Kokapena kontuan hartzen duen webgune bat bisitatzen duzunero, Firefoxek zure kokapena partekatu nahi al duzun galdetuko dizu.</p>
+        <p>Onartzen baduzu, Firefoxek zure konputagailuaren IP helbidetik gertuko hari gabeko sarrera puntuak arakatuko ditu. Ondoren Firefoxek informazio hau geokokapen zerbitzuaren hornitzaile lehenetsiari bidaliko dio, Google Location Services, zure gutxi gora-beherako kokapena ebazteko. Kokapen hau, azkenik, eskaera egin duen webguneari bidaliko zaio.</p>
+        <p>Eskaera ukatzen baduzu, Firefoxek ez du ezer egingo.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Zein da kokapenaren zehaztasuna?</h4>
+    <div class="expander-content">
+        <p>Zehaztasuna aldakorra da lekuaren arabera. Zenbait tokitan, gure zerbitzu hornitzaileek metro gutxitako akatsa baino ez dute burutzen. Beste zenbaitetan, aldiz, aldea askoz handiagoa izan daiteke. Gure zerbitzu hornitzaileek itzulitako kokapen guztiak gutxi gora-beherakoak dira, eta ez dugu ziurtatzen emandako kokapenen zehaztasuna. Mesedez, ez erabili informazio hau larrialdietarako. Erabili beti burua.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Zein informazio bidaltzen da, eta zeini? Nola babesten da nire pribatutasuna?</h4>
+    <div class="expander-content">
+        <p>Zure pribatutasuna lehentasun bat da guretzat, eta Firefoxek ez du inoiz zure kokapena baimenik gabe partekatzen. Informazio eskaera egiten duen web orri bat bisitatzen duzunero, hau partekatu aurretik zure baieztapena eskatuko zaizu.</p>
+        <p>Defektuz, Firefoxek Google Location Services darabil zure kokapena ebazteko, honakoa bidaltzen diolarik:</p>
+        <ul>
+            <li>zure konputagailuaren IP helbidea,</li>
+            <li>inguruko hari gabeko sarrera puntuen informazioa, eta</li>
+            <li>ausazko bezero identifikatzaile bat, Googlek emana, 2 asteren buruan iraungiko dena.</li>
+        </ul>
+        <p>Firefoxek biltzen eta erabiltzen duen informazioaren deskribapen xehea nahi baduzu, irakurri <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefoxen pribatutasun-politika</a> (ingelesez).</p>
+        <p>Google Location Services-ek, ondoren, zure gutxi gora-beherako kokapena itzultzen du (hau da, latitudea eta longitudea). Googlek bildu eta darabilen informazioaren deskribapen xehea nahi baduzu, irakurri <a href="http://www.google.com/privacy-lsf.html" class="external">Googleren Geokokapen zerbitzuaren pribatutasun-politika</a> (ingelesez).</p>
+        <p>Informazio trukea zifratutako konexio baten bidez burutzen da zure pribatutasuna babesteko. Behin Firefoxek zure geokokapen informazioa daukanean, eskaera egin duen webguneari bidaltzen dio. Ez da inoiz Google Location Services-ekin partekatzen bisitatzen zabitzan webgunearen izena edo helbidea, eta ezta cookie-rik ere.</p>
+        <p>Google Location Services-ek bildutako informazioa ez du inoiz ez Mozillak ez Googlek erabiliko zu identifikatzeko edo zelatatzeko.</p>
+        <p>Eskaera egin duen webguneak zure kokapen informazioarekin zer egiten duen jakiteko, irakurri webgune horren pribatutasun-politika.</p>
+        <p>Pribatutasunari buruzko informazio gehiagorako, irakurri honako hauek ere:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefoxen pribatutasun-politika</a> (ingelesez)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Googleren pribatutasun-politika</a> (ingelesez)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Nabigatu ahala nire aztarnak gordetzen al dira?</h4>
+    <div class="expander-content">
+        <p>Ez. Firefoxek kokapena bilatzeko eskaria egiten du soilik webgune batek eskatzen dionean, eta datuak zure baimenarekin soilik partekatzen ditu. Firefoxek ez ditu zure pausoak zelatatzen edo gogoratzen nabigatu ahala.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Nola ezeztatu dezaket webgune bati emandako baimena?</h4>
+    <div class="expander-content">
+        <p>Firefoxi esan badiozu webgune bati beti baimena emateko, zure kokapena eskura dezan, eta gero iritziz aldatzen baduzu, oso erraz ezeztatu dezakezu baimena. Jarraitu pauso hauek:</p>
+        <ul>
+            <li>Nabigatu baimena eman diozun webgunera</li>
+            <li>Zoaz <em>Tresnak</em> menura, eta hautatu <em>Orriaren informazioa</em></li>
+            <li>Hautatu <em>Baimenak</em> fitxa</li>
+            <li>Aldatu ezarpenak <em>Partekatu kokapena</em> aukerarako</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Nola ezaba dezaket “ausazko bezero identifikazio zenbakia”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Zoaz <em>Tresnak</em> menura, eta hautatu <em>Garbitu azkenaldiko historia</em></li>
+            <li>Klikatu <em>Xehetasunak</em> gezian</li>
+            <li>Egiaztatu <em>Cookie-ak</em> aukeratuta dagoela</li>
+            <li>Sakatu <em>Garbitu orain</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Nola desgaitu dezaket Kokapenaren araberako nabigazioa betiko?</h4>
+    <div class="expander-content">
+        <p>Kokapenaren araberako nabigazioa Firefoxen hautazko ezaugarri bat da. Inoiz ez da kokapenik bidaltzen zure baimenik gabe. Ezaugarri hau behin-betiko desgaitu nahi baduzu, jarraitu ondorengo pausoak:</p>
+        <ul>
+            <li>Helbide-barran, idatzi <code>about:config</code></li>
+            <li>Idatzi <code>geo.enabled</code></li>
+            <li>Egin klik bikoitza <em>geo.enabled</em> hobespenean</li>
+            <li>Kokapenaren araberako nabigazioa desgaituko da</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Non nago?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Hara! Akats bat gertatu da zure kokapena ebaztean.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

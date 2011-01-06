@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Firefox વેબ બ્રાઉઝર | તાજેતરનું બીટા ચકાસવામાં અમને મદદ કરો';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Firefox ના લક્ષણો ચકાસવામાં અમને મદદ કરો!</h2>
+        <p>Firefox ની તાજેતરની બીટા આવૃત્તિ હવે પૂર્વદર્શન પ્રકાશન તરીકે ઉપલબ્ધ છે. તેની ચકાસણી કરી જુઓ અને અમને તમારા વિચારો જણાવો!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>અગત્યની જાણકારી</h4>
+        <p class="intro">મહેરબાની કરીને ડાઉનલોડ કરવા પહેલાં વાંચો</p>
+    </div>
+    <ul>
+        <li>આ પૂર્વ-પ્રકાશન સોફ્ટવેર છે: તમે અમુક વેબસાઈટો અને એડ-ઓન સાથે સુસંગતતા સમસ્યાઓ અનુભવશો.</li>
+        <li>જો તમે સમસ્યા અનુભવો તો <a href="http://feedback.mozilla.org/">અમને જણાવો</a> અથવા <a href="https://bugzilla.mozilla.org/">ભૂલ જમા કરો</a>.</li>
+        <li>વધુ વિગતો માટે, <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">પ્રકાશન નોંધો</a> અને <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">જાણીતા મુદ્દાઓ</a> વાંચો (અંગ્રેજીમાં).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">બીટા માટે નથી જોઈ રહ્યા ને? <a href="/<?=$lang?>/firefox/">તાજેતરનું Firefox</a> મેળવો.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

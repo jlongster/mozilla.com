@@ -1,0 +1,70 @@
+<?php
+
+/* translate the page title below */
+$page_title = "Firefox е обновен";
+
+
+/*
+l10n note: there are 3 cases we have to deal with in the Whatsnew page:
+#1: Използвате най-новата версия на Firefox($latestVersion)
+#2: Използвате по-стара версия на Firefox($oldVersion)
+#3: Използвате версия на Firefox, която не можем да определим($unknownVersion)
+
+The text at the top of the page changes depending on the version we detect
+*/
+
+include_once "{$config['file_root']}/includes/headers/3.6/whatsnew-l10n.inc.php";
+
+?>
+
+
+
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
+      <p>Благодарим Ви, че подкрепяте <a href="/<?=$lang?>/about/whatismozilla.html">мисията на Mozilla</a> да окуражава откритостта, иновациите и възможностите в Интернет!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>Вие използвате Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">За по-голяма сигурност, Ви препоръчваме да свалите <a href="/<?=$lang?>/firefox/">най-новата и най-добра версия</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+
+  <h2>Използвате непозната версия на Firefox.</h2>
+
+  <p id="main-feature-contents">За по-голяма сигурност, Ви препоръчваме да свалите  <a href="/<?=$lang?>/firefox/">най-новата и най-добра версия</a>.</p>
+
+</div>
+
+
+
+
+<?php
+
+endif;
+include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
+include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+
+?>

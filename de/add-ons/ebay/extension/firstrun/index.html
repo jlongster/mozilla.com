@@ -1,0 +1,53 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion für eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-firstrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+    <div class="feature-contents">
+        <div id="feature-header">
+            <h3><img src="/<?=$lang?>/img/add-ons/ebay/firstrun-extension-title.png" height="124" width="490" alt="Welcome: eBay Companion" /><a href="../../"><img src="/<?=$lang?>/img/add-ons/ebay/title-logos.png" height="124" width="290" alt="" /></a></h3>
+        </div>
+        <div id="feature-text">
+
+        <p>Die eBay-Edition wurde zu Ihrem Firefox Browser hinzugefügt. Jetzt können Sie  direkt aus dem Firefox Webbrowser Artikel auf eBay suchen, beobachten und darauf bieten.</p>
+
+        <p><strong>Um Mozilla Firefox, eBay-Edition nutzen zu können, führen Sie bitte diese einfachen Schritte durch:</strong></p>
+
+        <ol id="setup-steps">
+            <li id="setup-steps-1">Klicken Sie auf das eBay-Symbol auf Ihrer Firefox-Symbolleiste. Es öffnet sich links in Ihrem Browser eine Sidebar. </li>
+            <li id="setup-steps-2">Loggen Sie sich bei eBay ein, indem Sie auf die Schaltfläche „Einloggen“ auf der Sidebar klicken und geben Sie Ihren Mitgliedsnamen und Ihr Passwort ein. Wenn Sie noch kein eBay-Mitglied sind, klicken Sie bitte auf die Schaltfläche „Anmelden“. </li>
+            <li id="setup-steps-3">Jetzt können Sie loslegen und das große Angebot auf eBay direkt in Ihrem Firefox Browser durchstöbern und beobachten.</li>
+        </ol>
+
+        <p>Weitere Informationen zur eBay-Edition finden Sie unter <a href="../../features.html">Funktionen</a> und <a href="../../faq.html">FAQ</a>.</p>
+
+        </div>
+
+        <div id="firstrun-sidebar">
+
+            <h3>Machen Sie Firefox zu Ihrem Standard-Webbrowser</h3>
+            <p>Für ein optimales Online-Erlebnis gehen Sie im Firefox-Menü zu Einstellungen und aktivieren Sie das Kontrollkästchen „Beim Starten überprüfen, ob Firefox der Standard-Browser ist“ aktiviert ist. So können Sie die Vorteile von Firefox jederzeit nutzen, selbst dann, wenn Sie auf einen Link in einer E-Mail drücken.</p>
+
+            <h3>Rufen Sie in Firefox gleich Ihre bevorzugten Websites auf</h3>
+            <p>Wussten Sie schon, dass beim Aufrufen von Firefox Ihre bevorzugten Webseiten bereits in verschiedenen Tabs für Sie geöffnet werden können, so dass Sie sofort mit dem Surfen loslegen können? Klicken Sie hier <input id="set-homepage-checbox" value="1" type="checkbox"/>, damit Firefox die eBay-Homepage in einem zweiten Tab automatisch aufruft. </p>
+
+        </div>
+
+        <br style="clear: both;" />
+    </div>
+</div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,31 @@
+<?php
+    // strings to translate
+    $page_title = 'Welkom bij Firefox';
+    $extra_feature_text = 'Klik op de sluitknop op dit tabblad om naar uw startpagina te gaan';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="Welkom bij Firefox 3"/></h2>
+    <p>Bedankt voor het downloaden van de veiligste, snelste en meest aanpasbare versie van Firefox ooit. Volg de instructies bovenaan deze pagina om dit tabblad te sluiten en onmiddellijk naar uw startpagina te gaan.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>Meer weten</h3>
+        <p>Leer meer over de mogelijkheden van Firefox. Onze snelstartgids bevat een lijst met aanbevolen websites, plus extra Firefox informatie. <a href="/<?=$lang?>/firefox/central/">Bezoek 'Aan de slag met Firefox'</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>Vragen?</h3>
+        <p>Onze Ondersteuningspagina brengt vele antwoorden met daarbovenop een live chatmogelijkheid om je door de heikele punten te leiden. <a href="http://support.mozilla.com/<?=$lang?>/kb/">Bezoek 'Ondersteuning'</a></p>
+    </div>
+
+<!-- marker //-->
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

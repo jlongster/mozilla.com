@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /> 주요 기능</h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Firefox 4 베타로 갈아타세요!</h3>
+        <p>집이든 회사든 모바일이든 언제 어디서나 Firefox를 사용할 수 있습니다. Firefox Sync는 여러분의 북마크, 암호, 방문 기록, 마지막 탭 사용 정보를 언제 어디서나 바로 사용가능하도록 합니다. PC와 모바일에서 함께 즐겨 보세요!</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">동기화 기능 보기 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">의견 나누기 »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">제품 소개서 »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>주요 기능</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>인터넷 생활을 더욱 풍요롭게 하세요!</h4>
+         <?=$tabvideo?>
+        <p>열어 놓은 탭들을 다 보시기 힘들지 않으세요? 여러분이 하시던 작업의 종류에 따라 탭을 그룹으로 모아서 보실 수 있습니다. 간단한 마우스 동작으로 탭들을 그룹으로 관리하실 수 있습니다.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

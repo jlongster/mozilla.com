@@ -1,0 +1,313 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'मोज़िल्ला उत्पाद | टिप्स &amp; ट्रिक्स';
+    $body_id    = 'tips';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
+    <script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="/js/mozilla-pager.js"></script>
+    <script type="text/javascript">// <![CDATA[
+    Mozilla.Pager.NEXT_TEXT        = 'आगे';
+    Mozilla.Pager.PREV_TEXT        = 'पीछे';
+    Mozilla.Pager.PAGE_NUMBER_TEXT = '%s / %s';
+    // ]]></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>टिप्स &amp; ट्रिक्स</h2>
+    <p>आप चाहे नए, थोड़ें पुराने या अग्रणी उपयोक्ता क्यों न हों, ये शार्टकट और सलाह आपको फ़ॉयरफ़ॉक्स 3 का सबसे बढ़िया अऩुभव देने में मदद करेगा.</p>
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><a href="/<?=$lang?>/products/">उत्पाद</a> / <a href="/<?=$lang?>/firefox/">Firefox</a></h3></li>
+    <li><a href="/<?=$lang?>/firefox/features/" hreflang="en">विशेषताएँ</a></li>
+    <li><a href="/<?=$lang?>/firefox/security/">सुरक्षा</a></li>
+    <li><a href="/<?=$lang?>/firefox/customize/">पसंदीदाकरण</a></li>
+    <li><a href="/<?=$lang?>/firefox/organic/">100% जैविकीय सॉफ्टवेयर</a></li>
+    <li><span>टिप्स &amp; ट्रिक</span></li>
+    <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/">रिलीज नोट्स</a></li>
+    <li><a href="/<?=$lang?>/firefox/all.html">दूसरे सिस्टम और भाषाएँ</a></li>
+</ul>
+
+<div id="content">
+
+    <div id="beginner" class="pager pager-with-nav pager-no-history">
+        <h3>Beginner</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="beginner-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-01.jpg', 'Zoom In, Zoom Out screenshot', '362', '225', 'right')?>
+
+                <h4>जूम इन, जूम आउट</h4>
+                <p>छोटे-छोटे अक्षरों से उब चुके हैं? किसी चित्र को अधिक नजदीक और निजी रूप में देखना चाहते हैं? अब आप अपने वेब पेज को आसानी से जूम इन और आउट कर सकेंगे.</p>
+
+                <div class="key-combo">
+                    Zoom In
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-in.png', 'ctrl + + (mac: ⌘ + +)', '107', '37')?>
+                </div>
+                <div class="key-combo">
+                    Zoom Out
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/zoom-out.png', 'ctrl + - (mac: ⌘ + -)', '107', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-02.jpg', 'Tab Tricks screenshot', '343', '117', 'right')?>
+
+                <h4>इन टैब युक्तियों को आजमाएँ</h4>
+                <p>यदि आप एक ऐसे व्यक्ति हैं जो एक समय में कई वेब पेज को देखना चाहते हैं, आपको टैब्ड ब्रॉउजिंग से निःसंदेह काफी फायदा होगा. यहाँ कुछ कुंजीपटल शार्टकट हैं जो आपको टैब पर मास्टरी करने में मदद करेगा:</p>
+
+                <div class="key-combo key-combo-1">
+                    Open a new empty tab
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/new-tab.png', 'ctrl + T (mac: ⌘ + T)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Open a link in a new tab
+                    <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                        document.write('<div class="key-combo-text">⌘ + कड़ी पर क्लिक करें</div>');
+                    } else {
+                        document.write('<div class="key-combo-text">कड़ी पर मिड्ल क्लिक करें</div>');
+                    }
+                    // ]]></script>
+                    <noscript>
+                    <div class="key-combo-text">Middle Click on link (mac: ⌘ + कड़ी पर क्लिक करें)</div>
+                    </noscript>
+                </div>
+                <div class="key-combo">
+                    Close a tab
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/close-tab.png', 'ctrl + W (mac: ⌘ + W)', '106', '37')?>
+                </div>
+                <div class="key-combo">
+                    Reopen a closed tab
+                    <?=buildPlatformImage('/en-US/img/tignish/tips/reopen-tab.png', 'ctrl + shift + T (mac: ⌘ + shift + T)', '201', '37')?>
+                </div>
+            </div>
+
+            <div class="slide-common" id="beginner-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/beginner-03.jpg', 'Bookmarks screenshot', '389', '250', 'right')?>
+
+                <h4>एक क्लिक में पुस्तचिह्न जोड़ें</h4>
+                <p>अपनी पसंद की साइटों का एक क्लिक में ट्रैक रखें (और समय भी बचाएँ). जब आप किसी पृष्ठ का भ्रमण करते हैं आप उसे याद रखना चाहेंगे, स्थान पट्टी में तारा चिह्न क्लिक करें. फ़ॉयरफ़ॉक्स इसे आपकी पुस्तचिह्न में जोड़ेगा ताकि आप इसे आसानी से फिर पता कर सकें.</p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide04">
+                <ul>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-01.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        The site provides verified identity information and protects your personal data from online eavesdroppers.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-02.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        The site provides basic identity information and protects your personal data from online eavesdroppers.
+                    </li>
+                    <li>
+                        <?=buildPlatformImage('/img/tignish/tips/security-icon-03.png', 'Security Icon', '60', '53', null, array('mac', 'linux', 'xp'))?>
+                        The site doesn't provide any identity information.
+                    </li>
+                </ul>
+
+                <h4>जानते हैं कि आपका किससे वास्ता पर रहा है</h4>
+                <p>वेब स्कैमर की एक सामान्य चतुराई होती है कि वह आपकी बैंक, आपके ई-वाणिज्य साइटों आदि से मिलता जुलता एक नकली साइट बनाता है जिसे फिशिंग साइट कहा जाता है. फ़ॉयरफ़ॉक्स सौभाग्य से इसे निर्धारित करना काफी आसान कर देता है कि क्या यह वही साइट है जिसके बारे में दावा किया जा रहा है - साइट प्रतीक पर तत्काल पहचान सारांश के लिए क्लिक करें.</p>
+                <p id="forgery">An attack site or forgery; giving this site your personal information, or even visiting it, may be harmful.
+                <script type="text/javascript">// <![CDATA[
+                    if (gPlatform == PLATFORM_MACOSX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-mac.png" alt="Forgery screenshot" />');
+                } else if (gPlatform == PLATFORM_LINUX) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-linux.png" alt="Forgery screenshot" />');
+                } else if (gPlatformVista) {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-vista.png" alt="Forgery screenshot" />');
+                } else {
+                    document.write('<img src="/en-US/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" />');
+                }
+            // ]]></script><noscript><div style="display: inline;"><img src="<?=$config['static_prefix']?>/img/tignish/tips/forgery-xp.png" alt="Forgery screenshot" /></div></noscript>
+                </p>
+            </div>
+
+            <div class="slide-common" id="beginner-slide05">
+                <div id="keys-column-right">
+                    <div class="clear">
+                        <div class="key-combo">
+                            Scroll down the page
+                            <img src="/en-US/img/tignish/tips/scroll-down.png" alt="space bar" />
+                        </div>
+                        <div class="key-combo">
+                            Scroll up the page
+                            <img src="/en-US/img/tignish/tips/scroll-up.png" alt="shift + space bar" />
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Refresh the page
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/reload.png', 'ctrl + R (mac: ⌘ + R)', '106', '37')?>
+                        </div>
+                    </div>
+                    <div class="clear">
+                        <div class="key-combo">
+                            Back
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/back.png', 'ctrl + ← (mac: ⌘ + ←)', '94', '37')?>
+                        </div>
+
+                        <div class="key-combo">
+                            Forward
+                            <?=buildPlatformImage('/en-US/img/tignish/tips/forward.png', 'ctrl + → (mac: ⌘ + →)', '94', '37')?>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>आपके सफलता के रास्ते का शॉर्टकट</h4>
+                <p>फ़ॉयरफ़ॉक्स कुंजपटल शॉर्टकटों से भरा हुआ है जो आपकी जिंदगी आसान बनाता है. यहाँ हमारे कुछ पसंदीदा हैं:</p>
+
+                <div id="keys-column-left">
+                    <div class="key-combo">
+                        Move cursor to the location bar
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-location.png', 'ctrl + L (mac: ⌘ + L)', '94', '37')?>
+                    </div>
+                    <div class="key-combo">
+                        Move cursor to the search box
+                        <?=buildPlatformImage('/en-US/img/tignish/tips/cursor-search.png', 'ctrl + K (mac: ⌘ + K)', '94', '37')?>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="intermediate" class="pager pager-with-nav pager-no-history">
+        <h3>थोड़े पुराने</h3>
+
+        <div class="pager-content">
+
+            <div class="slide-common" id="intermediate-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-01.jpg', 'Bookmarks screenshot', '387', '220', 'right')?>
+
+                <h4>प्ले टैग</h4>
+                <p>जब आपके पास पुस्तचिह्नों की बड़ी मात्रा जमा हो जाती है तो उसे ट्रैक करना काफी मुश्किल भरा काम होता है. व्यवस्थित रहने के लिए, आप अपनी पुस्तचिह्नित साइटों में टैग डाल सकते हैं: तारा चिह्न पर बस दो बार क्लिक करें और आपको टैग दाखिल करने के लिए प्रांप्ट किया जाएगा.</p>
+                <p>आप किसी साइट को जितने चाहे उतने टैह दे सकते हैं(लेकिन हर टैग के बाद अर्द्ध विराम देना न भूलें), और आसानी से टैग को स्थान पट्टी में टाइप करके पता करें. उदाहरण के लिए, स्थान पट्टी में "यात्रा" दाखिल करना उन सारे साइटों को सामने लाएगा जिसे आपने अपने अवकाश बिताने के हिस्से के रूप में पुस्तचिह्नित किया है.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-02.jpg', 'Add-ons screenshot', '364', '256', 'right')?>
+
+                <h4>सहयुक्तियों के बारे में सभकुछ जानें</h4>
+                <p>फ़ॉयरफ़ॉक्स का माक संस्करण विभिन्न विशेषताओं से भरा पड़ा है, सचमुच लेकिन वहीं क्यों ठहर गए? 5,000 सहयुक्तियों  — अतिरिक्तों की तरह जो फ़ॉयरफ़ॉक्स पसंदीदा करता है — जिसे आप अपने किसी काम की क्षमता बढ़ाने के लिए डाउनलोड कर सकते हैं. औजार → सहयुक्तियों में जाएँ सहयुक्तियाँ प्रबंधक को खोलने के लिए और उन सारे तरीकों को खोजें जिससे आप फ़ॉयरफ़ॉक्स को अपना बना सकते हैं.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-03.jpg', 'Search screenshot', '371', '233', 'right')?>
+
+                <h4>खोज स्मार्टर</h4>
+                <p>आप फ़ॉयरफ़ॉक्स में अंतस्थापित खोज पट्टी से परिचित हैं. लेकिन क्या आप जानते हैं कि आप इसे किसी खोज इंडन से पसंदीदा कर सकते हैं जिसे आप चाहते हैं? अपने खोज पट्टी के बाएँ प्रतीक पर क्लिक करें मूलभूत विकल्प के मेन्यू को देखने के लिए.</p>
+                <p>इससे बेहतर के लिए, खोज ईंजन प्रबंधित करें क्लिक करें… सूची फिर से व्यवस्थित करने के लिए, अतिरिक्त पसंद जोड़ें और अपने पसंदीदा खोज ईंजन में कुंजीपटल शार्टकट दें. उदाहरण के लिए, आप गूगल के लिए "G" शार्टकट दे सकते हैं - फिर यदि आप कुकी रिसाइप के लिए खोज करना चाहते हैं, बस स्थान पट्टी में  "G कुकी रिसाइप" टाइप करना पूरी सूची दे देगा.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-04.jpg', 'Find screenshot', '385', '254', 'right')?>
+
+                <h4>Find it in a Flash</h4>
+                <p>टाइप करते हुए ढूँढें विशेषता दूसरा समय बचानेवाली चाजी है. "ढूँढें" पट्टी  को किसी पेज पर खोजने के लिए प्रयोग के बजाए बस पृष्ठ पर किसी जगह क्लिक कीजिए और उन शब्दों को टाइप करना आरंभ कीजिए जिसे आप चाहते हैं. आपका सर्वर सीधे तत्काल वैसे शब्द के पहले उदाहरण पर जाएगा.</p>
+                <p>आप इसे कड़ी के लिए भी प्रयोग कर सकते हैं. उदाहरण के लिए, पृष्ठ पर माउस को "अधिक जानें" कड़ी पर खिसकाने के बजाए, बस शब्द टाइप करना शुरू कीजिए और जब कर्सर इसे ढूँढ़ता है, एँटर दबाएँ.</p>
+            </div>
+
+            <div class="slide-common" id="intermediate-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/intermediate-05.jpg', 'Privacy screenshot', '358', '219', 'right')?>
+
+                <h4>हर सबूत मिटाएँ</h4>
+                <p>सुरक्षा व गोपनीयता कारणों से, ब्रॉउज के दौरान अपनी चीजों को पीछे छोड़ना मुनासिब नहीं है (खासकर यदि आप एक साझा कंप्यूटर का प्रयोग कर रहे हैं). फ़ॉयरफ़ॉक्स आपकी ब्ऱॉउजिंग व डाउनलोड इतिहास को मिटाने, एक क्लिक में कैश साफ करने व कुकीज मिटाने की स्वीकृति देता है. बस औजार →निजी आँकड़ा साफ करें… पर जाएँ ऐसा करने के लिए. अथवा, अतिरिक्त सावधानी के लिए, <span id="trace-platform">औजार → विकल्प → गोपनीयता</span> पर जाएँ "हमेशा मेरे निजी आँकड़ा को साफ करें जब मैं फ़ॉयरफ़ॉक्स बंद करता हूँ" विकल्प चुनें.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('trace-platform').innerHTML="Firefox → Preferences → Privacy";
+                } else if (gPlatform == 2) {
+                    document.getElementById('trace-platform').innerHTML="Edit → Preferences → Privacy";
+                }
+                //]]></script>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+    <div id="advanced" class="pager pager-with-nav pager-no-history">
+        <h3>उन्नत</h3>
+
+        <div class="pager-content">
+            <div class="slide-common" id="advanced-slide01">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-01.jpg', 'Location bar screenshot', '392', '245', 'right')?>
+
+                <h4>अपने मनपसंद साइट पर सीधे जाएँ</h4>
+                <p>आप अपने पुस्तचिह्नों में बीजशब्दों को जोड़ सकते हैं आसान और तेज पहुँच के लिए. लाइब्रेरी से, बीजशब्द क्षेत्र में छोटा बीजशब्द जोड़ें और आप उस पुस्तचिह्न को बस उस बीजशब्द को अपनी पता पट्टी में टाइप कर पहुँच सकते हैं. उदाहरण के लिए, आप अपने del.icio.us खाता को  “कड़ी” बीजशब्द दे सकते हैं और बस तब “कड़ी” को पता पट्टी में टाइप करना आपको वहाँ सीधे ले जाएगा.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide02">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-02.jpg', 'Bookmarks screenshot', '381', '233', 'right')?>
+
+                <h4>स्मार्ट फोल्डर बनाएँ</h4>
+                <p>यदि आप एक उन्नत वेब सर्फर हैं जिसे कई साइटों को लगातार सहेजने व ट्रैक करने की जररूत होती है, यहाँ है एक उपयोगी समय बचानेवाला: फ़ॉयरफ़ॉक्स 3 की लाइब्रेरी के प्रयोग से, आप फोल्डर में खोज बना व सहेज सकते हैं जिसे स्वतः अद्यतन किया जाता है जैसे ही आप साइटों को पुस्तचिह्नों व इतिहास में जोड़ते हैं.</p>
+                <p>पहले, लाइब्रेरी को "पुस्तचिह्न व्यवस्थित करें" विकल्प को पुस्तचिह्न मेन्यू से खोलें. तब, खोज पेटी में खोज शब्द दाखिल करें. फिर स्मार्ट फोल्डर बनाने के लिए सहेजें बटन क्लिक करें.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide03">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-03.jpg', 'Download Manager screenshot', '387', '271', 'right')?>
+
+                <h4>अपना डाउनलोड प्रबंधित करें</h4>
+                <p>यदि आप बहुत अधिक डाउनलोड करना पसंद करते हैं, आप डाउनलोड प्रबंधक विंडो को अपने सभी डाउनलोडों को ट्रैक रखने के लिए प्रयोग कर सकते हैं. आप डाउनलोड रोक व फिर चला सकते हैं, और अपना समय बचा सकते हैं फाइलों को सीधे प्रबंधक से खोलकर.</p>
+                <p>यदि आप पिछले डाउनलोड का ट्रैक रखना चाहते हैं, औजार → डाउनलोड पर जाएँ और खोज पेटी का प्रयोग अपनी फाइल को ढ़ूँढ़ने के लिए करें. जब आप इसे पा लेते हैं, इसे खोलने के लिए फाइल पर दो बार क्लिक करें, या <span id="manage-downloads-click">right-click</span> और "डाउनलोड लिंक कॉपी करें" चुनें.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('manage-downloads-click').innerHTML="ctrl-click";
+                }
+                //]]></script>
+            </div>
+
+            <div class="slide-common" id="advanced-slide04">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-04.jpg', 'Developer Tools screenshot', '378', '252', 'right')?>
+
+                <h4>डेवलेपर औजार की खोज</h4>
+                <p>यदि आप वेब डेवलेपर हैं, फ़ॉयरफ़ॉक्स का डेवलेपर औजार आपकी जिंदगी आसान बनाता है. <a href="https://addons.mozilla.org/en-US/firefox/browse/type:1/cat:4">मोजिल्ला सहयुक्तियाँ साइट</a> विकास प्रक्रिया को स्ट्रीमलाइन करने के लिए कई औजार देता है, किसी वेबपेज में CSS, HTML, और JavaScript  को संपादित, डिबग करने, और निरीक्षण करने में मदद करता है, HTTP/HTTPS हेडर्स और POST पैरामीटर को देखने व बदलने के लिए  टैंपर डाटा है और किसी HTML या CSS तत्व को देखने के लिए सरल दाहिने क्लिक से DOM इंस्पेक्टर है.</p>
+            </div>
+
+            <div class="slide-common" id="advanced-slide05">
+
+                <?=buildPlatformImage('/en-US/img/tignish/tips/advanced-05.jpg', 'Preferences screenshot', '375', '309', 'right')?>
+
+                <h4>वेव को जैसा चाहते हैं सेट करें</h4>
+                <p>अब आप वेब आधारित प्रोटोकॉल हैंडरल का प्रयोग अपने पसंदीदा वेब अनुप्रयोग के अभिगम के लिए कर सकते हैं. उदाहरण के लिए, आप फ़ॉयरफ़ॉक्स को सेट कर सकते हैं किसी mailto: कड़ी पर किसी साइट पर क्लिक करके जो नए संदेश को आपके पसंदीदा वेबमेल प्रदाता से खोलेगा बजाए आपके कंप्यूटर के मूलभूत मेल प्रोग्राम के (नोट: यह विशेषता सिर्फ वेबमेल सेवा के साथ उपलब्ध है जो फ़ॉयरफ़ॉक्स 3 में पंजीकृत है).</p>
+                <p>हर प्रोटोकॉल के लिए मूलभूत अनुप्रयोग चुनने के लिए <span id="platform-protocol">औजार → विकल्प → अनुप्रयोग</span> पर जाएँ या “हमेशा पूछें” यदि आप अनुप्रयोग को हर बार चुनना पसंद करते हैं.</p>
+                <script type="text/javascript">//<![CDATA[
+                if (gPlatform == 3 || gPlatform == 4) {
+                    document.getElementById('platform-protocol').innerHTML="Firefox→Preferences→Applications";
+                } else if (gPlatform == 2) {
+                    document.getElementById('platform-protocol').innerHTML="Edit→Preferences→Applications";
+                }
+                //]]></script>
+                <p>यदि आप एक वेब डेवलपेर हैं, वेब आधारित प्रोटोकॉल हैंडलर के लिए समर्थन जोड़ने के लिए अधिक जानने के लिए चेक आउट करें <a href="http://developer.mozilla.org/">मोजिल्ला डेवलेपर सेंटर</a> में. </p>
+            </div>
+
+        </div><!-- end pager-content -->
+
+    </div>
+
+</div><!-- end #content div -->
+<div id="ruler"></div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,40 @@
+<?php
+    // Please translate the variable below for the page Title bar
+    $page_title = "Mozilla | Firefox 行動版";
+
+
+    $body_id = 'home';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="head">
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="歡迎使用 Firefox" /></h1>
+<p>全世界最好的網頁瀏覽器也登上手機與行動裝置了。</p>
+</div>
+
+<div class="download-button">
+  <?php if ($wurfl_device_supported): ?>
+
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">免費下載</a>
+    <div><a href="platforms.html" class="system">Firefox 使用我的語言嗎？</a></div>
+
+  <?php else: ?>
+
+    <p>不支援您的行動裝置</p>
+    <p><a href="/<?= $lang ?>/m/platforms">查看支援的作業系統與行動裝置</a></p>
+
+  <?php endif; ?>
+</div>
+
+<h2 id="features_title">請享用您最愛的 Firefox 功能:</h2>
+<ul id="favorite_features">
+    <li id="sync"><b>同步</b> <span>無縫同步您的桌面與行動瀏覽</span></li>
+    <li id="customize"><b>自訂</b> <span>安裝附加元件讓 Firefox 變成您所想要的樣子</span></li>
+    <li id="search"><b>搜尋</b> <span>透過智慧位址列，讓您輸入的更少，更快到達您想到的網站</span></li>
+</ul>
+
+<p id="features"><a href="/<?= $lang ?>/m/features">看看更多功能</a></p>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

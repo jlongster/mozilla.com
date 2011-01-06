@@ -1,0 +1,45 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Liity joukkoon';
+    
+    $pageid = "community";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Liity Mozillan joukkoon</h2>
+    <p>Olemme kansainvälinen yhteisö, jonka tavoitteena on tehdä verkosta parempi paikka meille kaikille.</p>
+</div>
+
+<div id="content">
+
+<p class="content-intro">Haluat siis auttaa? Hienoa! Sinun ei tarvitse olla C++-guru (tai edes tietää, mitä se tarkoittaa), eikä sinun tarvitse uhrata paljoa aikaakaan.</p>
+
+<div class="get-involved-list" id="easy">
+<h3>Helppoja tapoja osallistua toimintaan</h3>
+<ul>
+<li><a href="/<?=$lang?>/products/">Kerro perheellesi, ystävillesi ja työtovereillesi Mozilla-tuotteista</a></li>
+<li><a href="http://support.mozilla.com/<?=$lang?>/kb/">Auta muita käyttäjiä keskustelu- ja tukialueilla</a></li>
+<li><a href="http://www.spreadfirefox.com/" class="external">Liity yhteisön markkinointitiimiin ja auta kampanjoiden kanssa</a></li>
+<li><a href="http://www.mozilla.org/quality/qfa.html" class="external">Varmista, että lähetät kehittäjätiimille ohjelman kaatumistiedot</a></li>
+<li><a href="http://www.mozilla.org/projects/tech-evangelism/" class="external">Ota yhteyttä sivustoihin, jotka eivät toimi kunnolla Mozilla-tuotteilla</a></li>
+<li><a href="http://www.mozilla.org/foundation/donate.html" class="external">Tee lahjoitus Mozilla-säätiölle</a></li>
+</ul>
+</div>
+
+<div class="get-involved-list" id="tech">
+<h3>Teknisemmin suuntautuneille</h3>
+<ul>
+<li><a href="http://www.mozilla.org/quality/help/" class="external">Liity laaduntarkkailutiimiin ja ilmoita bugeista ja muista ongelmista, jotka pitäisi korjata</a></li>
+<li><a href="http://developer.mozilla.org/en/docs/MDC:How_to_Help" class="external">Kirjoita tai paranna olemassa olevia kehittäjien tai loppukäyttäjien ohjeita</a></li>
+<li><a href="http://support.mozilla.com/fi/kb/Contributor+Home+Page" class="external">Kirjoita tai paranna Firefoxin käyttöohjeita</a></li>
+<li><a href="http://developer.mozilla.org/en/docs/Extensions" class="external">Laajenna lisäosien kirjoa kirjoittamalla uusi lisäosa</a></li>
+<li><a href="http://www.mozilla.org/hacking/" class="external">Korjaa bugi tai kirjoita koodia</a></li>
+</ul>
+</div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

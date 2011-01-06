@@ -1,0 +1,96 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Companion für eBay';
+    $body_id    = 'ebay';
+    $body_class = 'ebay-primary';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/add-ons/ebay.css" media="all" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+<div id="main-feature-background">
+    <div class="feature-contents">
+        <div id="feature-header">
+            <h2><img src="<?=$config['static_prefix']?>/img/add-ons/ebay/title.png" alt="Mozilla Firefox eBay-Edition" /></h2>
+            <h3>Mit Firefox & eBay immer einen Schritt voraus</h3>
+            <p>Mit der kostenlosen eBay-Edition des Mozilla Firefox- Browsers haben Sie  alle Ihre Aktivitäten jederzeit im Blick.</p>
+        </div>
+        <div id="feature-text">
+            <div class="corner-box">
+                <h3>Kein Auktionsende mehr verpassen</h3>
+                <p>Erinnerungsmeldungen machen Sie rechtzeitig auf Angebote aufmerksam, die Sie beobachten bzw. auf die Sie geboten haben.</p>
+            </div>
+            <div class="corner-box">
+                <h3>eBay immer im Blick</h3>
+                <p>Sie können jederzeit problemlos nach Artikeln auf eBay suchen - selbst dann, wenn Sie sich gar nicht auf der eBay-Website befinden.</p>
+            </div>
+            <div class="corner-box">
+                <h3>Sicherer surfen</h3>
+                <p>Der Sicherheits-Check schützt Sie vor betrügerischen Websites.</p>
+            </div>
+            <div class="tile-footer"></div>
+        </div>
+            <div id="ebay-download">
+                <script type="text/javascript"><!--
+                    var platform = 'win';
+                    var lang = '<?=$lang?>';
+                    var product = 'ebaybundle';
+                    var downloadpage = 'download.html';
+                    var downloadtitle = 'Download Firefox eBay Edition';
+                    var downloadtext = 'Mit Mozilla Firefox 3.6 für Windows, Deutsch (8&nbsp;MB)';
+
+                    if (navigator.platform.indexOf("Win32") != -1) {
+                      downloadtext = 'Mit Mozilla Firefox 3.6 für Windows, Deutsch (8&nbsp;MB)';
+                      platform = 'win';
+                      product = 'ebaybundle';
+                    } else if (navigator.platform.indexOf("Linux") != -1) {
+                      downloadtext = 'Mit Mozilla Firefox 3.6 für Linux, Deutsch (10&nbsp;MB)';
+                      platform = 'linux';
+                      product = 'ebaybundle';
+                    } else if ((navigator.userAgent.indexOf("Mac OS X") != -1) ||
+                               (navigator.userAgent.indexOf("MSIE 5.2") != -1) ||
+                               (navigator.platform.indexOf("Mac") != -1)) {
+                      downloadtext = 'Mit Mozilla Firefox 3.6 für Mac OS X, Deutsch (19&nbsp;MB)';
+                      platform = 'mac';
+                      product = 'ebaybundle';
+                    }
+
+                    if ((navigator.userAgent.indexOf("Firefox/3") != -1) ||
+                        (navigator.userAgent.indexOf("Minefield/3") != -1) ||
+                        (navigator.userAgent.indexOf("Firefox/2") != -1) ||
+                        (navigator.userAgent.indexOf("BonEcho/2") != -1)) {
+                            // If the browser is Firefox...
+                            downloadtitle = 'Download eBay Sidebar';
+                            downloadtext  = 'Version 2.0.4 (659Kb)';
+                            product = 'ebaystandalone';
+                    }
+
+                    document.writeln('<a href="' + downloadpage  + '?product=' + product + '&os=' + platform + '&lang=' + lang + '">' );
+                    document.writeln('<span><strong>' + downloadtitle  + '<\/strong> <em id="ebay-download-text">');
+                    document.writeln(downloadtext);
+                    document.writeln('<\/em><\/span>');
+                    document.writeln('<\/a>');
+
+                --></script>
+                <noscript>
+                  <div class="download">
+                    <a href="download.html"><span><strong>Download</strong></span></a>
+                  </div>
+                </noscript>
+            </div>
+        <ul id="additional_links">
+            <li><a href="features.html">eBay Companion Funktionen</a></li>
+            <li><a href="faq.html">Häufig gestellte Fragen (FAQ)</a></li>
+            <li><a href="feedback/">Sagen Sie uns Ihre Meinung</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

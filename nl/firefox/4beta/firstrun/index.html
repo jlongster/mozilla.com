@@ -1,0 +1,51 @@
+<?php
+/*  translate the page title below */
+$page_title = "Welkom bij Firefox";
+
+include_once "{$config['file_root']}/includes/l10n/firstrun4-beta.inc.php";
+
+?>
+
+
+<div id="main-feature">
+
+    <h1>Welkom bij <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Bèta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <p>Bedankt dat u een bètatester van Firefox 4 bent geworden! We bouwen samen iets geweldigs, dus vertel ons wat u wel en niet bevalt.</p>
+        <p>We wachten op uw terugkoppeling - bekijk de video en maak kennis met een aantal mensen die zullen luisteren naar wat u te zeggen hebt!</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/features/">Nieuwe functies »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Feedback geven »</a></li>
+            <li><a href="/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">Uitgaveopmerkingen »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Vertel ons wat u denkt</h2>
+        <p>Als bètatester vormt u onderdeel van het team dat Firefox&nbsp;4 maakt. Vertel het ons als er iets is dat u wel of niet prettig vindt door op de knop <img src="<?=$screencap;?>" alt="Schermafbeelding Feedback-knop" /><em>Feedback</em> te klikken. Er zal ook worden gevraagd of u de actuele survey wilt invullen of aan gebruikers-onderzoeken wilt deelnemen.</p>
+    </div>
+
+    <div id="column-2">
+        <h5>Hoe werken de gebruikersonderzoeken?</h5>
+        <p>Gebruikersonderzoeken verzamelen anonieme statistieken over uw gebruik van Firefox, maar nooit over wat u online bekijkt of doet. U bent de baas, en zonder uw toestemming worden geen gegevens naar de servers van Mozilla Test Pilot verzonden. De gegevens zullen helpen bij het ontwerpen van Firefox&nbsp;4.</p>
+    </div>
+
+    <div id="column-3">
+        <h5>Wat als ik niet wil deelnemen?</h5>
+        <p>Voordat een onderzoek met het verzamelen van gegevens begint, en voordat er gegevens naar Mozilla worden verzonden, zult u op de hoogte worden gebracht. U kunt zich uitschrijven van bepaalde onderzoeken, of alle gebruikersonderzoeken uitschakelen door op de knop <em>Feedback</em> te klikken en uw instellingen te beheren.</p>
+    </div>
+
+</div>
+
+
+<?php
+  include_once "{$config['file_root']}/includes/l10n/firstrun4-beta-footer.inc.php";
+?>

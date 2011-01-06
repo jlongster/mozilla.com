@@ -1,0 +1,82 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Firefox 4 Beta'yı İndirin";
+
+    include_once "{$config['file_root']}/includes/l10n/download4-beta.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></h2>
+        <h3>Her şey burada başlıyor:</h3>
+        <p>Dünyanın en iyi tarayıcısının bir sonraki sürümünü yaratmamıza yardımcı olun.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Özellikler</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Teknoloji</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Geri Bildirim</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Geri Bildirim Gizlilik Politikası</a></li>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Beta'yı Yükleyin</h3>
+
+        <?=$download_link_2;?>
+
+        <p>Firefox 4 Beta, sizi kullanıcı araştırmalarına dahil eden Geri Bildirim Eklentisi'ni içerir. İzniniz olmadan Mozilla'ya hiçbir veri gönderilmeyecektir. <a href="#privacy">Daha fazla bilgi</a></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Fikirlerinizi Paylaşın</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Geri bildirim düğmesinin ekran görüntüsü" /></p>
+
+        <p>Fikirlerinizi bizimle paylaşmak için istediğiniz zaman Geri bildirim düğmesine tıklayın. <a href="https://testpilot.mozillalabs.com/faq">Test Pilotu</a> hakkında daha fazla bilgi alın.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Arkadaşlarınıza Söyleyin</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hey…</span></p></li>
+            <li class="second"><p><span>Vay be!</span></p></li>
+        </ul>
+
+        <p>Herkese duyurun: Firefox 4'ü geliştirmemize yardım eden ne kadar fazla beta kullanıcısı olursa, son sürüm o kadar başarılı olur. <a href="/<?=$lang?>/firefox/beta/features/">Beta hakkında daha fazla bilgi alın.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+<div id="privacy" class="footnote"><div class="footnote-footer">
+
+    <h4>Firefox 4 Beta, Mozilla Test Pilotu'nu temel alan Geri Bildirim Eklentisi'ni içerir</h4>
+
+    <p>Firefox 4 Beta'yı kurduğunuzda, sağ üst köşede Geri Bildirim Eklentisi'ni fark edeceksiniz. İstediğiniz zaman, anında geri bildirimde bulunmak için bunu kullanabilirsiniz. Ayrıca, Firefox'u nasıl kullandığınıza dair bilgi toplayan, ancak ziyaret ettiğiniz siteleri kesinlikle kaydetmeyen kullanıcı araştırmaları (Mozilla&nbsp;Test&nbsp;Pilotu tarafından yürütülürler) hakkında bilgilendirileceksiniz. Katılım sizin kontrolünüzdedir; istediğiniz araştırmadan çekilebilir ya da hangi verilerin toplandığını görebilirsiniz. Mozilla'ya herhangi bir veri gönderilmeden önce size sorulacaktır. Daha fazla bilgi için lütfen <a href="/<?=$lang?>/firefox/beta/feedbackprivacypolicy/">Geri Bildirim Eklentisi gizlilik politikasını</a> inceleyin.</p>
+
+</div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

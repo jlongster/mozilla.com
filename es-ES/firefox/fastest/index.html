@@ -1,0 +1,106 @@
+<?php
+
+    // L10n: Page title to translate
+    $page_title         = "El Firefox más veloz";
+
+    // video controls strings to translate
+    $download_ogg       = "Descargalo en el formato libre de vídeo (Ogg Theora)";
+    $download_mp4       = "Descargalo en formato MPEG-4";
+    $check_back         = "Vuelve pronto para ver el siguiente vídeo.";
+
+    $play               = "Reproducir vídeo";
+    $fallback_l1        = "Para ver este vídeo es necesario un navegador que implemente vídeo libre:";
+    $fallback_l2        = '<a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 o superior';
+    $fallback_l3        = '<a href="http://www.apple.com/safari/">Safari</a> 3.1 o superior';
+    $fallback_l4        = 'o <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.';
+
+    include_once "{$config['file_root']}/includes/headers/firefox/fastest.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+
+
+<div id="main-feature">
+
+    <h2>
+    Piensa con rapidez
+    </h2>
+
+    <p>Pedimos a los fans de Firefox que nos ayudaran a difundir la asombrosa velocidad de Firefox 3.5. Comprueba los resultados:</p>
+
+</div>
+
+
+<div id="main-content">
+<?=$primary_video;?>
+    <div id="videos">
+        <div class="video" id="french">
+            <p><a id="video-french" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-clapper.jpg" alt="video preview" /><span>
+
+            Mira el vídeo de Kent French como el que más rápido da palmas
+
+            </span></a></p>
+
+            <p class="secondary">
+            La persona que da palmas más rápida del mundo, Kent “Toast” French, aplaude a Firefox por haber obtenido el récord. Kent combina su propio estilo con agilidad y aguante para dar palmas a una velocidad máxima de 12 palmadas por segundo. Planea batir su propio récord en poco tiempo.
+            </p>
+
+            <p class="secondary"><a href="http://www.fastestclapper.com/" class="external">Descubre más sobre Kent</a></p>
+
+            <?=$video_player1;?>
+        </div>
+
+
+<?php if($nb_video>1): ?>
+
+        <div class="video" id="purugganan">
+            <p><a id="video-purugganan" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-cupstacker.jpg" alt="video preview" /><span>
+
+            Mira el vídeo de Steven Purugganan, el apilador deportivo más rápido del mundo
+
+            </span></a></p>
+
+            <p class="secondary">
+            El ostentador del Récord Mundial Guinness, Steven Purugganan quiere tanto a Firefox como para hacer algunas rápidas apiladas de vasos sólo para nosotros. Como parte de la Asosiación Mundial de Apilamiento Deportivo, Steven tiene tan solo 11 años de edad, pero sus manos rápidas arman una pila de vasos en sólo 5.93 segundos.
+            </p>
+
+            <p class="secondary"><a href="http://worldsportstackingassociation.org/" class="external">Descubre más sobre el apilamiento deportivo.</a></p>
+
+            <?=$video_player2;?>
+        </div>
+
+<?php else: echo $coming_soon_video1; endif; ?>
+
+<?php if($nb_video>2): ?>
+
+        <div class="video video-last" id="taylor">
+            <p><a id="video-taylor" href="#" class="thumbnail"><img src="/img/tignish/firefox/fastest/preview-banjo.jpg" alt="Vista previa del video" /><span>
+
+            Mira el vídeo de Todd Taylor, el músico de banjo más veloz del mundo
+
+            </span></a></p>
+            <p class="secondary">
+            El hombre del Banjo, Todd Taylor está feliz de tocar rápido para Firefox y en por tener también un Récord Mundial Guinness. Todd tocó bluegrass, country, pop y rock &amp; roll. Sigue tocando y grabando en películas, programas de TV y otros espacios.
+            </p>
+
+            <p class="secondary"><a href="http://www.toddtaylorbanjoman.com/" class="external">Descubre más sobre Todd.</a></p>
+
+            <?=$video_player3;?>
+        </div>
+
+<?php else: echo $coming_soon_video2; endif; ?>
+
+    </div>
+</div><!-- end #content div -->
+
+
+
+<?=$smalldownloadbox?>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

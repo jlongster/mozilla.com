@@ -1,0 +1,43 @@
+<?php
+
+    /* translate the variables below */
+
+    $page_title    = "Firefox Help voor Mobiel";
+    $search_field  = "Zoeken in Firefox Help";
+    $search_button = "Zoeken";
+    $link_to_sumo  = "of <a href=\"%s\">de volledige ondersteuningswebsite verkennen</a>";
+    /* end of variables to translate */
+
+    $pageid = 'm-support';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+    <h1 id="firefox-logo">Firefox Help <em>voor Mobiel</em></h1>
+
+    <h2>Alledaagse vragen</h2>
+
+    <ul class="highlight">
+        <li><a href="<?=$sumo_links[1]?>">Hoe synchroniseer ik Firefox tussen mijn desktop en mobiel?</a></li>
+        <li><a href="<?=$sumo_links[2]?>">Hoe upgrade ik Firefox?</a></li>
+        <li><a href="<?=$sumo_links[3]?>">Hoe gebruik ik de locatiebalk?</a></li>
+    </ul>
+
+    <h2>Helponderwerpen voor Mobiel</h2>
+    <ul>
+        <li><a href="<?=$sumo_links[4]?>">Hoe wijzig ik voorkeuren?</a></li>
+        <li><a href="<?=$sumo_links[5]?>">Wat zijn de sneltoetsen voor mobiel?</a></li>
+        <li><a href="<?=$sumo_links[6]?>">Hoe beheer ik downloads?</a></li>
+        <li><a href="<?=$sumo_links[7]?>">Hoe open ik een nieuw tabblad?</a></li>
+        <li><a href="<?=$sumo_links[8]?>">Hoe vind en installeer ik add-ons?</a></li>
+        <li><a href="<?=$sumo_links[9]?>">Hoe verwijder of schakel ik add-ons uit?</a></li>
+        <li><a href="<?=$sumo_links[10]?>">Hoe surf ik op het web met de mobiele Firefox?</a></li>
+        <li><a href="<?=$sumo_links[11]?>">Hoe voeg ik een bladwijzer toe?</a></li>
+        <li><a href="<?=$sumo_links[12]?>">Hoe zoom ik in en uit op een website?</a></li>
+    </ul>
+
+    <h2>Meer hulp nodig?</h2>
+    <?=$searchbox;?>
+    
+    <?=$footer;?>
+

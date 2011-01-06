@@ -1,0 +1,36 @@
+<?php
+    // Translate the page title below
+    $page_title = 'Brskalnik Firefox | Mednarodne različice: prenesite Firefox v vašem jeziku';
+    include_once "{$config['file_root']}/includes/l10n/allbeta.inc.php";
+
+?>
+
+<div id="main-feature">
+        <h2>Preizkusite prihodnost Firefoxa!</h2>
+        <p>Najnovejša različica beta brskalnika Firefox je na voljo za ogled in preizkus. Prenesite jo in nam sporočite svoje mnenje!</p>
+</div>
+
+<div id="side-feature">
+    <div id="side-feature-header">
+        <h4>Pomembno obvestilo</h4>
+        <p class="intro">Preberite pred prenosom</p>
+    </div>
+    <ul>
+        <li>Programska oprema je v razvoju, zato je lahko nezdružljiva z nekaterimi spletnimi stranmi in dodatki.</li>
+        <li>Če odkrijete napako, <a href="http://feedback.mozilla.org/">nas obvestite</a> ali <a href="https://bugzilla.mozilla.org/">prijavite hrošča</a>.</li>
+        <li>Za več podrobnosti preberite <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">opombe ob izdaji</a> in <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">znane napake</a> (v angleščini).</li>
+    </ul>
+    <div id="side-feature-footer"></div>
+</div><!-- end #side-feature div -->
+
+
+<div id="content">
+
+<?php echo $downloadbox; ?>
+
+    <p id="no-beta">Ne iščete preizkusne različice? Prenesite <a href="/<?=$lang?>/firefox/">najnovejši Firefox</a>.</p>
+
+</div><!-- end #content div -->
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

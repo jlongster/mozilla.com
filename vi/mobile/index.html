@@ -1,0 +1,42 @@
+<?php
+
+    // please translate the 3 variables below
+    $page_title         = "Firefox Mobile";
+    $form_field         = "Nhập số di động của bạn";
+    $chooseYourCountry  = "Chọn địa điểm của bạn";
+
+	$pageid = 'mobile-home';
+  	include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+<div id="main-feature">
+    <h2>Bạn đã giành lại được Web. Bây giờ là lúc mang nó theo bên mình.</h2>
+    <p>Firefox nay đã trở nên 'di động'.</p>
+</div>
+
+<?=$mobilesubmenu;?>
+<?=$smsformblock;?>
+
+<div id="mobile-footer" class="sub-features">
+    <div class="sub-feature" id="video-tour">
+        <h4>Xem đoạn phim</h4>
+        <p>Tìm hiểu Firefox đã đưa toàn bộ Web lên thiết bị di động của bạn như thế nào.</p>
+        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">Mở đoạn phim</a></p>
+    </div>
+    <div class="sub-feature" id="developers-wanted">
+        <h4>Tham gia</h4>
+        <p>Chúng tôi trông cậy vào cộng đồng toàn cầu gồm những người như bạn cùng trợ giúp xây dựng, thử nghiệm và lan truyền thông tin về Firefox.</p>
+        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">Tìm hiểu Những việc mà Bạn có thể Làm</a></p>
+    </div>
+
+    <div class="sub-feature" id="questions-comments">
+        <h4>Câu hỏi? Bình luận?</h4>
+        <p>Hãy để chúng tôi trả lời những câu hỏi của bạn, hoặc cho chúng tôi biết bạn nghĩ gì về Firefox.</p>
+        <p class="link"><a href="http://mobile.support.mozilla.com/">Nhận trợ giúp</a></p>
+    </div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

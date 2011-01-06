@@ -1,0 +1,68 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Mobile System Requirements';
+    $body_id    = 'mobile-requirements';
+    $breadcrumbs = array(
+        $l10n->get('Mobile') => "/{$lang}/mobile/",
+        $l10n->get('Requirements') => "/{$lang}/mobile/platforms/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/system-requirements.css" media="screen" />
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+?>
+
+<div id="main-feature">
+	<div id="feature-contents">
+    <h2>Supported Devices and <span>System Requirements</span></h2>
+    <p>Firefox is available for Android phones (2.0 and above) and the Nokia N900.</p>
+	</div>
+</div>
+
+<div id="main-content">
+
+  <h3>Supported Devices</h3>
+  <p>Below is a list of tested devices compatible with Firefox.</p>
+
+  <div id="list_maemo">
+    <h4>Maemo</h4>
+    <ul>
+      <li>Nokia N900</li>
+    </ul>
+  </div>
+  
+  <div id="list_android">
+    <h4>Android</h4>
+    <ul>
+      <li>Firefox is compatible with Android 2.0 and above devices.</li> 
+      <li>Installation requires approximately 32MB internal storage, plus 12MB SD storage.</li>
+    </ul>
+    
+    <h5>Supported Devices - Tested</h5>
+    <ul>
+      <li>HTC Desire</li>
+      <li>HTC Desire HD</li>
+      <li>HTC Droid Incredible</li>
+      <li>HTC EVO 4G</li>
+      <li>HTC Google Nexus One</li>
+      <li>Motorola Droid 2</li>
+      <li>Motorola Droid X</li>      
+      <li>Samsung I9000 Galaxy S (AT&amp;T Captivate, Verizon Fascinate, T-Mobile Vibrant, Sprint Epic 4G)</li>
+    </ul>
+
+    <h5>Supported Devices - Not Tested</h5>
+    <ul>
+      <li>HTC Desire Z (T-Mobile G2)</li>
+    </ul>
+    <p>See a full list of supported and unsupported devices by visiting our <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">System Requirements wiki</a>.</p>
+  </div>
+
+  <h4>Give Feedback or Get Help</h4>
+  <p>Although your device may support Firefox, we have not tested Firefox on every Android device. Tell us about your experience using Firefox on your device. Ask questions or give feedback on the <a href="http://support.mozilla.com/kb/Mobile+Help+and+Tutorials">Firefox Mobile Support Forum</a>.</p>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

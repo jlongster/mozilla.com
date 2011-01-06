@@ -1,0 +1,54 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Mobile 開發";
+
+    $pageid = "mobile-developers";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Mobile 開發</h2>
+    <p>動員的時刻到了，來看看您如何與我們一起開發。</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang,'developers')?>
+
+<div id="main-content">
+
+<h4 class="first">跟隨我們的進度</h4>
+
+<p>欲了解最新的消息與進展，請<a href="/<?=$lang?>/newsletter/about_mobile/">訂閱 about:mobile 新聞報（英文）</a>。</p>
+
+<h4>製作善用最新網路技術的網站</h4>
+
+<h5>Mobile Mozilla 開發者中心（MDC）</h5>
+<p>取得文件、工具、與程式碼來為您的行動版網站注入創新。<a href="https://developer.mozilla.org/En/Mobile">了解更多</a>。</p>
+
+<h5>Mobile Wiki</h5>
+<p>了解執行與測試 Firefox Mobile 的需求與最好作法。<a href="https://wiki.mozilla.org/Fennec">了解更多</a>。</p>
+
+<h5>地理位置感知的網際應用</h5>
+<p>製作使用地理定位功能的網站應用，帶領人們航向正確的航道。<a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">了解更多</a>。</p>
+
+<h4>開發創新的附加元件</h4>
+<p>Maemo 與 Windows Mobile (測試版)版本的 Firefox 都支援附加元件。事實上，附加元件可以同時使用在兩個作業系統上，所以來和 Firefox 一起將您的附加元件帶上路吧。以下是一些有用的參考資料：</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">擴充套件概要 (英文)</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">擴充套件最佳作法 (英文)</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface">使用者介面最佳作法 (英文)</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture">架構總覽 (英文)</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">程式碼範例 (英文)</a></li>
+</ul>
+
+<h4>協助我們開發 Firefox Mobile</h4>
+<p>您的幫助對 Firefox 的成功來說至關重要。請到我們的 IRC 頻道上提供建議（irc.mozilla.org，#mobile），<a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">參與我們的每週的開發會議</a>，或是<a href="https://bugzilla.mozilla.org/">提報程式錯誤</a>。</p>
+
+
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

@@ -1,0 +1,97 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Firefox Phishing Protection";
+    $body_id    = 'phishing-protection';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/phishing-page.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Phishing Protection</h2>
+	<p>Firefox 2 or later contains a built-in Phishing Protection feature
+	that warns you of suspected Web forgeries, and offers to take you directly to a search page so you
+	can find the real Web site you were looking for.  You can test the Phishing Protection feature by
+	browsing to this <a href="http://www.mozilla.com/firefox/its-a-trap.html">test site</a>.</p>
+</div>
+
+<div id="main-content">
+
+<h3>Frequently Asked Questions</h3>
+
+<div class="expander expander-odd" id="whatisphishing">
+	<h4 class="expander-header">What is Phishing?</h4>
+	<div class="expander-content">
+		<p>Phishing is a form of identity theft
+		that occurs when a malicious Web site impersonates a legitimate one in order to acquire sensitive
+		information such as passwords, account details, or credit card numbers. Phishing attacks usually
+		come from email messages that attempt to lure the recipient into updating their personal
+		information on fraudulent, but very real looking, Web sites.  More information on phishing can be
+		found at the <a href="http://www.antiphishing.org/">Anti-Phishing Working Group</a>, and there are
+		a number of examples and resources available at the <a
+		href="http://en.wikipedia.org/wiki/Phishing">Wikipedia Phishing page</a>.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">How does the Phishing Protection feature work in Firefox?</h4>
+	<div class="expander-content">
+		<p>Phishing Protection is turned on by default in Firefox 2 or later,
+		and works by checking the sites that you browse to against a list of known
+		phishing sites. This list is automatically downloaded and regularly updated
+		within Firefox when the Phishing Protection feature is enabled. Since
+		phishing attacks can occur very quickly, there's also an option to check
+		the sites you browse to against an online service for more up-to-date
+		protection. This enhanced capability, and other Phishing Protection
+		settings, can be configured in Firefox's Security settings.</p>
+	</div>
+</div>
+<div class="expander expander-odd">
+	<h4 class="expander-header">What information is sent to Mozilla or anti-phishing partners when Phishing Protection is enabled?</h4>
+	<div class="expander-content">
+		<p>When Phishing Protection is used in default mode, no information
+		about the sites you visit is sent to Mozilla or anti-phishing partners.
+		Rather, sites are checked against a local list that is downloaded to
+		your computer and updated on a regular basis. When sites are checked
+		against online anti-phishing services such as Google, the address of
+		each web site you visit is sent to the online service over a secure SSL
+		connection.</p>
+	</div>
+</div>
+<div class="expander expander-even">
+	<h4 class="expander-header">How do I use the Phishing Protection feature?</h4>
+	<div class="expander-content">
+		<p>Phishing Protection options can be found on the Security
+		preferences pane.  On Windows and Linux, go to Tools &gt; Options ... &gt; Security. On Mac OS X,
+		go to Firefox &gt; Preferences &gt; Options ... &gt; Security.</p>
+		<p>You can test to see if Phishing Protection is enabled by browsing to our <a
+		href="http://www.mozilla.com/firefox/its-a-trap.html">test site</a>.  If Phishing Protection is
+		turned on, a warning dialog will appear.</p>
+		<p>The "Get me out of here!" link will back out of a suspected phishing site and redirect you to
+		the Firefox Start page. The "Ignore this warning" link will allow you to continue to the suspected
+		phishing site.</p>
+	</div>
+</div>
+<div class="expander expander-odd">
+	<h4 class="expander-header">How do I report a suspected phishing site, or what if a warning appears on my own Web site?</h4>
+	<div class="expander-content">
+		<p>In the Help menu there is an option to "Report Web
+		Forgery..." which will bring you to a Web page that you can use to report a suspected phishing
+		site, or to submit an incorrect forgery report.</p>
+	</div>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+	$extra_footers = <<<EXTRA_FOOTERS
+<script src="/js/jquery/jquery.min.js"></script>
+<script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_FOOTERS;
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

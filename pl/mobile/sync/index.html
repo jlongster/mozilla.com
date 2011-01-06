@@ -1,0 +1,63 @@
+<?php
+    // please translate the 3 variables below
+    $page_title = "Firefox Sync dla urządzeń mobilnych";
+
+    $pageid = "mobile-sync";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Wstań i w drogę</h2>
+    <p>Zainstaluj dodatek Firefox Sync i&nbsp;dziel swoją historię, zakładki, karty i&nbsp;inne dane pomiędzy swoim komputerem a&nbsp;telefonem komórkowym.</p>
+    <p id="weave-button" class="wide-button">
+        <a href="https://addons.mozilla.org/mobile/addon/10868">Pobierz dodatek Firefox Sync już teraz</a>
+    </p>
+</div>
+<div>
+    <?=buildMobileSubPageMenu($lang,'sync')?>
+</div>
+
+<div id="main-content">
+    <div class="container">
+
+    <h3>Dlaczego Firefox Sync?</h3>
+
+    <h4>Pisanie jest trudne</h4>
+    <p>Spójrzmy prawdzie w oczy, pisanie na urządzeniach przenośnych jest trudne. Pora pożegnać się z&nbsp;wpisywaniem długich adresów URL i&nbsp;fraz wyszukiwania, kiedy niesamowity pasek adresu pamięta Twoją historię, zakładki i&nbsp;karty z&nbsp;Twojego komputera i&nbsp;telefonu, w&nbsp;szybki sposób umożliwiając Ci dostęp do czego tylko chcesz przy minimalnej ilości pisania.</p>
+
+    <h4>Nie zaczynaj od zera</h4>
+    <p>Pożegnaj się z&nbsp;resetowaniem i&nbsp;ponownym wpisywaniem. Firefox Sync synchronizuje Twoje hasła i&nbsp;ustawienia, więc zaraz po wyjściu z&nbsp;domu możesz kontynuować przeglądanie.</p>
+
+    <h4>Wstań i&nbsp;w&nbsp;drogę</h4>
+    <p>Zabierz swojego Firefoksa ze sobą gdziekolwiek się wybierasz. Przeglądaj WWW na swoim komputerze, wyjdź na zewnątrz i&nbsp;zauważ, że wszystko czeka już na Ciebie: Twoja historia, otwarte karty, zakładki, niesamowity pasek adresu – tak, jak przed wyjściem.</p>
+
+    </div>
+    <div id="main-content-footer"></div>
+
+</div>
+<div id="sidebar">
+    <h3>Pierwsze kroki</h3>
+    <ol>
+    <li>
+        <h4>Zainstaluj dodatek Firefox Sync na swoim komputerze</h4>
+        <p>Upewnij się, że masz zainstalowanego Firefoksa w wersji 3.5 lub nowszej i&nbsp;że Twój telefon został przetestowany z&nbsp;Firefoksem  (uaktualnij <a href="http://firefox.com/">Firefoksa</a>).
+        <ul>
+            <li><a href="https://addons.mozilla.org/mobile/addon/10868">Pobierz dodatek Firefox Sync</a>.</li>
+            <li>Po zakończeniu pobierania uruchom Firefoksa ponownie, aby dokończyć instalację dodatku.</li>
+            <li>Po uruchomieniu Firefoksa przejdź do menu Narzędzia lub kliknij ikonę dodatku Firefox Sync w&nbsp;prawym dolnym rogu ekranu, aby otworzyć Firefox Sync i&nbsp;zalogować się.</li>
+        </ul>
+    </li>
+    <li>
+        <h4>Zainstaluj dodatek Firefox Sync na swoim telefonie</h4>
+        <ul>
+            <li>Przejdź do ustawień i&nbsp;wybierz przycisk Dodatki.</li>
+            <li>Znajdź i&nbsp;zaznacz dodatek Firefox Sync. Zaloguj się i&nbsp;zsynchronizuj dane. Gotowe.</li>
+        </ul>
+    </li>
+    </ol>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

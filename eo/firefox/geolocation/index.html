@@ -1,0 +1,120 @@
+<?php
+
+$page_title = "Geografia lokado en Firefox";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Retesplorado kiu konsideras la lokon</h2>
+    <p>Firefox povas diri al retejoj kie vi estas tiel ke vi povas trovi informojn
+    kiuj estas pli gravaj kaj utilaj. Temas igi la TTTon pli inteligentan
+    &ndash; kaj tio estas tiel farata ke via privateco estos tute respektata.
+    <a href="#geo-demo" id="try-geolocation" style="display:none">Provu tion!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Oftaj demandoj</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kio estas la restesplorado kiu konsideras la lokon?</h4>
+    <div class="expander-content">
+        <p>Retejoj kiuj uzas esploradon kiu konsideras la lokon demandos al vi kie vi estas por povi sendi al vi pli gravajn informojn, aŭ igi vin ŝpari tempon dum serĉado. Ekzemple, imagu ke vi serĉas picejon en via kvartalo. La retejo povos peti al vi diskonigi vian lokon tiel ke simpla serĉado por “pico” donos al vi la respondojn kiujn vi bezonas... vi ne devos sendi pli da informo aŭ tajpi ion alian.</p>
+        <p>Aŭ, se vi planas sur mapo kiel atingi ejon, la retejo jam scios kie vi komencos la vojon kaj vi nur devos klarigi al ĝi kien vi volas iri.</p>
+        <p>Tio servo estas elektebla, malnepra &ndash; Firefox ne diskonigos vian lokon sen via permeso &ndash; kaj tio estos farata respektante kiel eble plej multe vian privatecon. Krome, kiel ĉiuj aliaj elementoj de Firefox, tiu ĉi servo uzas malfermitajn normojn por faciligi la alprenadon fare de TTTaj disvolvigantoj.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kiel funkcias tio?</h4>
+    <div class="expander-content">
+        <p>Kiam vi vizitas retejon kiu pritraktas lokojn Firefox demandos al vi se vi volas diskonigi vian lokon.</p>
+        <p>Se vi konsentas, Firefox kolektos informon pri proksimaj alirpunktoj de sendrataj retoj kaj la IP adreson de via komputilo. Poste Firefox sendos tiun ĉi informon al la ĉefa provizanto de servoj pri geografia lokado, Google Location Services, por difini kiel eble plej bone vian lokon. Tiu taksado de via loko estos kundividita kun la retejo kiu ĝin petis.</p>
+        <p>Se vi ne konsentas, Firefox faros nenion.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kiel akurata estas lokoj?</h4>
+    <div class="expander-content">
+        <p>Akurateco variemas de loko al loko.  En kelkaj ejoj la provizantoj de servoj de geografia lokado povas provizi lokon kiu estas ene de kelkaj metroj.  Tamen, en aliaj regionoj la lokoj provizitaj povas esti multe pli malproksime de la fakta.  Ĉiuj lokoj provizitaj de niaj provizantoj de servoj de geografia lokado estas nur taksoj kaj nenia akurateco estas garantiita. Bonvolu ne uzi tiun ĉi informon okaze de urĝaŭ situacioj. Ĉiam uzu raciecon.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kiu informo estas sendita kaj al kiu? Kiel vi protektas mian privatecon?</h4>
+    <div class="expander-content">
+        <p>Via privateco estas tre grava por ni kaj Firefox neniam diskonigos vian lokon sen via permeso. Kiam vi vizitas paĝon kiu petas vian informon, vi estos pridemandita antaŭ ol iu ajn datumo estos dividita kun la petinta retejo aŭ kun la ekstera provizanto de servo.</p>
+        <p>Se vi ne agordas tion Firefox uzos Google Location Services por determini vian lokon kaj ĝi sendos:</p>
+        <ul>
+            <li>la IP adreson de via komptilo,</li>
+            <li>informo pri proksimaj alirpunktoj de sendrataj retoj, kaj</li>
+            <li>hazardan identigilo de kliento, kiu estos asignita de Google, kaj senvalidiĝas post du semajnon.</li>
+        </ul>
+        <p>Por havi pli kompletan priskribon de la informo kolektata kaj uzata de Firefox, bonvolu viziti la paĝon <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Politiko pri privateco de Firefox</a> (en la angla).</p>
+        <p>Google Location Services respondas per takso de via geografia loko (t.e., latitudo kaj longitudo).  Por havi kompletan priskribon de la informo kolektata kaj uzata de Google, bonvolu viziti la paĝon <a href="http://www.google.com/privacy-lsf.html" class="external">Politiko pri privateco de geografia lokado de Google</a> (en la angla).</p>
+        <p>Tiu informo estos interŝanĝita sur ĉifrita konekto por protekti vian privatecon. Kiam Firefox havas la informon pri via loko ĝi resendas ĝin al la petinta retejo. La nomo aŭ adreso de la vizitata retejo, aŭ kuketoj, neniam estas kundividita kun Google Location Services.</p>
+        <p>Nek Mozilla nek Google uzos iam ajn la informon kolektitan de Google Location Services por identigi aŭ kaŝobservi vin.</p>
+        <p>Por scii kion faras la vizititan retejon kun la informo pri via loko bonvolu iri al ĝia paĝo pri politiko de privateco..</p>
+        <p>Se vi volas plian informon pri via privateco vi devus legi:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Politiko pri privateco de Mozilla Firefox</a> (en la angla)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Politiko pri privateco de Google</a> (en la angla)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ĉu oni sekvas miajn spurojn dum mi retesploras?</h4>
+    <div class="expander-content">
+        <p>Ne. Firefox nur petas vian lokon kiam retejo ĝin petas, kaj oni kundividas vian lokon kiam la uzanto konsentas. Firefox ne spuras aŭ memoras vian lokon dum vi retesploras.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Kiel mi neas permeson jam donitan al retejo?</h4>
+    <div class="expander-content">
+        <p>Se vi permesas al Firefox ĉiam sendi vian lokon al iu retejo kaj poste vi ne plu volas fari tion, vi povas tre facile nuligi tiun permeson ĉi tiel:</p>
+        <ul>
+            <li>Vizitu la retejon al kiu vi donis la permeson</li>
+            <li>Iru a al menuero <em>Iloj</em>, kaj alklaku <em>Informo de paĝo</em></li>
+            <li>Elektu la folion <em>Permesojn</em></li>
+            <li>Ŝanĝu la agordon de <em>Kundividi lokon</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Kiel mi forviŝas la “hazardan identigan numeron de kliento”?</h4>
+    <div class="expander-content">
+        <ul>
+            <li>Iru al la menuero <em>Iloj</em>, kaj poste alklaku <em>Forviŝi ĵusan historion</em></li>
+            <li>Alklaku la sageton <em>Detaloj</em></li>
+            <li>Certiĝu ke <em>Kuketoj</em> estas elektita</li>
+            <li>Alklaku <em>Forviŝi nun</em></li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Kiel mi malaktivigas por ĉiam la retesploradon kiu konsideras la lokon?</h4>
+    <div class="expander-content">
+        <p>La retesplorado kiu konsideras la lokon estas ĉiam uzata kun via konsento en Firefox. Neniu informo pri loko estos iam ajn sendita sen via permeso. Se vi volas malaktivigi la trajton tute, bonvolu sekvi la jenajn paŝojn:</p>
+        <ul>
+            <li>En la retadresa strio tajpu <code>about:config</code></li>
+            <li>Tajpu <code>geo.enabled</code></li>
+            <li>Duoble alklaku la preferon <em>geo.enabled</em> preference</li>
+            <li>La retesplorado kiu konsideras la lokon estas nur malaktiva</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Kie estas mi?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Fuŝ! Okazis eraro dum la klopodo taksi vian lokon.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

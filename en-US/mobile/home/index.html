@@ -1,0 +1,133 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Home for iPhone';
+    $body_id    = 'firefox-home';
+    $breadcrumbs = array(
+        $l10n->get('Mobile') => "/{$lang}/mobile/",
+        $l10n->get('Home') => "/{$lang}/mobile/home/",
+    );
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home-app.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+	<script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+	<script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script src="/includes/yui/2.5.1/container/container-min.js"></script>
+    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
+EXTRA_HEADERS;
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script src="/js/mobile-home.js"></script>
+EXTRA_FOOTERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="download" class="top-right">
+<a href="http://itunes.apple.com/us/app/firefox-home/id380366933?mt=8" class="download-link">
+  <span>Download Home - Free</span>
+</a>
+</div>
+<div id="main-feature">
+  <h2>Your Home <span>On The Go</span></h2>
+  <p>Get your Firefox history, bookmarks, and open tabs on your iPhone</p>
+</div>
+
+  <ul id="main-features">
+    <li class="onthego">
+      <h3>On the Go?</h3>
+      <p>Have instant access to the list of tabs you have open on your desktop</p>
+    </li>
+    <li class="less">
+      <h3>Type Less</h3>
+      <p>No need to type long URLs, your bookmarks get you to your favorite sites by tapping</p>
+    </li>
+    <li class="search">
+      <h3>Search</h3>
+      <p>Start typing and the Awesome Bar takes you to your favorite and important sites</p>
+    </li>
+    <li class="video">
+      <a href="#" id="tour-video">
+      <img src="<?= $config['static_prefix'] ?>/img/mobile/home-video-thumb.jpg" alt="Video screenshot">
+        <span>See Firefox Home in action »</span>
+      </a>
+      <script>
+      // <![CDATA[
+      var player_french = new Mozilla.VideoPlayer(
+        'tour-video',
+        [
+          {
+            url:   'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.webm',
+            type:  'video/webm',
+            title: 'Download in WebM format'
+          },
+          {
+            url:   'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: 'Open Video format (Ogg&nbsp;Theora)'
+          },
+          {
+            url:   'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.mp4',
+            type:  'video/mp4',
+            title: 'MPEG-4 format'
+          },
+          {
+            url:   'http://att.universalrepublic.umrg.com/community/artist/album.aspx?pid=12218&mid=329547',
+            type:  '',
+            title: 'Music by Kate Earl'
+          }
+        ],
+        'serv/mobile/firefox-home.mp4'
+      );
+      // ]]>
+      </script>
+    </li>
+  </ul>
+
+<div id="content">
+
+<div id="sidebar">
+    <h4>Why Get Firefox Home on Your iPhone?</h4>
+
+    <h5>Get up and go</h5>
+    <p>Get up and go and have the comforts of your Web waiting for you on your iPhone: Your history, open tabs, bookmarks, the Awesome Bar &mdash; just the way you like it, just the way you left it.</p>
+
+    <h5>Don’t start from scratch</h5>
+    <p>No need to retype long URLs or spend time searching for your favorite websites. Have your Firefox history working for you the moment you fire up your iPhone.</p>
+
+    <h5>Home sweet home</h5>
+    <p>Home is important, so you need an alarm system protecting your private data. Your Secret Phrase ensures that only you can access your info.</p>
+
+</div>
+
+<div id="main-content">
+    <h3>Getting <span>Started</span></h3>
+    <ol>
+      <li>
+        <h4>Download Home</h4>
+        <p><a href="http://itunes.apple.com/us/app/firefox-home/id380366933?mt=8" class="download-link">
+          <span>Download Home - Free</span>
+        </a></p>
+      </li>
+      <li>
+        <h4>Download Firefox 4 Beta and restart Firefox</h4>
+        <p>Firefox Home uses the capabilities of Firefox Sync, a built-in feature in Firefox 4 for desktop and mobile, to access your Firefox browser information and securely send it to your iPhone.</p>
+        <p><a href="/<?=$lang?>/firefox/beta/" class="beta-download"><img src="<?= $config['static_prefix'] ?>/img/mobile/home-firefox-logo.png" alt="Firefox icon"><span>Download Firefox 4 beta</span></a> and <span class="command">restart Firefox</span>.</p>
+      </li>
+      <li>
+        <h4>Set up Sync</h4>
+        <p>From your desktop, create a Sync account by navigating to <span class="command">Tools » Set Up Sync » and select Create a New Account</span>. Follow the steps, creating a username, password and Sync Key.</p>
+      </li>
+      <li>
+        <h4>Login on your iPhone</h4>
+        <p>Launch Firefox Home on your iPhone and <span class="command">enter your new Sync account login info</span> and tap <span class="command">Done</span>.</p>
+        <p>Firefox Sync will begin securely synchronizing your data with our service. This initial synchronization may take a few minutes. If you're having trouble logging in, <a href="http://support.mozilla.com/en-US/kb/Cannot+log+in+to+Firefox+Home+App">click here for help</a>.</p>
+        <p>For further help and support, see our <a href="http://support.mozilla.com/en-US/kb/What+is+Firefox+Home">Firefox Home Support site</a>.</p>
+      </li>
+    </ol>
+
+    <p><a href="/<?=$lang?>/mobile/home/faq/">Frequently Asked Questions</a></p>
+</div>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

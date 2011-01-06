@@ -1,0 +1,59 @@
+
+<div id="main-content">
+
+  <div class="sub-feature" id="intro">
+
+    <h2>Выберите вашу тему.</h2>
+    <p id="try">Наведите курсор для обкатки, щёлкните для примерки</p>
+
+    <a href="http://www.getpersonas.com/en-US/gallery/" id="personas-image-link">Лёгкие темы</a>
+    <iframe
+        src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
+        width="320"
+        height="200">
+    </iframe>
+
+    <ul id="personas-link" class="link">
+      <li>
+          <a href="http://www.getpersonas.com/en-US/gallery/" id="see-all-personas">Посмотреть все из более <?=$personasnumber?></a>
+      </li>
+    </ul>
+</div>
+
+  <div class="sub-feature" id="sidebar">
+    <h2>Оставайтесь на связи</h2>
+    <ul class="link">
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Следуйте за нами на Twitter</a></li>
+      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Станьте фанатом на Facebook</a></li>
+      <li id="connect-blog"><a href="http://blog.mozilla.com/">Читайте наш блог</a></li>
+    </ul>
+  </div>
+
+  <div class="sub-feature<?=$oop_class;?>" id="personalize"><div>
+    <h2>Другие способы настройки под себя браузера</h2>
+    <p>Адаптируйте Firefox к своему стилю веб-сёрфинга с помощью тысяч бесплатных дополнений.</p>
+    <ul class="link">
+      <li>
+          <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Посмотреть дополнения</a>
+      </li>
+    </ul>
+  </div></div>
+
+<?=$oop;?>
+</div>
+<div id="footer">
+    <div id="connect" class="sub-feature">
+        <ul class="link social">
+            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
+            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+        </ul>
+    </div>
+</div>
+<div>
+
+  <p id="sub-links">
+      <a href="http://www.mozilla-europe.org/<?=$lang?>/firefox/features/" id="features-link">Другие возможности Firefox 3.6</a>
+      <a href="http://support.mozilla.com" id="support-link">Поддержка Firefox</a>
+  </p>
+
+</div>

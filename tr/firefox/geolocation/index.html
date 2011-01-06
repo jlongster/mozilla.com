@@ -1,0 +1,117 @@
+<?php
+
+$page_title = "Firefox'ta Konum Belirleme";
+
+include_once "{$config['file_root']}/includes/headers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Konumdan Haberdar Gezinme</h2>
+    <p>Firefox, web sitelerine nerede olduğunuzu söyleyebilir ve bu sayede aradığınıza daha uygun ve kullanışlı bilgi bulabilmemiz mümkün olur. Bu özellik Web'i daha akıllı hale getirmek içindir ve gizliliğinize tamamen saygı duyar.<a href="#geo-demo" id="try-geolocation" style="display:none">Bir Deneyin!</a></p>
+</div>
+
+<div id="main-content">
+
+<h3>Sıkça Sorulan Sorular</h3>
+
+<div class="expander expander-odd">
+    <h4 class="expander-header">Konumdan Haberdar Gezinme Nedir?</h4>
+    <div class="expander-content">
+        <p>Konumdan haberdar gezinmeyi kullanan web siteleri, size amacınıza daha uygun bilgi sunabilmek veya arama yaparken zaman kazandırmak için nerede olduğunuzu soracak. Diyelim ki bulunduğunuz muhitte bir pizza restoranı arıyorsunuz. Bir  web sitesi sizden konumunuzu paylaşmanızı isteyebilecek ve böylelikle sadece "pizza" kelimesini aratarak istediğiniz cevapları alacaksınız. Fazladan hiçbir bilgiye veya veri girişine gerek yok.</p>
+        <p>Veya, eğer bir yere gitmek için yol istikameti çıkarıyorsanız, web sitesi nereden yola başladığınızı bilecek ve böylece yapacağınız tek şey nereye gitmek istediğinizi yazmak olacak.</p>
+        <p>Bu hizmet tamamıyla isteğe bağlıdır. Firefox sizin konumunuzu izniniz olmadan başkalarıyla paylaşmaz. İşlemler gizliliğinize en yüksek derecede saygı gösterilerek gerçekleştirilir. Firefox'un diğer tüm unsurları gibi bu unsur da Web geliştiricileri tarafından benimsenmesinin kolaylaştırılması için açık standartlar kullanılarak oluşturuluyor.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Bu sistem nasıl işliyor?</h4>
+    <div class="expander-content">
+        <p>Konumdan haberdar bir web sitesini ziyaret ettiğinizde, Firefox size konumuzu paylaşmayı isteyip istemediğinizi soracak.</p>
+        <p>Eğer kabul ederseniz, Firefox en yakın kablosuz erişim noktaları ve bilgisayarınızın IP adresi hakkında bilgi toplar. Daha sonra Firefox bu bilgileri konumunuz hakkında bir tahmin almak için varsayılan konum belirleme servis sağlayıcısı, Google Konum Hizmetleri'ne gönderir. Alınan tahmini konum bilgisi istekte bulunan web sitesiyle paylaşılır.</p>
+        <p>Eğer kabul etmediğinizi belirtirseniz, Firefox hiçbir şey yapmaz.</p>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Konum bilgisi ne kadar kesindir?</h4>
+    <div class="expander-content">
+        <p>Kesinlik bölgeden bölgeye büyük ölçüde değişir. Bazı bölgelerde, servis sağlayıcılarımız sadece birkaç metre içerisinde konum bilgisi sunabilirler. Buna rağmen bazı bölgelerde, bundan çok daha geniş bir alan içerisinde bilgi sunulabilir. Servis sağlayıcılarımız tarafından sunulan tüm konum bilgileri sadece tahminidir ve sunulan konum bilgilerinin doğruluğunu garanti edemeyiz.  Lütfen acil durımlar için bu bilgiyi kullanmayın. Her zaman sağduyunuzu kullanın.</p>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Hangi bilgi, kime gönderiliyor? Gizliliğim nasıl korunuyor?</h4>
+    <div class="expander-content">
+        <p>Gizliliğiniz bizim için son derece önemlidir ve Firefox izniniz olmadan konumunuzu başkalarıyla asla paylaşmaz. Bilginizi isteyen bir web sitesini ziyaret ettiğinizde, üçüncü taraf olan servis sağlayıcımız ve bilgi talep eden siteyle herhangi bir bilgi paylaşılmadan önce size sorulacaktır.</p>
+        <p>Firefox varsayılan olarak Google Konum Hizmetleri'ne konumunuzu tespit etmek için şu bilgileri gönderir:</p>
+        <ul>
+            <li>Bilgisayarınızın IP adresi</li>
+            <li>Yakınlardaki kablosuz erişim noktaları hakkında bilgi</li>
+            <li>Google tarafından rastsal atanan ve 2 haftada bir sıfırlanan bir istemci kimliği</li>
+        </ul>
+        <p>Firefox tarafından toplanan ve kullanılan bilginin tam bir açıklaması için, lütfen <a href="/<?=$lang?>/legal/privacy/firefox-en.html">Firefox Gizlilik Politikası</a> (İngilizce) sayfasına bakın.</p>
+        <p>Daha sonra, Google Konum Hizmetleri tahmini konum bilgilerinizi (enlem ve boylam gibi) sunar. Google tarafından toplanan ve kullanılan bilginin tam bir açıklaması için, lütfen <a href="http://www.google.com/privacy-lsf.html" class="external">Google Konum Belirleme Gizlilik Politikası</a> (İngilizce) sayfasına bakın.</p>
+        <p>Gizliliğinizi korumak için bilgi, şifreli bir bağlantı üzerinden aktarılır. Firefox konum bilginizi elde eder etmez, talepte bulunan siteye yollar. Hiçbir zaman ziyaret ettiğiniz sitenin adı veya konumu veya hiçbir çerezi, Google Konum Hizmetleri ile paylaşılmaz.</p>
+        <p>Ne Mozilla ne de Google, Google Konum Hizmetleri tarafından toplanan bilgiyi sizi tanımlamak ya da casusluk yapmak maksadıyla asla kullanmaz.</p>
+        <p>Konum bilginizi talep eden sitenin bu bilgiyle ne yaptığı hakkında bilgi için, lütfen o sitenin gizlilik politikasına bakın.</p>
+        <p>Gizliliğiniz hakkında daha fazla bilgi için ayrıca şunları da okumalısınız:</p>
+        <ul>
+            <li><a href="/<?=$lang?>/legal/privacy/firefox-en.html">Mozilla Firefox gizlilik politkası</a> (İngilizce)</li>
+            <li><a href="http://www.google.com/privacy-lsf.html" class="external">Google gizlilik politkası</a> (İngilizce)</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">Ben İnternette gezinirken takip ediliyor muyum?</h4>
+    <div class="expander-content">
+        <p>Hayır. Firefox, sadece bir site talep ettiğinde konum bilgisi ister ve konumunuzu, sadece kullanıcı kabul ederse paylaşır. Firefox, siz internette gezinirken, konumunuzu takip etmez veya kayıt altına almaz.</p>
+    </div>
+</div>
+<div class="expander expander-even" id="undo-permission">
+    <h4 class="expander-header">Bir siteye verilen izni nasıl geri alırım?</h4>
+    <div class="expander-content">
+        <p>Eğer Firefox'a bir siteye her zaman konum bilginizi verme izni verdiyseniz ve sonra kararınızı değiştirdiyseniz, o izni kolaylıkla geri alabilirsiniz. İşte yapılışı:</p>
+        <ul>
+            <li>İzin verdiğiniz siteye girin</li>
+            <li><em>Araçlar</em> menüsüne gidin ve <em>Sayfa bilgileri</em> seçeneğine tıklayın</li>
+            <li><em>İzinler</em> sekmesini seçin</li>
+            <li><em>Konumu paylaş</em> özelliği için istediğiniz seçeneği belirleyin</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-odd">
+    <h4 class="expander-header">"Rastgele alıcı tanımlama numarası”nı nasıl temizlerim?</h4>
+    <div class="expander-content">
+        <ul>
+            <li><em>Araçlar</em> menüsüne gidin, sonra <em>Yakın geçmişi temizle</em> seçeneğine tıklayın</li>
+            <li><em>Ayrıntılar</em> okuna tıklayın</li>
+            <li><em>Çerezler</em>'in seçili olduğuna emin olun</li>
+            <li><em>Şimdi temizle</em> düğmesine tıklayın</li>
+        </ul>
+    </div>
+</div>
+<div class="expander expander-even">
+    <h4 class="expander-header">Konumdan Haberdar Gezinme'yi kalıcı olarak nasıl kapatabilirim?</h4>
+    <div class="expander-content">
+        <p>Konumdan Haberdar Gezinme, Firefox'te her zaman isteğe bağlı kullanılabilen bir özelliktir. İzniniz olmadan hiçbir konum bilgisi gönderilmez. Eğer bu özelliğitamamen kaldırmak istiyorsanız, lütfen aşağıdaki adımları takip edin:</p>
+        <ul>
+            <li>Konum çubuğuna <code>about:config</code> yazın</li>
+            <li>Süzgeç çubuğuna <code>geo.enabled</code> yazın</li>
+            <li><em>geo.enabled</em> seçeneğine çift tıklayın</li>
+            <li>Konumdan Haberdar Gezinme artık devre dışı</li>
+        </ul>
+    </div>
+</div>
+
+<div id="geo-demo" style="display:none">
+    <div id="map_canvas"></div>
+    <button id="locateButton" type="button">Ben neredeyim?</button>
+    <img id="geo-busy" src="/img/ajax_loading.gif" alt="busy"/>
+    <p id="geodemo-error">Eyvah! Konumunuzu tespit etmeye çalışırken bir hata meydana geldi.</p>
+</div>
+
+</div> <!-- end #main -->
+
+
+<?php
+include_once "{$config['file_root']}/includes/footers/firefox/geolocation.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

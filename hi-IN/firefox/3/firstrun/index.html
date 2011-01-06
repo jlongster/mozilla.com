@@ -1,0 +1,30 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'फ़ॉयरफ़ॉक्स में आपका स्वागत है';
+    $extra_feature_text = 'इस बंद बटन पर इस टैब पर अपने होम पेज जाने के लिए क्लिक करें';
+
+    include_once "{$config['file_root']}/includes/headers/3.0/firstrun.inc.php";
+    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2><img src="/<?=$lang?>/img/3-welcome-firstrun.png" alt="फॉयरफॉक्स 3 में आपका स्वागत है" /></h2>
+    <p>फॉयरफॉक्स का अबतक का सबसे सुरक्षित, तेज व पसंदीदा बनाने योग्य संस्करण है. ब्रॉउजिंग शुरू करने के लिए ऊपर बताए गए के अनुसार टैब बंद करें.</p>
+</div>
+
+<div id="main-content">
+    <div class="sub-feature" id="learn_more">
+        <h3>अधिक जानें</h3>
+        <p>सोच रहे हैं कि अब क्या करें? हमारा आरंभ करें पृष्ठ के पास कई अनुशंसित साइट है, साथ ही अधिक फॉयरफॉक्स सूचना. <a href="/<?=$lang?>/firefox/central/">कैसे शुरू करें को देखें</a></p>
+    </div>
+    <div class="sub-feature" id="questions">
+        <h3>प्रश्न?</h3>
+        <p>हमारे समर्थन पृष्ठ में कई उत्तर हैं, साथ ही एक लाइव चैट फीचर जो आपको कई मुश्किल जगहों पर गाइड करता है. <a href="http://support.mozilla.com/<?=$lang?>/kb/">समर्थन देखें</a></p>
+    </div>
+</div>
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

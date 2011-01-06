@@ -1,0 +1,53 @@
+<?php
+    // please translate the variable below
+    $page_title = "Desenvolver para dispositivos móveis";
+
+    $pageid = "mobile-developers";
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Desenvolver para dispositivos móveis</h2>
+    <p>É hora de mobilizar. Aqui está o que você pode fazer para ajudar.</p>
+</div>
+
+<?=buildMobileSubPageMenu($lang,'developers')?>
+
+<div id="main-content">
+
+<h4 class="first">Siga nosso progresso</h4>
+
+<p>Obtenha as últimas notícias e atualizações sobre dispositivos móveis. <a href="/<?=$lang?>/newsletter/about_mobile/" hreflang="en">Assine a lista de discussão about:mobile</a>.</p>
+
+<h4>Crie sites e aplicações que alavancam a mais recente tecnologia Web</h4>
+
+<h5>Mozilla Developer Center para Mobile</h5>
+<p>Obtenha documentação, ferramentas e códigos necessários para criar suas inovações para mobile. <a href="https://developer.mozilla.org/En/Mobile" hreflang="en">Saiba mais</a>.</p>
+
+<h5>Wiki Mobile</h5>
+<p>Leia os requisitos e práticas recomendáveis para executar e testar a versão móvel do Firefox. <a href="https://wiki.mozilla.org/Fennec">Saiba mais</a>.</p>
+
+<h5>Aplicações sensíveis a localização</h5>
+<p>Coloque as pessoas no caminho certo e construa aplicações com Geolocalização. <a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Saiba mais</a>.</p>
+
+<h4>Desenvolva complementos inovadores</h4>
+<p>O Firefox para Maemo suporta complementos. Na verdade, os mesmos complementos podem ser usados em ambas as plataformas, então saia de casa e explore a mobilidade. Aqui está uma lista de referências interessantes:</p>
+
+<ul>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions" hreflang="en">Básico sobre Extensões</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices" hreflang="en">Práticas Recomendáveis para Extensões</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/UserInterface" hreflang="en">Práticas Recomendáveis para Interface</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/Architecture" hreflang="en">Visão geral da arquitetura</a></li>
+<li><a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets" hreflang="en">Trechos de código</a></li>
+</ul>
+<h4>Ajude a construir a versão móvel do Firefox</h4>
+<p>A sua ajuda é vital para o sucesso do Firefox. Diga o que você pensa sobre o Firefox for Mobile no nosso canal IRC (irc.mozilla.org, #mobile), <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings" hreflang="en">junte-se a nós em nossas reuniões semanais de desenvolvimento às quartas-feiras</a> ou mesmo <a href="https://bugzilla.mozilla.org/" hreflang="en">preencha alguns bugs</a>.</p>
+
+
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>

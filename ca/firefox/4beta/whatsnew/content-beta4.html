@@ -1,0 +1,40 @@
+
+<div id="main-feature">
+
+    <h1>Les novetats al <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Aixequeu-vos i aneu-vos-en amb el Firefox 4 Beta</h3>
+        <p>Aneu de casa a la feina, amb el mòbil, i torneu-hi! El Firefox Sync us ofereix un accés impecable a les dades importants del Firefox - incloent-hi les adreces d'interès, les contrasenyes, l'historial i les pestanyes obertes - entre diferents ordinadors i dispositius. Reproduïu el vídeo per saber com començar.</p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/sync/">Més informació del Sync »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Doneu-ne la vostra opinió »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b4/releasenotes/">Notes de la versió »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div class="intro">
+       <h2>Darreres notícies</h2>
+    </div>
+
+    <div id="column-1">
+        <h4>Organitzeu-vos a la xarxa:</h4>
+         <?=$tabvideo?>
+        <p>Passeu una mala estona esbrinant quines pestanyes teniu obertes? Ja és hora que domineu les pestanyes del vostre navegador! Arrossegueu-les i col·loqueu-les en grups que pugueu organitzar, tot anomenant-los i organitzant-los d'una forma visual i divertida.</p>
+    </div>
+
+</div>
+
+
+<?php endif; ?>

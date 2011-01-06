@@ -1,0 +1,81 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Downloads | Mozilla';
+    $body_id    = 'logo-download';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/logo.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Download</h2>
+	<p>Logotipos do Firefox recém saídos do forno.</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a> / <a href="/<?=$lang?>/about/logo/">Logotipos <sup>(beta)</sup></a></h3></li>
+	<li><a href="/<?=$lang?>/about/logo/use.html">Uso de Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/logo/stop.html">Crueldade com Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/logo/style.html">Elementos de Estilo</a></li>
+	<li><a href="/<?=$lang?>/about/logo/legal.html">Considerações legais</a></li>
+	<li><span>Download</span></li>
+</ul>
+
+<div id="main-content">
+
+	<h3>Logotipos</h3>
+
+	<p>Os seguintes logotipos do Firefox estão disponíveis para seu uso. Por favor, certifique-se de ler nossas <a href="use.html">regras de utilização</a>, <a href="stop.html">erros comuns de logotipo</a> e <a href="style.html">outros estilos</a> antes de baixar os arquivos. Além disso, lembre-se que qualquer uso dos logotipos estará sujeito à <a href="http://www.mozilla.org/foundation/trademarks/policy.html" hreflang="en">Política de marcas do Firefox</a>.</p>
+
+  <h4>Logotipos do Firefox</h4>
+  <table class="logos">
+  <tr>
+    <td>
+      <img src="/img/tignish/about/logo/download/logo-only-preview.png" alt="Somente Logotipo do Firefox" height="100" width="100" />
+      <div>Somente Logotipo do Firefox<br /><a href="/img/tignish/about/logo/download/logo-only.png">(361kB, PNG)</a></div>
+    </td>
+    <td>
+      <img src="/img/tignish/about/logo/download/logo-wordmark-preview.png" alt="Logotipo do Firefox + Texto Mozilla Firefox (marca registrada)" height="100" width="195" />
+      <div>Logotipo do Firefox + Texto Mozilla Firefox (marca registrada)<br /><a href="/img/tignish/about/logo/download/logo-wordmark.png">(150kB, PNG)</a></div>
+    </td>
+    <td>
+      <img src="/img/tignish/about/logo/download/logo-wordmark-version-preview.png" alt="Texto Mozilla Firefox Horizontal (marca registrada)" height="100" width="250" />
+      <div>Logotipo do Firefox com Versão<br /><a href="/img/tignish/about/logo/download/logo-wordmark-version.png">(110kB, PNG)</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/img/tignish/about/logo/download/logo-wordmark-vertical-preview.png" alt="Logotipo do Firefox + Texto Mozilla Firefox Vertical (marca registrada)" height="140" width="100" />
+      <div>Logotipo do Firefox + Texto Mozilla Firefox Vertical (marca registrada)<br /><a href="/img/tignish/about/logo/download/logo-wordmark-vertical.png">(319kB, PNG)</a></div>
+    </td>
+    <td>
+      <img src="/img/tignish/about/logo/download/logo-wordmark-version-vertical-preview.png" alt="Logotipo do Firefox + Texto com Versão Vertical (marca registrada)" height="140" width="100" />
+      <div>Logotipo do Firefox + Texto com Versão Vertical (marca registrada)<br /><a href="/img/tignish/about/logo/download/logo-wordmark-version-vertical">(342kB, PNG)</a></div>
+    </td>
+    <td>
+      <img src="/img/tignish/about/logo/download/wordmark-only-preview.png" alt="Somente Texto Firefox (marca registrada)" height="140" width="140" />
+      <div>Somente Texto Firefox (marca registrada)<br /><a href="/img/tignish/about/logo/download/wordmark-only">(17kB, PNG)</a></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="/img/tignish/about/logo/download/wordmark-version-preview.png" alt="Texto Firefox com Versão (marca registrada)" height="80" width="160" />
+      <div>Texto Firefox com Versão (marca registrada)<br /><a href="/img/tignish/about/logo/download/wordmark-version">(18kB, PNG)</a></div>
+    </td>
+    <td>
+      <img src="/img/tignish/about/logo/download/mozilla-wordmark-preview.png" alt="Texto Mozilla Firefox (marca registrada)" height="80" width="165" />
+      <div>Texto Mozilla Firefox (marca registrada)<br /><a href="/img/tignish/about/logo/download/mozilla-wordmark.png">(27kB, PNG)</a></div>
+    </td>
+    <td></td>
+  </tr>
+  </table>
+
+</div><!-- end #main-content div -->
+
+<div id="divider"></div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

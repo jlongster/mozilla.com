@@ -1,0 +1,133 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Carreiras | Mozilla';
+    $body_id    = 'careers';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" type="text/css" href="/style/tignish/about.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/style/tignish/careers.css" media="screen" />
+	<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+	<script type="text/javascript" src="/js/mozilla-pager.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2>Carreiras</h2>
+	<p>Faça parte de algo bom</p>
+</div>
+
+<ul id="side-menu">
+	<li class="first"><h3><a href="/<?=$lang?>/about/">Sobre</a></h3></li>
+	<li><a href="/<?=$lang?>/about/whatismozilla.html">O que é a Mozilla?</a></li>
+	<li><a href="/<?=$lang?>/about/get-involved.html">Envolva-se</a></li>
+	<li><a href="/<?=$lang?>/press/">Área de Imprensa</a></li>
+	<li><span>Carreiras</span></li>
+	<li><a href="/<?=$lang?>/about/partnerships.html">Parcerias</a></li>
+	<li><a href="/<?=$lang?>/about/licensing.html">Licenças</a></li>
+	<li><a href="http://blog.mozilla.com/" class="external" hreflang="en">Blog</a> / <a href="http://blog.mozilla.com/brasil/" class="external">Blog Brasil</a></li>
+	<li><a href="http://communitystore.mozilla.org/" class="external" hreflang="en">Loja da Comunidade</a></li>
+	<li><a href="/<?=$lang?>/about/logo/">Guia de Logotipos</a></li>
+	<li><a href="/<?=$lang?>/about/contact.html">Entre em contato</a></li>
+</ul>
+
+<div id="content">
+<div id="careers-feature" class="pager pager-with-tabs">
+
+	<ul id="careers-nav" class="pager-tabs">
+		<li id="meet-link"><a href="#feature-meet">Conheça a Mozilla</a></li>
+		<li id="team-link"><a href="#feature-team">A Equipe</a></li>
+		<li id="life-link"><a href="#feature-life">Vida na Mozilla</a></li>
+		<li id="first-person-link"><a href="#feature-first-person">Depoimentos</a></li>
+		<li id="apply-link" class="pager-not-tab"><a href="http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vfwa" hreflang="en">Oportunidades</a></li>
+	</ul>
+
+	<div class="pager-content">
+
+		<div class="careers-feature-contents" id="feature-meet">
+			<script type="text/javascript">// <![CDATA[
+			document.getElementById('feature-meet').id = 'page-feature-meet';
+			// ]]></script>
+			<h3>Quem somos nós</h3>
+			<p>A Mozilla Corporation é parte de um grande projeto de desenvolvimento de software de código aberto organizado por uma pequena (e crescente) comissão e milhares de colaboradores e voluntários. Somos parte de uma comunidade vibrante que dá suporte para padrões abertos, inovação e oportunidades na Internet. </p>
+			<p>O premiado navegador Firefox permite que centenas de milhões de pessoas de todo o mundo possam explorar a Internet por uma janela que está sempre evoluindo.</p>
+			<p>Nossa tecnologia é utilizada como plataforma para muitos projetos de inovação na Web. Muitos acreditam que somos parte fundamental do coração da Web - e que vamos manter seu batimento no futuro. </p>
+		</div>
+
+		<div class="careers-feature-contents" id="feature-team">
+			<script type="text/javascript">// <![CDATA[
+			document.getElementById('feature-team').id = 'page-feature-team';
+			// ]]></script>
+			<h3>Somos um grupo interessante</h3>
+			<p>Funcionários Mozilla pegam as ideias rapidamente. Somos motivados por inovação e liberdade, e confortáveis com mudanças. A cultura Mozilla cativa funcionários, encoraja colaboração e prospera com ideias e ambições.</p>
+			<p>A Mozilla é basicamente pessoas com talento trabalhando para melhorar a Web - é o que define nosso passado, futuro e dia-a-dia de trabalho. Interessado em trabalhar conosco? Diga-nos por que e envie seu résumé para <em>careers arroba mozilla ponto com</em>, preferivelmente em Inglês.</p>
+		</div>
+		<div class="careers-feature-contents" id="feature-life">
+			<script type="text/javascript">// <![CDATA[
+			document.getElementById('feature-life').id = 'page-feature-life';
+			// ]]></script>
+			<div id="hr-info">
+				<h5>Benefícios e Remuneração</h5>
+				<p>A Mozilla oferece remuneração competitiva e um pacote de benefícios. Entre em contato com nosso departamento de recursos humanos para maiores detalhes. </p>
+				<p><em>careers [arroba] mozilla [ponto] com</em></p>
+			</div>
+			<h3>É uma experiência completamente única.</h3>
+			<p>Trabalhar na Mozilla nunca é chato. Como uma organização pequena e de código aberto com um impacto mundial, nós esperamos que cada funcionário traga inovação e implemente ideias que tragam melhorias em grande escala. Em outras palavras, todo mundo contribui. </p>
+			<p>Nem tudo é trabalho. Quando não estamos construindo a plataforma que melhora a Web, também participamos de atividades de descontração. Já estivemos em jogos dos Giants, fazemos campeonatos de kickball, além de churrascos nos fundos. Sem falar dos campeonatos de tênis no Wii, então comece a praticar…</p>
+		</div>
+		<div class="careers-feature-contents" id="feature-first-person">
+			<script type="text/javascript">// <![CDATA[
+			document.getElementById('feature-first-person').id = 'page-feature-first-person';
+			// ]]></script>
+			<h3>Perspectivas de funcionários Mozilla ao redor do mundo:</h3>
+			<div class="quote">
+				<p lang="en" dir="ltr">“Mozilla has all the best parts of a start-up, only instead of the goal being something like going public or being acquired, it’s to help ensure a free and open web.”</p>
+				<div class="quote-source">
+					<div class="name">Sean Alamares</div>
+					<div>Engenheiro de Suporte Desktop</div>
+				</div>
+				<img src="/img/about/careers/p4_photo1.jpg" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p lang="en" dir="ltr">“I work at Mozilla because the opportunity to contribute to a community of over 100 million Firefox users worldwide is a unique honor and a significant privilege. Mozilla is unlike other software companies in more ways than can be counted.”</p>
+				<div class="quote-source">
+					<div class="name">Gen Kanai</div>
+					<div>Diretor de Marketing</div>
+					<div>Mozilla Japão</div>
+				</div>
+				<img src="/img/about/careers/p4_photo2.jpg" class="right" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p lang="en" dir="ltr">“Mozilla is one of the only places where you can work directly for the public benefit, spend every day in a hotbed of innovation <em>and</em> make a decent living.”</p>
+				<div class="quote-source">
+					<div class="name">Dietrich Ayala</div>
+					<div>Engenheiro do Firefox</div>
+				</div>
+				<img src="/img/about/careers/p4_photo3.jpg" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p lang="en" dir="ltr">“How many people get the opportunity to work on a cool, interesting technology that impacts millions of people’s daily lives? There’s no set way that things are done here, which keeps the job exciting."</p>
+				<div class="quote-source">
+					<div class="name">Mary Colvig</div>
+					<div>Gerente de Marketing</div>
+				</div>
+				<img src="/img/about/careers/p4_photo4.jpg" class="right" alt="Mozilla Staff" />
+			</div>
+			<div class="quote">
+				<p lang="en" dir="ltr">“Until recently, I ran a small startup. It was the best job in the world: I worked with four of the smartest people out there, my work touched hundreds of thousands, and I got to come in late. Mozilla is a better best job in the world: I work with 150 of the smartest people out there (in addition to a brilliant community), my work touches hundreds of millions, and I still get to come in late.”</p>
+				<div class="quote-source">
+					<div class="name">Aza Raskin</div>
+					<div>Chefe de Experiência<br />do Usuário</div>
+					<div>Mozilla Labs</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

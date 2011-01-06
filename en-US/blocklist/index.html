@@ -1,0 +1,45 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Add-ons Blocklist | Mozilla';
+    $body_id    = 'mozilla-com';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/add-ons/blocklist.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>Add-ons <span>Blocklist</span></h2>
+	<p>This page lists blocklisted add-ons that should no longer be used with Mozilla products.</p>
+</div>
+
+<div id="content">
+    <ul>
+        <li>Bing Bar for Firefox. Reason: security issue, blocked at 
+        Microsoft's request (see <a href="http://support.microsoft.com/kb/2430460">http://support.microsoft.com/kb/2430460</a>).</li>
+        <li>Default Manager, v2.2 for Firefox. Reason: security issue,
+        blocked at  Microsoft's request 
+        (see <a href="http://support.microsoft.com/kb/2430460">http://support.microsoft.com/kb/2430460</a>).</li>
+        <li>Search Helper Extension, v1.0 for Firefox. Reason: security issue,
+        blocked at  Microsoft's request 
+        (see <a href="http://support.microsoft.com/kb/2430460">http://support.microsoft.com/kb/2430460</a>).</li>
+        <li>Internet Download Manager, v2.1-3.3 for Firefox 3.0a1 and newer.  Reason: caused startup crashes (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=382356">see bug 382356</a>).</li>
+        <li>Free Download Manager, v1.0-1.3.1 for Firefox 3.0a1 and newer.  Reason: high crash volume (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=408445">see bug 408445</a>).</li>
+        <li>Yahoo Application State Plugin, v1.0.0.5 and older for Firefox 3.0a1 and newer.  Reason: high crash volume (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=419127">see bug 419127</a>).</li>
+        <li>Vietnamese Language Pack, v2.0 for all applications.  Reason: corrupted files (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=432406">see bug 432406</a>).</li>
+        <li>Apple QuickTime Plugin, v7.1.*, for all Firefox 3 versions on Windows.  Reason: remote code execution in multiple versions (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=430826">see bug 430826</a>).</li>
+        <li>Crawler Toolbar, for Firefox 3.0a1 and newer. Reason: high crash volume (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=441649">see bug 441649</a>).</li>
+        <li>Daemon Tools Toolbar, versions older than 1.0.0.5, for all applications.  Reason: high crash volume (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=459850">see bug 459850</a>).</li>
+        <li>AVG SafeSearch, versions older than 8.5, for all applications.  Reason: high crash volume and stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=527135">see bug 527135</a>).</li>
+        <li>Skype extension, versions older than 3.3.0.3971, for all versions of Firefox. Reason: high crash volume and other stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=448768">see bug 448768</a>). Users should <a href="http://skype.com/">update Skype</a>.</li>
+        <li>Enigmail, versions older than 0.97a, for Thunderbird 3.0pre and newer. Reason: high crash volume and other stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=531047">see bug 531047</a>). Users should <a href="https://addons.mozilla.org/en-US/thunderbird/addon/71">update Enigmail</a>.</li>
+        <li>YSlow, version 2.0.5, for Firefox 3.5.7 and newer. Reason: high crash volume and other stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=542686">see bug 542686</a>). Users should <a href="https://addons.mozilla.org/en-US/firefox/addon/5369">update to YSlow 2.0.6</a>.</li>
+        <li>Viewpoint Media Player, all versions, for Firefox 3.0 and newer. Reason: vendor claims incompatibility with 3.0+, high crash volume and other stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=539282">see bug 539282</a>). For more information, <a href="http://www.viewpoint.com/technologies/viewpoint-media-player.shtml#system-requirements">visit the vendor page</a>.</li>
+        <li>Java Deployment Toolkit, versions 6.0.200.0 and older.  Reason: security vulnerabilities (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=558584">see bug 558584</a>).  For more information, <a href="http://java.com/en/download/help/firefox_addons.xml">visit the vendor page</a>.</li>
+        <li>Internet Download Manager, versions 6.9.8 and older, for Firefox 3.7a1pre and newer.  Reason: high crash volume and other stability issues (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578443">see bug 578443</a>).</li>
+    </ul>
+</div><!-- end #content div -->
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
