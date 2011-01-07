@@ -9,8 +9,6 @@ $(document).ready(function() {
 var surveyId = 'survey201012';
 var surveyUrl = 'http://www.surveygizmo.com/s3/438545/f3795538bac9';
 var freq = 0.05;
-// XXX : for testing purposes
-freq = 1;
 var cookieName = surveyId;
 var cookieDays = 7;
 
@@ -35,9 +33,6 @@ function setCookie(name, value, path, expire)
 
 function getCookie(name)
 {
-    // XXX : for testing purposes
-    return 1;
-    
 	if (document.cookie.length === 0) {
 		return null;
 	}
