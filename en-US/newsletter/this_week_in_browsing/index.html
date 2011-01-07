@@ -2,17 +2,11 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Mozilla Newsletter';
     $body_id    = 'newsletter';
+    $body_class    = 'newsletter-thisweek';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
     <style>
-        #main-feature {
-          width: 90%;
-        }
-        #disclaimer {
-          margin-left: 177px;
-          font-size: .9em;
-        }
         #newsletter #doc {
           background-image: url('/img/newsletter/this_week_in_browsing/preview.png');
           background-position: 610px 120px;
@@ -34,7 +28,7 @@ EXTRA_HEADERS;
 ?>
 
 <div id="main-feature">
-    <h2>Subscribe to<br>This Week In Browsing!</h2>
+    <h2>Subscribe to<span>This Week In Browsing!</span></h2>
     <p>Weekly roundup of browser-related news.</p>
 </div>
 

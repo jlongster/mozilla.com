@@ -190,40 +190,52 @@
     clear: both;
 }
 
-/* {{{ about:mozilla and about:mobile*/
+/* {{{ about:mozilla,about:mobile, this-week*/
 
 .newsletter-aboutmozilla #main-feature,
-.newsletter-aboutmobile #main-feature {
+.newsletter-aboutmobile #main-feature,
+.newsletter-thisweek #main-feature {
     width: 90%;
     padding-bottom: 20px;
 }
 
-.newsletter-aboutmozilla h2 span,
-.newsletter-aboutmobile h2 span {
+.newsletter-aboutmozilla #main-feature h2 span,
+.newsletter-aboutmobile #main-feature h2 span {
     text-transform: lowercase;
 }
 
+.newsletter-thisweek #main-feature h2 span {
+    font-size: 60px;
+    letter-spacing: -0.05em;
+    text-transform: capitalize;
+}
+
 .newsletter-aboutmozilla #main-feature p,
-.newsletter-aboutmobile #main-feature p {
+.newsletter-aboutmobile #main-feature p,
+.newsletter-thisweek #main-feature p {
     line-height: 1.1em;
 }
 
-.newsletter-aboutmozilla #email-form .field {
+.newsletter-aboutmozilla #email-form .field,
+.newsletter-thisweek #email-form .field {
     padding: 5px 0;
 }
 
 .newsletter-aboutmozilla #email-form .required label,
-.newsletter-aboutmobile #email-form .required label {
+.newsletter-aboutmobile #email-form .required label,
+.newsletter-thisweek #email-form .required label {
     font-weight: normal;
 }
 
 .newsletter-aboutmozilla #email-form #subscribe,
-.newsletter-aboutmobile #email-form #subscribe {
+.newsletter-aboutmobile #email-form #subscribe,
+.newsletter-thisweek #email-form #subscribe {
     width: 150px;
 }
 
 .newsletter-aboutmozilla #email-form #disclaimer,
-.newsletter-aboutmobile #email-form #disclaimer {
+.newsletter-aboutmobile #email-form #disclaimer,
+.newsletter-thisweek #email-form #disclaimer {
     margin-left: 177px;
     font-size: .9em;
     padding-top: 5px;
