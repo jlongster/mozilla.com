@@ -1,0 +1,156 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Press Kit';
+    $body_id    = 'press-kits';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about/",
+		'Press Center' => "/{$lang}/press/",
+		'Press Kits' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="/style/covehead/press-page.css" media="screen" />
+    <script src="/js/mozilla-pager.js"></script>
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Firefox <span>Press Kits</span></h2>
+    <p>An Easy Guide to All Things Firefox</p>
+</div>
+
+<div id="content">
+
+    <div id="press-kit" class="pager pager-with-tabs">
+
+    <ul id="press-kit-menu" class="pager-tabs">
+        <li id="press-kit-desktop"><a href="#desktop">Desktop</a></li>
+        <li id="press-kit-mobile"><a href="#mobile">Mobile</a></li>
+    </ul>
+
+    <div class="pager-content">
+
+        <div class="press-kit-desktop" id="desktop">
+        <script>// <![CDATA[
+        document.getElementById('desktop').id = 'page-desktop';
+        // ]]></script>
+
+<div id="kit-3-6" class="kit-first">
+
+    <h2>Firefox 3.6</h2>
+
+    <h4>Press Releases</h4>
+    <ul>
+        <li><a href="http://blog.mozilla.com/blog/2010/01/21/firefox-3-6-release/">Firefox 3.6 Announcement</a></li>
+    </ul>
+
+    <h4>Useful Links</h4>
+    <ul>
+        <li><a href="/<?=$lang?>/press/mozilla-2010-01-21-faq.html">Frequently Asked Questions</a></li>
+        <li><a href="/<?=$lang?>/firefox/features/">Features</a></li>
+        <li><a href="/<?=$lang?>/firefox/tips/">Tips &amp; Tricks</a></li>
+        <li><a href="/<?=$lang?>/firefox/video/?video=about-firefox">What’s New in Firefox 3.6 Video</a></li>
+        <li><a href="http://www.spreadfirefox.com/5years/en-US/">Five Years of Firefox</a></li>
+    </ul>
+
+    <h4>Reference Materials</h4>
+    <ul>
+        <li><a href="http://static.mozilla.com/moco/en-US/pdf/firefox-3-6-reviewers-guide.pdf">Firefox 3.6 Reviewer’s Guide</a> (PDF)
+            <div class="commons-license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/80x15.png"/></a> (<a href="/<?=$lang?>/press/guide-license.html">What’s this?</a>)</div>
+        </li>
+        <li><a href="http://videos-cdn.mozilla.net/firefox3/b-roll/MozillaFirefox3.0-BRoll.mov">Mozilla B-Roll</a> (58MB MPEG4 Video)</li>
+        <li><a href="/<?= $lang ?>/press/media/screenshots/">Product Images</a></li>
+    </ul>
+
+</div>
+
+<div id="kit-4" class="kit-second">
+
+    <h2>Firefox 4 Beta</h2>
+
+    <h4>Reference Materials</h4>
+    <ul>
+        <li><a href="http://static.mozilla.com/moco/en-US/pdf/firefox_4_beta_guide_8_US.pdf">Firefox 4 Beta Reviewer’s Guide</a> (PDF)
+        </li>
+    </ul>
+
+</div>
+
+        </div><!-- end desktop tab -->
+        <div class="press-kit-mobile" id="mobile">
+        <script>// <![CDATA[
+        document.getElementById('mobile').id = 'page-mobile';
+        // ]]></script>
+
+<div id="kit-nokia" class="kit-first">
+
+    <h2>Nokia N900</h2>
+
+    <h4>Announcements</h4>
+    <ul>
+        <li><a href="http://blog.mozilla.com/blog/2010/01/29/firefox-for-maemo-now-available/">Firefox for the Nokia N900 Announcement</a></li>
+    </ul>
+
+    <h4>Useful Links</h4>
+    <ul>
+    <li><a href="/<?= $lang ?>/mobile/faq/">Frequently Asked Questions</a></li>
+    <li><a href="/<?= $lang ?>/mobile/features/">Features</a></li>
+    <li><a href="/<?= $lang ?>/mobile/sync/">Synchronize</a></li>
+    <li><a href="/<?= $lang ?>/mobile/developers/">For Developers</a></li>
+    <li><a href="/<?= $lang ?>/firefox/video/?video=about-mobile">Meet Mobile for Firefox</a></li>
+    </ul>
+
+    <h4>Reference Materials</h4>
+    <ul>
+    <li><a href="http://static.mozilla.com/moco/en-US/pdf/mobile-n900-v1.1-reviewers-guide.pdf">Firefox for the Nokia N900 Reviewer's Guide</a></li>
+    <li><a href="/<?= $lang ?>/press/media/screenshots/">Product Images</a></li>
+    <li><a href="/<?= $lang ?>/press/image-library/browsing-without-borders.jpg">Browsing Without Borders</a></li>
+    </ul>
+
+</div>
+
+<div id="kit-android" class="kit-second">
+
+    <h2>Android</h2>
+
+    <h4>Announcements</h4>
+    <ul>
+        <li><a href="http://blog.mozilla.com/blog/2010/10/07/firefox-4-beta-for-android-and-maemo/">Firefox 4 beta for Android and Nokia N900 announcement</a></li>
+    </ul>
+
+    <h4>Useful Links</h4>
+    <ul>
+    <li><a href="/<?= $lang ?>/mobile/beta/">Go Mobile with Firefox 4 beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/beta/features">Features - Beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/beta/faq">FAQ - Beta</a></li>
+    <li><a href="/<?= $lang ?>/mobile/sync/">Synchronize</a></li>
+    <li><a href="/<?= $lang ?>/mobile/">Develop for mobile</a></li>
+    <li><a href="/<?= $lang ?>/mobile/getinvolved">Meet Mobile for Firefox</a></li>
+    <li><a href="https://blog.mozilla.com/mobile/">Blog</a></li>
+    </ul>
+
+    <h4>Reference Materials</h4>
+    <ul>
+    <li><a href="http://static.mozilla.com/moco/en-US/pdf/mobile-n900-v1.1-reviewers-guide.pdf">Firefox for the Nokia N900 Reviewer's Guide</a></li>
+    <li><a href="/<?= $lang ?>/press/images.html#mobile-images">Product Images</a></li>
+    <li><a href="/<?= $lang ?>/press/image-library/browsing-without-borders.jpg">Browsing Without Borders</a></li>
+    </ul>
+
+</div>
+
+        </div><!-- end mobile tab -->
+
+    </div><!-- end pager-content -->
+    </div><!-- end press-kit -->
+</div><!-- end #content div -->
+
+<div id="sidebar">
+<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
