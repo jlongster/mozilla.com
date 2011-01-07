@@ -23,9 +23,9 @@
   <div class="sub-feature" id="sidebar">
     <h2>Stay Connected</h2>
     <ul class="link">
-      <li id="connect-twitter"><a href="http://twitter.com/firefox">Follow us on Twitter</a></li>
+      <li id="connect-newsletter"><a href="/en-GB/newsletter/">Get the Monthly News</a></li>
       <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Become a Fan on Facebook</a></li>
-      <li id="connect-blog"><a href="http://blog.mozilla.com/">Read our Blog</a></li>
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Follow us on Twitter</a></li>
     </ul>
   </div>
 
