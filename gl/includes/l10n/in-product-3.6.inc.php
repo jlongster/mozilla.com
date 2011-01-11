@@ -23,7 +23,7 @@
   <div class="sub-feature" id="sidebar">
     <h2>Conéctese</h2>
     <ul class="link">
-      <li id="connect-twitter"><a href="http://twitter.com/firefox">Séguenos no Twitter</a></li>
+      <li id="connect-twitter"><a href="http://twitter.com/firefox">Síganos no Twitter</a></li>
       <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Gústame o Facebook</a></li>
       <li id="connect-blog"><a href="http://blog.mozilla.com/">Lea o noso blog</a></li>
     </ul>
