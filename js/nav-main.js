@@ -4,7 +4,7 @@ $(document).ready(function() {
   }
 
   var main_menuitems = $('#nav-main [tabindex="0"]');
-  var prev_li, new_li;
+  var prev_li, new_li, focused_item;
 
   $('#nav-main [role="menubar"] > li').bind('mouseover focusin', function(event) {
     new_li = $(this);
@@ -26,6 +26,9 @@ $(document).ready(function() {
         // Close the menu
         prev_li.removeClass('hover').find('[role="menu"]').attr('aria-expanded', 'false');
         prev_li = null;
+        if (focused_item) {
+          focused_item.get(0).blur();
+        }
       }
     });
   }).each(function(menu_idx) {
@@ -34,6 +37,8 @@ $(document).ready(function() {
 
     menuitems.mouseover(function(event) {
       this.focus(); // Sometimes $(this).focus() doesn"t work
+    }).focus(function() {
+      focused_item = $(this);
     }).each(function(item_idx) {
       // Enable keyboard navigation
       $(this).keydown(function(event) {
