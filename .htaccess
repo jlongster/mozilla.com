@@ -348,6 +348,9 @@ RewriteRule ^(.*)$ /%1${toupper:%2}/$1 [R=permanent,L]
 
 RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privacy/ [R=301]
 
+# Bug 620717 - Temporarily redirect panorama video
+RewriteRule firefox/panorama http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm [R=temp]
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
