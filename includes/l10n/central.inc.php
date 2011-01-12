@@ -92,6 +92,7 @@ EXTRA_HEADERS;
         font-weight: bold !important;
         letter-spacing: -0.02em !important;
         text-transform: uppercase !important;
+        line-height: inherit !important;
     }
 
 
