@@ -22,7 +22,9 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 <div id="main-content">
 
     <p>Thanks for downloading Firefox, but this version is out of date. For the latest security, performance and feature enhancements we strongly recommend that you <a href="/<?=$lang?>/firefox/">get the newest version</a> instead.</p>
-	<script src="/js/download.old.js"></script>
+
+    <div id="download-info">
+    <script src="/js/download.old.js"></script>
     <script>
         <!--
         // Configure the Firefox download write script
@@ -41,6 +43,10 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
         //-->
     </script>
     <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang); ?>
+    </div>
+
+    <p id="beta-promo">Or, try the Firefox 4 beta for speedier browsing and awesome new features. <a href="/<?=$lang?>/firefox/beta/">Free download.</a></p>
+
 </div>
 
 <?php
