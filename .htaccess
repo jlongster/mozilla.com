@@ -158,6 +158,9 @@ RewriteRule ^en-US/press/images.html$ /en-US/press/media/logos/ [R=permanent]
 # RewriteRule ^en-US/firefox/sync/$ /en-US/mobile/sync/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/sync[/]?$ /$1mobile/sync/ [R=permanent]
 
+# Bug 620073
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4.0/features[/]? /firefox/beta/features/ [R=302]
+
 #### THUNDERBIRD PRODUCT REDIRECTS
 #
 # Older builds are not supported, so redirect to current builds page
