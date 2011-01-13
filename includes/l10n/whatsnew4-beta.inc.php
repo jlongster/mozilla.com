@@ -32,8 +32,10 @@ $ext_mp4         = 'mp4';
 // redirect to download page if not the latest whatsnew page.
 // This way we can put everything on production before the release.
 if ($shortversion > $latestRelease) {
+/*
     noCachingRedirect($config['url_scheme'].'://'.$config['server_name']."/$lang/firefox/beta/");
     exit;
+*/
 }
 
 $shortversion_content = ($shortversion == 6) ? 5 : $shortversion;
