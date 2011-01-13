@@ -309,6 +309,183 @@ FOOTER;
 
         break;
 
+    case '9':
+
+        $video        = 'Firefox_4_beta';
+        $videoid      = 'tour-video';
+        $video2       = 'grouptabs';
+        $subtitles    = getVideoSubtitles($videoid, 'includes/l10n/sub-fx4-firstrun-beta.html');
+        $subtitles   .= getVideoSubtitles($video2, 'includes/l10n/videos/sub-fx4-panorama.php', true);
+        $videoserver  = 'http://videos-cdn.mozilla.net/serv/firefox4beta/';
+        $titleimglk   = $config['static_prefix'].'/img/firefox/beta/4/firstrun/title.png';
+
+
+        $panoramavideo = <<<TABCANDY
+        <div id="video-sync" class="video-launch">
+            <a href="http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm" id="video-grouptabs" onclick="dcsMultiTrack('DCS.dcsuri', '/serv/firefox4beta/grouptabs.webm','WT.ti','Firefox 4 Beta 9 Group tabs video'); videoid='grouptabs';">
+              <div class="video-launch-border">
+                <img class="video-launch-thumbnail" src="/img/firefox/beta/4/video-frame.png" />
+              </div>
+              <span class="video-launch-text">{$l10n->get('Watch the video')}</span>
+            </a>
+        </div>
+TABCANDY;
+
+        $extra_css .=<<<ADJUSTMENTS
+
+    div#grouptabs.subtitles div.active {
+        background: rgba(0,0,0,0.5) !important;
+        pointer-events:none;
+    }
+
+    .subtitles div[data-special="blank"] {
+        opacity:0 !important;
+    }
+
+    #main-content p {
+        font-size: 100% !important;
+    }
+
+    div#grouptabs div:first-child {
+        /* those rules are because the webm video is not 640px wide */
+        left: 0 !important;
+        right: 0 !important;
+        margin: auto  !important;
+        width: 594px !important;
+        margin-top:16px !important; /* subtitles closer to video controls */
+    }
+
+    div#grouptabs div:first-child div {
+        /* those rules are because the webm video is not 640px wide */
+        width: 584px !important;
+
+    }
+
+ADJUSTMENTS;
+$extra_css .=<<<SUBTITLES
+
+    #mediaPlayer, .subtitles {
+        position:relative;
+        z-index:10000;
+        margin:auto;
+        top:380px;
+
+        /* those rules are because the webm video is not 640px wide */
+        position:absolute;
+        left: 0 !important;
+        right: 0 !important;
+        width: 640px !important;
+    }
+
+    div#mediaDescription, .subtitles div:first-child {
+      overflow: none;
+      position: absolute;
+      width: 640px !important;
+      text-align:center;
+      height:2.5em;
+    }
+
+    div#mediaDescription div, .subtitles div:first-child > div {
+      background: rgba(0,0,0,0.2);
+      padding:5px 0;
+      position: relative;
+      height:2.5em;
+      opacity: 0;
+      display:none;
+    }
+
+    div#mediaDescription div.active, .subtitles div:first-child > div.active {
+      opacity: 1;
+      display:block;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: white;
+      text-shadow: black 1px 1px 3px;
+      pointer-events:none;
+
+    }
+
+    div#mediaDescription div.active a, .subtitles div:first-child > div.active a {
+      color: orange;
+    }
+
+    div#mediaDescription div.active a:hover, .subtitles div:first-child > div a:hover {
+      color: white;
+    }
+
+    div[data-start="11.14"], div[data-start="18.32"], div[data-start="44.63"], div[data-start="49.85"]  {
+        margin-top: -3em !important;
+    }
+
+SUBTITLES;
+
+
+
+
+$extra_css .=<<<ADJUSTMENTS
+
+h1 {
+    text-shadow: 0 0 1px black !important;
+}
+
+
+html[lang=de] #video-launch {
+    right:15px;
+}
+
+html[lang=et] h1 {
+    font-size: 43px !important;
+    margin-left: -20px !important;
+}
+
+ADJUSTMENTS;
+
+    $extra_footer = <<<FOOTER
+    <script type="text/javascript">
+    // <![CDATA[
+
+        var player_tabcandy = new Mozilla.VideoPlayer(
+        'video-grouptabs',
+        [
+            {
+                url:   '{$videoserver}{$video2}.webm',
+                type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                title: '{$l10n->get('WebM format')}'
+            },
+            {
+                url:   '{$videoserver}{$video2}.theora.ogv',
+                type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                title: '{$l10n->get('Ogg Theora format')}'
+            },
+            {
+                url:   '{$videoserver}{$video2}.mp4',
+                type:  'video/mp4',
+                title: '{$l10n->get('MPEG-4 format')}'
+            }
+        ],
+        'firefox4beta/{$video2}.mp4'
+    );
+    // ]]>
+    </script>
+FOOTER;
+
+
+
+
+        $sidebarfile = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
+
+        if (file_exists($sidebarfile)) {
+            ob_start();
+            include_once $sidebarfile;
+            $sidebar = ob_get_contents();
+            ob_end_clean();
+        } else {
+            $sidebar     = '';
+        }
+
+        break;
+
     default:
         break;
 }
@@ -499,7 +676,7 @@ DYNAMIC_HEADER;
 
 $movie = <<<MOVIE
         <div id="video-launch" class="video-launch">
-            <a href="{$videoserver}{$video}.webm" id="{$videoid}-vid" onclick="videoid='{$videoid}';"><span id="video-launch-border"><img id="video-launch-thumbnail" class="video-launch-thumbnail" src="/img/firefox/beta/4/video-frame.png" /></span><span id="video-launch-text" class="video-launch-text">{$l10n->get('Watch the video')}</span></a>
+            <a href="{$videoserver}{$video}.webm" id="{$videoid}-vid" onclick="videoid='{$videoid}';"><span id="video-launch-border"><img src="{$config['static_prefix']}/img/firefox/beta/4/video-thumbnail.png" alt="Video thumbnail" /></span><span id="video-launch-text" class="video-launch-text">{$l10n->get('Watch the video')}</span></a>
             <script type="text/javascript">
             // <![CDATA[
                 Mozilla.VideoPlayer.close_text = '{$l10n->get('Close')}';
