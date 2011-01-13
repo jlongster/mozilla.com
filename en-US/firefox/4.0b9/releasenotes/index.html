@@ -49,7 +49,7 @@ EXTRA_HEADERS;
       <div class="expander-content">
         <ul class="spaced">
           <li>Overhaul of the <a href="http://shawnwilsher.com/archives/473">bookmarks and history code</a>, enabling faster bookmarking and startup performance</li>
-          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled</li>
+          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled, reducing work done during complex animations</li>
           <li>See the <a href="buglist.html">complete changelist from the previous beta</a></li>
        </ul>
        <p>As well as these features from previous Firefox&nbsp;4&nbsp;Betas:</p>
@@ -159,7 +159,7 @@ EXTRA_HEADERS;
         <dt id="allsystems">All Systems</dt>
         <dd>
           <ul class="spaced">
-            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to <a href="/mobile/beta/">Firefox 4 beta 3 for mobile</a></li>
+            <li>Users will experience many incompatibilites with bookmarks and history if they downgrade to any Firefox&nbsp;4 beta before beta 8. Users can still downgrade back to Firefox&nbsp;3.6 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620723">bug 620723</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=614439">bug 614439</a>)</li> 
             <li>When using Panorama, reopening a recently closed tab creates a
             new tab group and switches to it instead of restoring the tab to the proper existing group (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624265">bug 624265</a>)</li>
             <li>Clicking on an empty area of Panorama incorrectly creates an empty tab group (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=619937">bug 619937</a>)</li>
@@ -168,7 +168,7 @@ EXTRA_HEADERS;
             <li>For some users, scrolling in the main GMail window will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">bug 579260</a>)</li>
             <li>The site Formspring is not displaying content to beta users due to bad "user-agent" detection in their code (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620344">bug 620344</a>)</li>
             <li>If you try to start Firefox using a locked profile, it will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">bug 573369</a>)</li>
-            <li>Users will experience many incompatibilites with bookmarks and history if they downgrade to previous Firefox&nbsp;4 betas. Users can still downgrade back to Firefox&nbsp;3.6 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620723">bug 620723</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=614439">bug 614439</a>)</li> 
+            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to <a href="/mobile/beta/">Firefox 4 beta 3 for mobile</a></li>
           </ul>
         </dd>
 
@@ -195,6 +195,8 @@ EXTRA_HEADERS;
           <ul class="spaced">
             <li>WebGL has been temporarily disabled for Linux systems not using the proprietary NVIDIA driver (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624390">bug 624390</a>)</li>
             <li>The cideo control buttons may not work when viewing QuickTime videos with libtotem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=625036">bug 625036</a>)</li>
+            <li>For some users, Firefox may crash when setting the beta as their
+            default browser (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624267">bug 624267</a>)</li>
             <li>Users compiling from source might need a newer gcc and libstdc++ as the build requirements have changed (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578880">bug 578880</a>)</li>
           </ul>
         </dd>
