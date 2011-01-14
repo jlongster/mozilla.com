@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Sco che ti pos organisar tes tabs</em>Firefox Panorama ta dat ina survista visuala sur da tut tes tabs&hellip;";
+$sub[2]  = "&hellip;ed als lascha organisar en gruppas uschia che ti pos organisar tes process da lavur e seperar pensums differents.";
+$sub[3]  = "Sco che ti has gia discuvrì pos ti utilisar il buttun panorama per organisar tes tabs.";
+$sub[4]  = "Lura pos ti cliccar sin in tab u smatgar escape per turnar.";
+$sub[5]  = "Sa chapescha pos ti cliccar sin mintga tab per l'activar.";
+$sub[6]  = "Alternativamain pos ti utilisar Cmd+E sin Mac u Ctrl+E sin Windows per entrar e terminar Firefox Panorama.";
+$sub[7]  = "Per far gruppas da tabs als tira simplamain ensemen.";
+$sub[8]  = "En quest cas vul jau far gruppas da tut mias fotografias dal cosmos.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "Jau pos era cliccar e trair en il spazi vid per far ina gruppa.";
+$sub[11] = "Sche ti entras en ina gruppa pos ti be vesair ils tabs da questa gruppa. Quai ta gida da focusar.";
+$sub[12] = "Per organisar tias gruppas, las tira simplamain enturn.";
+$sub[13] = "Ti pos midar lur grondezza uschia che chaussas main impurtantas èn pli pitschnas&hellip;";
+$sub[14] = "&hellip;e chaussas pli impurtantas èn pli grondas.";
+$sub[15] = "Sche ti fas avunda pitschen ina gruppa vegn ella transfurmada en ina pluna da maletgs.";
+$sub[16] = "Ti pos cliccar sin in tab per l'avrir";
+$sub[17] = "u";
+$sub[18] = "sche ti vuls guardar tut ils tabs en la gruppa&hellip;";
+$sub[19] = "&hellip;clicca sin questa pitschna icona&hellip;";
+$sub[20] = "&hellip;e lura clicca sin il tab che t'interessescha.";
+$sub[21] = "Quai era ina pitschna introducziun en Firefox Panorama.";
+$sub[22] = "Malgrà ch'i dat anc dapli per scuvrir (sco dar nums a gruppas)&hellip;";
+$sub[23] = "&hellip;es ti ussa pront per explorar ina megliera via da navigar.";
 $sub[24] = "";
 
 ?>
