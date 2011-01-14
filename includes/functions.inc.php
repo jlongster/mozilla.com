@@ -665,7 +665,8 @@ function buildFirefoxBetaSubPageMenu($lang, $current = null)
             'title'     => ___('FAQ')
         ),
         'press-kit' => array(
-            'href'      => "/press/kit-4b.html",
+            /* 'href'      => "/press/kit-4b.html", */
+            'href'      => "/press/kits/",
             'title'     => ___('Press Kit')
         )
     );
