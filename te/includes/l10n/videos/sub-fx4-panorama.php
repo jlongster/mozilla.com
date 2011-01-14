@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>మీ ట్యాబులను నిర్వహించుకోవడం ఎలా</em>మీ అన్ని ట్యాబుల యొక్క దృశ్యపరైన సంగ్రహాన్ని ఫైర్‌ఫాక్స్ పానోరామ అందిస్తుంది&hellip;";
+$sub[2]  = "&hellip;మరియు ట్యాబులని గుంపులుగా జమకూర్చే వీలుకల్పిస్తుంది. ఆవిధంగా మీ పనులను మీరు నిర్వహించుకోవచ్చు వేర్వేరు పనులను వేరు వేరుగా ఉంచుకోవచ్చు.";
+$sub[3]  = "మీరు ఇప్పటికే కనుక్కున్నట్టుగా మీ ట్యాబులని నిర్వహించుకోడానికి పానోరామ బొత్తాన్ని ఉపయోగించుకోవచ్చు.";
+$sub[4]  = "ఆ తర్వాత మీరు ఏదైనా ట్యాగు మీద నొక్కవచ్చు, లేదా  వెనక్కి వెళ్ళడానికి ఎస్కేప్ మీటను నొక్కవచ్చు.";
+$sub[5]  = "లేదా చూడాలనుకుంటున్న ఏ ట్యాబునైనా నొక్కవచ్చనుకోండి.";
+$sub[6]  = "ఇందుకు బదులుగా ఫైర్‌ఫాక్స్ పానోరామను తెరవడానికి మరియు మూసేయడానికి, మ్యాకులో option-space లేదా విండోసులో  control-space అన్న మీటలను కూడా  ఉపయోగించవచ్చు.";
+$sub[7]  = "ట్యాగులను ఒక గుంపుగా చేయడానికి, వాటిని ఒక దగ్గరికి లాగండి.";
+$sub[8]  = "ఇప్పుడు, నా అంతరిక్ష చిత్రాలని గుంపుగా చేయాలనుకుంటున్నాను.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "ఖాళీ స్థలాన్ని గుంపుగా చేయడానికి దాన్ని   నొక్కి లాగవచ్చు .";
+$sub[11] = "మీరు ఒక గుంపుని చూస్తున్నప్పుడు, మీకు ఆ గుంపు లోని ట్యాబులు మాత్రమే కనిపిస్తాయి. ఇది మీ ఏకాగ్రతకి తోడ్పడుతుంది.";
+$sub[12] = "మీ గుంపులని అమర్చుకోడానికి, వాటిని అటూ ఇటూ జరపండి.";
+$sub[13] = "మీరు వాటి పరిమాణాన్ని మార్చుకోవచ్చు అంత ముఖ్యంకాని వాటిని చిన్నగా&hellip;";
+$sub[14] = "&hellip;ప్రాముఖ్యమైన వాటిని పెద్దగా.";
+$sub[15] = "మీరు ఒక గుంపుని మరీ చిన్నగా చేస్తే, అది ఒక పోగుగా మారుతుంది.";
+$sub[16] = "దాన్ని తెరవడానికి దానిలోని ట్యాబుని నొక్కవచ్చు";
+$sub[17] = "లేదా";
+$sub[18] = "పోగులో ఏమున్నాయో త్వరగా చూడడానికి&hellip;";
+$sub[19] = "&hellip;విస్తరణ ప్రతీకాన్ని నొక్కవచ్చు&hellip;";
+$sub[20] = "&hellip;ఆ తర్వాత మీకు ఆసక్తివున్న ట్యాబుని నొక్కవచ్చు.";
+$sub[21] = "ఇది ఫైర్‌ఫాక్స్ పానోరామకు  చిన్న పరిచయం మాత్రమే.";
+$sub[22] = "తెలుసుకోడానికి దీనిలో ఇంకా చాలా ఉన్నా (ఉదాహరణకి గుంపులకి పేరు పెట్టుకోవడం)&hellip;";
+$sub[23] = "&hellip;మరింత మెరుగైన విహారణ గురించి అన్వేషణకి ఇప్పుడు మీరు  సిద్ధం.";
 $sub[24] = "";
 
 ?>
