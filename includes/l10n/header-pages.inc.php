@@ -3,13 +3,13 @@
 
 // Build our dynamic header
 
-$page_title    = empty($page_title)    ? 'Mozilla.com' : $page_title;
-$textdir       = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
-$extra_headers = empty($extra_headers) ? ''            : $extra_headers;
-$extra_feature = empty($extra_feature) ? ''            : $extra_feature;
-$extra_css     = empty($extra_css)     ? ''            : $extra_css;
-$body_class    = empty($body_class)    ? ''            : $body_class;
-
+$page_title     = empty($page_title)     ? 'Mozilla.com' : $page_title;
+$extra_headers  = empty($extra_headers)  ? ''            : $extra_headers;
+$extra_feature  = empty($extra_feature)  ? ''            : $extra_feature;
+$extra_css      = empty($extra_css)      ? ''            : $extra_css;
+$body_class     = empty($body_class)     ? ''            : $body_class;
+$extra_top_text = empty($extra_top_text) ? ''            : $extra_top_text;
+$textdir        = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 
 // RTL support for Mozilla.com
 if ($textdir == 'rtl') {
@@ -274,8 +274,9 @@ if (gPlatform == 1) {
 DYNAMIC_HEADER;
 
 echo $dynamic_header;
-
+echo $extra_top_text;
 unset($dynamic_header);
+unset($extra_top_text);
 unset($dynamic_top_menu);
 unset($util_js);
 

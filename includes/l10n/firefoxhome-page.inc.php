@@ -3,11 +3,12 @@
     $body_id    = 'firefox-home';
     $html5      = true;
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mobile-features.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/tignish/mobile-later.css" media="screen" />
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
-    <script type="text/javascript" src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home-app.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="/includes/yui/2.5.1/container/container-min.js"></script>
+    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
 EXTRA_HEADERS;
 
     $extra_footers = <<<EXTRA_FOOTERS
@@ -40,6 +41,39 @@ $extra_css = <<<EXTRA_CSS
 
     #main-features li h4, #main-features li span {
         font-size:130% !important;
+    }
+
+    .features-divider {
+        display:none;
+    }
+
+    #main-feature p.dl {
+        display:none;
+    }
+
+    #firefox-home a.download-link span {
+        padding: 13px 5px 15px 50px !important;
+    }
+
+    #firefox-home #main-content {
+        background: url("/img/covehead/divider-main.jpg") no-repeat scroll 50% 0 transparent;
+        clear: both;
+        min-height: 100px;
+        padding-top: 30px;
+    }
+
+    #firefox-home #sidebar {
+        clear: none !important;
+        margin: 0 !important;
+        width: 260px !important;
+    }
+
+    #firefox-home #sidebar h3, #firefox-home #sidebar h4 {
+        margin:0;
+    }
+
+    #firefox-home #sidebar ol {
+        margin:0;
     }
 
 EXTRA_CSS;
@@ -107,10 +141,12 @@ $sidemenu = <<<SIDEMENU
 </div>
 SIDEMENU;
 
+$sidemenu = ''; //removed in nova design
+
 $video = <<<VIDEO
     <li class="video">
       <a href="#" id="tour-video">
-      <img src="{$config['static_prefix']}/img/mobile/features/home_video_thumb.png" alt="{$l10n->get('See Firefox Home in action')}" width="255" height="148" />
+      <img src="{$config['static_prefix']}/img/mobile/home-video-thumb.jpg" alt="{$l10n->get('See Firefox Home in action')}" width="255" height="148" />
         <span>{$video_title}</span>
       </a>
       <script type="text/javascript">
@@ -149,7 +185,13 @@ $video = <<<VIDEO
 
 VIDEO;
 
-
+$extra_top_text = <<<TOPTEXT
+<div id="download" class="top-right">
+<a href="http://itunes.apple.com/us/app/firefox-home/id380366933?mt=8" class="download-link">
+  <span>{$l10n->get('Free Download')}</span>
+</a>
+</div>
+TOPTEXT;
 
 
 require "{$config['file_root']}/includes/l10n/header-pages.inc.php";
