@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Kako organizirati kartice</em>Firefox Panorama vam daje vizualni prikaz svih vaših kartica&hellip;";
+$sub[2]  = "&hellip;i omogućava vam njihovu grupaciju kako biste svoj rad održali organiziranim, a zadatke odvojenima.";
+$sub[3]  = "Kao što ste već otkrili, za organizaciju kartica možete upotrijebiti tipku Panorame.";
+$sub[4]  = "Zatim možete kliknuti na karticu ili pritisnuti Escape za povratak.";
+$sub[5]  = "Naravno, možete kliknuti na bilo koju karticu ako je želite aktivirati.";
+$sub[6]  = "Alternativno, za ulaz i izlaz iz Firefox Panorame možete iskoristiti option-space na Macu ili control-space na Windowsima.";
+$sub[7]  = "Da biste kartice grupirali, jednostavno ih odvucite zajedno.";
+$sub[8]  = "U ovom slučaju, želim grupirati sve slike svemira.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "Također mogu kliknuti i povući prazan prostor kako bi se stvorila grupa.";
+$sub[11] = "Kada uvećate grupu, možete vidjeti samo one kartice koje pripadaju toj grupi. To vam pomaže usredotočiti se.";
+$sub[12] = "Da biste organizirali svoje grupe, jednostavno ih povucite.";
+$sub[13] = "Grupe možete i smanjivati, stoga manje važne stvari mogu biti manjih dimenzija,&hellip;";
+$sub[14] = "&hellip;a one bitnije stvari mogu biti veće.";
+$sub[15] = "Ako grupu dovoljno smanjite, pretvorit će se u hrpu.";
+$sub[16] = "Ako karticu želite otvoriti, jednostavno kliknite na nju";
+$sub[17] = "ili";
+$sub[18] = "ako želite brzinski pogled hrpe&hellip;";
+$sub[19] = "&hellip;možete kliknuti na raširenu ikonu&hellip;";
+$sub[20] = "&hellip;i potom kliknuti na karticu koja vas zanima.";
+$sub[21] = "Ovo je bilo kratko upoznavanje s Firefox Panoramom.";
+$sub[22] = "Iako još uvijek postoji mnogo neotkrivenih stvari (npr. kako imenovati grupe)&hellip;";
+$sub[23] = "&hellip;sada ste spremni za istraživanje boljeg načina surfanja.";
 $sub[24] = "";
 
 ?>
