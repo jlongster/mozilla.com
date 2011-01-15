@@ -1,13 +1,13 @@
 <?php
     // This is the page title as shown in the browser tab
-    $page_title = "Firefox Sync";
+    $page_title = "Firefox-Sync";
 ?>
 
 <div id="main-feature">
     <h2>Halten Sie Ihren Firefox synchron</h2>
     <p>Greifen Sie von all Ihren Geräten auf Ihre Chronik, Passwörter, Lesezeichen und sogar offene Tabs zu.</p>
     <p class="wide-button">
-        <a href="<?=$amo_url?>">Holen Sie sich jetzt das kostenlose Add-on Firefox Sync</a>
+        <a href="<?=$amo_url?>">Holen Sie sich jetzt das kostenlose Add-on Firefox-Sync</a>
     </p>
 </div>
 
@@ -25,7 +25,7 @@
     <h4>Sicherheit</h4>
     <p>Ihre Daten sind verschlüsselt, so dass nur Sie darauf zugreifen können, wenn Sie eine Passphrase eingeben. Für Firefox steht Sicherheit an erster Stelle und die Synchronisierung ist keine Ausnahme.</p>
 
-    <p id="mobile"><a href="/<?=$lang?>/mobile/sync/">Erfahren Sie mehr über Firefox Sync auf Ihrem Handy.</a></p>
+    <p id="mobile"><a href="/<?=$lang?>/mobile/sync/">Erfahren Sie mehr über Firefox-Sync auf Ihrem Handy.</a></p>
     </div>
     <div id="main-content-footer"></div>
 
@@ -33,9 +33,9 @@
 <div id="sidebar">
     <h3>Erste Schritte</h3>
     <ol>
-        <li>Installieren sie das kostenlose <a href="<?=$amo_url?>">Add-on Firefox Sync</a>.</li>
+        <li>Installieren sie das kostenlose <a href="<?=$amo_url?>">Add-on Firefox-Sync</a>.</li>
         <li>Starten Sie Firefox neu und folgen Sie den Anweisungen, um ein Benutzerkonto mit einem Passwort und einer Passphrase anzulegen.</li>
-        <li>Installieren Sie Firefox Sync auf allen anderen Geräten, die Sie verwenden.</li>
+        <li>Installieren Sie Firefox-Sync auf allen anderen Geräten, die Sie verwenden.</li>
         <li>Melden Sie sich an und wählen Sie, wie Sie synchronisieren möchten, dann können Sie da weitersurfen, wo Sie aufgehört haben.</li>
     </ol>
 
