@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Penaos kempenn hoc'h ivinelloù</em>Firefox Panorama a ro un taol sell dre welout eus hoc'h ivinelloù holl deoc'h&hellip;";
+$sub[2]  = "&hellip;ha dre strolladoù e vezont kenurzhiet a-benn ma viot evit kenurzhiañ ho labour ha lakaat an trevelloù disrann da chom disrann.";
+$sub[3]  = "Evel ma ' z eo bet dizoloet ganeoc'h e vez arveret an afell Panorama da gempenn hoc'h ivinelloù.";
+$sub[4]  = "Klikit war un ivinell neuze pe bouezit war Achap a-benn mont war-gil.";
+$sub[5]  = "Evel just e vez kliket war ne vern pe ivinell a-benn gweredekaat an ivinell-mañ.";
+$sub[6]  = "Gant un doare all e vez arveret dibarzh-esaou war Mac pe reolerezh-esaou war Windows a-benn mont tre pe vont kuit eus Firefox Panorama.";
+$sub[7]  = "A-benn strolladiñ ivinelloù, riklit div ivinell a-gevred.";
+$sub[8]  = "En dro-mañ e fell din strolladiñ ma skeudennoù holl.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "Kliket ha riklet e vez un esaou goullo a-benn sevel ur strollad.";
+$sub[11] = "Pa zoumit d'ur strollad e welit an ivinelloù a zo er strollad-mañ hepken. Aesoc'h eo a-benn chom spis.";
+$sub[12] = "Da kenurzhiañ ho strolladoù, lakait-i da riklañ.";
+$sub[13] = "Kemmet e vez o ment, neuze bihanoc'h eo an traoù disteroc'h&hellip;";
+$sub[14] = "&hellip;ha brasoc'h eo an traoù pouezusoc'h.";
+$sub[15] = "Mar savot ur strollad bihan a-walc'h ez ay d'ur bern.";
+$sub[16] = "Kliket e vez war un ivinell a-benn he digeriñ";
+$sub[17] = "pe";
+$sub[18] = "mar fell deoc'h un taol sell herrek e-kreiz ar bern&hellip;";
+$sub[19] = "&hellip;klikit war an arlun astenn&hellip;";
+$sub[20] = "&hellip;ha neuze, klikit war an ivinell ma 'z oc'h dedennet ganti.";
+$sub[21] = "Ur c'hinnig herrek eo bet evit Firefox Panorama.";
+$sub[22] = "Traoù all ez eus da zizoloiñ (evel penaos reiñ un anv d'ur strollad)&hellip;";
+$sub[23] = "&hellip;prest oc'h bremañ da ergerzhout un doare gwellañ da verdeiñ.";
 $sub[24] = "";
 
 ?>
