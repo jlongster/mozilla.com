@@ -124,15 +124,6 @@ FUNNEL;
         scriptElem.src = "<?php echo $config['static_prefix'];?>/js/nav-main.js";
         head.insertBefore(scriptElem, head.firstChild);
     }
-    function load_survey() {
-        // Only serve it to Firefox users
-        if (navigator.userAgent.indexOf('Firefox') === -1) {
-            return;
-        }
-        var scriptElem = document.createElement("script");
-        scriptElem.src = "<?php echo $config['static_prefix'];?>/js/survey-home-620501.js";
-        head.insertBefore(scriptElem, head.firstChild);
-    }
 
     function load_jquery () {
         var scriptElem = document.createElement("script");
@@ -144,7 +135,6 @@ FUNNEL;
             scriptElem.onload = scriptElem.onreadystatechange = null;
             scriptdone = true;
             load_nav_main();
-            load_survey();
         };
         scriptElem.src = "<?php echo $config['static_prefix'];?>/js/jquery/jquery.min.js";
         head.insertBefore(scriptElem, head.firstChild);
