@@ -351,6 +351,9 @@ RewriteRule ^(.*)$ /%1${toupper:%2}/$1 [R=permanent,L]
 
 RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privacy/ [R=301]
 
+# Bug 582721
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
