@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Fitxak nola antolatu</em>Firefox Panoramak zure fitxa guztien ikuspegi orokorra ematen dizu&hellip;";
+$sub[2]  = "&hellip;multzoka antolatu ahal izateko, ataza desberdinak bereiztuz.";
+$sub[3]  = "Dagoeneko deskubritu duzularik, Panorama botoia erabil dezakezu fitxak antolatzen hasteko.";
+$sub[4]  = "Ondoren klikatu fitxa bat edo sakatu Ihes tekla atzera joateko.";
+$sub[5]  = "Noski, edozein fitxa klikatu dezakezu berau aktibatzeko.";
+$sub[6]  = "Bestela, erabili aukera-hutsuna Mac-en edo kontrol-hutsunea Windowsen Firefox Panoramara sartu eta irteteko.";
+$sub[7]  = "Fitxak multzokatzeko arrastatu bi elkartuz.";
+$sub[8]  = "Kasu honetan, espazioko nire irudi guztiak multzokatu nahi ditut.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "Leku huts batean klikatu multzo berri bat sor dezaket.";
+$sub[11] = "Multzo batekin zoom egitean, bertan dauden fitxak soilik ikusiko dituzu. Zentratzeko lagungarria da hau.";
+$sub[12] = "Zure multzoak antolatzeko, arrastatu.";
+$sub[13] = "Multzoen tamaina alda dezakezu, garrantzia gutxikoak txikituz&hellip;";
+$sub[14] = "&hellip;eta garrantzitsuenak handitzu.";
+$sub[15] = "Behar bezain txikia den multzo bat sortuz gero, pilo bat bihurtuko da.";
+$sub[16] = "Klikatu fitxa bat irekitzeko";
+$sub[17] = "edo";
+$sub[18] = "pilo baten aurrebista ikusteko&hellip;";
+$sub[19] = "&hellip;sakatu zabaltzeko ikonoa&hellip;";
+$sub[20] = "&hellip;eta gero egin klik behar duzun fitxan.";
+$sub[21] = "Honakoa Firefox Panoramaren aurkezpen labur bat izan da.";
+$sub[22] = "Oraindik ezagutzeko asko dagoen arren (esaterako nola izendatu multzoak)&hellip;";
+$sub[23] = "&hellip;dagoeneko nabigatzeko modu hobea arakatzeko gertu zaude.";
 $sub[24] = "";
 
 ?>
