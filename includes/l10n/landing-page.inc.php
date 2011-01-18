@@ -26,6 +26,7 @@ $downloadbox .= "\n".'//]]>></script>'."\n";
 $downloadbox .= "\n".'<div id="home-download">'."\n";
 $downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome($lang);
 $downloadbox .= "\n".'</div>'."\n";
+$downloadbox .= $firefoxDetails->getNoScriptBlockForLocale($lang);
 $downloadbox .= "\n".'<!-- end generated box -->'."\n";
 
 unset($firefoxDetailsl10n);
