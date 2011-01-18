@@ -198,6 +198,23 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     /* }}} */
 
+    /* if javascript is disabled, we should show all download boxes */
+    li.os_windows, li.os_osx, li.os_linux {
+        display: block;
+    }
+
+    ul.os_linux li.os_windows, ul.os_linux li.os_osx {
+        display: none;
+    }
+    ul.os_windows li.os_linux, ul.os_windows li.os_osx {
+        display: none;
+    }
+    ul.os_osx li.os_linux, ul.os_osx li.os_windows {
+        display: none;
+    }
+
+
+
     /* download box adjustments for locales, get some extra horizontal space */
 
     a.download-link span.download-content {
