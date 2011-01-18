@@ -30,6 +30,12 @@ $(document).ready( function flashWarning() {
                               '<h2>' + FlashAlertTitle + '</h2>' +
                               '<p>' + FlashAlertText + '</p></div>';
 
+                if ($('.sub-feature#social').length && $('.sub-feature#flash-plus-beta').length) {
+                    // If the flash warning is showing in the main content area, 
+                    // replace the #social promo with a mini beta promo
+                    $('.sub-feature#social').hide();
+                    $('.sub-feature#flash-plus-beta').show();
+                }
             }
         }
 
@@ -39,6 +45,7 @@ $(document).ready( function flashWarning() {
                 $('body').append('<img src="/img/blank.gif?version='+version+'">');
             }
         }
+
     }
 });
 
