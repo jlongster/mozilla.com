@@ -146,9 +146,9 @@ h2 {
 	list-style-type: none;
 }
 
-#sidebar ul li a,
-#sidebar ul li a:link,
-#sidebar ul li a:visited {
+#firstrun #sidebar ul li a,
+#firstrun #sidebar ul li a:link,
+#firstrun #sidebar ul li a:visited {
 	display: block;
 	font-style: italic;
 	padding: 15px 0 15px 70px;
@@ -157,17 +157,17 @@ h2 {
 	background-repeat: no-repeat;
 	background-image: url(/img/firefox/3.6/firstrun/sidebar-icons.png);
 	line-height: 16px;
-} 
+}
 
-#sidebar ul li a:hover,
-#sidebar ul li a:active {
+#firstrun #sidebar ul li a:hover,
+#firstrun #sidebar ul li a:active {
 	text-decoration: none;
 }
 
-#sidebar ul li#sidebar-addons a { background-position: -400px 0; }
-#sidebar ul li#sidebar-mobile a { background-position: -800px 0; }
+#firstrun #sidebar ul li#sidebar-addons a { background-position: -400px 0; }
+#firstrun #sidebar ul li#sidebar-mobile a { background-position: -800px 0; }
 
-#sidebar ul li a span {
+#firstrun #sidebar ul li a span {
 	font-family: MetaBlack, "Trebuchet MS", sans-serif;
 	font-weight: bold;
 	font-style: normal;
@@ -178,13 +178,13 @@ h2 {
 	white-space: nowrap;
 }
 
-#sidebar ul li a:hover span {
+#firstrun #sidebar ul li a:hover span {
 	text-shadow:
 		1px 1px 0 rgba(255,255,255,0.8),
 		0 0 10px rgba(83,141,219,0.5);
 }
 
-#sidebar ul li a span span {
+#firstrun #sidebar ul li a span span {
 	font-family: georgia, serif;
 	font-weight: normal;
 	font-size: 28px;
@@ -212,32 +212,30 @@ h2 {
 	list-style-type: none;
 }
 
-#connect #email-form {
-	width: 400px;
+#connect #email-form ul {
 	float: left;
+	width: 550px;
 }
 
-#connect #email-form #open-pane a,
-#connect #email-form #open-pane a:link,
-#connect #email-form #open-pane a:visited {
-    display: block;
-    padding: 5px 0 5px 50px;
-    font-style: italic;
-    font-size: 16px;
-    line-height: 20px;
-    background-position: 0 50%;
+#connect #email-form #email-title {
+	display: block;
+	padding: 5px 0 5px 50px;
+	font-style: italic;
+	font-size: 16px;
+	line-height: 20px;
+	background-position: 0 50%;
 	background-repeat: no-repeat;
 	background-image: url(/img/firefox/3.6/firstrun/icon-email.png);
+	float: left;
+	margin-right: 12px;
 }
 
 #connect #email-form #open-pane a:hover,
 #connect #email-form #open-pane a:active {
-    text-decoration: none; 
+    text-decoration: none;
 }
 
-#connect #email-form a span,
-#connect #email-form a:link span,
-#connect #email-form a:visited span {
+#connect #email-form #email-title span {
     display: block;
 	font-family: MetaBlack, "Trebuchet MS", sans-serif;
 	font-weight: bold;
@@ -249,11 +247,10 @@ h2 {
 	white-space: nowrap;
 }
 
-#connect #email-form a:hover span,
-#connect #email-form a:active span {
-	text-shadow:
-		1px 1px 0 rgba(255,255,255,0.8),
-		0 0 10px rgba(83,141,219,0.5);
+#connect #email-field {
+	padding-top: 21px;
+	margin-left: 240px;
+	display: block;
 }
 
 #connect p {
@@ -306,34 +303,76 @@ h2 {
 /* }}} */
 /* {{{ Newsletter Form */
 
+#email-form #email-open {
+	display: inline-block;
+	width: 26px;
+	height: 24px;
+	text-align: center;
+	color: #4878bf;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 1.1;
+	background: -moz-linear-gradient(
+		left,
+		#bad3f1,
+		#bad3f1 30%,
+		#7eaae7
+	);
+	text-shadow:
+		1px 0 2px rgba(255,255,255, 0.5),
+		1px 0 1px rgba(255,255,255,0.4);
+	-moz-border-radius: 7px;
+	-moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
+	-moz-transform: rotate(90deg);
+	box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
+	border-radius: 7px;
+}
+
+#email-form ul.error #email-open,
+#email-form #email-open.opened {
+	-moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
+	box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
+	opacity: 0.5;
+	cursor: default;
+}
+#email-form ul.error #email-open:active,
+#email-form ul.error #email-open:focus,
+#email-form #email-open.opened:active,
+#email-form #email-open.opened:focus {
+	outline: none;
+}
+
 #email-form #form-pane {
-  display: none;
+	display: none;
 }
 
-#email-form.error #form-pane {
-  display: block;
-}
-#email-form.error #open-pane {
-  display: none;
+#email-form ul.error #form-pane {
+	display: block;
 }
 
-#form-pane form,
+#form-pane #form-details,
 #success-pane p {
-	padding: 10px 0;
 	color: #555;
 	font-size: 14px;
 	line-height: 1.2;
 }
+#firstrun #form-pane #form-details {
+	margin-left: 240px;
+}
+#success-pane p {
+	padding: 10px 0;
+}
 
 #form-pane,
 #success-pane {
+	clear: left;
 	position: relative;
 }
 
 #success-pane h3 {
-    font-weight: normal;
-    font-style: italic;
-    margin: 0;
+	font-weight: normal;
+	font-style: italic;
+	margin: 0;
 }
 
 #success-pane h3 img {
@@ -343,112 +382,202 @@ h2 {
 }
 
 #form-pane p.intro {
-	margin-bottom: 10px;
+	width: 170px;
+	float: left;
+	margin: 5px 0 0 50px;
+	font-size: 13px;
 }
 
-#form-pane p.footnote {
+#firstrun #form-pane p.footnote,
+#whatsnew #sidebar #form-pane p.footnote {
 	color: #999
 }
+#whatsnew #sidebar #form-pane p.footnote {
+	margin: 0;
+	font-size: 10px;
+}
 
-#form-pane form select#country,
-#form-pane form input#email {
-	color: #999;
+#email-form select#country,
+#email-form input#email {
+	color: #555;
     background: #fff;
-	width: 218px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #aaa #cdcdcd #cdcdcd #aaa;
 	padding: 3px;
-	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
 	-moz-border-radius: 3px;
 }
 
+#email-form input#email {
+	width: 218px;
+	border-color: #aaa #cdcdcd #cdcdcd #aaa;
+	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+#whatsnew #email-form input#email {
+	width: 200px;
+}
+
+#email-form input#email:-moz-placeholder {
+	color: #999;
+}
+#email-form input#email.placeholder {
+	color: #999;
+}
+
+#email-form input#email:focus {
+}
+
 #form-pane #country-field {
-    padding: 10px 0 0 0;
+	padding: 12px 2px 2px 2px;
 }
 
-#form-pane form select#country {
+#email-form select#country {
 	width: 225px;
-	font-size: 14px;
 	color: #555;
-	-moz-box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1);
 	border-color: #cdcdcd #aaa #aaa #cdcdcd;
+	font-size: 14px;
+	-moz-box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1);
+}
+#whatsnew #email-form select#country {
+	width: 208px;
 }
 
-#form-pane form input#email:focus {
-	color: #555;
-}
-
-#form-pane form input#subscribe {
-	background: transparent;
-	border: 0;
-	padding: 0;
-	font-family: MetaBlack, "Trebuchet MS", sans-serif;
+#email-form #form-pane input#subscribe {
+	background: -moz-linear-gradient(
+		center top,
+		#669be1 0%,
+		#5784bf 100%);
+	border: none;
+	padding: 6px 32px 8px;
+	font-family: "Trebuchet MS", sans-serif;
 	font-weight: bold;
 	font-style: normal;
-	text-transform: uppercase;
-	letter-spacing: -0.05em;
-	font-size: 20px;
-	color: #669be1;
+	font-size: 16px;
+	color: #fff;
 	white-space: nowrap;
+	margin: 10px 0 0 2px;
+	-moz-border-radius: 5px;
+	-moz-box-shadow:
+		0 3px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset;
 }
 
-#form-pane form input#subscribe:hover {
-	text-shadow:
-		1px 1px 0 rgba(255,255,255,0.8),
-		0 0 10px rgba(83,141,219,0.8);
-
+#email-form #form-pane input#subscribe:hover {
+	-moz-box-shadow:
+		0 3px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset,
+		0 -1px 80px rgba(0,0,0,0.1) inset;
+}
+#email-form #form-pane input#subscribe:active {
+	position: relative;
+	top: 1px;
+	-moz-box-shadow:
+		0 2px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset,
+		0 -1px 80px rgba(0,0,0,0.1) inset;
 }
 
-#form-pane form label {
+#email-form #form-pane label {
 	display: block;
 	padding: 10px 0 0 0;
 }
 
-#form-pane form label input {
+#meil-form #form-pane label input {
 	vertical-align: middle;
 }
 
-#form-pane form .form-error input#email {
+#email-form #form-pane .form-error input#email {
 	border-width: 2px;
 	padding: 2px;
 	border-color: #cc4927;
 }
 
-#form-pane form label#privacy-check-label span {
-	border: 2px solid #fff;
+#email-form #privacy-field .error-wrapper {
+	border: 2px solid transparent;
 	display: inline-block;
 	padding: 2px;
 	-moz-border-radius: 4px;
 	line-height: 0.8;
 }
 
-#form-pane form label#privacy-check-label a {
+#email-form #form-pane label#privacy-check-label a {
 	text-decoration: underline;
 }
 
-#connect p.form-error {
+#whatsnew #sidebar #email-form p.form-error,
+#email-form p.form-error {
+	z-index: 1000;
 	display: none;
-	border: 2px solid #cc4927;
-	color: #cc4927;
-	background: #fff;
+	border: none;
+	color: #fff;
+	background: #b11a04;
 	font-family: MetaWebPro-Book,sans-serif;
-	font-size: 14px;
-	padding: 6px;
-	-moz-border-radius: 4px;
+	font-size: 13px;
+	padding: 7px 13px;
 	width: 150px;
-    float: right;
+	position: absolute;
+	left: 475px;
+	top: -30px;
+	text-shadow: none;
+	-moz-border-radius: 5px;
+	-moz-box-shadow:
+		0 3px 0 rgba(0,0,0,0.1),
+		0 1px 10px rgba(0,0,0,0.2);
+}
+#whatsnew #sidebar #email-form p.form-error {
+	left: 217px;
 }
 
-#connect p.form-error-visible {
+#email-form p.form-error-visible {
 	display: block;
 }
 
-#form-pane form label#privacy-check-label.form-error span {
-	border-color: #cc4927;
+#email-form #format-field {
+	padding-top: 10px;
 }
 
+#email-form #form-pane #privacy-field {
+	clear: none;
+}
 
+#email-form .radio-wrapper {
+	padding: 1px 4px;
+	float: left;
+	margin: 0;
+	line-height: 0.8;
+	display: inline-block;
+}
+
+#email-form #form-pane #format-field label {
+	padding: 0;
+	margin: 0 12px 0 0;
+	width: auto;
+	float: left;
+}
+
+#email-form #form-pane #format-field input {
+	width: auto;
+	float: none;
+	margin: 0 4px;
+}
+
+#email-form .error-email #email-error { display: block !important; }
+#email-form .error-privacy #privacy-error { display: block !important; }
+
+#email-form .error-email #email-field .error-wrapper {
+	background: #b11a04;
+}
+#email-form .error-privacy #privacy-field .error-wrapper {
+	border-color: #b11a04;
+	background: #eb7a6b;
+}
+
+#email-form .success #open-pane { display: none !important; }
+#email-form .success #form-pane { display: none !important; }
+#email-form .success #success-pane { display: block !important; }
+
+
+/* }}} */
+/* {{{ Firstrun */
 /* }}} */
 /* {{{ What's New */
 
@@ -563,7 +692,7 @@ h2 {
 #whatsnew #main-feature p a {
     text-decoration: underline;
 }
- 
+
 #whatsnew #main-feature.flash-warning h2 {
 	font-size: 220%;
 }
@@ -639,11 +768,12 @@ h2 {
 }
 
 #whatsnew #sub-links {
-    clear: both;
 	font-style: italic;
 	text-align: right;
-	padding-top: 20px;
 	font-size: 14px;
+	position: absolute;
+	right: 0;
+	top: 590px;
 }
 
 #whatsnew #sub-links a {
@@ -660,20 +790,6 @@ h2 {
 	width: 913px;
 	min-height: 150px;
 }
-
-#whatsnew #sidebar ul li a,
-#whatsnew #sidebar ul li a:link,
-#whatsnew #sidebar ul li a:visited {
-	line-height: 24px;
-}
-
-#whatsnew #sidebar ul li a:hover,
-#whatsnew #sidebar ul li a:active {
-	text-shadow:
-		1px 1px 0 rgba(255,255,255,0.8),
-		0 0 15px rgba(83,141,219,1);
-}
-
 
 #whatsnew #sidebar .sub-feature {
 	float: left;
@@ -701,10 +817,19 @@ h2 {
     min-height: 30px;
 }
 
+#whatsnew #sidebar #success-pane h3 {
+	margin-right: 85px;
+	padding-top: 10px;
+}
+
 #whatsnew #sidebar .sub-feature p {
 	color: #414141;
 	font-size: 14px;
 	margin-right: 85px;
+}
+
+#whatsnew #sidebar #success-pane p {
+	margin-right: 0;
 }
 
 #whatsnew #sidebar #add-ons.sub-feature {
@@ -725,6 +850,11 @@ h2 {
 	background-position: 100% 3px;
 	background-repeat: no-repeat;
 	background-image: url(/img/firefox/3.6/firstrun/icon-newsletter.png);
+}
+
+#whatsnew #sidebar #newsletter.error,
+#whatsnew #sidebar #newsletter.success {
+	height: auto;
 }
 
 #whatsnew #sidebar #social.sub-feature ul.link li {
@@ -871,6 +1001,10 @@ body.participate #personalize-participate {
 	font-size: 14px;
 }
 
+
+#whatsnew #doc {
+	position: relative;
+}
 
 #whatsnew.nova-b #doc {
     width: 925px;
