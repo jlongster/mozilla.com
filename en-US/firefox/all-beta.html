@@ -58,10 +58,10 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
         }
 
 
-          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%<\/em><\/span><\/a> <\/li>";
       // Temporary fix for bug 439792
       if (gPlatform == PLATFORM_MACOSX) {
-            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.5 and above</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
+            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Free Download<\/strong> <em>%VERSION% for %PLATFORM_NAME% 10.5 and above</em> <em>%LANGUAGE_NAME%<\/em><\/span><\/a> <\/li>";
       }
           var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
           var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
