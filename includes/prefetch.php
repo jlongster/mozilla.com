@@ -166,10 +166,23 @@ define ('LANG', $lang);
 // it does (otherwise we get stuff with no language at all.  For example:
 //  www.mozilla.com/firefox   -->    www.mozilla.com/en-US/firefox
 if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
-    // Bug 619404 Quickly redirect index page
+
+    // Bug 619404 Quickly redirect homepage
     if ($_SERVER['REQUEST_URI'] == '/') {
         $_SERVER['REQUEST_URI'] = '/firefox/';
+
+        $ua = $_SERVER['HTTP_USER_AGENT'];
+
+        // On en-US homepage, redirect mobile devices (Android, Maemo)
+        if ($lang == 'en-US' && preg_match(':(Android|Maemo|Fennec|Linux armv7l):', $ua)) {
+            if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
+                setcookie('mobile_no_redirect', '1', 0, '/');
+            } else {
+                $_SERVER['REQUEST_URI'] = '/m/';
+            }
+        }
     }
+    
     header("Location: {$config['url_scheme']}://{$config['server_name']}/{$lang}{$_SERVER['REQUEST_URI']}");
     header('Pragma: no-cache');
     header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
@@ -194,19 +207,6 @@ $page = "{$lang}{$_SERVER['REDIRECT_URL']}";
 
 /* User agent redirection */
 if (preg_match(':^en-US/(/)?(firefox/(/)?)?index.html$:', $page)) {
-    $ua = $_SERVER['HTTP_USER_AGENT'];
-
-    // Mobile devices (Android, Maemo)
-    if (preg_match(':(Android|Maemo|Fennec|Linux armv7l):', $ua)) {
-        if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
-            setcookie('mobile_no_redirect', '1', 0, '/');
-        } else {
-            header('Pragma: no-cache');
-            header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
-            header('Location: /en-US/m/');
-            exit;
-        }
-    }
 }
 
 // Check and make sure our file exists
