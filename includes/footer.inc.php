@@ -55,7 +55,7 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
 
 		<div id="footer-right">
 
-		<form id="lang_form" dir="ltr" method="get" action=""><div>
+		<form id="lang_form" dir="ltr" method="get"><div>
 			<label for="flang">{$l10n->get('Other Languages')}</label>
 			{$lang_list}
 			<noscript>
