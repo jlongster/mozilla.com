@@ -23,7 +23,34 @@ $sumo_links = array(
 
 $extra_headers .= <<<EXTRA_HEADERS
     <link href="{$config['static_prefix']}/style/mobile/support.css" rel="stylesheet" media="all" />
-    
+    <style type="text/css">
+
+    #support-search form {
+        width: auto !important;
+    }
+
+    #support-search .wrap {
+        display: inline-block;
+        float:none;
+        vertical-align: bottom;
+        width: 70% !important;
+        padding: 2px 2px 1px 1px; /* input field should be 45px high like the submit image button, it was 1px off */
+    }
+
+    #support-search .text {
+        width:90%;
+    }
+
+    #support-search .text:-moz-placeholder {
+        font-size: 90%;
+    }
+
+    #support-search .submit {
+        float: none;
+        vertical-align: middle;
+    }
+
+    </style>
 EXTRA_HEADERS;
 
 // RTL support
@@ -33,12 +60,13 @@ if ($textdir == 'rtl') {
     <style type="text/css">
     #support-search .submit {
         -moz-transform: scale(-1, 1);
+        margin-right: 4px;
     }
 
     #support-search .wrap {
         float: right !important;
     }
-    
+
     ul.highlight li a {
         background: url("/img/mobile/support/disclosure-indicator-rtl.png") no-repeat scroll left center transparent !important;
     }
