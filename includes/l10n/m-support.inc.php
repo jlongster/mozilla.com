@@ -27,6 +27,7 @@ $extra_headers .= <<<EXTRA_HEADERS
 
     #support-search form {
         width: auto !important;
+        text-align:center;
     }
 
     #support-search .wrap {
@@ -61,10 +62,6 @@ if ($textdir == 'rtl') {
     #support-search .submit {
         -moz-transform: scale(-1, 1);
         margin-right: 4px;
-    }
-
-    #support-search .wrap {
-        float: right !important;
     }
 
     ul.highlight li a {
