@@ -25,19 +25,34 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
         <ul>
             <li id="sidebar-personas">
                 <a href="http://www.getpersonas.com/gallery?source=fxfirstrun"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com', 'DCS.dcsuri', '/gallery', 'WT.ti', 'Personas');">
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com',
+                                          'DCS.dcsuri', '/gallery',
+                                          'WT.ti', 'Link: Personas',
+                                          'WT.dl', 99,
+                                          'WT.nv', 'Content',
+                                          'WT.ac', 'Personas');">
                     Decorate your Firefox with <span class="highlight">Personas <span class="arrow">»</span></span>
                 </a>
             </li>
             <li id="sidebar-addons">
                 <a href="https://addons.mozilla.org/en-US/firefox/?src=fxfirstrun"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org', 'DCS.dcsuri', '/en-US/firefox/', 'WT.ti', 'Addons');">
+                   onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                          'DCS.dcsuri', '/en-US/firefox/',
+                                          'WT.ti', 'Link: Add-Ons',
+                                          'WT.dl', 99,
+                                          'WT.nv', 'Content',
+                                          'WT.ac', 'Addons');">
                     Browse better with <span class="highlight">Add-ons <span class="arrow">»</span></span>
                 </a>
             </li>
             <li id="sidebar-mobile">
                 <a href="/<?=$lang?>/mobile/?source=firstrun"
-                   onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/mobile/', 'WT.ti', 'Mobile');">
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                          'DCS.dcsuri', '/<?=$lang?>/mobile/',
+                                          'WT.ti', 'Link: Mobile',
+                                          'WT.dl', 99,
+                                          'WT.nv', 'Content',
+                                          'WT.ac', 'Mobile');">
                     Get Firefox on your <span class="highlight">mobile <span class="arrow">»</span></span>
                 </a>
             </li>
@@ -93,7 +108,12 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
             </span>
             <a id="email-open"
                 href="/<?php echo $lang; ?>/newsletter/"
-                onclick="dcsMultiTrack('DCS.dcsuri', '/{$lang}/newsletter/', 'WT.ti', 'Newsletter');">»</a>
+                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                               'DCS.dcsuri', '/mainstream_newsletter/step1', 
+                                               'WT.ti', 'Link: Monthly News - First Step',
+                                               'WT.dl', 99,
+                                               'WT.nv', 'Content',
+                                               'WT.ac', 'Newsletter');">»</a>
         </div>
     </li>
     <li id="form-pane">
@@ -139,7 +159,14 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
                 </label>
             </div>
 
-            <input name="submit" type="submit" value="Sign me up!" id="subscribe">
+            <input name="submit" type="submit" value="Sign me up!" id="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                            'DCS.dcsuri', '/mainstream_newsletter/signup',
+                            'WT.ti', 'Link: Sign me up - Second Step',
+                            'WT.dl', 99,
+                            'WT.nv', 'Content',
+                            'WT.ac', 'Newsletter');">
+
             <p class="footnote">We will only send you Mozilla-related information.</p>
         </div>
 
@@ -159,8 +186,28 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 <?php endif ?>
 
         <ul class="link social">
-            <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
-            <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
+            <li id="connect-facebook">
+              <a href="http://www.facebook.com/Firefox"
+                 onclick="dcsMultiTrack('DCS.dcssip', 'www.facebook.com',
+                                        'DCS.dcsuri', '/firefox',
+                                        'WT.ti', 'Link: Facebook',
+                                        'WT.dl', 99,
+                                        'WT.nv', 'Footer',
+                                        'WT.ac', 'Facebook');">
+                Facebook
+              </a>
+            </li>
+            <li id="connect-twitter">
+              <a href="http://twitter.com/firefox"
+                 onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com',
+                                        'DCS.dcsuri', '/firefox',
+                                        'WT.ti', 'Link: Twitter',
+                                        'WT.dl', 99,
+                                        'WT.nv', 'Footer',
+                                        'WT.ac', 'Twitter');">
+                Twitter
+              </a>
+            </li>
         </ul>
     </div>
 </div>

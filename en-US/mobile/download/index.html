@@ -9,6 +9,7 @@
     $html5      = true;
     $extra_headers = <<<EXTRA_HEADERS
 
+  <meta name="WT.ad" content="Get Firefox for Android;Get Firefox for Nokia" />
   <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-download.css" media="screen" />
   <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
   <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
@@ -32,12 +33,32 @@ EXTRA_HEADERS;
     <div id="platforms-divider">
       <div id="android" class="platform">
         <h3>Download for <span>Android</span></h3>
-        <p class="dl"><a href="/<?=$lang?>/mobile/beta"><span>Get Firefox for Android</span></a></p>
+        <p class="dl">
+          <a href="/<?=$lang?>/mobile/beta"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/<?=$lang?>/mobile/beta',
+                                    'WT.ti', 'Link: Get Firefox for Android',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for Android');">
+            <span>Get Firefox for Android</span>
+          </a>
+        </p>
         <p class="notes"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></p>
       </div>
       <div id="nokia" class="platform">
         <h3>Download for <span>Nokia N900</span></h3>
-        <p class="dl"><a href="/<?=$lang?>/mobile/beta"><span>Get Firefox for Nokia N900</span></a></p>
+        <p class="dl">
+          <a href="/<?=$lang?>/mobile/beta"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/<?=$lang?>/mobile/beta',
+                                    'WT.ti', 'Link: Get Firefox for Nokia',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for Nokia');">
+            <span>Get Firefox for Nokia N900</span>
+          </a>
+        </p>
         <p class="notes"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></p>
         <p class="notes">Get Firefox 1.1 by visiting <a href="/<?=$lang?>/m">Firefox.com/m</a></p>
       </div>

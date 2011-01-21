@@ -18,6 +18,8 @@ $inline_js_utils = min_inline_js('js_utils');
 
 $head_scripts = " ";
 $extra_headers = <<<EXTRA_HEADERS
+    <meta name="WT.ad" content="Personas;Addons;Mobile;Newsletter;Twitter;Facebook" />
+
     {$inline_css_firstrun}
     {$inline_js_utils}
 EXTRA_HEADERS;

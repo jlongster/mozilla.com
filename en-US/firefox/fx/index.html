@@ -4,6 +4,7 @@
     $page_title = 'Firefox web browser';
     $body_id    = 'home-fx';
     $extra_headers = <<<EXTRA_HEADERS
+    <meta name="WT.ad" content="Download Firefox;Participate;Amazing Features;Need Help;Twitter;Facebook;Connect;Newsletter;Mobile;Addons;Personas" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/home-fx.css" media="screen" />
     <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
     <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
@@ -48,8 +49,12 @@ EXTRA_HEADERS;
                         <li>Type less, browse more</li>
                     </ul>
                     <p><a href="/<?=$lang?>/mobile/download/" 
-                          onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/mobile/download/',
-                                      'WT.ti', 'Mobile%20Wheel');">
+                          onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                                 'DCS.dcsuri', '/<?=$lang?>/mobile/download/',
+                                                 'WT.ti', 'Link: Get Firefox on your Phone'',
+                                                 'WT.dl', 99,
+                                                 'WT.nv', 'Wheel - Mobile',
+                                                 'WT.ac', 'Mobile');">
                         Get Firefox on your phone »
                     </a></p>
                 </div>
@@ -64,7 +69,10 @@ EXTRA_HEADERS;
                             <a href="https://addons.mozilla.org/en-US/firefox/addon/11377/?src=mozcom-wheel"
                                onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
                                                       'DCS.dcsuri', '/en-US/firefox/addon/11377/',
-                                                      'WT.ti', 'Addons%20Wheel');">
+                                                      'WT.ti', 'Link: Addon - InvisibleHand',
+                                                      'WT.dl', 99,
+                                                      'WT.nv', 'Wheel - Addons',
+                                                      'WT.ac', 'Addons');">
                                 <span class="title">InvisibleHand</span>
                                 <span class="desc">Automatically get the lowest price when you  shop online.</span>
                             </a>
@@ -73,7 +81,10 @@ EXTRA_HEADERS;
                             <a href="https://addons.mozilla.org/en-US/firefox/addon/5579/?src=mozcom-wheel"
                                onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
                                                       'DCS.dcsuri', '/en-US/firefox/addon/5579/',
-                                                      'WT.ti', 'Addons%20Wheel');">
+                                                      'WT.ti', 'Link: Addon - Cooliris',
+                                                      'WT.dl', 99,
+                                                      'WT.nv', 'Wheel - Addons',
+                                                      'WT.ac', 'Addons');">
                                 <span class="title">Cooliris</span>
                                 <span class="desc">A stunning way to browse photos and videos from the Web.</span>
                             </a>
@@ -82,7 +93,10 @@ EXTRA_HEADERS;
                             <a href="https://addons.mozilla.org/en-US/firefox/addon/1191/?src=mozcom-wheel"
                                onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
                                                       'DCS.dcsuri', '/en-US/firefox/addon/1191/',
-                                                      'WT.ti', 'Addons%20Wheel');">
+                                                      'WT.ti', 'Link: Addon - ReminderFox',
+                                                      'WT.dl', 99,
+                                                      'WT.nv', 'Wheel - Addons',
+                                                      'WT.ac', 'Addons');">
                                 <span class="title">ReminderFox</span>
                                 <span class="desc">Make sure you remember all of your important dates.</span>
                             </a>
@@ -90,8 +104,11 @@ EXTRA_HEADERS;
                     </ul>
                     <p><a href="https://addons.mozilla.org/firefox/?src=mozcom-wheel"
                           onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
-                                                 'DCS.dcsuri', '/firefox/',
-                                                 'WT.ti', 'Addons%20Wheel');">
+                                                 'DCS.dcsuri', '/en-US/firefox/',
+                                                 'WT.ti', 'Link: View All Addons',
+                                                 'WT.dl', 99,
+                                                 'WT.nv', 'Wheel - Addons',
+                                                 'WT.ac', 'Addons');">
                         View all Firefox Add-ons »
                     </a></p>
                 </div>
@@ -108,8 +125,11 @@ EXTRA_HEADERS;
                         </iframe>
                         <p><a href="http://www.getpersonas.com/gallery?source=moz.com_fx"
                               onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com',
-                                                     'DCS.dcsuri', '/gallery', 
-                                                     'WT.ti', 'Personas%20Wheel');">
+                                                     'DCS.dcsuri', '/en-US/gallery', 
+                                                     'WT.ti', 'Link: Get All Personas',
+                                                     'WT.dl', 99,
+                                                     'WT.nv', 'Wheel - Personas',
+                                                     'WT.ac', 'Personas');">
                             Many more this way »
                         </a></p>
                 </div>
@@ -133,9 +153,11 @@ EXTRA_HEADERS;
             <!--
             // Configure the Firefox download write script
 
-            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"dcsMultiTrack('DCS.dcsurl', '%DOWNLOAD_URL%', 'WT.ti', 'Download%20Firefox'); do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+            var gDownloadTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/en-US/products/download.html', 'WT.ti', 'Link: Get Firefox', 'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Download Firefox');";
+            
+            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
             var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"dcsMultiTrack('DCS.dcsurl', '%DOWNLOAD_URL%', 'WT.ti', 'Download%20Firefox');\">Free Download<\/a>"
+            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
 
             document.writeln("<ul class=\"home-download " + gCssClass + " \">");
             writeDownloadItems("fx");
@@ -153,8 +175,12 @@ EXTRA_HEADERS;
     <div class="sub-feature" id="sub-participate">
         <h3>Easy Ways To <span>Pass It On</span></h3>
         <p>Telling your friends only takes a minute!</p>
-        <a href="/<?=$lang?>/about/participate/" onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/participate/',
-                                                                        'WT.ti', 'Share');">
+        <a href="/<?=$lang?>/about/participate/" onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                                                        'DCS.dcsuri', '/<?=$lang?>/about/participate/',
+                                                                        'WT.ti', 'Link: Share Firefox',
+                                                                        'WT.dl', 99,
+                                                                        'WT.nv', 'Content',
+                                                                        'WT.ac', 'Participate');">
           Share Firefox <span>»</span>
         </a>
     </div>
@@ -162,8 +188,12 @@ EXTRA_HEADERS;
     <div class="sub-feature" id="sub-features">
         <h3>Amazing <span>Features</span></h3>
         <p>Get acquainted with everything Firefox has to offer.</p>
-        <a href="/<?=$lang?>/firefox/features/" onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/features/',
-                                                                       'WT.ti', 'Learn%20More');">
+        <a href="/<?=$lang?>/firefox/features/" onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                                                       'DCS.dcsuri', '/<?=$lang?>/firefox/features/',
+                                                                       'WT.ti', 'Link: Amazing Features',
+                                                                       'WT.dl', 99,
+                                                                       'WT.nv', 'Content',
+                                                                       'WT.ac', 'Amazing Features');">
           Learn More <span>»</span>
         </a>
     </div>
@@ -173,8 +203,11 @@ EXTRA_HEADERS;
         <p>Our Support section has the answers you need.</p>
         <a href="http://support.mozilla.com/<?=$lang?>/kb/" 
            onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com', 
-                                  'DCS.dcsuri', '/<?=$lang?>/kb/', 
-                                  'WT.ti', 'Support');">
+                                  'DCS.dcsuri', '/<?=$lang?>/home/', 
+                                  'WT.ti', 'Link: Need Help',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Need Help');">
           Visit Support <span>»</span>
         </a>
     </div>

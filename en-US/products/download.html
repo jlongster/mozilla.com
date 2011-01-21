@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/style/kampyle/k_button.css" media="screen" />
     <link rel="stylesheet" href="/style/covehead/download-page.css" media="screen" />
+    <meta name="WT.ad" content="Support - Download Help;Tour;About;Mobile;Newsletter;Twitter;Facebook;Connect" />
     <meta name="WT.si_n" content="DownloadFirefox">
     <meta name="WT.si_x" content="1">
     <meta name="WT.si_cs" content="1">
@@ -190,13 +191,19 @@ EXTRA_HEADERS;
 		msg += '<img src="/img/covehead/download/mobile-icon.png" alt="" />';
 		msg += '<h3>Go <span>Mobile</span></h3>';
 		msg += '<p>Now that you have Firefox on your desktop, get Firefox on your Mobile phone, too. It\'s easy to sync both versions so you\'ll always have Firefox with you. ';
-                msg += "<a href=\"/<?=$lang?>/mobile\" onclick=\"dcsMultiTrack('DCS.dscuri', '/<?=$lang?>/mobile', 'WT.ti', 'Mobile');\">Learn More »</a></p>";
+                msg += '<a href="/<?=$lang?>/mobile" onclick="';
+                msg += "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dscuri', '/<?=$lang?>/mobile', 'WT.ti', 'Link: Go Mobile',";
+                msg += "  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Mobile');";
+                msg += '">Learn More »</a></p>';
 		msg += '</div>';
 		msg += '<div class="sidebar-divider"></div>';
 		msg += '<div id="sidebar-newsletter">';
 		msg += '<h3>Get <span>Monthly News</span></h3>';
 	        msg += '<p>Love Firefox? Get in on the action by taking a minute to help. ';
-                msg += "<a href=\"/<?=$lang?>/newsletter/\" onclick=\"dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Newsletter');\">Sign me up »</a></p>";
+                msg += '<a href="/<?=$lang?>/newsletter/" onclick="';
+                msg += "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Link: Monthly News',";
+                msg += "  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Newsletter');";
+                msg += '">Sign me up »</a></p>';
 		msg += '</div>';
 		msg += '</div>';
 
@@ -244,7 +251,12 @@ EXTRA_HEADERS;
 		  <h3>Need <span>Download Help?</span></h3>
 		  <p>Our help page has plenty of answers.</p>
 		  <a href="http://support.mozilla.com/"
-                     onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com', 'DCS.dcsuri', '/', 'WT.ti', 'Help');">
+                     onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com',
+                                            'DCS.dcsuri', '/en-US/home/',
+                                            'WT.ti', 'Link: Download Help',
+                                            'WT.dl', 99,
+                                            'WT.nv', 'Content',
+                                            'WT.ac', 'Support - Download Help');">
                     Visit Firefox Help »
                   </a>
 		</li>
@@ -252,7 +264,12 @@ EXTRA_HEADERS;
 		  <h3>Take the <span>Tour</span></h3>
 		  <p>Explore all the coolest and most helpful features of your new browser.</p>
 		  <a href="/<?=$lang?>/firefox/tips/" 
-                     onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/tips/', 'WT.ti', 'Tour');">
+                     onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                            'DCS.dcsuri', '/<?=$lang?>/firefox/tips/',
+                                            'WT.ti', 'Link: Take the Tour',
+                                            'WT.dl', 99,
+                                            'WT.nv', 'Content',
+                                            'WT.ac', 'Tour');">
                     Learn More »
                   </a>
 		</li>
@@ -260,7 +277,12 @@ EXTRA_HEADERS;
 		  <h3>About <span>Firefox</span></h3>
 		  <p>Firefox is made by Mozilla, a public benefit organization.</p>
 		  <a href="/<?=$lang?>/about/whatismozilla.html"
-                     onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/whatismozilla.html', 'WT.ti', 'About%20Mozilla');">
+                     onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                            'DCS.dcsuri', '/<?=$lang?>/about/whatismozilla.html',
+                                            'WT.ti', 'Link: About Firefox',
+                                            'WT.dl', 99,
+                                            'WT.nv', 'Content',
+                                            'WT.ac', 'About');">
                     What is Mozilla? »
                   </a>
 		</li>

@@ -5,6 +5,7 @@
         $l10n->get('Mobile') => "/{$lang}/mobile/",
     );
     $extra_headers = <<<EXTRA_HEADERS
+    <meta name="WT.ad" content="Download Firefox: Mobile;Take Tour: Mobile;Sync;Addons: Mobile;Features: Mobile" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home.css" media="screen" />
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
@@ -36,7 +37,15 @@ EXTRA_HEADERS;
     </div>
 
     <div id="home-download">
-        <a href="/<?=$lang?>/mobile/download/" class="download-link"><span class="download-content"><span class="download-title">Get Firefox</span> on Your Phone</span></a>
+        <a href="/<?=$lang?>/mobile/download/" class="download-link"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                  'DCS.dcsuri', '/<?=$lang?>/mobile/download/',
+                                  'WT.ti', 'Link: Get Firefox on Your Phone',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Download Firefox: Mobile');">
+          <span class="download-content"><span class="download-title">Get Firefox</span> on Your Phone</span>
+        </a>
     </div>
     <div class="download-other">Or visit <a href="http://Firefox.com/m">Firefox.com/m</a> on your phone’s browser.</div>
 
@@ -51,26 +60,56 @@ EXTRA_HEADERS;
 
     <div class="sub-feature" id="sub-video">
         <h3>See It <span>In Action</span></h3>
-        <p><a href="/<?=$lang?>/firefox/video/?video=about-mobile">
+        <p><a href="/<?=$lang?>/firefox/video/?video=about-mobile"
+              onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                     'DCS.dcsuri', '/<?=$lang?>/firefox/video/?video=about-mobile',
+                                     'WT.ti', 'Link: Take the Tour',
+                                     'WT.dl', 99,
+                                     'WT.nv', 'Content',
+                                     'WT.ac', 'Take Tour: Mobile');">
             <img src="<?=$config['static_prefix']?>/img/mobile/mobile-video-thumbnail.jpg" alt="Video thumbnail"><span>Take the Tour <span>»</span></span></a></p>
     </div>
 
     <div class="sub-feature" id="sub-sync">
         <h3>Your Life <span>In Sync</span></h3>
         <p>Go from desktop to mobile without interruption.</p>
-        <a href="/<?=$lang?>/mobile/sync/">Learn More <span>»</span></a>
+        <a href="/<?=$lang?>/mobile/sync/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                  'DCS.dcsuri', '/<?=$lang?>/mobile/sync/',
+                                  'WT.ti', 'Link: Your Life in Sync',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Sync');">
+          Learn More <span>»</span>
+        </a>
     </div>
 
     <div class="sub-feature" id="sub-addons">
         <h3>Personalize With <span>Add-ons</span></h3>
         <p>Customize Firefox to be exactly the way you like it.</p>
-        <a href="https://addons.mozilla.org/mobile/">Learn More <span>»</span></a>
+        <a href="https://addons.mozilla.org/mobile/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
+                                  'DCS.dcsuri', '/mobile/',
+                                  'WT.ti', 'Link: Personalize with Add-Ons',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Addons: Mobile');">
+          Learn More <span>»</span>
+        </a>
     </div>
 
     <div class="sub-feature" id="sub-speed">
         <h3>Browse More, <span>Type Less</span></h3>
         <p>Get where you need to go quickly and easily.</p>
-        <a href="/<?=$lang?>/mobile/features/#your-start">Learn More <span>»</span></a>
+        <a href="/<?=$lang?>/mobile/features/#your-start"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                  'DCS.dcsuri', '/mobile/features/',
+                                  'WT.ti', 'Link: Browse More Type Less',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Features: Mobile');">
+          Learn More <span>»</span>
+        </a>
     </div>
 
 </div>

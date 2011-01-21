@@ -49,7 +49,12 @@ if ($_version !== null && $_valid_version) {
     </ul>
     <ul class="link"><li>
         <a href="/<?=$lang?>/firefox/beta/?WT.mc_id=ba3613&amp;WT.mc_ev=click"
-           onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/beta/', 'WT.ti', 'Join%20the%Beta');">
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                  'DCS.dcsuri', '/<?=$lang?>/firefox/beta/',
+                                  'WT.ti', 'Link: Try the Beta',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Beta');">
           Join the Beta Program
         </a>
     </li></ul>
@@ -99,7 +104,12 @@ if ($_version !== null && $_valid_version) {
                     </span>
                     <a id="email-open"
                         href="/<?php echo $lang; ?>/newsletter/"
-                        onclick="dcsMultiTrack('DCS.dcsuri', '/{$lang}/newsletter/', 'WT.ti', 'Newsletter');">»</a>
+                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                               'DCS.dcsuri', '/mainstream_newsletter/step1', 
+                                               'WT.ti', 'Link: Monthly News - First Step',
+                                               'WT.dl', 99,
+                                               'WT.nv', 'Content',
+                                               'WT.ac', 'Newsletter');">»</a>
                 </div>
             </li>
             <li id="form-pane">
@@ -144,7 +154,13 @@ if ($_version !== null && $_valid_version) {
                         </label>
                     </div>
 
-                    <input name="submit" type="submit" value="Sign me up!" id="subscribe">
+                    <input name="submit" type="submit" value="Sign me up!" id="subscribe"
+                           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                                  'DCS.dcsuri', '/mainstream_newsletter/signup',
+                                                  'WT.ti', 'Link: Sign me up - Second Step',
+                                                  'WT.dl', 99,
+                                                  'WT.nv', 'Content',
+                                                  'WT.ac', 'Newsletter');">
                     <p class="footnote">We will only send you Mozilla-related information.</p>
                 </div>
 
@@ -166,7 +182,12 @@ if ($_version !== null && $_valid_version) {
             <p>A live feed of firefox cubs. Can you handle the cute?</p>
             <ul class="link"><li>
                 <a href="http://firefoxlive.mozilla.org/"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'firefoxlive.mozilla.org', 'DCS.dcsuri', '/', 'WT.ti', 'Firefox%20Live');">
+                   onclick="dcsMultiTrack('DCS.dcssip', 'firefoxlive.mozilla.org', 
+                                          'DCS.dcsuri', '/',
+                                          'WT.ti', 'Link: View the Cubs',
+                                          'WT.dl', 99,
+                                          'WT.nv', 'Content',
+                                          'WT.ac', 'Firefox Live');">
                   View the cubs
                 </a>
             </li></ul>
@@ -177,19 +198,34 @@ if ($_version !== null && $_valid_version) {
         <ul class="link">
             <li id="connect-twitter">
               <a href="http://twitter.com/firefox"
-                 onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com', 'DCS.dcsuri', '/firefox', 'WT.ti', 'Twitter');">
+                 onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com',
+                                        'DCS.dcsuri', '/firefox',
+                                        'WT.ti', 'Link: Twitter',
+                                        'WT.dl', 99,
+                                        'WT.nv', 'Footer',
+                                        'WT.ac', 'Twitter');">
                 Twitter
               </a>
             </li>
             <li id="connect-facebook">
               <a href="http://www.facebook.com/Firefox"
-                 onclick="dcsMultiTrack('DCS.dcssip', 'www.facebook.com', 'DCS.dcsuri', '/Firefox', 'WT.ti', 'Facebook');">
+                 onclick="dcsMultiTrack('DCS.dcssip', 'www.facebook.com',
+                                        'DCS.dcsuri', '/firefox',
+                                        'WT.ti', 'Link: Facebook',
+                                        'WT.dl', 99,
+                                        'WT.nv', 'Footer',
+                                        'WT.ac', 'Facebook');">
                 Facebook
               </a>
             </li>
             <li id="connect-participate">
               <a href="/<?=$lang?>/about/participate/"
-                 onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/about/participate/', 'WT.ti', 'Participate');">
+                 onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                        'DCS.dcsuri', '/<?=$lang?>/about/participate/',
+                                        'WT.ti', 'Link: Participate',
+                                        'WT.dl', 99,
+                                        'WT.nv', 'Footer',
+                                        'WT.ac', 'Participate');">
                 Participate
               </a>
             </li>
