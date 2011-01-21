@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>टॅब्स् कसे आयोजीत करायचे</em>फायरफॉक्स पनोरमा तुम्हाला सर्व टॅब्स्चे दृष्यास्पद अवलोकन पुरवतात&hellip;";
+$sub[2]  = "&hellip;व तुम्हाला गटामध्ये कार्यप्रवाह आयोजीत करण्यास व वेगळे कार्य वेगळे ठेवण्यास परवानगी पुरवते.";
+$sub[3]  = "आधिच लक्षात आले असल्यास तुम्ही पनोरमा बटणाचा वापर टॅब्स् आयोजीत करण्यासाठी करू शकता.";
+$sub[4]  = "त्यानंतर तुम्ही टॅबवर क्लिक करू शकता, किंवा मागे जाण्यासाठी एस्केप दाबा शकता.";
+$sub[5]  = "टॅब सक्रिय करण्यासाठी तुम्ही कुठलेही टॅब क्लिक करू शकता.";
+$sub[6]  = "वैकल्पिकरित्या, तुम्ही फायरफॉक्स पनोरमामध्ये प्रवेश व बाहेर पडण्यासाठी मॅकवरील ऑपशन-स्पेस् किंवा विंडोजवरील कंट्रोल-स्पेस्चा वापर करू शकता.";
+$sub[7]  = "टॅब्स्ला एका गटात करण्यासाठी दोघांना एकत्र ओढा.";
+$sub[8]  = "या उदाहरणात, मला स्पेस्चे सर्व चित्रे एका गटात एकत्र करायचे आहे.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "रिकाम्या जागेवर क्लिक केल्यावर त्यांस ओढून गट निर्माण करणे देखिल शक्य आहे.";
+$sub[11] = "गट मोठे केल्यावर, तुम्हाला फक्त गटातील टॅब्स आढळतील. यामुळे तुम्ही केंद्रीत राहतात.";
+$sub[12] = "गट आयोजीत करण्यासाठी, त्यांस फक्त ओढा.";
+$sub[13] = "आकार बदलणे शक्य आहे ज्यामुळे कमी महत्वाच्या बाबी छोट्या आकारात राहतात&hellip;";
+$sub[14] = "&hellip;व अधिक महत्वाच्या बाबी मोठ्या आकारात आढळतात.";
+$sub[15] = "गट अगदीच लहान केल्यास, त्याचे ढिग निर्माण होईल.";
+$sub[16] = "उघडण्यासाठी तुम्ही टॅबवर क्लिक करू शकता";
+$sub[17] = "किंवा";
+$sub[18] = "ढिगाऱ्यात पटकन नजर टाकायचे असल्यास&hellip;";
+$sub[19] = "&hellip;वाढवा चिन्हावर क्लिक करा&hellip;";
+$sub[20] = "&hellip;व त्यानंतर पसंतीच्या टॅबवर क्लिक करा.";
+$sub[21] = "हे फायरफॉक्स पनोरमाचे संक्षिप्त परिचय होते.";
+$sub[22] = "नवीन बाबींचा शोध (जसे कि गटांचे नामांकन कसे करायचे) सुरू असताना&hellip;";
+$sub[23] = "&hellip;तुम्ही ब्राऊज करायच्या उत्तम पद्धतीचा वापर करण्यास सज्ज आहात.";
 $sub[24] = "";
 
 ?>
