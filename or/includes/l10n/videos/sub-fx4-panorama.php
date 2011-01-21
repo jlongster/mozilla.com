@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>ଆପଣଙ୍କର ଟ୍ୟାବଗୁଡ଼ିକୁ କିପରି ସଂଗଠିତ କରାଯିବ</em>Firefox ପାନାରୋମା ଆପଣଙ୍କୁ ଟ୍ୟାବଗୁଡ଼ିକର&hellip; ଦୃଶ୍ୟମୟ ସମୀକ୍ଷା ପ୍ରଦାନ କରିଥାଏ";
+$sub[2]  = "&hellip;ଏବଂ ସେମାନଙ୍କୁ ଶ୍ରେଣୀଭୁକ୍ତ କରନ୍ତୁ ଯାହା ଫଳରେ ଆପଣ ନିଜର କାର୍ଯ୍ୟକୁ ସଂଗଠିତ କରିଥାଏ ଏବଂ ପ୍ରତ୍ୟେକ କାର୍ଯ୍ୟକୁ ପୃଥକ କରିଥାଏ।";
+$sub[3]  = "ଯେହେତୁ ଆପଣ ପୂର୍ବରୁ ଆବିଷ୍କାର କରିସାରିଛନ୍ତି ତେଣୁ ଆପଣ ନିଜର ଟ୍ୟାବଗୁଡ଼ିକୁ ସଂଗଠିତ କରିବା ପାଇଁ ପାନରୋମା ବଟନକୁ ବ୍ୟବହାର କରିପାରିବେ।";
+$sub[4]  = "ଆପଣ ତାପରେ ଗୋଟିଏ ଟ୍ୟାବ ଉପରେ କ୍ଲିକ କରିପାରିବେ, ଅଥବା ପଛକୁ ଯିବା ପାଇଁ Escape କୁ ଦବାଇପାରିବେ।";
+$sub[5]  = " ଯେକୌଣସି ଟ୍ୟାବକୁ ସକ୍ରିୟ କରିବା ପାଇଁ ଆପଣ ତାହା ଉପରେ କ୍ଲିକ କରିପାରିବେ।";
+$sub[6]  = "ବୈକଳ୍ପିକ ଭାବରେ, ଆପଣ ଭରଣ କରିବା ପାଇଁ Mac ଉପରେ option-space ବ୍ୟବହାର କରିପାରିବେ କିମ୍ବା Windows ଉପରେ control-space କୁ ବ୍ୟବହାର କରିପାରିବେ। Firefox ପାନରୋମାରୁ ପ୍ରସ୍ଥାନ କରନ୍ତୁ।";
+$sub[7]  = "ଟ୍ୟାବଗୁଡ଼ିକୁ ଶ୍ରେଣୀଭୁକ୍ତ କରିବା ପାଇଁ ଦୁଇଟିକୁ ଏକ ସଙ୍ଗରେ ଟାଣନ୍ତୁ।";
+$sub[8]  = "ଏହି କ୍ଷେତ୍ରରେ, ମୁଁ ମୋର ସମସ୍ତ ଛବିଗୁଡ଼ିକୁ ଶ୍ରେଣୀଭୁକ୍ତ କରିବାକୁ ଚାହୁଁଛି।";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "ମୁଁ ମଧ୍ଯ କ୍ଲିକ କରିପାରିବି ଏବଂ ଗୋଟିଏ ଶ୍ରେଣୀ ନିର୍ମାଣ ପାଇଁ ଖାଲି ସ୍ଥାନକୁ ଟାଣିପାରିବି।";
+$sub[11] = "ଯେତେବେଳେ ଆପଣ ଗୋଟିଏ ଶ୍ରେଣୀକୁ ଛୋଟବଡ଼ କରିବେ, ଆପଣ କେବଳ ସେହି ଟ୍ୟାବକୁ ଦେଖିପାରିବେ ଯାହାକି ସେହି ଶ୍ରେଣୀରେ ଥାଏ। ଏହା ଆପଣଙ୍କୁ ଲକ୍ଷ୍ଯସାଧନରେ ସହାୟତା କରିପାରିବ।";
+$sub[12] = "ଆପଣଙ୍କର ଶ୍ରେଣୀଗୁଡ଼ିକୁ ସଙ୍ଗଠିତ କରିବା ପାଇଁ, ସେମାନଙ୍କୁ କେବଳ ଚାରିପଟେ ଟାଣନ୍ତୁ।";
+$sub[13] = "ଆପଣ ସେମାନଙ୍କର ଆକାରକୁ ପରିବର୍ତ୍ତନ କରିପାରିବେ ଯାହାଫଳରେ କମ ଆବଶ୍ୟକ ବସ୍ତୁଗୁଡ଼ିକରେ ଛୋଟ &hellip; ଥାଏ";
+$sub[14] = "&hellip;ଏବଂ ଅତି ଆବଶ୍ୟକ ବସ୍ତୁଗୁଡ଼ିକ ବୃହତ ଅଟେ।";
+$sub[15] = "ଯଦି ଆପଣ ଗୋଟିଏ ଶ୍ରେଣୀକୁ ଅତି ଛୋଟ କରନ୍ତି, ତେବେ ଏହା ଗୋଟିଏ ପାଇଲରେ ପରିବର୍ତ୍ତିତ ହୋଇଥାଏ।";
+$sub[16] = "ଖୋଲିବା ପାଇଁ ଆପଣ ଟ୍ୟାବ ଉପରେ କ୍ଲିକ କରିପାରିବେ";
+$sub[17] = "କିମ୍ବା";
+$sub[18] = "ଯଦି ଆପଣ ପାଇଲ &hellip; କୁ ନିରୀକ୍ଷଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି ତେବେ ";
+$sub[19] = "&hellip;ପ୍ରସାରିତ ଚିତ୍ରସଂକେତ &hellip; ଉପରେ କ୍ଲିକ କରନ୍ତୁ";
+$sub[20] = "&hellip;ଏବଂ ତାପରେ ଆପଣ ଇଚ୍ଛାମୁତାବକ ଟ୍ୟାବକୁ କ୍ଲିକ କରିପାରିବେ।";
+$sub[21] = "Firefox ପାନରୋମା ପାଇଁ ଏହା ଏକ ବିସ୍ତୃତ ପରିଚୟ ଅଟେ";
+$sub[22] = "ତଥାପି ଆବିଷ୍କାର କରିବା ପାଇଁ ସେଠାରେ ଅନେକ ଅଛି (ଯେପରିକି ଶ୍ରେଣୀକୁ କିପରି ନାମାଙ୍କନ କରାଯିବ)&hellip;";
+$sub[23] = "&hellip;ଆପଣ ବର୍ତ୍ତମାନ ବ୍ରାଉଜ କରିବା ପାଇଁ ଗୋଟିଏ ଉତ୍ତମ ଉପାୟ ପାଇପାରିବେ।";
 $sub[24] = "";
 
 ?>
