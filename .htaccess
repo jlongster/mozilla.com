@@ -218,6 +218,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/all-beta.html$ $1firefox/bet
 # use all-beta content for all-rc
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/all-rc.html$ $1firefox/all-beta.html [PT]
 
+# The Firefox 4 beta details update billboard is generic
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4.0b\d{1,2}/details[/]?$ $1firefox/4.0beta/details/ [PT]
+
 # Redirect Firefox 4 Beta 1 whatsnew to firstrun (no difference in b1 between firstrun and whatsnew)
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4.0b1/whatsnew[/]?$ $1firefox/4.0b1/firstrun/ [PT]
 
