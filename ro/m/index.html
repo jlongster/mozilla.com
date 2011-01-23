@@ -1,6 +1,6 @@
 <?php
     // Please translate the variable below for the page Title bar
-    $page_title = "Mozilla | Firefox Mobile";
+    $page_title = "Mozilla | Firefox Mobil";
 
 
     $body_id = 'home';
@@ -8,32 +8,32 @@
 ?>
 
 <div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Welcome to Firefox" /></h1>
-<p>The world’s best Web browser has gone mobile.</p>
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="Bun venit la Firefox" /></h1>
+<p>Cel mai bun navigator web din lume a ajuns și pe mobil.</p>
 </div>
 
 <div class="download-button">
   <?php if ($wurfl_device_supported): ?>
 
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Download Now - Free</a>
-    <div><a href="platforms.html" class="system">Is Firefox available in my language?</a></div>
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Descarcă acum - Gratuit</a>
+    <div><a href="/<?= $lang ?>/m/platforms" class="system">Este Firefox disponibil în limba mea?</a></div>
 
   <?php else: ?>
 
-    <p>Your device is not supported</p>
-    <p><a href="/<?= $lang ?>/m/platforms">See our supported platforms and devices</a></p>
+    <p>Dispozitivul dumneavoastră nu este suportat</p>
+    <p><a href="/<?= $lang ?>/m/platforms">Vedeți platformele și dispozitivele acceptate</a></p>
 
   <?php endif; ?>
 </div>
 
-<h2 id="features_title">Enjoy your favorite Firefox features:</h2>
+<h2 id="features_title">Bucurați-vă de funcționalitățile Firefox preferate:</h2>
 <ul id="favorite_features">
-    <li id="sync"><b>Sync</b> <span>Seamlessly synchronize your desktop and mobile browsing</span></li>
-    <li id="customize"><b>Customize</b> <span>Install add-ons to make Firefox exactly the way you like</span></li>
-    <li id="search"><b>Search</b> <span>Type less and get to the Web faster using the Awesome Bar</span></li>
+    <li id="sync"><b>Sync</b> <span>Sincronizați perfect navigarea dumneavoastră între calculator și mobil</span></li>
+    <li id="customize"><b>Personalizare</b> <span>Instalați suplimente pentru a face un Firefox exact cum îl doriți</span></li>
+    <li id="search"><b>Căutare</b> <span>Scrieți mai puțin și ajungeți pe Web mai rapid cu ajutorul barei extraordinare de adrese</span></li>
 </ul>
 
-<p id="features"><a href="/<?= $lang ?>/m/features.html">See More Features</a></p>
+<p id="features"><a href="/<?= $lang ?>/m/features.html">Vedeți mai multe funcționalități</a></p>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
