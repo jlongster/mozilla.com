@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>כיצד לארגן את הלשוניות שלכם</em>תכונת הפנורמה של Firefox מאפשרת לכם לבצע סקירה חזותית של כל הלשוניות שלכם&hellip;";
+$sub[2]  = "&hellip;ומאפשרת לכם לקבץ אותן לקבוצות כדי שתוכלו לארגן את רצף העבודה שלכם ולהשאיר את המשימות הנפרדות בנפרד.";
+$sub[3]  = "כפי שכבר גיליתם ניתן להשתמש בלחצן הפנורמה כדי להתחיל לארגן את הלשוניות שלכם.";
+$sub[4]  = "ואז באפשרותכם ללחוץ על לשונית או ללחוץ על Escape כדי לחזור.";
+$sub[5]  = "כמובן שתוכלו ללחוץ על כל לשונית שהיא כדי להפעיל אותה.";
+$sub[6]  = "לחלופין, באפשרותכם להשתמש בלחצן option וברווח ביחד או ב־Ctrl ורווח ביחד בסביבת windows כדי להיכנס ולצאת ממסך הפנורמה של Firefox.";
+$sub[7]  = "כדי לקבץ לשוניות פשוט צריך לגרור שתיים יחדיו.";
+$sub[8]  = "במקרה שלהלן, אני מעוניין לקבץ את כל התמונות שלי בנושאי חלל יחד.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "אני יכול גם ללחוץ ולגרור במקום ריק כדי ליצור קבוצה.";
+$sub[11] = "כשאתם מתקרבים לתוך קבוצה, אתם יכולים רק לראות את הלשוניות שבאותה הקבוצה. מצב כזה מאפשר לכם להתרכז.";
+$sub[12] = "כדי לארגן את הקבוצות שלכם, פשוט גררו אותם ברחבי המסך.";
+$sub[13] = "תוכלו לשנות את גודלם כדי שהדברים הפחות חשובים יופיעו בקטן&hellip;";
+$sub[14] = "&hellip;והחשובים יותר בגדול.";
+$sub[15] = "אם תיצרו קבוצה קטנה מספיק היא תהפוך לערימה.";
+$sub[16] = "תוכלו ללחוץ על לשונית כדי לפתוח אותה";
+$sub[17] = "או";
+$sub[18] = "אם אתם רוצים להציץ מה קורה בערימה&hellip;";
+$sub[19] = "&hellip;לחצו על לחצן ההרחבה&hellip;";
+$sub[20] = "&hellip;ואז לחצו על הלשונית בה אתם מעוניינים.";
+$sub[21] = "זו הייתה היכרות קצרה עם מסך הפנורמה של Firefox.";
+$sub[22] = "כיוון שיש עוד הרבה מה לגלות (כמו למשל כיצד לתת שמות לקבוצות)&hellip;";
+$sub[23] = "&hellip;הרגישו חופשיים כעת להתחיל ולגלות דרך חדשה לגלוש.";
 $sub[24] = "";
 
-?>
+?>‬
