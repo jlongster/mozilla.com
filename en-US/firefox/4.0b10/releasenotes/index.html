@@ -16,7 +16,7 @@ EXTRA_HEADERS;
 <div id="main-feature">
     <div id="feature-contents">
       <h2><a href="../../beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
-      <p><em>Beta version 9: released January 14, 2011</em></p>
+      <p><em>Beta version 10: released TBD</em></p>
       <p>We rely on your feedback to help shape our products, so we've bundled a <a href="/<?=$lang?>/firefox/beta/#privacy">Feedback Add-on</a> with the Firefox&nbsp;4&nbsp;Beta that provides an easy to use <a href="/<?=$lang?>/firefox/beta/feedback/">Feedback button</a>.</p>
       <p>If you want to test Add-ons with Firefox&nbsp;4&nbsp;Beta, you will need to install the <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">Add-on Compatibility Reporter</a> first.</p>
     </div>
@@ -48,13 +48,16 @@ EXTRA_HEADERS;
       <h3 class="expander-header">What’s New in this Firefox&nbsp;4&nbsp;Beta</h3>
       <div class="expander-content">
         <ul class="spaced">
-          <li>Overhaul of the <a href="http://shawnwilsher.com/archives/473">bookmarks and history code</a>, enabling faster bookmarking and startup performance</li>
-          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled, reducing work done during complex animations</li>
+          <li>Compatibilty and stability improvements when using Adobe Flash on Mac OS X</li>
+          <li>Improvements in memory usage</li>
+          <li>Support for a graphics driver blacklist to improve stability</li>
           <li>See the <a href="buglist.html">complete changelist from the previous beta</a></li>
        </ul>
        <p>As well as these features from previous Firefox&nbsp;4&nbsp;Betas:</p>
        <ul class="spaced">
           <li>Firefox&nbsp;4&nbsp;Beta is available in <a href="http://www.mozilla.com/firefox/all-beta.html">76 languages</a></li>
+          <li>Overhaul of the <a href="http://shawnwilsher.com/archives/473">bookmarks and history code</a>, enabling faster bookmarking and startup performance</li>
+          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled, reducing work done during complex animations</li>
           <li>The <a href="http://www.mozilla.com/mobile/sync/">Firefox Sync</a> setup experience has been greatly improved across desktop and <a href="/mobile/beta/">mobile</a> devices</li>
           <li>Speed, functionality, and compatibility improvements to WebGL</li>
           <li>Additional polish for the Firefox Add-ons Manager</li>
@@ -160,15 +163,12 @@ EXTRA_HEADERS;
         <dd>
           <ul class="spaced">
             <li>Users will experience many incompatibilites with bookmarks and history if they downgrade to any Firefox&nbsp;4 beta before beta 8. Users can still downgrade back to Firefox&nbsp;3.6 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620723">bug 620723</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=614439">bug 614439</a>)</li> 
-            <li>When using Panorama, reopening a recently closed tab creates a
-            new tab group and switches to it instead of restoring the tab to the proper existing group (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624265">bug 624265</a>)</li>
-            <li>Clicking on an empty area of Panorama incorrectly creates an empty tab group (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=619937">bug 619937</a>)</li>
             <li>The popular video site Hulu.com is not displaying content to beta users due to bad "user-agent" detection in their code (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=580843">bug 580843</a>)</li>
             <li>For some users, entering text on Twitter will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579488">bug 579488</a>)</li>
             <li>For some users, scrolling in the main GMail window will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">bug 579260</a>)</li>
             <li>The site Formspring is not displaying content to beta users due to bad "user-agent" detection in their code (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620344">bug 620344</a>)</li>
             <li>If you try to start Firefox using a locked profile, it will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">bug 573369</a>)</li>
-            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to <a href="/mobile/beta/">Firefox 4 beta 3 for mobile</a></li>
+            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to the latest <a href="/mobile/beta/">Firefox 4 beta for mobile</a></li>
           </ul>
         </dd>
 
@@ -185,8 +185,8 @@ EXTRA_HEADERS;
           <ul class="spaced">
             <li>The 32bit Microsoft Silverlight plugin fails to load when using a 64bit version of
                 Firefox on Mac OS X 10.6. Sites that depend on the plugin (such as Netflix) will fail to work (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=598406">bug 598406</a>)</li>
-            <li>For some users, the window titlebar may flicker (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=621762">bug 621762</a>)</li>
             <li>This version of the beta will not work on Macintosh hardware with Power PC CPUs (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=587799">bug 587799</a>)</li>
+            <li>
           </ul>
         </dd>
 
@@ -195,8 +195,6 @@ EXTRA_HEADERS;
           <ul class="spaced">
             <li>WebGL has been temporarily disabled for Linux systems not using the proprietary NVIDIA driver (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624390">bug 624390</a>)</li>
             <li>The video control buttons may not work when viewing QuickTime videos with libtotem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=625036">bug 625036</a>)</li>
-            <li>For some users, Firefox may crash when setting the beta as their
-            default browser (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624267">bug 624267</a>)</li>
             <li>Users compiling from source might need a newer gcc and libstdc++ as the build requirements have changed (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578880">bug 578880</a>)</li>
           </ul>
         </dd>
@@ -272,7 +270,7 @@ EXTRA_HEADERS;
           </li>
           <li>
             Where’s the Firefox&nbsp;4&nbsp;Beta source code?
-            <p>A tarball of the Firefox&nbsp;4&nbsp;Beta source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0b9/source/">download</a>.
+            <p>A tarball of the Firefox&nbsp;4&nbsp;Beta source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0b10/source/">download</a>.
                The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
                Firefox-specific source is in mozilla-central's "browser", "toolkit",
                and "chrome" directories. Please follow the <a href=
@@ -294,7 +292,7 @@ EXTRA_HEADERS;
         <p>These are unofficial builds and may be configured differently than the official
            Mozilla builds. They may also be optimized and/or tested for specific
            platforms. You can browse through the available contributed builds on the
-           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0b9/contrib/">FTP
+           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0b10/contrib/">FTP
            site</a>.</p>
 
 <!-- put contributed builds here -->
