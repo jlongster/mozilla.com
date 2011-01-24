@@ -1010,10 +1010,10 @@ function getVersionBySelf()
 {
     $_matches    = array();
     $_expression = '/
-        \d            # major version number
+        \d             # major version number
         (?:\.\d+){1,3} # minor, micro, etc
-        (?:[ab]\d)?   # alpha, beta releases
-        (?:pre)?      # pre-release
+        (?:[ab]\d+)?   # alpha, beta releases
+        (?:pre)?       # pre-release
     /x';
 
     preg_match($_expression, $_SERVER['REQUEST_URI'], $_matches);
