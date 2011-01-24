@@ -1,0 +1,2702 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 4 Beta 9 Fixes';
+    $body_id    = 'firefox-relnotes';
+    
+    $extra_headers = <<<EXTRA_HEADERS
+  <script charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+  <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+  <script charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
+  <script src="/js/mozilla-video-tools.js"></script>
+  <script src="/js/mozilla-pager.js"></script>
+<link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+  <style>
+     /* This is a hack as I don't want to edit the release notes css */
+     #main-content { width: 100% !important; }
+  </style>
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <h2><a href="../"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/title.png" alt="Firefox 4 Beta" /></a></h2>
+        <h3>Firefox&nbsp;4&nbsp;Beta&nbsp;9 Fixes</h3>
+        <p>See the complete list of bugs fixed by Firefox&nbsp;4&nbsp;Beta&nbsp;9.</p>
+    </div>
+</div>
+
+<?=buildFirefoxBetaSubPageMenu($lang, 'releasenotes');?>
+
+<div id="release-notes">
+
+    <div id="main-content">
+
+        <table id="beta-bugfixes">
+        <thead>
+            <tr>
+                <th>Bug ID</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=569350'>569350</a></th>
+            <td>support Variation Selector sequences on all platforms</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=600079'>600079</a></th>
+            <td>Crash in [@ @0x0 | mozilla::gl::GLContext::MarkDestroyed() ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=509970'>509970</a></th>
+            <td>xpcshell-tests: random failure in test_removeVisitsByTimeframe.js | 2 == 10, 6 == 10, etc.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616469'>616469</a></th>
+            <td>Video sync is slow because of slow yuv2rgb conversion</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618526'>618526</a></th>
+            <td>"Security Error: Content at http://mochi.test:8888/tests/dom/tests/mochitest/general/test_focusrings&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=575519'>575519</a></th>
+            <td>"make buildsymbols" doesn't work on systems without Visual C++ 2005 installed</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=491552'>491552</a></th>
+            <td>Firebug toolbarbuttons don't work</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616454'>616454</a></th>
+            <td>Assertion failure: !IsNonCanonicalizedNaN(d)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620584'>620584</a></th>
+            <td>Hardcode app id to org.mozilla.firefox instead of org.mozilla.@MOZ_APP_NAME@</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604201'>604201</a></th>
+            <td>browser_tabview_snapping.js test fails if you run it by itself</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622637'>622637</a></th>
+            <td>warning: ‘nsresult nsCaseConversionImp2Constructor(nsISupports*, const nsIID&amp;, void**)’ defined but &hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610350'>610350</a></th>
+            <td>Assigning to a named function's name in strict mode code should throw</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=575535'>575535</a></th>
+            <td>ES5 Function.prototype.{apply,call} do not coerce |this| to object</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618546'>618546</a></th>
+            <td>Add-on bar covers lightweight theme background</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=569399'>569399</a></th>
+            <td>autofocus sometimes does not work because the element has no frame yet</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620600'>620600</a></th>
+            <td>Leaking virtual address space/threads during media mochitest run</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620608'>620608</a></th>
+            <td>Firefox Aero theme requires unnecessarily large ThebesLayer</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=579649'>579649</a></th>
+            <td>Update Hunspell to 1.2.12</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620610'>620610</a></th>
+            <td>Dump layer tree assignments when dumping display lists</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618565'>618565</a></th>
+            <td>Don't do flash hack for maemo platform</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618570'>618570</a></th>
+            <td>-mfloat-abi=softfp should not be hardcoded in pixman</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622667'>622667</a></th>
+            <td>incorrectly treating NPError values as nsresult values</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618572'>618572</a></th>
+            <td>Assertion failure: *userbuf.ptr == c, at ../jsscan.cpp:349</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618577'>618577</a></th>
+            <td>TM: "Assertion failure: 0,"</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610390'>610390</a></th>
+            <td>Object wrappers no longer compare equal (among other things, window.wrappedJSObject != window.wrappe&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620633'>620633</a></th>
+            <td>flash content keeps blinking</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622684'>622684</a></th>
+            <td>updates should not be downloaded to "&lt;sdcard&gt;/downloads"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614493'>614493</a></th>
+            <td>Move name information from JSFunction into JSScript</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602207'>602207</a></th>
+            <td>&lt;animateMotion&gt;&lt;mpath&gt; uses path's "transform" attribute on &lt;path&gt; elements, which it shouldn't</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594017'>594017</a></th>
+            <td>localize android java files</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620643'>620643</a></th>
+            <td>JM: "Assertion failure: obj" with typed array</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=591972'>591972</a></th>
+            <td>JM: generate inline code for JSOP_TABLESWITCH</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622695'>622695</a></th>
+            <td>allow android's logger to handle logging exceptions</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620562'>620562</a></th>
+            <td>TM: Imacros are broken</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=569454'>569454</a></th>
+            <td>bad ownership model for allProperties in GRE_GetGREPathWithProperties</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610415'>610415</a></th>
+            <td>Make :-moz-ui-invalid and :-moz-ui-valid not applying when the form element has @novalidate set</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618616'>618616</a></th>
+            <td>IndexedDB: Make IDBObjectStore.get() accept a key range</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620665'>620665</a></th>
+            <td>New intermittent crash on Talos[@ nsRefPtr&lt;TypeInState&gt;::assign_assuming_AddRef(TypeInState*) | nsRe&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614522'>614522</a></th>
+            <td>SVGPathData::GetMarkerPositioningData reads uninitialised stack allocated memory</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620668'>620668</a></th>
+            <td>spike in crashes [@ nsAString_internal::IsEmpty() ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620669'>620669</a></th>
+            <td>d3d9 layout does not compile on mingw</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621931'>621931</a></th>
+            <td>Widget Qt scrolling is slow because of non optimized SetCursor</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592918'>592918</a></th>
+            <td>TM:set right compartment in nsXBLDocGlobalObject::EnsureScriptEnvironment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592007'>592007</a></th>
+            <td>TM: New Scope patch changes GC behavior in browser</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620683'>620683</a></th>
+            <td>Star button flashes distractingly when switching tabs, loading pages, going back or forward, etc.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620684'>620684</a></th>
+            <td>Possible attempt to use invalid mGLContext.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622733'>622733</a></th>
+            <td>A horizontal line appears on tabbar, when opening 3 (or more) tabs [Aero]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=569487'>569487</a></th>
+            <td>generalize Reflect.parse to accept JS builder functions</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=479385'>479385</a></th>
+            <td>Undo shortcut doesn't work in Save Page As dialog</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=565615'>565615</a></th>
+            <td>TraceRecorder::stringify is odd</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618652'>618652</a></th>
+            <td>//@line n "f" busted, easy fix and test</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=485535'>485535</a></th>
+            <td>build breaks when JS_HAS_SHARP_VARS is disabled and JS_HAS_XML_SUPPORT enabled</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=585891'>585891</a></th>
+            <td>ES5 Object.create misbehaves in particular scenario</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616612'>616612</a></th>
+            <td>Speed up str.substring and str.substr</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612523'>612523</a></th>
+            <td>array comprehension hangs if JSOPTION_JIT is enabled</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=536748'>536748</a></th>
+            <td>Assertion failed: i &lt; callInfo()-&gt;count_args() | Crash [@  nanojit::Assembler::asm_arg(nanojit::ArgS&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=331959'>331959</a></th>
+            <td>Make nested links work</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=532666'>532666</a></th>
+            <td>Installing moonlight plugin corrupts pluginreg.dat</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=567483'>567483</a></th>
+            <td>HTML5 &lt;header&gt; top margin applies itself to parent &lt;body&gt;'s background image</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594977'>594977</a></th>
+            <td>Scrolling with trackpoint/touchpad (Thinkpad, Synaptics drivers) won't work</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611362'>611362</a></th>
+            <td>application security initialization error with 4.0b7</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620750'>620750</a></th>
+            <td>"arguments;" sneaks into decompilation (eval in strict mode, for, genexp)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=553172'>553172</a></th>
+            <td>ff36 immediately quits (no crash!) when quit and started for 2nd time</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606423'>606423</a></th>
+            <td>crash [@ EnableTraceHintAt ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614616'>614616</a></th>
+            <td>Flash text labels not displayed. Flash Settings menu labels also invisible + does not respond to mou&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594138'>594138</a></th>
+            <td>TM: testConservativeGC fails with gczeal</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618717'>618717</a></th>
+            <td>IndexedDB: Fix error codes to match spec changes</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=579808'>579808</a></th>
+            <td>unpainted lines with MozTransform scale after scrolling</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=524524'>524524</a></th>
+            <td>Intermittent failure in test_402799.js</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=588016'>588016</a></th>
+            <td>Avoid reporting OOM when background has not finished</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622838'>622838</a></th>
+            <td>Scaling retained layers when we don't want to be</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612599'>612599</a></th>
+            <td>Gray lines when using content.scrollTo</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594644'>594644</a></th>
+            <td>Return from Private Browsing Mode, Panorama forgets tab groups, until Panorama is manually re-launch&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=487674'>487674</a></th>
+            <td>JS_IsArrayObject should check whether obj is a wrapper of an array object</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614651'>614651</a></th>
+            <td>Canvas element(Google images) show through the add-on bar and horizontal scrollbar with D3D9:on</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614653'>614653</a></th>
+            <td>avoid O(n^2) rope node marking</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612609'>612609</a></th>
+            <td>browser_discovery.js is permaorange on Places branch</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=510219'>510219</a></th>
+            <td>random orange in xpcshell/tests/test_browser_places/unit/test_browserGlue_smartBookmarks.js : 2 == 3</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=190735'>190735</a></th>
+            <td>deCOMtaminate nsIFrame</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612624'>612624</a></th>
+            <td>dtoa.c Omit_Private_Memory option fails to compile</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610580'>610580</a></th>
+            <td>TMFLAGS=abort no longer works</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618777'>618777</a></th>
+            <td>Fix cpuid for x64 on Solaris</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618779'>618779</a></th>
+            <td>crash [@ nsRootAccessible::FireAccessibleFocusEvent(nsAccessible*, nsIContent*, int, EIsFromUserInpu&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606498'>606498</a></th>
+            <td>Make sure the new nsIScriptError2 is used in all possible places</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613083'>613083</a></th>
+            <td>IndexedDB: Switch serialization format from JSON to structured clone bytestream</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604452'>604452</a></th>
+            <td>Layers-accelerated scaling is nearest-neighbor, not bilinear on at least some hardware configuration&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620838'>620838</a></th>
+            <td>Incorrect optimization to global with local function inside control flow</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=557353'>557353</a></th>
+            <td>JM: PIC for object-wrapped string length</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=559402'>559402</a></th>
+            <td>"use strict" reported as strict mode warning 'useless expression'</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=574514'>574514</a></th>
+            <td>Hide personal toolbar only if user did not customize it or edited bookmarks</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618205'>618205</a></th>
+            <td>SVG SMIL: Correctly fallback to non-additive animation on display and shorthand properties</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=596273'>596273</a></th>
+            <td>cursor over the form's error popup let you think you can select text</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618889'>618889</a></th>
+            <td>Web Console doesn't animate away when you click the close button</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592184'>592184</a></th>
+            <td>TM: XPC_WN_CallMethod has to set the right compartment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618810'>618810</a></th>
+            <td>Qt Message Pump locks up in case of nested loops in flash plugin</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617525'>617525</a></th>
+            <td>MozAfterPaint events are delivered differently for in-process and out-of-process frame scripts</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612675'>612675</a></th>
+            <td>JSTreeContext::fun/scopeChain should be private, only accessed through methods asserting consistency&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=538949'>538949</a></th>
+            <td>firefox doesnt quit when executing the quit application command from menu bar. can only execute a fo&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594247'>594247</a></th>
+            <td>JM: Add specialized codepaths for typed arrays</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620875'>620875</a></th>
+            <td>Intermittent browser_webconsole_bug_595934_message_categories.js | Test timed out followed by failur&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586060'>586060</a></th>
+            <td>"warning: unused variable ‘cx’" in js/src/jscntxtinlines.h</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620880'>620880</a></th>
+            <td>make jit tests use browser-configuration by default</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=598357'>598357</a></th>
+            <td>use toSource() instead of toString() for some types of output in the Console</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=553304'>553304</a></th>
+            <td>Browser OOPP keeps downloading something even when minefield has been closed</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616800'>616800</a></th>
+            <td>Audio playback is very choppy, pauses every second during playback</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618849'>618849</a></th>
+            <td>TypeInference: Assertion failure: !isCopied()</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618850'>618850</a></th>
+            <td>TypeInference: Assertion failure: reg_ &gt;= Registers::TotalRegisters &amp;&amp; reg_ &lt; Registers::TotalAnyReg&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618853'>618853</a></th>
+            <td>TypeInference: inference failure for "new builtin()"</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620905'>620905</a></th>
+            <td>rules.mk generally fails to set ELOG to print-failed-commands.sh for make -s</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616810'>616810</a></th>
+            <td>CRs in cl.py generatesnippet.py buildlist.py upload.py util.py implicit.py</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620907'>620907</a></th>
+            <td>js/src/build/unix is missing print-failed-commands.sh</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622956'>622956</a></th>
+            <td>stub out webgl extension mechanism</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622957'>622957</a></th>
+            <td>fix depth-stencil attachment points</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618863'>618863</a></th>
+            <td>TypeInference: kraken imaging-gaussian-blur correctness bug</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622961'>622961</a></th>
+            <td>fix webgl getparam/getuniform test</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=511684'>511684</a></th>
+            <td>intermittent failure browser_bug304198.js | Timed out</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=557429'>557429</a></th>
+            <td>oversize window impossibly placed on 2nd monitor</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618870'>618870</a></th>
+            <td>CompressedGlyph::SetMissing should not overwrite FLAG_NOT_CLUSTER_START (missing glyph hexboxes do n&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618871'>618871</a></th>
+            <td>Assertion failure: compartment mismatched [@ jscntxtinlines.h:541]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614780'>614780</a></th>
+            <td>TM: "Assertion failure: !js_IsActiveWithOrBlock(cx, &amp;regs.fp-&gt;scopeChain(), 0),"</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610687'>610687</a></th>
+            <td>Make all the radio button group suffering from being missing (instead of only radio's with the requi&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610690'>610690</a></th>
+            <td>Crash when printing many documents successively [@ nsCOMPtr_base::assign_from_qi | nsDocShell::SetTr&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=432516'>432516</a></th>
+            <td>SM: consider doubleToInt32 optimization</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=589206'>589206</a></th>
+            <td>Drawing a tab group should be transparent or in background view</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618561'>618561</a></th>
+            <td>Enable direct Qt rendering for Maemo6</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614793'>614793</a></th>
+            <td>Web console window should automatically scroll to display results</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=575886'>575886</a></th>
+            <td>Random Crash during tsvg_opacity [@ nsDeque::PopFront()]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612752'>612752</a></th>
+            <td>Focus rings and default style for :-moz-ui-invalid should be re-thought</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622999'>622999</a></th>
+            <td>Merge fx-sync to mozilla-central</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606617'>606617</a></th>
+            <td>re-enable browser_tabview_multiwindow_search.js</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620955'>620955</a></th>
+            <td>spike in crashes [@ mozilla::ipc::RPCChannel::EnteredCxxStack() ]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594333'>594333</a></th>
+            <td>smeared pixels when elements with background-image &amp; background-position are moved around</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620968'>620968</a></th>
+            <td>GetUnixXDGUserDirectory can leave rv uninitialized ifdef MOZ_PLATFORM_MAEMO</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616861'>616861</a></th>
+            <td>crash [@ nsPrefetchNode::OnStopRequest ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614834'>614834</a></th>
+            <td>Recursive code using the module pattern is always at least quadratic in recursion depth due to GetUp&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613790'>613790</a></th>
+            <td>Most Drop down menus/boxes do not appear with hardware acceleration.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611401'>611401</a></th>
+            <td>crash in [@ xpc_CreateSandboxObject]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620988'>620988</a></th>
+            <td>preferences code uses getFolderContents but never closes the container.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617117'>617117</a></th>
+            <td>TEST-UNEXPECTED-FAIL | chrome://mochitests/content/browser/browser/components/sessionstore/test/brow&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586827'>586827</a></th>
+            <td>RegExp::execute wastes lots of time in ArenaAllocate and ArenaRelease</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618948'>618948</a></th>
+            <td>foo.oninput and foo.oninvalid should be working</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604618'>604618</a></th>
+            <td>[Web Console] Area outside the network traffic messages should not trigger the "Inspect Network Requ&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=487883'>487883</a></th>
+            <td>Image not properly cached, in disk but have 0 bytes (page info or properties)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602572'>602572</a></th>
+            <td>Log request and response bodies checkbox issues in Web Console</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=608721'>608721</a></th>
+            <td>Next character of U+3001 or U+3002 should break line even if it is "["</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602580'>602580</a></th>
+            <td>After using setCSSViewport, window.innerWidth/innerHeight should return the viewport size</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606678'>606678</a></th>
+            <td>use openLinkIn in nsContextMenu ("Open Link in New Tab" shouldn't add tabs to popups)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621018'>621018</a></th>
+            <td>Some browser chrome tests in browser/base/content try to load AMO content</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=526074'>526074</a></th>
+            <td>NJ merge: handle nothing-to-import case in import script</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621023'>621023</a></th>
+            <td>presContext = GetPresContext() is unused ifndef DEBUG in PresShell::Paint</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614887'>614887</a></th>
+            <td>Use grayscale-AA fonts for text in canvas</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612840'>612840</a></th>
+            <td>Clean up layer text flags to prepare for subpixel-AA changes</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610793'>610793</a></th>
+            <td>JM: Support single-stepping with Firebug in compiled code</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=608746'>608746</a></th>
+            <td>JM: TypeInference: recompile scripts on dynamic type changes</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616940'>616940</a></th>
+            <td>removed select option accessibles aren't removed until hide event is fired</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=608750'>608750</a></th>
+            <td>JM: TypeInference: Use inferred types for stack slots</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618996'>618996</a></th>
+            <td>nsDisplayClipRoundedRect::TryMerge always returns PR_FALSE</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590326'>590326</a></th>
+            <td>TM: Global Object created in TestXPC needs its own compartment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619003'>619003</a></th>
+            <td>failure to detect duplicate args if enough destructuring args are present</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590333'>590333</a></th>
+            <td>TM: Global Object created in xpcthreadcontext needs its own compartment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621055'>621055</a></th>
+            <td>JM: ReferenceError inside catch hangs JM</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623105'>623105</a></th>
+            <td>Crash: TEST-UNEXPECTED-FAIL | file:///home/cltbld/talos-slave/test/build/jsreftest/tests/jsreftest.h&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=330243'>330243</a></th>
+            <td>Array.prototype.concat isn't even as generic as ECMA requires</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614917'>614917</a></th>
+            <td>If Solaris Studio is used, strip LD LDFLAGS when configure libffi</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610823'>610823</a></th>
+            <td>nsTArray should default to infallible</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=514568'>514568</a></th>
+            <td>ES5 strict mode: eval code gets its own variable environment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590346'>590346</a></th>
+            <td>TM: Global Object created in GlobalForLocation needs its own compartment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621067'>621067</a></th>
+            <td>upgrade ANGLE to r515</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586252'>586252</a></th>
+            <td>Assertion failure: !cx-&gt;prevRequestContext, at /work/mozilla/builds/2.0.0/mozilla/js/src/jsapi.cpp:7&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621072'>621072</a></th>
+            <td>TM: Traces shouldn't bake in interruptFlags</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614931'>614931</a></th>
+            <td>Number.toLocaleString adds trailing NULL-byte</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621081'>621081</a></th>
+            <td>New feed discovery icon is never shown in disabled state on Linux</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614940'>614940</a></th>
+            <td>'setting a property that has only a getter' when adding a new tag to bookmark</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616989'>616989</a></th>
+            <td>JS_ASSERT when calling loadSubScript from a sandbox</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621099'>621099</a></th>
+            <td>plugins.unloadASAP set to true no longer unloads plugin-container.exe after closing tab that was usi&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=598575'>598575</a></th>
+            <td>Scroll redraw on print preview is off by one line of pixels (triggering dark horizontal lines)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=490035'>490035</a></th>
+            <td>"Script is busy" ("Unresponsive Script") warning from places flush script (nsPlacesDBFlush.js) on in&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620297'>620297</a></th>
+            <td>crash [@ nsPluginHost::SetUpPluginInstance] if !aOwner</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623162'>623162</a></th>
+            <td>[kk] Add Kazakh back to the Firefox 4 builds</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=584251'>584251</a></th>
+            <td>Crash in  [@ nsPluginInstanceOwner::CreateWidget() ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=584259'>584259</a></th>
+            <td>Add experimental support for packed format 3D video to libnestegg/WebMReader</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617593'>617593</a></th>
+            <td>for-in statement visits deleted properties</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622691'>622691</a></th>
+            <td>data race on JSContext::defaultCompartmentIsLocked</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621144'>621144</a></th>
+            <td>ConservativeGCThreadData::recordStackTop should annotate its use of setjmp</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=588379'>588379</a></th>
+            <td>Errors in the Web Console should link to the source file</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620532'>620532</a></th>
+            <td>TM: integer promotion/demotion doesn't distinguish signed vs unsigned sufficiently</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619102'>619102</a></th>
+            <td>Javascript is not displayed : content of the page is blank</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=608867'>608867</a></th>
+            <td>Tune JIT heuristics for v8-crypto</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621156'>621156</a></th>
+            <td>Painting problems in www.mtv3.fi when hardware acceleration and Flash are enabled</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=580710'>580710</a></th>
+            <td>Drag&amp;Drop onto sidebar loads page into sidebar</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621161'>621161</a></th>
+            <td>add (void) to markIfUnmarked() in js::gc::TypedMarker</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623210'>623210</a></th>
+            <td>Nested A and DIV elements erratically terminate/repeat</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620647'>620647</a></th>
+            <td>plugin-container crashes after channel error</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617074'>617074</a></th>
+            <td>Fix for building with Android 2.3 SDK (android-9 platform)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610936'>610936</a></th>
+            <td>Require SP1 of VC8 EE to build (successfully)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621180'>621180</a></th>
+            <td>Move JSThreadData::cachedNativeIterators into the compartment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=526974'>526974</a></th>
+            <td>lirasm: Add configuration options to lirasm test utility.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=510593'>510593</a></th>
+            <td>BenchJS: 70% slower than Opera</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618262'>618262</a></th>
+            <td>Removal of JS_NewString</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604807'>604807</a></th>
+            <td>Crash [@ nsHTMLSelectElement::GetOptionIndex] with QI to nsISelectElement</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621194'>621194</a></th>
+            <td>Merge fx-sync to mozilla-central</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=408205'>408205</a></th>
+            <td>Need a test (litmus) for FIPS mode</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618606'>618606</a></th>
+            <td>IndexedDB: keyPath parameter for createObjectStore should be optional</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623255'>623255</a></th>
+            <td>Crash [@ ShadowLayerParent::ActorDestroy] with OGL layers</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615065'>615065</a></th>
+            <td>NS_ERROR_NOT_IMPLEMENTED [nsIDOM3Document.documentURI] if methodjit is enabled</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621210'>621210</a></th>
+            <td>Reusing SVG masks with objectBoundingBox units fails to update CTM of child content</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=569114'>569114</a></th>
+            <td>TM: don't use tinyids in jsxml.cpp</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=541342'>541342</a></th>
+            <td>Dialog to allow a new cookie doesn't appear and blocks some functionality</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=510624'>510624</a></th>
+            <td>Function.prototype.{apply,call} insist on a Function object, instead of trying [[Call]]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621222'>621222</a></th>
+            <td>Broken firebug menu background</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621226'>621226</a></th>
+            <td>extern "C" necessary for older libproxy iirc</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621227'>621227</a></th>
+            <td>Optimize thebes layer render function</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619182'>619182</a></th>
+            <td>Convert moz_indexedDB to mozIndexedDB</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623281'>623281</a></th>
+            <td>about:memory reporting for method JIT code space usage</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623285'>623285</a></th>
+            <td>Crash uploading to shadow-layer texture from gfxSharedImageSurface</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623286'>623286</a></th>
+            <td>fix webgl framebuffer attachment test, and misc</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618954'>618954</a></th>
+            <td>Extra space for smart keyword results</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617152'>617152</a></th>
+            <td>Reftest harness test termination logic needs an overhaul</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621250'>621250</a></th>
+            <td>Assertion "TagForPlugin has failed" destroying instance of disabled plugin</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618217'>618217</a></th>
+            <td>js::Anchor specialization for jsval could be cleaner</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=596088'>596088</a></th>
+            <td>&lt;input type='file'&gt; doesn't look disabled when inside a disabled fieldest but is disabled</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=541396'>541396</a></th>
+            <td>Intermittent failure in test_fallback.html | Fallback page displayed for top level document</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=412373'>412373</a></th>
+            <td>String assignment too slow</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617175'>617175</a></th>
+            <td>deleteTabValue doesn't use early access</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604101'>604101</a></th>
+            <td>Implement TextureImage::DirectUpload to avoid wasteful temporaries</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615131'>615131</a></th>
+            <td>Installer crashes if 'Next' button is clicked while 'Looking for existing installation...' dialog is&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=576823'>576823</a></th>
+            <td>YARR incorrectly matches later in string with alternate and sticky flag</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=578274'>578274</a></th>
+            <td>Date modified on images saved from facebook are given the time stamp 12/31/2008 6:00PM</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613092'>613092</a></th>
+            <td>Method "addScript" in jsdbgapi.cpp returns JS_FALSE instead of a pointer value</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=584423'>584423</a></th>
+            <td>"Assertion failure: *pc == JSOP_GETARG,"</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590568'>590568</a></th>
+            <td>[D3D9] plugin area is shown in toolbars when scrolled off the screen as a rectangle about the size o&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592617'>592617</a></th>
+            <td>JM: cannot compile without JS_METHODJIT</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=582379'>582379</a></th>
+            <td>When :hover transition oscillates, some transitions continue all the way through</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=541423'>541423</a></th>
+            <td>With Firefox 3.6, after disabling autocomplete in nsloginmangaer, password not coming up</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615153'>615153</a></th>
+            <td>Workers: nsIWorkerFactory.newChromeWorker() throws NS_ERROR_UNEXPECTED</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586482'>586482</a></th>
+            <td>arguments.callee.caller not equal to proto-delegated joined function object method</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621301'>621301</a></th>
+            <td>TypeInference: inference is super wasteful on memory</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=537335'>537335</a></th>
+            <td>NYTimes skimmer never finishes loading even though it appears to have fetched everything</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=527099'>527099</a></th>
+            <td>sporadic timeout in chrome/dom/tests/mochitest/chrome/test_focus.xul</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=572160'>572160</a></th>
+            <td>Put tabs in the title bar when the window is maximized</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586198'>586198</a></th>
+            <td>Incorrect placement of tab after Undo Close Tab in Tab Candy</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619271'>619271</a></th>
+            <td>TypeInference: shape should determine type, type should determine prototype</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619272'>619272</a></th>
+            <td>Intermittent failure in layout/reftests/css-import/290018-1.html | image comparison (==)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=598795'>598795</a></th>
+            <td>Clean up reconnect code once we have instant access to sessionstore</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602892'>602892</a></th>
+            <td>When a scrollable box appears inside a box with border-radius and that border overlaps the scrollabl&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621328'>621328</a></th>
+            <td>TypeInference: JM: Kraken stanford-crypto-pbkdf2 regression</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617236'>617236</a></th>
+            <td>Investigate per tab memory usage increase caused by bug 558451 (Merge JSScope into JSScopeProperty, &hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619286'>619286</a></th>
+            <td>ZWNJ and ZWJ affect letterspacing</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620335'>620335</a></th>
+            <td>TM: "Assertion failure: !argsobj.getPrivate(),"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621341'>621341</a></th>
+            <td>Make jit_test.py and jstests.py executable</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621344'>621344</a></th>
+            <td>Displaying print preview stacks app tabs</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621348'>621348</a></th>
+            <td>Intermittent jsreftest.html?test=js1_5/extensions/regress-336410-2.js | application timed out after &hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586533'>586533</a></th>
+            <td>TM: Flag rarely used JSStackFrame members</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=559912'>559912</a></th>
+            <td>Setter exposes JSOP_SETMETHOD optimization</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621365'>621365</a></th>
+            <td>localstorage session-only determination in parent process is broken via IPC</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602935'>602935</a></th>
+            <td>TM: Always verify js_malloc(), js_calloc() return values.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617273'>617273</a></th>
+            <td>make editable text tests async</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615226'>615226</a></th>
+            <td>warning: unused variable 'resultArray' in getWindowPosition</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621374'>621374</a></th>
+            <td>Assertion failure: v.isNumber() / Crash null-ptr dereference</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621376'>621376</a></th>
+            <td>TM: Different output with Function, prototype, encodeURI</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619333'>619333</a></th>
+            <td>TypeInference: inference failure when calling array methods on objects</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619338'>619338</a></th>
+            <td>TypeInference: type inference crash for "new Function.prototype" [@ TypeObject::getNewObject]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619339'>619339</a></th>
+            <td>TypeInference: Assertion failure: op == JSOP_DIV &amp;&amp; type == JSVAL_TYPE_INT32</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619343'>619343</a></th>
+            <td>TypeInference: reading holes is slower with type inference</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623441'>623441</a></th>
+            <td>JSCompartment::wrap missing oom check</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=570195'>570195</a></th>
+            <td>hasOwnProperty doesn't set DETECTING flag</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=475991'>475991</a></th>
+            <td>Extend the NPAPI to allow plugins to participate in redirects</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617304'>617304</a></th>
+            <td>Keyboard events get sent twice when doorhanger is active</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=332636'>332636</a></th>
+            <td>backspace/delete in HTML editor don't handle Unicode plane 1 characters correctly (UTF-16 surrogate &hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=600930'>600930</a></th>
+            <td>intermittent mochitest-other failure in browser/base/content/test/browser_tabMatchesInAwesomebar.js &hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623459'>623459</a></th>
+            <td>Permaorange - layout/reftests/bugs/600974-2.html on WinXP</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592741'>592741</a></th>
+            <td>TM: set right compartment in nsXPCWrappedJSClass::CallQueryInterfaceOnJSObject</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621414'>621414</a></th>
+            <td>mochitests-1: test_fileapi_slice.html logs 12 _very_ (too) long lines</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619369'>619369</a></th>
+            <td>Assertion failure: *pc == JSOP_GETARG with JSD, but only when using wired ethernet</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604647'>604647</a></th>
+            <td>[d3d] Firefox Desktop Notification window is black after desktop lock with Intel Graphics card on XP</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615277'>615277</a></th>
+            <td>JM: Support break-on-next functionality</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621032'>621032</a></th>
+            <td>Move JSThreadData::(mathCache, iterationCounter) into the compartment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623474'>623474</a></th>
+            <td>String length PIC crash [@ js::mjit::EnterMethodJIT]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609141'>609141</a></th>
+            <td>Compartments mismatch in jsdScript::GetFunctionSource</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621430'>621430</a></th>
+            <td>Freeze (OOM) when playing Agent 008 Ball (NS_ERROR_OUT_OF_MEMORY) [nsIDOMHTMLAudioElement.play]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=559992'>559992</a></th>
+            <td>Zoom flicker with back/forward navigation</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603002'>603002</a></th>
+            <td>History folders labelled with wrong month names</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603005'>603005</a></th>
+            <td>HUDService should avoid the use of DOM mutation event listeners</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619397'>619397</a></th>
+            <td>Add-on bar no longer shows Personas footer image</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=547718'>547718</a></th>
+            <td>XML Parsing Error: no element found</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=598920'>598920</a></th>
+            <td>Remove button styling for buttons added to Addon Bar</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=568204'>568204</a></th>
+            <td>Fennec on xulrunner does not build with --enable-debug</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=502673'>502673</a></th>
+            <td>Possible to crash with multiple document state listeners on the same object</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615316'>615316</a></th>
+            <td>Should be able to use any ImageContainer with any ImageLayer</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615318'>615318</a></th>
+            <td>Add a "not now" choice to all doorhanger notification split buttons</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=535448'>535448</a></th>
+            <td>simple innerHTML ok on all browsers but Firefox</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=486297'>486297</a></th>
+            <td>Removal of struct JSProperty definition</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=582557'>582557</a></th>
+            <td>Intermittent failure in test_tags.js | test failed (with xpcshell return code: -2147483645)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=127903'>127903</a></th>
+            <td>&lt;a&gt; link tags intercept events meant for form submit buttons</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617718'>617718</a></th>
+            <td>Fennec crash [@ nsPresContext::IsRootContentDocument ] when loading GrooveShark (plugin.disable=fals&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611238'>611238</a></th>
+            <td>Intermittent crash in browser/base/content/test/tabview/browser_tabview_bug590606.js | Exited with c&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611241'>611241</a></th>
+            <td>xul:image with a SVG filter won't display on "about:" pages</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621484'>621484</a></th>
+            <td>Hang at org.mozilla.gecko.GeckoInputConnection.getExtractedText(GeckoInputConnection.java:252)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590766'>590766</a></th>
+            <td>"Assertion failure: PN_TYPE(pn) == TOK_NAME || PN_TYPE(pn) == TOK_ASSIGN" with Reflect.parse, let-bl&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621487'>621487</a></th>
+            <td>TypeInference &amp; TM + JM: Assertion failure: fe-&gt;data.synced()</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=596743'>596743</a></th>
+            <td>Need external RenderDocument API for embedding</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590774'>590774</a></th>
+            <td>Crash [@ js::ASTSerializer::function] with Reflect.parse("function::x")</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590775'>590775</a></th>
+            <td>Assertion with Reflect.parse("default xml namespace=x")</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609212'>609212</a></th>
+            <td>Peacekeeper's SHA1 hash algorithm is slow compared to Chrome due to profiling</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601030'>601030</a></th>
+            <td>autofocus could be used to steal user's focus</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621512'>621512</a></th>
+            <td>JM: jsop_length should use urshift32 instead of rshiftPtr</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594889'>594889</a></th>
+            <td>[Dwrite] wrong margins between characters in text and overlapping chars with no Cleartype</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=533450'>533450</a></th>
+            <td>js_GetStringBytes ignore js_CStringsAreUTF8 when JSString::isUnitString</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605133'>605133</a></th>
+            <td>Sync js/src/configure.in with configure.in</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621522'>621522</a></th>
+            <td>TypeInference: JM: crash when accessing property of undefined variable</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=553939'>553939</a></th>
+            <td>Firefox steals focus from games when Ff is minimised</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=607190'>607190</a></th>
+            <td>Add recognition of 32-bit Linux/MIPS platforms when setting CPU_ARCH to configure.in</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621527'>621527</a></th>
+            <td>ShadowLayersParent::RecvUpdate crashes when trying to use destroyed layer manager</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617433'>617433</a></th>
+            <td>TypeInference: (x &gt;&gt;&gt; 3.14) asserts with isInt32()</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619485'>619485</a></th>
+            <td>add WebGL info to about:support</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617440'>617440</a></th>
+            <td>TypeInference: Assertion failure: frame.stackDepth() == opinfo-&gt;stackDepth</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615394'>615394</a></th>
+            <td>Session Restore should notify when it is beginning and ending a restore</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=590820'>590820</a></th>
+            <td>Reflect.parse() crashers</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=332773'>332773</a></th>
+            <td>Drop XLink support</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592871'>592871</a></th>
+            <td>TM: compartment for Global Object created in nsXULPDGlobalObject::EnsureScriptEnvironment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594699'>594699</a></th>
+            <td>startup crash [@ nsWindowWatcher::OpenWindowJSInternal(nsIDOMWindow*, char const*, char const*, char&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619497'>619497</a></th>
+            <td>Use the WHATWG license in the license header of files transformed from the WHATWG spec</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617450'>617450</a></th>
+            <td>TypeInference: Assertion failure: backing-&gt;isType(JSVAL_TYPE_INT32)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613357'>613357</a></th>
+            <td>Fading address bar text briefly paints bright blue</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601070'>601070</a></th>
+            <td>"Assertion failure: offset &lt; length" [@ TypedArrayTemplate::copyFromWithOverlap]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=552445'>552445</a></th>
+            <td>Intermittent failure in test_tmpl_treeelementsimplesyntaxrecursive.xul | tree element - simple synta&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617458'>617458</a></th>
+            <td>TypeInference: Assertion failure: !synced()</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613364'>613364</a></th>
+            <td>javascript strict errors fail to show</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623606'>623606</a></th>
+            <td>Crash [@ nsDisplayClip::nsDisplayClip ] when dragging selected text</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=566266'>566266</a></th>
+            <td>opening 2 page, but 1 only exist on the windows menu</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615419'>615419</a></th>
+            <td>Exception... "Component returned failure code: 0x80004003 (NS_ERROR_INVALID_POINTER) [nsIURI.equals]&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619516'>619516</a></th>
+            <td>Rename nsSVGPreserveAspectRatio to SVGAnimatedPreserveAspectRatio &amp; split out its inner helper-class</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615423'>615423</a></th>
+            <td>Shutdown crash [@ mozilla::imagelib::SVGDocumentWrapper::StartAnimation]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621571'>621571</a></th>
+            <td>fix webgl is-object test</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611332'>611332</a></th>
+            <td>Applet embedded via JS/JQuery call will not start</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=596481'>596481</a></th>
+            <td>Geolocation sometimes hangs without returning result or running any callbacks.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623447'>623447</a></th>
+            <td>"ASSERTION: AreDialogsBlocked() called without a top window"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615445'>615445</a></th>
+            <td>gfxUniscribeShaper should treat halfwidth Katakana sound marks as extending a cluster</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623638'>623638</a></th>
+            <td>Crash [@ nsPluginStreamListenerPeer::SetUpStreamListener ] [@ nsPluginStreamListenerPeer::SetUpStrea&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=594972'>594972</a></th>
+            <td>JM: weird performance numbers for constructor/apply</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621598'>621598</a></th>
+            <td>Crash [@ nsSVGMarkerFrame::GetCanvasTM] with recursive marker, nested marker</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=556065'>556065</a></th>
+            <td>Make the OpenGL layers backend work on Mac OS X</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592930'>592930</a></th>
+            <td>TM: set right compartment for mozJSComponentLoader::ModuleEntry::Clear</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617511'>617511</a></th>
+            <td>bug fix for test breakage by 594644</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=476207'>476207</a></th>
+            <td>js1_8_1/trace/regress-462459-{01,02,03,04}.js fail.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617522'>617522</a></th>
+            <td>Tab strip moves a pixel when you have app tabs open and close the last normal tab</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597043'>597043</a></th>
+            <td>[meta] Panorama beta8</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623669'>623669</a></th>
+            <td>Minor cleanup in _positionPinnedTabs</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619578'>619578</a></th>
+            <td>Add GfxInfo for android</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=420925'>420925</a></th>
+            <td>Incorrect error message when missing argument to map()</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=508998'>508998</a></th>
+            <td>The TAMIL fonts are not getting displayed properly.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613449'>613449</a></th>
+            <td>DWM fails to composite plugin windows correctly when they're over glass margins</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=539723'>539723</a></th>
+            <td>Alt+"1-9" does the same as Cmd+"1-9"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617549'>617549</a></th>
+            <td>TypeInference: Assertion failure: fe-&gt;getKnownType() == original-&gt;getKnownType()</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614752'>614752</a></th>
+            <td>"Assertion failure: simsp &lt;= i.sp()" with apply</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617558'>617558</a></th>
+            <td>TypeInference: Assertion failure: !object-&gt;isDenseArray</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621655'>621655</a></th>
+            <td>TypeInference: JM: "Assertion failure: !fe-&gt;isType(JSVAL_TYPE_DOUBLE)"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=576605'>576605</a></th>
+            <td>intermittent mochitest-other failure in browser/base/content/test/browser_tabMatchesInAwesomebar.js &hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=531552'>531552</a></th>
+            <td>Firefox opens two windows when opening external links</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613477'>613477</a></th>
+            <td>Make the primary Star UI (bookmarked indicator) asynchronous</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619622'>619622</a></th>
+            <td>JM: shrink BasePolyIC by improving the ExecPoolVector representation</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611432'>611432</a></th>
+            <td>Add assertions to check that compartments are stay the same for JM activations</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619626'>619626</a></th>
+            <td>make splash screen faster</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605294'>605294</a></th>
+            <td>Leak nsGlobalWindow hiding a focused iframe</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618344'>618344</a></th>
+            <td>Web Console pprint() command should display something useful for functions</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611443'>611443</a></th>
+            <td>Create cairo_quartz_surface_create_for_data</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617589'>617589</a></th>
+            <td>TypeInference: Assertion failure: !ic.pools[index]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595062'>595062</a></th>
+            <td>Intermittent mochitest-ipcplugins failures: test_cocoa_focus.html | Test timed out then multiple fai&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=599159'>599159</a></th>
+            <td>Assigning to obj.length does nothing when .length is inherited from a slow array</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617592'>617592</a></th>
+            <td>TypeInference: Assertion failure: Call site vanished.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619641'>619641</a></th>
+            <td>jsd should return "anonymous", not an empty string or NULL, for nameless functions, for Firebug comp&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620394'>620394</a></th>
+            <td>crash [@ PresShell::GoToAnchor] if selectAnchor &amp;&amp; xpointerResult &amp;&amp; !sel</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605317'>605317</a></th>
+            <td>TM: Special case 'function(a){return b[a]}' in String.replace (and friends?)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=310056'>310056</a></th>
+            <td>CheckLoadURI exception for files about to be uploaded (let sites show preview of image referenced in&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=546328'>546328</a></th>
+            <td>javascript freezings</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621716'>621716</a></th>
+            <td>crash [@ js::LoopProfile::profileOperation][@ js::LoopProfile::decide][@ js::LoopProfile::profileLoo&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619670'>619670</a></th>
+            <td>onLowMemory may not work on Android</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=511097'>511097</a></th>
+            <td>After reinstalling disabled addon it continues to be disabled. Need to reload firefox twice.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617624'>617624</a></th>
+            <td>TypeInference: Assertion failure: !fe-&gt;isType(JSVAL_TYPE_DOUBLE)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605338'>605338</a></th>
+            <td>Turn off Aero Peek until we can implement a delayed hover</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=584860'>584860</a></th>
+            <td>TM: Move TM into compartment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609440'>609440</a></th>
+            <td>make JSString::chars / JS_GetStringChars fallible</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617634'>617634</a></th>
+            <td>SVGPathData::GetMarkerPositioningData checks for PATHSEG_CURVETO_QUADRATIC_ABS instead of PATHSEG_CU&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615589'>615589</a></th>
+            <td>-moz-mac-focusring color should be keyboardFocusIndicatorColor (NSColor)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601262'>601262</a></th>
+            <td>Octal in directive not caught in ES5 strict-mode code</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613551'>613551</a></th>
+            <td>JSGC_MAX_MALLOC_BYTES is too large on mobile</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617656'>617656</a></th>
+            <td>Discard jitcode to avoid excessive memory consumption</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586938'>586938</a></th>
+            <td>missing VIEWPORT enum in WebGL context</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617670'>617670</a></th>
+            <td>TypeInference: Assertion failure: op == JSOP_DIV</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614583'>614583</a></th>
+            <td>crash [@ nsDocument::AddToIdTable(mozilla::dom::Element*, nsIAtom*) ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612642'>612642</a></th>
+            <td>JS base64 code needs to be updated for removal of JS_GetStringBytesZ</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622797'>622797</a></th>
+            <td>#ifndef does not work for config/system-headers config</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617688'>617688</a></th>
+            <td>TypeInference: wrong result for x = -(void 0)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619737'>619737</a></th>
+            <td>TI: Kraken audio-fft much slower with type inference</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609502'>609502</a></th>
+            <td>TM: "Assertion failure: hasInt32Repr(*vp)"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617699'>617699</a></th>
+            <td>nsDOMFileReader::DispatchProgressEvent compares PRUint64 mReadTotal &gt;= 0</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619749'>619749</a></th>
+            <td>JSD: can't reach the last line when single stepping</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603366'>603366</a></th>
+            <td>NewCompartment leaks compartment when compartment-&gt;init() fails</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611564'>611564</a></th>
+            <td>8% DHTML talos regression from bug 575521</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617712'>617712</a></th>
+            <td>TypeInference: crash in debug and release builds</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621809'>621809</a></th>
+            <td>Update WebGLContextNotSupported.cpp</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621814'>621814</a></th>
+            <td>Incorrect decompilation with non-ASCII property name in destructuring</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619768'>619768</a></th>
+            <td>upgrade ANGLE to r511</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617729'>617729</a></th>
+            <td>Update Bookmark Star Icon</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617737'>617737</a></th>
+            <td>SVG text white space handling incorrect</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605457'>605457</a></th>
+            <td>Ogg code uses a singlethreaded hashtable on multiple threads, causing assertions during random tests&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=484627'>484627</a></th>
+            <td>TM: Generate code for js_CallTree directly on trace as LIR</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621845'>621845</a></th>
+            <td>Assertion failure: compartment mismatched with pending exception</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617750'>617750</a></th>
+            <td>TypeInference: Missing type at #1:00033 popped 0: RegExp:prototype:new</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619800'>619800</a></th>
+            <td>Enable scriptability for nsIPrincipal methods</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619802'>619802</a></th>
+            <td>nsLocaleService::nsLocaleService leaks resultLocale when posixConverter-&gt;GetXPLocale() fails</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617757'>617757</a></th>
+            <td>TypeInference: Missing type at #1:00039 popped 1: int</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619630'>619630</a></th>
+            <td>Support no comma or whitespace between points in polyline</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=570662'>570662</a></th>
+            <td>TM: eagerly call thisObject hook and cache result in global objects</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615723'>615723</a></th>
+            <td>Turn on methodjit for DOM workers</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601392'>601392</a></th>
+            <td>"ABORT: DOM wrapper's list length is out of sync" [@ DOMSVGLengthList::Length]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=607537'>607537</a></th>
+            <td>SVG SMIL: Support paint servers an animation values</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619827'>619827</a></th>
+            <td>throw from AudioTrack constructor kills fennec</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595253'>595253</a></th>
+            <td>IndexedDB: Notifications should auto-dismiss in some circumstances</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611639'>611639</a></th>
+            <td>NS_ProxyRelease does not work for RefPtrs</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=523578'>523578</a></th>
+            <td>test_places/queries/test_redirectsMode.js fails, and then reports a failure in head_queries.js</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=578877'>578877</a></th>
+            <td>Re-enable ANGLE and WebGL on Linux</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615745'>615745</a></th>
+            <td>CookieServiceChild doesn't receive preference observer notifications</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597315'>597315</a></th>
+            <td>Frameset history does not work properly when restoring a tab</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=576837'>576837</a></th>
+            <td>YARR allows what seems like a bogus character-class range</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619849'>619849</a></th>
+            <td>JM: shrink JITScript on 64-bit platforms</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615764'>615764</a></th>
+            <td>Remove nsRadioUpdateValueMissingVisitor</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=363861'>363861</a></th>
+            <td>GDI ClearType rendered to RGBA surfaces sometimes looks bad</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=580962'>580962</a></th>
+            <td>testcase from bug 580233 (unexpected values in GPOS table) crashes on Linux</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=373990'>373990</a></th>
+            <td>New feature suggestion: window.redraw() or similar from javascript</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623974'>623974</a></th>
+            <td>Letter spacing problem with D2D enabled and ClearType disabled</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595307'>595307</a></th>
+            <td>IndexedDB: third-party checks</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615788'>615788</a></th>
+            <td>Reusing SVG patterns with objectBoundingBox units fails to update CTM of child content</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617838'>617838</a></th>
+            <td>javascript: URIs don't work in &lt;browser remote&gt;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597360'>597360</a></th>
+            <td>Closing the last group results in weird behavior (window closes after pressing Ctrl+T, unresponsiven&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615794'>615794</a></th>
+            <td>Fix incorrect usage of ToNearestPixels in FrameLayerBuilder and elsewhere</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615805'>615805</a></th>
+            <td>Resizing Inspect Network Request window causes window to move</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=600982'>600982</a></th>
+            <td>Clear DOM storage entries for a domain when using the Forget about this site feature</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619910'>619910</a></th>
+            <td>Misplaced autocomplete suggestions when typing a command in a new line</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617863'>617863</a></th>
+            <td>"ASSERTION: video changed size?" from plugins' BasicImageLayers</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595180'>595180</a></th>
+            <td>[OS X] [OpenGL] Window resizer not drawn</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617870'>617870</a></th>
+            <td>Compartment mismatch with JSD: lineToPc(1, PCMAP_PRETTYPRINT)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617872'>617872</a></th>
+            <td>Focus manager allows F6 to focus elements inside non-focusable iframes/browsers</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613781'>613781</a></th>
+            <td>Window buttons (close, minimize, maximize) appear hovered although they are not when resizing window</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593302'>593302</a></th>
+            <td>"ASSERTION: Removing id entry that doesn't exist" after moving nodes between documents</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=578968'>578968</a></th>
+            <td>Hover-state of buttons at the end of the tabstrip isn't cleared when moving mouse up to the window b&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615833'>615833</a></th>
+            <td>Change event should not be cancelable</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619934'>619934</a></th>
+            <td>startup crash [@ mozilla::gl::GLContext::UploadSurfaceToTexture(gfxASurface*, nsIntRect const&amp;, unsi&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621986'>621986</a></th>
+            <td>fix webgl is-object test</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=621987'>621987</a></th>
+            <td>unary - applied to unsigned var in ConvertImage</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=607653'>607653</a></th>
+            <td>avoid temporary fbos/textures on transformed layers, when possible</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=583078'>583078</a></th>
+            <td>Too much padding on toolbars on Mac</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617905'>617905</a></th>
+            <td>refactor gfxFont::InitTextRun to make the splitting of long runs universally applicable</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593294'>593294</a></th>
+            <td>TM: various other defaultCompartment fixes</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=559006'>559006</a></th>
+            <td>Wrong behavior with JSClass::convert hook and JIT</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617913'>617913</a></th>
+            <td>FuzzOneInvalidCaseConversion could check result of CaseInsensitiveCompare/CharByCharCompareEqual</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615870'>615870</a></th>
+            <td>Remote HTML5 video rendering pipeline should be shorter</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619968'>619968</a></th>
+            <td>feGaussianBlur with a zero std deviation in either direction should not cause rendering to fail</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619970'>619970</a></th>
+            <td>Assertion failure: data.s.payload.why == why, at jsvalue.h:527</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=157123'>157123</a></th>
+            <td>Browser scrollbars continue scrolling after I release mouse button</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620790'>620790</a></th>
+            <td>crash [@ nsPluginInstanceOwner::UseLayers() ]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601545'>601545</a></th>
+            <td>Clear Recent History dialog jumps downwards and to the right each time details panel is opened/close&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611789'>611789</a></th>
+            <td>Web Console cleanup: Remove the window registry</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622042'>622042</a></th>
+            <td>IndexedDB: Rework events and requests</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620794'>620794</a></th>
+            <td>crash [@ nsNPAPIPluginInstance::HandleEvent ]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605662'>605662</a></th>
+            <td>enable per-compartment GC</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=568801'>568801</a></th>
+            <td>object received with no cache/expires headers using xmlhttprequest is sometimes after next request (&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622053'>622053</a></th>
+            <td>Devolve CallPropertyOp into its callers, for great assertiveness/readability</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603625'>603625</a></th>
+            <td>Network Panel heading alignment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622060'>622060</a></th>
+            <td>jsreftest.html?test=ecma_3/Number/15.7.4.3-02.js | application timed out after 330 seconds with no o&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617965'>617965</a></th>
+            <td>IPC::ParamTraits&lt;nsIDOMGeoPosition*&gt;::Read leaks GeoPositionCoords when ReadParam(... address) fails</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622063'>622063</a></th>
+            <td>Make Fennec-Gtk compiling on Maemo6</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=552432'>552432</a></th>
+            <td>Determine whether to shadow a property based on slotful *or* has JSPropertyOp setter (given writable&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609785'>609785</a></th>
+            <td>Startupcache urls should not depend on install-location</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620029'>620029</a></th>
+            <td>TM: newArray doesn't catch negative array lengths</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620034'>620034</a></th>
+            <td>"ABORT: DOM wrapper's list length is out of sync" [@ mozilla::DOMSVGNumberList::Length]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616705'>616705</a></th>
+            <td>Enable readBack for SharedMemory plugins pipeline</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619096'>619096</a></th>
+            <td>nsMemoryReporterManager should be threadsafe</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613909'>613909</a></th>
+            <td>Disable pinch gestures by default &amp; revert three finger vertical swipe gestures</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593497'>593497</a></th>
+            <td>JM+TM: use iteration count blacklisting only if methodjit is enabled</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=587288'>587288</a></th>
+            <td>TM: Fix RegExp ExecutablePool race</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620059'>620059</a></th>
+            <td>Tab bar icons have wrong gradient when window loses focus.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622678'>622678</a></th>
+            <td>[d3d9] Minefield gets black window interior with Intel graphics card on XP after screen lock</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593444'>593444</a></th>
+            <td>JM+TM: make Dromaeo+sessionrestore not inhibit tracing</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622117'>622117</a></th>
+            <td>Links with href broken if JavaScript is disabled and onclick attribute is present</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620070'>620070</a></th>
+            <td>Permaorange - js1_5/extensions/regress-342960.js - No test results reported. (SCRIPT)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609832'>609832</a></th>
+            <td>Function statements should be banned (for now) in ES5 strict mode</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=585258'>585258</a></th>
+            <td>Performance regression on the testcase in bug 424715</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620078'>620078</a></th>
+            <td>Crash [@ nsAutoFocusEvent::Run] with autofocus attribute in removed frame</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=562736'>562736</a></th>
+            <td>Request for relative uri after 302 redirect is occasionally relative to the original request</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=566836'>566836</a></th>
+            <td>Eliminate JSObjectOps::dropProperty</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619785'>619785</a></th>
+            <td>nsComputedDOMStyle::DoGetMozBackgroundSize leaks valY when it has problems with valX</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603706'>603706</a></th>
+            <td>Need a way to track the originating window for all nsIConsoleMessages</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=529987'>529987</a></th>
+            <td>Get error message in error console if I click on a link where I have &amp;lt;base target="_blank"&gt; in th&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=591430'>591430</a></th>
+            <td>Reflect.parse(): TOK_NAME statement nodes with pn_lexdef</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=591431'>591431</a></th>
+            <td>Reflect.parse(): JSOP_*XMLNAME nodes as lvalues</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595530'>595530</a></th>
+            <td>Searching bookmarks and history is much slower after SQLite 3.7.x upgrade</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=586679'>586679</a></th>
+            <td>Figure out how to show glass through TabView iframe</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601676'>601676</a></th>
+            <td>Configure should reject python3</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=591437'>591437</a></th>
+            <td>Reflect.parse(): can't reliably use pn_cookie for function args</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622158'>622158</a></th>
+            <td>Fix DirectX SDK platform detection</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620114'>620114</a></th>
+            <td>File size of pluginreg.dat increases steadily when I toggle enable/disable plug-ins</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615011'>615011</a></th>
+            <td>Intermittent timeout in jsreftest/tests/jsreftest.html?test=js1_5/extensions/regress-336409-2.js | a&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=601684'>601684</a></th>
+            <td>JSFUN_PRIMITIVE_THIS is redundant with fun-&gt;u.i.script-&gt;strictModeCode</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613973'>613973</a></th>
+            <td>Do not hide the invalid form popup if the user types in the invalid form control</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609878'>609878</a></th>
+            <td>no longer generating en-US langpacks after bug 578393</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613977'>613977</a></th>
+            <td>Intermittent invalid certificate error prompt in security tests causing timeouts</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=591450'>591450</a></th>
+            <td>crash parsing destructuring function with rebound non-destructuring arg</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613979'>613979</a></th>
+            <td>oninput should fire after the validity state update</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=539959'>539959</a></th>
+            <td>random failure in test_tmpl_bindingsmultiple.xul</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620130'>620130</a></th>
+            <td>Calls to eval with same code + varying strict mode of script containing eval == fail</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603750'>603750</a></th>
+            <td>nsWebSocket connection failure messages do not show in the Web Console</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617745'>617745</a></th>
+            <td>Jaegermonkey: Assert isDenseArray() &amp;&amp; idx &lt; getDenseArrayInitializedLength()</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609898'>609898</a></th>
+            <td>JM: TypeInference: do floating point register allocation</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609899'>609899</a></th>
+            <td>JM: Allocate registers across branches and joins</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620140'>620140</a></th>
+            <td>Bug 616271 causes CanLoadPlugin returns failure when plugin path is non-ASCII</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=566895'>566895</a></th>
+            <td>Tabs in Gmail are not displayed correctly</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620144'>620144</a></th>
+            <td>clip paths and masks that can't be resolved should be ignored</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622194'>622194</a></th>
+            <td>Animated GIF just flashes instead of proper animation</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=607860'>607860</a></th>
+            <td>remove navigator.mozNotification from Firefox desktop</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619113'>619113</a></th>
+            <td>Invalid vim modeline in nsDocShell.cpp</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=584969'>584969</a></th>
+            <td>Remove references to nsIFileSpec from the "supported" set in nsIPrefBranch</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623915'>623915</a></th>
+            <td>about:memory reporter for string chars</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=538242'>538242</a></th>
+            <td>window.moveTo(0,0) has no effect</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620169'>620169</a></th>
+            <td>[@ SVGAnimatedLengthList::SetBaseValueString][@ SVGAnimatedNumberList::SetBaseValueString] useing do&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=581263'>581263</a></th>
+            <td>remove slow natives</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=550548'>550548</a></th>
+            <td>Remove PRBool return-val for |nsCSSDeclaration::InitializeEmpty| (and always assume success)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618134'>618134</a></th>
+            <td>IndexedDB: Rename cursor types to comply with spec changes</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618135'>618135</a></th>
+            <td>IndexedDB: Implement update() on index cursors (not on index key cursors)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620184'>620184</a></th>
+            <td>remove null checks from GetDOMSlots() and rename it to DOMSlots() because it is infallible in m-c</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=580965'>580965</a></th>
+            <td>Vertical lines between non-tab tab bar elements look out of place in the tabs on top mode</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616090'>616090</a></th>
+            <td>nsDOMStorageDBWrapper is causing constant 5s timer</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618139'>618139</a></th>
+            <td>IndexedDB: Make delete() and get() not return an error event when the key does not exist</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618140'>618140</a></th>
+            <td>IndexedDB: Don't fire success event callbacks once a transaction has been aborted</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618141'>618141</a></th>
+            <td>IndexedDB: createObjectStore and createIndex should accept an optional object argument</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=544414'>544414</a></th>
+            <td>Use locale info when converting numbers to string in JS on Android</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618143'>618143</a></th>
+            <td>IndexedDB: Don't accept null as a valid key</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618096'>618096</a></th>
+            <td>Use 16x16 for extension toolbar icons on Mac</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620194'>620194</a></th>
+            <td>"ASSERTION: nsLoadGroup not thread-safe" under nsWyciwygCloseEvent::~nsWyciwygCloseEvent</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622246'>622246</a></th>
+            <td>Drop down menu href links dont work when clicked</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618151'>618151</a></th>
+            <td>Overwriting state can lead to unrestored tabs</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=503465'>503465</a></th>
+            <td>Image with a dimension of 65535px or greater does not display</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=556715'>556715</a></th>
+            <td>Combining diacritics with OpenType features broken with Monospace</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606834'>606834</a></th>
+            <td>[OS/2] follow-up Make int32* and int32_t* inter-convertible</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620637'>620637</a></th>
+            <td>Assertion failure: result-&gt;isImmI(jsint(r))</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=585393'>585393</a></th>
+            <td>left tab title text shifts when a new tab is added</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=542396'>542396</a></th>
+            <td>Intermittent failure in test_tmpl_treeelementquerysyntax.xul | tree element - query syntax</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595648'>595648</a></th>
+            <td>investigate and test handling of '0' in calc() expressions</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593604'>593604</a></th>
+            <td>Support some form of component alpha with D3D9 layers</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=609990'>609990</a></th>
+            <td>JS_ASSERT(!initialVarObj-&gt;getOps()-&gt;defineProperty); triggered while browsing hulu.com</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618183'>618183</a></th>
+            <td>nsDocument leak due to nsTypeAheadFind</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=607944'>607944</a></th>
+            <td>Canary fails to build with --disable-libxul (missing symbol XRE_GetProcessType)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=538314'>538314</a></th>
+            <td>TM: Add dmandelin's ad hoc closure tests to trace-test suite</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=585420'>585420</a></th>
+            <td>Drop files from intl and restore nsCaseConversionImp2</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610594'>610594</a></th>
+            <td>"ABORT: F.6.6.3 should prevent this. Will sqrt(-num)!"</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620242'>620242</a></th>
+            <td>[@ JetpackActorCommon::RecList::remove] mishandles node</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618196'>618196</a></th>
+            <td>IndexedDB: Error events and exceptions thrown during success events should abort transactions</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=538326'>538326</a></th>
+            <td>Large regression in test case from bug 534590</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620252'>620252</a></th>
+            <td>RomanToText could use // FALLTHROUGH comments for 3 and 2</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620253'>620253</a></th>
+            <td>nsResizerFrame::AdjustDimensions fall through comment is misplaced</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620255'>620255</a></th>
+            <td>add comment nsHTMLInputElement::PostHandleEvent for isMovingBack falling through</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623228'>623228</a></th>
+            <td>WebGL context destruction hangs on Droid</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620267'>620267</a></th>
+            <td>All newlines immediately following a start &lt;pre&gt; tag get stripped</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620269'>620269</a></th>
+            <td>unreachable code in nsPlatformCharset::GetDefaultCharsetForLocale if HAVE_LANGINFO_CODESET</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=605935'>605935</a></th>
+            <td>Use  private-browsing-transition-complete instead of sessionstore-browser-state-restored</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622321'>622321</a></th>
+            <td>{ x: 1, get x() { } }, { get x() { }, get x() { } }, { set x(v) { }, x: 2 } are all syntax errors, e&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614131'>614131</a></th>
+            <td>Compartment mismatches with JSD: CallJSNative(exn_toString)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604798'>604798</a></th>
+            <td>JM: Move JM ThreadData stuff to compartment</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614136'>614136</a></th>
+            <td>Hang in sa_stream_write on shutdown when IPC enabled due to stream being paused</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616186'>616186</a></th>
+            <td>fail the event tests if dupe event is fired</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=573039'>573039</a></th>
+            <td>Segfault with CUPS 1.4.4 (Print and Print Preview do not work)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610044'>610044</a></th>
+            <td>Crash [@ mozilla::ipc::RPCChannel::CxxStackFrame::CxxStackFrame]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593195'>593195</a></th>
+            <td>TM: Blacklist based on iteration count/weight</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620295'>620295</a></th>
+            <td>SVG &lt;a&gt; elements do not expose their href properties in JS</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618248'>618248</a></th>
+            <td>When I start drag a bookmark in any Bookmarks popup, the Bookmarks popup closes immediately</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610057'>610057</a></th>
+            <td>Persona theme overlap caption buttons when opening a new browser window and parent window is maximiz&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=536331'>536331</a></th>
+            <td>bradley hand tic tt bold font not available</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597634'>597634</a></th>
+            <td>Intermittent browser_522545.js | sessionstore got correct userTypedValue - Got undefined, expected e&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=534829'>534829</a></th>
+            <td>Dark Red Designer D persona automatically loads whenever I receive an automatic add-on update</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620304'>620304</a></th>
+            <td>crash [@ nsTypedSelection::GetIndicesForInterval] if !aStartIndex/!aEndIndex</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622959'>622959</a></th>
+            <td>fix webgl vertexattribpointer test</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610070'>610070</a></th>
+            <td>Large amount of heap allocation from js::PropertyTable::init</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618265'>618265</a></th>
+            <td>Leaking gfxSharedImageSurfaces</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=608026'>608026</a></th>
+            <td>[PATCH] fix some minor compilation warnings</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620315'>620315</a></th>
+            <td>"Assertion failure: unexpected constantly false guard detected" with "use strict", 4&gt;this</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=602757'>602757</a></th>
+            <td>Hardware acceleration disables ClearType on the add-on bar</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623921'>623921</a></th>
+            <td>Backout HTTP Syn Retry</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=541661'>541661</a></th>
+            <td>Dragging the map does not work on browser game, Grepolis, JavaScript attachEvent object not working.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620337'>620337</a></th>
+            <td>TI: Inference failure when using non-int/string properties</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611635'>611635</a></th>
+            <td>[OOPP][D2D][D3D10] Flash doesn't show its version in the about Flash page when OOPP and D3D10 is ena&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620345'>620345</a></th>
+            <td>Textarea doesn't allow keyboard input in modal dialog</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606011'>606011</a></th>
+            <td>onfocus event not fired on click for elements made specially focusable via tabindex</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=611296'>611296</a></th>
+            <td>QuickTime plugin not recognized for some Mac OS X users</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620355'>620355</a></th>
+            <td>Uninitialized variable warnings in GLContext::UploadSurfaceToTexture</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620356'>620356</a></th>
+            <td>Uninitialized variable warning in CreateOffscreenPixmapContext</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622405'>622405</a></th>
+            <td>Container of browser.xul identity-popup-more-info-button (an hbox) is missing ID</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620358'>620358</a></th>
+            <td>Uninitialized variable warning in SVGAnimatedPointList::SetBaseValueString</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=536391'>536391</a></th>
+            <td>When scrolling down, the whole PC freezes and must be rebooted</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=380747'>380747</a></th>
+            <td>Numeric and string literals after get/set</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619490'>619490</a></th>
+            <td>Don't use double-buffered shadowed layers with OGL compositing</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=593742'>593742</a></th>
+            <td>TM: nsDOMWorker has to set the right compartment</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=577359'>577359</a></th>
+            <td>Don't generate INITPROP/INITELEM for constant initializer elements</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620376'>620376</a></th>
+            <td>ArrayToIdVector from jsproxy.cpp should check for operation callback invocations</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618334'>618334</a></th>
+            <td>Web Console: normal GET requests should show up under Net/Log, not Net/Error</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=592869'>592869</a></th>
+            <td>TM: set right compartment in XPCNativeMember::Resolve</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622436'>622436</a></th>
+            <td>Crash [@ GLEngine@0xaa6bc ]</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616294'>616294</a></th>
+            <td>delete x, in function t() { return eval("var x; (function() { return delete x; })")(); }, doesn't wo&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597864'>597864</a></th>
+            <td>Javascript strangely slow/ locking up browser ( and tabs)</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606058'>606058</a></th>
+            <td>Non-chrome XUL overlays can create JSObjects in the wrong compartment.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=597867'>597867</a></th>
+            <td>New addons do not appear in the addons section FF4B6</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618350'>618350</a></th>
+            <td>TM calls setter for array literals</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=555653'>555653</a></th>
+            <td>Inability to save Sections, Categories, or Articles in Joomla 1.5</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620402'>620402</a></th>
+            <td>crash [@ gfxTextRun::BreakAndMeasureText] if haveHyphenation &amp;&amp; !aProvider</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=603322'>603322</a></th>
+            <td>new[] mismatch with delete instead of delete[] in TVariable::shareConstPointer</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=538488'>538488</a></th>
+            <td>Controls on pages do not indicate visually when the mouse pointer is over a clickable label</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622461'>622461</a></th>
+            <td>CSS3 transition delay ignored when transition duration is 0</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=479102'>479102</a></th>
+            <td>TM: Improve performance of code we don't trace well</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=561023'>561023</a></th>
+            <td>second instance of 3.7a4 tries to open</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622474'>622474</a></th>
+            <td>[QT] ipdlunittest does not work on Qt port</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=604045'>604045</a></th>
+            <td>TypeInference: identify packed arrays</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=596776'>596776</a></th>
+            <td>IndexedDB: Prevent quota prompt from hanging on shutdown</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=554648'>554648</a></th>
+            <td>Crash during exploration of folders</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614290'>614290</a></th>
+            <td>pinnedonly="true" incorrectly set after session restore</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=623598'>623598</a></th>
+            <td>avoid repeatedly extracting and deleting libraries</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620445'>620445</a></th>
+            <td>useless null check of prefix in XMLToXMLString</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620446'>620446</a></th>
+            <td>Provide support for RTL languages in simple SVG text elements</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618399'>618399</a></th>
+            <td>content area border color implemented in bug 588764 is incorrect - too light</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=272288'>272288</a></th>
+            <td>Allow SVG source for &lt;svg:image&gt;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=562406'>562406</a></th>
+            <td>Omnijar js components from startupcache during build</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622235'>622235</a></th>
+            <td>ipdlunittest.exe doesn't build on windows anymore</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622503'>622503</a></th>
+            <td>Build failure when JS_TRACER is not defined</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614314'>614314</a></th>
+            <td>Windows created after entering/exiting fullscreen mode are created at maximum size</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612267'>612267</a></th>
+            <td>Methods added to Window.prototype don't show up on window</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=610973'>610973</a></th>
+            <td>Script error when extending String.prototype</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615872'>615872</a></th>
+            <td>"ASSERTION: Sample time should not precede current interval" with removed documentElement</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618422'>618422</a></th>
+            <td>jstracer msvc warning in profiler code</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617460'>617460</a></th>
+            <td>TypeInference: different result in JM and interpreter</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614333'>614333</a></th>
+            <td>Remove the empty script optimization</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618485'>618485</a></th>
+            <td>64-bit big-endian jsval_layout is not defined, compile fails</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=615072'>615072</a></th>
+            <td>obj decl from top of Parser::letStatement is unused</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612292'>612292</a></th>
+            <td>Rename array allocation functions</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618437'>618437</a></th>
+            <td>No indication of blocked popups when the notification bar is disabled</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=556998'>556998</a></th>
+            <td>Save box do not work correctly until I close the first box and try to save the file again.</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=622536'>622536</a></th>
+            <td>OnProgress/OnStatus events processing is very expensive in Remote fennec</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=614348'>614348</a></th>
+            <td>browser/fuel/test/browser_ApplicationQuitting.js causes ASSERTION: XPConnect is being called on a sc&hellip;</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616397'>616397</a></th>
+            <td>New Image() doesn't work in Greasemonkey scripts</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=595922'>595922</a></th>
+            <td>tooltips should not show form validation message if the form element has @novalidate</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612312'>612312</a></th>
+            <td>Change DEBUG_ARRAYS to DEBUG</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=559067'>559067</a></th>
+            <td>tracemonkey MSVC warnings fixes</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616412'>616412</a></th>
+            <td>"Conditional jump or move depends on uninitialised value(s)" in nsScriptSecurityManager::CheckFuncti&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=606173'>606173</a></th>
+            <td>Firefox crashes [@ xpc::ResolveNativeProperty ]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=616414'>616414</a></th>
+            <td>"Conditional jump or move depends on uninitialised value(s)" at IPC::ParamTraits&lt;PrefTuple&gt;::Write (&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620512'>620512</a></th>
+            <td>Firefox 4.0b9pre crash in [@ nsNPAPIPluginInstance::UseAsyncPainting(int*) ]</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619488'>619488</a></th>
+            <td>Inform child processes of the compositor's layer-manager type</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=613372'>613372</a></th>
+            <td>IndexedDB: Success event for setVersion request has wrong result</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=612334'>612334</a></th>
+            <td>have typed arrays treat length params more sanely</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618484'>618484</a></th>
+            <td>Workers: Allow ChromeWorkers access to XPCOM objects</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=493557'>493557</a></th>
+            <td>"Recent Tags" and "Recently Bookmarked" are flipped when smart bookmarks are updated.</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=620534'>620534</a></th>
+            <td>Plugin-like files add overhead on every startup on Mac(nsPluginsDir::IsPluginFile is doing IO)</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=618487'>618487</a></th>
+            <td>Starting Nightly Win32 20101208 Trunk Build Divx Web Player Videos won't play on Vidbux.com and Vidx&hellip;</td>
+        </tr>
+        <tr class='even'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=619519'>619519</a></th>
+            <td>Fix android key down/press/up handling</td>
+        </tr>
+        <tr class='odd'>
+                  <th><a href='https://bugzilla.mozilla.org/show_bug.cgi?id=617813'>617813</a></th>
+            <td>"ASSERTION: does it make sense to Resize() a disabled or hidden widget?" in PuppetWidget</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div id="release-notes-footer"></div>
+
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

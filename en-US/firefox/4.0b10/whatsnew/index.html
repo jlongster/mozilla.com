@@ -1,0 +1,230 @@
+<?php
+
+// for sending sms and for list of countries + country codes
+require_once "{$config['file_root']}/includes/mobile-sms.inc.php";
+
+?><!DOCTYPE HTML>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Firefox Updated</title>
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/firefox/4/firstrun-page-beta9.css" media="screen" />
+    <link rel="stylesheet" href="<?=$config['static_prefix']?>/style/tignish/video-player.css" media="screen" />
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/js/util.js"></script>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/includes/yui/2.5.1/container/container_core-min.js"></script>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/js/mozilla-video-tools.js"></script>
+    <noscript>
+      <style>
+        #sub-feature {
+            opacity: 1;
+        }
+      </style>
+    </noscript>
+</head>
+
+<body id="whatsnew" class=" locale-en-US portal-page">
+<script type="text/javascript">// <![CDATA[
+if (document.body.className == '') {
+    document.body.className = 'js';
+} else {
+    document.body.className += ' js';
+}
+
+if (gPlatform == 1) {
+    document.body.className += ' platform-windows';
+} else if (gPlatform == 3 || gPlatform == 4) {
+    document.body.className += ' platform-mac';
+} else if (gPlatform == 2) {
+    document.body.className += ' platform-linux';
+}
+
+YAHOO.util.Event.onDOMReady(function() {
+	document.body.offsetLeft;
+	document.getElementById('sub-feature').className = 'loaded';
+});
+
+// ]]></script>
+
+<div id="wrapper">
+<div id="doc">
+
+<div id="main-feature">
+    <h1>What’s New in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+        <div id="video-launch" class="video-launch">
+            <a href="http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.webm" id="video-beta" onclick="dcsMultiTrack('DCS.dcsuri','/firefox4beta/Firefox_4_beta.webm','WT.ti','Firefox 4 Beta 9 demo');">
+              <span class="video-launch-border">
+                <img class="video-launch-thumbnail" src="/img/firefox/beta/4/video-thumbnail.png" />
+              </span>
+              <span class="video-launch-text">Watch the video</span>
+            </a>
+        </div>
+        <h3>Polishing Firefox 4 Features!</h3>
+        <p>
+          Firefox 4 Beta needs more in-depth testing from users like you!  To help us
+          polish this release before launch, take 30 seconds each day to help us test out
+          the following features.  You can send us a quick report to tell us how we're
+          doing through the feedback button on the top right corner of your browser. 
+        </p>
+        <ul>
+            <li><a href="http://input.mozilla.com/<?=$lang?>/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/4.0b9/releasenotes/">Release Notes »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-4">
+        <h4>Site Compatibility</h4>
+        <p>
+          Does your favorite site work? Help us make sure that the
+          sites you visit all the time work properly on Firefox 4. Can
+          you login to website accounts? Can you stream videos? Can
+          you play your favorite games?
+          <a href="http://input.mozilla.com/<?=$lang?>/feedback/">Let us know!</a>
+        </p>
+    </div>
+
+    <div id="column-1">
+        <h4>Sync</h4>
+        <p>
+          If you have Firefox Home for iPhone or Firefox 4 Beta for Mobile installed on
+          your mobile phone, try syncing your browser session across your devices.  Can
+          you log-in to your account properly? Are your bookmarks synced?
+        </p>
+        <ul>
+          <li><a href="/<?=$lang?>/mobile/sync/">Learn more about Sync »</a></li>
+          <li><a href="/<?=$lang?>/mobile/home/">Learn more about Firefox Home »</a></li>
+        </ul>
+    </div>
+
+    <div id="column-2">
+        <h4>Panorama</h4>
+        <p>
+          Have you tried Panorama yet? Click on the Panorama icon on the top right of
+          your browser.  Are all of your open tabs appearing? Can you easily move them
+          around the pane? Are they behaving the way you would expect them to? 
+          <a href="http://input.mozilla.com/<?=$lang?>/feedback/">Let us know!</a>
+        </p>
+        <div id="video-sync" class="video-launch">
+            <a href="http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm" id="video-grouptabs" onclick="dcsMultiTrack('DCS.dcsuri', '/serv/firefox4beta/grouptabs.webm','WT.ti','Firefox 4 Beta 9 Group tabs video');">
+              <div class="video-launch-border">
+                <img class="video-launch-thumbnail" src="/img/firefox/beta/4/video-frame.png" />
+              </div>
+              <span class="video-launch-text">Watch the Video</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="column-3">
+        <h4>Plugin Compatibility</h4>
+        <p>
+          Plugins help power videos, animations and games on popular
+          websites. Plugins, made by third party companies, can
+          sometimes crash because of compatibility issues.  Are
+          streaming music and videos playing correctly? Can you easily
+          chat with your friends on social networking sites?
+          <a href="http://input.mozilla.com/<?=$lang?>/feedback/">Let us know!</a>
+        </p>
+        <ul>
+          <li><a href="/<?=$lang?>/plugincheck/">Check your Plugins »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="sidebar">
+
+	<div id="mobile-promo-container" class="sidebar-section">
+        <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/mobile.png" alt="Mobile icon" />
+        <h4>Take Firefox 4 Beta with you!</h4>
+        <p>Get Firefox on your Android phone or Nokia N900. Enjoy all your favorite features like Sync, Add-ons and the Awesome Bar anywhere you go. Also available in the Android Market!</p>
+        <p><a href="/<?=$lang?>/mobile/beta/" id="mobile-download">Go Mobile! — Free</a></p>
+	</div>
+
+	<div class="sidebar-section">
+		<h4>Need Help?</h4>
+		<p><a href="https://support.mozilla.com/en-US/kb/Get+help+with+Firefox+4+Beta"><img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/support.png" alt="Support icon" />Our support pages</a> have answers and advice specifically for the Firefox 4 beta.</p>
+	</div>
+
+</div>
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<script type="text/javascript">
+// <![CDATA[
+var player_beta = new Mozilla.VideoPlayer(
+    'video-beta',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: 'Download in WebM format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.theora.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: 'Download in Ogg&nbsp;Theora format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/firefox4beta/Firefox_4_beta.mp4',
+            type:  'video/mp4',
+            title: 'Download in MPEG-4 format'
+        }
+    ],
+    '/firefox4beta/Firefox_4_beta.mp4'
+);
+
+var player_grouptabs = new Mozilla.VideoPlayer(
+    'video-grouptabs',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: 'Download in WebM format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.theora.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: 'Download in Ogg&nbsp;Theora format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/firefox4beta/grouptabs.mp4',
+            type:  'video/mp4',
+            title: 'Download in MPEG-4 format'
+        }
+    ],
+    'serv/firefox4beta/grouptabs.mp4'
+);
+
+// ]]>
+</script>
+<script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends({"dcsid":"dcst2y3n900000gohmphe66rf_3o6x","rate":5,"fpcdom":"mozilla.com"});
+_tag.dcsGetId();
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+_tag.dcsCollect();
+//]]>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+
+</body>
+</html>
