@@ -212,7 +212,7 @@ class MozillaCom_MenuData
                         ),
                         'submenu_support_thunderbird' => array(
                             'title' => 'Thunderbird Support',
-                            'href'  => "http://www.mozilla.org/support/thunderbird/",
+                            'href'  => "http://support.mozillamessaging.com/{$this->lang}/kb/",
                         ),
                     ),
                 ),
