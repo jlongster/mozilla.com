@@ -1,4 +1,9 @@
 <?php
+/*
+ * This is a quick and dirty solution to be able to do the Firefox 4 beta releases as fast as possible
+ * All beta files will go to the trashcan as soon as Firefox 4 is released, except for subtitling
+ */
+
 
 $body_id = 'whatsnew';
 
@@ -27,15 +32,22 @@ $videoid         = '';
 $ext_webm        = 'webm';
 $ext_theora      = 'theora.ogv';
 $ext_mp4         = 'mp4';
+$sidebarfile = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
 
+if (file_exists($sidebarfile)) {
+    ob_start();
+    include_once $sidebarfile;
+    $sidebar = ob_get_contents();
+    ob_end_clean();
+} else {
+    $sidebar = '';
+}
 
 // redirect to download page if not the latest whatsnew page.
 // This way we can put everything on production before the release.
-if ($shortversion > $latestRelease) {
-/*
+if ($_SERVER['HTTP_HOST'] == 'www.mozilla.com' && $shortversion > $latestRelease) {
     noCachingRedirect($config['url_scheme'].'://'.$config['server_name']."/$lang/firefox/beta/");
     exit;
-*/
 }
 
 $shortversion_content = ($shortversion == 6) ? 5 : $shortversion;
@@ -296,19 +308,6 @@ SYNC;
     </script>
 FOOTER;
 
-
-
-        $sidebarfile = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
-
-        if (file_exists($sidebarfile)) {
-            ob_start();
-            include_once $sidebarfile;
-            $sidebar = ob_get_contents();
-            ob_end_clean();
-        } else {
-            $sidebar     = '';
-        }
-
         break;
 
     case '9':
@@ -472,20 +471,16 @@ ADJUSTMENTS;
     </script>
 FOOTER;
 
+        break;
 
-
-
-        $sidebarfile = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
-
-        if (file_exists($sidebarfile)) {
-            ob_start();
-            include_once $sidebarfile;
-            $sidebar = ob_get_contents();
-            ob_end_clean();
-        } else {
-            $sidebar     = '';
-        }
-
+    case '10':
+        $video       = 'Firefox_4_beta';
+        $videoid     = 'tour-video';
+        $subtitles   = getVideoSubtitles($videoid, 'includes/l10n/sub-fx4-firstrun-beta.html');
+        $videoserver = 'http://videos-cdn.mozilla.net/serv/firefox4beta/';
+        $titleimglk  = $config['static_prefix'].'/img/firefox/beta/4/firstrun/title.png';
+        $feedbackurl = "http://input.mozilla.com/$lang/feedback";
+        $li_relnotes = '<li><a href="/'.$lang.'/firefox/'.$version.'/releasenotes/">'.___('Release Notes').' »</a></li>';
         break;
 
     default:
