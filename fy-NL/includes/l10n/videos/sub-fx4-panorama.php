@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Hoe organisearje jo jo ljepblêden</em>Firefox Panorama jout jo in fisueel oersjoch fan al jo ljepblêden&hellip;";
+$sub[2]  = "&hellip;en lit jo se organisearje yn groepen sa dat jo jo wurkflow organisearje kinne en separate taken separaat hâlde kinne.";
+$sub[3]  = "Sa as jo al ûntdekt hawwe kinne jo de Panorama-knop brûke om te begjinnen mei organisearjen fan jo ljepblêden.";
+$sub[4]  = "Jo kinne dan klikke op in ljepblêd, of op Escape drukke om werom te gean.";
+$sub[5]  = "Natuerlik kinne jo elk ljepblêd oanklikke om dat ljepblêd te aktivearjen.";
+$sub[6]  = "As alternatyf, kinne jo opsje-spaasjebalk op Mac of control-spaasjebalk op Windows brûke om Firefox Panorama te iepenjen of sluten.";
+$sub[7]  = "Om ljepblêden te groepearjen sleepje simpelwei twa tegaar.";
+$sub[8]  = "Yn dit gefal, wol ik al myn ôfbyldings fan de himmel groepearje.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "Ik kin ek in lege romte klikke en slepe om in nije groep te meitsjen.";
+$sub[11] = "As jo ynzoome op in groep, sjogge jo allinnich de ljepblêden dy't yn dy groep sitte. Dit jout jo in better oersicht.";
+$sub[12] = "Om jo groepen te organisearjen, sleepje se gewoan rûnom.";
+$sub[13] = "Jo kinne de grutte wizigje sa dat minder belangrike saken lytser binne&hellip;";
+$sub[14] = "&hellip;en mear belangrike saken grutter.";
+$sub[15] = "As jo in groep lyts genôch meitsje, sil it feroarje yn in stapel.";
+$sub[16] = "Jo kinne klikke op in ljepblêd om it te iepenjen";
+$sub[17] = "of";
+$sub[18] = "as jo fluch yn de stapel sjen wolle&hellip;";
+$sub[19] = "&hellip;klik it útklapikoan&hellip;";
+$sub[20] = "&hellip;en klik dan it ljepblêd dat jo hawwe wolle.";
+$sub[21] = "Dit is in koarte yntroduksje fan Firefox Panorama.";
+$sub[22] = "Wylst der noch hieltiid mear te ûntdekken is (byg. hoe kin ik groepen neame)&hellip;";
+$sub[23] = "&hellip;jo binne no ree om te begjinnen mei in bettere manier om te sneupen.";
 $sub[24] = "";
 
 ?>
