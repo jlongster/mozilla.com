@@ -1,62 +1,75 @@
 
 <div id="main-feature">
 
-    <h1>What’s New in <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+    <h1>Kaj je novega v <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
 
     <div id="sub-feature">
 
+    
+
     <?=$movie;?>
 
-        <h3>More feedback needed!</h3>
+        
+
+        <h3>Rabimo še več povratnih informacij!</h3>
         <p>
-            Thanks to you, we've received over one million pieces of feedback on Firefox 4 Beta. But, even more always helps! Just click the feedback button in the top right of the browser to let us know what you do and don't like (and be sure to include the URL, too).
+            Hvala vam vsem, doslej smo prejeli več kot milijon sporočil s povratnimi informacijami o Firefox 4 Beta. Ampak, hočemo še več! Kliknite enostavno na gumb za povratne informacije v zgornjem desnem kotu brskalnika in nam povejte, kaj vam je všeč in kaj vam ni(ne pozabite dodati URL).
         </p>
 
         <ul>
-            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Share Feedback »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Povratne informacije »</a></li>
+            
             <?=$li_relnotes?>
+        
         </ul>
     </div>
 
 </div>
 
+
+
 <?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+
 
 
 <div id="main-content">
 
     <div id="column-4">
-        <h4>How are your favorite sites performing?</h4>
+        <h4>Kako se obnašajo vaše najljubše strani?</h4>
         <p>
-          Do they load quickly? Are you seeing any unusual lines or boxes? Can you fill out forms? Does Flash work? Can you watch videos? <a href="<?=$feedbackurl?>">Tell us about sites that have problems.</a>
+          Ali se naložijo hitro? Ali je videti neobičajne črte ali pravokotnike? Ali obrazce lahko izpolnite? Ali Flash deluje? Si lahko ogledate video posnetke? <a href="<?=$feedbackurl?>">Sporočite nam, s katerimi stranmi so težave.</a>
         </p>
     </div>
 
     <div id="column-1">
-        <h4>Can you play your favorite online game?</h4>
+        <h4>Lahko igrate svojo najljubšo spletno igro?</h4>
         <p>
-          Help us make sure that sites that use Flash and other multimedia components run smoothly on Firefox 4. Is the experience faster? Or, did the game cause a crash? <a href="<?=$feedbackurl?>">Let us know what games do and don't work.</a>
+          Pomagajte nam zagotoviti, da mesta, ki uporabljajo Flash in druge multimedijske elemente, tečejo gladko v Firefox 4. Imate občutek, da gre hitreje? Ali pa je med igro prišlo do sesutja? <a href="<?=$feedbackurl?>">Povejte nam, katere igre delajo, katere pa ne.</a>
         </p>
     </div>
 
     <div id="column-2">
-        <h4>What add-ons have you tried?</h4>
+        <h4>Katere dodatke ste poskusili?</h4>
         <p>
-          Are your favorite add-ons compatible with Firefox 4 Beta? Which ones aren't working? Has the new Add-ons Manager helped you stay organized? (Note: to start using add-ons with Firefox 4 Beta look for 4.0.* under "Works with" in the Add-ons Manager.) <a href="<?=$feedbackurl?>">Tell us what you think.</a>
+          Ali so vaši najljubši dodatki združljivi s Firefox 4 Beta? Kateri od njih ne delajo? Vam je novi Skrbnik za dodatke pomagal obdržati red? (Opomba: da dodatke v Firefox 4 lahko začnete uporabljati, si v Skrbniku poiščite tiste postavke, ki so v polju "Dela z" označene z 4.0 .*) <a href="<?=$feedbackurl?>">Povejte nam, kaj si mislite.</a>
         </p>
 
         <p>
-          Or if you want to help even more, install the <a href="https://addons.mozilla.org/firefox/addon/15003">Add-ons Compatibility Reporter</a>. With this extension, if you notice that one of your add-ons doesn't seem to be working the same way it did in previous Firefox versions, just open the Add-ons Manager and click Compatibility next to that add-on to send a report to Mozilla.
+          Če pa želite pomagati še več, si namestite <a href="https://addons.mozilla.org/firefox/addon/15003">Add-ons Compatibility Reporter</a>, to je dodatek za preverjanje združljivosti. Če opazite, da eden od vaših dodatkov zgleda ne dela tako, kot je v prejšnjih različicah brskalnika, vam ta razširitev omogoča, da odprete Skrbnika za dodatke, kliknete na Združljivost za ta dodatek in Mozilli pošljete poročilo o odkritem problemu.
         </p>
     </div>
 
     <div id="column-3">
-        <h4>Have you set up a Sync account?</h4>
+        <h4>Ste odprli račun za Sync?</h4>
         <p>
-          If you have a Sync account, how was the set-up process? Could you sync your data on your Android device with the Mobile Beta, or on your iPhone with Firefox Home? If you haven't set up a Sync account, could you find the Sync feature in your browser? <a href="<?=$feedbackurl?>">Give us feedback on Sync</a>.
+          Če imate Sync račun, kako je potekala namestitev? Ste lahko sinhronizirali podatke vaše Android naprave z Beta Mobile, ali vaš iPhone s Firefox Home? Če še nimate računa Sync, ali ste Sync funkcijo v svojem brskalniku lahko našli? <a href="<?=$feedbackurl?>">Sporočite nam povratne informacije o Sync</a>.
         </p>
     </div>
 </div>
+
+
 
 <?=$sidebar?>
 
@@ -64,3 +77,4 @@
 
 
 <?php endif; ?>
+
