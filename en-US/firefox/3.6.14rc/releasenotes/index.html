@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
 	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
+    <style>
+        .relnote_header {
+            width: 70%;
+        }
+    </style>
+
 
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
@@ -14,7 +20,7 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
   <h2>Firefox 3.6 Release Notes</h2>
-    <p><em>v.3.6.14 Beta (Build 1), released January 26th, 2011</em><br />
+    <p class="relnote_header"><em>v.3.6.14 Beta (Build 1), released January 26th, 2011</em><br />
     Thanks for participating in the Firefox Community Beta Program!
     Testing beta builds of Firefox helps ensure that they are secure and stable
     for hundreds of millions of users around the world. Please let us know if
@@ -257,32 +263,6 @@ EXTRA_HEADERS;
   </div>
   <div id="release-notes-footer"></div>
 
-</div>
-
-<div id="sidebar">
-<script type="text/javascript" src="/js/download.js"></script>
-  <?php
-      $_options = array( 'ancillary_links' => true, 'layout' => 'sidebar', 'download_parent_override' => 'sidebar');
-      echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
-  ?>
-  <div id="get-involved">
-      <h3>Get Involved</h3>
-      <p>Want to become part of the Mozilla project?</p>
-      <a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
-  </div>
-
-  <div id="other-resources">
-      <h4>Other Resources &amp; Links</h4>
-      <p>The following resources contain additional useful information about Firefox 3.6:</p>
-      <ul>
-    <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
-    <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
-    <li><a href="http://developer.mozilla.org/en/Firefox_3.6_for_developers">Developer Information</a></li>
-    <li><a href="/<?=$lang?>/legal/privacy/firefox.html">Firefox Privacy Policy</a></li>
-    <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service Privacy Policy</a></li>
-    <li><a href="http://www.google.com/privacy-lsf.html">Google Geolocation Privacy Policy</a></li>
-      </ul>
-  </div>
 </div>
 
 <?php
