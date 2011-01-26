@@ -238,17 +238,17 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.5b99/(releasenotes)(/(?:in
 # Temporary rewrite for Firefox 3.6 release candidate
 #RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6/(releasenotes|whatsnew|firstrun)(/(?:index.html)?)?$ $1firefox/3.6rc2/$2$3 [PT]
 
-# Temporary rewrite for Firefox 3.5.16 beta
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.16/(releasenotes|whatsnew)(/(?:index.html)?)?$ $1firefox/3.5.16rc/$2$3 [PT]
+# Temporary rewrite for Firefox 3.5.17 beta
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.17/(releasenotes|whatsnew)(/(?:index.html)?)?$ $1firefox/3.5.17rc/$2$3 [PT]
 
-# Temporary rewrite for Firefox 3.6.13 beta
-#RewriteRule ^(en-US/)?firefox/3\.6\.13(?:build[0-9]+)?/(releasenotes|whatsnew|details)(/(?:index.html)?)? /$1firefox/3.6.13rc/$2$3 [PT,L]
+# Temporary rewrite for Firefox 3.6.14 beta
+RewriteRule ^(en-US/)?firefox/3\.6\.14(?:build[0-9]+)?/(releasenotes|whatsnew|details)(/(?:index.html)?)? /$1firefox/3.6.14rc/$2$3 [PT,L]
 
-# Temporary rewrite for Firefox 3.5.16 firstrun -> 3.5.16 beta whatsnew
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.16/firstrun(/(?:index.html)?)? $1firefox/3.5.16rc/whatsnew$3 [PT]
+# Temporary rewrite for Firefox 3.5.17 firstrun -> 3.5.17 beta whatsnew
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.17/firstrun(/(?:index.html)?)? $1firefox/3.5.17rc/whatsnew$3 [PT]
 
-# Temporary rewrite for Firefox 3.6.13 firstrun -> 3.6.13 beta whatsnew
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.13/firstrun(/(?:index.html)?)? $1firefox/3.6.13rc/whatsnew$3 [PT]
+# Temporary rewrite for Firefox 3.6.14 firstrun -> 3.6.14 beta whatsnew
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.14/firstrun(/(?:index.html)?)? $1firefox/3.6.14rc/whatsnew$3 [PT]
 
 # Rewrite rule for 3.7a4webm build firstrun/whatsnew pages to webmproject.org (bug 566884)
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.7a4webm/(whatsnew|firstrun)[/]?$ http://www.webmproject.org/ [R=temp,L]
