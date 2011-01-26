@@ -479,7 +479,7 @@ FOOTER;
         $subtitles   = getVideoSubtitles($videoid, 'includes/l10n/sub-fx4-firstrun-beta.html');
         $videoserver = 'http://videos-cdn.mozilla.net/serv/firefox4beta/';
         $titleimglk  = $config['static_prefix'].'/img/firefox/beta/4/firstrun/title.png';
-        $feedbackurl = "http://input.mozilla.com/$lang/feedback";
+        $feedbackurl = "http://input.mozilla.com/feedback";
         $li_relnotes = '<li><a href="/'.$lang.'/firefox/'.$version.'/releasenotes/">'.___('Release Notes').' »</a></li>';
         break;
 
