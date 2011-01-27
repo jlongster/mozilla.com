@@ -285,6 +285,9 @@ RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
 RewriteRule ^en-US/firefox/performance[/]? /en-US/firefox/underthehood/ [R=permanent]
 
+# bug 629381, /en-US/mobile/maemo -> /en-US/mobile/download/
+RewriteRule ^en-US/mobile/maemo[/]?$ /en-US/mobile/download/ [R=permanent]
+
 # bug 488327, firefox/mobile -> mobile
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/mobile(.*)[/]?$ /$1mobile$2 [R=permanent]
 
