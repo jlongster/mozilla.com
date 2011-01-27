@@ -362,6 +362,9 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 # Bug 582721
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
+# Bug 628826 /beta -> /firefox/beta
+RewriteRule ^beta[/]?$ /firefox/beta [R=permanent]
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
