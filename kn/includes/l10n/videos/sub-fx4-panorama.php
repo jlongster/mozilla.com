@@ -1,28 +1,28 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>ನಿಮ್ಮ ಹಾಳೆಗಳನ್ನು ಹೇಗೆ ವ್ಯವಸ್ಥಿತವಾಗಿ ಜೋಡಿಸಿಕೊಳ್ಳಬೇಕು</em> ಫೈರ್ಫಾಕ್ಸ್‍ ಪನೋರಮಾ ನಿಮ್ಮ ಎಲ್ಲಾ ಹಾಳೆಗಳ ಒಂದು ದೃಶ್ಯರೂಪದ ಅವಲೋಕನವನ್ನು ಒದಗಿಸುತ್ತದೆ&hellip;";
+$sub[2]  = "&hellip;ಹಾಗು ನಿಮ್ಮ ಕೆಲಸದ ಹರಿವನ್ನು ವ್ಯವಸ್ಥಿತವಾಗಿ ಜೋಡಿಸಿಕೊಳ್ಳಲು ಮತ್ತು ಪ್ರತ್ಯೇಕ ಕಾರ್ಯಗಳನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿರಿಸಲು ಇದು ನೆರವಾಗುತ್ತದೆ.";
+$sub[3]  = "ನೀವು ಈಗಾಗಲೆ ತಿಳಿದುಕೊಂಡಿರುವಂತೆ ನಿಮ್ಮ ಹಾಳೆಗಳನ್ನು ವ್ಯವಸ್ಥಿತವಾಗಿ ಜೋಡಿಸಿಕೊಳ್ಳುವುದನ್ನು ಆರಂಭಿಸಲು ಪನೋರಮಾ ಗುಂಡಿಯನ್ನು ಬಳಸಬಹುದಾಗಿರುತ್ತದೆ.";
+$sub[4]  = "ನಂತರ ಒಂದು ಹಾಳೆಯ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಬಹುದು ಅಥವ ಹಿಮ್ಮರಳಲು ಎಸ್ಕೇಪ್ ಅನ್ನು ಒತ್ತಬಹುದು.";
+$sub[5]  = "ಆ ಹಾಳೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ನೀವು ಯಾವ ಹಾಳೆಯನ್ನೂ ಸಹ ಕ್ಲಿಕ್ ಮಾಡಬಹುದು.";
+$sub[6]  = "ನಮೂದಿಸಲು ಪರ್ಯಾಯವಾಗಿ, ನೀವು ಮ್ಯಾಕ್‌ನಲ್ಲಿ option-space ಅನ್ನು ಅಥವ ವಿಂಡೋಸ್‌ನಲ್ಲಿ control-space ಅನ್ನು ಬಳಸಬಹುದು ಹಾಗು ಫೈರ್ಫಾಕ್ಸ್‍ ಪನೋರಮದಿಂದ ನಿರ್ಗಮಿಸಬಹುದು.";
+$sub[7]  = "ಹಾಳೆಗಳನ್ನು ಗುಂಪುಗೂಡಿಸಲು, ಎರಡನ್ನೂ ಒಟ್ಟಿಗೆ ಎಳೆಯಿರಿ.";
+$sub[8]  = "ಈ ಸಂದರ್ಭದಲ್ಲಿ, ಸ್ಪೇಸ್‌ನ ನನ್ನ ಎಲ್ಲಾ ಚಿತ್ರಗಳನ್ನು ಒಂದುಗೂಡಿಸಲು ಬಯಸುತ್ತೇನೆ.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "ಒಂದು ಗುಂಪನ್ನು ಮಾಡಲು ಒಂದು ಖಾಲಿ ಜಾಗದಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ ಎಳೆಯಬಹುದು.";
+$sub[11] = "ನೀವು ಒಂದು ಗುಂಪಿಗೆ ಜೂಮ್ ಮಾಡಿದಾಗ, ನಿಮಗೆ ಕೇವಲ ಆ ಗುಂಪಿನ ಹಾಳೆಗಳು ಮಾತ್ರ ಕಾಣಿಸುತ್ತವೆ. ಇದರಿಂದ ನಿಮಗೆ ಗಮನ ಕೇಂದ್ರೀಕರಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ.";
+$sub[12] = "ನಿಮ್ಮ ಗುಂಪುಗಳನ್ನು ವ್ಯವಸ್ಥಿತವಾಗಿ ಜೋಡಿಸಲು, ಅವನ್ನು ಸುತ್ತಲೂ ಎಳೆಯಿರಿ.";
+$sub[13] = "ಕಡಿಮೆ ಪ್ರಾಮುಖ್ಯತೆ ಇರುವ ಗುಂಪುಗಳ ಚಿಕ್ಕದಾಗಿರುವಂತೆ ಅವುಗಳ ಗಾತ್ರವನ್ನು ನೀವು ಬದಲಾಯಿಸಬಹುದು&hellip;";
+$sub[14] = "&hellip;ಅಂತೆಯೆ ಅಧಿಕ ಪ್ರಾಮುಖ್ಯತೆಯವುಗಳು ದೊಡ್ಡದಾಗಿರುವಂತೆ ಮಾಡಬಹುದು.";
+$sub[15] = "ನೀವು ಒಂದು ಗುಂಪನ್ನು ಸಾಕಷ್ಟು ಸಣ್ಣದಾಗಿ ಮಾಡಿದಲ್ಲಿ, ಅದು ಒಂದು ರಾಶಿಯಂತೆ ಕಾಣಿಸುತ್ತದೆ.";
+$sub[16] = "ತೆರೆಯಲು ನೀವು ಒಂದು ಹಾಳೆಯ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಬಹುದು";
+$sub[17] = "ಅಥವ";
+$sub[18] = "ನೀವು ರಾಶಿಯತ್ತ ಒಂದು ಕ್ಷಿಪ್ರ ನೋಟವನ್ನು ಹರಿಸಲು &hellip;";
+$sub[19] = "&hellip;ವಿಸ್ತರಿಸುವ ಚಿಹ್ನೆಯ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ&hellip;";
+$sub[20] = "&hellip;ಹಾಗು ನಿಮಗೆ ಆಸಕ್ತಿ ಇರುವ ಹಾಳೆಯ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ.";
+$sub[21] = "ಇದು ಫೈರ್ಫಾಕ್ಸ್‍ ಪನೋರಮಾದ ಒಂದು ಸಂಕ್ಷಿಪ್ತ ಪರಿಚಯವಾಗಿರುತ್ತದೆ.";
+$sub[22] = "ತಿಳಿದುಕೊಳ್ಳಲು ಇನ್ನೂ ಇದೆಯಾದರೂ ಸಹ (ಗುಂಪುಗಳನ್ನು ಹೇಗೆ ಹೆಸರಿಸುವುದು)&hellip;";
+$sub[23] = "&hellip;ಈಗ ನೀವು ಹೇಗೆ ಉತ್ತಮ ರೀತಿಯಲ್ಲಿ ಜಾಲವನ್ನು ವೀಕ್ಷಿಸಲು ಸಾಧ್ಯ ಎಂದು ಕಂಡುಕೊಳ್ಳಲು ಸಿದ್ಧರಾಗಿದ್ದೀರಿ.";
 $sub[24] = "";
 
 ?>
