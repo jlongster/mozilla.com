@@ -1,28 +1,46 @@
 <?php
 
-$sub[1]  = "<em style='display:block; margin-top:-20px;'>How to organize your tabs</em>Firefox Panorama gives you a visual overview of all of your tabs&hellip;";
-$sub[2]  = "&hellip;and lets organize them into groups so that you can organize your workflow and keep separate tasks separate.";
-$sub[3]  = "As you've already discovered you can use the Panorama button to begin organizing your tabs.";
-$sub[4]  = "You can then click on a tab, or hit Escape to go back.";
-$sub[5]  = "Of course you can click any tab to activate that tab.";
-$sub[6]  = "Alternatively, you can use option-space on Mac or control-space on Windows to enter and exit Firefox Panorama.";
-$sub[7]  = "To group tabs simply drag two together.";
-$sub[8]  = "In this case, I want to group all of my pictures of space.";
+$sub[1]  = "<em style='display:block; margin-top:-20px;'>Mar a chumas 
+tu rian air na tabaichean agad</em>Tha Firefox Panorama a' toirt dhut 
+for-shealladh air na tabaichean uile agad&hellip;";
+$sub[2]  = "&hellip;agus leigidh e leat an cur ann am buidhnean, rud a 
+nì e nas fhasa dhut obrachadh leotha 's gnìomhan eadar-dhealaichte a 
+chumail o chèile.";
+$sub[3]  = "Mar a chunnaic thu mu thràth, 's urrainn dhut am putan 
+Panorama a chleachdadh gus rian a chumail air na tabaichean agad.";
+$sub[4]  = "'S urrainn dhut briogadh air taba an uairsin, no Escape a 
+bhrùthadh gus tilleadh.";
+$sub[5]  = "'S urrainn dhut briogadh air taba sam bith gus fhaicinn 
+cuideachd, bheil fhios agad.";
+$sub[6]  = "Air neo, 's urrainn dhut option-space a chleachdadh air Mac 
+no control-space air Windows gus a dhol a-steach do Firefox Panorama 
+agus fhàgail ann.";
+$sub[7]  = "Gus tabaichean a chur ann am buidheann, cha leig thu leas 
+ach dà dhiubh a shlaodadh os cionn a chèile.";
+$sub[8]  = "Ma-tà, bu toigh leam gach dealbh agam dhen fhànas.";
 $sub[9]  = "";
-$sub[10] = "I can also click and drag an empty space to make a group.";
-$sub[11] = "When you zoom into a group, you only see the tabs that are in that group. This helps you focus.";
-$sub[12] = "To organize your groups, simply drag them around.";
-$sub[13] = "You can change their size so that less important things are smaller&hellip;";
-$sub[14] = "&hellip;and more important things are bigger.";
-$sub[15] = "If you make a group small enough, it will turn into a pile.";
-$sub[16] = "You can click on a tab to open it";
-$sub[17] = "or";
-$sub[18] = "if you want a quick-look into the pile&hellip;";
-$sub[19] = "&hellip;click the expand icon&hellip;";
-$sub[20] = "&hellip;and then click the tab that you are interested in.";
-$sub[21] = "This has been a brief introduction to Firefox Panorama.";
-$sub[22] = "While there's still more to discover (like how to name groups)&hellip;";
-$sub[23] = "&hellip;you are now ready to begin exploring a better way to browse.";
+$sub[10] = "'S urrainn dhomh briogadh air àite bàn agus a shlaodadh cuideachd gus 
+buidheann a dhèanamh.";
+$sub[11] = "Nuair a shùmas tu a-steach do bhuidheann, chan fhaic thu 
+ach na tabaichean a tha sa bhuidheann sin. Bidh fòcas nas fhearr agad 
+leis.";
+$sub[12] = "'S urrainn dhut na buidhnean agad a chur an òrdugh 's tu 
+'gan slaodadh mun cuairt.";
+$sub[13] = "'S urrainn dhut am meud atharrachadh gus am bith rudan 
+nach eil cho cudromach nas lugha&hellip;";
+$sub[14] = "&hellip;agus rudan a tha nas cudromaiche nas motha.";
+$sub[15] = "Ma nì thu buidheann beag gu leòr, tionndaidhidh e 'na chàrn.";
+$sub[16] = "'S urrainn dhut briogadh air taba gus fhosgladh";
+$sub[17] = "no";
+$sub[18] = "ma tha thu airson sùil ghoirid a chur air a' chàrn&hellip;";
+$sub[19] = "&hellip;briog air an ìomhaigheag gus a leudachadh&hellip;";
+$sub[20] = "&hellip;agus briog air an taba a tha thu ag iarraidh an 
+uairsin.";
+$sub[21] = "'S e gearr-chunntas air Firefox Panorama a bha seo.";
+$sub[22] = "Tha iomadh rud eile 'na bhroinn fhathast (mar eisimpleir 
+mar a chuireas tu ainm air buidhnean)&hellip;";
+$sub[23] = "&hellip;ach tha thu deiseil gus fàs eòlach air dòighean 
+nas fhearr a chum brabhsaidh.";
 $sub[24] = "";
 
 ?>
