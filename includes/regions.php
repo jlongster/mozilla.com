@@ -1,17 +1,13 @@
 <?php
 
-require_once dirname(__FILE__) .'/functions.inc.php';
-
-function regionNames($lang = 'en-US') {
-    require 'config.inc.php';
-    $countries = propertiesToArray($config['file_root']. "/". $lang. "/includes/l10n/regionNames.properties");
-    asort($countries, SORT_LOCALE_STRING);
-    return $countries;
-}
+require_once "{$config['file_root']}/includes/product-details/regionDetails.class.php";
 
 function regionsAsOptions($lang, $selected='') {
+    $regionDetails = new regionDetails();
+    $names = $regionDetails->getRegionNames($lang);
+    
     $out = '';
-    foreach (regionNames() as $code => $name) {
+    foreach($names as $code => $name) {
         $is_selected = ($code == $selected) ? " selected='selected'" : "";
         $out .= "<option value='{$code}'{$is_selected}>{$name}</option>\n";
     }
