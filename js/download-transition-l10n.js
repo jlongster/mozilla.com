@@ -80,7 +80,8 @@
                 switch (os) {
                     case 'win' :
                         var at_least_xp = /Windows NT (5\.[1-9]|[6-9]\.|[1-9][0-9]+\.)/.test(navigator.userAgent);
-                        if (YAHOO.env.ua.ie && at_least_xp) {
+                        var is_ie = /(msie) ([\w.]+)/.test(navigator.userAgent);
+                        if (is_ie && at_least_xp) {
                             promotion_msg = '';
                         } else {
                             document.body.className += ' default-download';
