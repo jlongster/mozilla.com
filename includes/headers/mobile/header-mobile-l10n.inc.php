@@ -68,7 +68,6 @@ $dynamic_header = <<<DYNAMIC_HEADER
         <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/content.css" media="screen" />
         <script type="text/javascript" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
         <script type="text/javascript" src="/includes/yui/2.5.1/container/container_core-min.js"></script>
-        <script type="text/javascript" src="/includes/yui/2.5.1/menu/menu-min.js"></script>
         <script type="text/javascript" src="/js/mozilla-menu.js"></script>
         <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/portal-page.css" media="screen" />
 
