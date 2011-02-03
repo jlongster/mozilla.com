@@ -108,6 +108,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?about/licensing.html$ http://www.moz
 # Bug 444603
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/addons[/]?$ /$1firefox/customize/ [R=permanent]
 
+# Bug 630937
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/customize/getpersonal[/]?$ /$1firefox/customize/ [R=permanent]
+
 # Bug 447602.  Redirects /products/firefox/central.html but is building on the /products/firefox/ -> /firefox/ redirect
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/central.html$ /$1firefox/central/ [R=permanent]
 
