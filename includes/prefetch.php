@@ -168,7 +168,7 @@ define ('LANG', $lang);
 if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
 
     // Bug 619404 Quickly redirect homepage
-    if ($_SERVER['REQUEST_URI'] == '/') {
+    if ($_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == '/fake.html') {
         $_SERVER['REQUEST_URI'] = '/firefox/';
 
         $ua = $_SERVER['HTTP_USER_AGENT'];
