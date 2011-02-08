@@ -114,7 +114,7 @@ JS_INCLUDE;
 
         $_return = <<<HTML_RETURN
 
-        <ul class="download-firefox">
+        <ul class="download-firefox nojs">
 {$_li_windows}
 {$_li_linux}
 {$_li_osx}
@@ -192,7 +192,7 @@ HTML_RETURN;
             case 'linksonly':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}>{$_download_product}</a>
+                <li class="{$_os_class} linksonly"><a class="download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}>{$_download_product}</a>
                 </li>
 LI_SIDEBAR;
                 break;
@@ -200,7 +200,7 @@ LI_SIDEBAR;
             case 'betabox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
+                <li class="{$_os_class} betabox"><a class="download-link" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
                 </li>
 LI_SIDEBAR;
                 break;

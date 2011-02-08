@@ -172,6 +172,38 @@ if ($options['bouncer_js']) {
     $download_link_1 .= '<script type="text/javascript" src="'.$config['static_prefix'].'/js/download.old.js"></script>';
 }
 
+$download_link_1  .= '<noscript>
+<style tyle="text.css">
+
+.nojs li.linksonly {
+    display:none !important
+}
+
+ul.download-firefox {
+    margin-left: 2em;
+}
+
+ul.download-firefox li a.download-link, ul.download-firefox li a.download-link:hover {
+    background: none;
+    color: #447BC4;
+    font-size: inherit;
+    height: inherit;
+    margin-bottom: inherit;
+    margin-left: inherit;
+    margin-top: 1em;
+    padding: inherit;
+}
+
+.download-other {
+    margin-top: 1em;
+}
+
+</style>
+
+
+</noscript>';
+
+
 $download_link_1 .= $firefoxDetailsl10n -> getDevelVersionForLocale($dl_lang, $options);
 
 
@@ -179,10 +211,10 @@ $options['product']                  = 'firefox';
 $options['download_product']         = ___('Free Download');
 $options['layout']                   = 'betabox';
 $options['download_parent_override'] = 'beta-install';
-$release_notes                       = ___('Release Notes');
+$pricacy_policy                      = ___('Privacy Policy');
 $others                              = ___('Other Systems and Languages');
 $download_link_2   = $firefoxDetailsl10n -> getDevelVersionForLocale($dl_lang, $options);
-$download_link_2  .='<div class="download-other"><span class="other"><a href="/'.$lang.'/firefox/'.LATEST_FIREFOX_DEVEL_VERSION.'/releasenotes/">'.$release_notes.'</a> <br/> <a href="/en-US/firefox/all-beta.html">'.$others.'</a></span></div>';
+$download_link_2  .='<div class="download-other"><span class="other"><a href="/'.$lang.'/legal/privacy/">'.$pricacy_policy.'</a> <br/> <a href="/en-US/firefox/all-beta.html">'.$others.'</a></span></div>';
 
 
 
