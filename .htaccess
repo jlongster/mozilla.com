@@ -298,7 +298,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/mobile(.*)[/]?$ /$1mobile$2 
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$2 [R=permanent]
 
 # Bug 619404 Quickly redirect index page
-RewriteRule ^$ /fake-page.html [L]
+RewriteRule ^$ /index.html [L]
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/firefox.*[/]?$ /$1firefox/ [R=permanent]
