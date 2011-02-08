@@ -32,7 +32,7 @@ $videoid         = '';
 $ext_webm        = 'webm';
 $ext_theora      = 'theora.ogv';
 $ext_mp4         = 'mp4';
-$sidebarfile = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
+$sidebarfile     = $_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/firefox/4beta/whatsnew/sidebar.inc.html';
 
 if (file_exists($sidebarfile)) {
     ob_start();
@@ -51,6 +51,7 @@ if ($_SERVER['HTTP_HOST'] == 'www.mozilla.com' && $shortversion > $latestRelease
 }
 
 $shortversion_content = ($shortversion == 6) ? 5 : $shortversion;
+$shortversion_content = ($shortversion == 11) ? 10 : $shortversion;
 $cssversion           = $shortversion_content;
 
 switch ($shortversion_content) {
@@ -474,12 +475,13 @@ FOOTER;
         break;
 
     case '10':
+    case '11':
         $video       = 'Firefox_4_beta';
         $videoid     = 'tour-video';
         $subtitles   = getVideoSubtitles($videoid, 'includes/l10n/sub-fx4-firstrun-beta.html');
         $videoserver = 'http://videos-cdn.mozilla.net/serv/firefox4beta/';
         $titleimglk  = $config['static_prefix'].'/img/firefox/beta/4/firstrun/title.png';
-        $feedbackurl = "http://input.mozilla.com/feedback";
+        $feedbackurl = 'http://input.mozilla.com/feedback';
         $li_relnotes = '<li><a href="/'.$lang.'/firefox/'.$version.'/releasenotes/">'.___('Release Notes').' »</a></li>';
         break;
 
@@ -670,7 +672,7 @@ YAHOO.util.Event.onDOMReady(function() {
 DYNAMIC_HEADER;
 
 
-
+if (!isset($movie)) {
 $movie = <<<MOVIE
         <div id="video-launch" class="video-launch">
             <a href="{$videoserver}{$video}.webm" id="{$videoid}-vid" onclick="videoid='{$videoid}';"><span id="video-launch-border"><img src="{$config['static_prefix']}/img/firefox/beta/4/video-thumbnail.png" alt="Video thumbnail" /></span><span id="video-launch-text" class="video-launch-text">{$l10n->get('Watch the video')}</span></a>
@@ -703,6 +705,7 @@ $movie = <<<MOVIE
             </script>
         </div>
 MOVIE;
+}
 
 echo $dynamic_header;
 
