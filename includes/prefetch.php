@@ -162,14 +162,17 @@ define ('LANG', $lang);
 
 /*** END TEMPORARY CODE ***/
 
-// If the URL doesn't have a langauage at the front of it, we need to redirect so
+// If the URL doesn't have a language at the front of it, we need to redirect so
 // it does (otherwise we get stuff with no language at all.  For example:
 //  www.mozilla.com/firefox   -->    www.mozilla.com/en-US/firefox
 if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
 
     // Bug 619404 Quickly redirect homepage
-    if ($_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == '/fake.html') {
-        $_SERVER['REQUEST_URI'] = '/firefox/';
+    if ($_SERVER['REQUEST_URI']     == '/'
+        || $_SERVER['REDIRECT_URL'] == '/fake.html'
+        || $_SERVER['REQUEST_URI']  == '/fake.html') {
+
+        $_SERVER['REDIRECT_URL'] = $_SERVER['REQUEST_URI'] = '/firefox/';
 
         $ua = $_SERVER['HTTP_USER_AGENT'];
 
@@ -182,7 +185,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
             }
         }
     }
-    
+
     header("Location: {$config['url_scheme']}://{$config['server_name']}/{$lang}{$_SERVER['REQUEST_URI']}");
     header('Pragma: no-cache');
     header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
@@ -255,7 +258,7 @@ if (file_exists("{$config['file_root']}/{$page}")) {
         header("Location: {$config['url_scheme']}://{$config['server_name']}/{$config['default_lang']}{$_SERVER['REQUEST_URI']}.html");
         header('Pragma: no-cache');
         header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
-      
+
     }
 
     // We've got a 404, show a localized 404 page
