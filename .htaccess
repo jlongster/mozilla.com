@@ -298,7 +298,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/mobile(.*)[/]?$ /$1mobile$2 
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$2 [R=permanent]
 
 # Bug 619404 Quickly redirect index page
-RewriteRule ^$ index.html [L]
+RewriteRule ^$ /fake-page.html [L]
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/firefox.*[/]?$ /$1firefox/ [R=permanent]
@@ -345,7 +345,7 @@ AddHandler init .html
 # (despite the 404) it'll still forward them to the correct place.  If it's not a
 # valid page, they'll get a localized 404 (if available)
 ErrorDocument 403 /includes/prefetch.php
-ErrorDocument 404 /includes/prefetch.php
+ErrorDocument 404 /includes/prefetch2.php
 
 # Setup URL Prettiness.  Special thanks to hopsonro for his apache voodoo.
 
