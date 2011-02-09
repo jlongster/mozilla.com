@@ -236,13 +236,25 @@ if (file_exists("{$config['file_root']}/{$page}")) {
     // building a Frankensite with the old mozilla.com.  While we're in this
     // transitional phase, we need to check if the page they are looking for
     // exists in the default locale (en-us), and if so, we'll forward them there.
-    if (file_exists("{$config['file_root']}/{$config['default_lang']}{$_SERVER['REDIRECT_URL']}")) {
+
+
+    if (file_exists("{$config['file_root']}/{$config['default_lang']}{$_SERVER['REDIRECT_URL']}") OR $_SERVER['REDIRECT_URL'] == '/fake.html') {
 
         if (substr($_SERVER['REQUEST_URI'], 1, strlen($lang)) == $lang && $_SERVER['REQUEST_URI'][strlen($lang)+1] == '/') {
             $_SERVER['REQUEST_URI'] = substr($_SERVER['REQUEST_URI'], strlen($lang)+1);
         }
 
-        header("Location: {$config['url_scheme']}://{$config['server_name']}/{$config['default_lang']}{$_SERVER['REQUEST_URI']}");
+        // Bug 619404 Quickly redirect homepage
+        // we need this for calls to ab-CD.www.mozilla.com/ which get redirected
+        // via htaccess to ab-CD.www.mozilla.com/ab-CD/fake.html which would be a 404
+
+        if($_SERVER['REDIRECT_URL'] == '/fake.html') {
+            $target = 'firefox/';
+        } else {
+            $target = $config['default_lang'].$_SERVER['REQUEST_URI'];
+        }
+
+        header("Location: {$config['url_scheme']}://{$config['server_name']}/{$target}");
         header('Pragma: no-cache');
         header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
         exit;
