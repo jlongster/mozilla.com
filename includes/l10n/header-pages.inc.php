@@ -11,6 +11,13 @@ $body_class     = empty($body_class)     ? ''            : $body_class;
 $extra_top_text = empty($extra_top_text) ? ''            : $extra_top_text;
 $textdir        = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 
+// a few commodity variables that are much easier to use in the template than appending config vars
+// when all pages on the site are centralized un controller.inc.php, we can remove those
+$host_root = $config['url_scheme'].'://'.$config['server_name'].'/';
+$host_l10n = $config['url_scheme'].'://'.$config['server_name'].'/'.$lang;
+$host_enUS = $config['url_scheme'].'://'.$config['server_name'].'/en-US';
+
+
 // RTL support for Mozilla.com
 if ($textdir == 'rtl') {
     $extra_headers  .= <<<EXTRA_HEADERS
