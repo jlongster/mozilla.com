@@ -280,8 +280,8 @@ if (gPlatform == 1) {
     <!-- start #header -->
     <div id="header">
         <div>
-        <h1><a href="/{$lang}/" title="{$l10n->get('Back to home page')}">Mozilla</a></h1>
-        <a href="/en-US/" id="return">{$val}</a>
+        <h1><a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/" title="{$l10n->get('Back to home page')}">Mozilla</a></h1>
+        <a href="{$config['url_scheme']}://{$config['server_name']}/en-US/" id="return">{$val}</a>
         </div>
         <hr class="hide" />
     </div>

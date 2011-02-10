@@ -18,6 +18,16 @@ function localeConvert($lang) {
     return $lang;
 }
 
+
+// we never want the domain to be locale.www.mozilla.com,
+// ()old legacy causing bugs with links when switching locale)
+
+if (in_array($a[0], $full_languages) || in_array(strtolower($a[0]), $full_languages)) {
+    array_shift($a);
+    $config['server_name'] = implode($a);
+}
+
+
 // here we define our per-page includes
 $sitepages = array(
     'oldversion'         => 'oldversion.inc.php',
