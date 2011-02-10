@@ -170,7 +170,10 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     // Bug 619404 Quickly redirect homepage
     if ($_SERVER['REQUEST_URI'] == '/') {
         $_SERVER['REQUEST_URI'] = '/firefox/';
+    }
 
+    // This matches both / and /firefox because of the above code
+    if (rtrim($_SERVER['REQUEST_URI'], '/') == '/firefox') {
         $ua = $_SERVER['HTTP_USER_AGENT'];
 
         // On en-US homepage, redirect mobile devices (Android, Maemo)
