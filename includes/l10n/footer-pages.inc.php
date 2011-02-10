@@ -26,9 +26,9 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     <div id="footer">
     <div id="footer-contents">
     <div id="copyright">
-        <p id="footer-links"><a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/" id="footer-logo" title="{$l10n->get('Back to home page')}"><img src="{$config['static_prefix']}/img/tignish/template/mozilla-logo.png" height="56" width="145" alt="Mozilla" /></a><a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/privacy-policy.html">{$l10n->get('Privacy Policy')}</a> &nbsp;|&nbsp;
-        <a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/about/legal.html">{$l10n->get('Legal Notices')}</a> &nbsp;|&nbsp;
-                    <a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/legal/fraud-report/index.html">{$l10n->get('Report Trademark Abuse')}</a>{$extra_footer_links}</p>
+        <p id="footer-links"><a href="{$host_l10n}/" id="footer-logo" title="{$l10n->get('Back to home page')}"><img src="{$config['static_prefix']}/img/tignish/template/mozilla-logo.png" height="56" width="145" alt="Mozilla" /></a><a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/privacy-policy.html">{$l10n->get('Privacy Policy')}</a> &nbsp;|&nbsp;
+        <a href="{$host_l10n}/about/legal.html">{$l10n->get('Legal Notices')}</a> &nbsp;|&nbsp;
+        <a href="{$host_l10n}/legal/fraud-report/index.html">{$l10n->get('Report Trademark Abuse')}</a>{$extra_footer_links}</p>
         <p>{$creative_commons}</p>
     </div>
     </div>

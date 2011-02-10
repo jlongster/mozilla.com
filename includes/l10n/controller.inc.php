@@ -20,12 +20,21 @@ function localeConvert($lang) {
 
 
 // we never want the domain to be locale.www.mozilla.com,
-// ()old legacy causing bugs with links when switching locale)
+// old legacy bug (398938) causing bugs with links when switching locale
+// safety mesure for cases when we forget to use $config['server_name'] in a script
 
+$a = explode('.', $_SERVER['SERVER_NAME']);
 if (in_array($a[0], $full_languages) || in_array(strtolower($a[0]), $full_languages)) {
     array_shift($a);
-    $config['server_name'] = implode($a);
+    $_SERVER['SERVER_NAME'] = implode($a);
 }
+unset($a);
+
+
+// a few commodity variables that are much easier to use in the template than appending config vars
+$host_root = $config['url_scheme'].'://'.$config['server_name'].'/';
+$host_l10n = $config['url_scheme'].'://'.$config['server_name'].'/'.$lang;
+$host_enUS = $config['url_scheme'].'://'.$config['server_name'].'/en-US';
 
 
 // here we define our per-page includes
