@@ -13,14 +13,26 @@ $extra_headers .= <<<EXTRA_HEADERS
         background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll 800px 150px transparent;
     }
 
-    #content {
+    #main-feature, #content {
         margin-right: 400px;
         font-size: 16px;
     }
 
-    #main-feature h2 {
-        width: 65%;
+    body.rtl #wrapper {
+        background: url("/img/covehead/firefox/survey/thanks-background-rtl.png") no-repeat scroll 200px 150px transparent;
     }
+
+
+    body.rtl #content,
+    body.rtl #main-feature
+    {
+        margin-left: 400px !important;
+        margin-right: 20px !important;
+    }
+
+
+
+
     </style>
 EXTRA_HEADERS;
 
