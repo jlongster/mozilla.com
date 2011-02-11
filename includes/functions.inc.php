@@ -645,23 +645,23 @@ function buildFirefoxBetaSubPageMenu($lang, $current = null)
 {
     $firefox_menu = array(
         'features'      => array(
-            'href'      => "/firefox/beta/features/",
+            'href'      => "/firefox/RC/features/",
             'title'     => ___('Features')
         ),
         'technology'    => array(
-            'href'      => "/firefox/beta/technology/",
+            'href'      => "/firefox/RC/technology/",
             'title'     => ___('Technology')
         ),
         'feedback'   => array(
-            'href'      => "/firefox/beta/feedback/",
+            'href'      => "/firefox/RC/feedback/",
             'title'     => ___('Feedback')
         ),
         'privacy'   => array(
-            'href'      => "/firefox/beta/feedbackprivacypolicy/",
+            'href'      => "/firefox/RC/feedbackprivacypolicy/",
             'title'     => ___('Feedback Privacy Policy')
         ),
         'faq'       => array(
-            'href'      => "/firefox/beta/faq/",
+            'href'      => "/firefox/RC/faq/",
             'title'     => ___('FAQ')
         ),
         'press-kit' => array(
@@ -688,9 +688,9 @@ function buildFirefoxBetaSubPageMenu($lang, $current = null)
         echo " / ";
 
         if ($current == 'beta') {
-            echo "<span>" . ___('Firefox 4') . "<sup>" .  ___('Beta') .  "</sup></span>";
+            echo "<span>" . ___('Firefox 4') . "<sup>" .  ___('RC') .  "</sup></span>";
         } else {
-            echo "<a href=\"/" . $lang . "/firefox/beta/\">" . ___('Firefox 4') . "<sup>" .  ___('Beta') . "</sup></a>";
+            echo "<a href=\"/" . $lang . "/firefox/RC/\">" . ___('Firefox 4') . "<sup>" .  ___('Beta') . "</sup></a>";
         }
 
         echo "</h3></li>\n";
