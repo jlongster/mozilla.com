@@ -372,9 +372,10 @@ RewriteRule ^RC[/]?$ /firefox/RC [R=permanent]
 RewriteRule ^beta[/]?$ /firefox/RC [R=permanent]
 
 # Bug 627407 rename /beta to /RC
-# /img/firefox/beta directory is caught by the rule,
-# so protect against that
+# protect against a few urls that would get caught,
+# /cdn is a link on the trunk site
 RewriteCond %{REQUEST_URI} !^/img
+RewriteCond %{REQUEST_URI} !^/cdn
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent]
 
 <FilesMatch "\.(ttf|woff|eot)$">
