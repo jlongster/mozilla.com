@@ -365,8 +365,17 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 # Bug 582721
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
-# Bug 628826 /beta -> /firefox/beta
-RewriteRule ^beta[/]?$ /firefox/beta [R=permanent]
+# Bug 627407
+RewriteRule ^RC[/]?$ /firefox/RC [R=permanent]
+
+# Bug 627407 rename /beta to /RC (previous bug 628826)
+RewriteRule ^beta[/]?$ /firefox/RC [R=permanent]
+
+# Bug 627407 rename /beta to /RC
+# /img/firefox/beta directory is caught by the rule,
+# so protect against that
+RewriteCond %{REQUEST_URI} !^/img
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent]
 
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
