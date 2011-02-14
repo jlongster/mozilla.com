@@ -83,7 +83,7 @@ if (gPlatform == 1) {
 	<div id="header">
 		<div>
 		<h1><a href="/{$lang}/firefox/" title="{$l10n->get('Back to home page')}">{$l10n->get('Mozilla Firefox')}</a></h1>
-		<a href="http://www.mozilla.org/" class="mozilla">visit <span>mozilla</span></a>
+		<a href="http://www.mozilla.org/" class="mozilla">mozilla</a>
 		{$dynamic_top_menu}
 		</div>
 	</div>
