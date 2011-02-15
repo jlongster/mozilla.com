@@ -59,6 +59,10 @@ $extra_headers = <<<EXTRA_HEADERS
         display:{$extraval1} !important;
     }
 
+    #whatsnew #main-feature {
+        padding-top: 0px;
+    }
+
     h2 {
         font-size: 20px;
         color: #303030 ;
