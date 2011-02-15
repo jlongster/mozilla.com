@@ -2,64 +2,19 @@
 /*  translate the page title below */
 $page_title = "Willkommen zu Firefox";
 
-include_once "{$config['file_root']}/includes/headers/3.6/firstrun-l10n.inc.php";
+$pageid = 'firstrun-36';
+require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
 
 <div id="main-feature">
-    <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
-    <p>Danke, dass Sie <a href="/<?=$lang?>/about/whatismozilla.html">Mozillas Mission</a> zur Förderung von Offenheit, Innovation und Chancen im Internet unterstützen!</p>
+    <?=$logo?>
+    <p>Danke, dass Sie <a <?=$aboutlink?>>Mozillas Mission</a> zur Förderung von Offenheit, Innovation und Chancen im Internet unterstützen!</p>
 </div>
 
-
-<div id="main-content">
-
-  <div class="sub-feature" id="personas">
-
-    <h3>Wählen Sie Ihr Persona.</h3>
-    <p id="try">Daraufhalten zum Ausprobieren, anklicken zum Übernehmen</p>
-
-    <a href="http://www.getpersonas.com/en-US/gallery/" id="personas-image-link">Personas</a>
-    <iframe
-        src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
-        width="320"
-        height="200">
-    </iframe>
-
-    <ul id="personas-link" class="link">
-      <li>
-          <a href="http://www.getpersonas.com/en-US/gallery/" id="see-all-personas">Sehen Sie sich alle 30.000+ an</a>
-      </li>
-    </ul>
-</div>
-
-  <div class="sub-feature" id="help">
-      <div>
-      <h3>Benötigen Sie Hilfe bei den ersten Schritten?</h3>
-      <p>Besuchen Sie unsere Hilfeseite für Antworten und Ratschläge zur Verwendung von Firefox.</p>
-      <ul class="link">
-          <li><a href="https://support.mozilla.com/<?=$lang?>/kb/Windows+start+page">Firefox-Hilfe holen</a></li>
-      </ul>
-      </div>
-  </div>
-
-  <div class="sub-feature" id="connect">
-    <h3>Bleiben Sie in Verbindung</h3>
-    <ul class="link">
-      <li id="connect-twitter"><a href="http://twitter.com/firefox">Folgen Sie uns auf Twitter</a></li>
-      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Werden Sie ein Fan auf Facebook</a></li>
-      <li id="connect-blog"><a href="http://blog.mozilla.com/">Lesen Sie unser Blog</a></li>
-    </ul>
-  </div>
-
-  <p id="sub-links">
-      <a href="http://www.mozilla-europe.org/<?=$lang?>/firefox/features/" id="features-link">Weitere Funktionen von Firefox 3.6</a>
-      <a href="http://support.mozilla.com" id="support-link">Firefox-Hilfe</a>
-  </p>
-
-</div>
 
 <?php
-  include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+  require_once $footerfile;
 ?>
+

@@ -52,6 +52,8 @@ $sitepages = array(
     'security'           => 'security.inc.php',
     'm-support'          => 'm-support.inc.php',
     'unsupported'        => 'unsupported-version.inc.php',
+    'firstrun-36'        => '3.6/firstrun.inc.php',
+    'whatsnew-36'        => '3.6/whatsnew.inc.php',
 );
 
 // add the include if it exists only

@@ -2,19 +2,19 @@
 /*  translate the page title below */
 $page_title = "Witamy w Firefoksie";
 
-include_once "{$config['file_root']}/includes/headers/3.6/firstrun-l10n.inc.php";
+$pageid = 'firstrun-36';
+require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
 
 <div id="main-feature">
-    <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
-    <p>Dziękujemy za wsparcie <a href="/<?=$lang?>/firefox/about/">naszej misji</a> &ndash;
+    <?=$logo?>
+    <p>Dziękujemy za wsparcie <a <?=$aboutlink?>>naszej misji</a> &ndash;
        pobudzania innowacyjności, otwartości i&nbsp;potencjału Sieci!</p>
 </div>
 
 
 <?php
-  include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
-  include_once "{$config['file_root']}/includes/footers/3.6/portal-pages.inc.php";
+  require_once $footerfile;
 ?>

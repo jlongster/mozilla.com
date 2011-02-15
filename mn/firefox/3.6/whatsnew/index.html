@@ -13,7 +13,8 @@ l10n note: there are 3 cases we have to deal with in the Whatsnew page:
 The text at the top of the page changes depending on the version we detect
 */
 
-@include_once "{$config['file_root']}/includes/headers/3.6/whatsnew-l10n.inc.php";
+$pageid = 'whatsnew-36';
+require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -24,8 +25,8 @@ The text at the top of the page changes depending on the version we detect
 
 
 <div id="main-feature" class="latest-version">
-  <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
-      <p>Thanks for supporting <a href="/<?=$lang?>/about/whatismozilla.html">Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
+  <?=$logo?>
+      <p>Thanks for supporting <a <?=$aboutlink?> >Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
 </div>
 
 
@@ -34,7 +35,7 @@ The text at the top of the page changes depending on the version we detect
 
 <div id="main-feature" class="old-version">
 
-  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+  <?=$logo2?>
 
   <h2>You’re now running Firefox <?=$_version?>.</h2>
 
@@ -50,7 +51,7 @@ The text at the top of the page changes depending on the version we detect
 
 <div id="main-feature" class="unknown-version">
 
-  <img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />
+  <?=$logo2?>
 
   <h2>You’re running an unknown version of Firefox.</h2>
 
@@ -64,7 +65,6 @@ The text at the top of the page changes depending on the version we detect
 <?php
 
 endif;
-@include_once "{$config['file_root']}/{$lang}/includes/l10n/in-product-3.6.inc.php";
-@include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
+require_once $footerfile;
 
 ?>

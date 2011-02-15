@@ -2,14 +2,15 @@
 /*  translate the page title below */
 $page_title = "Welcome to Firefox";
 
-@include_once "{$config['file_root']}/includes/headers/3.6/firstrun-l10n.inc.php";
+@$pageid = 'firstrun-36';
+require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
 
 <div id="main-feature">
-    <h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>
-    <p>Thanks for supporting <a href="/<?=$lang?>/firefox/about/">Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
+    <?=$logo?>
+    <p>Thanks for supporting <a <?=$aboutlink?>>Mozilla’s mission</a> of encouraging openness, innovation and opportunity on the Web!</p>
 </div>
 
 
