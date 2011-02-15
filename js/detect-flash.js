@@ -38,8 +38,8 @@ $(document).ready( function flashWarning() {
                 }
             }
         }
-
-        if (navigator.appVersion.indexOf("Mac")!=-1) {
+        
+        if (navigator.appVersion.indexOf("Windows")!=-1) {
             var version = GetSwfVer();
             if(version != -1) {
                 $('body').append('<img src="/img/blank.gif?version='+version+'">');
