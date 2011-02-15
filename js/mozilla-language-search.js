@@ -7,9 +7,10 @@ Mozilla.LanguageSearch = function(input, results_container, data, version)
 {
 	this.data = data;
 
-	YAHOO.util.Event.onDOMReady(function () {
-		this.init(input, results_container);
-	}, this, true);
+	var that = this;
+	$(document).ready(function () {
+		that.init(input, results_container);
+	});
 
 	this.old_keywords = null;
 	this.timer = null;
@@ -30,37 +31,31 @@ Mozilla.LanguageSearch.download_text = 'download';
 
 Mozilla.LanguageSearch.prototype.init = function(input, results_container)
 {
-	if ((typeof input).toLowerCase() == 'string') {
-		input = YAHOO.util.Dom.get(input);
-	}
+	input = $("#" + input);
 
-	input.setAttribute('autocomplete', 'off');
+	input.attr('autocomplete', 'off');
 
-	if ((typeof results_container).toLowerCase() == 'string') {
-		results_container = YAHOO.util.Dom.get(results_container);
-	}
+	results_container = $("#" + results_container);
 
 	// setup key event handlers
-	YAHOO.util.Event.on(input, 'keyup', this.handleKeywordsChange,
-		this, true);
+	input.keyup($.proxy(this.handleKeywordsChange, this));
 
-	YAHOO.util.Event.on(input, 'blur', this.handleKeywordsChange,
-		this, true);
+	input.blur($.proxy(this.handleKeywordsChange, this));
 
 	// set up results container
 	this.results_container = document.createElement('div');
 	this.results_container.className = 'results';
-	results_container.appendChild(this.results_container);
+	results_container.append(this.results_container);
 
 	// perform initial search
-	this.value = input.value;
+	this.value = input.val();
 	this.search();
 }
 
 Mozilla.LanguageSearch.prototype.handleKeywordsChange = function(e)
 {
-	var target = YAHOO.util.Event.getTarget(e);
-	var value = target.value.replace(/^\s+|\s+$/g, ''); // trim whitespace
+	var target = $(e.target);
+	var value = target.val().replace(/^\s+|\s+$/g, ''); // trim whitespace
 
 	// if value changed
 	if (value != this.value) {

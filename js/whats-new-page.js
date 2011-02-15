@@ -30,16 +30,16 @@ function whatsNewMessage() {
 }
 
 // Surveys for 50% of people; Bugs 449417 & 466849
-YAHOO.util.Event.onDOMReady( function hideSurvey() {
+$(document).ready( function hideSurvey() {
     var survey = document.getElementById('survey');
     var sumo   = document.getElementById('sumo');
     if (survey) {
         var rand = Math.random();
         if (rand < 0.50) {
             if (sumo) {
-                YAHOO.util.Dom.addClass(sumo, 'hide');
+                $(sumo).addClass('hide');
             }
-            YAHOO.util.Dom.removeClass(survey, 'hide');
+            $(survey).removeClass('hide');
         }
     }
 });

@@ -3,7 +3,7 @@ window.onunload = GUnload;
 /**
  * Initializes map widget on this page after the document has been loaded
  */
-YAHOO.util.Event.onDOMReady(function()
+$(document).ready(function()
 {
 	if (!GBrowserIsCompatible())
 		return;
@@ -85,18 +85,19 @@ Mozilla.Map.prototype.addLocation = function(loc)
 		title_anchor.innerHTML = title;
 		title_anchor.href = '#';
 		title_anchor.id = 'link_' + id;
-		YAHOO.util.Event.on(title_anchor, 'click', function (e) {
-			YAHOO.util.Event.preventDefault(e); this.goToLocation(id);
-			}, this, true);
+		var that = this;
+		$(title_anchor).click(function (e) {
+			e.preventDefault(); that.goToLocation(id);
+		});
 		map_links.appendChild(title_anchor);
 
 		var update_map = document.createElement('a');
 		update_map.innerHTML = 'Update Map';
 		update_map.href = '#';
 		update_map.className = 'update-map';
-		YAHOO.util.Event.on(update_map, 'click', function (e) {
-			YAHOO.util.Event.preventDefault(e); this.goToLocation(id);
-			}, this, true);
+		$(update_map).click(function (e) {
+			e.preventDefault(); that.goToLocation(id);
+		});
 		document.getElementById(id).appendChild(update_map);
 	} else {
 		map_links.innerHTML+= '<div id="link_' + id + '">' + title + '</div>';
