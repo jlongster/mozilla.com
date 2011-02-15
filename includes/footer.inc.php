@@ -29,11 +29,7 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
                         </li>
 		</ul>
 		<p id="sub-footer-newsletter">
-			<span class="intro">Want us to keep in touch?</span>
-			<a href="/{$lang}/newsletter/" 
-                           onclick="dcsMultiTrack('DCS.dcsuri', '/{$lang}/newsletter/', 'WT.ti', 'Newsletter');">
-                          Get Monthly News <span>»</span>
-                        </a>
+    { include("$config['file_root']/includes/newsletter.inc.php"); }
 		</p>
 		</div>
 	</div>
