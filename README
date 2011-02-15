@@ -1,82 +1,73 @@
 Mozilla.com
 ===========
 
-Testing/Reviewing
------------------
-This is a special section that will be removed once the code is released. 
-Also, the scope of this project is limited to just "in-project pages"
-as defined on http://wiki.mozilla.org/Firefox2/In-Product_Web_Pages .
+This is the codebase for mozilla.com, a site which Mozilla uses as a
+central spot for promoting and providing free software, particularly
+the Firefox web browser.
 
+More information can be found on the wiki page:
 
-Description
------------
+https://wiki.mozilla.org/Mozilla.com
 
-This is the main mozilla.com site, now supporting many languages.  In it's first revision, it will only
-support "in-product pages" in multiple languages ( defined here: http://wiki.mozilla.org/Firefox2/In-Product_Web_Pages ).
+Installing
+----------
 
+Get the code from:
 
-Requirements
-------------
-- Make sure name-based virtual hosting is enabled.  In apache, check for this line in httpd.conf:
+    * git: https://github.com/jlongster/mozilla.com
+    * svn: https://svn.mozilla.org/projects/mozilla.com/trunk
+
+Cloning from git gives a repo ready for `git-svn` usage to work on the
+SVN repo.
+
+Make sure name-based virtual hosting is enabled.  In apache, check for
+this line in httpd.conf:
 
     NameVirtualHost *:80
 
-- DNS entries for any languages you will be supporting.  (For testing, pointing *.name.com -> name.com will work well).
+Copy /includes/config.inc.php-dist to /includes/config.inc.php and
+fill out the variables (server_name and file_root are required).
 
-- There is an .htaccess that must run on page requests
+Install the Virtual Host in apache. Example config:
 
-    AllowOverride All
+    <Directory /path/to/mozilla.com>
+            Options Includes FollowSymLinks MultiViews Indexes
+            AllowOverride All
+            Order Deny,Allow
+            Allow from all
+    </Directory>
 
-- You must enable the following Apache Modules
+    <VirtualHost *:80>
+        ServerName mozilla.local
+        VirtualDocumentRoot "/path/to/mozilla.com"
+    </VirtualHost>
 
-    a2enmod expires 
-    a2enmod actions
-    a2enmod headers
+The should be it. mozilla.com doesn't use any complicated frameworks,
+so as long as you get PHP running it should work.
 
-How To Install
---------------
+Depending on your Apache installation you might need the following
+line within the VirtualHost block to allow PHP inside of html files:
 
+    AddType application/x-httpd-php .php .html
 
-1) (Assuming apache) create a virutal host for your site that supports all DNS
-entries you made.  Also be sure to add the Rewrite rules below.
-Example:
+Git or SVN?
+-----------
 
-        <VirtualHost *:80>
-            ServerName www.mozilla.com
-            ServerAlias *.www.mozilla.com
-            DocumentRoot /data/www.mozilla.com
-            AddType application/x-httpd-php .php .html
-            DirectoryIndex index.php index.html
-            Options -Indexes
+The site is primarily worked on through SVN, and git is only supported
+as far as `git-svn`. Right now, this means you can use git all you
+want in your development environment, but you can't map your git
+branches to SVN or anything like that. When it comes time to commit,
+use `git-svn` and always only commit one branch to SVN.
 
-            RewriteEngine On
-            RewriteMap toupper int:toupper
-        </VirtualHost>
+Contributing
+------------
 
-Notice that we're parsing html as php - this is for backwards compatibility with the stuff we migrated from mozilla-europe.
-
-
-2) Check out the code from svn.mozilla.org/projects/mozilla.com/trunk/ to your webroot
-
-3) Copy /includes/config.inc.php-dist to /includes/config.inc.php, and fill out all variables.
-
-
-Testing
--------
-
-Make sure the following URLs load without errors:
-
-/firefox/2.0/firstrun
-/firefox/2.0/whatsnew
-/firefox/central
-/firefox/help
-/firefox/customize
-/firefox/community
-/firefox/about
-/firefox/contact
-
+Please contact us (jlong@mozilla.com) if you are interesting in
+contributing to this project. Localizing requires a lot of work, and
+we couldn't support this many locales without the generous help of our
+current localizers. Thanks!
 
 Questions?
 ----------
 
-Email: Wil Clouser <clouserw@mozilla.com>
+Email: James Long <jlong@mozilla.com>
