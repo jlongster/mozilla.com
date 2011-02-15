@@ -33,11 +33,14 @@ $head_scripts = empty($head_scripts) ? $default_head_scripts : $head_scripts;
 $fonts = empty($fonts) ? $default_fonts : $fonts;
 $styles = empty($styles) ? $default_styles : $styles;
 
+$iframe ='<iframe src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php" width="320" height="250"></iframe>';
+
+
 $dynamic_header = <<<DYNAMIC_HEADER
 <!DOCTYPE HTML>
 <html lang="{$lang}" dir="{$textdir}">
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <title>{$page_title}</title>
 
 {$fonts}
