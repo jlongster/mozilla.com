@@ -1,9 +1,10 @@
 <?php 
+
 // translate $page_title below 
 
 $page_title = "404: strani ni najti"; 
 
-include_once "{$config['file_root']}/includes/l10n/404.inc.php"; 
+include_once "{$config['file_root']}/includes/l10n/controller.inc.php"; 
 
 ?>
 
@@ -45,6 +46,6 @@ include_once "{$config['file_root']}/includes/l10n/404.inc.php";
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>
 

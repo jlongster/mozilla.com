@@ -1,6 +1,7 @@
 <?php
-    $body_id    = 'mozilla-com';
-    $html5      = true;
+    $body_id          = 'mozilla-com';
+    $html5            = true;
+    $disable_js_stats = true;
 
     if(!isset($extra_headers)) {$extra_headers = '';}
     if(!isset($extra_css))     {$extra_css     = '';}

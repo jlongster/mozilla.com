@@ -1,15 +1,10 @@
 <?php
-    // The $body_* variables are for compatibility with pre-existing css
-    $page_title = '404: Page Not Found';
-    $body_id    = 'mozilla-com';
-    $breadcrumbs = array(
-                            'Page Not Found' => ""
-                        );
-    $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/rustico/errors.css" media="screen" />
-EXTRA_HEADERS;
-    include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
 
+    // translate $page_title below
+    $page_title = '404: Page Not Found';
+
+    $pageid = '404';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
     <div id="content">
@@ -43,7 +38,8 @@ EXTRA_HEADERS;
 
 
     </div><!-- end #content div -->
+
+    
 <?php
-    $disable_js_stats = true;
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -3,8 +3,8 @@
     // translate $page_title below
     $page_title       = "404: Betg chattà la pagina";
 
-
-    include_once "{$config['file_root']}/includes/l10n/404.inc.php";
+    $pageid = '404';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
 
@@ -40,5 +40,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

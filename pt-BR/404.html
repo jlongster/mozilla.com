@@ -1,14 +1,10 @@
 <?php
-    // The $body_* variables are for compatibility with pre-existing css
+
+    // translate $page_title below
     $page_title = '404: Página não encontrada';
-    $body_id    = 'mozilla-com';
-    $extra_headers = <<<EXTRA_HEADERS
 
-    <link rel="stylesheet" type="text/css" href="/style/tignish/404-page.css" media="screen" />
-
-EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
-
+    $pageid = '404';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
 <div id="main-feature">
@@ -39,6 +35,5 @@ EXTRA_HEADERS;
 </div><!-- end #content div -->
 
 <?php
-    $disable_js_stats = true;
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>
