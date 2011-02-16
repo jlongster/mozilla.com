@@ -616,15 +616,12 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>{$page_title}</title>
 
-    <script type="text/javascript" src="{$config['static_prefix']}/js/util.js"></script>
+    <script type="text/javascript" src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/template.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/content.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/4/firstrun-page-beta{$cssversion}.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/container/container_core-min.js"></script>
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
     <script type="text/javascript" src="{$config['static_prefix']}/js/mozilla-video-tools-addsubtitles.js"></script>
     <script type="text/javascript" src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
 
@@ -654,7 +651,7 @@ if (gPlatform == 1) {
 }
 
 // css transition effect
-YAHOO.util.Event.onDOMReady(function() {
+$(document).ready(function() {
     document.body.offsetLeft;
     document.getElementById('sub-feature').className = 'loaded';
 });
