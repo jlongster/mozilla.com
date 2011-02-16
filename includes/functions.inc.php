@@ -1086,16 +1086,16 @@ function insertQuarterlySurvey( $lang='en-GB', $active=array('') )
 $surveyJS = <<<SURVEY
     <script>
     // Surveys for 50% of people; Bugs 449417 & 466849
-    YAHOO.util.Event.onDOMReady( function hideSurvey() {
+    $(document).ready( function hideSurvey() {
         var survey = document.getElementById('survey');
         var addons = document.getElementById('addons');
         if (survey) {
             var rand = Math.random();
             if (rand < 0.50) {
                 if (addons) {
-                    YAHOO.util.Dom.addClass(addons, 'hide');
+                    $(addons).addClass('hide');
                 }
-                YAHOO.util.Dom.removeClass(survey, 'hide');
+                $(survey).removeClass('hide');
             }
         }
     });
