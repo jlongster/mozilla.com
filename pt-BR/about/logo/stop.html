@@ -3,8 +3,8 @@
     $page_title = 'Crueldade com Logotipos | Mozilla';
     $body_id    = 'logo-stop';
     $extra_headers = <<<EXTRA_HEADERS
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/tips.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/logo.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/tips.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/logo.css" media="screen" />
 	<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
 	<script type="text/javascript" src="/js/mozilla-pager.js"></script>
 	<script type="text/javascript">// <![CDATA[
@@ -14,7 +14,8 @@
 	// ]]></script>
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -215,5 +216,5 @@ EXTRA_HEADERS;
 <div id="divider"></div>
 
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

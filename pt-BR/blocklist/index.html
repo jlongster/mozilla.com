@@ -3,10 +3,11 @@
     $page_title = 'Complementos bloqueados | Mozilla';
     $body_id    = 'mozilla-com';
     $extra_headers = <<<EXTRA_HEADERS
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/add-ons/blocklist.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/add-ons/blocklist.css" media="screen" />
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="main-feature">
@@ -33,5 +34,5 @@ EXTRA_HEADERS;
 	</ul>
 </div><!-- end #content div -->
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

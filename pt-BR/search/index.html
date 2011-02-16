@@ -3,10 +3,11 @@
     $page_title = 'Resultados da Busca em Mozilla.com';
     $body_id    = 'search';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/search.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/search.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="/includes/nutch-interface/style/moz_nutch.css" media="screen" />
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
     // Include the nutch interface library
     require_once "{$config['file_root']}/includes/nutch-interface/mozNutch.class.php";
@@ -101,5 +102,5 @@ EXTRA_HEADERS;
 <!-- Please do not ever remove this comment. -->
 
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

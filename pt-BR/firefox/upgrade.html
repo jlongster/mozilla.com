@@ -5,16 +5,17 @@
     $extra_headers = <<<EXTRA_HEADERS
 	<meta name="keywords" content="Firefox, Mozilla Firefox, Mozilla, Thunderbird, Thunderbird 2, Thunderbird email, email, Firefox 2, Foxfire, Fire Fox, navegador, web, bloqueio de popups, internet, velocidade, segurança, complementos, browser, web browser, internet browser, pop-up blocker, speed, secure, customize, online, add-ons, fastest, download Firefox" />
 	<meta name="description" content="O navegador Firefox é a maneira mais rápida, segura e personalizável de navegar na web." />
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/firefox.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/upgrade.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/firefox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/upgrade.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
     <script type="text/javascript" charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
     <script type="text/javascript" charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
 	<script type="text/javascript" src="/includes/yui/2.5.1/animation/animation-min.js"></script>
     <script type="text/javascript" src="/js/mozilla-video-tools.js"></script>
 EXTRA_HEADERS;
 
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 <?php
     // Funnelcake Config
@@ -139,5 +140,5 @@ FUNNEL;
 </div>
 
 <?php
-    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

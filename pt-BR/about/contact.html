@@ -3,12 +3,13 @@
     $page_title = 'Entre em contato | Mozilla';
     $body_id    = 'about-contact';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/tignish/about.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/about.css" media="screen" />
     <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key={$config['gmap_api_key']}" type="text/javascript"></script>
 
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -169,5 +170,5 @@ $extra_footers = <<<EXTRA_FOOTERS
 
 EXTRA_FOOTERS;
 
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    require_once $footerfile;
 ?>

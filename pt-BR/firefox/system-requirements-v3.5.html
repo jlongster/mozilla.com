@@ -3,9 +3,10 @@
     $page_title = 'Mozilla Firefox 3.5 | Requisitos do Sistema';
     $body_id    = 'firefox-requirements';
     $extra_headers = <<<EXTRA_HEADERS
-	<link rel="stylesheet" type="text/css" href="/style/tignish/system-requirements.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/style/covehead/system-requirements.css" media="screen" />
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -75,5 +76,5 @@ EXTRA_HEADERS;
 </div>
 
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

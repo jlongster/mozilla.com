@@ -3,12 +3,13 @@
     $page_title = 'Firefox | Ajude-nos a testar o Beta mais recente';
     $body_id    = 'firefox-all';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/tignish/firefox.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/tignish/all.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/tignish/all-beta.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/firefox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/all.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/all-beta.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="main-feature">
@@ -71,5 +72,5 @@ EXTRA_HEADERS;
 
 </div><!-- end #content div -->
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

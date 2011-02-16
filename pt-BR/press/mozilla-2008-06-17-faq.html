@@ -4,10 +4,11 @@
     $body_id    = 'mozilla-com';
 	$extra_headers = <<<EXTRA_HEADERS
 
-    <link rel="stylesheet" type="text/css" href="/style/tignish/press-release.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/press-release.css" media="screen" />
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -138,5 +139,5 @@ EXTRA_HEADERS;
 
 </div><!-- end #content div -->
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

@@ -4,12 +4,13 @@
     $page_title = 'Firefox | Versões internacionais: obtenha o Firefox no seu idioma';
     $body_id    = 'firefox-all';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/tignish/firefox.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/tignish/all.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/firefox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/all.css" media="screen" />
     <script type="text/javascript" src="/js/mozilla-language-search.js"></script>
 
 EXTRA_HEADERS;
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <?php
@@ -109,5 +110,5 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 	</div>
 </div>
 <?php
-    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>

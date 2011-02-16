@@ -3,10 +3,11 @@
     $page_title = 'Prêmios da Mozilla';
     $body_id    = 'awards';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/tignish/press-page.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/style/covehead/press-page.css" media="screen" />
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -121,5 +122,5 @@ EXTRA_HEADERS;
 </div><!-- end #content div -->
 
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+  require_once $footerfile;
 ?>
