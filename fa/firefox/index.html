@@ -4,7 +4,8 @@
     $page_title = 'مرورگر وب فایرفاکس فارسی | سریع‌تر، امن‌تر و قابل سفارشی‌سازی';
     $meta_description = "به فایرفاکس فارسی خوش آمدید! مرورگر وب فایرفاکس امکانی سریع‌تر، امن‌تر و قابل سفارشی‌سازی برای مرور اینترنت است.";
     
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -47,5 +48,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

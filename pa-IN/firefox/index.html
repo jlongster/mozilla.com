@@ -5,7 +5,8 @@
     $meta_description = "ਪੰਜਾਬੀ ਵਿੱਚ ਫਾਇਰਫਾਕਸ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ! ਫਾਇਰਫਾਕਸ ਵੈੱਬ ਬਰਾਊਜ਼ਰ ਬਹੁਤ ਤੇਜ਼, ਵੱਧ ਸੁਰੱਖਿਅਤ ਅਤੇ ਇੰਟਰਨੈੱਟ ਵਰਤਣ ਲਈ ਪੂਰੀ ਤਰ੍ਹਾਂ ਅਨੁਕੂਲ ਕਰਨ ਦੇ ਯੋਗ ਹੈ।";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -57,5 +58,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -4,7 +4,8 @@
     $page_title       = "Firefox վեբ դիտարկիչը ՀԱՅԵՐԵՆ լեզվով | Արագ, ավելի անվտանգ և կառավարելի";
     $meta_description = "Բարի Գալուստ Firefox-ի ՀԱՅԵՐԵՆ էջը։ Firefox վեբ դիտարկիչը ավելի արագ է, ավելի անվտանգ և ամբողջովին կարգավորելի է՝ Ինտերնետից օգտվելու համար։";
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
 <div id="main-feature">
@@ -46,5 +47,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

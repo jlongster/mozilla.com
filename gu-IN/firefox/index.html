@@ -5,7 +5,8 @@
     $meta_description = "Firefox ગુજરાતીમાં તમારું સ્વાગત છે! ઈન્ટરનેટ વાપરવા માટે Firefox એ ઝડપી, વધુ સુરક્ષિત, અને સંપૂર્ણપણે વૈવિધ્યપૂર્ણ બનાવી શકાય તેવું બ્રાઉઝર છે.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -54,5 +55,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

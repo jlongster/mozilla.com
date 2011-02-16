@@ -4,7 +4,8 @@
     $page_title       = "&#x202B; דפדפן Firefox בעברית | מהיר יותר, בטוח יותר, וניתן להתאמה אישית ";
     $meta_description = "ברוכים הבאים ל־Firefox בעברית! דפדפן Firefox הוא דרך המהירה יותר, הבטוחה יותר, והטובה יותר לגלישה ברשת.";
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -60,5 +61,5 @@ Thunderbird
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

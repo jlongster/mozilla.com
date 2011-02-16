@@ -5,7 +5,8 @@
     $meta_description = "Dámoslle a benvida a Firefox en galego! O Firefox é o navegador máis rápido, máis seguro e completamente configurábel para navegar pola Internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -55,5 +56,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

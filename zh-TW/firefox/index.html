@@ -5,7 +5,8 @@
     $meta_description = "歡迎使用 Firefox 正體中文版！Firefox 是更快、更安全，也最能方便自訂的網路瀏覽器。";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -50,5 +51,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -4,7 +4,8 @@
     $page_title = 'متصفح فَيَرْفُكْس العربي | أسرع، وأكثر موثوقية، وأكثر قابلية للتخصيص';
     $meta_description = "مرحبًا بكم في متصفح فَيَرْفُكْس العربي! متصفح فَيَرْفُكْس هو الطريقة الأسرع والأأمن والقابلة للتخصيص بشكل كامل للإبحار في الإنترنت.";
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 
 ?>
@@ -55,5 +56,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

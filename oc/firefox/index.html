@@ -5,7 +5,8 @@
     $meta_description = "Planvengut dins Firefox en occitan ! Lo navigador web Firefox es lo biais mai rapid, mai segur e mai personalizable de navigar sus internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -56,7 +57,7 @@ Firefox es lo melhor biais, lo mai aviat e lo mai segur per navigar sus internet
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>
 
 

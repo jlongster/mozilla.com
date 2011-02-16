@@ -5,7 +5,8 @@
     $meta_description = "বাংলা (ভারত) Firefox ওয়েব ব্রাউজারে স্বাগত! The Firefox Web Browser is the faster, more secure, and fully customizable way to surf the Internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -54,5 +55,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

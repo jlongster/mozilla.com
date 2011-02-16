@@ -5,7 +5,8 @@
     $meta_description = "Türkçe Firefox sitesine hoş geldiniz! Firefox Web tarayıcısı, İnternet'i keşfetmenin daha hızlı, güvenli ve tam özelleştirilebilir yöntemidir.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -66,5 +67,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

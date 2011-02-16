@@ -5,7 +5,8 @@
     $meta_description = "Benvenuto nella versione italiana di Firefox. Il browser web Firefox è il modo più veloce, sicuro e personalizzabile per navigare su internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -55,5 +56,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

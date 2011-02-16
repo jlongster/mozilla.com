@@ -5,7 +5,8 @@
     $meta_description = "ಕನ್ನಡದಲ್ಲಿನ ಫೈರ್ಫಾಕ್ಸ್‍ಗೆ ಸುಸ್ವಾಗತ! ಫೈರ್ಫಾಕ್ಸ್ ಜಾಲ ವೀಕ್ಷಕವು ಈಗ ವೇಗ, ಇನ್ನಷ್ಟು ಸುರಕ್ಷಿತ, ಹಾಗು ನಿಮ್ಮ ಇಚ್ಛೆಗೆ ತಕ್ಕಂತೆ  ಸಂಪೂರ್ಣವಾಗಿ ಬದಲಾಯಿಸಿಕೊಂಡು ಅಂತರ್ಜಾಲವನ್ನು ವೀಕ್ಷಿಸುವಂತಹ ಮಾರ್ಗವಾಗಿದೆ.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -57,5 +58,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

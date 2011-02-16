@@ -5,7 +5,8 @@
     $meta_description = "ආයුබෝවන්, Firefox සිංහල වෙතට සාධරයෙන් පිළිගනිමු! Firefox වෙබ් ගවේශකය අන්තර්ජාලයට පිවිසිය හැකි වේගවත්, වඩා ආරක්‍ෂිත සහ රිසි ලෙස සැකසිය හැකි ආකාරයයි.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -57,6 +58,6 @@ Firefox යනු වේගවත්, ආරක්‍ෂිත සහ හොඳ�
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>
 

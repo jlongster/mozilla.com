@@ -5,7 +5,8 @@
     $meta_description = "മലയാളത്തില്‍ ലഭ്യമാകുന്ന ഫയര്‍ഫോക്സിലേക്കു് സ്വാഗതം! ഫയര്‍ഫോക്സ് വെബ് ബ്രൌസര്‍ ഉപയോഗിച്ചു് ഇന്റര്‍നെറ്റ് ഏറ്റവും ലളിതമായും സുരക്ഷിതമായും ഉപയോഗിക്കുവാന്‍ സാധിക്കുന്നു.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -69,5 +70,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

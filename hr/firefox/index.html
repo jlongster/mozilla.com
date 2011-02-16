@@ -5,7 +5,8 @@
     $meta_description = "Dobro došli u Firefox na hrvatskom jeziku! Firefox web pretraživač je brži, sigurniji i potpuno prilagodljiv način pretraživanja Interneta.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -67,5 +68,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

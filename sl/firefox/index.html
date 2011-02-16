@@ -5,7 +5,8 @@
     $meta_description = "Pozdravljeni v Firefoxu, ki predstavlja hitrejšo, bolj varno in v celoti prilagodljivo uporabniško izkušnjo pri brskanju po spletu.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -57,5 +58,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

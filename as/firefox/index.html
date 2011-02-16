@@ -5,7 +5,8 @@
     $meta_description = "অসমীয়া Firefox সংস্কৰণলৈ স্বাগতম! Firefox ৱেব চৰক হৈছে ইন্টাৰ্নে'ট চৰণ কৰাৰ অধিক দ্ৰুত, অধিক নিৰাপদ, আৰু সম্পূৰ্ণৰূপে নিজৰ পছন্দৰ মতে সজাব পৰা ধৰণ ।";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -59,5 +60,5 @@ href="http://support.mozilla.com/<?=$lang?>/kb/">সমৰ্থনৰ পৃষ
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

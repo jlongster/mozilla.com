@@ -5,7 +5,8 @@
     $meta_description = "Қазақ тіліндегі Firefox веб браузеріне қош келдіңіз! Firefox веб браузері - Интернет шолудың әлдеқайда жылдам, қауіпсіз әрі толығымен лайықталатын құралы.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -58,5 +59,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

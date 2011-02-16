@@ -40,6 +40,7 @@ $host_enUS = $config['url_scheme'].'://'.$config['server_name'].'/en-US';
 
 // here we define our per-page includes
 $sitepages = array(
+    'landing'            => 'landing-page.inc.php',
     'oldversion'         => 'oldversion.inc.php',
     'about'              => 'about.inc.php',
     'central'            => 'central.inc.php',

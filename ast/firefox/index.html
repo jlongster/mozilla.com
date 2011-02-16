@@ -4,7 +4,8 @@
     $page_title       = "Restolador web Firefox n'Asturianu | Más rápidu, seguru y cenciellu de personalizar";
     $meta_description = "Bienllegáu a Firefox n'Asturianu! El restolador web Firefox ye'l más rápidu, más seguru y el mou más completu y personalizable de restolar per Internet.";
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
 <div id="main-feature">
@@ -46,5 +47,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

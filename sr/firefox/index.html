@@ -5,7 +5,8 @@
     $meta_description = "Добродошли у фајерфокс на српском!  Веб читач фајерфокс је бржи, безбеднији и потпуно прилагодљив начин за читање страна на Интернету.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -57,5 +58,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

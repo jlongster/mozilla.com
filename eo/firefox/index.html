@@ -5,7 +5,8 @@
     $meta_description = "Bonvenon al Firefox en Esperanto! La retesplorilo Firefox estas la pli sekura, pli rapida kaj tute adaptebla maniero esplori la Interreton.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -55,5 +56,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -5,7 +5,8 @@
     $meta_description = "Velkommen til Firefox på dansk! Firefox er hurtigere, mere sikker og kan tilpasses til lige netop dit behov.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -64,5 +65,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

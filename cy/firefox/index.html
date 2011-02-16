@@ -5,7 +5,8 @@
     $meta_description = "Croeso i Firefox yn Gymraeg! Y porwr Gwe Firefox yw'r ffordd mwy cyflym, diogel a hyblyg i bori'r We.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 <div id="main-feature">
@@ -52,5 +53,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

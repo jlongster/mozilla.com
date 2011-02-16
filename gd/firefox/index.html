@@ -4,7 +4,8 @@
     $page_title       = "Firefox, am brabhsair-lìon sa Ghàidhlig | Nas luaithe, nas tèarainte agus fear as urrainn dhut a ghnàthachadh";
     $meta_description = "Fàilte gu Firefox sa Ghàidhlig! 'S e Firefox am brabhsair-lìon nas luaithe is nas tèarainte a chum seòladh an eadar-lìon agus is urrainn dhut a ghnàthachadh gu tur.";
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
 <div id="main-feature">
@@ -46,5 +47,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -5,7 +5,8 @@
     $meta_description = "Καλώς ήλθατε στην ελληνική έκδοση του Firefox! Ο περιηγητής Firefox είναι το ταχύτερο, ασφαλέστερο και πλήρως προσαρμόσιμο μέσο για να περιηγηθείτε στο διαδίκτυο.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -65,5 +66,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

@@ -5,7 +5,8 @@
     $meta_description = "Firefox உலாவிக்கு உங்களை வரவேற்கிறோம். இதுவே விரைவாகவும், பாதுகாப்பாகவும், தனிப்பயனாக்க வசதியுடனும் இணையத்தில் உலா வருவதற்கான ஒரே வழியாகும்.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -56,5 +57,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

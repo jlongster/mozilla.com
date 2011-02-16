@@ -5,7 +5,8 @@
     $meta_description = "తెలుగు ఫైర్‌ఫాక్స్‌కి స్వాగతం! అంతర్జాలంలో విహరించడానికి ఫైర్‌ఫాక్స్ జాల విహారిణి అన్నది వేగవంతమైన, సురక్షితమైన మరియు కావల్సినట్టు తీర్చిదిద్దుకోగల మార్గం.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -48,5 +49,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

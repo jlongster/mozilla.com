@@ -5,7 +5,8 @@
     $meta_description = "Chào mừng đến với Firefox Tiếng Việt! Trình Duyệt Web Firefox là một phương thức nhanh hơn, an toàn hơn và có khả năng tùy biến đầy đủ để lướt web trên Internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -59,5 +60,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>

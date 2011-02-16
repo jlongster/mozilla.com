@@ -5,7 +5,8 @@
     $meta_description = "¡Bienvenido a Firefox en español de España! El navegador web Firefox es la forma más rápida, más segura y más personalizable de navegar por Internet.";
 
 
-    include_once "{$config['file_root']}/includes/l10n/landing-page.inc.php";
+    $pageid = 'landing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 ?>
 
@@ -61,5 +62,5 @@
 
 
 <?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+  require_once $footerfile;
 ?>
