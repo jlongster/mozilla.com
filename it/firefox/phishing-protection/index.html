@@ -1,22 +1,11 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = "Firefox - Protezione da phishing e malware";
-    $body_id    = 'phishing-protection';
-    $body_class = 'portal-page';
-    $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/phishing-page.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/mozilla-expanders.css" media="screen" />
-    <script type="text/javascript">//<![CDATA[
-        function userAgentRedirect(match_string, url) {
-            if (navigator.userAgent && navigator.userAgent.indexOf(match_string) != -1)
-                window.location = url;
-        }
-        userAgentRedirect('Firefox/2', '/{$lang}/firefox/phishing-protection/firefox2/');
-    //]]></script>
-EXTRA_HEADERS;
 
-    include_once "{$config['file_root']}/includes/header.inc.php";
+    $pageid = 'antiphishing';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
+
 
 <div id="main-feature">
     <h2>Protezione da phishing e malware</h2>
@@ -88,10 +77,5 @@ EXTRA_HEADERS;
 
 
 <?php
-    $extra_footers = <<<EXTRA_FOOTERS
-<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/js/mozilla-expanders.js"></script>
-
-EXTRA_FOOTERS;
-    include_once "{$config['file_root']}/includes/footer.inc.php";
+    include_once $footerfile;
 ?>
