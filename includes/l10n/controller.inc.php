@@ -3,6 +3,7 @@
 // make sure we have a few variables defined to avoid php warnings if they don't exist
 $head_add         = (isset($head_add)) ? $head_add                 : '';
 $body_id          = (isset($body_id)) ? $body_id                   : '';
+$pageid           = (isset($pageid)) ? $pageid                     : '';
 $body_class       = (isset($body_class)) ? $body_class             : '';
 $meta_description = (isset($meta_description)) ? $meta_description : '';
 $extra_headers    = (isset($extra_headers)) ? $extra_headers       : '';
