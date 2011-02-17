@@ -9,16 +9,22 @@ More information can be found on the wiki page:
 
 https://wiki.mozilla.org/Mozilla.com
 
-Installing
-----------
+Downloading
+-----------
 
 Get the code from:
 
     * git: https://github.com/jlongster/mozilla.com
     * svn: https://svn.mozilla.org/projects/mozilla.com/trunk
 
-Cloning from git gives a repo ready for `git-svn` usage to work on the
-SVN repo.
+Git support is still experimental; it is recommend for you to clone
+the SVN repo directly if you intend to contribute. For reference, this
+git repo was created using:
+
+    git svn clone -r80321 https://svn.mozilla.org/projects/mozilla.com/trunk
+
+Installing
+----------
 
 Make sure name-based virtual hosting is enabled.  In apache, check for
 this line in httpd.conf:
