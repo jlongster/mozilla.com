@@ -145,6 +145,7 @@ $full_languages = array(
     'hi-IN',
     'hr',
     'hu',
+    'hy',
     'hy-AM',
     'id',
     'is',
@@ -209,7 +210,8 @@ $lang_remap = array(
     'ja-jp-mac' => 'ja',
     'no'        => 'nb-NO',
     'pt'        => 'pt-PT',
-    'sv'        => 'sv-SE'
+    'sv'        => 'sv-SE',
+    'hy'        => 'hy-AM',
 
 );
 
