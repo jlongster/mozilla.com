@@ -1,0 +1,118 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+EXTRA_HEADERS;
+
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error-'. $form->error;
+    }
+?>
+
+<div id="main-feature">
+    <h2>Erfahren Sie mehr, mit dem <span>Mozilla-Newsletter</span></h2>
+    <p>Abonnieren Sie den monatlichen Mozilla-Newsletter und erhalten Sie die wichtigsten Mozilla-News. Sie lernen aus erster Hand, wie Sie das Beste aus Ihrem Firefox-Browser herausholen. So bleiben Sie immer auf dem neuesten Stand.</p>
+</div>
+
+<div id="content">
+
+<ul id="email-form" class="<?= $status ?>">
+    <li id="form-pane">
+      <form action="" method="post">
+        <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
+        <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+
+        <div class="field required" id="email-field">
+          <label for="email">Ihre E-Mail-Adresse:</label>
+          <span class="error-wrapper"><input name="email" type="email" id="email" value="<?= $form->get('email') ?>" autofocus></span>
+        </div>
+
+        <div class="field" id="country-field">
+          <label for="country">Land:</label>
+          <select id="country" name="country">
+            <option value="">Select country</option>
+            <?php 
+                $country = $form->get('country');
+                if (!$country) {
+                    $country = 'de';
+                }
+                echo regionsAsOptions($lang, $country);
+            ?>
+          </select>
+        </div>
+
+        <div class="field" id="format-field">
+          <?php
+              $html_format = 'checked="checked"';
+              $text_format = '';
+              if ($form->get('format') == 'text') {
+                  $text_format = 'checked="checked"';
+                  $html_format = '';
+              }
+          ?>
+          <span class="field-label">Sparche:</span>
+          <div class="field-radios">
+            <label for="html-format">Deutsch</label>
+            <input type="radio" name="lang" id="html-format" value="de" <?= $html_format?>>
+            <label for="text-format">Englisch</label>
+            <input type="radio" name="lang" id="text-format" value="en" <?= $text_format?>>
+          </div>
+        </div>
+
+        <div class="field" id="privacy-field">
+          <label for="privacy-check" id="privacy-check-label">
+            <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+            <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?>></span>
+            <span class="title"> Ich stimme den <a href="/en-US/privacy-policy">Datenschutzbestimmungen von Mozilla</a></span>
+          </label>
+        </div>
+
+        <div class="text">Sie erhalten ausschließlich Mozilla-bezogene Informationen.</div>
+
+        <div class="field one-time">
+          <input type="checkbox" name="one-time" value="t" />
+          <label for="one-time">
+            Ich würde gerne eine einmalige Info-E-Mail über das "Ich-mach-mit-bei-Mozilla"- Programm erhalten.
+          </label>
+        </div>
+
+        <div class="field" id="submit-field">
+          <input name="submit" type="submit" value="Submit" id="subscribe">
+        </div>
+
+        <p id="disclaimer">We will only send you Mozilla-related information.</p>
+      </form>
+    </li>
+
+    <li id="success-pane">
+      <h3>Thanks for Subscribing!</h3>
+      <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
+      <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
+    </li>
+</ul>
+
+
+</div><!-- end #content div -->
+
+<?php if ($status == 'success'): ?>
+  <script>
+    dcsMultiTrack('WT.si_n', 'Main Newsletter Subscribe', 'WT.si_x', '1', 'WT.si_cs', '1');
+  </script>
+<?php endif ?>
+
+<script src="{$config['static_prefix']}/js/autofocus.js"></script>
+
+<?php
+  require_once $footerfile;
+?>
