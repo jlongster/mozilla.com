@@ -63,6 +63,8 @@ $sitepages = array(
     'firstrun-36'        => '3.6/firstrun.inc.php',
     'whatsnew-36'        => '3.6/whatsnew.inc.php',
     'antiphishing'       => 'antiphishing.inc.php',
+    'firstrun-4'         => '4/firstrun.inc.php',
+    'whatsnew-4'         => '4/whatsnew.inc.php',
 );
 
 // add the include if it exists only

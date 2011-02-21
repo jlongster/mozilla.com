@@ -60,6 +60,23 @@ RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/start[/]?$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/releasenotes[/]?$ http://www.mozillamessaging.com/$1thunderbird/2.0.0.$2/releasenotes/ [R=permanent]
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all.html$ http://www.mozillamessaging.com/thunderbird/all.html [R=permanent]
 
+<IfModule mod_php5.c>
+# PHP error handling for production servers
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag log_errors on
+php_flag ignore_repeated_errors off
+php_flag ignore_repeated_source off
+php_flag report_memleaks on
+php_flag track_errors on
+php_value docref_root 0
+php_value docref_ext 0
+php_value error_log /home/path/public_html/domain/PHP_errors.log
+php_value error_reporting 999999999
+php_value log_errors_max_len 0
+</IfModule>
+
 # bug 578744
 RewriteRule en-US/thunderbird/(.*) http://www.mozillamessaging.com/en-US/thunderbird/$1 [R=permanent]
 
@@ -180,7 +197,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all-older.html$ $1thunde
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/2\.0\.0\.\d{1,2}/whatsnew[/]?$ $1firefox/oldversion/ [PT]
 
-# Merge Firefox 3.0, 3.0.x, 3.5, 3.6 pages for locales only
+# Merge Firefox 3.0, 3.0.x, 3.5, 3.6, 4.x pages for locales only
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.0/firstrun[/]?$ $1firefox/3/firstrun/ [PT]
 RewriteCond $1 !en-US/
@@ -197,7 +214,10 @@ RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.\d{1,2}/firstrun[/]?$ $1firefox/3.6/firstrun/ [PT]
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.\d{1,2}/whatsnew[/]?$ $1firefox/3.6/whatsnew/ [PT]
-
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.\d{1,2}/firstrun[/]?$ $1firefox/4/firstrun/ [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.\d{1,2}/whatsnew[/]?$ $1firefox/4/whatsnew/ [PT]
 
 # Redirect  Firefox 4bx firstrun pages to 4beta generic page for locales only
 RewriteCond $1 !en-US/
