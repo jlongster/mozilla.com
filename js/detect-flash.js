@@ -1,13 +1,15 @@
 // What's new page logic.
 var requiredMajorVersion = 10;
-var requiredMinorVersion = 1;
-var requiredRevision     = 85;
+var requiredMinorVersion = 2;
+var requiredRevision     = 152;
 
 
 $(document).ready( function flashWarning() {
     var featureSection  = document.getElementById('main-feature');
     var isWinCE = navigator.appVersion.indexOf("WindowsCE");
-    if (featureSection && isWinCE == -1) {
+    // No message for Mac OS PPC cause it's not supported anymore by Adobe
+    var isPPCMac = navigator.userAgent.indexOf("PPC Mac");
+    if (featureSection && isWinCE == -1 && isPPCMac == -1) {
         var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
         if (!hasRequestedVersion && hasRequestedVersion != -1) {
             if (typeof(FlashAlertTitle) == 'undefined') {
