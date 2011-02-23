@@ -11,7 +11,7 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $form = new GermanNewsletterForm('MOZILLA_AND_YOU', $_POST);
     $status = '';
     if ($form->save()) {
         $status = 'success';
@@ -81,8 +81,8 @@ EXTRA_HEADERS;
         <div class="text">Sie erhalten ausschließlich Mozilla-bezogene Informationen.</div>
 
         <div class="field one-time">
-          <input type="checkbox" name="one-time" value="t" />
-          <label for="one-time">
+          <input type="checkbox" name="join_email" value="t" />
+          <label for="join_email">
             Ich würde gerne eine einmalige Info-E-Mail über das "Ich-mach-mit-bei-Mozilla"- Programm erhalten.
           </label>
         </div>
@@ -96,8 +96,8 @@ EXTRA_HEADERS;
     </li>
 
     <li id="success-pane">
-      <h3>Thanks for Subscribing!</h3>
-      <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
+      <h3>Vielen Dank, dass Sie den Mozilla-Newsletter abonniert haben!</h3>
+      <p>Sie gehören jetzt zu den Ersten, die exklusiv über Events, Aktualisierungen, Videos und viele andere spannende Dinge informiert werden.</p>
       <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
     </li>
 </ul>

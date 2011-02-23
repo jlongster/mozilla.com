@@ -7,8 +7,6 @@ class Responsys {
     static $lang = '';
 
     static function subscribe($campaign, $data = array()) {  
-        $data['LANG_LOCALE'] = self::$lang;
-        $data['SOURCE_URL'] = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']; 
         $data['EMAIL_ADDRESS_'] = $data['email'];
         if (isset($data['country'])) {
             $data['COUNTRY_'] = $data['country'];
@@ -21,7 +19,14 @@ class Responsys {
         $data[$campaign .'_FLG'] = 'Y';
         $data[$campaign .'_DATE'] = date('Y-m-d');
 
+        return Responsys::post($data);
+    }
+
+    static function post($data) {
         require dirname(__FILE__) .'/../config.inc.php';
+
+        $data['LANG_LOCALE'] = self::$lang;
+        $data['SOURCE_URL'] = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
         $data['_ri_'] = isset($config['responsys_id']) ? $config['responsys_id'] : 'X0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0OQQzgQvQviRVwjpnpgHlpgneHmgJoXX0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0NQQGQvQvH3';
 
         $_curl = curl_init('http://awesomeness.mozilla.org/pub/rf');  
@@ -38,5 +43,5 @@ class Responsys {
         }  
         $code = curl_getinfo($_curl, CURLINFO_HTTP_CODE);
         return $response;  
-    }  
+    }
 }
