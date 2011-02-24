@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 	} else {
 
-		$('#email-form a').click(function(e) {
+	    $('#email-form a:first').click(function(e) {
 			e.preventDefault();
 
 			$(this).hide();
