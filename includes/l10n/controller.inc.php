@@ -69,9 +69,9 @@ $sitepages = array(
 
 // add the include if it exists only
 if (array_key_exists($pageid, $sitepages) && $sitepages[$pageid] != '') {
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/l10n/'.$sitepages[$pageid];
+    include $config['file_root'].'/includes/l10n/'.$sitepages[$pageid];
 } else {
-    include $_SERVER['DOCUMENT_ROOT'].'/includes/l10n/header-pages.inc.php';
+    include $config['file_root'].'/includes/l10n/header-pages.inc.php';
 }
 
 ?>
