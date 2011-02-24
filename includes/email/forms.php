@@ -61,6 +61,26 @@ class NewsletterForm {
 
 }
 
+class GermanNewsletterForm extends NewsletterForm {
+    function subscribe() {
+        $now = date('Y-m-d');
+
+        $data = array('EMAIL_ADDRESS_' => $this->data['email'],
+                      'LANGUAGE_ISO2' => $this->data['lang'],
+                      'COUNTRY_' => $this->data['country']);
+
+        $data[$this->campaign . "_FLG"] = 'Y';
+        $data[$this->campaign . "_DATE"] = $now;
+
+        if(isset($this->data['join_email'])) {
+            $data['JOIN_MOZILLA_GERMAN'] = 'Y';
+            $data['JOIN_MOZILLA_GERMAN_DATE'] = $now;
+        }
+
+        Responsys::post($data);
+    }
+}
+
 class ExtraNewsletterForm extends NewsletterForm {
     function subscribe() {
         parent::subscribe();
