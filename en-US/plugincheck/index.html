@@ -39,7 +39,12 @@ function display_badge($size, $code_class='')
 <div id="main-content">
 
 	<div id="content-left">
-
+          <div class="blocklisted flash">
+            <h3>Missing <span>FLASH&#63;</span></h3>
+            <p>For your safety Firefox has blocked your older version.
+               Please <a href="http://get.adobe.com/flashplayer/">upgrade to the newest.</a></p>
+            <br class="clearfix" />
+          </div>
 	<div id="legend">
 		<ul>
 		<li id="old_browser" style="display:none"><strong>Warning, a newer version of your browser is available.</strong> Please upgrade your browser.</li>
@@ -234,6 +239,10 @@ $extra_footers .= <<<EXTRA_FOOTERS
 	Pfs.$('.web-badge-code').bind('click.badge', function(){
 	  Pfs.$(this).select().unbind('click.badge');
 	});
+    if (!document.referrer ||
+        location.href.indexOf('flash=1') > 0) {
+        $('.blocklisted.flash').show();
+    }
 });
 /* ]]> */
 </script>
