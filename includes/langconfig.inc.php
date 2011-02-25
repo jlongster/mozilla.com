@@ -17,6 +17,7 @@ $native_languages = array(
     'as'        => '&#2437;&#2488;&#2478;&#2496;&#2479;&#2492;&#2494;',
     'ast'       => 'Asturianu',
     'bg'        => '&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;',
+    'bs'        => 'Bosanski',
     'be'        => 'Беларуская',
     'br'        => 'breton',
     'bn-IN'     => '&#2476;&#2494;&#2434;&#2482;&#2494;',
@@ -96,7 +97,7 @@ $native_languages = array(
     'vi'        => 'Tiếng Việt',
     'zh-CN'     => '&#20013;&#25991; (&#31616;&#20307;)',
     'zh-TW'     => '&#27491;&#39636;&#20013;&#25991; (&#32321;&#39636;)',
-    'zu'        => 'Zulu'
+    'zu'        => 'isiZulu'
 );
 
 
@@ -116,6 +117,7 @@ $full_languages = array(
     'bg',
     'bn-IN',
     'bn-BD',
+    'bs', // Remap to en-US
     'ca',
     'cs',
     'cy',
@@ -207,6 +209,7 @@ $full_languages = array(
  *      lowercase(requested_language) => mapped_language
  */
 $lang_remap = array(
+    'bs'        => 'en-US',
     'en'        => 'en-US',
     'es'        => 'es-ES',
     'ja-jp-mac' => 'ja',
@@ -332,6 +335,7 @@ $language_select_list = array(
     'bn-BD'     => 'বাংলা (বাংলাদেশ)',
     'bn-IN'     => '&#2476;&#2494;&#2434;&#2482;&#2494;',
     'br'        => 'Brezhoneg',
+    'bs'        => 'Bosanski',
     'ca'        => 'Catal&#224;',
     'cs'        => '&#268;e&#353;tina',
     'cy'        => 'Cymraeg',
@@ -403,6 +407,7 @@ $language_select_list = array(
     'vi'        => 'Tiếng Việt',
     'zh-CN'     => '&#20013;&#25991; (&#31616;&#20307;)',
     'zh-TW'     => '&#27491;&#39636;&#20013;&#25991; (&#32321;&#39636;)',
+    'zu'        => 'isiZulu',
 );
 /*** END TEMPORARY CODE ***/
 ?>
