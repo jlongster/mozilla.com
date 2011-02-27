@@ -4,23 +4,18 @@
 require_once $config['file_root'] . '/includes/min/inline.php';
 $inline_css_firstrun = min_inline_css('css_firstrun');
 
-$personasnumber = 180000;
-$logo           = '<h2><img src="/img/firefox/3.6/firstrun/title.png" alt="Firefox 3.6" id="title-logo" /></h2>';
+$logo           = '<h2><img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox 3.6" id="title-logo" /></h2>';
 $logo2          = '<img src="/img/firefox/3.6/firstrun/logo.png" alt="Firefox Logo" id="title-logo" />';
 $aboutlink      = 'href="/'.$lang.'/about/"';
 $iframe         = '<iframe src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php" width="320" height="250"></iframe>';
-$oop            = '';
 
-if( $body_id == 'whatsnew' && $oldVersion == true) {
-    $extraval1 = 'block';
-    $extraval2 = '';
-} else {
-    $extraval1 = 'none';
-    $extraval2 = 'padding-top:1em;';
-}
+// old 3.6 variables, avoid throwing an error
+$extraval1 = $extraval2 = $oop = $oop_class = '';
 
+
+$personasnumber = 240000;
 if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'ga-IE', 'he', 'hi-IN', 'ja', 'kn', 'ml', 'mr', 'or', 'pa-IN', 'si', 'ta', 'ta-LK', 'te', 'th', 'zh-CN', 'zh-TW'))) {
-   $personasnumber = number_format($personasnumber, 0, ',', '.');
+    $personasnumber = number_format($personasnumber, 0, ',', '.');
 } else {
     $personasnumber = number_format($personasnumber, 0, '.', ',');
 }
@@ -41,6 +36,10 @@ $extra_headers = <<<EXTRA_HEADERS
 
     <style>
       /* l10n mods */
+
+    #main-feature p {
+        display:none;
+    }
 
     #wrapper {
         padding: 20px  !important;
