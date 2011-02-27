@@ -22,10 +22,8 @@ $css = file_get_contents($config['file_root'].'/style/l10n/fx4-fistrun-fallback.
 
 $extra_headers = <<<EXTRA_HEADERS
 
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/l10n/fx4-fistrun-fallback.css" media="screen" />
     <style>
         {$css}
-
     </style>
 EXTRA_HEADERS;
 
@@ -37,5 +35,7 @@ if ($textdir == 'rtl') {
     </style>
 EXTRA_HEADERS;
 }
+
+unset($css);
 
 ?>
