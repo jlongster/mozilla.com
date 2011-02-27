@@ -23,7 +23,7 @@ if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'g
 $extra_headers = <<<EXTRA_HEADERS
     <script src="/js/util.js"></script>
     <script src="/js/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/3.6/firstrun-page.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/l10n/fx4-fistrun-fallback.css" media="screen" />
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
     @font-face {
