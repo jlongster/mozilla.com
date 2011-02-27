@@ -52,6 +52,7 @@ if ($_SERVER['HTTP_HOST'] == 'www.mozilla.com' && $shortversion > $latestRelease
 
 $shortversion_content = ($shortversion == 6) ? 5 : $shortversion;
 $shortversion_content = ($shortversion == 11) ? 10 : $shortversion;
+$shortversion_content = ($shortversion == 12) ? 10 : $shortversion;
 $cssversion           = $shortversion_content;
 
 switch ($shortversion_content) {
@@ -476,6 +477,7 @@ FOOTER;
 
     case '10':
     case '11':
+    case '12':
         $video       = 'Firefox_4_beta';
         $videoid     = 'tour-video';
         $subtitles   = getVideoSubtitles($videoid, 'includes/l10n/sub-fx4-firstrun-beta.html');
