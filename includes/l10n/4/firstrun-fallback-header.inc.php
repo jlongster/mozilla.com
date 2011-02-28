@@ -5,7 +5,7 @@
   <title><?=$page_title;?></title>
   <?=$extra_headers;?>
 </head>
-<body>
+<body style="">
 <div id="wrapper">
     <div id="doc">
 

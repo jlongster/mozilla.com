@@ -1,7 +1,7 @@
 <?php
 
 $logolink  = '/img/firefox/3.6/firstrun/logo.png';
-$logo      = '<h2><img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" /></h2>';
+$logo      = '<h2><img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" /><span>'.$page_title.'</span></h2>';
 $logo2     = '<img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" />';
 $aboutlink = 'href="/'.$lang.'/about/"';
 $iframe    = '<iframe src="http://www.getpersonas.com/en-US/external/mozilla/firstrun.php" width="320" height="250"></iframe>';

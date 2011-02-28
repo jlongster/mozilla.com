@@ -78,11 +78,9 @@ h1 {
 
 #title-logo {
     display: block;
-    margin-left: 130px;
 }
 
-#title-logo {
-    display: block;
+#title-logo.start {
     margin-left: 630px;
     opacity:0;
 }
@@ -91,12 +89,13 @@ h1 {
 .go #title-logo {
     margin-left: 0;
     opacity: 1;
-    -moz-transition: margin-left .5s ease-in,
-                     opacity 1s ease-in;
+    -moz-transition: margin-left .8s ease-out,
+                     opacity .5s ease-in;
 }
 
-body,
-#main-content {
+/* initial opacity on body set to 0 via javacript */
+
+body.start {
     opacity:0;
 }
 
@@ -118,16 +117,6 @@ p {
     margin-top: -15px;
     float: left;
     width: 100%;
-
-/*
-    border-radius: 10px;
-    box-shadow: 0 0 5px lightblue;
-    background-color: #e5f1fe;
-    background-position: 100% 100%;
-    background-repeat: repeat-x;
-    background-image: url(/img/firefox/3.6/firstrun/background-content.png);
-*/
-
     background-color: #FFFFFF;
     background-image: -moz-linear-gradient(#FFFFFF 95%, rgba(223, 239, 249, 0.15));
     border: 1px solid #BDC6D7;
@@ -158,20 +147,12 @@ h2 {
     margin: 0;
 }
 
-/* }}} */
 /* {{{ Sidebar */
 
 #sidebar {
     float: left;
-    width: 273px;
-    height: 135px;
-    padding: 20px 45px 25px 45px;
-/*
-    margin-bottom: -20px;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url(/img/firefox/3.6/firstrun/yeti-top.png);
-*/
+    height: 170px;
+    padding: 30px 45px 0 20px;
 }
 
 #sidebar ul {
@@ -185,52 +166,15 @@ h2 {
     list-style-type: none;
 }
 
-#firstrun #sidebar ul li a,
-#firstrun #sidebar ul li a:link,
-#firstrun #sidebar ul li a:visited {
-    display: block;
-    font-style: italic;
-    padding: 10px 0 10px 70px;
-    min-height: 26px;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    background-image: url(/img/firefox/3.6/firstrun/sidebar-icons.png);
-    line-height: 16px;
-}
 
-#firstrun #sidebar ul li a:hover,
-#firstrun #sidebar ul li a:active {
+#sidebar ul li a:hover,
+#sidebar ul li a:active {
     text-decoration: none;
+    text-shadow: 0px 0px 0px rgba(0,0,255,0.8);
 }
 
-#firstrun #sidebar ul li#sidebar-addons a { background-position: -400px 0; }
-#firstrun #sidebar ul li#sidebar-mobile a { background-position: -800px 0; }
 
-#firstrun #sidebar ul li a span {
-    font-family: MetaBlack, "Trebuchet MS", sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    font-size: 20px;
-    color: #669be1;
-    white-space: nowrap;
-}
-
-#firstrun #sidebar ul li a:hover span {
-    text-shadow:
-        1px 1px 0 rgba(255,255,255,0.8),
-        0 0 10px rgba(83,141,219,0.5);
-}
-
-#firstrun #sidebar ul li a span span {
-    font-family: georgia, serif;
-    font-weight: normal;
-    font-size: 28px;
-}
-
-/* }}} */
-/* {{{ Footer */
+/* Footer */
 
 footer {
     float: left;
@@ -240,12 +184,6 @@ footer {
     border-radius: 10px;
     background-color: #f2f8fe;
     background-position: 100% 0, 0 0;
-/*
-    background-repeat: no-repeat, repeat;
-    background-image:
-                      url(/img/firefox/3.6/firstrun/yeti-bottom.png),
-                      url(/img/firefox/3.6/firstrun/background-footer.png);
-*/
 }
 
 #connect li {
@@ -384,7 +322,7 @@ h2 {
 #sidebar,
 #personalize,
 div.side-content {
-    width: 273px;
+    width: 290px;
 }
 
 #intro h2 {
@@ -408,7 +346,7 @@ iframe {
 #sidebar ul li a:link,
 #sidebar ul li a:visited {
     background-image: url("/img/mobile/m/nav-arrow.png");
-    background-position: 10px 10px;
+    background-position: 10px 7px;
     background-repeat: no-repeat;
     display: block;
     font-style: normal;
@@ -419,14 +357,9 @@ iframe {
 
 #personalize,
 div.side-content {
-/*
-    background-image: url("/img/firefox/3.6/firstrun/yeti-top.png");
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-*/
     float: left;
-    min-height: 200px;
-    padding: 0px 40px;
+    height: 180px;
+    padding: 0px 20px;
     position:relative;
 }
 
@@ -446,7 +379,7 @@ div.side-content {
 div.side-content ul.link
 {
     padding: 0;
-    width: 80%;
+    width: 85%;
     position:absolute;
     bottom:7px;
 }
@@ -465,12 +398,28 @@ div.side-content ul.link li
     padding: 0;
 }
 
+#intro ul.link li,
+#personalize ul.link li,
+div.side-content ul.link li
+ {
+
+    background-color: #FFFFFF;
+    background-image: -moz-linear-gradient(rgba(240,245,255, 1) 95%, rgba(223, 239, 249, 0.15));
+    border: 1px solid #BDC6D7;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset;
+}
+
 #intro ul.link li a,
 #personalize ul.link li a,
 div.side-content ul.link li a
   {
+/*
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAMAAADUOCSZAAAAM1BMVEU4AADB2fjv9f2SvPSpy/bg7Pyxz/eawfS51PiixvXY5/vJ3vn3+v7Q4vro8f2Kt/ODs/LKfzhhAAAAAXRSTlMAQObYZgAAAHZJREFUGNNt0EESgCAIBVBMzSyVf//TBrJpIDbO8AYEaNyksQb5ODH1yXl5OXjTAw40san8UAFOosHg6kRyShVW/A3NCV0/pLlFowEcf1KRrjlMh7TdjScbaf8ZgPoGcQ/JJupoDpYtmND8TZP1yC0e+7BDBHgBPWIGKLbjNQIAAAAASUVORK5CYII=");
     background-position: 100% 50%;
+*/
+    background-image: url("/img/mobile/m/nav-arrow.png");
+    background-position: 99% 4px;
     background-repeat: no-repeat;
     display: block;
     font-size: 16px;
@@ -539,23 +488,36 @@ div.side-content {
 
 #intro ul.link li a,
 #personalize ul.link li a {
-    margin-left:0;
+
 }
 
-#intro ul.link li a:hover,
-#personalize ul.link li a:hover {
-    font-style: normal;
-    text-shadow: 0px 0px 1px rgba(0,0,255,0.3);
-    margin-left:3px;
-    -moz-transition: font-style 0.2s ease-in,
-                     margin-left 0.2s ease-in;
+#intro ul.link li:hover,
+#personalize ul.link li:hover {
+    text-shadow: 0px 0px 1px rgba(255,255,255,1);
+    box-shadow: 0px 0px 5px lightblue;
+    background-image: -moz-linear-gradient(rgba(245,245,255, 1) 95%, rgba(223, 239, 249, 0.15));
+    -moz-transition: background 0.1s ease-in,
+                     box-shadow 0.1s ease-in;
 }
 
 #main-content h2 {
-    font-family:monospace;
+    font-family: Helvetica, sans-serif;
+     margin-bottom: 0.5em;
 }
 
 footer {
 
 display: none;
+}
+
+header h2 {
+    position:relative;
+}
+header h2 span {
+    display:block;
+    font-size:50px;
+    position:absolute;
+    top:45px;
+    left:140px;
+    height:140px;
 }
