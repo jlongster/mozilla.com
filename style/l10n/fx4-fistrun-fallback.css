@@ -53,9 +53,12 @@ html, body {
 body {
     margin: 0;
     padding: 0;
-    background-position: 0 0;
-    background-repeat: repeat-x;
-    background-image: url(/img/firefox/3.6/firstrun/background.png);
+    background-image: url("/img/l10n/stripes.png"), -moz-linear-gradient(#D6E9F7, #FFFFFF 600px);
+    background-repeat: repeat-x, no-repeat;
+    color: #444444;
+    font-family: Georgia,serif;
+    height: 100%;
+    line-height: 1.4em;
 }
 
 #wrapper {
@@ -113,20 +116,32 @@ p {
 
 #main-content {
     margin-top: -15px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px lightblue;
     float: left;
     width: 100%;
+
+/*
+    border-radius: 10px;
+    box-shadow: 0 0 5px lightblue;
     background-color: #e5f1fe;
     background-position: 100% 100%;
     background-repeat: repeat-x;
     background-image: url(/img/firefox/3.6/firstrun/background-content.png);
+*/
+
+    background-color: #FFFFFF;
+    background-image: -moz-linear-gradient(#FFFFFF 95%, rgba(223, 239, 249, 0.15));
+    border: 1px solid #BDC6D7;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset;
 }
+
 
 #intro {
     float: left;
     width: 450px;
-    padding: 40px 50px;
+    position:relative;
+    padding: 30px 50px 0 50px;
+    min-height:350px;
 }
 
 #intro a {
@@ -149,12 +164,14 @@ h2 {
 #sidebar {
     float: left;
     width: 273px;
-    min-height: 270px;
-    padding: 20px 45px;
+    height: 135px;
+    padding: 20px 45px 25px 45px;
+/*
     margin-bottom: -20px;
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-image: url(/img/firefox/3.6/firstrun/yeti-top.png);
+*/
 }
 
 #sidebar ul {
@@ -223,10 +240,12 @@ footer {
     border-radius: 10px;
     background-color: #f2f8fe;
     background-position: 100% 0, 0 0;
+/*
     background-repeat: no-repeat, repeat;
     background-image:
                       url(/img/firefox/3.6/firstrun/yeti-bottom.png),
                       url(/img/firefox/3.6/firstrun/background-footer.png);
+*/
 }
 
 #connect li {
@@ -360,11 +379,7 @@ h2 {
     color: #303030 ;
 }
 
-#intro  {
-    position:relative;
-    padding: 30px 50px 0 50px;
-    min-height:334px;
-}
+
 
 #sidebar,
 #personalize,
@@ -389,12 +404,6 @@ iframe {
     top: 30px;
 }
 
-#sidebar {
-    background-image:none;
-    min-height:inherit;
-    padding: 20px 45px;
-}
-
 #sidebar ul li a,
 #sidebar ul li a:link,
 #sidebar ul li a:visited {
@@ -410,12 +419,14 @@ iframe {
 
 #personalize,
 div.side-content {
+/*
     background-image: url("/img/firefox/3.6/firstrun/yeti-top.png");
     background-position: 100% 100%;
     background-repeat: no-repeat;
+*/
     float: left;
     min-height: 200px;
-    padding: 20px 45px;
+    padding: 0px 40px;
     position:relative;
 }
 
@@ -437,11 +448,7 @@ div.side-content ul.link
     padding: 0;
     width: 80%;
     position:absolute;
-    bottom:50px;
-}
-
-#intro ul.link {
-    bottom: 5px;
+    bottom:7px;
 }
 
 #intro ul.link li,
@@ -497,16 +504,6 @@ div.side-content ul li a
     background-repeat: no-repeat;
 }
 
-#main-content {
-    border-radius: 10px 10px 10px 10px;
-    background-color: #E5F1FE;
-    background-image: url("/img/firefox/3.6/firstrun/background-content.png");
-    background-position: 100% 100%;
-    background-repeat: repeat-x;
-    float: left;
-    margin-top: -15px;
-    width: 100%;
-}
 
 .hideme {
     display:none;
@@ -525,39 +522,40 @@ div.side-content {
     position:relative;
 }
 
-
-#intro p#try
-{
-    font-size: 30px;
-}
-
-#intro h2,
-#intro p#try
-{
-    margin-right:100px;
-}
-
-#intro:hover h2 {
-    margin: 0 315px 0 0;
-    -moz-transition: margin 0.2s ease-in;
-}
-
-#intro:hover p#try {
-    margin: 10px 275px 10px 0;
-    font-size: inherit;
-    -moz-transition: margin 0.2s ease-in,
-                     font 0.2s ease-in;
-}
-
 #intro iframe {
-    width:  160px;
-    height: 250px;
+    opacity:1;
     overflow: hidden
 }
 
 #intro:hover iframe {
-    width:  320px;
-    height: 250px;
-    -moz-transition: width 0.4s ease-in,
+    opacity:1;
+    -moz-transition: opacity 0.4s ease-in,
                      height 0.4s ease-in;
+}
+
+#intro ul.link li:hover {
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(0, 0, 0, 0.05) inset;
+}
+
+#intro ul.link li a,
+#personalize ul.link li a {
+    margin-left:0;
+}
+
+#intro ul.link li a:hover,
+#personalize ul.link li a:hover {
+    font-style: normal;
+    text-shadow: 0px 0px 1px rgba(0,0,255,0.3);
+    margin-left:3px;
+    -moz-transition: font-style 0.2s ease-in,
+                     margin-left 0.2s ease-in;
+}
+
+#main-content h2 {
+    font-family:monospace;
+}
+
+footer {
+
+display: none;
 }
