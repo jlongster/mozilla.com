@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "下載 Firefox 4 Beta";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>千里之遠，<br />始於足下</h3>
+        <p>請幫忙我們<br />開發全世界最好的瀏覽器。</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">特點</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">技術</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">意見回饋</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>安裝 Beta 測試版</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>傳送意見回饋</h3>
+
+        <p><img src="<?=$screencap;?>" alt="意見回饋按鈕擷圖" /></p>
+
+        <p>隨時點擊意見回饋按鈕並告訴我們您的想法。了解更多關於  的資訊。</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>告訴您的朋友</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>嗯，我覺得…</span></p></li>
+            <li class="second"><p><span>哇！超強的！</span></p></li>
+        </ul>
+
+        <p>口耳相傳：能有越多的測試使用者幫忙開發 Firefox 4，我們最後就能推出更好的產品。<a href="/<?=$lang?>/firefox/beta/features/">了解更多測試版本的資訊。</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

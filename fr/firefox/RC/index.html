@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 bêta";
+    $download_link_text = "Téléchargez Firefox 4 bêta";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Un objectif clair&nbsp;:</h3>
+        <p>Aidez-nous à créer la prochaine version du meilleur navigateur au monde.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>bêta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Fonctionnalités</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Technologies</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Vos réactions</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Installez la version bêta</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Envoyez vos impressions</h3>
+
+        <p><img src="<?=$screencap;?>" alt="capture écran du bouton Réagir" /></p>
+
+        <p>Cliquez sur le bouton «&nbsp;Réagir&nbsp;» à tout moment pour nous communiquer votre opinion sur notre logiciel.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Parlez-en à vos amis</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Intéressant&hellip;</span></p></li>
+            <li class="second"><p><span>Génial&nbsp;!</span></p></li>
+        </ul>
+
+        <p>Faites agir le bouche à oreille&nbsp;: <br/>Plus il y aura d'utilisateurs de la bêta, meilleur sera le logiciel final. <br/><a href="/<?=$lang?>/firefox/beta/features/">En savoir plus sur cette bêta.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

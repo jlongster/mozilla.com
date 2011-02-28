@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Unduh Firefox 4 Beta";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Semuanya berawal dari sini:</h3>
+        <p>Mari bersama membantu membuat versi baru peramban terbaik di dunia.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Fitur</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Teknologi</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Saran</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Instal versi Beta</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Kirim Saran</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Tangkapan layar tombol Saran" /></p>
+
+        <p>Klik tombol Saran kapan saja untuk mengabari kami apa pendapat Anda. Baca lebih lanjut tentang fitur  ini.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Kabari Teman Anda</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Keren…</span></p></li>
+            <li class="second"><p><span>Canggih!</span></p></li>
+        </ul>
+
+        <p>Kabarkan ke seluruh dunia, semakin banyak para pengguna versi beta akan semakin membantu kami membuat Firefox 4 lebih baik. <a href="/<?=$lang?>/firefox/beta/features/">Lebih lanjut tentang versi beta.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

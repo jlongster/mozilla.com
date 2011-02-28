@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "फ़ायरफ़ॉक्स 4 बीटा";
+    $download_link_text = "फ़ायरफ़ॉक्स 4 बीटा डाउनलोड करें";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>यह सबकुछ यहाँ से शुरू होता है:</h3>
+        <p>दुनिया के सबसे बेहतर ब्राउज़र के अगले संस्करण को तैयार करने में हमारी मदद करें.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">सुविधाएँ</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">तकनीक</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">प्रतिक्रिया</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>बीटा संस्थापित करें</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>हमें प्रतिक्रिया दें</h3>
+
+        <p><img src="<?=$screencap;?>" alt="प्रतिक्रिया बटन स्क्रीनशॉट" /></p>
+
+        <p>प्रतिक्रिया बटन को किसी भी समय यह बताने के लिए क्लिक करें कि आप क्या सोचते हैं.  के बारे में अधिक सोचें.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>अपने मित्रों को बताएँ</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>मित्रों…</span></p></li>
+            <li class="second"><p><span>वाह!</span></p></li>
+        </ul>
+
+        <p>इसका प्रचार प्रसार करें: अधिक बीटा उपयोक्ता का होना हमें फ़ायरफ़ॉक्स 4 को अधिक बेहतर बनाने में मदद करेगा. <a href="/<?=$lang?>/firefox/beta/features/">बीटा के बारे में अधिक जानें.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

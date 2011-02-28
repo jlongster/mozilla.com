@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title below */
+
+    $page_title         = "Firefox 4 বিটা";
+    $download_link_text = "Firefox 4 বিটা সংস্করণ ডাউনলোড করুন";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>প্রারম্ভ:</h3>
+        <p>বিশ্বের সর্বোত্তম ব্রাউজারের পরবর্তী সংস্করণ নির্মাণে সাহায্য করুন।</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>বিটা</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">বৈশিষ্ট্য</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">প্রযুক্তি</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">মতামত</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>বিটা সংস্করণ ইনস্টল করুন</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>আপনার মতামত আমাদের জানান</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback বাটনের ছবি" /></p>
+
+        <p>Feedback শীর্ষক বাটনটি টিপে আপনার মতামত আমাদের জানান।  সম্পর্কে অধিক তথ্য জেনে নিন।</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>বন্ধুমহলে প্রচার করুন</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>শোনো শোনো…</span></p></li>
+            <li class="second"><p><span>ওহ বাব্বা!</span></p></li>
+        </ul>
+
+        <p>প্রচার করুন: Firefox 4 তৈরির সময় বেশি সংখ্যক ব্যবহারকারী দ্বারা বিটা সংস্করণ ব্যবহার করা হলে অবশেষে নির্মিত উৎপাদনের গুণমান বৃদ্ধি করা সহজ হবে। <a href="/<?=$lang?>/firefox/beta/features/">বিটা সংস্করণ সম্পর্কে অধিক তথ্য প্রাপ্ত করুন।</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

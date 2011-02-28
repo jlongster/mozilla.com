@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Parsisiųskite „Firefox&nbsp;4“ betą";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Viskas prasideda čia:</h3>
+        <p>Padėkite kurti naująją geriausios naršyklės pasaulyje laidą.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Savybės</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Technologijos</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Atsiliepimai</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Įdiekite betą</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Siųskite savo atsiliepimus</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Mygtukas „Atsiliepti“" /></p>
+
+        <p>Bet kuriuo metu galite spustelėti mygtuką „Atsiliepti“ ir pasidalinti savo nuomone su mumis. </p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Papasakokite įspūdžius draugams</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Klausyk…</span></p></li>
+            <li class="second"><p><span>Oho!</span></p></li>
+        </ul>
+
+        <p>Skleiskite žinią. Kuo daugiau „Firefox&nbsp;4“ beta testuotojų turėsime, tuo geresnė ši naršyklė bus. <a href="/<?=$lang?>/firefox/beta/features/">Sužinokite apie šią betą daugiau…</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

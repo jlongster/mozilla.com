@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 베타";
+    $download_link_text = "Firefox 4 베타 다운로드";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>시작합시다!</h3>
+		<p>차기 버전이 세계 최고가 되도록 함께 도와 주십시오.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>베타</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">주요 기능</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">웹 기술</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">의견 보내기</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>베타 버전 설치</h3>
+
+<?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>의견 보내기</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+		<p>베타 버전 오른쪽 상단의 'Feedback' 버튼을 통해 여러번의 의견을 보내주
+실 수 있습니다. 더 자세한 것은 (영문)을 참고하시기 바랍니다.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>친구에게 알려주기</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>우와…</span></p></li>
+            <li class="second"><p><span>멋져!</span></p></li>
+        </ul>
+
+		<p>Firefox 4의 새로운 기능을 친구들에게 많이 알려 주세요. 더 나은 소프트
+웨어를 만들 수 있습니다. <a href="/<?=$lang?>/firefox/beta/features/">더 자세히 보기</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

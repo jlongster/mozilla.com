@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title below */
+
+    $page_title         = "Firefox 4 бета";
+    $download_link_text = "Завантажте Firefox 4 бета";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Все починається тут:</h3>
+        <p>Допоможіть зробити наступну версію найкращого у світі браузеру.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>бета</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Можливості</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Технологія</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Випробувач</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Встановіть бету</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Надішліть нам відгук</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>Натискайте кнопку Відгук коли є що сказати нам. Докладніше про додаток .</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Розкажіть друзям</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Альо…</span></p></li>
+            <li class="second"><p><span>Вау!</span></p></li>
+        </ul>
+
+        <p>Розповсюджуйте чутки: чим більше ми матимемо користувачів Firefox 4 бета, тим краще буде кінцевий продукт. <a href="/<?=$lang?>/firefox/beta/features/">Докладніше про бету.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

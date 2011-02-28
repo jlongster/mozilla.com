@@ -1,0 +1,80 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Hämta Firefox 4 Beta";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Allt börjar här:</h3>
+        <p>Hjälp till att göra nästa version av världens bästa webbläsare.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Funktioner</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Teknik</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Feedback</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Installera betan</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Dela med dig av dina intryck</h3>
+
+        <p><img src="<?=$screencap;?>" alt="skärmdump av Feedback-knappen" /></p>
+
+        <p>Klicka på Feedback-knappen varje gång du vill tala om för oss vad du 
+        tycker. Läs mer om .</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Berätta för dina vänner</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hey…</span></p></li>
+            <li class="second"><p><span>Woah!</span></p></li>
+        </ul>
+
+        <p>Berätta för andra: ju fler betatestare vi har som hjälper oss med 
+        Firefox 4, desto bättre blir slutresultatet. <a 
+        href="/<?=$lang?>/firefox/beta/features/">Läs mer om betan.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

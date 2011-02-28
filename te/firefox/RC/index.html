@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title below */
+
+    $page_title         = "ఫైర్‌ఫాక్స్ 4 బీటా";
+    $download_link_text = "ఫైర్‌ఫాక్స్ 4 బీటాని దింపుకోండి";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>అంతా ఇక్కడ మొదలవుతుంది:</h3>
+        <p>ప్రపంచపు అత్యుత్తమ విహారిణి యొక్క తర్వాత సంచికని తయారుచేయడంలో తోడ్పడండి.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>ఫైర్‌ఫాక్స్ 4<sup>బీటా</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">సౌలభ్యాలు</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">సాంకేతికత</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">ప్రతిస్పందన</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>బీటాని స్థాపించుకోండి</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>మీ ప్రతిస్పందని తెలియజేయండి</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>మీ అభిప్రాయాన్ని మాకు తెలియజేయడానికి ఎప్పుడైనా ప్రతిస్పందన బొత్తంపై నొక్కండి.  గురించి మరింత తెలుసుకోండి.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>మీ స్నేహితులకు తెలియజేయండి</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>హేయ్…</span></p></li>
+            <li class="second"><p><span>ఓహో!</span></p></li>
+        </ul>
+
+        <p>వ్యాపింపజేయండి: ఫైర్‌ఫాక్స్ 4ని మేం తయారుచేయడానికి ఎంతమంది బీటా వాడుకర్లు ఉంటే, అంతిమ ఉత్పాదన అంత మెరుగ్గా ఉంటుంది. <a href="/<?=$lang?>/firefox/beta/features/">బీటా గురించి మరింత తెలుసుకోండి.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

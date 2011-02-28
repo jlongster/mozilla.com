@@ -1,0 +1,87 @@
+<?php 
+    /* translate the page title and download link text below */ 
+    
+    $page_title = "Firefox 4 Beta"; 
+    $download_link_text = "Descargar Firefox 4 Beta"; 
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Todo comeza aquí:</h3>
+        <p>Axuda a crear a próxima versión do mellor navegador do mundo.</p>
+
+        
+
+        <?=$download_link_1;?>
+
+    
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Características</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Tecnoloxía</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">A súa opinión</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Instale a Beta</h3>
+
+        
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Déanos a súa opinión</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Captura de pantalla do botón opinión" /></p>
+
+        <p>Prema no botón Opinión en calquera momento para contarnos o que pensa. Lea máis sobre o .</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Cóntello aos seus amigos</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hey…</span></p></li>
+            <li class="second"><p><span>Woah!</span></p></li>
+        </ul>
+
+        <p>Difunde a palabra: cantos máis usuarios beta teñamos axudándonos a facer Firefox 4, mellor será o produto final. <a href="/<?=$lang?>/firefox/beta/features/">Máis información sobre a beta.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+

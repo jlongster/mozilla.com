@@ -1,0 +1,77 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Firefox 4 Beta ஐ பதிவிறக்குக";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>அனைத்தும் இங்கேயே ஆரம்பிக்கப்படுகிறது:</h3>
+        <p>உலகின் மிகச்சிறந்த உலாவியின் அடுத்த பதிப்பை உருவாக்குவதற்கு உதவி செய்க.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">புதிய அம்சங்கள்</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">தொழில்நுட்பம்</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">பின்னூட்டம்</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Beta ஐ நிறுவுக</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>உங்கள் பின்னூட்டங்களைத் தாருங்கள்</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Feedback button screenshot" /></p>
+
+        <p>நீங்கள் என்ன நினைக்கின்றீர்கள் என்பதை எந்த நேரத்திலும் பின்னூட்டப் பொத்தானைச் சொடுக்குவதன் மூலம் எமக்குத் தெரியப்படுத்தலாம்.ஐ பற்றி மேலும் வாசிக்க.</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>உங்கள் நண்பர்களுக்கும் தெரியப்படுத்துங்கள்!</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hey…</span></p></li>
+            <li class="second"><p><span>Woah!</span></p></li>
+        </ul>
+
+        <p>எல்லோருக்கும் Firefox 4 பற்றி அறிவியுங்கள். நிறைய பயனாளர்கள் பங்கெடுக்கும்போது இறுதி பதிப்பு ஒரு சிறந்த பதிப்பாக அமையும்! <a href="/<?=$lang?>/firefox/beta/features/">beta இனை பற்றி மேலதிகமாக அறிய.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

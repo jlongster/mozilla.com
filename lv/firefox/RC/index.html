@@ -1,0 +1,78 @@
+<?php
+    /*  translate the page title and download link text below */
+
+    $page_title         = "Firefox 4 Beta";
+    $download_link_text = "Lejupielādējiet Firefox 4 Beta";
+
+
+    $pageid = 'firefox4-rc';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+
+
+<div id="main-feature">
+    <div id="feature-contents">
+        <?=$logo;?>
+        <h3>Viss sākas šeit:</h3>
+        <p>Palīdziet veidot pasaules labākā pārlūka nākamo versiju.</p>
+
+        <?=$download_link_1;?>
+
+    </div>
+
+</div>
+
+<ul id="side-menu">
+    <li class="first"><h3><span>Firefox 4<sup>Beta</sup></span></h3></li>
+    <li><a href="/<?=$lang?>/firefox/beta/features/">Iespējas</a></li>
+    <li><a href="/<?=$lang?>/firefox/beta/technology/">Tehnoloģija</a></li>
+    <li class="feedback"><a href="/<?=$lang?>/firefox/beta/feedback/">Atsauksmes</a></li>
+    <?=$privacylink;?>
+</ul>
+
+
+<div id="beta-sub-features">
+    <div class="sub-feature" id="beta-install">
+
+        <h3>Instalējiet Beta</h3>
+
+        <?=$download_link_2;?>
+
+    <p></p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-feedback">
+
+        <h3>Uzrakstiet atsauksmi</h3>
+
+        <p><img src="<?=$screencap;?>" alt="Atsauksmju pogas attēls" /></p>
+
+        <p>Klikšķiniet uz atsauksmju pogas, lai pastāstītu, ko jūs domājat. Lasiet vairāk par .</p>
+
+    </div>
+
+    <div class="sub-feature" id="beta-share">
+
+        <h3>Pastāstiet draugiem</h3>
+
+        <ul id="bubbles">
+            <li class="first"><p><span>Hei…</span></p></li>
+            <li class="second"><p><span>Ohoo!</span></p></li>
+        </ul>
+
+        <p>Izplatiet informāciju: jo vairāk beta testētāju iesaistīsies Firefox 4 veidošanā, jo labāks būs gala produkts. <a href="/<?=$lang?>/firefox/beta/features/">Uzzināt vairāk par beta.</a></p>
+
+    </div>
+    <div id="beta-sub-feature-footer"></div>
+</div>
+
+
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
+
