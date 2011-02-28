@@ -19,6 +19,7 @@ function localeConvert($lang) {
     return $lang;
 }
 
+
 // we never want the domain to be locale.www.mozilla.com,
 // old legacy bug (398938) causing bugs with links when switching locale
 // safety mesure for cases when we forget to use $config['server_name'] in a script
@@ -66,6 +67,22 @@ $sitepages = array(
     'whatsnew-4'        => '4/whatsnew.inc.php',
     'firefox4-rc'       => '4/download-rc.inc.php',
 );
+
+// pages deactivated on production
+$deactivated = array(
+    'firstrun-4',
+    'whatsnew-4',
+    'firefox4-rc',
+);
+
+
+// add the include if it exists only
+if (in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
+    include_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";
+    noCachingRedirect($host_l10n);
+    exit;
+}
+
 
 // add the include if it exists only
 if (array_key_exists($pageid, $sitepages) && $sitepages[$pageid] != '') {
