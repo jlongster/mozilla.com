@@ -657,7 +657,7 @@ function buildFirefoxBetaSubPageMenu($lang, $current = null)
             'title'     => ___('Feedback')
         ),
         'privacy'   => array(
-            'href'      => "/firefox/RC/feedbackprivacypolicy/",
+            'href'      => "/legal/privacy/firefox.html",
             'title'     => ___('Privacy Policy')
         ),
         'faq'       => array(
