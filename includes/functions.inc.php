@@ -725,7 +725,7 @@ function buildFirefoxMobileBetaSubPageMenu($lang, $current = null)
 {
     $firefox_menu = array(
         'release_notes' => array(
-            'href'      => '/mobile/4.0b3/releasenotes/index.html',
+            'href'      => '/mobile/4.0b4/releasenotes/index.html',
             'title'     => ___('Release Notes'),
         ),
         'features' => array(
