@@ -17,7 +17,8 @@
     'firefox-4.0b8',
     'firefox-4.0b9',
     'firefox-4.0b10',
-    'firefox-4.0b11'
+    'firefox-4.0b11',
+    'firefox-4.0b12'
     );
 
 ?>
