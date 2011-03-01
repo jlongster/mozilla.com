@@ -2,7 +2,7 @@
 
 include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
-$productionQuality = array('fr');
+$productionQuality = array('en-GB');
 
 checkProductionQuality($lang, $productionQuality, $host_enUS);
 

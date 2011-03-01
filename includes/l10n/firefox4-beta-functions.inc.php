@@ -16,7 +16,8 @@ function noCachingRedirect($url) {
 
 
 function checkProductionQuality($lang, $productionQuality, $host = 'http://www.mozilla.com') {
-    if (!in_array($lang, $productionQuality)) {
+
+    if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  'www.mozilla.com') {
         $requested = explode('/', $_SERVER['REDIRECT_URL']);
         if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
             array_pop($requested);
@@ -25,6 +26,7 @@ function checkProductionQuality($lang, $productionQuality, $host = 'http://www.m
         noCachingRedirect($host.$requested);
         exit;
     }
+
     return false;
 }
 
