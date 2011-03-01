@@ -15,6 +15,19 @@ function noCachingRedirect($url) {
 }
 
 
+function checkProductionQuality($lang, $productionQuality, $host = 'http://www.mozilla.com') {
+    if (!in_array($lang, $productionQuality)) {
+        $requested = explode('/', $_SERVER['REDIRECT_URL']);
+        if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
+            array_pop($requested);
+            $requested = implode('/', $requested).'/';
+        }
+        noCachingRedirect($host.$requested);
+        exit;
+    }
+    return false;
+}
+
 function getVideoSubtitles($videoname, $subfile, $dynamic = false) {
     global $lang;
     global $config;

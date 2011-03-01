@@ -2,6 +2,10 @@
 
 include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
+$productionQuality = array('fr');
+
+checkProductionQuality($lang, $productionQuality, $host_enUS);
+
 $body_id = 'firefox-beta';
 $html5   = true;
 

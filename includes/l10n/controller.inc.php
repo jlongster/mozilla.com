@@ -19,6 +19,8 @@ function localeConvert($lang) {
     return $lang;
 }
 
+// include fx4 commodity functions
+include_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";
 
 // we never want the domain to be locale.www.mozilla.com,
 // old legacy bug (398938) causing bugs with links when switching locale
@@ -78,7 +80,6 @@ $deactivated = array(
 
 // add the include if it exists only
 if (in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
-    include_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";
     noCachingRedirect($host_l10n);
     exit;
 }
