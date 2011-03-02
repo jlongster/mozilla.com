@@ -46,7 +46,7 @@ header h2 {
 #intro #action {
     position: absolute;
     text-align: center;
-    top: 70px;
+    top: 80px;
     width: 447px;
     pointer-events: none;
 }
@@ -83,7 +83,7 @@ header h2 {
 }
 
 
-#screenshot img {
+#screenshot a img {
     opacity:0;
     margin-top:10px;
 }
@@ -102,7 +102,7 @@ header h2 {
 
 }
 
-#screenshot:hover img {
+#screenshot:hover a img {
     opacity:1;
     -moz-transition: opacity 1s ease-in;
 }
@@ -120,10 +120,8 @@ header h2 {
     display: inline-block;
     font-size: 48px;
     height: 36px;
-    line-height: 26px;
     margin-top: 20px;
     position: relative;
-    text-indent: 2px;
     width: 36px;
 }
 
@@ -158,10 +156,7 @@ $logo  = '<h2><img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" /><img
         <div id="action">
             <h2><?=$page_title?></h2>
             <span class="emblem">
-                <svg height="17" width="18">
-                    <polygon points="0 0, 18 9, 0 17" fill="#ffffff">
-                    </polygon>
-                </svg>
+                <img src="/img/l10n/abouthome-icon.png" alt=""/>
             </span>
         </div>
         <a href="about:home"><img src="/img/l10n/abouthome.png" /></a>
