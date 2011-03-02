@@ -111,11 +111,14 @@ function secureText($var, $tablo = true)
         $value = str_replace('%0A', '', $value);
 
         // Remove html tags and ASCII characters below 32
+        // Deactivated filter since we are still on PHP <5.2 on mozilla.com...
+/*
         $value = filter_var(
             $value,
             FILTER_SANITIZE_STRING,
             FILTER_FLAG_STRIP_LOW
         );
+*/
 
         // Repopulate value
         $var[$item] = $value;
