@@ -95,6 +95,52 @@ DOCTYPE;
 DOCTYPE;
 }
 
+$version = getVersionBySelf();
+$version = explode('.', $version);
+array_pop($version);
+$version = implode('.', $version);
+
+if($version == '3.5') {
+// 3.5 tweaks
+$str_upgrade = ___('Free Upgrade');
+$extra_headers  .= <<<EXTRA_HEADERS
+    <style type="text/css">
+    #main-feature {
+
+    }
+    #main-feature h2 span {
+        visibility:hidden;
+        margin-top:-2em;
+    }
+    #main-feature h2:after {
+        content:"{$str_upgrade}";
+
+    }
+
+
+    #main-feature h3 {
+        font-size: 30px;
+        padding-left: 150px;
+        text-align: left;
+    }
+
+    #main-content {
+      padding: 35px 100px 35px 150px;
+    }
+
+    #main-content p:first-child {
+      display:none;
+    }
+
+
+
+        </style>
+
+EXTRA_HEADERS;
+
+}
+
+
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}
 <head>
@@ -138,6 +184,9 @@ if (gPlatform == 1) {
 
 
 DYNAMIC_HEADER;
+
+
+
 
 echo $dynamic_header;
 
