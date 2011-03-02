@@ -17,7 +17,16 @@ if ($fallback) {
         $footerfile = $config['file_root'].'/includes/l10n/4/firstrun-fallback-footer.inc.php';
         include_once $config['file_root'].'/includes/l10n/4/firstrun-fallback.inc.php';
         include_once $headerfile;
-        include_once $fallbackfile;
+        $val = secureText($_GET['val']);
+        switch ($val) {
+            case '0':
+                include $config['file_root'].'/'.$lang.'/firefox/4/firstrun/fallback2.inc.html';
+                break;
+            case '1':
+            default:
+                include $config['file_root'].'/'.$lang.'/firefox/4/firstrun/fallback.inc.html';
+                break;
+            }
         require_once $footerfile;
         exit;
     }
