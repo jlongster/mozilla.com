@@ -17,7 +17,7 @@ if ($fallback) {
         $footerfile = $config['file_root'].'/includes/l10n/4/firstrun-fallback-footer.inc.php';
         include_once $config['file_root'].'/includes/l10n/4/firstrun-fallback.inc.php';
         include_once $headerfile;
-        $val = secureText($_GET['val']);
+        $val = (isset($_GET['val'])) ? intval($_GET['val']): '1';
         switch ($val) {
             case '0':
                 include $config['file_root'].'/'.$lang.'/firefox/4/firstrun/fallback2.inc.html';
