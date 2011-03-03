@@ -140,6 +140,10 @@ if(in_array($lang, array('ar', 'fa', 'he'))) {
         padding-right:30px !important;
     }
 
+    a.download-link span {
+        margin-right:50px !important;
+    }
+
     .download-other, ul.download-firefox em {
         text-align: right !important;
     }
