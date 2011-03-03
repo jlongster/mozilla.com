@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xml:lang="en-US" lang="en-US" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Welcome to Firefox</title>
+    <script type="text/javascript" src="<?=$config['static_prefix']?>/js/util.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix']?>/includes/yui/2.5.1/reset-fonts-grids/reset-fonts-grids.css" />
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix']?>/style/tignish/template.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix']?>/style/tignish/content.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix']?>/style/firefox/4/firstrun-page-beta1.css" media="screen" />
+</head>
+
+<body id="firstrun" class=" locale-en-US portal-page rc">
+<script type="text/javascript">// <![CDATA[
+if (document.body.className == '') {
+    document.body.className = 'js';
+} else {
+    document.body.className += ' js';
+}
+
+if (gPlatform == 1) {
+    document.body.className += ' platform-windows';
+} else if (gPlatform == 3 || gPlatform == 4) {
+    document.body.className += ' platform-mac';
+} else if (gPlatform == 2) {
+    document.body.className += ' platform-linux';
+}
+
+// ]]></script>
+
+<div id="wrapper">
+
+<div id="doc">
+
+<div id="main-feature">
+
+    <h1>Welcome to <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+        <p>Thanks for downloading Firefox 4 RC. We’re building something awesome together, so please let us know what you like and don’t like about your browsing experience.</p>
+        <p>We’ll be waiting for your feedback.</p>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/RC/features/">New Features »</a></li>
+            <li><a href="/<?=$lang?>/firefox/RC/feedback/">Share Feedback »</a></li>
+            <li><a href="../releasenotes/">Release Notes »</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div id="main-content">
+
+    <div id="column-1">
+        <h2>Tell Us What You Think</h2>
+        <?=buildPlatformImage('/img/firefox/beta/4/feedback-button.png', 'Feedback button screenshot')?>
+        <p>As a RC tester, you’re part of the team making Firefox 4. Tell us when you like
+        or dislike something in Firefox by going to the “Help” menu and selecting the
+        “Submit Feedback” option. You can even submit product suggestions!
+        </p>
+    </div>
+
+</div>
+
+
+</div><!-- end #doc -->
+</div><!-- end #wrapper -->
+
+<script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
+<script type="text/javascript">
+//<![CDATA[
+var _tag=new WebTrends({"dcsid":"dcst2y3n900000gohmphe66rf_3o6x","rate":5,"fpcdom":"mozilla.com"});
+_tag.dcsGetId();
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+_tag.dcsCollect();
+//]]>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+
+</body>
+</html>
