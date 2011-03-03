@@ -4,9 +4,6 @@
     $body_id    = 'firefox-beta-tech';
     
     $extra_headers = <<<EXTRA_HEADERS
-  <script charset="utf-8" src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-  <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
-  <script charset="utf-8" src="/js/yui/2.7.0/get/get-min.js"></script>
   <script src="/js/mozilla-video-tools.js"></script>
   <script src="/js/mozilla-pager.js"></script>
 <link rel="stylesheet" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
@@ -480,7 +477,7 @@ EXTRA_HEADERS;
                     <td class="yes">Yes</td>
                 </tr>
                 <tr>
-                    <th><span title="articles coming soon!">Animated PNGs</span></th>
+                    <th><a href="https://developer.mozilla.org/en/Animated_PNG_graphics">Animated PNGs</a></th>
                     <td class="yes">Yes</td>
                     <td class="yes">Yes</td>
                     <td class="yes">Yes</td>
@@ -638,6 +635,12 @@ EXTRA_HEADERS;
                     <td class="no"></td>
                     <td class="yes">Yes</td>
                 </tr>
+                <tr class="odd">
+                    <th><a href="http://firstpersoncookie.wordpress.com/2011/01/23/more-choice-and-control-over-online-tracking/">Do Not Track</a></th>
+                    <td class="no"></td>
+                    <td class="no"></td>
+                    <td class="yes">Yes</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -663,7 +666,7 @@ EXTRA_HEADERS;
                     <td class="yes">Yes</td>
                 </tr>
                 <tr>
-                    <th><span title="articles coming soon!">Web Console</span></th>
+                    <th><a href="https://developer.mozilla.org/en/Using_the_Web_Console">Web Console</a></th>
                     <td class="no"></td>
                     <td class="no"></td>
                     <td class="yes">Yes</td>
@@ -844,11 +847,8 @@ $(document).ready(function() {
         function(e, el) {
             var backgroundHeight = 50;
             var newTab = el.parentNode;
-            console.log(newTab);
             var list = newTab.parentNode;
-            console.log(list);
             var offsetY = $(newTab).position().top;
-            console.log(offsetY);
             var nextSibling = $(newTab).next().get(0);
             if (nextSibling) {
                 offsetY += (nextSibling.offsetTop - offsetY)/2 - backgroundHeight/2;
