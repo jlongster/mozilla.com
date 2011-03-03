@@ -389,8 +389,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /lega
 RewriteRule ^RC[/]?$ /firefox/RC [R=permanent]
 RewriteRule ^en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L]
 
-# Bug 627407 rename /beta to /RC (previous bug 628826)
-RewriteRule ^beta[/]?$ /firefox/RC [R=permanent]
+# Bug 627407 rename /beta to /RC (previous bug 628826) and bug 633310
+RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent]
+RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent]
 
 # Bug 627407 rename /beta to /RC
 # protect against a few urls that would get caught,
