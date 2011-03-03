@@ -388,6 +388,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /lega
 # Bug 627407
 RewriteRule ^RC[/]?$ /firefox/RC [R=permanent]
 
+
 # Bug 627407 rename /beta to /RC (previous bug 628826)
 RewriteRule ^beta[/]?$ /firefox/RC [R=permanent]
 
@@ -396,7 +397,7 @@ RewriteRule ^beta[/]?$ /firefox/RC [R=permanent]
 # /cdn is a link on the trunk site
 RewriteCond %{REQUEST_URI} !^/img
 RewriteCond %{REQUEST_URI} !^/cdn
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent]
+RewriteRule ^/en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L]
 
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
