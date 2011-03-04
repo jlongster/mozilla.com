@@ -305,7 +305,10 @@ RewriteRule ^en-US/developers[/]?$ http://developer.mozilla.org/ [R=permanent,L]
 RewriteRule ^en-US/support(?:/.*)?$ http://support.mozilla.com/ [R=permanent,L]
 RewriteRule ^en-US/firefox/flicks(?:/.*)$ http://www.firefoxflicks.com/ [R=permanent,L]
 RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
-RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
+
+# temporarily removed for Firefox 4 RC and Final (by beltzner)
+#RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
+
 RewriteRule ^en-US/firefox/performance[/]? /en-US/firefox/underthehood/ [R=permanent]
 
 # bug 629381, /en-US/mobile/maemo -> /en-US/mobile/download/
