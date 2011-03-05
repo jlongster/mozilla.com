@@ -1,28 +1,10 @@
-<?php
-/*  translate the page title below */
-$page_title = "Bem-vindo ao Firefox";
-
-$pageid = 'firstrun-36';
-require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
-
-?>
-
-
-<div id="main-feature">
+<header>
     <?=$logo?>
     <p>Obrigado por apoiar a <a <?=$aboutlink?>>missão Mozilla</a> de encorajar abertura, inovação e oportunidade na web!</p>
-</div>
+</header>
 
 
-<?php
-  require_once $footerfile;
-?>
-<style type="text/css">
-  #main-content .sub-feature li#connect-orkut a {
-    background: url(data:image/gif;base64,<?php echo base64_encode(file_get_contents("{$config['file_root']}/img/firefox/3.6/firstrun/orkut.png")) ?>) no-repeat;
-    background-position:0 50%;
-  }
-</style>
+
 <div id="main-content">
 
   <section class="sub-feature" id="intro">
@@ -36,7 +18,6 @@ require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
     <ul class="link">
       <li id="connect-twitter"><a href="http://twitter.com/firefox">Seguir no Twitter</a></li>
       <li id="connect-orkut"><a href="http://www.orkut.com.br/Main#Community?cmm=1186175">Comunidade no Orkut</a></li>
-      <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Tornar-se fã no Facebook</a></li>
       <li id="connect-blog"><a href="http://blog.mozilla.com/brasil/">Ler nosso blog</a></li>
     </ul>
   </div>
@@ -53,19 +34,12 @@ require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 <?=$oop;?>
 </div>
-<div id="footer">
+
+<footer>
     <div id="connect" class="sub-feature">
         <ul class="link social">
             <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
             <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
         </ul>
     </div>
-</div>
-<div>
-
-  <p id="sub-links">
-      <a href="/<?=$lang?>/firefox/features/" id="features-link">Mais recursos do Firefox 3.6</a>
-      <a href="http://support.mozilla.com" id="support-link">Suporte do Firefox</a>
-  </p>
-
-</div>
+</footer>
