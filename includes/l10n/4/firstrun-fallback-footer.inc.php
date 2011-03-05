@@ -6,7 +6,7 @@
         document.getElementById('title-wordmark').className = 'start';
         document.getElementsByTagName('body')[0].className = 'start';
         window.onload = function() {
-            document.getElementsByTagName('body')[0].className = 'go';
+            document.body.className = 'go';
         };
     </script>
 

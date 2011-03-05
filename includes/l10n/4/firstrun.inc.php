@@ -26,6 +26,9 @@ if ($fallback) {
             default:
                 include $config['file_root'].'/'.$lang.'/firefox/4/firstrun/fallback.inc.html';
                 break;
+            case '2':
+                include $config['file_root'].'/'.$lang.'/firefox/4/firstrun/fallback3.inc.html';
+                break;
             }
         require_once $footerfile;
         exit;
