@@ -2,7 +2,8 @@
 
 /* add correct links */
 
-    $str3 = '<a href="http://www.mozilla.com/'.$lang.'/firefox/" class="upgrade" target="_blank">'.$str3.'</a>';
+$str3 = '<a href="http://www.mozilla.com/'.$lang.'/firefox/" class="upgrade" target="_blank">'.$str3.'</a>';
+
 
 // RTL support
 if ($textdir == 'rtl') {
@@ -23,7 +24,7 @@ EXTRA_HEADERS;
     <title><?=$str1?></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <style media="all">@import "/style/tignish/content.css";</style>
-    <style media="all">@import "/style/firefox/4.0/details.css";</style>
+    <style media="all">@import "/style/l10n/details-40.css";</style>
 </head>
 
 <body>
