@@ -2,8 +2,7 @@
 
 /* add correct links */
 
-    $str4 = sprintf($str4, ' href="http://www.mozilla.com/'.$lang.'/firefox/" class="upgrade" target="_blank"');
-    $str8 = sprintf($str8, ' href="#" target="_blank"');
+    $str3 = '<a href="http://www.mozilla.com/'.$lang.'/firefox/" class="upgrade" target="_blank">'.$str3.'</a>';
 
 // RTL support
 if ($textdir == 'rtl') {
@@ -37,14 +36,11 @@ EXTRA_HEADERS;
 </div>
 
 <div id="details-content">
-    <p><?=$str4?></p>
-
     <ul>
+        <li><?=$str4?></li>
         <li><?=$str5?></li>
         <li><?=$str6?></li>
-        <li><?=$str7?></li>
     </ul>
-    <!--  <p><small><?=$str8?></p>  -->
 </div>
 
 </div>
