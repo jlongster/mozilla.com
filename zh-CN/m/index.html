@@ -1,42 +1,43 @@
 <?php
     // Please translate the variable below for the page Title bar
-    $page_title = "Mozilla | Firefox Mobile";
+    $page_title = "Mozilla | Firefox 移动版";
 
 
-    $body_id = 'home';
+    $body_id = '首页';
     include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
 ?>
 
 <div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Welcome to Firefox" /></h1>
-<p>The world’s best Web browser has gone mobile.</p>
+<h1><img src="/img/mobile/m/logo-welcome.png" alt="欢迎使用 Firefox" /></h1>
+<p>世界上最好的网络浏览器来到了手机上。</p>
 </div>
 
 <div class="download-button">
   <?php if ($wurfl_device_supported): ?>
 
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Download Now - Free</a>
-    <div><a href="platforms.html" class="system">Is Firefox available in my language?</a></div>
+    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">现在下载 - 免费</a>
+    <div><a href="platforms.html" class="system">Firefox 是否支持我的语言？</a></div>
 
   <?php else: ?>
 
-    <p>Your device is not supported</p>
-    <p><a href="/<?= $lang ?>/m/platforms">See our supported platforms and devices</a></p>
+    <p>不能支持你的设备</p>
+    <p><a href="/<?= $lang ?>/m/platforms">查看支持哪些平台和设备</a></p>
 
   <?php endif; ?>
 </div>
 
-<h2 id="features_title">Enjoy your favorite Firefox features:</h2>
+<h2 id="features_title">享受你喜爱的 Firefox 功能：</h2>
 <ul id="favorite_features">
-    <li id="sync"><b>Sync</b> <span>Seamlessly synchronize your desktop and mobile browsing</span></li>
-    <li id="customize"><b>Customize</b> <span>Install add-ons to make Firefox exactly the way you like</span></li>
-    <li id="search"><b>Search</b> <span>Type less and get to the Web faster using the Awesome Bar</span></li>
+    <li id="sync"><b>同步</b> <span>完美实现桌面和移动浏览器之间的同步</span></li>
+    <li id="customize"><b>定制</b> <span>安装附加组件让 Firefox 更符合你的喜好</span></li>
+    <li id="search"><b>搜索</b> <span>通过智能地址栏，录入文字更好访问网页更快</span></li>
 </ul>
 
-<p id="features"><a href="/<?= $lang ?>/m/features.html">See More Features</a></p>
+<p id="features"><a href="/<?= $lang ?>/m/features.html">了解更多功能</a></p>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
     // Source en-GB reference file at rev 66448:
     // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
 ?>
+T
