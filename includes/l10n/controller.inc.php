@@ -68,6 +68,7 @@ $sitepages = array(
     'firstrun-4'        => '4/firstrun.inc.php',
     'whatsnew-4'        => '4/whatsnew.inc.php',
     'firefox4-rc'       => '4/download-rc.inc.php',
+    'MU-fx4'            => '4/majorupdate-v1.inc.php',
 );
 
 // pages deactivated on production
