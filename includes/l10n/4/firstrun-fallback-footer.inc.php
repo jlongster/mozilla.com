@@ -1,5 +1,4 @@
-    </div> <!-- wrapper -->
-</div> <!-- doc -->
+</div> <!-- wrapper -->
 
     <script>
         document.getElementById('title-logo').className = 'start';

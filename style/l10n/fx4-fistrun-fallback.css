@@ -1,14 +1,26 @@
-/* {{{ Fonts */
+html, body {
+    background: white;
+}
 
 body {
     font-size: 15px;
-    line-height: 1.3;
     text-shadow: 1px 1px 0 rgba(255,255,255,0.8);
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/l10n/stripes.png"), -moz-linear-gradient(#D6E9F7, #FFFFFF 600px);
+    background-repeat: repeat-x, no-repeat;
+    color: #444444;
+    font-family: Georgia,serif;
+    line-height: 1.4em;
+    overflow:hidden;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
-    font-family: georgia, serif;
+h1, h2, h3, h4, h5, h6 {
     color: #2a2a2a;
+}
+
+p {
+    margin: 0 0 10px 0;
 }
 
 a:link,
@@ -46,29 +58,12 @@ a:active {
 
 /* Header and Template */
 
-html, body {
-    background: white;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url("/img/l10n/stripes.png"), -moz-linear-gradient(#D6E9F7, #FFFFFF 600px);
-    background-repeat: repeat-x, no-repeat;
-    color: #444444;
-    font-family: Georgia,serif;
-    height: 100%;
-    line-height: 1.4em;
-}
 
 #wrapper {
     min-height: 600px;
-    padding: 10px 10px 0 10px;
-}
-
-#doc {
-    margin: 0 auto;
     width: 913px;
+    padding: 10px  0 0;
+    margin: 0 auto;
 }
 
 h1 {
@@ -84,7 +79,6 @@ h1 {
     margin-left: 630px;
     opacity:0;
 }
-
 
 .go #title-logo {
     margin-left: 0;
@@ -107,44 +101,28 @@ body.go #main-content
 }
 
 
-p {
-    margin: 0 0 10px 0;
-}
-
 /* Main Content */
 
 #main-content {
     margin-top: -15px;
     float: left;
     width: 100%;
-    background-color: #FFFFFF;
-    background-image: -moz-linear-gradient(#FFFFFF 95%, rgba(223, 239, 249, 0.15));
+    background-color:transparent;
+    background-image: -moz-linear-gradient(left center , #FFFFFF 552px, rgba(247, 247, 255, 1) 552px);
     border: 1px solid #BDC6D7;
     border-radius: 6px 6px 6px 6px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset;
 }
 
-
-#intro {
-    float: left;
-    width: 450px;
-    position:relative;
-    padding: 30px 50px 0 50px;
-    min-height:350px;
-}
-
-#intro a {
-    text-decoration: underline;
-}
-
-
 h2 {
-    font-family: MetaBlack, "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    font-family: "Trebuchet MS", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: -0.05em;
-    font-size: 65px;
+    color: #303030 ;
     margin: 0;
+    text-shadow: 0 0 1px lightgray;
 }
 
 /* {{{ Sidebar */
@@ -155,16 +133,23 @@ h2 {
     padding: 30px 45px 0 20px;
 }
 
-#sidebar ul {
-    margin: 0;
-    padding: 0;
-}
-
-#sidebar ul li {
+#sidebar ul,
+#sidebar li {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
+
+
+#sidebar ul li a,
+#sidebar ul li a:link,
+#sidebar ul li a:visited {
+    background: transparent url("/img/mobile/m/nav-arrow.png") no-repeat 10px 7px;
+    display: block;
+    padding: 10px 0 10px 50px;
+    min-height:inherit;
+}
+
 
 
 #sidebar ul li a:hover,
@@ -176,147 +161,23 @@ h2 {
 }
 
 
-/* Footer */
-
-footer {
-    float: left;
-    width: 100%;
-    clear: both;
-    margin: 0;
-    border-radius: 10px;
-    background-color: #f2f8fe;
-    background-position: 100% 0, 0 0;
-}
-
-#connect li {
-    list-style-type: none;
-}
-
-
-#connect p {
-    margin: 0;
-}
-
-#connect ul.social {
-    float: right;
-    margin-right: 40px;
-}
-
-#connect ul.social li {
-    float: left;
-    list-style-type: none;
-    margin: 0 10px 0 0;
-    padding: 0;
-}
-
-#connect ul.social li a,
-#connect ul.social li a:link,
-#connect ul.social li a:visited {
-    display: block;
-    width: 80px;
-    padding: 45px 0 0 0;
-    font-family: georgia, serif;
-    font-weight: normal;
-    line-height: 18px;
-    font-style: italic;
-    font-size: 13px;
-    text-align: center;
-    background-position: 50% 5px;
-    background-repeat: no-repeat;
-    background-image: url(/img/firefox/3.6/firstrun/icon-social.png);
-}
-
-#connect ul.social li a:hover,
-#connect ul.social li a:active {
-    background-position: 50% 1px;
-}
-
-#connect ul.social li#connect-facebook a,
-#connect ul.social li#connect-facebook a:link,
-#connect ul.social li#connect-facebook a:visited
- { background-position: 50% -188px; }
-#connect ul.social li#connect-facebook a:hover { background-position: 50% -192px; }
-
-
-/* Firstrun */
-
-header.flash-warning p,
-header.flash-warning h2 {
-    margin-left: 200px;
-}
-
-
-header.flash-warning #title-logo {
-    display: none;
-}
-
-#wrapper.flash-warning {
-    background-position: 50% -80px;
-    background-repeat: no-repeat;
-}
-
-#main-content.flash-warning #flash-warning {
-    display: block;
-    background: #fee5bf url(/img/firefox/out-of-date/flash-warning.png) 12px 50% no-repeat;
-    border: 1px solid #f9ae64;
-    padding: 45px 45px 45px 200px;
+#personalize {
     position: relative;
-    border-radius: 10px;
-    -moz-box-shadow: 0 2px rgba(0,0,0,0.05), inset 0 -2px rgba(0,0,0,0.05);
 }
-
-#main-content.flash-warning #flash-warning h2 {
-     font-size: 42px;
-     text-transform: none;
-}
-
-#main-content.flash-warning #flash-warning p {
-    color: #cd6400;
-    font-family: MetaWebPro-Book, sans-serif;
-    line-height: 1.2;
-    margin: 10px 0 0 0;
-}
-
-#main-content.flash-warning #flash-warning h2,
-#main-content.flash-warning #flash-warning a:link,
-#main-content.flash-warning #flash-warning a:visited,
-#main-content.flash-warning #flash-warning a:hover,
-#main-content.flash-warning #flash-warning a:active {
-    color: #a0560d;
-    text-decoration: underline;
-}
-
-#main-content.flash-warning #flash-warning h2 {
-    text-decoration: none;
-}
-
-
-#personalize { position: relative; }
 
 #personalize h3 {
     margin-right: 45px;
     min-height: 30px;
 }
 
-#personalize ul.link a {personalize
+#personalize ul.link a {
     width: 200px;
 }
 
-#personalize #personalize-thunderbird {
-    display: none;
-    background-image: url(/img/firefox/3.6/firstrun/icon-thunderbird.png);
-}
-
-header p {
+header p,
+footer {
     display:none;
 }
-
-h2 {
-    font-size: 20px;
-    color: #303030 ;
-}
-
-
 
 #sidebar,
 #personalize,
@@ -324,36 +185,50 @@ div.side-content {
     width: 290px;
 }
 
+/* intro section */
+#intro {
+    float: left;
+    width: 452px;
+    position:relative;
+    padding: 20px 50px 0 50px;
+    min-height:350px;
+    border-right: 1px inset #BDC6D7;
+}
+
 #intro h2 {
     color: #303030;
-    font-family: georgia,serif;
-    font-size: 28px;
+    font-size: 20px;
+    font-weight:normal;
     line-height: 1;
-    margin: 0 315px 0 0;
+    margin: 0;
+    text-transform:none;
 }
 
-iframe {
-    border: 0 none;
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    top: 30px;
-}
-
-#sidebar ul li a,
-#sidebar ul li a:link,
-#sidebar ul li a:visited {
-    background-image: url("/img/mobile/m/nav-arrow.png");
-    background-position: 10px 7px;
-    background-repeat: no-repeat;
-    display: block;
+#intro h2 em {
+    color: #303030;
     font-style: normal;
-    font-size: inherit;
-    padding: 10px 0 10px 50px;
-    min-height:inherit;
+    font-weight:bold;
+    font-size: 24px;
+    line-height: 1;
+    margin: 0;
+    text-transform:none;
+    display:inline-block;
+    margin-bottom:10px;
 }
 
+#intro p {
+    font-style: italic;
+    margin: 10px 275px 10px 0;
+}
+
+
+#intro #action {
+    text-align: center;
+}
+
+
+#intro ul.link,
+#personalize ul.link,
 #personalize,
 div.side-content {
     float: left;
@@ -362,21 +237,7 @@ div.side-content {
     position:relative;
 }
 
-#personas-image-link {
-    display:none;
-}
-
-#intro p {
-
-    font-style: italic;
-    margin: 10px 275px 10px 0;
-}
-
-
-#intro ul.link,
-#personalize ul.link,
-div.side-content ul.link
-{
+div.side-content ul.link {
     padding: 0;
     width: 85%;
     position:absolute;
@@ -385,23 +246,10 @@ div.side-content ul.link
 
 #intro ul.link li,
 #personalize ul.link li,
-div.side-content ul.link li
- {
-    -moz-border-radius: 12px 12px 12px 12px;
-    -moz-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
-    background: -moz-linear-gradient(center top , #FFFFFF 50%, #FCFCFC 0%) repeat scroll 0 0 #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    line-height: 24px;
+div.side-content ul.link li {
     list-style-type: none;
-    margin: 10px 0 0;
+    margin: 0;
     padding: 0;
-}
-
-#intro ul.link li,
-#personalize ul.link li,
-div.side-content ul.link li
- {
-
     background-color: #FFFFFF;
     background-image: -moz-linear-gradient(rgba(240,245,255, 1) 95%, rgba(223, 239, 249, 0.15));
     border: 1px solid #BDC6D7;
@@ -411,83 +259,15 @@ div.side-content ul.link li
 
 #intro ul.link li a,
 #personalize ul.link li a,
-div.side-content ul.link li a
-  {
-/*
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAMAAADUOCSZAAAAM1BMVEU4AADB2fjv9f2SvPSpy/bg7Pyxz/eawfS51PiixvXY5/vJ3vn3+v7Q4vro8f2Kt/ODs/LKfzhhAAAAAXRSTlMAQObYZgAAAHZJREFUGNNt0EESgCAIBVBMzSyVf//TBrJpIDbO8AYEaNyksQb5ODH1yXl5OXjTAw40san8UAFOosHg6kRyShVW/A3NCV0/pLlFowEcf1KRrjlMh7TdjScbaf8ZgPoGcQ/JJupoDpYtmND8TZP1yC0e+7BDBHgBPWIGKLbjNQIAAAAASUVORK5CYII=");
-    background-position: 100% 50%;
-*/
-    background-image: url("/img/mobile/m/nav-arrow.png");
-    background-position: 99% 4px;
-    background-repeat: no-repeat;
+div.side-content ul.link li a {
+    background: transparent url("/img/mobile/m/nav-arrow.png") no-repeat 99% 2px;
     display: block;
-    font-size: 16px;
     font-style: italic;
-    min-height: 0;
-    padding: 5px 35px 7px 10px;
-    text-decoration: none;
-    text-shadow: 0 1px #E2F2FA;
-    line-height: 24px;
-    list-style-type: none;
-}
-
-footer {
-    width:270px;
-    float:right;
-     -moz-box-shadow: 1px 1px 1px lightgray;
-}
-
-
-#personalize ul li#sidebar-addons a,
-div.side-content ul li a
- {
-    background-position: -400px 0;
-}
-
-#personalize ul li a,
-div.side-content ul li a
- {
-    background-image: url("/img/firefox/3.6/firstrun/sidebar-icons.png");
-    background-position: 0 0;
-    background-repeat: no-repeat;
-}
-
-
-.hideme {
-    display:none;
-}
-
-footer ul.social li {
-    border-radius: 0;
-    -moz-box-shadow: none;
-    background: transparent;
-    border:none;
-    margin: 0 10px 0 0;
-}
-
-
-div.side-content {
-    position:relative;
-}
-
-#intro iframe {
-    opacity:1;
-    overflow: hidden
-}
-
-#intro:hover iframe {
-    opacity:1;
-    -moz-transition: opacity 0.4s ease-in,
-                     height 0.4s ease-in;
+    padding: 5px 65px 7px 10px;
 }
 
 #intro ul.link li:hover {
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(0, 0, 0, 0.05) inset;
-}
-
-#intro ul.link li a,
-#personalize ul.link li a {
-
 }
 
 #intro ul.link li:hover,
@@ -504,13 +284,10 @@ div.side-content {
      margin-bottom: 0.5em;
 }
 
-footer {
-
-display: none;
-}
 
 header h2 {
     position:relative;
+    z-index: 1000;
 }
 header h2 span {
     display:block;
@@ -521,3 +298,71 @@ header h2 span {
     height:140px;
     text-shadow: 0 0 8px white;
 }
+
+
+#title-logo {
+    float:left;
+}
+
+#title-wordmark {
+    float:left;
+    margin-left:30px;
+    margin-top:10px;
+}
+
+#title-wordmark.start {
+    margin-left: -1000px;
+    opacity:0;
+}
+
+
+.go #title-wordmark {
+    margin-left: 30px;
+    opacity: 1;
+    -moz-transition: margin-left .8s ease-out,
+                     opacity .5s ease-in;
+}
+
+
+#screenshot a {
+  outline: none;
+}
+
+#screenshot {
+    height:0;
+    overflow:hidden;
+    margin-top:-200px
+    border:1px solid transparent;
+    position:relative;
+}
+
+#screenshot img {
+    display:block;
+}
+
+
+.go #screenshot {
+    margin-top:20px;
+    height:252px;
+    -moz-transition: height 0.9s ease-in,
+                     margin 0.9s ease-in;
+}
+
+#shade {
+    position:absolute;
+    top:1px;
+    left:1px;
+    height:248px;
+    width:448px;
+    pointer-events: none;
+    background-image: -moz-linear-gradient(rgba(214, 233, 247, 0.1) 300px, #FFFFFF 430px)
+}
+
+
+#screenshot:hover #shade {
+    height:0px;
+    width:0px;
+    background-image:none;
+    -moz-transition: background-image 0.2s ease-in;
+}
+
