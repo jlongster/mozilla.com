@@ -1,22 +1,9 @@
-<?php
-/*  translate the page title below */
-$page_title = "Velkommen til Firefox";
-
-$pageid = 'firstrun-36';
-require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
-
-?>
-
-
-<div id="main-feature">
+<header>
     <?=$logo?>
     <p>Takk for at du st&oslash;ttar <a <?=$aboutlink?>>Mozilla sitt m&aring;l</a> om auke openheit, fornying og andre moglegheiter verdsveven gjev!</p>
-</div>
+</header>
 
 
-<?php
-  require_once $footerfile;
-?>
 
 <div id="main-content">
 
@@ -47,19 +34,11 @@ require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 
 <?=$oop;?>
 </div>
-<div id="footer">
+<footer>
     <div id="connect" class="sub-feature">
         <ul class="link social">
             <li id="connect-facebook"><a href="http://www.facebook.com/Firefox">Facebook</a></li>
             <li id="connect-twitter"><a href="http://twitter.com/firefox">Twitter</a></li>
         </ul>
     </div>
-</div>
-<div>
-
-  <p id="sub-links">
-      <a href="/<?=$lang?>/firefox/features/" id="features-link">Fleire funksjonar i 3.6</a>
-      <a href="http://support.mozilla.com" id="support-link">Firefox st&oslash;tte</a>
-  </p>
-
-</div>
+<footer>

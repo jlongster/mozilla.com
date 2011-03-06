@@ -130,7 +130,8 @@ h2 {
 #sidebar {
     float: left;
     height: 170px;
-    padding: 30px 45px 0 20px;
+    padding: 30px 0 0 10px;
+    width:345px;
 }
 
 #sidebar ul,
@@ -138,6 +139,7 @@ h2 {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    line-height: 1.2em;
 }
 
 
@@ -179,10 +181,9 @@ footer {
     display:none;
 }
 
-#sidebar,
 #personalize,
 div.side-content {
-    width: 290px;
+    width: 320px;
 }
 
 /* intro section */
@@ -329,12 +330,18 @@ header h2 span {
 }
 
 #screenshot {
-    height:0;
+    height:252px;
     overflow:hidden;
-    margin-top:-200px
+    margin-top:20px
     border:1px solid transparent;
     position:relative;
 }
+
+#screenshot.start {
+    margin-top: -200px;
+    height:0;
+}
+
 
 #screenshot img {
     display:block;
@@ -366,3 +373,22 @@ header h2 span {
     -moz-transition: background-image 0.2s ease-in;
 }
 
+/* per locale adjustments */
+
+html[lang="el"] #action h2,
+html[lang="el"] #action h2 em,
+html[lang="mk"] #action h2,
+html[lang="mk"] #action h2 em,
+html[lang="si"] #action h2,
+html[lang="si"] #action h2 em,
+html[lang="sr"] #action h2,
+html[lang="sr"] #action h2 em,
+html[lang="ta-LK"] #action h2,
+html[lang="ta-LK"] #action h2 em
+{
+    font-size:18px;
+}
+
+html[lang="es-MX"] #action h2 {
+    font-size:18px;
+}

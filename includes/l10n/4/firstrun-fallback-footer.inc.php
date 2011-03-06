@@ -3,7 +3,8 @@
     <script>
         document.getElementById('title-logo').className = 'start';
         document.getElementById('title-wordmark').className = 'start';
-        document.getElementsByTagName('body')[0].className = 'start';
+        document.getElementById('screenshot').className = 'start';
+        document.body.className = 'start';
         window.onload = function() {
             document.body.className = 'go';
         };
