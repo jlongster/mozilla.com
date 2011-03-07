@@ -241,7 +241,9 @@ $extra_footers .= <<<EXTRA_FOOTERS
 	});
     if (!document.referrer ||
         location.href.indexOf('flash=1') > 0) {
-        $('.blocklisted.flash').show();
+        if (! PluginDetect.getVersion('Flash')) {
+            $('.blocklisted.flash').show();
+        }
     }
 });
 /* ]]> */
