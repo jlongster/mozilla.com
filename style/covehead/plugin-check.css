@@ -24,22 +24,47 @@
 }
 
 .blocklisted { 
-    background-color: #cbe2f4;
-    -moz-border-radius: 8px;
+    background: 
+    url(/style/covehead/plugin-check/bg-vert-check.png) repeat-y,
+    -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,249,222)),
+        color-stop(1, rgb(255,255,255))
+    );
+    background: 
+    url(/style/covehead/plugin-check/bg-vert-check.png) repeat-y,
+    -moz-linear-gradient(
+        center bottom,
+        rgb(255,249,222) 0%,
+        rgb(255,255,255) 100%
+    );
+    border: solid 1px #e2d3a9;
+    color: #a72e00;
+    margin-bottom: 40px;
+    margin-top: 30px;
     padding: 8px 25px;
     display: none;
 }
     .blocklisted h3 { 
+        color: #a72e00;
         float: left;
         line-height: 1;
         margin-top: 0px;
         margin-bottom: 0px;
+
     }
     .blocklisted p { 
+
         float: left; 
         width: 60%;
         margin-top: 8px;
         margin-left: 25px;
+        
+    }
+    .blocklisted p a { 
+        color: #2f8aca;
     }
 .clearfix { clear: both; }
 
@@ -65,7 +90,7 @@
 	width: 235px;
 	margin-right: 0;
 	margin-left: 20px;
-	margin-top: 25px;
+	margin-top: 5px;
 }
 
 #sidebar ul { margin: 10px 0 20px 15px; }
