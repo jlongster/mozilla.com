@@ -47,6 +47,15 @@ if (typeof Mozilla == 'undefined') {
 	var Mozilla = {};
 }
 
+// create namespace
+if (typeof Mozilla.Expander == 'undefined') {
+	Mozilla.Expander = {};
+}
+
+// string resources
+Mozilla.Expander.OPEN_TEXT  = 'Show';
+Mozilla.Expander.CLOSE_TEXT = 'Hide';
+
 $(document).ready(function() {
 
 	// add easing functions
@@ -58,15 +67,6 @@ $(document).ready(function() {
 			return -c * (t /= d) * (t - 2) + b;
 		}
 	});
-
-	// create namespace
-	if (typeof Mozilla.Expander == 'undefined') {
-		Mozilla.Expander = {};
-	}
-
-	// string resources
-	Mozilla.Expander.OPEN_TEXT  = 'Show';
-	Mozilla.Expander.CLOSE_TEXT = 'Hide';
 
 	function Expander(container)
 	{
