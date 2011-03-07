@@ -408,7 +408,8 @@ RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent]
 RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent]
 
 # Bug 627423 (remove when Firefox 4 is released)
-RewriteRule ^en-US/firefox/4\.0/(.*)$ /en-US/firefox/4.0rc1/$1 [PT]
+RewriteCond %{REQUEST_URI} !system-requirements
+RewriteRule ^en-US/firefox/4\.0/(.*)$ /en-US/firefox/4.0rc1/$1 [PT,L]
 
 # Bug 627407 rename /beta to /RC
 # protect against a few urls that would get caught,
