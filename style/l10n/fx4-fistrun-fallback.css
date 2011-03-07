@@ -172,18 +172,9 @@ h2 {
     min-height: 30px;
 }
 
-#personalize ul.link a {
-    width: 200px;
-}
-
 header p,
 footer {
     display:none;
-}
-
-#personalize,
-div.side-content {
-    width: 320px;
 }
 
 /* intro section */
@@ -227,11 +218,19 @@ div.side-content {
     text-align: center;
 }
 
-
-#intro ul.link,
-#personalize ul.link,
 #personalize,
 div.side-content {
+    float: left;
+    width: 320px;
+    height: 180px;
+    padding: 0px 20px;
+    position:relative;
+}
+
+
+#intro ul.link,
+#personalize ul.link
+{
     float: left;
     height: 180px;
     padding: 0px 20px;
@@ -244,6 +243,11 @@ div.side-content ul.link {
     position:absolute;
     bottom:7px;
 }
+
+#personalize ul.link {
+    margin: 10px 0 0 0;
+}
+
 
 #intro ul.link li,
 #personalize ul.link li,
@@ -265,6 +269,7 @@ div.side-content ul.link li a {
     display: block;
     font-style: italic;
     padding: 5px 65px 7px 10px;
+    width: 200px;
 }
 
 #intro ul.link li:hover {

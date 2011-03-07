@@ -107,10 +107,16 @@ if(array_key_exists($lang, $slogan)) {
 
     $needle = array('!', '！', '.');
     foreach ($needle as $var) {
+        $endsentence = ($var == '.') ? '' : $var; // period doesn't look good in a title
         if(strpos($finalslogan, $var)) {
             $finalslogan = explode($var, $finalslogan);
-            $finalslogan[0] = '<em>'.$finalslogan[0].$var.'</em><br/>';
+            foreach ($finalslogan as $key => $parts) {
+                $finalslogan[$key] = ltrim($parts);
+            }
+
+            $finalslogan[0] = '<em>'.$finalslogan[0].$endsentence.'</em><br/>';
             $finalslogan = implode('', $finalslogan);
+            if($var == '.') $finalslogan .= '.';
             break;
         }
     }
