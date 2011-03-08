@@ -15,15 +15,15 @@ function noCachingRedirect($url) {
 }
 
 
-function checkProductionQuality($lang, $productionQuality, $host = 'http://www.mozilla.com') {
+function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com') {
 
-    if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  'www.mozilla.com') {
+    if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  $host) {
         $requested = explode('/', $_SERVER['REDIRECT_URL']);
         if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
             array_pop($requested);
             $requested = implode('/', $requested).'/';
         }
-        noCachingRedirect($host.$requested);
+        noCachingRedirect('http://'.$host.'/en-US'.$requested);
         exit;
     }
 

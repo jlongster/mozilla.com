@@ -2,9 +2,9 @@
 
 include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
-$productionQuality = array('en-GB');
+$productionQuality = array('ar', 'cs', 'de', 'es-AR','es-CL', 'es-ES','es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gl', 'he', 'hr', 'hu', 'id', 'is', 'it', 'ko', 'lt', 'mr', 'nb-NO', 'nl', 'pa-IN', 'pl', 'pt-PT', 'rm', 'ro', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'te', 'tr', 'uk', 'zh-CN', 'zh-TW');
 
-checkProductionQuality($lang, $productionQuality, $host_enUS);
+checkProductionQuality($lang, $productionQuality);
 
 $body_id = 'firefox-beta';
 $html5   = true;
