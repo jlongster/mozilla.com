@@ -1,12 +1,5 @@
 <?php
 
-// redirect to en-US download page if not the latest whatsnew page and let htaccess redirect work
-// This way we can put everything on production before the release.
-if ($_SERVER['HTTP_HOST'] == 'www.mozilla.com' && LATEST_FIREFOX_DEVEL_VERSION != '4.0RC') {
-    noCachingRedirect($config['url_scheme'].'://'.$config['server_name']."/$lang/firefox/");
-    exit;
-}
-
 include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
 $productionQuality = array('en-GB');
