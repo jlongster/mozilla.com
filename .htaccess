@@ -411,6 +411,9 @@ RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent]
 RewriteCond %{REQUEST_URI} !system-requirements
 RewriteRule ^en-US/firefox/4\.0/(.*)$ /en-US/firefox/4.0rc1/$1 [PT,L]
 
+# Bug 638948 redirect beta privacy policy link
+RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/firefox.html [R=permanent]
+
 # Bug 627407 rename /beta to /RC
 # protect against a few urls that would get caught,
 # /cdn is a link on the trunk site
