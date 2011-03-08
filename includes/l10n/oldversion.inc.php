@@ -3,8 +3,6 @@
 $body_class = 'whatsnew-3-0-19';
 $body_id = 'out-of-date';
 
-
-
 include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/class.novadownload.php";
 
 $firefoxDetailsl10n = new firefoxDetailsL10n();
@@ -43,7 +41,8 @@ $extra_css = <<<EXTRA_CSS
         padding-top:70px !important;
     }
     #main-feature h2 span {
-    text-align: center;
+        text-align: center;
+        min-height: 169px;
     }
 
 EXTRA_CSS;
@@ -71,7 +70,7 @@ EXTRA_HEADERS;
 
 // inline util.js since it's such a small file it doesn't deserver an http call
 ob_start();
-include "{$config['file_root']}/js/util.js";
+include $config['file_root'].'/js/util.js';
 $util_js = ob_get_contents();
 ob_end_clean();
 
@@ -105,9 +104,7 @@ if($version == '3.5') {
 $str_upgrade = ___('Free Upgrade');
 $extra_headers  .= <<<EXTRA_HEADERS
     <style type="text/css">
-    #main-feature {
 
-    }
     #main-feature h2 span {
         visibility:hidden;
         margin-top:-2em;
@@ -125,16 +122,14 @@ $extra_headers  .= <<<EXTRA_HEADERS
     }
 
     #main-content {
-      padding: 35px 100px 35px 150px;
+        padding: 35px 100px 35px 150px;
     }
 
     #main-content p:first-child {
-      display:none;
+        display:none;
     }
 
-
-
-        </style>
+    </style>
 
 EXTRA_HEADERS;
 
