@@ -97,10 +97,10 @@ echo '<'.'?xml version="1.0" encoding="UTF-8"?'.'>'."\n";
 
             <item>
                 <title><?=htmlspecialchars($item['title'])?></title>
-                <pubDate><?=$item['date']?></pubDate>
+                <pubDate><?=htmlspecialchars($item['date'])?></pubDate>
 
-                <link><?=$item['link']?></link>
-                <guid isPermaLink="true"><?=$item['link']?></guid>
+                <link><?=htmlspecialchars($item['link'])?></link>
+                <guid isPermaLink="true"><?=htmlspecialchars($item['link'])?></guid>
                 <description><?=htmlspecialchars($item['description'])?></description>
             </item>
 
