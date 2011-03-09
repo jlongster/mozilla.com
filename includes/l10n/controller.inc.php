@@ -75,7 +75,6 @@ $sitepages = array(
 $deactivated = array(
     'firstrun-4',
     'whatsnew-4',
-    'firefox4-rc',
 );
 
 
