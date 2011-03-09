@@ -72,12 +72,14 @@ foreach ($names as $name) {
     $items[] = $item;
 }
 
-// Set some headers, last modified based on last recent release and 
+// Set some headers, last modified based on last recent release and
 // cache expiration at least an hour from now.
 header('Content-Type: application/rss+xml');
 header('Last-Modified: ' . $items[0]['date']);
 header('Cache-Control: max-age=3600');
 header('Expires: ' . date('r', time()+3600));
+
+$link = $_SERVER['SCRIPT_URI'];
 
 // HACK: Concatenated because PHP's not happy about the PI
 echo '<'.'?xml version="1.0" encoding="UTF-8"?'.'>'."\n";
@@ -85,9 +87,9 @@ echo '<'.'?xml version="1.0" encoding="UTF-8"?'.'>'."\n";
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Mozilla Press Center</title>
-        <atom:link href="<?=$_SERVER['SCRIPT_URI']?>" 
+        <atom:link href="<?=htmlspecialchars($link)?>"
             rel="self" type="application/rss+xml" />
-        <link><?=str_replace('feed.php', '', $_SERVER['SCRIPT_URI'])?></link>
+        <link><?=str_replace('feed.php', '', htmlspecialchars($link))?></link>
         <description>Mozilla News, Announcements and More</description>
         <lastBuildDate><?=$items[0]['date']?></lastBuildDate>
         <language>en</language>
