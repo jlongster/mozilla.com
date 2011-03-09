@@ -389,7 +389,7 @@ RewriteRule ^en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L]
 
 # Bug 627407 rename /beta to /RC (previous bug 628826) and bug 633310
 RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent,NC]
-RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent,NC]
+RewriteRule ^en-US/[firefox]?beta[/]?$ /en-US/firefox/RC/ [R=permanent,NC]
 
 # Bug 627423 (remove when Firefox 4 is released)
 RewriteCond %{REQUEST_URI} !system-requirements
@@ -403,7 +403,7 @@ RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/fi
 # /cdn is a link on the trunk site
 RewriteCond %{REQUEST_URI} !^/img
 RewriteCond %{REQUEST_URI} !^/cdn
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent,NC]
 
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
