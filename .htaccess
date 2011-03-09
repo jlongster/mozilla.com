@@ -60,23 +60,6 @@ RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/start[/]?$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/releasenotes[/]?$ http://www.mozillamessaging.com/$1thunderbird/2.0.0.$2/releasenotes/ [R=permanent]
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all.html$ http://www.mozillamessaging.com/thunderbird/all.html [R=permanent]
 
-<IfModule mod_php5.c>
-# PHP error handling for production servers
-php_flag display_startup_errors on
-php_flag display_errors on
-php_flag html_errors on
-php_flag log_errors on
-php_flag ignore_repeated_errors off
-php_flag ignore_repeated_source off
-php_flag report_memleaks on
-php_flag track_errors on
-php_value docref_root 0
-php_value docref_ext 0
-php_value error_log /home/path/public_html/domain/PHP_errors.log
-php_value error_reporting 999999999
-php_value log_errors_max_len 0
-</IfModule>
-
 # bug 578744
 RewriteRule en-US/thunderbird/(.*) http://www.mozillamessaging.com/en-US/thunderbird/$1 [R=permanent]
 
