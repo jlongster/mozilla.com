@@ -383,13 +383,12 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
 # Bug 627407
-RewriteRule ^RC[/]?$ /firefox/RC [R=permanent]
-RewriteRule ^rc[/]?$ /firefox/RC [R=permanent]
-RewriteRule ^en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L]
+RewriteRule ^RC[/]?$ /firefox/RC/ [R=permanent,NC]
+RewriteRule ^en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L,NC]
 
 # Bug 627407 rename /beta to /RC (previous bug 628826) and bug 633310
-RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent]
-RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent]
+RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent,NC]
+RewriteRule ^en-US/beta[/]?$ /en-US/firefox/RC/ [R=permanent,NC]
 
 # Bug 627423 (remove when Firefox 4 is released)
 RewriteCond %{REQUEST_URI} !system-requirements
