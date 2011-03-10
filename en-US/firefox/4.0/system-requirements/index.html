@@ -4,6 +4,76 @@
     $body_id    = 'firefox-requirements';
     $extra_headers = <<<EXTRA_HEADERS
 	<link rel="stylesheet" href="/style/covehead/system-requirements.css" media="screen" />
+    <style>
+    /* This is ugly and copied from RC/index.html but it fixes bug 640461 */
+/* {{{ Download Button */
+
+ul.download-firefox,
+#sidebar ul.download-firefox {
+	margin: 8px 10px 0 0;
+	left: auto;
+	width: 234px;
+}
+
+ul.download-firefox li {
+	background: none;
+	padding: 0;
+}
+
+ul.download-firefox li a.download-link,
+ul.download-firefox li a.download-link:hover {
+	background: url(/img/firefox/beta/4/download-button.png) top left no-repeat;
+	padding: 50px 10px 10px 43px;
+	height: 30px;
+	font-size: 131%;
+	margin-left: -4px;
+	margin-top: 5px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	filter: none;
+	color: #09700B;
+	margin-bottom: 0;
+}
+
+* html #firefox ul.home-download li {
+	background: none;
+}
+
+.download-other,
+ul.download-firefox em {
+	font-style: normal;
+	display: block;
+	left: auto;
+	margin-left: 0;
+    font-family: verdana, sans-serif;
+    font-size: 85%;
+	text-align: left;
+	width: auto;
+}
+
+ul.download-firefox abbr {
+	border: 0;
+}
+
+ul.download-firefox em {
+	margin: 0;
+	position: relative;
+}
+
+.download-other {
+	margin-bottom: 15px;
+	font-size: 85%;
+}
+
+
+.download-noscript { margin-left: 35px; width: 400px; }
+.download-noscript h3 { font-size: 120%; margin-bottom: 0; }
+.download-noscript h3 span { display: block; font-size: 75%; color: #898378; }
+.download-noscript ul { margin-top: 0.5em; }
+
+/* }}} */
+    </style>
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
