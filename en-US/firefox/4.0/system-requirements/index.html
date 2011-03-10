@@ -10,17 +10,12 @@ EXTRA_HEADERS;
 ?>
 
 <div id="download" class="top-right">
-    <script src="/js/download.old.js"></script>
-        <script>
-              <!--
-              // Configure the Firefox download write script
-              var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\">Download Firefox 4 RC.<\/a>";
-
-              document.writeln("<ul class=\"" + gCssClass + " \">");
-              writeDownloadItems("fxbeta");
-              document.writeln("<\/ul>");
-              //-->
-        </script>
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'devel_version' => true, 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 4.0');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
 </div>
 
 <div id="main-feature">
