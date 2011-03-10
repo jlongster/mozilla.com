@@ -86,7 +86,7 @@ EXTRA_HEADERS;
               // Configure the Firefox download write script
               var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"><a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\">Download Firefox 4 RC.<\/a>";
 
-              document.writeln("<ul class=\"" + gCssClass + " \">");
+              document.writeln("<ul class=\"download-firefox " + gCssClass + " \">");
               writeDownloadItems("fxbeta");
               document.writeln("<\/ul>");
               //-->
