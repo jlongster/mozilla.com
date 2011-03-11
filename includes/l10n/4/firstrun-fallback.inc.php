@@ -22,7 +22,7 @@ if ($textdir == 'rtl') {
     /* RTL support */
 
     #main-content {
-        background-image: -moz-linear-gradient(left center , #F7F7FF 402px, #FFFFFF 402px)
+        background-image: -moz-linear-gradient(left center , #F7F7FF 380px, #FFFFFF 380px)
     }
 
     #intro, #sidebar {
@@ -49,8 +49,12 @@ if ($textdir == 'rtl') {
         padding: 10px 40px 0px 35px;
         display:block;
         height:30px;
+    }
 
-
+    #sidebar ul.link,
+    #personalize ul.link {
+        float:right;
+        padding-right:0;
     }
 
     #personalize {
