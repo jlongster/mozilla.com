@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?=$lang;?>">
+<html lang="<?=$lang;?>" dir="<?=$textdir;?>">
 <head>
   <meta charset="utf-8" />
   <title><?=$page_title;?></title>

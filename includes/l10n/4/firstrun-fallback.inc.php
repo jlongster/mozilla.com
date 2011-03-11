@@ -21,6 +21,43 @@ if ($textdir == 'rtl') {
     <style>
     /* RTL support */
 
+    #main-content {
+        background-image: -moz-linear-gradient(left center , #F7F7FF 402px, #FFFFFF 402px)
+    }
+
+    #intro, #sidebar {
+        float: right;
+    }
+
+    #sidebar h2:first-child {
+        padding: 0 20px;
+    }
+
+    #sidebar ul li a:before,
+    #personalize ul li a:before {
+        content: url("/img/mobile/m/nav-arrow.png");
+        -moz-transform: translate(27px) rotate(180deg);
+        -moz-transform-origin: center center;
+        float:right;
+        height:25px;
+
+    }
+
+    #sidebar ul.link li a,
+    #personalize ul.link li a {
+        background-image:none;
+        padding: 10px 40px 0px 35px;
+        display:block;
+        height:30px;
+
+
+    }
+
+    #personalize {
+        padding-top: 50px;
+        float: right;
+    }
+
     </style>
 EXTRA_HEADERS;
 }
