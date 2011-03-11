@@ -89,6 +89,9 @@ tips & tricks, and more!</p>
 
 <?php if ($status == 'success'): ?>
   <script type="text/javascript">
-    dcsMultiTrack('DCS.dcsuri', '<?= $newsletter_wt_subscribe_uri ?>', 'WT.ti', '<?= $newsletter_wt_subscribe_ti ?>');
+    // webtrends may not be available
+    if(window.dcsMultiTrack) {
+      dcsMultiTrack('DCS.dcsuri', '<?= $newsletter_wt_subscribe_uri ?>', 'WT.ti', '<?= $newsletter_wt_subscribe_ti ?>');
+    }
   </script>
 <?php endif ?>
