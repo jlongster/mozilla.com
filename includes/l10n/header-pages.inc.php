@@ -72,6 +72,25 @@ if(in_array($lang, array('cs', 'eu', 'fi', 'pl', 'ru', 'sk', 'sl', 'sr', 'uk')))
     $val = '<span id="t1">'.$val.'</span>';
 }
 
+$mozillalink = "<a href=\"$host_enUS/\" id=\"return\">$val</a>";
+$newfirefox4menu = '';
+
+if ($config['server_name'] != 'www.mozilla.com' OR LATEST_FIREFOX_VERSION == '4.0') {
+$mozillalink = "<a class=\"mozilla\" href=\"$host_enUS/\">mozilla</a>";
+$newfirefox4menu = <<<NEWMENU
+        <!-- start menu #nav-main -->
+
+        <div id="nav-main" role="navigation">
+          <ul role="menubar">
+            <li id="nav-main-features" class="first"><a href="{$host_l10n}/firefox/features/">{$l10n->get('Features')}</a></li>
+            <li id="nav-main-addons"><a href="https://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
+            <li id="nav-main-support"><a href="http://support.mozilla.com/">{$l10n->get('Support')}</a></li>
+            <li id="nav-main-about" class="last"><a href="{$host_l10n}/about/">{$l10n->get('About')}</a></li>
+          </ul>
+        </div>
+        <!-- end menu #nav-main -->
+NEWMENU;
+}
 
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}
@@ -288,30 +307,9 @@ if (gPlatform == 1) {
     <div id="header">
         <div>
         <h1><a href="{$host_l10n}/" title="{$l10n->get('Back to home page')}">Mozilla</a></h1>
-        <a class="mozilla" href="{$host_enUS}/">mozilla</a>
 
-
-<!-- start menu #nav-main -->
-
-<div id="nav-main" role="navigation">
-  <ul role="menubar">
-    <li id="nav-main-features" class="first"><a href="{$host_l10n}/{$lang}/firefox/features/">{$l10n->get('Features')}</a></li>
-    <li id="nav-main-addons"><a href="https://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
-    <li id="nav-main-support"><a href="http://support.mozilla.com/">{$l10n->get('Support')}</a></li>
-    <li id="nav-main-about" class="last"><a href="{$host_l10n}/{$lang}/about/">{$l10n->get('About')}</a></li>
-  </ul>
-</div>
-<!-- end menu #nav-main -->
-
-
-
-
-
-
-
-
-
-
+        {$mozillalink}
+        {$newfirefox4menu}
 
         </div>
         <hr class="hide" />
