@@ -24,9 +24,10 @@ if(!file_exists($fx4file)) {
     $fx4file = $config['file_root'].'/includes/l10n/4/fallback.home.inc.php';
 }
 
-/*
-$contentfile = ($fx4released) ? $fx4file : $oldfile;
-*/
+
+if(isset($_GET['fx4']) && intval($_GET['fx4']) == 1) {
+    $fx4released = true;
+}
 
 if($fx4released) {
     $contentfile = $fx4file;
