@@ -1,5 +1,13 @@
 <?php
 
+// commodity variable to bypass the controller
+if(isset($retour) && $retour == true) {
+    return;
+}
+
+// Firefox 4 release
+$fx4released = (LATEST_FIREFOX_RELEASED_VERSION == '4.0') ? true : false;
+
 // make sure we have a few variables defined to avoid php warnings if they don't exist
 $head_add         = (isset($head_add))          ? $head_add         : '';
 $body_id          = (isset($body_id))           ? $body_id          : '';
@@ -13,6 +21,7 @@ $extra_css        = empty($extra_css)           ? ''                : $extra_css
 $body_class       = empty($body_class)          ? ''                : $body_class;
 $textdir          = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 $footerfile       = $config['file_root'].'/includes/l10n/footer-pages.inc.php';
+$headerfile       = $config['file_root'].'/includes/l10n/header-pages.inc.php';
 
 // dummy function to avoid error in code borrowed from mozilla-europe
 function localeConvert($lang) {

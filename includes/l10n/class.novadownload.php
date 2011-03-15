@@ -116,6 +116,7 @@ HTML_RETURN;
         $_current_version             = array_key_exists('version', $options) ? $options['version'] : $this->getNewestVersionForLocale($locale);
         $_bouncer_js                  = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_download_product            = array_key_exists('download_product', $options) ?  ___($options['download_product']) : ___('Free Download');
+        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Firefox 3.6';
         $_release_notes               = ___('Release Notes');
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_language_name               = $this->localeDetails->getNativeNameForLocale($locale);
@@ -205,7 +206,7 @@ LI_SIDEBAR;
                 <li class="{$_os_class}">
                     <a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}>
                         <span class="download-content">
-                            <span class="download-title">Firefox 3.6 <img class="download-arrow" alt="" src="/img/home/download-arrow.png"></span>
+                            <span class="download-title">{$_wording} <img class="download-arrow" alt="" src="/img/home/download-arrow.png"></span>
                             {$_download_product}
                             <span class="download-info">{$_os_name} &middot; {$_current_version} &middot; {$_language_name}</span>
                             {$_betalocaletext}

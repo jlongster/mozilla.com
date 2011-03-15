@@ -3,49 +3,61 @@
 $body_id    = 'home';
 $html5      = true;
 
-if(!isset($meta_description)) {$meta_description = '';}
-if(!isset($extra_headers)) {$extra_headers = '';}
-
 $extra_headers .= <<<EXTRA_HEADERS
     <meta name="description" content="{$meta_description}" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/landing-page-l10n.css" media="screen" />
 
 EXTRA_HEADERS;
 
 $templang = $lang;
 
-
-include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/class.novadownload.php";
-
-$firefoxDetailsl10n = new firefoxDetailsL10n();
-
-$downloadbox  = "\n".'<!-- generated box -->'."\n";
-$downloadbox .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
-$downloadbox .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
-$downloadbox .= "\n".'//]]>></script>'."\n";
-$downloadbox .= "\n".'<div id="home-download">'."\n";
-$downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome($lang);
-$downloadbox .= "\n".'</div>'."\n";
-//$downloadbox .= $firefoxDetails->getNoScriptBlockForLocale($lang); // removed, see bug 457188
-$downloadbox .= "\n".'<!-- end generated box -->'."\n";
-
-unset($firefoxDetailsl10n);
+// dl box
+include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 
+// Fx 4 page activated when product-details switches to 4.0
+$oldfile = $config['file_root'].'/'.$lang.'/firefox/fx36.inc.html';
+$fx4file = $config['file_root'].'/'.$lang.'/firefox/fx4.inc.html';
 
 
-// if we don't have builds for a locale yet, let's display an en-US build to avoid php warnings
-/*
-if(!array_key_exists($templang, $firefoxDetails->primary_builds) AND !array_key_exists($templang, $firefoxDetails->beta_builds)) {
-    // Download box code for locales
-    $templang = 'en-US';
-    $downloadbox  = '<script type="text/javascript" src="'.$config['static_prefix'].'/js/download.js"></script>';
-    $downloadbox .= $firefoxDetails->getDownloadBlockForLocale($templang,  array('ancillary_links' => true, 'download_product' => 'Free Download') );
-} else {
-    $downloadbox  = '<script type="text/javascript" src="'.$config['static_prefix'].'/js/download.js"></script>';
-    $downloadbox .= $firefoxDetails->getDownloadBlockForLocale($lang,  array('ancillary_links' => true, 'download_product' => 'Free Download') );
+// this is our fallback page
+if(!file_exists($fx4file)) {
+    $fx4file = $config['file_root'].'/includes/l10n/4/fallback.home.inc.php';
 }
+
+/*
+$contentfile = ($fx4released) ? $fx4file : $oldfile;
 */
 
-require "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+if($fx4released) {
+    $contentfile = $fx4file;
+    $retour = true;
+    $details = $config['file_root'].'/'.$lang.'/firefox/4/details/index.html';
+    if(file_exists($details)) {
+        $promo = true;
+        include $details;
+    } else {
+        $promo = false;
+        $str2 = 'Firefox 4';
+    }
+
+
+    $extra_headers .= <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/landing-page-l10n-fx4.css" media="screen" />
+EXTRA_HEADERS;
+
+} else {
+    $contentfile = $oldfile;
+    $extra_headers .= <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/landing-page-l10n.css" media="screen" />
+EXTRA_HEADERS;
+
+}
+
+// build page
+require_once $headerfile;
+require_once $contentfile;
+require_once $footerfile;
+
+
+
 ?>

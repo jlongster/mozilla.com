@@ -1,4 +1,9 @@
 <?php
+// commodity variable to bypass the controller
+if(isset($retour) && $retour == true) {
+    return;
+}
+
     $body_id    = 'home';
     $body_class = 'locale-'.$lang;
     require_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
