@@ -17,7 +17,7 @@
     <?=buildPlatformImage($config['static_prefix'].'/img/l10n/main-feature.png', 'Firefox screenshot', null, null, 'screenshot', array('mac', 'linux'))?>
         <div id="download-stats">
             <h4><img src="/img/home/download-arrow.png"/></h4>
-            <p><span id="download-count">+ 24 000 000</span></p>
+            <p><span id="download-count">+ <?=$downloads;?></span></p>
         </div>
     </div>
 

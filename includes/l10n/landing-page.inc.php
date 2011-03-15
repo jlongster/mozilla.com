@@ -40,6 +40,20 @@ if($fx4released) {
         $str2 = 'Firefox 4';
     }
 
+    $uri = 'https://metrics.mozilla.com/stats/firefox_4_final_downloads_total.json';
+    $json = json_decode(file_get_contents($uri), true);
+    if ($json === null) {
+        $downloads = '2091478';
+    } else {
+        $downloads = $json['4.0'];
+    }
+
+    // regional numbers formatting
+    if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'ga-IE', 'he', 'hi-IN', 'ja', 'kn', 'ml', 'mr', 'or', 'pa-IN', 'si', 'ta', 'ta-LK', 'te', 'th', 'zh-CN', 'zh-TW'))) {
+        $downloads = number_format($downloads, 0, ',', '.');
+    } else {
+        $downloads = number_format($downloads, 0, '.', ',');
+    }
 
     $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/landing-page-l10n-fx4.css" media="screen" />
