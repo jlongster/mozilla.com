@@ -57,7 +57,16 @@ Mozilla.VideoControl = function(container)
   this.container = container;
 
   // Retrieve jQuery object and the corresponding DOM element
-  this.video = container.find('video:first');
+  var video = container.find('video:first');
+
+  // If there is not preload attribute set, set it to metadata
+  // because this library depends on preloading
+  var preload = video.attr('preload');
+  if(!preload || preload == 'none') {
+      video.attr('preload', 'metadata');
+  }
+
+  this.video = video;
   this._video = this.video[0];
 
   this.semaphore = false;
