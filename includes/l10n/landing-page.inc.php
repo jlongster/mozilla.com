@@ -39,19 +39,34 @@ if($fx4released) {
         $str2 = 'Firefox 4';
     }
 
-    $uri = 'https://metrics.mozilla.com/stats/firefox_4_final_downloads_total.json';
-    $json = json_decode(file_get_contents($uri), true);
-    if ($json === null) {
-        $downloads = '2091478';
-    } else {
-        $downloads = $json['4.0'];
+    $downloads = ___('Experience Firefox&nbsp;4');
+    $file = "{$config['file_root']}/includes/firefox_4_final_downloads_total.json";
+    if (file_exists($file) && is_readable($file)) {
+        $json = json_decode(file_get_contents($file), true);
+        if ($json !== null) {
+            $downloads = ___('Experience Firefox&nbsp;4');
+        }
     }
 
-    // regional numbers formatting
-    if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'ga-IE', 'he', 'hi-IN', 'ja', 'kn', 'ml', 'mr', 'or', 'pa-IN', 'si', 'ta', 'ta-LK', 'te', 'th', 'zh-CN', 'zh-TW'))) {
-        $downloads = number_format($downloads, 0, ',', '.');
+    if(is_numeric($downloads)) {
+        // regional numbers formatting
+        if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'ga-IE', 'he', 'hi-IN', 'ja', 'kn', 'ml', 'mr', 'or', 'pa-IN', 'si', 'ta', 'ta-LK', 'te', 'th', 'zh-CN', 'zh-TW'))) {
+            $downloads = number_format($downloads, 0, ',', '.');
+        } else {
+            $downloads = number_format($downloads, 0, '.', ',');
+        }
+
+        $windowmessage = '
+        <div id="download-stats">
+            <h4><img src="/img/home/download-arrow.png"/></h4>
+            <p><span id="download-count">+ '.$downloads.'</span></p>
+        </div>';
+
     } else {
-        $downloads = number_format($downloads, 0, '.', ',');
+        $windowmessage = '
+        <div id="download-stats">
+            <span id="download-count">'.$downloads.'</span>
+        </div>';
     }
 
     $extra_headers .= <<<EXTRA_HEADERS
