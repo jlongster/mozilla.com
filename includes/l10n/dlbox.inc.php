@@ -3,8 +3,14 @@
 include_once $config['file_root'].'/includes/l10n/class.novadownload.php';
 
 $dl_box_id = '';
+$templang = $lang;
 
 switch($pageid) {
+    case 'firefox-features':
+        $dl_box_class   = 'top-right';
+        $dl_box_id      = ' id="download"';
+        $dl_box_options = array('layout' => 'smallbox', 'download_parent_override' => 'download');
+        break;
     case 'firefox':
     default:
         $dl_box_class = 'home-download';

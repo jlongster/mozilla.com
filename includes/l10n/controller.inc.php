@@ -5,6 +5,8 @@ if(isset($retour) && $retour == true) {
     return;
 }
 
+define('UI_LANG', $lang);
+
 // Firefox 4 release
 $fx4released = (LATEST_FIREFOX_RELEASED_VERSION == '4.0') ? true : false;
 
@@ -78,6 +80,7 @@ $sitepages = array(
     'whatsnew-4'        => '4/whatsnew.inc.php',
     'firefox4-rc'       => '4/download-rc.inc.php',
     'MU-fx4'            => '4/majorupdate-v1.inc.php',
+    'firefox-features'  => 'desktop-features.inc.php',
 );
 
 // pages deactivated on production

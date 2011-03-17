@@ -8,8 +8,6 @@ $extra_headers .= <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
-$templang = $lang;
-
 // dl box
 include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
