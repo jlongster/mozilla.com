@@ -29,7 +29,16 @@
     
     /* Set the Locale */
     $locale = $user["user"]["locale"];
-    
+
+    $exceptions = array(
+        "ar_AR" => "ar_JO.utf8",
+        "rm_CH" => "it_CH.utf8"
+    );
+
+    if (array_key_exists($locale, $exceptions)) {
+        $locale = $exceptions[$locale];
+    }
+
     putenv("LC_ALL=" . $locale);
     setlocale(LC_ALL, $locale);
     
@@ -65,12 +74,14 @@
                 <div id="meet" class="firefox4">
                     <?php print gettext("Be part of <span>TEAM FIREFOX</span> and help <span>SPREAD THE WORD</span>!"); ?>
                 </div>
-        		<img src="../images/topGlam.png" class="glam firefox4" />
+			<img src="images/topGlam.png" class="glam firefox4" />
     		<?php }  else { ?>
     		  <div id="downloadButton">
-                <?php print gettext("Firefox 4"); ?>
-                <div id="buttonCTA"><?php print gettext("Free Download"); ?></div>
-                <div id="buttonVersion"><?php print gettext("4.0 for %OS_VERSION%"); ?></div>
+		    <div id="buttonContent">
+                    <?php print gettext("Firefox 4"); ?>
+                    <img src="images/download-arrow.png" />
+                    <span id="buttonCTA"><?php print gettext("Free Download"); ?></span>
+                </div>
               </div>
     		  <div id="meet">
                     <?php print gettext("Meet <span>FIREFOX 4</span>"); ?>
@@ -84,7 +95,7 @@
         		</div>
     		<? } ?>
     		<div id="badgeCTA">
-    		  <?php print gettext("FACEBOOK BADGES -"); ?> 
+		  <?php print gettext("FACEBOOK BADGES -"); ?>
     		  <span><?php print gettext("(Pick a badge and post to your wall)."); ?></span>
     		  <div id="badgeClick">
     		      <?php print gettext("click"); ?>
