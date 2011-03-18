@@ -25,10 +25,6 @@ $textdir          = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 $footerfile       = $config['file_root'].'/includes/l10n/footer-pages.inc.php';
 $headerfile       = $config['file_root'].'/includes/l10n/header-pages.inc.php';
 
-// dummy function to avoid error in code borrowed from mozilla-europe
-function localeConvert($lang) {
-    return $lang;
-}
 
 // include fx4 commodity functions
 include_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";

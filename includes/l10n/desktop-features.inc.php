@@ -2,111 +2,11 @@
 $body_id    = 'firefox-features';
 $html5      = true;
 
-/*
- * format numbers according to national conventions ans localizers preferences
- *
- */
-
-function localeNumberFormat($val) {
-    if(UI_LANG == 'en') {
-        $val = number_format($val, 0, '.', ',');
-    } else {
-        $val = number_format($val, 0, ',', '.');
-    }
-    return $val;
-}
-
-function buildPlatformImageL10n($filename, $alt, $width = null, $height = null,
-                                $class = null, $platforms = array('mac')) {
-        if($platforms == null) { $platforms = array('');}
-        $valid_platforms = array('mac', 'linux', 'xp');
-        $platforms = array_intersect($valid_platforms, $platforms);
-        // reindex array, we expect ordinal indexing later
-        $platforms = array_values($platforms);
-
-        // maps platforms to JavaScript boolean expressions
-        $platform_conditional = array(
-                'mac'     => 'gPlatform == PLATFORM_MACOSX',
-                'linux'   => 'gPlatform == PLATFORM_LINUX',
-                'xp'      => '!gPlatformVista',
-        );
-
-        $filename = minimizeEntities($filename);
-        $filename = escapeForJavaScript($filename);
-
-        $alt = minimizeEntities($alt);
-        $alt = escapeForJavaScript($alt);
-        $alt = str_replace('%', '%%', $alt);
-
-        // build image tag template
-        $image_template = '<img src="%s" alt="' . $alt .'"';
-        if (is_int($width)) {
-                $image_template.= ' width="' . $width . '"';
-        }
-        if (is_int($height)) {
-                $image_template.= ' height="' . $height . '"';
-        }
-        if (is_string($class)) {
-                $class = minimizeEntities($class);
-                $class = escapeForJavaScript($class);
-                $class = str_replace('%', '%%', $class);
-                $image_template.= ' class="' . $class . '"';
-        }
-        $image_template.= ' />';
-
-        // build platform-specific image tags
-        $filename_exp = explode('.', $filename);
-        $extension = array_pop($filename_exp);
-        $base = implode('.', $filename_exp);
-        foreach ($platforms as $platform) {
-            $platform_filename = $base . '-' . $platform . '.' . $extension;
-            // if a linux or mac localized screenshot does not exist, we want to fallback to en-US screenshot
-            if(!file_exists($_SERVER['DOCUMENT_ROOT'].$platform_filename)) {
-                $platform_filename = str_replace('/'.UI_LANG.'/', '/en-US/', $platform_filename);
-            }
-
-            $platform_image[$platform] = sprintf($image_template, $platform_filename);
-        }
-
-        // if a windows localized screenshot does not exist, we want to fallback to en-US screenshot
-        if(!file_exists($_SERVER['DOCUMENT_ROOT'].$filename)) {
-            $filename = str_replace('/'.UI_LANG.'/', '/en-US/', $filename);
-        }
-        $default_image = sprintf($image_template, $filename);
-
-        ob_start();
-
-        if (count($platforms) === 0) {
-                echo $default_image;
-        } else {
-                echo '<script type="text/javascript">// <![CDATA[', "\n";
-
-                foreach ($platforms as $index => $platform) {
-                        if ($index == 0) {
-                                printf("if (%s) {\n\tdocument.write('%s');\n",
-                                        $platform_conditional[$platform],
-                                        $platform_image[$platform]);
-                        } else {
-                                printf("} else if (%s) {\n\tdocument.write('%s');\n",
-                                        $platform_conditional[$platform],
-                                        $platform_image[$platform]);
-                        }
-                }
-
-                printf("} else {\n\tdocument.write('%s');\n}\n",
-                        $default_image);
-
-                echo '// ]]></script><noscript><div style="display: inline;">',
-                        $default_image,
-                        "</div></noscript>";
-        }
-
-        return ob_get_clean();
-}
-
-
 if(!isset($extra_headers)) { $extra_headers = ''; }
 if(!isset($extra_css))     { $extra_css     = ''; }
+
+// commodity functions for localized pages
+include_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
 // dl box
 include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
@@ -236,11 +136,13 @@ $extra_headers .= <<<EXTRA_HEADERS
 EXTRA_HEADERS;
 
 
-require $config['file_root'].'/includes/l10n/header-pages.inc.php';
-
 if($fx4released || $config['server_name'] != 'www.mozilla.com') {
-    require_once $fx4file;
+    include_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
+    include_once $fx4file;
+    include_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';
+} else {
+    goToEnglishPage();
 }
 
-require $config['file_root'].'/includes/l10n/footer-pages.inc.php';
+
 ?>
