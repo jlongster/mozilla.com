@@ -188,7 +188,7 @@ LI_SIDEBAR;
             case 'smallbox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span class="download-content"><span class="download-title">Firefox 3.6</span>{$_download_product}</span></a></li>
+                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span class="download-content"><span class="download-title">{$_wording}</span>{$_download_product}</span></a></li>
 LI_SIDEBAR;
                 break;
 
