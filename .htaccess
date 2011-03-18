@@ -412,6 +412,9 @@ RewriteCond %{REQUEST_URI} !^/img
 RewriteCond %{REQUEST_URI} !^/cdn
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent,NC]
 
+# Bug 638501 redirect /mobile/beta to /mobile
+RewriteRule ^en-US/mobile/beta /en-US/mobile
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
