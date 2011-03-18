@@ -103,6 +103,10 @@ $dynamic_header = <<<DYNAMIC_HEADER
     {$yuicall}
     <style type="text/css">
 
+    html {
+        background-color: #33559B;
+    }
+
     #doc {
         min-height:550px;
         margin-bottom:50px;
