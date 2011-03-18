@@ -182,8 +182,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/2\.0\.0\.\d{1,2}/whatsnew[/]
 
 # System requirements for an arbitrary version go to the major requirements
 # First part of regex matches major (eg 2.0, 3.0, 3.5, 4.0)
-# Second part of regex matches anything (eg b12, rc, .12rc, .0.1)
-# (see bug 586314)
+# Second part of regex matches anything (eg b12, rc, .12rc, .0.1)# (see bug 586314)
 RewriteRule ^(en-US/)?firefox/([0-9]\.[0-9]+)[^/]+/system-requirements(/(?:index.html)?)? /$1firefox/$2/system-requirements$3 [PT,L]
 
 # Just to be safe, we will point anyone looking at the old-style system requirements to 4.0's
@@ -310,7 +309,7 @@ RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 # temporarily removed for Firefox 4 RC and Final (by beltzner)
 #RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
 
-RewriteRule ^en-US/firefox/performance[/]? /en-US/firefox/underthehood/ [R=permanent]
+RewriteRule ^en-US/firefox/underthehood[/]? /en-US/firefox/performance/ [R=permanent]
 
 # bug 629381, /en-US/mobile/maemo -> /en-US/mobile/download/
 RewriteRule ^en-US/mobile/maemo[/]?$ /en-US/mobile/download/ [R=permanent]
@@ -325,7 +324,6 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$
 RewriteRule ^$ /fake-page.html [L]
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/firefox.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/personal.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/upgrade.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/ie.*[/]?$ /$1firefox/ [R=permanent]
@@ -389,28 +387,38 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 # Bug 582721
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
-# Bug 627407
-RewriteRule ^RC[/]?$ /firefox/RC/ [R=permanent,NC]
-RewriteRule ^en-US/firefox/rc$ /en-US/firefox/RC/ [R=301,L]
-RewriteRule ^en-US/firefox/rc/(.*)$ /en-US/firefox/RC/$1 [R=301,L]
+# Bug 640038 redirect all beta and rc links to /firefox
+RewriteRule ^beta/?$ /firefox/ [R=301]
+RewriteRule ^firefox/beta/?$ /firefox/ [R=301]
+RewriteRule ^en-US/firefox/beta/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301]
+RewriteRule ^en-US/firefox/beta/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301]
+RewriteRule ^en-US/firefox/beta/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301]
+RewriteRule ^en-US/firefox/beta(?:/(.*))?$ /en-US/firefox/ [R=301]
 
-# Bug 627407 rename /beta to /RC (previous bug 628826) and bug 633310
-RewriteRule ^beta[/]?$ /firefox/RC/ [R=permanent,NC]
-RewriteRule ^en-US/[firefox]?beta[/]?$ /en-US/firefox/RC/ [R=permanent,NC]
+RewriteRule ^RC/?$ /firefox/ [R=301,NC]
+RewriteRule ^firefox/RC/?$ /firefox/ [R=301,NC]
+RewriteRule ^en-US/firefox/RC/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301,NC]
+RewriteRule ^en-US/firefox/RC/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301,NC]
+RewriteRule ^en-US/firefox/RC/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301,NC]
+RewriteRule ^en-US/firefox/RC(?:/(.*))?$ /en-US/firefox/ [R=301,NC]
 
-# Bug 627423 (remove when Firefox 4 is released)
-RewriteCond %{REQUEST_URI} !system-requirements
-RewriteRule ^en-US/firefox/4\.0/(.*)$ /en-US/firefox/4.0rc2/$1 [PT,L]
+RewriteRule ^en-US/firefox/all-beta.html$ /en-US/firefox/all.html [R=301]
+
+# Bug 640701 redirects stats page to glow
+
+RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
+
+# Bug 629407 Redirect updated ff users to /fx
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/4\.0$
+RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/fx/ [R=302]
+# redirect everyone else to /new
+RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
 
 # Bug 638948 redirect beta privacy policy link
 RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/firefox.html [R=permanent]
 
-# Bug 627407 rename /beta to /RC
-# protect against a few urls that would get caught,
-# /cdn is a link on the trunk site
-RewriteCond %{REQUEST_URI} !^/img
-RewriteCond %{REQUEST_URI} !^/cdn
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta(.*)$ /$1firefox/RC$2 [R=permanent,NC]
+# Bug 638501 redirect /mobile/beta to /mobile
+RewriteRule ^en-US/mobile/beta /en-US/mobile
 
 # Bug 638501 redirect /mobile/beta to /mobile
 RewriteRule ^en-US/mobile/beta /en-US/mobile

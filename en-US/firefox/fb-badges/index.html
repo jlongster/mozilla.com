@@ -1,0 +1,132 @@
+<?php
+    
+    /* App config definitions */
+    require_once("config.php");
+
+    /* default to fx4-beta CDN if none is set */
+    if (empty($config)) $config['static_prefix'] = 'http://www-fx4-cdn.stage.mozilla.com';
+    
+    /* Facebook API */
+    include("lib/facebook.php");
+    
+    /* Init Facebook API */
+    $facebook = new Facebook(array(
+      'appId'  => APP_ID,
+      'secret' => APP_SECRET,
+      'cookie' => true
+    ));
+    
+    /* Get identifying info about the user from FB */
+    $user = $facebook->getSignedRequest();
+
+    /* Redirect them to the tab if they aren't in a tab */
+    if(!$user['page']) {
+        print "<script>top.location = 'http://www.facebook.com/Firefox';</script>";
+    }
+
+    /* Figure out if they are on FF 4 */
+    $firefox4 = preg_match("/Firefox\/4/", $_SERVER['HTTP_USER_AGENT']) ? true : false;
+    
+    /* Set the Locale */
+    $locale = $user["user"]["locale"];
+    
+    putenv("LC_ALL=" . $locale);
+    setlocale(LC_ALL, $locale);
+    
+    bindtextdomain('messages', dirname(__FILE__) . '/locale');
+    bind_textdomain_codeset("messages", "UTF-8");
+    textdomain('messages');
+
+
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Firefox 4 Tab</title>
+		<link rel="stylesheet" type="text/css" href="static/styles.css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="static/main.js"></script>
+		<style type="text/css">
+        /* L10n: Replace this by CSS rules that make things pretty in your locale. */
+        <?php
+            if ( _('custom-css') && (_('custom-css') != 'custom-css') ) {
+                echo _('custom-css');
+            }
+        ?>
+        </style>
+	</head>
+	<?php if($firefox4) { ?>
+	<body class="firefox4">
+	<? } else { ?>
+	<body>
+	<?php } ?>
+    	<div id="tabContent">
+            <?php if($firefox4) { ?>
+                <div id="meet" class="firefox4">
+                    <?php print gettext("Be part of <span>TEAM FIREFOX</span> and help <span>SPREAD THE WORD</span>!"); ?>
+                </div>
+        		<img src="../images/topGlam.png" class="glam firefox4" />
+    		<?php }  else { ?>
+    		  <div id="downloadButton">
+                <?php print gettext("Firefox 4"); ?>
+                <div id="buttonCTA"><?php print gettext("Free Download"); ?></div>
+                <div id="buttonVersion"><?php print gettext("4.0 for %OS_VERSION%"); ?></div>
+              </div>
+    		  <div id="meet">
+                    <?php print gettext("Meet <span>FIREFOX 4</span>"); ?>
+                </div>
+                <div id="slogan">
+                    <?php print gettext("Made to make the Web a better place."); ?>
+                </div>
+        		<img src="images/topGlam.png" class="glam" />
+        		<div id="team">
+        		  <?php print gettext("Be part of <span>TEAM FIREFOX</span> and help <span>SPREAD THE WORD</span>!"); ?>
+        		</div>
+    		<? } ?>
+    		<div id="badgeCTA">
+    		  <?php print gettext("FACEBOOK BADGES -"); ?> 
+    		  <span><?php print gettext("(Pick a badge and post to your wall)."); ?></span>
+    		  <div id="badgeClick">
+    		      <?php print gettext("click"); ?>
+    		      <img src="images/downarrow.png" />
+    		  </div>
+    		</div>
+    		<div id="badges">
+              <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/BetterWeb2.png" class="badge" /></div>
+              <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/TeamFF.png" class="badge" /></div>
+              <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/Firefox4.png" class="badge" /></div>
+              <div class="badgeWrap last"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/IDownloadedFF.png" class="badge" /></div>
+    		</div>
+    		<div id="dots"></div>
+    		<div id="onTwitter">
+    		  <?php print gettext("ARE YOU ON TWITTER?"); ?>
+    		</div>
+    		<div id="tweet">
+    		  <div id="tweetText">
+    		      <?php print gettext("<p id='join'><em>Join the</em></p><p id='fx4'>Firefox 4</p><p id='party'>Twitter Party &raquo;</p>"); ?>
+    		  </div>
+    		</div>
+    		<img src="images/bottomGlam.png" class="glam" />
+    	</div>
+    	<div id="fb-root"></div>
+        <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript">
+            FB.init({
+              appId  : '122300121174636',
+              status : true,
+              cookie : true
+            });
+            $(".badge").click(function(e) {
+                FB.ui({
+                    method: "feed",
+                    name: "<?php print gettext("Mozilla Firefox 4 is here!"); ?>",
+                    link: "http://mozilla.com/firefox",
+                    picture: $(this).attr("src"),
+                    description: "<?php print gettext("Made by a global non-profit dedicated to shaping the future of the Web for the public good, the new Firefox is fresh, super fast and more awesome than ever."); ?>"
+                });
+                
+                e.preventDefault();
+            });
+        </script>
+	</body>
+</html>

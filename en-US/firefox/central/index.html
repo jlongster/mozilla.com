@@ -2,222 +2,287 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title  = 'Getting Started with Firefox';
     $body_id     = 'central';
-    $breadcrumbs = array(
-        $l10n->get('Features') => "/{$lang}/firefox/features/",
-        $l10n->get('Tour')      => "/{$lang}/firefox/tour/",
-    );
     $extra_headers = <<<EXTRA_HEADERS
-
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/getting-started.css" media="screen" />
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
+        <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/getting-started.css" media="screen" />
+        <script src="{$config['static_prefix']}/js/html5.js"></script>
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 4');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
 
 <div id="main-feature">
-    <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/title.png" alt="Firefox 3.6" id="title-logo" />
-    <h2>Meet <span>Your Browser</span></h2>
-</div>
-<div id="screenshot">
-  <div>
-    <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/tour-gradient.png">
-  </div>
-  <!-- Preload screenshots -->
-  <span class="screenshot-overlay-awesomebar"></span>
-  <span class="screenshot-overlay-bookmark"></span>
-  <span class="screenshot-overlay-password"></span>
-  <span class="screenshot-overlay-private"></span>
-  <span class="screenshot-overlay-websiteid"></span>
-  <span class="screenshot-overlay-tabs"></span>
-  <span class="screenshot-overlay-personas"></span>
-  <span class="screenshot-overlay-addons"></span>
-</div>
+<h2>Meet <span>Mozilla Firefox</span></h2>
 
-<div id="feature-list">
-    <ul id="features">
-        <li><a href="#" id="awesomebar">
-            <span class="title">Awesome Bar</span>
-            <span class="desc">Find the sites you love in seconds (without having to remember clunky URLs).</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="bookmark">
-            <span class="title">One-Click Bookmarking</span>
-            <span class="desc">Bookmark, search and organize Web sites quickly and easily.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="password">
-            <span class="title">Password Manager</span>
-            <span class="desc">View all the usernames and passwords that Firefox has saved for you.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="private">
-            <span class="title">Private Browsing</span>
-            <span class="desc">Surf the Web without leaving a single trace.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="websiteid">
-            <span class="title">Instant Web Site ID</span>
-            <span class="desc">Make sure a site is what it claims to be and does what you want it to do.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="tabs">
-            <span class="title">Tabs</span>
-            <span class="desc">Each new site appears as a new tab (not a new window), accessed in one click.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="personas">
-            <span class="title">Personas</span>
-            <span class="desc">Instantly change the look of your Firefox with thousands of easy-to-install themes.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-        <li><a href="#" id="addons">
-            <span class="title">Add-ons</span>
-            <span class="desc">Make your browser work your way with your choice of 6,000 add-ons.</span>
-            <span class="learn">Learn More</span>
-        </a></li>
-    </ul>
-</div>
+<p class="roll-over">Roll over the markers below for feature info</p>
 
-<div id="feature-boxes">
-    <div class="feature-box">
-        <h3>More Firefox <span>Features</span></h3>
-        <p>See everything Firefox has to offer.</p>
-        <a href="/<?=$lang?>/firefox/features/">Learn more »</a>
-    </div>
-    <div class="feature-box">
-        <h3>Take Your Firefox <span>Anywhere</span></h3>
-        <p>The best Web browser has gone mobile!</p>
-        <a href="/<?=$lang?>/mobile/">Firefox on mobile phones »</a>
-    </div>
-    <div class="feature-box" id="search-feature-box">
-        <h3>Need <span>Help?</span></h3>
-        <form action="<?= $config['url_scheme'] ?>://support.mozilla.com/<?=$lang?>/search"  id="support-form">
-			<div class="search-box">
-				<input type="hidden" name="lang" value="<?=$lang?>" />
-				<input id="fsearch-new" name="q" type="text" value="" placeholder="Search Firefox Help">
-				<input type="image" src="<?=$config['static_prefix']?>/img/firefox/all/search-button.png" id="support-submit" alt="Search">
-			</div>
-        </form>
+<div id="figure">
+    <?php echo buildPlatformImage($config['static_prefix'].'/img/covehead/firefox/gettingstarted/screen.png', 'Screenshot', null, null, 'screenshot', array('mac', 'linux'));?>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 560 200" preserveAspectRatio="xMidYMid meet" width="100%" height="100%">
+        <defs>
+        <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <path d="M16.802,0.683c0,0-9.661,142.868,44.197,131.43   c49.807-10.578,13.865-110.09,65.133-102.934c37.108,5.179,29.659,55.828,101.771,83.161   c62.574,23.718,125.838-17.103,62.807-33.148c-50.728-12.914-136.247-52.884-54.084-60.48   c92.236-8.528,103.52,58.502,143.061,44.197c35.339-12.784,32.594-40.535,61.644-41.871c47.754-2.197,25.543,88.557,84.906,89.559   c52.795,0.891,32.566-73.857-36.056-112.239" fill="transparent" stroke="black" stroke-width="0.6" stroke-linecap="round" stroke-dasharray="1 4"/>
+    </svg>
+    <div id="features">
+        <p>Become a Firefox Expert in <span>7</span> Easy Steps:</p>
+        <ul>
+            <li><a href="#" id="get-started">Get started</a></li>
+            <li><a href="#" id="meet-your-browser">Meet Your Browser</a></li>
+            <li><a href="#" id="experience-super-speed">Experience Super Speed</a></li>
+            <li><a href="#" id="stay-in-sync">Stay in Sync</a></li>
+        </ul>
+        <ul>
+            <li><a href="#" id="customize">Customize</a></li>
+            <li><a href="#" id="secure-your-personal-info">Secure Your Personal Info</a></li>
+            <li><a href="#" id="explore-the-cutting-edge">Explore the Cutting Edge</a></li>
+        </ul>
     </div>
 </div>
+<article id="sync" class="tip">
+    <h1>Sync</h1>
+    <p>Sync seamlessly connects your desktop and mobile Firefoxes, so you can access your browsing history, passwords,
+    bookmarks and even open tabs no matter which device you use.</p>
+</article>
+<article id="tabs-on-top" class="tip">
+    <h1>Tabs on Top</h1>
+    <p>Tabs are now located above the Awesome Bar to make it easier to focus on the content of the sites you visit.</p>
+</article>
+<article id="app-tab" class="tip">
+    <h1>App Tab</h1>
+    <p>Take sites you always keep open—like Web mail—off your tab bar and give them a permanent home in your browser.</p>
+</article>
+<article id="switch-to-tab" class="tip">
+    <h1>Switch to Tab</h1>
+    <p>As you’re opening a new tab, Firefox will check to see if you already have that site open. If you do, you’ll be directed to the existing tab so you don’t open a duplicate.</p>
+</article>
+<article id="firefox-menu-button" class="tip">
+    <h1>Firefox Menu Button</h1>
+    <p>All your menu items are now found in a single button for easy access.</p>
+</article>
+<article id="bookmark-button" class="tip">
+    <h1>Bookmark Button</h1>
+    <p>Manage your bookmarks in a single button. Find your favorite links without getting bogged down!</p>
+</article>
+<article id="awesome-bar" class="tip">
+    <h1>Awesome Bar</h1>
+    <p>Get to your favorite sites quickly – even if you don’t remember the URLs. Start typing and the Awesome Bar will include possible matches from your browsing history, bookmarked sites and open tabs.</p>
+</article>
+<article id="private-browsing" class="tip">
+    <h1>Private Browsing</h1>
+    <p>Turn this feature on and protect your browsing history. You can slip in and out of private browsing mode quickly, so it’s easy to go back to what you were doing before as if nothing ever happened.</p>
+</article>
+<article id="password-manager" class="tip">
+    <h1>Password Manager</h1>
+    <p>Firefox can remember your passwords, but does so without intrusive pop-ups. Instead, look for the Remember Password notification integrated seamlessly into your view at the top of the site page.</p>
+</article>
+<article id="instant-website-id" class="tip">
+    <h1>Instant Website ID</h1>
+    <p>Want to be extra sure about a site’s legitimacy before you hand over your personal info? Click on its favicon for an instant identity overview.</p>
+</article>
+<article id="customize-toolbar" class="tip">
+    <h1>Customize Toolbar</h1>
+    <p>You can adjust Firefox’s interface to be exactly the way you like it: re-arrange, organize, add or remove buttons or fields to change your browsing experience however you want.</p>
+</article>
+<article id="addons-manager" class="tip">
+    <h1>Add-ons Manager</h1>
+    <p>The Add-ons Manager lets you discover and install add-ons without ever leaving Firefox. Browse ratings, recommendations, descriptions and pictures of the add-ons in action to help you make your selection.</p>
+</article>
+<article id="personas" class="tip">
+    <h1>Personas</h1>
+    <p>Change the look of your Firefox in a single click with Personas, easy-to-install themes created by users from around the world (or that you make yourself!).</p>
+</article>
 
-<div>
+<article id="overlay-get-started" class="overlay-box">
+    <div class="info">
+        <h1>Get Started</h1>
+        <p>Ready to begin? Good! Getting started with Firefox is actually quite simple – here are a few handy shortcuts to help you get going:</p>
+        <ul>
+            <li><a href="https://support.mozilla.com/kb/Browsing%20basics">Browsing Basics</a></li>
+            <li><a href="https://support.mozilla.com/kb/Importing%20favorites%20and%20other%20data%20from%20Internet%20Explorer">Import bookmarks from another browser</a></li>
+            <li><a href="https://support.mozilla.com/kb/How%20to%20set%20the%20home%20page">Set your home page</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls">
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Browsing-Basics-640.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Browsing-Basics-640.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Browsing-Basics-640.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Browsing-Basics-640.mp4&amp;autoplay=false">
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Browsing-Basics-640.mp4&amp;autoplay=false" />
+                <param name="wmode" value="transparent" />
+                <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
+            </object>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn more about Firefox’s features</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
 
-    <div id="overlay-awesomebar" class="overlay-box"><div class="overlay-inside">
-        <h3>Awesome Bar</h3>
-            <div class="mozilla-video-control">
-            <video width="480" height="270" controls="controls" poster="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/poster-awesomebar.jpg">
-                <source src="http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                <source src="http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.ogv" type='video/ogg; codecs="theora, vorbis"' />
-                <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=firefox/3.5/awesomebar/awesomebar.mp4&amp;autoplay=false">
-                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=firefox/3.5/awesomebar/awesomebar.mp4&amp;autoplay=false" />
+<article id="overlay-meet-your-browser" class="overlay-box">
+    <div class="info">
+        <h1>Meet Your Browser</h1>
+        <p>The Firefox interface has been designed by a team of experts and tested by a community of millions of users around the world to make sure your browsing is as easy and intuitive as possible. Try these links to learn more:</p>
+        <ul>
+            <li><a href="https://support.mozilla.com/kb/what-are-app-tabs">Create an app tab</a></li>
+            <li><a href="http://support.mozilla.com/kb/how-do-i-customize-toolbars">Customize your toolbar</a></li>
+            <li><a href="https://support.mozilla.com/kb/how-do-i-use-bookmarks">Organize your bookmarks</a></li>
+            <li><a href="http://support.mozilla.com/kb/what-are-tab-groups">Manage your tabs with Panorama</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls">
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/uioverview640.mp4&amp;autoplay=false">
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/uioverview640.mp4&amp;autoplay=false" />
+                <param name="wmode" value="transparent" />
+                <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
+            </object>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn about the Firefox interface</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
+
+<article id="overlay-experience-super-speed" class="overlay-box">
+    <div class="info">
+        <h1>Experience Super Speed</h1>
+        <p>We’ve optimized Firefox’s performance to support the way you browse, and with faster start-up times, rapid graphics rendering and improved page load, Firefox is fast in ways you’ll notice instantly.</p>
+        <ul>
+            <li><a href="/firefox/performance/">Go under the hood to find out more</a></li>
+        </ul>
+    </div>
+    <a href="#" class="close">close</a>
+</article>
+
+<article id="overlay-stay-in-sync" class="overlay-box">
+    <div class="info">
+        <h1>Stay in Sync</h1>
+        <p>Life on the go means always browsing with a single device isn’t very feasible. So, we created Sync to give you constant access to your browsing data, including history, passwords, bookmarks and open tabs, no matter what computer or phone you’re using.</p>
+        <ul>
+            <li><a href="https://support.mozilla.com/kb/sync-firefox-between-desktop-and-mobile">Create your Sync account</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls">
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Sync-Instructions-640.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Sync-Instructions-640.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Sync-Instructions-640.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Sync-Instructions-640.mp4&amp;autoplay=false">
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Sync-Instructions-640.mp4&amp;autoplay=false" />
+                <param name="wmode" value="transparent" />
+                <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
+            </object>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn more about Sync</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
+
+<article id="overlay-customize" class="overlay-box">
+    <div class="info">
+        <h1>Customize</h1>
+        <p>When it comes to browsing, one size definitely doesn’t fit all. That’s why we’ve made sure you can customize Firefox to your exact needs in pretty much any possible way. Enhance functionality with extensions, add style with Personas or even change the toolbar icons to be just the way you like.</p>
+        <ul>
+            <li><a href="https://support.mozilla.com/kb/Customizing%20Firefox%20with%20add-ons">Ways to personalize your Firefox</a></li>
+            <li><a href="https://support.mozilla.com/kb/Customizing%20Firefox%20with%20add-ons">How to install an add-on</a></li>
+            <li><a href="http://support.mozilla.com/kb/how-do-i-customize-toolbars">Customize your toolbars</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls" poster="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/poster-getpersonas.jpg">
+                <source src="http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                <source src="http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv" type='video/ogg; codecs="theora, vorbis"' />
+                <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=firefox/3.6/getpersonas.mp4&amp;autoplay=false">
+                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=firefox/3.6/getpersonas.mp4&amp;autoplay=false" />
                     <param name="wmode" value="transparent" />
                     <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
                 </object>
-            </video>
-            </div>
-        <p>A quick way to get to the sites you love—even the ones with addresses you only vaguely remember. Type in term into location bar (aka the Awesome Bar) and the autocomplete function includes possible matching sites from your browsing history, as well as sites you’ve bookmarked and tagged in a drop down.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn more about Personas</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
 
-    <div id="overlay-bookmark" class="overlay-box"><div class="overlay-inside">
-        <h3>One-Click Bookmarking</h3>
-            <div class="mozilla-video-control">
-            <video width="480" height="270" controls="controls" poster="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/poster-bookmarks.jpg">
-                <source src="http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                <source src="http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.ogv" type='video/ogg; codecs="theora, vorbis"' />
-                <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=firefox/3.5/bookmarks/bookmarks.mp4&amp;autoplay=false">
-                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=firefox/3.5/bookmarks/bookmarks.mp4&amp;autoplay=false" />
-                    <param name="wmode" value="transparent" />
-                    <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
-                </object>
-            </video>
-            </div>
-        <p>Manage your bookmarks a lot or a little. One click on the star icon at the end of the location bar bookmarks a site. Two clicks and you can choose where to save it and whether to tag it. File bookmarked sites in easy-to-access folders and organize according to theme (like “job search” or “favorite shopping”). Find your bookmarked sites in a flash by entering the tag, page or bookmark name into the location bar. The more you use your tags and bookmark names in the location bar, the more the system will adapt to your preferences.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
+<article id="overlay-secure-your-personal-info" class="overlay-box">
+    <div class="info">
+        <h1>Secure Your Personal Info</h1>
+        <p>We’ve packed Firefox with highly advanced security features to keep you safe while you browse. And, as a non-profit organization, protecting your privacy by keeping you in control over your personal information is a key part of our mission.</p>
+        <ul>
+            <li><a href="http://support.mozilla.com/kb/Site+Identity+Button">Instant Web ID</a></li>
+            <li><a href="http://support.mozilla.com/kb/how-do-i-stop-websites-tracking-me">Do not Track</a></li>
+            <li><a href="http://support.mozilla.com/kb/Private%20Browsing">Private Browsing</a></li>
+            <li><a href="http://support.mozilla.com/kb/Clear%20Recent%20History">Clear Recent History</a></li>
+            <li><a href="http://support.mozilla.com/kb/Options%20window%20-%20Security%20panel">Customized Security Setting</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls">
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/privatebrowsing640.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/privatebrowsing640.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/privatebrowsing640.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/privatebrowsing640.mp4&amp;autoplay=false">
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/privatebrowsing640.mp4&amp;autoplay=false" />
+                <param name="wmode" value="transparent" />
+                <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
+            </object>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn more about Firefox’s security features</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
 
-    <div id="overlay-password" class="overlay-box"><div class="overlay-inside">
-        <h3>Password Manager</h3>
-        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/overlay-password.jpg" alt="Password screenshot" height="271" width="350" />
-        <p>We’ve seamlessly integrated this feature into your surfing experience. Choose to remember site passwords without intrusive pop-ups. Now you’ll see the “remember password” notification integrated into your view at the top of the site page.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-    <div id="overlay-private" class="overlay-box"><div class="overlay-inside">
-        <h3>Private Browsing</h3>
-        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/overlay-private.jpg" alt="Private Browsing screenshot" height="296" width="434" />
-        <p>Sometimes it’s nice to go undercover, so turn this feature on and protect your browsing history. You can slip in and out of private browsing mode quickly, so it’s easy to go back to what you were doing before as if nothing ever happened. It’s great if you’re doing your online banking on a shared computer or checking email from an Internet café.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-    <div id="overlay-websiteid" class="overlay-box"><div class="overlay-inside">
-        <h3>Instant Web Site ID</h3>
-        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/overlay-websiteid.jpg" alt="Web Site ID screenshot" height="252" width="425" />
-        <p>Want to be extra sure about a site’s legitimacy before you make a purchase? Click on a site favicon for an instant identity overview. Another click digs deeper: how many times have you visited? Are your passwords saved? Check up on suspicious sites, avoid Web forgeries and make sure a site is what it claims to be.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-    <div id="overlay-tabs" class="overlay-box"><div class="overlay-inside">
-        <h3>Tabs</h3>
-        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/overlay-tabs.jpg" alt="Tabs screenshot" height="249" width="412" />
-        <p>At first glance, they look like little labels living above the site you’re currently visiting. But they are a brilliant way to browse multiple sites at once. Simple and easy, you can think of them as the electronic version of a well kept filing cabinet, with the tabs as the dividers and the sites as the content kept in folders. Each new site appears as a new tab (not a new window) and can be accessed in one click.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-    <div id="overlay-personas" class="overlay-box"><div class="overlay-inside">
-        <h3>Personas</h3>
-            <div class="mozilla-video-control">
-            <video width="480" height="270" controls="controls" poster="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/poster-getpersonas.jpg">
-                    <source src="http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-                    <source src="http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv" type='video/ogg; codecs="theora, vorbis"' />
-                    <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=firefox/3.6/getpersonas.mp4&amp;autoplay=false">
-                        <param name="movie" value="/includes/flash/playerWithControls.swf?flv=firefox/3.6/getpersonas.mp4&amp;autoplay=false" />
-                        <param name="wmode" value="transparent" />
-                        <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
-                    </object>
-            </video>
-            </div>
-        <p>Personas are easy-to-install, easy-to-use themes that change the look of your Firefox web browser. There are thousands of Personas to choose from, with more added every day. Click <a href="http://www.getpersonas.com/gallery">here</a> to visit the Personas gallery and start looking for designs that fit your style.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-    <div id="overlay-addons" class="overlay-box"><div class="overlay-inside">
-        <h3>Add-ons</h3>
-        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/gettingstarted/overlay-addons.jpg" alt="Add-ons screenshot" height="277" width="407" />
-        <p>The sky’s the limit with a growing library of over 6,000 Firefox add-ons, little extras you choose to download and install for a browser that works your way. Manage online auctions, upload digital photos, see the weather forecast in a glance and listen to music all from the convenience of your browser. If you’re not sure where to begin, try groups of add-ons assembled around common topics like travel, web development or social networking.</p>
-        <p><a href="/<?=$lang?>/firefox/features/">See More Firefox Features</a></p>
-        <a href="#" class="close">close</a>
-    </div></div>
-
-</div>
-<script>
-$(".overlay-box img").each(function (i, item) {
-    $(item).attr('original', $(item).attr('src'));
-    $(item).removeAttr('src');
-});
-$(window).load(function () {
-    $(".overlay-box img").each(function (i, item) {
-        $(item).attr('src', $(item).attr('original'));
-    });
-});
-</script>
+<article id="overlay-explore-the-cutting-edge" class="overlay-box">
+    <div class="info">
+        <h1>Explore The Cutting Edge</h1>
+        <p>As part of our mission to make the Web better, Firefox supports the latest and greatest technology like HTML5 to make sure you can enjoy the most innovative and advanced sites out there. Be sure to check out our demo gallery for some examples of what the modern Web can do.</p>
+        <ul>
+            <li><a href="http://www.webofwonder.org">Web O’ Wonder demo gallery</a></li>
+            <li><a href="/firefox/technology">More about Firefox technology</a></li>
+            <li><a href="https://developer.mozilla.org">Mozilla Developer Network</a></li>
+        </ul>
+    </div>
+    <figure class="figure">
+        <div class="mozilla-video-control">
+        <video width="480" height="270" controls="controls">
+            <source src=" http://videos-cdn.mozilla.net/serv/marketing/firefox4/Cutting-Edge-640.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Cutting-Edge-640.webm" type='video/webm; codecs="vp8, vorbis"' />
+            <source src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/Cutting-Edge-640.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+            <object type="application/x-shockwave-flash" style="width: 480px; height: 270px;" data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Cutting-Edge-640.mp4&amp;autoplay=false">
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/Cutting-Edge-640.mp4&amp;autoplay=false" />
+                <param name="wmode" value="transparent" />
+                <div class="video-player-no-flash">This video requires a browser with support for open video or Flash.</div>
+            </object>
+        </video>
+        </div>
+        <figcaption class="figcaption">Learn more about Firefox’s technology</figcaption>
+    </figure>
+    <a href="#" class="close">close</a>
+</article>
 
 <?php
     $extra_footers = <<<EXTRA_FOOTERS
-    <script src="{$config['static_prefix']}/js/mozilla-input-placeholder.js"></script>
-    <script src="{$config['static_prefix']}/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-    <script src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
-    <script src="{$config['static_prefix']}/includes/yui/2.5.1/container/container-min.js"></script>
-    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
     <script src="{$config['static_prefix']}/js/mozilla-getting-started-page.js"></script>
+    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
 EXTRA_FOOTERS;
 
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";

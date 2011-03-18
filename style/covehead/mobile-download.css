@@ -4,7 +4,7 @@
   overflow: hidden;
   margin: 0 30px 20px 30px;
   background: url(/img/covehead/divider-main-reverse.jpg) no-repeat center 100%;
-  padding: 0 0 20px 0;
+  padding: 0;
 }
 
 #platforms .platform {
@@ -45,6 +45,10 @@
   background: url(/img/mobile/device-n900.jpg) 0 0 no-repeat;
 }
 
+#platforms #nokia p {
+    font-size: 15px;
+}
+
 .platform h3 {
   line-height: 0.9;
   margin: 0 0 20px;
@@ -55,8 +59,15 @@
   color: #447bc4;
 }
 
-.platform .notes {
+#platforms #android .notes {
   font-size: 90%; zoom: 1;
+    text-align: left;
+}
+
+#main-content .notes {
+  font-size: 90%; zoom: 1;
+    text-align: center;
+    color: #999;
 }
 
 .platform .dl {
@@ -136,7 +147,7 @@
 .platform .dl a:visited {
 	width: 240px;
 	font-family: "Trebuchet MS", sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	display: block;
 	-moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
@@ -156,12 +167,23 @@
 	transition:        box-shadow 0.2s ease-in-out;
 }
 
-.platform .dl a span {
+.platform .dl a span.title {
 	display: block;
 	background: url(/img/firefox/download-arrow.png) 10px 14px no-repeat;
-	padding: 8px 8px 8px 30px;
+	padding: 8px 8px 0 30px;
 }
 
+.platform .dl a span.desc {
+	display: block;
+	padding: 0 8px 8px 30px;
+    font-size: 11px;
+    color: #ddecd2;
+}
+
+
+.platform .dl a:hover span.title {
+    text-decoration: underline;
+}
 
 .platform .dl a:hover,
 .platform .dl a:active {
@@ -171,6 +193,7 @@
 	-moz-transition:    box-shadow 0.2s ease-in-out;
 	-webkit-transition: box-shadow 0.2s ease-in-out;
 	transition:         box-shadow 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 /* }}} */

@@ -78,7 +78,7 @@ class MozillaCom_MenuData
             'items' => array(
 
                 'menu_features' => array(
-                    'title' => 'Features',
+                    'title' => 'Desktop',
                     'href'  => "/{$this->lang}/firefox/features/",
                     'items' => array(
                         'submenu_features' => array(
@@ -96,6 +96,10 @@ class MozillaCom_MenuData
                         'submenu_customization' => array(
                             'title' => 'Customization',
                             'href'  => "/{$this->lang}/firefox/customize/",
+                        ),
+                        'submenu_technology' => array(
+                            'title' => 'Technology',
+                            'href'  => "/{$this->lang}/firefox/technology/",
                         ),
                         'submenu_video' => array(
                             'title' => 'Videos',
@@ -224,6 +228,10 @@ class MozillaCom_MenuData
                         'submenu_about_firefox' => array(
                             'title' => 'About Firefox',
                             'href'  => "/{$this->lang}/about/",
+                        ),
+                        'submenu_about_join' => array(
+                            'title' => 'Join Mozilla',
+                            'href'  => "http://www.mozilla.org/join",
                         ),
                         'submenu_about_participate' => array(
                             'title' => 'Participate',

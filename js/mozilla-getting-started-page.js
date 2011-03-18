@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('<div id="overlay" />').appendTo('body');
 
-	$('#features > li > a')
+	$('#features li a')
 		.click(function(e) {
 			e.preventDefault();
 			$('#overlay')
@@ -12,25 +12,20 @@ $(document).ready(function() {
 			var height = $('#overlay-' + this.id).height();
 			var docWidth = $(document).width();
 			var viewHeight = $(window).height();
+			
 
-			$('#overlay-' + this.id)
-				.appendTo('body')
+			var $overlay = $('#overlay-' + this.id);
+			var top = ((viewHeight - height) / 2);
+			if ($overlay.css('position') == 'absolute') {
+			  top += $(window).scrollTop();
+			}
+			$overlay.appendTo('body')
 				.css('display', 'block')
-				.css('top', ((viewHeight - height) / 2) + 'px')
+				.css('top', top + 'px')
 				.css('left', ((docWidth - width) / 2) + 'px')
 		});
 
-	$('#features > li')
-		.hover(function() {
-			var id = $('a', this)[0].id;
-			$('#screenshot > div')
-				.addClass('screenshot-overlay-' + id);
-		}, function () {
-			$('#screenshot > div')
-				.removeClass();
-		});
-
-	$('#overlay,.overlay-box > div > .close').click(function(e) {
+	$('#overlay,.overlay-box .close').click(function(e) {
 		e.preventDefault();
 		$('.overlay-box').each(function() {
 			$(this).css('display', 'none');
@@ -42,5 +37,112 @@ $(document).ready(function() {
 			}
 		});
 	});
+  var tips = {}
+  tips[PLATFORM_WINDOWS] = [
+      {'left': 77, 'top': 73, 'id': 'firefox-menu-button'},
+      {'left': 28, 'top': 105, 'id': 'app-tab'},
+      {'left': 37, 'top': 137, 'id': 'private-browsing', 'direction': 'up'},
+      {'left': 88, 'top': 137, 'id': 'instant-website-id', 'direction': 'up'},
+      {'left': 155, 'top': 105, 'id': 'tabs-on-top'},
+      {'left': 345, 'top': 137, 'id': 'awesome-bar', 'direction': 'up'},
+      {'left': 355, 'top': 105, 'id': 'addons-manager'},
+      {'left': 510, 'top': 137, 'id': 'switch-to-tab', 'direction': 'up'},
+      {'left': 575, 'top': 105, 'id': 'password-manager'},
+      {'left': 695, 'top': 105, 'id': 'customize-toolbar'},
+      {'left': 805, 'top': 105, 'id': 'personas'},
+      {'left': 920, 'top': 137, 'id': 'bookmark-button', 'direction': 'up'},
+      {'left': 928, 'top': 105, 'id': 'sync'}
+  ];
+  tips[PLATFORM_MACOSX] = [
+      {'left': 18, 'top': 105, 'id': 'app-tab'},
+      {'left': 37, 'top': 137, 'id': 'private-browsing', 'direction': 'up'},
+      {'left': 80, 'top': 137, 'id': 'instant-website-id', 'direction': 'up'},
+      {'left': 155, 'top': 105, 'id': 'tabs-on-top'},
+      {'left': 345, 'top': 137, 'id': 'awesome-bar', 'direction': 'up'},
+      {'left': 355, 'top': 105, 'id': 'addons-manager'},
+      {'left': 510, 'top': 137, 'id': 'switch-to-tab', 'direction': 'up'},
+      {'left': 575, 'top': 105, 'id': 'password-manager'},
+      {'left': 695, 'top': 105, 'id': 'customize-toolbar'},
+      {'left': 805, 'top': 105, 'id': 'personas'},
+      {'left': 920, 'top': 137, 'id': 'bookmark-button', 'direction': 'up'},
+      {'left': 928, 'top': 105, 'id': 'sync'}
+  ];
+  tips[PLATFORM_LINUX] = [
+      {'left': 18, 'top': 130, 'id': 'app-tab'},
+      {'left': 37, 'top': 170, 'id': 'private-browsing', 'direction': 'up'},
+      {'left': 91, 'top': 170, 'id': 'instant-website-id', 'direction': 'up'},
+      {'left': 155, 'top': 130, 'id': 'tabs-on-top'},
+      {'left': 345, 'top': 170, 'id': 'awesome-bar', 'direction': 'up'},
+      {'left': 355, 'top': 130, 'id': 'addons-manager'},
+      {'left': 510, 'top': 170, 'id': 'switch-to-tab', 'direction': 'up'},
+      {'left': 575, 'top': 130, 'id': 'password-manager'},
+      {'left': 695, 'top': 130, 'id': 'customize-toolbar'},
+      {'left': 805, 'top': 130, 'id': 'personas'},
+      {'left': 920, 'top': 170, 'id': 'bookmark-button', 'direction': 'up'},
+      {'left': 928, 'top': 130, 'id': 'sync'}
+  ];
+
+
+    var tipWidth = 500;
+    var sceneWidth = 950;
+
+    $(tips[gPlatform]).each(function (index, tip) {
+        drawTip(tip);
+    })
+    addHandlers();
+
+    function addHandlers() {
+        $('.tip-container').bind('focusin mouseenter', function () {
+            var $this = $(this);
+            $this.siblings().focusout();
+            $this.children('.arrow, .tip')
+                .css({'display': 'block'})
+                .animate({'opacity': 1}, 300);
+            $this.children('.callout')
+                .focus()
+                .animate({'opacity': 0}, 300);
+        }).bind('focusout mouseleave', function () {
+            var $this = $(this);
+            $this.children('.arrow, .tip')
+                .animate({'opacity': 0}, 300, function () {
+                    $(this).css({'display': 'none'});
+                });
+            $this.children('.callout')
+                .animate({'opacity': 1}, 300);
+        });
+
+    }
+
+    function drawTip(tip) {
+        var $container = $(document.createElement('div'));
+        $container.addClass('tip-container');
+        if (tip.direction == 'up') {
+            $container.addClass('up');
+        }
+
+        var $callout = $(document.createElement('span'));
+        $callout.addClass('callout')
+        $callout.attr('tabindex', 0);
+        $callout.css({'left': tip.left, 'top': tip.top});
+        $container.append($callout);
+
+        var $tip = $('#' + tip.id);        
+        var left = Math.max(tip.left - (tipWidth/2), 0);
+        if (left + tipWidth > sceneWidth) {
+            left = sceneWidth - tipWidth;
+        }
+        $tip.css({'left': left, 'top': tip.top, 'opacity': 0, 'display': 'none'});
+        $container.append($tip);
+
+        var $arrow = $(document.createElement('span'));
+        $arrow.addClass('arrow');
+        $arrow.css({'left': tip.left, 'top': tip.top, 'opacity': 0, 'display': 'none'});
+        $container.append($arrow);
+
+        $tip.removeAttr('id');
+        $container.attr('id', tip.id);
+
+        $('#figure').append($container);
+    }
 
 });

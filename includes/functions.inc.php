@@ -398,6 +398,8 @@ function buildPlatformImage($filename, $alt, $width = null, $height = null,
 {
     $valid_platforms = array('mac', 'linux', 'xp');
     $platforms = array_intersect($valid_platforms, $platforms);
+    // reindex array, we expect ordinal indexing later
+    $platforms = array_values($platforms);
 
     // maps platforms to JavaScript boolean expressions
     $platform_conditional = array(

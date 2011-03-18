@@ -13,7 +13,7 @@ EXTRA_HEADERS;
 ?>
 
 <div id="main-feature">
-    <h2>Good news! Your Firefox is up-to-date. <span>Go beyond basic browsing</span></h2>
+    <h2>Good news! Your Firefox is up to date. <span>Discover More Awesome</span></h2>
 
     <div id="wheel-frame" class="a">
         <span id="spin" onclick="javascript:window.switchPage()">
@@ -22,18 +22,10 @@ EXTRA_HEADERS;
         <div id="wheel" onclick="javascript:window.switchPage()">
             <div id="section-a" class="section">Mobile</div>
             <div id="section-b" class="section">Add-ons</div>
-            <div id="section-c" class="section">Personas</div>
+            <div id="section-c" class="section">New Look</div>
         </div>
         <img src="<?=$config['static_prefix']?>/img/covehead/firefox/fx/stand.png" alt="" id="wheel-stand">
         <div id="wheel-creature"></div>
-        <div id="wheel-bubble">
-            <div>
-                <p class="feature-default">Spin the Wheel of Firefox!</p>
-                <p class="feature-a">Firefox, Now in Pocket-size</p>
-                <p class="feature-b">Make Browsing even Better!</p>
-                <p class="feature-c">Change how Firefox Looks!</p>
-            </div>
-        </div>
         <div id="wheel-panel" class="pager pager-no-history">
 
             <div class="pager-content">
@@ -48,10 +40,10 @@ EXTRA_HEADERS;
                         <li>Customize with add-ons</li>
                         <li>Type less, browse more</li>
                     </ul>
-                    <p><a href="/<?=$lang?>/mobile/download/" 
+                    <p><a href="/<?=$lang?>/mobile/download/"
                           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                                  'DCS.dcsuri', '/<?=$lang?>/mobile/download/',
-                                                 'WT.ti', 'Link: Get Firefox on your Phone'',
+                                                 'WT.ti', 'Link: Get Firefox on your Phone',
                                                  'WT.dl', 99,
                                                  'WT.nv', 'Wheel - Mobile',
                                                  'WT.ac', 'Mobile');">
@@ -63,7 +55,7 @@ EXTRA_HEADERS;
                     <script>// <![CDATA[
                     document.getElementById('feature-c').id = 'page-feature-c';
                     // ]]></script>
-                    <h3>Get More <span>From Your Firefox</span></h3>
+                    <h3>Make Your Firefox <span>Supercharged</span></h3>
                     <ul>
                         <li id="addon-invisiblehand">
                             <a href="https://addons.mozilla.org/en-US/firefox/addon/11377/?src=mozcom-wheel"
@@ -117,21 +109,9 @@ EXTRA_HEADERS;
                     <script>// <![CDATA[
                     document.getElementById('feature-b').id = 'page-feature-b';
                     // ]]></script>
-                    <h3>Roll Over to Try, <span>Click to Apply</span></h3>
-                    <iframe
-                        src="<?= $config['url_scheme'] ?>://www.getpersonas.com/en-US/external/mozilla/firstrun.php"
-                        width="330"
-                        height="185">
-                        </iframe>
-                        <p><a href="http://www.getpersonas.com/gallery?source=moz.com_fx"
-                              onclick="dcsMultiTrack('DCS.dcssip', 'www.getpersonas.com',
-                                                     'DCS.dcsuri', '/en-US/gallery', 
-                                                     'WT.ti', 'Link: Get All Personas',
-                                                     'WT.dl', 99,
-                                                     'WT.nv', 'Wheel - Personas',
-                                                     'WT.ac', 'Personas');">
-                            Many more this way »
-                        </a></p>
+                    <h3>Browsing <span>Made Easy</span></h3>
+                    <p>Firefox 4 has been designed by a team of experts and tested by millions of users around the world to make sure your browsing as intuitive and easy as possible.</p>
+                    <a href="/<?=$lang?>/firefox/central/">Take the Tour »</a>
                 </div>
 
             </div>
@@ -148,67 +128,39 @@ EXTRA_HEADERS;
         <h3>Get <span>Firefox</span></h3>
         <p>If you need a fresh new copy of Firefox, you can get it here:</p>
         <div id="home-fx-download">
-        <script src="/js/download.old.js"></script>
-        <script>
-            <!--
-            // Configure the Firefox download write script
-
-            var gDownloadTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/en-US/products/download.html', 'WT.ti', 'Link: Get Firefox', 'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Download Firefox');";
-            
-            var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 3.6 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
-            var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
-
-            document.writeln("<ul class=\"home-download " + gCssClass + " \">");
-            writeDownloadItems("fx");
-            document.writeln("<\/ul>");
-            document.writeln("<div class=\"download-other\">");
-            document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
-            document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
-            document.writeln("<\/div>");
-            //-->
-        </script>
-        <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang); ?>
+        <script src="/js/download.js"></script>
+        <?php
+            $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'home-fx-download', '_include_js' => true, 'download_product' => 'Firefox 4');
+            echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+            echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+        ?>
         </div>
     </div>
 
     <div class="sub-feature" id="sub-participate">
-        <h3>Easy Ways To <span>Pass It On</span></h3>
-        <p>Telling your friends only takes a minute!</p>
-        <a href="/<?=$lang?>/about/participate/" onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                                                        'DCS.dcsuri', '/<?=$lang?>/about/participate/',
-                                                                        'WT.ti', 'Link: Share Firefox',
+        <h3>Be Part Of <span>Team Firefox</span></h3>
+        <p>Help us share Firefox 4 with the world.</p>
+        <a href="http://glow.mozilla.org/" onclick="dcsMultiTrack('DCS.dcssip', 'glow.mozilla.org',
+                                                                        'DCS.dcsuri', '/',
+                                                                        'WT.ti', 'Link: Global map',
                                                                         'WT.dl', 99,
                                                                         'WT.nv', 'Content',
-                                                                        'WT.ac', 'Participate');">
-          Share Firefox <span>»</span>
-        </a>
-    </div>
-
-    <div class="sub-feature" id="sub-features">
-        <h3>Amazing <span>Features</span></h3>
-        <p>Get acquainted with everything Firefox has to offer.</p>
-        <a href="/<?=$lang?>/firefox/features/" onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                                                       'DCS.dcsuri', '/<?=$lang?>/firefox/features/',
-                                                                       'WT.ti', 'Link: Amazing Features',
-                                                                       'WT.dl', 99,
-                                                                       'WT.nv', 'Content',
-                                                                       'WT.ac', 'Amazing Features');">
-          Learn More <span>»</span>
+                                                                        'WT.ac', 'Global Map');">
+          View global map <span>»</span>
         </a>
     </div>
 
     <div class="sub-feature" id="sub-support">
-        <h3>Need <span>Help?</span></h3>
-        <p>Our Support section has the answers you need.</p>
-        <a href="http://support.mozilla.com/<?=$lang?>/kb/" 
-           onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com', 
-                                  'DCS.dcsuri', '/<?=$lang?>/home/', 
-                                  'WT.ti', 'Link: Need Help',
+        <h3>Amazing Demos: <span>Web O’ Wonder</span></h3>
+        <p>See what the modern Web is capable of!</p>
+        <a href="https://demos.mozilla.org/" 
+           onclick="dcsMultiTrack('DCS.dcssip', 'demos.mozilla.org', 
+                                  'DCS.dcsuri', '/', 
+                                  'WT.ti', 'Link: Visit Web o Wonder',
                                   'WT.dl', 99,
                                   'WT.nv', 'Content',
-                                  'WT.ac', 'Need Help');">
-          Visit Support <span>»</span>
+                                  'WT.ac', 'Web o Wonder');">
+           Visit Web o’ Wonder <span>»</span>
         </a>
     </div>
 
@@ -227,12 +179,6 @@ EXTRA_HEADERS;
         var wheel       = document.getElementById('wheel');
         var \$wheel     = \$(wheel);
         var page        = 0;
-		var bubble      = document.getElementById('wheel-bubble').firstChild;
-		while (bubble.nodeType != 1 && bubble.nextSibling) {
-			bubble = bubble.nextSibling;
-		}
-		var \$bubble    = $(bubble);
-		var \$bubbles   = $('#wheel-bubble p');
 
         var useTransitions = false;
         (function() {
@@ -272,26 +218,10 @@ EXTRA_HEADERS;
                 showPanel,
                 true
             );
-
-			bubble.addEventListener(
-                'webkitTransitionEnd',
-                showBubble,
-                true
-			);
-
-			bubble.addEventListener(
-                'transitionend',
-                showBubble,
-                true
-			);
         } else {
             wheel.addEvent(
                 'transitionend',
                 showPanel
-            );
-            bubble.addEvent(
-                'transitionend',
-                showBubble
             );
         }
 
@@ -310,31 +240,9 @@ EXTRA_HEADERS;
             }
         }
 
-		function showBubble()
-		{
-			\$bubbles.css('display', 'none');
-			\$(\$bubbles.get(page + 1)).css('display', 'block');
-
-           if (useTransitions) {
-                \$bubble.css('opacity', 1.0);
-            } else {
-                \$bubble.animate({ opacity: 1.0 }, 200);
-            }
-		}
-
-		function hideBubble()
-		{
-            if (useTransitions) {
-                \$bubble.css('opacity', 0);
-            } else {
-                \$bubble.animate({ opacity: 0.0 }, 200, 'linear', showBubble);
-            }
-		}
-
         function switchPage()
         {
             hidePanel();
-            hideBubble();
             spinWheel();
 
             if(\$container.hasClass('a')) {

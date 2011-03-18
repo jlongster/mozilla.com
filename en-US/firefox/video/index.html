@@ -2,406 +2,444 @@
 
     $_FLASH_PLAYER_CONTROLS_HEIGHT = 28;
 
-	/**
-	 * Videos data array
-	 *
-	 * Duration is measured in seconds.
-	 *
-	 * @var array
-	 */
-	$_videos = array(
-		// {{{ video array
+    /**
+     * Videos data array
+     *
+     * Duration is measured in seconds.
+     *
+     * @var array
+     */
+    $_videos = array(
+        // {{{ Firefox Desktop
+        array(
+            'title'  => 'Firefox Desktop',
+            'videos' => array(
+                'fx4-features' => array(
+                    'title'        => 'Firefox 4 Features',
+                    'description'  => 'Learn about our new look, super speed and even more awesomeness. (Video by JESS3)',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-features.jpg',
+                    'flv_filename' => '/serv/marketing/firefox4/FF4_Jess3Features_VO_1.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 60,
+                ),
+                'fx4-whatsnew' => array(
+                    'title'        => 'What’s New in Firefox 4',
+                    'description'  => 'Get an overview of what makes our latest version our best yet.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-whatsnew.jpg',
+                    'flv_filename' => 'serv/marketing/firefox4/WN-Desktop-V2_640.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Desktop-V2_640.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Desktop-V2_640.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Desktop-V2_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 185,
+                ),
+                'fx4-ui' => array(
+                    'title'        => 'User Interface Overview',
+                    'description'  => 'Take a tour of the new user interface in Firefox 4.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-ui.jpg',
+                    'flv_filename' => 'serv/marketing/firefox4/uioverview640.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/uioverview640_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 157,
+                ),
+                'fx4-tutorial' => array(
+                    'title'        => 'User Interface Tutorial',
+                    'description'  => 'Go deeper into the new user interface with a step-by-step tutorial.',
+                    'thumbnail'    => '/img/covehead/video/icon-meet-3.5.png',
+                    'flv_filename' => 'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                    'sources'      => array(
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 105,
+                ),
+                'fx4-latest' => array(
+                    'title'        => 'Browse the Future',
+                    'description'  => 'See how the latest technologies give you the greatest online experience.',
+                    'thumbnail'    => '/img/covehead/video/icon-meet-3.5.png',
+                    'flv_filename' => 'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                    'sources'      => array(
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 105,
+                ),
+                'personas' => array(
+                    'title'        => 'Your Firefox, Your Style',
+                    'description'  => 'What’s your style? Make your Firefox your own with Personas.',
+                    'thumbnail'    => '/img/covehead/video/icon-personas.png',
+                    'flv_filename' => 'firefox/3.6/getpersonas.mp4',
+                    'sources'      => array(
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4',
+                            'type' => 'video/mp4;',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 67,
+                ),
+            ),
+        ),
 
-		'about-firefox' => array(
-			'title'        => 'Meet Firefox',
-			'description'  => 'A quick overview of what makes Mozilla’s latest browser so great.',
-			'thumbnail'    => '/img/covehead/video/icon-meet-3.5.png',
-			'flv_filename' => 'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 105,
-		),
-		'whatsnew-3.6' => array(
-			'title'        => 'What’s New in Firefox 3.6',
-			'description'  => 'Mike Beltzner gives a quick tour of Firefox 3.6’s new features.',
-			'thumbnail'    => '/img/covehead/video/icon-whatsnew-3.6.png',
-			'flv_filename' => 'firefox/3.6/whatsnewin36.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/whatsnewin36.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 130,
-		),
-		'personas' => array(
-			'title'        => 'Your Firefox, Your Style',
-			'description'  => 'What’s your style? Make your Firefox your own with Personas.',
-			'thumbnail'    => '/img/covehead/video/icon-personas.png',
-			'flv_filename' => 'firefox/3.6/getpersonas.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/getpersonas.mp4',
-					'type' => 'video/mp4;',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 67,
-		),
-		'choice' => array(
-			'title'        => 'Open to Choice',
-			'description'  => 'John Lilly talks about the importance of browser choice.',
-			'thumbnail'    => '/img/covehead/video/icon-choice.png',
-			'flv_filename' => 'firefox/3.6/John_Lilly_about_Opentochoice.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/John_Lilly_about_Opentochoice.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/John_Lilly_about_Opentochoice.mp4',
-					'type' => 'video/mp4;',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 102,
-		),
-		'about-mobile' => array(
-			'title'        => 'Meet Firefox for Your Mobile Phone',
-			'description'  => 'Learn how Firefox brings the Web to your phone.',
-			'thumbnail'    => '/img/covehead/video/icon-mobile.png',
-			'flv_filename' => 'serv/mobile/firefox-mobile.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-large.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4',
-					'type' => 'video/mp4;',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 160,
-    ),
-    'meet-mobile-beta' => array(
-			'title'        => 'Meet Firefox 4 beta for mobile',
-			'description'  => 'Hear from the team and check out the new features of Firefox 4 beta for mobile',
-			'thumbnail'    => '/img/covehead/video/icon-mobile-beta.png',
-			'flv_filename' => 'serv/mobile/firefox-mobile.mp4',
-			'sources'      => array(
-				'webm' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.webm',
-					'type' => 'video/webm',
-				),
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.theora.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.mp4',
-					'type' => 'video/mp4;',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 175,
-    ),
-		'performance-3.5' => array(
-			'title'        => 'Performance',
-			'description'  => 'Chris Blizzard shows Firefox 3.6’s speed in a side-by-side test.',
-			'thumbnail'    => '/img/covehead/video/icon-performance-3.5.png',
-			'flv_filename' => 'firefox/3.6/performance/fx36performancedemo.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/performance/fx36performancedemo.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/performance/fx36performancedemo.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 106,
-		),
-		'security' => array(
-			'title'        => 'Security',
-			'description'  => 'Johnathan Nightingale shows off Firefox’s security features.',
-			'thumbnail'    => '/img/covehead/video/icon-security.png',
-			'flv_filename' => 'firefox/3.5/security/security.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/security/security.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/security/security.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 348,
-		),
-		'awesomebar' => array(
-			'title'        => 'Awesome Bar',
-			'description'  => 'Seth Spitzer explains how to get the most out of the Awesome Bar.',
-			'thumbnail'    => '/img/covehead/video/icon-awesome-bar.png',
-			'flv_filename' => 'firefox/3.5/awesomebar/awesomebar.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/awesomebar/awesomebar.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 53,
-		),
-		'privacy' => array(
-			'title'        => 'Privacy',
-			'description'  => 'Drew Willcoxon explains the privacy features in Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-privacy.png',
-			'flv_filename' => 'firefox/3.5/privacy/privacy.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/privacy/privacy.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/privacy/privacy.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 185,
-		),
-		'tabs' => array(
-			'title'        => 'Tabs',
-			'description'  => 'Marcia Knous shows a series of tips and tricks to get the most out of tabs in Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-tabs.png',
-			'flv_filename' => 'firefox/3.5/tabs/tabs.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/tabs/tabs.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/tabs/tabs.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 184,
-		),
-		'bookmarks' => array(
-			'title'        => 'Bookmarks',
-			'description'  => 'Alex Faaborg gives an overview of bookmarks in Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-bookmarks.png',
-			'flv_filename' => 'firefox/3.5/bookmarks/bookmarks.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/bookmarks/bookmarks.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 73,
-		),
-		'tour' => array(
-			'title'        => 'Firefox: A quick tour',
-			'description'  => 'Asa Dotzler gives a quick tour of the different elements of the Firefox browser.',
-			'thumbnail'    => '/img/covehead/video/icon-tour.png',
-			'flv_filename' => 'firefox/3.5/firefoxtour/firefoxtour.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/firefoxtour/firefoxtour.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/firefoxtour/firefoxtour.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 126,
-		),
-		'switch' => array(
-			'title'        => 'Make the Switch',
-			'description'  => 'Asa Dotzler shows how easy it is to switch to Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-switch.png',
-			'flv_filename' => 'firefox/3.5/switch/switch.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/switch/switch.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/switch/switch.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 40,
-		),
-		'fastest-clapper' => array(
-			'title'        => 'Fastest Firefox: Clapper',
-			'description'  => 'The world’s fastest clapper claps for Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-fastest-clapper.png',
-			'flv_filename' => 'firefox/3.5/fastest/1/fastest-clapper.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/4/fastest-clapper.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/1/fastest-clapper.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 426,
-			'duration'     => 79,
-		),
-		'fastest-sport-stacker' => array(
-			'title'        => 'Fastest Firefox: Sport Stacker',
-			'description'  => 'Watch the world’s fastest sport stacker in action.',
-			'thumbnail'    => '/img/covehead/video/icon-fastest-sport-stacker.png',
-			'flv_filename' => 'firefox/3.5/fastest/2/fastest-sportstacker.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/3/fastest-sportstacker.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/2/fastest-sportstacker.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 426,
-			'duration'     => 40,
-		),
-		'fastest-banjo' => array(
-			'title'        => 'Fastest Firefox: Banjo Player',
-			'description'  => 'The fastest banjo player strums a speedy tune for Firefox.',
-			'thumbnail'    => '/img/covehead/video/icon-fastest-banjo.png',
-			'flv_filename' => 'firefox/3.5/fastest/6/fastest-banjo.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/5/fastest-banjo.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/6/fastest-banjo.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 428,
-			'duration'     => 77,
-		),
-		'fastest-users' => array(
-			'title'        => 'Fastest Firefox: Fast Fans',
-			'description'  => 'We asked fans to help us spread the word about Firefox’s speed.',
-			'thumbnail'    => '/img/covehead/video/icon-fastest-users.png',
-			'flv_filename' => 'firefox/3.5/fastest/fastest-users.m4v',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/fastest-users.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/fastest/fastest-users.m4v',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 77,
-		),
-		'thankyou' => array(
-			'title'        => 'Thank You!',
-			'description'  => 'The worldwide Mozilla community says thanks for your support.',
-			'thumbnail'    => '/img/covehead/video/icon-thankyou.png',
-			'flv_filename' => 'firefox/3.5/thankyou/thankyou.mp4',
-			'sources'      => array(
-				'ogg' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/thankyou/thankyou.ogv',
-					'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
-				),
-				'mp4' => array(
-					'src'  => 'http://videos-cdn.mozilla.net/firefox/3.5/thankyou/thankyou.mp4',
-					'type' => 'video/mp4',
-				),
-			),
-			'width'        => 640,
-			'height'       => 360,
-			'duration'     => 40,
-		),
-		// }}}
-	);
+        // }}}
+        // {{{ Firefox Mobile
 
-	// get selected video and shortname
-	$_selected_shortname = (isset($_GET['video'])) ? $_GET['video'] : key($_videos);
-	if (!array_key_exists($_selected_shortname, $_videos)) {
-		$_selected_shortname = key($_videos);
-	}
+        array(
+             'title'  => 'Firefox Mobile',
+             'videos' => array(
+                'fx4-mobile-whatsnew' => array(
+                    'title'        => 'What’s New in Firefox 4 Mobile',
+                    'description'  => 'Take Firefox 4 anywhere with our latest mobile release.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-whatsnew.jpg',
+                    'flv_filename' => 'serv/marketing/firefox4/WN-Mobile-640.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Mobile-640.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Mobile-640.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/WN-Mobile-640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 210,
+                ),
+                'fx4-sync' => array(
+                    'title'        => 'All About Sync',
+                    'description'  => 'Now you can stay on the same page (or pages), even on the go.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-sync.jpg',
+                    'flv_filename' => 'serv/marketing/firefox4/foxy3300.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 26,
+                ),
+                'fx4-mobile-addons' => array(
+                    'title'        => 'Add-ons for Mobile',
+                    'description'  => 'Add-ons add a whole other dimension to the Mobile experience.',
+                    'thumbnail'    => '/img/covehead/video/icon-meet-3.5.png',
+                    'flv_filename' => 'firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                    'sources'      => array(
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/firefox/3.6/meetfirefox/FF3.6_Screencast_FINAL_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 105,
+                ),
+                'fx4-mobile-home1' => array(
+                    'title'        => 'Firefox Home 1',
+                    'description'  => '*description needed*',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-home1.jpg',
+                    'flv_filename' => 'serv/mobile/firefox-home.webm',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 60,
+                ),
+                'fx4-mobile-home2' => array(
+                    'title'        => 'Firefox Home 2',
+                    'description'  => '*description needed*',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-home2.jpg',
+                    'flv_filename' => 'serv/mobile/firefox-home-mini-2.webm',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home-mini-2.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home-mini-2.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-home-mini-2.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 49,
+                ),
+                'fx4-mobile-meet' => array(
+                    'title'        => 'Meet Your Firefox for Mobile Phone',
+                    'description'  => 'Learn how Firefox brings the Web to your phone.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-meet.jpg',
+                    'flv_filename' => 'serv/mobile/firefox-mobile.mp4',
+                    'sources'      => array(
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-small.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 0,
+                ),
+                'fx4-mobile-meet2' => array(
+                    'title'        => 'Meet Firefox 4 Beta for Mobile',
+                    'description'  => 'Hear from the team and check out the new features of Firefox 4 beta for mobile.',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-meet2.jpg',
+                    'flv_filename' => 'serv/mobile/meetFFXmobile2-640x360.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/meetFFXmobile2-640x360.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 175,
+                ),
+                'fx4-mobile-invite' => array(
+                    'title'        => 'Firefox Android Invite',
+                    'description'  => '*description needed*',
+                    'thumbnail'    => '/img/covehead/video/icon-fx4-mobile-invite.jpg',
+                    'flv_filename' => 'serv/mobile/Firefox_Android_invite2.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/Firefox_Android_invite2.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/Firefox_Android_invite2.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/mobile/Firefox_Android_invite2.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 56,
+                ),
+            ),
+        ),
 
-	$_selected_video = $_videos[$_selected_shortname];
+        // }}}
+        // {{{ Mozilla and Community
+
+        array(
+            'title'  => 'Mozilla and Community',
+            'videos' => array(
+                'brand' => array(
+                    'title'        => 'A Different Kind of Browser',
+                    'description'  => 'What’s Mozilla all about? Why are we doing this? We’re glad you asked.',
+                    'thumbnail'    => '/img/covehead/video/icon-brand.jpg',
+                    'flv_filename' => 'brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 105,
+                ),
+                'awesome' => array(
+                    'title'        => 'Join the Army of Awesome',
+                    'description'  => 'What’s Mozilla all about? Why are we doing this? We’re glad you asked.',
+                    'thumbnail'    => '/img/covehead/video/icon-awesome.jpg',
+                    'flv_filename' => 'serv/marketing/firefox4/Army-of-awesome_final.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Army-of-awesome_final.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Army-of-awesome_final.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Army-of-awesome_final.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 61,
+                ),
+                'livecubs' => array(
+                    'title'        => 'Warning: Contains Cuteness',
+                    'description'  => 'Watch the adorable firefox cubs in action at the Knoxville Zoo.',
+                    'thumbnail'    => '/img/covehead/video/icon-livecubs.jpg',
+                    'flv_filename' => 'serv/firefoxlive/serv/firefoxlive/meetthecubs.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/firefoxlive/meetthecubs.webm',
+                            'type' => 'video/webm;',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/firefoxlive/meetthecubs.mp4',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/firefoxlive/meetthecubs.mp4',
+                            'type' => 'video/mp4',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 78,
+                ),
+            ),
+        ),
+        // }}}
+    );
+
+    $_videos_by_shortname = array();
+    $_autoplay = true;
+
+    foreach ($_videos as $_category) {
+        foreach ($_category['videos'] as $_shortname => $_video) {
+            $_videos_by_shortname[$_shortname] = $_video;
+        }
+    }
+
+    // get selected video and shortname
+    if (isset($_GET['video'])) {
+        $_selected_shortname = $_GET['video'];
+        if (!array_key_exists($_selected_shortname, $_videos_by_shortname)) {
+            $_selected_shortname = key($_videos_by_shortname);
+            $_autoplay = false;
+        }
+    } else {
+        $_selected_shortname = key($_videos_by_shortname);
+        $_autoplay = false;
+    }
+
+    $_selected_video = $_videos_by_shortname[$_selected_shortname];
 
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Firefox Browser | Video tour of Firefox browser features';
     $body_id    = 'firefox-videos';
-    $breadcrumbs = array(
-		'Features'    => "/{$lang}/firefox/features",
-        'Videos'      => ""
-    );
-    $html5      = true;
     $extra_headers = <<<EXTRA_HEADERS
-	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video.css" media="screen" />
-	<script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-	<script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
-	<script src="/includes/yui/2.5.1/container/container-min.js"></script>
-	<script src="/js/mozilla-video-tools.js"></script>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video.css" media="screen" />
+    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
+    <script src="/includes/yui/2.5.1/container/container-min.js"></script>
+    <script src="/js/mozilla-video-tools.js"></script>
 
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
@@ -410,7 +448,7 @@ EXTRA_HEADERS;
 <div id="download" class="top-right">
     <script src="/js/download.js"></script>
     <?php
-        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 3.6');
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 4');
         echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
         echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
     ?>
@@ -418,130 +456,229 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
 
-	<h2>Our <span>Videos</span></h2>
-	<p>Take a quick overview tour of Firefox, or watch our developers explain specific features in more detail.</p>
+    <h2>Our <span>Videos</span></h2>
+    <p>Get an overview of what makes Firefox awesome, learn about the Mozilla mission and explore popular features.</p>
 
 </div>
 
 <div id="content">
 
-	<div id="current-video">
+    <div id="current-video">
 
-		<div id="video-player" class="mozilla-video-control">
-			<video
-				id="video"
-				width="<?php echo $_selected_video['width']; ?>"
-				height="<?php echo $_selected_video['height']; ?>"
-				controls="controls"
-                                preload="metadata">
-
-<?php
-	foreach ($_selected_video['sources'] as $_source) {
-		echo "\t\t\t\t<source src=\"", $_source['src'], "\"";
-		if ($_source['type']) {
-			echo " type=\"", $_source['type'], "\"";
-		}
-		echo " />\n";
-	}
-?>
-
-				<object type="application/x-shockwave-flash"
-	                style="width: <?php echo $_selected_video['width']; ?>px; height: <?php echo $_selected_video['height'] + $_FLASH_PLAYER_CONTROLS_HEIGHT; ?>px;"
-					data="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=false&amp;msg=Play%20Video">
-
-					<param name="movie" value="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=false&amp;msg=Play%20Video" />
-					<param name="wmode" value="transparent" />
-
-					<div class="video-player-no-flash">
-					This video requires a browser with support for open video:
-					<ul>
-					<li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
-					<li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
-					</ul>
-					or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
-					Alternatively, you may use the video download links to the right.
-					</div>
-
-				</object>
-
-			</video>
-		</div>
-
-		<div id="video-details">
-			<h3><?php echo $_selected_video['title']; ?></h3>
-			<div class="video-duration"><?php
-			$minutes = floor($_selected_video['duration'] / 60);
-			$seconds = $_selected_video['duration'] % 60;
-			printf('%d:%02d', $minutes, $seconds);
-			?></div>
-			<p><?php echo $_selected_video['description']; ?></p>
-			<ul id="video-download">
+        <div id="video-player" class="mozilla-video-control">
+            <video
+                id="video"
+                width="<?php echo $_selected_video['width']; ?>"
+                height="<?php echo $_selected_video['height']; ?>"
+                controls="controls" preload="metadata" <?php echo ($_autoplay) ? 'autoplay="autoplay"' : ''; ?>>
 
 <?php
-	foreach ($_selected_video['sources'] as $_key => $_source) {
-		switch ($_key) {
-		case 'ogg':
-			$text = 'Open video format (Ogg&nbsp;Theora)';
-			break;
-		case 'mp4':
-			$text = 'MPEG-4 format';
-			break;
-		default:
-			$text = $_source['type'].' format';
-			break;
-		}
-		echo "\t\t\t\t<li><a href=\"", $_source['src'], "\">", $text, "</a></li>\n";
-	}
+    foreach ($_selected_video['sources'] as $_source) {
+        echo "\t\t\t\t<source src=\"", $_source['src'], "\"";
+        if ($_source['type']) {
+            echo " type=\"", $_source['type'], "\"";
+        }
+        echo " />\n";
+    }
 ?>
-			</ul>
-		</div>
-	</div>
 
-	<div id="main-content">
+                <object type="application/x-shockwave-flash"
+                    style="width: <?php echo $_selected_video['width']; ?>px; height: <?php echo $_selected_video['height'] + $_FLASH_PLAYER_CONTROLS_HEIGHT; ?>px;"
+                    data="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=<?php echo ($_autoplay) ? 'true' : 'false'; ?>&amp;msg=Play%20Video">
 
-	<div id="other-videos">
-		<div class="section-content">
-			<h3>Other <span>Videos</span></h3>
-		</div>
-	<?php
+                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=<?php echo $_selected_video['flv_filename']; ?>&amp;autoplay=<?php echo ($_autoplay) ? 'true' : 'false'; ?>&amp;msg=Play%20Video" />
+                    <param name="wmode" value="transparent" />
 
-	$count = 0;
+                    <div class="video-player-no-flash">
+                    This video requires a browser with support for open video:
+                    <ul>
+                    <li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+                    <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                    </ul>
+                    or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                    Alternatively, you may use the video download links to the right.
+                    </div>
 
-	foreach ($_videos as $_shortname => $_video) {
-		echo "\n";
+                </object>
 
-		if (($count % 5) == 0) {
-			echo "\t\t<div class=\"clear\"></div>\n";
-		}
+            </video>
+        </div>
 
-		$_video_href  = '/' . $lang . '/firefox/video?video=' . $_shortname;
-		$_video_class = ($_shortname == $_selected_shortname) ? 'video-preview selected' : 'video-preview';
+        <div id="video-details">
+            <h3><?php echo $_selected_video['title']; ?></h3>
+            <div class="video-duration"><?php
+            $minutes = floor($_selected_video['duration'] / 60);
+            $seconds = $_selected_video['duration'] % 60;
+            printf('%d:%02d', $minutes, $seconds);
+            ?></div>
+            <p><?php echo $_selected_video['description']; ?></p>
+            <ul id="video-download">
 
-		echo "\t\t<div class=\"", $_video_class, "\" id=\"", $_shortname, "\">\n";
+<?php
+    foreach ($_selected_video['sources'] as $_key => $_source) {
+        switch ($_key) {
+        case 'webm':
+            $text = 'Open video format (WebM)';
+            break;
+        case 'ogg':
+            $text = 'Open video format (Ogg&nbsp;Theora)';
+            break;
+        case 'mp4':
+            $text = 'MPEG-4 format';
+            break;
+        default:
+            $text = $_source['type'].' format';
+            break;
+        }
+        echo "\t\t\t\t<li><a href=\"", $_source['src'], "\">", $text, "</a></li>\n";
+    }
+?>
+            </ul>
+        </div>
+    </div>
 
-		if ($_shortname == $_selected_shortname) {
-			echo "\t\t\t<span class=\"active\">\n";
-		} else {
-			echo "\t\t\t<a href=\"", $_video_href, "\">\n";
-		}
+    <div id="main-content">
 
-		echo "\t\t\t\t<img src=\"", $config['static_prefix'], $_video['thumbnail'], "\" alt=\"", $_video['title'], " thumbnail\" />";
-		echo  "<span>", $_video['title'], "</span>\n";
+        <div class="section-content">
+            <h3>Video <span>Gallery</span></h3>
+        </div>
+    <?php
 
-		if ($_shortname == $_selected_shortname) {
-			echo "\t\t\t</span>\n";
-		} else {
-			echo "\t\t\t</a>\n";
-		}
+    foreach ($_videos as $_category) {
 
-		echo "\t\t\t<p>", $_video['description'], "</p>\n";
-		echo "\t\t</div>\n";
+        echo "\n";
 
-		$count++;
-	}
-	?>
-	</div>
-	</div>
+        echo "<h4>", $_category['title'], "</h4>\n";
+
+        echo "<div class=\"video-scroll\">\n";
+        echo "\t<div class=\"video-scroll-view\">\n";
+        echo "\t\t<div class=\"video-scroll-content\">\n";
+
+        foreach ($_category['videos'] as $_shortname => $_video) {
+
+            $_video_href  = '/' . $lang . '/firefox/video?video=' . $_shortname;
+            $_video_class = ($_shortname == $_selected_shortname) ? 'video-preview selected' : 'video-preview';
+
+            echo "\t\t\t<div class=\"", $_video_class, "\" id=\"", $_shortname, "\">\n";
+
+            if ($_shortname == $_selected_shortname) {
+                echo "\t\t\t\t<span class=\"active\">\n";
+            } else {
+                echo "\t\t\t\t<a href=\"", $_video_href, "\">\n";
+            }
+
+            echo "\t\t\t\t\t<img src=\"", $config['static_prefix'], $_video['thumbnail'], "\" alt=\"", $_video['title'], " thumbnail\" />";
+            echo  "<span>", $_video['title'], "</span>\n";
+
+            if ($_shortname == $_selected_shortname) {
+                echo "\t\t\t\t</span>\n";
+            } else {
+                echo "\t\t\t\t</a>\n";
+            }
+
+            echo "\t\t\t\t<p>", $_video['description'], "</p>\n";
+            echo "\t\t\t</div>\n";
+        }
+
+        echo "\t\t</div>\n";
+        echo "\t</div>\n";
+        echo "</div>\n";
+
+    }
+
+    ?>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        var videoWidth = 160;
+
+        $('.video-scroll').each(function(i, n) {
+            var $el        = $(n);
+            var $scroll    = $el.find('.video-scroll-content');
+            var numVideos  = $el.find('.video-preview').length;
+            var currentPos = 0;
+            var perPage    = 5;
+            var min        = -((numVideos - perPage) * videoWidth);
+
+            if (numVideos <= perPage) {
+                min = 0;
+            }
+
+            var next = function()
+            {
+                var oldPos = currentPos;
+                var newPos = Math.max(currentPos - perPage * videoWidth, min);
+                $scroll.css('left', newPos);
+                currentPos = newPos;
+                update(oldPos, newPos);
+            };
+
+            var prev = function()
+            {
+                var oldPos = currentPos;
+                var newPos = Math.min(currentPos + perPage * videoWidth, 0);
+                $scroll.css('left', newPos);
+                currentPos = newPos;
+                update(oldPos, newPos);
+
+            };
+
+            var update = function(oldPos, newPos)
+            {
+                if (newPos === 0 && oldPos !== 0) {
+                    $prevLink.detach();
+                    $el.prepend($prevSpan);
+                }
+
+                if (oldPos === 0 && newPos !== 0) {
+                    $prevSpan.detach();
+                    $el.prepend($prevLink);
+                }
+
+                if (newPos === min && oldPos !== min) {
+                    $nextLink.detach();
+                    $el.append($nextSpan);
+                }
+
+                if (oldPos === min && newPos !== min) {
+                    $nextSpan.detach();
+                    $el.append($nextLink);
+                }
+            };
+
+            var $prevLink = $('<a href="#" class="video-scroll-prev"></a>');
+            $prevLink.click(function(e) {
+                e.preventDefault();
+                prev();
+            });
+
+            var $prevSpan = $('<span class="video-scroll-prev"></span>');
+
+            var $nextLink = $('<a href="#" class="video-scroll-next"></a>');
+            $nextLink.click(function(e) {
+                e.preventDefault();
+                next();
+            });
+
+            var $nextSpan = $('<span class="video-scroll-next"></span>');
+
+            var $leftFade = $('<span class="video-fade-left"></span>');
+            var $rightFade = $('<span class="video-fade-right"></span>');
+
+            $el.prepend($leftFade);
+            $el.prepend($prevSpan);
+            $el.append($rightFade);
+
+            if (numVideos > perPage) {
+                $el.append($nextLink);
+            } else {
+                $el.append($nextSpan);
+            }
+        });
+    });
+
+    </script>
 
 </div><!-- end #content div -->
 

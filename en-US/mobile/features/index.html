@@ -8,11 +8,7 @@
     );
     $extra_headers = <<<EXTRA_HEADERS
 
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/mobile-features.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
-	<script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-	<script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/animation/animation-min.js"></script>
-	<script type="text/javascript" src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-features.css" media="screen" />
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
@@ -27,31 +23,12 @@ EXTRA_HEADERS;
 	<h2>Firefox <span>Mobile Features</span></h2>
 	<p>All the awesomeness of Firefox, packed into a mobile device.</p>
 	<ul class="feature-links">
-		<li id="menu-sync"><a href="#sync">Sync</a></li>
-		<li id="menu-browse"><a href="#browse">Browse</a></li>
-		<li id="menu-customize"><a href="#customize">Customize</a></li>
-		<li id="menu-action"><a href="#" id="tour-video">See Firefox in Action</a>
-			<script type="text/javascript">
-			// <![CDATA[
-			var player_french = new Mozilla.VideoPlayer(
-				'tour-video',
-				[
-					{
-						url:   'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile-large.ogv',
-						type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
-						title: 'Download in Open Video format (Ogg&nbsp;Theora)'
-					},
-					{
-						url:   'http://videos-cdn.mozilla.net/serv/mobile/firefox-mobile.mp4',
-						type:  'video/mp4',
-						title: 'Download in MPEG-4 format'
-					}
-				],
-				'serv/mobile/firefox-mobile.mp4'
-			);
-			// ]]>
-			</script>
-		</li>
+		<li id="easy-personalization"><a href="#easypersonalization"><span class="feature-link-content">Easy <span>Personalization</span></span></a></li>
+		<li id="friendly-tothetouch"><a href="#friendlytothetouch"><span class="feature-link-content">Friendly <span>to the Touch</span></span></a></li>
+		<li id="productivity-andperformance"><a href="#productivityandperformance"><span class="feature-link-content">Productivity <span>and Performance</span></span></a></li>
+		<li id="advanced-security"><a href="#advancedsecurity"><span class="feature-link-content">Advanced <span>Security</span></span></a></li>
+		<li id="cutting-edge"><a href="#cuttingedge"><span class="feature-link-content">The <span>Cutting Edge</span></span></a></li>
+		<li id="universal-access"><a href="#universalaccess"><span class="feature-link-content">Universal <span>Access</span></span></a></li>
 	</ul>
 	
 	<div id="top-features">
@@ -59,398 +36,319 @@ EXTRA_HEADERS;
 		<p>(rollover for details)</p>
 		<ul>
 			<li>
-				<a href="#">Stay in Sync</a>
+				<a href="#">Sync</a>
 				<div class="top-feature-hover">
-					<h3>Stay in Sync</h3>
-					<p>Share passwords, bookmarks, open tabs and more across your desktop and mobile Firefox.</p>
+					<h3>Sync</h3>
+					<p>Securely access your desktop Firefox history, bookmarks, tabs and passwords on your mobile.</p>
 				</div>
 			</li>
 			<li>
-				<a href="#">Touch Friendly Interface</a>
+				<a href="#">Add-ons</a>
 				<div class="top-feature-hover">
-					<h3>Touch Friendly Interface</h3>
-					<p>Easily browse the Web with more swiping and less typing.</p>
+					<h3>Add-ons</h3>
+					<p>Install extensions to change the look, feel and functionality of Firefox to match your exact needs.</p>
 				</div>
 			</li>
 			<li>
-				<a href="#">Privacy & Security</a>
+				<a href="#">Awesome Screen</a>
 				<div class="top-feature-hover">
-					<h3>Privacy Protection</h3>
-					<p>Protect your passwords, clear private data and more.</p>
+					<h3>Awesome Screen</h3>
+					<p>Firefox learns your favorite sites as you browse and helps you get to them with minimal or no typing.</p>
 				</div>
 			</li>
 			<li>
-				<a href="#">Share, Find, Save</a>
+				<a href="#">Tabs</a>
 				<div class="top-feature-hover">
-					<h3>Share, Find, Save</h3>
-					<p>Share interesting content with friends in a single tap.</p>
+					<h3>Tabs</h3>
+					<p>Enjoy the convenience of tabbed browsing on your mobile device. </p>
 				</div>
 			</li>
 			<li>
-				<a href="#">Zoom with Ease</a>
+				<a href="#">Greater Control</a>
 				<div class="top-feature-hover">
-					<h3>Location-Aware Browsing</h3>
-					<p>Save time by letting sites know where you are (opt-in only).</p>
-				</div>
-			</li>
-			<li>
-				<a href="#">Performance & Productivity</a>
-				<div class="top-feature-hover">
-					<h3>Performance & Productivity</h3>
-					<p>The mobile Firefox is optimized for power and efficiency.</p>
+					<h3>Greater Control</h3>
+					<p>Just tap the site ID of the page you’re on to save to PDF, add a search engine, find specific text and more.</p>
 				</div>
 			</li>
 		</ul>
 	</div>
 </div>
 
+
 <div id="content">
 
-	<div id="sync" class="features-box clearfix"><div class="features-container clearfix">
-
-		<h3>Stay in <span>Sync</span></h3>
-
-		<div class="column1">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/sync-01.png" alt="Sync your desktop" width="260" height="217" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<h4>Access your history, passwords, bookmarks and even open tabs across all your devices.</h4>
-			<p>To go from desktop to mobile without interruption, create a Firefox Sync account on your desktop and follow the steps to setup all your devices. <a href="http://www.mozilla.com/en-US/mobile/sync/">Learn more and get started using Firefox Sync</a>.</p>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/sync-04.png" alt="Sync your desktop" width="222" height="232" style="margin-left: 40px;" />
-			</div>
-		</div>
-		
-		<div class="features-divider"><hr /></div>
+	<div id="easypersonalization" class="features-box">
+	<div class="features-container">
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+		<h3>Easy <span>Personalization</span></h3>
 		
 		<div class="column1">
 			<div class="feature">
-			<p>Imagine an Awesome Bar (Smart Location Bar) that knows your Web history regardless of which device you visited it on – home desktop, work laptop, or mobile.</p>
-			<p>Leverage years of desktop browsing on the first day you fire up your mobile. Even your saved passwords from your desktop can be used to automatically fill out forms.</p>
+				<h4>Stay in Sync</h4>
+				<p>Sync seamlessly connects your desktop and mobile Firefoxes, so you can access your browsing history, passwords, bookmarks and even open tabs no matter which device you use. Access years of desktop browsing the first day you fire up your mobile, and use saved passwords from your desktop to fill out forms on your phone.</p>
+				<img src="/img/covehead/mobile/screen-sync-mobile.png" width="290" height="160" alt="" />
+				<p>Now you can surf the Web on your desktop, get up in the middle of browsing and have your open tabs ready and waiting on your mobile, just as you left them. Your browsing will never be the same! <a href="/<?=$lang?>/mobile/sync/">Learn more.</a></p>
+			</div>
+			<div class="feature">
+				<h4>Mobile Add-ons</h4>
+				<p>Customize Firefox to fit exactly the way you browse with our growing catalog of <a href="http://addons.mozilla.org/en-US/mobile/">mobile add-ons</a>. Discover and install them directly from your phone! Any developer can <a href="http://www.mozilla.com/en-US/mobile/developers/">build a mobile add-on for Firefox</a> or easily adapt an existing one to be optimized for mobile devices.</p>
 			</div>
 		</div>
 		<div class="column2">
 			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/sync-03.png" alt="Sync your desktop" width="260" height="217" />
+				<h4>Awesome Screen: Type Less, Browse More</h4>
+				<p>Typing isn’t always easy on mobile devices, which is why we made the Awesome Screen. It gets to know you as you browse, and offers a smart list of shortcuts to your favorite sites, bookmarked pages and tabs from your other computers. Just tap the Awesome Bar (Smart Location Bar) to get started.</p>
+				<img src="/img/covehead/mobile/screen-awesomebar-mobile.png" width="290" height="160" alt="" />
+			</div>
+			<div class="feature">
+				<h4>Search Engines</h4>
+				<p>For maximum search power, multiple search engines appear when you start typing in the Awesome Bar. You can also tap on the magnifier next to the Awesome Bar to see a list of your search engine options, or customize this list to your liking through the Add-ons Manager.</p>
+				<img src="/img/covehead/mobile/screen-search-mobile.png" width="290" height="160" alt="" />
 			</div>
 		</div>
 		<div class="column3">
 			<div class="feature">
-			<p>Surf the Web on your desktop, get up and go, and have your open tabs ready and waiting for you on your mobile – just as you left them on your computer.</p>
-			<p>Your information is encrypted from end-to-end so only you can access it. Firefox puts security as a top priority and syncing is no exception. <a href="http://www.mozilla.com/en-US/mobile/sync/">Learn More</a></p>
+				<h4>Your Start Page</h4>
+				<p>Firefox’s personalized start page gives you instant access to your desktop tabs, the tabs you had open the previous time you browsed on your phone and recommendations for useful add-ons.</p>
+				<img src="/img/covehead/mobile/screen-start-mobile.png" width="290" height="160" alt="" />
 			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-	</div></div>
-
-	<div id="browse" class="features-box clearfix"><div class="features-container clearfix">
-
-		<h3>Type less, <span>Browse More</span></h3>
-
-		<div class="column1">
 			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/typeless-01.png" alt="Type Less" width="278" height="196" />
+				<h4>Dress Up Your Firefox</h4>
+				<p>The mobile Firefox gives you access to <a href="http://www.getpersonas.com/?source=moz.com_features">thousands of easy-to-install themes called Personas</a>, meaning you can change the look of your browser to practically anything with just a tap. Choose anything from simple designs to colorful patterns to content from partners like Harry Potter and Bob Marley.</p>
+				<img src="/img/covehead/mobile/screen-personas-mobile.png" width="290" height="160" alt="" />
 			</div>
 		</div>
-		<div class="column2">
-			<div class="feature">
-			<p>The Awesome Screen pops up just by tapping on the Awesome Bar (location bar). It gets to know you and gives you instant access to a smart list of your favorite history items, bookmarks and tabs from your other computers. </p>
-			<p>Tap on the magnifier next to the Awesome Bar and send your search directly to Google, Wikipedia, Amazon.com or Twitter with just one tap. Customize your default search engines to fit your lifestyle.</p>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/typeless-02.png" alt="Type Less" width="278" height="199" />
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-	</div></div>
-
-	<div id="customize" class="features-box clearfix"><div class="features-container clearfix">
-
-		<h3>Customize your <span>browser</span></h3>
-
-		<div class="column1">
-			<div class="feature">
-			<h4>Add features that help make your browser your own.</h4>
-			<p>Discover and install add-ons directly from your mobile. Check out our  growing catalog of <a href="http://addons.mozilla.org/en-US/mobile/">mobile add-ons</a></p>
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<p>Any developer in the world can <a href="http://www.mozilla.com/en-US/mobile/developers/">build a mobile add-on for Firefox</a>, or easily adapt an existing one to be optimized for mobile</p>
-			<p>You can also customize your default search engines through the Add-ons Manager.</p>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-01.png" alt="Customize your browser" width="278" height="227" />
-			</div>
-		</div>
-
-		<div class="features-divider"><hr /></div>
-
-		<div class="column1">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/your-start.jpg" alt="Your Start Page" width="204" height="271" style="margin-left: 50px;" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<h4>Your Start Page</h4>
-			<p>Pick up where you left off with your own personalized Start page.</p>
-			<p>Your Start page gives you instant access to the tabs you had open last time you were browsing on your phone, tabs from you other computers and even get add-on recommendations to help you get the most of your Firefox.</p>
-			<p>Or, you can just tap on the Awesome Bar to start browsing the Web!</p>
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Touch Friendly Interface</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<p><strong>If you've ever been there before, the Awesome Bar's practically found your search result before you've typed a couple keys.</strong></p>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-03.png" alt="Type Less" width="268" height="103" />
-			<ul>
-				<li>Access your favorite search engines from the title bar in just one tap</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-02.png" alt="Tab Thumbnails" width="280" height="152" />
-			<ul>
-				<li>Swipe right to see thumbnails of your open tabs, which easily let you identify and go to your open pages</li>
-				<li>Spell Checker catches typos and misspellings in form fields</li>
-				<li>When you get to your destination or when you start scrolling, the browser controls get stored out of view</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<ul>
-				<li>Password Manager lets you choose to remember site passwords so you don’t have to type them more than once</li>
-			</ul>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-17.png" alt="Page Bookmark" width="243" height="126" />
-			<ul>
-				<li>Swipe left to access your browser tools, backward and forward, and bookmark a site with one touch</li>
-			</ul>
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Privacy & Security</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<p><strong>Customize your settings for passwords, cookies, loading images and installing add-ons for a fully empowered mobile browsing experience </strong></p>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-05.png" alt="Privacy &amp; Security" width="280" height="103" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<ul>
-				<li>Instant Web site ID ("Larry") lets you tap on a site favicon for an instant identity overview </li>
-				<li>The Password manager lets you choose to remember site passwords and avoid long and difficult typing</li>
-				<li>Popup blocker banishes pop-ups from your surfing experience once and for all</li>
-				<li>Clear private data in one touch as an extra security measure</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-06.png" alt="Automated Update notifications" width="265" height="102" />
-			<ul>
-				<li>Receive Automated Update notifications as soon as updates to Firefox are available. Install them right away, or wait until you're ready</li>
-				<li>Forget Password setting in the Site Menu tells a site to forget your password if you want to share your phone or no longer trust a site</li>
-			</ul>
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Share, Find, Save, Oh My!</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/share-01.png" alt="Share, Find, Save" width="207" height="164" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<ul>
-				<li>Long tap on a link, a bookmark, history item or photo and share content with your friends via email, Twitter, Google Reader or Facebook</li>
-				<li>Tap to open the Site Menu to Save to PDF, Add Search Engine, Forget Password and more</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/share-02.png" alt="Share, Find, Save" width="278" height="177" />
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Zoom with Ease</h4>
-
-		<div class="zoom">
-			<div class="column1">
-				<div class="feature">
-				<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-08.png" alt="Location-Aware Browsing" width="407" height="196" />
-				<ul>
-					<li>Double-tap to zoom in, double-tap to back out</li>
-				</ul>
-				</div>
-			</div>
-			<div class="column2">
-				<div class="feature">
-				<ul>
-					<li>Use the volume rocker on the Nokia N900 to "free-form" zoom in small increments</li>
-				</ul>
-				<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-16.png" alt="Location-Aware Browsing" width="351" height="213" />
-				</div>
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Location-aware Browsing</h4>
-
-		<div class="location">
-			<div class="column1">
-				<div class="feature">
-				<p>Get maps and info relevant to your location. Saves time by allowing Web sites to ask you where you are. It’s all optional – Firefox doesn’t share your location without your permission. <a href="http://www.mozilla.com/en-US/firefox/geolocation/">Learn more</a>.</p>
-				</div>
-			</div>
-			<div class="column2">
-				<div class="feature">
-				<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-12.png" alt="Location-Aware Browsing" width="328" height="225" />
-				</div>
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Performance & Productivity</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<p><strong>Optimized for power and efficiency, Firefox for mobile is built on the same browser engine as Firefox for the desktop, letting you interact with and enjoy your favorite sites</strong></p>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/icon-bee.png" alt="Icon Bee" width="144" height="152" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<ul>
-				<li>Offline browsing in Firefox lets you have a Web connection even if your mobile device doesn't have one. Certain enabled sites may allow applications—like your Web-based email—to stay with you at all times</li>
-				<li>Memory Management in Firefox uses less of your mobile phone’s memory while it’s running so you can browse all your favorite sites with speed</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<ul>
-				<li>Downloads Manager lets you download any file to your mobile.  It will download in the background while you continue browsing, enables multiple simultaneous downloads, and lets you to stop, pause or resume downloads</li>
-			</ul>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-09.png" alt="Downloads Manager" width="295" height="145" />
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Global Community</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<p><strong>Firefox for mobile is offered in more than 30 languages and counting</strong></p>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-10.png" alt="Global Community" width="274" height="139" />
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<ul>
-				<li>Improved text rendering lets you read your language as it’s written. With a new graphics engine, Arabic, Dutch, Hebrew and other script languages now render seamlessly</li>
-				<li>Mozilla is a global community of people creating a better Internet</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-11.png" alt="Improved Text Rendering" width="236" height="139" />
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
-
-		<h4>Under the Hood</h4>
-
-		<div class="column1">
-			<div class="feature">
-			<p>Firefox's leading Web compatibility uses open standards like <a href="http://hacks.mozilla.org/category/html5/">HTML5</a>, <a href="http://hacks.mozilla.org/category/css/">CSS</a> and <a href="http://hacks.mozilla.org/category/javascript/">JavaScript</a>, so developers can create fast, powerful, beautiful applications, and even tap into the unique capabilities of mobile devices like camera, <a href="http://hacks.mozilla.org/category/geolocation/">geolocation</a> and <a href="http://hacks.mozilla.org/category/device-apis/">device orientation</a>. Learn more and <a href="http://www.mozilla.com/en-US/mobile/developers/">develop for Mobile</a>.</p>
-			</div>
-		</div>
-		<div class="column2">
-			<div class="feature">
-			<ul>
-				<li>Firefox has a fast JavaScript engine, using Mozilla's "TraceMonkey" just-in-time compiler, and is optimized for ARM processors</li>
-				<li>Offline browsing in Firefox lets you have a Web connection even if your mobile device doesn't have one. Certain enabled sites may allow applications—like your Web-based email—to stay with you at all times</li>
-			</ul>
-			</div>
-		</div>
-		<div class="column3">
-			<div class="feature">
-			<ul>
-				<li>Next Generation Graphics in Firefox renders of text and graphics, including  <a href="http://hacks.mozilla.org/category/svg/">SVG</a> and  <a href="http://hacks.mozilla.org/category/canvas/">Canvas</a>, faster and sharper than ever before, thanks to our upgraded graphics engine</li>
-			</ul>
-			<img src="<?= $config['static_prefix'] ?>/img/mobile/features/customize-13.png" alt="Under the Hood" width="280" height="134" />
-			</div>
-		</div>
-
-		<a href="#main-feature" class="features-top-link">Return to top</a>
-		<div class="features-divider"><hr /></div>
 		
-		<div class="support">
-			<div class="column1">
-				<img src="<?= $config['static_prefix'] ?>/img/mobile/features/icon-nurse.png" alt="Icon Nurse" width="144" height="158" />
+	</div>
+	</div>
+
+	<div id="friendlytothetouch" class="features-box">
+	<div class="features-container">
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+		<h3>Friendly <span>to the Touch</span></h3>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>Browsing: Yes, Clutter: No</h4>
+				<p>There’s not a lot of room for extra stuff on your phone screen, so we’ve designed Firefox to stay out of the way of the content you’re looking at. Once you land on your destination the Awesome Bar and controls get stowed out of view, but they’re easy to find again: just swipe left and right to see your tabs and browser tools, or swipe up to start another search. </p>
 			</div>
-			<div class="column2">
-				<h4>Support</h4>
-				<div class="feature">
-				<p>Have a question? We've got your back. Visit our searchable <a href="http://mobile.support.mozilla.com/en-US/kb/">Knowledge Base</a> of articles, plus forums and tutorials full of solutions and tips to find the answers you need</p>
-				<p>Got <a href="http://mobile.support.mozilla.com/tiki-view_forum.php?forumId=5">feedback</a>? We want to hear from you!</p>
+			<div class="feature">
+				<h4>Zoom!</h4>
+				<p>Reading tiny content on a small strain can strain even the best eyesight. To swiftly zoom in and out of any page, just pinch-to-zoom (Android) or double tap (Android/Maemo) any time you’d like to take a closer look.</p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Tabbed Browsing</h4>
+				<p>Enjoy the convenience of tabs on your desktop? The mobile Firefox has tabs, too! Simply swipe to the right and you’ll see all your open tabs as thumbnails so you can easily see where you’d like to go next. Tap the plus button to open a new tab, and if you accidentally close one of your tabs you can tap the Undo button to bring it back. </p>
+				<img src="/img/covehead/mobile/screen-tabs-mobile.png" width="290" height="160" alt="" />
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>One-Touch Bookmarking</h4>
+				<p>Swipe to the left and bookmark a site you love with one touch. Then, you can tag and save it to make sure it always appears in your Awesome Screen for easy access.</p>
+				<img src="/img/covehead/mobile/screen-1touchbookmarks-mobile.png" width="290" height="160" alt="" />
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+	<div id="productivityandperformance" class="features-box">
+	<div class="features-container">
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+		<h3>Productivity <span>and Performance</span></h3>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>Super Speed</h4>
+				<p>The mobile Firefox is built on the same browser engine as the desktop version, yet optimized for browsing on a mobile device. The result? Speed, efficiency and a seamlessly smooth browsing experience.</p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Location-Aware Browsing</h4>
+				<p>Need directions, help finding a restaurant or other info relevant to your current location? Firefox saves you time and clicks by allowing sites to ask your phone were you are. It’s handy, but also optional – Firefox doesn’t share your location without your permission. <a href="/<?=$lang?>/firefox/geolocation/">Learn more.</a></p>
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>Download Manager</h4>
+				<p>Download files on your mobile just like with the desktop Firefox. The downloads take place in the background so your browsing isn’t interrupted, even if you’re downloading multiple files at once. Plus, the Download Manager lets you stop, pause and resume the process any time you want. </p>
+			</div>
+		</div>
+		
+		<hr />
+		
+		<div class="feature">
+			<h4>Site Menu</h4>
+			<p>Being on a mobile device doesn’t mean you should lose control over your browsing. Tap the site ID button (the site’s icon next to the URL or page title) and you’ll get a series of choices for each page you’re visiting. Depending on the site, you’ll see options like these in the Site Menu:</p>
+			
+			<div class="column1">
+				<div class="sub-feature">
+					<h5>Save to PDF</h5>
+					<p>Save to PDF lets you capture important content, like driving directions or a boarding pass, to view offline.</p>
 				</div>
 			</div>
+			
+			<div class="column2">
+				<div class="sub-feature">
+					<h5>Forget Password</h5>
+					<p>Forget Password tells site to forget your private data.</p>
+				</div>
+			</div>
+			
 			<div class="column3">
-				<h4>Tips & Tricks</h4>
-				<div class="feature">
-				<p><a href="http://mobile.support.mozilla.com/en-US/kb/Keyboard+shortcuts">Check out some keyboard shortcuts for the Nokia N900</a></p>
+				<div class="sub-feature">
+					<h5>Add Search Engine</h5>
+					<p>Add Search Engine lets you add a new search engine to your custom search engine list.</p>
+				</div>
+			</div>
+
+			<div class="column1">
+				<div class="sub-feature">
+					<h5>Find in Page</h5>
+					<p>Find in Page lets you quickly scan to find the text you’re looking for.</p>
+				</div>
+			</div>
+			
+			<div class="column2">
+				<div class="sub-feature">
+					<h5>Share Page</h5>
+					<p>Share Page lets you send content to email, Facebook, Twitter, Google Reader and more.</p>
+				</div>
+			</div>
+			
+			<div class="column3">
+				<div class="sub-feature">
+					<h5>Clear Site Preferences</h5>
+					<p>Clear Site Preferences manages other site-specific preferences, including pop-up blocking, automatic location sharing, storing local data and opting to never save a password.</p>
 				</div>
 			</div>
 		</div>
-
+		
+		<hr />
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>Automatic Updates</h4>
+				<p>Firefox will let you know as soon as a new, improved version is available. Install updates right away, or wait until you’re ready.</p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Password Manager</h4>
+				<p>Firefox can remember passwords to your favorite sites to help you avoid extra typing.</p>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+	<div id="advancedsecurity" class="features-box">
+	<div class="features-container">
 		<a href="#main-feature" class="features-top-link">Return to top</a>
-	</div></div>
-
-
+		<h3>Advanced <span>Security</span></h3>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>Security Preferences</h4>
+				<p>We take your online security very seriously, and have packed Firefox full of ways to help you stay safe. Swipe left and tap on your browser tools to go to your preferences, where you can easily customize the settings for your passwords, private data, cookies, loading images and installing add-ons.</p>
+				<img src="/img/covehead/mobile/screen-privacy-mobile.png" width="290" height="160" alt="" />
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Instant Web Site ID</h4>
+				<p>Want to be extra sure about a site’s legitimacy? Click on its favicon for an instant identity overview. It’s an easy way to check up on suspicious sites, avoid Web forgeries and make sure a site is what it claims to be.</p>
+				<img src="/img/covehead/mobile/screen-webid-mobile.png" width="290" height="160" alt="" />
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>Forget Password</h4>
+				<p>There are times when you may want Firefox to stop remembering your passwords. If you’re sharing your phone, or simply no longer trust a site, just use the Forget Password setting in the Site Menu to erase the info.</p>
+				<img src="/img/covehead/mobile/screen-forget-mobile.png" width="290" height="266" alt="" />
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+	<div id="cuttingedge" class="features-box">
+	<div class="features-container">
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+		<h3>The <span>Cutting Edge</span></h3>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>HTML5</h4>
+				<p>Firefox uses open Web standards like <a href="http://hacks.mozilla.org/category/html5/">HTML5</a>, <a href="http://hacks.mozilla.org/category/css/">CSS</a> and <a href="http://hacks.mozilla.org/category/javascript/">JavaScript</a> so developers can create fast, powerful and beautiful applications, and even tap into the unique capabilities of mobile devices like camera, <a href="http://hacks.mozilla.org/category/geolocation/">geolocation</a> and <a href="http://hacks.mozilla.org/category/device-apis/">device orientation</a>. <a href="https://developer.mozilla.org/en-US/mobile">Learn more.</a> </p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Audio & Video</h4>
+				<p>HTML5 audio and video support brings a richer browsing experience to your phone. Now you can watch videos in open formats like WebM or Ogg Theora. <a href="/<?=$lang?>/firefox/video/?video=meet-mobile-beta">Watch our Meet Mobile video</a> on your phone to see and hear it in action. </p>
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>Electrolysis</h4>
+				<p>Electrolysis allows the browser interface to run in a separate process from the one rendering Web content, resulting in a much more stable and responsive browser.</p>
+			</div>
+		</div>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>JaegerMonkey JavaScript Engine</h4>
+				<p>Firefox includes a superfast JavaScript engine that uses Mozilla's "JaegerMonkey" just-in-time compiler and is optimized for ARM processors.</p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Layers</h4>
+				<p>Layers technology helps improve graphic performance for swifter and slicker scrolling, zooming and animations.</p>
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>Offline Browsing</h4>
+				<p>Offline browsing in Firefox lets you have a Web connection even if your mobile device doesn't have one. Certain enabled sites may allow applications—like your Web-based email—to stay with you at all times.</p>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
+	<div id="universalaccess" class="features-box">
+	<div class="features-container">
+		<a href="#main-feature" class="features-top-link">Return to top</a>
+		<h3>Universal <span>Access</span></h3>
+		
+		<div class="column1">
+			<div class="feature">
+				<h4>Firefox Speaks Your Language</h4>
+				<p>Firefox for mobile is offered in more than 10 languages and counting.</p>
+			</div>
+		</div>
+		<div class="column2">
+			<div class="feature">
+				<h4>Text Rendering</h4>
+				<p>Read your language exactly as it’s written. With Firefox’s new graphics engine, Arabic, Dutch, Hebrew and other script languages now render seamlessly.</p>
+			</div>
+		</div>
+		<div class="column3">
+			<div class="feature">
+				<h4>Global Community</h4>
+				<p>Firefox is made by Mozilla, a non-profit organization and worldwide community dedicated to building a better Web. </p>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	
 </div><!-- end #content div -->
 	
 <?php

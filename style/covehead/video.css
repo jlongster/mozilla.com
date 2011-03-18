@@ -2,6 +2,7 @@
 
 #firefox-videos #main-feature h2 {
 	line-height: 0.8;
+    padding-top: 65px;
 }
 
 #firefox-videos .section-content h3 {
@@ -11,7 +12,13 @@
 }
 
 #firefox-videos #main-content {
+	background: url(/img/covehead/divider-notch-main.jpg) no-repeat 50% 0;
+	padding-top: 40px;
 	clear: both;
+}
+
+#firefox-videos #main-content h4 {
+	margin: 10px 0 5px 5px;
 }
 
 .firefox-video-window {
@@ -20,7 +27,7 @@
 
 #firefox-videos #main-feature p {
 	font-size: 135%;
-	margin-right: 455px;
+	width: 500px;
 }
 
 .video-feature {
@@ -66,9 +73,7 @@
 	overflow: auto;
 	position: relative;
 	min-height: 430px;
-	background: url(/img/covehead/video/divider.jpg) no-repeat 50% 100%;
-	padding-bottom: 40px;
-	margin-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 * #current-video { height: 1% }
@@ -78,13 +83,22 @@
 	margin: 10px 20px 10px 10px;
 	float: left;
 	display: inline;
-	padding: 20px;
-	box-shadow: 0 0 15px #ccc;
-	-webkit-box-shadow: 0 0 15px #ccc;
-	-moz-box-shadow: 0 0 15px #ccc;
-	border-radius: 20px;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
+	padding: 15px;
+	border: 1px solid #c9ddf2;
+	-moz-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+	-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+	box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F5F9FD)); /* webkit */
+	background: linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
+}
+
+#current-video #video-player video {
+	display: block;
+	margin: 0 auto;
 }
 
 #current-video #video-details {
@@ -125,58 +139,164 @@
 /* }}} */
 /* {{{ Other Videos */
 
-#other-videos {
-	zoom: 1;
+.video-scroll-view {
+	position: relative;
+	overflow: hidden;
+	height: 18em;
+	width: 800px;
+	margin-left: 40px;
 }
 
-#other-videos .video-preview {
-	width: 158px;
+.video-scroll-content {
+	width: 3200px; /* TODO: set in JS */
+	position: relative;
+	left: 0;
+	transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+
+.video-scroll .video-preview {
+	width: 144px;
 	float: left;
 	display: inline;
-	margin-right: 20px;
+	padding: 0 8px;
 	height: 16em;
 	font-style: italic;
 }
 
-#other-videos .video-preview p {
+.video-scroll .video-preview p {
 	font-style: normal;
 }
 
-#other-videos .video-preview a {
+.video-scroll .video-preview a {
 	text-decoration: none;
 	display: block;
 	outline: none;
 }
 
-#other-videos .video-preview a:hover span,
-#other-videos .video-preview a:active span {
+.video-scroll .video-preview a:hover span,
+.video-scroll .video-preview a:active span {
 	text-decoration: underline;
 }
 
-#other-videos .video-preview img {
+.video-scroll .video-preview a:hover img {
+	border-color: #c9ddf2;
+	-webkit-box-shadow:
+		0 2px 15px rgba(0, 128, 255, 0.25),
+		0 2px rgba(0, 0, 0, 0.1);
+
+}
+
+.video-scroll .video-preview img {
+	width: 130px;
 	margin: 12px 0;
 	display: block;
-	box-shadow: 0 0 5px #ccc;
-	-moz-box-shadow: 0 0 5px #ccc;
-	-webkit-box-shadow: 0 0 5px #ccc;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	padding: 5px;
+	padding: 4px;
 	background: #fff;
+	border: 1px solid #eaeaea;
+	-moz-box-shadow: 0 2px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 2px rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F5F9FD)); /* webkit */
+	background: linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
+
+	transition: all 0.25s;
+	-o-transition: all 0.25s;
+	-ms-transition: all 0.25s;
+	-moz-transition: all 0.25s;
+	-webkit-transition: all 0.25s;
 }
 
-#other-videos .video-preview .active img {
-	opacity: 0.5;
-	filter: alpha(opacity=50);
+.video-scroll .video-preview .active img {
+	border-color: #98B2C9;
+	border-width: 2px;
+	padding: 2px;
+	-moz-box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2px rgba(0, 0, 0, 0.15);
 }
 
-#other-videos .video-preview .active span {
+.video-scroll .video-preview .active span {
 	color: #4b4740;
 }
 
-#other-videos .clear {
-	clear: both;
+.video-scroll {
+	position: relative;
+	width: 880px;
+}
+
+.video-scroll-prev,
+.video-scroll-next {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 80px;
+	background-image: url(/img/covehead/video/arrows.png);
+	top: 10px;
+}
+
+a.video-scroll-prev {
+	left: 0;
+	background-position: 0 0px;
+}
+
+a.video-scroll-prev:hover,
+a.video-scroll-prev:active,
+a.video-scroll-prev:focus {
+	background-position: 0 -80px;
+	outline: none;
+}
+
+span.video-scroll-prev {
+	left: 0;
+	background-position: 0 -160px;
+}
+
+a.video-scroll-next {
+	right: 0;
+	background-position: 0 -240px;
+}
+
+a.video-scroll-next:hover,
+a.video-scroll-next:active,
+a.video-scroll-next:focus {
+	background-position: 0 -320px;
+	outline: none;
+}
+
+span.video-scroll-next {
+	right: 0;
+	background-position: 0 -400px;
+}
+
+.video-fade-left,
+.video-fade-right {
+	top: 0;
+	position: absolute;
+	width: 8px;
+	height: 16em;
+	z-index: 100;
+}
+
+.video-fade-left {
+	background: -moz-linear-gradient(left, #fff 0%, rgba(255,255,255,0) 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fff), color-stop(100%, rgba(255, 255, 255, 0))); /* webkit */
+	background: linear-gradient(left, #fff 0%, rgba(255,255,255,0) 100%); /* firefox */
+	left: 40px;
+}
+
+.video-fade-right {
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, #fff 100%); /* firefox */
+	background: -webkit-gradient(linear, right top, left top, color-stop(100%, rgba(255, 255, 255, 0)), color-stop(0%, #fff)); /* webkit */
+	background: linear-gradient(left, rgba(255,255,255,0) 0%, #fff 100%); /* firefox */
+	right: 40px;
 }
 
 /* }}} */

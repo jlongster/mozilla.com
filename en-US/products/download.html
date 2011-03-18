@@ -16,6 +16,29 @@
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
+
+<div id="download-sidebar-contents" style="display: none;">
+  <div id="sidebar-mobile">
+    <img src="/img/covehead/download/team-firefox.png" alt="" />
+    <h3>Are you on <span>TEAM FIREFOX?</span></h3>
+    <p>
+      Tell your friends and show your support.
+    </p>
+    <p>Post a <a href="http://www.facebook.com/Firefox?v=app_122300121174636">Facebook Badge »</a></p>
+    <p>Join the <a href="http://twitterparty.mozilla.org/">Twitter Party »</a></p>
+  </div>
+  <div class="sidebar-divider"></div>
+  <div id="sidebar-newsletter">
+    <h3>Get <span>Monthly News</span></h3>
+    <p>Love Firefox? Get in on the action by taking a minute to help.
+      <a href="/<?=$lang?>/newsletter/" 
+         onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Link: Monthly News',
+                  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Newsletter');">Sign me up »</a>
+    </p>
+  </div>
+</div>
+
+
 	<div id="download-message">
 
 <noscript id="download-noscript">
@@ -186,25 +209,8 @@ EXTRA_HEADERS;
 		download_url += product + '&os=' + os + '&lang=' + lang;
 
 		// 3. Display sidebar
-		var msg = '<div id="blue-sidebar">';
-		msg += '<div id="sidebar-mobile">';
-		msg += '<img src="/img/covehead/download/mobile-icon.png" alt="" />';
-		msg += '<h3>Go <span>Mobile</span></h3>';
-		msg += '<p>Now that you have Firefox on your desktop, get Firefox on your Mobile phone, too. It\'s easy to sync both versions so you\'ll always have Firefox with you. ';
-                msg += '<a href="/<?=$lang?>/mobile" onclick="';
-                msg += "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dscuri', '/<?=$lang?>/mobile', 'WT.ti', 'Link: Go Mobile',";
-                msg += "  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Mobile');";
-                msg += '">Learn More »</a></p>';
-		msg += '</div>';
-		msg += '<div class="sidebar-divider"></div>';
-		msg += '<div id="sidebar-newsletter">';
-		msg += '<h3>Get <span>Monthly News</span></h3>';
-	        msg += '<p>Love Firefox? Get in on the action by taking a minute to help. ';
-                msg += '<a href="/<?=$lang?>/newsletter/" onclick="';
-                msg += "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Link: Monthly News',";
-                msg += "  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Newsletter');";
-                msg += '">Sign me up »</a></p>';
-		msg += '</div>';
+		var msg = '<div id="download-sidebar">';
+                msg += document.getElementById('download-sidebar-contents').innerHTML;
 		msg += '</div>';
 
 		// 4. display the download URL as a manual fall-back link

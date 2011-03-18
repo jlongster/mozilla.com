@@ -159,20 +159,27 @@ Mozilla.VideoControl.prototype.hide = function()
 {
   var that = this;
 
-  this.control.stop(true).fadeTo('fast', 0, function() {
-    $(this).hide();
-    that._video.controls = true;
-  });
+  if (this.control.is(':visible')) {
+    this.semaphore = true;
+    this.control.stop(true).fadeTo('fast', 0, function() {
+      $(this).hide();
+      that._video.controls = true;
+    });
+  }
 }
 
 Mozilla.VideoControl.prototype.prelight = function()
 {
-  this.control.stop(true).fadeTo('fast', 1);
+  if (this.control.is(':visible')) {
+    this.control.stop(true).fadeTo('fast', 1);
+  }
 }
 
 Mozilla.VideoControl.prototype.unprelight = function()
 {
-  this.control.stop(true).fadeTo('fast', 0.7);
+  if (this.control.is(':visible')) {
+    this.control.stop(true).fadeTo('fast', 0.7);
+  }
 }
 
 // }}}
@@ -233,15 +240,15 @@ Mozilla.VideoScaler.close_text = 'Close';
 
 Mozilla.VideoScaler.prototype.init = function()
 {
-  var width = this.container.width()
-  var height = this.container.height()
+  var width = this.container.width();
+  var height = this.container.height();
 
   this.original_position = {
     top: parseInt(this.container.position().top) + parseInt(this.container.css('marginTop')),
     left: parseInt(this.container.position().left) + parseInt(this.container.css('marginLeft')),
     width: width,
-    height: height,
-  }
+    height: height
+  };
 
   // insert a shim of the original dimensions to keep text wrapping the same
   $('<div class="mozilla-video-scaler-shim" />').css({
@@ -308,9 +315,9 @@ Mozilla.VideoScaler.prototype.open = function()
   var that = this;
 
   this.container.stop(true).animate({
-    width: w, 
-    height: h, 
-    top: y, 
+    width: w,
+    height: h,
+    top: y,
     left: x
   }, 1000, 'swing', function() {
     that.showCloseLink();

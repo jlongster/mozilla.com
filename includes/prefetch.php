@@ -176,6 +176,16 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     if (rtrim($_SERVER['REQUEST_URI'], '/') == '/firefox') {
         $ua = $_SERVER['HTTP_USER_AGENT'];
 
+        // Bug 629407 Redirect to user-specific pages
+        // This is also implemented in .htaccess, but we do it here 
+        // to redirect the user only once
+        if (preg_match('/Firefox\/4.0$/', $ua)) {
+            $_SERVER['REQUEST_URI'] = '/firefox/fx/';
+        }
+        else {
+            $_SERVER['REQUEST_URI'] = '/firefox/new/';
+        }
+
         // On en-US homepage, redirect mobile devices (Android, Maemo)
         if ($lang == 'en-US' && preg_match(':(Android|Maemo|Fennec|Linux armv7l):', $ua)) {
             if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {

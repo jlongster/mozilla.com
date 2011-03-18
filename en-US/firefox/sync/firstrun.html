@@ -5,39 +5,49 @@
     $body_class = 'portal-page firstrun';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="shortcut icon" type="image/png" href="/img/firefox/sync/sync-ico.png"/>
-    <link rel="stylesheet" href="/style/covehead/sync.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/sync-product-page.css" media="screen" />
 
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
 ?>
 <div id="main-feature">
-  <h2 id="main-feature-title">Congratulations, your Firefox data is now being synced!</h2>
-  <p>Be sure to leave Firefox Sync connected so your data will automatically sync every day.</p>
+  <h2 id="main-feature-title"><span>Congrats!</span></h2>
+  <p>Now that your have a Firefox Sync account, securely access your Firefox history, bookmarks, tabs and passwords across your devices.</p>
 </div>
 
 <div id="main-content">
-  <div>
-    <h3>Leaving your computer?</h3>
-    <p>Install Firefox Sync on all your devices, enter your account information
-    and voila, you have access to your browsing data.</p>
-    <p>For detailed instructions on setting up Firefox Home on your iPhone, visit the <a href="/<?= $lang ?>/mobile/home">Firefox Home page</a>.</p>
-    <p>For detailed instructions on setting up Firefox Sync on your n900, visit the <a href="/<?= $lang ?>/mobile/sync">Firefox Sync on Mobile page</a>.</p>
-  </div>
-  <div>
-    <h3>Forgot your password?</h3>
-    <p>Your account information is stored in the Firefox Password Manager so
-    you can retrieve it when needed.</p>
-    <p>Don’t forget your Secret Phrase ensures your data is protected and
-    under your control at all times.</p>
-  </div>
-  <div>
-    <h3>Need more information?</h3>
-    <p>Have a question? Check out our <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">
-      frequently asked questions</a>.</p>
-    <p>Interested in learning more? Read the
-    <a href="https://services.mozilla.com/sync/relnotes/1.4.html">release notes</a>
-    to get all the details of this release.</p>
-  </div>
+
+    <div id="sync-android">
+        <h3>Sync your <span>Android</span></h3>
+        <ol>
+            <li>
+                <h4>Step 1.</h4>
+                <p>Install Firefox 4 for Android by visiting <a href="http://Firefox.com/m">Firefox.com/m</a> on your phone’s default browser, or install it <a href="https://market.android.com/details?id=org.mozilla.firefox">over-the air</a>.</p>
+            </li>
+            <li>
+                <h4>Step 2.</h4>
+                <p>Launch Firefox on your phone, swipe to Tools » Preferences and tap on Connect. A single-use sync code will appear.</p>
+            </li>
+            <li>
+                <h4>Step 3.</h4>
+                <p>Then come back to the Firefox menu on your desktop, select Firefox » Options (Win) Preferences (Mac)  » Sync » Add New Device and enter your sync code.</p>
+            </li>
+        </ol>
+    </div>
+
+    <div id="sync-iphone">
+        <h3>Sync your <span>iPhone</span></h3>
+        <p><a href="http://itunes.apple.com/us/app/firefox-home/id380366933?mt=8">Download</a> and launch Firefox Home. Tap on Setup Firefox Home and a single-use sync code will appear. Then go to the Firefox menu on your desktop, select Firefox » Preferences » Sync » Activate New Device and enter your sync code.</p>
+    </div>
+
+    <div id="more-info">
+        <h3>Need more information?</h3>
+        <div>
+        <p>For more detailed instructions, visit setting up <a href="/<?=$lang?>/mobile/sync/">Firefox Sync on your Android or Maemo</a>, or setting up <a href="/<?=$lang?>/mobile/home/">Firefox Home</a> on your iPhone.</p>
+        <p>Have a question? Check out our <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">frequently asked questions</a>.</p>
+        </div>
+    </div>
+
 </div>
 
 <?php

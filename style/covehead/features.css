@@ -1,58 +1,7 @@
-/* {{{ Main Features and Sidebar */
+/* {{{ Main Features */
 
-#firefox-features #main-feature { 
-	position: relative;
-	min-height: 200px;
-}
-
-* html #firefox-features #main-feature { height: 200px; /* Hack for IE6 */ }
-
-#main-feature p {
-	margin-bottom: 0;
-	margin-right: 200px;
-}
-
-
-#firefox-features #main-content {
-	width: 630px;
-	margin: 0 15px;
-}
-
-#firefox-features #content {
-	clear: both;
-}
-
-#firefox-features #sidebar {
-	width: 265px;
-	margin-right: 0;
-	margin-top: 4em;
-}
-
-#firefox-features #sidebar #sidebar-menu {
-	width: 180px;
-	margin-left: 85px;
-	padding: 2em 0;
-}
-
-#firefox-features #sidebar h4 {
-	background: url(/img/covehead/features/sidebar-divider.png) bottom left no-repeat;
-	color: #afaba3;
-	padding: 0 5px 10px 5px;
-}
-
-#firefox-features #sidebar ul {
-	font-size: 85%;
-	margin-left: 5px;
-}
-
-h3 {
-	font-size: 40px;
-	line-height: 1em;
-}
-
-h4 {
-	font-size: 20px;
-	margin-bottom: 0.5em;
+#firefox-features #main-feature {
+    padding-top: 60px;
 }
 
 /* }}} */
@@ -60,10 +9,9 @@ h4 {
 
 .feature-links {
 	float: left;
-	background: url(/img/covehead/features/dottedline-background.png) top left no-repeat;
-	height: 220px;
+	background: url(/img/covehead/features/dottedline-background.png) 0 -30px no-repeat;
 	margin: 0;
-	padding: 0;
+	padding: 30px 0 28px;
 }
 
 .feature-links li {
@@ -72,53 +20,89 @@ h4 {
 	float: left;
 	list-style-type: none;
 	margin: 0 5px 0 0;
-	padding: 60px 1px 30px;
+	padding: 0 1px;
 }
 
-.feature-links li a {
-	background: url(/img/covehead/features/icon-featurelinks.png) 50% 0 no-repeat;
+.feature-links li a,
+.feature-links li a:link,
+.feature-links li a:visited {
+	color: #484848;
+	display: block;
+	padding: 0 0 2px;
+}
+
+.feature-links li a .feature-link-content,
+.feature-links li a:link .feature-link-content,
+.feature-links li a:visited .feature-link-content {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.feature-links li a .feature-link-content {
+	background: url(/img/covehead/features/menu-icons.png) 50% 0 no-repeat;
 	display: block;
 	width: 110px;
 	font-size: 14px;
 	font-style: italic;
 	line-height: 16px;
 	text-align: center;
-	padding: 90px 0 40px;
+	padding: 110px 0 1px;
+	cursor: pointer; /* For IE */
+	position: relative;
+	top: 0;
+}
+
+.feature-links li a:hover .feature-link-content {
+	top: -8px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+
+.feature-links li a:active .feature-link-content {
+	top: -5px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
 }
 
 .feature-links li a span {
 	display: block;
 }
 
-.feature-links li#security-privacy a { background-position: 50% 0; }
-.feature-links li#high-performance a { background-position: 50% -200px; }
-.feature-links li#greater-personalization a { background-position: 50% -400px; }
-.feature-links li#higher-productivity a { background-position: 50% -600px; }
-.feature-links li#cutting-edge a { background-position: 50% -800px; }
-.feature-links li#universal-access a { background-position: 50% -1000px; }
+.feature-links li#made-easy a .feature-link-content { background-position: 50% 0; }
+.feature-links li#high-performance a .feature-link-content { background-position: 50% -250px; }
+.feature-links li#advanced-security a .feature-link-content { background-position: 50% -500px; }
+.feature-links li#powerful-personalization a .feature-link-content { background-position: 50% -750px; }
+.feature-links li#cutting-edge a .feature-link-content { background-position: 50% -1000px; }
+.feature-links li#universal-access a .feature-link-content { background-position: 50% -1250px; }
 
 #top-features {
 	zoom: 1;
 	float: right;
 	width: 150px;
-	padding: 20px 20px 15px 20px;
-	background: #cce2f3;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	margin-top: -20px;
+	margin: -100px 0 50px 0;
+	padding: 15px 20px 10px 20px;
+	background: #fff;
+	border: #d7d9e8 1px solid;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-moz-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+	-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+	box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
 }
 
 #top-features h3 {
 	font-size: 18px;
 	margin: 0;
-	color: #3a4692;
 	line-height: 1;
 }
 
 #main-feature #top-features p {
 	font-size: 12px;
-    margin: 0;
+	margin: 0;
 }
 
 #top-features ul {
@@ -170,153 +154,215 @@ h4 {
 }
 
 /* }}} */
-/* {{{ Features */
+/* {{{ General Features */
 
-.features-box {
-	clear: left;
-	padding: 60px 0 0 0;
-	position: relative;
+#content {
+	clear: both;
+	margin-top: 50px;
 }
-
-.features-box h3 a.video {
-	background: url(/img/covehead/features/video-reel.png) bottom right no-repeat;
-	font-family:georgia,serif;
-	font-size: 14px;
-	font-weight: normal;
-	text-transform: none;
-	margin-left: 10px;
-	padding-right: 25px;
-}
-
 
 .features-box .features-container {
-	padding: 10px 0 30px 0;
-	background: url(/img/covehead/divider-main.jpg) top center no-repeat;
+	padding: 25px 0 30px 0;
+	background: url(/img/covehead/divider-notch.jpg) top center no-repeat;
 	position: relative;
 }
 
-.features-box .feature {
-	margin-bottom: 20px;
+.features-box,
+.features-container,
+.feature {
+	clear: both;
 }
 
-.features-box .feature h4 {
-	margin-top: 0;
-}
-
-.features-box .features-row {
-	padding-left: 20px;
-}
-
-.features-box .features-top-link {
+.features-top-link {
 	background: url(/img/covehead/features/return-to-top.png) bottom left no-repeat;
-	text-indent: -99999px;
-	clear: both;
-	display: block;
-	width: 15px;
-	margin: 10px 10px 0 0;
-	padding: 10px 0 0 0;
-	outline: none;
+	float: right;
+	padding-left: 25px;
 }
 
-.features-divider hr { display: none; }
-.features-divider {
-	background: url(/img/covehead/features/features-divider.png) 0 40% no-repeat;
-	height: 8px;
-	clear: both;
-	padding: 30px 0;
-	margin-left: 10px;
+h3 {
+	font-size: 40px;
+	line-height: 1em;
 }
 
-.features-footer { clear: both; }
+h4 {
+	font-size: 22px;
+	margin: 0;
+}
+
+h5 {
+	font-size: 13px;
+	font-weight: bold;
+	font-style: normal;
+	margin: 0;
+}
+
+hr {
+	clear: both;
+	background: url(/img/covehead/divider-dotted.png) top center repeat-x;
+	margin: 25px 0;
+	padding: 2px;
+	border: 0;
+}
+
+img.right {
+	float: right;
+	margin-left: 20px;
+}
 
 .column1,
 .column2,
-.column3 {
+.column3,
+.column1-2wide {
 	float: left;
 	display: inline;
 	width: 290px;
 	margin-right: 35px;
+	margin-bottom: 25px;
 	position: relative;
 }
+.column1,
+.column1-2wide { clear: left; }
 .column3 { margin-right: 0; }
 
-/* }}} */
-/* {{{ Security */
-
-
-/* }}} */
-/* {{{ Performance */
-
-#performance-chart ul {
-	left: 0;
-	margin: 10px 0 0 0;
-	padding: 0;
-}
-
-#performance-chart ul li {
-	float: left;
-	background: none;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	width: 90px;
-	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	font-style: italic;
-	color: #4b4740;
-}
-
-#performance-chart ul li span {
-	display: block;
-	font-size: 12px;
-	font-weight: normal;
-	color: #666;
-}
-
-#out-of-process {
-	clear: both;
-	padding-top: 15px;
-}
-
-/* }}} */
-/* {{{ Personalization */
-
-
-/* }}} */
-/* {{{ Productivity */
-
-#location-bar {
-	float: left;
+.column1-2wide {
 	width: 580px;
-	margin-right: 60px;
 }
 
-#tabs-feature {
-	float: left;
-	width: 275px;
+.column1-2wide .column1,
+.column1-2wide .column2 {
+	width: 270px;
 }
 
-#firefox-support {
-	float: left;
-	width: 600px;
+.column1-2wide .column2 {
+	margin-right: 0;
 }
 
-#firefox-support img {
-	float: right;
+.column-span {
+	margin-bottom: 25px;
+}
+
+.column1 .sub-feature,
+.column2 .sub-feature,
+.column3 .sub-feature,
+.column1-2wide .sub-feature {
+	margin: 5px 0 10px 0;
+}
+
+.column1 img,
+.column2 img,
+.column3 img,
+.column1-2wide img {
+	margin: 0 0 25px 0;
 }
 
 /* }}} */
-/* {{{ Cutting Edge */
+/* {{{ Browsing Made Easy */
 
-#newest-technologies ul {
-	margin-left: 25px;
+
+#madeeasy .features-container {
+	background: url(/img/covehead/divider-notch-main.jpg) top center no-repeat;
+}
+
+.oneclickbookmarking {
+	margin-bottom: 25px;
+	margin-right: 50px;
+}
+
+.oneclickbookmarking p {
+	padding-right: 300px;
 }
 
 /* }}} */
-/* {{{ Universal */
+/* {{{ High Performance */
+
+#performance-chart {
+    float: left;
+    width: 290px;
+}
+
+#performance-chart img {
+	margin: 0;
+}
+
+#performance-chart th,
+#performance-chart td {
+    padding: 2px 2px 3px 2px;
+}
+
+#performance-chart tr.kraken-36 th,
+#performance-chart tr.kraken-4 th,
+#performance-chart tr.sunspider-36 th,
+#performance-chart tr.sunspider-4 th,
+#performance-chart tr.v8-36 th,
+#performance-chart tr.v8-4 th { width: 76px; }
+
+#performance-chart tr.kraken-36 td,
+#performance-chart tr.kraken-4 td,
+#performance-chart tr.sunspider-36 td,
+#performance-chart tr.sunspider-4 td,
+#performance-chart tr.v8-36 td,
+#performance-chart tr.v8-4 td { width: 214px; }
+
+#performance-chart th {
+    color: #484848;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+#performance-chart td span {
+    display: inline-block;
+    width: 200px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    text-align: right;
+    padding: 3px 0 3px 0;
+    -moz-box-shadow:    0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1);
+    box-shadow:         0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #666;
+    line-height: 20px;
+    font-size: 12px;
+    background-image: -moz-linear-gradient(top, #979797 0%, #7a7a7a 100%); /* firefox */
+}
+
+#performance-chart tr.winner td span {
+    background-color: #fa7701;
+    background-image: -moz-linear-gradient(top, #ff7e0a 0%, #d46501 100%); /* firefox */
+    -moz-box-shadow: 0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1), 0 0 12px 1px #ffc000;
+    -webkit-box-shadow: 0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1), 0 0 12px 1px #ffc000;
+    box-shadow: 0 2px rgba(0,0,0,0.1), inset 0 -3px rgba(0,0,0,0.1), 0 0 12px 1px #ffc000;
+}
+
+#performance-chart tr.winner td span em {
+    font-size: 14px;
+    font-style: normal;
+}
+
+#performance-chart tr.note td {
+    color: #ea6401;
+    padding-bottom: 10px;
+}
+
+/* }}} */
+/* {{{ Advanced Security */
 
 
 /* }}} */
+/* {{{ Powerful Personalization */
+
+.addons-manager {
+	margin-bottom: 50px;
+}
+
+/* }}} */
+/* {{{ The Cutting Edge */
 
 
+/* }}} */
+/* {{{ Universal Access */
+
+
+/* }}} */

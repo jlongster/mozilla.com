@@ -1,22 +1,5 @@
 /* {{{ Main Feature */
 
-#main-feature h2 {
-    padding: 10px 0;
-    margin: 0;
-    line-height: 1;
-}
-
-#main-feature p {
-    font-style: italic;
-    color: #303030;
-    line-height: 1;
-}
-
-
-#security #doc {
-	background: url('/img/firefox/security/background-security.png') no-repeat 35px 105px;
-}
-
 #security #main-feature {
 	min-height: 280px;
 }
@@ -24,87 +7,111 @@
 * html #security #main-feature { height: 380px; }
 
 #security #main-feature h2 {
-	padding-top: 0;
-    font-size: 50px;
+	padding-top: 55px;
+    margin: 0;
+    line-height: 1;
+	font-size: 41px;
 }
 
 #security #main-feature h2 span {
-    font-size: 80px;
+    font-size: 70px;
 }
-
 
 #security #main-feature p {
-    font-size: 22px;
-    width: 400px;
+    font-style: italic;
+    color: #303030;
+    line-height: 1;
 }
+
 
 /* }}} */
 /* {{{ Navigation */
 
-#security #main-feature ul {
+.feature-links {
 	overflow: auto;
-	margin: 30px 0 0 0;
+	zoom: 1;
+	margin: 15px 0 0 -20px;
+	padding: 15px 0 15px 15px;
+	background: url(/img/firefox/security/menu-background.png) 20px 0 no-repeat;
 }
 
-#security #main-feature ul li {
+.feature-links li {
+	text-align: center;
+	display: inline;
 	float: left;
 	background: none;
-	padding: 1px;
-	display: inline;
-	margin-right: 38px;
-	padding-bottom: 30px;
 	list-style-type: none;
+	margin: 0 60px 0 0;
+	padding: 0 1px;
 }
 
-#security #main-feature ul li a,
-#security #main-feature ul li a:link
-#security #main-feature ul li a:visited {
+.feature-links li a,
+.feature-links li a:link,
+.feature-links li a:visited {
+	color: #484848;
 	display: block;
-	width: 200px;
-	padding: 100px 0 40px 0;
-	background: url(/img/firefox/security/menu-icons.png) 50% 0 no-repeat;
-	text-align: center;
-	font-family: georgia, serif;
-	font-style: italic;
-	font-size: 18px;
-	line-height: 18px;
+	padding: 0 0 2px;
 }
 
-#security #main-feature ul li#security-mission {
+.feature-links li a .feature-link-content,
+.feature-links li a:link .feature-link-content,
+.feature-links li a:visited .feature-link-content {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+.feature-links li a .feature-link-content {
+	background: url(/img/firefox/security/menu-icons.png) 50% 0 no-repeat;
+	display: block;
+	width: 120px;
+	font-size: 14px;
+	font-style: italic;
+	line-height: 16px;
+	text-align: center;
+	padding: 110px 0 10px;
+	cursor: pointer; /* For IE */
+	position: relative;
+	top: 0;
+}
+
+.feature-links li a:hover .feature-link-content {
+	top: -8px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+
+.feature-links li a:active .feature-link-content {
+	top: -5px;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+}
+
+.feature-links li#security-mission {
 	margin-right: 0;
 }
 
-#security #main-feature ul li a:hover,
-#security #main-feature ul li a:active {
-	text-decoration: none;
+.feature-links li a span {
+	display: block;
 }
 
-#security #main-feature ul li a span {
-    display: block;
-}
-
-#security #main-feature ul li#security-privacy a,
-#security #main-feature ul li#security-privacy a:link,
-#security #main-feature ul li#security-privacy a:visited { background-position: 50% -260px; }
-
-#security #main-feature ul li#security-control a,
-#security #main-feature ul li#security-control a:link,
-#security #main-feature ul li#security-control a:visited { background-position: 50% -520px; }
-
-#security #main-feature ul li#security-mission a,
-#security #main-feature ul li#security-mission a:link,
-#security #main-feature ul li#security-mission a:visited { background-position: 50% -775px; }
+.feature-links li#security-secure a .feature-link-content { background-position: 50% -250px; }
+.feature-links li#security-control a .feature-link-content { background-position: 50% -500px; }
+.feature-links li#security-mission a .feature-link-content { background-position: 50% -750px; }
 
 /* }}} */
 /* {{{ Main Content */
 
-#security #secure {
-	background: url(/img/covehead/divider-main.jpg) 50% 0 no-repeat;
+#security #privacy {
+	background: url(/img/covehead/divider-notch-main.jpg) 50% 0 no-repeat;
+	padding-top: 55px;
 }
 
 #security .section {
-	background: url(/img/firefox/security/divider-sub.png) 50% 0 no-repeat;
-	padding: 30px 0 0 0;
+	background: url(/img/covehead/divider-notch.jpg) 50% 0 no-repeat;
+	padding: 40px 0 0 0;
 	clear: both;
 	overflow: auto;
 	zoom: 1;
@@ -158,6 +165,14 @@
 
 #security .section .top-link {
 	clear: left;
+}
+
+#security .section .top-link a {
+    background: url(/img/firefox/page-top.png) 0 0 no-repeat;
+    height: 20px;
+    display: inline-block;
+    padding-left: 25px;
+    font-size: 12px;
 }
 
 #security #mission .section-image {
