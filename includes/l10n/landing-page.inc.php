@@ -27,7 +27,8 @@ if(isset($_GET['fx4']) && intval($_GET['fx4']) == 1) {
     $fx4released = true;
 }
 
-if($fx4released) {
+
+if($fx4released || $config['server_name'] != 'www.mozilla.com') {
     $contentfile = $fx4file;
     $retour = true;
     $details = $config['file_root'].'/'.$lang.'/firefox/4/details/index.html';
