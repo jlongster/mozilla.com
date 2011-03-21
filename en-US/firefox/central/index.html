@@ -19,11 +19,6 @@
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
-<svg style="display: none">
-    <defs>
-    <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
-    </defs>
-</svg>
 <div id="download" class="top-right">
     <script src="/js/download.js"></script>
     <?php
@@ -288,6 +283,11 @@ EXTRA_HEADERS;
     </figure>
     <a href="#" class="close">close</a>
 </article>
+<svg style="height: 0">
+    <defs>
+    <filter id="blur"><feGaussianBlur stdDeviation="3"/></filter>
+    </defs>
+</svg>
 
 <?php
     $extra_footers = <<<EXTRA_FOOTERS
