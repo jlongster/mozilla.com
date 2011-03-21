@@ -1,10 +1,24 @@
+<?php
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="preload" href="/img/firefox/4.0/firstrun/effects.svg">
-    <link rel="stylesheet" href="/style/firefox/4/firstrun-page.css">
     <style>
+<?php
+    require_once "{$config['file_root']}/style/firefox/4/firstrun-page.min.css"
+?>
       #tour .callout path {
           fill: #fff;
       }
@@ -18,7 +32,7 @@
   <body>
     <div id="container">
       <header>
-        <img id="logo" src="/img/firefox/4.0/firstrun/FxLogo.png" width="116" height="124" alt="Firefox Logo">
+        <div id="logo"></div>
         <div id="header">
           <h1 class="wordmark">mozilla Firefox</h1>
           <aside>
@@ -54,21 +68,33 @@
                    special Mozilla news, Firefox tips & tricks, and more!
               </div>
             </div>
-            <form id="email-form" action="#email-form" method="post">
-              <input name="email" type="email" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
+            <form id="email-form" class="<?= $status ?>" action="" method="post">
+              <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
+              <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+              <div id="success-msg">Thanks for Subscribing!</div>
               <div class="more">
                 <div class="row">
                   <select id="country" name="country">
                       <option value="">Select country</option>
+                      <?php
+                          $country = $form->get('country');
+                          if (!$country) {
+                              $country = 'us';
+                          }
+                          echo regionsAsOptions($lang, $country);
+                      ?>
                   </select>
                 </div>
                 <div class="row"> 
-                    <label for="html-format"><input type="radio" name="format" id="html-format" value="html"> HTML</label>
-                    <label for="text-format"><input type="radio" name="format" id="text-format" value="text"> Text</label>&nbsp;
+                    <?php
+                        $isText = $form->get('format') == 'text';
+                    ?>
+                    <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
+                    <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
                 </div>
                 <div class="row">
                     <label for="privacy-check" id="privacy-check-label">
-                        <input type="checkbox" id="privacy-check" name="privacy">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                        <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
                     </label>
                 </div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
@@ -85,22 +111,24 @@
           <div class="promo">
             <a href="http://twitterparty.mozilla.org/"
                onmousedown="dcsMultiTrack('DCS.dcsuri', '/button/firstrun/twitter.html', 'WT.ti', 'First%20Run%20%20Twitter');"
-               class="button" id="twitter"><img src="/img/firefox/4.0/firstrun/twitter-badge.png">Join the party&nbsp;&raquo;</a>
+               class="button" id="twitter">Join the party&nbsp;&raquo;</a>
             <a href="http://www.facebook.com/Firefox?v=app_122300121174636"
                onmousedown="dcsMultiTrack('DCS.dcsuri', '/button/firstrun/facebook.html', 'WT.ti', 'First%20Run%20%20Facebook');"
-               class="button" id="facebook"><img src="/img/firefox/4.0/firstrun/fb-badge.png">Facebook badges&nbsp;&raquo;</a>
+               class="button" id="facebook">Facebook badges&nbsp;&raquo;</a>
           </div>
         </footer>
       </div>
     </div>
     <div id="video">
       <a href="#" id="video-close">close</a>
-      <video src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.webm" controls></video>
+      <video src="http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.webm"
+             poster="/img/firefox/4.0/firstrun/poster.jpg"
+             preload="none" controls></video>
     </div>
     <div id="tour">
     </div>
     <div id="overlay"></div>
-    <svg>
+    <svg id="effects">
       <defs>
         <linearGradient id="hover" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style="stop-color:#7ba9e5; stop-opacity:1"/>
@@ -166,6 +194,7 @@
       function init() {
         var body = document.body,
             vid = $("video");
+            timeout = false;
             window.vid = vid;
 
         $(".know").addEventListener("transitionend", function() {
@@ -197,18 +226,28 @@
         }, false);
         $("#video").addEventListener("transitionend", function(e) {
           if (e.originalTarget == $("video") && body.classList.contains("video")) {
-            setTimeout(function() {
-              vid.load();
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+              vid.play();
             }, 1000);
           }
         }, false);
 
-        $("#video-close").addEventListener("click", function(e) {
-          e.preventDefault();
-          vid.pause();
-          body.classList.remove("video");
+        $("#video").addEventListener("click", function(e) {
+          if (e.originalTarget == $("#video") && body.classList.contains("video")) {
+            dismissVideo(e);
+          }
         }, false);
 
+        $("#video-close").addEventListener("click", dismissVideo, false);
+
+        function dismissVideo(e) {
+          e.preventDefault();
+          clearTimeout(timeout);
+          vid.pause();
+          body.classList.remove("video");
+        }
+        
         function bindTour() {
           $$("#tour .tip .callout, #tour .tip .emblem", function() {
             this.addEventListener("mouseover", function(e) {
@@ -224,6 +263,21 @@
             body.classList.remove("tour");
           }, false);
         }
+        
+        $("#overlay").addEventListener("click", function(e) {
+          if (e.originalTarget == $("#overlay") && body.classList.contains("tour")) {
+            e.preventDefault();
+            body.classList.remove("tour");
+          }
+        }, false);
+
+        $("#email").addEventListener("focus", function() {
+          $("#newsletter-signup").classList.add("expand");
+        }, false);
+        $("#newsletter-signup .title h3").addEventListener("click", function() {
+          $("#newsletter-signup").classList.add("expand");
+          $("#email").focus();
+        }, false);
 
         function fetchTour() {
           var req = new XMLHttpRequest();
@@ -254,5 +308,10 @@
       })();
       document.body.classList.add(platform);
     </script>
+
+    <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
+    <noscript>
+      <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/>
+    </noscript>    
   </body>
 </html> 
