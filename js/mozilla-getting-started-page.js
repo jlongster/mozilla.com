@@ -92,16 +92,15 @@ $(document).ready(function() {
     addHandlers();
 
     function addHandlers() {
-        $('.tip-container').bind('focusin mouseenter', function () {
+        // Fix for keyboard accessibility
+        $('.tip-container').bind('mouseenter', function (e) {
             var $this = $(this);
-            $this.siblings().focusout();
             $this.children('.arrow, .tip')
                 .css({'display': 'block'})
                 .animate({'opacity': 1}, 300);
             $this.children('.callout')
-                .focus()
                 .animate({'opacity': 0}, 300);
-        }).bind('focusout mouseleave', function () {
+        }).bind('mouseleave', function (e) {
             var $this = $(this);
             $this.children('.arrow, .tip')
                 .animate({'opacity': 0}, 300, function () {
@@ -110,7 +109,7 @@ $(document).ready(function() {
             $this.children('.callout')
                 .animate({'opacity': 1}, 300);
         });
-
+        
     }
 
     function drawTip(tip) {
