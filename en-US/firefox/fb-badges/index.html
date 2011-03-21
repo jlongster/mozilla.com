@@ -46,10 +46,13 @@
     bind_textdomain_codeset("messages", "UTF-8");
     textdomain('messages');
 
+    if ($locale == 'ar_JO.utf8' || $locale == 'he_IL') {
+        $rtl = true;
+    }
 
 ?>
 <!DOCTYPE html>
-<html>
+<html dir="<?php echo ($rtl) ? 'rtl' : 'ltr' ?>">
 	<head>
 		<title>Firefox 4 Tab</title>
 		<link rel="stylesheet" type="text/css" href="static/styles.css" />
@@ -79,7 +82,11 @@
     		  <div id="downloadButton">
 		    <div id="buttonContent">
                     <?php print gettext("Firefox 4"); ?>
-                    <img src="images/download-arrow.png" />
+                    <?php if ($rtl) { ?>
+                        <img src="images/rtl/download-arrow.png" />
+                    <?php } else { ?>
+                        <img src="images/download-arrow.png" />
+                    <?php } ?>
                     <span id="buttonCTA"><?php print gettext("Free Download"); ?></span>
                 </div>
               </div>
@@ -99,7 +106,11 @@
     		  <span><?php print gettext("(Pick a badge and post to your wall)."); ?></span>
     		  <div id="badgeClick">
     		      <?php print gettext("click"); ?>
-    		      <img src="images/downarrow.png" />
+    		      <?php if ($rtl) { ?>
+    		          <img src="images/rtl/downarrow.png" />
+    		      <?php } else { ?>
+    		          <img src="images/downarrow.png" />
+                  <?php } ?>
     		  </div>
     		</div>
     		<div id="badges">
