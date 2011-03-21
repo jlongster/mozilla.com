@@ -27,16 +27,20 @@
     margin-left: -20px;
 }
 
-#figure svg {
+#figure #svg-path {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
+    height: 300px;
+    background: url(/img/covehead/firefox/gettingstarted/path.svg) left top no-repeat;
+    background-size: 100% 100%;
 }
 
 #figure .callout {
     position: absolute;
-    background: url(/img/covehead/firefox/gettingstarted/callout-down.png);
+    background: url(/img/covehead/firefox/gettingstarted/callout-down.png) no-repeat center bottom;
+    background-image: url(/img/covehead/firefox/gettingstarted/callout-down-ie.png)\9;
     width: 36px;
     height: 52px;
     margin-left: -18px;
@@ -44,7 +48,8 @@
 }
 
 #figure .up .callout {
-    background: url(/img/covehead/firefox/gettingstarted/callout-up.png);
+    background: url(/img/covehead/firefox/gettingstarted/callout-up.png) no-repeat center top;
+    background-image: url(/img/covehead/firefox/gettingstarted/callout-up-ie.png)\9;
     margin-top: 0;
 }
 
@@ -60,6 +65,7 @@
 
 #figure .up .arrow {
     background: url(/img/covehead/firefox/gettingstarted/arrow-hover-up.png) no-repeat bottom;
+    background-image: url(/img/covehead/firefox/gettingstarted/arrow-hover-up-ie.png)\9;
     margin-top: -5px;
 }
 
@@ -82,13 +88,14 @@
     -webkit-box-shadow: 0 4px rgba(0,0,0,.3), inset 0 -3px #425094, inset 0 0 8px #5b91e2;
     box-shadow: 0 4px rgba(0,0,0,.3), inset 0 -3px #425094, inset 0 0 8px #5b91e2;
     background: -moz-linear-gradient(bottom, #4352ac, #6a9de3 135%);
+    background: -o-linear-gradient(bottom, #4352ac, #6a9de3 135%);
     background: -webkit-linear-gradient(bottom, #4352ac, #6a9de3 135%);
     background: -webkit-gradient(linear, left bottom, left top, from(#4352ac), to(#6a9de3));
     z-index: 1;
 }
 
 #figure .up .tip {
-    background-color: #6a9de3;
+    background-color: #4866E1;
     margin-top: 17px;
 }
 
@@ -159,13 +166,6 @@
     z-index: 9999;
 }
 
-/* Firefox >= 4 */
-:-moz-any(body) #overlay {
-    opacity: 1;
-    background: -moz-linear-gradient(rgba(255,255,255, .5), rgba(255,255,255, .5)), -moz-element(#central) white;
-    filter: url(#blur);
-}
-
 .overlay-box {
     position: fixed;
     _position: absolute;
@@ -175,6 +175,9 @@
     width: 910px;
     background: white;
     background: -moz-linear-gradient(top, white, white 50%, #f4f9ff);
+    background: -o-linear-gradient(top, white, white 50%, #f4f9ff);
+    background: -webkit-linear-gradient(top, white, white 50%, #f4f9ff);
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(0.5, white), to(#f4f9ff));
     border: 1px solid #b0c1d2;
     box-shadow: 0 3px rgba(0,0,0, .1), inset 0 -2px #e0ecf9, inset 0 0 12px rgba(223, 236, 249, .2);
     -moz-border-radius: 5px;
