@@ -34,6 +34,21 @@ function goToEnglishPage() {
     exit;
 }
 
+function noCachingRedirect($url) {
+    header('Date: '.gmdate('D, d M Y H:i:s \G\M\T', time()));
+    header('Expires: Fri, 01 Jan 1990 00:00:00 GMT');
+    header('Pragma: no-cache');
+    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
+    header('Vary: *');
+    header("Location: $url");
+    exit;
+}
+
+
+
+
+
+
 
 /*
  *  fork of buildPlatformImage() used on features page but l10n friendly

@@ -1,5 +1,10 @@
 /* RTL support for mozilla.com */
 
+
+html, body, #doc, #wrapper {
+    text-align:right;
+}
+
 #header h1 {
   float: right;
 }
@@ -23,6 +28,8 @@
   float: right;
   -moz-transform: scaleX(-1);
 }
+
+
 
 ul.home-download {
   margin-left: auto;
@@ -142,25 +149,32 @@ a.email:hover, a.email:hover {
     padding-right: 35px;
 }
 
-.rtl #header {
+ #header {
     text-align: center;
 }
 
-.rtl #header a.mozilla {
+ #header a.mozilla {
     float: left;
 
 }
-.rtl #header a:hover {
+ #header a:hover {
     text-decoration:none;
 }
 
-.rtl #nav-main li {
-    float: right;
-    text-align: right;
+/* IE6/7 compatibility */
+ #nav-main {
+    display:inline;
+    display:inline-block;
 }
 
-.rtl #nav-main ul li a,
-.rtl #nav-main ul li a:link,
-.rtl #nav-main ul li a:visited {
+ #nav-main li {
+    float: right;
+    text-align: right;
+
+}
+
+ #nav-main ul li a,
+ #nav-main ul li a:link,
+ #nav-main ul li a:visited {
     padding: 15px 10px 10px 30px;
 }

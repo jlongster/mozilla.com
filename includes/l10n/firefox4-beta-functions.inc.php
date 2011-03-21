@@ -3,18 +3,6 @@
  * commodity functions for the Firefox 4 beta pages
  */
 
-
-function noCachingRedirect($url) {
-    header('Date: '.gmdate('D, d M Y H:i:s \G\M\T', time()));
-    header('Expires: Fri, 01 Jan 1990 00:00:00 GMT');
-    header('Pragma: no-cache');
-    header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
-    header('Vary: *');
-    header("Location: $url");
-    exit;
-}
-
-
 function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com') {
 
     if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  $host) {
