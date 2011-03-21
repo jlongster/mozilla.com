@@ -8,8 +8,8 @@ $(document).ready(function() {
 				.css('display', 'block')
 				.css('height', $(document).height() + 'px');
 
-			var width = $('#overlay-' + this.id).width();
-			var height = $('#overlay-' + this.id).height();
+			var width = $('#overlay-' + this.id).outerWidth();
+			var height = $('#overlay-' + this.id).outerHeight();
 			var docWidth = $(document).width();
 			var viewHeight = $(window).height();
 			
