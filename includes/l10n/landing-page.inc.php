@@ -45,7 +45,7 @@ if($fx4released || $config['server_name'] != 'www.mozilla.com') {
     if (file_exists($file) && is_readable($file)) {
         $json = json_decode(file_get_contents($file), true);
         if ($json !== null) {
-            $downloads = ___('Experience Firefox&nbsp;4');
+            $downloads = $json['4.0'];
         }
     }
 
