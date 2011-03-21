@@ -306,8 +306,9 @@ RewriteRule ^en-US/support(?:/.*)?$ http://support.mozilla.com/ [R=permanent,L]
 RewriteRule ^en-US/firefox/flicks(?:/.*)$ http://www.firefoxflicks.com/ [R=permanent,L]
 RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 
-# temporarily removed for Firefox 4 RC and Final (by beltzner)
-#RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
+# to be used leading up to a release, as a way of diverting HTTP traffic from
+# FTP mirrors - remove when the new version goes live
+RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
 
 RewriteRule ^en-US/firefox/underthehood[/]? /en-US/firefox/performance/ [R=permanent]
 
