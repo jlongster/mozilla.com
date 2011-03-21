@@ -46,9 +46,8 @@
     bind_textdomain_codeset("messages", "UTF-8");
     textdomain('messages');
 
-    if ($locale == 'ar_JO.utf8' || $locale == 'he_IL') {
-        $rtl = true;
-    }
+    // right-to-left languages
+    $rtl = in_array($locale, array('ar_JO.utf8', 'he_IL'));
 
 ?>
 <!DOCTYPE html>
