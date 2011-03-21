@@ -29,8 +29,7 @@ EXTRA_HEADERS;
 <div id="main-feature">
   <h2>Firefox 4 <span>Release Notes</span></h2>
   <p><em>v.4.0, released March 22nd, 2011</em>
-  <p>We rely on your feedback to help shape our products, so we've bundled a <a href="/<?=$lang?>/firefox/beta/#privacy">Feedback Add-on</a> with the Firefox&nbsp;4&nbsp;RC that provides an easy to use <a href="/<?=$lang?>/firefox/beta/feedback/">Feedback button</a>.</p>
-  <p>If you want to test Add-ons with Firefox&nbsp;4&nbsp;RC, you will need to install the <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">Add-on Compatibility Reporter</a> first.</p>
+    Check out what’s new, the known issues and frequently asked questions about the latest version of Firefox. As always, you’re encouraged to <a href="http://input.mozilla.com/release/feedback">tell us what you think</a>, or <a href="https://bugzilla.mozilla.org/">file a bug in Bugzilla</a>.</p>
 </div>
 
 <div id="main-content">
@@ -38,69 +37,45 @@ EXTRA_HEADERS;
         @include_once "{$config['file_root']}/{$lang}/includes/release-notes-sidebar-4.inc.php";
     ?>
 
-    <div id="whatsnew" class="expander">
-      <h3 class="expander-header">About this release</h3>
-      <div class="expander-content">
-       <p>Firefox&nbsp;4&nbsp;RC is based on the Gecko 2.0 Web platform. Please read below for more detailed information about what's new in this version of the release, as well as the known issues.</p>
-       <p>This Firefox&nbsp;4&nbsp;RC is considered to be stable and safe to use for daily web browsing, though the features and content may change before the final product release. At this time many <a href="http://addons.mozilla.org">Add-ons</a> may not yet have been
-       tested by their authors to ensure that they are compatible with this
-       release. If you wish to help test Add-on compatibility, please
-       <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your
-       favorite Add-on author will appreciate it!</p>
-       <p>Check out what’s new, the known issues and frequently asked questions
-       about the latest version of Firefox. Please tell us what you think using the <a
-       href="/<?=$lang?>/firefox/beta/feedback/">feedback tools</a> provided as part of the RC. We appreciate your input!
-        </p>
-      </div>
-    </div>
-
     <div id="whatsnew2" class="expander expander-odd">
-      <h3 class="expander-header">What’s New in this Firefox&nbsp;4&nbsp;RC</h3>
+      <h3 class="expander-header">What’s New in this Firefox&nbsp;4</h3>
       <div class="expander-content">
+	         <p>Firefox&nbsp;4 is based on the Gecko 2.0 Web platform. This release features JavaScript execution speeds up to <i>six</i> times faster than the previous version, new capabilities for Web Developers and Add-on Developers such as hardware accelerated graphics and HTML5 technologies, and a completely revised user interface. Please read below for more detailed information about what's new in this version of the release, as well as the known issues.</p>
+
         <ul class="spaced">
-          <li>General stability, performance, and compatibility improvements</li>
-          <li>See the <a href="buglist.html">complete changelist from the previous beta</a></li>
-       </ul>
-       <p>As well as these features from previous Firefox&nbsp;4&nbsp;Betas:</p>
-       <ul class="spaced">
-          <li>Firefox&nbsp;4&nbsp;RC is available in <a href="http://www.mozilla.com/firefox/all-beta.html">79 languages</a></li>
-          <li>Support for the proposed <a href="http://blog.sidstamm.com/2011/01/opting-out-of-behavioral-ads.html">Do Not Track ("DNT") header</a></li>
-          <li>Connection status messages are now <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628654">shown in a small overlay</a></li>
-          <li>WebGL is enabled on all platforms, but, like for other hardware acceleration features, many buggy drivers or driver versions are blocked</li>
-          <li>The default homepage design has been <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=627301">refreshed</a></li>
-          <li>Firefox no longer switches into <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620472">offline mode</a> automatically</li>
-          <li>Overhaul of the <a href="http://shawnwilsher.com/archives/473">bookmarks and history code</a>, enabling faster bookmarking and startup performance</li>
-          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled, reducing work done during complex animations</li>
-          <li>The <a href="http://www.mozilla.com/mobile/sync/">Firefox Sync</a> setup experience has been greatly improved across desktop and <a href="/mobile/beta/">mobile</a> devices</li>
-          <li>Additional polish for the Firefox Add-ons Manager</li>
-          <li>Uses <a href="http://blog.mozilla.com/dmandelin/2010/09/08/presenting-jagermonkey/">J&auml;gerMonkey</a>, a new, faster JavaScript engine</li>
-          <li>Certain rendering operations are now <a href="http://hacks.mozilla.org/2010/09/hardware-acceleration/">hardware-accelerated</a> using Direct3D 9 on Windows XP, Direct3D 10 on Windows Vista and 7, and OpenGL on Mac OS X</li>
-          <li>Improved web typography using <a href="http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/">OpenType</a> with support for ligatures, kerning and font variants</li>
-          <li><a href="http://blog.oldworld.fr/index.php?post/2010/11/17/HTML5-Forms-Validation-in-Firefox-4">HTML5 Forms API</a> makes web based forms easier to implement and validate</li>
-          <li>Support for the new proposed <a href="https://wiki.mozilla.org/Audio_Data_API">Audio Data API</a></li>
+          <li>Firefox&nbsp;4 is available in over <a href="http://www.mozilla.com/firefox/all-beta.html">80 languages</a></li>
+          <li>Uses <a href="http://blog.mozilla.com/dmandelin/2010/09/08/presenting-jagermonkey/">J&auml;gerMonkey</a>, a new, faster JavaScript engine that is up to six times faster than Firefox 3.6</li>
+          <li>Support for the <a href="http://blog.sidstamm.com/2011/01/opting-out-of-behavioral-ads.html">Do Not Track ("DNT") header</a> that allows users to opt-out of behavioural advertising</li>
+          <li><a href="http://www.mozilla.com/mobile/sync/">Firefox Sync</a> is included by default, allowing you to securely synchronize between multiple computers and mobile devices</li>
+          <li>Certain graphics rendering operations are now <a href="http://hacks.mozilla.org/2010/09/hardware-acceleration/">hardware-accelerated</a> using Direct3D 9 on Windows XP, Direct3D 10 on Windows Vista and 7, and OpenGL on Mac OS (OpenGL on Linux will be supported in the future)</li>
           <li><a href="https://wiki.mozilla.org/Platform/GFX/Direct2DDemo">Direct2D Hardware Acceleration</a> is now on by default for Windows 7 users</li>
+          <li>WebGL is enabled on all platforms that have a capable graphics card with updated drivers</li>
+          <li>Native support for the HD HTML5 <a href="http://hacks.mozilla.org/2010/05/firefox-youtube-and-webm/">WebM</a> video format, hardware accelerated where available</li>
           <li>Firefox button has a new look for Windows Vista and Windows 7 users</li>
-          <li>Support for <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">HSTS security protocol</a> allowing sites to insist that they only be loaded over SSL</li>
-          <li><a href="http://www.mozilla.com/en-US/firefox/sync/">Firefox Sync</a> is now included by default</li>
-          <li>A <a href="http://www.azarask.in/blog/post/designing-tab-candy/">new feature</a> gives users a visual overview of all open tabs, allowing them to be sorted and grouped</li>
-          <li>An <a href="http://hacks.mozilla.org/2010/08/more-efficient-javascript-animations-with-mozrequestanimationframe/">experimental API</a> is included to provide more efficient Javascript animations</li>
-          <li>Firefox now supports the <a href="http://hacks.mozilla.org/2010/08/html5-video-buffered-property-available-in-firefox-4/">HTML5 video "buffered" property</a></li>
           <li><a href="http://blog.mozilla.com/faaborg/2010/06/24/why-tabs-are-on-top-in-firefox-4/">Tabs are now on top</a> by default on Windows, Mac OS X, and Linux</li>
-          <li>You can turn any tab into an "App Tab" by right-clicking on it and  selecting "Make into App Tab" from the context menu</li>
-          <li>Web developers can animate content using <a href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS Transitions</a></li>
-          <li>Responsiveness and scrolling improvements from the new <a href="http://weblogs.mozillazine.org/roc/archives/2010/07/retained_layers.html">retained layers</a> layout system</li>
-          <li>JavaScript speed improvements due to <a href="http://blog.mozilla.com/dmandelin/2010/07/19/jagermonkey-update-getting-faster/">engine optimizations</a></li>
-          <li><a href="https://developer.mozilla.org/en/XPCOM/XPCOM_changes_in_Gecko_2.0">Changes to how XPCOM components are registered</a> in order to help startup time and process separation</li>
           <li>You can <a href="http://www.mozilla.com/en-US/firefox/beta/features/#feature-switch">search for and switch to already open tabs</a> in the Smart Location Bar</li>
-          <li>New Addons Manager and extension management API (UI will be changed before final release)</li>
-          <li>Significant API improvements are available for JS-ctypes, a foreign function interface for extensions</li>
           <li>The stop and reload buttons have been merged into a single button on Windows, Mac OS X, and Linux</li>
           <li>The Bookmarks Toolbar has been replaced with a Bookmarks Button by default (you can switch it back if you'd like)</li>
           <li>Crash protection for Windows, Linux, and Mac OS X when there is a crash in the Adobe Flash, Apple Quicktime or Microsoft Silverlight plugins</li>
+          <li>You can turn any tab into an "App Tab" by right-clicking on it and  selecting "Make into App Tab" from the context menu</li>
+          <li>The default homepage design has been <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=627301">refreshed</a></li>
+          <li>Overhaul of the <a href="http://shawnwilsher.com/archives/473">bookmarks and history code</a>, enabling faster bookmarking and startup performance</li>
+          <li><a href="http://andreasgal.wordpress.com/2010/10/13/compartments/">Per-compartment garbage collection</a> is now enabled, reducing work done during complex animations</li>
+          <li>Additional polish for the Firefox Add-ons Manager</li>
+          <li>Improved web typography using <a href="http://hacks.mozilla.org/2010/11/firefox-4-font-feature-support/">OpenType</a> with support for ligatures, kerning and font variants</li>
+          <li>Web developers can animate content using <a href="https://developer.mozilla.org/en/CSS/CSS_transitions">CSS Transitions</a></li>
+          <li>Responsiveness and scrolling improvements from the new <a href="http://weblogs.mozillazine.org/roc/archives/2010/07/retained_layers.html">retained layers</a> layout system</li>
+          <li><a href="http://blog.oldworld.fr/index.php?post/2010/11/17/HTML5-Forms-Validation-in-Firefox-4">HTML5 Forms API</a> makes web based forms easier to implement and validate</li>
+          <li>Support for the new proposed <a href="https://wiki.mozilla.org/Audio_Data_API">Audio Data API</a></li>
+          <li>Support for <a href="http://blog.sidstamm.com/2010/08/http-strict-transport-security-has.html">HSTS security protocol</a> allowing sites to insist that they only be loaded over SSL</li>
+          <li>A <a href="http://www.azarask.in/blog/post/designing-tab-candy/">new feature called Panorama</a> gives users a visual overview of all open tabs, allowing them to be sorted and grouped</li>
+          <li>An <a href="http://hacks.mozilla.org/2010/08/more-efficient-javascript-animations-with-mozrequestanimationframe/">experimental API</a> is included to provide more efficient Javascript animations</li>
+          <li>Firefox now supports the <a href="http://hacks.mozilla.org/2010/08/html5-video-buffered-property-available-in-firefox-4/">HTML5 video "buffered" property</a></li>
+          <li><a href="https://developer.mozilla.org/en/XPCOM/XPCOM_changes_in_Gecko_2.0">Changes to how XPCOM components are registered</a> in order to help startup time and process separation</li>
+          <li>New Addons Manager and extension management API (UI will be changed before final release)</li>
+          <li>Significant API improvements are available for JS-ctypes, a foreign function interface for extensions</li>
           <li><a href="https://developer.mozilla.org/en/CSS/-moz-transition">CSS Transitions</a> are partially supported</li>
-          <li>Full <a href="https://developer.mozilla.org/en/WebGL">WebGL</a> support is included</li>
           <li>Core Animation rendering model for plugins on Mac OS X. Plugins which also support this rendering model can now draw faster and more efficiently</li>
-          <li>Native support for the HD HTML5 <a href="http://hacks.mozilla.org/2010/05/firefox-youtube-and-webm/">WebM</a> video format</li>
           <li>Web developers can update the URL field without reloading the page using <a href="https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history#Adding_and_modifying_history_entries">HTML History APIs</a></li>
           <li>More responsive page rendering using <a href="http://hacks.mozilla.org/2010/05/better-performance-with-lazy-frame-construction/">lazy frame construction</a></li>
           <li>Link history lookup is done asynchronously to provide better responsiveness during pageload</li>
@@ -126,16 +101,15 @@ EXTRA_HEADERS;
     <div id="download" class="expander expander-odd">
       <h3 class="expander-header">Downloading</h3>
       <div class="expander-content">
-        <p>Mozilla provides Firefox&nbsp;4&nbsp;RC for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a <a href="/<?=$lang?>/firefox/all-beta.html">variety of languages</a>. For builds for other systems and languages not provided by Mozilla, see the Contributed Builds section at the end of this document.</p>
+        <p>Mozilla provides Firefox&nbsp;4 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a <a href="/<?=$lang?>/firefox/all.html">variety of languages</a>. For builds for other systems and languages not provided by Mozilla, see the Contributed Builds section at the end of this document.</p>
       </div>
     </div>
 
     <div id="install" class="expander">
       <h3 class="expander-header">Installing</h3>
       <div class="expander-content">
-        <p>Please note that installing Firefox&nbsp;4&nbsp;RC will overwrite your existing installation of Firefox.
-        You won’t lose any of your bookmarks or browsing history,
-        but some of your extensions and other add-ons might not work
+        <p>Please note that installing Firefox&nbsp;4 will overwrite your existing installation of Firefox.
+        You won’t lose any of your bookmarks or browsing history, but some of your extensions and other add-ons might not work
         until updates for them are made available.</p>
       </div>
     </div>
@@ -143,8 +117,8 @@ EXTRA_HEADERS;
     <div id="uninstall" class="expander expander-odd">
       <h3 class="expander-header">Uninstalling</h3>
       <div class="expander-content">
-        <p>You can remove Firefox&nbsp;4&nbsp;RC with the Add/Removes Programs utility on Windows, by moving the Firefox application to the Trash on Mac OS X, or by deleting the containing folder on Linux.</p>
-        <p>By default, removing Firefox&nbsp;4&nbsp;RC won’t remove your bookmarks,
+        <p>You can remove Firefox&nbsp;4 with the Add/Removes Programs utility on Windows, by moving the Firefox application to the Trash on Mac OS X, or by deleting the containing folder on Linux.</p>
+        <p>By default, removing Firefox&nbsp;4 won’t remove your bookmarks,
            web browsing history, extensions or other add-ons. This data is
            stored in your <em>profile folder</em>, which can be found by going
            to the <em>Help</em> menu and selecting <em>Troubleshooting
@@ -152,7 +126,7 @@ EXTRA_HEADERS;
            Directory</em> line in <em>Application Basics</em> will open your
            profile directory in your system's file explorer.</p>
         <p>Please note that if you keep your profile, any version of Firefox
-           that you install after removing Firefox&nbsp;4&nbsp;RC will
+           that you install after removing Firefox&nbsp;4 will
            continue to use the bookmarks, web browsing history, add-ons, and
            other data from this profile folder.</p>
       </div>
@@ -161,39 +135,37 @@ EXTRA_HEADERS;
     <div id="extensions" class="expander">
       <h3 class="expander-header">Add-ons and Themes</h3>
       <div class="expander-content">
-        <p>Add-ons installed with previous versions of Firefox may not yet have
-        been updated by their authors to work with this Firefox&nbsp;4&nbsp;RC. If you wish to help test Add-ons, please <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your favorite Add-on author will appreciate it!</p>
+        <p>You can get Add-ons and Themes by opening the Add-ons Manager, or by visiting <a href="https://addons.mozilla.org">the Add-ons Web site</a>. Add-ons installed with previous versions of Firefox may not yet have been updated by their authors to work with this Firefox&nbsp;4. If you wish to help test Add-ons, please <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your favorite Add-on author will appreciate it!</p>
       </div>
     </div>
 
     <div id="issues" class="expander expander-odd">
       <h3 class="expander-header">Known Issues</h3>
       <div class="expander-content">
-        <p>This list covers some of the known problems with Firefox&nbsp;4&nbsp;RC which will be resolved in future versions:</p>
+        <p>This list covers some of the known problems with Firefox&nbsp;4 which will be resolved in future versions:</p>
         <dl>
         <dt id="allsystems">All Systems</dt>
         <dd>
           <ul class="spaced">
             <li>Users will experience many incompatibilities with bookmarks and history if they downgrade to any Firefox&nbsp;4 beta before beta 8. Users can still downgrade back to Firefox&nbsp;3.6 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620723">bug 620723</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=614439">bug 614439</a>)</li> 
-            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to the latest <a href="/mobile/beta/">Firefox 4 beta for mobile</a></li>
+            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to the latest <a href="/mobile/beta/">Firefox 4 for mobile release</a></li>
             <li>For some users, scrolling in the main GMail window will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">bug 579260</a>)</li>
             <li>If you try to start Firefox using a locked profile, it will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">bug 573369</a>)</li>
           </ul>
         </dd>
 
-        <!--
         <dt id="windows">Microsoft Windows</dt>
         <dd>
           <ul class="spaced">
+		    <li>Some users of Adobe Reader X have experienced instability when viewing PDF documents in the browser. Uninstalling and reinstalling Adobe Reader X has been determined to resolve the issue (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=640901">bug 640901</a>)</li>
+			<li>If you customize your toolbars to include the Location Bar or Search Bar in the Menu Bar, and then toggle the state of the Menu Bar between shown and hidden, Firefox will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=640652">bug 640652</a>)</li>
           </ul>
         </dd>
-        -->
 
         <dt id="osx">Mac OS X</dt>
         <dd>
           <ul class="spaced">
-            <li>The 32bit Microsoft Silverlight plugin fails to load when using a 64bit version of
-                Firefox on Mac OS X 10.6. Sites that depend on the plugin (such as Netflix) will fail to work (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=598406">bug 598406</a>)</li>
+		    <li>
             <li>This version of the beta will not work on Macintosh hardware with Power PC CPUs (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=587799">bug 587799</a>)</li>
           </ul>
         </dd>
@@ -271,13 +243,13 @@ EXTRA_HEADERS;
                <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
           </li>
           <li>
-            Who makes Firefox&nbsp;4&nbsp;RC?
+            Who makes Firefox&nbsp;4?
             <p>Lots of people. See Help-&gt;About Mozilla Firefox, Credits for a list of some of the people who
-              have contributed to Firefox&nbsp;4&nbsp;RC.</p>
+              have contributed to Firefox&nbsp;4.</p>
           </li>
           <li>
-            Where’s the Firefox&nbsp;4&nbsp;RC source code?
-            <p>A tarball of the Firefox&nbsp;4&nbsp;RC source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0rc1/source/">download</a>.
+            Where’s the Firefox&nbsp;4 source code?
+            <p>A tarball of the Firefox&nbsp;4&nbsp;RC source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0/source/">download</a>.
                The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
                Firefox-specific source is in mozilla-central's "browser", "toolkit",
                and "chrome" directories. Please follow the <a href=
@@ -285,7 +257,7 @@ EXTRA_HEADERS;
           </li>
           <li>
             Where is the mail client?
-            <p>Firefox&nbsp;4&nbsp;RC works with whatever mail client is the default on your system.
+            <p>Firefox&nbsp;4 works with whatever mail client is the default on your system.
                However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our
                next-generation email client and the perfect complement to Firefox.</p>
           </li>
@@ -299,7 +271,7 @@ EXTRA_HEADERS;
         <p>These are unofficial builds and may be configured differently than the official
            Mozilla builds. They may also be optimized and/or tested for specific
            platforms. You can browse through the available contributed builds on the
-           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0rc1/contrib/">FTP
+           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0/contrib/">FTP
            site</a>.</p>
 
 <!-- put contributed builds here -->
@@ -310,7 +282,7 @@ EXTRA_HEADERS;
   <div id="links" class="expander expander-odd">
       <h3 class="expander-header">Other Resources and Links</h3>
       <div class="expander-content">
-        <p>The following resources contain useful information about Firefox&nbsp;4&nbsp;RC</p>
+        <p>The following resources contain useful information about Firefox&nbsp;4</p>
 
         <ul class="spaced">
           <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
