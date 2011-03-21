@@ -34,6 +34,9 @@ EXTRA_HEADERS;
 </div>
 
 <div id="main-content">
+    <?php
+        @include_once "{$config['file_root']}/{$lang}/includes/release-notes-sidebar.inc.php";
+    ?>
 
     <div id="whatsnew" class="expander">
       <h3 class="expander-header">About this release</h3>
@@ -319,54 +322,6 @@ EXTRA_HEADERS;
       </div>
     </div>
 
-</div>
-
-<div id="sidebar">
-<script src="/js/download.old.js"></script>
-  <?php
-// en-US download box is built in js and doesn't offer the flexibility
-// hidePartialLocaleJS() hides unavailable locales for specific platforms
-// include after download.old.js
-hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
-  ?>
-    <script>
-          <!--
-          // Configure the Firefox download write script
-          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span>Free Download<\/span><\/a> <em>%LANGUAGE_NAME%, %PLATFORM_NAME%<\/em> <\/li>";
-      // Temporary fix for bug 439792
-      if (gPlatform == PLATFORM_MACOSX) {
-            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span>Free Download<\/span><\/a> <em>%LANGUAGE_NAME%, %PLATFORM_NAME% 10.5 and above<\/em> <\/li>";
-      }
-          var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
-
-          document.writeln("<ul class=\"download-firefox " + gCssClass + " \">");
-          writeDownloadItems("fxbeta");
-          document.writeln("<\/ul>");
-          document.writeln("<div class=\"download-other\"><span class=\"other\">");
-          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-beta.html\">All Systems &amp; Languages<\/a> | ");
-          document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
-          document.writeln("<\/span><\/div>");
-          //-->
-    </script>
-    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
-  <div id="get-involved" class="sidebar-section">
-    <h3>Get Involved</h3>
-    <p>Want to become part of the Mozilla project?</p>
-    <a href="http://www.mozilla.org/contribute/">Find out how you can help</a>
-  </div>
-
-  <div id="other-resources" class="sidebar-section">
-    <h4>Other Resources &amp; Links</h4>
-    <p>The following resources contain additional useful information about Firefox&nbsp;4&nbsp;RC:</p>
-    <ul>
-      <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
-      <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
-      <li><a href="http://developer.mozilla.org/en/Firefox_4_for_developers">Developer Information</a></li>
-      <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
-        Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
-    </ul>
-  </div>
 </div>
 
 <div id="release-notes-footer"></div>
