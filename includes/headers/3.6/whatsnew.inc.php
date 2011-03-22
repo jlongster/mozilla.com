@@ -21,7 +21,6 @@ $extra_headers = <<<EXTRA_HEADERS
     <meta name="WT.ad" content="Beta;Twitter;Facebook;Participate;Firefox Live;Newsletter" />
     {$inline_css_firstrun}
     {$inline_js_utils}
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/content.css" />
 EXTRA_HEADERS;
 
 $flash1 = 'You should <a href="http://get.adobe.com/flashplayer/">update Adobe Flash Player</a> right now.';
