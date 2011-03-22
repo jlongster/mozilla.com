@@ -9,7 +9,7 @@ $_hits_per_page    = !isset($_hits_per_page)   ? ''    : $_hits_per_page;
 $_hits_per_site    = !isset($_hits_per_site)   ? ''    : $_hits_per_site;
 
 $default_head_scripts = <<<HEAD_SCRIPTS
-    <script src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
+    <script src="{$config['static_prefix']}/includes/min/min.js?g=js&up"></script>
 HEAD_SCRIPTS;
 
 $default_fonts = <<<FONTS
@@ -25,7 +25,7 @@ $default_fonts = <<<FONTS
 FONTS;
 
 $default_styles = <<<STYLES
-    <link href="{$config['static_prefix']}/includes/min/min.css?g=css" rel="stylesheet">
+    <link href="{$config['static_prefix']}/includes/min/min.css?g=css&up" rel="stylesheet">
 STYLES;
 
 $head_scripts = empty($head_scripts) ? $default_head_scripts : $head_scripts;
