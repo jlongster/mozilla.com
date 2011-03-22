@@ -269,6 +269,11 @@ $dynamic_header = <<<DYNAMIC_HEADER
         width: 320px;
     }
 
+    /* per locale fixes */
+
+    body.locale-hy-AM #nav-main {
+        font-size:10px;
+    }
 
     {$extra_css}
     </style>

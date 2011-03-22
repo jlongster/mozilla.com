@@ -163,10 +163,10 @@ $full_languages = array(
     'lg', // remap to en-GB
     'lt',
     'lv',
-    'mai',
+    'mai', // remap to en-GB
     'mk',
     'ml',
-    'mn',
+    'mn', // remap to en-GB
     'mr',
     'nb-NO',
     'nl',
@@ -218,6 +218,8 @@ $lang_remap = array(
     'ja-jp-mac' => 'ja',
     'lg'        => 'en-GB',
     'no'        => 'nb-NO',
+    'mai'       => 'en-GB',
+    'mn'        => 'en-GB',
     'nso'       => 'en-GB',
     'pt'        => 'pt-PT',
     'sv'        => 'sv-SE',
@@ -290,6 +292,7 @@ $language_url_map = array(
     'lg'        => 'http://www.mozilla.com/lg/',
     'lt'        => 'http://www.mozilla-europe.org/lt/',
     'lv'        => 'http://www.mozilla.com/lv/',
+    'mai'       => 'http://www.mozilla.com/mai/',
     'mk'        => 'http://www.mozilla.com/mk/',
     'ml'        => 'http://www.mozilla.com/ml/',
     'mr'        => 'http://www.mozilla.com/mr/',
