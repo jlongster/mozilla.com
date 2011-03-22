@@ -121,7 +121,9 @@ if (array_key_exists(strtolower($lang), $lang_remap)) {
         $_SERVER['REDIRECT_URL'] = '/'.$lang_remap[strtolower($lang)].substr($_SERVER['REDIRECT_URL'], strlen($lang)+1);
         $_SERVER['REQUEST_URI'] = '/'.$lang_remap[strtolower($lang)].substr($_SERVER['REQUEST_URI'], strlen($lang)+1);
     }
-    $lang = $lang_remap[strtolower($lang)];
+    // we want to keep a variable with the locale code for the download boxes before remapping $lang
+    $dl_lang = $lang;
+    $lang    = $lang_remap[strtolower($lang)];
 }
 
 // After our detection is all said and done, we want the locale in the form xx-YY for
@@ -177,7 +179,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
         $ua = $_SERVER['HTTP_USER_AGENT'];
 
         // Bug 629407 Redirect to user-specific pages
-        // This is also implemented in .htaccess, but we do it here 
+        // This is also implemented in .htaccess, but we do it here
         // to redirect the user only once
         if (preg_match('/Firefox\/4.0$/', $ua)) {
             $_SERVER['REQUEST_URI'] = '/firefox/fx/';
@@ -195,7 +197,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
             }
         }
     }
-    
+
     header("Location: {$config['url_scheme']}://{$config['server_name']}/{$lang}{$_SERVER['REQUEST_URI']}");
     header('Pragma: no-cache');
     header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
@@ -268,7 +270,7 @@ if (file_exists("{$config['file_root']}/{$page}")) {
         header("Location: {$config['url_scheme']}://{$config['server_name']}/{$config['default_lang']}{$_SERVER['REQUEST_URI']}.html");
         header('Pragma: no-cache');
         header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
-      
+
     }
 
     // We've got a 404, show a localized 404 page

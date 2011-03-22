@@ -59,7 +59,7 @@ $native_languages = array(
     'kn'        => '&#57522;&#38368;&#45736;&#57523;&#36320;&#45736;&#57522;',
     'ko'        => '&#54620;&#44397;&#50612;',
     'ku'        => 'Kurd&#238;',
-    'lg'        => 'Luganda;',
+    'lg'        => 'Luganda',
     'lt'        => 'Lietuvi&#371;',
     'lv'        => 'Latvie&#353;u',
     'mai'       => '&#2350;&#2376;&#2341;&#2367;&#2354;&#2368; &#2478;&#2504;&#2469;&#2495;&#2482;&#2496;',
@@ -108,12 +108,12 @@ $native_languages = array(
  */
 $full_languages = array(
     'af',
-    'ak',
+    'ak', // Remap to en-GB
     'ar',
     'as',
     'ast',
     'be',
-    'br',
+    'br', // remap to fr
     'bg',
     'bn-IN',
     'bn-BD',
@@ -127,7 +127,7 @@ $full_languages = array(
     'en', // Remap to en-US
     'en-GB',
     'en-US',
-    'en-ZA',
+    'en-ZA', // Remap to en-GB
     'eo',
     'es', // Remap to es-ES
     'es-AR',
@@ -160,7 +160,7 @@ $full_languages = array(
     'kn',
     'ko',
     'ku',
-    'lg',
+    'lg', // remap to en-GB
     'lt',
     'lv',
     'mai',
@@ -172,7 +172,7 @@ $full_languages = array(
     'nl',
     'nn-NO',
     'no', // Remap to nb-NO
-    'nso', // remap to en-US for now, potential Fx4
+    'nso', // remap to en-GB
     'oc',
     'or',
     'pa-IN',
@@ -186,7 +186,7 @@ $full_languages = array(
     'si',
     'sk',
     'sl',
-    'son',
+    'son', // remap to en-GB
     'sq',
     'sr',
     'sv', // Remap to sv-SE
@@ -200,7 +200,7 @@ $full_languages = array(
     'vi',
     'zh-CN',
     'zh-TW',
-    'zu', // remap to en-US
+    'zu', // remap to en-GB
 );
 
 /**
@@ -209,15 +209,21 @@ $full_languages = array(
  *      lowercase(requested_language) => mapped_language
  */
 $lang_remap = array(
-    'bs'        => 'en-US',
+    'ak'        => 'en-GB',
+    'br'        => 'fr',
+    'bs'        => 'en-GB',
     'en'        => 'en-US',
+    'en-za'     => 'fr',
     'es'        => 'es-ES',
     'ja-jp-mac' => 'ja',
+    'lg'        => 'en-GB',
     'no'        => 'nb-NO',
+    'nso'       => 'en-GB',
     'pt'        => 'pt-PT',
     'sv'        => 'sv-SE',
+    'son'       => 'en-GB',
     'hy'        => 'hy-AM',
-    'zu'        => 'en-US',
+    'zu'        => 'en-GB',
 
 );
 
@@ -258,6 +264,7 @@ $language_url_map = array(
     'eu'        => 'http://www.mozilla-europe.org/eu/',
     'en-GB'     => 'http://www.mozilla-europe.org/en/',
     'en-US'     => 'http://www.mozilla.com/en-US/',
+    'en-ZA'     => 'http://www.mozilla.com/en-ZA/',
     'fa'        => 'http://www.mozilla.com/fa/',
     'fi'        => 'http://www.mozilla-europe.org/fi/',
     'fr'        => 'http://www.mozilla-europe.org/fr/',
@@ -352,6 +359,7 @@ $language_select_list = array(
     'eu'        => 'Euskara',
     'en-GB'     => 'English (British)',
     'en-US'     => 'English (US)',
+    'en-ZA'     => 'English (South African)',
     'fa'        => '&#1601;&#1575;&#1585;&#1587;&#1740;',
     'fi'        => 'Suomi',
     'fr'        => 'Fran&#231;ais',
