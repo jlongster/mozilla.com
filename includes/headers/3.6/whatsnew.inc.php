@@ -42,5 +42,5 @@ $extra_footers = <<<EXTRA_FOOTERS
 EXTRA_FOOTERS;
 }
 
-$detect_flash = TRUE;
+$detect_flash = FALSE;
 ?>
