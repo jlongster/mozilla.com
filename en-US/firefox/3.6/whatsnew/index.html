@@ -1,5 +1,5 @@
 <?php
-
+	
 include_once "{$config['file_root']}/includes/headers/3.6/whatsnew.inc.php";
 
 $page_title = 'Firefox Updated';
@@ -7,6 +7,9 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 
 $_version       = getVersionBySelf();
 $_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
+$extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/content.css" />
+EXTRA_HEADERS;
 ?>
 
 
