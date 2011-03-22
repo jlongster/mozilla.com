@@ -1,5 +1,27 @@
 <?php
 
+/* redirect to home, no beta now */
+// commodity functions for localized pages
+include_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
+
+$a = explode('.', $_SERVER['SERVER_NAME']);
+
+if (in_array($a[0], $full_languages) || in_array(strtolower($a[0]), $full_languages)) {
+    array_shift($a);
+    $_SERVER['SERVER_NAME'] = implode($a);
+}
+
+unset($a);
+
+// a few commodity variables that are much easier to use in the template than appending config vars
+$host_root = $config['url_scheme'].'://'.$config['server_name'].'/';
+$host_l10n = $host_root.$lang;
+$host_enUS = $host_root.'en-US';
+
+noCachingRedirect($host_l10n);
+exit;
+
+
     include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
     $body_id    = 'firefox-all';

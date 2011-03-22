@@ -85,7 +85,7 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    '',
+    'firefox4-rc',
 );
 
 
