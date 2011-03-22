@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
         <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/getting-started.css" media="screen" />
         <style>
-        /* Firefox >= 4 */
+        /* Firefox >= 4 
+           Remove for now because video is jittery when playing on top of it
         :-moz-any(body) #overlay {
             opacity: 1;
             background: -moz-linear-gradient(rgba(255,255,255, .5), rgba(255,255,255, .5)), -moz-element(#central) white;
             filter: url(#blur); /* Need to be same origin */
         }
+        */
         </style>
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
