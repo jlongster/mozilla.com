@@ -16,6 +16,9 @@ switch($pageid) {
         $dl_box_class   = 'top-right';
         $dl_box_id      = ' id="download"';
         $dl_box_options = array('layout' => 'smallbox', 'download_parent_override' => 'download');
+        if($fx4released) {
+            $dl_box_options['wording'] = 'Firefox 4';
+        }
         break;
     case 'firefox':
     default:
