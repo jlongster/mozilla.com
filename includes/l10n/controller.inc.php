@@ -85,8 +85,7 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    'firstrun-4',
-    'whatsnew-4',
+    '',
 );
 
 
