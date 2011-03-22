@@ -11,7 +11,7 @@
     $status = '';
     if ($form->save()) {
         $status = 'success';
-        $form->reset()
+        $form->reset();
     } elseif ($form->error) {
         $status = 'error error-'. $form->error;
     }
