@@ -7,6 +7,10 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 
 $_version       = getVersionBySelf();
 $_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
+
+$should_upgrade = (strpos($_SERVER['HTTP_USER_AGENT'], 'PPC') === FALSE &&
+                   strpos($_SERVER['HTTP_USER_AGENT'] , 'Mac OS X 10.4') === FALSE);
+
 ?>
 
 
@@ -27,22 +31,25 @@ if ($_version !== null && $_valid_version) {
     } else {
         ?>
         <h2>You’re now running Firefox <?=$_version?></h2>
+        <?php if($should_upgrade) { ?>
         <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
         <?php
+            }
     }
 } else {
     ?>
     <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
+    <?php if($should_upgrade) { ?>
     <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
     <?php
+        }
 }
 ?>
 </div>
 
 <?php 
    // Don't show Firefox 4 download promo for PPC or OS X 10.4 users
-   if(strpos($_SERVER['HTTP_USER_AGENT'], 'PPC') === FALSE &&
-      strpos($_SERVER['HTTP_USER_AGENT'] , 'Mac OS X 10.4') === FALSE) {
+   if($should_upgrade) {
 ?>
 
 <div id="main-content" class="beta-promo">
