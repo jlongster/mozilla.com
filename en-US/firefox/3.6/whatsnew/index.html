@@ -39,8 +39,14 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
+<?php 
+   // Don't show Firefox 4 download promo for PPC or OS X 10.4 users
+   if(strpos($_SERVER['HTTP_USER_AGENT'], 'PPC') === FALSE &&
+      strpos($_SERVER['HTTP_USER_AGENT'] , 'Mac OS X 10.4') === FALSE) {
+?>
+
 <div id="main-content" class="beta-promo">
-    <h3><span>Firefox 4 is here!</span></h3>
+   <h3><span>Firefox 4 is here!</span></h3>
     <p>Upgrade today to the latest version:</p>
     <ul>
         <li>Awesomely fast</li>
@@ -59,6 +65,8 @@ if ($_version !== null && $_valid_version) {
         </a>
     </li></ul>
 </div>
+
+<?php } ?>
 
 <div id="sidebar">
 
