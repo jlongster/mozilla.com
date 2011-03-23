@@ -427,6 +427,9 @@ RewriteRule ^en-US/mobile/beta /en-US/mobile
 # Bug make fx mobile rc1 look like real thing
 RewriteRule ^en-US/mobile/4.0rc1/(.*)$ /en-US/mobile/4.0/$1 [P]
 
+# Bug 644178 redirect /en/ locale to /en-US/
+RewriteRule ^en(?:/(.*))?$ /en-US/$1 [R=301]
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
