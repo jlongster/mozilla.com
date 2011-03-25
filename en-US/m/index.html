@@ -1,3 +1,4 @@
+
 <?php
     // Please also translate the php variable below
     // TITLE OF THE PAGE
@@ -8,30 +9,38 @@
     include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
 ?>
 
-    <h1><img src="<?= $config['static_prefix'] ?>/img/mobile/m/firefox-logo.gif" alt="Mozilla Firefox" /></h1>
 
-    <div id="primary-content">
-        <div id="primary-content-headline"><h2>Get Firefox on Your Phone</h2><img src="<?= $config['static_prefix'] ?>/img/mobile/m/phone.gif" /></div>
-        <h4>Download the Beta Now:</h4>
-        <div id="button-wrapper">
-            <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>" class="button beta"><small>for</small> Android <em>Free</em></a>
-            <a href="<?= mobileDetails::download_url('en-us', mobileDetails::maemo, mobileDetails::beta_version) ?>" class="button beta"><small>for</small> Maemo <em>Free</em></a>
+    <div class="title">
+      <div class="title-bg">
+        <div class="text">
+          <h2>Firefox is</h2>
+          <h1>Mobile</h1>
         </div>
-        <div style="clear:both; zoom: 1;"> </div>
+        
+        <img src="/img/mobile/m/iphone.png" />
+        <div class="clear"></div>
+      </div>
     </div>
 
-    <div class="ancillary">
-        <a href="/<?= $lang ?>/mobile/platforms/">Supported Devices and Languages</a>
+    <div id="button-wrapper">
+      <img class="up-corner" src="/img/mobile/m/up-corner.png" />
+      <div class="buttons">
+        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>" class="button"><small>for</small> Android <em>Free</em></a>
+        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::maemo, mobileDetails::beta_version) ?>" class="button"><small>for</small> Maemo <em>Free</em></a>
+        <div class="clear"></div>
+        </div>
     </div>
-    <div class="ancillary">
-        <a href="/<?= $lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a> - <a href="/<?= $lang ?>/mobile/beta/faq/">FAQ</a>
+    <div class="clear"></div>
+
+    <div class="center-link">
+      <a href="/<?= $lang ?>/mobile/platforms/">List of Supported Devices »</a>
     </div>
 
-    <h2>Enjoy Your Favorite Features</h2>
+    <h2>Enjoy Your Favorite Features:</h2>
     <ul id="firefox-features">
         <li id="feature-sync">
             <h3>Sync</h3>
-            Seamlessly synchronize your desktop and mobile browsing.
+            Securely synchronize your desktop and mobile browsing.
         </li>
         <li id="feature-customize">
             <h3>Customize</h3>
@@ -39,22 +48,23 @@
         </li>
         <li id="feature-search">
             <h3>Search</h3>
-            Type less and get to the Web faster using the Awesome Bar.
+            Type less and get to the Web faster using the Awesome Screen.
         </li>
     </ul>
 
+    <ul class="link-list">
+      <li><a href="#">Release Notes</a></li>
+      <li><a href="#">Frequently Asked Questions</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+
+    <ul class="link-list">
+      <li class="spark">
+        <a class="spark-img" href="#"><img src="/img/mobile/m/spark.png" /></a>
+        <a class="spark-txt" href="#">Play Firefox Spark</a>
+      </li>
+    </ul>
+
 <?php 
-
-$stable_download_url = mobileDetails::download_url($lang);
-$footer_content = <<<FOOTER_CONTENT
-<div class="section">
-    <h4>Stable Version for Nokia N900:</h4>
-    <a href="{$stable_download_url}" class="button">Firefox 1.1 <em>- Free</em></a>
-    <div class="ancillary">
-        <a href="/{$lang}/m/platforms.html">Supported Languages</a> - <a href="/{$lang}/mobile/1.1/releasenotes/">Release Notes</a> - <a href='/{$lang}/m/faq.html'>FAQ</a>
-    </div>
-</div>
-FOOTER_CONTENT;
-
     include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
 ?>

@@ -1,6 +1,9 @@
 <?php
 
-require_once 'wurfl/bootstrap.php';
+  // Not sure what this is, but it breaks the site locally.
+  // Remove on launch.
+  // require_once 'wurfl/bootstrap.php';
+
 include_once 'product-details/mobileDetails.class.php';
 
     // Build our dynamic header
@@ -18,12 +21,6 @@ include_once 'product-details/mobileDetails.class.php';
 
 DOCTYPE;
 
-if ($lang == 'en-US' || c__("View Full Site")) {
-    $view_full_site_link_header = '<a href="/' . $lang . '/?mobile_no_redirect=1" id="view-full-site">' . $l10n->get("View Full Site") . '</a>';
-} else {
-    $view_full_site_link_header = '';
-}
-
 $header = <<<HEADER
 {$doctype}
 <head>
@@ -35,9 +32,42 @@ $header = <<<HEADER
 </head>
 <body id="{$body_id}" class="{$body_class}">
 {$controls}
+<div id="menu" class="closed">
+  <ul>
+    <li><a href="#">Mozilla Firefox</a></li>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Desktop</a></li>
+    <li><a href="#">Add-ons</a></li>
+    <li><a href="#">Support</a></li>
+    <li><a href="#">Visit Mozilla</a></li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+    function toggle_menu(tab) {
+      var menu = document.getElementById('menu');
+
+      if(menu.className == 'open') {
+          menu.className = 'closed';
+          tab.className = 'closed';
+      }
+      else {
+          menu.className = 'open';
+          tab.className = 'open';
+      }
+  }
+</script>
+
 <div class="wrapper">
-    <div id="header">
-        <a href="/{$lang}/m/" id="mozilla-logo"><img src="{$config['static_prefix']}/img/mobile/m/mozilla-logo.png" alt="Mozilla"/></a>
-        {$view_full_site_link_header}
+  <div id="header">
+    <div class="logo">
+      <a href="/{$lang}/m/" id="mozilla-logo">
+        <img src="{$config['static_prefix']}/img/mobile/m/mobile-logo.png" alt="Mozilla"/>
+      </a>
     </div>
+    <div id="nav-tab">
+      <a href="#" onclick="toggle_menu(this);">menu</a>
+    </div>
+    <div class="clear"></div>
+  </div>
 HEADER;
