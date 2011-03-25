@@ -34,12 +34,12 @@ $header = <<<HEADER
 {$controls}
 <div id="menu" class="closed">
   <ul>
-    <li><a href="#">Mozilla Firefox</a></li>
-    <li><a href="#">Features</a></li>
-    <li><a href="#">Desktop</a></li>
-    <li><a href="#">Add-ons</a></li>
-    <li><a href="#">Support</a></li>
-    <li><a href="#">Visit Mozilla</a></li>
+    <li><a href="/m">Mozilla Firefox</a></li>
+    <li><a href="/mobile/features/">Features</a></li>
+    <li><a href="/firefox">Desktop</a></li>
+    <li><a href="http://addons.mozilla.org/">Add-ons</a></li>
+    <li><a href="http://support.mozilla.org/">Support</a></li>
+    <li><a href="http://mozilla.org/">Visit Mozilla</a></li>
   </ul>
 </div>
 
