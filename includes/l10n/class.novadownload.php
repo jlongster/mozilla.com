@@ -8,16 +8,15 @@ class firefoxDetailsL10n extends firefoxDetails
         $_blockclass               = array_key_exists('blockclass', $options) ?  $options['blockclass'] : 'home-download';
         $_js_replace_links         = array_key_exists('js_replace_links', $options) ?  $options['js_replace_links'] : false;
         $_include_ancillary_links  = array_key_exists('ancillary_links', $options) ? $options['ancillary_links'] : true;
-        $_locale_link_override     = array_key_exists('locale_link_override', $options) ? $options['locale_link_override'] : $locale;
         $_download_parent_override = array_key_exists('download_parent_override', $options) ? $options['download_parent_override'] : 'main-feature';
         $_bouncer_js               = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_extra_link_attr          = array_key_exists('extra_link_attr', $options) ? $options['extra_link_attr'] : false;
-        $_ancillary_links          = $_include_ancillary_links ? $this->getAncillaryLinksForLocaleDiv($_locale_link_override, $options) : '';
+
         $_current_version          = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
         $_betalocale_version       = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
 
         // if we have no builds at all, let's default to en-US so as to display download boxes on pages
-        if ($_current_version == '' && $_betalocale_version == '') {
+        if(!in_array(LATEST_FIREFOX_RELEASED_VERSION, array($_current_version, $_betalocale_version))) {
             $locale           = 'en-US';
             $_current_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
         } elseif ($_current_version == '') {
@@ -25,6 +24,9 @@ class firefoxDetailsL10n extends firefoxDetails
             $_blockclass                  .= ' betalocale';
             $options['betalocale_status']  = true;
         }
+
+        $_locale_link_override     = array_key_exists('locale_link_override', $options) ? $options['locale_link_override'] : $locale;
+        $_ancillary_links          = $_include_ancillary_links ? $this->getAncillaryLinksForLocaleDiv($_locale_link_override, $options) : '';
 
         $options['version'] = $_current_version;
 
@@ -237,7 +239,8 @@ LI_MAIN;
         $_return = <<<HTML_RETURN
         <div class="download-other">
             <a class="ancillaryLink" href="/{$locale}/firefox/{$_current_version}/releasenotes/">{$_release_notes}</a> -
-            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a>
+            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> -
+            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
         </div>
 HTML_RETURN;
 
