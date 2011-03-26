@@ -38,9 +38,9 @@ $extra_footers .= <<<EXTRA_FOOTERS
 
 EXTRA_FOOTERS;
 
-$links[1] = "/$lang/firefox/video/?video=fx4-mobile-whatsnew";
-$links[2] = "/$lang/mobile/getinvolved/";
-$links[3] = 'http://support.mozilla.com/kb/Mobile+Help+and+Tutorials';
+$link[1] = "/$lang/firefox/video/?video=fx4-mobile-whatsnew";
+$link[2] = "/$lang/mobile/getinvolved/";
+$link[3] = 'http://support.mozilla.com/kb/Mobile+Help+and+Tutorials';
 
 
 $url           = "/$lang/m";
