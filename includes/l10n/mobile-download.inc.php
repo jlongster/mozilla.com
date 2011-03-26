@@ -102,7 +102,7 @@ $mobile_dl_box = <<<ANDROID
       </div>
     </div>
   </div>
-  <p class="notes"><a href="/{$relnotes_url}">{$relnotes_txt}</a> | <a href="/<?=$lang?>/mobile/platforms">{$devices}</a></p>
+  <p class="notes"><a href="/{$relnotes_url}">{$relnotes_txt}</a> | <a href="/{$lang}>/mobile/platforms">{$devices}</a></p>
 ANDROID;
 
 $video = <<<VIDEO
