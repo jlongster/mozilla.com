@@ -10,7 +10,6 @@ if (isset($_404) && $_404 == true) {
 }
 
 $current_year       = date('Y');
-$extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
 $creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <br /><a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", 'http://creativecommons.org/licenses/by-sa/3.0/');
 
