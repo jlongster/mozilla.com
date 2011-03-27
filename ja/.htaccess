@@ -2,4 +2,5 @@ Options +MultiViews
 RewriteEngine On
 RewriteBase /ja/
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule (.*)? http://mozilla.jp/$1 [L,R=permanent]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(firefox|mobile|plugincheck)/(.*) http://mozilla.jp/$1/$2 [L,R=permanent]
