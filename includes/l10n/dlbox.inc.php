@@ -3,6 +3,7 @@
 include_once $config['file_root'].'/includes/l10n/class.novadownload.php';
 
 $dl_box_id = '';
+$dl_fallback = false;
 
 // check if we have a locale remapped to another, preserve the download box link
 if(isset($dl_lang)) {
