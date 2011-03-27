@@ -16,17 +16,20 @@ switch($pageid) {
         $dl_box_class   = 'top-right';
         $dl_box_id      = ' id="download"';
         $dl_box_options = array('layout' => 'smallbox', 'download_parent_override' => 'download');
-        if($fx4released) {
-            $dl_box_options['wording'] = 'Firefox 4';
-        }
         break;
+
+    case 'oldversion':
+        $dl_box_class   = 'home-download';
+        $dl_box_id      = ' id="dl_latest"';
+        $dl_box_options = array();
+        $dl_box_options = array('download_parent_override' => 'main-content', 'wording' => 'Firefox 4');
+        $dl_fallback    = true;
+        break;
+
     case 'firefox':
     default:
         $dl_box_class = 'home-download';
-        $dl_box_options = array();
-        if($fx4released) {
-            $dl_box_options['wording'] = 'Firefox 4';
-        }
+        $dl_box_options = array('wording' => 'Firefox 4');
         break;
 }
 
@@ -43,7 +46,6 @@ if(!isset($firefoxDetailsl10n->primary_builds[$templang][LATEST_FIREFOX_VERSION]
     $templang = 'en-US';
 }
 
-
 $downloadbox  = "\n".'<!-- generated box -->'."\n";
 $downloadbox .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
 $downloadbox .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
@@ -53,9 +55,26 @@ $downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), 
 $downloadbox .= "\n".'</div>'."\n";
 $downloadbox .= "\n".'<!-- end generated box -->'."\n";
 
+// the following hack is for Mac 10.4 that we no longer support with Firefox 4, we need another set of 3.6 boxes for those users
+// the first set will be hidden client-side by javascript
+if($dl_fallback == true) {
+    $dl_box_options = array('download_parent_override' => 'dl_fallback', 'wording' => 'Firefox 3.6', 'older_version' => true);
+    $downloadbox .= "\n".'<!-- generated box -->'."\n";
+    $downloadbox .= "\n".'<div id="dl_fallback" class="'.$dl_box_class.'">'."\n";
+    $downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
+    $downloadbox .= "\n".'</div>'."\n";
+
+$downloadbox .= <<<HIDE
+    <script type="text/javascript">//<![CDATA[
+    if (gPlatform == 3 || gPlatform == 4) {
+        document.getElementById('dl_latest').style.display = 'none';
+    } else {
+        document.getElementById('dl_fallback').style.display = 'none';
+    }
+
+    </script>
+HIDE;
+    $downloadbox .= "\n".'<!-- end generated box -->'."\n";
+}
+
 unset($firefoxDetailsl10n);
-
-
-
-?>
-

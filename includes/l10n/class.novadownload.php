@@ -11,12 +11,20 @@ class firefoxDetailsL10n extends firefoxDetails
         $_download_parent_override = array_key_exists('download_parent_override', $options) ? $options['download_parent_override'] : 'main-feature';
         $_bouncer_js               = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_extra_link_attr          = array_key_exists('extra_link_attr', $options) ? $options['extra_link_attr'] : false;
+        $_older_version            = array_key_exists('older_version', $options) ? true: false;
 
-        $_current_version          = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
-        $_betalocale_version       = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+        if($_older_version == FALSE ) {
+            $_current_version    = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+            $_betalocale_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+            $_targetted_version  = LATEST_FIREFOX_RELEASED_VERSION;
+        } else {
+            $_current_version    = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+            $_betalocale_version = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+            $_targetted_version  = LATEST_FIREFOX_OLDER_VERSION;
+        }
 
         // if we have no builds at all, let's default to en-US so as to display download boxes on pages
-        if(!in_array(LATEST_FIREFOX_RELEASED_VERSION, array($_current_version, $_betalocale_version))) {
+        if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
             $locale           = 'en-US';
             $_current_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
         } elseif ($_current_version == '') {
@@ -118,7 +126,7 @@ HTML_RETURN;
         $_current_version             = array_key_exists('version', $options) ? $options['version'] : $this->getNewestVersionForLocale($locale);
         $_bouncer_js                  = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_download_product            = array_key_exists('download_product', $options) ?  ___($options['download_product']) : ___('Free Download');
-        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Firefox 3.6';
+        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Firefox';
         $_release_notes               = ___('Release Notes');
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_language_name               = $this->localeDetails->getNativeNameForLocale($locale);

@@ -3,21 +3,8 @@
 $body_class = 'whatsnew-3-0-19';
 $body_id = 'out-of-date';
 
-include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/class.novadownload.php";
-
-$firefoxDetailsl10n = new firefoxDetailsL10n();
-
-$downloadbox  = "\n".'<!-- generated box -->'."\n";
-$downloadbox .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
-$downloadbox .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
-$downloadbox .= "\n".'//]]>></script>'."\n";
-$downloadbox .= "\n".'<div id="home-download">'."\n";
-$options['download_parent_override'] = 'main-content';
-$downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome($lang, $options);
-$downloadbox .= "\n".'</div>'."\n";
-$downloadbox .= "\n".'<!-- end generated box -->'."\n";
-
-unset($firefoxDetailsl10n);
+// dl box
+include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 
 $extra_headers = <<<EXTRA_HEADERS
@@ -44,6 +31,47 @@ $extra_css = <<<EXTRA_CSS
         text-align: center;
         min-height: 169px;
     }
+        /* if javascript is disabled, we should show all download boxes */
+    li.os_windows, li.os_osx, li.os_linux {
+        display: block;
+    }
+
+    ul.os_linux li.os_windows, ul.os_linux li.os_osx {
+        display: none;
+    }
+    ul.os_windows li.os_linux, ul.os_windows li.os_osx {
+        display: none;
+    }
+    ul.os_osx li.os_linux, ul.os_osx li.os_windows {
+        display: none;
+    }
+
+
+
+    /* download box adjustments for locales, get some extra horizontal space */
+
+    a.download-link span.download-content {
+        font-size: 17px;
+        line-heigth: 17px;
+        padding: 10px 0 0 112px;
+    }
+
+    a.download-link span.download-title {
+        margin-bottom: 3px !important;
+    }
+
+    .betalocale a.download-link span.download-title {
+        margin-bottom: 0 !important;
+    }
+
+    ul.home-download {
+        width: 310px;
+    }
+
+    .download-other {
+        width: 320px;
+    }
+
 
 EXTRA_CSS;
 
