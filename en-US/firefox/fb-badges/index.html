@@ -72,14 +72,8 @@
 	<body>
 	<?php } ?>
     	<div id="tabContent">
-            <?php if($firefox4) { ?>
-                <div id="meet" class="firefox4">
-                    <?php print gettext("Be part of <span>TEAM FIREFOX</span> and help <span>SPREAD THE WORD</span>!"); ?>
-                </div>
-			<img src="images/topGlam.png" class="glam firefox4" />
-    		<?php }  else { ?>
     		  <div id="downloadButton">
-		    <div id="buttonContent">
+		       <div id="buttonContent">
                     <?php print gettext("Firefox 4"); ?>
                     <?php if ($rtl) { ?>
                         <img src="images/rtl/download-arrow.png" />
@@ -89,6 +83,7 @@
                     <span id="buttonCTA"><?php print gettext("Free Download"); ?></span>
                 </div>
               </div>
+              <a href="http://www.mozilla.com/mobile/download/?WT.mc_id=b42&WT.mc_ev=click" class="mobileLink"><?php print gettext("Get Firefox on your phone!"); ?></a>
     		  <div id="meet">
                     <?php print gettext("Meet <span>FIREFOX 4</span>"); ?>
                 </div>
@@ -99,7 +94,6 @@
         		<div id="team">
         		  <?php print gettext("Be part of <span>TEAM FIREFOX</span> and help <span>SPREAD THE WORD</span>!"); ?>
         		</div>
-    		<? } ?>
     		<div id="badgeCTA">
 		  <?php print gettext("FACEBOOK BADGES -"); ?>
     		  <span><?php print gettext("(Pick a badge and post to your wall)."); ?></span>
@@ -113,7 +107,7 @@
     		  </div>
     		</div>
     		<div id="badges">
-              <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/BetterWeb2.png" class="badge" /></div>
+              <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/mobile.png" class="badge" /></div>
               <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/TeamFF.png" class="badge" /></div>
               <div class="badgeWrap"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/Firefox4.png" class="badge" /></div>
               <div class="badgeWrap last"><img src="<?=$config['static_prefix']?>/en-US/firefox/fb-badges/images/badges/IDownloadedFF.png" class="badge" /></div>
