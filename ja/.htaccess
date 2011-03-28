@@ -1,5 +1,10 @@
 Options +MultiViews
 RewriteEngine On
 RewriteBase /ja/
+# All requests to the major subdirectories except /ja/firefox/4.0/details/ 
+# will be redirected to the Mozilla Japan site at mozilla.jp.
+# Otherwise, requests will be redirected to the English site.
+RewriteRule ^$ /en-US/ [L,R=permanent]
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(firefox|mobile|plugincheck)/(.*) http://mozilla.jp/$1/$2 [L,R=permanent]
+RewriteCond %{REQUEST_FILENAME} !firefox/4\.0/details
+RewriteRule ^(firefox|mobile|plugincheck|thunderbird)(.*) http://mozilla.jp/$1$2 [L,R=permanent]
