@@ -35,7 +35,7 @@ $header = <<<HEADER
 <div id="menu">
   <ul>
     <li><a href="/m">Mozilla Firefox</a></li>
-    <li><a href="/mobile/features/">Features</a></li>
+    <li><a href="/m/features">Features</a></li>
     <li><a href="/firefox">Desktop</a></li>
     <li><a href="http://addons.mozilla.org/">Add-ons</a></li>
     <li><a href="http://support.mozilla.org/">Support</a></li>
