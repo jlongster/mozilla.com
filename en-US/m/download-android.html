@@ -1,0 +1,45 @@
+
+<?php
+    // Please also translate the php variable below
+    // TITLE OF THE PAGE
+    $page_title = "Mozilla | Firefox Mobile";
+
+    $body_id = 'download-android';
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<script type="text/javascript">
+  function begin_download() {
+    window.location = "<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>";
+  }
+
+  setTimeout(begin_download, 2500);
+</script>
+
+    <div class="title">
+        <div class="text">
+          <h1>Thank you</h1>
+          <h3>for downloading Firefox!</h3>
+        </div>        
+    </div>
+
+    <div class="content">
+      <strong>If the Android Market app didn't open:</strong>
+      <p>
+        You can try installing Firefox from the
+        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>">Android Market website</a>.
+      </p>
+
+      <strong>
+        If the Android Market app opened but couldn't find Firefox:
+      </strong>
+      <p>
+        It may be that your device is not supported. Please
+        see <a href="#">Will Firefox work on my device?</a>
+      </p>
+    </div>
+
+<?php 
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>
+
