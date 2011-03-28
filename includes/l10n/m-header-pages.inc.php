@@ -28,7 +28,7 @@ ob_end_clean();
 
 $dynamic_header = <<<DYNAMIC_HEADER
 <!DOCTYPE html>
-<html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
+<html lang="{$lang}" dir="{$textdir}">
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
@@ -36,13 +36,21 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <style>
     {$extra_css}
+
+    #nav-tab a, #nav-tab a:visited {
+        font-family: "Trebuchet MS";
+        font-weight: bold;
+        background:none !important;
+        padding:10px 15px !important;
+    }
     </style>
 
     {$extra_headers}
 </head>
 
-<body id="{$body_id}" class="{$body_class} locale-{$lang} {$textdir}">
-<div id="menu" class="closed">
+<body id="{$body_id}" class="">
+
+<div id="menu">
   <ul>
     <li><a href="/m">Mozilla Firefox</a></li>
     <li><a href="/mobile/features/">{$l10n->get('Features')}</a></li>
@@ -52,7 +60,6 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <li><a href="http://mozilla.org/">{$l10n->get('Visit Mozilla')}</a></li>
   </ul>
 </div>
-
 
 
 <div class="outer-wrapper">
@@ -65,15 +72,14 @@ $dynamic_header = <<<DYNAMIC_HEADER
         </a>
       </div>
       <div id="nav-tab">
-        <a href="#" onclick="toggle_menu(this);"><strong id="arrow" style="font-weight:bold; font-family:Arial Bold;">&darr;</strong></a>
+        <a href="#" onclick="toggle_menu(this);" id="arrow">&nbsp;&nbsp;&darr;&nbsp;&nbsp;</a>
       </div>
       <div class="clear"></div>
 
     </div>
 
     <!-- end #header -->
-
-<script type="text/javascript">
+<script>
 
     (function() {
       var menu = document.getElementById('menu');
@@ -83,13 +89,13 @@ $dynamic_header = <<<DYNAMIC_HEADER
       function toggle_menu(tab) {
           if(menu.className == 'open') {
               menu.style.marginTop = -height + 'px';
-              arrow.innerHTML = "&darr;";
+              arrow.innerHTML = '&nbsp;&nbsp;&darr;&nbsp;&nbsp;';
               menu.className = 'closed';
               tab && (tab.className = 'closed');
           }
           else {
               menu.style.marginTop = 0;
-              arrow.innerHTML = '&uarr;';
+              arrow.innerHTML = '&nbsp;&nbsp;&uarr;&nbsp;&nbsp;';
               menu.className = 'open';
               tab && (tab.className = 'open');
           }
@@ -100,6 +106,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
     })();
 
 </script>
+
 DYNAMIC_HEADER;
 
 

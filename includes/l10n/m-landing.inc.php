@@ -11,6 +11,7 @@ $dl_maemo   = mobileDetails::download_url('en-us', mobileDetails::maemo, mobileD
 // reuse some of the strings we had for beta
 $retour = true;
 include_once $config['file_root'].'/'.$lang.'/m/beta.html';
+$main_slogan = str_replace('.', '', $main_slogan);
 
 $downloadbox = <<<BUTTON
     <div id="button-wrapper">
@@ -33,8 +34,10 @@ BUTTON;
 
 $extra_headers .= <<<EXTRA_HEADERS
     <link href="{$config['static_prefix']}/style/tignish/mobile-m.css" rel="stylesheet" media="all" />
-    <style type="text/css">
-
+    <style>
+    .title .text {
+        margin-right: 100px;
+    }
     </style>
 EXTRA_HEADERS;
 
