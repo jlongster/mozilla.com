@@ -1,11 +1,10 @@
 <?php
 
-
 // RTL support for Mozilla.com mobile pages
 if ($textdir == 'rtl') {
     $extra_headers  .= <<<EXTRA_HEADERS
     {$extra_headers}
-    <style type="text/css">
+    <style>
     #view-full-site {
         left: 0;
         right: auto !important;
@@ -27,34 +26,15 @@ $util_js = ob_get_contents();
 ob_end_clean();
 
 
-if (isset($html5) && $html5 == true) {
-    $doctype = <<<DOCTYPE
-<!DOCTYPE HTML>
-<html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
-DOCTYPE;
-} elseif (isset($transitional) && $transitional == true) {
-    $doctype = <<<DOCTYPE
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
-DOCTYPE;
-} else {
-    $doctype = <<<DOCTYPE
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
-DOCTYPE;
-}
-
-
 $dynamic_header = <<<DYNAMIC_HEADER
-{$doctype}
+<!DOCTYPE html>
+<html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>{$page_title}</title>
-    
-    <style type="text/css">
+
+    <style>
     {$extra_css}
     </style>
 
@@ -62,38 +42,66 @@ $dynamic_header = <<<DYNAMIC_HEADER
 </head>
 
 <body id="{$body_id}" class="{$body_class} locale-{$lang} {$textdir}">
+<div id="menu" class="closed">
+  <ul>
+    <li><a href="/m">Mozilla Firefox</a></li>
+    <li><a href="/mobile/features/">{$l10n->get('Features')}</a></li>
+    <li><a href="/firefox">{$l10n->get('Desktop')}</a></li>
+    <li><a href="http://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
+    <li><a href="http://support.mozilla.org/">{$l10n->get('Support')}</a></li>
+    <li><a href="http://mozilla.org/">{$l10n->get('Visit Mozilla')}</a></li>
+  </ul>
+</div>
 
 
+
+<div class="outer-wrapper">
 <div class="wrapper">
 
     <div id="header">
-        <a href="/{$lang}/m/" id="firefox-logotype"><img src="{$config['static_prefix']}/img/mobile/support/firefox-logotype.gif" alt="Firefox"/></a>
-        <a href="{$sumo_links[0]}" id="view-full-site">{$l10n->get("View Full Site")}</a>
+      <div class="logo">
+        <a href="/en-US/m/" id="mozilla-logo">
+          <img src="/img/mobile/m/mobile-logo.png" alt="Mozilla"/>
+        </a>
+      </div>
+      <div id="nav-tab">
+        <a href="#" onclick="toggle_menu(this);"><strong id="arrow" style="font-weight:bold; font-family:Arial Bold;">&darr;</strong></a>
+      </div>
+      <div class="clear"></div>
+
     </div>
 
     <!-- end #header -->
 
+<script type="text/javascript">
 
+    (function() {
+      var menu = document.getElementById('menu');
+      var arrow = document.getElementById('arrow');
+      var height = menu.offsetHeight;
+
+      function toggle_menu(tab) {
+          if(menu.className == 'open') {
+              menu.style.marginTop = -height + 'px';
+              arrow.innerHTML = "&darr;";
+              menu.className = 'closed';
+              tab && (tab.className = 'closed');
+          }
+          else {
+              menu.style.marginTop = 0;
+              arrow.innerHTML = '&uarr;';
+              menu.className = 'open';
+              tab && (tab.className = 'open');
+          }
+      }
+
+      menu.style.marginTop = -height + 'px';
+      window.toggle_menu = toggle_menu;
+    })();
+
+</script>
 DYNAMIC_HEADER;
-
-$creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <br /><a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", 'http://creativecommons.org/licenses/by-sa/3.0/');
-
-$footer = <<<FOOTER
-</div> <!-- end .wrapper -->
-
-<div id="lower">
-    <div class="wrapper">
-        <div id="footer">
-            <a href="{$sumo_links[0]}" class="button">{$l10n->get("View Full Site")}</a>
-            <p>{$creative_commons}</p>
-        </div>
-    </div> <!-- end .wrapper -->
-</div> <!-- end #lower -->
-    
-FOOTER;
 
 
 echo $dynamic_header;
 unset($dynamic_header);
-
-?>

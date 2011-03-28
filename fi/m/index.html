@@ -3,40 +3,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Tervetuloa käyttämään Firefoxia" /></h1>
-<p>Maailman paras selain mahtuu nyt myös taskuun.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Lataa nyt &ndash; ilmaiseksi</a>
-    <div><a href="platforms.html" class="system">Onko Firefox saatavissa äidinkielelläni?</a></div>
-
-  <?php else: ?>
-
-    <p>Laitteesi ei ole tuettu</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Katso tuetut järjestelmät ja laitteet</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Hyödynnä Firefoxin suosikkiominaisuuksia:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Synkronoi</b> <span>Synkronoi työpöytä- ja mobiiliselailusi saumattomasti</span></li>
-    <li id="customize"><b>Muokkaa</b> <span>Asenna lisäosia, joilla teet Firefoxista omasi</span></li>
-    <li id="search"><b>Hae</b> <span>Kirjoita vähemmän ja selaa nopeammin älykkään osoitepalkin avulla</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Katso lisää ominaisuuksia</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

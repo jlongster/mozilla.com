@@ -3,50 +3,7 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
-?>
-
-
-
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Dobrodošli v Firefoxu" /></h1>
-<p>Najboljši med brskalniki, kar jih pozna svet, je dobil noge. </p>
-</div>
-
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?> <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Prenesite zdaj - brezplačno</a>
-    <div><a href="platforms.html" class="system">Je Firefox na voljo v  slovenščini?</a></div>
-
-  
-
-  <?php else: ?>
-
-    
-
-    <p>Vaša naprava ni podprta</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Oglejte si seznam platform in naprav, ki jih podpiramo</a></p>
-
-  
-
-  <?php endif; ?>
-
-</div>
-
-<h2 id="features_title">Uživajte v vam najljubših potezah Firefoxa:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b> Sync </b><span> Neopazno sinhronizirajte svoje namizno in mobilno brskanje </span></li>
-    <li id="customize"><b> Prilagajanje </b><span> Namestite si razširitve, da bo Firefox točno tak, kot si ga želite </span></li>
-    <li id="search"><b>Iskanje</b><span> Prihranite si tipkanje in čas za iskanje s pomočjo  nove vrstice za naslove </span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Druge nove funkcije</a></p>
-
-
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&amp;content-type=text%2Fplain&amp;view=co
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 

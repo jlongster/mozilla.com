@@ -3,40 +3,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Firefox'a hoş geldiniz" /></h1>
-<p>Dünyanın en iyi web tarayıcısı cebe girdi.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Şimdi İndirin - Ücretsiz</a>
-    <div><a href="platforms.html" class="system">Firefox benim dilimde mevcut mu?</a></div>
-
-  <?php else: ?>
-
-    <p>Kullandığınız aygıt desteklenmiyor</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Desteklediğimiz platformları ve aygıtları görün</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Sevdiğiniz Firefox özellikleri sizinle:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Eşitleme</b> <span>Masaüstü ve mobil tarayıcılarınızı rahatça eşitleyin</span></li>
-    <li id="customize"><b>Özelleştirme</b> <span>Firefox'u istediğiniz şekle sokmak için eklenti yükleyin</span></li>
-    <li id="search"><b>Arama</b> <span>Şahane Çubuk'la daha az yazın, web'e daha hızlı ulaşın</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Diğer Özellikleri Görün</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

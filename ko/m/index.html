@@ -3,36 +3,7 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Firefox에 오신 것을 환영 합니다" /></h1>
-<p>세계 최고의 웹 브라우저 모바일로 가다.</p>
-</div>
-
-<div class="download-button">
-	<?php if ($wurfl_device_supported): ?>
-		 <a href="<?= mobileDetails::download_url($lang) ?>" class="button">무료 다운로드</a>
-  	     <div><a href="/<?= $lang ?>/m/platforms" class="system">언어별 버전 보기</a></div>
- 	  	 
-   <?php else: ?>
- 	     <p>현재 기기에는 지원하지 않습니다!</p>
-  	     <p><a href="/<?= $lang ?>/m/platforms">지원 가능 단말기 보기</a></p>
- 	  	 
-   <?php endif; ?>
-</div>
-
-<h2 id="features_title">Firefox 주요 기능을 살펴보세요</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>동기화</b> <span>여러분의 PC와 모바일 기기 사이에 항상 동기화 할 수 있습니다.</span></li>
-    <li id="customize"><b>개인화</b> <span>원하시는 부가 기능을 모바일에서도 사용할 수 있습니다.</span></li>
-    <li id="search"><b>검색</b> <span>주소창에 단어만 입력하면 웹 검색을 이용할 수 있습니다.</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">더 자세히 보기</a></p>
-
-<?php
-    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-?>

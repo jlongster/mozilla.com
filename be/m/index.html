@@ -3,40 +3,8 @@
     $page_title = "Mozilla | Мабільны Firefox";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Калі ласка да Firefox" /></h1>
-<p>Найлепшы ў Сеціве азіральнік стаў мабільным.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Сцягнуць зараз - Задарма</a>
-    <div><a href="platforms.html" class="system">Firefox даступны на маёй мове?</a></div>
-
-  <?php else: ?>
-
-    <p>Ваша збудова не падтрымліваецца.</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Пабачыць усе платформы і збудовы, якія падтрымліваюцца</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Атрымайце асалоду ад улюбёных асаблівасцяў Firefox:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Сінхранізацыя</b> <span>Бесперапынна сінхранізуйце вашае кампутарнае і мабільнае азіранне</span></li>
-    <li id="customize"><b>Уладкаванне</b> <span>Усталёўвайце дадаткі, каб зрабіць Firefox такім, якім ён вам бачыцца</span></li>
-    <li id="search"><b>Пошук</b> <span>Набірайце менш і дасягайце Сеціва хутчэй з дапамогаю Awesome Bar</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Іншыя асаблівасці</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

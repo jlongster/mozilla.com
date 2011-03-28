@@ -3,41 +3,6 @@
     $page_title = "Mozilla | Firefox 移动版";
 
 
-    $body_id = '首页';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
-
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="欢迎使用 Firefox" /></h1>
-<p>世界上最好的网络浏览器来到了手机上。</p>
-</div>
-
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">现在下载 - 免费</a>
-    <div><a href="platforms.html" class="system">Firefox 是否支持我的语言？</a></div>
-
-  <?php else: ?>
-
-    <p>不能支持你的设备</p>
-    <p><a href="/<?= $lang ?>/m/platforms">查看支持哪些平台和设备</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">享受你喜爱的 Firefox 功能：</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>同步</b> <span>完美实现桌面和移动浏览器之间的同步</span></li>
-    <li id="customize"><b>定制</b> <span>安装附加组件让 Firefox 更符合你的喜好</span></li>
-    <li id="search"><b>搜索</b> <span>通过智能地址栏，录入文字更好访问网页更快</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">了解更多功能</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>
-T

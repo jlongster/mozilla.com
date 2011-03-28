@@ -4,40 +4,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Üdvözli a Firefox" /></h1>
-<p>A világ legjobb böngészője elérhető mobil eszközökre.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Letöltés - ingyenes</a>
-    <div><a href="platforms.html" class="system">Elérhető a Firefox az anyanyelvemen?</a></div>
-
-  <?php else: ?>
-
-    <p>Az Ön készüléke nem támogatott</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Tekintse meg a támogatott platformokat és eszközöket</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Élvezze a Firefox funkcióit:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Szinkronizáció</b> <span>Szinkronizálja a böngésző beállításait az asztali gép és a mobil eszköz között</span></li>
-    <li id="customize"><b>Testreszabás</b> <span>Telepítsen kiegészítőket, éppen úgy, ahogy azt az asztali böngészőknél tette</span></li>
-    <li id="search"><b>Keresés</b> <span>Az intelligens címsor segítségével kevesebbet kell gépelnie</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">További funkciók</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

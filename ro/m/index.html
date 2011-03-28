@@ -3,40 +3,7 @@
     $page_title = "Mozilla | Firefox Mobil";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Bun venit la Firefox" /></h1>
-<p>Cel mai bun navigator web din lume a ajuns și pe mobil.</p>
-</div>
-
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Descarcă acum - Gratuit</a>
-    <div><a href="/<?= $lang ?>/m/platforms" class="system">Este Firefox disponibil în limba mea?</a></div>
-
-  <?php else: ?>
-
-    <p>Dispozitivul dumneavoastră nu este suportat</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Vedeți platformele și dispozitivele acceptate</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Bucurați-vă de funcționalitățile Firefox preferate:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Sync</b> <span>Sincronizați perfect navigarea dumneavoastră între calculator și mobil</span></li>
-    <li id="customize"><b>Personalizare</b> <span>Instalați suplimente pentru a face un Firefox exact cum îl doriți</span></li>
-    <li id="search"><b>Căutare</b> <span>Scrieți mai puțin și ajungeți pe Web mai rapid cu ajutorul barei extraordinare de adrese</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Vedeți mai multe funcționalități</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

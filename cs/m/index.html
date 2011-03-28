@@ -4,40 +4,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Vítá vás Firefox" /></h1>
-<p>Nejlepší webový prohlížeč na světe se stal mobilním.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Zdarma stáhnout</a>
-    <div><a href="platforms.html" class="system">Je Firefox dostupný v mém jazyce?</a></div>
-
-  <?php else: ?>
-
-    <p>Vaše zařízení není podporováno</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Prohlédněte si seznam podporovaných platforem a zařízení</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Užijte si oblíbené funkce Firefoxu:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Synchronizace</b> <span>Jednoduše synchronizujte své prohlížení na desktopu s mobilním zařízením.</span></li>
-    <li id="customize"><b>Přizpůsobení</b> <span>Nainstalujte si doplňky, které upraví Firefox přesně podle vašich představ.</span></li>
-    <li id="search"><b>Vyhledávání</b> <span>Díky chytrému adresnímu řádku pište méně a zobrazujte weby rychleji.</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Podívat se na další funkce</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

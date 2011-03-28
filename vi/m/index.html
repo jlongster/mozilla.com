@@ -4,40 +4,8 @@
     $page_title = "Mozilla | Firefox Di Động";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Chào mừng đến với Firefox" /></h1>
-<p>Trình duyệt Web tốt nhất thế giới nay đã trở nên 'di động'.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Tải xuống ngay - Miễn phí</a>
-    <div><a href="platforms.html" class="system">Firefox có phiên bản ngôn ngữ của tôi không?</a></div>
-
-  <?php else: ?>
-
-    <p>Thiết bị của bạn không được hỗ trợ</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Xem các nền tảng và thiết bị được hỗ trợ của chúng tôi</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Tận hưởng các tính năng Firefox ưa thích của bạn:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Đồng bộ</b> <span>Đồng bộ hóa mượt mà giữa máy tính và việc duyệt web di động của bạn</span></li>
-    <li id="customize"><b>Tùy biến</b> <span>Cài đặt tiện ích để cải tiến Firefox chính xác theo cách bạn thích</span></li>
-    <li id="search"><b>Tìm kiếm</b> <span>Gõ ít hơn và vào Web nhanh hơn bằng Thanh Kì Diệu</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Xem thêm Tính năng khác</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

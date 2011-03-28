@@ -3,40 +3,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Witamy w Firefoksie" /></h1>
-<p>Najlepsza przeglądarka na świecie jest teraz dostępna na urządzeniach przenośnych.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Pobierz teraz - za darmo</a>
-    <div><a href="platforms.html" class="system">Czy Firefox jest dostępny w moim języku?</a></div>
-
-  <?php else: ?>
-
-    <p>Twoje urządzenie nie jest obsługiwane</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Zobacz listę obsługiwanych przez nas platform i urządzeń</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Korzystaj ze swoich ulubionych funkcji Firefoksa:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Synchronizacja</b> <span>Wygodnie synchronizuj dane między przeglądarką na komputerze i w telefonie</span></li>
-    <li id="customize"><b>Dostosowanie</b> <span>Zainstaluj dodatki, by dopasować Firefoksa do swoich upodobań</span></li>
-    <li id="search"><b>Wyszukiwanie</b> <span>Mniej pisania dzięki niesamowitemu paskowi adresu</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Poznaj pozostałe możliwości</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

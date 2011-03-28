@@ -3,40 +3,8 @@
     $page_title = "Mozilla | Мобільний Firefox";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Ласкаво просимо до Firefox" /></h1>
-<p>Найкращий у світі браузер став мобільним.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Завантажте зараз - безплатно</a>
-    <div><a href="platforms.html" class="system">Чи є Firefox моєю мовою?</a></div>
-
-  <?php else: ?>
-
-    <p>Ваш пристрій не підримується</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Перегляньте платформи та пристрої, що підтримуються</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Насолоджуйтесь улюбленими можливостями Firefox:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Синхронізація</b> <span>Безпроблемно синхронізуйте ваші мобільний та звичайний браузери</span></li>
-    <li id="customize"><b>Налаштування</b> <span>Встановлюйте додатки, щоб підлаштувати Firefox за своїм смаком</span></li>
-    <li id="search"><b>Пошук</b> <span>Друкуйте менше та отримуйте швидший веб, використовуючи вражаючу панель адрес</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Перегляньте більше можливостей</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

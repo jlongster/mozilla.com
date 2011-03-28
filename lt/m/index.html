@@ -4,40 +4,8 @@
     $page_title = "Mozilla | Firefox Mobile";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Sveiki! Čia Firefox" /></h1>
-<p>Geriausia naršyklė pasaulyje tapo mobili.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Parsisiųskite nemokamai</a>
-    <div><a href="platforms.html" class="system">Ar „Firefox“ išversta į mano kalbą?</a></div>
-
-  <?php else: ?>
-
-    <p>Su Jūsų įrenginiu „Firefox“ nesuderinama</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Aplankykite suderinamų platformų ir įrenginių sąrašą</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Mėgiamiausios „Firefox“ savybės:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Sinchronizacija:</b> <span>be vargo sinchronizuokite naršykles kompiuteryje ir telefone</span></li>
-    <li id="customize"><b>Individualizavimas:</b> <span>priedų pagalba pritaikykite „Firefox“ prie bet kokių savo poreikių ar pomėgių</span></li>
-    <li id="search"><b>Paieška:</b> <span>universaliojo adreso lauko dėka, mažiau rašydami, greičiau pateksite ten, kur norite</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Daugiau savybių</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>

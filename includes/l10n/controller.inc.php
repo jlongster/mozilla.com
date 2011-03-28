@@ -2,6 +2,7 @@
 
 // commodity variable to bypass the controller
 if(isset($retour) && $retour == true) {
+    $retour = false;
     return;
 }
 
@@ -74,6 +75,7 @@ $sitepages = array(
     'community'         => 'community.inc.php',
     'security'          => 'security.inc.php',
     'm-support'         => 'm-support.inc.php',
+    'm-landing'         => 'm-landing.inc.php',
     'unsupported'       => 'unsupported-version.inc.php',
     'firstrun-36'       => '3.6/firstrun.inc.php',
     'whatsnew-36'       => '3.6/whatsnew.inc.php',
@@ -89,6 +91,7 @@ $sitepages = array(
 $deactivated = array(
     'firefox4-rc',
     'mobile-download',
+    'm-landing',
 );
 
 
@@ -105,5 +108,3 @@ if (array_key_exists($pageid, $sitepages) && $sitepages[$pageid] != '') {
 } else {
     include $config['file_root'].'/includes/l10n/header-pages.inc.php';
 }
-
-?>

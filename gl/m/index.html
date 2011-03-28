@@ -4,40 +4,8 @@
     $page_title = "Mozilla | Firefox Móbil";
 
 
-    $body_id = 'home';
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    $pageid = 'm-landing';
+    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
-<div id="head">
-<h1><img src="/img/mobile/m/logo-welcome.png" alt="Welcome to Firefox" /></h1>
-<p>O mellor navegador web do mundo agora é móbil.</p>
-</div>
 
-<div class="download-button">
-  <?php if ($wurfl_device_supported): ?>
-
-    <a href="<?= mobileDetails::download_url($lang) ?>" class="button">Descargar agora - De balde</a>
-    <div><a href="platforms.html" class="system">Está Firefox dispoñíbel no meu idioma?</a></div>
-
-  <?php else: ?>
-
-    <p>O seu dispositivo non é compatíbel</p>
-    <p><a href="/<?= $lang ?>/m/platforms">Consulte as plataformas e os dispositivos compatíbeis</a></p>
-
-  <?php endif; ?>
-</div>
-
-<h2 id="features_title">Goce das súas características favoritas:</h2>
-<ul id="favorite_features">
-    <li id="sync"><b>Sincronización</b> <span>Sincroniza de forma transparente a súa navegación móbil coa de escritorio</span></li>
-    <li id="customize"><b>Personalizar</b> <span>Instale complementos para facer que Firefox sexa xusto como vostede quere</span></li>
-    <li id="search"><b>Buscas</b> <span>Escriba menos e acceda ao web máis rápido usando a Barra fantástica.</span></li>
-</ul>
-
-<p id="features"><a href="/<?= $lang ?>/m/features.html">Ver máis características</a></p>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
-    // Source en-GB reference file at rev 66448:
-    // http://viewvc.svn.mozilla.org/vc/projects/mozilla.com/trunk/en-GB/m/index.html?revision=66448&content-type=text%2Fplain&view=co
-?>
