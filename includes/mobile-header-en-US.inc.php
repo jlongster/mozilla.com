@@ -32,7 +32,7 @@ $header = <<<HEADER
 </head>
 <body id="{$body_id}" class="{$body_class}">
 {$controls}
-<div id="menu">
+<div id="menu" class="closed">
   <ul>
     <li><a href="/m">Mozilla Firefox</a></li>
     <li><a href="/m/features">Features</a></li>
@@ -45,26 +45,17 @@ $header = <<<HEADER
 
 <script type="text/javascript">
 
-    (function() {
-      var menu = document.getElementById('menu');
-      var height = menu.offsetHeight;
-      
       function toggle_menu(tab) {
+          var menu = document.getElementById('menu');
           if(menu.className == 'open') {
-              menu.style.marginTop = -height + 'px';
               menu.className = 'closed';
-              tab && (tab.className = 'closed');
+              tab.className = 'closed';
           }
           else {
-              menu.style.marginTop = 0;
               menu.className = 'open';
-              tab && (tab.className = 'open');
+              tab.className = 'open';
           }
       }
-
-      menu.style.marginTop = -height + 'px';
-      window.toggle_menu = toggle_menu;
-    })();
 
 </script>
 
