@@ -1,8 +1,6 @@
 <?php
 
-  // Not sure what this is, but it breaks the site locally.
-  // Remove on launch.
-  // require_once 'wurfl/bootstrap.php';
+require_once 'wurfl/bootstrap.php';
 
 include_once 'product-details/mobileDetails.class.php';
 
