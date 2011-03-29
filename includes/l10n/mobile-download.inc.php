@@ -11,7 +11,9 @@ $extra_headers .= <<<EXTRA_HEADERS
       <meta name="WT.ad" content="Get Firefox for Android;Get Firefox for Nokia" />
       <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-download.css" media="screen" />
       <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+      <script src="{$config['static_prefix']}/js/jquery/jquery.min.js"></script>
       <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
+
 
       <style type="text/css">
 
