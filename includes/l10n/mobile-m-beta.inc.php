@@ -1,8 +1,5 @@
 <?php
-// commodity variable to bypass the controller
-if(isset($retour) && $retour == true) {
-    return;
-}
+
 
     $body_id    = 'home';
     $body_class = 'locale-'.$lang;

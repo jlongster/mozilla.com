@@ -75,6 +75,7 @@ $sitepages = array(
     'community'         => 'community.inc.php',
     'security'          => 'security.inc.php',
     'm-support'         => 'm-support.inc.php',
+    'm-beta'            => 'mobile-m-beta.inc.php',
     'm-landing'         => 'm-landing.inc.php',
     'unsupported'       => 'unsupported-version.inc.php',
     'firstrun-36'       => '3.6/firstrun.inc.php',
@@ -92,6 +93,7 @@ $deactivated = array(
     'firefox4-rc',
     'mobile-download',
     'm-landing',
+    'm-beta',
 );
 
 
