@@ -1,5 +1,10 @@
 <?php
 
+// we redirect this page direcly to the download page
+noCachingRedirect($host_l10n.'/mobile/download/');
+exit;
+
+
 $body_id    = 'mobile-home';
 
 if(!isset($meta_description)) {$meta_description = '';}
