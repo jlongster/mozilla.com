@@ -1,5 +1,7 @@
 <?php
 
+$lang_list = getLangLinksSelect();
+$textdir = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 $extra_footers = empty($extra_footers) ? '' : $extra_footers;
 $footer_content = empty($footer_content) ? '' : $footer_content;
 
@@ -27,10 +29,13 @@ $footer = <<<FOOTER
           {$footer_content}
 
           <div class="languages">
-            <div>Other Languages</div>
-            <select name="language">
-              <option value="en-US">English (US)</option>
-            </select>
+            <form id="lang_form" class="languages"  dir="{$textdir}" method="get" action="/includes/l10n/langswitcher.inc.php">
+              <label for="flang">{$l10n->get('switch language')}</label>
+              {$lang_list}
+              <noscript>
+                <div><input type="submit" id="lang_submit" value="{$l10n->get('Go')}" /></div>
+              </noscript>
+            </form>
           </div>
 
           {$view_full_site_link_footer}
