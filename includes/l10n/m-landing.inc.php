@@ -12,6 +12,9 @@ $dl_maemo   = mobileDetails::download_url('en-us', mobileDetails::maemo, mobileD
 $retour = true;
 include_once $config['file_root'].'/'.$lang.'/m/beta.html';
 $main_slogan = str_replace('.', '', $main_slogan);
+if(!isset($list_devices)) {
+    $list_devices = 'List of Supported Devices';
+}
 
 $downloadbox = <<<BUTTON
     <div id="button-wrapper">

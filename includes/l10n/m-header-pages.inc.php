@@ -25,6 +25,7 @@ include "{$config['file_root']}/js/util.js";
 $util_js = ob_get_contents();
 ob_end_clean();
 
+$visit = str_replace('.com', '.org', ___('Visit Mozilla.com'));
 
 $dynamic_header = <<<DYNAMIC_HEADER
 <!DOCTYPE html>
@@ -36,6 +37,10 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <style>
     {$extra_css}
+
+    html[lang="el"] * {
+        text-transform:none !important;
+    }
 
     #nav-tab a, #nav-tab a:visited {
         font-family: "Trebuchet MS";
@@ -57,7 +62,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <li><a href="/firefox">{$l10n->get('Desktop')}</a></li>
     <li><a href="http://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
     <li><a href="http://support.mozilla.org/">{$l10n->get('Support')}</a></li>
-    <li><a href="http://mozilla.org/">{$l10n->get('Visit Mozilla')}</a></li>
+    <li><a href="http://mozilla.org/">{$visit}</a></li>
   </ul>
 </div>
 

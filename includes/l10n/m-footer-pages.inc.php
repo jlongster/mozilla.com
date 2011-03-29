@@ -27,8 +27,8 @@ $footer = <<<FOOTER
         <div id="footer">
           {$footer_content}
 
-        <form id="lang_form" class="languages" dir="ltr" method="get" action="{$host_root}includes/l10n/langswitcher.inc.php"><div>
-            <label for="flang">{$l10n->get('Other Languages')}</label>
+        <form id="lang_form" class="languages"  dir="{$textdir}" method="get" action="{$host_root}includes/l10n/langswitcher.inc.php"><div>
+            <label for="flang">{$l10n->get('switch language')}</label>
             {$lang_list}
             <noscript>
                 <div><input type="submit" id="lang_submit" value="{$l10n->get('Go')}" /></div>
