@@ -52,7 +52,7 @@ $visit_android = str_replace('%s', ' href="'.$url.'"', ___('Or visit <a %s>Firef
 $android2      = ___('Download for <span>Android</span>');
 $n900          = ___('Download for <span>Nokia N900</span>');
 $visit_maemo   = str_replace('%s', ' href="'.$url.'"', ___('Get Firefox for Maemo by visiting <a %s>Firefox.com/m</a> on your phone.'));
-$relnotes_url  = $lang.mobileDetails::release_notes_url(mobileDetails::beta_version);
+$relnotes_url  = $lang.mobileDetails::release_notes_url(mobileDetails::lastest_version);
 $relnotes_txt  = ___('Release Notes');
 $devices       = ___('Supported Devices');
 $learn         = ___('Learn More');
