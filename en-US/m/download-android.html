@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
   function begin_download() {
-    window.location = "<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>";
+    window.location = "<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::latest_version) ?>";
   }
 
   setTimeout(begin_download, 2500);
@@ -27,7 +27,7 @@
       <strong>If the Android Market app didn't open:</strong>
       <p>
         You can try installing Firefox from the
-        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version) ?>">Android Market website</a>.
+        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::latest_version) ?>">Android Market website</a>.
       </p>
 
       <strong>
