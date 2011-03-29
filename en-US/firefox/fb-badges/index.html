@@ -24,9 +24,6 @@
         print "<script>top.location = 'http://www.facebook.com/Firefox';</script>";
     }
 
-    /* Figure out if they are on FF 4 */
-    $firefox4 = preg_match("/Firefox\/4/", $_SERVER['HTTP_USER_AGENT']) ? true : false;
-    
     /* Set the Locale */
     $locale = $user["user"]["locale"];
 
@@ -66,11 +63,7 @@
         ?>
         </style>
 	</head>
-	<?php if($firefox4) { ?>
-	<body class="firefox4">
-	<? } else { ?>
 	<body>
-	<?php } ?>
     	<div id="tabContent">
     		  <div id="downloadButton">
 		       <div id="buttonContent">
