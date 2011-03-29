@@ -430,6 +430,9 @@ RewriteRule ^en-US/mobile/4.0rc1/(.*)$ /en-US/mobile/4.0/$1 [P]
 # Bug 644178 special redirect for google snippets (please remove when may 2011 snippets are online)
 RewriteRule ^en/firefox/beta/$ /en-US/firefox/ [R=301]
 
+# Bug 646078 deprecate /firefox/firefox.html
+RewriteRule ^en-US/firefox/firefox.html /en-US/firefox/ [R=301]
+
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
     ExpiresDefault "access plus 10 years"
