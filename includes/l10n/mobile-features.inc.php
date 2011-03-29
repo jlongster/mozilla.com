@@ -1,5 +1,8 @@
 <?php
 
+// disabled for now
+goToEnglishPage();
+
 /* Variables and functions needed only on the customize mobile page */
 
 $body_id    = 'mobile-features';
