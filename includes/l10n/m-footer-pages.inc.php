@@ -1,5 +1,6 @@
 <?php
 
+$lang_list = getLangLinksSelect();
 $extra_footers = empty($extra_footers) ? '' : $extra_footers;
 
 $link1 = !empty($link1) ? $link1 : "<a href='/{$lang}/m/faq.html'>{$l10n->get('FAQ')}</a>";
@@ -26,12 +27,13 @@ $footer = <<<FOOTER
         <div id="footer">
           {$footer_content}
 
-          <div class="languages">
-            <div>{$l10n->get('Other languages:')}</div>
-            <select name="language">
-              <option value="en-US">English (US)</option>
-            </select>
-          </div>
+        <form id="lang_form" class="languages" dir="ltr" method="get" action="{$host_root}includes/l10n/langswitcher.inc.php"><div>
+            <label for="flang">{$l10n->get('Other Languages')}</label>
+            {$lang_list}
+            <noscript>
+                <div><input type="submit" id="lang_submit" value="{$l10n->get('Go')}" /></div>
+            </noscript>
+        </div></form>
 
           {$view_full_site_link_footer}
 
