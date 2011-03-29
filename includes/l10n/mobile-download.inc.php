@@ -111,23 +111,25 @@ ANDROID;
 $video = <<<VIDEO
       <script>
         // <![CDATA[
+        Mozilla.VideoPlayer.close_text = '{$l10n->get('Close')}';
+        Mozilla.VideoScaler.close_text = '{$l10n->get('Close')}';
         var player_french = new Mozilla.VideoPlayer(
             'tour-video',
             [
                 {
                     url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.webm',
                     type:  'video/webm',
-                    title: 'Download in WebM format'
+                    title: '{$l10n->get('WebM format')}'
                 },
                 {
                     url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.theora.ogv',
                     type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
-                    title: 'Download in Open Video format (Ogg&nbsp;Theora)'
+                    title: '{$l10n->get('Ogg Theora format')}'
                 },
                 {
                     url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.mp4',
                     type:  'video/mp4',
-                    title: 'Download in MPEG-4 format'
+                    title: '{$l10n->get('MPEG-4 format')}'
                 }
             ],
             'serv/marketing/firefox4/Mobile-launch-greatday640.mp4'
