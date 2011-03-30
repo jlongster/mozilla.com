@@ -27,7 +27,7 @@ class Responsys {
 
         $data['LANG_LOCALE'] = self::$lang;
         $data['SOURCE_URL'] = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-        $data['_ri_'] = isset($config['responsys_id']) ? $config['responsys_id'] : 'X0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0OQQzgQvQviRVwjpnpgHlpgneHmgJoXX0Gzc2X%3DUQpglLjHJlTQTtQyTQ3qQ0NQQGQvQvH3';
+        $data['_ri_'] = $config['responsys_id'];
 
         $_curl = curl_init('http://awesomeness.mozilla.org/pub/rf');  
         curl_setopt($_curl, CURLOPT_FOLLOWLOCATION, true);  
