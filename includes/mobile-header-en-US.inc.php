@@ -27,7 +27,7 @@ $header = <<<HEADER
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
     <title>{$page_title}</title>
-    <link href="{$config['static_prefix']}/style/tignish/mobile-m.css" rel="stylesheet" media="all" />
+    <link href="{$config['static_prefix']}/style/covehead/mobile-m.css" rel="stylesheet" media="all" />
     {$extra_headers}
 </head>
 <body id="{$body_id}" class="{$body_class}">

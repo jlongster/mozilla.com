@@ -36,7 +36,7 @@ BUTTON;
 
 
 $extra_headers .= <<<EXTRA_HEADERS
-    <link href="{$config['static_prefix']}/style/tignish/mobile-m.css" rel="stylesheet" media="all" />
+    <link href="{$config['static_prefix']}/style/covehead/mobile-m.css" rel="stylesheet" media="all" />
     <style>
     .title .text {
         margin-right: 100px;
