@@ -8,9 +8,6 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 $_version       = getVersionBySelf();
 $_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], $lang);
 
-$should_upgrade = (strpos($_SERVER['HTTP_USER_AGENT'], 'PPC') === FALSE &&
-                   strpos($_SERVER['HTTP_USER_AGENT'] , 'Mac OS X 10.4') === FALSE);
-
 ?>
 
 
@@ -31,26 +28,17 @@ if ($_version !== null && $_valid_version) {
     } else {
         ?>
         <h2>You’re now running Firefox <?=$_version?></h2>
-        <?php if($should_upgrade) { ?>
         <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
-        <?php
-            }
+<?php
     }
 } else {
     ?>
     <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
-    <?php if($should_upgrade) { ?>
     <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
-    <?php
-        }
+<?php
 }
 ?>
 </div>
-
-<?php 
-   // Don't show Firefox 4 download promo for PPC or OS X 10.4 users
-   if($should_upgrade) {
-?>
 
 <div id="main-content" class="beta-promo">
    <h3><span>Firefox 4 is here!</span></h3>
@@ -72,8 +60,6 @@ if ($_version !== null && $_valid_version) {
         </a>
     </li></ul>
 </div>
-
-<?php } ?>
 
 <div id="sidebar">
 
@@ -270,6 +256,17 @@ if ($_version !== null && $_valid_version) {
     <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
     <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
 </p>
+
+<script type="text/javascript">
+  
+  // bug 644255, don't tell users to upgrade to fx4 if they 
+  // are PPC or using any OS X before 10.5
+  if(/(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent)) {
+     document.getElementById('main-content').style.display = 'none';
+     document.getElementById('main-feature-contents').style.display = 'none';
+  }
+  
+</script>
 
 <?php
 $detect_flash = FALSE;
