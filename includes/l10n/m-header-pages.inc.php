@@ -3,7 +3,6 @@
 // RTL support for Mozilla.com mobile pages
 if ($textdir == 'rtl') {
     $extra_headers  .= <<<EXTRA_HEADERS
-    {$extra_headers}
     <style>
     #view-full-site {
         left: 0;

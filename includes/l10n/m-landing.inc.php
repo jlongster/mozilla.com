@@ -47,7 +47,6 @@ EXTRA_HEADERS;
 // RTL support
 if ($textdir == 'rtl') {
     $extra_headers  .= <<<EXTRA_HEADERS
-    {$extra_headers}
     <style>
 
     </style>
