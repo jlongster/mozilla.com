@@ -91,6 +91,11 @@ echo $downloads;
     </script>
     <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_product_details_options); ?>
     </div>
+    <script>
+    if(/(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent)) {
+        document.getElementById('home-download').style.visibility = "hidden";
+    }
+    </script>
 
     <p id="mobile-promo">
       <a href="/<?=$lang?>/mobile/?WT.mc_id=hp_1&amp;WT.mc_ev=click"
