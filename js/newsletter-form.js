@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var is_firstrun = ($('#firstrun,#whatsnew').length > 0);
+        var email_open = $('#email-form input[name=email]').not(':hidden');
 
 	var opened = (function() {
 		var ul = $('#email-form ul');
@@ -9,10 +9,13 @@ $(document).ready(function() {
 
 	function scrollTo(id, time)
 	{
-		$('html, body')
-			.animate(
-				{ scrollTop: $(id).offset().top }, time
-			);
+            // Disable this functionality because it's jarring to users
+            // (discovered by putting form in footer of every page)
+            // jwl, bug 630638
+            // $('html, body')
+	    // 	.animate(
+	    // 		{ scrollTop: $(id).offset().top }, time
+	    // 	);
 	}
 
 	function open()
@@ -28,7 +31,7 @@ $(document).ready(function() {
 		}
 	}
 
-	if (is_firstrun) {
+	if (email_open) {
 
 		$('#email-form').submit(function(e) {
 			if (!opened) {

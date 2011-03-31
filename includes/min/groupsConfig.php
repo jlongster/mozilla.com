@@ -23,7 +23,8 @@ return array(
     ),
     'css' => array(
         '//style/covehead/template.css',
-        '//style/covehead/content.css' 
+        '//style/covehead/content.css',
+        '//style/email-form.css'
     ),
     'css_firstrun' => array(
         '//style/firefox/3.6/firstrun-page.css',

@@ -31,6 +31,8 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
 		<div id="sub-footer-newsletter">
     <?php require "{$config['file_root']}/includes/newsletter.inc.php"; ?>
 		</div>
+
+                <div class="clear"></div>
 		</div>
 	</div>
 	<div id="footer">

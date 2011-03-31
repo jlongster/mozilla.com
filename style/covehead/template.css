@@ -336,7 +336,6 @@ body {
 	margin: auto;
 	width: 980px;
 	text-align: left;
-	overflow: auto;
 }
 
 #sub-footer h3 {
@@ -414,7 +413,7 @@ body {
 
 #sub-footer #sub-footer-newsletter {
 	float: right;
-	width: 275px;
+
 	background: url(/img/template/footer-social.png) 30% -412px no-repeat;
 	margin: 0 32px 0 0;
 	padding: 135px 0 0 0;
@@ -430,25 +429,6 @@ body {
 	line-height: 18px;
 	font-style: italic;
 	color: #fff;
-}
-
-#sub-footer #sub-footer-newsletter a,
-#sub-footer #sub-footer-newsletter a:link,
-#sub-footer #sub-footer-newsletter a:visited {
-	font-family: MetaBlack, "Trebuchet MS", sans-serif;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-style: normal;
-	font-size: 22px;
-	color: #83b3f2;
-	-moz-transition: text-shadow 0.2s ease-in;
-	-webkit-transition: text-shadow 0.2s ease-in;
-	transition: text-shadow 0.2s ease-in;
-}
-
-#sub-footer #sub-footer-newsletter a:hover,
-#sub-footer #sub-footer-newsletter a:active {
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3), 0 0 5px rgba(51,85,155,1), 0 0 20px rgba(255,255,255,0.4);
 }
 
 /* }}} */
@@ -734,70 +714,356 @@ body {
 
 /* {{{ Newsletter */
 
-.newsletter-signup {
+
+#email-form #email-open {
+	display: inline-block;
+	width: 26px;
+	height: 24px;
+	text-align: center;
+	color: #4878bf;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 1.1;
+	background: -moz-linear-gradient(
+		left,
+		#bad3f1,
+		#bad3f1 30%,
+		#7eaae7
+	);
+	text-shadow:
+		1px 0 2px rgba(255,255,255, 0.5),
+		1px 0 1px rgba(255,255,255,0.4);
+	-moz-border-radius: 7px;
+	-moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
+	-moz-transform: rotate(90deg);
+	box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
+	border-radius: 7px;
+}
+
+#email-form ul.error #email-open,
+#email-form #email-open.opened {
+	-moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
+	box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
+	opacity: 0.5;
+	cursor: default;
+}
+#email-form ul.error #email-open:active,
+#email-form ul.error #email-open:focus,
+#email-form #email-open.opened:active,
+#email-form #email-open.opened:focus {
+	outline: none;
+}
+
+#email-form #form-pane {
+	display: none;
+}
+
+#email-form ul.error #form-pane {
+	display: block;
+}
+
+#form-pane #form-details,
+#success-pane p {
+	color: #555;
+	font-size: 14px;
+	line-height: 1.2;
+}
+#firstrun #form-pane #form-details {
+	margin-left: 240px;
+}
+#success-pane p {
+	padding: 10px 0;
+}
+
+#form-pane,
+#success-pane {
+	clear: left;
+	position: relative;
+}
+
+#success-pane h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin: 0;
+}
+
+#success-pane h3 img {
+	position: absolute;
+	top: -12px;
+	right: 0;
+}
+
+#form-pane p.intro {
+	width: 170px;
 	float: left;
-	height: 120px;
-	width: 250px;
-	padding: 10px 20px;
-	margin-right: 20px;
-	background-color: #e3f0fe;
-	background-position: 0 0;
-	background-repeat: repeat;
-	background-image: url(/img/firefox/3.6/firstrun/background-sidebar-whatsnew.png);
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	margin: 5px 0 0 50px;
+	font-size: 13px;
 }
 
-.newsletter-signup #form-pane,
-.newsletter-signup #success-pane {
-    display: none;
+#firstrun #form-pane p.footnote,
+#whatsnew #sidebar #form-pane p.footnote {
+	color: #999
+}
+#whatsnew #sidebar #form-pane p.footnote {
+	margin: 0;
+	font-size: 10px;
 }
 
-#sub-footer .newsletter-signup ul {
+#email-form select#country,
+#email-form input#email {
+	color: #555;
+    background: #fff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 3px;
+	-moz-border-radius: 3px;
+}
+
+#email-form input#email {
+	width: 218px;
+	border-color: #aaa #cdcdcd #cdcdcd #aaa;
+	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+#whatsnew #email-form input#email {
+	width: 200px;
+}
+
+#email-form input#email:-moz-placeholder {
+	color: #999;
+}
+#email-form input#email.placeholder {
+	color: #999;
+}
+
+#email-form input#email:focus {
+}
+
+#form-pane #country-field {
+	padding: 12px 2px 2px 2px;
+}
+
+#email-form select#country {
+	width: 225px;
+	color: #555;
+	border-color: #cdcdcd #aaa #aaa #cdcdcd;
+	font-size: 14px;
+	-moz-box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1);
+}
+#whatsnew #email-form select#country {
+	width: 208px;
+}
+
+#email-form #form-pane input#subscribe {
+	background: -moz-linear-gradient(
+		center top,
+		#669be1 0%,
+		#5784bf 100%);
+	border: none;
+	padding: 6px 32px 8px;
+	font-family: "Trebuchet MS", sans-serif;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 16px;
+	color: #fff;
+	white-space: nowrap;
+	margin: 10px 0 0 2px;
+	-moz-border-radius: 5px;
+	-moz-box-shadow:
+		0 3px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset;
+}
+
+#email-form #form-pane input#subscribe:hover {
+	-moz-box-shadow:
+		0 3px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset,
+		0 -1px 80px rgba(0,0,0,0.1) inset;
+}
+#email-form #form-pane input#subscribe:active {
+	position: relative;
+	top: 1px;
+	-moz-box-shadow:
+		0 2px 0 rgba(0, 0, 0, 0.1),
+		0 -3px 0 rgba(0,0,0,0.1) inset,
+		0 -1px 80px rgba(0,0,0,0.1) inset;
+}
+
+#email-form #form-pane label {
+	display: block;
+	padding: 10px 0 0 0;
+}
+
+#meil-form #form-pane label input {
+	vertical-align: middle;
+}
+
+#email-form #form-pane .form-error input#email {
+	border-width: 2px;
+	padding: 2px;
+	border-color: #cc4927;
+}
+
+#email-form #privacy-field .error-wrapper {
+	border: 2px solid transparent;
+	display: inline-block;
+	padding: 2px;
+	-moz-border-radius: 4px;
+	line-height: 0.8;
+}
+
+#email-form #form-pane label#privacy-check-label a {
+	text-decoration: underline;
+}
+
+#whatsnew #sidebar #email-form p.form-error,
+#email-form p.form-error {
+	z-index: 1000;
+	display: none;
+	border: none;
+	color: #fff;
+	background: #b11a04;
+	font-family: MetaWebPro-Book,sans-serif;
+	font-size: 13px;
+	padding: 7px 13px;
+	width: 150px;
+	position: absolute;
+	left: 475px;
+	top: -30px;
+	text-shadow: none;
+	-moz-border-radius: 5px;
+	-moz-box-shadow:
+		0 3px 0 rgba(0,0,0,0.1),
+		0 1px 10px rgba(0,0,0,0.2);
+}
+#whatsnew #sidebar #email-form p.form-error {
+	left: 217px;
+}
+
+#email-form p.form-error-visible {
+	display: block;
+}
+
+#email-form #format-field {
+	padding-top: 10px;
+}
+
+#email-form #form-pane #privacy-field {
+	clear: none;
+}
+
+#email-form .radio-wrapper {
+	padding: 1px 4px;
+	float: left;
+	margin: 0;
+	line-height: 0.8;
+	display: inline-block;
+}
+
+#email-form #form-pane #format-field label {
+	padding: 0;
+	margin: 0 12px 0 0;
+	width: auto;
+	float: left;
+}
+
+#email-form #form-pane #format-field input {
+	width: auto;
+	float: none;
+	margin: 0 4px;
+}
+
+#email-form .error-email #email-error { display: block !important; }
+#email-form .error-privacy #privacy-error { display: block !important; }
+
+#email-form .error-email #email-field .error-wrapper {
+	background: #b11a04;
+}
+#email-form .error-privacy #privacy-field .error-wrapper {
+	border-color: #b11a04;
+	background: #eb7a6b;
+}
+
+#email-form .success #open-pane { display: none !important; }
+#email-form .success #form-pane { display: none !important; }
+#email-form .success #success-pane { display: block !important; }
+
+#sub-footer #newsletter {
+    position: relative;
+    overflow: visible;
+}
+
+#sub-footer #form-pane {
+    position: absolute;
+    top: 55px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    z-index: 20;
+}
+
+#sub-footer #newsletter p {
+    max-width: 300px;
+    color: white;
+}
+
+#sub-footer #email-form p.form-error {
+    position: static;
+    color: white;
+}
+
+#sub-footer #newsletter,
+#sub-footer #form-pane p,
+#sub-footer #form-pane,
+#sub-footer #form-pane #form-details {
+    color: black;
+}
+
+#sub-footer #newsletter ul,
+#sub-footer #newsletter ul li {
     margin: 0;
-    background: none;
+    list-style: none;
+    color: white;
+    float: none;
 }
 
-#sub-footer .newsletter-signup h3 {
+#sub-footer #newsletter h3 {
+    float: none;
+    background: none;
+    width: auto;
     height: auto;
     margin: 0;
     padding: 0;
-    background: none;
+    color: white;
 }
 
-#sub-footer .newsletter-signup a#email-open {
-    display: inline-block;
-    width: 26px;
-    height: 24px;
-    text-align: center;
-    color: #4878bf;
-    font-weight: bold;
-    font-size: 19px;
-
-    padding: 0;
+#sub-footer #newsletter #privacy-field a {
     background: none;
-    background: -moz-linear-gradient(
-	left,
-	#bad3f1,
-	#bad3f1 30%,
-	#7eaae7
-    );
-    text-shadow:
-    1px 0 2px rgba(255,255,255, 0.5),
-    1px 0 1px rgba(255,255,255,0.4);
-    -moz-border-radius: 7px;
-    -moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
-    -moz-transform: rotate(90deg);
-    box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.1);
-    border-radius: 7px;
+    display: inline;
+    font-size: 12px;
 }
 
-#sub-footer #email-open:link,
-#sub-footer #email-open:hover,
-#sub-footer #email-open:visited,
-#sub-footer #email-open:active {
+#sub-footer #newsletter a,
+#sub-footer #newsletter a:link,
+#sub-footer #newsletter a:visited {
+    padding: 2px 1px;
+    font-family: Georgia, serif;
+    margin: 0;
+    font-style: normal;
+    color: black;
+}
+
+#sub-footer #newsletter a:hover {
     text-decoration: none;
+    text-shadow: none;
+}
+
+#sub-footer #newsletter #email-open {
+    color: #4878BF;
+    text-align: center;
 }
 
 /* }}} */
 
+.clear {
+    clear: both;
+}

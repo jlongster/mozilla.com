@@ -1,16 +1,6 @@
 <?php
-    $newsletter_wt_subscribe_uri = '/button/firstrun/newsletter_subscribe.html';
-    $newsletter_wt_subscribe_ti = 'First%20Run%20Newsletter%20Subscribe';
-    $newsletter_wt_blade_uri = '/button/firstrun/newsletter_blade.html';
-    $newsletter_wt_blade_ti = 'First%20Run%20Newsletter%20Blade';
-
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
-
-    $newsletter_wt_subscribe_uri = isset($newsletter_wt_subscribe_uri) ? $newsletter_wt_subscribe_uri : '';
-    $newsletter_wt_subscribe_ti = isset($newsletter_wt_subscribe_ti) ? $newsletter_wt_subscribe_ti : '';
-    $newsletter_wt_blade_uri = isset($newsletter_wt_blade_uri) ? $newsletter_wt_blade_uri : '';
-    $newsletter_wt_blade_ti = isset($newsletter_wt_blade_ti) ? $newsletter_wt_blade_ti : '';
 
     $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
     $status = '';
@@ -20,6 +10,8 @@
         $status = 'error error-'. $form->error;
     }
 ?>
+
+<script src="/js/newsletter-form.js"></script>
 <div class="newsletter-signup <?= $status ?>" id="newsletter">
   <div class="container">
 
