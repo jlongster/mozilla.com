@@ -1,7 +1,7 @@
 <?php
 
 if ($lang == 'de') {
-    $extra_footer_links = ' &nbsp;|&nbsp;<a href="/de/impressum/">Impressum</a>';
+    $extra_footer_links = '&nbsp;|&nbsp;<a href="'.$host_l10n.'/impressum/">Impressum</a> &nbsp;|&nbsp;<a href="'.$host_l10n.'/newsletter/">Mozilla-Newsletter</a>';
 }
 
 // no webstats on 404 page
