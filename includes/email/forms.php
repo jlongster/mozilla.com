@@ -72,11 +72,6 @@ class GermanNewsletterForm extends NewsletterForm {
         $data[$this->campaign . "_FLG"] = 'Y';
         $data[$this->campaign . "_DATE"] = $now;
 
-        if(isset($this->data['join_email'])) {
-            $data['JOIN_MOZILLA_GERMAN'] = 'Y';
-            $data['JOIN_MOZILLA_GERMAN_DATE'] = $now;
-        }
-
         Responsys::post($data);
     }
 }
