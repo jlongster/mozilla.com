@@ -93,7 +93,10 @@ echo $downloads;
     </div>
     <script>
     if(/(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent)) {
-        document.getElementById('home-download').style.visibility = "hidden";
+        var div = document.getElementById('home-download');
+        div.innerHTML = 'Unfortunately the latest version of Firefox isn\'t compatible with your computer\'s operating system. <a href="/firefox/4.0/system-requirements/">Learn more</a>.';
+        div.style.width = '400px';
+        div.style.marginBottom = '50px';
     }
     </script>
 
