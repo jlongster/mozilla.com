@@ -115,7 +115,7 @@ dd, p {
     padding-right:0.75em;
 }
 
-#faq-nav a { 
+#faq-nav a {
     background:url("/img/mobile/m/skip-nav-arrow.gif") no-repeat scroll right center transparent;
     display:block;
     font-size:120%;
@@ -333,7 +333,7 @@ p.button strong {
 }
 
 .buttons {
-    padding: 7px 0 12px 8px;    
+    padding: 7px 0 12px 8px;
 }
 
 #button-wrapper .up-corner {
@@ -451,7 +451,7 @@ ul.link-list {
     list-style: none;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
-    border-radius: 4px;    
+    border-radius: 4px;
     -moz-box-shadow:0 2px 2px #d7d9e8;
     -webkit-box-shadow:0 2px 2px #d7d9e8;
     box-shadow: 0 2px 2px #d7d9e8;
@@ -512,7 +512,7 @@ a.button-beta {
 /* lower */
 
 .lower-bg {
-    background: #e3e2df url(/img/mobile/m/bg-bottom.png) top center repeat-x; 
+    background: #e3e2df url(/img/mobile/m/bg-bottom.png) top center repeat-x;
     height: 61px;
 }
 
@@ -617,4 +617,33 @@ a.button-beta {
 #footer p a,
 #footer p a:visited {
     color: #679cdc;
+}
+
+
+/* RTL Compatibility */
+
+[dir="rtl"] #menu a:after,
+[dir="rtl"] ul.link-list li a:after {
+    padding: 0 10px;
+    float:left;
+    vertical-align:bottom;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+[dir="rtl"] ul.link-list li a:after {
+    content: url("/img/mobile/m/right-arrow.png");
+}
+
+[dir="rtl"] #menu a:after {
+    content: url("/img/mobile/m/right-arrow-light.png");
+}
+
+[dir="rtl"] ul.link-list li,
+[dir="rtl"] #menu a,
+[dir="rtl"] #menu a:visited {
+    background: none;
 }
