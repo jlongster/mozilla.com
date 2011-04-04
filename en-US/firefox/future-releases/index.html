@@ -1,0 +1,26 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Future Releases';
+    $body_id    = 'future';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/future.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Welcome to <span>The Future</span></h2>
+    <p>Searching for the future of Firefox? You came to the right place.</p>
+</div>
+
+<div id="main-content">
+
+</div>
+
+
+</div><!-- end #main-content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
