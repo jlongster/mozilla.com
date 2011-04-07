@@ -2,6 +2,17 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Firefox Future Releases';
     $body_id    = 'future';
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/future.css" media="screen" />
 EXTRA_HEADERS;
@@ -42,7 +53,40 @@ EXTRA_HEADERS;
     </div>
 
     <div id="channel_news">
-        <h3>Get the Latest <span>Channel News</span></h3>
+          <div id="newsletter-signup">
+            <div class="title">
+              <h3>Get the Latest <span>Channel News</span></h3>
+              <p>Sign up for one or all of our Firefox Channel newsletters.</p>
+            </div>
+            <form id="email-form" class="<?= $status ?>" action="" method="post">
+              <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
+              <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+              <div id="success-msg">Thanks for Subscribing!</div>
+              <div class="more">
+                <div class="row">
+                  <select id="country" name="country">
+                      <option value="">Select country</option>
+                      <?php
+                          $country = $form->get('country');
+                          if (!$country) {
+                              $country = 'us';
+                          }
+                          echo regionsAsOptions($lang, $country);
+                      ?>
+                  </select>
+                </div>
+                <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
+                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                'DCS.dcsuri', '/mainstream_newsletter/signup',
+                                'WT.ti', 'Link: Sign me up - Second Step',
+                                'WT.dl', 99,
+                                'WT.nv', 'Content',
+                                'WT.ac', 'Newsletter');">
+                <p class="footnote">We will only send you Mozilla-related information (<a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>).</p>
+              </div>
+            </form>
+          </div>
+
     </div>
 
 </div>

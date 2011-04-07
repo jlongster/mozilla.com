@@ -16,7 +16,96 @@
 #channel_news {
     clear: both;
     background: url(/img/covehead/divider-notch-main.jpg) 50% 0 no-repeat;
-    padding-top: 20px;
+    padding-top: 75px;
+}
+
+/* }}} */
+/* {{{  Newsletter */
+
+#newsletter-signup {
+    position: relative;
+    margin-left: 100px;
+}
+#newsletter-signup .title h3 {
+    margin-top: 0;
+    float: left;
+    padding-right: 20px;
+    border-right: 1px dotted #ccc;
+    font-style: italic;
+    padding: 5px 15px;
+    line-height: 1;
+}
+#newsletter-signup .title p {
+    float: left;
+    padding: 5px 15px;
+    width: 200px;
+    margin: 0;
+    color: #888;
+    font-style: italic;
+    font-size: 15px;
+}
+#newsletter-signup form {
+    display: inline-block;
+    vertical-align: top;
+}
+#newsletter-signup form select {
+    width: 23em;
+}
+#email {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    height: 34px;
+    width: 210px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #aaa;
+    border-right:0;
+    padding: 1px 0 1px 14px;
+    box-shadow: 0 2px rgba(0,0,0,.1), 0 0 1px #888 inset;
+}
+.error-email #email,
+.error-email #expand {
+    border-color: red;
+}
+#email-error,
+#success-msg {
+    display: none;
+    font-size: .8em;
+    margin-top: .5em;
+}
+.success #success-msg {
+    color: green;
+    display: block;
+}
+.error-email #email-error {
+    color: red;
+    display: block;
+}
+#newsletter-signup input[type=submit] {
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: .9em;
+    font-weight: bold;
+}
+#newsletter-signup input {
+    margin-left: 0;
+}
+#privacy-check-label {
+    font-size: .9em;
+}
+#newsletter-signup .footnote {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 10px;
+}
+input:-moz-placeholder {
+    font-style: italic;
+    color: #ccc;
+}
+.row {
+    margin: 16px 0;
+}
+#newsletter-signup label:first-child {
+    margin-right: 20px;
 }
 
 /* }}} */
