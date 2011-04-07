@@ -1,7 +1,7 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Firefox Future Releases';
-    $body_id    = 'future';
+    $body_id    = 'channel';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
@@ -14,49 +14,52 @@
         $status = 'error error-'. $form->error;
     }
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/future.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/channel.css" media="screen" />
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
 <div id="main-feature">
-    <h2>Welcome to <span>The Future of Firefox</span></h2>
-    <p>Want to test and experience what’s in store for Firefox? You came to the right place.<br>
-    Download the build that’s right for you and sign-up for a Channel newsletter to stay in the loop.</p>
+    <h2>Welcome to the<span>Future of Firefox</span></h2>
+    <p>Download and test the build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>
 </div>
 
 <div id="main-content">
 
     <div id="download_aurora" class="channel">
-        <h3><span>Aurora</span> Channel</h3>
+        <h3><span>Aurora</span></h3>
         <ul>
-            <li>Lorem ipsum</li>
+            <li>Experience the newest innovations in an unstable environment that’s not for the faint of heart</li>
+            <li>Provide feedback on features and performance to help determine what makes the final release</li>
         </ul>
-        <p>Downloadz!</p>
+        <p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox Aurora</span></a></p>
+        <small>Available in en-US only</small>
     </div>
 
     <div id="download_beta" class="channel">
-        <h3><span>Beta</span> Channel</h3>
+        <h3><span>Beta</span></h3>
         <ul>
-            <li>Lorem ipsum</li>
+            <li>Experience cutting edge features but with more stability</li>
+            <li>Provide feedback to help refine and polish what will be in the final release</li>
         </ul>
-        <p>Downloadz!</p>
+        <p><span class="download-soon"><span>Coming Soon!</span> Get notified when Beta is ready.</span></p>
     </div>
 
     <div id="download_firefox" class="channel">
-        <h3><span>Firefox <span>Final Release</span></span> Channel</h3>
+        <h3><span>Final <span>Release</span></span></h3>
         <ul>
-            <li>Lorem ipsum</li>
+            <li>Enjoy the tried and tested final release being used by hundreds of millions around the world</li>
+            <li>Stay in control of your online experience with super speed, easy customization and the latest Web technologies</li>
         </ul>
-        <p>Downloadz!</p>
+        <p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox 4</span></a></p>
     </div>
 
     <div id="channel_news">
           <div id="newsletter-signup">
             <div class="title">
-              <h3>Get the Latest <span>Channel News</span></h3>
-              <p>Sign up for one or all of our Firefox Channel newsletters.</p>
+              <h3>Get the latest <span>channel news</span></h3>
+              <p>Sign up for one or all of our Firefox channel newsletters.</p>
             </div>
             <form id="email-form" class="<?= $status ?>" action="" method="post">
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
