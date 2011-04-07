@@ -1,0 +1,71 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Be a Web Hero";
+    $body_id    = 'webhero';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/webhero.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+<div id="webhero-wrap">
+  <h1 class="page-title">Be a Web Hero</h1>
+  
+  <section class="step" id="step1">
+    <h2>Firefox 4 + You = Awesome!</h2>
+    <p>We don’t have to tell you how awesome Firefox 4 is. Or how it’s made to make the Web a better 
+    place. You know it. You experience it every day. Ever since you downloaded it weeks ago. But not 
+    everyone is there yet. Some people just need a little nudge in the right direction. And that’s 
+    where you come in.</p>
+  </section>
+  
+  <section class="step" id="step2">
+    <h2>Know Someone Browsing <br>in the Past?</h2>
+    <p>It could be friend, a family member, a colleague, your chiropractor, but chances are you know 
+    someone who isn’t on Team Firefox yet. They’re missing out on the awesome. And it just wouldn’t 
+    be fair to keep it all for yourself.</p>
+  </section>
+  
+  <section class="step" id="step3">
+    <h2>Helping is Easy! And Feels Great!</h2>
+    <p>All you have to do is share your love of Firefox 4 with someone who needs it and help Team 
+    Firefox grow. Here’s how:</p>
+    <ul class="checklist">
+      <li class="check1">Install Firefox 4 on their computer. Get up close and personal and show them the awesome first hand.</li>
+      <li class="check2">Take them to school. Send a video that teaches them how to install Firefox 4 on their 
+        <a href="#">Mac</a> or 
+        <a href="#">PC</a>. 
+        Or send them PDF instructions for 
+        <a href="/<?= $lang ?>/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf" title="Download this PDF (1MB)">Mac</a> or 
+        <a href="/<?= $lang ?>/firefox/webhero/Firefox4_Installation_Guide_PC.pdf" title="Download this PDF (1.5MB)">PC</a> instead.</li>
+      <li class="check3">Give them the tour. Show off the best Firefox 4 has to offer <a href="/<?= $lang ?>/firefox/central/">on your computer</a> or send them a <a href="/<?= $lang ?>/firefox/video/">video</a>.</li>
+    </ul>
+  </section>
+  
+  <section class="step" id="step4">
+    <h2>Awesome = You!</h2>
+    <p>Give yourself a pat on the back. In fact, get someone else to do it for you. You’ve earned it. 
+    You not only helped someone get the best of the Web, you helped make sure it stays open, accessible, 
+    transparent, safe and &ndash; most of all &ndash; awesome.</p>
+    <p>Thanks for your support of our belief in principles over profit and for using a browser that 
+    answers to no one but you. Let’s keep building a better Web together.</p>
+  
+    <div id="share">
+      <h3><b>Share Firefox 4</b> with someone right now!</h3>
+      <ul>
+        <li><a id="share-twitter" title="Share on Twitter" href="http://twitter.com/home/?status=Discover%20the%20awesome,%20I%20did!%20Upgrade%20to%20%23Firefox%204%20today!%20http://mzl.la/i85nib">Twitter</a></li>
+        <li><a id="share-facebook" title="Share on Facebook" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmzl.la%2Fi85nib&amp;t=Discover%20the%20awesome,%20I%20did!%20Upgrade%20to%20Firefox%204%20today!">Facebook</a></li>
+        <li><a id="share-email" title="Share by email" href="#">Email</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div id="copyright">
+	<p id="footer-links"><a href="/<?=$lang?>/privacy-policy.html"><?=$l10n->get('Privacy Policy')?></a> &nbsp;|&nbsp; 
+	<a href="/<?=$lang?>/about/legal.html"><?=$l10n->get('Legal Notices')?></a> &nbsp;|&nbsp;
+  <a href="/<?=$lang?>/legal/fraud-report/index.html"><?=$l10n->get('Report Trademark Abuse')?></a></p>
+	<p>Except where otherwise <a href="/<?=$lang?>/about/legal.html#site">noted</a>, content on this site is licensed under the <br /><a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.</p>
+</div>
+
+</body>
+</html>
