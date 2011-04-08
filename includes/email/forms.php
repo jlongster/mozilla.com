@@ -74,6 +74,10 @@ class ChannelsForm extends NewsletterForm {
             throw new NewsletterValidationException('email');
         }
 
+        if (!isset($data['aurora']) && !isset($data['beta']) && !isset($data['general'])) {
+            throw new NewsletterValidationException('channel');
+        }
+        
         return true;
     }
 
@@ -88,7 +92,7 @@ class ChannelsForm extends NewsletterForm {
             Responsys::subscribe($this->campaign[1], $this->data);
         }
 
-        if(isset($data['release'])) {
+        if(isset($data['general'])) {
             Responsys::subscribe($this->campaign[2], $this->data);
         }
 

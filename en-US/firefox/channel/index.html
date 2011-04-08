@@ -5,7 +5,7 @@
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new ChannelsForm(array('AURORA', 'BETA', 'RELEASE'), $_POST);
+    $form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
     $status = '';
     if ($form->save()) {
         $status = 'success';
@@ -69,7 +69,7 @@ EXTRA_HEADERS;
             <div class="success-pane">
               Thanks for subscribing!
             </div>
-            <form id="email-form" action="" method="post">
+            <form id="email-form" action="#newsletter-signup" method="post">
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
               <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
               <div class="more">
@@ -88,8 +88,9 @@ EXTRA_HEADERS;
                 <ul class="channels_signup">
                   <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="t" /> Aurora</label></li>
                   <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="t" /> Beta</label></li>
-                  <li><label for="check_release"><input type="checkbox" id="check_release" name="release" value="t" /> General Mozilla News</label></li>
+                  <li><label for="check_general"><input type="checkbox" id="check_general" name="general" value="t" /> General Mozilla News</label></li>
                 </ul>
+                <div id="channel-error">Please select at least one newsletter.</div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                 'DCS.dcsuri', '/mainstream_newsletter/signup',

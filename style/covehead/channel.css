@@ -241,10 +241,14 @@
     border-color: red;
 }
 #email-error,
+#channel-error,
 .success-pane {
     display: none;
     font-size: .8em;
     margin-top: .5em;
+}
+#channel-error {
+    margin-bottom: 1em;
 }
 .success .success-pane {
     color: green;
@@ -253,7 +257,8 @@
 .success #newsletter-signup form {
     display: none;
 }
-.error-email #email-error {
+.error-email #email-error,
+.error-channel #channel-error {
     color: red;
     display: block;
 }
@@ -268,6 +273,10 @@
 }
 #privacy-check-label {
     font-size: .9em;
+}
+
+#newsletter-signup .channels_signup {
+    margin-bottom: .25em;
 }
 
 #newsletter-signup .channels_signup li {
