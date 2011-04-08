@@ -29,7 +29,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                         </li>
 		</ul>
 		<div id="sub-footer-newsletter">
-    <?php require "{$config['file_root']}/includes/newsletter.inc.php"; ?>
+
 		</div>
 
                 <div class="clear"></div>
