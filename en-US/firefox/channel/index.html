@@ -5,11 +5,10 @@
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $form = new ChannelsForm(array('AURORA', 'BETA', 'RELEASE'), $_POST);
     $status = '';
     if ($form->save()) {
         $status = 'success';
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     } elseif ($form->error) {
         $status = 'error error-'. $form->error;
     }
@@ -61,16 +60,18 @@ EXTRA_HEADERS;
     </div>
     </div>
 
-    <div id="channel_news">
+    <div id="channel_news" class="<?= $status ?>">
           <div id="newsletter-signup">
             <div class="title">
               <h3>Get the latest <span>channel news</span></h3>
               <p>Sign up for one or all of our Firefox channel newsletters.</p>
             </div>
-            <form id="email-form" class="<?= $status ?>" action="" method="post">
+            <div class="success-pane">
+              Thanks for subscribing!
+            </div>
+            <form id="email-form" action="" method="post">
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
               <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
-              <div id="success-msg">Thanks for Subscribing!</div>
               <div class="more">
                 <div class="row">
                   <select id="country" name="country">
@@ -83,6 +84,11 @@ EXTRA_HEADERS;
                           echo regionsAsOptions($lang, $country);
                       ?>
                   </select>
+                </div>
+                <div class="channels_signup">
+                  <div><input type="checkbox" name="aurora" value="t" /> Aurora</div>
+                  <div><input type="checkbox" name="beta" value="t" /> Beta</div>
+                  <div><input type="checkbox" name="release" value="t" /> Release</div>
                 </div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',

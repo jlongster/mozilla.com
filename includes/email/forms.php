@@ -61,6 +61,39 @@ class NewsletterForm {
 
 }
 
+class ChannelsForm extends NewsletterForm {
+    function __construct($campaigns, $data) {
+        $this->campaigns = $campaigns;
+        $this->data = $data;
+    }
+
+    function validate() {
+        $data = $this->data;
+        
+        if (!isset($data['email']) || !preg_match('/^([\w\-.+])+@([\w\-.])+\.[A-Za-z]{2,4}$/', $data['email'])) {
+            throw new NewsletterValidationException('email');
+        }
+
+        return true;
+    }
+
+    function subscribe() {
+        $data = $this->data;
+
+        if(isset($data['aurora'])) {
+            Responsys::subscribe($this->campaign[0], $this->data);
+        }
+
+        if(isset($data['beta'])) {
+            Responsys::subscribe($this->campaign[1], $this->data);
+        }
+
+        if(isset($data['release'])) {
+            Responsys::subscribe($this->campaign[2], $this->data);
+        }
+
+    }}
+
 class GermanNewsletterForm extends NewsletterForm {
     function subscribe() {
         $now = date('Y-m-d');
