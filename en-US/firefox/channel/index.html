@@ -85,11 +85,11 @@ EXTRA_HEADERS;
                       ?>
                   </select>
                 </div>
-                <div class="channels_signup">
-                  <div><input type="checkbox" name="aurora" value="t" /> Aurora</div>
-                  <div><input type="checkbox" name="beta" value="t" /> Beta</div>
-                  <div><input type="checkbox" name="release" value="t" /> Release</div>
-                </div>
+                <ul class="channels_signup">
+                  <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="t" /> Aurora</label></li>
+                  <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="t" /> Beta</label></li>
+                  <li><label for="check_release"><input type="checkbox" id="check_release" name="release" value="t" /> General Mozilla News</label></li>
+                </ul>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                 'DCS.dcsuri', '/mainstream_newsletter/signup',
