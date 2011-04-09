@@ -132,6 +132,8 @@ function getProductName(aProduct)
     return "firefox";
   } else if (aProduct == "fxbeta") {
     return "firefox";
+  } else if (aProduct == "fxaurora") {
+    return "firefox";
   } else if (aProduct == "tb") {
     return "thunderbird";
   } else if (aProduct == "tbold") {
@@ -156,7 +158,7 @@ function getDownloadURLForLanguage(aLangID, aPlatform, directLink)
   var product = getProductName(aLangID.product);
   var version = aLangID[aLangID.product];
 
-  // If we are testing the site locally, or if we explicitly asked for it,  
+  // If we are testing the site locally, or if we explicitly asked for it,
   // give the direct download URL.
   if (window.location.protocol == "file:" ||
       directLink == true) {
@@ -242,7 +244,7 @@ function getLanguageIDs(aProduct)
     language = navigator.userLanguage;
   else if (navigator.systemLanguage)
     language = navigator.systemLanguage;
-  
+
   // Convert "en" to "en-US" as well since en-US build is the canonical
   // translation, and thus better tested.
   if (language == "" || language == "en")
@@ -277,8 +279,8 @@ function getLanguageIDs(aProduct)
       }
     }
 
-    // We have a localized build for this language, but not this region. 
-    // Show all available regions and let the user pick. 
+    // We have a localized build for this language, but not this region.
+    // Show all available regions and let the user pick.
 
     if (bestVersion != currentVersion) {
       var bestRegionVersion = "";
@@ -354,6 +356,8 @@ function do_download(link)
     } else if (matches[1] == 'fxold') {
       var product = 'firefox';
     } else if (matches[1] == 'fxbeta') {
+      var product = 'firefox';
+    } else if (matches[1] == 'fxaurora') {
       var product = 'firefox';
     } else if (matches[1] == 'tb') {
       var product = 'thunderbird';
