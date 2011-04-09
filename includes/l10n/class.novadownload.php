@@ -4,24 +4,42 @@ class firefoxDetailsL10n extends firefoxDetails
 {
 
     function getLocaleBoxHome($locale, $options=array()) {
-        $_include_js               = array_key_exists('include_js', $options) ?  $options['include_js'] : true;
-        $_blockclass               = array_key_exists('blockclass', $options) ?  $options['blockclass'] : 'home-download';
-        $_js_replace_links         = array_key_exists('js_replace_links', $options) ?  $options['js_replace_links'] : false;
-        $_include_ancillary_links  = array_key_exists('ancillary_links', $options) ? $options['ancillary_links'] : true;
-        $_download_parent_override = array_key_exists('download_parent_override', $options) ? $options['download_parent_override'] : 'main-feature';
-        $_bouncer_js               = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
-        $_extra_link_attr          = array_key_exists('extra_link_attr', $options) ? $options['extra_link_attr'] : false;
-        $_older_version            = array_key_exists('older_version', $options) ? true: false;
+        $_include_js               = array_key_exists('include_js', $options)               ? $options['include_js']                : true;
+        $_blockclass               = array_key_exists('blockclass', $options)               ? $options['blockclass']                : 'home-download';
+        $_js_replace_links         = array_key_exists('js_replace_links', $options)         ? $options['js_replace_links']          : false;
+        $_include_ancillary_links  = array_key_exists('ancillary_links', $options)          ? $options['ancillary_links']           : true;
+        $_download_parent_override = array_key_exists('download_parent_override', $options) ? $options['download_parent_override']  : 'main-feature';
+        $_bouncer_js               = array_key_exists('bouncer_js', $options)               ? $options['bouncer_js']                : false;
+        $_extra_link_attr          = array_key_exists('extra_link_attr', $options)          ? $options['extra_link_attr']           : false;
+        $_channel                  = array_key_exists('channel', $options)                  ? $options['channel']                   : 'stable';
 
-        if($_older_version == FALSE ) {
-            $_current_version    = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
-            $_betalocale_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
-            $_targetted_version  = LATEST_FIREFOX_RELEASED_VERSION;
-        } else {
-            $_current_version    = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
-            $_betalocale_version = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
-            $_targetted_version  = LATEST_FIREFOX_OLDER_VERSION;
+        switch ($_channel) {
+            case 'older':
+                $_current_version    = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                $_betalocale_version = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+                $_targetted_version  = $option['version'] = LATEST_FIREFOX_OLDER_VERSION;
+                break;
+
+            case 'beta':
+                $_current_version    = $this->getDevelVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                $_betalocale_version = $this->getDevelVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+                $_targetted_version  = $option['version'] = LATEST_FIREFOX_DEVEL_VERSION;
+                break;
+
+            case 'aurora':
+                $_current_version    = $this->getAuroraVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                $_betalocale_version = $this->getAuroraVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+                $_targetted_version  = $option['version'] = FIREFOX_AURORA;
+                break;
+
+            case 'stable':
+            default:
+                $_current_version    = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                $_betalocale_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
+                $_targetted_version  = LATEST_FIREFOX_RELEASED_VERSION;
+                break;
         }
+
 
         // if we have no builds at all, let's default to en-US so as to display download boxes on pages
         if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
@@ -33,13 +51,13 @@ class firefoxDetailsL10n extends firefoxDetails
             $options['betalocale_status']  = true;
         }
 
-        $_locale_link_override     = array_key_exists('locale_link_override', $options) ? $options['locale_link_override'] : $locale;
-        $_ancillary_links          = $_include_ancillary_links ? $this->getAncillaryLinksForLocaleDiv($_locale_link_override, $options) : '';
+        $_locale_link_override = array_key_exists('locale_link_override', $options) ? $options['locale_link_override'] : $locale;
+        $_ancillary_links      = $_include_ancillary_links ? $this->getAncillaryLinksForLocaleDiv($_locale_link_override, $options) : '';
 
         $options['version'] = $_current_version;
 
         $_in_primary = empty($this->primary_builds[$locale][$_current_version]) ? array('') : $this->primary_builds[$locale][$_current_version];
-        $_in_beta    = empty($this->beta_builds[$locale][$_current_version]) ? array('') : $this->beta_builds[$locale][$_current_version];
+        $_in_beta    = empty($this->beta_builds[$locale][$_current_version])    ? array('') : $this->beta_builds[$locale][$_current_version];
         $_platforms  = array('Windows', 'Linux', 'OS X');
 
         foreach ($_platforms as $_os_var) {
@@ -137,8 +155,6 @@ HTML_RETURN;
         $_megabytes                   = ___('MegaBytes');
         $_betalocale_status           = array_key_exists('betalocale_status', $options) ?  $options['betalocale_status'] : false;
 
-        $_os_filesize = $this->getFilesizeForLocaleAndPlatform($locale, $platform);
-
         if (in_array($locale, $this->has_transition_download_page)) {
            $_download_base_url = $this->download_base_url_transition;
         } else {
@@ -156,16 +172,19 @@ HTML_RETURN;
                 $_os_class     = 'os_windows';
                 $_os_shortname = 'win';
                 $_os_name      = ___('Windows');
+                $_os_file_ext  = 'win32.installer.exe';
                 break;
             case 'Linux':
                 $_os_class     = 'os_linux';
                 $_os_shortname = 'linux';
                 $_os_name      = ___('Linux');
+                $_os_file_ext  = 'linux-i686.tar.bz2';
                 break;
             case 'OS X':
                 $_os_class     = 'os_osx';
                 $_os_shortname = 'osx';
                 $_os_name      = ___('Mac OS X');
+                $_os_file_ext  = 'en-US.mac.dmg';
                 break;
             default:
                 return;
@@ -210,6 +229,24 @@ LI_SIDEBAR;
 LI_SIDEBAR;
                 break;
 
+            case 'aurora':
+
+                $_return = <<<LI_SIDEBAR
+                <li class="{$_os_class}">
+                <a class="download" href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/{$_product}-{$_current_version}.{$locale}.{$_os_file_ext}"><span><strong>{$_download_product}</strong> Mozilla Firefox Aurora</span>{$extra_dl_info}</a>
+                </li>
+LI_SIDEBAR;
+                break;
+
+            case 'simple':
+
+                $_return = <<<LI_SIDEBAR
+                <li class="{$_os_class}">
+                <a class="download" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}"><span><strong>{$_download_product}</strong> Mozilla Firefox 4</span>{$extra_dl_info}</a>
+                </li>
+LI_SIDEBAR;
+                break;
+
             case 'main':
             default:
                 $_return = <<<LI_MAIN
@@ -229,6 +266,7 @@ LI_MAIN;
 
         return $_return;
     }
+
     function getAncillaryLinksForLocaleDiv($locale, $options=array()) {
         $_devel_version = array_key_exists('devel_version', $options) ? $options['devel_version'] : false;
 
@@ -254,6 +292,7 @@ HTML_RETURN;
 
         return $_return;
     }
+
 }
 
 ?>

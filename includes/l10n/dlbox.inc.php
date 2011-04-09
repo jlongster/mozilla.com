@@ -2,7 +2,7 @@
 
 include_once $config['file_root'].'/includes/l10n/class.novadownload.php';
 
-$dl_box_id   = 'default_l10n_download_box';
+$dl_box_id   = $dl_box_aurora = $dl_box_beta = 'default_l10n_download_box';
 $dl_fallback = false;
 
 // check if we have a locale remapped to another, preserve the download box link
@@ -25,6 +25,22 @@ switch($pageid) {
         $dl_box_options = array();
         $dl_box_options = array('download_parent_override' => 'main-content', 'wording' => 'Firefox 4');
         $dl_fallback    = true;
+        break;
+
+    case 'firefox-channels':
+        $dl_box_class   = 'home-download';
+        $dl_box_id      = 'dl_latest';
+        $dl_box_aurora  = 'dl_aurora';
+        $dl_box_beta    = 'dl_beta';
+        $dl_box_options = array('download_parent_override'  => 'dl_aurora',
+                                'wording'                   => 'Mozilla Firefox 4',
+                                'channel'                   => 'aurora',
+                                'layout'                    => 'aurora',
+                                'download_product'          => ___('Download'),
+                                'ancillary_links'           => false,
+                                );
+        $dl_beta        = '<p><span class="download-soon"><span>Coming Soon!</span></span></p>';
+        $dl_stable      = '<p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox 4</span></a></p>';
         break;
 
     case 'firefox':
@@ -91,5 +107,26 @@ $downloadbox .= <<<HIDE
 HIDE;
     $downloadbox .= "\n".'<!-- end generated box -->'."\n";
 }
+
+$dl_aurora  = "\n".'<!-- generated box -->'."\n";
+$dl_aurora .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
+$dl_aurora .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
+$dl_aurora .= "\n".'//]]>></script>'."\n";
+$dl_aurora .= "\n".'<div class="'.$dl_box_class.'" id="'.$dl_box_aurora.'">'."\n";
+$dl_aurora .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
+$dl_aurora .= "\n".'</div>'."\n";
+$dl_aurora .= <<<HIDE
+    <script type="text/javascript">//<![CDATA[
+      // bug 644255, don't tell users to upgrade to fx4 if they
+      // are PPC or using any OS X before 10.5
+
+    if(/(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent)) {
+        document.getElementById('{$dl_box_id}').style.display = 'none'; id="'.$dl_box_id.'"
+    }
+
+    </script>
+HIDE;
+$dl_aurora .= "\n".'<!-- end generated box -->'."\n";
+
 
 unset($firefoxDetailsl10n);
