@@ -32,7 +32,14 @@ EXTRA_HEADERS;
             <li>Experience the newest innovations in an unstable environment that’s not for the faint of heart</li>
             <li>Provide feedback on features and performance to help determine what makes the final release</li>
         </ul>
-        <p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox Aurora</span></a></p>
+        <div id="download_aurora_button">
+        <script src="/js/download.js"></script>
+        <?php
+            $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download_aurora_button', '_include_js' => true, 'download_product' => 'Download', 'download_title' => 'Mozilla Firefox Aurora', 'aurora_version' => true);
+            echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+            echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+        ?>
+        </div>
     </div>
 
     <div id="download_beta" class="channel">
@@ -51,7 +58,6 @@ EXTRA_HEADERS;
             <li>Stay in control of your online experience with super speed, easy customization and the latest Web technologies</li>
         </ul>
     <div id="download">
-        <script src="/js/download.js"></script>
         <?php
             $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Download', 'download_title' => 'Mozilla Firefox 4');
             echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
