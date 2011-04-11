@@ -219,12 +219,8 @@ Mozilla.VideoPlayer.width = 640;
 Mozilla.VideoPlayer.close_text = 'Close';
 
 Mozilla.VideoPlayer.fallback_text =
-    'This video requires a browser with support for open video:'
-  + '<ul>'
-  + '<li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>'
-  + '<li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>'
-  + '</ul>'
-  + 'or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash '
+    'This video requires a browser with support for open video or the '
+  + '<a href="http://get.adobe.com/flashplayer">Adobe Flash '
   + 'Player</a>. Alternatively, you may use the video download links '
   + 'provided.';
 
