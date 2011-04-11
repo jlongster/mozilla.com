@@ -27,6 +27,7 @@
     padding-right: 20px;
 }
 
+#channel .channel#download_aurora,
 #channel .channel#download_firefox {
     padding-right: 0;
 }
@@ -50,6 +51,7 @@
 #download_firefox h3 { background-position: 0 -260px; }
 
 
+#channel .channel#download_aurora h3 span,
 #channel .channel#download_firefox h3 span {
     padding-top: 15px;
 }
@@ -59,6 +61,7 @@
     padding: 25px 0 30px 120px;
 }
 
+#channel .channel#download_aurora #download_aurora_button,
 #channel .channel#download_firefox #download {
     margin: 10px 20px 10px 28px;
 }
@@ -67,29 +70,44 @@
     width: auto;
 }
 
+#channel .channel#download_aurora a.download-link,
 #channel .channel#download_firefox a.download-link {
     margin: 0;
     height: auto;
 }
 
+#channel .channel#download_aurora a.download-link,
+#channel .channel#download_aurora a.download-link:hover,
+#channel .channel#download_aurora a.download-link:active {
+	background: #6b65bd; /* old browsers */
+	background: -moz-linear-gradient(top, #6b65bd 0%, #3d2c6f 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b65bd), color-stop(100%,#3d2c6f)); /* webkit */
+	background: linear-gradient(top, #6b65bd 0%, #3d2c6f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b65bd', endColorstr='#3d2c6f',GradientType=0 ); /* ie */
+}
+
+#channel .channel#download_aurora #download_aurora_button a.download-link span.download-content,
 #channel .channel#download_firefox #download a.download-link span.download-content {
     background: url("/img/covehead/channel/download-arrow.png") no-repeat 12px 50%;
     padding: 10px 20px 12px 45px;
     margin: 0;
+    height: 40px;
     font-size: 16px;
     line-height: 1.1;
 }
 
+#channel #download_aurora_button a.download-link span.download-title,
 #channel #download a.download-link span.download-title {
     background: none;
     line-height: 1.1;
     display: block;
     padding: 0;
-    margin: 0; 
+    margin: 0;
     font-style: italic;
     font-size: 20px;
 }
 
+#channel .channel#download_aurora h3 span span,
 #channel .channel#download_firefox h3 span span {
     font-size: 24px;
     display: block;
@@ -97,8 +115,10 @@
     padding: 0;
 }
 
+#channel #download_aurora_button .download-other,
 #channel #download .download-other {
     margin: 0;
+    width: auto;
 }
 
 .channel ul.channel-list {
