@@ -1,4 +1,4 @@
-<div id="main-content">
+<div id="content">
   <h1 id="page-title">Rreth Nesh</h1>
 
 <div class="intro">
