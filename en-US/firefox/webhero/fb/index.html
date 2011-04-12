@@ -37,8 +37,6 @@
               window.fbAsyncInit = function() {
                   setTimeout(function() {
 
-                      alert(FB);
-
                   FB.init({
                       appId  : '176093342441461',
                       status : true,
@@ -47,9 +45,11 @@
 
                       
 
+
+                      FB.Canvas.setSize();
+
                   }, 2000);
 
-                  //FB.Canvas.setAutoResize();
               }
 
               (function() {
