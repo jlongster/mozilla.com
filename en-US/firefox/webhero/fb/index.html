@@ -35,14 +35,16 @@
         <div id="fb-root"></div>
         <script src="http://connect.facebook.net/en_US/all.js"></script>
         <script type="text/javascript">
-          window.fbAsyncInit = function() {
-            FB.Canvas.setAutoResize();
-          }
-          FB.init({
-            appId  : '176093342441461',
-            status : true,
-            cookie : true
-          });
+          setTimeout(function() {
+              window.fbAsyncInit = function() {
+                  FB.Canvas.setAutoResize();
+              }
+              FB.init({
+                  appId  : '176093342441461',
+                  status : true,
+                  cookie : true
+              });
+          }, 1000);
         </script>
     </body>
 </html>
