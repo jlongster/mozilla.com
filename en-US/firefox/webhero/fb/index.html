@@ -35,20 +35,15 @@
         <div id="fb-root"></div>
         <script type="text/javascript">
               window.fbAsyncInit = function() {
-                  setTimeout(function() {
 
                   FB.init({
                       appId  : '176093342441461',
                       status : true,
                       cookie : true
                   });
-
-                      
-
-
-                      FB.Canvas.setSize();
-
-                  }, 2000);
+                  
+                  FB.Canvas.setSize({ width: 800,
+                                      height: 1200 });
 
               }
 
