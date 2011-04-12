@@ -33,27 +33,15 @@
       </div>
       
         <div id="fb-root"></div>
-        <script type="text/javascript">
-              window.fbAsyncInit = function() {
-
-                  FB.init({
-                      appId  : '176093342441461',
-                      status : true,
-                      cookie : true
-                  });
+        <script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script>
+          FB.init({
+              appId  : '176093342441461',
+              status : true,
+              cookie : true
+          });
                   
-                  FB.Canvas.setSize({ width: 800,
-                                      height: 1200 });
-
-              }
-
-              (function() {
-                  var e = document.createElement('script');
-                  e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-                  e.async = true;
-                  document.getElementById('fb-root').appendChild(e);
-              }());
-
+          FB.Canvas.setSize();
         </script>
     </body>
 </html>
