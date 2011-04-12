@@ -33,17 +33,24 @@
       </div>
       
         <div id="fb-root"></div>
-        <script src="http://connect.facebook.net/en_US/all.js"></script>
         <script type="text/javascript">
-          setTimeout(function() {
               window.fbAsyncInit = function() {
+                  FB.init({
+                      appId  : '176093342441461',
+                      status : true,
+                      cookie : true
+                  });
+
                   FB.Canvas.setAutoResize();
               }
-              FB.init({
-                  appId  : '176093342441461',
-                  status : true,
-                  cookie : true
-              });
+
+              (function() {
+                  var e = document.createElement('script');
+                  e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+                  e.async = true;
+                  document.getElementById('fb-root').appendChild(e);
+              }());
+
           }, 1000);
         </script>
     </body>
