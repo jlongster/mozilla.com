@@ -18,11 +18,3 @@
 
 </div>
 
-<div id="sidebar">
-  <?=$getsidemenu?>
-
-  <div class="promo">
-    <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Donate now and get the 2010 Mozilla shirt" width="245" height="125" /></a>
-  </div>
-</div>
-

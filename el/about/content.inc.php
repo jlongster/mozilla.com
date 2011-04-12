@@ -16,12 +16,3 @@
 <p>Το <a href="/foundation">ίδρυμα Mozilla</a> είναι ένας μη κερδοσκοπικός οργανισμός αφοσιωμένος σ' αυτούς τους στόχους, αλλά η πραγματική δύναμη του  Mozilla είναι οι άνθρωποι από όλο τον κόσμο που αναλαμβάνουν δράση για να φτιάξουν το διαδίκτυο όπως το θέλουν. <a href="/contribute">Μπορείτε κι εσείς να βοηθήσετε</a>!</p>
 
 </div>
-
-<div id="sidebar">
-
-  <?=$getsidemenu?>
-
-  <div class="promo">
-    <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Κάντε μια δωρεά τώρα και αποκτήστε το μπλουζάκι του Mozilla για το 2010" width="245" height="125" /></a>
-  </div>
-</div>

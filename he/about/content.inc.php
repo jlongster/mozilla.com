@@ -17,12 +17,3 @@ protected.</p>
 
 <p> <a href="/foundation">קרן Mozilla</a> היא ארגון ללא מטרות רווח שמוקשת למטרות אלו, אבל הכוח האמיתי מאחורי Mozilla הם אנשים מסביב לעולם שנוקטים בפעולות כדי לבנות את הרשת כפי שהם רואים לנכון. <a href="/contribute">וכאן גם אתם יכולים לעזור</a>!</p>
 </div>
-
-<div id="sidebar">
-
-  <?=$getsidemenu?>
-
-  <div class="promo">
-    <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Donate now and get the 2010 Mozilla shirt" width="245" height="125" /></a>
-  </div>
-</div>

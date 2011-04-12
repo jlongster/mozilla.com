@@ -16,12 +16,3 @@
 
         <p><a href="/foundation">Mozilla Fondacija</a> je neprofitna organizacija posvećena ovim ciljevima ali stvarna moć i snaga iza Mozille su ljudi diljem svijeta koji rade na izgradnji web-a kakvog žele. <a href="/contribute">I Vi možete pomoći</a>!</p>
 </div>
-
-<div id="sidebar">
-
-    <?=$getsidemenu?>
-
-    <div class="promo">
-        <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Donate now and get the 2010 Mozilla shirt" width="245" height="125" /></a>
-    </div>
-</div>

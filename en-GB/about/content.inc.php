@@ -18,12 +18,3 @@
     <p>The <a href="/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
     around the world taking action to build the web they want. <a href="/contribute">And you can help</a>!</p>
 </div>
-
-<div id="sidebar">
-
-    <?=$getsidemenu?>
-
-    <div class="promo">
-        <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Donate now and get the 2010 Mozilla shirt" width="245" height="125" /></a>
-    </div>
-</div>

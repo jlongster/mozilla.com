@@ -18,11 +18,3 @@
 du monde entier qui prennent part à la construction du Web qu'elles veulent. <a href="/contribute">Et vous pouvez aider</a>&nbsp;!</p>
 
 </div>
-
-<div id="sidebar">
-  <?=$getsidemenu?>
-
-  <div class="promo">
-    <a href="https://donate.mozilla.org/page/contribute/openwebfund?WT.ac=adopt_a"><img src="/images/promos/donate-simple.png" alt="Faites un don maintenant et obtenez le Tshirt Mozilla 2010" width="245" height="125" /></a>
-  </div>
-</div>
