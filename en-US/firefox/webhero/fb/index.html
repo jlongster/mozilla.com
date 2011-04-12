@@ -35,11 +35,19 @@
         <div id="fb-root"></div>
         <script type="text/javascript">
               window.fbAsyncInit = function() {
+                  setTimeout(function() {
+
+                      alert(FB);
+
                   FB.init({
                       appId  : '176093342441461',
                       status : true,
                       cookie : true
                   });
+
+                      
+
+                  }, 2000);
 
                   //FB.Canvas.setAutoResize();
               }
