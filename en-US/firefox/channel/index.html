@@ -12,6 +12,7 @@
     } elseif ($form->error) {
         $status = 'error error-'. $form->error;
     }
+    
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/channel.css" media="screen" />
 EXTRA_HEADERS;
@@ -33,12 +34,24 @@ EXTRA_HEADERS;
             <li>Provide feedback on features and performance to help determine what makes the final release</li>
         </ul>
         <div id="download_aurora_button">
-        <script src="/js/download.js"></script>
-        <?php
-            $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download_aurora_button', '_include_js' => true, 'download_product' => 'Download', 'download_title' => 'Mozilla Firefox Aurora', 'aurora_version' => true);
-            echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
-            echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
-        ?>
+            <script><?php include $config['file_root'] . '/js/download.old.js';?></script>
+            <script>
+                <!--
+                // Configure the Firefox download write script
+                var gDownloadTracker = "";
+                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Mozilla Firefox Aurora <\/span><\/a> <\/li>";
+                var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+                var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
+
+                document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+                writeDownloadItems("fxaurora");
+                document.writeln("<\/ul>");
+                document.writeln("<div class=\"download-other\">");
+                document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+                document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
+                document.writeln("<\/div>");
+                //-->
+            </script>
         </div>
     </div>
 
@@ -57,13 +70,26 @@ EXTRA_HEADERS;
             <li>Enjoy the tried and tested final release being used by hundreds of millions around the world</li>
             <li>Stay in control of your online experience with super speed, easy customization and the latest Web technologies</li>
         </ul>
-    <div id="download">
-        <?php
-            $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Download', 'download_title' => 'Mozilla Firefox 4');
-            echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
-            echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
-        ?>
-    </div>
+        <script src="<?php echo $config['static_prefix'];?>/js/download.js"></script>
+        <div id="download">
+            <script>
+                <!--
+                // Configure the Firefox download write script
+                var gDownloadTracker = "";
+                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Mozilla Firefox 4 <\/span><\/a> <\/li>";
+                var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+                var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
+
+                document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+                writeDownloadItems("fx");
+                document.writeln("<\/ul>");
+                document.writeln("<div class=\"download-other\">");
+                document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
+                document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
+                document.writeln("<\/div>");
+                //-->
+            </script>
+        </div>
     </div>
 
     <div id="channel_news" class="<?= $status ?>">

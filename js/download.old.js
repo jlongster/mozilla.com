@@ -158,6 +158,10 @@ function getDownloadURLForLanguage(aLangID, aPlatform, directLink)
   var product = getProductName(aLangID.product);
   var version = aLangID[aLangID.product];
 
+  if (aLangID.product == "fxaurora") {
+    return getDownloadURLForAuroraForLanguage(product, version, abCD, aPlatform);
+  }
+
   // If we are testing the site locally, or if we explicitly asked for it,
   // give the direct download URL.
   if (window.location.protocol == "file:" ||
@@ -167,6 +171,7 @@ function getDownloadURLForLanguage(aLangID, aPlatform, directLink)
   } else {
     var url = "/products/download.html?product=";
   }
+
 
   url += product + "-" + version;
 
@@ -194,6 +199,22 @@ function getDownloadURLForLanguage(aLangID, aPlatform, directLink)
   }
 
   return url + "&amp;lang=" + abCD;
+}
+
+function getDownloadURLForAuroraForLanguage(aProduct, aVersion, aLocale, aPlatform) {
+  var os_file_ext;
+  if (aPlatform == PLATFORM_WINDOWS) {
+    os_file_ext = "win32.installer.exe";
+  } else if (aPlatform == PLATFORM_LINUX) {
+    os_file_ext = "linux-i686.tar.bz2";
+  } else if (aPlatform == PLATFORM_MACOSX) {
+    os_file_ext = "mac.dmg";
+  }
+  
+  var url = "http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/";
+  url += aProduct + "-" + aVersion + "." + aLocale + "." + os_file_ext;
+
+  return url;
 }
 
 // "" for a version means it should be "Not Yet Available" on all.html,
