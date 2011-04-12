@@ -37,4 +37,6 @@ $extra_headers .= <<<EXTRA_HEADERS
 EXTRA_HEADERS;
 
 include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+include_once "{$config['file_root']}/{$lang}/about/content.inc.php";
+include_once "{$config['file_root']}/includes/l10n/footerer-pages.inc.php";
 ?>
