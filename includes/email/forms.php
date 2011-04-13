@@ -85,15 +85,15 @@ class ChannelsForm extends NewsletterForm {
         $data = $this->data;
 
         if(isset($data['aurora'])) {
-            Responsys::subscribe($this->campaign[0], $this->data);
+            Responsys::subscribe($this->campaigns[0], $this->data);
         }
 
         if(isset($data['beta'])) {
-            Responsys::subscribe($this->campaign[1], $this->data);
+            Responsys::subscribe($this->campaigns[1], $this->data);
         }
 
         if(isset($data['general'])) {
-            Responsys::subscribe($this->campaign[2], $this->data);
+            Responsys::subscribe($this->campaigns[2], $this->data);
         }
 
     }}
