@@ -1,0 +1,31 @@
+<?php
+    // translate $page_title below
+    $page_title = 'Mozilla ৰ বিষয়ে';
+    
+    $pageid = 'about';
+    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>
+    ৱেবৰ কাৰণে ভাল ।
+    <br />
+    বিশ্বৰ কাৰণে ভাল ।
+    </h2>
+</div>
+
+<div id="content">
+
+<p>Mozilla এটা পাৰম্পৰিক চালনাজ্ঞানৰ কোম্পানী নহয় । যি কোনো স্থানৰ মানুহৰ কাৰণে অন-লাইন অভিজ্ঞতা উন্নত কৰিবলৈ বিনামূলীয়া, মুক্ত উৎসৰ উৎপাদন আৰু প্ৰযুক্তিবিদ্যা সৃষ্টি কৰিবলৈ উৎসৰ্গিত আমি এটা বিশ্বব্যাপী <a href="/<?=$lang?>/firefox/community/">সম্প্ৰদায়</a> । ৱেবক এটা মুক্ত অংশীদাৰ কৰিব পৰা জনসাধাৰণৰ সম্পদ হিচাপে সংৰক্ষিত কৰি ৰাখিবলৈ কাম কৰা আমি প্ৰ'গ্ৰেমাৰ, মাৰ্কেটাৰ, টেষ্টাৰ, আৰু অধিবক্তা । আমি বিশ্বাস কৰোঁ যে মুক্ত মানে পছন্দ আৰু উদ্ভাৱনৰ ক্ষমতাক সক্ৰিয় আৰু শক্তিশালী কৰে আৰু সকলোৱে, সকলো স্থানতে অধিক সুৰক্ষিত, দ্ৰুত আৰু সম্ভৱপৰ সৰ্বশ্ৰেষ্ঠ অন-লাইন অভিজ্ঞতা পোৱাৰ যোগ্য ।</p>
+
+<p>৭০ টকৈ অধিক ভাষাত বিনামূলীয়াভাবে আমি নিজৰ পুৰষ্কৃত, মুক্ত উৎসৰ <a href="/<?=$lang?>/products/">চালনাজ্ঞানৰ উৎপাদন</a> আৰু <a href="http://www.mozilla.org/projects/">প্ৰযুক্তিবিদ্যা</a> আগবঢ়াওঁ ।</p>
+
+<p>Mozilla ৰ সদৰ কাৰ্য্যালয় <a href="/<?=$lang?>/about/contact.html">Mountain View, California</a> ত আৰু <a href="/<?=$lang?>/about/contact.html">প্ৰাদেশিক কাৰ্য্যলয়</a> Aukland, Beijing, Copenhagen, Paris, Tokyo আৰু Toronto ত ।</p>
+
+</div>
+
+
+
+<?php
+    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>
