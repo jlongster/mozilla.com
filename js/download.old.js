@@ -210,9 +210,11 @@ function getDownloadURLForAuroraForLanguage(aProduct, aVersion, aLocale, aPlatfo
   } else if (aPlatform == PLATFORM_MACOSX) {
     os_file_ext = "mac.dmg";
   }
-  
+    
+    
+  // Force en-US locale for now, when we fix other language replace it with "locale"
   var url = "http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/";
-  url += aProduct + "-" + aVersion + "." + aLocale + "." + os_file_ext;
+  url += aProduct + "-" + aVersion + ".en-US." + os_file_ext;
 
   return url;
 }
