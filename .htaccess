@@ -237,17 +237,23 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.5b99/(releasenotes)(/(?:in
 # Temporary rewrite for Firefox 3.6 release candidate
 #RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6/(releasenotes|whatsnew|firstrun)(/(?:index.html)?)?$ $1firefox/3.6rc2/$2$3 [PT]
 
-# Temporary rewrite for Firefox 3.5.17 beta
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.17/(releasenotes|whatsnew)(/(?:index.html)?)?$ $1firefox/3.5.17rc/$2$3 [PT]
+# Temporary rewrite for Firefox 3.5.18 beta
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.18/(releasenotes|whatsnew)(/(?:index.html)?)?$ $1firefox/3.5.18rc/$2$3 [PT]
 
-# Temporary rewrite for Firefox 3.6.14 beta
-#RewriteRule ^(en-US/)?firefox/3\.6\.14(?:build[0-9]+)?/(releasenotes|whatsnew|details)(/(?:index.html)?)? /$1firefox/3.6.14rc/$2$3 [PT,L]
+# Temporary rewrite for Firefox 3.6.17 beta
+RewriteRule ^(en-US/)?firefox/3\.6\.17(?:build[0-9]+)?/(releasenotes|whatsnew|details)(/(?:index.html)?)? /$1firefox/3.6.17rc/$2$3 [PT,L]
 
-# Temporary rewrite for Firefox 3.5.17 firstrun -> 3.5.17 beta whatsnew
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.17/firstrun(/(?:index.html)?)? $1firefox/3.5.17rc/whatsnew$3 [PT]
+# Temporary rewrite for Firefox 4.0.1 beta
+RewriteRule ^(en-US/)?firefox/4\.0\.1(?:build[0-9]+)?/(releasenotes|whatsnew|details)(/(?:index.html)?)? /$1firefox/4.0.1rc/$2$3 [PT,L]
 
-# Temporary rewrite for Firefox 3.6.14 firstrun -> 3.6.14 beta whatsnew
-#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.14/firstrun(/(?:index.html)?)? $1firefox/3.6.14rc/whatsnew$3 [PT]
+# Temporary rewrite for Firefox 3.5.18 firstrun -> 3.5.18 beta whatsnew
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.18/firstrun(/(?:index.html)?)? $1firefox/3.5.18rc/whatsnew$3 [PT]
+
+# Temporary rewrite for Firefox 3.6.17 firstrun -> 3.6.17 beta whatsnew
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.17/firstrun(/(?:index.html)?)? $1firefox/3.6.17rc/whatsnew$3 [PT]
+
+# Temporary rewrite for Firefox 4.0.1 firstrun -> 4.0.1 beta whatsnew
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.1/firstrun(/(?:index.html)?)? $1firefox/4.0.1rc/whatsnew$3 [PT]
 
 # Rewrite rule for 3.7a4webm build firstrun/whatsnew pages to webmproject.org (bug 566884)
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.7a4webm/(whatsnew|firstrun)[/]?$ http://www.webmproject.org/ [R=temp,L]
@@ -258,6 +264,8 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.7a4webm/(whatsnew|firstrun
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.[0-9]+/details(/(?:index.html)?)?$ $1firefox/3.5/details$3 [PT,L]
 # 3.6.x firstrun/details/whatsnew always points to 3.6's version
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html)?)?$ $1firefox/3.6/$2$3 [PT,L]
+# 4.0.x firstrun/details/whatsnew always points to 4.0's version
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html)?)?$ $1firefox/4.0/$2$3 [PT,L]
 
 # Special rewrite for some pages since they are hardcoded in Firefox source
 RewriteRule ^firefox/its-a-trap.html$ /en-US/firefox/its-a-trap.html [L]
