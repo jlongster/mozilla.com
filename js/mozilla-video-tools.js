@@ -229,12 +229,18 @@ Mozilla.VideoPlayer.prototype.init = function()
   var that = this;
 
   // add overlay and preview image to document
-  this.overlay = $('<div class="mozilla-video-player-overlay" />').hide().appendTo('body');
-  this.video_container = $('<div class="mozilla-video-player-window" />').hide().appendTo('body');
+  this.overlay = $('<a class="mozilla-video-player-overlay" href="#"/>')
+    .hide()
+    .appendTo('body')
+    .click(function(e) { e.preventDefault(); that.close(); });
+
+  this.video_container = $('<div class="mozilla-video-player-window" />')
+    .hide()
+    .appendTo('body');
 
   // set video link and video preview link event handler
-  $('#' + this.id + ', #' + this.id + '-preview').click(function(event) {
-    event.preventDefault();
+  $('#' + this.id + ', #' + this.id + '-preview').click(function(e) {
+    e.preventDefault();
     that.open();
   });
 }
@@ -280,7 +286,9 @@ Mozilla.VideoPlayer.prototype.drawVideoPlayer = function()
       $('<a href="#" />').click(function(event) {
         event.preventDefault();
         that.close();
-      }).text(Mozilla.VideoPlayer.close_text)
+      }).append(
+        $('<img src="/img/covehead/video/clothes-lol.png" height="32" width="32" alt="' + Mozilla.VideoPlayer.close_text + '" />')
+      )
     )
   ).append(
     $('<div class="mozilla-video-player-content" />').html(content)
@@ -302,7 +310,7 @@ Mozilla.VideoPlayer.prototype.getVideoPlayerContent = function()
 
   $.each(this.sources, function(index, source) {
     if (!source.type) return; // must have MIME type
-    content += '<source src="' + source.url + '" ' 
+    content += '<source src="' + source.url + '" '
         + 'type="' + source.type + '"/>';
   });
 
@@ -346,23 +354,37 @@ Mozilla.VideoPlayer.prototype.open = function()
   // correctly in IE6
   $('#lang_form').hide();
 
-  this.drawVideoPlayer();
+  var that = this;
+  this.resizeHandler = function(e) {
+      that.resizeOverlay();
+  };
+  $(window).resize(this.resizeHandler);
 
-  this.overlay.height($(window).height()).fadeIn();
-  this.video_container.css('top', $(window).scrollTop() + ($(window).height() - 570) / 2).fadeIn();
+  this.drawVideoPlayer();
+  this.resizeOverlay();
+
+  this.overlay.fadeTo(400, 0.75);
+  this.video_container
+    .css('top', $(window).scrollTop() + ($(window).height() - 570) / 2)
+    .fadeIn();
 
   this.opened = true;
 
   // getSubtitles() depends on mozilla-video-tools-addsubtitles.js
-  if(window.getSubtitles) {
+  if (window.getSubtitles) {
     getSubtitles(this.video_container.css('top'));
   }
+}
+
+Mozilla.VideoPlayer.prototype.resizeOverlay = function()
+{
+    this.overlay.height($(window).height());
 }
 
 Mozilla.VideoPlayer.prototype.close = function()
 {
   // hideSubtitles() depends on mozilla-video-tools-addsubtitles.js
-  if(window.hideSubtitles) {
+  if (window.hideSubtitles) {
     hideSubtitles();
   }
 
@@ -374,6 +396,8 @@ Mozilla.VideoPlayer.prototype.close = function()
 
   // if language form was hidden, show it again
   $('#lang_form').show();
+
+  $(window).unbind('resize', this.resizeHandler);
 
   this.opened = false;
 }

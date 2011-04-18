@@ -21,30 +21,47 @@ a.mozilla-video-control-overlay {
 /* {{{ Video Launcher */
 
 .mozilla-video-player-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: #fff;
-	z-index: 500;
-	opacity: 0.6;
-	filter: alpha(opacity=60);
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #444;
+    background: -webkit-gradient(radial,center center,0,center center,100%,from(#fff), to(#000));
+    background: -webkit-radial-gradient(center center, rgba(255,255,255,1) 0, rgba(0,0,0,0.9) 100%);
+    background: -moz-radial-gradient(center center, rgba(255,255,255,1) 0, rgba(0,0,0,0.9) 100%);
+    background: radial-gradient(center center, rgba(255,255,255,1) 0, rgba(0,0,0,0.9) 100%);
+    z-index: 500;
+    outline: 0;
+    cursor: default;
 }
 
 .mozilla-video-player-window {
-	position: absolute;
-	left: 50%; /* for centering */
-	margin-left: -417px; /* for centering */
-	top: 0;
-	width: 834px;
-	height: 570px;
-	z-index: 1000;
-	background: url(/img/covehead/firefox/video-frame.png) no-repeat;
+    position: fixed;
+    left: 50%; /* for centering */
+    margin-left: -320px; /* for centering */
+    top: 0;
+    width: 640px;
+    z-index: 1000;
+    background: #333;
+    background: rgba(0,0,0,0.8);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8); /* ye-olde WebKit */
+    -webkit-box-shadow: 0 3px 70px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 3px 70px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 70px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5);
+}
+
+.mozilla-video-player-content {
+    overflow: hidden;
 }
 
 * html .mozilla-video-player-window {
-	background-image: url(/img/covehead/firefox/video-frame-ie.png);
+}
+
+.mozilla-video-player-content video {
+    display: block;
 }
 
 .mozilla-video-player-no-flash {
@@ -57,18 +74,18 @@ a.mozilla-video-control-overlay {
 
 .mozilla-video-player-link,
 .mozilla-video-player-close {
-	margin: 35px 50px 15px 0;
 	text-align: right;
 }
 
 .mozilla-video-player-link a,
 .mozilla-video-player-close a {
 	display: block;
-	height: 35px;
-	padding-right: 40px;
-	padding-top: 8px;
-	font-size: 90%;
-	background: url(/img/covehead/firefox/video-close.png) no-repeat 100% 0;
+	height: 32px;
+    width: 32px;
+    margin: 0 0 0 auto;
+	overflow: hidden;
+    line-height: 200px;
+	background: url(/img/covehead/video/clothes-lol.png) no-repeat 50% 50%;
 }
 
 .mozilla-video-player-link a {
@@ -78,13 +95,25 @@ a.mozilla-video-control-overlay {
 
 .mozilla-video-player-content .video-download-links {
 	text-align: center;
-	margin: 0 40px;
+    font-family: "Trebuchet MS",sans-serif;
+    font-size: 11px;
+}
+
+.mozilla-video-player-content .video-download-links ul {
+    margin: 0;
+    padding: 1em;
 }
 
 .mozilla-video-player-content .video-download-links ul li {
 	background: none;
 	display: inline;
 	margin: 0 0.5em;
+}
+
+.mozilla-video-player-content .video-download-links a,
+.mozilla-video-player-content .video-download-links a:link,
+.mozilla-video-player-content .video-download-links a:hover {
+    color: #888;
 }
 
 #firefox-video #main-feature {

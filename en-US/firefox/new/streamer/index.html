@@ -177,7 +177,52 @@ FUNNEL;
 (function () {
     var head = document.head || document.getElementsByTagName("head")[0];
 
-    function load_nav_main() {
+    function init_video()
+    {
+        Mozilla.VideoPlayer.width = 640;
+        Mozilla.VideoPlayer.height = 360;
+        var player = new Mozilla.VideoPlayer(
+            'video-link',
+            [
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.webm',
+                    type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+                    title: 'WebM format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.theora.ogv',
+                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                    title: 'Ogg&nbsp;Theora format'
+                },
+                {
+                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/FF4_Jess3Features_VO_1.mp4',
+                    type:  'video/mp4',
+                    title: 'MPEG-4 format'
+                }
+            ],
+            'serv/marketing/firefox4/FF4_Jess3Features_VO_1.mp4',
+            true
+        );
+    }
+
+    function load_video()
+    {
+        var scriptElem = document.createElement("script");
+        var scriptDone = false;
+        scriptElem.onload = scriptElem.onreadystatechange = function () {
+            if ((scriptElem.readyState && scriptElem.readyState !== "complete" && scriptElem.readyState !== "loaded") || scriptDone) {
+                return false;
+            }
+            scriptElem.onload = scriptElem.onreadystatechange = null;
+            scriptDone = true;
+            init_video();
+        };
+        scriptElem.src = "<?php echo $config['static_prefix'];?>/js/mozilla-video-tools.js";
+        head.insertBefore(scriptElem, head.firstChild);
+    }
+
+    function load_nav_main()
+    {
         var scriptElem = document.createElement("script");
         scriptElem.src = "<?php echo $config['static_prefix'];?>/js/nav-main.js";
         head.insertBefore(scriptElem, head.firstChild);
@@ -185,26 +230,24 @@ FUNNEL;
 
     function load_jquery () {
         var scriptElem = document.createElement("script");
-        var scriptdone = false;
+        var scriptDone = false;
         scriptElem.onload = scriptElem.onreadystatechange = function () {
-            if ((scriptElem.readyState && scriptElem.readyState !== "complete" && scriptElem.readyState !== "loaded") || scriptdone) {
+            if ((scriptElem.readyState && scriptElem.readyState !== "complete" && scriptElem.readyState !== "loaded") || scriptDone) {
                 return false;
             }
             scriptElem.onload = scriptElem.onreadystatechange = null;
-            scriptdone = true;
+            scriptDone = true;
             load_nav_main();
+            load_video();
         };
         scriptElem.src = "<?php echo $config['static_prefix'];?>/js/jquery/jquery.min.js";
         head.insertBefore(scriptElem, head.firstChild);
     };
 
     var old_onload = window.onload;
-    if (old_onload)
-    {
+    if (old_onload) {
         window.onload = function() { old_onload(); load_jquery(); };
-    }
-    else
-    {
+    } else {
         window.onload = load_jquery;
     }
 
