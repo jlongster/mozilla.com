@@ -128,9 +128,9 @@ class MozillaCom_MenuData
                             'title' => 'Features',
                             'href'  => "/{$this->lang}/mobile/features/",
                         ),
-                        'submenu_mobile_customize' => array(
-                            'title' => 'Customize',
-                            'href'  => "https://addons.mozilla.org/{$this->lang}/mobile/?browse=featured",
+                        'submenu_mobile_customization' => array(
+                            'title' => 'Customization',
+                            'href'  => "/{$this->lang}/mobile/customize/",
                         ),
                         'submenu_mobile_sync' => array(
                             'title' => 'Sync',

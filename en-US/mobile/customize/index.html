@@ -1,39 +1,209 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Get Personal';
-    $body_id    = 'mobile-customize';
+    $page_title = 'Firefox Browser | Customize your Web with free add-ons';
+    $body_id    = 'firefox-addons';
+    $body_class = 'products';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="/style/tignish/mobile-later.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/personalize.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/video-player.css" media="screen" />
+    <script src="/js/mozilla-pager.js"></script>
+    <script src="/js/mozilla-video-tools.js"></script> 
+    <script src="/js/mozilla-customize-page.js"></script> 
 EXTRA_HEADERS;
-
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
+
+<div id="download" class="top-right mobile">
+    <a class="dl" href="/<?=$lang?>/mobile/download/"><span>Get Firefox <em>on Your Phone</em></span></a>
+    <p class="notes">Or visit <a href="/<?=$lang?>/mobile/">Firefox.com/m</a> on your phone’s browser</p>
+</div>
+
 <div id="main-feature">
-    <h2>Get Personal</h2>
-	<p>Customize Firefox and enjoy the first browser to offer add-ons for mobile.</p>
+    <h2>Easy Ways To <span>Personalize</span></h2>
+    <p class="main-feature-sub-title">When it comes to browsing, one size doesn’t fit all—customize Firefox pretty much any way you like!</p>
+    <ul class="feature-links">
+        <li id="cust-addons"><a href="#mobile-addons"><span class="feature-link-content">Customize: <span>Add-ons</span></span></a></li>
+        <li id="cust-style"><a href="#mobile-style"><span class="feature-link-content">Add Style: <span>Personas</span></span></a></li>
+        <li id="cust-plugins"><a href="#plugins"><span class="feature-link-content">Make It Work: <span>Plugins</span></span></a></li>
+        <li id="cust-interface"><a href="#interface"><span class="feature-link-content">Adapt Your <span>Interface</span></span></a></li>
+        <li id="cust-sync"><a href="#sync"><span class="feature-link-content">Stay In <span>Sync</span></span></a></li>
+    </ul>
+
+    <div id="top-features">
+        <h3>Go <span>Mobile</span></h3>
+        <p>Get add-ons on your mobile, too! Just use the Add-ons Manager on your Android device or Nokia N900 to search and install.</p>
+    </div>
 </div>
 
-<div>
-    <?=buildMobileSubPageMenu('en-US','customize')?>
-</div>
+<div id="content">
+    <div class="features-container" id="mobile-addons">
+        <div class="addon-intro">
+            <h3>Customize: <span>Add-ons</span></h3>
+            <p>Choose from hundreds of ways to add features, extend functionality and make Firefox work for exactly the way you use the Web on your phone. See some of our favorite below! Get these and more right from your Add-ons Manager in Firefox for mobile.</p>
+        </div>
+        <div id="addons-feature" class="pager pager-with-tabs">
 
-<div id="main-content">
+            <ul id="addons-nav" class="pager-tabs">
+                <li id="starter-link"><a href="#feature-starter">Starter <span>Pack</span></a></li>
+                <li id="shopping-link"><a href="#feature-shopping">Online <span>Shopping</span></a></li>
+                <li id="reference-link"><a href="#feature-reference">Reference <span>Desk</span></a></li>
+                <li id="travel-link"><a href="#feature-travel">Travel <span>Help</span></a></li>
+            </ul>
 
-<h5>Make your browser your own.</h5>
-<p><a href="https://addons.mozilla.org/en-US/mobile">Mobile add-ons</a> help make life a breeze when you're on the go. Install add-ons that share your info with social networks, fix URL typos, or translate your questions to a different language, all from the convenience of your mobile phone. Add-ons are free and easy to install right from your mobile, so get to it.</p>
+            <div class="pager-content">
 
-<img src="/img/mobile/personal-screenshot.jpg" alt="Add-Ons screenshot" id="personal-screenshot" />
+                <div class="addons-feature-contents" id="feature-starter">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-starter').id = 'page-feature-starter';
+                    // ]]></script>
+                    <ul>
+                        <li id="addon-yoono">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi//?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-yoono.png" alt="Yoono icon">
+                                <span class="desc">Yoono manages all social media in a tidy sidebar.</span>
+                                <span class="link">Download »</span>
+                            </a>
+                        </li>
+                        <li id="addon-invisiblehand">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/invisiblehand/?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-invisiblehand.png" alt="InvisibleHand icon">
+                                <span class="desc">Shop online and save with Invisible Hand.</span>
+                                <span class="link">Download »</span>
+                            </a>
+                        </li>
+                        <li id="addon-imtranslator">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/imtranslator/?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-imtranslator.png" alt="ImTranslator icon">
+                                <span class="desc">Enjoy real-time translation with ImTranslator.</span>
+                                <span class="link">Download »</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 
-<h5>Customize right from your phone.</h5>
-<p>Personalize your Firefox by searching and installing add-ons right from your mobile. Just swipe across the screen and select the Tools button on the right side of your screen. Tap on the add-ons button to start customizing.</p>
+                <div class="addons-feature-contents" id="feature-shopping">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-shopping').id = 'page-feature-shopping';
+                    // ]]></script>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-button-11542/?src=mozcom-personalize">
+                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-amazonbutton.png" alt="Amazon Button icon">
+                        <em>Amazon Button</em></a></h4>
+                    <p>Easily navigate popular Amazon destinations, search Amazon using context menu, visually Browse bestsellers/most gifted items, browse Amazon by directory and much more!</p>
+                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-button-11542/?src=mozcom-personalize">Get the Amazon Button Add-on now »</a></p>
+                </div>
 
-<div id="dev-promo">
-<h3>Want to develop an add-on for mobile?</h3>
-<p>Your innovations are essential to the success of Firefox. We've made it easy to develop add-ons for mobile. Visit the <a href="../developers/">Develop for Mobile</a> page to learn more.</p>
-</div>
+                <div class="addons-feature-contents" id="feature-reference">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-reference').id = 'page-feature-reference';
+                    // ]]></script>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/similarweb-sites-recommendatio/?src=mozcom-personalize">
+                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-similarweb.png" alt="SimilarWeb icon">
+                        <em>SimilarWeb</em></a></h4>
+                    <p>An easy way to find the best sites on the Internet! As you browse, find the most interesting related sites by similarity and category and get the latest articles and buzz on every site you visit.</p>
+                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/similarweb-sites-recommendatio/?src=mozcom-personalize">Get the SimilarWeb Add-on now »</a></p>
+                </div>
 
+                <div class="addons-feature-contents" id="feature-travel">
+                    <script>// <![CDATA[
+                    document.getElementById('feature-travel').id = 'page-feature-travel';
+                    // ]]></script>
+                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/flagfox/?src=mozcom-personalize">
+                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-flagfox.png" alt="Flagfox icon">
+                        <em>Flagfox</em></a></h4>
+                    <p>Displays a country flag depicting the location of the current site’s server and provides quick access to detailed location and webserver information.</p>
+                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/flagfox/?src=mozcom-personalize">Get the Flagfox Add-on now »</a></p>
+                </div>
 
-</div>
+            </div>
+        </div>
+    </div>
+    <div class="features-container" id="mobile-style">
+        <div class="addon-intro">
+            <h3>Add Style: <span>Personas</span></h3>
+            <p>Easy-to-install themes that help you personalize the look of your Firefox on the go. Just install the Personas add-on and go right to the gallery from your mobile Start page.</p>
+        </div>
+
+        <div id="persona-previews">
+            <div id="try-on"><p>Roll over to try, click to apply</p></div>
+            <div class="persona-previewer persona-previewer-random">
+                <div class="persona-previewer-content">
+                    <div id="persona-tattoo" class="persona-visible"><img src="/img/covehead/add-ons/personas-tattoo.png" width="344" height="174" alt="preview" /></div>
+                    <div id="persona-endless"><img src="/img/covehead/add-ons/personas-endless.png" width="344" height="174" alt="preview" /></div>
+                    <div id="persona-kanagawa"><img src="/img/covehead/add-ons/personas-kanagawa.png" width="344" height="174" alt="preview" /></div>
+                    <div id="persona-harrypotter"><img src="/img/covehead/add-ons/personas-harrypotter.png" width="344" height="174" alt="preview" /></div>
+                    <div id="persona-bobmarley"><img src="/img/covehead/add-ons/personas-bobmarley.png" width="344" height="174" alt="preview" /></div>
+                    <div id="persona-sunset"><img src="/img/covehead/add-ons/personas-sunset.png" width="344" height="174" alt="preview" /></div>
+                </div>
+                <ul class="persona-previewer-tabs">
+                    <li><a href="http://www.getpersonas.com/en-US/persona/7610"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/1/0/7610/preview.jpg" width="138" height="46" alt="Japanese Tattoo" /></a></li>
+                    <li><a href="http://www.getpersonas.com/en-US/persona/30987"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/7/30987/preview.jpg" width="138" height="46" alt="Endless Possibilities" /></a></li>
+                    <li><a href="http://www.getpersonas.com/en-US/persona/141882"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/2/141882/preview.jpg" width="138" height="46" alt="kanagawa wave" /></a></li>
+                    <li><a href="http://www.getpersonas.com/en-US/persona/35081"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/1/35081/preview.jpg" width="138" height="46" alt="Harry Potter" /></a></li>
+                    <li><a href="http://www.getpersonas.com/en-US/persona/44136"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/3/6/44136/preview.jpg" width="138" height="46" alt="Bob Marley" /></a></li>
+                    <li><a href="http://www.getpersonas.com/en-US/persona/64769"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/6/9/64769/preview.jpg" width="138" height="46" alt="Sunset Over Water" /></a></li>
+                </ul>
+            </div>
+            <p id="see-all-personas"><a href="http://www.getpersonas.com/en-US/gallery/" class="feature arrow">See all 180,000+  »</a></p>
+        </div> 
+
+    </div>
+    <div class="features-container" id="plugins">
+        <div class="addon-intro">
+            <h3>Make It Work: <span>Plugins</span></h3>
+            <p>Plugins are small bits of third-party software built by companies like Adobe Systems or Apple to power videos, animation and games (examples include Flash Player or Quicktime). They can cause browser crashes or pose security risks when they get out of date, so we’ve built an easy tool to help you stay current. <a href="/<?=$lang?>/plugincheck/">Check your plugins.</a></p>
+        </div>
+        <div class="features-image"><?=buildPlatformImage($config['static_prefix'].'/img/covehead/add-ons/make-it-work.png', 'Make It Work: Plugins', '599', '229', null, array('mac', 'linux'))?></div>
+    </div>
+    <div class="features-container" id="interface">
+        <div class="addon-intro">
+            <h3>Adapt Your <span>Interface</span></h3>
+            <p>The Firefox interface has been designed by a team of experts and tested by a community of millions of users around the world to make sure your browsing is as easy and intuitive as possible.</p>
+            <p>But, everyone has their own specific needs, and you can always adjust the interface to be exactly the way you like it: re-arrange, organize, add or remove buttons or fields to change your browsing experience however you want. <a href="https://support.mozilla.com/kb/How%20to%20customize%20the%20toolbar">Learn more.</a></p>
+        </div>
+        <div class="features-image"><?=buildPlatformImage($config['static_prefix'].'/img/covehead/add-ons/adapt-your-interface.png', 'Adapt Your Interface', '611', '408', null, array('mac', 'linux'))?></div>
+    </div>
+    <div class="features-container" id="sync">
+        <div class="addon-intro">
+            <h3>Stay In <span>Sync</span></h3>
+            <p>Sync seamlessly connects your desktop and mobile Firefoxes, so you can access your browsing history, passwords, bookmarks and even open tabs no matter which device you use.</p>
+            <p>Now you can surf the Web on your desktop, get up in the middle of browsing and have your open tabs ready and waiting on your mobile, just as you left them. Your browsing will never be the same! <a href="/<?=$lang?>/mobile/sync/">Learn more.</a></p>
+        </div>
+        <div id="video-player" class="mozilla-video-control">
+            <video
+                id="video"
+                width="640"
+                height="360"
+                poster="<?=$config['static_prefix']?>/img/covehead/video/poster-fx4-sync.jpg"
+                controls="controls">
+
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.webm" type="video/webm" />
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.mp4" type="video/mp4" />
+
+                <object type="application/x-shockwave-flash"
+                    style="width: 480px; height: 298px;"
+                    data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/FoxySync640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/FoxySync640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                    <param name="wmode" value="transparent" />
+
+                    <div class="video-player-no-flash">
+                    This video requires a browser with support for open video:
+                    <ul>
+                    <li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+                    <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                    </ul>
+
+                    or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                    Alternatively, you may use the video download links to the right.
+                    </div>
+
+                </object>
+
+            </video>
+        </div>
+    </div>
+</div><!-- end content -->
 
 <?php
     @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
