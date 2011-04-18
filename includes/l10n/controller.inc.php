@@ -90,13 +90,12 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    'firefox4-rc',
     'm-beta',
 );
 
 
 // add the include if it exists only
-if (in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
+if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
     noCachingRedirect($host_l10n);
     exit;
 }
