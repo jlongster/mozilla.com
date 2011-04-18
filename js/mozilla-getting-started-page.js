@@ -78,7 +78,6 @@ $(document).ready(function() {
       {'left': 575, 'top': 130, 'id': 'password-manager'},
       {'left': 695, 'top': 130, 'id': 'customize-toolbar'},
       {'left': 805, 'top': 130, 'id': 'personas'},
-      {'left': 920, 'top': 170, 'id': 'bookmark-button', 'direction': 'up'},
       {'left': 928, 'top': 130, 'id': 'sync'}
   ];
 
