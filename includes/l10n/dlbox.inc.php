@@ -1,6 +1,6 @@
 <?php
 
-include_once $config['file_root'].'/includes/l10n/class.novadownload.php';
+include_once $config['file_root'].'/includes/l10n/libs/class.download.php';
 
 $dl_box_id   = $dl_box_aurora = $dl_box_beta = 'default_l10n_download_box';
 $dl_fallback = false;

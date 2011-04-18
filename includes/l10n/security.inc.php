@@ -14,7 +14,7 @@
     </style>
 EXTRA_HEADERS;
 
-    include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/class.novadownload.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/libs/class.download.php";
 
     $firefoxDetailsl10n = new firefoxDetailsL10n();
 
