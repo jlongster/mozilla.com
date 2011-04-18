@@ -31,10 +31,6 @@ $textdir          = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 $footerfile       = $config['file_root'].'/includes/l10n/footer-pages.inc.php';
 $headerfile       = $config['file_root'].'/includes/l10n/header-pages.inc.php';
 
-
-// include fx4 commodity functions
-include_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";
-
 // we never want the domain to be locale.www.mozilla.com,
 // old legacy bug (398938) causing bugs with links when switching locale
 // safety mesure for cases when we forget to use $config['server_name'] in a script

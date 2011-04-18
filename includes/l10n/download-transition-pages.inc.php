@@ -5,8 +5,9 @@
  */
 
 // get commodity functions
-require_once "{$config['file_root']}/includes/l10n/firefox4-beta-functions.inc.php";
-require_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
+// commodity functions for localized pages
+require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
+require_once $config['file_root'].'/includes/l10n/locale-transition-status.inc.php';
 
 // redirect if malformed url to firefox download page
 if (!isset($_GET['product']) ||!isset($_GET['lang']) ||!isset($_GET['os'])) {
