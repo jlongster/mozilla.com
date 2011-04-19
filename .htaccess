@@ -114,8 +114,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/customize/getpersonal[/]?$ /
 # Bug 447602.  Redirects /products/firefox/central.html but is building on the /products/firefox/ -> /firefox/ redirect
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/central.html$ /$1firefox/central/ [R=permanent]
 
-# Bug 455786
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?organic[/]?$ /$1firefox/organic/ [R=permanent]
+# Bug 644290
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?organic[/]?$ / [R=permanent]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/organic[/]?$ / [R=permanent]
 
 # Bug 453876
 RewriteRule ^en-US/add-ons/kodak[/]?$ https://addons.mozilla.org/en-US/firefox/addon/4441 [R=permanent]
