@@ -1,4 +1,5 @@
 <?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
@@ -16,10 +17,8 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to Firefox 4</title>
+    <? echo min_inline_css('css_firstrun'); ?>
     <style>
-<?php
-    require_once "{$config['file_root']}/style/firefox/4/firstrun-page.min.css"
-?>
       #tour .callout path {
           fill: #fff;
       }
@@ -40,7 +39,7 @@
             Made by a global non-profit dedicated to
             shaping the future of the Web for the
             public good.
-            <a href="http://mozilla.org/about">Learn more&nbsp;&raquo;</a>
+            <a href="http://mozilla.org/about">Learn more »</a>
           </aside>
         </div>
       </header>

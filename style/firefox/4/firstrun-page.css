@@ -129,9 +129,13 @@ section {
     cursor: pointer;
     background-color: #fff;
     height: 270px;
-    box-shadow: 0 2px rgba(0,0,0,.1), 0 -2px #e5eff8 inset;
+    box-shadow: 0 2px rgba(0,0,0,.1), 0 -2px rgba(99,149,185,0.1) inset;
     background-color: #fff;
-    background-image: -moz-linear-gradient(#fff 95%, rgba(223,239,249,.15));
+    background-image:
+        -moz-image-rect(url(/img/firefox/4.0/firstrun/firstrun_sprite.png), 237, 210, 314, 0),
+        -moz-linear-gradient(rgba(255,255,255,0) 90%, rgba(223,239,249,0.5));
+    background-repeat: no-repeat;
+    background-position: 50% 100%, 50% 50%;
 }
 section:first-child {
     margin-right: 8px;
@@ -146,7 +150,23 @@ section:first-child {
     overflow: hidden;
     -moz-transition-property: width, height, top, right;
     -moz-transition-duration: .5s;
+    background-image:
+        -moz-linear-gradient(rgba(255,255,255,0) 90%, rgba(223,239,249,0.5)),
+        url(/img/firefox/4.0/firstrun/step2back.png);
+    background-position: 50% 50%, 50% 100%;
 }
+.mac .know {
+    background-image:
+        -moz-linear-gradient(rgba(255,255,255,0) 90%, rgba(223,239,249,0.5)),
+        url(/img/firefox/4.0/firstrun/step2back-mac.png);
+}
+.linux .know {
+    background-image:
+        -moz-linear-gradient(rgba(255,255,255,0) 90%, rgba(223,239,249,0.5)),
+        url(/img/firefox/4.0/firstrun/step2back-linux.png);
+}
+
+
 .lightbox .know {
     width: 980px;
     height: 435px;
@@ -211,7 +231,7 @@ aside {
     position: relative;
     font-style: italic;
     font-size: 2.1em;
-    margin-top: 60px;
+    margin-top: 55px;
     line-height: 1.1em;
     -moz-transition: 1s margin-top cubic-bezier(.7, 1.4, .8, 1);
 }

@@ -31,7 +31,11 @@ return array(
         '//style/email-form.css'
     ),
     'css_home' => array(
-        '//style/covehead/home.css'
+        '//style/covehead/home.css',
+        '//style/covehead/video-player.css'
+    ),
+    'css_firstrun' => array(
+        '//style/firefox/4/firstrun-page.css'
     ),
     'js_portal_header' => array(
         '//js/util.js',
