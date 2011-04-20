@@ -1,20 +1,24 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Om oss</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="../community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Vi är en global community</strong> <a href="../community">som
+        har arbetat tillsammans</a> sedan 1998 för att bygga ett bättre internet.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Vi är en ideell organisation</strong> som har som mål att
+        främja <a href="mission.html">öppenhet, innovationer och möjligheter</a>
+        på nätet.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="../projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>Och vi är ett öppen källkodsprojekt</strong> vars
+        <a href="../projects">programvaror</a> har använts för att bygga några
+        av de bästa programmen för internet.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Vi anser att internet, som vår tids viktigaste sociala och tekniska
+    framsteg, är en offentlig resurs som måste förbättras och skyddas.</p>
 
-    <p>The <a href="/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="/contribute">And you can help</a>!</p>
+    <p><a href="/foundation">Mozilla Foundation</a> är en ideell organisation
+    som strävar mot dessa mål, men den verkliga styrkan med Mozilla är att vi
+    har människor över hela världen som agerar för att göra nätet bättre.
+    <a href="/contribute">Och du kan hjälpa oss</a>!</p>
 </div>
