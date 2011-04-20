@@ -235,7 +235,7 @@ LI_SIDEBAR;
                 <li class="{$_os_class}">
                 <a class="download-link download-firefox" href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/{$_product}-{$_current_version}.{$locale}.{$_os_file_ext}">
                 <span class="download-content">
-                    <span class="download-title">{$_download_product}</span> Mozilla Firefox Aurora
+                    <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
                 {$extra_dl_info}
                 </a>
@@ -247,7 +247,12 @@ LI_SIDEBAR;
 
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
-                <a class="download" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}"><span><strong>{$_download_product}</strong> Mozilla Firefox 4</span>{$extra_dl_info}</a>
+                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">
+                <span class="download-content">
+                    <span class="download-title">{$_download_product}</span> Mozilla Firefox
+                </span>
+                {$extra_dl_info}
+                </a>
                 </li>
 LI_SIDEBAR;
                 break;

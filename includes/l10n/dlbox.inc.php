@@ -29,10 +29,17 @@ switch($pageid) {
 
     case 'firefox-channels':
         $dl_box_class   = '';
-        $dl_box_id      = 'dl_latest';
+        $dl_box_id      = 'download'; // stable release id
         $dl_box_aurora  = 'download_aurora_button';
         $dl_box_beta    = 'dl_beta';
-        $dl_box_options = array('download_parent_override'  => 'download_aurora',
+        $dl_box_options = array('download_parent_override'  => 'download',
+                                'wording'                   => 'Mozilla Firefox 4',
+                                'channel'                   => 'stable',
+                                'layout'                    => 'aurora',
+                                'download_product'          => ___('Download'),
+                                'ancillary_links'           => false,
+                                );
+        $dl_box_options_aurora = array('download_parent_override'  => 'download_aurora',
                                 'wording'                   => 'Mozilla Firefox Aurora',
                                 'channel'                   => 'aurora',
                                 'layout'                    => 'aurora',
@@ -40,7 +47,6 @@ switch($pageid) {
                                 'ancillary_links'           => false,
                                 );
         $beta_button        = '<p><span class="download-soon"><span>Coming Soon!</span></span></p>';
-        $stable_button      = '<p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox 4</span></a></p>';
         break;
 
     case 'firefox':
@@ -113,7 +119,7 @@ $aurora_button .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
 $aurora_button .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
 $aurora_button .= "\n".'//]]>></script>'."\n";
 $aurora_button .= "\n".'<div class="'.$dl_box_class.'" id="'.$dl_box_aurora.'">'."\n";
-$aurora_button .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
+$aurora_button .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options_aurora);
 $aurora_button .= "\n".'</div>'."\n";
 $aurora_button .= <<<HIDE
     <script type="text/javascript">//<![CDATA[
