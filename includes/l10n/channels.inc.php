@@ -99,6 +99,20 @@ $extra_headers .= <<<EXTRA_HEADERS
         text-align: center;
     }
 
+    div.title h3,
+    p.footnote {
+        max-width:250px;
+    }
+
+    div.title {
+        width:700px;
+    }
+
+    form {
+        width:200px;
+    }
+
+
     </style>
 EXTRA_HEADERS;
 
