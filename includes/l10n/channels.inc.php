@@ -1,6 +1,7 @@
 <?php
 
 $body_id = 'channel';
+$html5   = true;
 
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
