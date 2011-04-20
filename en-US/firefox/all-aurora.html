@@ -86,27 +86,33 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 </div><!-- end #main-content div -->
 
 <div id="sidebar">
-	<div id="sidebar-search">
-		<h3>Search Language</h3>
-		<form method="get" action="all.html" id="search-form">
-			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
-		</form>
-		<script>// <![CDATA[
-		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
-		var language_search = new Mozilla.LanguageSearch(
-			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
-		// ]]>
-		Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
-		Mozilla.LanguageSearch.download_text = 'download';
-		</script>
-	</div>
-	<div id="other-versions">
-		<h3>Other Firefox Downloads</h3>
-		<ul>
-			<li><a href="all.html#beta_versions">New languages still in beta</a></li>
-			<li><a href="all-older.html">Firefox <?=LATEST_FIREFOX_OLDER_VERSION?></a></li>
-		</ul>
-	</div>
+
+    <div id="sidebar-search">
+        <h3>Search Language</h3>
+        <form method="get" action="all.html" id="search-form">
+            <div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+        </form>
+        <script>// <![CDATA[
+        var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
+        var language_search = new Mozilla.LanguageSearch(
+            'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
+        // ]]>
+        Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
+        Mozilla.LanguageSearch.download_text = 'download';
+        </script>
+    </div>
+    <div id="sidebar-notes">
+        <h3>Don’t see your language?</h3>
+        <p>Check for updates as more languages will be added.</p>
+        <p>These localized versions may contain translation errors.</p>
+    </div>
+    <div id="other-versions">
+        <h3>Other Firefox Downloads</h3>
+        <ul>
+            <li><a href="all.html#beta_versions">New languages still in beta</a></li>
+            <li><a href="all-older.html">Firefox <?=LATEST_FIREFOX_OLDER_VERSION?></a></li>
+        </ul>
+    </div>
 </div>
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
