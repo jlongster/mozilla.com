@@ -28,19 +28,19 @@ switch($pageid) {
         break;
 
     case 'firefox-channels':
-        $dl_box_class   = 'home-download';
+        $dl_box_class   = '';
         $dl_box_id      = 'dl_latest';
-        $dl_box_aurora  = 'dl_aurora';
+        $dl_box_aurora  = 'download_aurora_button';
         $dl_box_beta    = 'dl_beta';
-        $dl_box_options = array('download_parent_override'  => 'dl_aurora',
-                                'wording'                   => 'Mozilla Firefox 4',
+        $dl_box_options = array('download_parent_override'  => 'download_aurora',
+                                'wording'                   => 'Mozilla Firefox Aurora',
                                 'channel'                   => 'aurora',
                                 'layout'                    => 'aurora',
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => false,
                                 );
-        $dl_beta        = '<p><span class="download-soon"><span>Coming Soon!</span></span></p>';
-        $dl_stable      = '<p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox 4</span></a></p>';
+        $beta_button        = '<p><span class="download-soon"><span>Coming Soon!</span></span></p>';
+        $stable_button      = '<p><a href="#" class="download"><span><strong>Download</strong> Mozilla Firefox 4</span></a></p>';
         break;
 
     case 'firefox':
@@ -108,14 +108,14 @@ HIDE;
     $downloadbox .= "\n".'<!-- end generated box -->'."\n";
 }
 
-$dl_aurora  = "\n".'<!-- generated box -->'."\n";
-$dl_aurora .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
-$dl_aurora .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
-$dl_aurora .= "\n".'//]]>></script>'."\n";
-$dl_aurora .= "\n".'<div class="'.$dl_box_class.'" id="'.$dl_box_aurora.'">'."\n";
-$dl_aurora .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
-$dl_aurora .= "\n".'</div>'."\n";
-$dl_aurora .= <<<HIDE
+$aurora_button  = "\n".'<!-- generated box -->'."\n";
+$aurora_button .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
+$aurora_button .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
+$aurora_button .= "\n".'//]]>></script>'."\n";
+$aurora_button .= "\n".'<div class="'.$dl_box_class.'" id="'.$dl_box_aurora.'">'."\n";
+$aurora_button .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
+$aurora_button .= "\n".'</div>'."\n";
+$aurora_button .= <<<HIDE
     <script type="text/javascript">//<![CDATA[
       // bug 644255, don't tell users to upgrade to fx4 if they
       // are PPC or using any OS X before 10.5
@@ -126,7 +126,7 @@ $dl_aurora .= <<<HIDE
 
     </script>
 HIDE;
-$dl_aurora .= "\n".'<!-- end generated box -->'."\n";
+$aurora_button .= "\n".'<!-- end generated box -->'."\n";
 
 
 unset($firefoxDetailsl10n);
