@@ -7,7 +7,7 @@
     <h2>Sincronizate con Firefox</h2>
     <p>Accedé a tu historial, contraseñas, marcadores y hasta las pestañas que están abiertas en todos tus dispositivos.</p>
     <p class="wide-button">
-        <a href="<?=$amo_url?>">Descargá gratis el agregado Firefox Sync</a>
+        <a href="<?=$amo_url?>">Descargá gratis el complemento Firefox Sync</a>
     </p>
 </div>
 
@@ -33,7 +33,7 @@
 <div id="sidebar">
     <h3>Cómo empezar</h3>
     <ol>
-        <li>Instalá gratis el <a href="<?=$amo_url?>">agregado Firefox Sync</a> .</li>
+        <li>Instalá gratis el <a href="<?=$amo_url?>">complemento Firefox Sync</a> .</li>
         <li>Reiniciá Firefox y seguí los pasos para crear una cuenta que incluye tanto una contraseña como una frase secreta.</li>
         <li>Instalá Firefox Sync en los demás dispositivos que uses.</li>
         <li>Ingresá y elije cómo sincronizar, luego comenzá a navegar donde habías dejado.</li>
