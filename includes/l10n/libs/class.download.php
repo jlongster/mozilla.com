@@ -230,10 +230,14 @@ LI_SIDEBAR;
                 break;
 
             case 'aurora':
-
+                if($lang == 'en-US') {
+                    $_repository = 'http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/';
+                } else {
+                    $_repository = 'http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora-l10n/';
+                }
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
-                <a class="download-link download-firefox" href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/{$_product}-{$_current_version}.{$locale}.{$_os_file_ext}">
+                <a class="download-link download-firefox" href="{$_repository}{$_product}-{$_current_version}.{$locale}.{$_os_file_ext}">
                 <span class="download-content">
                     <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
