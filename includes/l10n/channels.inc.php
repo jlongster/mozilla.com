@@ -85,12 +85,18 @@ $extra_headers .= <<<EXTRA_HEADERS
     <style>
     a.download-link em {
         display: block;
-        margin: 0 1em;
+        margin: -1em 1em 0;
         text-align:right;
     }
 
+
     .rtl a.download-link em {
         text-align:left;
+    }
+
+    #channel #download_aurora_button .download-other,
+    #channel #download .download-other {
+        text-align: center;
     }
 
     </style>

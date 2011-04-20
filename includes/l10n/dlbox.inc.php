@@ -37,7 +37,7 @@ switch($pageid) {
                                 'channel'                   => 'stable',
                                 'layout'                    => 'aurora',
                                 'download_product'          => ___('Download'),
-                                'ancillary_links'           => false,
+                                'ancillary_links'           => true,
                                 );
         $dl_box_options_aurora = array('download_parent_override'  => 'download_aurora',
                                 'wording'                   => $mz_aurora,
@@ -46,7 +46,7 @@ switch($pageid) {
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => false,
                                 );
-        $beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span></span></p>';
+        $beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</span></p>';
         break;
 
     case 'firefox':
