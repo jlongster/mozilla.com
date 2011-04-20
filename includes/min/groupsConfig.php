@@ -34,7 +34,7 @@ return array(
         '//style/covehead/home.css',
         '//style/covehead/video-player.css'
     ),
-    'css_firstrun' => array(
+    'css_firstrun4' => array(
         '//style/firefox/4/firstrun-page.css'
     ),
     'js_portal_header' => array(
