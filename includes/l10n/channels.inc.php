@@ -35,7 +35,7 @@ ob_end_clean();
 
 $newsletter_form = <<<FORM
 
-    <div id="channel_news" class="{ $status ?>">
+    <div id="channel_news" class="{$status}">
           <div id="newsletter-signup">
             <div class="title">
               <h3>{$title}</h3>
@@ -75,7 +75,6 @@ $newsletter_form = <<<FORM
 
     </div>
 
-</div>
 FORM;
 
 
