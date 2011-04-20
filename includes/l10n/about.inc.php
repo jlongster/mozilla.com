@@ -10,7 +10,7 @@ $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/about.css" media="screen" />
     <style>
     #wrapper {
-        background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll 800px 150px transparent;
+        background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll 1100px 150px transparent;
     }
 
     #main-feature, #content {
