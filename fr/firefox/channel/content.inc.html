@@ -38,52 +38,5 @@
 
     </div>
 
-    <div id="channel_news" class="<?= $status ?>">
-          <div id="newsletter-signup">
-            <div class="title">
-              <h3>Get the latest <span>channel news</span></h3>
-              <p>Sign up for one or all of our Firefox channel newsletters.</p>
-            </div>
-            <div class="success-pane">
-              <h3>Thanks for subscribing!</h3>
-            </div>
-            <form id="email-form" action="#newsletter-signup" method="post">
-              <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
-              <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
-              <div class="more">
-                <div class="row">
-                  <select id="country" name="country">
-                      <option value="">Select country</option>
-                      <?php
-                          $country = $form->get('country');
-                          if (!$country) {
-                              $country = 'us';
-                          }
-                          echo regionsAsOptions($lang, $country);
-                      ?>
-                  </select>
-                </div>
-                <ul class="channels_signup">
-                  <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="t" /> Aurora</label></li>
-                  <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="t" /> Beta</label></li>
-                  <li><label for="check_general"><input type="checkbox" id="check_general" name="general" value="t" /> General Mozilla News</label></li>
-                </ul>
-                <div id="channel-error">Please select at least one newsletter.</div>
-                <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
-                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                'DCS.dcsuri', '/mainstream_newsletter/signup',
-                                'WT.ti', 'Link: Sign me up - Second Step',
-                                'WT.dl', 99,
-                                'WT.nv', 'Content',
-                                'WT.ac', 'Newsletter');">
-                <p class="footnote">We will only send you Mozilla-related information (<a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>).</p>
-              </div>
-            </form>
-          </div>
-
-    </div>
-
-</div>
-
-
+    <?=$newsletter_form;?>
 </div><!-- end #main-content div -->
