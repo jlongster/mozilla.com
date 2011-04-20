@@ -33,20 +33,20 @@ switch($pageid) {
         $dl_box_aurora  = 'download_aurora_button';
         $dl_box_beta    = 'dl_beta';
         $dl_box_options = array('download_parent_override'  => 'download',
-                                'wording'                   => 'Mozilla Firefox 4',
+                                'wording'                   => $mz_stable,
                                 'channel'                   => 'stable',
                                 'layout'                    => 'aurora',
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => false,
                                 );
         $dl_box_options_aurora = array('download_parent_override'  => 'download_aurora',
-                                'wording'                   => 'Mozilla Firefox Aurora',
+                                'wording'                   => $mz_aurora,
                                 'channel'                   => 'aurora',
                                 'layout'                    => 'aurora',
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => false,
                                 );
-        $beta_button        = '<p><span class="download-soon"><span>Coming Soon!</span></span></p>';
+        $beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span></span></p>';
         break;
 
     case 'firefox':
