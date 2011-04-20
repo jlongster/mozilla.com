@@ -248,7 +248,6 @@ LI_SIDEBAR;
                 break;
 
             case 'simple':
-
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
                 <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">

@@ -35,7 +35,7 @@ switch($pageid) {
         $dl_box_options = array('download_parent_override'  => 'download',
                                 'wording'                   => $mz_stable,
                                 'channel'                   => 'stable',
-                                'layout'                    => 'aurora',
+                                'layout'                    => 'simple',
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => true,
                                 );
