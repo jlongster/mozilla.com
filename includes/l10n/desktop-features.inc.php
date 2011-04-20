@@ -135,14 +135,6 @@ $extra_headers .= <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
-
-if($fx4released || $config['server_name'] != 'www.mozilla.com') {
-    include_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
-    include_once $fx4file;
-    include_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';
-} else {
-    goToEnglishPage();
-}
-
-
-?>
+require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
+require_once $fx4file;
+require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';

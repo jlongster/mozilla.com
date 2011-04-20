@@ -8,12 +8,8 @@ if(isset($retour) && $retour == true) {
 
 define('UI_LANG', $lang);
 
-
 // commodity functions for localized pages
 include_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
-
-// Firefox 4 release
-$fx4released = (LATEST_FIREFOX_RELEASED_VERSION == '4.0') ? true : false;
 
 
 // make sure we have a few variables defined to avoid php warnings if they don't exist
