@@ -13,7 +13,7 @@
  * stored in mozilla-video-tools-addsubtitles.js
  *
  *
- * @copyright 2009 Mozilla Corporation
+ * @copyright 2009-2011 Mozilla Corporation
  * @author    Michael Gauthier <mike@silverorange.com>
  */
 
@@ -365,7 +365,7 @@ Mozilla.VideoPlayer.prototype.open = function()
 
   this.overlay.fadeTo(400, 0.75);
   this.video_container
-    .css('top', $(window).scrollTop() + ($(window).height() - 570) / 2)
+    .css('top', ($(window).height() - 430) / 2)
     .fadeIn();
 
   this.opened = true;
