@@ -113,7 +113,7 @@ $extra_headers .= <<<EXTRA_HEADERS
     }
     
     body.locale-sq .channel h3 span {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     </style>
