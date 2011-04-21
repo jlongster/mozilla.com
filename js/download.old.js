@@ -209,12 +209,18 @@ function getDownloadURLForAuroraForLanguage(aProduct, aVersion, aLocale, aPlatfo
     os_file_ext = "linux-i686.tar.bz2";
   } else if (aPlatform == PLATFORM_MACOSX) {
     os_file_ext = "mac.dmg";
+    if (aLocale == "ja") {
+      aLocale = "ja-JP-mac";
+    }
   }
     
     
   // Force en-US locale for now, when we fix other language replace it with "locale"
-  var url = "http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/";
-  url += aProduct + "-" + aVersion + ".en-US." + os_file_ext;
+  var url = "http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora-l10n/";
+  if (aLocale == "en-US") {
+    url = "http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-mozilla-aurora/";
+  }
+  url += aProduct + "-" + aVersion + "." + aLocale + "." + os_file_ext;
 
   return url;
 }
