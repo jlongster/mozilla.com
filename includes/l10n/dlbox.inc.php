@@ -46,7 +46,7 @@ switch($pageid) {
                                 'download_product'          => ___('Download'),
                                 'ancillary_links'           => false,
                                 );
-        $beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</span></p>';
+        $beta_button        = '<p><a href="#channel_news" class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</a></p>';
         break;
 
     case 'firefox':
@@ -113,6 +113,11 @@ $downloadbox .= <<<HIDE
 HIDE;
     $downloadbox .= "\n".'<!-- end generated box -->'."\n";
 }
+
+if(!isset($dl_box_options_aurora)) {
+    $dl_box_options_aurora = $dl_box_options;
+}
+
 
 $aurora_button  = "\n".'<!-- generated box -->'."\n";
 $aurora_button .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
