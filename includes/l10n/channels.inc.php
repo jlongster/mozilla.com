@@ -116,6 +116,74 @@ $extra_headers .= <<<EXTRA_HEADERS
     </style>
 EXTRA_HEADERS;
 
+if ($textdir == "rtl") {
+    $extra_headers .= <<<RTL
+        <style>
+        /* {{{  RTL Support */
+
+        [dir="rtl"] #main-feature {
+            margin: 0 20px 0 210px;
+        }
+
+        [dir="rtl"] #main-content {
+            margin: 0 20px;
+        }
+        
+        [dir="rtl"] #channel .channel {
+            float: right;
+            padding-right: 0;
+            padding-left: 10px;
+        }
+
+        [dir="rtl"] #download_aurora h3 {
+            background-position: right 0;
+        }
+
+        [dir="rtl"] #download_beta h3 {
+            background-position: right -260px;
+        }
+
+        [dir="rtl"] #download_firefox h3 {
+            background-position: right -260px;
+        }
+
+        [dir="rtl"] .channel h3 span {
+            padding: 25px 120px 30px 0;
+        }
+
+        [dir="rtl"] ul.home-download {
+            margin-right: 30px;
+            margin-left: 0;
+        }
+
+        [dir="rtl"] #channel #download_aurora.channel #download_aurora_button a.download-link span.download-content, 
+        [dir="rtl"] #channel #download_firefox.channel #download a.download-link span.download-content {
+            background: url("/img/covehead/channel/download-arrow.png") no-repeat scroll 190px 50% transparent;
+            padding: 10px 45px 12px 20px;
+        }
+
+        [dir="rtl"] #newsletter-signup {
+            background: url("/img/covehead/channel/mail.png") no-repeat scroll right 10px transparent;
+            margin-right: 20px;
+            padding-right: 55px;
+            margin-left: 0;
+            padding-left: 0;
+
+        }
+
+        [dir="rtl"] #newsletter-signup .title h3 {
+            float: right;
+            border-right: 0;
+            border-left: 1px dotted #CCCCCC;
+        }
+
+        [dir="rtl"] #newsletter-signup .title p {
+            float: right;
+        }
+        </style>
+RTL;
+}
+
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
 require_once $config['file_root'].'/'.$lang.'/firefox/channel/content.inc.html';
 require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';
