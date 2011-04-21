@@ -111,7 +111,10 @@ $extra_headers .= <<<EXTRA_HEADERS
     form {
         width:200px;
     }
-
+    
+    body.locale-sq .channel h3 span {
+        font-size: 25px;
+    }
 
     </style>
 EXTRA_HEADERS;
