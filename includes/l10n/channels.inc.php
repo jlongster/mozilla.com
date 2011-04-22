@@ -154,6 +154,10 @@ if ($textdir == "rtl") {
             padding: 25px 120px 30px 0;
         }
 
+        [dir="rtl"] .channel ul.channel-list {
+            padding: 0 20px 10px 0;
+        }
+        
         [dir="rtl"] ul.home-download {
             margin-right: 30px;
             margin-left: 0;
