@@ -8,6 +8,7 @@ $slogan = array(
 'bg'    => "Благодарим ви, че избрахте Firefox! За да използвате максимално вашия браузър, научете повече за <a>последните възможности</a>.",
 'bn-BD' => "ফায়ারফক্স নির্বাচন করার জন্য ধন্যবাদ! আপনার ব্রাউজারের সর্বাধিক সুবিধা নেয়ার জন্য <a>সর্বশেষ বৈশিষ্ট্য</a> সম্পর্কে জানুন।",
 'bn-IN' => "Firefox নির্বাচনের জন্য ধন্যবাদ! ব্রাউজারের <a>নতুন বৈশিষ্ট্যগুলি</a> সম্বন্ধে জেনে নিয়ে ব্রাউজারের সর্বোত্তম ব্যবহার করুন।",
+'br'    => "Trugarez da vezañ dibabet Firefox ! A-benn kaout ar pep gwellañ eus ho merdeer, deskit traoù a-zivout ar <a>molladoù diwezhañ</a>.",
 'ca'    => "Gràcies per triar el Firefox! Per aconseguir el millor del vostre navegador, informeu-vos sobre les <a>darreres característiques</a>.",
 'cs'    => "Děkujeme, že jste si vybrali Firefox! Abyste získali ze svého prohlížeče maximum, přečtěte sí více o <a>nejnovějších funkcích</a>.",
 'cy'    => "Diolch am ddewis Firefox! I gael y mwyaf allan o'ch porwr, dysgwch fwy am y <a>nodweddion diweddaraf</a>.",
