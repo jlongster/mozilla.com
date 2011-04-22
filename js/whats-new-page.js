@@ -1,13 +1,17 @@
-function whatsNewMessage() {
+function firefoxVersion() {
         // get user-agent version for firefox browsers
         var exp = /(?:Firefox|GranParadiso|Minefield|BonEcho)\/([0-9.]+(?:[ab][^ ]+|))/;
         var matches = navigator.userAgent.match(exp);
+        return matches && matches[1];
+}
 
+function whatsNewMessage() {
+        var version = firefoxVersion();
         var firefox = null;
 
-        if (matches !== null) {
+        if (version !== null) {
                 firefox = {};
-                firefox.version = matches[1];
+                firefox.version = version;
 
                 // normalize versions for alphas and betas
                 var beta = firefox.version.match(/([0-9.]+)[ab]/);

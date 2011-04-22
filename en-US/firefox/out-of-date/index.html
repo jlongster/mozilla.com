@@ -15,16 +15,30 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
 
 ?>
 
+<script type="text/javascript">
+  var not_compat = /(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent);
+</script>
+
 <div id="main-feature">
-    <h2><span>Almost there!</span></h2>
+    <h2><span id="main-feature-msg">Almost there!</span></h2>
 </div>
 
 <div id="main-content">
 
-    <p>Thanks for downloading Firefox, but this version is out of date. For the latest security, performance and feature enhancements we strongly recommend that you <a href="/<?=$lang?>/firefox/">get the newest version</a> instead.</p>
+    <p id="upgrade-msg">Thanks for downloading Firefox, but this version is out of date. For the latest security, performance and feature enhancements we strongly recommend that you <a href="/<?=$lang?>/firefox/">get the newest version</a> instead.</p>
+
+    <p id="compat-msg">
+      Thanks for downloading Firefox, but this version is out of
+      date. Unfortunately your computer's operating system isn't
+      compatible with the most current
+      Firefox <a href="http://www.mozilla.com/en-US/firefox/4.0/system-requirements/">learn
+      more</a>, but you are encouraged to download
+      the <a href="http://www.mozilla.com/en-US/firefox/all-older.html">most
+      recent version</a> that <em>is</em> compatible instead.
+    </p>
 
     <div id="download-info">
-    <script src="/js/download.old.js"></script>
+    <script src="/js/download.old.js"></script>    
     <script>
         <!--
         // Configure the Firefox download write script
@@ -40,12 +54,33 @@ include_once "{$config['file_root']}/{$lang}/includes/headers/3.6/portal-pages.i
         document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
         document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
         document.writeln("<\/div>");
+
         //-->
     </script>
     <?php echo $firefoxDetails->getNoScriptBlockForLocale($lang); ?>
     </div>
 
 </div>
+
+
+<script type="text/javascript">
+function firefoxVersion() {
+        // get user-agent version for firefox browsers
+        var exp = /Firefox\/([0-9.]+(?:[ab][^ ]+)?)/;
+        var matches = navigator.userAgent.match(exp);
+        return matches && matches[1];
+}
+
+if(not_compat) {
+    var msg = 'You are now running Firefox ' + firefoxVersion();
+    document.getElementById("main-feature-msg").innerHTML = msg;
+
+    document.getElementById("compat-msg").style.display = "block";
+    document.getElementById("upgrade-msg").style.display = "none";
+    document.getElementById("download-info").style.display = "none";
+}
+
+</script>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footers/3.6/portal-pages.inc.php";
