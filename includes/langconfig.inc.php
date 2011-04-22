@@ -19,7 +19,7 @@ $native_languages = array(
     'bg'        => '&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;',
     'bs'        => 'Bosanski',
     'be'        => 'Беларуская',
-    'br'        => 'breton',
+    'br'        => 'Brezhoneg',
     'bn-IN'     => '&#2476;&#2494;&#2434;&#2482;&#2494;',
     'ca'        => 'Catal&#224;',
     'cs'        => '&#268;e&#353;tina',
@@ -113,10 +113,10 @@ $full_languages = array(
     'as',
     'ast',
     'be',
-    'br', // remap to fr
     'bg',
     'bn-IN',
     'bn-BD',
+    'br',
     'bs', // Remap to en-US
     'ca',
     'cs',
@@ -210,7 +210,6 @@ $full_languages = array(
  */
 $lang_remap = array(
     'ak'        => 'en-GB',
-    'br'        => 'fr',
     'bs'        => 'en-GB',
     'en'        => 'en-US',
     'en-za'     => 'fr',
