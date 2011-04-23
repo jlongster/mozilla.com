@@ -12,7 +12,7 @@
             dessen <a href="http://www.mozilla.org/projects">Software</a> verwendet wurde, um einige der besten Anwendungen des Internets zu entwickeln.</p>
     </div>
 
-    <p>Wir glauben, dass das Internet als wichtigste soziale und technologische Entwicklung unserer Zeit ein öffnentliches Gut ist, das verbessert und geschützt werden muss.</p>
+    <p>Wir glauben, dass das Internet als wichtigste soziale und technologische Entwicklung unserer Zeit ein öffentliches Gut ist, das verbessert und geschützt werden muss.</p>
 
     <p>Die <a href="http://www.mozilla.org/foundation">Mozilla-Stiftung</a> ist eine gemeinnützige Organisation, die sich für diese Ziele engagiert, aber die wahre Kraft hinter Mozilla sind Menschen auf der ganzen Welt, die dafür arbeiten, dass das Internet so ist, wie sie es möchten. <a href="http://www.mozilla.org/contribute">Und Sie können helfen</a>!</p>
 </div>
