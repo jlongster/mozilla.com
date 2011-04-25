@@ -37,6 +37,9 @@ return array(
     'css_firstrun4' => array(
         '//style/firefox/4/firstrun-page.css'
     ),
+    'css_whatsnew4' => array(
+        '//style/firefox/4/whatsnew-page.css'
+    ),
     'js_portal_header' => array(
         '//js/util.js',
     ),
