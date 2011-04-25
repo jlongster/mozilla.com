@@ -109,6 +109,10 @@ class MozillaCom_MenuData
                             'title' => 'Tour',
                             'href'  => "/{$this->lang}/firefox/central/",
                         ),
+                        'submenu_future' => array(
+                            'title' => 'Future Releases',
+                            'href'  => "/{$this->lang}/firefox/channel/",
+                        ),
                     ),
                 ),
 
