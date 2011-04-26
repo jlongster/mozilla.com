@@ -7,7 +7,6 @@ $(document).ready(function() {
     var overlayed = pane.css('position') == 'absolute';
     
     $(window).click(function(e) {
-        console.debug(e);
         if(overlayed) {
             close();
         }
@@ -15,7 +14,6 @@ $(document).ready(function() {
 
     $('.inline-email-form').click(function(e) {
         if(overlayed) {
-            console.debug('stopping');
             e.stopPropagation();
         }
     });

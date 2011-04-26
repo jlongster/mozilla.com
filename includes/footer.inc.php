@@ -20,15 +20,28 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
 	<!-- start #footer -->
 	<div id="sub-footer">
 		<div id="sub-footer-contents">
-		<ul>
-			<li id="footer-connect">
-                          <a href="/{$lang}/firefox/connect/" 
-                             onclick="dcsMultiTrack('DCS.dcsuri', '/{$lang}/firefox/connect/', 'WT.ti', 'Connect');">
-                            More Ways to Connect
-                          </a>
-                        </li>
-		</ul>
-		<div id="sub-footer-newsletter">
+                  <h3>Let’s be <span>friends!</span></h3>
+                  <ul>
+                    <li id="footer-twitter">
+                      <a href="http://twitter.com/firefox" 
+                         onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com', 'DCS.dcsuri', '/firefox', 'WT.ti', 'Twitter');">
+                        Twitter
+                      </a>
+                    </li>
+                    <li id="footer-facebook">
+                      <a href="http://facebook.com/Firefox" 
+                         onclick="dcsMultiTrack('DCS.dcssip', 'facebook.com', 'DCS.dcsuri', '/Firefox', 'WT.ti', 'Facebook');">
+                        Facebook
+                      </a>
+                    </li>
+                    <li id="footer-connect">
+                      <a href="/<?=$lang?>/firefox/connect/" 
+                         onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/connect/', 'WT.ti', 'Connect');">
+                        More Ways to Connect
+                      </a>
+                    </li>
+                  </ul>
+		  <div id="sub-footer-newsletter">
     <?php require "{$config['file_root']}/includes/newsletter.inc.php"; ?>
 		</div>
 
