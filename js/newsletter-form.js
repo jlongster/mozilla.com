@@ -1,71 +1,84 @@
 $(document).ready(function() {
 
-        var email_open = $('#email-form input[name=email]').not(':hidden');
+    var email_open = $('.inline-email-form .email-form input[name=email]').not(':hidden');
 
-	var opened = (function() {
-		var ul = $('#email-form ul');
-		return ul.hasClass('error');
-	})();
+    var pane = $('.inline-email-form .form-pane');
+    var opened = $('.inline-email-form ul').hasClass('error');
+    var overlayed = pane.css('position') == 'absolute';
+    
+    $(window).click(function() {
+        if(overlayed) {
+            close();
+        }
+    });
 
-	function scrollTo(id, time)
-	{
-            // Disable this functionality because it's jarring to users
-            // (discovered by putting form in footer of every page)
-            // jwl, bug 630638
-            // $('html, body')
-	    // 	.animate(
-	    // 		{ scrollTop: $(id).offset().top }, time
-	    // 	);
+    $('.inline-email-form').click(function(e) {
+        if(overlayed) {
+            e.stopPropagation();
+        }
+    });
+
+    function open()
+    {
+	if (!opened) {
+	    $('#whatsnew .newsletter').css('height', 'auto');
+	    $('.inline-email-form .form-pane').fadeIn();
+	    $('.inline-email-form .form-pane select[name=country]').focus();
+
+	    opened = true;
 	}
+    }
 
-	function open()
-	{
-		if (!opened) {
-			scrollTo('#email-form', 500);
+    function close() {
+        $('.inline-email-form .form-pane').hide();
+        $('.inline-email-form .email-open').removeClass('opened');
 
-			$('#whatsnew #newsletter').css('height', 'auto');
-			$('#form-pane').fadeIn();
-			$('#form-pane select[name=country]').focus();
+        opened = false;
+    }
 
-			opened = true;
-		}
-	}
+    if (email_open) {
 
-	if (email_open) {
+	$('.inline-email-form').submit(function(e) {
+	    if (!opened) {
+		e.preventDefault();
+		open();
+	    }
+	});
+        
+	$('.inline-email-form .email-open').click(function(e) {
+	    e.preventDefault();
 
-		$('#email-form').submit(function(e) {
-			if (!opened) {
-				e.preventDefault();
-				open();
-			}
-		});
+	    if (!opened) {
+		$(this).addClass('opened');
+		var uri = $(this).attr('data-wt_uri');
+		var ti = $(this).attr('data-wt_ti');
+		dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
+	    }
 
-		$('#email-open').click(function(e) {
-			e.preventDefault();
+	    open();
+	});
 
-			if (!opened) {
-				$(this).addClass('opened');
-				var uri = $(this).attr('data-wt_uri');
-				var ti = $(this).attr('data-wt_ti');
-				dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
-			}
+        if(opened) {
+            $('html, body').animate({
+                scrollTop: $('.inline-email-form').offset().top
+            }, 500);
 
-			open();
-		});
+            $('a.email-open').addClass('opened')
+        }
 
-	} else {
+    } else {
 
-	    $('#email-form a:first').click(function(e) {
-			e.preventDefault();
+	$('.inline-email-form a:first').click(function(e) {
+	    e.preventDefault();
 
-			$(this).hide();
-			var uri = $(this).attr('data-wt_uri');
-			var ti = $(this).attr('data-wt_ti');
-			dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
+	    $(this).hide();
+	    var uri = $(this).attr('data-wt_uri');
+	    var ti = $(this).attr('data-wt_ti');
+	    dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
 
-			$('#form-pane').fadeIn();
-			$('#form-pane input[name=email]').focus();
-		});
+	    $('.form-pane').fadeIn();
+	    $('.form-pane input[name=email]').focus();
+	});
 
-	}
+    }
 });

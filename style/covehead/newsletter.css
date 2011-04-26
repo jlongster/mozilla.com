@@ -17,78 +17,91 @@
 
 }
 
-#newsletter ul#email-form {
+#newsletter-form {
     left: auto;
     position: relative;
 }
 
-#newsletter ul#email-form li {
+#newsletter-form li {
     list-style-type: none;
     padding: 0;
     background: none;
 }
 
-#email-form .field {
+#newsletter-form .field {
     clear: left;
     padding: 8px 0;
 }
 
-#email-form label,
-#email-form .field-label {
+#newsletter-form label,
+#newsletter-form .form-pane label,
+#newsletter-form .field-label {
     text-align: right;
     float: left;
     display: inline;
     width: 170px;
     padding: 3px 10px 5px 0;
 }
-#email-form .required label {
+#newsletter-form .required label {
     font-weight: bold;
 }
-#email-form #format-field label {
-    margin-left: 20px;
-    width: auto;
-    float: none;
-}
-#email-form #format-field input {
-    width: auto;
-    float: none;
-}
 
-#email-form input,
-#email-form .field-radios,
-#email-form select {
+#newsletter-form input,
+#newsletter-form .field-radios,
+#newsletter-form select {
     float: left;
     display: inline;
     width: 250px;
     font-size: 13px;
 }
 
-#email-form #submit-field {
+#newsletter-form .format-field input {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+#newsletter-form .radio-wrapper {
+    padding-top: 5px;
+}
+
+#newsletter-form .form-pane {
+    display: block;
+}
+
+#newsletter-form .format-field input,
+#newsletter-form .format-field label {
+    width: auto;
+}
+
+#newsletter-form .submit-field {
     margin-left: 177px;
 }
 
-#email-form #privacy-field {
+#newsletter-form .privacy-field {
     margin-left: 177px;
 }
 
-#email-form #extra-news-field {
+#newsletter-form .extra-news-field {
     margin-left: 177px;
 }
 
-#email-form #privacy-field label span {
+#newsletter-form .privacy-field label span {
     float: left;
     padding: 2px;
     margin: 2px;
 }
 
-#email-form .form-error {
+#newsletter-form .form-error {
     width: 215px;
     position: absolute;
     top: 0;
     left: 420px;
+    background: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 
-#email-form p.form-error span {
+#newsletter-form p.form-error span {
     display: block;
     background: #b11a04;
     color: #fff;
@@ -100,55 +113,53 @@
     -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-#email-form #country-field select {
+#newsletter-form #country-field select {
     margin: 2px;
 }
 
-#email-form #privacy-field input {
+#newsletter-form .form-pane .privacy-field input {
     vertical-align: text-top;
     float: none;
     width: inherit;
 }
 
-#email-form #privacy-field label {
+#newsletter-form .privacy-field label {
     width: inherit;
 }
 
-#email-form label#privacy-check-label span.title {
+#newsletter-form label.privacy-check-label span.title {
     float: left;
     display: inline;
     padding-top: 5px;
 }
 
-#email-form .text {
+#newsletter-form .text {
     clear: both;
     width: 350px;
     margin-left: 180px;
 }
 
-#email-form .one-time label {
+#newsletter-form .one-time label {
     text-align: left;
     width: 300px;
     margin-left: 10px;
 }
 
-#email-form .one-time input {
+#newsletter-form .one-time input {
     width: auto;
     margin-left: 185px;
 }
 
-#form-pane {
+#newsletter-form .form-pane {
     background: #fff;
     width: 540px;
 }
 
-#success-pane {
+#newsletter-form .success-pane {
     width: 300px;
-    background: #fff url(/img/news/envelope.png) 135px 30px no-repeat;
-    padding-left: 170px;
 }
 
-#success-pane h3 {
+#newsletter-form .success-pane h3 {
     background: url(/img/news/check.png) 100% 100% no-repeat;
     padding-top: 25px;
     padding-right: 30px;
@@ -156,7 +167,7 @@
     margin: 0;
 }
 
-#success-pane #stay-connected {
+#newsletter-form .success-pane .stay-connected {
     display: inline-block;
     border: 0;
     background: url(/img/news/button.png) -166px 0 no-repeat;
@@ -170,7 +181,7 @@
     line-height: 30px;
 }
 
-#email-form #subscribe {
+#newsletter-form .subscribe {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 14px;
     padding: 8px 40px;
@@ -195,8 +206,8 @@
     transition:        box-shadow 0.2s ease-in-out;
 }
 
-#email-form #subscribe:hover,
-#email-form #subscribe:active {
+#newsletter-form .subscribe:hover,
+#newsletter-form .subscribe:active {
     -moz-box-shadow:    0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
     -webkit-box-shadow: 0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
     box-shadow:         0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
@@ -204,7 +215,7 @@
     -webkit-transition: box-shadow 0.2s ease-in-out;
     transition:         box-shadow 0.2s ease-in-out;
 }
-#disclaimer {
+#newsletter-form .disclaimer {
     margin-left: 177px;
     font-size: 0.9em;
     clear: both;
@@ -236,26 +247,26 @@
     line-height: 1.1em;
 }
 
-.newsletter-aboutmozilla #email-form .field,
-.newsletter-thisweek #email-form .field {
+.newsletter-aboutmozilla .email-form .field,
+.newsletter-thisweek .email-form .field {
     padding: 5px 0;
 }
 
-.newsletter-aboutmozilla #email-form .required label,
-.newsletter-aboutmobile #email-form .required label,
-.newsletter-thisweek #email-form .required label {
+.newsletter-aboutmozilla .email-form .required label,
+.newsletter-aboutmobile .email-form .required label,
+.newsletter-thisweek .email-form .required label {
     font-weight: normal;
 }
 
-.newsletter-aboutmozilla #email-form #subscribe,
-.newsletter-aboutmobile #email-form #subscribe,
-.newsletter-thisweek #email-form #subscribe {
+.newsletter-aboutmozilla .email-form .subscribe,
+.newsletter-aboutmobile .email-form .subscribe,
+.newsletter-thisweek .email-form .subscribe {
     width: 150px;
 }
 
-.newsletter-aboutmozilla #email-form #disclaimer,
-.newsletter-aboutmobile #email-form #disclaimer,
-.newsletter-thisweek #email-form #disclaimer {
+.newsletter-aboutmozilla .email-form .disclaimer,
+.newsletter-aboutmobile .email-form .disclaimer,
+.newsletter-thisweek .email-form .disclaimer {
     margin-left: 177px;
     font-size: .9em;
     padding-top: 5px;

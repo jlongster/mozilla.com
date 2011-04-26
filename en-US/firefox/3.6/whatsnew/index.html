@@ -63,9 +63,11 @@ if ($_version !== null && $_valid_version) {
 
 <div id="sidebar">
 
-<?php include "{$config['file_root']}/includes/newsletter.inc.php" ?>
-
-</div>
+<?php 
+   $newsletter_snippet = "<p>Product info, tips & tricks and much more.</p>";
+   $newsletter_class = "sub-feature";
+   include "{$config['file_root']}/includes/newsletter.inc.php";
+?>
 
     <div class="sub-feature" id="personalize">
         <div id="personalize-live" class="container">

@@ -212,12 +212,12 @@ h2 {
 	list-style-type: none;
 }
 
-#connect #email-form ul {
+#connect .email-form ul {
 	float: left;
 	width: 550px;
 }
 
-#connect #email-form #email-title {
+#connect .email-form #email-title {
 	display: block;
 	padding: 5px 0 5px 50px;
 	font-style: italic;
@@ -230,12 +230,12 @@ h2 {
 	margin-right: 12px;
 }
 
-#connect #email-form #open-pane a:hover,
-#connect #email-form #open-pane a:active {
+#connect .email-form #open-pane a:hover,
+#connect .email-form #open-pane a:active {
     text-decoration: none;
 }
 
-#connect #email-form #email-title span {
+#connect .email-form #email-title span {
     display: block;
 	font-family: MetaBlack, "Trebuchet MS", sans-serif;
 	font-weight: bold;
@@ -247,10 +247,14 @@ h2 {
 	white-space: nowrap;
 }
 
-#connect #email-field {
+#connect .email-field {
 	padding-top: 21px;
 	margin-left: 240px;
 	display: block;
+}
+
+#connect .open-pane h3 {
+    display: none;
 }
 
 #connect p {
@@ -303,7 +307,7 @@ h2 {
 /* }}} */
 /* {{{ Newsletter Form */
 
-#email-form #email-open {
+.email-form .email-open {
 	display: inline-block;
 	width: 26px;
 	height: 24px;
@@ -328,77 +332,84 @@ h2 {
 	border-radius: 7px;
 }
 
-#email-form ul.error #email-open,
-#email-form #email-open.opened {
+.email-form ul.error .email-open,
+.email-form .email-open.opened {
 	-moz-box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
 	box-shadow: -2px 0 1px #6a95cc inset, 2px 0 0 rgba(0,0,0,0.2);
 	opacity: 0.5;
 	cursor: default;
 }
-#email-form ul.error #email-open:active,
-#email-form ul.error #email-open:focus,
-#email-form #email-open.opened:active,
-#email-form #email-open.opened:focus {
+.email-form ul.error .email-open:active,
+.email-form ul.error .email-open:focus,
+.email-form .email-open.opened:active,
+.email-form .email-open.opened:focus {
 	outline: none;
 }
 
-#email-form #form-pane {
+.email-form .form-pane {
 	display: none;
 }
 
-#email-form ul.error #form-pane {
+.email-form ul.error .form-pane {
 	display: block;
 }
 
-#form-pane #form-details,
-#success-pane p {
+.form-pane .form-details,
+.success-pane p {
 	color: #555;
 	font-size: 14px;
 	line-height: 1.2;
 }
-#firstrun #form-pane #form-details {
+#firstrun .form-pane .form-details {
 	margin-left: 240px;
 }
-#success-pane p {
+.success-pane p {
 	padding: 10px 0;
 }
 
-#form-pane,
-#success-pane {
+.form-pane,
+.success-pane {
 	clear: left;
 	position: relative;
+        display: none;
 }
 
-#success-pane h3 {
+.success-pane h3 {
 	font-weight: normal;
 	font-style: italic;
 	margin: 0;
 }
 
-#success-pane h3 img {
+.success-pane h3 img {
 	position: absolute;
 	top: -12px;
 	right: 0;
 }
 
-#form-pane p.intro {
+#connect .form-pane p.intro {
 	width: 170px;
 	float: left;
 	margin: 5px 0 0 50px;
 	font-size: 13px;
 }
 
-#firstrun #form-pane p.footnote,
-#whatsnew #sidebar #form-pane p.footnote {
-	color: #999
-}
-#whatsnew #sidebar #form-pane p.footnote {
-	margin: 0;
-	font-size: 10px;
+#firstrun .footnote {
+    font-size: 12px;
+    padding: 3px 0;
 }
 
-#email-form select#country,
-#email-form input#email {
+#firstrun .form-pane p.footnote,
+#whatsnew #sidebar .form-pane p.footnote {
+	color: #999
+}
+#whatsnew #sidebar .form-pane p.footnote {
+	margin: 0;
+	font-size: 10px;
+        padding: 5px 0;
+}
+
+.email-form select.country,
+.email-form input.email {
 	color: #555;
     background: #fff;
 	border-width: 1px;
@@ -407,41 +418,41 @@ h2 {
 	-moz-border-radius: 3px;
 }
 
-#email-form input#email {
+.email-form input.email {
 	width: 218px;
 	border-color: #aaa #cdcdcd #cdcdcd #aaa;
 	-moz-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
 }
-#whatsnew #email-form input#email {
+#whatsnew .email-form input.email {
 	width: 200px;
 }
 
-#email-form input#email:-moz-placeholder {
+.email-form input.email:-moz-placeholder {
 	color: #999;
 }
-#email-form input#email.placeholder {
+.email-form input.email.placeholder {
 	color: #999;
 }
 
-#email-form input#email:focus {
+.email-form input.email:focus {
 }
 
-#form-pane #country-field {
+.form-pane .country-field {
 	padding: 12px 2px 2px 2px;
 }
 
-#email-form select#country {
+.email-form select.country {
 	width: 225px;
 	color: #555;
 	border-color: #cdcdcd #aaa #aaa #cdcdcd;
 	font-size: 14px;
 	-moz-box-shadow: inset -1px -1px 2px rgba(0,0,0,0.1);
 }
-#whatsnew #email-form select#country {
+#whatsnew .email-form select.country {
 	width: 208px;
 }
 
-#email-form #form-pane input#subscribe {
+.email-form .form-pane input.subscribe {
 	background: -moz-linear-gradient(
 		center top,
 		#669be1 0%,
@@ -461,13 +472,13 @@ h2 {
 		0 -3px 0 rgba(0,0,0,0.1) inset;
 }
 
-#email-form #form-pane input#subscribe:hover {
+.email-form .form-pane input.subscribe:hover {
 	-moz-box-shadow:
 		0 3px 0 rgba(0, 0, 0, 0.1),
 		0 -3px 0 rgba(0,0,0,0.1) inset,
 		0 -1px 80px rgba(0,0,0,0.1) inset;
 }
-#email-form #form-pane input#subscribe:active {
+.email-form .form-pane input.subscribe:active {
 	position: relative;
 	top: 1px;
 	-moz-box-shadow:
@@ -476,22 +487,26 @@ h2 {
 		0 -1px 80px rgba(0,0,0,0.1) inset;
 }
 
-#email-form #form-pane label {
+.email-form .form-pane label {
 	display: block;
 	padding: 10px 0 0 0;
 }
 
-#meil-form #form-pane label input {
+.meil-form .form-pane label input {
 	vertical-align: middle;
 }
 
-#email-form #form-pane .form-error input#email {
+.email-form .form-pane .form-error input.email {
 	border-width: 2px;
 	padding: 2px;
 	border-color: #cc4927;
 }
 
-#email-form #privacy-field .error-wrapper {
+.email-form .privacy-field {
+    font-size: 12px;
+}
+
+.email-form .privacy-field .error-wrapper {
 	border: 2px solid transparent;
 	display: inline-block;
 	padding: 2px;
@@ -499,12 +514,12 @@ h2 {
 	line-height: 0.8;
 }
 
-#email-form #form-pane label#privacy-check-label a {
+.email-form .form-pane label.privacy-check-label a {
 	text-decoration: underline;
 }
 
-#whatsnew #sidebar #email-form p.form-error,
-#email-form p.form-error {
+#whatsnew #sidebar .email-form p.form-error,
+.email-form p.form-error {
 	z-index: 1000;
 	display: none;
 	border: none;
@@ -523,23 +538,23 @@ h2 {
 		0 3px 0 rgba(0,0,0,0.1),
 		0 1px 10px rgba(0,0,0,0.2);
 }
-#whatsnew #sidebar #email-form p.form-error {
+#whatsnew #sidebar .email-form p.form-error {
 	left: 217px;
 }
 
-#email-form p.form-error-visible {
+.email-form p.form-error-visible {
 	display: block;
 }
 
-#email-form #format-field {
+.email-form .format-field {
 	padding-top: 10px;
 }
 
-#email-form #form-pane #privacy-field {
+.email-form .form-pane .privacy-field {
 	clear: none;
 }
 
-#email-form .radio-wrapper {
+.email-form .radio-wrapper {
 	padding: 1px 4px;
 	float: left;
 	margin: 0;
@@ -547,33 +562,39 @@ h2 {
 	display: inline-block;
 }
 
-#email-form #form-pane #format-field label {
+.email-form .form-pane .format-field label {
 	padding: 0;
 	margin: 0 12px 0 0;
 	width: auto;
 	float: left;
 }
 
-#email-form #form-pane #format-field input {
+.email-form .form-pane .format-field input {
 	width: auto;
 	float: none;
 	margin: 0 4px;
 }
 
-#email-form .error-email #email-error { display: block !important; }
-#email-form .error-privacy #privacy-error { display: block !important; }
+.email-form .error-email .email-error { display: block !important; }
+.email-form .error-privacy .privacy-error { display: block !important; }
 
-#email-form .error-email #email-field .error-wrapper {
+.email-form .error-wrapper {
+    display: inline-block;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.email-form .error-email .email-field .error-wrapper {
 	background: #b11a04;
 }
-#email-form .error-privacy #privacy-field .error-wrapper {
+.email-form .error-privacy .privacy-field .error-wrapper {
 	border-color: #b11a04;
 	background: #eb7a6b;
 }
 
-#email-form .success #open-pane { display: none !important; }
-#email-form .success #form-pane { display: none !important; }
-#email-form .success #success-pane { display: block !important; }
+.email-form .success .open-pane { display: none !important; }
+.email-form .success .form-pane { display: none !important; }
+.email-form .success .success-pane { display: block !important; }
 
 
 /* }}} */
@@ -794,7 +815,7 @@ h2 {
 
 #whatsnew #sidebar .sub-feature {
 	float: left;
-	height: 120px;
+	min-height: 120px;
 	width: 250px;
 	padding: 10px 20px;
 	margin-right: 20px;
@@ -819,7 +840,7 @@ h2 {
     min-height: 30px;
 }
 
-#whatsnew #sidebar #success-pane h3 {
+#whatsnew #sidebar .success-pane h3 {
 	margin-right: 85px;
 	padding-top: 10px;
 }
@@ -830,7 +851,7 @@ h2 {
 	margin-right: 85px;
 }
 
-#whatsnew #sidebar #success-pane p,
+#whatsnew #sidebar .success-pane p,
 #whatsnew #sidebar #flash-plus-beta p {
 	margin-right: 0;
 }

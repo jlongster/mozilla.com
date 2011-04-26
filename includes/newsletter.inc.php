@@ -2,34 +2,46 @@
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $newsletter_class = empty($newsletter_class) ? '' : $newsletter_class;
+    $newsletter_snippet = empty($newsletter_snippet) ? '' : $newsletter_snippet;
+    $newsletter_form_snippet = empty($newsletter_form_snippet) ? '' : $newsletter_form_snippet;
+
     $status = '';
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
+
+    if(isset($_POST['target']) && $_POST['target'] == 'inline') {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+        if ($form->save()) {
+            $status = 'success';
+        } elseif ($form->error) {
+            $status = 'error error-'. $form->error;
+        }
+    }
+    else {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     }
 ?>
 
-<script src="/js/newsletter-form.js"></script>
-<div class="newsletter-signup <?= $status ?>" id="newsletter">
+<div class="newsletter-signup <?= $newsletter_class ?> <?= $status ?> " id="newsletter">
   <div class="container">
 
-    <form id="email-form" action="#email-form" method="post">
+    <form class="email-form inline-email-form" action="#email-form" method="post">
+      <input type="hidden" name="target" value="inline" />
+
       <ul class="<?= $status ?>">
-        <li id="open-pane" data-wt_uri="<?= $newsletter_wt_blade_uri ?>" data-wt_ti="<?= $newsletter_wt_blade_ti ?>">
+        <li class="open-pane" data-wt_uri="<?= $newsletter_wt_blade_uri ?>" data-wt_ti="<?= $newsletter_wt_blade_ti ?>">
           <h3>Get Monthly News</h3>
-          <div id="email-field" class="field">
+          <?= $newsletter_snippet ?>
+          <div class="email-field" class="field">
             <span class="error-wrapper">
               <input
-                 id="email"
+                 class="email"
                  name="email"
                  type="email"
                  placeholder="Your Email Address"
                  value="<?= $form->get('email') ?>"
                  class="<?= ($form->get('email') == '') ? 'placeholder' : '' ?>">
             </span>
-            <a id="email-open"
+            <a class="email-open"
                href="/<?php echo $lang; ?>/newsletter/"
                onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                         'DCS.dcsuri', '/mainstream_newsletter/step1', 
@@ -39,13 +51,14 @@
                         'WT.ac', 'Newsletter');">»</a>
           </div>
         </li>
-        <li id="form-pane">
-          <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
-          <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
-          <div id="form-details">
+        <li class="form-pane">
+          <?= $newsletter_form_snippet ?>
+          <p class="form-error email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
+          <p class="form-error privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+          <div class="form-details">
 
-            <div class="field" id="country-field">
-              <select id="country" name="country">
+            <div class="field country-field">
+              <select class="country" name="country">
                 <option value="">Select country</option>
                 <?php
                    $country = $form->get('country');
@@ -57,7 +70,7 @@
               </select>
             </div>
 
-            <div class="field" id="format-field">
+            <div class="field format-field">
               <?php
                  $html_format = 'checked="checked"';
                  $text_format = '';
@@ -67,21 +80,21 @@
               }
               ?>
               <div class="field-radios">
-                <span class="radio-wrapper"><input type="radio" name="format" id="html-format" value="html" <?= $html_format?>></span>
+                <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
                 <label for="html-format">HTML</label>
-                <span class="radio-wrapper"><input type="radio" name="format" id="text-format" value="text" <?= $text_format?>></span>
+                <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
                 <label for="text-format">Text</label>&nbsp;
               </div>
             </div>
 
-            <div id="privacy-field">
+            <div class="privacy-field">
               <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
-              <label for="privacy-check" id="privacy-check-label">
-                <span class="error-wrapper"><input type="checkbox" id="privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+              <label for="privacy-check" class="privacy-check-label">
+                <span class="error-wrapper"><input type="checkbox" class="privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
               </label>
             </div>
 
-            <input name="submit" type="submit" value="Sign me up!" id="subscribe"
+            <input name="submit" type="submit" value="Sign me up!" class="subscribe"
                    onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                             'DCS.dcsuri', '/mainstream_newsletter/signup',
                             'WT.ti', 'Link: Sign me up - Second Step',
@@ -92,7 +105,7 @@
           </div>
 
         </li>
-        <li id="success-pane">
+        <li class="success-pane">
           <h3>Thanks for Subscribing!</h3>
           <p>We look forward to soon begin sharing tips &amp; tricks on getting the most out of Firefox, as well as exciting news about Mozilla and how we’re working to create a better Web.</p>
         </li>
@@ -100,3 +113,9 @@
     </form>
   </div>
 </div>
+
+<?php
+   $newsletter_class = '';
+   $newsletter_snippet = '';
+   $newsletter_form_snippet = '';
+?>

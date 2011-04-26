@@ -14,6 +14,7 @@ return array(
         '//js/util.js',
         '//js/jquery/jquery.min.js',
         '//js/nav-main.js',
+        '//js/newsletter-form.js'
     ),
     'js_utils' => array(
       '//js/util.js',
@@ -24,11 +25,9 @@ return array(
     'css' => array(
         '//style/covehead/template.css',
         '//style/covehead/content.css',
-        '//style/email-form.css'
     ),
     'css_firstrun' => array(
-        '//style/firefox/3.6/firstrun-page.css',
-        '//style/email-form.css'
+        '//style/firefox/3.6/firstrun-page.css'
     ),
     'css_home' => array(
         '//style/covehead/home.css',
