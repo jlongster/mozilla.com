@@ -6,7 +6,8 @@ $(document).ready(function() {
     var opened = $('.inline-email-form ul').hasClass('error');
     var overlayed = pane.css('position') == 'absolute';
     
-    $(window).click(function() {
+    $(window).click(function(e) {
+        console.debug(e);
         if(overlayed) {
             close();
         }
@@ -14,6 +15,7 @@ $(document).ready(function() {
 
     $('.inline-email-form').click(function(e) {
         if(overlayed) {
+            console.debug('stopping');
             e.stopPropagation();
         }
     });
@@ -58,12 +60,12 @@ $(document).ready(function() {
 	    open();
 	});
 
-        if(opened) {
+        if(opened || $('.inline-email-form .success-pane').not(':hidden').length) {
             $('html, body').animate({
                 scrollTop: $('.inline-email-form').offset().top
             }, 500);
 
-            $('a.email-open').addClass('opened')
+            $('a.email-open').addClass('opened');
         }
 
     } else {

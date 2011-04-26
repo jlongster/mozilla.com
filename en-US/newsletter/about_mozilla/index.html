@@ -4,8 +4,7 @@
     $body_id    = 'newsletter';
     $body_class    = 'newsletter-aboutmozilla';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter-old.css" media="screen">
     <style>
         #newsletter #doc {
           background-image: url('/img/newsletter/about_mozilla/preview.png');
@@ -17,12 +16,18 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new NewsletterForm('ABOUT_MOZILLA', $_POST);
     $status = '';
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error-'. $form->error;
+
+    if(isset($_POST['target']) && $_POST['target'] == 'main') {
+        $form = new NewsletterForm('ABOUT_MOZILLA', $_POST);
+        if ($form->save()) {
+            $status = 'success';
+        } elseif ($form->error) {
+            $status = 'error-'. $form->error;
+        }
+    }
+    else {
+        $form = new NewsletterForm('ABOUT_MOZILLA', array());
     }
 ?>
 
@@ -36,6 +41,8 @@ EXTRA_HEADERS;
 <ul id="email-form" class="<?= $status ?>">
     <li id="form-pane">
       <form action="" method="post">
+        <input type="hidden" name="target" value="main" />
+
         <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
         <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
 

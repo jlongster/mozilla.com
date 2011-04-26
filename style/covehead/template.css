@@ -904,7 +904,8 @@ body {
 	border-color: #cc4927;
 }
 
-.email-form .error-wrapper {
+.email-form .error-wrapper,
+#email-form .error-wrapper {
 	display: inline-block;
 	padding: 2px;
 	-moz-border-radius: 4px;
@@ -917,7 +918,8 @@ body {
 }
 
 #whatsnew #sidebar .email-form p.form-error,
-.email-form p.form-error {
+.email-form p.form-error,
+#email-form p.form-error {
 	z-index: 1000;
 	display: none;
 	border: none;
@@ -974,22 +976,43 @@ body {
 	margin: 0 4px;
 }
 
-.error-email .email-error { display: block !important; }
-.error-privacy .privacy-error { display: block !important; }
+.error-email .email-error,
+.error-email #email-error { 
+    display: block !important; 
+}
 
-.error-email .email-field .error-wrapper {
+.error-privacy .privacy-error,
+.error-privacy #privacy-error {
+    display: block !important;
+}
+
+.error-email .email-field .error-wrapper,
+.error-email #email-field .error-wrapper {
 	background: #b11a04;
 }
-.error-privacy .privacy-field .error-wrapper {
+.error-privacy .privacy-field .error-wrapper,
+.error-privacy #privacy-field .error-wrapper {
 	border-color: #b11a04;
 	background: #eb7a6b;
 }
 
-.success .open-pane { display: none !important; }
-.success .form-pane { display: none !important; }
-.success .success-pane { display: block !important; }
+.success .open-pane,
+.success #open-pane {
+    display: none !important; 
+}
+
+.success .form-pane,
+.success #form-pane {
+    display: none !important; 
+}
+
+.success .success-pane,
+.success #success-pane {
+    display: block !important;
+}
 
 .success-pane,
+#success-pane,
 .form-pane {
     display: none;
 }
@@ -997,6 +1020,10 @@ body {
 #sub-footer #newsletter {
     position: relative;
     overflow: visible;
+}
+
+#sub-footer #newsletter .success-pane p {
+    color: white;
 }
 
 #sub-footer .form-pane {

@@ -24,7 +24,7 @@
 <div class="newsletter-signup <?= $newsletter_class ?> <?= $status ?> " id="newsletter">
   <div class="container">
 
-    <form class="email-form inline-email-form" action="#email-form" method="post">
+    <form class="email-form inline-email-form" action="#subscribe-form" method="post">
       <input type="hidden" name="target" value="inline" />
 
       <ul class="<?= $status ?>">
@@ -80,17 +80,17 @@
               }
               ?>
               <div class="field-radios">
-                <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
-                <label for="html-format">HTML</label>
-                <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
-                <label for="text-format">Text</label>&nbsp;
+                <span class="radio-wrapper"><input type="radio" name="format" class="html-format" id="inline-html-format" value="html" <?= $html_format?>></span>
+                <label for="inline-html-format">HTML</label>
+                <span class="radio-wrapper"><input type="radio" name="format" class="text-format" id="inline-text-format" value="text" <?= $text_format?>></span>
+                <label for="inline-text-format">Text</label>&nbsp;
               </div>
             </div>
 
             <div class="privacy-field">
               <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
-              <label for="privacy-check" class="privacy-check-label">
-                <span class="error-wrapper"><input type="checkbox" class="privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+              <label for="inline-privacy-check" class="privacy-check-label">
+                <span class="error-wrapper"><input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
               </label>
             </div>
 
