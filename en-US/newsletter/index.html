@@ -3,7 +3,6 @@
     $page_title = 'Mozilla Newsletter';
     $body_id    = 'newsletter';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
 EXTRA_HEADERS;
 
@@ -106,11 +105,13 @@ EXTRA_HEADERS;
 
 <?php if ($status == 'success'): ?>
   <script>
-    dcsMultiTrack('WT.si_n', 'Main Newsletter Subscribe', 'WT.si_x', '1', 'WT.si_cs', '1');
+    $(function() {
+        dcsMultiTrack('WT.si_n', 'Main Newsletter Subscribe', 'WT.si_x', '1', 'WT.si_cs', '1');
+      });
   </script>
 <?php endif ?>
 
-<script src="{$config['static_prefix']}/js/autofocus.js"></script>
+<script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
