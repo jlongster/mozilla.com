@@ -132,11 +132,16 @@ p {
     margin-bottom: 20px;
     height: 268px;
     position: relative;
-    background: url(/img/firefox/4.0/whatsnew/feature.jpg) 0 0 no-repeat;
+    background-position: 0 0;
+    background-repeat: no-repeat;
 }
 
-.mac   #main-content { background-image: url(/img/firefox/4.0/whatsnew/feature-mac.jpg); }
-.linux #main-content { background-image: url(/img/firefox/4.0/whatsnew/feature-linux.jpg); }
+#main-content.default {
+    background-image: url(/img/firefox/4.0/whatsnew/feature.jpg);
+}
+
+.mac   #main-content.default { background-image: url(/img/firefox/4.0/whatsnew/feature-mac.jpg); }
+.linux #main-content.default { background-image: url(/img/firefox/4.0/whatsnew/feature-linux.jpg); }
 
 #main-content #intro {
     padding: 35px 40px;
@@ -177,6 +182,71 @@ p {
     bottom: 168px;
     width: 150px;
 }
+
+/* }}} */
+/* {{{ Web Hero Promo */
+
+#main-content.webhero #intro h3 {
+    font-size: 48px;
+    width: 220px;
+    line-height: 0.9;
+    margin-bottom: 10px;
+}
+
+#main-content.webhero #intro p {
+    color: #666;
+    font-size: 16px;
+}
+
+#main-content.webhero #intro a {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #484848;
+    margin: 10px 0;
+}
+
+#main-content.webhero #hero {
+    position: absolute;
+    top: 32px;
+    left: 340px;
+}
+
+#main-content.webhero #hero h3 {
+    font-family: LeagueGothicRegular;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 72px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow:
+        1px 1px #f06833,
+        2px 2px #f06833,
+        3px 3px #f06833,
+        4px 4px #f06833,
+        5px 5px #f06833;
+}
+
+#main-content.webhero #hero ul {
+    margin: 0;
+    padding: 5px 0 0 60px;
+    width: 300px;
+}
+
+#main-content.webhero #hero ul li {
+    margin: 0;
+    padding: 5px 5px 0 35px;
+    color: #fff;
+    list-style-type: none;
+    font-size: 24px;
+    font-style: italic;
+    text-shadow: 1px 1px rgba(0,0,0,0.3);
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAcCAYAAAB2+A+pAAABYElEQVRIx72WsWrDMBCG8wh+hMyd/AAd/AgiW6dm69qxo6EP4CljMXQuCDp0LX0CP4LHTsEktNAUyvUOTkU1OutsxxL8i51fn3T3R/JqlXgcri7WpNTQGmVTAgtUh2pQWSpoydAuJbRCAatIAcy4nw5apwyRgzYag5kb9V55qa+5pjwuBNVEqPGgoJqnt1Lg6OcjDwbf30ZTHDD96etpB5rxeX/9z3d6eaTHr6hsCGwlMOnjbgM/+/cKJylDOj0/NP7vjzeXBKx5TXaot5Z7CwMSgxLwGnru4JpwVYoFFLFsuHdcEVD/+alUEbjxshHc7WiwM3y/WZdMsex8DoN0WEwCk4HLL+2+Dez29ixg4dwVwzc0z2iw1/ttBGwXASvg28XAEXi2KJjheS9Y7ZR5JhkYLvZ3MbB3DdLOy6Rgr+f5WcE4Zn2gqS6JnmHN4E66ChVy12I9drUG1cK8IX4I/AIcA2lmCu8tKQAAAABJRU5ErkJggg==);
+}
+
 
 /* }}} */
 /* {{{ Footer */
