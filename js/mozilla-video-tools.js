@@ -215,6 +215,8 @@ Mozilla.VideoPlayer = function(id, sources, flv_url, autoplay)
 
 Mozilla.VideoPlayer.height = 385;
 Mozilla.VideoPlayer.width = 640;
+Mozilla.VideoPlayer.ie6 =
+    ($.browser.msie && parseInt($.browser.version, 10) <= 6);
 
 Mozilla.VideoPlayer.close_text = 'Close';
 
@@ -339,7 +341,6 @@ Mozilla.VideoPlayer.prototype.getFlashPlayerContent = function()
 
 Mozilla.VideoPlayer.prototype.getFallbackContent = function()
 {
-
   var content =
       '<div class="mozilla-video-player-no-flash">'
     + Mozilla.VideoPlayer.fallback_text
@@ -354,19 +355,25 @@ Mozilla.VideoPlayer.prototype.open = function()
   // correctly in IE6
   $('#lang_form').hide();
 
+  if (Mozilla.VideoPlayer.ie6) {
+      this.video_container.css('position', 'absolute');
+      this.overlay.css('position', 'absolute');
+  }
+
   var that = this;
   this.resizeHandler = function(e) {
       that.resizeOverlay();
   };
   $(window).resize(this.resizeHandler);
+  if (Mozilla.VideoPlayer.ie6) {
+    $(window).scroll(this.resizeHandler);
+  }
 
   this.drawVideoPlayer();
   this.resizeOverlay();
 
   this.overlay.fadeTo(400, 0.75);
-  this.video_container
-    .css('top', ($(window).height() - 430) / 2)
-    .fadeIn();
+  this.video_container.fadeIn();
 
   this.opened = true;
 
@@ -378,7 +385,23 @@ Mozilla.VideoPlayer.prototype.open = function()
 
 Mozilla.VideoPlayer.prototype.resizeOverlay = function()
 {
+  if (Mozilla.VideoPlayer.ie6) {
+    var scrollTop    = $(window).scrollTop();
+    var docHeight    = $(document).height();
+    var winHeight    = $(window).height();
+    var playerHeight = 430;
+    var bottom = scrollTop + (winHeight + playerHeight) / 2;
+    if (bottom > docHeight) {
+        // this prevents infinite scroll
+        this.video_container.css('top', docHeight - playerHeight - 10);
+    } else {
+        this.video_container.css('top', scrollTop + (winHeight - playerHeight) / 2);
+    }
+    this.overlay.height(docHeight);
+  } else {
+    this.video_container.css('top', ($(window).height() - 430) / 2);
     this.overlay.height($(window).height());
+  }
 }
 
 Mozilla.VideoPlayer.prototype.close = function()
