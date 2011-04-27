@@ -41,36 +41,29 @@ EXTRA_HEADERS;
             <h3>Customize: <span>Add-ons</span></h3>
             <p>Add features, functionality and personalize Firefox exactly the way you want. See some of our favorite below! Get these and more right from your Add-ons Manager in Firefox for mobile.</p>
         </div>
-        <div id="addons-feature" class="pager pager-with-tabs">
-
-            <ul id="addons-nav" class="pager-tabs">
-                <li id="starter-link"><a href="#feature-starter">Mobile <span>Starter Pack</span></a></li>
-            </ul>
+        <div id="addons-feature" class="pager pager-with-tabs" style="margin-top: 20px;">
 
             <div class="pager-content">
 
                 <div class="addons-feature-contents" id="feature-starter">
-                    <script>// <![CDATA[
-                    document.getElementById('feature-starter').id = 'page-feature-starter';
-                    // ]]></script>
                     <ul>
                         <li id="addon-phony">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi//?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-yoono.png" alt="Yoono icon">
+                            <a href="https://addons.mozilla.org/af/mobile/addon/phony/?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-phony.png" alt="Phony icon">
                                 <span class="desc">View mobile or desktop versions of the sites you visit.</span>
                                 <span class="link">Download »</span>
                             </a>
                         </li>
-                        <li id="addon-quit">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/invisiblehand/?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-invisiblehand.png" alt="InvisibleHand icon">
+                        <li id="addon-quitfirefox">
+                            <a href="https://addons.mozilla.org/en-us/firefox/addon/quit-firefox/?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-quitfirefox.png" alt="quitfirefox icon">
                                 <span class="desc">Exit Firefox by closing all tabs or choosing "Quit" from the menu.</span>
                                 <span class="link">Download »</span>
                             </a>
                         </li>
                         <li id="addon-adblockplus">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/imtranslator/?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-imtranslator.png" alt="ImTranslator icon">
+                            <a href="https://addons.mozilla.org/en-US/firefox/addon/adblock-plus/?src=mozcom-personalize">
+                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-addblockplus.png" alt="Adblock Plus icon">
                                 <span class="desc">Remove ads and view the Web exactly the way you'd like.</span>
                                 <span class="link">Download »</span>
                             </a>
@@ -86,30 +79,7 @@ EXTRA_HEADERS;
             <h3>Add Style: <span>Personas</span></h3>
             <p>Easy-to-install themes that help you personalize the look of your Firefox on the go. Just install the Personas add-on and go right to the gallery from your mobile Start page.</p>
         </div>
-
-        <div id="persona-previews">
-            <div id="try-on"><p>Roll over to try, click to apply</p></div>
-            <div class="persona-previewer persona-previewer-random">
-                <div class="persona-previewer-content">
-                    <div id="persona-tattoo" class="persona-visible"><img src="/img/covehead/add-ons/personas-tattoo.png" width="344" height="174" alt="preview" /></div>
-                    <div id="persona-endless"><img src="/img/covehead/add-ons/personas-endless.png" width="344" height="174" alt="preview" /></div>
-                    <div id="persona-kanagawa"><img src="/img/covehead/add-ons/personas-kanagawa.png" width="344" height="174" alt="preview" /></div>
-                    <div id="persona-harrypotter"><img src="/img/covehead/add-ons/personas-harrypotter.png" width="344" height="174" alt="preview" /></div>
-                    <div id="persona-bobmarley"><img src="/img/covehead/add-ons/personas-bobmarley.png" width="344" height="174" alt="preview" /></div>
-                    <div id="persona-sunset"><img src="/img/covehead/add-ons/personas-sunset.png" width="344" height="174" alt="preview" /></div>
-                </div>
-                <ul class="persona-previewer-tabs">
-                    <li><a href="http://www.getpersonas.com/en-US/persona/7610"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/1/0/7610/preview.jpg" width="138" height="46" alt="Japanese Tattoo" /></a></li>
-                    <li><a href="http://www.getpersonas.com/en-US/persona/30987"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/7/30987/preview.jpg" width="138" height="46" alt="Endless Possibilities" /></a></li>
-                    <li><a href="http://www.getpersonas.com/en-US/persona/141882"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/2/141882/preview.jpg" width="138" height="46" alt="kanagawa wave" /></a></li>
-                    <li><a href="http://www.getpersonas.com/en-US/persona/35081"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/8/1/35081/preview.jpg" width="138" height="46" alt="Harry Potter" /></a></li>
-                    <li><a href="http://www.getpersonas.com/en-US/persona/44136"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/3/6/44136/preview.jpg" width="138" height="46" alt="Bob Marley" /></a></li>
-                    <li><a href="http://www.getpersonas.com/en-US/persona/64769"><img src="<?= $config['url_scheme'] ?>://www.getpersonas.com/static/6/9/64769/preview.jpg" width="138" height="46" alt="Sunset Over Water" /></a></li>
-                </ul>
-            </div>
-            <p id="see-all-personas"><a href="http://www.getpersonas.com/en-US/gallery/" class="feature arrow">See all 180,000+  »</a></p>
-        </div> 
-
+        <div class="features-image"><img src="/img/covehead/add-ons/personas-mobile.jpg" width="600" height="400" alt="Personas" /></div>
     </div>
 
     <div class="features-container" id="interface">
