@@ -72,10 +72,7 @@ if(in_array($lang, array('cs', 'eu', 'fi', 'pl', 'ru', 'sk', 'sl', 'sr', 'uk')))
     $val = '<span id="t1">'.$val.'</span>';
 }
 
-$mozillalink = "<a href=\"$host_enUS/\" id=\"return\">$val</a>";
-$newfirefox4menu = '';
 
-if ($config['server_name'] != 'www.mozilla.com' OR LATEST_FIREFOX_VERSION == '4.0') {
 $mozillalink = "<a class=\"mozilla\" href=\"$host_enUS/\">mozilla</a>";
 $newfirefox4menu = <<<NEWMENU
         <!-- start menu #nav-main -->
@@ -90,7 +87,7 @@ $newfirefox4menu = <<<NEWMENU
         </div>
         <!-- end menu #nav-main -->
 NEWMENU;
-}
+
 
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}
