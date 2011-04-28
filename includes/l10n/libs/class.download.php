@@ -184,7 +184,7 @@ HTML_RETURN;
                 $_os_class     = 'os_osx';
                 $_os_shortname = 'osx';
                 $_os_name      = ___('Mac OS X');
-                $_os_file_ext  = 'en-US.mac.dmg';
+                $_os_file_ext  = 'mac.dmg';
                 break;
             default:
                 return;
