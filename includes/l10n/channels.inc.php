@@ -115,8 +115,12 @@ $extra_headers .= <<<EXTRA_HEADERS
     body.locale-sq .channel h3 span {
         font-size: 20px;
     }
-    body.locale-ru .channel h3 span {
+    body.locale-ru .channel h3 span,
+    body.locale-vi .channel h3 span {
         font-size: 25px;
+    }
+    body.locale-gd .channel h3 span {
+        font-size: 24px;
     }
 
     </style>
