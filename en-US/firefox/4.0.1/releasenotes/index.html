@@ -1,0 +1,261 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 4.0.1 Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    
+    <script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox 4 <span>Release Notes</span></h2>
+  <p><em>v.4.0.1, released April 28th, 2011</em>
+    Check out what’s new, the known issues and frequently asked questions about the latest version of Firefox. As always, you’re encouraged to <a href="http://input.mozilla.com/release/feedback">tell us what you think</a>, or <a href="https://bugzilla.mozilla.org/">file a bug in Bugzilla</a>.</p>
+</div>
+
+<div id="main-content">
+    <?php
+        @include_once "{$config['file_root']}/{$lang}/includes/release-notes-sidebar-4.inc.php";
+    ?>
+
+    <div id="whatsnew2" class="expander expander-odd">
+      <h3 class="expander-header">What’s New in Firefox&nbsp;4.0.1</h3>
+      <div class="expander-content">
+        <p>Firefox&nbsp;4.0.1 fixes the following issues found in previous versions of
+           Firefox&nbsp;4:</p>
+
+        <ul class="spaced">
+            <li>Fixed several <a href="http://www.mozilla.org/security/known-vulnerabilities/firefox4.html#firefox4.0.1">security issues</a>.</li>
+            <li>Fixed several stability issues.</li>
+        </ul>
+        <p>
+            Please see the
+            <a href="https://bugzilla.mozilla.org/buglist.cgi?quicksearch=ALL%20status2.0%3A.1-fixed">complete list of changes</a> 
+            in this version. You may also be interested in the
+            <a href="../../4.0/releasenotes/">Firefox 4 release notes</a> for a list of changes in the previous version.
+
+        </p>
+      </div>
+    </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">System Requirements</h3>
+      <div class="expander-content">
+        <p>Before installing, make sure your computer meets the <a href="../system-requirements/">
+           system requirements</a>.</p>
+      </div>
+    </div>
+
+    <div id="downloading" class="expander expander-odd">
+      <h3 class="expander-header">Downloading</h3>
+      <div class="expander-content">
+        <p>Mozilla provides Firefox&nbsp;3.6 for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a variety of languages. You can <a href="/<?=$lang?>/firefox/all.html">get the latest version of Firefox 3.6 here</a>. For builds for other systems and languages not provided by Mozilla, see the Contributed Builds section at the end of this document.</p>
+
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Installing</h3>
+      <div class="expander-content">
+        <p>Please note that installing Firefox&nbsp;4 will overwrite your existing installation of Firefox.
+        You won’t lose any of your bookmarks or browsing history, but some of your extensions and other add-ons might not work
+        until updates for them are made available.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Uninstalling</h3>
+      <div class="expander-content">
+        <p>You can remove Firefox&nbsp;4 with the Add/Remove Programs utility on Windows, by moving the Firefox application to the Trash on Mac OS X, or by deleting the containing folder on Linux.</p>
+        <p>By default, removing Firefox&nbsp;4 won’t remove your bookmarks,
+           web browsing history, extensions or other add-ons. This data is
+           stored in your <em>profile folder</em>, which can be found by going
+           to the <em>Help</em> menu and selecting <em>Troubleshooting
+           Information...</em>. The button next to the <em>Profile
+           Directory</em> line in <em>Application Basics</em> will open your
+           profile directory in your system's file explorer.</p>
+        <p>Please note that if you keep your profile, any version of Firefox
+           that you install after removing Firefox&nbsp;4 will
+           continue to use the bookmarks, web browsing history, add-ons, and
+           other data from this profile folder.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Add-ons and Themes</h3>
+      <div class="expander-content">
+        <p>You can get Add-ons and Themes by opening the Add-ons Manager, or by visiting <a href="https://addons.mozilla.org">the Add-ons Web site</a>. Add-ons installed with previous versions of Firefox may not yet have been updated by their authors to work with this Firefox&nbsp;4. If you wish to help test Add-ons, please <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your favorite Add-on author will appreciate it!</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Known Issues</h3>
+      <div class="expander-content">
+        <p>This list covers some of the known problems with Firefox&nbsp;4 which will be resolved in future versions:</p>
+        <dl>
+        <dt id="allsystems">All Systems</dt>
+        <dd>
+          <ul class="spaced">
+            <li>Users will experience many incompatibilities with bookmarks and history if they downgrade to any Firefox&nbsp;4 beta before beta 8. Users can still downgrade back to Firefox&nbsp;3.6 (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=620723">bug 620723</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=614439">bug 614439</a>)</li> 
+            <li>Users using <a href="/mobile/sync/">Firefox Sync</a> with their mobile device will need to update to the latest <a href="/mobile/beta/">Firefox 4 for mobile release</a></li>
+            <li>For some users, scrolling in the main GMail window will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">bug 579260</a>)</li>
+            <li>If you try to start Firefox using a locked profile, it will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">bug 573369</a>)</li>
+          </ul>
+        </dd>
+
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+		    <li>Some users of Adobe Reader X have experienced instability when viewing PDF documents in the browser. Uninstalling and reinstalling Adobe Reader X has been determined to resolve the issue (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=640901">bug 640901</a>)</li>
+			<li>If you customize your toolbars to include the Location Bar or Search Bar in the Menu Bar, and then toggle the state of the Menu Bar between shown and hidden, Firefox will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=640652">bug 640652</a>)</li>
+          </ul>
+        </dd>
+
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>This version of the beta will not work on Macintosh hardware with Power PC CPUs (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=587799">bug 587799</a>)</li>
+			<li>Firefox on Mac OS X running in 64-bit mode does not recognize that Java supports certain MIME types. Running Firefox in 32-bit mode has been found to help (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=638171">bug 638171</a>)</li>
+		  </ul>
+        </dd>
+
+        <dt id="linux">Linux and Unix</dt>
+        <dd>
+          <ul class="spaced">
+            <li>The video control buttons may not work when viewing QuickTime videos with libtotem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=625036">bug 625036</a>)</li>
+            <li>Users compiling from source might need a newer gcc and libstdc++ as the build requirements have changed (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578880">bug 578880</a>)</li>
+          </ul>
+        </dd>
+
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Troubleshooting</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Poorly designed or incompatible extensions can cause problems with your browser,
+            including make it crash, slow down page display, etc. If you encounter strange
+            problems relating to parts of the browser no longer working, the browser not
+            starting, windows with strange or distorted appearance, degraded performance, etc,
+            you may be suffering from Extension or Theme trouble.
+            Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+            Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux,
+            start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            When started in Safe Mode all extensions are disabled and the Default theme is
+            used. Disable the Extension/Theme that is causing trouble and then start normally.
+          </li>
+          <li>
+            If you uninstall an extension that is installed with your user profile (i.e.
+            you installed it from a Web page) and then wish to install it for all user profiles
+            using the -install-global-extension command line flag, you must restart the
+            browser once to cleanse the profile extensions datasource of traces of that
+            extension before installing with the switch. If you do not do this you may end
+            up with a jammed entry in the Extensions list and will be unable to install
+            the extension globally.
+          </li>
+          <li>
+            If you encounter strange problems relating to bookmarks, downloads, window
+            placement, toolbars, history, or other settings, it is recommended that you try
+            creating a new profile and attempting to reproduce the problem before filing
+            bugs. Create a new profile by running Firefox with the -P command line
+            argument, choose the "Manage Profiles" button and then choose "Create
+            Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+            one by one, checking each time to see if the problems resurface. If you do
+            find a particular profile data file is causing a problem, file a bug and attach
+            the file.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Frequently Asked Questions</h3>
+      <div class="expander-content">
+        <ol class="faq">
+          <li>
+            What can I do to help?
+            <p>We need help from developers and the testing community to provide as much
+               feedback as possible to make Firefox even better. Please pick your <a href="/<?=$lang?>/firefox/beta/feedback/">favorite way to give us your feedback</a> at any time!</p>
+          </li>
+          <li>
+            Where can I get extensions and themes (add-ons)?
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+          </li>
+          <li>
+            Who makes Firefox&nbsp;4?
+            <p>Lots of people. See Help-&gt;About Mozilla Firefox, and click the "global community" for a list of some of the people who have contributed to Firefox&nbsp;4.</p>
+          </li>
+          <li>
+            Where’s the Firefox&nbsp;4 source code?
+            <p>A tarball of the Firefox&nbsp;4 source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0.1/source/">download</a>.
+               The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
+               Firefox-specific source is in mozilla-central's "browser", "toolkit",
+               and "chrome" directories. Please follow the <a href=
+               "http://developer.mozilla.org/en/Build_Documentation">build instructions</a>.</p>
+          </li>
+          <li>
+            Where is the mail client?
+            <p>Firefox&nbsp;4 works with whatever mail client is the default on your system.
+               However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our
+               next-generation email client and the perfect complement to Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Contributed Builds</h3>
+      <div class="expander-content">
+        <p>These are unofficial builds and may be configured differently than the official
+           Mozilla builds. They may also be optimized and/or tested for specific
+           platforms. You can browse through the available contributed builds on the
+           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0.1/contrib/">FTP
+           site</a>.</p>
+
+<!-- put contributed builds here -->
+
+      </div>
+    </div>
+
+  <div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Other Resources and Links</h3>
+      <div class="expander-content">
+        <p>The following resources contain useful information about Firefox&nbsp;4</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+          <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+          <li><a href="https://developer.mozilla.org/en/Firefox_4_for_developers">Developer Information</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
+            Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+        </ul>
+      </div>
+    </div>
+
+</div>
+
+<div id="release-notes-footer"></div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
