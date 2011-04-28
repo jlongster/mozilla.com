@@ -111,16 +111,22 @@ $extra_headers .= <<<EXTRA_HEADERS
     form {
         width:200px;
     }
-    
+
     body.locale-sq .channel h3 span {
         font-size: 20px;
     }
+
     body.locale-ru .channel h3 span,
     body.locale-vi .channel h3 span {
         font-size: 25px;
     }
+
     body.locale-gd .channel h3 span {
         font-size: 24px;
+    }
+
+    body.locale-ro .channel h3 span {
+        font-size: 28px;
     }
 
     </style>
@@ -138,7 +144,7 @@ if ($textdir == "rtl") {
         [dir="rtl"] #main-content {
             margin: 0 20px;
         }
-        
+
         [dir="rtl"] #channel .channel {
             float: right;
             padding-right: 0;
@@ -164,13 +170,13 @@ if ($textdir == "rtl") {
         [dir="rtl"] .channel ul.channel-list {
             padding: 0 20px 10px 0;
         }
-        
+
         [dir="rtl"] ul.home-download {
             margin-right: 30px;
             margin-left: 0;
         }
 
-        [dir="rtl"] #channel #download_aurora.channel #download_aurora_button a.download-link span.download-content, 
+        [dir="rtl"] #channel #download_aurora.channel #download_aurora_button a.download-link span.download-content,
         [dir="rtl"] #channel #download_firefox.channel #download a.download-link span.download-content {
             background: url("/img/covehead/channel/download-arrow.png") no-repeat scroll 190px 50% transparent;
             padding: 10px 45px 12px 20px;
