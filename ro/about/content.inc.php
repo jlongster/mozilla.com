@@ -1,20 +1,19 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Despre noi</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Suntem o comunitate globală</strong>
+            de <a href="http://www.mozilla.org/community">oameni care lucrează împreună</a> din 1998 pentru a face un Internet mai bun.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Suntem o organizație non-profit</strong>
+            dedicată promovării <a href="http://www.mozilla.org/about/mission.html">sincerității, inovației și oportunității</a> online.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>Și suntem un proiect cu sursă deschisă</strong>
+            a căror <a href="http://www.mozilla.org/projects">programe</a> au fost folosite pentru a construi unele dintre cele mai bune aplicații de Internet.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Noi credem că Internetul, cea mai semnificativă evoluție socială și tehnologică a timpului nostru, este o resursă publică care trebuie îmbunătățită și protejată.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Fundația Mozilla</a> este o organizație non-profit dedicată acestor obiective, dar adevărata forță din spatele Mozilla sunt oameni 
+    din întreaga lume care acționează pentru a construi webul pe care și-l doresc. <a href="http://www.mozilla.org/contribute">Și tu poți ajuta</a>!</p>
 </div>
