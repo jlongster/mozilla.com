@@ -373,16 +373,18 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 # Bug 582721
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
-# Bug 640038 redirect all beta and rc links to /firefox
-RewriteRule ^beta/?$ /firefox/ [R=301]
-RewriteRule ^firefox/beta/?$ /firefox/ [R=301]
+# Bug 651645 /beta -> /firefox/channel
+RewriteRule ^beta/?$ /firefox/channel/ [R=302]
+RewriteRule ^firefox/beta/?$ /firefox/channel/ [R=301]
+RewriteRule ^RC/?$ /firefox/channel/ [R=302,NC]
+RewriteRule ^firefox/RC/?$ /firefox/channel/ [R=302,NC]
+
+# Bug 640038 redirect old beta and rc links
 RewriteRule ^en-US/firefox/beta/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301]
 RewriteRule ^en-US/firefox/beta/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301]
 RewriteRule ^en-US/firefox/beta/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301]
 RewriteRule ^en-US/firefox/beta(?:/(.*))?$ /en-US/firefox/ [R=301]
 
-RewriteRule ^RC/?$ /firefox/ [R=301,NC]
-RewriteRule ^firefox/RC/?$ /firefox/ [R=301,NC]
 RewriteRule ^en-US/firefox/RC/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301,NC]
 RewriteRule ^en-US/firefox/RC/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301,NC]
 RewriteRule ^en-US/firefox/RC/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301,NC]
