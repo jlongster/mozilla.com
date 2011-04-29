@@ -182,7 +182,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
         // This is also implemented in .htaccess, but we do it here
         // to redirect the user only once
         if ($lang == 'en-US') {
-            if (preg_match('/Firefox\/4.0$/', $ua)) {
+            if (preg_match('/Firefox\/4.0.1$/', $ua)) {
                 $_SERVER['REQUEST_URI'] = '/firefox/fx/';
             }
             else {
