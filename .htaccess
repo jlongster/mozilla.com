@@ -397,7 +397,7 @@ RewriteRule ^en-US/firefox/all-beta.html$ /en-US/firefox/all.html [R=301]
 RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
 
 # Bug 629407 Redirect updated ff users to /fx
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/4\.0
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/4\.0\.1$
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/fx/ [R=302]
 # redirect everyone else to /new
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
