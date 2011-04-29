@@ -266,7 +266,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.[0-9]+/details(/(?:ind
 # 3.6.x firstrun/details/whatsnew always points to 3.6's version
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html)?)?$ $1firefox/3.6/$2$3 [PT,L]
 # 4.0.x firstrun/details/whatsnew always points to 4.0's version
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html)?)?$ $1firefox/4.0/$2$3 [PT,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html|tour_.*)?)?$ $1firefox/4.0/$2$3 [PT,L]
 
 # Special rewrite for some pages since they are hardcoded in Firefox source
 RewriteRule ^firefox/its-a-trap.html$ /en-US/firefox/its-a-trap.html [L]
