@@ -78,6 +78,10 @@ $newsletter_form = <<<FORM
 FORM;
 
 
+if($lang == 'de') {
+    $newsletter_form = '';
+}
+
 
 
 $extra_headers .= <<<EXTRA_HEADERS
