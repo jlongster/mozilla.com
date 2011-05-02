@@ -47,6 +47,8 @@ switch($pageid) {
                                 'ancillary_links'           => false,
                                 );
         $beta_button        = '<p><a href="#channel_news" class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</a></p>';
+        // Bug 654158: we hide the newsletter form link
+        $beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</span></p>';
         break;
 
     case 'firefox':

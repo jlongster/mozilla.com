@@ -6,6 +6,10 @@ $html5   = true;
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
+// Bug 654158: we hide the newsletter form
+$getnotified = '<span style="min-height:1.2em">&nbsp;<span>';
+
+
 // dl box
 require_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 $stable_button = $downloadbox;
@@ -78,7 +82,8 @@ $newsletter_form = <<<FORM
 FORM;
 
 
-if($lang == 'de') {
+if($lang != 'en-US') {
+    // Bug 654158: we hide the newsletter form
     $newsletter_form = '';
 }
 
@@ -87,15 +92,21 @@ if($lang == 'de') {
 $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/channel.css" media="screen" />
     <style>
+
+    /* Bug 654158: we hide the newsletter form, subtitle description  */
+    #channel #main-feature p {
+        visibility: hidden;
+    }
+
+    /* Bug 654158: we hide the newsletter form, subtitle description, some spacing to make it look better without a form */
+    #main-content {
+        margin: 0 20px 500px;
+    }
+
     a.download-link em {
         display: block;
         margin: -1em 1em 0;
         text-align:right;
-    }
-
-
-    .rtl a.download-link em {
-        text-align:left;
     }
 
     #channel #download_aurora_button .download-other,
@@ -133,6 +144,8 @@ $extra_headers .= <<<EXTRA_HEADERS
         font-size: 28px;
     }
 
+
+
     </style>
 EXTRA_HEADERS;
 
@@ -140,6 +153,10 @@ if ($textdir == "rtl") {
     $extra_headers .= <<<RTL
         <style>
         /* {{{  RTL Support */
+
+        [dir="rtl"] a.download-link em {
+            text-align:left;
+        }
 
         [dir="rtl"] #main-feature {
             margin: 0 20px 0 210px;
