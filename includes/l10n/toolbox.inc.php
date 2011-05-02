@@ -25,6 +25,7 @@ function localeConvert($lang) {
 function goToEnglishPage() {
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
+    $requested = secureText($requested);
     if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
         array_pop($requested);
         $requested = implode('/', $requested).'/';

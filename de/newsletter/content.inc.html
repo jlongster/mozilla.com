@@ -1,0 +1,76 @@
+<div id="main-feature">
+    <h2>Erfahren Sie mehr, mit dem <span>Mozilla-Newsletter</span></h2>
+    <p>Abonnieren Sie den monatlichen Mozilla-Newsletter und erhalten Sie die wichtigsten Mozilla-News. Sie lernen aus erster Hand, wie Sie das Beste aus Ihrem Firefox-Browser herausholen. So bleiben Sie immer auf dem neuesten Stand.</p>
+</div>
+
+<div id="content">
+
+<ul id="email-form" class="<?= $status ?>">
+    <li id="form-pane">
+      <form method="post">
+        <p class="form-error" id="email-error"><span>Upps! Das scheint keine gültige E-Mail-Adresse zu sein.</span></p>
+        <p class="form-error" id="privacy-error"><span>Bitte lesen Sie die Datenschutzbestimmungen und akzeptieren Sie sie mit einem Klick in das Kästchen.</span></p>
+
+        <div class="field required" id="email-field">
+          <label for="email">Ihre E-Mail-Adresse:</label>
+          <span class="error-wrapper"><input name="email" type="email" id="email" value="<?= $form->get('email') ?>" autofocus></span>
+        </div>
+
+        <div class="field" id="country-field">
+          <label for="country">Land:</label>
+          <select id="country" name="country">
+            <option value="">Select country</option>
+            <?php
+                $country = $form->get('country');
+                if (!$country) {
+                    $country = 'de';
+                }
+                echo regionsAsOptions($lang, $country);
+            ?>
+          </select>
+        </div>
+
+        <div class="field" id="format-field">
+          <?php
+              $html_format = 'checked="checked"';
+              $text_format = '';
+              if ($form->get('format') == 'text') {
+                  $text_format = 'checked="checked"';
+                  $html_format = '';
+              }
+          ?>
+          <span class="field-label">Sparche:</span>
+          <div class="field-radios">
+            <label for="html-format">Deutsch</label>
+            <input type="radio" name="lang" id="html-format" value="de" <?= $html_format?>>
+            <label for="text-format">Englisch</label>
+            <input type="radio" name="lang" id="text-format" value="en" <?= $text_format?>>
+          </div>
+        </div>
+
+        <div class="field" id="privacy-field">
+          <label for="privacy-check" id="privacy-check-label">
+            <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+            <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?>></span>
+            <span class="title"> Ich stimme den <a href="/en-US/privacy-policy">Datenschutzbestimmungen von Mozilla</a></span>
+          </label>
+        </div>
+
+        <div class="text">Sie erhalten ausschließlich Mozilla-bezogene Informationen.</div>
+
+        <div class="field" id="submit-field">
+          <input name="submit" type="submit" value="Mozilla-Newsletter anmelden" id="subscribe">
+        </div>
+      </form>
+    </li>
+
+    <li id="success-pane">
+      <h3>Vielen Dank, dass Sie den Mozilla-Newsletter abonniert haben!</h3>
+      <p>Sie gehören jetzt zu den Ersten, die exklusiv über Events, Aktualisierungen, Videos und viele andere spannende Dinge informiert werden.</p>
+      <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
+    </li>
+</ul>
+
+
+</div><!-- end #content div -->
+
