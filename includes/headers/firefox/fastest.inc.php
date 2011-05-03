@@ -8,8 +8,7 @@
  */
 
 // The $body_* variables are for compatibility with pre-existing css
-$body_id    = 'fastest';
-$html5      = true;
+$body_id = 'fastest';
 
 include_once $_SERVER['DOCUMENT_ROOT']."/includes/l10n/class.novadownload.php";
 

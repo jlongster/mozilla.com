@@ -1,7 +1,6 @@
 <?php
 
     $body_id = 'central';
-    $html5   = true;
 
     if(!isset($extra_headers)) {$extra_headers = '';}
     if(!isset($extra_css))     {$extra_css     = '';}
@@ -51,7 +50,7 @@ EXTRA_HEADERS;
         margin-bottom:20px;
         padding: 0 0 60px;
     }
-    
+
 
     #gettingstarted-nav li a {
         border:none !important;

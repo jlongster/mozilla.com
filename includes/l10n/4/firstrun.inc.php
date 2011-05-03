@@ -1,7 +1,6 @@
 <?php
 
 $body_id        = 'firstrun';
-$html5          = true;
 $fallback       = true;
 $aboutlink      = '';
 $logo           = '<h2><img src="/img/covehead/firefox/background-firefox-download.png" alt="Firefox" /></h2>';

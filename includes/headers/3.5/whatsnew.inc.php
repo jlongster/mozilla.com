@@ -16,9 +16,6 @@ $extra_headers = empty($extra_headers) ? ''            : $extra_headers;
 $extra_feature = empty($extra_feature) ? ''            : $extra_feature;
 $extra_css     = empty($extra_css)     ? ''            : $extra_css;
 $body_class    = empty($body_class)    ? ''            : $body_class;
-$html5         = true;
-
-
 
 $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/whatsnew-page-3-5.css" media="screen" />

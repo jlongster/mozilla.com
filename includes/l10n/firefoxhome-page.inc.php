@@ -1,7 +1,6 @@
 <?php
 
     $body_id    = 'firefox-home';
-    $html5      = true;
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home-app.css" media="screen" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />

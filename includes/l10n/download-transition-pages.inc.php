@@ -15,7 +15,6 @@ if (!isset($_GET['product']) ||!isset($_GET['lang']) ||!isset($_GET['os'])) {
 }
 
 $page_title    = 'Mozilla - '.___('Download');
-$html5         = true;
 $body_id       = 'download';
 $dl_product    = htmlspecialchars(strip_tags($_GET['product']), ENT_QUOTES);
 $dl_lang       = htmlspecialchars(strip_tags($_GET['lang']), ENT_QUOTES);

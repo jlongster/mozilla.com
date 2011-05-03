@@ -24,8 +24,7 @@ exit;
 
     include_once "{$config['file_root']}/includes/l10n/locale-transition-status.inc.php";
 
-    $body_id    = 'firefox-all';
-    $html5      = true;
+    $body_id = 'firefox-all';
 
     if(!isset($meta_description)) {$meta_description = '';}
     if(!isset($extra_headers)) {$extra_headers = '';}

@@ -1,7 +1,6 @@
 <?php
 
-$body_id    = 'home';
-$html5      = true;
+$body_id = 'home';
 
 $extra_headers .= <<<EXTRA_HEADERS
     <meta name="description" content="{$meta_description}" />
@@ -12,6 +11,7 @@ EXTRA_HEADERS;
 include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 $fx4file = $config['file_root'].'/'.$lang.'/firefox/fx4.inc.html';
+
 // this is our fallback page
 if(!file_exists($fx4file)) {
     $fx4file = $config['file_root'].'/includes/l10n/4/fallback.home.inc.php';

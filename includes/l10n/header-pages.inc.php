@@ -35,12 +35,7 @@ $util_js = ob_get_contents();
 ob_end_clean();
 
 
-if (isset($html5) && $html5 == true) {
-    $doctype = <<<DOCTYPE
-<!DOCTYPE HTML>
-<html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
-DOCTYPE;
-} elseif (isset($transitional) && $transitional == true) {
+if (isset($transitional) && $transitional == true) {
     $doctype = <<<DOCTYPE
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -48,9 +43,8 @@ DOCTYPE;
 DOCTYPE;
 } else {
     $doctype = <<<DOCTYPE
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
+<!DOCTYPE HTML>
+<html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
 DOCTYPE;
 }
 

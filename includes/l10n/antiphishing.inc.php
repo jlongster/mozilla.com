@@ -1,6 +1,5 @@
 <?php
-    $body_id    = 'phishing-protection';
-    $html5      = true;
+    $body_id = 'phishing-protection';
 
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/phishing-page.css" media="screen" />

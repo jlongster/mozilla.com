@@ -1,6 +1,5 @@
 <?php
-$body_id    = 'firefox-features';
-$html5      = true;
+$body_id = 'firefox-features';
 
 if(!isset($extra_headers)) { $extra_headers = ''; }
 if(!isset($extra_css))     { $extra_css     = ''; }
