@@ -1,20 +1,18 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Davart nus</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Nus essan ina communitad globala</strong>
+            da <a href="http://www.mozilla.org/community">persunas che lavuran ensemen</a> dapi l'onn 1998 per crear in meglier internet.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Nus essan ina organisaziun senza finamira da profit</strong>
+            che s'engaschescha da promover <a href="http://www.mozilla.org/about/mission.html">l'avertadad, l'innovaziun e las schanzas</a> en l'internet.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>E nus essan in project dad open source</strong>
+            e nossa <a href="http://www.mozilla.org/projects">software</a> vegn utilisada per far intginas da las meglieras applicaziuns da l'internet.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Nus essan dal maini che l'internet, sco pli impurtont svilup sozial e tecnologic da noss temp, è ina resursa che sto vegnir meglierada e protegida.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p>La <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> è ina organisaziun senza finamira da profit che sa deditgescha a questas finamiras. La gronda forza davos Mozilla èn dentant persunas da tut il mund che s'engascheschan per crear il web ch'els vulan. <a href="http://www.mozilla.org/contribute">E ti pos gidar</a>!</p>
 </div>
