@@ -42,6 +42,9 @@ RewriteRule ^en-US/college http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vf
 # security/.htaccess
 Redirect temp /security/ http://www.mozilla.org/security/
 
+# Bug 652124
+RewriteRule en-US/firefox/5.0beta/(whatsnew|firstrun)[/](?:index.html)? https://developer.mozilla.org/devnews/index.php/2011/04/28/beta-channel-switcher-testing/ [L]
+
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
 # bug 538486
@@ -49,9 +52,6 @@ RewriteCond $1 !^(?:3.6.*|4.*|sync)$
 RewriteRule en-US/firefox/(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/[/]?$ /$1firefox [R=permanent]
-
-# Bug 652124
-RewriteRule en-US/firefox/5.0beta/details[/](?:index.html)? https://developer.mozilla.org/devnews/index.php/2011/04/28/beta-channel-switcher-testing/
 
 # Redirects for mozillamessaging.com. bug 480373
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird[/]?$ http://www.mozillamessaging.com/thunderbird/ [R=permanent]
