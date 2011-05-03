@@ -5,38 +5,42 @@
  *
  */
 
-function localeNumberFormat($val) {
-    if(UI_LANG == 'en') {
+function localeNumberFormat($val)
+{
+    if (UI_LANG == 'en') {
         $val = number_format($val, 0, '.', ',');
-    } else if(UI_LANG == 'fi') {
+    } elseif (UI_LANG == 'fi') {
         $val = number_format($val, 0, ',', ' ');
     } else {
         $val = number_format($val, 0, ',', '.');
     }
+
     return $val;
 }
 
 
 // dummy function to avoid error in code borrowed from mozilla-europe
-function localeConvert($lang) {
+function localeConvert($lang)
+{
     return $lang;
 }
 
-function goToEnglishPage() {
+function goToEnglishPage()
+{
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
     $requested = secureText($requested);
     if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
         array_pop($requested);
-        $requested = implode('/', $requested).'/';
+        $requested = implode('/', $requested) . '/';
     }
 
-    noCachingRedirect('http://'.$config['server_name'].'/en-US'.$requested);
+    noCachingRedirect('http://' . $config['server_name'] . '/en-US' . $requested);
     exit;
 }
 
 function noCachingRedirect($url) {
-    header('Date: '.gmdate('D, d M Y H:i:s \G\M\T', time()));
+    header('Date: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
     header('Expires: Fri, 01 Jan 1990 00:00:00 GMT');
     header('Pragma: no-cache');
     header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
@@ -91,7 +95,8 @@ function buildPlatformImageL10n($filename, $alt, $width = null, $height = null,
                 $class = str_replace('%', '%%', $class);
                 $image_template.= ' class="' . $class . '"';
         }
-        $image_template.= ' />';
+
+        $image_template .= ' />';
 
         // build platform-specific image tags
         $filename_exp = explode('.', $filename);
@@ -100,15 +105,15 @@ function buildPlatformImageL10n($filename, $alt, $width = null, $height = null,
         foreach ($platforms as $platform) {
             $platform_filename = $base . '-' . $platform . '.' . $extension;
             // if a linux or mac localized screenshot does not exist, we want to fallback to en-US screenshot
-            if(!file_exists($_SERVER['DOCUMENT_ROOT'].$platform_filename)) {
-                $platform_filename = str_replace('/'.UI_LANG.'/', '/en-US/', $platform_filename);
+            if(!file_exists($_SERVER['DOCUMENT_ROOT'] . $platform_filename)) {
+                $platform_filename = str_replace('/' . UI_LANG . '/', '/en-US/', $platform_filename);
             }
 
             $platform_image[$platform] = sprintf($image_template, $platform_filename);
         }
 
         // if a windows localized screenshot does not exist, we want to fallback to en-US screenshot
-        if(!file_exists($_SERVER['DOCUMENT_ROOT'].$filename)) {
+        if(!file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
             $filename = str_replace('/'.UI_LANG.'/', '/en-US/', $filename);
         }
         $default_image = sprintf($image_template, $filename);
@@ -143,37 +148,38 @@ function buildPlatformImageL10n($filename, $alt, $width = null, $height = null,
         return ob_get_clean();
 }
 
-function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com') {
-
+function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com')
+{
     if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  $host) {
         $requested = explode('/', $_SERVER['REDIRECT_URL']);
         if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
             array_pop($requested);
-            $requested = implode('/', $requested).'/';
+            $requested = implode('/', $requested) . '/';
         }
-        noCachingRedirect('http://'.$host.'/en-US'.$requested);
+        noCachingRedirect('http://' . $host . '/en-US' . $requested);
         exit;
     }
 
     return false;
 }
 
-function getVideoSubtitles($videoname, $subfile, $dynamic = false) {
+function getVideoSubtitles($videoname, $subfile, $dynamic = false)
+{
     global $lang;
     global $config;
     ob_start();
     echo '
-    <div id="'.$videoname.'" class="htmlPlayer subtitles">
-        <div id="'.$videoname.'Description">'."\n";
+    <div id="' . $videoname . '" class="htmlPlayer subtitles">
+        <div id="' . $videoname . 'Description">'."\n";
 
-    if (file_exists($_SERVER['DOCUMENT_ROOT'].'/'.$lang.'/'.$subfile)) {
-        include $config['file_root'].'/'.$lang.'/'.$subfile;
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/' . $lang . '/' . $subfile)) {
+        include $config['file_root'] . '/' . $lang . '/' . $subfile;
     } else {
-        include $config['file_root'].'/en-GB/'.$subfile;
+        include $config['file_root'] . '/en-GB/' . $subfile;
     }
 
     if ($dynamic){
-        include $config['file_root'].'/'.$subfile;
+        include $config['file_root'] . '/' . $subfile;
         outputSubtitles($sub, $refsubs);
     }
 
@@ -183,32 +189,35 @@ function getVideoSubtitles($videoname, $subfile, $dynamic = false) {
     </div>';
     $subtitles = ob_get_contents();
     ob_clean();
+
     return $subtitles;
 }
 
 
-function outputSubtitles($subarray, $original) {
+function outputSubtitles($subarray, $original)
+{
 
     foreach ($subarray as $key => $str) {
         $original[$key][2] = $str;
     }
 
-    if(isset($_GET['comparesubs'])) {
+    if (isset($_GET['comparesubs'])) {
         echo '<style> .hideme { display:block; position:absolute; left:0; margin-top: -3.5em; background-color: rgba(0,0,200,0.5); width:100%; height:3em;}</style>'."\n";
         foreach ($original as $key => $str) {
             $blank = empty($str[0]) ? ' data-special="blank"' : '';
-            echo '<div data-start="'.$str[1].'"'.$blank.'><span class="hideme" dir="ltr">'.$str[0].'</span>'.$str[2].'</div>'."\n\n";
+            echo '<div data-start="' . $str[1] . '"' . $blank . '><span class="hideme" dir="ltr">' . $str[0] . '</span>' . $str[2] . '</div>'."\n\n";
         }
     } else {
         foreach ($original as $key => $str) {
             $blank = empty($str[0]) ? ' data-special="blank"' : '';
-            echo '<div data-start="'.$str[1].'"'.$blank.'>'.$str[2].'</div>'."\n\n";
+            echo '<div data-start="' . $str[1] . '"' . $blank.'>' . $str[2] . '</div>'."\n\n";
         }
     }
 }
 
 
-function get_include_contents($filename) {
+function get_include_contents($filename)
+{
     if (is_file($filename)) {
         ob_start();
         include_once $filename;
@@ -216,6 +225,7 @@ function get_include_contents($filename) {
         ob_end_clean();
         return $contents;
     }
+
     return false;
 }
 
@@ -235,6 +245,8 @@ function secureText($var, $tablo = true)
 
     foreach ($var as $item => $value) {
         // CRLF XSS
+        $item  = str_replace('%0D', '', $item);
+        $item  = str_replace('%0A', '', $item);
         $value = str_replace('%0D', '', $value);
         $value = str_replace('%0A', '', $value);
 
@@ -247,10 +259,14 @@ function secureText($var, $tablo = true)
             FILTER_FLAG_STRIP_LOW
         );
 */
+        //
+
+        $item  = strip_tags($item);
+        $value = strip_tags($value);
 
         // Repopulate value
-        $var[$item] = $value;
+        $var2[$item] = $value;
     }
 
-    return ($tablo == true) ? $var : $var[0];
+    return ($tablo == true) ? $var2 : $var2[0];
 }
