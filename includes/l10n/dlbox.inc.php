@@ -13,6 +13,7 @@ if(isset($dl_lang)) {
 }
 
 switch($pageid) {
+    case 'security':
     case 'firefox-features':
         $dl_box_class   = 'top-right';
         $dl_box_id      = 'download';
@@ -140,6 +141,11 @@ $aurora_button .= <<<HIDE
     </script>
 HIDE;
 $aurora_button .= "\n".'<!-- end generated box -->'."\n";
+
+// security page to migrate
+if($pageid == 'security') {
+    $fx_dl_box = $downloadbox;
+}
 
 
 unset($firefoxDetailsl10n);
