@@ -257,7 +257,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
     }
 
     .download-other {
-        width: 320px;
+        width: 350px;
     }
 
     /* per locale fixes */

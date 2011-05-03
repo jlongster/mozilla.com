@@ -55,6 +55,7 @@ switch($pageid) {
     case 'firefox':
     default:
         $dl_box_class = 'home-download';
+        $dl_box_id    = 'home-download';
         $dl_box_options = array('wording' => 'Firefox 4');
         break;
 }

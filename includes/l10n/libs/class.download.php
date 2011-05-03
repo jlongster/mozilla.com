@@ -298,7 +298,7 @@ LI_MAIN;
         $_return = <<<HTML_RETURN
         <div class="download-other">
             <a class="ancillaryLink" href="/{$locale}/firefox/{$_current_version}/releasenotes/">{$_release_notes}</a> -
-            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> -
+            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> <br/>
             <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
         </div>
 HTML_RETURN;
