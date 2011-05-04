@@ -23,7 +23,7 @@ if (count($_GET) > 0) {
             include_once $config['file_root'].'/includes/min/inline.php';
             $home_css = min_inline_css('css_home');
             $target   = $val;
-            $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/networks.lang');
+            $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
             break;
         }
     }
@@ -74,6 +74,44 @@ EXTRA;
 
     case 'worker':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.worker.inc.php';
+        $extra_css = <<<EXTRA
+    <style type="text/css">
+        body {
+            background-image: url("/img/covehead/firefox/direct/page-background.png");
+        }
+        #home #main-feature {
+            zoom: 1;
+        }
+        #home #main-feature img.screenshot {
+            top: auto;
+            bottom: 0;
+        }
+        #home #main-feature img.second-screenshot {
+            opacity: 0;
+        }
+        #home ul#benefits li {
+            font-size: 18px;
+            max-width:140px;
+            padding: 8px 10px;
+        }
+        #home .download-other {
+            text-align: center;
+            width: 350px;
+        }
+        #home .sub-feature.first {
+            background: none;
+        }
+        #home .sub-feature {
+            width: 250px;
+            padding: 0 20px 100px 60px;
+        }
+
+        #home .sub-feature h3 {
+            font-size:25px;
+        }
+
+    </style>
+EXTRA;
         break;
 
     case 'normal':
