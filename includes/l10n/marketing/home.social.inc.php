@@ -1,6 +1,6 @@
 
 <div id="main-feature">
-    <h2><?php e__('Made for sharing'); ?></h2>
+    <h2><?php e__('Made for sharing.'); ?></h2>
 
     <ul id="benefits">
         <li class="first"><?php e__('Create <br/> dedicated <br/> tabs for it'); ?></li>

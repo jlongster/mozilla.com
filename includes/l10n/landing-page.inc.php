@@ -16,7 +16,7 @@ $home_css = '<link rel="stylesheet" type="text/css" href="' . $config['static_pr
 if (count($_GET) > 0) {
     $getArray = secureText($_GET);
     $getArray = array_keys($getArray);
-    $campaigns = array('socialmedia', 'worker');
+    $campaigns = array('socialmedia', 'worker', 'streamer', 'gamer', 'messaging');
 
     foreach($getArray as $val) {
         if (in_array($val, $campaigns)) {
@@ -27,96 +27,75 @@ if (count($_GET) > 0) {
             break;
         }
     }
+
+    $extra_css = <<<EXTRA
+    <style type="text/css">
+        body {
+            background-image: url("/img/covehead/firefox/direct/page-background.png");
+        }
+        #home #main-feature {
+            zoom: 1;
+        }
+        #home #main-feature h2 {
+            line-height: 50px;
+        }
+        #home #main-feature img.screenshot {
+            top: auto;
+            bottom: 0;
+        }
+        #home #main-feature img.second-screenshot {
+            opacity: 0;
+        }
+        #home ul#benefits li {
+            font-size: 18px;
+            max-width:140px;
+            padding: 8px 10px;
+        }
+        #home .download-other {
+            text-align: center;
+            width: 350px;
+        }
+        #home .sub-feature.first {
+            background: none;
+        }
+        #home .sub-feature {
+            width: 250px;
+            padding: 0 20px 100px 60px;
+        }
+
+        #home .sub-feature h3 {
+            font-size:25px;
+        }
+
+    </style>
+EXTRA;
 }
 
 switch($target) {
     case 'socialmedia':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.social.inc.php';
-        $extra_css = <<<EXTRA
-    <style type="text/css">
-        body {
-            background-image: url("/img/covehead/firefox/direct/page-background.png");
-        }
-        #home #main-feature {
-            zoom: 1;
-        }
-        #home #main-feature img.screenshot {
-            top: auto;
-            bottom: 0;
-        }
-        #home #main-feature img.second-screenshot {
-            opacity: 0;
-        }
-        #home ul#benefits li {
-            font-size: 18px;
-            max-width:140px;
-            padding: 8px 10px;
-        }
-        #home .download-other {
-            text-align: center;
-            width: 350px;
-        }
-        #home .sub-feature.first {
-            background: none;
-        }
-        #home .sub-feature {
-            width: 250px;
-            padding: 0 20px 100px 60px;
-        }
-
-        #home .sub-feature h3 {
-            font-size:25px;
-        }
-
-    </style>
-EXTRA;
         break;
 
     case 'worker':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.worker.inc.php';
-        $extra_css = <<<EXTRA
-    <style type="text/css">
-        body {
-            background-image: url("/img/covehead/firefox/direct/page-background.png");
-        }
-        #home #main-feature {
-            zoom: 1;
-        }
-        #home #main-feature img.screenshot {
-            top: auto;
-            bottom: 0;
-        }
-        #home #main-feature img.second-screenshot {
-            opacity: 0;
-        }
-        #home ul#benefits li {
-            font-size: 18px;
-            max-width:140px;
-            padding: 8px 10px;
-        }
-        #home .download-other {
-            text-align: center;
-            width: 350px;
-        }
-        #home .sub-feature.first {
-            background: none;
-        }
-        #home .sub-feature {
-            width: 250px;
-            padding: 0 20px 100px 60px;
-        }
+        break;
 
-        #home .sub-feature h3 {
-            font-size:25px;
-        }
+    case 'gamer':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.gamer.inc.php';
+        break;
 
-    </style>
-EXTRA;
+    case 'messaging':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.messaging.inc.php';
+        break;
+
+    case 'streamer':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.streamer.inc.php';
         break;
 
     case 'normal':
     default:
         $contentfile = $config['file_root'].'/includes/l10n/4/fallback.home.inc.php';
+        $extra_css = '';
         break;
 }
 

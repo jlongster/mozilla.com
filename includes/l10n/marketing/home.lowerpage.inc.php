@@ -120,7 +120,9 @@
             scriptElem.onload = scriptElem.onreadystatechange = null;
             scriptDone = true;
             load_nav_main();
+            <?php if (isset($target) && $target == 'socialmedia'): ?>
             init_crossfade();
+            <?php endif; ?>
             load_video();
         };
         scriptElem.src = "<?php echo $config['static_prefix'];?>/js/jquery/jquery.min.js";
