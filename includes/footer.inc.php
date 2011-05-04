@@ -17,6 +17,8 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
 </div><!-- end #doc -->
 </div><!-- end #wrapper -->
 
+<div class="clear"></div>
+
 	<!-- start #footer -->
 	<div id="sub-footer">
 		<div id="sub-footer-contents">
