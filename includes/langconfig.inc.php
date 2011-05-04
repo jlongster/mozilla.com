@@ -127,7 +127,7 @@ $full_languages = array(
     'en', // Remap to en-US
     'en-GB',
     'en-US',
-    'en-ZA', // Remap to en-GB
+    'en-ZA', // Remap to en-US
     'eo',
     'es', // Remap to es-ES
     'es-AR',
@@ -212,7 +212,7 @@ $lang_remap = array(
     'ak'        => 'en-GB',
     'bs'        => 'en-GB',
     'en'        => 'en-US',
-    'en-za'     => 'fr',
+    'en-za'     => 'en-US',
     'es'        => 'es-ES',
     'ja-jp-mac' => 'ja',
     'lg'        => 'en-GB',
