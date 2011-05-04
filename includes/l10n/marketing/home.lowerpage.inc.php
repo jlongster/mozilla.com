@@ -4,7 +4,7 @@
     <div id="sub-customize" class="sub-feature first">
         <h3><?php e__('Personalize'); ?></h3>
         <p><?php e__('One size doesn’t fit all.'); ?></p>
-        <a href="/en-US/firefox/customize/">
+        <a href="/<?=$lang;?>/firefox/features/#powerfulpersonalization">
           <?php e__('Learn More'); ?>&nbsp;<span>»</span>
         </a>
     </div>
@@ -12,7 +12,7 @@
     <div id="sub-performance" class="sub-feature">
         <h3><?php e__('Go Fast'); ?></h3>
         <p><?php e__('Accelerate the way you use the web.'); ?></p>
-        <a href="/en-US/firefox/performance/">
+        <a href="/<?=$lang;?>/firefox/features/#highperformance">
           <?php e__('Learn More'); ?>&nbsp;<span>»</span>
         </a>
     </div>
@@ -20,13 +20,12 @@
     <div id="sub-security" class="sub-feature">
         <h3><?php e__('Stay Safe'); ?></h3>
         <p><?php e__('We’ve got your back.'); ?></p>
-        <a href="/firefox/security/">
+        <a href="/<?=$lang;?>/firefox/features/#advancedsecurity">">
           <?php e__('Learn More'); ?>&nbsp;<span>»</span>
         </a>
     </div>
 
 </div>
-
 
 <!-- Please do not ever remove this comment. -->
 
