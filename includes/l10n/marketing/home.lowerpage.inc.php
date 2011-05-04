@@ -20,7 +20,7 @@
     <div id="sub-security" class="sub-feature">
         <h3><?php e__('Stay Safe'); ?></h3>
         <p><?php e__('We’ve got your back.'); ?></p>
-        <a href="/<?=$lang;?>/firefox/features/#advancedsecurity">">
+        <a href="/<?=$lang;?>/firefox/features/#advancedsecurity">
           <?php e__('Learn More'); ?>&nbsp;<span>»</span>
         </a>
     </div>
