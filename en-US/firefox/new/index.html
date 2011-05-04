@@ -114,72 +114,6 @@ echo $downloads;
 
 <hr class="hide" />
 
-<div id="main-content">
-
-    <div class="sub-feature" id="sub-firefox">
-        <h3>Meet Firefox 4</h3>
-        <a id="tour-link" href="/<?=$lang?>/firefox/central/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/central/',
-                                  'WT.ti', 'Link: Take the Tour',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Tour');">
-          Take the Tour</a>
-        <a id="video-link" href="/<?=$lang?>/firefox/video/?video=fx4-features"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/video/?video=fx4-features',
-                                  'WT.ti', 'Link: Watch the Video',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Video');">
-          Watch the Video</a>
-    </div>
-
-    <div class="sub-feature" id="sub-customize">
-        <h3>Personalize</h3>
-        <p>One size doesn’t fit all.</p>
-        <a href="/<?=$lang?>/firefox/customize/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/customize/',
-                                  'WT.ti', 'Link: Personalize',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Customize');">
-          Learn More <span>»</span>
-        </a>
-    </div>
-
-    <div class="sub-feature" id="sub-performance">
-        <h3>Go Fast</h3>
-        <p>Accelerate the way you use the web.</p>
-        <a href="/<?=$lang?>/firefox/performance/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/performance/',
-                                  'WT.ti', 'Link: Go Fast',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Go Fast');">
-          Learn More <span>»</span>
-        </a>
-    </div>
-
-    <div class="sub-feature" id="sub-security">
-        <h3>Stay Safe</h3>
-        <p>We’ve got your back.</p>
-        <a href="/<?=$lang?>/firefox/security/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/security/',
-                                  'WT.ti', 'Link: Stay Safe',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Security');">
-          Learn More <span>»</span>
-        </a>
-    </div>
-
-</div>
-
 <!-- Please do not ever remove this comment. -->
 
 <script>
@@ -269,5 +203,19 @@ echo $downloads;
 </script>
 
 <?php
-    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+
+$extra_footers = <<<EXTRA_FOOTERS
+  <div class="footer-links">
+    <a href="/firefox/central/">Tour</a> &nbsp;|&nbsp;
+    <a href="/firefox/features/">Desktop</a> &nbsp;|&nbsp;
+    <a href="/mobile/">Mobile</a> &nbsp;|&nbsp;
+    <a href="https://addons.mozilla.org/">Add-Ons</a> &nbsp;|&nbsp;
+    <a href="http://support.mozilla.com/">Support</a> &nbsp;|&nbsp;
+    <a href="/about/">About</a> &nbsp;|&nbsp;
+    <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+    <a href="/en-US/about/legal.html">Legal Notices</a>
+  </div>
+EXTRA_FOOTERS;
+
+    include_once "{$config['file_root']}/includes/footer-home.inc.php";
 ?>
