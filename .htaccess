@@ -215,6 +215,18 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.\d{1,2}/details[/]?$ $1fi
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/(beta|rc|RC)[/]?$ /$1firefox/ [R=301]
 
+# Bug 649073 Fx4 upgrade DIRECT campaign - localize landing pages
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/gamer[/]?$ $1firefox/?gamer [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/socialmedia[/]?$ $1firefox/?socialmedia [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/worker[/]?$ $1firefox/?worker [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/messaging[/]?$ $1firefox/?messaging [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/streamer[/]?$ $1firefox/?streamer [PT]
+
 # Redirect Firefox all-beta and all-rc to the all download page (disabled while we have product betas/RCs available!)
 # RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/all-(?:beta|rc).html$ $1firefox/all.html [PT]
 
