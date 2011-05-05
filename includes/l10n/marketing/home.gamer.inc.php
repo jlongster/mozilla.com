@@ -1,6 +1,6 @@
 
 <div id="main-feature">
-    <h2><?php e__('Made for <br/> the way you play.'); ?></h2>
+    <h2><?php e__('Made for the way you play.'); ?></h2>
 
     <ul id="benefits">
         <li class="first"><?php e__('Increased <br/> speed'); ?></li>
