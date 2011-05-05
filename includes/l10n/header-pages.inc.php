@@ -115,7 +115,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
     /* {{{ Header */
 
     #header {
-        margin-bottom:30px;
+        margin-bottom:20px;
     }
 
     #header #return {

@@ -33,11 +33,16 @@ if (count($_GET) > 0) {
         body {
             background-image: url("/img/covehead/firefox/direct/page-background.png");
         }
+        #home #header {
+            margin-bottom: 0;
+        }
         #home #main-feature {
             zoom: 1;
         }
         #home #main-feature h2 {
             line-height: 50px;
+            padding: 60px 0 0px 0;
+            font-style: italic;
         }
         #home #main-feature img.screenshot {
             top: auto;
@@ -48,8 +53,9 @@ if (count($_GET) > 0) {
         }
         #home ul#benefits li {
             font-size: 18px;
-            max-width:140px;
-            padding: 8px 10px;
+            width:120px;
+            padding: 0 10px;
+            margin-bottom: 5px;
         }
         #home .download-other {
             text-align: center;
