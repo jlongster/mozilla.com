@@ -59,39 +59,12 @@ EXTRA_HEADERS;
           <span class="error-wrapper"><input name="email" type="email" id="email" value="<?= $form->get('email') ?>"></span>
         </div>
 
-        <div class="field" id="firstname-field">
-          <label for="firstname">First name</label>
-          <input name="firstname" type="text" id="firstname" value="<?= $form->get('firstname') ?>">
-        </div>
-        <div class="field" id="lastname-field">
-          <label for="lastname">Last name</label>
-          <input name="lastname" type="text" id="lastname" value="<?= $form->get('lastname') ?>">
-        </div>
-
         <div class="field" id="country-field">
           <label for="country">Country</label>
           <select id="country" name="country">
             <option value="">Choose one</option>
             <?= regionsAsOptions($lang, $form->get('country')) ?>
           </select>
-        </div>
-
-        <div class="field required" id="role-field">
-          <label for="role">Which role describes you best?</label>
-          <span class="error-wrapper">
-            <select id="role" name="role">
-              <option value="">Choose one</option>
-              <? foreach ($roles as $role): ?>
-                  <? $selected = $form->get('role') == $role ? 'selected' : ''; ?>
-                  <option value="<?= $role ?>" <?= $selected ?>><?= $role ?></option>
-              <? endforeach ?>
-            </select>
-          </span>
-        </div>
-
-        <div class="field" id="other-field">
-          <label for="other">Anything you want to add?</label>
-          <input name="other" type="text" id="other" value="<?= $form->get('other') ?>">
         </div>
 
         <div class="field" id="format-field">

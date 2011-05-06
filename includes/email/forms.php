@@ -122,26 +122,6 @@ class ExtraNewsletterForm extends NewsletterForm {
     }
 }
 
-class MobileNewsletterForm extends NewsletterForm {
-    function validate() {
-        parent::validate();
-
-        if (empty($this->data['role'])) {
-            throw new NewsletterValidationException('role');
-        }
-        return true;
-    }
-
-    function subscribe() {
-        // transform some data, to match what Responsys is expecting
-        $this->data['MOBILE_SEGMENT'] = $this->data['role'];
-        $this->data['FIRST_NAME'] = $this->data['firstname'];
-        $this->data['LAST_NAME'] = $this->data['lastname'];
-        $this->data['MOBILE_COMMENTS'] = $this->data['other'];
-        parent::subscribe();
-    }
-}
-
 class DrumbeatNewsletterForm extends NewsletterForm {
     function subscribe() {
         // transform some data, to match what Responsys is expecting
