@@ -1,41 +1,58 @@
+<?php
+    /* Localization setup */
+    $locale = setlocale(LC_ALL,"0");
+    bindtextdomain('messages', dirname(__FILE__) . '/locale');
+    bind_textdomain_codeset("messages", "UTF-8");
+    textdomain('messages');
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Firefox 4 WebHero</title>
+        <title><?= _("Firefox 4 WebHero"); ?></title>
         <link rel="stylesheet" href="css/main.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+        <script type="text/javascript">
+            if(top.location != window.location) {
+                top.location = 'http://www.facebook.com/Firefox';
+            }
+        </script>
+        <meta property="og:title" content="<?= _("Get Firefox 4"); ?>" />
+        <meta property="og:description" content="<?= _("Firefox 4 is awesome, just like you! I know you've been missing out, so I'm here to help. Upgrade to Firefox 4 and see for yourself: http://mzl.la/getFx4"); ?>"/>
     </head>
     <body>
       <div class="content">
         <div id="step-1" class="step">
             <div class="stepContent">
-                <h1>FIREFOX 4 + YOU = AWESOME!</h1>
-                <p>You already know how awesome Firefox 4 is. You experience it every day. But not everyone is there yet. Some people need a nudge in the right direction. And that's where you come in.</p>
-                <input type="button" class="buttonSendMessage" value="Tell a friend, earn a badge &rang;&rang;" />
+                <h1><?= _("FIREFOX 4 + YOU = AWESOME!"); ?></h1>
+                <p><?= _("You already know how awesome Firefox 4 is. You experience it every day. But not everyone is there yet. Some people need a nudge in the right direction. And that's where you come in."); ?></p>
+                <input type="button" class="buttonSendMessage" value="<?= _("Tell a friend, earn a badge"); ?> &rang;&rang;" />
             </div>
         </div>
         <div id="web-hero">
-            <div id="web-hero-text">BE A WEB HERO</div>
+            <div id="web-hero-text"><?= _("BE A WEB HERO"); ?></div>
         </div>
         <div id="step-2" class="step">
             <div class="stepContent">
-                <h1>KNOW SOMEONE BROWSING IN THE PAST?</h1>
-                <p>Chances are you know someone who isn't on Team Firefox yet. They're missing out on the awesome. And it wouldn't be fair to keep it all for yourself.</p>
+                <h1><?= _("KNOW SOMEONE BROWSING IN THE PAST?"); ?></h1>
+                <p><?= _("Chances are you know someone who isn't on Team Firefox yet. They're missing out on the awesome. And it wouldn't be fair to keep it all for yourself."); ?></p>
             </div>
         </div>
         <div id="step-3" class="step">
-                <h1>HELPING IS EASY!<br />AND IT FEELS GREAT!</h1>
-                <p>Help Team Firefox grow. Here's how:</p>
+                <h1><?= _("HELPING IS EASY!<br />AND IT FEELS GREAT!"); ?></h1>
+                <p><?= _("Help Team Firefox grow. Here's how:"); ?></p>
         </div>
         <ul id="checklist">
-            <li>Install Firefox 4 on their computer.</li>
-            <li>Send them a how-to-install video for <a href="/en-US/firefox/video/?video=upgrade-mac" target="_top">Mac</a> or <a href="/en-US/firefox/video/?video=upgrade-win" target="_top">PC</a>. Or show them PDF instructions for <a href="/en-US/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf" target="_top" title="Download this PDF (1MB)">Mac</a> or <a href="/en-US/firefox/webhero/Firefox4_Installation_Guide_PC.pdf" target="_top" title="Download this PDF (1.5MB)">PC</a>.</li>
-            <li id="checklist-last">Show them the features <a href="/en-US/firefox/central" target="_top">on your computer</a> or send them a <a href="/en-US/firefox/video/" target="_top">video</a>.
+            <li><?= _("Install Firefox 4 on their computer."); ?></li>
+            <li><?= _("Send them a how-to-install video for <a href='/en-US/firefox/video/?video=upgrade-mac' target='_top'>Mac</a> or <a href='/en-US/firefox/video/?video=upgrade-win' target='_top'>PC</a>. Or show them PDF instructions for <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_PC.pdf' target='_top' title='Download this PDF (1.5MB)'>PC</a>."); ?>
+            </li>
+            <li id="checklist-last"><?= _("Show them the features <a href='/en-US/firefox/central' target='_top'>on your computer</a> or send them a <a href='/en-US/firefox/video/' target=/_top'>video"); ?></a>.
 </li>
         </ul>
         <div id="step-4" class="step">
-            <h1>AWESOME = YOU!</h1>
-            <p>Give yourself a pat on the back. You helped someone get the best of the Web and make sure it stays open and awesome. Let's keep building a better Web together.</p>
-            <input type="button" class="buttonSendMessage" value="Tell a friend, earn a badge &rang;&rang;" />
+            <h1><?= _("AWESOME = YOU!"); ?></h1>
+            <p><?= _("Give yourself a pat on the back. You helped someone get the best of the Web and make sure it stays open and awesome. Let's keep building a better Web together."); ?></p>
+            <input type="button" class="buttonSendMessage" value="<?= _("Tell a friend, earn a badge"); ?> &rang;&rang;" />
         </div>
       </div>
       
@@ -49,6 +66,14 @@
           });
                   
           FB.Canvas.setSize();
+          
+          $(".buttonSendMessage").click(function() {
+                var left = (screen.width/2)-(626/2), 
+                top = (screen.height/2)-(436/2), 
+                share_url = encodeURIComponent("http://www.stage.mozilla.com/en-US/firefox/webhero/fb/");
+                
+                window.open('http://www.facebook.com/sharer.php?u=' + share_url + '&t=Firefox 4&mode=message', 'sharer', 'toolbar=0,status=0,width=626,height=436, top='+top+', left='+left);
+          });
         </script>
     </body>
 </html>
