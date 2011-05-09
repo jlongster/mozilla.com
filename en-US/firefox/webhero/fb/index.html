@@ -67,12 +67,24 @@
                   
           FB.Canvas.setSize();
           
-          $(".buttonSendMessage").click(function() {
+          $(".buttonSendMessage").one("click", function() {
                 var left = (screen.width/2)-(626/2), 
                 top = (screen.height/2)-(436/2), 
-                share_url = encodeURIComponent("http://www.stage.mozilla.com/en-US/firefox/webhero/fb/");
+                share_url = encodeURIComponent("http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/");
                 
                 window.open('http://www.facebook.com/sharer.php?u=' + share_url + '&t=Firefox 4&mode=message', 'sharer', 'toolbar=0,status=0,width=626,height=436, top='+top+', left='+left);
+                
+                $(this).val("<?= _("Post your badge!"); ?> &nbsp;&raquo;").click(function() {
+                    FB.ui({
+                     method: 'feed',
+                     name: 'I upgraded a friend to Firefox 4!',
+                     link: 'http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/',
+                     picture: 'http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/images/fb-badge-webhero.png',
+                     caption: 'Firefox 4',
+                     description: 'Not only did I help someone get the best of the Web, I helped make sure it stays open, accessible, transparent, safe and Ð most of all Ð awesome.',
+                     message: 'Facebook Dialogs are easy!'
+                   });
+                });
           });
         </script>
     </body>
