@@ -1,0 +1,206 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+	$_version       = getVersionBySelf();
+	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firefox 4</title>
+   <style>
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+    </style>
+    <? echo min_inline_css('css_firstrun5'); ?>
+  </head>
+<body>
+
+<div id="wrapper">
+<div id="doc">
+
+
+<div id="main-feature">
+    <img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/logo.png')?>" alt="Firefox Logo" id="title-logo" width="128" height="130" />
+<?php // check if there is a version
+if ($_version !== null && $_valid_version) {
+    // check if we’re running the latest version
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+        ?>
+        <h2>You are now running Firefox <?=$_version?></h2>
+        <?php
+    } else {
+        ?>
+        <h2>You’re now running Firefox <?=$_version?></h2>
+        <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+<?php
+    }
+} else {
+    ?>
+    <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
+    <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+<?php
+}
+?>
+</div>
+
+<div id="main-content" class="box">
+    <div class="contents">
+    <div id="intro">
+        <h3>Welcome to the <span>Future of Firefox</span></h3>
+    </div>
+    <p class="note" id="note-win">Thanks for helping us make our next version our best yet. Click the Firefox button, go to the Help menu, and click Submit Feedback to give us immediate input.</p>
+    <p class="note" id="note-mac-lin">Thanks for helping us make our next version our best yet. Go to the Help menu and click Submit Feedback to give us immediate input.</p>
+    </div>
+</div>
+
+<div id="newsletter-signup" class="sub-feature box">
+    <h3>Get Monthly News!</h3>
+    <p>Product info, tips &amp; tricks and much more.</p>
+        <form id="email-form" class="<?= $status ?>" action="" method="post">
+          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
+          <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+          <div id="success-msg">Thanks for Subscribing!</div>
+          <div class="more">
+            <div class="row">
+              <select id="country" name="country">
+                  <option value="">Select country</option>
+                  <?php
+                      $country = $form->get('country');
+                      if (!$country) {
+                          $country = 'us';
+                      }
+                      echo regionsAsOptions($lang, $country);
+                  ?>
+              </select>
+            </div>
+            <div class="row"> 
+                <?php
+                    $isText = $form->get('format') == 'text';
+                ?>
+                <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
+                <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
+            </div>
+            <div class="row">
+                <label for="privacy-check" id="privacy-check-label">
+                    <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                </label>
+            </div>
+            <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                            'DCS.dcsuri', '/mainstream_newsletter/signup',
+                            'WT.ti', 'Link: Sign me up - Second Step',
+                            'WT.dl', 99,
+                            'WT.nv', 'Content',
+                            'WT.ac', 'Newsletter');">
+            <p class="footnote">We will only send you Mozilla-related information.</p>
+          </div>
+        </form>
+</div>
+
+<div class="sub-feature box" id="mobile">
+    <h3><a href="/<?=$lang?>/mobile/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>//mobile/', 'WT.ti', 'Firefox%20Live');">
+        Get Up and Go
+    </a></h3>
+    <p>It’s your Web, anywhere you go.</p>
+    <ul class="link"><li>
+        <a href="/<?=$lang?>/mobile/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 
+                                  'DCS.dcsuri', '/<?=$lang?>/mobile/',
+                                  'WT.ti', 'Get Firefox for mobile',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Get Firefox for mobile');">
+          Get Firefox for mobile »
+        </a>
+    </li></ul>
+</div>
+
+<div class="sub-feature box" id="channels">
+    <h3><a href="/<?=$lang?>/firefox/channel/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>/firefox/channel/', 'WT.ti', 'Channels');">
+        Beyond Beta
+    </a></h3>
+    <p>Download and test the build that’s right for you.</p>
+    <ul class="link"><li>
+        <a href="/<?=$lang?>/firefox/channel/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 
+                                  'DCS.dcsuri', '/<?=$lang?>/firefox/channel/',
+                                  'WT.ti', 'See all our channels',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'See all our channels');">
+          See all our channels »
+        </a>
+    </li></ul>
+</div>
+
+<p id="sub-links">
+    <a href="/<?=$lang?>/firefox/<?=$_version?>/releasenotes/">Release Notes <span>»</span></a>
+    <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+
+
+
+
+</div>
+</div>
+
+    <script>
+      function getTop(el) {
+          if (!el.offsetParent) return 0;
+          return el.offsetTop + getTop(el.offsetParent);
+      }
+      function getLeft(el) {
+          if (!el.offsetParent) return 0;
+          return el.offsetLeft + getLeft(el.offsetParent);
+      }
+
+      $ = document.querySelector.bind(document);
+      function $$(s, fn) {
+          var nl = document.querySelectorAll(s), item;
+          for (var i = 0; i < nl.length; ++i) {
+              item = nl[i];
+              fn.apply(item);
+          }
+      }
+
+  var platform = (function() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf("Mac") != -1) {
+      return "mac";
+    } else if (ua.indexOf("Linux") != -1) {
+      return "linux";
+    }
+    return "win";
+  })();
+  document.body.classList.add(platform);
+    $("#email").addEventListener("focus", function() {
+      $("#newsletter-signup").classList.add("expand");
+    }, false);
+    </script>
+    <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
+    <noscript>
+      <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/>
+    </noscript>
+  </body>
+</html>
