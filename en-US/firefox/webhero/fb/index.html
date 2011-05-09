@@ -78,11 +78,11 @@
                 $(this).val("<?= _("Post your badge!"); ?>!").click(function() {
                     FB.ui({
                      method: 'feed',
-                     name: 'I upgraded a friend to Firefox 4!',
+                     name: '<?= _("I upgraded a friend to Firefox 4!"); ?>',
                      link: 'http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/',
                      picture: 'http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/images/fb-badge-webhero.png',
-                     caption: 'Firefox 4',
-                     description: 'Not only did I help someone get the best of the Web, I helped make sure it stays open, accessible, transparent, safe and - most of all - awesome.'
+                     caption: '<?= _("Firefox 4"); ?>',
+                     description: '<?= _("Not only did I help someone get the best of the Web, I helped make sure it stays open, accessible, transparent, safe and - most of all - awesome."); ?>'
                    });
                 });
           });
