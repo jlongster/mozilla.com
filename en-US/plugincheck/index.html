@@ -98,33 +98,45 @@ function display_badge($size, $code_class='')
 			<form action="#" method="get"><fieldset><button>Retry</button></fieldset></form></div>
     </div>
 
-	<div id="sidebar">
-		<div id="information">
-			<h3>Plugin Tips</h3>
-			<ul>
-				<li><a href="#what-plugin">What is a plugin?</a></li>
-				<li><a href="#why-update">Why should I update my plugins?</a></li>
-				<li><a href="#firefox-helps">How can Firefox help me?</a></li>
-				<li><a href="#list-plugins">Which plugins do I have?</a></li>
-				<li><a href="#howto-disable">How do I disable a plugin?</a></li>
-			</ul>
-		</div>
-        <div id="helpus">
+        <div id="sidebar">
+          <div id="information">
+            <h3>Plugin Tips</h3>
+            <ul>
+              <li><a href="#what-plugin">What is a plugin?</a></li>
+              <li><a href="#why-update">Why should I update my plugins?</a></li>
+              <li><a href="#firefox-helps">How can Firefox help me?</a></li>
+              <li><a href="#list-plugins">Which plugins do I have?</a></li>
+              <li><a href="#howto-disable">How do I disable a plugin?</a></li>
+            </ul>
+          </div>
+          <div id="helpus">
             <h3>Help Us Out</h3>
             <ul>
-                <li><a href="#web-badge">Grab a badge</a> to <strong>spread the word</strong> about plugins</li>
-                <!-- li>If you have plugin information we don't have, <a href="http://plugins.mozilla.org">please let us know</a>.</li -->
-				<li>Get <a href='more_info.html'>More Information</a> about this project</li>
+              <li><a href="#web-badge">Grab a badge</a> to <strong>spread the word</strong> about plugins</li>
+              <!-- li>If you have plugin information we don't have, <a href="http://plugins.mozilla.org">please let us know</a>.</li -->
+              <li>Get <a href='more_info.html'>More Information</a> about this project</li>
             </ul>
-        </div>
-		<div id="support">
-			<h3>Need Help?</h3>
+          </div>
+          <div id="support">
+            <h3>Need Help?</h3>
             <ul>
-				<li><a href="http://support.mozilla.com">Visit support.mozilla.com</a></li>
-				<li><a href="http://support.mozilla.com/<?php echo $lang ?>/kb/Troubleshooting+plugins">Read support articles about plugins</a></li>
+              <li><a href="http://support.mozilla.com">Visit support.mozilla.com</a></li>
+              <li><a href="http://support.mozilla.com/<?php echo $lang ?>/kb/Troubleshooting+plugins">Read support articles about plugins</a></li>
             </ul>
-		</div>
-	</div>
+          </div>
+
+          <div id="newsletter">
+            </p>
+            <div>
+              <?php
+                 $newsletter_snippet = "<p>Subscribe to monthly email updates and keep current with " .
+                                       "Mozilla news, including details about new and innovative " .
+                                       "plug-ins!</p>";
+                 require "{$config['file_root']}/includes/newsletter.inc.php"; 
+              ?>
+            </div>
+          </div>
+        </div>
 
 	<div id="information-content" class="clearfix">
 		<div class="return-link"><a href="#">Return to Top</a></div>
