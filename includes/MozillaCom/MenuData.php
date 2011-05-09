@@ -156,6 +156,10 @@ class MozillaCom_MenuData
                             'title' => 'Blog',
                             'href'  => "https://blog.mozilla.com/mobile/",
                         ),
+                        'submenu_mobile_videos' => array(
+                            'title' => 'Videos',
+                            'href' => "/{$this->lang}/firefox/video?video=fx4-mobile-greatday"
+                        )
                     )
                 ),
 
