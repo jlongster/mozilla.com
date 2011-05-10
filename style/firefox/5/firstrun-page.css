@@ -136,6 +136,8 @@ p {
     background-repeat: no-repeat;
 }
 
+#main-content-help { display: none; }
+
 #main-content.default {
     background-image: url(/img/firefox/4.0/whatsnew/feature.jpg);
 }
@@ -143,17 +145,19 @@ p {
 .mac   #main-content.default { background-image: url(/img/firefox/4.0/whatsnew/feature-mac.jpg); }
 .linux #main-content.default { background-image: url(/img/firefox/4.0/whatsnew/feature-linux.jpg); }
 
-#main-content {
-    background-image: url(/img/firefox/5.0/firstrun/feature.jpg);
-}
-
+       #main-content { background-image: url(/img/firefox/5.0/firstrun/feature.jpg);}
 .mac   #main-content { background-image: url(/img/firefox/5.0/firstrun/feature-mac.jpg); }
 .linux #main-content { background-image: url(/img/firefox/5.0/firstrun/feature-linux.jpg); }
 
+       #main-content { background-image: url(/img/firefox/5.0/firstrun/feedback.jpg);}
+.mac   #main-content { background-image: url(/img/firefox/5.0/firstrun/feedback-mac.jpg); }
+.linux #main-content { background-image: url(/img/firefox/5.0/firstrun/feedback-linux.jpg); }
+
 #main-content .contents {
-    position: absolute;
-    left: 40px;
-    bottom: 45px;
+}
+
+#main-content #intro {
+    padding: 35px 20px;
 }
 
 #main-content #intro h3 {
@@ -177,6 +181,13 @@ p {
     font-style: italic;
     color: #666;
     font-size: 14px;
+}
+
+#main-content #note {
+    width: 325px;
+    position: absolute;
+    left: 500px;
+    bottom: 150px;
 }
 
 #main-content #note-win,

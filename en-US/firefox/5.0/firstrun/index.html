@@ -7,7 +7,7 @@
     $status = '';
     if ($form->save()) {
         $status = 'success';
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+        $form = new NewsletterForm('FIREFOX_BETA_NEWS', array());
     } elseif ($form->error) {
         $status = 'error error-'. $form->error;
     }
@@ -19,7 +19,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Firefox 4</title>
+    <title>Welcome to Firefox 5</title>
    <style>
     @font-face {
         font-family: 'MetaBlack';
@@ -60,7 +60,7 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<div id="main-content" class="box">
+<div id="main-content-help" class="box">
     <div class="contents">
     <div id="intro">
         <h3>Welcome to the <span>Future of Firefox</span></h3>
@@ -70,9 +70,18 @@ if ($_version !== null && $_valid_version) {
     </div>
 </div>
 
+<div id="main-content" class="box">
+    <div class="contents">
+    <div id="intro">
+        <h3>Welcome to the <span>Future of Firefox</span></h3>
+    </div>
+    <p class="note" id="note">Thanks for helping us make our next version our best yet. Click on the feedback button to give us immediate input.</p>
+    </div>
+</div>
+
 <div id="newsletter-signup" class="sub-feature box">
-    <h3>Get Monthly News!</h3>
-    <p>Product info, tips &amp; tricks and much more.</p>
+    <h3>Get Beta News!</h3>
+    <p>Sign up for our Beta newsletter for desktop and mobile.</p>
         <form id="email-form" class="<?= $status ?>" action="" method="post">
           <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
           <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
@@ -117,18 +126,18 @@ if ($_version !== null && $_valid_version) {
 <div class="sub-feature box" id="mobile">
     <h3><a href="/<?=$lang?>/mobile/"
            onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>//mobile/', 'WT.ti', 'Firefox%20Live');">
-        Get Up and Go
+        Take Beta to Go
     </a></h3>
-    <p>It’s your Web, anywhere you go.</p>
+    <p>Give feedback and help shape Firefox for mobile.</p>
     <ul class="link"><li>
         <a href="/<?=$lang?>/mobile/"
            onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 
                                   'DCS.dcsuri', '/<?=$lang?>/mobile/',
-                                  'WT.ti', 'Get Firefox for mobile',
+                                  'WT.ti', 'Go mobile',
                                   'WT.dl', 99,
                                   'WT.nv', 'Content',
-                                  'WT.ac', 'Get Firefox for mobile');">
-          Get Firefox for mobile »
+                                  'WT.ac', 'Go mobile');">
+          Go mobile »
         </a>
     </li></ul>
 </div>
