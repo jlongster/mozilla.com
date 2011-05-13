@@ -38,26 +38,7 @@
 
 <div id="main-feature">
     <img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/logo.png')?>" alt="Firefox Logo" id="title-logo" width="128" height="130" />
-<?php // check if there is a version
-if ($_version !== null && $_valid_version) {
-    // check if we’re running the latest version
-    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
-        ?>
-        <h2>You are now running Firefox <?=$_version?></h2>
-        <?php
-    } else {
-        ?>
-        <h2>You’re now running Firefox <?=$_version?></h2>
-        <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
-<?php
-    }
-} else {
-    ?>
-    <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
-    <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
-<?php
-}
-?>
+    <h2>You are now running Firefox Beta</h2>
 </div>
 
 <div id="main-content-help" class="box">
