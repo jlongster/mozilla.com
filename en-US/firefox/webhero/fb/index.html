@@ -17,6 +17,14 @@
                 top.location = 'http://www.facebook.com/Firefox';
             }
         </script>
+        <style type="text/css">
+        <?php
+            /* L10n: Replace this by CSS rules that make things pretty in your locale. */
+            if ( _('custom-css') && (_('custom-css') != 'custom-css') ) {
+                echo _('custom-css');
+            }
+        ?>
+        </style>
         <?php /* L10n: Facebook share message, title */ ?>
         <meta property="og:title" content="<?= _("Get Firefox 4"); ?>" />
         <?php /* L10n: Facebook share message, body */ ?>
@@ -34,6 +42,7 @@
             </div>
         </div>
         <div id="web-hero">
+            <?php /* L10n: A short text that goes into a speech bubble. Edit the custom-css for #web-hero-text to make it fit. */ ?>
             <div id="web-hero-text"><?= _("BE A WEB HERO"); ?></div>
         </div>
         <div id="step-2" class="step">
