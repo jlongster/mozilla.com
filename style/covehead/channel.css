@@ -17,6 +17,15 @@
     width: 550px;
 }
 
+
+#channel #footer {
+    margin-top: 50px;
+}
+
+#channel #sub-footer {
+    display: none;
+}
+
 /* }}} */
 /* {{{ Main Content */
 
@@ -28,13 +37,15 @@
 }
 
 #channel .channel#download_aurora,
-#channel .channel#download_firefox {
+#channel .channel#download_mobile_beta {
     padding-right: 0;
 }
 
 #channel_news {
     clear: both;
-    background: url(/img/covehead/divider-notch-main.jpg) 50% 0 no-repeat;
+    background-position: 50% 0;
+    background-repeat: repeat-x;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAASCAMAAACglzTJAAAAS1BMVEXv9/70+v7x+f73/P/y+P/x+P/w+P72+v/s9v/v9//1+v/y+v/y+f7v+P7v+P/g8f34/P/3+//y+f/g8f7h8f7g8P3t9//s9//s9v4Izr2eAAAAX0lEQVQI1wXBwQrCQBBEwde9cwioIRfx//8w6GFhDdOp0ptGnAUS2d2IlWUR8LIC1cP5E+sqb5HOh/igZvklYv3GesaovLcaMEZpXB3h7/AG6vIMCrMQoOGjSZi+aEncnN0pTtnMDPsAAAAASUVORK5CYII=);
     padding-top: 75px;
     zoom: 1;
 }
@@ -48,10 +59,10 @@
 
 #download_aurora  h3 { background-position: 0 0; }
 #download_beta    h3 { background-position: 0 -260px; }
-#download_firefox h3 { background-position: 0 -260px; }
+#download_mobile_beta h3 { background-position: 0 -260px; }
 
 
-#channel .channel#download_firefox h3 span {
+#channel .channel#download_mobile_beta h3 span {
     padding-top: 15px;
 }
 
@@ -61,8 +72,8 @@
 }
 
 #channel .channel#download_aurora #download_aurora_button,
-#channel .channel#download_firefox #download {
-    margin: 10px 20px 10px 28px;
+#channel .channel#download_mobile_beta .home-download {
+    margin: 10px 10px 10px 28px;
 }
 
 #channel ul.home-download {
@@ -71,7 +82,7 @@
 }
 
 #channel .channel#download_aurora a.download-link,
-#channel .channel#download_firefox a.download-link {
+#channel .channel#download_mobile_beta a.download-link {
     margin: 0;
     height: auto;
 }
@@ -87,17 +98,17 @@
 }
 
 #channel .channel#download_aurora #download_aurora_button a.download-link span.download-content,
-#channel .channel#download_firefox #download a.download-link span.download-content {
-    background: url("/img/covehead/channel/download-arrow.png") no-repeat 12px 50%;
-    padding: 10px 20px 12px 45px;
+#channel .channel#download_mobile_beta a.download-link span.download-content {
+    background: url("/img/covehead/channel/download-arrow.png") no-repeat 10px 50%;
+    padding: 10px 10px 12px 38px;
     margin: 0;
     height: 40px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.1;
 }
 
 #channel #download_aurora_button a.download-link span.download-title,
-#channel #download a.download-link span.download-title {
+#channel #download_mobile_beta a.download-link span.download-title {
     background: none;
     line-height: 1.1;
     display: block;
@@ -108,7 +119,7 @@
 }
 
 #channel .channel#download_aurora h3 span span,
-#channel .channel#download_firefox h3 span span {
+#channel .channel#download_mobile_beta h3 span span {
     font-size: 24px;
     display: block;
     line-height: 0.8;
@@ -116,7 +127,7 @@
 }
 
 #channel #download_aurora_button .download-other,
-#channel #download .download-other {
+#channel #download_mobile_beta .download-other {
     margin: 5px 0 0 0;
     width: auto;
     text-align: left;
@@ -125,7 +136,7 @@
 .channel ul.channel-list {
     margin: 5px 10px 10px 10px;
     padding: 0 0 10px 20px;
-    min-height: 10em;
+    min-height: 11em;
 }
 
 .channel a.download,
@@ -223,22 +234,21 @@
 #newsletter-signup {
     position: relative;
     margin-left: 20px;
-    padding-left: 55px;
-    background: url(/img/covehead/channel/mail.png) 0 10px no-repeat;
+    float: left;
+    width: 400px;
+    margin-right: 40px;
+    padding-right: 40px;
+    border-right: 1px dotted #ddd;
 }
 #newsletter-signup .title h3 {
-    margin-top: 0;
-    float: left;
-    border-right: 1px dotted #ccc;
+    margin: 0;
     font-style: italic;
-    padding: 5px 25px 5px 15px;
+    padding: 5px 25px 5px 65px;
     line-height: 1;
+    background: url(/img/covehead/channel/mail.png) 0 10px no-repeat;
 }
 #newsletter-signup .title p {
-    float: left;
-    padding: 5px 20px;
-    width: 200px;
-    margin: 0;
+    margin: 0 0 20px 0;
     color: #888;
     font-style: italic;
     font-size: 15px;
@@ -255,10 +265,9 @@
     font-size: 16px;
     height: 34px;
     width: 210px;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     border: 1px solid #aaa;
-    border-right:0;
-    padding: 1px 0 1px 14px;
+    padding: 1px 14px;
     box-shadow: 0 2px rgba(0,0,0,.1), 0 0 1px #888 inset;
 }
 .error-email #email,
@@ -269,7 +278,6 @@
 #channel-error,
 .success-pane {
     display: none;
-    font-size: .8em;
     margin-top: .5em;
 }
 #channel-error {
@@ -293,15 +301,37 @@
     color: red;
     display: block;
 }
+
+#newsletter-signup .privacy-field label span {
+    float: left;
+    margin: 2px;
+    padding: 2px;
+}
+
+#newsleter-signup .privacy-field span.title {
+    display: inline;
+    float: left;
+    padding-top: 5px;
+}
+
 #newsletter-signup input[type=submit] {
     padding: 8px 20px;
     cursor: pointer;
-    font-size: .9em;
     font-weight: bold;
 }
 #newsletter-signup input {
     margin-left: 0;
 }
+
+#newsletter-signup #subscribe {
+    clear: left;
+    margin-top: 10px;
+}
+
+#newsletter-signup .privacy-field {
+    padding: 10px 0 30px 0;
+}
+
 #privacy-check-label {
     font-size: .9em;
 }
@@ -319,7 +349,7 @@
 #newsletter-signup .footnote {
     margin-top: 8px;
     font-style: italic;
-    font-size: 10px;
+    font-size: 11px;
 }
 input:-moz-placeholder {
     font-style: italic;
@@ -328,8 +358,52 @@ input:-moz-placeholder {
 .row {
     margin: 16px 0;
 }
-#newsletter-signup label:first-child {
-    margin-right: 20px;
+#newsletter-signup .channels_signup input {
+    float: left;
 }
+
+#newsletter-signup label span {
+    float: left;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+#newsletter-signup label small {
+    clear: left;
+    font-size: 11px;
+    font-style: italic;
+    display: block;
+}
+
+/* }}} */
+/* {{{  Blog */
+
+#blog {
+    float: left;
+    width: 425px;
+}
+
+#blog h3 {
+    margin-top: 0;
+    font-size: 22px;
+    line-height: 1;
+    padding: 5px 0;
+}
+
+#blog ul {
+    margin: 10px 0;
+    padding: 0;
+}
+
+#blog ul li {
+    margin: 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#blog h4 {
+    margin: 0;
+}
+
 
 /* }}} */

@@ -64,31 +64,20 @@ EXTRA_HEADERS;
         <p><a href="#channel_news" class="download-soon"><span>Coming Soon!</span> Get notified when Beta is ready.</a></p>
     </div>
 
-    <div id="download_firefox" class="channel">
-        <h3><span>Final <span>Release</span></span></h3>
+    <div id="download_mobile_beta" class="channel">
+        <h3><span>Beta <span>for Mobile</span></span></h3>
         <ul class="channel-list">
-            <li>Enjoy the tried and tested final release being used by hundreds of millions around the world</li>
+            <li>Experience cutting edge mobile features still in Enjoy the tried and tested final release being used by hundreds of millions around the world</li>
             <li>Stay in control of your online experience with super speed, easy customization and the latest Web technologies</li>
         </ul>
-        <script src="<?php echo $config['static_prefix'];?>/js/download.js"></script>
-        <div id="download">
-            <script>
-                <!--
-                // Configure the Firefox download write script
-                var gDownloadTracker = "";
-                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Mozilla Firefox 4 <\/span><\/a> <\/li>";
-                var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-                var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
-
-                document.writeln("<ul class=\"home-download " + gCssClass + " \">");
-                writeDownloadItems("fx");
-                document.writeln("<\/ul>");
-                document.writeln("<div class=\"download-other\">");
-                document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all.html\">All Systems &amp; Languages<\/a> | ");
-                document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
-                document.writeln("<\/div>");
-                //-->
-            </script>
+        <div class="home-download">
+            <a href="https://market.android.com/details?id=org.mozilla.firefox" class="download-link download-firefox">
+                <span class="download-content">
+                <span class="download-title">Download</span>
+                Mozilla Firefox Beta for Mobile
+            </a>
+            <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
+<a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
         </div>
     </div>
 
@@ -118,11 +107,32 @@ EXTRA_HEADERS;
                   </select>
                 </div>
                 <ul class="channels_signup">
-                  <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="t" /> Aurora</label></li>
-                  <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="t" /> Beta</label></li>
-                  <li><label for="check_general"><input type="checkbox" id="check_general" name="general" value="t" /> General Mozilla News</label></li>
+                  <li>
+                    <label for="check_aurora">
+                        <input type="checkbox" id="check_aurora" name="aurora" value="t" />
+                        <span>Aurora <small>(Desktop)</small></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="check_beta">
+                        <input type="checkbox" id="check_beta" name="beta" value="t" />
+                        <span>Beta <small>(Desktop &amp; Mobile)</small></span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="check_general">
+                        <input type="checkbox" id="check_general" name="general" value="t" />
+                        <span>Final Release <small>(General Mozilla News)</small></span>
+                    </label>
+                  </li>
                 </ul>
                 <div id="channel-error">Please select at least one newsletter.</div>
+                <div class="privacy-field">
+                  <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+                  <label for="inline-privacy-check" class="privacy-check-label">
+                    <span class="error-wrapper"><input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>></span> <span class="title">I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a></span>
+                  </label>
+                </div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                 'DCS.dcsuri', '/mainstream_newsletter/signup',
@@ -130,10 +140,93 @@ EXTRA_HEADERS;
                                 'WT.dl', 99,
                                 'WT.nv', 'Content',
                                 'WT.ac', 'Newsletter');">
-                <p class="footnote">We will only send you Mozilla-related information (<a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>).</p>
+                <p class="footnote">We will only send you Mozilla-related information.</p>
               </div>
             </form>
           </div>
+
+        <div id="blog">
+            <h3>Follow the <span>Rapid Release Blog</span></h3>
+            <p>Be the first to know what’s happening with <a href="#">our upcoming releases</a>.</p>
+            <?php
+
+            require_once $config['file_root'].'/includes/Cache/Lite.php';
+
+            $uri = 'http://wordpress.org/news/feed/';
+            $max_items = 4;
+            $lifetime = 450; // 7.5 mins, about half static cache time
+
+            $document = new DOMDocument();
+            $items = array();
+
+            $cache = new Cache_Lite(
+                array(
+                    'cacheDir' => dirname(__FILE__) . '/../../../cache/',
+                    'lifeTime' => $lifetime,
+                )
+            );
+
+            if (($xml = $cache->get($uri)) === false) {
+                $xml = file_get_contents($uri);
+                if ($xml === false) {
+                    // try invalid cached version if it exists
+                    if (($xml = $cache->get($uri, 'default', true)) === false) {
+                        $xml = '';
+                    }
+                }
+                $document->load($uri);
+                $cache->save($xml, $uri);
+            }
+
+            if ($xml != '') {
+                $document->loadXML($xml);
+                $xpath = new DOMXPath($document);
+                $item_els = $xpath->query('//item');
+                $count = 0;
+                foreach ($item_els as $item_el) {
+                    $item = array();
+                    $item['title'] = $xpath->evaluate('string(title/text())', $item_el);
+                    $item['link'] = $xpath->evaluate('string(link/text())', $item_el);
+                    $item['date'] = strtotime($xpath->evaluate('string(pubDate/text())', $item_el));
+                    $categories = array();
+                    $category_els = $xpath->query('category/text()', $item_el);
+                    foreach ($category_els as $category) {
+                        $categories[] = $category->data;
+                    }
+                    $item['categories'] = $categories;
+                    $items[] = $item;
+                    $count++;
+
+                    if ($count >= $max_items) {
+                        break;
+                    }
+                }
+            }
+
+            if (count($items) > 0) {
+                echo '<ul>';
+
+                foreach ($items as $item) {
+                    echo '<li>';
+                    echo '<h4><a href="' . htmlspecialchars($item['link']) . '">';
+                    echo htmlspecialchars($item['title']);
+                    echo '</a></h4>';
+                    echo '<div class="info">';
+                    echo '<span class="date">' . htmlspecialchars(date('F j, Y', $item['date'])) . '</span>';
+                    if (count($item['categories']) > 0) {
+                        echo ' • ';
+                        $categories = array_map('htmlspecialchars', $item['categories']);
+                        echo implode(', ', $categories);
+                    }
+                    echo '</div>';
+                    echo '</li>';
+                }
+
+                echo '</ul>';
+            }
+
+            ?>
+        </div>
 
     </div>
 
