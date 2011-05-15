@@ -2,7 +2,7 @@
 
 #platforms {
   overflow: hidden;
-  margin: 0 30px 20px 30px;
+  margin: 0 30px 40px 30px;
   background: url(/img/covehead/divider-main-reverse.jpg) no-repeat center 100%;
   padding: 0;
 }
@@ -29,7 +29,7 @@
 }
 
 #platforms-divider {
-  background: url(/img/covehead/mobile/dotted-line.png) 410px 20px no-repeat;
+  background: url(/img/covehead/mobile/dotted-line.png) 415px 20px no-repeat;
   min-height: 215px;
 }
 
@@ -39,14 +39,14 @@
 
 #platforms #android {
   background: url(/img/mobile/device-android.jpg) 0 0 no-repeat;
+    margin-right: 15px;
 }
 
-#platforms #nokia {
-  background: url(/img/mobile/device-n900.jpg) 0 0 no-repeat;
+#platforms #iphone {
+  background: url(/img/mobile/device-iphone.png) 0 0 no-repeat;
 }
 
-#platforms #nokia p {
-    font-size: 15px;
+#platforms #iphone p {
 }
 
 .platform h3 {
@@ -59,15 +59,11 @@
   color: #447bc4;
 }
 
-#platforms #android .notes {
-  font-size: 90%; zoom: 1;
-    text-align: left;
-}
-
-#main-content .notes {
-  font-size: 90%; zoom: 1;
-    text-align: center;
-    color: #999;
+#platforms .notes {
+  font-size: 11px;
+  zoom: 1;
+  text-align: left;
+  color: #999;
 }
 
 .platform .dl {
@@ -89,9 +85,9 @@
   overflow: hidden;
 }
 
-#secondary div {
-  width: 42%;
-  padding: 20px 3% 10px;
+#secondary .sub-feature {
+  width: 500px;
+  padding: 20px;
   float: left;
   background: #c9ddf2;
   -moz-border-radius: 8px;
@@ -121,22 +117,53 @@
 }
 
 #secondary #desktop {
-  float: right;
-  margin-top: 20px;
-  padding: 20px 20px 10px 100px;
-  width: 450px;
-  background: #c9ddf2 url("/img/covehead/mobile/logo-download.png") 5px 5px no-repeat;
+    width: 340px;
+    margin-left: 20px;
 }
 
+#secondary #desktop ul,
 #secondary #desktop li {
   display: inline;
-  padding: 0;
-  background: none;
-  margin-right: 30px;
 }
 
-#secondary h4 {
-  margin: 0 0 .75em;
+#secondary #desktop .for {
+    display: inline-block;
+    padding: 0 1em;
+    font-style: italic;
+    zoom:1;
+    *display:inline;
+}
+
+#secondary h3 {
+  margin: 0 0 10px 0;
+}
+
+#secondary .download {
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    font-size: 16px;
+    font-style: italic;
+    padding: 8px 12px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #bdc6d7;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset, 0 0 2px rgba(223, 239, 249, 0.8) inset;
+    -moz-box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset, 0 0 2px rgba(223, 239, 249, 0.8) inset;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset, 0 0 2px rgba(223, 239, 249, 0.8) inset;
+    color: #484848;
+    margin: 0 0 8px 0;
+    zoom:1;
+    vertical-align: middle;
+    *display:inline;
+}
+
+#secondary .notes {
+    font-size: 11px;
+    margin: 0 0 0 14px;
 }
 
 /* }}} */
@@ -145,7 +172,7 @@
 .platform .dl a,
 .platform .dl a:link,
 .platform .dl a:visited {
-	width: 240px;
+	width: 250px;
 	font-family: "Trebuchet MS", sans-serif;
 	font-size: 16px;
 	display: block;
@@ -167,10 +194,18 @@
 	transition:        box-shadow 0.2s ease-in-out;
 }
 
+#iphone.platform .dl a,
+#iphone.platform .dl a:link,
+#iphone.platform .dl a:visited {
+    width: 265px;
+}
+
 .platform .dl a span.title {
+    font-weight: bold;
 	display: block;
 	background: url(/img/firefox/download-arrow.png) 10px 14px no-repeat;
 	padding: 8px 8px 0 30px;
+    letter-spacing: -0.02em;
 }
 
 .platform .dl a span.desc {
@@ -197,38 +232,33 @@
 }
 
 /* }}} */
-/* {{{ Feature Boxes */
 
-#feature-boxes .feature-box {
-	float: left;
-	width: 250px;
-	padding: 0 30px;
+#connect {
+    text-align: center;
+    padding: 40px 0;
 }
 
-#feature-boxes h4 {
-	font-size: 22px;
-	margin: 40px 0 10px 0;
-	line-height: 0.9;
+#connect h3,
+#connect ul,
+#connect li {
+    display: inline;
+    margin: 0 10px;
 }
 
-#feature-boxes .feature-box p {
-	min-height: 5em;
+.twitter a {
+    background: url("/img/sprite-16.png") no-repeat scroll 0 0 transparent;
+    padding-left: 25px;
+    padding-bottom: 3px;
 }
-
-* html #feature-boxes .feature-box p {
-	height: 5em;
+.facebook a {
+    background: url("/img/sprite-16.png") no-repeat scroll 0 -40px transparent;
+    padding-left: 25px;
+    padding-bottom: 3px;
 }
-
-#feature-boxes .feature-box p,
-#feature-boxes .feature-box a {
-	font-size: 15px;
+.mail a {
+    background: url("/img/sprite-16.png") no-repeat scroll 0 -160px transparent;
+    padding-left: 25px;
+    padding-bottom: 3px;
 }
-
-#feature-boxes h4 {
-	line-height: 0.9;
-}
-
-/* }}} */
-
 
 #firefox-mobile #footer { margin-top: 0; }

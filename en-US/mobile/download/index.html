@@ -33,7 +33,7 @@ EXTRA_HEADERS;
         <p class="dl">
           <a href="https://market.android.com/details?id=org.mozilla.firefox"
              onclick="dcsMultiTrack('DCS.dcssip', 'market.android.com',
-                                    'DCS.dcsuri', 'details?id=org.mozilla.firefo',
+                                    'DCS.dcsuri', 'details?id=org.mozilla.firefox',
                                     'WT.ti', 'Link: Get Firefox for Android',
                                     'WT.dl', 99,
                                     'WT.nv', 'Content',
@@ -42,80 +42,97 @@ EXTRA_HEADERS;
             <span class="desc">Free from the Android Market</span>
           </a>
         </p>
-        <p class="notes">Or visit <a href="/<?=$lang?>/m">Firefox.com/m</a> on your phone.</p>
+        <p><a href="/<?=$lang?>/mobile/platforms">List of Supported Devices »</a></p>
+        <p class="notes">Get Firefox for Maemo by visiting <a href="/<?=$lang?>/m">Firefox.com/m</a> on your phone.</p>
       </div>
-      <div id="nokia" class="platform">
-        <h3>Download for <span>Nokia N900</span></h3>
-        <p>Get Firefox for Maemo by visiting <a href="/<?=$lang?>/m">Firefox.com/m</a> on your phone.</p>
+      <div id="iphone" class="platform">
+        <h3>Firefox Home for <span>iPhone</span></h3>
+        <p class="dl">
+          <a href="http://itunes.com/apps/firefoxhome"
+             onclick="dcsMultiTrack('DCS.dcssip', 'itunes.com',
+                                    'DCS.dcsuri', 'apps/firefoxhome',
+                                    'WT.ti', 'Link: Get Firefox Home for iPhone',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox Home for iPhone');">
+            <span class="title">Get Firefox Home for iPhone</span>
+            <span class="desc">Free from iTunes</span>
+          </a>
+        </p>
+        <p>Access your Firefox history, bookmarks and open tabs on your iPhone. <a href="/<?=$lang?>/mobile/home/">Learn More »</a></p>
       </div>
     </div>
   </div>
-      <p class="notes"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></p>
 
   <div id="secondary">
-    <div id="ffhome">
-      <h4>Firefox Home for iPhone</h4>
-      <p>Access your Firefox history, bookmarks and open tabs on your iPhone.</p>
-      <ul>
-        <li><a href="/<?=$lang?>/mobile/home/">Learn more</a></li>
-        <li><a href="http://itunes.com/apps/firefoxhome">Get it from iTunes - FREE</a></li>
-      </ul>
+    <div id="beta_android" class="sub-feature">
+      <h3>Want to test the latest features?</h3>
+      <p>You’ll get to experience cutting-edge features and provide feedback to help refine and polish what will be in the final release.</p>
+      <a class="download" href="https://market.android.com/details?id=org.mozilla.firefox">Download Beta for Android »</a>
+      <p class="notes">Free from the Android Market</p>
     </div>
-    <div id="desktop">
-      <h4>Download Firefox for mobile to your desktop computer</h4>
-      <p>Developers, you can install the mobile version of Firefox to your desktop computer in order
-      to test, provide feedback and build add-ons. The desktop versions are intended for development
-      purposes only.</p>
-      <ul>
-        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank">Windows</a></li>
-        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank">Mac OS X</a></li>
-        <li><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank">Linux</a></li>
+    <div id="desktop" class="sub-feature">
+      <h3>Developer Tools</h3>
+      <p>You can install the mobile version of Firefox to our desktop computer in order to test, provide feedback, and build add-ons.</p>
+      <ul id="desktop_download">
+        <li id="desktop_windows"><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank" class="download">Download<span> Windows</span></a></li>
+        <li id="desktop_mac"><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank" class="download">Download<span> Mac OS X</span></a></li>
+        <li id="desktop_linux"><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank" class="download">Download<span> Linux</span></a></li>
       </ul>
+
+        <span class="for">for</span>
+
+      <select id="desktop_choser">
+        <option value="windows">Windows</option>
+        <option value="mac">Mac OS X</option>
+        <option value="linux">Linux</option>
+      </select>
+      <script>
+        $(document).ready(function(){
+
+            // Hide the platform span if we have JS as it's only for non-JS users
+            $('#desktop_download span').hide();
+
+            // When a platform is selected, hide the other platform download buttons
+            $('#desktop_choser').change(function() {
+                var platformval =  $('#desktop_choser').val();
+                switch (platformval) {
+                case 'windows':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_windows').show();
+                    break;
+                case 'mac':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_mac').show();
+                    break;
+                case 'linux':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_linux').show();
+                    break;
+                };
+            });
+
+            // Detect platform and default platform choser
+            if (navigator.platform.indexOf('Linux') >= 0) {
+                $('#desktop_choser').val('linux');
+            } else if (navigator.platform.indexOf('Mac') >= 0) {
+                $('#desktop_choser').val('mac');
+            }
+            $('#desktop_choser').change();
+        });
+      </script>
     </div>
   </div>
 
-  <div id="feature-boxes">
-    <div id="video-tour" class="feature-box">
-      <h4>Take the <span>Video Tour</span></h4>
-      <p>Learn how Firefox brings your Web to your phone.</p>
-      <p class="go"><a href="/<?=$lang?>/firefox/video/?video=fx4-mobile-whatsnew" id="tour-video">Launch the Video »</a></p>
-      <script>
-        // <![CDATA[
-        var player_french = new Mozilla.VideoPlayer(
-            'tour-video',
-            [
-                {
-                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.webm',
-                    type:  'video/webm',
-                    title: 'Download in WebM format'
-                },
-                {
-                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.theora.ogv',
-                    type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
-                    title: 'Download in Open Video format (Ogg&nbsp;Theora)'
-                },
-                {
-                    url:   'http://videos-cdn.mozilla.net/serv/marketing/firefox4/Mobile-launch-greatday640.mp4',
-                    type:  'video/mp4',
-                    title: 'Download in MPEG-4 format'
-                }
-            ],
-            'serv/marketing/firefox4/Mobile-launch-greatday640.mp4'
-        );
-        // ]]>
-      </script>
-    </div>
-    <div id="getinvolved" class="feature-box">
-      <h4>Get <span>Involved</span></h4>
-      <p>We rely on a global community of people like you to help build, test and spread Firefox.</p>
-      <p class="go"><a href="/<?=$lang?>/mobile/getinvolved/">Find Out What You Can Do »</a></p>
-    </div>
+  <div id="connect">
 
-    <div id="feedback" class="feature-box">
-      <h4>Questions? <span>Comments?</span></h4>
-      <p>Let us answer your questions, or tell us what you think about Firefox on your phone.</p>
-      <p class="go"><a href="http://support.mozilla.com/kb/Mobile+Help+and+Tutorials">Get Help »</a></p>
-    </div>
+   <h3>Connect With Firefox for Mobile:</h3>
+   <ul>
+      <li class="mail"><a href="/<?=$lang?>/newsletter/about_mobile/">Monthly newsletter</a></li>
+      <li class="twitter"><a href="http://twitter.com/MozMobile">Follow us</a></li>
+      <li class="facebook"><a href="http://www.facebook.com/firefoxformobile">Become a fan</a></li>
+   </ul>
+
   </div>
 
 </div><!-- /#main-content -->
@@ -123,14 +140,14 @@ EXTRA_HEADERS;
 <script>// <![CDATA[
   /* Whichever box is taller, make the shorter one the same height */
 	$(document).ready(function(){
-  	h_left = $('#ffhome').height();
+  	h_left = $('#beta_android').height();
   	h_right = $('#desktop').height();
 
   	if(h_left >= h_right) {
   		$('#desktop').height(h_left);
   	}
   	if (h_left < h_right) {
-  		$('#ffhome').height(h_right);
+  		$('#beta_android').height(h_right);
   	}
 	});
 // ]]></script>
