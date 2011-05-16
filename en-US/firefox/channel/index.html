@@ -173,9 +173,9 @@ EXTRA_HEADERS;
                     if (($xml = $cache->get($uri, 'default', true)) === false) {
                         $xml = '';
                     }
+                } else {
+                    $cache->save($xml, $uri);
                 }
-                $document->load($uri);
-                $cache->save($xml, $uri);
             }
 
             if ($xml != '') {
