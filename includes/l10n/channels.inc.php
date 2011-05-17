@@ -236,6 +236,17 @@ $extra_headers .= <<<EXTRA_HEADERS
         margin-right:300px;
         margin-left:auto;
     }
+
+
+    #mobile-beta .download-soon:hover {
+        -moz-transition: box-shadow 0.2s ease-in !important;
+        box-shadow: 0 3px rgba(90, 90, 90, 0.1), 0 -4px rgb(200,239,255) inset, 0 -10px 30px rgb(200,239,255) inset !important;
+    }
+
+
+    #mobile-beta .download-soon:hover a {
+        text-decoration:none;
+    }
     </style>
 
 EXTRA_HEADERS;
