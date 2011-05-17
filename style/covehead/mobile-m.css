@@ -615,23 +615,39 @@ li.spark a.spark-img {
     margin-top: .5em;
 }
 
+#channel #newsletter {
+    padding: 0;
+    margin: 0;
+}
+
 #newsletter a.news-switch {
+    display: block;
     position: relative;
-    background: url(/img/mail.png) no-repeat 0 40%;
-    padding-left: 50px;
-    padding-right: 50px;
+
+    background: url(/img/mail.png) no-repeat 0 50%;
     font-size: 1.2em;
     text-decoration: none;
+
+    margin: 0 .75em;
+    padding: 15px 0;
+    padding-left: 52px;
+}
+
+#newsletter a.news-switch span {
+    display: block;
+    width: 11em;
 }
 
 #newsletter .indicator {
     position: absolute;
     top: 0;
     right: 0;
+
     font-size: 1.25em;
     color: black;
     margin: 0;
     padding: 0;
+    margin-top: .9em;
 }
 
 #newsletter .open-pane {
@@ -646,10 +662,18 @@ li.spark a.spark-img {
     display: block;
 }
 
+#newsletter .open-pane .separator {
+    border-bottom: 1px solid #d7d9e8;
+}
+
+#newsletter .newsletter {
+    margin-top: 1em;
+}
+
 /* newsletter */
 
 .newsletter .success-pane {
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 1em 0;
 }
 
@@ -678,11 +702,11 @@ li.spark a.spark-img {
 }
 
 .newsletter {
-    margin-top: 1em;
+    margin: 0 1em;
 }
 
 .newsletter .email {
-    width: 98%;
+    width: 95%;
     border-radius: 4px;
     border: 1px solid #999999;
     padding: 10px 5px;

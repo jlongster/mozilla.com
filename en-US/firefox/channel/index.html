@@ -4,6 +4,7 @@
     $body_id    = 'channel';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/feeds/rapidrelease.php";
 
     $form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
     $status = '';
@@ -189,81 +190,30 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
             <h3>Follow the <span>Future Release Blog</span></h3>
             <p>Be the first to know what’s happening with <a href="http://blog.mozilla.com/futurereleases/">our upcoming releases</a>.</p>
             <?php
+               $feed = new RapidReleaseFeed();
+               $items = $feed->get_items(4);
 
-            require_once $config['file_root'].'/includes/Cache/Lite.php';
+               if (count($items) > 0) {
+                   echo '<ul>';
 
-            $uri = 'http://blog.mozilla.com/futurereleases/feed/';
-            $max_items = 4;
-            $lifetime = 450; // 7.5 mins, about half static cache time
+                   foreach ($items as $item) {
+                       echo '<li>';
+                       echo '<h4><a href="' . htmlspecialchars($item['link']) . '">';
+                       echo htmlspecialchars($item['title']);
+                       echo '</a></h4>';
+                       echo '<div class="info">';
+                       echo '<span class="date">' . htmlspecialchars(date('F j, Y', $item['date'])) . '</span>';
+                       if (count($item['categories']) > 0) {
+                           echo ' • ';
+                           $categories = array_map('htmlspecialchars', $item['categories']);
+                           echo implode(', ', $categories);
+                       }
+                       echo '</div>';
+                       echo '</li>';
+                   }
 
-            $document = new DOMDocument();
-            $items = array();
-
-            $cache = new Cache_Lite(
-                array(
-                    'cacheDir' => dirname(__FILE__) . '/../../../cache/',
-                    'lifeTime' => $lifetime,
-                )
-            );
-
-            if (($xml = $cache->get($uri)) === false) {
-                $xml = file_get_contents($uri);
-                if ($xml === false) {
-                    // try invalid cached version if it exists
-                    if (($xml = $cache->get($uri, 'default', true)) === false) {
-                        $xml = '';
-                    }
-                } else {
-                    $cache->save($xml, $uri);
-                }
-            }
-
-            if ($xml != '') {
-                $document->loadXML($xml);
-                $xpath = new DOMXPath($document);
-                $item_els = $xpath->query('//item');
-                $count = 0;
-                foreach ($item_els as $item_el) {
-                    $item = array();
-                    $item['title'] = $xpath->evaluate('string(title/text())', $item_el);
-                    $item['link'] = $xpath->evaluate('string(link/text())', $item_el);
-                    $item['date'] = strtotime($xpath->evaluate('string(pubDate/text())', $item_el));
-                    $categories = array();
-                    $category_els = $xpath->query('category/text()', $item_el);
-                    foreach ($category_els as $category) {
-                        $categories[] = $category->data;
-                    }
-                    $item['categories'] = $categories;
-                    $items[] = $item;
-                    $count++;
-
-                    if ($count >= $max_items) {
-                        break;
-                    }
-                }
-            }
-
-            if (count($items) > 0) {
-                echo '<ul>';
-
-                foreach ($items as $item) {
-                    echo '<li>';
-                    echo '<h4><a href="' . htmlspecialchars($item['link']) . '">';
-                    echo htmlspecialchars($item['title']);
-                    echo '</a></h4>';
-                    echo '<div class="info">';
-                    echo '<span class="date">' . htmlspecialchars(date('F j, Y', $item['date'])) . '</span>';
-                    if (count($item['categories']) > 0) {
-                        echo ' • ';
-                        $categories = array_map('htmlspecialchars', $item['categories']);
-                        echo implode(', ', $categories);
-                    }
-                    echo '</div>';
-                    echo '</li>';
-                }
-
-                echo '</ul>';
-            }
+                   echo '</ul>';
+               }
 
             ?>
         </div>
