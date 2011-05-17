@@ -255,16 +255,13 @@ $newsletter_form .= <<<MOBILEBETA
 <div id="mobile-beta" class="channel">
     <p class="download-soon">
     <a href="{$host_l10n}/m/beta.html">
-    {$l10n->get('Firefox Beta for mobile')}
-    <br/>
+    <span>{$l10n->get('Firefox Beta for mobile')}</span>
     <img src="/img/mobile/beta/beta-install-inset.png">
-    <br/>
-    {$l10n->get('Download')}
+    <span>{$l10n->get('Download')}</span>
     </a>
     </p>
 </div>
 MOBILEBETA;
-
 
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
