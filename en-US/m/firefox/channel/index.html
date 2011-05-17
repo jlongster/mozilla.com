@@ -1,0 +1,136 @@
+<?php
+    $page_title = "Firefox Future Releases | Firefox Mobile";
+    $body_id = 'channel';
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new ChannelsPrivacyForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div class="page-title with-titles">
+  <h2>Future Releases</h2>
+</div>
+
+<div class="content-box with-titles">
+  <div class="title">
+    <h1>Beta</h1>
+    <h3>Mobile</h3>
+  </div>
+  <ul>
+    <li>
+      Experience cutting edge mobile features still in development
+    </li>
+    <li>
+      Provide feedback to help refine and polish what will be in the
+      final release
+    </li>
+  </ul>
+
+  <a href="/m/download-android.html" class="button button-beta">
+    Download Beta<br />
+    <em>for Android</em>
+  </a>
+</div>
+
+<a class="desktop" href="/<?=$lang?>/firefox/channel">Future Releases for Desktop »</a>
+
+<div id="newsletter" class="content-box">
+  <a class="news-switch link-pane" href="#newsletter">
+    Get the latest channel news
+    <div class="indicator">+</div>
+  </a>
+
+  <div class="open-pane">
+    <a class="news-switch" href="#">
+      Get the latest channel news
+      <div class="indicator">-</div>
+    </a>
+
+    <div class="newsletter <?= $status ?>">
+      <div class="success-pane">
+        <h3>Thanks for subscribing!</h3>
+      </div>
+
+      <form action="#newsletter" method="post">
+        Email Address:
+        <input class="email" name="email" type="email" value="<?= $form->get('email') ?>">
+        <div class="error" id="email-error">Whoops! Be sure to enter a valid email address.</div>
+
+        <select class="country" name="country">
+          <option value="">Select country</option>
+          <?php
+             $country = $form->get('country');
+             if (!$country) {
+                $country = 'us';
+             }
+             echo regionsAsOptions($lang, $country);
+          ?>
+        </select>
+
+        <ul class="channels_signup">
+          <li>
+            <input type="checkbox" id="check_beta" name="beta" value="t" <?php echo $form->get('beta') ? 'checked' : '' ?> />
+            <label for="check_beta">Beta <div class="subtext">(Desktop and Mobile)</div></label>
+          </li>
+          <li>
+            <input type="checkbox" id="check_aurora" name="aurora" value="t" <?php echo $form->get('aurora') ? 'checked' : '' ?> />
+            <label for="check_aurora">Aurora <div class="subtext">(Desktop)</div></label>
+          </li>
+          <li>
+            <input type="checkbox" id="check_general" name="general" value="t" <?php echo $form->get('general') ? 'checked' : '' ?> />
+            <label for="check_general">General Mozilla News <div class="subtext">(General Mozilla News)</div></label>
+          </li>
+        </ul>
+        
+        <div class="error" id="channel-error">Please select at least one newsletter.</div>
+
+        <div class="privacy">
+          <input type="checkbox" name="privacy" value="t" <?php echo $form->get('privacy') ? 'checked' : '' ?>> I agree to the <a href="#">Mozilla Privacy Policy</a>
+        </div>
+
+        <div class="error" id="privacy-error">Please agree to the Privacy Policy.</div>
+        
+        <input type="hidden" name="submit" value="submit" />
+        <button type="submit" id="subscribe"
+               onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                        'DCS.dcsuri', '/mainstream_newsletter/signup',
+                        'WT.ti', 'Link: Sign me up - Second Step',
+                        'WT.dl', 99,
+                        'WT.nv', 'Content',
+                        'WT.ac', 'Newsletter');">
+          Sign me up!
+        </button>
+
+        <p class="footnote">We will only send you Mozilla-related information.</p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<h2>Future Release Blog</h2>
+
+<ul class="blog-feed">
+  <li>
+    <a href="#">New Channels for Firefox Rapid Releases</a>
+    <span class="date">April 13th, 2011</span>
+  </li>
+  <li>
+    <a href="#">New Channels for Firefox Rapid Releases and other stuff</a>
+    <span class="date">April 13th, 2011</span>
+  </li>  
+</ul>
+
+<a class="blog" href="#">View Blog »</a>
+
+<?php 
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>

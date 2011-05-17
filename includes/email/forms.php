@@ -28,6 +28,7 @@ class NewsletterForm {
         if (!isset($data['email']) || !preg_match('/^([\w\-.+])+@([\w\-.])+\.[A-Za-z]{2,4}$/', $data['email'])) {
             throw new NewsletterValidationException('email');
         }
+
         if (!array_key_exists('privacy', $data)) {
             throw new NewsletterValidationException('privacy');
         }
@@ -96,7 +97,20 @@ class ChannelsForm extends NewsletterForm {
             Responsys::subscribe($this->campaigns[2], $this->data);
         }
 
-    }}
+    }
+}
+
+class ChannelsPrivacyForm extends ChannelsForm {
+    function validate() {
+        parent::validate();
+
+        if (!array_key_exists('privacy', $this->data)) {
+            throw new NewsletterValidationException('privacy');
+        }
+        
+        return true;
+    }
+}
 
 class GermanNewsletterForm extends NewsletterForm {
     function subscribe() {
