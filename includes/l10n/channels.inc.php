@@ -223,6 +223,33 @@ if ($textdir == "rtl") {
         </style>
 RTL;
 }
+$extra_headers .= <<<EXTRA_HEADERS
+    <style>
+    #mobile-beta {
+        width: 300px !important;
+        margin-left: 300px!important;
+        text-align:center;
+        clear:both !important;
+    }
+    </style>
+
+EXTRA_HEADERS;
+
+$newsletter_form .= <<<MOBILEBETA
+<div id="mobile-beta" class="channel">
+    <p class="download-soon">
+    <a href="{$host_l10n}/m/beta.html">
+    {$l10n->get('Firefox Beta for mobile')}
+    <br/>
+    <img src="/img/mobile/beta/beta-install-inset.png">
+    <br/>
+    {$l10n->get('Download')}
+    </a>
+    </p>
+</div>
+MOBILEBETA;
+
+
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
 require_once $config['file_root'].'/'.$lang.'/firefox/channel/content.inc.html';
