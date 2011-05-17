@@ -1,9 +1,18 @@
 <?php
 
-
     $body_id    = 'home';
     $body_class = 'locale-'.$lang;
-    require_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    include_once $config['file_root'].'/includes/product-details/mobileDetails.class.php';
+    $extra_headers .= <<<EXTRA_HEADERS
+    <link href="{$config['static_prefix']}/style/covehead/mobile-m.css" rel="stylesheet" media="all" />
+    <style>
+    .title .text {
+        margin-right: 100px;
+    }
+    </style>
+EXTRA_HEADERS;
+    require_once $config['file_root'].'/includes/l10n/m-header-pages.inc.php';
+
 ?>
 <style type="text/css">
 .download-button .button-beta {
@@ -40,5 +49,5 @@
 
 <?php
     $link1 = "<a href='/{$lang}/mobile/beta/faq/'>".___('FAQ')."</a>";
-    require_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    require_once $config['file_root'].'/includes/l10n/m-footer-pages.inc.php';
 ?>
