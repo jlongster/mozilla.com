@@ -231,6 +231,11 @@ $extra_headers .= <<<EXTRA_HEADERS
         text-align:center;
         clear:both !important;
     }
+
+    [dir=rtl] #mobile-beta {
+        margin-right:300px;
+        margin-left:auto;
+    }
     </style>
 
 EXTRA_HEADERS;
