@@ -254,7 +254,7 @@ EXTRA_HEADERS;
 $newsletter_form .= <<<MOBILEBETA
 <div id="mobile-beta" class="channel">
     <p class="download-soon">
-    <a href="{$host_l10n}/m/beta.html">
+    <a href="https://market.android.com/details?id=org.mozilla.firefox_beta">
     <span>{$l10n->get('Firefox Beta for mobile')}</span>
     <img src="/img/mobile/beta/beta-install-inset.png">
     <span>{$l10n->get('Download')}</span>
