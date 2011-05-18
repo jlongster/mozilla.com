@@ -13,11 +13,11 @@ $(document).ready( function flashWarning() {
         var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
         if (!hasRequestedVersion && hasRequestedVersion != -1) {
             if (typeof(FlashAlertTitle) == 'undefined') {
-                FlashAlertTitle = 'You should <a href="http://get.adobe.com/flashplayer/" onclick="dcsMultiTrack(\'DCS.dcssip\', \'get.adobe.com\', \'DCS.dcsuri\', \'/flashplayer/\', \'WT.ti\', \'Adobe&20-%20Adobe%20Flash%20Player\');">update Adobe Flash Player</a> right now.';
+                FlashAlertTitle = 'Your Flash Player is out of date. Never fear, we can help.';
                 }
 
             if (typeof(FlashAlertText) == 'undefined') {
-                FlashAlertText  = 'Firefox is up to date, but your current version of Flash Player can cause security and stability issues.  Please <a href="http://get.adobe.com/flashplayer/" onclick="dcsMultiTrack(\'DCS.dcssip\', \'get.adobe.com\', \'DCS.dcsuri\', \'/flashplayer/\', \'WT.ti\', \'Adobe&20-%20Adobe%20Flash%20Player\');">install the free update</a> as soon as possible.';
+                FlashAlertText  = 'To keep you as safe as possible, we recommend you upgrade your Flash Player. Without it, your browser could be less stable and less secure. So <a href="http://get.adobe.com/flashplayer/" onclick="dcsMultiTrack(\'DCS.dcssip\', \'get.adobe.com\', \'DCS.dcsuri\', \'/flashplayer/\', \'WT.ti\', \'Adobe&20-%20Adobe%20Flash%20Player\');">get the free update now</a> or <a href="http://support.mozilla.com/kb/Managing+the+Flash+plugin#w_updating-flash">learn more</a>.';
                 }
 
             bodyTag = document.getElementsByTagName('body')[0];
@@ -25,12 +25,11 @@ $(document).ready( function flashWarning() {
             if (bodyTag.id == 'whatsnew') {
 
                 $('body').addClass('flash-warning');
-                $('#main-content').addClass('flash-warning');
 
-                var e = document.getElementById('main-content');
-                e.innerHTML = '<div id="flash-warning">' +
+                $('#main-content').before( '<div id="flash-warning">' +
                               '<h2>' + FlashAlertTitle + '</h2>' +
-                              '<p>' + FlashAlertText + '</p></div>';
+                              '<p>' + FlashAlertText + '</p>' +
+                              '<a href="#" id="flash-close">✖</a></div>' );
 
                 if ($('.sub-feature#social').length && $('.sub-feature#flash-plus-beta').length) {
                     // If the flash warning is showing in the main content area, 
@@ -49,6 +48,12 @@ $(document).ready( function flashWarning() {
         }
 
     }
+});
+
+$(function () {
+    $('#flash-close').live('click',function () {
+        $(this).parent().remove();
+    });
 });
 
 // Flash Player Version Detection - Rev 1.6
