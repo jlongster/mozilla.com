@@ -115,7 +115,7 @@ $extra_headers .= <<<EXTRA_HEADERS
     }
 
     .channel ul.channel-list {
-        min-height: 12em;
+        min-height: 13em;
     }
 
     div.title h3,

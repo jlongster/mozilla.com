@@ -18,18 +18,33 @@ class firefoxDetailsL10n extends firefoxDetails
                 $_current_version    = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 $_betalocale_version = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
                 $_targetted_version  = $option['version'] = LATEST_FIREFOX_OLDER_VERSION;
+                // if we have no builds at all, let's default to en-US so as to display download boxes on pages
+                if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
+                    $locale           = 'en-US';
+                    $_current_version = $this->getOldestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                }
                 break;
 
             case 'beta':
                 $_current_version    = $this->getDevelVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 $_betalocale_version = $this->getDevelVersionForLocaleFromBuildArray($locale, $this->beta_builds);
                 $_targetted_version  = $option['version'] = LATEST_FIREFOX_DEVEL_VERSION;
+                // if we have no builds at all, let's default to en-US so as to display download boxes on pages
+                if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
+                    $locale           = 'en-US';
+                    $_current_version = $this->getDevelVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                }
                 break;
 
             case 'aurora':
                 $_current_version    = $this->getAuroraVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 $_betalocale_version = $this->getAuroraVersionForLocaleFromBuildArray($locale, $this->beta_builds);
                 $_targetted_version  = $option['version'] = FIREFOX_AURORA;
+                // if we have no builds at all, let's default to en-US so as to display download boxes on pages
+                if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
+                    $locale           = 'en-US';
+                    $_current_version = $this->getAuroraVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                }
                 break;
 
             case 'stable':
@@ -37,15 +52,17 @@ class firefoxDetailsL10n extends firefoxDetails
                 $_current_version    = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 $_betalocale_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
                 $_targetted_version  = LATEST_FIREFOX_RELEASED_VERSION;
+                // if we have no builds at all, let's default to en-US so as to display download boxes on pages
+                if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
+                    $locale           = 'en-US';
+                    $_current_version = $this->getNewsetVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                }
                 break;
         }
 
 
-        // if we have no builds at all, let's default to en-US so as to display download boxes on pages
-        if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
-            $locale           = 'en-US';
-            $_current_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
-        } elseif ($_current_version == '') {
+        // bela locales styling
+        if ($_current_version == '') {
             $_current_version              = $_betalocale_version;
             $_blockclass                  .= ' betalocale';
             $options['betalocale_status']  = true;
