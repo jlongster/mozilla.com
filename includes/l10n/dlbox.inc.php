@@ -38,30 +38,30 @@ switch($pageid) {
         $dl_box_class['aurora']   = '';
         $dl_box_class['beta']     = 'beta-download';
         $dl_box_class['mobile']   = '';
-        $dl_box_id      = 'download'; // stable release id
-        $dl_box_aurora  = 'download_aurora_button';
-        $dl_box_beta    = 'download-button';
-        $dl_box_options = array('download_parent_override'  => 'download',
-                                'wording'                   => $mz_stable,
-                                'channel'                   => 'stable',
-                                'layout'                    => 'channel',
-                                'download_product'          => ___('Download'),
-                                'ancillary_links'           => true,
-                                );
+        $dl_box_id                = 'download'; // stable release id
+        $dl_box_aurora            = 'download_aurora_button';
+        $dl_box_beta              = 'download-button';
+        $dl_box_options           = array('download_parent_override'  => 'download',
+                                    'wording'                   => $mz_stable,
+                                    'channel'                   => 'stable',
+                                    'layout'                    => 'simple',
+                                    'download_product'          => ___('Download'),
+                                    'ancillary_links'           => true,
+                                    );
         $dl_box_options_aurora = array('download_parent_override'  => 'download_aurora',
-                                'wording'                          => $mz_aurora,
-                                'channel'                          => 'aurora',
-                                'layout'                           => 'aurora',
-                                'download_product'                 => ___('Download'),
-                                'ancillary_links'                  => false,
-                                );
+                                    'wording'                          => $mz_aurora,
+                                    'channel'                          => 'aurora',
+                                    'layout'                           => 'aurora',
+                                    'download_product'                 => ___('Download'),
+                                    'ancillary_links'                  => true,
+                                    );
         $dl_box_options_beta = array('download_parent_override'  => 'download_beta',
-                                'wording'                        => $mz_beta,
-                                'channel'                        => 'beta',
-                                'layout'                         => 'channel',
-                                'download_product'               => ___('Download'),
-                                'ancillary_links'                => false,
-                                );
+                                    'wording'                        => $mz_beta,
+                                    'channel'                        => 'beta',
+                                    'layout'                         => 'simple',
+                                    'download_product'               => ___('Download'),
+                                    'ancillary_links'                => true,
+                                    );
         //$beta_button        = '<p><a href="#channel_news" class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</a></p>';
         // Bug 654158: we hide the newsletter form link
         //$beta_button        = '<p><span class="download-soon"><span>'.$soon.'</span>'.$getnotified.'</span></p>';
@@ -72,7 +72,7 @@ switch($pageid) {
     default:
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'home-download';
-        $dl_box_options         = array('wording' => 'Firefox 4');
+        $dl_box_options         = array('wording' => 'Firefox 4', 'relnotes_link' => true);
         break;
 }
 

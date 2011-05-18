@@ -144,7 +144,7 @@ HTML_RETURN;
         $_current_version             = array_key_exists('version', $options) ? $options['version'] : $this->getNewestVersionForLocale($locale);
         $_bouncer_js                  = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_download_product            = array_key_exists('download_product', $options) ?  ___($options['download_product']) : ___('Free Download');
-        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Firefox';
+        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Mozilla Firefox';
         $_release_notes               = ___('Release Notes');
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_language_name               = $this->localeDetails->getNativeNameForLocale($locale);
@@ -247,24 +247,12 @@ LI_SIDEBAR;
 LI_SIDEBAR;
                 break;
 
-            case 'channel':
-                $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}">
-                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">
-                <span class="download-content">
-                    <span class="download-title">{$_download_product}</span> {$_wording}
-                </span>
-                {$extra_dl_info}
-                </a>
-                </li>
-LI_SIDEBAR;
-
             case 'simple':
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
                 <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">
                 <span class="download-content">
-                    <span class="download-title">{$_download_product}</span> Mozilla Firefox
+                    <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
                 {$extra_dl_info}
                 </a>
@@ -307,13 +295,26 @@ LI_MAIN;
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_privacy_policy              = ___('Privacy Policy');
 
-        $_return = <<<HTML_RETURN
-        <div class="download-other">
-            <a class="ancillaryLink" href="/{$locale}/firefox/{$_current_version}/releasenotes/">{$_release_notes}</a> -
-            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> <br/>
-            <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
-        </div>
+        if(array_key_exists('relnotes_link', $options)) {
+
+            $_return = <<<HTML_RETURN
+            <div class="download-other">
+                <a class="ancillaryLink" href="/{$locale}/firefox/{$_current_version}/releasenotes/">{$_release_notes}</a> -
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> <br/>
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
+            </div>
 HTML_RETURN;
+
+        } else {
+
+            $_return = <<<HTML_RETURN
+            <div class="download-other">
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> -
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
+            </div>
+HTML_RETURN;
+
+        }
 
         return $_return;
     }

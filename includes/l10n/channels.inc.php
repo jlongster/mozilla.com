@@ -109,8 +109,13 @@ $extra_headers .= <<<EXTRA_HEADERS
     }
 
     #channel #download_aurora_button .download-other,
+    #channel #download-button .download-other,
     #channel #download .download-other {
         text-align: center;
+    }
+
+    .channel ul.channel-list {
+        min-height: 12em;
     }
 
     div.title h3,
