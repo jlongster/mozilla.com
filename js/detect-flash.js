@@ -1,7 +1,7 @@
-// What's new page logic.
+ // What's new page logic.
 var requiredMajorVersion = 10;
-var requiredMinorVersion = 2;
-var requiredRevision     = 152;
+var requiredMinorVersion = 3;
+var requiredRevision     = 181;
 
 
 $(document).ready( function flashWarning() {
