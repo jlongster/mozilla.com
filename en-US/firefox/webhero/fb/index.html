@@ -1,9 +1,50 @@
 <?php
-    /* Localization setup */
-    $locale = setlocale(LC_ALL,"0");
+    
+    /* App config definitions */
+    require_once("config.php");
+
+    /* default to fx4-beta CDN if none is set */
+    if (empty($config)) $config['static_prefix'] = 'http://www-fx4-cdn.stage.mozilla.com';
+    
+    /* Facebook API */
+    include("lib/facebook.php");
+    
+    /* Init Facebook API */
+    $facebook = new Facebook(array(
+      'appId'  => APP_ID,
+      'secret' => APP_SECRET,
+      'cookie' => true
+    ));
+    
+    /* Get identifying info about the user from FB */
+    $user = $facebook->getSignedRequest();
+
+    /* Redirect them to the tab if they aren't in a tab */
+    if(!$user['page']) {
+        print "<script>top.location = 'http://www.facebook.com/Firefox';</script>";
+    }
+
+    /* Set the Locale */
+    $locale = $user["user"]["locale"];
+
+    $exceptions = array(
+        "ar_AR" => "ar_JO.utf8",
+        "rm_CH" => "it_CH.utf8"
+    );
+
+    if (array_key_exists($locale, $exceptions)) {
+        $locale = $exceptions[$locale];
+    }
+
+    putenv("LC_ALL=" . $locale);
+    setlocale(LC_ALL, $locale);
+    
     bindtextdomain('messages', dirname(__FILE__) . '/locale');
     bind_textdomain_codeset("messages", "UTF-8");
     textdomain('messages');
+
+    // right-to-left languages
+    $rtl = in_array($locale, array('ar_JO.utf8', 'he_IL'));
 
 ?>
 <!DOCTYPE html>
@@ -12,11 +53,6 @@
         <title><?= _("Firefox 4 WebHero"); ?></title>
         <link rel="stylesheet" href="css/main.css" />
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
-        <script type="text/javascript">
-            if(top.location == window.location) {
-                top.location = 'http://www.facebook.com/Firefox';
-            }
-        </script>
         <style type="text/css">
         <?php
             /* L10n: Replace this by CSS rules that make things pretty in your locale. */
