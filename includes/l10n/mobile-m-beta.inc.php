@@ -36,6 +36,8 @@ EXTRA_HEADERS;
   </a>
 </div>
 
+<?php
+/*  NO MAEMO version
 <div class="download-button">
   <a href="<?= mobileDetails::download_url($lang, mobileDetails::maemo, mobileDetails::beta_version) ?>" class="button button-beta">
     <span><?php echo $link_maemo;?> <em><?php echo $sub_link;?></em></span>
@@ -46,6 +48,8 @@ EXTRA_HEADERS;
   <li><a href="/<?= $lang ?>/mobile/<?php echo mobileDetails::beta_version; ?>/releasenotes/"><?php e__('Release Notes'); ?></a></li>
   <li><a href="/<?= $lang ?>/mobile/platforms/"><?php echo $list_devices; ?></a></li>
 </ul>
+*/
+?>
 
 <?php
     $link1 = "<a href='/{$lang}/mobile/beta/faq/'>".___('FAQ')."</a>";
