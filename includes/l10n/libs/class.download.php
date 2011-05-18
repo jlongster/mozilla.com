@@ -247,6 +247,18 @@ LI_SIDEBAR;
 LI_SIDEBAR;
                 break;
 
+            case 'channel':
+                $_return = <<<LI_SIDEBAR
+                <li class="{$_os_class}">
+                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">
+                <span class="download-content">
+                    <span class="download-title">{$_download_product}</span> {$_wording}
+                </span>
+                {$extra_dl_info}
+                </a>
+                </li>
+LI_SIDEBAR;
+
             case 'simple':
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
