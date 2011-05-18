@@ -3,7 +3,7 @@
     <h2><?php e__('Staying in touch is easier than ever.'); ?></h2>
 
     <ul id="benefits">
-        <li class="first"><?php e__('Increased <br/> speed'); ?></li>
+        <li class="first"><?php e__('Effortless <br/> customization'); ?></li>
         <li><?php e__('Easy to <br/> access tabs'); ?></li>
         <li><?php e__('Advanced <br/> security'); ?></li>
     </ul>
