@@ -40,6 +40,7 @@ function goToEnglishPage()
 }
 
 function noCachingRedirect($url) {
+    header('Status: 302 Moved Temporarily', false, 302);
     header('Date: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
     header('Expires: Fri, 01 Jan 1990 00:00:00 GMT');
     header('Pragma: no-cache');
@@ -50,10 +51,14 @@ function noCachingRedirect($url) {
 }
 
 
-
-
-
-
+function permanentRedirect($url) {
+    header('Status: 301 Moved Permanently', false, 301);
+    header('Date: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
+    header('Expires: Fri, 01 Jan 1990 00:00:00 GMT');
+    header('Vary: *');
+    header("Location: $url");
+    exit;
+}
 
 /*
  *  fork of buildPlatformImage() used on features page but l10n friendly

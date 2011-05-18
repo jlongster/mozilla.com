@@ -23,5 +23,5 @@ if(!isset($_REQUEST['flang']) OR !in_array($_REQUEST['flang'], $full_languages))
 $_REQUEST['flang'] = str_replace("%0D", "", $_REQUEST['flang']); // security measure for potential CRLF attacks
 $_REQUEST['flang'] = str_replace("%0A", "", $_REQUEST['flang']); // security measure for potential CRLF attacks
 
-header('Location: '.$config['url_scheme'].'://'.$config['server_name'].'/'.$_REQUEST['flang'].'/m/');
+permanentRedirect($config['url_scheme'].'://'.$config['server_name'].'/'.$_REQUEST['flang'].'/m/');
 exit;
