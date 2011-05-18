@@ -43,13 +43,14 @@ EXTRA_HEADERS;
     <span><?php echo $link_maemo;?> <em><?php echo $sub_link;?></em></span>
   </a>
 </div>
+*/
+?>
 
 <ul class="ancillary">
   <li><a href="/<?= $lang ?>/mobile/<?php echo mobileDetails::beta_version; ?>/releasenotes/"><?php e__('Release Notes'); ?></a></li>
   <li><a href="/<?= $lang ?>/mobile/platforms/"><?php echo $list_devices; ?></a></li>
 </ul>
-*/
-?>
+
 
 <?php
     $link1 = "<a href='/{$lang}/mobile/beta/faq/'>".___('FAQ')."</a>";
