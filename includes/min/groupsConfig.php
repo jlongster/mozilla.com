@@ -49,6 +49,10 @@ return array(
         '//js/jquery/jquery.min.js',
         '//js/detect-flash.js'
     ),
+    'js_whatsnew5' => array(
+        '//js/jquery/jquery.min.js',
+        '//js/detect-flash.js'
+    ),
     'js_portal_footer' => array(
         '//js/jquery/jquery.min.js',
         '//js/newsletter-form.js',

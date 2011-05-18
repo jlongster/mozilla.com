@@ -29,8 +29,9 @@
     }
     </style>
     <? echo min_inline_css('css_firstrun5'); ?>
+    <? echo min_inline_js('js_whatsnew5'); ?>
   </head>
-<body>
+<body id="whatsnew">
 
 <div id="wrapper">
 <div id="doc">
@@ -159,23 +160,6 @@
 </div>
 
     <script>
-      function getTop(el) {
-          if (!el.offsetParent) return 0;
-          return el.offsetTop + getTop(el.offsetParent);
-      }
-      function getLeft(el) {
-          if (!el.offsetParent) return 0;
-          return el.offsetLeft + getLeft(el.offsetParent);
-      }
-
-      $ = document.querySelector.bind(document);
-      function $$(s, fn) {
-          var nl = document.querySelectorAll(s), item;
-          for (var i = 0; i < nl.length; ++i) {
-              item = nl[i];
-              fn.apply(item);
-          }
-      }
 
   var platform = (function() {
     var ua = navigator.userAgent;
@@ -187,9 +171,13 @@
     return "win";
   })();
   document.body.classList.add(platform);
-    $("#email").addEventListener("focus", function() {
-      $("#newsletter-signup").classList.add("expand");
-    }, false);
+
+    $(document).ready(function(){
+        $("#email").focus(function() {
+            $("#newsletter-signup").addClass("expand");
+        });
+    });
+
     </script>
     <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
     <noscript>
