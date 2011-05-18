@@ -202,6 +202,7 @@ if ($textdir == "rtl") {
         }
 
         [dir="rtl"] #channel #download_aurora.channel #download_aurora_button a.download-link span.download-content,
+        [dir="rtl"] #channel #download_beta.channel #download-button a.download-link span.download-content,
         [dir="rtl"] #channel #download_firefox.channel #download a.download-link span.download-content {
             background: url("/img/covehead/channel/download-arrow.png") no-repeat scroll 190px 50% transparent;
             padding: 10px 45px 12px 20px;
