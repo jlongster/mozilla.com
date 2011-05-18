@@ -231,7 +231,7 @@ RTL;
 $extra_headers .= <<<EXTRA_HEADERS
     <style>
     #mobile-beta {
-        width: 300px !important;
+        width: 310px !important;
         margin-left: 300px!important;
         text-align:center;
         clear:both !important;
