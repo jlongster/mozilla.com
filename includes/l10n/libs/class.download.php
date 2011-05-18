@@ -295,13 +295,35 @@ LI_MAIN;
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_privacy_policy              = ___('Privacy Policy');
 
+        $_all_file = array_key_exists('all_file', $options) ? $options['all_file'] : 'latest';
+
+        switch($_all_file) {
+            case 'older':
+                $_all = 'all-older.html';
+                break;
+            case 'beta':
+                $_all = 'all-beta.html';
+                break;
+            case 'aurora':
+                $_all = 'all-aurora.html';
+                break;
+            case 'rc':
+                $_all = 'all-rc.html';
+                break;
+            case 'latest':
+            default:
+                $_all = 'all.html';
+                break;
+        }
+
+
         if(array_key_exists('relnotes_link', $options)) {
 
             $_return = <<<HTML_RETURN
             <div class="download-other">
                 <a class="ancillaryLink" href="/{$locale}/firefox/{$_current_version}/releasenotes/">{$_release_notes}</a> -
                 <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> <br/>
-                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/{$_all}">{$_other_systems_and_languages}</a>
             </div>
 HTML_RETURN;
 
@@ -310,7 +332,7 @@ HTML_RETURN;
             $_return = <<<HTML_RETURN
             <div class="download-other">
                 <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/legal/privacy/">{$_privacy_policy}</a> -
-                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/all.html">{$_other_systems_and_languages}</a>
+                <a class="ancillaryLink" href="http://www.mozilla.com/{$locale}/firefox/{$_all}">{$_other_systems_and_languages}</a>
             </div>
 HTML_RETURN;
 
