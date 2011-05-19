@@ -247,6 +247,12 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.6a2/(releasenotes|firstrun
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.5b99/(releasenotes)(/(?:index.html)?)?$ $1firefox/3.5pre/$2$3 [PT]
 
 
+# Channel redirects
+
+# We are in beta for 5.0, redirect the "final" url to the beta pages
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/5\.0/(releasenotes|whatsnew|firstrun|details)(/(?:index.html)?)?$ $1firefox/5.0beta/$2$3 [PT]
+
+
 # Temporary rewrite for Firefox 3.6 release candidate
 #RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6/(releasenotes|whatsnew|firstrun)(/(?:index.html)?)?$ $1firefox/3.6rc2/$2$3 [PT]
 
