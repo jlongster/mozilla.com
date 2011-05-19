@@ -37,7 +37,7 @@
     }
 
     putenv("LC_ALL=" . $locale);
-    setlocale(LC_ALL, $locale);
+    $registered_locale = setlocale(LC_ALL, $locale);
     
     bindtextdomain('messages', dirname(__FILE__) . '/locale');
     bind_textdomain_codeset("messages", "UTF-8");
@@ -68,6 +68,7 @@
         <meta property="og:image" content="http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/images/firefox_logo.png" />
     </head>
     <body>
+      <!-- <?php echo $locale . ' -- ' . $registered_locale; ?> -->
       <div class="content">
         <div id="step-1" class="step">
             <div class="stepContent">
