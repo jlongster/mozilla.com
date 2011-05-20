@@ -86,7 +86,7 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    'm-beta',
+    '',
 );
 
 // pages deactivated on production per locale
