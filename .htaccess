@@ -42,6 +42,12 @@ RewriteRule ^en-US/college http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vf
 # security/.htaccess
 Redirect temp /security/ http://www.mozilla.org/security/
 
+# Redirect release-candidate firstrun/whatsnew pages to out-of-date page (Bug 656721)
+RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
+
+# Redirect beta firstrun/whatsnew pages to out-of-date beta page (Bug 656721)
+RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/beta.html [PT,L]
+
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
 # bug 538486
