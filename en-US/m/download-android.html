@@ -6,6 +6,12 @@
 
     $body_id = 'download-android';
     include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+
+    if (isset($_GET["beta"])) {
+        $market_link = mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version));
+    } else {
+        $market_link = mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::latest_version));
+    }
 ?>
 
 <script type="text/javascript">
@@ -36,14 +42,14 @@
         <div class="text">
           <h2>Thank you</h2>
           <h3>for downloading Firefox!</h3>
-        </div>        
+        </div>
     </div>
 
     <div class="content">
       <strong>If the Android Market app didn't open:</strong>
       <p>
         You can try installing Firefox from the
-        <a href="<?= mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::latest_version) ?>">Android Market website</a>.
+        <a href="<?= $market_link ?>">Android Market website</a>.
       </p>
 
       <strong>
