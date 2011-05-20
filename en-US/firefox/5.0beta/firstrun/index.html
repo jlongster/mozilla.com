@@ -3,7 +3,7 @@
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $form = new NewsletterForm('FIREFOX_BETA_NEWS', $_POST);
     $status = '';
     if ($form->save()) {
         $status = 'success';
