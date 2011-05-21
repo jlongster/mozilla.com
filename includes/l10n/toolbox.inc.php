@@ -30,9 +30,12 @@ function goToEnglishPage()
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
     $requested = secureText($requested);
-    if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
+
+    if (strstr(end($requested), 'index.html') || strstr(end($requested), 'index.php')) {
         array_pop($requested);
         $requested = implode('/', $requested) . '/';
+    } else {
+        $requested = implode('/', $requested);
     }
 
     noCachingRedirect('http://' . $config['server_name'] . '/en-US' . $requested);
