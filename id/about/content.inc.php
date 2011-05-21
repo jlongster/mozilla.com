@@ -1,20 +1,20 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Tentang Kami</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Kami adalah komunitas global</strong>
+            yang <a href="http://www.mozilla.org/community">bekerja sama</a> sejak 1998 untuk membangun Internet yang lebih baik.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Kami adalah organisasi nirlaba</strong>
+            yang berdedikasi untuk mempromosikan <a href="http://www.mozilla.org/about/mission.html">keterbukaan, inovasi dan kesempatan</a> di dunia maya.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>Dan kami adalah proyek sumber terbuka</strong>
+            dengan <a href="http://www.mozilla.org/projects">berbagai perangkat lunak</a> yang telah digunakan untuk membangun beberapa aplikasi terbaik Internet.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Kami percaya bahwa Internet sebagai perkembangan teknologi dan sosial terpenting dalam era ini, merupakan sumber daya yang harus selalu dikembangkan dan dilindungi.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> adalah organisasi nirlaba yang berdedikasi untuk tujuan di atas. Tetapi kekuatan 
+    utama di balik Mozilla adalah para insan dari berbagai penjuru dunia yang menyingsingkan lengan baju untuk membangun web yang mereka inginkan. 
+    <a href="http://www.mozilla.org/contribute">Dan Anda dapat turut serta</a>!</p>
 </div>
