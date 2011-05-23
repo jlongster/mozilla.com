@@ -82,6 +82,7 @@ $sitepages = array(
     'firefox-features'  => 'desktop-features.inc.php',
     'firefox-channels'  => 'channels.inc.php',
     'newsletter'        => 'newsletter.inc.php',
+    'webhero'           => 'webhero.inc.php',
 );
 
 // pages deactivated on production
