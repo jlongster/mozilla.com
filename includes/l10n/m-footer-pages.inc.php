@@ -43,7 +43,6 @@ $footer = <<<FOOTER
     </div> <!-- end .wrapper -->
 </div> <!-- end #lower -->
 
-    <script type="text/javascript" src="/js/mobile-nav.js"></script>
     {$stats_js}
     {$extra_footers}
 
