@@ -4,8 +4,14 @@
     if(!isset($extra_headers)) {$extra_headers = '';}
     if(!isset($extra_css))     {$extra_css     = '';}
     
+    include_once "{$config['file_root']}/includes/l10n/remaps.inc.php";
     include_once "{$config['file_root']}/includes/js_stats.inc.php";
-    l10n_moz::load($config['file_root'].'/includes/l10n/gettext_externals/webhero/'.$lang.'/LC_MESSAGES/messages.po', 'po');    
+    
+    if(isset($mapped_lang)) {
+        l10n_moz::load($config['file_root'].'/includes/l10n/gettext_externals/webhero/'.$mapped_lang.'/LC_MESSAGES/messages.po', 'po');
+    } else {
+        l10n_moz::load($config['file_root'].'/includes/l10n/gettext_externals/webhero/'.$lang.'/LC_MESSAGES/messages.po', 'po');
+    }
     
     $extra_headers .= <<<EXTRA_HEADERS
         <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/webhero.css" media="screen">
@@ -54,7 +60,7 @@ EXTRA_FOOTERS;
     <ul class="checklist">
       <li class="check1"><?=___("Install Firefox 4 on their computer.")?> Get up close and personal and show them the awesome first hand.</li>
       <li class="check2"><?=___("Send them a how-to-install video for <a href='/en-US/firefox/video/?video=upgrade-mac' target='_top'>Mac</a> or <a href='/en-US/firefox/video/?video=upgrade-win' target='_top'>PC</a>. Or show them PDF instructions for <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_PC.pdf' target='_top' title='Download this PDF (1.5MB)'>PC</a>.")?></li>
-      <li class="check3"><?=___("Покажи им могућности <a href='/en-US/firefox/central' target='_top'>на свом рачнару</a> или им покажи <a href='/en-US/firefox/video/' target=/_top'>видео снимак</a>.")?></li>
+      <li class="check3"><?=___("Show them the features <a href='/en-US/firefox/central' target='_top'>on your computer</a> or send them a <a href='/en-US/firefox/video/' target=/_top'>video</a>.")?></li>
     </ul>
   </section>
   
