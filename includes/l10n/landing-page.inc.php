@@ -43,6 +43,7 @@ if (count($_GET) > 0) {
             line-height: 50px;
             padding: 60px 0 0px 0;
             font-style: italic;
+            width: 420px;
         }
         #home #main-feature img.screenshot {
             top: auto;
@@ -50,6 +51,9 @@ if (count($_GET) > 0) {
         }
         #home #main-feature img.second-screenshot {
             opacity: 0;
+        }
+        #home ul#benefits {
+            min-height: 40px;
         }
         #home ul#benefits li {
             font-size: 18px;
