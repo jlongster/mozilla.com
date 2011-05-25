@@ -55,7 +55,7 @@ if (!in_array($_version, $_pre_oop)) {
             } else {
                 $val = $lang;
             }
-            $oop_url = "http://www.mozilla-europe.org/{$val}/firefox/features/#performance";
+            $oop_url = "http://europe.mozilla.org/{$val}/firefox/features/#performance";
         } else {
             $oop_url = "/{$lang}/firefox/features/#performance";
         }

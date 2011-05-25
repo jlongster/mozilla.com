@@ -114,11 +114,11 @@ $link[6]  = 'http://www.mozilla.com/'.UI_LANG.'/plugincheck/';
 $link[7]  = '/'.UI_LANG.'/firefox/security/';
 $link[8]  = '/'.UI_LANG.'/firefox/customize/';
 $link[9]  = 'https://addons.mozilla.org/'.UI_LANG.'/firefox/';
-$link[10] = '';
-$link[11] = '';
-$link[12] = '';
-$link[13] = '';
-$link[14] = 'http://www.mozilla.com/en-US/firefox/all.html';
+$link[10] = 'https://mozillademos.org/demos/dashboard/demo.html';
+$link[11] = 'https://developer.mozilla.org/en/svg_in_html_introduction';
+$link[12] = 'https://developer.mozilla.org/en/IndexedDB';
+$link[13] = '/en-US/firefox/technology/';
+$link[14] = '/en-US/firefox/all.html';
 $link[15] = 'http://rockyourfirefox.com/';
 
 $return   = ___('Return to top');

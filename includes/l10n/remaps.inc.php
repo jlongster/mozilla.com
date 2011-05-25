@@ -1,6 +1,6 @@
 <?php
 
-// define a array of locales to remap
+// define an array of locales to remap from gettext to mozilla codes
 
 $locale_mapping = array(
     'fy'    => 'fy-NL',
@@ -15,6 +15,3 @@ foreach($locale_mapping as $shortl => $longl){
         $mapped_lang = $shortl;
     }
 }
-
-
-?>
