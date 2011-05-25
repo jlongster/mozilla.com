@@ -67,7 +67,7 @@ EXTRA_FOOTERS;
     <h2><?=___("HELPING IS EASY!<br />AND IT FEELS GREAT!")?></h2>
     <p><?=___("Help Team Firefox grow. Here's how:")?></p>
     <ul class="checklist">
-      <li class="check1"><?=___("Install Firefox 4 on their computer.")?> Get up close and personal and show them the awesome first hand.</li>
+      <li class="check1"><?=___("Install Firefox 4 on their computer.")?></li>
       <li class="check2"><?=___("Send them a how-to-install video for <a href='/en-US/firefox/video/?video=upgrade-mac' target='_top'>Mac</a> or <a href='/en-US/firefox/video/?video=upgrade-win' target='_top'>PC</a>. Or show them PDF instructions for <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_PC.pdf' target='_top' title='Download this PDF (1.5MB)'>PC</a>.")?></li>
       <li class="check3"><?=___("Show them the features <a href='/en-US/firefox/central' target='_top'>on your computer</a> or send them a <a href='/en-US/firefox/video/' target=/_top'>video</a>.")?></li>
     </ul>
