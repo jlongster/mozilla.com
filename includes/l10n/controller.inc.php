@@ -87,7 +87,7 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    '',
+    'webhero',
 );
 
 // pages deactivated on production per locale
