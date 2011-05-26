@@ -139,6 +139,9 @@ RewriteRule ^(?:en-US/)?university/?(?:index.html)?$ https://wiki.mozilla.org/Ed
 # Bug 524509
 RewriteRule en-US/about/get-involved?(?:.html)?$ http://www.mozilla.org/contribute/ [R=permanent]
 
+# Bug 656270
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?manyfaces[/]?$ http://www.mozilla.org/community/ [R=permanent]
+
 # Bug 399466
 RewriteRule en-US/legal/eula/(firefox|thunderbird)(.?)-(.+)\.(.+) /$3/legal/eula/$1$2.$4 [R=permanent]
 
