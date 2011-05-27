@@ -20,7 +20,7 @@ $host_enUS = $config['url_scheme'].'://'.$config['server_name'].'/en-US';
 
 // RTL support for Mozilla.com
 if ($textdir == 'rtl') {
-    $extra_headers  .= <<<EXTRA_HEADERS
+    $extra_headers  = <<<EXTRA_HEADERS
     {$extra_headers}
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/rtl.css" media="screen" />
 EXTRA_HEADERS;
