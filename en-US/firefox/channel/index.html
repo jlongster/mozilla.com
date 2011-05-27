@@ -151,20 +151,23 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
                 <ul class="channels_signup">
                   <li>
                     <label for="check_aurora">
-                        <input type="checkbox" id="check_aurora" name="aurora" value="t" />
-                        <span>Aurora <small>(Desktop)</small></span>
+                      <?php $checked = $form->get('aurora') ? 'checked="checked"' : '' ?>
+                      <input type="checkbox" id="check_aurora" name="aurora" value="t" <?= $checked ?> />
+                      <span>Aurora <small>(Desktop)</small></span>
                     </label>
                   </li>
                   <li>
                     <label for="check_beta">
-                        <input type="checkbox" id="check_beta" name="beta" value="t" />
-                        <span>Beta <small>(Desktop &amp; Mobile)</small></span>
+                      <?php $checked = $form->get('beta') ? 'checked="checked"' : '' ?>
+                      <input type="checkbox" id="check_beta" name="beta" value="t" <?= $checked ?> />
+                      <span>Beta <small>(Desktop &amp; Mobile)</small></span>
                     </label>
                   </li>
                   <li>
                     <label for="check_general">
-                        <input type="checkbox" id="check_general" name="general" value="t" />
-                        <span>Final Release <small>(General Mozilla News)</small></span>
+                      <?php $checked = $form->get('general') ? 'checked="checked"' : '' ?>
+                      <input type="checkbox" id="check_general" name="general" value="t" <?= $checked ?> />
+                      <span>Final Release <small>(General Mozilla News)</small></span>
                     </label>
                   </li>
                 </ul>
@@ -175,6 +178,7 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
                     <span class="error-wrapper"><input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>></span> <span class="title">I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a></span>
                   </label>
                 </div>
+                <div id="privacy-error">Please agree to the Privacy Policy.</div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
                        onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                 'DCS.dcsuri', '/mainstream_newsletter/signup',
