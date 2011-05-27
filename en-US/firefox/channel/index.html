@@ -175,7 +175,13 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
                 <div class="privacy-field">
                   <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
                   <label for="inline-privacy-check" class="privacy-check-label">
-                    <span class="error-wrapper"><input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>></span> <span class="title">I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a></span>
+                    <span class="error-wrapper">
+                      <input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>>
+                    </span> 
+                    <span class="title">
+                      I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+                    </span>
+                    <div class="clear"></div>
                   </label>
                 </div>
                 <div id="privacy-error">Please agree to the Privacy Policy.</div>
