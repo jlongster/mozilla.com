@@ -78,6 +78,10 @@ class ChannelsForm extends NewsletterForm {
         if (!isset($data['aurora']) && !isset($data['beta']) && !isset($data['general'])) {
             throw new NewsletterValidationException('channel');
         }
+
+        if (!array_key_exists('privacy', $data)) {
+            throw new NewsletterValidationException('privacy');
+        }
         
         return true;
     }
