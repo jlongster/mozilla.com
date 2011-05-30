@@ -55,7 +55,7 @@ class firefoxDetailsL10n extends firefoxDetails
                 // if we have no builds at all, let's default to en-US so as to display download boxes on pages
                 if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
                     $locale           = 'en-US';
-                    $_current_version = $this->getNewsetVersionForLocaleFromBuildArray($locale, $this->primary_builds);
+                    $_current_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 }
                 break;
         }
