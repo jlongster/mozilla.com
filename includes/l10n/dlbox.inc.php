@@ -17,6 +17,15 @@ if(isset($dl_lang)) {
     $templang = $lang;
 }
 
+
+$fx_stable_Major = explode('.', LATEST_FIREFOX_VERSION);
+
+if ($fx_stable_Major[0] == 4) {
+    $firefox_wordmark = 'Firefox&nbsp;' . $fx_stable_Major[0];
+} else {
+    $firefox_wordmark = 'Mozilla Firefox';
+}
+
 switch($pageid) {
     case 'security':
     case 'firefox-features':
@@ -29,7 +38,7 @@ switch($pageid) {
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'dl_latest';
         $dl_box_options         = array();
-        $dl_box_options         = array('download_parent_override' => 'main-content', 'wording' => 'Firefox 4');
+        $dl_box_options         = array('download_parent_override' => 'main-content', 'wording' => $firefox_wordmark);
         $dl_fallback            = true;
         break;
 
@@ -74,7 +83,7 @@ switch($pageid) {
     default:
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'home-download';
-        $dl_box_options         = array('wording' => 'Firefox 4', 'relnotes_link' => true);
+        $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true);
         break;
 }
 
