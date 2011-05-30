@@ -76,7 +76,7 @@ echo $downloads;
 
         var gDownloadTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/en-US/products/download.html', 'WT.ti', 'Link: Get Firefox', 'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Download Firefox');";
 
-        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox 4 <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
         var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
         var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
 

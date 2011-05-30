@@ -690,9 +690,9 @@ function buildFirefoxBetaSubPageMenu($lang, $current = null)
         echo " / ";
 
         if ($current == 'beta') {
-            echo "<span>" . ___('Firefox 4') . "<sup>" .  ___('RC') .  "</sup></span>";
+            echo "<span>" . ___('Firefox') . "<sup>" .  ___('RC') .  "</sup></span>";
         } else {
-            echo "<a href=\"/" . $lang . "/firefox/RC/\">" . ___('Firefox 4') . "<sup>" .  ___('RC') . "</sup></a>";
+            echo "<a href=\"/" . $lang . "/firefox/RC/\">" . ___('Firefox') . "<sup>" .  ___('RC') . "</sup></a>";
         }
 
         echo "</h3></li>\n";
