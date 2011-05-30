@@ -31,6 +31,13 @@ $header = <<<HEADER
     {$extra_headers}
 </head>
 <body id="{$body_id}" class="{$body_class}">
+<div id="mobile-survey">
+    <div id="survey-contents">
+    <h4>A one question survey?</h4>
+    <a href="#" id="survey-dismiss">No thanks.</a>
+    <a href="http://sgiz.mobi/s3/293dbff586e0" id="survey-button">Sure, I’d love to help.</a>
+    </div>
+</div>
 {$controls}
 <div id="menu" class="closed">
   <ul>
