@@ -29,7 +29,7 @@ class Responsys {
         $data['SOURCE_URL'] = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
         $data['_ri_'] = $config['responsys_id'];
 
-        $_curl = curl_init('http://awesomeness.mozilla.org/pub/rf');  
+        $_curl = curl_init('https://awesomeness.mozilla.org/pub/rf');
         curl_setopt($_curl, CURLOPT_FOLLOWLOCATION, true);  
         
         curl_setopt($_curl, CURLOPT_RETURNTRANSFER, true);
@@ -37,11 +37,15 @@ class Responsys {
         // not sure why, but responsys + curl doesn't work unless we build the query string ourselves :(
         curl_setopt($_curl, CURLOPT_POSTFIELDS, http_build_query($data));
 
-        $response = curl_exec($_curl);  
-        if (!$response) {  
-            $response = curl_error($_curl);  
-        }  
+        $response = curl_exec($_curl);
+        if (!$response) {
+            $response = curl_error($_curl);
+
+            echo "[Curl error] " . $response;
+            exit;
+        }
+
         $code = curl_getinfo($_curl, CURLINFO_HTTP_CODE);
-        return $response;  
+        return $response;
     }
 }
