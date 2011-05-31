@@ -381,10 +381,6 @@ RedirectMatch permanent ^/(.*).inc.html? http://www.mozilla.com
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/platforms[/]?$ /en-US/mobile/platforms/ [R=temp,L]
 
-# Temporary redirect to en-US plugincheck until we have localization fixed for this page
-RewriteCond $1 !en-US/
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?plugincheck[/]?$ /en-US/plugincheck/ [R=temp,L]
-
 # All our pages hit this prefetch script.  This will determine the language and
 # forward them to the right place.
 Action init /includes/prefetch.php
