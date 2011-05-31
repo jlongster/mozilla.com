@@ -124,8 +124,9 @@ class GermanNewsletterForm extends NewsletterForm {
                       'LANGUAGE_ISO2' => $this->data['lang'],
                       'COUNTRY_' => $this->data['country']);
 
-        $data[$this->campaign . "_FLG"] = 'Y';
-        $data[$this->campaign . "_DATE"] = $now;
+        $data[$this->campaign . '_FLG'] = 'N';
+        $data[$this->campaign . '_DATE'] = $now;
+        $data['EMAIL_PERMISSION_STATUS_'] = 'O';
 
         Responsys::post($data);
     }

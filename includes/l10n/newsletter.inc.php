@@ -13,7 +13,6 @@ $extra_headers = <<<EXTRA_HEADERS
     }
     </style>
 
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/email-form.css" media="screen">
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
 EXTRA_HEADERS;
 
