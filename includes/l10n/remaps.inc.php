@@ -6,6 +6,8 @@ $locale_mapping = array(
     'fy'    => 'fy-NL',
     'ga'    => 'ga-IE',
     'es'    => 'es-ES',
+    'pt_BR' => 'pt-BR',
+    'zh_TW' => 'zh-TW',
 );
 
 // define a path for remapped locales
