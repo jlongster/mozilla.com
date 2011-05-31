@@ -45,7 +45,7 @@ EXTRA_HEADERS;
           <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
         </div>
 
-        <div class="field" class="country-field">
+        <div class="field country-field">
           <label for="country">Country:</label>
           <select class="country" name="country">
             <option value="">Select country</option>
@@ -86,7 +86,17 @@ EXTRA_HEADERS;
         </div>
 
         <div class="field submit-field">
-          <input name="submit" type="submit" value="Sign me up!" class="subscribe">
+          <input onclick="dcsMultiTrack(
+                            'DCS.dcssip', 'www.mozilla.com',
+                            'DCS.dcsuri', '/en-us/newsletter',
+                            'WT.ti', 'Link: Mozilla Newsletter',
+                            'WT.dl', 99,
+                            'WT.z_convert', 'newsletter'
+                          );"
+                 name="submit" 
+                 type="submit" 
+                 value="Sign me up!" 
+                 class="subscribe">
         </div>
 
         <p class="disclaimer">We will only send you Mozilla-related information.</p>
