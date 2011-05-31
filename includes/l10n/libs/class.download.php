@@ -161,7 +161,7 @@ HTML_RETURN;
         $_current_version             = array_key_exists('version', $options) ? $options['version'] : $this->getNewestVersionForLocale($locale);
         $_bouncer_js                  = array_key_exists('bouncer_js', $options) ? $options['bouncer_js'] : false;
         $_download_product            = array_key_exists('download_product', $options) ?  ___($options['download_product']) : ___('Free Download');
-        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Mozilla Firefox';
+        $_wording                     = array_key_exists('wording', $options) ?  ___($options['wording']) : 'Firefox';
         $_release_notes               = ___('Release Notes');
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_language_name               = $this->localeDetails->getNativeNameForLocale($locale);

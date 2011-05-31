@@ -83,11 +83,13 @@ $sitepages = array(
     'firefox-channels'  => 'channels.inc.php',
     'newsletter'        => 'newsletter.inc.php',
     'webhero'           => 'webhero.inc.php',
+    'plugincheck'       => 'plugincheck.inc.php',
 );
 
 // pages deactivated on production
 $deactivated = array(
     'webhero',
+    'plugincheck',
 );
 
 // pages deactivated on production per locale

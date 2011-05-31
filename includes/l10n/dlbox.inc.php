@@ -29,6 +29,7 @@ if ($fx_stable_Major[0] == 4) {
 switch($pageid) {
     case 'security':
     case 'firefox-features':
+    case 'plugincheck':
         $dl_box_class['stable']   = 'top-right';
         $dl_box_id                = 'download';
         $dl_box_options           = array('layout' => 'smallbox', 'download_parent_override' => 'download');
@@ -104,7 +105,7 @@ $downloadbox  = "\n".'<!-- generated box -->'."\n";
 $downloadbox .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
 $downloadbox .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
 $downloadbox .= "\n".'//]]>></script>'."\n";
-$downloadbox .= "\n".'<div class="'.$dl_box_class.'" id="'.$dl_box_id.'">'."\n";
+$downloadbox .= "\n".'<div class="'.$dl_box_class['stable'].'" id="'.$dl_box_id.'">'."\n";
 $downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
 $downloadbox .= "\n".'</div>'."\n";
 $downloadbox .= <<<HIDE
