@@ -40,9 +40,6 @@ class Responsys {
         $response = curl_exec($_curl);
         if (!$response) {
             $response = curl_error($_curl);
-
-            echo "[Curl error] " . $response;
-            exit;
         }
 
         $code = curl_getinfo($_curl, CURLINFO_HTTP_CODE);

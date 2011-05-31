@@ -32,6 +32,13 @@ class NewsletterForm {
         if (!array_key_exists('privacy', $data)) {
             throw new NewsletterValidationException('privacy');
         }
+
+        if(isset($data['country'])) {
+            if(!preg_match('/^\w{2}$/', $data['country'])) {
+                throw new NewsletterValidationException('country');
+            }
+        }
+
         return true;
     }
 
@@ -81,6 +88,12 @@ class ChannelsForm extends NewsletterForm {
 
         if (!array_key_exists('privacy', $data)) {
             throw new NewsletterValidationException('privacy');
+        }
+
+        if(isset($data['country'])) {
+            if(!preg_match('/^\w{2}$/', $data['country'])) {
+                throw new NewsletterValidationException('country');
+            }
         }
         
         return true;
