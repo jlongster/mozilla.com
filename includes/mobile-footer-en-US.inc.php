@@ -49,6 +49,73 @@ $footer = <<<FOOTER
     {$stats_js}
     {$extra_footers}
 
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+var cookieName = 'mobileSurveyJune2011';
+var cookieDays = 30;
+
+function setCookie(name, value, path, expire)
+{
+    if (expire) {
+        var expdate = new Date();
+        expdate.setDate(expdate.getDate() + expire);
+        expire = ';expires=' + expdate.toUTCString();
+    } else {
+        expire = '';
+    }
+
+    if (path) {
+        path = ';path=' + path;
+    } else {
+        path = '';
+    }
+
+    document.cookie = name + '=' + escape(value) + expire + path;
+}
+
+function getCookie(name)
+{
+    if (document.cookie.length === 0) {
+        return null;
+    }
+
+    var start = document.cookie.indexOf(name + '=');
+
+    if (start === -1) {
+        return null;
+    }
+
+    start += name.length + 1;
+    end    = document.cookie.indexOf(';', start);
+    if (end === -1) {
+        end = document.cookie.length;
+    }
+
+    return unescape(document.cookie.substring(start, end));
+}
+
+if (getCookie(cookieName) === null) {
+    var survey = document.getElementById('mobile-survey');
+    survey.style.display = 'block';
+    var closeLink = document.getElementById('survey-dismiss');
+    closeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        setCookie(cookieName, '1', '/', cookieDays);
+        survey.style.display = 'none';
+    }, false);
+    var openLink = document.getElementById('survey-button');
+    openLink.addEventListener('click', function(e) {
+        setCookie(cookieName, '1', '/', cookieDays);
+        survey.style.display = 'none';
+    }, false);
+}
+
+}, false);
+
+</script>
+
 </body>
 </html>
 FOOTER;
