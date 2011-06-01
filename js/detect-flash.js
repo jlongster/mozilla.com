@@ -31,12 +31,6 @@ $(document).ready( function flashWarning() {
                               '<p>' + FlashAlertText + '</p>' +
                               '<a href="#" id="flash-close">✖</a></div>' );
 
-                if ($('.sub-feature#social').length && $('.sub-feature#flash-plus-beta').length) {
-                    // If the flash warning is showing in the main content area, 
-                    // replace the #social promo with a mini beta promo
-                    $('.sub-feature#social').hide();
-                    $('.sub-feature#flash-plus-beta').show();
-                }
             }
         }
         
