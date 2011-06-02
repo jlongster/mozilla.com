@@ -1,0 +1,138 @@
+
+<div id="main-feature">
+
+    <h2>檢查您的 <span>外掛程式</span></h2>
+    <p>保持使用最新版本的外掛程式可以幫助 Firefox 更快、更順地執行。</p>
+
+</div>
+
+<div id="main-content">
+
+    <div id="content-left">
+        <div class="blocklisted flash">
+
+            <h3><span>FLASH</span> 不見了？</h3>
+            <p>為了您的安全，Firefox 已經自動停用了您過時的 Flash 版本。請到 <a <?=$link[0];?> >下載升級最新版本。</a></p>
+
+            <br class="clearfix" />
+        </div>
+
+        <div id="legend">
+            <ul>
+                <li id="old_browser" style="display:none">
+                    <strong>警告，您的瀏覽器有新版本可用。</strong> 請升級您的瀏覽器。
+                </li>
+                <li id="modern_browsers" style="display:none">
+                    此頁面最適合於最新的瀏覽器使用: Firefox 3.6+、Opera 10.5+、Safari 4+、Chrome 4+，或是 IE 8+
+                </li>
+                <li id="exploder" style="display: none">
+                    Plugin Check <strong>對於 Internet Explorer 支援程度受限</strong>。也請使用工具 &gt; 管理附加元件
+                </li>
+                <li>
+                    <strong><em>第一步:</em></strong> 點一下 <strong>更新</strong> 以更新某個外掛程式。
+                </li>
+                <li>
+                    <strong><em>第二步:</em></strong> 在重新啟動您的瀏覽器 <em>之前</em> <strong>完成所有建議的更新</strong>。
+                </li>
+            </ul>
+        </div>
+
+        <noscript>
+            <div>
+                <h3>請注意</h3>
+                <p><strong>您目前已停用 JavaScript</strong> 或您正在使用不支援 JavaScript 的瀏覽器。這個外掛程式檢查頁面若沒有 <strong>JavaScript</strong> 的超強大威力就無法工作。請啟用此內容偏好設定並重新載入頁面。</p>
+                <p>或是停用您所有的外掛程式，也保持 JavaScript 停用... 這樣就會相當安全，這也是 <a <?=$link[1];?> >RMS 的作法</a>。</p>
+            </div>
+        </noscript>
+
+        <?=$pluginsTable?>
+
+        <div id="error-panel" style="display: none">
+            <h3>Plugin Finding Service 錯誤</h3>
+            <p>我們遇到了某些問題。請稍後再重試。</p>
+
+            <form action="#" method="get">
+                <fieldset>
+                    <button>重試</button>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+    <div id="sidebar">
+      <div id="information">
+        <h3>外掛程式小秘訣</h3>
+        <ul>
+          <li><a <?=$link[2];?> > 外掛程式是什麼？                 </a></li>
+          <li><a <?=$link[3];?> > 為什麼我應該更新我的外掛程式？   </a></li>
+          <li><a <?=$link[4];?> > Firefox 可以如何幫助我？         </a></li>
+          <li><a <?=$link[5];?> > 我擁有那些外掛程式？             </a></li>
+          <li><a <?=$link[6];?> > 我要如何停用某個外掛程式？       </a></li>
+        </ul>
+      </div>
+
+          <div id="support">
+            <h3>需要幫助？</h3>
+            <ul>
+              <li><a <?=$link[7];?> > 請參考 support.mozilla.com </a></li>
+              <li><a <?=$link[8];?> > 閱讀關於外掛程式的技術支援文件 </a></li>
+            </ul>
+          </div>
+
+        </div>
+
+    <div id="information-content" class="clearfix">
+        <?=$backtotop?>
+
+        <h2>常見 <span>問題</span></h2>
+
+        <div id="column-one">
+            <h3 id="what-plugin">外掛程式是什麼？</h3>
+            <ul>
+                <li>外掛程式可以讓您 <strong>播放影片、動畫，或是遊戲</strong>。</li>
+                <li>外掛程式是由像是 <a <?=$link[9];?>>Adobe Systems</a> 與 <a <?=$link[10];?> >Apple</a> 等 <strong>不是 Firefox 的公司</strong> 所開發的。</li>
+                <li>外掛程式 <strong>通常不會自動更新</strong>。</li>
+            </ul>
+
+            <h3 id="why-update">為什麼我應該更新我的外掛程式？</h3>
+            <ul>
+                <li>過時的外掛程式可能會影響您的瀏覽並 <strong>浪費您的時間</strong>。</li>
+                <li>過時的外掛程式會增加您遭受惡意軟體、病毒，以及其他安全威脅 <strong>攻擊的風險</strong>。</li>
+                <li><strong>更新後的外掛程式通常會變得更棒</strong> 讓網路變得 <strong>更好更安全</strong>。</li>
+            </ul>
+
+            <?=$screenshot;?>
+
+        </div>
+
+        <div id="column-two">
+            <h3 id="firefox-helps">Firefox 可以如何幫助我？</h3>
+            <p>在未來，Firefox 也將會為您更新外掛程式。在這之前，您應該 <strong>定時至此頁面進行檢查</strong> 並更新您的外掛程式以保持安全。</p>
+
+            <h3 id="list-plugins">我擁有那些外掛程式？</h3>
+            <p>我們在上面自動為您偵測出您安裝了那些外掛程式，您也可以依照下列步驟 <strong>在 Firefox 檢視您已安裝的外掛程式</strong>:</p>
+            <ol>
+                <li>開啟 <kbd>工具</kbd> 選單。</li>
+                <li>選擇 <kbd>附加元件</kbd>。</li>
+                <li>點一下 <kbd>外掛程式</kbd> 標籤。</li>
+            </ol>
+
+            <div class="howto-disable-plugin">
+                <h3 id="howto-disable">我要如何停用某個外掛程式？</h3>
+                <p>在 Firefox 當中:</p>
+                <ol>
+                    <li>開啟 <kbd>工具</kbd> 選單。</li>
+                    <li>選擇 <kbd>附加元件</kbd>。</li>
+                    <li>點一下 <kbd>外掛程式</kbd> 標籤。</li>
+                    <li>點一下清單當中要停用的外掛程式。</li>
+                    <li>點一下 <kbd>停用</kbd> 按鈕。</li>
+                </ol>
+                <p><strong>注意:</strong> 停用某個外掛程式代表您將 <strong>無法再做</strong> 某些事。舉例來說，若您停用了 Flash，您將無法在有名的視訊串流網站當中觀看影片。</p>
+            </div>
+
+            <h3 id="more-questions">還有更多 <span>問題？</span></h3>
+            <p><a <?=$link[7];?>>我們的技術支援網站</a> 可以幫助您 <a <?=$link[6];?>>瞭解更多關於外掛程式的資訊</a> 或是 <a <?=$link[8];?>>排除外掛程式的問題</a>。</p>
+        </div>
+    </div>
+</div>
