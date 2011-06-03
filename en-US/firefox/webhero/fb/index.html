@@ -66,7 +66,7 @@
         <meta property="og:title" content="<?= _("Get Firefox 4"); ?>" />
         <?php /* L10n: Facebook share message, body */ ?>
         <meta property="og:description" content="<?= _("Firefox 4 is awesome, just like you! I know you've been missing out, so I'm here to help. Upgrade to Firefox 4 and see for yourself: http://mzl.la/getFx4wh"); ?>"/>
-        <meta property="og:image" content="http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/images/firefox_logo.png" />
+        <meta property="og:image" content="http://<?= $config['server_name'] ?>/en-US/firefox/webhero/fb/images/firefox_logo.png" />
     </head>
     <body>
       <!-- <?php echo $locale . ' -- ' . $registered_locale; ?> -->
@@ -114,7 +114,7 @@
         <script src="https://connect.facebook.net/en_US/all.js"></script>
         <script type="text/javascript">
           FB.init({
-              appId  : '153855034679517',
+              appId  : '<?= APP_ID ?>',
               status : true,
               cookie : true
           });
@@ -125,7 +125,7 @@
           $(".buttonSendMessage").one("click", function() {
                 var left = (screen.width/2)-(626/2), 
                 top = (screen.height/2)-(436/2), 
-                share_url = encodeURIComponent("http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/");
+                share_url = encodeURIComponent("http://<?= $config['server_name'] ?>/en-US/firefox/webhero/fb/");
                 
                 window.open('http://www.facebook.com/sharer.php?u=' + share_url + '&t=Firefox 4&mode=message', 'sharer', 'toolbar=0,status=0,width=626,height=436, top='+top+', left='+left);
                 
@@ -134,8 +134,8 @@
                      method: 'feed',
                      <?php /* L10n: Facebook share message, status update */ ?>
                      name: "<?= _("I upgraded a friend to Firefox 4!"); ?>",
-                     link: "http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/",
-                     picture: "http://www-trunk.stage.mozilla.com/en-US/firefox/webhero/fb/images/fb-badge-webhero.png",
+                     link: "http://<?= $config['server_name'] ?>/en-US/firefox/webhero/fb/",
+                     picture: "http://<?= $config['server_name'] ?>/en-US/firefox/webhero/fb/images/fb-badge-webhero.png",
                      <?php /* L10n: Facebook share message, caption */ ?>
                      caption: "<?= _("Firefox 4"); ?>",
                      <?php /* L10n: Facebook share message, body */ ?>
