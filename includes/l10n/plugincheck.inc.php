@@ -9,6 +9,23 @@ include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/plugin-check.css" media="screen" />
+
+    <style>
+
+    html[lang='de'] #main-feature h2 {
+        font-size: 40px;
+    }
+
+    html[lang='hu'] ##main-feature h2 span {
+        font-size: 57px;
+    }
+
+
+    #plugin-check #doc {
+        background: url("/img/covehead/plugincheck/background.png") no-repeat scroll 370px 36px transparent;
+    }
+    </style>
+
 EXTRA_HEADERS;
 
 /*
