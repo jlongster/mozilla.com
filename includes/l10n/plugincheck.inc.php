@@ -20,6 +20,10 @@ $extra_headers = <<<EXTRA_HEADERS
         font-size: 57px;
     }
 
+    #sidebar {
+        margin-left: 40px;
+    }
+
 
     #plugin-check #doc {
         background: url("/img/covehead/plugincheck/background.png") no-repeat scroll 370px 36px transparent;
