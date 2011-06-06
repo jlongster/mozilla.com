@@ -1,11 +1,21 @@
 <?php
 
-$windowmessage = '
-<div id="download-stats" style="text-align:center; font-weight:normal; font-size:2em; left:90px;top:250px;">
-    Déjà
-    <span id="download-count">'.$downloads.'</span>
-    téléchargements
-</div>';
+
+if (is_numeric($downloads)) {
+    $windowmessage = '
+    <div id="download-stats">
+        <h3 style="float:left; font-size:1.3em;vertical-align:middle;margin:0; height:100px; text-align:center; line-height:25px;padding:25px 0;">Rejoignez<br/>nous</h3>
+        <p style="text-align:center; font-weight:normal; line-height:30px;height:auto;">
+            Déjà <span id="download-count" style="color: #6FB02B;">'.$downloads.'</span> téléchargements
+        </p>
+    </div>';
+} else {
+    $windowmessage = '
+    <div id="download-stats">
+        <span id="download-count">Déjà des millions de téléchargements</span>
+    </div>';
+}
+
 
 ?>
 
@@ -14,9 +24,9 @@ $windowmessage = '
 
     <?php if($promo): ?>
     <ul id="benefits">
-        <li><em>&raquo;</em><?php echo $str4 ?></li>
-        <li><em>&raquo;</em><?php echo $str5 ?></li>
-        <li><em>&raquo;</em><?php echo $str6 ?></li>
+        <li class="first"><?php echo $str4 ?></li>
+        <li><?php echo $str5 ?></li>
+        <li><?php echo $str6 ?></li>
     </ul>
     <?php else: ?>
     <hr style="margin-bottom:3em; height:0; border:0; color:transparent; background-color:transparent">
@@ -30,26 +40,35 @@ $windowmessage = '
 
 <?=$downloadbox?>
 
+<p id="mobile-promo"><a href="./mobile/">Découvrez Firefox sur votre mobile</a></p>
+
 </div>
 
 <div id="main-content">
 
-    <div class="sub-feature first">
+    <div class="sub-feature first" id="sub-firefox">
+        <h3>Visite guidée</h3>
+        <p><a id="tour-link" href="./features/">Découvrez un aperçu des nouveautés de Firefox&nbsp;4</a>
+        </p>
+    </div>
+
+    <div class="sub-feature">
         <h3>Personnalisation</h3>
-        <p>Découvrez les nouveautés de Firefox&nbsp;4
-        <a href="./features/"><?php e__('Learn More');?></a></p>
+        <p>À chacun son navigateur
+        <a href="https://addons.mozilla.org/"><?php e__('Learn More');?></a>
+        </p>
     </div>
 
     <div class="sub-feature">
         <h3>Rapidité</h3>
-        <p>Firefox&nbsp;4 est jusqu'à 6&nbsp;fois plus rapide que la version précédente
+        <p>Donnez un coup d'accélérateur à votre navigation sur le Web
         <a href="./features/#super-speed"><?php e__('Learn More');?></a>
         </p>
     </div>
 
     <div class="sub-feature">
         <h3>Sécurité</h3>
-        <p>Firefox&nbsp;4 protège votre ordinateur et vos données personnelles
+        <p>Nous protégeons votre ordinateur et vos données personnelles
         <a href="./features/#advancedsecurity"><?php e__('Learn More');?></a>
         </p>
     </div>

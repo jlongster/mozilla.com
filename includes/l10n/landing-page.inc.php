@@ -40,55 +40,63 @@ if (count($_GET) > 0) {
     }
 
     $extra_css = <<<EXTRA
-    <style type="text/css">
-        body {
+
+        #home body {
             background-image: url("/img/covehead/firefox/direct/page-background.png");
         }
         #home #header {
-            margin-bottom: 0;
+            margin-bottom: 0 !important;
         }
         #home #main-feature {
-            zoom: 1;
+            zoom: 1 !important;
         }
         #home #main-feature h2 {
-            line-height: 50px;
-            padding: 60px 0 0px 0;
-            font-style: italic;
-            width: 420px;
+            line-height: 50px !important;
+            padding: 60px 0 0 0 !important;
+            font-style: italic !important;
+            width: 420px !important;
         }
         #home #main-feature img.screenshot {
-            top: auto;
-            bottom: 0;
+            top: auto !important;
+            bottom: 0 !important;
         }
         #home #main-feature img.second-screenshot {
             opacity: 0;
         }
+
         #home ul#benefits {
-            min-height: 40px;
+            min-height: 40px !important;
         }
         #home ul#benefits li {
-            font-size: 18px;
-            width:120px;
-            padding: 0 10px;
-            margin-bottom: 5px;
+            font-size: 18px !important;
+            width:120px !important;
+            padding: 0 10px !important;
+            margin-bottom: 5px!important;
         }
         #home .download-other {
-            text-align: center;
-            width: 350px;
+            text-align: center !important;
+            width: 350px !important;
         }
         #home .sub-feature.first {
-            background: none;
+            background: none !important;
         }
         #home .sub-feature {
-            width: 250px;
-            padding: 0 20px 100px 60px;
+            width: 250px !important;
+            padding-top: 0!important;
+            padding-bottom: 100px!important;
+            padding-left: 60px !important;
+            padding-right: 20px !important;
+        }
+
+        #home #sub-security.sub-feature {
+            padding-right: 0px !important;
         }
 
         #home .sub-feature h3 {
-            font-size:25px;
+            font-size:25px !important;
         }
 
-    </style>
+
 EXTRA;
 }
 
@@ -122,7 +130,120 @@ switch($target) {
     case 'AB2':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.abtesting2.inc.php';
         $abtest = true;
-        $extra_css = '';
+
+        $extra_css .= <<<EXTRA
+
+        #home #main-content {
+            margin: 20px 0 0;
+        }
+
+        #home .sub-feature {
+            float: left;
+            font-size: 16px;
+            padding: 20px !important;
+            position: relative;
+            width: 200px !important;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAwCAMAAADjGDCOAAAAElBMVEXq6urAwMDBwcHp6en29vb///+NcJSLAAAAPElEQVQI12WOwQ0AMQzCTAL7r9zfXZM+LUsGLHA1SUiCq7G4GKzfJ8FqXEzWaowmyzM31O+Hm9fHr1F9AMllAhxqMpx9AAAAAElFTkSuQmCC") no-repeat scroll 0 70px transparent;
+        }
+        #home .sub-feature p {
+            min-height: 50px !important;
+        }
+
+        #home #sub-firefox.sub-feature p {
+            min-height: 20px !important;
+            line-height: inherit;
+        }
+
+        #home #sub-firefox.sub-feature {
+            background: none repeat scroll 0 0 transparent;
+            padding-right: 5px;
+            padding-left: 5px !important;
+            width: 230px !important;
+            margin-left:0;
+        }
+
+        #home #sub-firefox.sub-feature h3 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        #home .sub-feature h3 {
+            font-size: 25px;
+            margin-bottom: 5px;
+            margin-top:0;
+        }
+
+        #home #sub-firefox.sub-feature p a:after {
+            padding:0;
+            content: "" !important;
+        }
+
+        #home #sub-firefox.sub-feature a {
+            background: url("data:image/png;base64,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") no-repeat scroll 0 50% transparent;
+            float: left;
+            font-size: 17px;
+            letter-spacing: -0.02em;
+            padding: 5px 5px 5px 40px;
+        }
+
+         #home #mobile-promo {
+            color: #6D7581;
+            font-size: 13px;
+            margin: 0;
+            padding: 15px 30px 0px 60px;
+            text-align: right;
+            width: 240px;
+        }
+
+        #home ul#benefits {
+            font-size: 22px;
+            font-style: italic;
+            padding: 0;
+            margin: 10px 0 20px 0;
+        }
+
+        #home ul#benefits li {
+            float: left;
+            margin: 0 0 40px 0;
+            list-style-type: none;
+            text-align: center;
+            padding: 8px 20px;
+            line-height: 19px;
+            color: #484848;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAwCAMAAADjGDCOAAAAElBMVEXq6urAwMDBwcHp6en29vb///+NcJSLAAAAPElEQVQI12WOwQ0AMQzCTAL7r9zfXZM+LUsGLHA1SUiCq7G4GKzfJ8FqXEzWaowmyzM31O+Hm9fHr1F9AMllAhxqMpx9AAAAAElFTkSuQmCC") 0 6px no-repeat;
+            *background-image: url('/img/covehead/firefox/dotted-divider.png'); /* IE6 and IE7 only */
+        }
+
+        #home ul#benefits li.first {
+            padding-left: 5px;
+            background: none;
+            margin-top: 0.5em;
+        }
+
+        #home ul#benefits li span {
+            display: block;
+        }
+
+        #home ul#benefits {
+            min-height: 40px !important;
+        }
+
+        #home ul#benefits li {
+            font-size: 18px !important;
+            width:120px !important;
+            padding: 0 10px !important;
+            margin-bottom: 5px!important;
+        }
+
+        #home #home-download {
+            clear: left;
+            padding-left: 0;
+            position: relative;
+            z-index: 25;
+            margin-top:40px;
+        }
+
+EXTRA;
         break;
 
     case 'normal':
@@ -176,10 +297,10 @@ if (is_numeric($downloads)) {
     </div>';
 }
 
-$extra_headers .= <<<EXTRA_HEADERS
+$extra_headers = <<<EXTRA_HEADERS
 
     {$home_css}
-    {$extra_css}
+
 EXTRA_HEADERS;
 
 
