@@ -1,11 +1,20 @@
 <?php
 
-$windowmessage = '
-<div id="download-stats" style="text-align:center; font-weight:normal; font-size:2em; left:90px;top:250px;">
-    Déjà
-    <span id="download-count">'.$downloads.'</span>
-    téléchargements
-</div>';
+if (is_numeric($downloads)) {
+    $windowmessage = '
+    <div id="download-stats" style="text-align:center; font-weight:normal; font-size:2em; left:90px;top:250px;">
+        Déjà
+        <span id="download-count">'.$downloads.'</span>
+        téléchargements
+    </div>';
+} else {
+    $windowmessage = '
+    <div id="download-stats">
+        <span id="download-count">Déjà des millions de téléchargements</span>
+    </div>';
+}
+
+
 
 ?>
 
