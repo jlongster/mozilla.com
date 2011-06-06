@@ -100,6 +100,18 @@ NEWMENU;
 
 }
 
+if(isset($abtest) && $abtest == true && $target == 'AB3') {
+    $newfirefox4menu = <<<NEWMENU
+        <!-- start menu #nav-main -->
+
+        <div id="nav-main" role="navigation">
+
+        </div>
+        <!-- end menu #nav-main -->
+NEWMENU;
+
+}
+
 
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}

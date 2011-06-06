@@ -31,7 +31,7 @@ if (count($_GET) > 0) {
     // AB testing campaign
     if($target == 'normal' && $lang == 'fr') {
         foreach($getArray as $val) {
-            if (in_array($val, array('AB1', 'AB2'))) {
+            if (in_array($val, array('AB1', 'AB2', 'AB3'))) {
                 $target   = $val;
                 $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
                 break;
@@ -184,6 +184,84 @@ switch($target) {
             font-size: 17px;
             letter-spacing: -0.02em;
             padding: 5px 5px 5px 40px;
+        }
+
+         #home #mobile-promo {
+            color: #6D7581;
+            font-size: 13px;
+            margin: 0;
+            padding: 15px 30px 0px 60px;
+            text-align: right;
+            width: 240px;
+        }
+
+        #home ul#benefits {
+            font-size: 22px;
+            font-style: italic;
+            padding: 0;
+            margin: 10px 0 20px 0;
+        }
+
+        #home ul#benefits li {
+            float: left;
+            margin: 0 0 40px 0;
+            list-style-type: none;
+            text-align: center;
+            padding: 8px 20px;
+            line-height: 19px;
+            color: #484848;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAwCAMAAADjGDCOAAAAElBMVEXq6urAwMDBwcHp6en29vb///+NcJSLAAAAPElEQVQI12WOwQ0AMQzCTAL7r9zfXZM+LUsGLHA1SUiCq7G4GKzfJ8FqXEzWaowmyzM31O+Hm9fHr1F9AMllAhxqMpx9AAAAAElFTkSuQmCC") 0 6px no-repeat;
+            *background-image: url('/img/covehead/firefox/dotted-divider.png'); /* IE6 and IE7 only */
+        }
+
+        #home ul#benefits li.first {
+            padding-left: 5px;
+            background: none;
+            margin-top: 0.5em;
+        }
+
+        #home ul#benefits li span {
+            display: block;
+        }
+
+        #home ul#benefits {
+            min-height: 40px !important;
+        }
+
+        #home ul#benefits li {
+            font-size: 18px !important;
+            width:120px !important;
+            padding: 0 10px !important;
+            margin-bottom: 5px!important;
+        }
+
+        #home #home-download {
+            clear: left;
+            padding-left: 0;
+            position: relative;
+            z-index: 25;
+            margin-top:40px;
+        }
+
+EXTRA;
+        break;
+
+    case 'AB3':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.abtesting3.inc.php';
+        $abtest = true;
+
+        $extra_css .= <<<EXTRA
+
+        html {
+            background-color: white;
+        }
+
+        #home #doc {
+            margin-bottom: 0 !important;
+        }
+
+        #home #header h1 a {
+            display:none !important;
         }
 
          #home #mobile-promo {
