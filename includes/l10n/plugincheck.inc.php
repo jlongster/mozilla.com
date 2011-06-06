@@ -32,6 +32,53 @@ $extra_headers = <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
+if($textdir == "rtl") {
+    $extra_headers .= <<<EXTRA_HEADERS
+    <style>
+        [dir="rtl"] #plugin-check #doc {
+	        background: url(/img/covehead/plugincheck/background-rtl.png) 190px 36px no-repeat;
+        }
+
+        [dir="rtl"] #main-feature {
+            margin: 0 20px 0 210px;
+        }
+
+        [dir="rtl"] #main-content,
+        [dir="rtl"] #main-feature h2,
+        [dir="rtl"] #main-feature p {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        [dir="rtl"] #download.top-right {
+            right: auto;
+            left: 10px;
+        }
+
+        [dir="rtl"] #main-content #content-left,
+        [dir="rtl"] #main-content #sidebar,
+        [dir="rtl"] #column-one,
+        [dir="rtl"] #column-two {
+            float: right;
+        }
+
+        [dir="rtl"] #sidebar {
+            margin-left: 0;
+            margin-right: 30px;
+        }
+
+        [dir="rtl"] #information-content .return-link, .badge-content .return-link {
+            padding-left: 15px;
+            text-align: left;
+        }
+        
+        [dir="rtl"] #column-one, .left-column {
+            margin-left: 40px;
+        }
+    </style>
+EXTRA_HEADERS;
+}
+
 /*
 $url_prefix = $config['url_scheme'] . '://' . $config['server_name'];
 */
