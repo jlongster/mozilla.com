@@ -82,6 +82,24 @@ $newfirefox4menu = <<<NEWMENU
         <!-- end menu #nav-main -->
 NEWMENU;
 
+if(isset($abtest) && $abtest == true) {
+    $newfirefox4menu = <<<NEWMENU
+        <!-- start menu #nav-main -->
+
+        <div id="nav-main" role="navigation">
+          <ul role="menubar">
+            <li id="nav-main-features" class="first"><a href="{$host_l10n}/firefox/features/">Ordinateur</a></li>
+            <li id="nav-main-features" class="first"><a href="{$host_l10n}/firefox/mobile/">Mobile</a></li>
+            <li id="nav-main-addons"><a href="https://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
+            <li id="nav-main-support"><a href="http://support.mozilla.com/">{$l10n->get('Support')}</a></li>
+            <li id="nav-main-about" class="last"><a href="{$host_l10n}/about/">{$l10n->get('About')}</a></li>
+          </ul>
+        </div>
+        <!-- end menu #nav-main -->
+NEWMENU;
+
+}
+
 
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}

@@ -28,6 +28,17 @@ if (count($_GET) > 0) {
         }
     }
 
+    // AB testing campaign
+    if($target == 'normal' && $lang == 'fr') {
+        foreach($getArray as $val) {
+            if (in_array($val, array('AB1', 'AB2'))) {
+                $target   = $val;
+                $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
+                break;
+            }
+        }
+    }
+
     $extra_css = <<<EXTRA
     <style type="text/css">
         body {
@@ -100,6 +111,18 @@ switch($target) {
 
     case 'streamer':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.streamer.inc.php';
+        break;
+
+    case 'AB1':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.abtesting1.inc.php';
+        $abtest = true;
+        $extra_css = '';
+        break;
+
+    case 'AB2':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.abtesting2.inc.php';
+        $abtest = true;
+        $extra_css = '';
         break;
 
     case 'normal':
