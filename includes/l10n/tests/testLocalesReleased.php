@@ -44,6 +44,17 @@ if ( isset($_GET['fx']) && isset($_GET['hg']) && isset($_GET['type']) ) {
     $type      = secureText($_GET['type']);
     $hg  = 'http://hg.mozilla.org/releases/' . $type . '/raw-file/' . $changeset . '/browser/locales/shipped-locales';
 } else {
+    echo "
+    Not enough GET variables, please indicate:<br/>
+    <dl>
+        <dt>Version:</dt>
+            <dd>fx=5.0b3</dd>
+        <dt>Changeset of the release:</dt>
+            <dd>hg=c93fe6829c74</dd>
+        <dt>Repository:</dt>
+            <dd>type=mozilla-beta</dd>
+    </dl>";
+
     exit;
 }
 
