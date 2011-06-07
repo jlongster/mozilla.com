@@ -6,9 +6,9 @@
     require_once "{$config['file_root']}/includes/js_stats.inc.php";
 
     if(isset($mapped_lang)) {
-        l10n_moz::load($config['file_root'] . '/includes/l10n/gettext_externals/webhero/' . $mapped_lang . '/LC_MESSAGES/messages.po', 'po');
+        l10n_moz::load($config['file_root'] . '/en-US/firefox/webhero/fb/locale/' . $mapped_lang . '/LC_MESSAGES/messages.po', 'po');
     } else {
-        l10n_moz::load($config['file_root'] . '/includes/l10n/gettext_externals/webhero/' . $lang . '/LC_MESSAGES/messages.po', 'po');
+        l10n_moz::load($config['file_root'] . '/en-US/firefox/webhero/fb/locale/' . $lang . '/LC_MESSAGES/messages.po', 'po');
     }
 
     $extra_headers .= <<<EXTRA_HEADERS
