@@ -1,6 +1,6 @@
 <?php
 
-if ($donwload_ok ==  true) {
+if ($download_ok ==  true) {
     $windowmessage = '
     <div id="download-stats" style="text-align:center; font-weight:normal; font-size:2em; left:90px;top:250px;">
         Déjà

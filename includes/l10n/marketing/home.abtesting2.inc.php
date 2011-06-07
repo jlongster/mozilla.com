@@ -1,7 +1,7 @@
 <?php
 
 
-if ($donwload_ok ==  true) {
+if ($download_ok ==  true) {
     $windowmessage = '
     <div id="download-stats">
         <h3 style="float:left; font-size:1.3em;vertical-align:middle;margin:0; height:100px; text-align:center; line-height:25px;padding:25px 0;">Rejoignez<br/>nous</h3>

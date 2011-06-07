@@ -376,7 +376,7 @@ if (file_exists($file) && is_readable($file)) {
 }
 
 if (is_numeric($downloads)) {
-    $donwload_ok = true;
+    $download_ok = true;
     // regional numbers formatting
     if (!in_array($lang, array('as', 'bn-BD', 'bn-IN', 'en-GB', 'en-US', 'gu-IN', 'ga-IE', 'he', 'hi-IN', 'ja', 'kn', 'ml', 'mr', 'or', 'pa-IN', 'si', 'ta', 'ta-LK', 'te', 'th', 'zh-CN', 'zh-TW'))) {
         $downloads = number_format($downloads, 0, ',', '.');
@@ -391,6 +391,7 @@ if (is_numeric($downloads)) {
     </div>';
 
 } else {
+    $download_ok   = false;
     $windowmessage = '
     <div id="download-stats">
         <span id="download-count">'.$downloads.'</span>
