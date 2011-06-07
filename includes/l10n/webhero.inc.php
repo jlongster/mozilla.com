@@ -35,6 +35,9 @@ EXTRA_HEADERS;
         opacity: inherit !important;
         text-align: inherit !important;
     }
+
+    {$l10n->get('custom-css')}
+
 EXTRA_CSS;
 
     $extra_footers = <<<EXTRA_FOOTERS
