@@ -29,12 +29,29 @@ if (count($_GET) > 0) {
     }
 
     // AB testing campaign
-    if($target == 'normal' && $lang == 'fr') {
+    if ($target == 'normal' && $lang == 'fr') {
         foreach($getArray as $val) {
             if (in_array($val, array('AB1', 'AB2', 'AB3'))) {
                 $target   = $val;
                 $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
                 break;
+            }
+        }
+    }
+
+    // XP conversion campaign
+    if ($target == 'normal' && (in_array('xp', $getArray) || in_array('XP', $getArray)) ) {
+
+        $target = 'XP';
+
+        if ($stage == false) {
+
+            if (   i__('Mozilla Firefox. Bringing the modern Web to XP.') == false
+                || i__('Super speed') == false
+                || i__('Stunning graphics') == false
+                || i__('The latest technologies') == false ) {
+
+                $target = 'normal';
             }
         }
     }
@@ -324,6 +341,10 @@ EXTRA;
 EXTRA;
         break;
 
+    case 'XP':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.xpcampaign.inc.php';
+        $extra_css = '';
+        break;
     case 'normal':
     default:
         $contentfile = $config['file_root'].'/includes/l10n/4/fallback.home.inc.php';
