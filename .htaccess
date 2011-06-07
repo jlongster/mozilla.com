@@ -239,6 +239,12 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/messaging[/]?$ $1firefox/?me
 RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/streamer[/]?$ $1firefox/?streamer [PT]
 
+# Bug 660249 Update Mozilla.com for XP campaign
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp[/]?$ $1firefox/?xp [PT]
+RewriteCond $1 !en-US/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
+
 # Redirect Firefox all-beta and all-rc to the all download page (disabled while we have product betas/RCs available!)
 # RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/all-(?:beta|rc).html$ $1firefox/all.html [PT]
 
