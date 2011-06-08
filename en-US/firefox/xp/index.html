@@ -17,6 +17,16 @@
     {$all_css}
     {$home_css}
     <style>
+        body {
+            background-image: url("/img/covehead/firefox/direct/page-background.png");
+        }
+    #home #main-content {
+        margin-top: 0;
+    }
+    #home #main-feature img.screenshot {
+        bottom: 0;
+        top: auto;
+    }
     #home #main-feature h2 {
         padding-top: 70px;
     }
@@ -58,33 +68,7 @@ FUNNEL;
         <li>Stunning <span>graphics</span></li>
         <li>The latest <span>technologies</span></li>
     </ul>
-    <?=buildPlatformImage($config['static_prefix'].'/img/covehead/firefox/main-feature.png', 'Firefox screenshot', null, null, 'screenshot', array('mac', 'linux'))?>
-    <div id="download-stats">
-        <h4>Team <em>Firefox</em></h4>
-        <p>
-            <span id="download-count"><?php
-
-$downloadFallbackText = 'Millions of';
-
-$file = "{$config['file_root']}/includes/firefox_4_final_downloads_total.json";
-if (file_exists($file) && is_readable($file)) {
-    $json = json_decode(file_get_contents($file), true);
-    if ($json === null) {
-        $downloads = $downloadFallbackText;
-    } else {
-        $downloads = $json['4.0'];
-        $downloads = number_format($downloads);
-    }
-} else {
-    $downloads = $downloadFallbackText;
-}
-
-echo $downloads;
-
-?></span>
-            <span id="text">downloads and counting!</span>
-        </p>
-    </div>
+    <img src="<?=$config['static_prefix']?>/img/covehead/firefox/main-feature-xp-gamer.png" alt="Firefox screenshot" class="screenshot" />
     <div id="home-download">
     <script><?php include $config['file_root'] . '/js/download.old.js';?></script>
     <script>
@@ -129,7 +113,7 @@ echo $downloads;
 
 </div>
 
-<hr class="hide" />
+<div id="main-content"></div>
 
 <!-- Please do not ever remove this comment. -->
 
