@@ -124,6 +124,14 @@ $dynamic_header = <<<DYNAMIC_HEADER
     {$yuicall}
     <style type="text/css">
 
+    /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('{$config['static_prefix']}/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('{$config['static_prefix']}/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+
     html {
         background-color: #33559B;
     }
