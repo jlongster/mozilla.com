@@ -1,8 +1,13 @@
 <?php
 
-    // translate $page_title and $meta_description
-    $page_title       = "Navegador Firefox em Português Brasileiro | MAis rápido, seguro e personalizável";
-    $meta_description = "Bem-vindo ao Firefox em Português Brasileiro! O navegador Firefox é a maneira mais rápida, segura e personalizável de navegar na Internet.";
+$page_title = "Firefox web browser | Features: Faster, more secure, &amp; customizable";
 
-    $pageid = 'firefox-features';
-    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+// Translate those strings, they are used in the comparizon table
+$comment[1]  = "Fx4 - more than 3.5x faster!";
+$comment[2]  = "Fx4 - more than 3x faster!";
+$comment[3]  = "Fx4 - more than 6x faster!";
+$miliseconds = "ms";
+
+// template call
+$pageid = "firefox-features";
+require $controller;
