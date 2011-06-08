@@ -123,8 +123,6 @@ $link[15] = 'http://rockyourfirefox.com/';
 
 $return   = ___('Return to top');
 
-$fx4file = $config['file_root'].'/'.UI_LANG.'/firefox/features/fx4.inc.html';
-
 $fx_dl_box = $downloadbox;
 
 $extra_headers .= <<<EXTRA_HEADERS
@@ -135,5 +133,5 @@ $extra_headers .= <<<EXTRA_HEADERS
 EXTRA_HEADERS;
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
-require_once $fx4file;
+require_once $config['file_root'].'/'.UI_LANG.'/firefox/features/content.inc.html';
 require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';

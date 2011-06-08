@@ -243,6 +243,9 @@ if (file_exists("{$config['file_root']}/{$page}")) {
     $firefoxDetails = new firefoxDetails();
     $thunderbirdDetails = new thunderbirdDetails();
 
+    // path to the controller for localized pages
+    $controller = $config['file_root'] . '/includes/l10n/controller.inc.php';
+
     require_once "{$config['file_root']}/{$page}";
 
     // We're all done.
