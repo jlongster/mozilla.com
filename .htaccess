@@ -431,8 +431,10 @@ RewriteRule ^en-US/firefox/RC/technology(/(index.html)?)?$ /en-US/firefox/perfor
 RewriteRule ^en-US/firefox/RC/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301,NC]
 RewriteRule ^en-US/firefox/RC(?:/(.*))?$ /en-US/firefox/ [R=301,NC]
 
-# Bug 640701 redirects stats page to glow
+#Bug 660292 redirect fx4 faq to general fx faq
+RewriteRule ^en-US/press/faq/fx4(/(index.html)?)?$ /en-US/press/faq/fx/ [R=301]
 
+# Bug 640701 redirects stats page to glow
 RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
 
 # Bug 629407  & 659786 Redirect updated ff users to /fx
