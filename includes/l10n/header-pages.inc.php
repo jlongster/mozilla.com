@@ -268,6 +268,11 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     /* download box adjustments for locales, get some extra horizontal space */
 
+     #download.top-right .download-other {
+        max-width: 250px;
+    }
+
+
     a.download-link span.download-content {
         font-size: 17px;
         line-heigth: 17px;
