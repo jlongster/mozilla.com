@@ -13,8 +13,7 @@
     <?php endif; ?>
 
     <div id="screenshot">
-        <img src="/img/l10n/main-feature.png" alt="Firefox screenshot" class="screenshot" />
-
+        <img src="<?=$config['static_prefix'];?>/img/covehead/firefox/main-feature-xp2.png" alt="Firefox screenshot" class="screenshot" />
 
         <?=$windowmessage;?>
     </div>
