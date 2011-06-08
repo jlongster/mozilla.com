@@ -435,8 +435,8 @@ RewriteRule ^en-US/firefox/RC(?:/(.*))?$ /en-US/firefox/ [R=301,NC]
 
 RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
 
-# Bug 629407 Redirect updated ff users to /fx
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/4\.0\.1$
+# Bug 629407  & 659786 Redirect updated ff users to /fx
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(4\.0\.1|5.*|6.*)$
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/fx/ [R=302]
 # redirect everyone else to /new
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
