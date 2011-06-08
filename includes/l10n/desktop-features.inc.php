@@ -158,9 +158,14 @@ $extra_css .= <<<EXTRA_CSS
     body.locale-ca #top-features h3 span,
     body.locale-pt #top-features h3 span,
     body.locale-it #top-features h3 span,
-    body.locale-ro #top-features h3 span,
-    body.locale-es #top-features h3 span {
+    body.locale-el #top-features h3 span,
+    body.locale-ru #top-features h3 span,
+    body.locale-es-ES #top-features h3 span {
         font-size: 18px;
+    }
+    
+    body.locale-ro #top-features h3 span {
+        font-size: 16px;
     }
 
 EXTRA_CSS;
