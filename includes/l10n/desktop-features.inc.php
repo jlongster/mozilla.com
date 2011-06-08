@@ -126,11 +126,44 @@ $return   = ___('Return to top');
 $fx_dl_box = $downloadbox;
 
 $extra_headers .= <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/l10n/features.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/features.css" media="screen" />
     <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/js/firefox-features.js"></script>
 
 EXTRA_HEADERS;
+
+$extra_css .= <<<EXTRA_CSS
+    #firefox-features #main-feature {
+        margin: 0 20px;
+    }
+
+    #top-features {
+        width: 170px;
+    }
+
+    #top-features .top-feature-hover {
+        display: none;
+        position: absolute;
+        bottom: -40px;
+        left: -285px;
+        padding: 40px 30px 25px;
+        width: 219px;
+        height: 125px;
+        border-radius: 15px;
+        -moz-border-radius: 15px;
+        background: url(/img/covehead/features/bubble.png);
+        _background: url(/img/covehead/features/bubble-256.png); /* IE6 only */
+    }
+
+    body.locale-ca #top-features h3 span,
+    body.locale-pt #top-features h3 span,
+    body.locale-it #top-features h3 span,
+    body.locale-ro #top-features h3 span,
+    body.locale-es #top-features h3 span {
+        font-size: 18px;
+    }
+
+EXTRA_CSS;
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
 require_once $config['file_root'].'/'.UI_LANG.'/firefox/features/content.inc.html';

@@ -2,10 +2,12 @@
 
 #firefox-features #main-feature {
     padding-top: 60px;
-    margin: 0 20px;
 }
 
 
+#main-feature > p {
+    margin-right: 230px
+}
 
 /* }}} */
 /* {{{ Top Features */
@@ -13,9 +15,8 @@
 .feature-links {
     float: left;
     background: url(/img/covehead/features/dottedline-background.png) 0 -30px no-repeat;
-
     margin: 0;
-    padding: 0;
+    padding: 30px 0 28px;
 }
 
 .feature-links li {
@@ -24,7 +25,7 @@
     float: left;
     list-style-type: none;
     margin: 0 5px 0 0;
-    padding: 30px 1px 30px;
+    padding: 0 1px;
 }
 
 .feature-links li a,
@@ -37,14 +38,15 @@
 }
 
 .feature-links li a {
-    background: url(/img/l10n/covehead/features/menu-icons.png) 50% 0 no-repeat;
+    background: url(/img/covehead/features/menu-icons.png) 50% 0 no-repeat;
     display: block;
     width: 110px;
     font-size: 14px;
     font-style: italic;
     line-height: 16px;
     text-align: center;
-    padding: 110px 0 0;
+    padding: 110px 0 1px;
+    cursor: pointer; /* For IE */
     position: relative;
     top: 0;
 }
@@ -67,12 +69,12 @@
     display: block;
 }
 
-.feature-links li#made-easy a { background-position: 50% 0; }
-.feature-links li#high-performance a { background-position: 50% -250px; }
-.feature-links li#advanced-security a { background-position: 50% -500px; }
-.feature-links li#powerful-personalization a { background-position: 50% -750px; }
-.feature-links li#cutting-edge a { background-position: 50% -1000px; }
-.feature-links li#universal-access a { background-position: 50% -1250px; }
+.feature-links li#made-easy a .feature-link-content { background-position: 50% 0; }
+.feature-links li#high-performance a .feature-link-content { background-position: 50% -250px; }
+.feature-links li#advanced-security a .feature-link-content { background-position: 50% -500px; }
+.feature-links li#powerful-personalization a .feature-link-content { background-position: 50% -750px; }
+.feature-links li#cutting-edge a .feature-link-content { background-position: 50% -1000px; }
+.feature-links li#universal-access a .feature-link-content { background-position: 50% -1250px; }
 
 #top-features {
     zoom: 1;
@@ -159,7 +161,7 @@
 
 .features-box .features-container {
     padding: 25px 0 30px 0;
-    background: url(/img/l10n/covehead/divider-notch.jpg) top center no-repeat;
+    background: url(/img/covehead/divider-notch.jpg) top center no-repeat;
     position: relative;
 }
 
@@ -194,7 +196,7 @@ h5 {
 
 hr {
     clear: both;
-    background: url(/img/l10n/covehead/divider-dotted.png) top center repeat-x;
+    background: url(/img/covehead/divider-dotted.png) top center repeat-x;
     margin: 25px 0;
     padding: 2px;
     border: 0;
@@ -256,7 +258,7 @@ img.right {
 
 
 #madeeasy .features-container {
-    background: url(/img/l10n/covehead/divider-notch-main.jpg) top center no-repeat;
+    background: url(/img/covehead/divider-notch-main.jpg) top center no-repeat;
 }
 
 .oneclickbookmarking {
