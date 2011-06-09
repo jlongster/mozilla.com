@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <?php
 
 function secureText($var, $tablo = true) {
@@ -33,6 +34,38 @@ function getLocales($array1, $array2) {
     return $value;
 }
 
+function handleErrors($error) {
+
+    switch($error) {
+
+        case '1':
+            echo '<p>Not enough GET variables, please indicate:</p>
+                <dl>
+                    <dt>Changeset of the release:</dt>
+                        <dd>hg=c93fe6829c74</dd>
+                    <dt>Repository:</dt>
+                        <dd>type=mozilla-beta</dd>
+                </dl>';
+                die();
+            break;
+
+        case '2':
+            die('Error, unknown repo');
+            break;
+
+        case '3':
+            die('The changeset/repo combination is not correct');
+            break;
+
+        default:
+            return true;
+            break;
+        }
+
+    return false;
+}
+
+
 // Load the product details classes
 require dirname(__FILE__).'/../../product-details/firefoxDetails.class.php';
 
@@ -58,29 +91,21 @@ if ( isset($_GET['hg']) && isset($_GET['type']) ) {
     $hg = 'http://hg.mozilla.org/releases/' . $type . '/raw-file/' . $changeset . '/browser/locales/shipped-locales';
 
 } else {
-    echo "
-    <p>Not enough GET variables, please indicate:</p>
-    <dl>
-        <dt>Changeset of the release:</dt>
-            <dd>hg=c93fe6829c74</dd>
-        <dt>Repository:</dt>
-            <dd>type=mozilla-beta</dd>
-    </dl>";
-
-    exit;
+    handleErrors(1);
 }
 
 // define repos
 $repo = array_search($type, $repoMapping);
+
 if ($repo == false) {
-    die('Error, unknown repo');
+    handleErrors(2);
 };
 
 
 // extract hg shipped-locales file
 $file = @file($hg, FILE_IGNORE_NEW_LINES);
 if ($file ==  false) {
-    die('The changeset/repo combination is not correct');
+    handleErrors(3);
 }
 
 if (in_array('ja linux win32', $file) && in_array('ja-JP-mac osx', $file) ) {
@@ -105,26 +130,65 @@ foreach($fx->beta_builds as $key => $val) {
     }
 }
 
+?>
+
+ <?php echo getLocales($pd, $file); ?>
+
+
+<html xml:lang="fr" lang="fr" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Check product-details status vs hg changeset</title>
+
+
+    <style type="text/css">
+
+    /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('http://mozcom-cdn.mozilla.net/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('http://mozcom-cdn.mozilla.net/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+        font-style: Georgia, serif;
+        font-size:16px;
+    }
+
+    </style>
 
 
 
-echo '<h4>Product-details values currently set on this website</h4>';
-echo '<ul>';
-echo '<li>LATEST_FIREFOX_VERSION: ' . LATEST_FIREFOX_VERSION;
-echo '<li>LATEST_FIREFOX_DEVEL_VERSION: ' . LATEST_FIREFOX_DEVEL_VERSION;
-echo '<li>LATEST_FIREFOX_OLDER_VERSION: ' . LATEST_FIREFOX_OLDER_VERSION;
-echo '<li>FIREFOX_AURORA: ' . FIREFOX_AURORA;
-echo '</ul>';
+</head>
+
+<body>
+
+<h4>Product-details values currently set on this website</h4>
+
+<ul>
+    <li>LATEST_FIREFOX_VERSION: <?php echo LATEST_FIREFOX_VERSION; ?></li>
+    <li>LATEST_FIREFOX_DEVEL_VERSION: <?php echo LATEST_FIREFOX_DEVEL_VERSION; ?></li>
+    <li>LATEST_FIREFOX_OLDER_VERSION: <?php echo LATEST_FIREFOX_OLDER_VERSION; ?></li>
+    <li>FIREFOX_AURORA: <?php echo FIREFOX_AURORA; ?></li>
+</ul>
 
 
 
-echo '<p>Requested repository:<strong> ' . $type . '</strong>, that is Firefox ' . constant($repo) . ' in product-details<br/> ';
-echo '(changeset: ' . $changeset .' - <a href="' . $hg . '">HG source</a>)</p>';
+<p>Requested repository:<strong> <?php echo $type; ?></strong>, that is Firefox <?php echo constant($repo); ?>in product-details<br/>
+(changeset: <?php echo $changeset; ?>- <a href="<?php echo $hg; ?>">HG source</a>)</p>
 
-echo '<p>Locales we have built in the above changeset but are not proposed on the website:</p>';
+<p>Locales we have built in the above changeset but are not proposed on the website:</p>
 
-echo getLocales($file, $pd);
+<?php echo getLocales($file, $pd); ?>
 
-echo '<p>Locales we propose on the website but don\'t have builds for:</p>';
+<p>Locales we propose on the website but don't have builds for:</p>
 
-echo getLocales($pd, $file);
+
+
+
+
+</body>
+</html>
