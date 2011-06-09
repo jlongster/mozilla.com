@@ -24,11 +24,21 @@ function secureText($var, $tablo = true) {
 }
 
 function getLocales($array1, $array2) {
-    $tmp   = array_diff($array1, $array2);
-    $value = '';
+    $tmp      = array_diff($array1, $array2);
+    $value    = '';
+    $last_key = end((array_keys($tmp)));
 
-    foreach ($tmp as $val) {
-        $value .=  $val . ', ';
+    foreach ($tmp as $key => $val) {
+
+        if ($key != $last_key) {
+            $value .=  $val . ', ';
+        } else {
+            $value .=  $val;
+        }
+    }
+
+    if ($value == '') {
+        $value = 'mozilla-central and product-details have the same locales for the changeset requested';
     }
 
     return $value;
@@ -70,16 +80,13 @@ function handleErrors($error) {
 require dirname(__FILE__).'/../../product-details/firefoxDetails.class.php';
 
 // variables
-$fx = new firefoxDetails();
-$pd = array();
+$fx          = new firefoxDetails();
+$pd          = array();
 $repoMapping = array (
-
     'LATEST_FIREFOX_VERSION'        => 'mozilla-2.0',
     'LATEST_FIREFOX_DEVEL_VERSION'  => 'mozilla-beta',
     'LATEST_FIREFOX_OLDER_VERSION'  => 'mozilla-1.9.2',
     'FIREFOX_AURORA'                => 'mozilla-aurora',
-
-
 );
 
 
@@ -88,8 +95,7 @@ $repoMapping = array (
 if ( isset($_GET['hg']) && isset($_GET['type']) ) {
     $changeset = secureText($_GET['hg']);
     $type      = secureText($_GET['type']);
-    $hg = 'http://hg.mozilla.org/releases/' . $type . '/raw-file/' . $changeset . '/browser/locales/shipped-locales';
-
+    $hg        = 'http://hg.mozilla.org/releases/' . $type . '/raw-file/' . $changeset . '/browser/locales/shipped-locales';
 } else {
     handleErrors(1);
 }
@@ -101,14 +107,13 @@ if ($repo == false) {
     handleErrors(2);
 };
 
-
 // extract hg shipped-locales file
 $file = @file($hg, FILE_IGNORE_NEW_LINES);
 if ($file ==  false) {
     handleErrors(3);
 }
 
-if (in_array('ja linux win32', $file) && in_array('ja-JP-mac osx', $file) ) {
+if ( in_array('ja linux win32', $file) && in_array('ja-JP-mac osx', $file) ) {
     unset($file[array_search('ja linux win32', $file)]);
     unset($file[array_search('ja-JP-mac osx', $file)]);
     $file[] = 'ja';
@@ -116,26 +121,22 @@ if (in_array('ja linux win32', $file) && in_array('ja-JP-mac osx', $file) ) {
     $file = array_values($file);
 }
 
-foreach($fx->primary_builds as $key => $val) {
+foreach ($fx->primary_builds as $key => $val) {
 
-    if(isset($val[constant($repo)])) {
+    if ( isset($val[constant($repo)]) ) {
         $pd[] = $key;
     }
 }
 
-foreach($fx->beta_builds as $key => $val) {
+foreach ($fx->beta_builds as $key => $val) {
 
-    if(isset($val[constant($repo)])) {
+    if( isset($val[constant($repo)]) ) {
         $pd[] = $key;
     }
 }
 
 ?>
-
- <?php echo getLocales($pd, $file); ?>
-
-
-<html xml:lang="fr" lang="fr" dir="ltr">
+<html dir="ltr">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Check product-details status vs hg changeset</title>
@@ -154,8 +155,17 @@ foreach($fx->beta_builds as $key => $val) {
     body {
         background-color: white;
         color: black;
-        font-style: Georgia, serif;
+        font-family: Georgia, serif;
         font-size:16px;
+    }
+
+    h4 {
+        font-family: MetaBlack;
+        margin-bottom:0;
+    }
+
+    h4 + p, h4 + ul  {
+        margin-top: 0 !important;
     }
 
     </style>
@@ -177,18 +187,17 @@ foreach($fx->beta_builds as $key => $val) {
 
 
 
-<p>Requested repository:<strong> <?php echo $type; ?></strong>, that is Firefox <?php echo constant($repo); ?>in product-details<br/>
-(changeset: <?php echo $changeset; ?>- <a href="<?php echo $hg; ?>">HG source</a>)</p>
+<h4>Requested repository: <?php echo $type; ?></h4>
+<p><em>that is Firefox <?php echo constant($repo); ?> in product-details<br/>
+(changeset: <?php echo $changeset; ?> - <a href="<?php echo $hg; ?>">HG source</a>)</em></p>
 
-<p>Locales we have built in the above changeset but are not proposed on the website:</p>
+<h4>Locales we have built in the above changeset but are not proposed on the website:</h4>
 
-<?php echo getLocales($file, $pd); ?>
+<p><?php echo getLocales($file, $pd); ?></p>
 
-<p>Locales we propose on the website but don't have builds for:</p>
+<h4>Locales we propose on the website but don't have builds for:</h4>
 
-
-
-
+<p><?php echo getLocales($pd, $file); ?></p>
 
 </body>
 </html>
