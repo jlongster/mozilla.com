@@ -35,7 +35,21 @@ EXTRA_HEADERS;
         opacity: inherit !important;
         text-align: inherit !important;
     }
-
+    
+    body.locale-el #hero .page-title {
+        font: 40px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
+    }
+    
+    body.locale-ga-IE #hero .page-title,
+    body.locale-pl #hero .page-title,
+    body.locale-vi #hero .page-title {
+        font: 60px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
+    }
+    
+    body.locale-ar #step2 {
+    padding: 50px 350px 10px 230px;
+    }
+    
     {$l10n->get('custom-css')}
 
 EXTRA_CSS;
