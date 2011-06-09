@@ -40,6 +40,10 @@ EXTRA_HEADERS;
         font: 40px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
     }
     
+    body.locale-el #share h3 {
+        text-transform: none;
+    }
+    
     body.locale-ga-IE #hero .page-title,
     body.locale-pl #hero .page-title,
     body.locale-vi #hero .page-title {
@@ -48,6 +52,10 @@ EXTRA_HEADERS;
     
     body.locale-ar #step2 {
     padding: 50px 350px 10px 230px;
+    }
+    
+    .checklist li {
+        min-height: 35px;
     }
     
     {$l10n->get('custom-css')}
