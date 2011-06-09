@@ -1,20 +1,18 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">О нас</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Мы являемся глобальным сообществом</strong> 
+             <a href="http://www.mozilla.org/community">людей, работающих вместе</a> с 1998 года, чьей целью является построение лучшего Интернета.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Мы являемся некоммерческой организацией</strong>, 
+            чьей целью является поощрение <a href="http://www.mozilla.org/about/mission.html">открытости, инновационности и равноправности</a> в Интернете.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>И мы являемся проектом с открытым исходным кодом</strong>,
+            чьи <a href="http://www.mozilla.org/projects">программы</a> были использованы для создания одного из лучших приложений в Интернете.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Мы верим, что Интернет, как наиболее значимая социальная и технологическая разработка нашего времени, является общественным ресурсом, который необходимо улучшать и защищать.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> является некоммерческой организацией, посвятившей себя реализации всех этих целей, но реальной силой, стоящей за Mozilla, являются люди со всего мира, предпринимающие шаги по построению Интернета таким, каким они его видят. <a href="http://www.mozilla.org/contribute">И вы можете помочь</a>!</p>
 </div>
