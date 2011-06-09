@@ -8,6 +8,12 @@ $body_class    = !isset($body_class)   ? ''            : $body_class;
 $_hits_per_page    = !isset($_hits_per_page)   ? ''    : $_hits_per_page;
 $_hits_per_site    = !isset($_hits_per_site)   ? ''    : $_hits_per_site;
 
+if (isset($page_desc)) {
+    $meta_desc = '<meta name="Description" content="'.$page_desc.'">';
+} else {
+    $meta_desc = '';
+}
+
 $default_head_scripts = <<<HEAD_SCRIPTS
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-05-20"></script>
 HEAD_SCRIPTS;
@@ -40,9 +46,8 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <meta charset="utf-8">
     <meta name="viewport" content="width=1024">
     <title>{$page_title}</title>
-
-  <meta name="og:image" content="{$config['static_prefix']}/img/firefox-100.jpg">
-
+    <meta name="og:image" content="{$config['static_prefix']}/img/firefox-100.jpg">
+    {$meta_desc}
 {$fonts}
 {$styles}
 {$head_scripts}
