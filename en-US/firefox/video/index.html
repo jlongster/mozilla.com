@@ -528,18 +528,20 @@
             $_selected_shortname = key($_videos_by_shortname);
             $_autoplay = false;
         }
+        $_selected_video = $_videos_by_shortname[$_selected_shortname];
+        $_page_title = $_selected_video['title'];
+        $_page_desc = $_selected_video['description'];
     } else {
         $_selected_shortname = key($_videos_by_shortname);
+        $_selected_video = $_videos_by_shortname[$_selected_shortname];
         $_page_title = 'Watch Videos';
+        $_page_desc  = 'A video overview of what makes the Firefox web browser so awesome. Explore popular features, learn about the Mozilla mission and more.';
         $_autoplay = false;
     }
 
-    $_selected_video = $_videos_by_shortname[$_selected_shortname];
-    $_page_title = $_selected_video['title'];
-
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Mozilla Firefox Web Browser — ' . $_page_title;
-    $page_desc  = 'A video overview of what makes the Firefox web browser so awesome. Explore popular features, learn about the Mozilla mission and more.';
+    $page_desc  = $_page_desc;
     $body_id    = 'firefox-videos';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video.css" media="screen" />
