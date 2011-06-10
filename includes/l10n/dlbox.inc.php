@@ -98,7 +98,7 @@ if(!array_key_exists($templang, $firefoxDetailsl10n->primary_builds) AND !array_
 
 if(!isset($firefoxDetailsl10n->primary_builds[$templang][LATEST_FIREFOX_VERSION]) AND !isset($firefoxDetailsl10n->beta_builds[$templang][LATEST_FIREFOX_VERSION])) {
     // Download box code for locales
-    $templang = 'en-US';
+    $stable_release_lang = 'en-US';
 }
 
 $downloadbox  = "\n".'<!-- generated box -->'."\n";
@@ -106,7 +106,7 @@ $downloadbox .= "\n".'<script type="text/javascript">//<![CDATA['."\n";
 $downloadbox .= file_get_contents($_SERVER['DOCUMENT_ROOT'].'/js/download.js');
 $downloadbox .= "\n".'//]]>></script>'."\n";
 $downloadbox .= "\n".'<div class="'.$dl_box_class['stable'].'" id="'.$dl_box_id.'">'."\n";
-$downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($templang), $dl_box_options);
+$downloadbox .= $firefoxDetailsl10n->getLocaleBoxHome(localeConvert($stable_release_lang), $dl_box_options);
 $downloadbox .= "\n".'</div>'."\n";
 $downloadbox .= <<<HIDE
     <script type="text/javascript">//<![CDATA[
