@@ -51,11 +51,16 @@ EXTRA_HEADERS;
     }
     
     body.locale-ar #step2 {
-    padding: 50px 350px 10px 230px;
+        padding: 50px 350px 10px 230px;
     }
     
     .checklist li {
         min-height: 35px;
+    }
+    
+    #share a:hover,
+    #share a:active {
+        text-decoration: none;
     }
     
     {$l10n->get('custom-css')}
