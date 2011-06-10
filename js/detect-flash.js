@@ -18,6 +18,16 @@ $(document).ready(function() {
 
         var detectedVersion = plugin.version;
 
+        if (detectedVersion === '') {
+            // Linux doesn't support Plugin.version properly
+            var matches = plugin.description.match(/([0-9]+)\.([0-9]+) r([0-9]+)$/);
+            if (matches.length === 0) {
+                // Could not parse the plugin description
+                return -1;
+            }
+            detectedVersion = matches[1] + '.' + matches[2] + '.' + matches[3];
+        }
+
         if (!detectedVersion) {
             // Maybe an unsupported browser
             return -1;
@@ -25,7 +35,7 @@ $(document).ready(function() {
 
         var detected = detectedVersion.split('.');
 
-        if (detected.length !== 4) {
+        if (detected.length < 3) {
             // Unknown Flash version detected
             return -1;
         }
@@ -57,15 +67,22 @@ $(document).ready(function() {
             }
 
             if (Number(detected[1]) === Number(required[1])) {
-                if (Number(detected[2]) > Number(required[2])) {
-                    // revision is greater than required version
-                    return true;
-                }
-
-                if (Number(detected[2]) === Number(required[2])) {
-                    if (Number(detected[3]) >= Number(required[3])) {
-                        // build number is greater than required version
+                if (detected.length < 4) {
+                    if (Number(detected[2]) >= Number(required[2])) {
+                        // revision is greater than required version
                         return true;
+                    }
+                } else {
+                    if (Number(detected[2]) > Number(required[2])) {
+                        // revision is greater than required version
+                        return true;
+                    }
+
+                    if (Number(detected[2]) === Number(required[2])) {
+                        if (Number(detected[3]) >= Number(required[3])) {
+                            // build number is greater than required version
+                            return true;
+                        }
                     }
                 }
             }
@@ -83,6 +100,7 @@ $(document).ready(function() {
     var $featureSection = $('#main-feature');
 
     if ($featureSection && !isWinCE && !isPPCMac) {
+        var $body = $('body');
         var hasRequiredVersion = verifyFlashVersion();
         if (!hasRequiredVersion && hasRequiredVersion !== -1) {
 
@@ -99,7 +117,6 @@ $(document).ready(function() {
                     'or <a href="http://support.mozilla.com/kb/Managing+the+Flash+plugin#w_updating-flash">learn more</a>.';
             }
 
-            var $body = $('body');
             if ($body.attr('id') == 'whatsnew') {
                 $body.addClass('flash-warning');
                 $('#main-content').before(
