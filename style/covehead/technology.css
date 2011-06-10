@@ -419,6 +419,80 @@ article, section {display: block;}
  }
 #transitiondemo:hover { -webkit-transform: scale(3) rotate(360deg);  -moz-transform: scale(3) rotate(360deg); text-shadow: 0px 0px 3px #28C2DA; }
 
+#animationdemo {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  box-shadow: none;
+  font-size: 5em;
+  color: #e8001e;
+  text-align: center;
+  padding-top: 60px;
+  width: 53%;
+}
+
+#animationdemo:hover {
+  -moz-animation: glowheart 2s linear 0s infinite;
+  -webkit-animation: glowheart 2s linear 0s infinite;
+  color: transparent;
+}
+
+@-moz-keyframes glowheart {
+  from {
+    text-shadow: 0 0 0 #e8001e;
+  }
+  10% {
+    -moz-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  30% {
+    -moz-transform: scale(1.1);
+    text-shadow: 0 0 10px #f00038;
+  }
+  50% {
+    -moz-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  70% {
+    -moz-transform: scale(1.2);
+    text-shadow: 0 0 10px #ea0048;
+  }
+  90% {
+    -moz-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  to {
+    text-shadow: 0 0 0 #e8001e;
+  }
+}
+@-webkit-keyframes glowheart {
+  from {
+    text-shadow: 0 0 0 #e8001e;
+  }
+  10% {
+    -webkit-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  30% {
+    -webkit-transform: scale(1.1);
+    text-shadow: 0 0 10px #f00038;
+  }
+  50% {
+    -webkit-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  70% {
+    -webkit-transform: scale(1.2);
+    text-shadow: 0 0 10px #ea0048;
+  }
+  90% {
+    -webkit-transform: scale(1);
+    text-shadow: 0 0 0 #e8001e;
+  }
+  to {
+    text-shadow: 0 0 0 #e8001e;
+  }
+}
+
 #formdemo .demo { padding: 4px 8px 0; width: 190px; font-size: 12px; left: 49px; }
 #formdemo input { display: inline; width: 70px; border: none; font-size: 12px; font-weight: bold; text-align: center; padding: 0; }
 #formdemo input:hover { background: #dff5ff; box-shadow: 0px 0px 2px #33b3f0; }
