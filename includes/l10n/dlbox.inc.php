@@ -96,7 +96,10 @@ if(!array_key_exists($templang, $firefoxDetailsl10n->primary_builds) AND !array_
     $templang = 'en-US';
 }
 
-if(!isset($firefoxDetailsl10n->primary_builds[$templang][LATEST_FIREFOX_VERSION]) AND !isset($firefoxDetailsl10n->beta_builds[$templang][LATEST_FIREFOX_VERSION])) {
+// this is the lang parameter we will use for LATEST_FIREFOX_VERSION  dl box
+$stable_release_lang = $templang;
+
+if(!isset($firefoxDetailsl10n->primary_builds[$stable_release_lang][LATEST_FIREFOX_VERSION]) AND !isset($firefoxDetailsl10n->beta_builds[$stable_release_lang][LATEST_FIREFOX_VERSION])) {
     // Download box code for locales
     $stable_release_lang = 'en-US';
 }
