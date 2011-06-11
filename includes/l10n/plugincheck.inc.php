@@ -16,8 +16,12 @@ $extra_headers = <<<EXTRA_HEADERS
         font-size: 40px;
     }
 
-    html[lang='hu'] ##main-feature h2 span {
+    html[lang='hu'] #main-feature h2 span {
         font-size: 57px;
+    }
+
+    html[lang='lt'] #main-feature h2 {
+        font-size: 32px;
     }
 
     #sidebar {
@@ -36,7 +40,7 @@ if($textdir == "rtl") {
     $extra_headers .= <<<EXTRA_HEADERS
     <style>
         [dir="rtl"] #plugin-check #doc {
-	        background: url(/img/covehead/plugincheck/background-rtl.png) 190px 36px no-repeat;
+            background: url(/img/covehead/plugincheck/background-rtl.png) 190px 36px no-repeat;
         }
 
         [dir="rtl"] #main-feature {
@@ -71,7 +75,7 @@ if($textdir == "rtl") {
             padding-left: 15px;
             text-align: left;
         }
-        
+
         [dir="rtl"] #column-one, .left-column {
             margin-left: 40px;
         }
