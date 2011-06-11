@@ -1,53 +1,54 @@
 <?php
 
 // translate the variables below please
-$page_title = "Plugin Check";
+$page_title = "בודק התוספים";
 
-$tableHeader[1] = "Plugin details";
-$tableHeader[2] = "State";
-$tableHeader[3] = "Action";
+$tableHeader[1] = "פרטי התוסף החיצוני";
+$tableHeader[2] = "מצב";
+$tableHeader[3] = "פעולה";
 
 
 // PLuginCheck application strings
-$message[0]  = "Checking with Mozilla on the status of your plugins";
-$message[1]  = "Loading Data";
-$message[2]  = "View All Your Plugins";
+$message[0]  = "בודק מול Mozilla את מצב התוספים החיצוניים שלך";
+$message[1]  = "טוען נתונים";
+$message[2]  = "צפייה בכל התוספים שברשותך";
 
 // label and status for plugin detection table
-$message[3]  = "Disable Now";
-$message[4]  = "Vulnerable No Fix";
-$message[5]  = "Update Now";
-$message[6]  = "Vulnerable";
-$message[7]  = "Update";
-$message[8]  = "Outdated Version";
-$message[9]  = "Up to Date";
-$message[10] = "Research";
-$message[11] = "Unknown plugin";
+$message[3]  = "נטרל עכשיו";
+$message[4]  = "פגיע ללא תיקון";
+$message[5]  = "עדכן עכשיו";
+$message[6]  = "סכנה";
+$message[7]  = "עדכון";
+$message[8]  = "גרסה לא עדכנית";
+$message[9]  = "עדכני";
+$message[10] = "חקירה";
+$message[11] = "תוסף לא ידוע";
 $message[12] = ""; // unused string, keep blank
-$message[13] = "Out of date plugins:";
-$message[14] = "Vulnerable plugins:";
-$message[15] = "Potentially vulnerable plugins:";
-$message[16] = "The plugins listed below are up to date";
-$message[17] = "No plugins were detected";
+$message[13] = "תוספים לא עדכניים:";
+$message[14] = "תוספים מסוכנים:";
+$message[15] = "תוספים חיצוניים עם פוטנציאל לסכנה:";
+$message[16] = "התוספים החיצוניים שלהלן עדכניים";
+$message[17] = "לא אותרו תוספים חיצוניים";
 $message[18] = "http://www.google.com/search?q=";
 
 /*search terms before the plugin name...
  Example if there was a plugin named "DivX Media Player" that we couldn't detect, then we would
  search google for "current version plugin DivX Media Player */
 
+// I've kept the following string in English as it is more likely to give better search results than Hebrew translated string. (Tomer)
 $message[19] = "current version plugin";
 
 // more labels and status for plugin detection table
 
 
-$message[20] = "Update Now";                   //MAYBE_VULNERABLE
-$message[21] = "Potentially Vulnerable";       //MAYBE_VULNERABLE
-$message[22] = "Update";                       //MAYBE_OUTDATED
-$message[23] = "Potentially Outdated Version"; //MAYBE_OUTDATED
+$message[20] = "עדכן עכשיו";             //MAYBE_VULNERABLE
+$message[21] = "סכנה פוטנציאלית";        //MAYBE_VULNERABLE
+$message[22] = "עדכון";                  //MAYBE_OUTDATED
+$message[23] = "אפשרות לגרסה לא עדכנית"; //MAYBE_OUTDATED
 
 // Bug#553661 Vulnerability details
-$message[24] = "<p>This plugin version has a security vulnerability that websites can exploit and potentially harm your computer. It is recommended that you update this plugin or if an update is not available, <a href='#howto-disable'>disable it</a>.</p><p>For more information, read the <a href='#' class='vulner-url'>plugin vendor's vulnerability information</a>.</p><p><a class='qtip-closer'>Close</a></p>";
-$message[25] = " (more info)";
+$message[24] = "<p>גרסת תוסף חיצוני זו כוללת סכנת אבטחה שיכולה לשמש אתרים כדי לפגוע במחשב שלך. מומלץ לעדכן את תוסף חיצוני זה או במידה ולא קיים עבורו עדכון זמין, <a href='#howto-disable'>לנטרל אותו</a>.</p><p>למידע נוסף, ראה את <a href='#' class='vulner-url'>המידע על סכנת האבטחה של יצרן התוסף החיצוני</a>.</p><p><a class='qtip-closer'>סגירה</a></p>";
+$message[25] = " (מידע נוסף)";
 
 // end of translations
 
