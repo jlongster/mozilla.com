@@ -1,8 +1,7 @@
-
 <div id="main-feature">
 
     <h2>Preverite svoje <span>vstavke</span></h2>
-    <p>Ažurni vstavki skrbijo za to, da Firefox deluje varno in nemoteno.</p>
+    <p>Če redno posodabljate vstavke, bo Firefox deloval varno in brez težav.</p>
 
 </div>
 
@@ -12,7 +11,7 @@
         <div class="blocklisted flash">
 
             <h3>Pogrešate <span>FLASH?</span></h3>
-            <p>Za vašo varnost, je Firefox zastarelo različico Flash onemogočil. Prosim <a <?=$link[0];?>posodobite na najnovejšo različico.</a></p>
+            <p>Zaradi večje varnosti je Firefox zastarelo različico Flasha onemogočil. <a <?=$link[0];?> >Nadgradite na najnovejšo.</a></p>
 
             <br class="clearfix" />
         </div>
@@ -20,40 +19,40 @@
         <div id="legend">
             <ul>
                 <li id="old_browser" style="display:none">
-                    <strong>Opozorilo, na voljo je novejša različica brskalnika.</strong> Posobite prosim svoj brskalnik.
+                    <strong>Opozorilo: na voljo je novejša različica vašega brskalnika.</strong> Prosimo, da ga posodobite.
                 </li>
                 <li id="modern_browsers" style="display:none">
-                    Ta stran deluje najbolje z najnovejšimi brskalniki: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, ali IE 8+
+                    Ta stran najbolje deluje z najnovejšimi brskalniki: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+ in IE 8+.
                 </li>
                 <li id="exploder" style="display: none">
-                     Za kontrolo vstavkov je <strong>podpora za Internet Explorer omejena</strong>. Uporabite lahko tudi Orodja &gt; Dodatki
+                    Preverjanje vstavkov <strong>v Internet Explorerju ni podprto v celoti</strong>. Uporabite lahko tudi Orodja &gt; Upravljanje dodatkov
                 </li>
                 <li>
-                    <strong><em>Korak 1:</em></strong> Kliknite na <strong>Posodobi</strong>, da vstavek posodobite.
+                    <strong><em>Korak 1:</em></strong> Kliknite <strong>Posodobi</strong> za posodobitev vstavkov.
                 </li>
                 <li>
-                    <strong><em>Korak 2:</em></strong> <strong>Opravite najprej vse predlagane posodobitve</strong>, <em>potem šele</em> poženite znova svoj brskalnik.
+                    <strong><em>Korak 2:</em></strong> Najprej <strong>opravite vse predlagane posodobitve</strong> in <em>šele potem</em> ponovno zaženite vaš brskalnik.
                 </li>
             </ul>
         </div>
 
         <noscript>
             <div>
-                <h3>Opomba</h3>
-                <p><strong>JavaScript je onemogočen</strong> ali pa uporabljate brskalnik, ki JavaScript ne uporablja. Ta stran, s katero se preverja vstavke, ne dela brez <strong>JavaScripta</strong>. Omogočite prosim JavaScript v Orodja &gt; Možnosti in nato stran osvežite.</p>
-                <p>Ali pa onemogočite vse svoje vstavke in pustite JavaScript onemogočen... znašli se boste v dobri družbi, tako <a <?=$link[1];?> >rola RMS</a>.</p>
+                <h3>Opozorilo</h3>
+                <p><strong>JavaScript je onemogočen</strong> ali pa uporabljate brskalnik brez JavaScripta. Stran za preverjanje vstavkov ne deluje brez <strong>JavaScripta</strong>. Omogočite ga v Orodja &gt; Možnosti in ponovno naložite stran.</p>
+                <p>Onemogočite lahko tudi vse svoje vstavke in pustite JavaScript onemogočen. Tako boste v dobri družbi <a <?=$link[1];?> >RMS</a>.</p>
             </div>
         </noscript>
 
         <?=$pluginsTable?>
 
         <div id="error-panel" style="display: none">
-            <h3>Napaka storitve pri iskanju vstavka</h3>
-            <p>Naleteli smo na napako. Poskusite prosim znova kasneje.</p>
+            <h3>Napaka storitve za iskanje vstavkov</h3>
+            <p>Prišlo je do napake. Poskusite znova pozneje.</p>
 
             <form action="#" method="get">
                 <fieldset>
-                    <button>Poizkusi znova</button>
+                    <button>Poskusi znova</button>
                 </fieldset>
             </form>
         </div>
@@ -62,21 +61,21 @@
 
     <div id="sidebar">
       <div id="information">
-        <h3>Plugin Tips</h3>
+        <h3>Nasveti</h3>
         <ul>
           <li><a <?=$link[2];?> > Kaj je vstavek?                   </a></li>
-          <li><a <?=$link[3];?> > Zakaj naj bi vstavke posodobil?   </a></li>
-          <li><a <?=$link[4];?> > Kako mi Firefox lahko pomaga?     </a></li>
-          <li><a <?=$link[5];?> > Katere vstavke imam?              </a></li>
+          <li><a <?=$link[3];?> > Zakaj naj posodabljam vstavke?    </a></li>
+          <li><a <?=$link[4];?> > Kako mi lahko Firefox pomaga?     </a></li>
+          <li><a <?=$link[5];?> > Katere vstavke uporabljam?        </a></li>
           <li><a <?=$link[6];?> > Kako vstavek onemogočim?          </a></li>
         </ul>
       </div>
 
           <div id="support">
-            <h3>Need Help?</h3>
+            <h3>Potrebujete pomoč?</h3>
             <ul>
               <li><a <?=$link[7];?> > Obiščite support.mozilla.com </a></li>
-              <li><a <?=$link[8];?> > Preberite si članke o vstavkih in podpori zanje </a></li>
+              <li><a <?=$link[8];?> > Preberite članke o vstavkih </a></li>
             </ul>
           </div>
 
@@ -90,16 +89,16 @@
         <div id="column-one">
             <h3 id="what-plugin">Kaj je vstavek?</h3>
             <ul>
-                <li>Vstavki so motor za <strong>video posnetke, animacije in igre</strong>.</li>
-                <li>So izdelek<strong> podjetij, ki niso del Firefoxa</strong>, kot na primer <a <?=$link[9];?>Adobe Systems</a> in <a <?=$link[10];?>Apple</a>.</li>
-                <li>Vstavkov se <strong>ne posodablja vedno</strong> samodejno.</li>
+                <li>Vstavki poganjajo <strong>videoposnetke, animacije in igre</strong>.</li>
+                <li>Izdelujejo jih <strong>podjetja, ki ne razvijajo Firefoxa</strong>, npr. <a <?=$link[9];?>>Adobe Systems</a> in <a <?=$link[10];?> >Apple</a>.</li>
+                <li>Vstavki se <strong>vedno ne posodabljajo</strong> samodejno.</li>
             </ul>
 
-            <h3 id="why-update">Zakaj naj bi vstavke posodobil?</h3>
+            <h3 id="why-update">Zakaj naj posodabljam vstavke?</h3>
             <ul>
-                <li>Zastareli vstavki lahko da motijo delo brskalnika in <strong>zapravljajo vaš čas</strong>.</li>
-                <li>Zastareli vstavki <strong>povečujejo nevarnost</strong> za napad s stranih škodljivih programov, virusov, in drugih virov nevarnosti za vašo varnost.</li>
-                <li><strong>Posodobljeni vstavki vsebujejo izboljšave</strong>, zaradi katerih je splet za vas <strong>boljši in varnejši</strong>.</li>
+                <li>Stari vstavki lahko otežujejo brskanje in <strong>zapravljajo vaš čas</strong>.</li>
+                <li>Zastareli vstavki <strong>povečujejo tveganje</strong> za napad s stranih škodljivih programov, virusov in drugih virov nevarnosti.</li>
+                <li><strong>Posodobljeni vstavki vsebujejo izboljšave</strong>, zaradi katerih je splet <strong>boljši in varnejši</strong>.</li>
             </ul>
 
             <?=$screenshot;?>
@@ -107,32 +106,32 @@
         </div>
 
         <div id="column-two">
-            <h3 id="firefox-helps">Kako mi Firefox lahko pomaga?</h3>
-            <p>V bodoče bo Firefox skrbel za posodobitve vaših vstavkov. Do takrat pa  bi bilo dobro, če <strong>redno obiščete tole stran</strong> in za svojo lastno varnost vstavke posodite.</p>
+            <h3 id="firefox-helps">Kako mi lahko Firefox pomaga?</h3>
+            <p>V prihodnje bo Firefox skrbel za posodobitve vaših vstavkov. Do takrat pa bi bilo dobro, če <strong>redno obiščete to stran</strong> in za svojo lastno varnost vstavke posodobite.</p>
 
-            <h3 id="list-plugins">Katere vstavke imam? </h3>
-            <p>Samodejno smo odkrili vstavke, ki so v seznamu zgoraj, da si <strong>ogledate vstavke, ki so nameščeni v vašem Firefoxu</strong>, postopajte takole:</p>
+            <h3 id="list-plugins">Katere vstavke uporabljam?</h3>
+            <p>Samodejno smo odkrili vstavke v zgornjem seznamu. Za <strong>ogled vstavkov v Firefoxu</strong> sledite naslednjm korakom:</p>
             <ol>
                 <li>Odprite meni <kbd>Orodja</kbd>.</li>
                 <li>Izberite <kbd>Dodatki</kbd>.</li>
-                <li>Kliknite na zavihek <kbd>Vstavki</kbd>.</li>
+                <li>Kliknite na izbiro <kbd>Vstavki</kbd>.</li>
             </ol>
 
             <div class="howto-disable-plugin">
                 <h3 id="howto-disable">Kako vstavek onemogočim? </h3>
-                <p>In Firefox:</p>
+                <p>V Firefoxu:</p>
                 <ol>
 					<li>Odprite meni <kbd>Orodja</kbd>.</li>
 					<li>Izberite <kbd>Dodatki</kbd>.</li>
-					<li>Kliknite na zavihek <kbd>Vstavki</kbd>.</li>
+					<li>Kliknite na izbiro <kbd>Vstavki</kbd>.</li>
                     <li>Kliknite na vstavek v seznamu.</li>
                     <li>Kliknite na gumb <kbd>Onemogoči</kbd>.</li>
                 </ol>
-                <p><strong>Pozor:</strong> ko vstavek enkrat onemogočite, pomeni, da nekaterih stvari <strong>ne boste več mogli izvajati</strong>. Na primer. će onemogočite Flash, ne boste mogli več predvajati video posnetkov na priljubljenih video spletnih straneh.</p>
+                <p><strong>Pozor:</strong> potem ko vstavek onemogočite, nekaterih stvari <strong>ne boste mogli več izvajati</strong>. Npr., če onemogočite Flash, ne boste mogli več predvajati videoposnetkov na priljubljenih spletnih straneh.</p>
             </div>
 
-            <h3 id="more-questions">Imate še <span>vprašanja?</span></h3>
-            <p><a <?=$link[7];?>Naša stran za podporo</a> vam lahko pomaga <a <?=$link[6];?>zvesti več o vstavkih</a> ali <a <?=$link[8];?>ešiti probleme v zvezi z njimi</a>.</p>
+            <h3 id="more-questions">Imate več <span>vprašanj?</span></h3>
+            <p><a <?=$link[7];?>>Naša stran za podporo</a> vam lahko pomaga pri <a <?=$link[6];?>>učenju o vstavkih</a> in <a <?=$link[8];?>>reševanju težav z njimi</a>.</p>
         </div>
     </div>
 </div>
