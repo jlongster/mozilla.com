@@ -6,6 +6,8 @@ class RapidReleaseFeed
 {
     public function get_items($max_items = 4)
     {
+        global $config;
+
         $uri = 'http://blog.mozilla.com/futurereleases/feed/';
         $lifetime = 450; // 7.5 mins, about half static cache time
 
@@ -14,7 +16,7 @@ class RapidReleaseFeed
 
         $cache = new Cache_Lite(
             array(
-                'cacheDir' => dirname(__FILE__) . '/../../../cache/',
+                'cacheDir' => rtrim($config['file_root'], '/') . '/cache/',
                 'lifeTime' => $lifetime,
             )
         );
