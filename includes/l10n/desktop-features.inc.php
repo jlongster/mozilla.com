@@ -107,7 +107,7 @@ foreach($screenshots as $k => $v) {
 
 $link[1]  = '/'.UI_LANG.'/mobile/sync/';
 $link[2]  = '/'.UI_LANG.'/mobile/';
-$link[3]  = '/https://addons.mozilla.org/'.UI_LANG.'/firefox/browse/type:4';
+$link[3]  = 'https://addons.mozilla.org/'.UI_LANG.'/firefox/browse/type:4';
 $link[4]  = 'http://www.mozilla.com/'.UI_LANG.'/plugincheck/#what-plugin';
 $link[5]  = 'http://www.mozilla.com/'.UI_LANG.'/firefox/performance/';
 $link[6]  = 'http://www.mozilla.com/'.UI_LANG.'/plugincheck/';
@@ -163,7 +163,7 @@ $extra_css .= <<<EXTRA_CSS
     body.locale-es-ES #top-features h3 span {
         font-size: 18px;
     }
-    
+
     body.locale-ro #top-features h3 span {
         font-size: 16px;
     }
