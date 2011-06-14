@@ -1,7 +1,7 @@
 <?php
 
 $logolink  = '/img/firefox/3.6/firstrun/logo.png';
-$logo      = '<h2><img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" /><img src="/img/l10n/fx4-wordmark2.png" alt="Firefox Logo" id="title-wordmark" /></h2>';
+$logo      = '<h2><img src="'.$logolink.'" alt="Firefox Logo" id="title-logo" /><img src="' . $config['static_prefix'] . '/img/firefox/4.0/firstrun/wordmark.png" alt="Firefox Logo" id="title-wordmark" /></h2>';
 $aboutlink = 'href="/'.$lang.'/about/"';
 $slogan    = 'foobar';
 
