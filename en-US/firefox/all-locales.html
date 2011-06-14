@@ -1,5 +1,5 @@
 <?php
-    header('Expires: ' . gmdate("D, d M Y H:i:s", floor((time() + 60) / 60) * 60) . ' GMT'); 
+    header('Expires: ' . gmdate("D, d M Y H:i:s", floor((time() + 60) / 60) * 60) . ' GMT');
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Firefox web browser | International versions: Get Firefox in your language';
     $body_id    = 'firefox-all';
@@ -26,8 +26,8 @@ EXTRA_HEADERS;
 
 <div id="feature-header"></div>
 <div id="main-feature">
-	<h2>Download a Firefox that <span>speaks your language</span></h2>
-	<p>Firefox is available in over 70 languages, thanks to the contributions from Mozilla community members around the world.</p>
+    <h2>Download a Firefox that <span>speaks your language</span></h2>
+    <p>Firefox is available in over 70 languages, thanks to the contributions from Mozilla community members around the world.</p>
 </div>
 
 
@@ -74,7 +74,7 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
     </div>
 
     <?php
-        $_beta_table = $firefoxDetails->getDownloadTableForBetaBuilds();
+        $_beta_table = $firefoxDetails->getDownloadTableForUpcomingLocales();
 
         if (!empty($_beta_table)) {
     ?>
@@ -90,27 +90,27 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 </div><!-- end #main-content div -->
 
 <div id="sidebar">
-	<div id="sidebar-search">
-		<h3>Search Language</h3>
-		<form method="get" action="all.html" id="search-form">
-			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
-		</form>
-		<script>// <![CDATA[
-		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
-		var language_search = new Mozilla.LanguageSearch(
-			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
-		// ]]>
-		Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
-		Mozilla.LanguageSearch.download_text = 'download';
-		</script>
-	</div>
-	<div id="other-versions">
-		<h3>Other Firefox Downloads</h3>
-		<ul>
-			<li><a href="all.html#beta_versions">New languages still in beta</a></li>
-			<li><a href="all-older.html">Firefox <?=LATEST_FIREFOX_OLDER_VERSION?></a></li>
-		</ul>
-	</div>
+    <div id="sidebar-search">
+        <h3>Search Language</h3>
+        <form method="get" action="all.html" id="search-form">
+            <div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+        </form>
+        <script>// <![CDATA[
+        var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
+        var language_search = new Mozilla.LanguageSearch(
+            'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
+        // ]]>
+        Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
+        Mozilla.LanguageSearch.download_text = 'download';
+        </script>
+    </div>
+    <div id="other-versions">
+        <h3>Other Firefox Downloads</h3>
+        <ul>
+            <li><a href="all.html#beta_versions">New languages still in beta</a></li>
+            <li><a href="all-older.html">Firefox <?=LATEST_FIREFOX_OLDER_VERSION?></a></li>
+        </ul>
+    </div>
 </div>
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
