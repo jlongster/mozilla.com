@@ -363,10 +363,10 @@ if (file_exists($details)) {
     include $details;
 } else {
     $promo = false;
-    $str2  = 'Firefox 4';
+    $str2  = 'Firefox';
 }
 
-$downloads = ___('Experience Firefox&nbsp;4');
+$downloads = ___('Experience Firefox');
 $file      = $config['file_root'].'/includes/firefox_4_final_downloads_total.json';
 if (file_exists($file) && is_readable($file)) {
     $json = json_decode(file_get_contents($file), true);

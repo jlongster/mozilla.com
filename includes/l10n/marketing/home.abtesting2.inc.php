@@ -48,7 +48,7 @@ if ($download_ok ==  true) {
 
     <div class="sub-feature first" id="sub-firefox">
         <h3>Visite guidée</h3>
-        <p><a id="tour-link" href="./features/">Découvrez un aperçu des nouveautés de Firefox&nbsp;4</a>
+        <p><a id="tour-link" href="./features/">Découvrez un aperçu des nouveautés de Firefox</a>
         </p>
     </div>
 

@@ -26,7 +26,7 @@
 
     <div class="sub-feature first">
         <h3><?php e__('Features');?></h3>
-        <p><?php e__('Check out the new look and feel of Firefox&nbsp;4.');?><a href="./features/"><?php e__('Learn More');?></a></p>
+        <p><?php e__('Check out the new look and feel of Firefox.');?><a href="./features/"><?php e__('Learn More');?></a></p>
     </div>
 
     <div class="sub-feature">

@@ -1,13 +1,7 @@
 <?php
 
 $str2 = str_replace('4', '', $str2);
-$str2 = str_replace('$nbsp;', '', $str2);
-
-$feat_str = ___('Check out the new look and feel of Firefox&nbsp;4.');
-$feat_str = str_replace('4', '', $feat_str);
-$feat_str = str_replace('&nbsp;', '', $feat_str);
-
-
+$str2 = str_replace('&nbsp;', '', $str2);
 
 ?>
 
@@ -38,7 +32,7 @@ $feat_str = str_replace('&nbsp;', '', $feat_str);
 
     <div class="sub-feature first">
         <h3><?php e__('Features');?></h3>
-        <p><?php echo $feat_str;?><a href="./features/"><?php e__('Learn More');?></a></p>
+        <p><?php e__('Check out the new look and feel of Firefox.');?><a href="./features/"><?php e__('Learn More');?></a></p>
     </div>
 
     <div class="sub-feature">

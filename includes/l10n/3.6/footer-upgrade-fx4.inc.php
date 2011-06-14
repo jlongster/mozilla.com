@@ -7,7 +7,7 @@ if(file_exists($details)) {
     include $details;
 } else {
     $promo = false;
-    $str2 = 'Firefox 4';
+    $str2 = 'Firefox';
 }
 
 ?>

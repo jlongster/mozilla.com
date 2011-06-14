@@ -45,20 +45,20 @@ if ($download_ok ==  true) {
 
     <div class="sub-feature first">
         <h3>Personnalisation</h3>
-        <p>Découvrez les nouveautés de Firefox&nbsp;4
+        <p>Découvrez les nouveautés de Firefox
         <a href="./features/"><?php e__('Learn More');?></a></p>
     </div>
 
     <div class="sub-feature">
         <h3>Rapidité</h3>
-        <p>Firefox&nbsp;4 est jusqu'à 6&nbsp;fois plus rapide que la version précédente
+        <p>Firefox est jusqu'à 6&nbsp;fois plus rapide que la version précédente
         <a href="./features/#super-speed"><?php e__('Learn More');?></a>
         </p>
     </div>
 
     <div class="sub-feature">
         <h3>Sécurité</h3>
-        <p>Firefox&nbsp;4 protège votre ordinateur et vos données personnelles
+        <p>Firefox protège votre ordinateur et vos données personnelles
         <a href="./features/#advancedsecurity"><?php e__('Learn More');?></a>
         </p>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Extra HTML head content for the "What's New" page for Firefox 3.6.x
+ * Extra HTML head content for the "What's New" page for  3.6.x
  *
  * CSS and JavaScript should be included here as long as they are not
  * language-specific.
@@ -20,7 +20,7 @@ $detect_flash   = true;
 // check if there is a version
 if ($_version !== null && $_valid_version) {
     // check if we're running the latest version
-    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+    if (strcmp($_version, LATEST__VERSION) == 0) {
         $latestVersion  = true;
         $oldVersion     = false;
         $unknownVersion = false;
@@ -55,9 +55,9 @@ if (!in_array($_version, $_pre_oop)) {
             } else {
                 $val = $lang;
             }
-            $oop_url = "http://europe.mozilla.org/{$val}/firefox/features/#performance";
+            $oop_url = "http://europe.mozilla.org/{$val}//features/#performance";
         } else {
-            $oop_url = "/{$lang}/firefox/features/#performance";
+            $oop_url = "/{$lang}//features/#performance";
         }
 
         $oopstr1        = ___('New: Crash Protection');
@@ -87,7 +87,7 @@ OOP;
 
 
 $flash1 = 'You should <a href="http://get.adobe.com/flashplayer/">update Adobe Flash Player</a> right now.';
-$flash2 = 'Firefox is up to date, but your current version of Flash Player can cause security and stability issues.  Please <a href="http://get.adobe.com/flashplayer/">install the free update</a> as soon as possible.';
+$flash2 = ' is up to date, but your current version of Flash Player can cause security and stability issues.  Please <a href="http://get.adobe.com/flashplayer/">install the free update</a> as soon as possible.';
 
 if ( $lang != 'en-US' AND ___($flash1) != $flash1 AND ___($flash2) != $flash2 )
 {
@@ -170,13 +170,13 @@ OOP;
 
 }
 
-// special promo for firefox 4 beta
+// special promo for  4 beta
 
 $promo = array('');
 $promo[0] = "Take a Look at Tomorrow's Web";
-$promo[1] = 'Journey to the Future with Firefox&nbsp;4';
+$promo[1] = 'Journey to the Future with ';
 $promo[2] = 'Join the Beta Program';
-$promo[3] = 'Experience Firefox&nbsp;4';
+$promo[3] = 'Experience ';
 $promo[4] = 'The future of the Web is waiting for you!';
 $displaypromo = ($_version == '3.6.13') ? true : false;
 
@@ -199,7 +199,7 @@ $oop .= <<<OOP
 <style>
 
 #main-content #beta4promo1, #main-content #beta4promo2 {
-    background: url("/img/firefox/beta/4/firstrun/l10npromo.jpg") no-repeat scroll left center transparent;
+    background: url("/img//beta/4/firstrun/l10npromo.jpg") no-repeat scroll left center transparent;
     color: white;
     text-shadow: 2px 1px 2px black;
     min-height:146px;
@@ -258,19 +258,19 @@ $oop .= <<<OOP
 }
 
 #footer {
-    background-image: url("/img/firefox/3.6/firstrun/background-footer.png");
+    background-image: url("/img//3.6/firstrun/background-footer.png");
     background-repeat: repeat;
 }
 
 </style>
 <div class="sub-feature side-content" id="beta4promo1" style="display:none;"><div>
     <h3>{$promo[0]}</h3>
-    <a href="/{$lang}/firefox/beta/">{$promo[2]}</a>
+    <a href="/{$lang}//beta/">{$promo[2]}</a>
 </div></div>
 
 <div class="sub-feature side-content" id="beta4promo2" style="display:none;"><div>
     <h3>{$promo[1]}</h3>
-    <a href="/{$lang}/firefox/beta/">{$promo[2]}</a>
+    <a href="/{$lang}//beta/">{$promo[2]}</a>
 </div></div>
 
 
@@ -305,7 +305,7 @@ $oop .= <<<OOP
 
 OOP;
 }
-// end of special promo for firefox 4 beta
+// end of special promo for  4 beta
 
 
 // Include the global header.  All locales will include this.
