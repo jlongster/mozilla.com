@@ -1,7 +1,13 @@
 <?php
 
-$str2 = str_replace('4', '', $str2);
-$str2 = str_replace('&nbsp;', '', $str2);
+$str2  = str_replace('4', '', $str2);
+$str2  = str_replace('&nbsp;', '', $str2);
+$speed = '';
+
+if ( i__('Super speed') == true) {
+    $speed = '<li><em>&raquo;</em>' . ___('Super speed') . '</li>';
+}
+
 
 ?>
 
@@ -12,7 +18,7 @@ $str2 = str_replace('&nbsp;', '', $str2);
     <ul id="benefits">
         <li><em>&raquo;</em><?php echo $str4 ?></li>
         <li><em>&raquo;</em><?php echo $str6 ?></li>
-        <li><em>&raquo;</em><?php echo $str5 ?></li>
+        <?php echo $speed ?>
     </ul>
     <?php else: ?>
     <hr style="margin-bottom:3em; height:0; border:0; color:transparent; background-color:transparent">
