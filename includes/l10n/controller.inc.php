@@ -71,6 +71,7 @@ $sitepages = array(
     'm-support'         => 'm-support.inc.php',
     'm-beta'            => 'mobile-m-beta.inc.php',
     'm-landing'         => 'm-landing.inc.php',
+    'm-channel'         => 'm-channel.inc.php',
     'unsupported'       => 'unsupported-version.inc.php',
     'firstrun-36'       => '3.6/firstrun.inc.php',
     'whatsnew-36'       => '3.6/whatsnew-v2.inc.php',
