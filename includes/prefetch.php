@@ -177,11 +177,12 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     // This matches both / and /firefox because of the above code
     if (rtrim($_SERVER['REQUEST_URI'], '/') == '/firefox') {
         $ua = $_SERVER['HTTP_USER_AGENT'];
+        $ua_nocase = strtolower($ua);
 
-        // Bug 629407 Redirect to user-specific pages
-        // This is also implemented in .htaccess, but we do it here
-        // to redirect the user only once
         if ($lang == 'en-US') {
+            // Bug 629407 Redirect to user-specific pages
+            // This is also implemented in .htaccess, but we do it here
+            // to redirect the user only once
             if (preg_match('/Firefox\/4.0.1$/', $ua) ||
                 preg_match('/Firefox\/5/', $ua) ||
                 preg_match('/Firefox\/6/', $ua)) {
@@ -190,15 +191,26 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
             else {
                 $_SERVER['REQUEST_URI'] = '/firefox/new/';
             }
-        }
 
-        // On en-US homepage, redirect mobile devices (Android, Maemo)
-        if ($lang == 'en-US' && preg_match(':(Android|Maemo|Fennec|Linux armv7l):', $ua)) {
-            if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
-                setcookie('mobile_no_redirect', '1', 0, '/');
-            } else {
-                $_SERVER['REQUEST_URI'] = '/m/';
+            // On en-US homepage, redirect mobile devices (Android, Maemo)
+            if (preg_match(':(Android|Maemo|Fennec|Linux armv7l):', $ua)) {
+                if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
+                    setcookie('mobile_no_redirect', '1', 0, '/');
+                } else {
+                    $_SERVER['REQUEST_URI'] = '/m/';
+                }
             }
+
+            // Same with iOS devices
+            if (strpos($ua_nocase, 'iphone') !== FALSE &&
+                strpos($ua_nocase, 'ipad') === FALSE) {
+
+                if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
+                    setcookie('mobile_no_redirect', '1', 0, '/');
+                } else {
+                    $_SERVER['REQUEST_URI'] = '/m/ios';
+                }                
+            }            
         }
     }
 
