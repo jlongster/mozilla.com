@@ -1,7 +1,7 @@
 html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup,sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;}
 
 html { background: #fff; }
-body {
+body { 
     color: #69645c;
     font-family:georgia,serif;
 }
@@ -28,6 +28,13 @@ h2, #faq h3, #content h3 {
 dd, p {
     line-height: 1.5;
     margin:0.5em 1em 1.5em;
+}
+
+@font-face {
+    font-family: 'MetaBlack';
+    src: local('☺'), url('/img/fonts/MetaWebPro-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
@@ -282,6 +289,7 @@ p.button strong {
 .with-titles h3,
 .with-titles h4 {
     font-family: MetaBlack, "Trebuchet MS";
+    font-weight: bold;
     text-transform: uppercase;
     font-style: normal;
     border: 0;
@@ -320,11 +328,19 @@ p.button strong {
     margin-right: 0;
 }
 
-#home .title {
+#home .title,
+#ios .title {
     position: relative;
     border: 0;
     height: 110px;
+}
+
+#home .title {
     background: url('/img/mobile/m/iphone.png') 92% 0 no-repeat;
+}
+
+#ios .title {
+    background: url('/img/mobile/m/iphone-home.png') 92% 0 no-repeat;
 }
 
 #home .title .text {
@@ -450,6 +466,46 @@ p.button strong {
     text-decoration:none;
 }
 
+/* ios page */
+
+#ios .button-wrapper .button {
+    float: none;
+    width: auto;
+}
+
+#ios .button-wrapper em:before,
+#ios .button-wrapper em:after { 
+    content: '';
+}
+
+#ios .title {
+    height: 130px;
+}
+
+#ios .title h2 {
+    text-transform: none;
+    font-size: 2.3em;
+    letter-spacing: -.01em;
+}
+
+#ios .title .text {
+    padding-top: .5em;
+    padding-left: .5em;
+}
+
+#ios .title .text div {
+    margin-top: .6em;
+    color: #777777;
+}
+
+#ios .title .title-light {
+    font-weight: normal;
+}
+
+#ios #firefox-features li {
+    background: transparent url(/img/mobile/m/fxhome-features-new.png) top left no-repeat;
+}
+
 /* firefox-features */
 
 #firefox-features li, #favorite_features li {
@@ -461,11 +517,15 @@ p.button strong {
     background: transparent url(/img/mobile/m/features-new.png) top left no-repeat;
 }
 
-#firefox-features #feature-customize, #favorite_features #customize {
+#ios #firefox-features #feature-customize,
+#firefox-features #feature-customize,
+#favorite_features #customize {
     background-position: center left;
 }
 
-#firefox-features #feature-search, #favorite_features #search {
+#ios #firefox-features #feature-search,
+#firefox-features #feature-search,
+#favorite_features #search {
     background-position: bottom left;
     min-height: 79px;
 }
