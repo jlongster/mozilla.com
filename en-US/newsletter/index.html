@@ -4,6 +4,8 @@
     $body_id    = 'newsletter';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+    <meta name="WT.si_n" content="newsletter">
+    <meta name="WT.si_x" content="1">
 EXTRA_HEADERS;
 
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
@@ -91,8 +93,9 @@ EXTRA_HEADERS;
                             'DCS.dcsuri', '/en-us/newsletter',
                             'WT.ti', 'Link: Mozilla Newsletter',
                             'WT.dl', 99,
-                            'WT.z_convert', 'newsletter'
-                          );"
+                            'WT.z_convert', 'newsletter',
+                            'WT.si_n', 'newsletter',
+                            'WT.si_x', '2');"
                  name="submit" 
                  type="submit" 
                  value="Sign me up!" 
