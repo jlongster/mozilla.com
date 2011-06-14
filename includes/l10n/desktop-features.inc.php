@@ -70,6 +70,9 @@ $performancechart = <<<CHART
 CHART;
 
 
+# [Bug 661285] [Fx5LaunchDay] Remove Perf graphs from moz.com and add new content to take its place on the Performance page
+$performancechart = '<img src="' . $config['static_prefix'] .'/img/covehead/firefox/performance/speed.jpg" style="margin-left:-170px; display:block;" alt=""/>';
+
 $screenshots = array(
     0  => array(false, 'img/nova2/features/img-placeholder.png'),
     1  => array('screen-awesomebar.png',      'Awesome Bar screenshot',           '450', '160', 'right', array('mac', 'linux')),
