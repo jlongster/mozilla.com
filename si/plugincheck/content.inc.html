@@ -1,8 +1,9 @@
 
 <div id="main-feature">
 
-    <h2>Check Your <span>Plugins</span></h2>
-    <p>Keeping your third-party plugins up to date helps Firefox run safely and smoothly.</p>
+    <h2>ඔබගේ <span>ප්ලගීන</span> පරීක්ෂා කරන්න</h2>
+    <p>ඔබගේ තෙවන පාර්ශවීය ප්ලගීන යාවත්කාලීන කර තබා ගැනීම ෆයර්ෆොක්ස් 
+    ආරක්ෂිත සහ සුමට ලෙස ක්‍රියාත්මක වීමට සහායය වේ.</p>
 
 </div>
 
@@ -12,7 +13,9 @@
         <div class="blocklisted flash">
 
             <h3>Missing <span>FLASH?</span></h3>
-            <p>For your safety, Firefox has disabled your outdated version of Flash. Please <a <?=$link[0];?> >upgrade to the latest version.</a></p>
+            <p>ඔබගේ ආරක්ෂාව සඳහා, ෆයර්ෆොක්ස් ඔබගේ යල්පැනගිය ප්ලෑෂ් 
+            (Flash) නිකුතුව අබලකර ඇත. කරුණාකර එය<a <?=$link[0];?> >නවතම 
+            නිකුතුවට ඉහළ දමන්න.</a></p>
 
             <br class="clearfix" />
         </div>
@@ -20,40 +23,52 @@
         <div id="legend">
             <ul>
                 <li id="old_browser" style="display:none">
-                    <strong>Warning, a newer version of your browser is available.</strong> Please upgrade your browser.
+                    <strong>අවවාදයයි, ඔබගේ බ්‍රව්සරයේ නවතම නිකුතුව 
+                    ඇත.</strong> නව නිකුතුව ලබාගන්න.
                 </li>
                 <li id="modern_browsers" style="display:none">
-                    This page works best with the latest browsers: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, or IE 8+
+                    මෙම පිටුව නවතම බ්‍රව්සර නිකුතූන් සමඟ හොඳින්ම 
+                    වැඩකරයි: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, or IE 8+
                 </li>
                 <li id="exploder" style="display: none">
-                    Plugin Check <strong>support for Internet Explorer is limited</strong>. Also use Tools &gt; Manage Addons
+                     <strong>ඉන්ටනෙට් එක්ස්ප්ලෝරර් (Internet Explorer) 
+                     සඳහා</strong> ප්ලගීන පරීක්ෂා කිරීමේ සහායය 
+                    සීමාසහිතය. එසේම &gt; ඇඩෝන කළමනාකරණය භාවිතා කරන්න
                 </li>
                 <li>
-                    <strong><em>Step 1:</em></strong> Click <strong>Update</strong> to update a plugin.
+                    <strong><em>පියවර 1:</em></strong> ප්ලගීන 
+                    යාවත්කාලීන කිරීමට <strong>යාවත්කාලීන</strong> 
+                    ක්ලික් කරන්න.
                 </li>
                 <li>
-                    <strong><em>Step 2:</em></strong> <strong>Complete all recommended updates</strong> <em>before</em> restarting your browser.
+                    <strong><em>පියවර 2:</em></strong> <strong>සියළුම 
+                    නිර්දේශිත යාවත්කාලීන සම්පුර්ණ කිරීමෙන් </strong> 
+                    <em>පසුව</em> බ්‍රව්සරය යළි-අරඔන්න.
                 </li>
             </ul>
         </div>
 
         <noscript>
             <div>
-                <h3>Note</h3>
-                <p><strong>You have JavaScript disabled</strong> or are using a browser without JavaScript. This Plugin Check page does not work without the awesome power of <strong>JavaScript</strong>. Please enable this Content Preference and reload the page.</p>
-                <p>Or disable all your plugins and keep JavaScript disabled... you'd be in good company, that's how <a <?=$link[1];?> >RMS rolls</a>.</p>
+                <h3>සටහන</h3>
+                <p><strong>ඔබ JavaScript අබලකර ඇත</strong> හෝ ඔබ භාවිතා 
+                කරන්නේ JavaScript නොමැති බ්‍රව්සරයකි. මෙම ප්ලගීන 
+                පරීක්ෂා කරන පිටුව <strong>JavaScript</strong> ‍සහායය 
+                නොමැතිව ප්‍රියාත්මක නොවේ. මෙය සබල කර පිටුව යළි පූරණය 
+                කරන්න.</p>
+                <p>හෝ සියළුම ප්ලගීන අබලකර JavaScript ද අබලකර තබන්න... you'd be in good company, that's how <a <?=$link[1];?> >RMS rolls</a>.</p>
             </div>
         </noscript>
 
         <?=$pluginsTable?>
 
         <div id="error-panel" style="display: none">
-            <h3>Plugin Finding Service Error</h3>
-            <p>We've encountered an error. Please try your request again later.</p>
+            <h3>ප්ලගීන සෙවීමේ සේවාවේ දෝෂයකි</h3>
+            <p>දෝෂයක් ඇතිවිය. පසුව නැවත උත්සාහ කරන්න.</p>
 
             <form action="#" method="get">
                 <fieldset>
-                    <button>Retry</button>
+                    <button>නැවත උත්සාහ කරන්න</button>
                 </fieldset>
             </form>
         </div>
@@ -62,18 +77,18 @@
 
     <div id="sidebar">
       <div id="information">
-        <h3>Plugin Tips</h3>
+        <h3>ප්ලගීන උපදේශයන්</h3>
         <ul>
-          <li><a <?=$link[2];?> > What is a plugin?                 </a></li>
-          <li><a <?=$link[3];?> > Why should I update my plugins?   </a></li>
-          <li><a <?=$link[4];?> > How can Firefox help me?          </a></li>
-          <li><a <?=$link[5];?> > Which plugins do I have?          </a></li>
-          <li><a <?=$link[6];?> > How do I disable a plugin?        </a></li>
+          <li><a <?=$link[2];?> > ප්ලගීනයක් යනු කුමක්ද?                 </a></li>
+          <li><a <?=$link[3];?> > මම ප්ලගීන යාවත්කාලීන කළ යුත්තේ ඇයි?   </a></li>
+          <li><a <?=$link[4];?> > ෆයර්ෆොක්ස් මට සහායය වන්නේ කෙසේද?          </a></li>
+          <li><a <?=$link[5];?> > මා සතුව ඇත්තේ කවර ප්ලගීනද?          </a></li>
+          <li><a <?=$link[6];?> > ප්ලගීනයක් අබල කරන්නේ කෙසේද?        </a></li>
         </ul>
       </div>
 
           <div id="support">
-            <h3>Need Help?</h3>
+            <h3>සහායය අවශ්‍යද?</h3>
             <ul>
               <li><a <?=$link[7];?> > Visit support.mozilla.com </a></li>
               <li><a <?=$link[8];?> > Read support articles about plugins </a></li>
@@ -85,21 +100,31 @@
     <div id="information-content" class="clearfix">
         <?=$backtotop?>
 
-        <h2>Frequently asked <span>Questions</span></h2>
+        <h2>නිති අසන <span>පැණ</span></h2>
 
         <div id="column-one">
-            <h3 id="what-plugin">What is a plugin?</h3>
+            <h3 id="what-plugin">ප්ලගීනයක් යනු කුමක්ද?</h3>
             <ul>
-                <li>Plugins power <strong>videos, animation and games</strong>.</li>
-                <li>They're built <strong>outside of Firefox by companies</strong> like <a <?=$link[9];?>>Adobe Systems</a> and <a <?=$link[10];?> >Apple</a>.</li>
-                <li>Plugins <strong>don't always update</strong> automatically.</li>
+                <li>ප්ලගීනයන් විසින් <strong>වීඩියෝ, ඇනිමේෂන් 
+                (animation) සහ ක්‍රීඩාවන් ශක්තිමත් කරයි</strong>.</li>
+                <li><a <?=$link[9];?>>Adobe 
+                Systems</a> සහ <a <?=$link[10];?> >Apple</a> වැනි 
+                සමාගම් විසින් නිපදවන අතර <strong>ෆයර්ෆොක්ස්ට පරිභාහිරව 
+                නිර්මිතය</strong>.</li>
+                <li>ප්ලගීනයන් සෑමවිටම <strong>ස්වයංක්‍රීයව යාවත්කාලීන 
+                නොවේ</strong>.</li>
             </ul>
 
-            <h3 id="why-update">Why should I update my plugins?</h3>
+            <h3 id="why-update">මම ප්ලගීන යාවත්කාලීන කළ යුත්තේ ඇයි?</h3>
             <ul>
-                <li>Old plugins can interrupt browsing and <strong>waste your time</strong>.</li>
-                <li>Old plugins <strong>increase your risk</strong> for attack by malware, viruses, and other security threats.</li>
-                <li><strong>Updated plugins have improvements</strong> that make the web <strong>better and safer</strong> for you.</li>
+                <li>පැරණි ප්ලගීනයන් ඔබගේ වෙබ් ගවේෂණයට බාධා කරන අතර 
+                <strong>ඔබගේ කාළය නාස්ති කරයි</strong>.</li>
+                <li>පැරණි ප්ලගීනයන් විසින් හානිකර මෘදුකාංග, වෛරස, සහ 
+                වෙනත් ආරක්ෂාවට වන තර්ජනයන්ගෙන් ඇති විය හැකි 
+                <strong>අනතුරුදායකබව ඉහළ දමයි</strong>.</li>
+                <li><strong>යාවත්කාලීන කළ ප්ලගීනයන් තුළ වැඩිදියුණු 
+                කිරීම් තිබිය හැකි අතර එමඟින්</strong> වෙබ් ගවේෂණය සහ 
+                එහි ආරක්ෂිතබව <strong>ඉහළ නංවයි</strong> .</li>
             </ul>
 
             <?=$screenshot;?>
@@ -107,32 +132,42 @@
         </div>
 
         <div id="column-two">
-            <h3 id="firefox-helps">How can Firefox help me?</h3>
-            <p>In the future, Firefox will update plugins for you.  Until then, you should <strong>regularly check this page</strong> and update your plugins to stay safe.</p>
+            <h3 id="firefox-helps"> ෆයර්ෆොක්ස් මට සහායය වන්නේ කෙසේද?</h3>
+            <p>අනාගතයේදී, ෆයර්ෆොක්ස් ප්ලගීනයන් ස්වයංක්‍රීයව යාවත්කාලීන 
+            කරනු ඇත.  එතෙක්, ඔබ මෙම පිටුව <strong>නිරතුරුව පරීක්ෂා කළ 
+            යුතු අතර</strong> ප්ලගීනයන්  යාවත්කාලීන කර ආරක්ෂිතබව රැකගත 
+            යුතුය.</p>
 
-            <h3 id="list-plugins">Which plugins do I have?</h3>
-            <p>We automatically detected your plugins above, to <strong>view your installed plugins in Firefox</strong> follow these steps:</p>
+            <h3 id="list-plugins">මා සතුව ඇත්තේ කවර ප්ලගීනද?</h3>
+             <p>ඔබගේ ඉහත ප්ලගීනයන් ස්වයංක්‍රීයව හඳුනාගෙන ඇත, <strong> 
+             ඔබගේ ෆයර්ෆොක්ස් තුළ ස්ථාපනය කළ ප්ලගීනයන් බැලීමට</strong> 
+             මෙම පියවර අනුගමනය කරන්න:</p>
             <ol>
-                <li>Open the <kbd>Tools</kbd> menu.</li>
-                <li>Choose <kbd>Add-ons</kbd>.</li>
-                <li>Click the <kbd>plugins</kbd> tab.</li>
+                <li>මෙනුවේ <kbd>මෙවලම්</kbd> වෙත යන්න.</li>
+                <li> <kbd>ඇඩෝන </kbd> තෝරන්න.</li>
+                <li><kbd>ප්ලගීන</kbd> ටැබය ක්ලික් කරන්න.</li>
             </ol>
 
             <div class="howto-disable-plugin">
-                <h3 id="howto-disable">How do I disable a plugin?</h3>
-                <p>In Firefox:</p>
+                <h3 id="howto-disable">ප්ලගීනයක් අබල කරන්නේ කෙසේද?</h3>
+                <p>ෆයර්ෆොක්ස් තුළදී:</p>
                 <ol>
-                    <li>Open the <kbd>Tools</kbd> menu.</li>
-                    <li>Choose <kbd>Add-ons</kbd>.</li>
-                    <li>Click the <kbd>plugins</kbd> tab.</li>
-                    <li>Click on a plugin in the list.</li>
-                    <li>Click the <kbd>Disable</kbd> button.</li>
+                    <li>මෙනුවේ <kbd>මෙවලම්</kbd> වෙත යන්න.</li>
+                    <li><kbd>ඇඩෝන </kbd> තෝරන්න.</li>
+                    <li><kbd>ප්ලගීන</kbd> ටැබය ක්ලික් කරන්න.</li>
+                    <li>ලැයිස්තුවේ ප්ලගීනයක් ක්ලික් කරන්න.</li>
+                    <li> <kbd>අබල කරන්න</kbd> බොත්තම ක්ලික් කරන්න.</li>
                 </ol>
-                <p><strong>Caution:</strong> disabling a plugin means that you will <strong>no longer be able to do</strong> certain things. For example, if you disable Flash, you will not be able to watch videos on popular video streaming sites.</p>
+                <p><strong>අවවාදයයි:</strong> ප්ලගීනයක් අබල කිරීමෙන් 
+                අදහස් කරන්නේ තවදුරටත් <strong>සමහර දේ කළ 
+                නොහැකි</strong> බවයි. උදාහරණයක් ලෙස, ඔබ ප්ලෑෂ් (Flash) 
+                අබල කළේ නම්, ඔබට ජනප්‍රිය වීඩියෝ විකාශණ නැරඹිය නොහැකි 
+                වනු ඇත.</p>
             </div>
 
-            <h3 id="more-questions">Have more <span>questions?</span></h3>
-            <p><a <?=$link[7];?>>Our support site</a> can help you <a <?=$link[6];?>>learn about plugins</a> or <a <?=$link[8];?>>troubleshoot plugin problems</a>.</p>
+            <h3 id="more-questions">ඔබට තව දුරටත් <span>ගැටළු</span> 
+            තිබේද?</h3>
+            <p><a <?=$link[7];?>>අපගේ සහායක පිටු</a> ඔබට උදව් කරනු ඇත <a <?=$link[6];?>>learn about plugins</a> or <a <?=$link[8];?>>troubleshoot plugin problems</a>.</p>
         </div>
     </div>
 </div>
