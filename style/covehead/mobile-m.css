@@ -340,7 +340,7 @@ p.button strong {
 }
 
 #ios .title {
-    background: url('/img/mobile/m/iphone-home.png') 92% 0 no-repeat;
+    background: url('/img/mobile/m/fxhome-iphone.png') 100% 0 no-repeat;
 }
 
 #home .title .text {
@@ -468,10 +468,6 @@ p.button strong {
 
 /* ios page */
 
-#ios .wrapper {
-    min-width: 200px;
-}
-
 #ios .button-wrapper .button {
     float: none;
     width: auto;
@@ -487,14 +483,18 @@ p.button strong {
 }
 
 #ios .title h2 {
+    /* Don't use MetaBlack because iOS doesn't support woff, and we adjust
+       the spacing specifically for the font */
+
+    font-family: "Trebuchet MS";
     text-transform: none;
     font-size: 2.3em;
-    letter-spacing: -.01em;
+    letter-spacing: -.08em;
 }
 
 #ios .title .text {
     padding-top: .5em;
-    padding-left: .5em;
+    padding-left: .3em;
 }
 
 #ios .title .text div {
