@@ -9,7 +9,9 @@
     $html5      = true;
     $extra_headers = <<<EXTRA_HEADERS
 
-  <meta name="WT.ad" content="Get Firefox for Android" />
+  <meta name="WT.si_n" content="Get Firefox for Android;Get Firefox for iPhone" />
+  <meta name="WT.si_x" content="1;1" />
+  <meta name="WT.ad" content="Get Firefox for Android;Get Firefox for iPhone" />
   <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-download.css" media="screen" />
   <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
   <script src="/js/mozilla-video-tools.js"></script>
@@ -31,12 +33,15 @@ EXTRA_HEADERS;
         <h3>Download for <span>Android</span></h3>
         <p class="dl">
           <a href="https://market.android.com/details?id=org.mozilla.firefox"
-             onclick="dcsMultiTrack('DCS.dcssip', 'market.android.com',
-                                    'DCS.dcsuri', 'details?id=org.mozilla.firefox',
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/en-us/mobile/download/',
                                     'WT.ti', 'Link: Get Firefox for Android',
                                     'WT.dl', 99,
                                     'WT.nv', 'Content',
-                                    'WT.ac', 'Get Firefox for Android');">
+                                    'WT.ac', 'Get Firefox for Android',
+                                    'WT.z_convert','Get Firefox for Android', 
+                                    'WT.si_n','Get Firefox for Android',
+                                    'WT.si_x','2')">
             <span class="title">Get Firefox for Android</span>
             <span class="desc">Free from the Android Market</span>
           </a>
@@ -49,12 +54,15 @@ EXTRA_HEADERS;
         <h3>Firefox Home for <span>iPhone</span></h3>
         <p class="dl">
           <a href="http://itunes.com/apps/firefoxhome"
-             onclick="dcsMultiTrack('DCS.dcssip', 'itunes.com',
-                                    'DCS.dcsuri', 'apps/firefoxhome',
-                                    'WT.ti', 'Link: Get Firefox Home for iPhone',
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/en-us/mobile/download/',
+                                    'WT.ti', 'Link: Get Firefox for iPhone',
                                     'WT.dl', 99,
                                     'WT.nv', 'Content',
-                                    'WT.ac', 'Get Firefox Home for iPhone');">
+                                    'WT.ac', 'Get Firefox for iPhone',
+                                    'WT.z_convert','Get Firefox for iPhone', 
+                                    'WT.si_n','Get Firefox for iPhone',
+                                    'WT.si_x','2');">
             <span class="title">Get Firefox Home for iPhone</span>
             <span class="desc">Free from iTunes</span>
           </a>
