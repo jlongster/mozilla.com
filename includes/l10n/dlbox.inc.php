@@ -18,13 +18,7 @@ if(isset($dl_lang)) {
 }
 
 
-$fx_stable_Major = explode('.', LATEST_FIREFOX_VERSION);
-
-if ($fx_stable_Major[0] == 4) {
-    $firefox_wordmark = 'Firefox&nbsp;' . $fx_stable_Major[0];
-} else {
-    $firefox_wordmark = 'Mozilla Firefox';
-}
+$firefox_wordmark = 'Firefox';
 
 switch($pageid) {
     case 'security':
