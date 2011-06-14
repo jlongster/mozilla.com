@@ -10,6 +10,12 @@ if(file_exists($details)) {
     $str2 = 'Firefox';
 }
 
+$fx_stable_Major = explode('.', LATEST_FIREFOX_VERSION);
+$str2 = str_replace('4', $fx_stable_Major[0], $str2);
+
+
+
+
 ?>
 
 <div id="main-content" class="beta-promo">
