@@ -1,9 +1,9 @@
 <?php
     header('Expires: ' . gmdate("D, d M Y H:i:s", floor((time() + 60) / 60) * 60) . ' GMT'); 
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Firefox web browser | Ajude-nos a testar o Beta mais recente';
+    $page_title = 'Navegador Firefox | Versões internacionais: obtenha o Firefox no seu idioma';
     $body_id    = 'firefox-all';
-    $body_class   = 'beta-all';
+    $body_class   = 'aurora-all';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
     <script src="/js/mozilla-language-search.js"></script>
@@ -16,14 +16,14 @@ EXTRA_HEADERS;
     // Funnelcake Config
     $_product_details_options = array();
     if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
-        $_product_details_options['tweaks'] = array( '/firefox-'.LATEST_FIREFOX_DEVEL_VERSION.'([^"]*)en-US/' => 'firefox-'.LATEST_FIREFOX_DEVEL_VERSION.$config['funnelcake_suffix'].'$1en-US');
+        $_product_details_options['tweaks'] = array( '/firefox-'.LATEST_FIREFOX_VERSION.'([^"]*)en-US/' => 'firefox-'.LATEST_FIREFOX_VERSION.$config['funnelcake_suffix'].'$1en-US');
     }
 ?>
 
 <div id="feature-header"></div>
 <div id="main-feature">
-    <h2>Baixe o Firefox Beta <span>no seu idioma</span></h2>
-    <p>Aproveite as últimas funcionalidades com mais estabilidade. Envie-nos sua opinião para ajudar a refinar e polir o que estará na versão final.</p>
+    <h2>Baixe o Firefox Aurora <span>em seu idioma</span></h2>
+    <p>Aproveite as últimas inovações em um ambiente instável e diga-nos o que achou das funcionalidades e da performance para nos ajudar a definir o que entra na versão final.</p>
 </div>
 
 
@@ -37,14 +37,14 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
     $filtered_keywords = htmlspecialchars($_GET['lang-search']);
 ?>
     <?php
-        $_results_table = $firefoxDetails->getFilteredDownloadTableForDevelBuilds($_product_details_options, $_GET['lang-search']);
+        $_results_table = $firefoxDetails->getFilteredDownloadTableForAuroraBuilds($_product_details_options, $_GET['lang-search']);
         if (empty($_results_table)) {
     ?>
-    <h2 class="results no-results">Nenhum resultado para: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
+    <h2 class="results no-results">Nenhum resultado para: <em><?php echo $filtered_keywords; ?></em> <a href="all-aurora.html" class="clear">Limpar pesquisa</a></h2>
     <?php } else { ?>
-    <h2 class="results">Resultados da pesquisa por: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
+    <h2 class="results">Resultados da pesquisa por: <em><?php echo $filtered_keywords; ?></em> <a href="all-aurora.html" class="clear">Limpar pesquisa</a></h2>
     <div id="languages">
-        <h3>Versões completamente localizadas</h3>
+    <h3>Versões completamente localizadas</h3>
         <?php echo $_results_table; ?>
     </div>
     <?php } ?>
@@ -55,7 +55,7 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 ?>
 
     <div id="languages">
-    <?php echo $firefoxDetails->getDownloadTableForDevelBuilds($_product_details_options); ?>
+    <?php echo $firefoxDetails->getDownloadTableForAuroraBuilds($_product_details_options); ?>
     </div>
 
 <?php } // end lang-search conditional ?>
@@ -65,15 +65,15 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 <div id="sidebar">
 	<div id="sidebar-search">
 		<h3>Pesquisar idioma</h3>
-		<form method="get" action="all-beta.html" id="search-form">
+		<form method="get" action="all-aurora.html" id="search-form">
 			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
 		</form>
 		<script>// <![CDATA[
 		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
 		var language_search = new Mozilla.LanguageSearch(
-			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_DEVEL_VERSION; ?>');
+			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
 		// ]]>
-		Mozilla.LanguageSearch.no_results_text = 'Nenhum idioma correspondente encontrado.';
+        Mozilla.LanguageSearch.no_results_text = 'Nenhum idioma correspondente encontrado.';
 		Mozilla.LanguageSearch.download_text = 'baixar';
 		</script>
 	</div>
