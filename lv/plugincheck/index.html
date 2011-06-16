@@ -1,34 +1,34 @@
 <?php
 
 // translate the variables below please
-$page_title = "Plugin Check";
+$page_title = "Spraudņu pārbaude";
 
-$tableHeader[1] = "Plugin details";
-$tableHeader[2] = "State";
-$tableHeader[3] = "Action";
+$tableHeader[1] = "Informācija par spraudņiem";
+$tableHeader[2] = "Stāvoklis";
+$tableHeader[3] = "Darbība";
 
 
 // PLuginCheck application strings
-$message[0]  = "Checking with Mozilla on the status of your plugins";
-$message[1]  = "Loading Data";
-$message[2]  = "View All Your Plugins";
+$message[0]  = "Pārbauda Mozilla sistēmā jūsu spraudņu stāvokli";
+$message[1]  = "Ielādē datus";
+$message[2]  = "Aplūkot visus spraudņus";
 
 // label and status for plugin detection table
-$message[3]  = "Disable Now";
-$message[4]  = "Vulnerable No Fix";
-$message[5]  = "Update Now";
-$message[6]  = "Vulnerable";
-$message[7]  = "Update";
-$message[8]  = "Outdated Version";
-$message[9]  = "Up to Date";
-$message[10] = "Research";
-$message[11] = "Unknown plugin";
+$message[3]  = "Deaktivizēt";
+$message[4]  = "Ievainojams, nav labojuma";
+$message[5]  = "Atjaunināt";
+$message[6]  = "Ievainojams";
+$message[7]  = "Atjaunināt";
+$message[8]  = "Novecojusi versija";
+$message[9]  = "Viss kārtībā";
+$message[10] = "Jāizpēta";
+$message[11] = "Nezināms spraudnis";
 $message[12] = ""; // unused string, keep blank
-$message[13] = "Out of date plugins:";
-$message[14] = "Vulnerable plugins:";
-$message[15] = "Potentially vulnerable plugins:";
-$message[16] = "The plugins listed below are up to date";
-$message[17] = "No plugins were detected";
+$message[13] = "Novecojis spraudnis:";
+$message[14] = "Ievainojams spraudnis:";
+$message[15] = "Potenciāli ievainojams spraudnis:";
+$message[16] = "Ar zemāk redzamajiem spraudņiem viss ir kārtībā";
+$message[17] = "Neviens spraudnis nav atrasts";
 $message[18] = "http://www.google.com/search?q=";
 
 /*search terms before the plugin name...
@@ -40,17 +40,18 @@ $message[19] = "current version plugin";
 // more labels and status for plugin detection table
 
 
-$message[20] = "Update Now";                   //MAYBE_VULNERABLE
-$message[21] = "Potentially Vulnerable";       //MAYBE_VULNERABLE
-$message[22] = "Update";                       //MAYBE_OUTDATED
-$message[23] = "Potentially Outdated Version"; //MAYBE_OUTDATED
+$message[20] = "Atjaunināt";                   //MAYBE_VULNERABLE
+$message[21] = "Potenciāli ievainojams";       //MAYBE_VULNERABLE
+$message[22] = "Atjaunināt";                       //MAYBE_OUTDATED
+$message[23] = "Potenciāli novecojusi versija"; //MAYBE_OUTDATED
 
 // Bug#553661 Vulnerability details
-$message[24] = "<p>This plugin version has a security vulnerability that websites can exploit and potentially harm your computer. It is recommended that you update this plugin or if an update is not available, <a href='#howto-disable'>disable it</a>.</p><p>For more information, read the <a href='#' class='vulner-url'>plugin vendor's vulnerability information</a>.</p><p><a class='qtip-closer'>Close</a></p>";
-$message[25] = " (more info)";
+$message[24] = "<p>Šajā spraudņa versijā ir drošības ievainojamība, kuru var izmantot kaitnieciskas mājas lapas, lai kaitētu jūsu datoram. Iesakām atjaunināt spraudni, vai, ja atjauninājums nav pieejams, <a href='#howto-disable'>deaktivizēt to</a>.</p><p>Lai iegūtu papildus informāciju, izlasiet <a href='#' class='vulner-url'>spraudņa piegādātāja drošības informāciju</a>.</p><p><a class='qtip-closer'>Aizvērt</a></p>";
+$message[25] = " (papildu info)";
 
 // end of translations
 
 
 $pageid = 'plugincheck';
 require_once $config['file_root'].'/includes/l10n/controller.inc.php';
+
