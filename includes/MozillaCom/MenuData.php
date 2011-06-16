@@ -159,7 +159,11 @@ class MozillaCom_MenuData
                         'submenu_mobile_videos' => array(
                             'title' => 'Videos',
                             'href' => "/{$this->lang}/firefox/video?video=fx4-mobile-greatday"
-                        )
+                        ),
+                        'submenu_future' => array(
+                            'title' => 'Future Releases',
+                            'href'  => "/{$this->lang}/firefox/channel/",
+                        ),
                     )
                 ),
 
