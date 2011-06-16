@@ -40,7 +40,7 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
         $_results_table = $firefoxDetails->getFilteredDownloadTableForDevelBuilds($_product_details_options, $_GET['lang-search']);
         if (empty($_results_table)) {
     ?>
-    <h2 class="results no-results">Nenhum resultado encontrado para: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
+    <h2 class="results no-results">Nenhum resultado para: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
     <?php } else { ?>
     <h2 class="results">Resultados da pesquisa por: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
     <div id="languages">
