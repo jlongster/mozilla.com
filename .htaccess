@@ -124,6 +124,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/central.html$ /$1firefox/cen
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?organic[/]?$ / [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/organic[/]?$ / [R=permanent]
 
+# Bug 663374
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/check-marks/?(?:index.html)?$ / [R=permanent]
+
 # Bug 663832
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/fastest/?(?:index.html)?$ / [R=permanent]
 
