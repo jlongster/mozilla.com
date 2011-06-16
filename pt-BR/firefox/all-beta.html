@@ -1,76 +1,90 @@
 <?php
+    header('Expires: ' . gmdate("D, d M Y H:i:s", floor((time() + 60) / 60) * 60) . ' GMT'); 
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Firefox | Ajude-nos a testar o Beta mais recente';
+    $page_title = 'Firefox web browser | Ajude-nos a testar o Beta mais recente';
     $body_id    = 'firefox-all';
+    $body_class   = 'beta-all';
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" type="text/css" href="/style/covehead/firefox.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/covehead/all.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/style/covehead/all-beta.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/beta/4/main.css"  />
+    <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
+    <script src="/js/mozilla-language-search.js"></script>
+
 EXTRA_HEADERS;
-    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
-    require_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
-<div id="main-feature">
-	<h2>Ajude a testar o futuro do Firefox!</h2>
-	<p>A versão Beta mais recente do Firefox está disponível como um lançamento de pré-visualização. Baixe-a para testá-la e diga para nós o que você pensa sobre ela!</p>
-</div>
-
-<div id="side-feature">
-	<div id="side-feature-header">
-		<h4>Informação Importante</h4>
-		<p class="intro">Por favor, leia antes de baixar</p>
-	</div>
-	<ul>
-		<li>Esta é uma versão de testes: você poderá encontrar problemas de compatibilidade com alguns sites e complementos.</li>
-		<li>Se você encontrar algum problema, por favor <a href="http://feedback.mozilla.org/">nos avise</a> ou <a href="https://bugzilla.mozilla.org/">registre um bug</a>.</li>
-		<li>Mais detalhes nas <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/">notas da versão</a> e <a href="<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#issues">problemas conhecidos</a>.</li>
-	</ul>
-    <div id="side-feature-footer"></div>
-</div>
-
-<div id="content">
-
-	<script type="text/javascript" src="/js/download.js"></script>
-
-	<div id="download-button">
-    <script type="text/javascript" src="/js/download.old.js"></script>
-    <script type="text/javascript">
-          <!--
-          // Configure the Firefox download write script
-          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Download gratuito<\/strong> <em>%VERSION% para %PLATFORM_NAME%</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
-      // Temporary fix for bug 439792
-      if (gPlatform == PLATFORM_MACOSX) {
-            gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span><strong>Download gratuito<\/strong> <em>%VERSION% para %PLATFORM_NAME% 10.5 e superiores</em> <em>%LANGUAGE_NAME%&nbsp;(%FILE_SIZE%)<\/em><\/span><\/a> <\/li>";
-      }
-          var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 e anteriores não são suportados<\/a>";
-          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Download gratuito<\/a>"
-
-          document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
-          writeDownloadItems("fxbeta");
-          document.writeln("<\/ul>");
-          document.writeln("<div class=\"download-other\"><span class=\"other\">");
-          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/<?=LATEST_FIREFOX_DEVEL_VERSION?>\/releasenotes\/\">Notas da versão<\/a>");
-          document.writeln("- Outros sistemas e idiomas listados abaixo");
-          document.writeln("<\/span><\/div>");
-          //-->
-    </script>
-    <?php echo $firefoxDetails->getNoScriptBlockForLocale('pt-BR', array('devel_version' => true)); ?>
-  </div>
-  <p id="no-beta">Não deseja uma versão Beta? Obtenha o <a href="/<?=$lang?>/firefox/">Firefox mais recente</a>.</p>
-  <div id="all-beta">
-    <div id="languages">
-		<h3>Versões completamente localizadas</h3>
-      <?php
-        $_options['tweaks'] = array('/>([0-9]{1}\.[0-9]{1,2})b([0-9]{1})</' => '>$1 Beta $2<');
-        echo $firefoxDetails->getDownloadTableForDevelBuilds($_options);
-      ?>
-    </div>
-  <div id="all-beta-footer"></div>
-  </div>
-
-</div><!-- end #content div -->
 <?php
-  require_once $footerfile;
+    // Funnelcake Config
+    $_product_details_options = array();
+    if (array_key_exists('funnelcake_suffix', $config) && !empty($config['funnelcake_suffix'])) {
+        $_product_details_options['tweaks'] = array( '/firefox-'.LATEST_FIREFOX_DEVEL_VERSION.'([^"]*)en-US/' => 'firefox-'.LATEST_FIREFOX_DEVEL_VERSION.$config['funnelcake_suffix'].'$1en-US');
+    }
 ?>
+
+<div id="feature-header"></div>
+<div id="main-feature">
+    <h2>Baixe o Firefox Beta <span>no seu idioma</span></h2>
+    <p>Aproveite as últimas funcionalidades com mais estabilidade. Envie-nos sua opinião para ajudar a refinar e polir o que estará na versão final.</p>
+</div>
+
+
+<div id="main-content">
+
+    <script src="/js/download.js"></script>
+
+<?php
+// lang-search specified, filter languages
+if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
+    $filtered_keywords = htmlspecialchars($_GET['lang-search']);
+?>
+    <?php
+        $_results_table = $firefoxDetails->getFilteredDownloadTableForDevelBuilds($_product_details_options, $_GET['lang-search']);
+        if (empty($_results_table)) {
+    ?>
+    <h2 class="results no-results">Nenhum resultado encontrado para: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
+    <?php } else { ?>
+    <h2 class="results">Resultados da pesquisa de idiomas para: <em><?php echo $filtered_keywords; ?></em> <a href="all-beta.html" class="clear">Limpar pesquisa</a></h2>
+    <div id="languages">
+        <h3>Versões completamente localizadas</h3>
+        <?php echo $_results_table; ?>
+    </div>
+    <?php } ?>
+
+<?php
+    // no lang-search, show all languages
+    } else {
+?>
+
+    <div id="languages">
+    <?php echo $firefoxDetails->getDownloadTableForDevelBuilds($_product_details_options); ?>
+    </div>
+
+<?php } // end lang-search conditional ?>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+	<div id="sidebar-search">
+		<h3>Search Language</h3>
+		<form method="get" action="all-beta.html" id="search-form">
+			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+		</form>
+		<script>// <![CDATA[
+		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
+		var language_search = new Mozilla.LanguageSearch(
+			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_DEVEL_VERSION; ?>');
+		// ]]>
+		Mozilla.LanguageSearch.no_results_text = 'Nenhum idioma correspondente encontrado.';
+		Mozilla.LanguageSearch.download_text = 'baixar';
+		</script>
+	</div>
+	<div id="other-versions">
+		<h3>Outros downloads do Firefox</h3>
+		<ul>
+			<li><a href="all.html">Firefox <?=LATEST_FIREFOX_VERSION?></a></li>
+		</ul>
+	</div>
+</div>
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
+
