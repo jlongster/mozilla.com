@@ -2,9 +2,6 @@
 
     $body_id = 'central';
 
-    if(!isset($extra_headers)) {$extra_headers = '';}
-    if(!isset($extra_css))     {$extra_css     = '';}
-
     $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/getting-started.css" media="screen" />
 EXTRA_HEADERS;
@@ -134,6 +131,16 @@ EXTRA_HEADERS;
         margin-bottom: 1em !important;
     }
 
+
+    /* Hide Clipmarks addon for locales, not 4.0 compatible */
+    #page-feature-work .col2 h3:last-of-type,
+    #page-feature-work .col2 h4,
+    #page-feature-work .col2 p:last-of-type
+    {
+        display:none;
+    }
+
+
 EXTRA_CSS;
 
     $extra_footers = <<<EXTRA_FOOTERS
@@ -141,5 +148,8 @@ EXTRA_CSS;
     <script type="text/javascript" src="/js/mozilla-pager.js"></script>
 EXTRA_FOOTERS;
 
-    require "{$config['file_root']}/includes/l10n/header-pages.inc.php";
-?>
+
+
+require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
+require_once $config['file_root'].'/'.$lang.'/firefox/central/content.inc.html';
+require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';
