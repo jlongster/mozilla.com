@@ -215,7 +215,7 @@ a.download-link:visited {
 	border-radius: 6px;
 	color: #fff;
 	overflow: visible;
-	background: #84C63C; /* old browsers */
+	background: #58a100; /* old browsers */
 	background: -moz-linear-gradient(top, #84C63C 0%, #489615 100%); /* firefox */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84C63C), color-stop(100%,#489615)); /* webkit */
 	background: linear-gradient(top, #84C63C 0%, #489615 100%);
@@ -261,7 +261,7 @@ a.download-link span.download-content {
 	line-height: 18px;
 	padding: 10px 10px 0 112px;
 }
- 
+
 a.download-link span.download-title {
     display: block;
     font-style: normal;
@@ -281,7 +281,11 @@ a.download-link:active {
 	cursor: pointer;
 }
 
-* html ul.home-download li a.download-link { overflow: hidden; }
+* html ul.home-download li a.download-link {
+    overflow: hidden;
+    height: 105px;
+    filter: none;
+}
 
 ul.home-download li a.download-link span.download-info {
 	display: block;
@@ -359,6 +363,10 @@ ul.home-download li a.download-link span.download-info em {
     margin-bottom: 3px;
 }
 
+* html #download a.download-link {
+    height: 48px;
+}
+
 #download a.download-link span.download-content {
     margin-left: -25px;
     padding-left: 55px;
@@ -376,7 +384,7 @@ ul.home-download li a.download-link span.download-info em {
     padding-bottom: 3px;
     margin-right: 5px;
     vertical-align: middle;
-    background: url(/img/firefox/download-arrow.png) 100% 50% no-repeat; 
+    background: url(/img/firefox/download-arrow.png) 100% 50% no-repeat;
 }
 
 #download .download-other {
@@ -389,7 +397,7 @@ ul.home-download li a.download-link span.download-info em {
 #download .download-noscript {
     width: 275px;
     background: url(/img/download-logo-sub.png) 0 0 no-repeat;
-    padding-left: 55px; 
+    padding-left: 55px;
     margin-left: 25px;
 }
 
