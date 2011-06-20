@@ -120,13 +120,9 @@ class MozillaCom_MenuData
                     'title' => 'Mobile',
                     'href'  => "/{$this->lang}/mobile/",
                     'items' => array(
-                        'submenu_mobile_overview' => array(
-                            'title' => 'Mobile Overview',
-                            'href'  => "/{$this->lang}/mobile/",
-                        ),
                         'submenu_mobile_download' => array(
                             'title' => 'Download',
-                            'href'  => "/{$this->lang}/mobile/download/",
+                            'href'  => "/{$this->lang}/mobile/",
                         ),
                         'submenu_mobile_features' => array(
                             'title' => 'Features',
