@@ -47,6 +47,15 @@ EXTRA_HEADERS;
         <p>Web applications like mail, video or games keep getting more awesome, but they also require additional processing power to run smoothly. To meet these increasingly sophisticated demands, Firefox 4 features a massively improved JavaScript engine called JägerMonkey.</p>
         <p>As a result, Firefox 4 handles even the most dynamic applications smoothly and easily, allowing you to enjoy the very best the modern Web has to offer.</p>
     </div>
+    <iframe id="runfield" name="runfield" src="/<?=$lang?>/firefox/performance/runfield/index.html" width="640" height="360" scrolling="no"></iframe>
+    <script>
+    var runfield = window.frames['runfield'];
+    window.addEventListener('message',  function(e) {
+        if (e.data == 'loaded') {
+            runfield.postMessage('start_demo', '*');
+        }
+    }, false);
+    </script>
 </div>
 
 <div id="hardware" class="section">

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Runfield</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <script src="mt.js"></script>
+        <script src="audio.js"></script>
+        <script src="runfield.js"></script>
+        <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Ubuntu, sans-serif;
+            color: #ccc;
+        }
+        a {
+            color: #ccc;
+        }
+        #runfield-fallback {
+            color: #444;
+            padding: 40px 80px;
+        }
+        #runfield-fallback a {
+            color: #333;
+        }
+        #runfield-fallback span { display: block; }
+        #runfield-fallback #video-runfield {
+            display: block;
+            text-align: center;
+        }
+        #content {
+            position: relative;
+            width: 640px;
+            height: 360px;
+        }
+        #credits {
+            padding: 4px 8px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-size: 11px;
+        }
+        #musicToggle {
+            padding: 4px 8px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 11px;
+            text-decoration: underline;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <canvas id="c" width="640" height="360">
+                <div id="runfield-fallback">
+                    <a id="video-runfield" href="https://demos.mozilla.org/en-US/screencast/runfield" target="_top"><img src="thumbnail.jpg" alt="Runfield thumbnail"><span>Watch the demo »</span></a>
+                    <p>Runfield is a Web-based game built with JavaScript and Canvas. Try it for yourself in <a href="/">Firefox 4</a> or higher to experience speed like never before.</p>
+                </div>
+            </canvas>
+            <div id="musicToggle" style="cursor:pointer; margin-top:8px;">The Sound is Off</div>
+            <div id="credits">
+                Music: <a href="http://myspace.com/karhumauri">Mauri Heikkinen</a> (a.k.a. <a href="http://fat-cat.co.uk/fatcat/release.php?id=161">Drowsy</a>)
+            </div>
+        </div>
+    </body>
+</html>
