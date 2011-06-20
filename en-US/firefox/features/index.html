@@ -350,10 +350,27 @@ EXTRA_HEADERS;
 		<a href="#main-feature" class="features-top-link">Return to top</a>
 		<h3>High <span>Performance</span></h3>
 
+    <iframe id="runfield" name="runfield" src="/<?=$lang?>/firefox/performance/runfield/index.html" width="640" height="360" scrolling="no"></iframe>
+    <script>
+    var runfield = window.frames['runfield'];
+    window.addEventListener('message',  function(e) {
+        if (e.data == 'loaded') {
+            runfield.postMessage('start_demo', '*');
+        }
+    }, false);
+    </script>
 		<div class="column1">
 			<div class="feature">
 				<h4>Super Speed</h4>
 				<p>With faster start-up times, rapid graphics rendering and improved page load speed, the latest version of Firefox is full of major performance improvements you’ll notice instantly. From integrating Compartments and more efficiently managing JavaScript objects to supporting ECMAScript5 and improvements to the JägerMonkey JavaScript engine, we’ve been working hard to make this the most powerful Firefox ever.</p>
+			</div>
+			<div class="feature">
+				<h4>Hardware Acceleration</h4>
+				<p>Experience super-fast graphics acceleration of video and Web content with a new layers-based graphics system that takes advantage of Direct2D and Direct3D on Windows.</p>
+			</div>
+			<div class="feature">
+				<h4>Real World Performance</h4>
+				<p>Having a super-fast JavaScript engine is definitely important, but since those changes are often measured in milliseconds, sometimes what matters even more is the way the browser feels when you’re actually using it. That’s why we’re constantly optimizing Firefox to be great  for the way you use the Web — things like making new tabs open up more quickly, or having the Awesome Bar provide results even faster. In the end, it’s about getting you where you need to go as quickly and easily as possible.</p>
 			</div>
 		</div>
 
@@ -364,10 +381,6 @@ EXTRA_HEADERS;
 				<p><a href="/<?=$lang?>/firefox/performance/">Learn more about Firefox’s performance.</a></p>
 			</div>
 
-			<div class="feature">
-				<h4>Real World Performance</h4>
-				<p>Having a super-fast JavaScript engine is definitely important, but since those changes are often measured in milliseconds, sometimes what matters even more is the way the browser feels when you’re actually using it. That’s why we’re constantly optimizing Firefox to be great  for the way you use the Web — things like making new tabs open up more quickly, or having the Awesome Bar provide results even faster. In the end, it’s about getting you where you need to go as quickly and easily as possible.</p>
-			</div>
 		</div>
 
 		<div class="column3">
@@ -407,12 +420,8 @@ EXTRA_HEADERS;
                     </video>
                 </div>
 			</div>
-
-			<div class="feature">
-				<h4>Hardware Acceleration</h4>
-				<p>Experience super-fast graphics acceleration of video and Web content with a new layers-based graphics system that takes advantage of Direct2D and Direct3D on Windows.</p>
-			</div>
 		</div>
+
 	</div>
 	</div>
 
