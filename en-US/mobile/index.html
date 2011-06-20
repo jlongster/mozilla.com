@@ -1,115 +1,162 @@
 <?php
-    $page_title = 'Mozilla Firefox | Firefox for Android or Nokia N900 | Take the Web with you';
-    $body_id    = 'mobile-home';
-    $breadcrumbs = array(
-        $l10n->get('Mobile') => "/{$lang}/mobile/",
-    );
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox | Firefox for Android | Download Firefox to your mobile device';
+    $body_id    = 'mobile-download';
     $extra_headers = <<<EXTRA_HEADERS
-    <meta name="WT.ad" content="Download Firefox: Mobile;Take Tour: Mobile;Sync;Addons: Mobile;Features: Mobile" />
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home.css" media="screen" />
+
+  <meta name="WT.si_n" content="Get Firefox for Android;Get Firefox for iPhone" />
+  <meta name="WT.si_x" content="1;1" />
+  <meta name="WT.ad" content="Get Firefox for Android;Get Firefox for iPhone" />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-download.css" media="screen" />
+  <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
+  <script src="/js/mozilla-video-tools.js"></script>
+
 EXTRA_HEADERS;
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
 ?>
 
-<script>// <![CDATA[
-    // Add a class to the body tag to alternate background features
-    var feature_class_options = new Array( "trapeze", "rhino" );
-
-    if (Math.random) {
-        var choice = Math.floor(Math.random() * (feature_class_options.length));
-
-        // Just in case javascript gets carried away...
-        choice = ( (choice < feature_class_options.length)  && choice >= 0) ? choice : 0;
-
-        if (document.body.className == '') {
-            document.body.className = 'feature-'+feature_class_options[choice];
-        } else {
-            document.body.className += ' feature-'+feature_class_options[choice];
-        }
-    }
-// ]]></script>
-
 <div id="main-feature">
-    <div id="intro">
-        <h3>Firefox is <span>Mobile</span></h3>
-        <p>Bring Your Web with You</p>
-    </div>
-
-    <div id="home-download">
-        <a href="/<?=$lang?>/mobile/download/" class="download-link"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/mobile/download/',
-                                  'WT.ti', 'Link: Get Firefox for Mobile',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Download Firefox: Mobile');">
-          <span class="download-content"><span class="download-title">Get Firefox</span> for Mobile</span>
-        </a>
-    </div>
-    <div class="download-other">Or visit <a href="http://Firefox.com/m">Firefox.com/m</a> on your browser.</div>
-
-    <div id="button">
-         <p><a href="/<?=$lang?>/mobile/download/">It’s Your Web, <span>Anywhere you go</span></a></p>
-    </div>
-
+  <h2>Download Firefox to <span>Your Mobile</span></h2>
 </div>
-
-<hr class="hide" />
 
 <div id="main-content">
 
-    <div class="sub-feature" id="sub-video">
-        <h3>See It <span>In Action</span></h3>
-        <p><a href="/<?=$lang?>/firefox/video/?video=fx4-mobile-greatday"
-              onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                     'DCS.dcsuri', '/<?=$lang?>/firefox/video/?video=fx4-mobile-greatday',
-                                     'WT.ti', 'Link: Watch the Video',
-                                     'WT.dl', 99,
-                                     'WT.nv', 'Content',
-                                     'WT.ac', 'Take Tour: Mobile');">
-            <img src="<?=$config['static_prefix']?>/img/mobile/mobile-video-thumbnail.jpg" alt="Video thumbnail"><span>Watch the Video <span>»</span></span></a></p>
+  <div id="platforms">
+    <div id="platforms-divider">
+      <div id="android" class="platform">
+        <h3>Download for <span>Android</span></h3>
+        <p class="dl">
+          <a href="https://market.android.com/details?id=org.mozilla.firefox"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/en-us/mobile/download/',
+                                    'WT.ti', 'Link: Get Firefox for Android',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for Android',
+                                    'WT.z_convert','Get Firefox for Android', 
+                                    'WT.si_n','Get Firefox for Android',
+                                    'WT.si_x','2')">
+            <span class="title">Get Firefox for Android</span>
+            <span class="desc">Free from the Android Market</span>
+          </a>
+          <div class="download-other"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::latest_version) ?>">Release Notes</a></div>
+        </p>
+        <p><a href="/<?=$lang?>/mobile/platforms">List of Supported Devices »</a></p>
+        <p class="notes">Get Firefox for Maemo by visiting <a href="/<?=$lang?>/m">Firefox.com/m</a> on your phone.</p>
+      </div>
+      <div id="iphone" class="platform">
+        <h3>Firefox Home for <span>iPhone</span></h3>
+        <p class="dl">
+          <a href="http://itunes.com/apps/firefoxhome"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                    'DCS.dcsuri', '/en-us/mobile/download/',
+                                    'WT.ti', 'Link: Get Firefox for iPhone',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for iPhone',
+                                    'WT.z_convert','Get Firefox for iPhone', 
+                                    'WT.si_n','Get Firefox for iPhone',
+                                    'WT.si_x','2');">
+            <span class="title">Get Firefox Home for iPhone</span>
+            <span class="desc">Free from iTunes</span>
+          </a>
+        </p>
+        <p>Access your Firefox history, bookmarks and open tabs on your iPhone. <a href="/<?=$lang?>/mobile/home/">Learn More »</a></p>
+      </div>
     </div>
+  </div>
 
-    <div class="sub-feature" id="sub-sync">
-        <h3>Your Life <span>In Sync</span></h3>
-        <p>Go from desktop to mobile without interruption.</p>
-        <a href="/<?=$lang?>/mobile/sync/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/mobile/sync/',
-                                  'WT.ti', 'Link: Your Life in Sync',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Sync');">
-          Learn More <span>»</span>
-        </a>
+  <div id="secondary">
+    <div id="beta_android" class="sub-feature">
+      <h3>Want to test the latest features?</h3>
+      <p>You’ll get to experience cutting-edge features and provide feedback to help refine and polish what will be in the final release.</p>
+      <a class="download" href="https://market.android.com/details?id=org.mozilla.firefox_beta">Download Beta for Android »</a>
+      <p class="notes">Free from the Android Market</p>
+          <div class="download-other"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::beta_version) ?>">Release Notes</a></div>
     </div>
+    <div id="desktop" class="sub-feature">
+      <h3>Developer Tools</h3>
+      <p>You can install the mobile version of Firefox to our desktop computer in order to test, provide feedback, and build add-ons.</p>
+      <ul id="desktop_download">
+        <li id="desktop_windows"><a href="<?= mobileDetails::download_url($lang, mobileDetails::windows) ?>" target="_blank" class="download">Download<span> Windows</span></a></li>
+        <li id="desktop_mac"><a href="<?= mobileDetails::download_url($lang, mobileDetails::mac) ?>" target="_blank" class="download">Download<span> Mac OS X</span></a></li>
+        <li id="desktop_linux"><a href="<?= mobileDetails::download_url($lang, mobileDetails::linux) ?>" target="_blank" class="download">Download<span> Linux</span></a></li>
+      </ul>
 
-    <div class="sub-feature" id="sub-addons">
-        <h3>Personalize With <span>Add-ons</span></h3>
-        <p>Customize Firefox to be exactly the way you like it.</p>
-        <a href="https://addons.mozilla.org/mobile/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'addons.mozilla.org',
-                                  'DCS.dcsuri', '/mobile/',
-                                  'WT.ti', 'Link: Personalize with Add-Ons',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Addons: Mobile');">
-          Learn More <span>»</span>
-        </a>
+        <span class="for">for</span>
+
+      <select id="desktop_choser">
+        <option value="windows">Windows</option>
+        <option value="mac">Mac OS X</option>
+        <option value="linux">Linux</option>
+      </select>
+      <script>
+        $(document).ready(function(){
+
+            // Hide the platform span if we have JS as it's only for non-JS users
+            $('#desktop_download span').hide();
+
+            // When a platform is selected, hide the other platform download buttons
+            $('#desktop_choser').change(function() {
+                var platformval =  $('#desktop_choser').val();
+                switch (platformval) {
+                case 'windows':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_windows').show();
+                    break;
+                case 'mac':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_mac').show();
+                    break;
+                case 'linux':
+                    $('#desktop_download > li').hide();
+                    $('#desktop_linux').show();
+                    break;
+                };
+            });
+
+            // Detect platform and default platform choser
+            if (navigator.platform.indexOf('Linux') >= 0) {
+                $('#desktop_choser').val('linux');
+            } else if (navigator.platform.indexOf('Mac') >= 0) {
+                $('#desktop_choser').val('mac');
+            }
+            $('#desktop_choser').change();
+        });
+      </script>
     </div>
+  </div>
 
-    <div class="sub-feature" id="sub-speed">
-        <h3>Take Beta <span>to Go</span></h3>
-        <p>Give feedback and help shape Firefox for mobile.</p>
-        <a href="/<?=$lang?>/firefox/channel/">
-          Go mobile <span>»</span>
-        </a>
-    </div>
+  <div id="connect">
 
-</div>
+   <h3>Connect With Firefox for Mobile:</h3>
+   <ul>
+      <li class="mail"><a href="/<?=$lang?>/newsletter/about_mobile/">Monthly newsletter</a></li>
+      <li class="twitter"><a href="http://twitter.com/MozMobile">Follow us</a></li>
+      <li class="facebook"><a href="http://www.facebook.com/firefoxformobile">Become a fan</a></li>
+   </ul>
 
-<!-- Please do not ever remove this comment. -->
+  </div>
+
+</div><!-- /#main-content -->
+
+<script>// <![CDATA[
+  /* Whichever box is taller, make the shorter one the same height */
+	$(document).ready(function(){
+  	h_left = $('#beta_android').height();
+  	h_right = $('#desktop').height();
+
+  	if(h_left >= h_right) {
+  		$('#desktop').height(h_left);
+  	}
+  	if (h_left < h_right) {
+  		$('#beta_android').height(h_right);
+  	}
+	});
+// ]]></script>
 
 <?php
-    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
+
