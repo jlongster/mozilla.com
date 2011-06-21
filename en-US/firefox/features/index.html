@@ -350,15 +350,43 @@ EXTRA_HEADERS;
 		<a href="#main-feature" class="features-top-link">Return to top</a>
 		<h3>High <span>Performance</span></h3>
 
-    <iframe id="runfield" name="runfield" src="/<?=$lang?>/firefox/performance/runfield/index.html" width="640" height="360" scrolling="no"></iframe>
-    <script>
-    var runfield = window.frames['runfield'];
-    window.addEventListener('message',  function(e) {
-        if (e.data == 'loaded') {
-            runfield.postMessage('start_demo', '*');
-        }
-    }, false);
-    </script>
+    <div id="video-wrapper">
+    <div id="video-player" class="mozilla-video-control">
+        <video
+            id="video"
+            width="640"
+            height="360"
+            poster="<?=$config['static_prefix']?>/img/covehead/firefox/performance/poster-runfield.jpg"
+            controls="controls">
+
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.webm" type="video/webm" />
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.mp4" type="video/mp4" />
+
+            <object type="application/x-shockwave-flash"
+                style="width: 640px; height: 388px;"
+                data="/includes/flash/playerWithControls.swf?flv=serv/mozhacks/demos/screencasts/runfield/screencast.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/mozhacks/demos/screencasts/runfield/screencast.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                <param name="wmode" value="transparent" />
+
+                <div class="video-player-no-flash">
+                This video requires a browser with support for open video:
+                <ul>
+                <li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+                <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                </ul>
+
+                or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                Alternatively, you may use the video download links to the right.
+                </div>
+
+            </object>
+
+        </video>
+    </div>
+    <p>Runfield is a Web-based game built with JavaScript and Canvas. <a href="https://mozillademos.org/demos/runfield/demo.html">Try it for yourself »</a></p>
+    </div>
 		<div class="column1">
 			<div class="feature">
 				<h4>Super Speed</h4>
@@ -369,16 +397,16 @@ EXTRA_HEADERS;
 				<p>Experience super-fast graphics acceleration of video and Web content with a new layers-based graphics system that takes advantage of Direct2D and Direct3D on Windows.</p>
 			</div>
 			<div class="feature">
-				<h4>Real World Performance</h4>
-				<p>Having a super-fast JavaScript engine is definitely important, but since those changes are often measured in milliseconds, sometimes what matters even more is the way the browser feels when you’re actually using it. That’s why we’re constantly optimizing Firefox to be great  for the way you use the Web — things like making new tabs open up more quickly, or having the Awesome Bar provide results even faster. In the end, it’s about getting you where you need to go as quickly and easily as possible.</p>
+				<h4>Crash Protection</h4>
+				<p>Firefox provides uninterrupted browsing when there is a crash in the plugins for Adobe Flash, Apple QuickTime or Microsoft Silverlight. If  one of these commonly-used plugins crashes or freezes, it won't affect the rest of the browser. You can simply reload the page to restart the plugin and try again. <a href="/<?=$lang?>/plugincheck/#what-plugin">Learn more about plugins.</a></p>
+				<p><a href="/<?=$lang?>/firefox/performance/">Learn more about Firefox’s performance.</a></p>
 			</div>
 		</div>
 
 		<div class="column2">
 			<div class="feature">
-				<h4>Crash Protection</h4>
-				<p>Firefox provides uninterrupted browsing when there is a crash in the plugins for Adobe Flash, Apple QuickTime or Microsoft Silverlight. If  one of these commonly-used plugins crashes or freezes, it won't affect the rest of the browser. You can simply reload the page to restart the plugin and try again. <a href="/<?=$lang?>/plugincheck/#what-plugin">Learn more about plugins.</a></p>
-				<p><a href="/<?=$lang?>/firefox/performance/">Learn more about Firefox’s performance.</a></p>
+				<h4>Real World Performance</h4>
+				<p>Having a super-fast JavaScript engine is definitely important, but since those changes are often measured in milliseconds, sometimes what matters even more is the way the browser feels when you’re actually using it. That’s why we’re constantly optimizing Firefox to be great  for the way you use the Web — things like making new tabs open up more quickly, or having the Awesome Bar provide results even faster. In the end, it’s about getting you where you need to go as quickly and easily as possible.</p>
 			</div>
 
 		</div>

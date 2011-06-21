@@ -6,6 +6,8 @@
     $extra_headers = <<<EXTRA_HEADERS
 
 	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/performance.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/video-player.css" media="screen" />
+    <script src="/js/mozilla-video-tools.js"></script> 
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
@@ -37,15 +39,43 @@ EXTRA_HEADERS;
         <p>Fasten your seat belts! With lightning fast start-up times, rapid graphics rendering and improved page load speed, the latest version of Firefox is full of performance enhancements that you’ll notice instantly.</p>
         <p>Web applications like mail, video and games keep getting more awesome, but they also require additional power to run smoothly. To meet these increasingly sophisticated demands, our latest release features a massively improved JavaScript engine called JägerMonkey.</p>
     </div>
-    <iframe id="runfield" name="runfield" src="/<?=$lang?>/firefox/performance/runfield/index.html" width="640" height="360" scrolling="no"></iframe>
-    <script>
-    var runfield = window.frames['runfield'];
-    window.addEventListener('message',  function(e) {
-        if (e.data == 'loaded') {
-            runfield.postMessage('start_demo', '*');
-        }
-    }, false);
-    </script>
+    <div id="video-wrapper">
+    <div id="video-player" class="mozilla-video-control">
+        <video
+            id="video"
+            width="640"
+            height="360"
+            poster="<?=$config['static_prefix']?>/img/covehead/firefox/performance/poster-runfield.jpg"
+            controls="controls">
+
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.webm" type="video/webm" />
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+            <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/mozhacks/demos/screencasts/runfield/screencast.mp4" type="video/mp4" />
+
+            <object type="application/x-shockwave-flash"
+                style="width: 640px; height: 388px;"
+                data="/includes/flash/playerWithControls.swf?flv=serv/mozhacks/demos/screencasts/runfield/screencast.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/mozhacks/demos/screencasts/runfield/screencast.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                <param name="wmode" value="transparent" />
+
+                <div class="video-player-no-flash">
+                This video requires a browser with support for open video:
+                <ul>
+                <li><a href="http://www.mozilla.com/firefox/">Firefox</a> 3.5 or greater</li>
+                <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                </ul>
+
+                or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                Alternatively, you may use the video download links to the right.
+                </div>
+
+            </object>
+
+        </video>
+    </div>
+    <p>Runfield is a Web-based game built with JavaScript and Canvas. <a href="https://mozillademos.org/demos/runfield/demo.html">Try it for yourself »</a></p>
+    </div>
 </div>
 
 <div id="hardware" class="section">
