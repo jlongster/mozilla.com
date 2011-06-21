@@ -20,6 +20,7 @@ $extra_headers = <<<EXTRA_HEADERS
         font-size: 57px;
     }
 
+    html[lang='hy-AM'] #main-feature h2,
     html[lang='lt'] #main-feature h2 {
         font-size: 32px;
     }
@@ -35,19 +36,19 @@ $extra_headers = <<<EXTRA_HEADERS
     body.locale-sq #main-feature h2 {
         font-size:35px;
     }
-        
+
     body.locale-sq #main-feature h2 span {
         font-size:55px;
     }
-        
+
     body.locale-sq #main-feature {
         padding-top:0;
     }
-        
+
     body.locale-sq #main-feature p {
         width:410px;
     }
-        
+
     body.locale-sq #main-content {
         margin-top:45px;
     }
@@ -98,7 +99,7 @@ if($textdir == "rtl") {
         [dir="rtl"] #column-one, .left-column {
             margin-left: 40px;
         }
-        
+
     </style>
 EXTRA_HEADERS;
 }
