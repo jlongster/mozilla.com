@@ -83,7 +83,7 @@ require dirname(__FILE__).'/../../product-details/firefoxDetails.class.php';
 $fx          = new firefoxDetails();
 $pd          = array();
 $repoMapping = array (
-    'LATEST_FIREFOX_VERSION'        => 'mozilla-2.0',
+    'LATEST_FIREFOX_VERSION'        => 'mozilla-release',
     'LATEST_FIREFOX_DEVEL_VERSION'  => 'mozilla-beta',
     'LATEST_FIREFOX_OLDER_VERSION'  => 'mozilla-1.9.2',
     'FIREFOX_AURORA'                => 'mozilla-aurora',
