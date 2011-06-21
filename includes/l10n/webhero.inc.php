@@ -80,8 +80,8 @@ EXTRA_FOOTERS;
 <!-- Starting a page html here as localizers are not going to touch it -->
 <div id="webhero-wrap">
   <section class="step" id="step1">
-    <h2><?=___('FIREFOX 4 + YOU = AWESOME!')?></h2>
-    <p> <?=___("You already know how awesome Firefox 4 is. You experience it every day. But not everyone is there yet. Some people need a nudge in the right direction. And that's where you come in.")?></p>
+    <h2><?=___('FIREFOX + YOU = AWESOME!')?></h2>
+    <p> <?=___("You already know how awesome Firefox is. You experience it every day. But not everyone is there yet. Some people need a nudge in the right direction. And that's where you come in.")?></p>
   </section>
 
   <div id="hero">
@@ -97,9 +97,9 @@ EXTRA_FOOTERS;
     <h2><?=___("HELPING IS EASY!<br />AND IT FEELS GREAT!")?></h2>
     <p><?=___("Help Team Firefox grow. Here's how:")?></p>
     <ul class="checklist">
-      <li class="check1"><?=___("Install Firefox 4 on their computer.")?></li>
-      <li class="check2"><?=___("Send them a how-to-install video for <a href='/en-US/firefox/video/?video=upgrade-mac' target='_top'>Mac</a> or <a href='/en-US/firefox/video/?video=upgrade-win' target='_top'>PC</a>. Or show them PDF instructions for <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_MAC.pdf' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='/en-US/firefox/webhero/Firefox4_Installation_Guide_PC.pdf' target='_top' title='Download this PDF (1.5MB)'>PC</a>.")?></li>
-      <li class="check3"><?=___("Show them the features <a href='/en-US/firefox/central' target='_top'>on your computer</a> or send them a <a href='/en-US/firefox/video/' target=/_top'>video</a>.")?></li>
+      <li class="check1"><?=___("Install Firefox on their computer.")?></li>
+      <li class="check2"><?=___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>.")?></li>
+      <li class="check3"><?=___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=/_top'>video</a>.")?></li>
     </ul>
   </section>
 
@@ -108,7 +108,7 @@ EXTRA_FOOTERS;
     <p><?=___("Give yourself a pat on the back. You helped someone get the best of the Web and make sure it stays open and awesome. Let's keep building a better Web together.")?></p>
 
     <div id="share">
-      <h3><?=___("I upgraded a friend to Firefox 4!")?></h3>
+      <h3><?=___("I upgraded a friend to the new Firefox!")?></h3>
       <ul>
         <li><a id="share-twitter" title="<?=$twitter_link?>" href="https://twitter.com/?status=<?=$twitter_message;?>"><?=___('Twitter')?></a></li>
         <li><a id="share-facebook" title="<?=$facebook_link?>" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmzl.la%2Fi85nib&amp;t=<?=$facebook_message;?>"><?=___('Facebook')?></a></li>
