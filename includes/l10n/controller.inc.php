@@ -51,6 +51,10 @@ $publicsites = array('www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozil
 $stage = (!in_array($config['server_name'], $publicsites)) ? true: false;
 unset($publicsites);
 
+// pt-BR is an experiment of having the whole site localized so we don't want to include all our l10n site
+// but mix it with en-US header page.
+
+if ($lang == 'pt-BR' && $pageid == '') return;
 
 
 // here we define our per-page includes
