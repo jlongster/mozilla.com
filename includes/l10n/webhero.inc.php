@@ -63,6 +63,14 @@ EXTRA_HEADERS;
         text-decoration: none;
     }
     
+    body.locale-lt #webhero-wrap h2 {
+        font: 35px/0.9 georgia,serif;
+    }
+    
+    body.locale-lt #webhero-wrap h1 {
+        font: 55px/0.9 Haettenschweiler,"Arial Narrow",sans-serif !important;
+    }
+    
     {$l10n->get('custom-css')}
 
 EXTRA_CSS;
@@ -98,8 +106,21 @@ EXTRA_FOOTERS;
     <p><?=___("Help Team Firefox grow. Here's how:")?></p>
     <ul class="checklist">
       <li class="check1"><?=___("Install Firefox on their computer.")?></li>
-      <li class="check2"><?=___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>.")?></li>
-      <li class="check3"><?=___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=/_top'>video</a>.")?></li>
+      <li class="check2"><?=printf(___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>."),
+                                    /* L10n: URL of the how-to-install video for Mac */
+	                                ___("/en-US/firefox/video/?video=upgrade-mac"),
+                                 	/* L10n: URL of the how-to-install video for PC */
+                                 	___("/en-US/firefox/video/?video=upgrade-win"),
+                                 	/* L10n: URL of the how-to-install PDF for Mac */
+                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_MAC.pdf"),
+                                 	/* L10n: URL of the how-to-install PDF for PC */
+                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_PC.pdf"))?></li>
+      <li class="check3"><?php printf(___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=_top'>video</a>."),
+                                        /* L10n: URL for "show them the features on your computer" */
+                                        ___("/en-US/firefox/central"),
+                                        /* L10n: URL for "send them a video" */
+                                        ___("/en-US/firefox/video/"))?>
+      </li>
     </ul>
   </section>
 
