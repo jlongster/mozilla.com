@@ -106,7 +106,7 @@ EXTRA_FOOTERS;
     <p><?=___("Help Team Firefox grow. Here's how:")?></p>
     <ul class="checklist">
       <li class="check1"><?=___("Install Firefox on their computer.")?></li>
-      <li class="check2"><?=printf(___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>."),
+      <li class="check2"><?php printf(___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>."),
                                     /* L10n: URL of the how-to-install video for Mac */
 	                                ___("/en-US/firefox/video/?video=upgrade-mac"),
                                  	/* L10n: URL of the how-to-install video for PC */
@@ -114,12 +114,12 @@ EXTRA_FOOTERS;
                                  	/* L10n: URL of the how-to-install PDF for Mac */
                                  	___("/en-US/firefox/webhero/Firefox_Installation_Guide_MAC.pdf"),
                                  	/* L10n: URL of the how-to-install PDF for PC */
-                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_PC.pdf"))?></li>
-      <li class="check3"><?php printf(___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=_top'>video</a>."),
+                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_PC.pdf")); ?></li>
+      <li class="check3"><?php printf(___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=/_top'>video</a>."),
                                         /* L10n: URL for "show them the features on your computer" */
                                         ___("/en-US/firefox/central"),
                                         /* L10n: URL for "send them a video" */
-                                        ___("/en-US/firefox/video/"))?>
+                                        ___("/en-US/firefox/video/")); ?>
       </li>
     </ul>
   </section>
