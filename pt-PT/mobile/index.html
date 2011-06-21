@@ -1,42 +1,11 @@
 <?php
 
-    // please translate the 3 variables below
-    $page_title         = "Firefox Mobile";
-    $form_field         = "Escreva o número do seu telemóvel";
-    $chooseYourCountry  = "Escolha a sua localização";
-
-	$pageid = 'mobile-home';
-  	include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
-?>
+    // translate the page title below
+    $page_title = "Mozilla Firefox | Firefox para Android ou Nokia N900 | Transfira o Firefox para o seu dispositivo móvel";
 
 
-<div id="main-feature">
-    <h2>Voltou a ter a Web. Agora leve-a consigo.</h2>
-    <p>O Firefox agora é móvel.</p>
-</div>
 
-<?=$mobilesubmenu;?>
-<?=$smsformblock;?>
+    $pageid = 'mobile-download';
+    include_once $config['file_root'].'/includes/l10n/controller.inc.php';
 
-<div id="mobile-footer" class="sub-features">
-    <div class="sub-feature" id="video-tour">
-        <h4>Veja o Vídeo de demonstração</h4>
-        <p>Saiba como é que o Firefox coloca a web no dispositivo móvel.</p>
-        <p class="link"><a href="/<?=$lang?>/firefox/video/?video=about-mobile">Lançar o Vídeo</a></p>
-    </div>
-    <div class="sub-feature" id="developers-wanted">
-        <h4>Envolva-se</h4>
-        <p>Nós contamos com uma comunidade de pessoas como você que ajuda a construir, testar e divulgar o Firefox.</p>
-        <p class="link"><a href="/<?=$lang?>/mobile/getinvolved/">Saiba o que você pode fazer</a></p>
-    </div>
-
-    <div class="sub-feature" id="questions-comments">
-        <h4>Questões? Comentários?</h4>
-        <p>Deixe-nos responder às questões, ou diga-nos o que acha do Firefox.</p>
-        <p class="link"><a href="http://mobile.support.mozilla.com/">Obter ajuda</a></p>
-    </div>
-</div>
-
-<?php
-    include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
 ?>
