@@ -105,16 +105,16 @@ $(document).ready(function() {
         if (!hasRequiredVersion && hasRequiredVersion !== -1) {
 
             if (typeof(FlashAlertTitle) == 'undefined') {
-                var FlashAlertTitle = 'Your Flash Player is out of date. Never ' +
-                    'fear, we can help.';
+                FlashAlertTitle = 'Your Flash Player is out of date. Never ' +
+                'fear, we can help.';
             }
 
             if (typeof(FlashAlertText) == 'undefined') {
-                var FlashAlertText = 'To keep you as safe as possible, we ' +
-                    'recommend you upgrade your Flash Player. Without it, ' +
-                    'your browser could be less stable and less secure. So ' +
-                    '<a href="http://get.adobe.com/flashplayer/" onclick="dcsMultiTrack(\'DCS.dcssip\', \'get.adobe.com\', \'DCS.dcsuri\', \'/flashplayer/\', \'WT.ti\', \'Adobe&20-%20Adobe%20Flash%20Player\');">get the free update now</a> ' +
-                    'or <a href="http://support.mozilla.com/kb/Managing+the+Flash+plugin#w_updating-flash">learn more</a>.';
+                FlashAlertText = 'To keep you as safe as possible, we ' +
+                'recommend you upgrade your Flash Player. Without it, ' +
+                'your browser could be less stable and less secure. So ' +
+                '<a href="http://get.adobe.com/flashplayer/" onclick="dcsMultiTrack(\'DCS.dcssip\', \'get.adobe.com\', \'DCS.dcsuri\', \'/flashplayer/\', \'WT.ti\', \'Adobe&20-%20Adobe%20Flash%20Player\');">get the free update now</a> ' +
+                'or <a href="http://support.mozilla.com/kb/Managing+the+Flash+plugin#w_updating-flash">learn more</a>.';
             }
 
             if ($body.attr('id') == 'whatsnew') {
