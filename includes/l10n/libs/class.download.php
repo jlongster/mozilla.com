@@ -52,6 +52,12 @@ class firefoxDetailsL10n extends firefoxDetails
                 $_current_version    = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->primary_builds);
                 $_betalocale_version = $this->getNewestVersionForLocaleFromBuildArray($locale, $this->beta_builds);
                 $_targetted_version  = LATEST_FIREFOX_RELEASED_VERSION;
+
+                // bela locales styling
+                if ($_current_version == LATEST_FIREFOX_OLDER_VERSION) {
+                    $_current_version = '';
+                }
+
                 // if we have no builds at all, let's default to en-US so as to display download boxes on pages
                 if(!in_array($_targetted_version, array($_current_version, $_betalocale_version))) {
                     $locale           = 'en-US';
