@@ -171,6 +171,54 @@
                     'height'       => 360,
                     'duration'     => 40,
                 ),
+                'builder' => array(
+                    'title'        => 'Introducing Add-on Builder & Add-on SDK',
+                    'description'  => 'An overview of developing add-ons using the Add-on Builder & Add-on SDK.',
+                    'poster'       => '/img/covehead/video/poster-builder.jpg',
+                    'thumbnail'    => '/img/covehead/video/icon-builder.jpg',
+                    'flv_filename' => 'serv/marketing/Firefox5/AddOnsBuilderOverview.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderOverview.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderOverview.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderOverview.mp4',
+                            'type' => 'video/mp4;',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 115,
+                ),
+                'builder-tutorial' => array(
+                    'title'        => 'Add-on Builder Tutorial',
+                    'description'  => 'An in-depth tutorial showing how to create an add-on; from start to finish.',
+                    'poster'       => '/img/covehead/video/poster-builder-tutorial.jpg',
+                    'thumbnail'    => '/img/covehead/video/icon-builder-tutorial.jpg',
+                    'flv_filename' => 'serv/marketing/Firefox5/AddOnsBuilderTutorial.mp4',
+                    'sources'      => array(
+                        'webm' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderTutorial.webm',
+                            'type' => 'video/webm',
+                        ),
+                        'ogg' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderTutorial.theora.ogv',
+                            'type' => 'video/ogg; codecs=&quot;theora, vorbis&quot;',
+                        ),
+                        'mp4' => array(
+                            'src'  => 'http://videos-cdn.mozilla.net/serv/marketing/Firefox5/AddOnsBuilderTutorial.mp4',
+                            'type' => 'video/mp4;',
+                        ),
+                    ),
+                    'width'        => 640,
+                    'height'       => 360,
+                    'duration'     => 373,
+                ),
             ),
         ),
 
@@ -576,7 +624,9 @@ EXTRA_HEADERS;
                 id="video"
                 width="<?php echo $_selected_video['width']; ?>"
                 height="<?php echo $_selected_video['height']; ?>"
-                controls="controls" preload="metadata" <?php echo ($_autoplay) ? 'autoplay="autoplay"' : ''; ?>>
+                controls="controls" preload="metadata"
+                <?php echo isset($_selected_video['poster']) ? 'poster="'.$_selected_video['poster'].'"' : ''; ?>>
+                <?php echo ($_autoplay) ? 'autoplay="autoplay"' : ''; ?>>
 
 <?php
     foreach ($_selected_video['sources'] as $_source) {
