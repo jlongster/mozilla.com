@@ -398,7 +398,7 @@ if (is_numeric($downloads)) {
     </div>';
 }
 
-$extra_headers = <<<EXTRA_HEADERS
+$extra_headers .= <<<EXTRA_HEADERS
 
     {$home_css}
 
