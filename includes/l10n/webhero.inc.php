@@ -35,42 +35,42 @@ EXTRA_HEADERS;
         opacity: inherit !important;
         text-align: inherit !important;
     }
-    
+
     body.locale-el #hero .page-title {
         font: 40px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
     }
-    
+
     body.locale-el #share h3 {
         text-transform: none;
     }
-    
+
     body.locale-ga-IE #hero .page-title,
     body.locale-pl #hero .page-title,
     body.locale-vi #hero .page-title {
         font: 60px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
     }
-    
+
     body.locale-ar #step2 {
         padding: 50px 350px 10px 230px;
     }
-    
+
     .checklist li {
         min-height: 35px;
     }
-    
+
     #share a:hover,
     #share a:active {
         text-decoration: none;
     }
-    
+
     body.locale-lt #webhero-wrap h2 {
         font: 35px/0.9 georgia,serif;
     }
-    
+
     body.locale-lt #webhero-wrap h1 {
         font: 55px/0.9 Haettenschweiler,"Arial Narrow",sans-serif !important;
     }
-    
+
     {$l10n->get('custom-css')}
 
 EXTRA_CSS;
@@ -78,8 +78,9 @@ EXTRA_CSS;
     $extra_footers = <<<EXTRA_FOOTERS
 EXTRA_FOOTERS;
 
+    $twitter_message  = str_replace('http://mzl.la/i85nib', 'http://firefox.com', $twitter_message);
     $twitter_message  = rawurlencode($twitter_message);
-    $facebook_message = str_replace('%20http://mzl.la/i85nib%20%23fx4', '', $twitter_message);
+    $facebook_message = $twitter_message;
 
 
 
@@ -108,16 +109,16 @@ EXTRA_FOOTERS;
       <li class="check1"><?=___("Install Firefox on their computer.")?></li>
       <li class="check2"><?php printf(___("Send them a how-to-install video for <a href='%s' target='_top'>Mac</a> or <a href='%s' target='_top'>PC</a>. Or show them PDF instructions for <a href='%s' target='_top' title='Download this PDF (1MB)'>Mac</a> or <a href='%s' target='_top' title='Download this PDF (1.5MB)'>PC</a>."),
                                     /* L10n: URL of the how-to-install video for Mac */
-	                                ___("/en-US/firefox/video/?video=upgrade-mac"),
-                                 	/* L10n: URL of the how-to-install video for PC */
-                                 	___("/en-US/firefox/video/?video=upgrade-win"),
-                                 	/* L10n: URL of the how-to-install PDF for Mac */
-                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_MAC.pdf"),
-                                 	/* L10n: URL of the how-to-install PDF for PC */
-                                 	___("/en-US/firefox/webhero/Firefox_Installation_Guide_PC.pdf")); ?></li>
+                                    ___("/en-US/firefox/video/?video=upgrade-mac"),
+                                    /* L10n: URL of the how-to-install video for PC */
+                                    ___("/en-US/firefox/video/?video=upgrade-win"),
+                                    /* L10n: URL of the how-to-install PDF for Mac */
+                                    ___("/en-US/firefox/webhero/Firefox_Installation_Guide_MAC.pdf"),
+                                    /* L10n: URL of the how-to-install PDF for PC */
+                                    ___("/en-US/firefox/webhero/Firefox_Installation_Guide_PC.pdf")); ?></li>
       <li class="check3"><?php printf(___("Show them the features <a href='%s' target='_top'>on your computer</a> or send them a <a href='%s' target=/_top'>video</a>."),
                                         /* L10n: URL for "show them the features on your computer" */
-                                        ___("/en-US/firefox/central"),
+                                        "/$lang/firefox/features/",
                                         /* L10n: URL for "send them a video" */
                                         ___("/en-US/firefox/video/")); ?>
       </li>
@@ -132,7 +133,7 @@ EXTRA_FOOTERS;
       <h3><?=___("I upgraded a friend to the new Firefox!")?></h3>
       <ul>
         <li><a id="share-twitter" title="<?=$twitter_link?>" href="https://twitter.com/?status=<?=$twitter_message;?>"><?=___('Twitter')?></a></li>
-        <li><a id="share-facebook" title="<?=$facebook_link?>" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fmzl.la%2Fi85nib&amp;t=<?=$facebook_message;?>"><?=___('Facebook')?></a></li>
+        <li><a id="share-facebook" title="<?=$facebook_link?>" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.mozilla.com%2Ffr%2Ffirefox%2F&amp;t=<?=$facebook_message;?>"><?=___('Facebook')?></a></li>
         <li><a id="share-email" title="<?=$email_link?>" href="#email-box"><?=___('Email')?></a></li>
       </ul>
     </div>
