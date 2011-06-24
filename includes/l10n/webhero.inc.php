@@ -36,24 +36,6 @@ EXTRA_HEADERS;
         text-align: inherit !important;
     }
 
-    body.locale-el #hero .page-title {
-        font: 40px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
-    }
-
-    body.locale-el #share h3 {
-        text-transform: none;
-    }
-
-    body.locale-ga-IE #hero .page-title,
-    body.locale-pl #hero .page-title,
-    body.locale-vi #hero .page-title {
-        font: 60px/1.4 "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
-    }
-
-    body.locale-ar #step2 {
-        padding: 50px 350px 10px 230px;
-    }
-
     .checklist li {
         min-height: 35px;
     }
@@ -63,12 +45,58 @@ EXTRA_HEADERS;
         text-decoration: none;
     }
 
-    body.locale-lt #webhero-wrap h2 {
-        font: 35px/0.9 georgia,serif;
+    body.locale-el #webhero-wrap h2,
+    body.locale-lt #webhero-wrap h2,
+    body.locale-pl #webhero-wrap h2,
+    body.locale-el #webhero-wrap h1.page-title,
+    body.locale-lt #webhero-wrap h1.page-title,
+    body.locale-pl #webhero-wrap h1.page-title,
+    body.locale-el #share h3,
+    body.locale-lt #share h3,
+    body.locale-pl #share h3
+    {
+        font-family: "Arial Narrow", sans-serif !important;
+        font-weight: bold !important;
     }
 
-    body.locale-lt #webhero-wrap h1 {
-        font: 55px/0.9 Haettenschweiler,"Arial Narrow",sans-serif !important;
+    body.locale-el #webhero-wrap h2,
+    body.locale-lt #webhero-wrap h2,
+    body.locale-pl #webhero-wrap h2
+    {
+        font-size:   35px !important;
+        line-height: 35px !important;
+    }
+
+    body.locale-el #webhero-wrap h1.page-title,
+    body.locale-pl #webhero-wrap h1.page-title
+    {
+        font-size:   36px !important;
+        line-height: 50px !important;
+    }
+
+    body.locale-lt #webhero-wrap h1.page-title
+    {
+        font-size:   40px !important;
+        line-height: 100px !important;
+    }
+
+
+    body.locale-el #share h3,
+    body.locale-lt #share h3,
+    body.locale-pl #share h3
+    {
+        text-transform: none;
+        font-size:0.9em;
+    }
+
+    body.locale-ga-IE #hero .page-title,
+    body.locale-vi #hero .page-title
+    {
+        font: 60px/100px "League Gothic",Haettenschweiler,"Arial Narrow",sans-serif !important;
+    }
+
+    body.locale-ar #step2 {
+        padding: 50px 350px 10px 230px;
     }
 
     {$l10n->get('custom-css')}
