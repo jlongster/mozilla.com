@@ -164,7 +164,7 @@ function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.
             array_pop($requested);
             $requested = implode('/', $requested) . '/';
         }
-        noCachingRedirect('http://' . $host . '/en-US' . $requested);
+        goToEnglishPage();
         exit;
     }
 

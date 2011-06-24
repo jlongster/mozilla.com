@@ -2,6 +2,11 @@
 
     $body_id = 'webhero';
 
+
+    $productionQuality = array('de', 'el', 'es-ES', 'fr', 'fy-NL', 'gl', 'lt', 'nl', 'pt-BR' );
+
+    checkProductionQuality($lang, $productionQuality);
+
     require_once "{$config['file_root']}/includes/l10n/remaps.inc.php";
     require_once "{$config['file_root']}/includes/js_stats.inc.php";
 
