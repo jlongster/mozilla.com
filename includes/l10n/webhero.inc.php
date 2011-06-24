@@ -133,7 +133,7 @@ EXTRA_FOOTERS;
       <h3><?=___("I upgraded a friend to the new Firefox!")?></h3>
       <ul>
         <li><a id="share-twitter" title="<?=$twitter_link?>" href="https://twitter.com/?status=<?=$twitter_message;?>"><?=___('Twitter')?></a></li>
-        <li><a id="share-facebook" title="<?=$facebook_link?>" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.mozilla.com%2Ffr%2Ffirefox%2F&amp;t=<?=$facebook_message;?>"><?=___('Facebook')?></a></li>
+        <li><a id="share-facebook" title="<?=$facebook_link?>" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.mozilla.com%2F<?=$lang?>%2Ffirefox%2F&amp;t=<?=$facebook_message;?>"><?=___('Facebook')?></a></li>
         <li><a id="share-email" title="<?=$email_link?>" href="#email-box"><?=___('Email')?></a></li>
       </ul>
     </div>
