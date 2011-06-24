@@ -82,5 +82,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
     <?=$stats_js?>
 	<?=$extra_footers?>
 
+    <? echo min_inline_js('js_update_v3'); ?>
+
 </body>
 </html>

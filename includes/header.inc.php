@@ -52,6 +52,46 @@ $dynamic_header = <<<DYNAMIC_HEADER
 {$styles}
 {$head_scripts}
 {$extra_headers}
+<style>
+#download #update-notice { display: none; }
+#update-notice {
+    background: #333;
+    border-bottom: 2px solid #686868;
+    text-shadow: 0 1px #000;
+    -moz-text-shadow: 0 1px #000;
+}
+
+#update-notice .container {
+    text-align: left;
+    padding: 12px 10px 12px 140px;
+    max-width: 780px;
+    display: inline-block;
+    margin: 0 auto;
+    background: url({$config['static_prefix']}/img/covehead/firefox/update-creature.png) 0 100% no-repeat;
+}
+
+#update-notice h2 {
+    letter-spacing: normal;
+    text-transform: none;
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 22px;
+    font-style: italic;
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+#update-notice p { font-size: 14px; color: #eee;  margin: 0; }
+
+#update-notice a:link,
+#update-notice a:visited,
+#update-notice a:hover,
+#update-notice a:active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+</style>
 </head>
 
 <body id="{$body_id}" class="{$body_class}">

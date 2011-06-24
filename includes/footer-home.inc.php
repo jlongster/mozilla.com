@@ -11,6 +11,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
     </div><!-- end #wrapper -->
 
     <!-- end #footer -->
+    <? echo min_inline_js('js_update_v3'); ?>
     <?=$extra_footers?>
     <?=$stats_js?>
 
