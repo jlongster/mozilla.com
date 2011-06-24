@@ -135,9 +135,6 @@ if (typeof Pfs_external != 'undefined' && Pfs_external.length && typeof Pfs_inte
   }
 }
 
-
-console.log(Pfs_external, Pfs_internal);
-
 //]]>
 </script>
 
