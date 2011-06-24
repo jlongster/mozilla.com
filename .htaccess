@@ -264,15 +264,15 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
 
 # Bug 666937, redirect old ab-CD/firefox/customize/ pages to addons.mozilla.org for locales
 RewriteCond $1 !en-US/
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?)?/firefox/customize[/]?$ https://addons.mozilla.org/$1/firefox/ [R=permanent,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/customize[/]?$ https://addons.mozilla.org/$1firefox/ [R,L]
 
 # rewrite old ab-CD/firefox/tips/ pages to ab-CD/features/#madeeasy for locales
 RewriteCond $1 !en-US/
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?)?/firefox/tips[/]?$ /$1/firefox/features/#madeeasy [R,L,NE]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/tips[/]?$ /$1firefox/features/#madeeasy [R,L,NE]
 
 # rewrite old ab-CD/firefox/security/ pages to ab-CD/features/#advancedsecurity for locales
 RewriteCond $1 !en-US/
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?)?/firefox/security[/]?$ /$1/firefox/features/#advancedsecurity [R,L,NE]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/features/#advancedsecurity [R,L,NE]
 
 
 # Redirect Firefox all-beta and all-rc to the all download page (disabled while we have product betas/RCs available!)
