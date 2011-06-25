@@ -92,6 +92,15 @@ if ($lang != 'en-US' && ___($flash1) != $flash1 && ___($flash2) != $flash2) {
 EXTRA_FOOTERS;
 }
 
+$extra_headers = <<<EXTRA_HEADERS
+
+    <style type="text/css">
+    #whatsnew #main-feature h2 {
+        margin-right:  0 !important;
+    }
+    </style>
+
+EXTRA_HEADERS;
 
 
 // Include the global header.  All locales will include this.

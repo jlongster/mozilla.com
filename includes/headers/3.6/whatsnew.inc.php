@@ -17,7 +17,7 @@ $inline_css_firstrun = min_inline_css('css_firstrun');
 $inline_js_utils = min_inline_js('js_utils');
 
 $head_scripts = " ";
-$extra_headers = <<<EXTRA_HEADERS
+$extra_headers .= <<<EXTRA_HEADERS
     <meta name="WT.ad" content="Beta;Twitter;Facebook;Participate;Firefox Live;Newsletter" />
     {$inline_css_firstrun}
     {$inline_js_utils}
