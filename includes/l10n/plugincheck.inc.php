@@ -20,13 +20,18 @@ $extra_headers = <<<EXTRA_HEADERS
         font-size: 37px !important;
     }
 
-    html[lang='hu'] #main-feature h2 span {
+    html[lang='hu'] #main-feature h2 span,
+    html[lang='gd'] #main-feature h2 span {
         font-size: 57px !important;
     }
 
     html[lang='hy-AM'] #main-feature h2,
     html[lang='lt'] #main-feature h2 {
         font-size: 32px !important;
+    }
+
+    #main-feature p {
+        width: 350px !important;
     }
 
     #sidebar {
