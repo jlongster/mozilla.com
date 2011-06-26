@@ -263,17 +263,17 @@ RewriteCond $1 !en-US/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
 
 # Bug 666937, redirect old ab-CD/firefox/customize/ pages to addons.mozilla.org for locales
-RewriteCond $1 !en-US/
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/customize[/]?$ https://addons.mozilla.org/$1firefox/ [R,L]
 
 # rewrite old ab-CD/firefox/tips/ pages to ab-CD/features/#madeeasy for locales
-RewriteCond $1 !en-US/
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/tips[/]?$ /$1firefox/features/#madeeasy [R,L,NE]
 
 # rewrite old ab-CD/firefox/security/ pages to ab-CD/features/#advancedsecurity for locales
-RewriteCond $1 !en-US/
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/features/#advancedsecurity [R,L,NE]
 
