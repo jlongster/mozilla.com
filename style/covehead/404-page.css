@@ -1,37 +1,67 @@
 #mozilla-404 {
-    background-position: 50% -50px;
+    background: #555 url(/img/covehead/404-page/background-404.png) 0 0 repeat-x;
 }
 
-#doc {
-	background: transparent url(/img/covehead/404-page/background-404.png) no-repeat scroll 0 85px;
+#mozilla-404 #wrapper {
+    background: url(/img/covehead/404-page/poker.png) 50% 0 no-repeat;
+
+}
+
+#mozilla-404 #sub-footer {
+    display: none;
 }
 
 #main-feature {
     padding-top: 40px;
-    padding-bottom: 40px;
-    min-height: 160px;
+    padding-bottom: 0;
+    min-height: 0px;
+    text-shadow: 1px 1px #000;
 }
 
 * html #main-feature {
     height: 160px;
 }
 
+#main-feature h2 {
+    color: #fff;
+    font-size: 32px;
+    line-height: 1em;
+}
+
+#main-feature h2 span {
+    line-height: 1em;
+}
+
 #main-feature p {
     width: 400px;
+    color: #aaa;
+    margin-bottom: 30px;
 }
 
-#error-reasons {
-	float: left;
-    display: inline;
-	width: 380px;
-	margin: 45px 50px 0 0;
+#footer {
+    background-image: url(/img/covehead/404-page/background-footer.png);
+    background-position: 0 0;
+    opacity: 0.5;
+    -moz-transition: opacity .25s linear;
 }
 
-#error-suggestions {
-	float: left;
-    display: inline;
-	width: 400px;
-	margin: 45px 50px 0 0;
+#footer:hover {
+    opacity: 1;
+}
+
+#content {
+    padding-bottom: 200px;
+    width: 380px;
+    color: #aaa;
+    text-shadow: 1px 1px #000;
+}
+
+#content a,
+#content a:link,
+#content a:visited,
+#content a:hover,
+#content a:active {
+    color: #fff;
 }
 
 #content ul {
@@ -40,4 +70,34 @@
 
 #content ul li {
     padding-bottom: 10px;
+}
+
+#mozilla-404 #nav-main ul li a,
+#mozilla-404 #nav-main ul li a:link,
+#mozilla-404 #nav-main ul li a:visited,
+#mozilla-404 #nav-main ul li span {
+    color: #fff;
+    border-color: #555;
+}
+
+#mozilla-404 #nav-main ul li li a,
+#mozilla-404 #nav-main ul li li a:link,
+#mozilla-404 #nav-main ul li li a:visited,
+#mozilla-404 #nav-main ul li li span {
+    color: #484848;
+}
+
+#mozilla-404 #nav-main ul li a:hover,
+#mozilla-404 #nav-main ul li:hover a,
+#mozilla-404 #nav-main ul li.hover a,
+#mozilla-404 #nav-main ul li.hover a:link,
+#mozilla-404 #nav-main ul li.hover a:visited {
+    background: #ccc;
+    color: #484848;
+    border-color: #98B2C9;
+}
+
+#mozilla-404 #header h1 a,
+#mozilla-404 #header a.mozilla {
+    background-image: url(/img/covehead/404-page/title.png);
 }
