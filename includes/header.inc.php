@@ -1,4 +1,5 @@
 <?php
+require_once "{$config['file_root']}/includes/min/inline.php";
 
 $page_title    = empty($page_title)    ? 'Mozilla.com' : $page_title;
 $textdir       = empty($textdir)       ? 'ltr'         : $textdir;

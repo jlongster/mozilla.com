@@ -1,8 +1,5 @@
 <?php
 
-require_once "{$config['file_root']}/includes/min/inline.php";
-
-
 // Generate the language links to go on the bottom of each page
 $lang_list = getLangLinksSelect();
 
