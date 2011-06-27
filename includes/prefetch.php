@@ -239,6 +239,8 @@ $page = "{$lang}{$_SERVER['REDIRECT_URL']}";
 if (preg_match(':^en-US/(/)?(firefox/(/)?)?index.html$:', $page)) {
 }
 
+$firefoxDetails = new firefoxDetails();
+
 // Check and make sure our file exists
 if (file_exists("{$config['file_root']}/{$page}")) {
 
@@ -253,8 +255,6 @@ if (file_exists("{$config['file_root']}/{$page}")) {
     // Parse the language file and drop info in a global variable
     $l10n->load("{$config['file_root']}/{$lang}/includes/l10n/main.lang");
 
-    $firefoxDetails = new firefoxDetails();
-    $thunderbirdDetails = new thunderbirdDetails();
 
     // path to the controller for localized pages
     $controller = $config['file_root'] . '/includes/l10n/controller.inc.php';
