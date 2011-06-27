@@ -34,6 +34,14 @@ if ($lang == 'zh-CN' || $lang == 'zh-TW') {
 EXTRA_HEADERS;
 }
 
+// no uppercasing for Greek
+if ($lang == 'el') {
+    $extra_headers  = <<<EXTRA_HEADERS
+    {$extra_headers}
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/l10n/covehead/greek-mod.css" media="screen" />
+EXTRA_HEADERS;
+}
+
 
 
 // inline util.js since it's such a small file it doesn't deserver an http call
