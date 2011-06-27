@@ -1,77 +1,13 @@
 <?php
+
 $body_id = 'firefox-features';
-
-if(!isset($extra_headers)) { $extra_headers = ''; }
-if(!isset($extra_css))     { $extra_css     = ''; }
-
-// commodity functions for localized pages
-include_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
 // dl box
 include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 $localeImgFolder= '/img/screenshots/'.$lang.'/firefox4/features/';
 
-$logo36 = '/img/l10n/chart-firefox-3.6.png';
-$logo4  = '/img/l10n/chart-firefox-4.png';
-$miliseconds = (isset($miliseconds)) ? $miliseconds : 'ms';
-$value[1]   = localeNumberFormat(14293).$miliseconds;
-$value[2]   = localeNumberFormat(5072).$miliseconds;
-$value[3]   = localeNumberFormat(620).$miliseconds;
-$value[4]   = localeNumberFormat(206).$miliseconds;
-$value[5]   = localeNumberFormat(733);
-$value[6]   = localeNumberFormat(5189);
-$comment[1] = (isset($comment[1])) ? $comment[1] : 'Fx4 - more than 3.5x faster!';
-$comment[2] = (isset($comment[2])) ? $comment[2] : 'Fx4 - more than 3x faster!';
-$comment[3] = (isset($comment[3])) ? $comment[3] : 'Fx4 - more than 6x faster!';
-
-$performancechart = <<<CHART
-<table id="performance-chart">
-    <tbody>
-        <tr>
-            <td></td> <th>Kraken</th>
-        </tr>
-        <tr class="kraken-36">
-            <th><img src="{$logo36}" alt="Firefox 3.6"></th> <td><span style="width: 100%;">&nbsp;$value[1]&nbsp;&nbsp;</span></td>
-        </tr>
-        <tr class="kraken-4 winner">
-            <th><img src="{$logo4}" alt="Firefox 4"></th> <td><span style="width: 35.5%;">&nbsp;<em>$value[2]</em>&nbsp;&nbsp;</span></td>
-        </tr>
-        <tr class="note">
-            <td></td><td>{$comment[1]}</td>
-        </tr>
-        <tr>
-            <td></td> <th>Sunspider</th>
-        </tr>
-        <tr class="sunspider-36">
-            <th><img src="{$logo36}" alt="Firefox 3.6"></th> <td><span style="width: 100%;">&nbsp;$value[3]&nbsp;&nbsp;</span></td>
-        </tr>
-        <tr class="sunspider-4 winner">
-            <th><img src="{$logo4}" alt="Firefox 4"></th> <td><span style="width: 33.2%;">&nbsp;<em>$value[4]</em>&nbsp;&nbsp;</span></td>
-        </tr>
-        <tr class="note">
-            <td></td><td>{$comment[2]}</td>
-        </tr>
-        <tr>
-            <td></td> <th>v8</th>
-        </tr>
-        <tr class="v8-36">
-            <th><img src="{$logo36}" alt="Firefox 3.6"></th> <td><span style="width: 14.1%;">&nbsp;$value[5]&nbsp;</span></td>
-        </tr>
-        <tr class="v8-4 winner">
-            <th><img src="{$logo4}" alt="Firefox 4"></th> <td><span style="width: 100%;">&nbsp;<em>$value[6]</em>&nbsp;&nbsp;</span></td>
-        </tr>
-        <tr class="note">
-            <td></td><td>{$comment[3]}</td>
-        </tr>
-    </tbody>
-  </table>
-
-CHART;
-
-
 # [Bug 661285] [Fx5LaunchDay] Remove Perf graphs from moz.com and add new content to take its place on the Performance page
-$performancechart = '<img src="' . $config['static_prefix'] .'/img/covehead/firefox/performance/speed.jpg" style="margin-left:-170px; display:block;" alt=""/>';
 $performancechart = '<img src="' . $config['static_prefix'] .'/img/l10n/speed-smaller.jpg" style="margin-left:-130px; display:block;" alt=""/>';
 
 $screenshots = array(
@@ -175,5 +111,6 @@ $extra_css .= <<<EXTRA_CSS
 EXTRA_CSS;
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
+echo $fx_dl_box; // download box on top of page
 require_once $config['file_root'].'/'.UI_LANG.'/firefox/features/content.inc.html';
 require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';
