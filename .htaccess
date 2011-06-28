@@ -208,8 +208,8 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all-older.html$ $1thunde
 # Second part of regex matches anything (eg b12, rc, .12rc, .0.1)# (see bug 586314)
 RewriteRule ^(en-US/)?firefox/([0-9]\.[0-9]+)[^/]+/system-requirements(/(?:index.html)?)? /$1firefox/$2/system-requirements$3 [PT,L]
 
-# Just to be safe, we will point anyone looking at the old-style system requirements to 4.0's
-RewriteRule ^(en-US/)?firefox/system-requirements.html /$1firefox/4.0/system-requirements/ [PT,L]
+# Just to be safe, we will point anyone looking at the old-style system requirements to 5.0's
+RewriteRule ^(en-US/)?firefox/system-requirements.html /$1firefox/5.0/system-requirements/ [PT,L]
 
 # Merge Firefox 3.0, 3.0.x, 3.5, 3.6, 4.x, 5.x pages for locales only
 # Redirect Firefox 2 whatsnew pages to oldversion page
