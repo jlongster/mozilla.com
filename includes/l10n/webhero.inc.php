@@ -3,7 +3,7 @@
     $body_id = 'webhero';
 
 
-    $productionQuality = array('de', 'el', 'es-ES', 'fr', 'fy-NL', 'gl', 'lt', 'nl', 'pt-BR' );
+    $productionQuality = array('lt');
 
     checkProductionQuality($lang, $productionQuality);
 
