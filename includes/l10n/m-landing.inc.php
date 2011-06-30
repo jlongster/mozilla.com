@@ -5,9 +5,10 @@
 $body_id = 'home';
 
 include_once $config['file_root'].'/includes/product-details/mobileDetails.class.php';
-$version    = mobileDetails::latest_version;
-$dl_android = mobileDetails::download_url('en-us', mobileDetails::android, $version);
-$dl_maemo   = mobileDetails::download_url('en-us', mobileDetails::maemo, $version);
+$version           = mobileDetails::latest_version;
+$url_release_notes = mobileDetails::release_notes_url($version);
+$dl_android        = mobileDetails::download_url('en-us', mobileDetails::android, $version);
+$dl_maemo          = mobileDetails::download_url('en-us', mobileDetails::maemo, $version);
 
 // reuse some of the strings we had for beta
 $retour = true;
@@ -58,7 +59,7 @@ EXTRA_HEADERS;
 
 $links = <<<LINKS
     <ul class="link-list">
-      <li><a href="/mobile/{$version}/releasenotes">{$l10n->get('Release Notes')}</a></li>
+      <li><a href="{$url_release_notes}">{$l10n->get('Release Notes')}</a></li>
 
       <li><a href="/m/faq">{$l10n->get('FAQ')}</a></li>
       <li><a href="/m/privacy.html">{$l10n->get('Privacy Policy')}</a></li>
