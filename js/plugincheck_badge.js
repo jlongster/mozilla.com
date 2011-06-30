@@ -7,7 +7,7 @@
    BrowserDetect PPK http://www.quirksmode.org/js/detect.html
    jquery.jsonp 1.1.0 (c)2009 Julian Aubourg | MIT License http://code.google.com/p/jquery-jsonp/
 */
-;// Version: 893b5471ef4c67c197a5e82cc635ea88 -
+;// Version: 3363dcdc3caf3c04d3acd464fb1c8efa -
 
 window.BrowserDetect={detect:function(){return{browser:this.searchString(this.dataBrowser)||"???",version:this.searchRev(this.versionSearchString,navigator.userAgent)||this.searchRev(this.versionSearchString,navigator.appVersion)||"???",build:navigator.buildID||this.searchRev(this.buildSearchString,navigator.userAgent)||this.searchRev(this.buildSearchString,navigator.appVersion)||"???",os:this.searchString(this.dataOS)||"???"};},searchString:function(data){var i,dataString,dataProp;for(i=0;i<data.length;i++){dataString=data[i].string;dataProp=data[i].prop;this.versionSearchString=data[i].versionSearch||data[i].identity;this.buildSearchString=data[i].buildSearch||data[i].identity;if(dataString){if(dataString.indexOf(data[i].subString)!=-1){return data[i].identity;}}else if(dataProp){return data[i].identity;}}
 return undefined;},searchRev:function(searchString,dataString){var index=dataString.indexOf(searchString),val;if(index==-1){return undefined;}
