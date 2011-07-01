@@ -20,6 +20,10 @@ $(document).ready(function ()
 		$('try-on').addClass('fx36');
 		$('see-all-personas').addClass('fx36');
 
+        try {
+            iframe.contentWindow.postMessage("activatePersonas", "*");
+        } catch(e) {}
+
 	} else {
 		var previewers = $('.persona-previewer').each(function (index, previewer) {
 			new Mozilla.PersonaPreviewer(previewer);
