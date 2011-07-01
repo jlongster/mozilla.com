@@ -456,6 +456,9 @@ RewriteRule ^firefox/beta/?$ /firefox/channel/ [R=301]
 RewriteRule ^RC/?$ /firefox/channel/ [R=302,NC]
 RewriteRule ^firefox/RC/?$ /firefox/channel/ [R=302,NC]
 
+# Bug 657903 /m/beta -> /m/firefox/channel
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?m/beta/? /$1m/firefox/channel/ [R=permanent]
+
 # Bug 640038 redirect old beta and rc links
 RewriteRule ^en-US/firefox/beta/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301]
 RewriteRule ^en-US/firefox/beta/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301]
