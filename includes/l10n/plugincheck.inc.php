@@ -20,6 +20,10 @@ $extra_headers = <<<EXTRA_HEADERS
         font-size: 37px !important;
     }
 
+    html[lang='nb-NO'] #main-feature h2 span {
+        font-size: 47px !important;
+    }
+
     html[lang='hu'] #main-feature h2 span,
     html[lang='gd'] #main-feature h2 span {
         font-size: 57px !important;
