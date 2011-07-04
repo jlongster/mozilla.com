@@ -45,13 +45,14 @@ if ($_version !== null && $_valid_version) {
     // check if we’re running the latest version
     if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
         ?>
-        <h2>You are now running Firefox <?=$_version?></h2>
+        <h2>Your Firefox is up to date.</h2>
         <p id="main-feature-contents">Can’t find your last tab session? <a href="http://support.mozilla.com/kb/common-questions-after-updating-firefox">Get answers to the most common questions here.</a></p>
         <?php
     } else {
         ?>
-        <h2>You’re now running Firefox <?=$_version?></h2>
-        <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+        <h2> Your Firefox is out of date.
+</h2>
+        <p id="main-feature-contents">For security reasons, we recommend upgrading to the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
 <?php
     }
 } else {
