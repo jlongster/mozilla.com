@@ -23,6 +23,20 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     {$stats_js}
     {$extra_footers}
     {$inline_js_portal_footer}
+
+<script>
+
+$(document).ready(function () {
+    var iframe = document.getElementById("getpersonasiframe");
+
+    if (iframe.contentWindow.postMessage && iframe.addEventListener) {
+        iframe.addEventListener('load', function () {
+            iframe.contentWindow.postMessage("activatePersonas", "*");
+        }, false);
+    }
+})
+
+</script>
 </body>
 </html>
 DYNAMIC_FOOTER;
