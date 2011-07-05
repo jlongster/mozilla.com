@@ -1,56 +1,58 @@
 <?php
 
 // translate the variables below please
-$page_title = "Plugin Check";
+$page_title = "Проверка за приклучоци";
 
-$tableHeader[1] = "Plugin details";
-$tableHeader[2] = "State";
-$tableHeader[3] = "Action";
+$tableHeader[1] = "Детали за приклучок";
+$tableHeader[2] = "Состојба";
+$tableHeader[3] = "Дејство";
 
 
 // PLuginCheck application strings
-$message[0]  = "Checking with Mozilla on the status of your plugins";
-$message[1]  = "Loading Data";
-$message[2]  = "View All Your Plugins";
+$message[0]  = "Mozilla го проверува статустот на Вашите приклучоци";
+$message[1]  = "Се вчитуваат податоци";
+$message[2]  = "Прикажи ги сите приклучоци";
 
 // label and status for plugin detection table
-$message[3]  = "Disable Now";
-$message[4]  = "Vulnerable No Fix";
-$message[5]  = "Update Now";
-$message[6]  = "Vulnerable";
-$message[7]  = "Update";
-$message[8]  = "Outdated Version";
-$message[9]  = "Up to Date";
-$message[10] = "Research";
-$message[11] = "Unknown plugin";
+$message[3]  = "Оневозможи сега";
+$message[4]  = "Ранлив, нема поправка";
+$message[5]  = "Надгради сега";
+$message[6]  = "Ранлив";
+$message[7]  = "Надгради";
+$message[8]  = "Стара верзија";
+$message[9]  = "Најнова верзија";
+$message[10] = "Истражи";
+$message[11] = "Непознати приклучок";
 $message[12] = ""; // unused string, keep blank
-$message[13] = "Out of date plugins:";
-$message[14] = "Vulnerable plugins:";
-$message[15] = "Potentially vulnerable plugins:";
-$message[16] = "The plugins listed below are up to date";
-$message[17] = "No plugins were detected";
+$message[13] = "Застарерни приклучоци:";
+$message[14] = "Ранливи приклучоци:";
+$message[15] = "Потенцијално ранливи приклучоци:";
+$message[16] = "Приклучоците испишани подолу се надградени до најнова верзија";
+$message[17] = "Не се откриени приклучоци";
 $message[18] = "http://www.google.com/search?q=";
 
 /*search terms before the plugin name...
- Example if there was a plugin named "DivX Media Player" that we couldn't detect, then we would
+ Example if there was a plugin named "DivX Media Player" that we couldn't
+detect, then we would
  search google for "current version plugin DivX Media Player */
 
-$message[19] = "current version plugin";
+$message[19] = "моментална верзија на приклучокот";
 
 // more labels and status for plugin detection table
 
 
-$message[20] = "Update Now";                   //MAYBE_VULNERABLE
-$message[21] = "Potentially Vulnerable";       //MAYBE_VULNERABLE
-$message[22] = "Update";                       //MAYBE_OUTDATED
-$message[23] = "Potentially Outdated Version"; //MAYBE_OUTDATED
+$message[20] = "Надгради сега";                   //MAYBE_VULNERABLE
+$message[21] = "Потенцијално ранлив";       //MAYBE_VULNERABLE
+$message[22] = "Надгради";                       //MAYBE_OUTDATED
+$message[23] = "Потенцијално застарена верзија"; //MAYBE_OUTDATED
 
 // Bug#553661 Vulnerability details
-$message[24] = "<p>This plugin version has a security vulnerability that websites can exploit and potentially harm your computer. It is recommended that you update this plugin or if an update is not available, <a href='#howto-disable'>disable it</a>.</p><p>For more information, read the <a href='#' class='vulner-url'>plugin vendor's vulnerability information</a>.</p><p><a class='qtip-closer'>Close</a></p>";
-$message[25] = " (more info)";
+$message[24] = "<p>Оваа верзија на приклучокот има безбедносна ранливост која мрежните страници можат да ја искористат и потенцијално да му наштетат на Вашиот компјутер. Се препорачува да го надградите овој приклучок, или ако нема надградба, <a href='#howto-disable'>да го оневозможите</a>.</p><p>За повеќе информации,  прочитајте ги информациите од <a href='#' class='vulner-url'>снабдувачите на приклучоци</a>.</p><p><a class='qtip-closer'>Затвори</a></p>";
+$message[25] = " (повеќе информации)";
 
 // end of translations
 
 
 $pageid = 'plugincheck';
 require_once $config['file_root'].'/includes/l10n/controller.inc.php';
+
