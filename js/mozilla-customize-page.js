@@ -20,9 +20,11 @@ $(document).ready(function ()
 		$('try-on').addClass('fx36');
 		$('see-all-personas').addClass('fx36');
 
-        try {
-            iframe.contentWindow.postMessage("activatePersonas", "*");
-        } catch(e) {}
+		if (iframe.contentWindow.postMessage && iframe.addEventListener) {
+			iframe.addEventListener('load', function () {
+				iframe.contentWindow.postMessage("activatePersonas", "*");
+			}, false);
+		}
 
 	} else {
 		var previewers = $('.persona-previewer').each(function (index, previewer) {
