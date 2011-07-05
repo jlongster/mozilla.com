@@ -89,6 +89,10 @@ function is_num($var)
     return true;
 }
 
+function getattr($dict, $prop, $default = NULL) {
+    return isset($dict[$prop]) ? $dict[$prop] : $default;
+}
+
 function printPlatformDownloadLink($product)
 {
     if ($product['en']->name == 'Camino') {

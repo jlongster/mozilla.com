@@ -129,17 +129,30 @@ class ChannelsPrivacyForm extends ChannelsForm {
     }
 }
 
-class GermanNewsletterForm extends NewsletterForm {
+class LocalizedNewsletterForm extends NewsletterForm {
+    var $optin;
+
+    function __construct($campaign, $data, $optin = TRUE) {
+        $this->campaign = $campaign;
+        $this->data = $data;
+        $this->optin = $optin;
+    }
+
     function subscribe() {
         $now = date('Y-m-d');
+        $data = $this->data;
 
-        $data = array('EMAIL_ADDRESS_' => $this->data['email'],
-                      'LANGUAGE_ISO2' => $this->data['lang'],
-                      'COUNTRY_' => $this->data['country']);
+        $data = array('EMAIL_ADDRESS_' => $data['email'],
+                      'LANGUAGE_ISO2' => $data['lang'],
+                      'COUNTRY_' => $data['country'],
+                      'EMAIL_FORMAT_' => getattr($data, 'format', 'H'));
 
-        $data[$this->campaign . '_FLG'] = 'N';
+        $data[$this->campaign . '_FLG'] = $this->optin ? 'Y' : 'N';
         $data[$this->campaign . '_DATE'] = $now;
-        $data['EMAIL_PERMISSION_STATUS_'] = 'O';
+
+        if(!$this->optin) {
+            $data['EMAIL_PERMISSION_STATUS_'] = 'O';
+        }
 
         Responsys::post($data);
     }

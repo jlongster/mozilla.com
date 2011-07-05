@@ -19,14 +19,14 @@ EXTRA_HEADERS;
 require_once "{$config['file_root']}/includes/regions.php";
 require_once "{$config['file_root']}/includes/email/forms.php";
 
-if($lang == 'de') {
-    $form = new GermanNewsletterForm('MOZILLA_AND_YOU', $_POST);
-    $status = '';
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error-'. $form->error;
-    }
+// If some localized should be optin, change the last parameter to
+// TRUE just for those locales
+$form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
+$status = '';
+if ($form->save()) {
+    $status = 'success';
+} elseif ($form->error) {
+    $status = 'error-'. $form->error;
 }
 
 

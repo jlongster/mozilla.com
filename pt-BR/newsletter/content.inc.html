@@ -1,0 +1,78 @@
+<div id="main-feature">
+  <h2>Leia tudo sobre o assunto <br /> na nossa newsletter</h2>
+  <p>Assine as atualizações mensais e mantenha-se sempre informado sobre as novidades do Mozilla, inclusive dicas e truques para tirar o máximo proveito do seu navegador Firefox. É a forma ideal de nós comunicarmos consigo!</p>
+</div>
+
+<div id="content">
+
+<ul class="email-form <?= $status ?>" id="newsletter-form">
+    <li class="form-pane">
+      <form action="" method="post">
+        <p class="form-error email-error"><span>Upps! Das scheint keine gültige E-Mail-Adresse zu sein.</span></p>
+        <p class="form-error privacy-error"><span>Bitte lesen Sie die Datenschutzbestimmungen und akzeptieren Sie sie mit einem Klick in das Kästchen.</span></p>
+
+        <div class="field required email-field">
+          <label for="email">O seu endereço e-mail:</label>
+          <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
+        </div>
+
+        <div class="field country-field">
+          <label for="country">País:</label>
+          <select class="country" name="country">
+            <option value="">Select country</option>
+            <?php
+                $country = $form->get('country');
+                if (!$country) {
+                    $country = 'br';
+                }
+                echo regionsAsOptions($lang, $country);
+            ?>
+          </select>
+        </div>
+
+        <div class="field format-field">
+          <?php
+              $html_format = 'checked="checked"';
+              $text_format = '';
+              if ($form->get('format') == 'text') {
+                  $text_format = 'checked="checked"';
+                  $html_format = '';
+              }
+          ?>
+          <span class="field-label">Langues disponibles actuellement:</span>
+          <div class="field-language">
+            <select class="lang" name="lang">
+              <option value="pr">Português</option>
+              <option value="de">Deutsch</option>
+              <option value="fr">Francês</option>
+              <option value="en">Inglês</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field privacy-field">
+          <label for="privacy-check" class="privacy-check-label">
+            <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+            <span class="error-wrapper"><input type="checkbox" name="privacy" class="privacy-check" <?= $checked ?>></span>
+            <span class="title"> Aceito a <a href="/en-US/privacy-policy">Politica de Privacidade do Mozilla</a></span>
+          </label>
+        </div>
+
+        <div class="text">Vamos enviar-lhe apenas informações sobre o Mozilla.</div>
+
+        <div class="field submit-field">
+          <input name="submit" type="submit" value="Inscrever-se" id="subscribe">
+        </div>
+      </form>
+    </li>
+
+    <li class="success-pane">
+      <h3>Obrigado por ter assinado!</h3>
+      <p>Confira a sua caixa de correio: deve ter recebido um e-mail de confirmação. Precisa de clicar no e-mail de confirmação para começar a receber as notícias de Mozilla & You.</p>
+      <p><a href="/<?=$lang?>/firefox/connect/" class="stay-connected">Stay Connected »</a></p>
+    </li>
+</ul>
+
+
+</div><!-- end #content div -->
+
