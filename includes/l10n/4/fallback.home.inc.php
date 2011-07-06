@@ -11,6 +11,27 @@ if ( i__('Super speed') == true) {
 
 ?>
 
+<script>// <![CDATA[
+    // Add a class to the body tag to alternate background features
+    var feature_class_options    = new Array( "facebook", "cupcake", "treasure" );
+    var feature_platform_options = new Array( "", "mac", "linux" );
+
+    var feature_platform = '';
+    if (gPlatform == PLATFORM_MACOSX) {
+        feature_platform = '-mac';
+    } else if (gPlatform == PLATFORM_LINUX) {
+        feature_platform = '-linux';
+    }
+
+    if (Math.random) {
+        var choice = Math.floor(Math.random() * (feature_class_options.length));
+
+        // Just in case javascript gets carried away...
+        choice = ( (choice < feature_class_options.length)  && choice >= 0) ? choice : 0;
+
+    }
+// ]]></script>
+
 <div id="main-feature">
     <h2><?php echo $str2 ?></h2>
 
@@ -25,9 +46,14 @@ if ( i__('Super speed') == true) {
     <?php endif; ?>
 
     <div id="screenshot">
-    <?=buildPlatformImage($config['static_prefix'].'/img/l10n/main-feature.png', 'Firefox screenshot', null, null, 'screenshot', array('mac', 'linux'))?>
-
-        <?=$windowmessage;?>
+    <noscript><img src="<?=$config['static_prefix']?>/img/covehead/firefox/main-feature-facebook.png" alt="Firefox screenshot" class="screenshot"></noscript>
+    <script>
+        var image = document.createElement('img');
+        image.src = '<?=$config['static_prefix']?>/img/covehead/firefox/main-feature-' + feature_class_options[choice] + feature_platform + '.png';
+        image.alt = 'Firefox screenshot';
+        image.className  = 'screenshot';
+        document.getElementById('screenshot').appendChild(image);
+    </script>
     </div>
 
 <?=$downloadbox?>
