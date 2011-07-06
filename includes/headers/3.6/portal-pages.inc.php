@@ -12,7 +12,7 @@
 
 $default_head_scripts = <<<HEAD_SCRIPTS
     <script src="{$config['static_prefix']}/js/util.js"></script>
-    <script src="{$config['static_prefix']}/js/jquery/jquery.min.js"></script>
+
 HEAD_SCRIPTS;
 
 $default_fonts = <<<FONTS
