@@ -20,22 +20,10 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     {$stats_js}
     {$extra_footers}
     {$inline_js_portal_footer}
-        <script>
-
-
-        var iframe = document.getElementsByTagName("iframe");
-        console.log(iframe.length);
-        if (iframe.contentWindow.postMessage && iframe.addEventListener) {
-            iframe.addEventListener('load', function () {
-                iframe.contentWindow.postMessage("activatePersonas", "*");
-            }, false);
-        }
-
-    </script>
 </body>
 </html>
 DYNAMIC_FOOTER;
-echo "voo";
+
 if($lang != 'en-US') {
     // only en-US has a dedicated file just to echo the footer
     echo $dynamic_footer;

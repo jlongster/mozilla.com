@@ -25,7 +25,9 @@ if ( i__('Super speed') == true) {
     <?php endif; ?>
 
     <div id="screenshot">
-    <?=buildPlatformImage($config['static_prefix'].'/img/covehead/firefox/main-feature-treasure.png', 'Firefox screenshot', null, null, 'screenshot', array('mac', 'linux', 'win'))?>
+    <?=buildPlatformImage($config['static_prefix'].'/img/l10n/main-feature.png', 'Firefox screenshot', null, null, 'screenshot', array('mac', 'linux'))?>
+
+        <?=$windowmessage;?>
     </div>
 
 <?=$downloadbox?>
