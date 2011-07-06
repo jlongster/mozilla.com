@@ -1,53 +1,61 @@
-<?php
+﻿<?php
 
-// translate the variables below please
-$page_title = "Plugin Check";
+$page_title = "Kiểm tra phần mở rộng";
 
-$tableHeader[1] = "Plugin details";
-$tableHeader[2] = "State";
-$tableHeader[3] = "Action";
-
+$tableHeader[1] = "Chi tiết phần mở rộng";
+$tableHeader[2] = "Trạng thái";
+$tableHeader[3] = "Hành động";
 
 // PLuginCheck application strings
-$message[0]  = "Checking with Mozilla on the status of your plugins";
-$message[1]  = "Loading Data";
-$message[2]  = "View All Your Plugins";
+$message[0]  = "Kiểm tra Mozilla và trạng thái của phần mở rộng";
+$message[1]  = "Tải dữ liệu";
+$message[2]  = "Xem tất cả phần mở rộng";
 
 // label and status for plugin detection table
-$message[3]  = "Disable Now";
-$message[4]  = "Vulnerable No Fix";
-$message[5]  = "Update Now";
-$message[6]  = "Vulnerable";
-$message[7]  = "Update";
-$message[8]  = "Outdated Version";
-$message[9]  = "Up to Date";
-$message[10] = "Research";
-$message[11] = "Unknown plugin";
+$message[3]  = "Tạm tắt";
+$message[4]  = "Có lỗi bảo mật, không sửa";
+$message[5]  = "Cập nhật ngay";
+$message[6]  = "Có lỗi bảo mật";
+$message[7]  = "Cập nhật";
+$message[8]  = "Phiên bản cũ";
+$message[9]  = "Đã là bản mới nhất";
+$message[10] = "Nghiên cứu";
+$message[11] = "Phần mở rộng nào đó";
 $message[12] = ""; // unused string, keep blank
-$message[13] = "Out of date plugins:";
-$message[14] = "Vulnerable plugins:";
-$message[15] = "Potentially vulnerable plugins:";
-$message[16] = "The plugins listed below are up to date";
-$message[17] = "No plugins were detected";
-$message[18] = "http://www.google.com/search?q=";
+$message[13] = "Phần mở rộng cũ:";
+$message[14] = "Phần mở rộng lỗi:";
+$message[15] = "Phần mở rộng có thể bị lỗi:";
+$message[16] = "Phần mở rộng dưới đây bị lỗi";
+$message[17] = "Không tìm thấy phần mở rộng nào";
+
+/* 	vuhung changed from 
+	http://www.google.com/search?q=
+	to http://www.google.com.vn/search?q= */
+$message[18] = "http://www.google.com.vn/search?q=";
 
 /*search terms before the plugin name...
  Example if there was a plugin named "DivX Media Player" that we couldn't detect, then we would
  search google for "current version plugin DivX Media Player */
 
-$message[19] = "current version plugin";
+$message[19] = "phần mở rộng của phiên bản hiện tại";
+
 
 // more labels and status for plugin detection table
 
-
-$message[20] = "Update Now";                   //MAYBE_VULNERABLE
-$message[21] = "Potentially Vulnerable";       //MAYBE_VULNERABLE
-$message[22] = "Update";                       //MAYBE_OUTDATED
-$message[23] = "Potentially Outdated Version"; //MAYBE_OUTDATED
+$message[20] = "Cập nhật ngay";                   //MAYBE_VULNERABLE
+$message[21] = "Có thể bị lỗi bảo mật";       //MAYBE_VULNERABLE
+$message[22] = "Cập nhật";                       //MAYBE_OUTDATED
+$message[23] = "Có thể là phiên bản cũ"; //MAYBE_OUTDATED
 
 // Bug#553661 Vulnerability details
-$message[24] = "<p>This plugin version has a security vulnerability that websites can exploit and potentially harm your computer. It is recommended that you update this plugin or if an update is not available, <a href='#howto-disable'>disable it</a>.</p><p>For more information, read the <a href='#' class='vulner-url'>plugin vendor's vulnerability information</a>.</p><p><a class='qtip-closer'>Close</a></p>";
-$message[25] = " (more info)";
+$message[24] = "<p>
+Phiên bản của phần mở rộng này bị lỗi bảo mật và một website có thể thâm nhập và
+làm hại tới máy tính của bạn. Chúng tôi khuyến nghị rằng nếu phần mở rộng này không có bản 
+cập nhật, hãy <a href='#howto-disable'>tắt nó</a>.</p>
+<p>Thông tin chi tiết hơn xem tại <a href='#' class='vulner-url'>
+Thông tin lỗi bảo mật của nhà phát triển phần mở rộng</a>.</p>
+<p><a class='qtip-closer'>Đóng</a></p>";
+$message[25] = " (thông tin thêm)";
 
 // end of translations
 

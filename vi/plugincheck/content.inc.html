@@ -1,8 +1,8 @@
-
+﻿
 <div id="main-feature">
 
-    <h2>Check Your <span>Plugins</span></h2>
-    <p>Keeping your third-party plugins up to date helps Firefox run safely and smoothly.</p>
+    <h2>Kiểm tra <span>phần mở rộng</span></h2>
+    <p>Luôn cập nhật phần mở rộng của hãng thứ ba để Firefox chạy ổn định hơn.</p>
 
 </div>
 
@@ -11,8 +11,9 @@
     <div id="content-left">
         <div class="blocklisted flash">
 
-            <h3>Missing <span>FLASH?</span></h3>
-            <p>For your safety, Firefox has disabled your outdated version of Flash. Please <a <?=$link[0];?> >upgrade to the latest version.</a></p>
+            <h3>Thiếu <span>FLASH?</span></h3>
+            <p>Vì lý do an toàn, Firefox đã tắt bản Flash cũ. Hãy <a <?=$link[0];?> >
+			cập nhật bản mới nhất.</a></p>
 
             <br class="clearfix" />
         </div>
@@ -20,40 +21,48 @@
         <div id="legend">
             <ul>
                 <li id="old_browser" style="display:none">
-                    <strong>Warning, a newer version of your browser is available.</strong> Please upgrade your browser.
+                    <strong>
+					Cảnh báo: Có phiên bản trình duyệt mới hơn.
+					</strong>
+					Hãy cập nhật trình duyệt này!
                 </li>
                 <li id="modern_browsers" style="display:none">
-                    This page works best with the latest browsers: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, or IE 8+
+                    Trang này xem tốt nhất với các trình duyệt mới nhất dòng:
+					Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, hay IE 8+
                 </li>
                 <li id="exploder" style="display: none">
-                    Plugin Check <strong>support for Internet Explorer is limited</strong>. Also use Tools &gt; Manage Addons
+                    Trình kiểm tra phần mở rộng <strong>không hỗ trợ tốt</strong>. 
+					Nên dùng công cụ &gt; quản lý phần mở rộng
                 </li>
                 <li>
-                    <strong><em>Step 1:</em></strong> Click <strong>Update</strong> to update a plugin.
+                    <strong><em>Bước 1:</em></strong> Nhấn <strong>Cập nhật</strong> để cập nhật phần mở rộng.
                 </li>
                 <li>
-                    <strong><em>Step 2:</em></strong> <strong>Complete all recommended updates</strong> <em>before</em> restarting your browser.
+                    <strong><em>Bước 2:</em></strong> <strong>
+					Hòan tất mọi cập nhật</strong> <em>trước khi</em> khởi động lại trình duyệt.
                 </li>
             </ul>
         </div>
 
         <noscript>
             <div>
-                <h3>Note</h3>
-                <p><strong>You have JavaScript disabled</strong> or are using a browser without JavaScript. This Plugin Check page does not work without the awesome power of <strong>JavaScript</strong>. Please enable this Content Preference and reload the page.</p>
-                <p>Or disable all your plugins and keep JavaScript disabled... you'd be in good company, that's how <a <?=$link[1];?> >RMS rolls</a>.</p>
+                <h3>Chú ý</h3>
+                <p><strong>Bạn đang tắt</strong> hoặc trình duyệt không hỗ trợ JavaScript.
+				Trang kiểm tra phần mở rộng này yêu cầu<strong>JavaScript</strong>. 
+				Hãy bật JavaScrip trong Tùy chọn và làm mới lại trang này.</p>
+                <p>Hoặc tắt tất cả phần mở rộng và tắt JavaScript... để <a <?=$link[1];?> >RMS vui</a>.</p>
             </div>
         </noscript>
 
         <?=$pluginsTable?>
 
         <div id="error-panel" style="display: none">
-            <h3>Plugin Finding Service Error</h3>
-            <p>We've encountered an error. Please try your request again later.</p>
+            <h3>Lỗi dịch vụ tìm phần mở rộng</h3>
+            <p>Gặplỗi. Hãy thử lại.</p>
 
             <form action="#" method="get">
                 <fieldset>
-                    <button>Retry</button>
+                    <button>Thử lại</button>
                 </fieldset>
             </form>
         </div>
@@ -64,19 +73,19 @@
       <div id="information">
         <h3>Plugin Tips</h3>
         <ul>
-          <li><a <?=$link[2];?> > What is a plugin?                 </a></li>
-          <li><a <?=$link[3];?> > Why should I update my plugins?   </a></li>
-          <li><a <?=$link[4];?> > How can Firefox help me?          </a></li>
-          <li><a <?=$link[5];?> > Which plugins do I have?          </a></li>
-          <li><a <?=$link[6];?> > How do I disable a plugin?        </a></li>
+          <li><a <?=$link[2];?> > Phần mở rộng là gì?                 </a></li>
+          <li><a <?=$link[3];?> > Vì sao cần cần cập nhật phần mở rộng?   </a></li>
+          <li><a <?=$link[4];?> > Firefox có thể hỗ trợ gì?          </a></li>
+          <li><a <?=$link[5];?> > Phần mở rộng nào đang được cài đặt?          </a></li>
+          <li><a <?=$link[6];?> > Tắt phần mở rộng thế nào?        </a></li>
         </ul>
       </div>
 
           <div id="support">
-            <h3>Need Help?</h3>
+            <h3>Cần hỗ trợ?</h3>
             <ul>
-              <li><a <?=$link[7];?> > Visit support.mozilla.com </a></li>
-              <li><a <?=$link[8];?> > Read support articles about plugins </a></li>
+              <li><a <?=$link[7];?> > Ghé thăm support.mozilla.com </a></li>
+              <li><a <?=$link[8];?> > Đọc tài liệu hỗ trợ về phần mở rộng </a></li>
             </ul>
           </div>
 
@@ -85,21 +94,21 @@
     <div id="information-content" class="clearfix">
         <?=$backtotop?>
 
-        <h2>Frequently asked <span>Questions</span></h2>
+        <h2><span>Câu hỏi</span> thường gặp</h2>
 
         <div id="column-one">
-            <h3 id="what-plugin">What is a plugin?</h3>
+            <h3 id="what-plugin">Phần mở rộng là gì?</h3>
             <ul>
-                <li>Plugins power <strong>videos, animation and games</strong>.</li>
-                <li>They're built <strong>outside of Firefox by companies</strong> like <a <?=$link[9];?>>Adobe Systems</a> and <a <?=$link[10];?> >Apple</a>.</li>
-                <li>Plugins <strong>don't always update</strong> automatically.</li>
+                <li>Phần mở rộng chi phối<strong>videos, hình ảnh động và games</strong>.</li>
+                <li>Phần mở rộng được xây dựng <strong>bởi các ngoài Firefox bởi các công ty </strong> như <a <?=$link[9];?>>Adobe Systems</a> và <a <?=$link[10];?> >Apple</a>.</li>
+                <li>Phần mở rộng <strong>không phải lúc nào cũng được cập nhật </strong> tự động.</li>
             </ul>
 
-            <h3 id="why-update">Why should I update my plugins?</h3>
+            <h3 id="why-update">Vì sao cần cập nhật phần mở rộng?</h3>
             <ul>
-                <li>Old plugins can interrupt browsing and <strong>waste your time</strong>.</li>
-                <li>Old plugins <strong>increase your risk</strong> for attack by malware, viruses, and other security threats.</li>
-                <li><strong>Updated plugins have improvements</strong> that make the web <strong>better and safer</strong> for you.</li>
+                <li>Phần mở rộng cũ có thể cản trở việc lướt web và <strong>ngốn thời gian của bạn</strong>.</li>
+                <li>Phần mở rộng cũ <strong>làm tăng nguy cơ </strong> bị tấn công bởi phần mềm độc hại, vi-rút và các nguy cơ khác.</li>
+                <li><strong>Việc cập nhật phần mở rộng sẽ cải thiện giúp cho</strong> việc lướt web <strong>nhanh và an toàn hơn</strong>.</li>
             </ul>
 
             <?=$screenshot;?>
@@ -107,32 +116,39 @@
         </div>
 
         <div id="column-two">
-            <h3 id="firefox-helps">How can Firefox help me?</h3>
-            <p>In the future, Firefox will update plugins for you.  Until then, you should <strong>regularly check this page</strong> and update your plugins to stay safe.</p>
+            <h3 id="firefox-helps">Firefox có thể hỗ trợ gì?</h3>
+            <p>Trong tương lai, Firefox sẽ cập nhật phần mở rộng giúp bạn.
+			Tuy nhiên, cho tới lúc đó, bạn cần 	
+			<strong>theo dõi trang này thường xuyên</strong> và cập nhật phần mở rộng 
+			để có thể lướt web an toàn.</p>
 
-            <h3 id="list-plugins">Which plugins do I have?</h3>
-            <p>We automatically detected your plugins above, to <strong>view your installed plugins in Firefox</strong> follow these steps:</p>
+            <h3 id="list-plugins">Tôi cần phần mở rộng nào?</h3>
+            <p>Firefox tự động dò các phần mở rộng trên, để <strong>xem các phần mở rộng  đã cài vào Firefox</strong> hãy làm theo các bước sau:</p>
             <ol>
-                <li>Open the <kbd>Tools</kbd> menu.</li>
-                <li>Choose <kbd>Add-ons</kbd>.</li>
-                <li>Click the <kbd>plugins</kbd> tab.</li>
+                <li>Mở <kbd>Công cụ</kbd>.</li>
+                <li>Chọn <kbd>Add-on</kbd>.</li>
+                <li>Nhấn vào thẻ <kbd>phần mở rộng</kbd> .</li>
             </ol>
 
             <div class="howto-disable-plugin">
-                <h3 id="howto-disable">How do I disable a plugin?</h3>
-                <p>In Firefox:</p>
+                <h3 id="howto-disable">Tắt phần mở rộng thế nào?</h3>
+                <p>Trong Firefox:</p>
                 <ol>
-                    <li>Open the <kbd>Tools</kbd> menu.</li>
-                    <li>Choose <kbd>Add-ons</kbd>.</li>
-                    <li>Click the <kbd>plugins</kbd> tab.</li>
-                    <li>Click on a plugin in the list.</li>
-                    <li>Click the <kbd>Disable</kbd> button.</li>
+                    <li>Mở <kbd>Công cụ</kbd>.</li>
+                    <li>Chọn <kbd>Add-ons</kbd>.</li>
+                    <li>Nhấn vào thể <kbd>phần mở rộng</kbd>.</li>
+                    <li>Nhấn vào phần mở rộng trong danh sách.</li>
+                    <li>Nhấn vào nút <kbd>Tắt</kbd>.</li>
                 </ol>
-                <p><strong>Caution:</strong> disabling a plugin means that you will <strong>no longer be able to do</strong> certain things. For example, if you disable Flash, you will not be able to watch videos on popular video streaming sites.</p>
+                <p><strong>Cảnh báo:</strong> khi tắt một phần mở rộng, bạn sẽ 
+				<strong>không thể thao tác</strong> một số chức năng.
+				Ví dụ, nếu bạn tắt Flash, bạn sẽ không xem được movie trên một số trang web.</p>
             </div>
 
-            <h3 id="more-questions">Have more <span>questions?</span></h3>
-            <p><a <?=$link[7];?>>Our support site</a> can help you <a <?=$link[6];?>>learn about plugins</a> or <a <?=$link[8];?>>troubleshoot plugin problems</a>.</p>
+            <h3 id="more-questions">Có <span>câu hỏi</span> khác?</h3>
+            <p><a <?=$link[7];?>>Website của chúng tôi</a> luôn sẵn sàng hỗ trợ
+			<a <?=$link[6];?>>về các phần mở rộng</a> hoặc 
+			<a <?=$link[8];?>>giải quyết các vấn đề về phần mở rộng.</a>.</p>
         </div>
     </div>
 </div>
