@@ -20,6 +20,9 @@ $ver =getVersionBySelf();
 
 if($ver == '5.0') {
     $str2 = str_replace('4', '5', $str2);
+    if(in_array($lang, array('bn-BD', 'et', 'fa', 'gu-IN'))) {
+        $str2 = ___('Free Upgrade');
+    }
 }
 
 ?>
