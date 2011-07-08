@@ -191,15 +191,17 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
             href="https://www.mozilla.com/mobile/platforms/">Platforms and Device
             Requirements</a> page to make sure your phone meets the system requirements.
             </p>
+            <!--
             <h5>Developers</h5>
             <p>
             Developers can download a version of Firefox for mobile to their desktop in order to test, provide feedback, and build add-ons. Desktop  builds are for development purposes only and don't have full functionality:
             </p>
             <ul>
-                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::windows) ?>"     target="_blank">Windows</a></li>
-                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::mac) ?>"  target="_blank">Mac OS X</a></li>
-                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::linux) ?>"     target="_blank">Linux</a></li>
+                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::windows, mobileDetails::beta_version) ?>"     target="_blank">Windows</a></li>
+                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::mac, mobileDetails::beta_version) ?>"  target="_blank">Mac OS X</a></li>
+                 <li><a href="<?=  mobileDetails::download_url($lang,    mobileDetails::linux, mobileDetails::beta_version) ?>"     target="_blank">Linux</a></li>
             </ul>
+          -->
           </div>
         </div>
         <div id="faq" class="expander expander-even">
@@ -329,7 +331,7 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
                 <dt>What browser engine does Firefox use?</dt>
                 <dd>
                   The desktop and mobile versions of Firefox both use the Gecko rendering engine.
-                  The mobile version of Firefox uses Gecko version 5,
+                  The mobile version of Firefox uses Gecko version 6,
                   which is the best performing browser engine Mozilla has ever
                   released and includes exciting features such as radically improved JavaScript performance,
                   geolocation support, worker threads, and much more.
