@@ -1,0 +1,65 @@
+<?php
+
+    // We want caching to vary the page based on user agent
+    header('Vary: User-Agent');
+
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Firefox Updated';
+    $body_id    = 'whatsnew';
+    $body_class = 'portal-page';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/whatsnew-page-beta.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/tignish/whatsnew-page-3.6.4.css" media="screen" />
+
+	<script type="text/javascript" src="/js/whats-new-page.js"></script>
+EXTRA_HEADERS;
+
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+
+?>
+
+<div id="main-feature">
+	<h2 id="main-feature-title">Thanks for helping us beta test Firefox 3.6.18!</h2>
+    <div id="release-metadata">
+        <p class="changelog">Firefox 3.6.19 (Build 1) was released on July 8th, 2011.</p>
+        <p class="changelog">For a complete list of what’s new in this update, please <a
+    href="../releasenotes/">view the release notes</a>.</p>
+    </div>
+    <p>If you notice any problems while you browse with this update, please let us know by 
+    <a href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Firefox&amp;format=guided">filing a bug</a>
+    or <a href="http://feedback.mozilla.org/">sending us feedback</a>.</p>
+</div>
+
+<div id="main-content">
+	<div>
+		<h3>Why am I a Beta Tester?</h3>
+		<p>Anyone who installs a pre-release (alpha or beta) Firefox build
+		  automatically becomes part of our Beta Testers program. To leave the
+		  program, simply <a href="http://getfirefox.com/">download and install
+		  Firefox from firefox.com</a>.</p>
+	</div>
+	<div>
+		<h3>How does this help Firefox?</h3>
+		<p>Feedback from you and other beta testers helps ensure that we catch and
+		  fix any issues before we share this version with the general public and
+		  allows us to release a more stable, higher quality Firefox.</p>
+	</div>
+	<div>
+		<h3>How do I submit feedback?</h3>
+		<p>Please report any crashes, broken sites or other problems by <a
+		  href="https://bugzilla.mozilla.org/enter_bug.cgi?product=Firefox&amp;format=guided">filing
+		  a bug</a> or <a href="http://feedback.mozilla.org/">sending us
+		  feedback</a>. You can also <a
+		  href="http://wiki.mozilla.org/QA/Community/Betatesters_Mailing_List">join
+		  the Beta Testers</a> mailing list to get more involved with our testing
+		  community.</p>
+	</div>
+
+	<p id="follow">Stay connected with Firefox on <a href="http://twitter.com/firefox">Twitter</a> and <a href="http://www.facebook.com/Firefox">Facebook</a></p>
+</div>
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
