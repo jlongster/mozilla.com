@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <style type="text/css">
+            /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+            @font-face {
+                font-family: 'MetaBlack';
+                src: url('http://mozcom-cdn.mozilla.net/img/fonts/MetaWebPro-Black.eot');
+                src: local('?'), url('http://mozcom-cdn.mozilla.net/img/fonts/MetaWebPro-Black.woff') format('woff');
+                font-weight: bold;
+            }
+    
+            html {
+                min-height: 800px;
+            }
+            
+            body {
+                width: 520px;
+                min-height: 800px;
+                background-image: url(images/bg.jpg);
+                background-repeat: no-repeat;
+                color: #484848;
+                overflow: hidden;
+                margin: 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            
+            h1 {
+                 font-family: Georgia, serif;
+                 font-style: italic;
+                 font-weight: 100; 
+                 font-size: 26px;
+                 padding: 0px;
+                 margin: 0px;
+                 line-height: 26px;
+                 position: absolute;
+                 left: 265px;
+                 top: 200px;
+            }
+            
+            h2 {
+                font-family: MetaBlack,"Trebuchet MS",sans-serif;
+                font-weight: bold;
+                letter-spacing: -0.02em;
+                font-size: 38px;
+                text-transform: uppercase;
+                padding: 0px;
+                margin: 0px;
+                line-height: 38px;
+                position: absolute;
+                left: 265px;
+                top: 225px;
+				width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="content">
+        <h1>Be Part of the Future.</h1>
+        <h2>Like Firefox Today!</h2>
+        <div id="fb-root"></div>
+        <script src="https://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript">
+          FB.init({
+              appId  : '144212115656465',
+              status : false,
+              cookie : false
+          });
+                  
+          // FB.Canvas.setAutoResize();
+		  FB.Canvas.setSize({ width: 520, height: 800 });
+          
+        </script>
+    </body>
+</html>
