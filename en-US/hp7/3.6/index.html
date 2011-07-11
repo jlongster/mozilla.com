@@ -41,6 +41,15 @@ EXTRA_HEADERS;
 
 <h3 id="persona-title"><span>Roll over to try, click to apply</span></h3>
 
+<iframe
+    src="../iframe.html"
+    width="320"
+    height="170"
+    scrolling="no"
+    frameborder="0"
+    ALLOWTRANSPARENCY="true"
+    id="persona-preview"></iframe>
+
 <div id="moz-footer">
     <a href="/<?=$lang?>/firefox/central/">Tour</a>  | 
     <a href="/<?=$lang?>/privacy-policy.html">Privacy Policy</a>  | 
@@ -54,6 +63,15 @@ EXTRA_HEADERS;
 </div>
 
 
+
+<script>
+var iframe = document.getElementById('persona-preview');
+if (iframe.contentWindow.postMessage && iframe.addEventListener) {
+    iframe.addEventListener('load', function () {
+        iframe.contentWindow.postMessage("activatePersonas", "*");
+    }, false);
+}
+</script>
 <?php
     @include_once "{$config['file_root']}/includes/footer-simple.inc.php";
 ?>
