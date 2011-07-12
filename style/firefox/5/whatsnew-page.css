@@ -127,7 +127,7 @@ p {
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(99, 149, 185, 0.1) inset;
 }
 
-#main-content {
+.main-content {
     margin-top: -10px;
     margin-bottom: 20px;
     height: 268px;
@@ -136,35 +136,38 @@ p {
     background-repeat: no-repeat;
 }
 
-#main-content {
+/* }}} */
+/* {{{ Promo: Tabs */
+
+#feature-tabs {
     background-image: url(/img/firefox/5.0/whatsnew/tabs-feature.jpg);
 }
 
-.mac   #main-content { background-image: url(/img/firefox/5.0/whatsnew/tabs-feature-mac.jpg); }
-.linux #main-content { background-image: url(/img/firefox/5.0/whatsnew/tabs-feature-linux.jpg); }
+.mac   #feature-tabs { background-image: url(/img/firefox/5.0/whatsnew/tabs-feature-mac.jpg); }
+.linux #feature-tabs { background-image: url(/img/firefox/5.0/whatsnew/tabs-feature-linux.jpg); }
 
-#main-content #intro {
+#feature-tabs #intro {
     padding: 35px 40px;
     width: 300px;
     color: #666;
 }
 
-#main-content #intro h3 {
+#feature-tabs #intro h3 {
     font-size: 30px;
     margin: 0 0 15px 0;
     line-height: 32px;
     letter-spacing: -0.02em;
 }
 
-#main-content #intro p {
+#feature-tabs #intro p {
     font-style: italic;
 }
 
-#main-content #intro a {
+#feature-tabs #intro a {
     color: #666;
 }
 
-#main-content .note {
+#feature-tabs .note {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -173,31 +176,31 @@ p {
     font-size: 14px;
 }
 
-#main-content #note-1 {
+#feature-tabs #note-1 {
     left: 40px;
     bottom: 48px;
     width: 195px;
 }
 
-#main-content #note-2 {
+#feature-tabs #note-2 {
     left: 440px;
     bottom: 175px;
     width: 225px;
 }
 
-#main-content #note-3 {
+#feature-tabs #note-3 {
     left: 670px;
     bottom: 175px;
     width: 200px;
 }
 
-#main-content .note p,
-#main-content .note h4 {
+#feature-tabs .note p,
+#feature-tabs .note h4 {
     margin: 0;
     font-size: inherit;
 }
 
-#main-content .note h4 {
+#feature-tabs .note h4 {
     font-weight: bold;
 }
 
@@ -207,6 +210,73 @@ p {
 .note a:active {
     color: #447BC4;
 }
+
+/* }}} */
+/* {{{ Promo: Mobile & Sync */
+
+#feature-mobile {
+    display: none;
+    background-image: url(/img/firefox/5.0/whatsnew/feature-mobile.jpg);
+}
+
+#feature-sync {
+    display: none;
+    background-image: url(/img/firefox/5.0/whatsnew/feature-sync.jpg);
+}
+
+#feature-mobile #intro,
+#feature-sync   #intro {
+    padding: 40px 0 0 40px;
+    width: 380px;
+}
+
+#feature-mobile #intro h3,
+#feature-sync   #intro h3 {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    line-height: 0.9;
+}
+
+#feature-mobile #intro p,
+#feature-sync   #intro p {
+    font-style: italic;
+    color: #666;
+    font-size: 16px;
+    width: 330px;
+    margin: 0 0 15px 0;
+}
+
+#feature-mobile a,
+#feature-sync   a {
+    background: -moz-linear-gradient(center top , #62A9E3 0%, #5492C4 100%) repeat scroll 0 0 transparent;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(0, 0, 0, 0.2) inset;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-style: italic;
+    margin: 0 0 8px;
+    padding: 8px 25px 10px;
+    text-decoration: none;  
+    text-shadow: 1px 1px rgba(0,0,0,0.2);
+}
+
+#feature-mobile a span,
+#feature-sync   a span {
+    font-size: 120%;
+    color: #fff
+}
+
+/* }}} */
+/* {{{ Promo Switching */
+
+body.feature-mobile #feature-mobile { display: block; }
+body.feature-mobile #feature-tabs,
+body.feature-mobile #feature-sync { display: none; }
+
+body.feature-sync #feature-sync { display: block; }
+body.feature-sync #feature-mobile,
+body.feature-sync #feature-sync { display: none; }
 
 /* }}} */
 /* {{{ Footer */

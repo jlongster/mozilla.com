@@ -64,7 +64,23 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<div id="main-content" class="box">
+<div class="main-content box" id="feature-mobile">
+    <div id="intro">
+        <h3>It’s Your Web, <span>Anywhere You Go.</span></h3>
+        <p>The speed, add-ons and Awesome Bar you love on your desktop, always with you.</p>
+        <a href="/<?=$lang?>/mobile/">Download Firefox for Android <span>»</span></a>
+    </div>
+</div>
+
+<div class="main-content box" id="feature-sync">
+    <div id="intro">
+        <h3>Keep Your Firefox <span>In Sync</span></h3>
+        <p>Access your history, bookmarks, tabs and passwords from any device.</p>
+        <a href="/<?=$lang?>/mobile/sync/">Get in Sync <span>»</span></a>
+    </div>
+</div>
+
+<div class="main-content box" id="feature-tabs">
     <div id="intro">
         <h3><span>Fabulous Tabs</span></h3>
         <p>Browse quickly, easily and efficiently with the awesome tab features in Firefox.</p>
@@ -222,18 +238,23 @@ if ($_version !== null && $_valid_version) {
     <script>
 
     // Add a class to the body tag to alternate promo features
-    var class_options = new Array( "promo-mobile", "promo-markup" );
+    var class_options   = new Array( "promo-mobile", "promo-markup" );
+    var feature_options = new Array( "feature-mobile", "feature-sync", "feature-tabs" );
 
     if (Math.random) {
-        var choice = Math.floor(Math.random() * (class_options.length));
+        var class_choice   = Math.floor(Math.random() * (class_options.length));
+        var feature_choice = Math.floor(Math.random() * (feature_options.length));
 
         // Just in case javascript gets carried away...
-        choice = ( (choice < class_options.length) && choice >= 0) ? choice : 0;
+        class_choice   = ( (class_choice < class_options.length) && class_choice >= 0) ? class_choice : 0;
+        feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
 
         if (document.body.className == '') {
-            document.body.className = class_options[choice];
+            document.body.className = class_options[class_choice];
+            document.body.className += ' '+feature_options[feature_choice];
         } else {
             document.body.className += ' '+class_options[choice];
+            document.body.className += ' '+feature_options[feature_choice];
         }
     }
 
