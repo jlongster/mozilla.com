@@ -8,8 +8,11 @@
 <ul class="email-form <?= $status ?>" id="newsletter-form">
     <li class="form-pane">
       <form action="" method="post">
-        <p class="form-error email-error"><span>Upps! Das scheint keine gültige E-Mail-Adresse zu sein.</span></p>
-        <p class="form-error privacy-error"><span>Bitte lesen Sie die Datenschutzbestimmungen und akzeptieren Sie sie mit einem Klick in das Kästchen.</span></p>
+        <p class="form-error email-error"><span>Veuillez saisir votre adresse électronique.</span></p>
+        <p class="form-error privacy-error">
+          <span>Confirmez que vous avez lu et acceptez la politique de
+          confidentialité de Mozilla en cochant la case.</span>
+        </p>
 
         <div class="field required email-field">
           <label for="email">Votre adresse électronique:</label>
@@ -30,6 +33,18 @@
           </select>
         </div>
 
+        <div class="field lang-field">
+          <span class="field-label">Langues disponibles actuellement:</span>
+          <div class="field-language">
+            <select class="lang" name="lang">
+              <option value="fr">Francês</option>
+              <option value="pt-BR">Português</option>
+              <option value="de">Deutsch</option>
+              <option value="en">Inglês</option>
+            </select>
+          </div>
+        </div>
+
         <div class="field format-field">
           <?php
               $html_format = 'checked="checked"';
@@ -39,14 +54,12 @@
                   $html_format = '';
               }
           ?>
-          <span class="field-label">Langues disponibles actuellement:</span>
-          <div class="field-language">
-            <select class="lang" name="lang">
-              <option value="fr">Francês</option>
-              <option value="pr">Português</option>
-              <option value="de">Deutsch</option>
-              <option value="en">Inglês</option>
-            </select>
+          <span class="field-label">Format:</span>
+          <div class="field-radios">
+            <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
+            <label for="html-format">HTML</label>
+            <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
+            <label for="text-format">Texte</label>
           </div>
         </div>
 
