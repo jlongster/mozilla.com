@@ -1,7 +1,7 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'It All Ends Here.';
-    $body_id    = 'hp7-36';
+    $body_id    = 'hp7-latest';
     $fonts = <<<FONTS
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
@@ -24,51 +24,38 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
 
-<h2>It All Ends Here.</h2>
-<h3>In theatres now.</h3>
+    <h2>It All Ends Here.</h2>
+    <h3>In theatres now.</h3>
 
-<p>Dress up your Firefox in the custom <em>Harry Potter and the Deathly Hallows – Part 2</em> Persona that’s right for you. Roll over each to try it on or click to wear the one you want. No restart required.</p>
+    <p>Dress up your Firefox in the custom <em>Harry Potter and the Deathly Hallows – Part 2</em> Persona that’s right for you. Roll over each to try it on or click to wear the one you want. No restart required.</p>
 
-<div id="download">
-    <script src="/js/download.js"></script>
-    <?php
-        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox');
-        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
-        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
-    ?>
+    <div id="persona-wrapper">
 
-    <p>Upgrade to the new version of Firefox for the latest features and speed!</p>
+    <h3 id="persona-title"><span>Roll over to try, click to apply</span></h3>
 
-</div>
+    <iframe
+        src="../iframe.html"
+        width="320"
+        height="170"
+        scrolling="no"
+        frameborder="0"
+        ALLOWTRANSPARENCY="true"
+        id="persona-preview"></iframe>
 
-<div id="persona-wrapper">
+    </div>
 
-<h3 id="persona-title"><span>Roll over to try, click to apply</span></h3>
+    <div id="moz-footer">
+        <a href="/<?=$lang?>/firefox/central/">Tour</a>  | 
+        <a href="/<?=$lang?>/privacy-policy.html">Privacy Policy</a>  | 
+        <a href="/<?=$lang?>/about/legal.html">Legal Notices</a>
+    </div>
 
-<iframe
-    src="../iframe.html"
-    width="320"
-    height="170"
-    scrolling="no"
-    frameborder="0"
-    ALLOWTRANSPARENCY="true"
-    id="persona-preview"></iframe>
-
-</div>
-
-<div id="moz-footer">
-    <a href="/<?=$lang?>/firefox/central/">Tour</a>  | 
-    <a href="/<?=$lang?>/privacy-policy.html">Privacy Policy</a>  | 
-    <a href="/<?=$lang?>/about/legal.html">Legal Notices</a>
-</div>
 </div>
 
 <div id="hp-footer">
     <p>© 2011 Warner Bros. Ent.<br />Harry Potter Publishing Rights © J.K.R.</p>
     <p>Harry Potter characters, names and related indicia are trademarks of and © Warner Bros. Ent.  All Rights Reserved.</p>
 </div>
-
-
 
 <script>
 var iframe = document.getElementById('persona-preview');

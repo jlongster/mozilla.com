@@ -15,8 +15,14 @@
     border-color: #888;
 }
 
-#hp7-36 #header h1 a,
-#hp7-36 #header a.mozilla {
+#hp7-36      #header h1 a,
+#hp7-35      #header h1 a,
+#hp7-latest  #header h1 a,
+#hp7-new     #header h1 a,
+#hp7-36      #header a.mozilla,
+#hp7-35      #header a.mozilla,
+#hp7-latest  #header a.mozilla,
+#hp7-new     #header a.mozilla {
     background-image: url(/img/covehead/404-page/title.png);
 }
 
@@ -27,17 +33,35 @@ body {
     background: #000 url(/img/covehead/firefox/hp7/background.jpg) 50% 0 no-repeat;
 }
 
+body#hp7-36     { background-image: url(/img/covehead/firefox/hp7/background-36.jpg); }
+body#hp7-latest { background-image: url(/img/covehead/firefox/hp7/background-latest.jpg); }
+body#hp7-35,
+body#hp7-new    { background-image: url(/img/covehead/firefox/hp7/background-new.jpg); }
+
 /* }}} */
 /* {{{ Content*/
 
-#main-feature h2 {
+#main-feature h2,
+#main-feature h3 {
     font-family: MetaBook, sans-serif;
     color: #fff;
     font-style: normal;
-    padding: 15px 30px 10px 30px;
-    letter-spacing: -0.02em;
-    font-size: 48px;
+    margin: 0;
+    letter-spacing: -0.03em;
     text-shadow: 0 -1px rgba(0,0,0,0.75);
+    text-align: center;
+    line-height: 1;
+}
+
+#main-feature h2 {
+    padding: 15px 30px 0 30px;
+    font-size: 48px;
+}
+
+#main-feature h3 {
+    color: #ccc;
+    padding: 0 30px 10px 30px;
+    font-size: 28px;
 }
 
 #main-feature {
@@ -48,16 +72,30 @@ body {
     position: relative;
 }
 
+#hp7-35     #main-feature { height: 660px; }
+#hp7-latest #main-feature { height: 660px; }
+
 #main-feature p {
     color: #d5d5d3;
     margin: 0;
     padding: 10px 30px;
-    font-size: 14px;
+    font-size: 15px;
     text-shadow: 0 -1px rgba(0,0,0,0.25);
 }
 
 #main-feature #download {
-    padding: 20px 30px;
+    padding: 20px 30px 15px 30px;
+    position: absolute;
+    bottom: 350px;
+    width: 360px; 
+}
+
+#hp7-35 #main-feature #download {
+    bottom: 260px;
+}
+
+#main-feature #download p {
+    padding: 10px 0;
 }
 
 #main-feature #download .download-other {
@@ -88,16 +126,27 @@ body {
 /* }}} */
 /* {{{ Personas */
 
-#persona-title {
-    padding: 0 25px;
+#persona-wrapper {
     position: absolute;
-    bottom: 310px;
+    bottom: 145px;
+    left: 20px;
+    width: 390px;
+}
+
+#hp7-latest #persona-wrapper {
+    bottom: 200px;
+}
+
+#main-feature h3#persona-title {
+    padding: 10px 3px;
+    position: absolute;
+    bottom: 170px;
 }
 
 #persona-title span {
     display: inline;
     padding-right: 20px;
-    font-size: 16px;
+    font-size: 17px;
     font-family: MetaBook, sans-serif;
     text-transform: none;
     font-style: normal;
@@ -110,8 +159,7 @@ body {
     border: 0;
     width: 390px;
     position: absolute;
-    bottom: 145px;
-    left: 20px;
+    bottom: 0px;
 }
 
 
