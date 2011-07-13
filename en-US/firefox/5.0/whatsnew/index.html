@@ -1,4 +1,15 @@
 <?php
+
+    // We want caching to vary the page based on user agent
+    header('Vary: User-Agent');
+
+    // Check if platform is Mac
+    if( isset($_SERVER['HTTP_USER_AGENT']) && strpos($_SERVER['HTTP_USER_AGENT'], 'Macintosh') !== FALSE ) {
+        $mac = TRUE;
+    }else{
+        $mac = FALSE;
+    }
+
     require_once "{$config['file_root']}/includes/min/inline.php";
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
@@ -43,7 +54,7 @@
 <?php // check if there is a version
 if ($_version !== null && $_valid_version) {
     // check if we’re running the latest version
-    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0 || (LATEST_FIREFOX_VERSION == '5.0.1' && $_version == '5.0' && !$mac)) {
         ?>
         <h2>Your Firefox is up to date.</h2>
         <p id="main-feature-contents">Can’t find your last tab session? <a href="http://support.mozilla.com/kb/common-questions-after-updating-firefox">Get answers to the most common questions here.</a></p>
