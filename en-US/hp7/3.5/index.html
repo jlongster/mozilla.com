@@ -52,16 +52,6 @@ EXTRA_HEADERS;
     <p>Harry Potter characters, names and related indicia are trademarks of and © Warner Bros. Ent.  All Rights Reserved.</p>
 </div>
 
-
-
-<script>
-var iframe = document.getElementById('persona-preview');
-if (iframe.contentWindow.postMessage && iframe.addEventListener) {
-    iframe.addEventListener('load', function () {
-        iframe.contentWindow.postMessage("activatePersonas", "*");
-    }, false);
-}
-</script>
 <?php
     @include_once "{$config['file_root']}/includes/footer-simple.inc.php";
 ?>
