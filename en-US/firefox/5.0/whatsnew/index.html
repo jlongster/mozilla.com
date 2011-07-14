@@ -39,6 +39,12 @@
         src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
         font-weight: bold;
     }
+    @font-face {
+        font-family: 'MetaBook';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.woff') format('woff');
+        font-weight: bold;
+    }
     </style>
     <? echo min_inline_css('css_whatsnew5'); ?>
     <? echo min_inline_js('js_whatsnew4'); ?>
@@ -73,6 +79,20 @@ if ($_version !== null && $_valid_version) {
 <?php
 }
 ?>
+</div>
+
+<div class="main-content box" id="feature-hp7">
+    <div id="intro">
+        <h3>It All Ends Here. <span>In theatres now.</span></h3>
+        <p>Dress up your Firefox in the custom <em>Harry Potter and the Deathly Hallows – Part 2</em> Persona. Roll over to try, click to apply.</p>
+        <iframe
+            src="/hp7/iframe.html"
+            width="390"
+            height="170"
+            scrolling="no"
+            frameborder="0"
+            id="persona-preview"></iframe>
+    </div>
 </div>
 
 <div class="main-content box" id="feature-mobile">
@@ -286,6 +306,12 @@ if ($_version !== null && $_valid_version) {
         });
     });
 
+    var iframe = document.getElementById('persona-preview');
+    if (iframe.contentWindow.postMessage && iframe.addEventListener) {
+        iframe.addEventListener('load', function () {
+            iframe.contentWindow.postMessage("activatePersonas", "*");
+        }, false);
+    }
     </script>
     <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
     <script type="text/javascript">

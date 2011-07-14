@@ -28,6 +28,12 @@
         src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
         font-weight: bold;
     }
+    @font-face {
+        font-family: 'MetaBook';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.woff') format('woff');
+        font-weight: bold;
+    }
     </style>
     <? echo min_inline_css('css_whatsnew5'); ?>
     <? echo min_inline_js('js_whatsnew4'); ?>
@@ -64,7 +70,37 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<div id="main-content" class="box">
+<div class="main-content box" id="feature-hp7">
+    <div id="intro">
+        <h3>It All Ends Here. <span>In theatres now.</span></h3>
+        <p>Dress up your Firefox in the custom <em>Harry Potter and the Deathly Hallows – Part 2</em> Persona. Roll over to try, click to apply.</p>
+        <iframe
+            src="/hp7/iframe.html"
+            width="390"
+            height="170"
+            scrolling="no"
+            frameborder="0"
+            id="persona-preview"></iframe>
+    </div>
+</div>
+
+<div class="main-content box" id="feature-mobile">
+    <div id="intro">
+        <h3>It’s Your Web, <span>Anywhere You Go.</span></h3>
+        <p>The speed, add-ons and Awesome Bar you love on your desktop, always with you.</p>
+        <a href="/<?=$lang?>/mobile/">Download Firefox for Android <span>»</span></a>
+    </div>
+</div>
+
+<div class="main-content box" id="feature-sync">
+    <div id="intro">
+        <h3>Keep Your Firefox <span>In Sync</span></h3>
+        <p>Access your history, bookmarks, tabs and passwords from any device.</p>
+        <a href="/<?=$lang?>/mobile/sync/">Get in Sync <span>»</span></a>
+    </div>
+</div>
+
+<div class="main-content box" id="feature-tabs">
     <div id="intro">
         <h3><span>Fabulous Tabs</span></h3>
         <p>Browse quickly, easily and efficiently with the awesome tab features in Firefox.</p>
@@ -222,18 +258,23 @@ if ($_version !== null && $_valid_version) {
     <script>
 
     // Add a class to the body tag to alternate promo features
-    var class_options = new Array( "promo-mobile", "promo-markup" );
+    var class_options   = new Array( "promo-mobile", "promo-markup" );
+    var feature_options = new Array( "feature-mobile", "feature-sync", "feature-tabs" );
 
     if (Math.random) {
-        var choice = Math.floor(Math.random() * (class_options.length));
+        var class_choice   = Math.floor(Math.random() * (class_options.length));
+        var feature_choice = Math.floor(Math.random() * (feature_options.length));
 
         // Just in case javascript gets carried away...
-        choice = ( (choice < class_options.length) && choice >= 0) ? choice : 0;
+        class_choice   = ( (class_choice < class_options.length) && class_choice >= 0) ? class_choice : 0;
+        feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
 
         if (document.body.className == '') {
-            document.body.className = class_options[choice];
+            document.body.className = class_options[class_choice];
+            document.body.className += ' '+feature_options[feature_choice];
         } else {
             document.body.className += ' '+class_options[choice];
+            document.body.className += ' '+feature_options[feature_choice];
         }
     }
 
@@ -254,6 +295,12 @@ if ($_version !== null && $_valid_version) {
         });
     });
 
+    var iframe = document.getElementById('persona-preview');
+    if (iframe.contentWindow.postMessage && iframe.addEventListener) {
+        iframe.addEventListener('load', function () {
+            iframe.contentWindow.postMessage("activatePersonas", "*");
+        }, false);
+    }
     </script>
     <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
     <script type="text/javascript">
