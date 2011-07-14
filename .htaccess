@@ -51,15 +51,15 @@ RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox
 # Redirects for HP7 (Bug 665019)
 # Firefox 4, 5, 6 and beyond folk
 RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/([4-9]\..*|[1-9][0-9]\..*)$
-RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/latest/ [R=302]
+RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/latest/
 # Firefox 3.6 folk
 RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/3\.6.*$
-RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/3.6/ [R=302]
+RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/3.6/
 # Firefox 3.5 and earlier folk
 RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(3\.5.*|3.0.*|2\..*|1\..*)$
-RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/3.5/ [R=302]
+RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/3.5/
 # Everyone else
-RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/new/ [R=302]
+RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/new/
 
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
