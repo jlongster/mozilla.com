@@ -116,7 +116,7 @@ EXTRA;
 }
 
 // dl box
-include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
+include $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 switch($target) {
     case 'socialmedia':
@@ -345,8 +345,8 @@ EXTRA;
     case 'XP':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.xpcampaign.inc.php';
         $extra_css = '';
-        $firefoxDetailsl10n -> download_base_url_transition = "/$lang/download/";
-        $firefoxDetailsl10n -> has_transition_download_page = $XPCampaignTransitionPage;
+        $firefoxDetailsl10n->download_base_url_transition = "/$lang/download/";
+        $firefoxDetailsl10n->has_transition_download_page = $XPCampaignTransitionPage;
         break;
     case 'normal':
     default:

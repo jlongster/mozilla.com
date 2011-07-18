@@ -204,6 +204,3 @@ $beta_button .= "\n".'<!-- end generated box -->'."\n";
 if($pageid == 'security') {
     $fx_dl_box = $downloadbox;
 }
-
-
-unset($firefoxDetailsl10n);

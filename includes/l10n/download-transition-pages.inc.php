@@ -117,18 +117,15 @@ $extra_headers = <<<EXTRA_HEADERS
 <meta name="WT.si_cs" content="1">
 EXTRA_HEADERS;
 
+
+// XXX: these variables are defined in controller.inc.php but this page is old and not in controller yet
+$extra_headers    = (isset($extra_headers))     ? $extra_headers    : '';
+$extra_footers    = (isset($extra_footers))     ? $extra_footers    : '';
+$extra_css        = (isset($extra_css))         ? $extra_css        : '';
+
 if (!$nodownload) {
     $extra_footers .= get_include_contents("{$config['file_root']}/js/download-transition-l10n.js");
 }
-
-if (!isset($extra_headers)) {
-    $extra_headers = '';
-}
-
-if (!isset($extra_css)) {
-    $extra_css = '';
-}
-
 
 if($extra == 'XPUpgrade') {
     // extra tracking code for the XP campaign will go there and be added to the footer
