@@ -90,6 +90,7 @@ $sitepages = array(
     'newsletter'        => 'newsletter.inc.php',
     'webhero'           => 'webhero.inc.php',
     'plugincheck'       => 'plugincheck.inc.php',
+    'dl-transition'     => 'download-transition-pages.inc.php',
 );
 
 // pages deactivated on production

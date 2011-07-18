@@ -6,6 +6,8 @@
 
     $stableTransitionPage = array('en-US');
 
+    $XPCampaignTransitionPage = array('en-US', 'de', 'fr');
+
     $betas = array(
     'firefox-4.0b1',
     'firefox-4.0b2',

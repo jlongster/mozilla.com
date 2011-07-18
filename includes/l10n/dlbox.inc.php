@@ -1,6 +1,9 @@
 <?php
-
+include_once $config['file_root'].'/includes/l10n/locale-transition-status.inc.php';
 include_once $config['file_root'].'/includes/l10n/libs/class.download.php';
+
+// create a download box object
+$firefoxDetailsl10n = new firefoxDetailsL10n();
 
 // initialize variables for download boxes
 $dl_box_id      = $dl_box_aurora = $dl_box_beta = 'default_l10n_download_box';
@@ -79,10 +82,17 @@ switch($pageid) {
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'home-download';
         $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true);
+
+        // transition download pages for the XP campaign
+        if ($target == 'XP') {
+            $firefoxDetailsl10n -> download_base_url_transition = "/$lang/download/";
+            $firefoxDetailsl10n -> has_transition_download_page = $XPCampaignTransitionPage;
+            $dl_box_options['dl_extra'] = 'XPUpgrade';
+        }
+
         break;
 }
 
-$firefoxDetailsl10n = new firefoxDetailsL10n();
 
 // if we don't have builds for a locale yet, let's display an en-US build to avoid php warnings
 if(!array_key_exists($templang, $firefoxDetailsl10n->primary_builds) AND !array_key_exists($templang, $firefoxDetailsl10n->beta_builds)) {

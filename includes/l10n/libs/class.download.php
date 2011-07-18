@@ -176,7 +176,15 @@ HTML_RETURN;
         $_osx_name                    = ___('Mac OS X');
         $_mb                          = ___('MB');
         $_megabytes                   = ___('MegaBytes');
-        $_betalocale_status           = array_key_exists('betalocale_status', $options) ?  $options['betalocale_status'] : false;
+        $_betalocale_status           = array_key_exists('betalocale_status', $options) ? $options['betalocale_status'] : false;
+        $_dl_extra                    = array_key_exists('dl_extra', $options)          ? $options['dl_extra']          : false;
+
+        if ($_dl_extra) {
+            $extra = '&extra='.htmlspecialchars(strip_tags($_dl_extra), ENT_QUOTES);
+        } else {
+            $extra = '';
+        }
+
 
         if (in_array($locale, $this->has_transition_download_page)) {
            $_download_base_url = $this->download_base_url_transition;
@@ -240,14 +248,14 @@ LI_SIDEBAR;
             case 'smallbox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span class="download-content"><span class="download-title">{$_wording}</span>{$_download_product}</span></a></li>
+                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}><span class="download-content"><span class="download-title">{$_wording}</span>{$_download_product}</span></a></li>
 LI_SIDEBAR;
                 break;
 
             case 'betabox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
+                <li class="{$_os_class}"><a class="download-link" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
                 </li>
 LI_SIDEBAR;
                 break;
@@ -273,7 +281,7 @@ LI_SIDEBAR;
             case 'simple':
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
-                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}">
+                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}">
                 <span class="download-content">
                     <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
@@ -287,7 +295,7 @@ LI_SIDEBAR;
             default:
                 $_return = <<<LI_MAIN
                 <li class="{$_os_class}">
-                    <a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}" {$_extra_link_attr}>
+                    <a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}>
                         <span class="download-content">
                             <span class="download-title">{$_wording} <img class="download-arrow" alt="" src="/img/home/download-arrow.png"></span>
                             {$_download_product}

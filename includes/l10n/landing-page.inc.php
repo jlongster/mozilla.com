@@ -8,9 +8,6 @@ $extra_headers .= <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
-// dl box
-include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
-
 $target   = 'normal';
 $home_css = '<link rel="stylesheet" type="text/css" href="' . $config['static_prefix'] . '/style/covehead/l10n/landing-page.css" media="screen" />';
 
@@ -345,6 +342,8 @@ EXTRA;
     case 'XP':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.xpcampaign.inc.php';
         $extra_css = '';
+        $firefoxDetailsl10n -> download_base_url_transition = "/$lang/download/";
+        $firefoxDetailsl10n -> has_transition_download_page = $XPCampaignTransitionPage;
         break;
     case 'normal':
     default:
@@ -405,6 +404,8 @@ $extra_headers .= <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
+// dl box
+include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 // build page
 require_once $headerfile;
