@@ -115,6 +115,9 @@ if (count($_GET) > 0) {
 EXTRA;
 }
 
+// dl box
+include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
+
 switch($target) {
     case 'socialmedia':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.social.inc.php';
@@ -404,8 +407,6 @@ $extra_headers .= <<<EXTRA_HEADERS
 
 EXTRA_HEADERS;
 
-// dl box
-include_once $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 // build page
 require_once $headerfile;
