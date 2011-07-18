@@ -2,11 +2,11 @@
 
     // arrays storing what we do with transition pages for download links
 
-    $betaTransitionPage = array('ar', 'ast', 'bg', 'bn-BD', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-ES', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'he', 'hr', 'hu', 'hy-AM', 'id', 'is',  'it', 'kn', 'ko', 'ku', 'lt', 'lv', 'mk', 'nb-NO', 'nl', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'te', 'tr', 'uk', 'zh-CN', 'zh-TW');
+    $betaTransitionPage = array('af', 'ar', 'ast', 'be', 'bg', 'bn-BD', 'bn-IN', 'ca', 'cs', 'cy', 'da', 'de', 'el', 'en-GB', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu', 'fa', 'fi', 'fr', 'fy-NL', 'ga-IE', 'gd', 'gl', 'gu-IN', 'he', 'hi-IN', 'hr', 'hu', 'hy-AM', 'id', 'is', 'it', 'ja', 'kk', 'kn', 'ko', 'ku', 'lt', 'lv', 'mk', 'ml', 'mr', 'nb-NO', 'nl', 'or', 'pa-IN', 'pl', 'pt-BR', 'pt-PT', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'ta', 'ta-LK', 'te', 'th', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW');
 
     $stableTransitionPage = array('en-US');
 
-    $XPCampaignTransitionPage = array('en-US', 'de', 'fr');
+    $XPCampaignTransitionPage = $betaTransitionPage;
 
     $betas = array(
     'firefox-4.0b1',
@@ -22,5 +22,3 @@
     'firefox-4.0b11',
     'firefox-4.0b12'
     );
-
-?>
