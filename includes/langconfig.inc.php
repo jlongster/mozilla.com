@@ -65,7 +65,7 @@ $native_languages = array(
     'mai'       => '&#2350;&#2376;&#2341;&#2367;&#2354;&#2368; &#2478;&#2504;&#2469;&#2495;&#2482;&#2496;',
     'mk'        => '&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;',
     'ml'        => '&#3374;&#3378;&#3375;&#3390;&#3379;&#3330;',
-    'mn'        => '&#1052;&#1086;&#1085;&#1075;&#1086;&#1083;',
+//    'mn'        => '&#1052;&#1086;&#1085;&#1075;&#1086;&#1083;',
     'mr'        => '&#2350;&#2352;&#2366;&#2336;&#2368;',
     'nb-NO'     => 'Norsk bokm&#229;l',
     'ne-NP'     => '&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;',
@@ -166,7 +166,7 @@ $full_languages = array(
     'mai', // remap to en-GB
     'mk',
     'ml',
-    'mn', // remap to en-GB
+    'mn', // remap mn to en-GB, we lost this locale but there are still in-product links in Firefox 3 to mozilla.com/mn/
     'mr',
     'nb-NO',
     'nl',
@@ -218,7 +218,7 @@ $lang_remap = array(
     'lg'        => 'en-GB',
     'no'        => 'nb-NO',
     'mai'       => 'en-GB',
-    'mn'        => 'en-GB',
+    'mn'        => 'en-US',
     'nso'       => 'en-GB',
     'pt'        => 'pt-PT',
     'sv'        => 'sv-SE',
