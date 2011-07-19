@@ -198,6 +198,14 @@ function getDownloadURLForLanguage(aLangID, aPlatform, directLink)
     return "http://www.mozilla.com/" + abCD + "/" + product + "/all.html";
   }
 
+
+  // Check for an arbitrary tracking tag variable to append to URL
+  // Define a JS var "downloadTag" with a tag to pass onto the download URL
+  // for tracking through to the download-confirmation page.
+  if (typeof gDownloadTag != undefined) {
+    url +="&amp;tag=" + gDownloadTag;
+  }
+
   return url + "&amp;lang=" + abCD;
 }
 

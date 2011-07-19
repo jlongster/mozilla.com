@@ -310,6 +310,7 @@ EXTRA_HEADERS;
 
 </div> <!-- end #download_message -->
 
+<? if (isset($_GET['tag']) && $_GET['tag'] == 'xpcamp') { ?>
 <!-- measure tag (Bug 660249) -->
 <IFRAME
 SRC="http://media.mozilla.com/ipixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"
@@ -320,6 +321,7 @@ SRC="http://media.mozilla.com/jpixel?spacedesc=1121943_1061349_1x1_1061349_10613
 <![endif]>
 </IFRAME>
 
+<? } ?>
 
 <?php
     @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
