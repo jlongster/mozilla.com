@@ -173,9 +173,10 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     if ($_SERVER['REQUEST_URI'] == '/') {
         $_SERVER['REQUEST_URI'] = '/firefox/';
     }
-
+    
+    $parsed_url = parse_url($_SERVER['REQUEST_URI']);
     // This matches both / and /firefox because of the above code
-    if (rtrim($_SERVER['REQUEST_URI'], '/') == '/firefox') {
+    if (rtrim($parsed_url['path'], '/') == '/firefox') {
         $ua = $_SERVER['HTTP_USER_AGENT'];
         $ua_nocase = strtolower($ua);
 
