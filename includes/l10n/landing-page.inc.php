@@ -40,6 +40,11 @@ if (count($_GET) > 0) {
     // XP conversion campaign
     if ($target == 'normal' && (in_array('xp', $getArray) || in_array('XP', $getArray)) ) {
 
+        if ($config['url_scheme'] === 'http') {
+            noCachingRedirect('https://' . $config['server_name'] . '/' . $lang .'/firefox/xp/');
+            exit;
+        }
+
         $target = 'XP';
 
         if ($stage == false) {
