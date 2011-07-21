@@ -133,11 +133,11 @@ if($extra == 'XPUpgrade') {
 
 <!-- measure tag (Bug 660249) -->
 <IFRAME
-SRC="http://media.mozilla.com/ipixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"
+SRC="https://media.mozilla.com/ipixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"
      WIDTH="1" HEIGHT="1" SCROLLING="No" FRAMEBORDER="0" MARGINHEIGHT="0" MARGINWIDTH="0">
 <![if lt IE 5]>
 <SCRIPT
-SRC="http://media.mozilla.com/jpixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"></SCRIPT>
+SRC="https://media.mozilla.com/jpixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"></SCRIPT>
 <![endif]>
 </IFRAME>
 
