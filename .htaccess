@@ -290,9 +290,6 @@ RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
 
-RewriteCond %{HTTPS} off
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp(.*)[/]?$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301]
-
 # Bug 666937, redirect old ab-CD/firefox/customize/ pages to addons.mozilla.org for locales
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
