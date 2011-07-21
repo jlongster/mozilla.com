@@ -289,6 +289,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp[/]?$ $1firefox/?xp [PT]
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
+
 RewriteCond %{HTTPS} off
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp(.*)[/]?$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301]
 
@@ -541,6 +542,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?blocklist(/(?:index.html)?)?$ https:
 
 # Bug 655193
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/download/?$ / [R=permanent]
+
+RewriteCond %{HTTPS} (o.+)
+RewriteRule ^t$ /test.php?ssl=%1
 
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
