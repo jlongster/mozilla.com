@@ -225,6 +225,14 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     exit;
 }
 
+# Make sure firefox/xp is on HTTPS, for some reason the %{HTTPS}
+# Apache variable does not work! Remove this soon (7/11)
+if(trim($_SERVER['REQUEST_URI'], '/') == "$lang/firefox/xp" &&
+   $config['url_scheme'] != 'https') {
+    header("Location: https://{$config['server_name']}/{$lang}{$_SERVER['REQUEST_URI']}");
+    exit;
+}
+
 // All the firefox2 in-product pages have the language in the REDIRECT_URL.
 // We're using $lang already to put it in the right directories, so we don't want
 // this on there as well.  If $lang is at the front of the URL, this removes it.
