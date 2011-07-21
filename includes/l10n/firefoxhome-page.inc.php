@@ -4,9 +4,6 @@
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-home-app.css" media="screen" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/video-player.css" media="screen" />
-    <script src="/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-    <script src="/includes/yui/2.5.1/animation/animation-min.js"></script>
-    <script src="/includes/yui/2.5.1/container/container-min.js"></script>
     <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
 EXTRA_HEADERS;
 

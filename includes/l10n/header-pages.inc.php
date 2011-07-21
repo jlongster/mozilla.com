@@ -64,16 +64,6 @@ DOCTYPE;
 DOCTYPE;
 }
 
-$yuicall = '';
-
-if (in_array($body_id, array('geolocation', 'tips', 'firefox-home', 'download'))) {
-    $yuicall = <<<YUICALL
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/yahoo-dom-event/yahoo-dom-event.js"></script>
-    <script type="text/javascript" src="{$config['static_prefix']}/includes/yui/2.5.1/container/container_core-min.js"></script>
-YUICALL;
-}
-
-
 if(in_array($lang, array('cs', 'eu', 'fi', 'pl', 'ru', 'sk', 'sl', 'sr', 'uk'))) {
     $val = str_replace('Mozilla.com', '</span><span id="t2">Mozilla</span><span>.com</span><br/><span id="t3">', ___('Visit Mozilla.com (in English)'));
     $val = '<span id="t1">'.$val.'</span>';
@@ -137,7 +127,6 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/template.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/content.css" media="screen" />
-    {$yuicall}
     <style type="text/css">
 
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
