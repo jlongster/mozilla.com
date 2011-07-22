@@ -5,6 +5,12 @@ include_once $config['file_root'].'/includes/l10n/libs/class.download.php';
 // create a download box object
 $firefoxDetailsl10n = new firefoxDetailsL10n();
 
+if($pageid != 'firefox-channels') {
+    $firefoxDetailsl10n -> download_base_url_transition = "/$lang/download/";
+    $firefoxDetailsl10n -> has_transition_download_page = $stableTransitionPage;
+}
+
+
 // initialize variables for download boxes
 $dl_box_id      = $dl_box_aurora = $dl_box_beta = 'default_l10n_download_box';
 $dl_fallback    = false;
