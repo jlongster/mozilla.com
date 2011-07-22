@@ -1,14 +1,14 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Maidir Linn</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
+        <p><strong>Is comhphobal domhanda muid</strong>
             of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
       
-        <p><strong>We're a non-profit organization</strong>
+        <p><strong>Is eagraíocht neamhbhrabúis muid</strong>
             dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
       
-        <p><strong>And we're an open source project</strong>
+        <p><strong>Is tionscadal foinse oscailte muid</strong>
             whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
     </div>
 
