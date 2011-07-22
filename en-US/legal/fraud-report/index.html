@@ -54,8 +54,8 @@
 </style>
 EXTRA_HEADERS;
 
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
-    @include_once "{$config['file_root']}/includes/recaptcha/recaptcha.lib.php";
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/recaptcha/recaptchalib.php";
 ?>
 
 
@@ -267,5 +267,5 @@ EXTRA_HEADERS;
 
 </div>
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
