@@ -516,6 +516,10 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new/? /$1m/ios [R=302]
 RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new/? /$1m [R=302]
 
+# Bug 672863
+RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/? /$1m [R=302]
+
 # Bug 638948 redirect beta privacy policy link
 RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/firefox.html [R=permanent]
 
