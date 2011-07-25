@@ -177,6 +177,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
     $parsed_url = parse_url($_SERVER['REQUEST_URI']);
     // This matches both / and /firefox because of the above code
     if (rtrim($parsed_url['path'], '/') == '/firefox') {
+        $is_mobile_redirected = FALSE;
         $ua = $_SERVER['HTTP_USER_AGENT'];
         $ua_nocase = strtolower($ua);
 
