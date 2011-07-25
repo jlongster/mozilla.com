@@ -89,9 +89,15 @@ BETA_STYLING;
 
 $extra_headers = <<<EXTRA_HEADERS
 <link rel="stylesheet" type="text/css" href="/style/covehead/download-page.css" media="screen" />
+<meta name="WT.ad" content="Support - Download Help;Tour;About;Mobile;Newsletter;Twitter;Facebook;Connect" />
+<meta name="WT.si_n" content="DownloadFirefox">
+<meta name="WT.si_x" content="1">
+<meta name="WT.si_cs" content="1">
+<meta name="WT.z_convert" content="DownloadFirefox">
+
 <style type⁼"text/css">
 #wrapper {
-    background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll 1100px 150px transparent;
+    background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll right 150px transparent;
     min-height: 700px;
 }
 
