@@ -30,7 +30,7 @@ if ($beta_download) {
 
     $betastyling = <<<BETA_STYLING
 
-<link rel="stylesheet" type="text/css" href="/style/firefox/beta/4/main.css" />
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/firefox/beta/4/main.css" />
 
 <style>
 
@@ -55,7 +55,7 @@ if ($beta_download) {
 }
 
 body[id="download"] #content {
-    background:url("/img/firefox/beta/4/tech-table-borders.png") no-repeat scroll 0 0 #F9F9F9 !important;
+    background:url("{$config['static_prefix']}/img/firefox/beta/4/tech-table-borders.png") no-repeat scroll 0 0 #F9F9F9 !important;
     width:880px !important;
     height:100px !important;
     padding: 0 !important;
@@ -64,7 +64,7 @@ body[id="download"] #content {
 }
 
 body[id="download"] #content p {
-    background:url("/img/firefox/beta/4/tech-table-borders.png") no-repeat scroll 100% 100% transparent;
+    background:url("{$config['static_prefix']}/img/firefox/beta/4/tech-table-borders.png") no-repeat scroll 100% 100% transparent;
     width:780px !important;
     padding:40px 20px 0 80px !important;
     min-height:130px !important;
@@ -77,7 +77,7 @@ BETA_STYLING;
 
 $extra_headers = <<<EXTRA_HEADERS
 
-<link rel="stylesheet" type="text/css" href="/style/covehead/download-page.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/download-page.css" media="screen" />
 
 <meta name="WT.ad" content="Support - Download Help;Tour;About;Mobile;Newsletter;Twitter;Facebook;Connect" />
 <meta name="WT.si_n" content="DownloadFirefox" />
@@ -92,7 +92,7 @@ $extra_headers = <<<EXTRA_HEADERS
 }
 
 #doc {
-    background: url("/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll right 150px transparent;
+    background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll right 150px transparent;
 }
 
 #download-message {
