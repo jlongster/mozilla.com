@@ -33,7 +33,7 @@ EXTRA_HEADERS;
 <div id="main-content">
 
     <div id="download_aurora" class="channel">
-        <h3><span>Aurora</span></h3>
+        <h3>Firefox Aurora</h3>
         <ul class="channel-list">
             <li>Experience the newest innovations before they go to beta in an environment that’s not for the faint of heart</li>
             <li>Provide feedback on features and performance to help determine what makes the final release</li>
@@ -45,8 +45,8 @@ EXTRA_HEADERS;
                 // Configure the Firefox download write script
                 var gDownloadTracker = "";
 
-                var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Mozilla Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Mozilla Firefox Aurora','WT.si_n', 'Mozilla Firefox Aurora','WT.si_x', '2');";
-                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + "\" href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Mozilla Firefox Aurora <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+                var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
+                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + "\" href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Firefox Aurora <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
                 var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
                 var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
@@ -61,10 +61,31 @@ EXTRA_HEADERS;
                 //-->
             </script>
         </div>
+        <div id="download_aurora_mobile_button">
+        <div class="home-download beta-download">
+            <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_Aurora"
+               class="download-link download-firefox"
+               onclick="dcsMultiTrack('DCS.dcssip', 'wiki.mozilla.org',
+                                      'DCS.dcsuri', 'Mobile/Platforms/Android',
+                                      'WT.ti', 'Link:  Firefox Aurora for Mobile',
+                                      'WT.dl', 99,
+                                      'WT.z_convert', 'Firefox Aurora for Mobile',
+                                      'WT.si_n', 'Firefox Aurora for Mobile',
+                                      'WT.si_x', '2');">
+                <span class="download-content">
+                <span class="download-title">Download</span>
+                Firefox Aurora for Mobile
+                </span>
+                <img src="<?=$config['static_prefix']?>/img/covehead/channel/icon-mobile.png" alt="" />
+            </a>
+            <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
+<a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
+        </div>
+        </div>
     </div>
 
     <div id="download_beta" class="channel">
-        <h3><span>Beta</span></h3>
+        <h3>Firefox Beta</h3>
         <ul class="channel-list">
             <li>Experience cutting edge features but with more stability</li>
             <li>Provide feedback to help refine and polish what will be in the final release</li>
@@ -90,8 +111,8 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
             document.body.className += ' platform-linux';
         }
         
-          var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Mozilla Firefox Beta','WT.dl', 99,'WT.z_convert', 'Mozilla Firefox Beta','WT.si_n', 'Mozilla Firefox Beta','WT.si_x', '2');";
-          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span class=\"download-content\"><span class=\"download-title\">Download<\/span> Mozilla Firefox Beta <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+          var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Beta','WT.dl', 99,'WT.z_convert', 'Firefox Beta','WT.si_n', 'Firefox Beta','WT.si_x', '2');";
+          var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span class=\"download-content\"><span class=\"download-title\">Download<\/span> Firefox Beta <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
           var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
           var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
@@ -111,31 +132,26 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
     <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
 
   </div>
-    </div>
-
-    <div id="download_mobile_beta" class="channel">
-        <h3><span>Beta <span>for Mobile</span></span></h3>
-        <ul class="channel-list">
-            <li>Experience cutting edge mobile features still in development</li>
-            <li>Provide feedback to help refine and polish what will be in the final release</li>
-        </ul>
+        <div id="download_beta_mobile_button">
         <div class="home-download beta-download">
             <a href="<?= mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version)) ?>"
                class="download-link download-firefox"
                onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
                                       'DCS.dcsuri', '/en-US/firefox/channel/',
-                                      'WT.ti', 'Link:  Mozilla Firefox Beta for Mobile',
+                                      'WT.ti', 'Link:  Firefox Beta for Mobile',
                                       'WT.dl', 99,
-                                      'WT.z_convert', 'Mozilla Firefox Beta for Mobile',
-                                      'WT.si_n', 'Mozilla Firefox Beta for Mobile',
+                                      'WT.z_convert', 'Firefox Beta for Mobile',
+                                      'WT.si_n', 'Firefox Beta for Mobile',
                                       'WT.si_x', '2');">
                 <span class="download-content">
                 <span class="download-title">Download</span>
-                Mozilla Firefox Beta for Mobile
+                Firefox Beta for Mobile
                 </span>
+                <img src="<?=$config['static_prefix']?>/img/covehead/channel/icon-mobile.png" alt="" />
             </a>
             <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
 <a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
+        </div>
         </div>
     </div>
 

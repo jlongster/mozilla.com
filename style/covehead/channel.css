@@ -30,18 +30,14 @@
 /* {{{ Main Content */
 
 #channel .channel {
-    width: 300px;
+    width: 450px;
     float: left;
     display: inline;
-    padding-bottom: 20px;
-    padding-right: 20px;
+    margin-right: 40px;
 }
 
-#channel .channel#download_aurora,
-#channel .channel#download_beta,
-#channel .channel#download_firefox,
-#channel .channel#download_mobile_beta {
-    padding-right: 0;
+#channel .channel#download_beta {
+    margin-right: 0;
 }
 
 #channel_news {
@@ -58,12 +54,11 @@
     padding: 0;
     margin: 0;
     height: 110px;
+    text-indent: -1000px;
+    overflow: hidden;
 }
 
-#download_aurora  h3 { background-position: 0 0; }
-#download_beta    h3 { background-position: 0 -260px; }
-#download_firefox h3 { background-position: 0 -260px; }
-#download_mobile_beta h3 { background-position: 0 -260px; }
+#download_beta    h3 { background-position: -600px 0; }
 
 
 #channel .channel#download_firefox h3 span,
@@ -76,16 +71,24 @@
     padding: 25px 0 30px 120px;
 }
 
-#channel .channel#download_aurora #download_aurora_button,
-#channel .channel#download_beta #download-button,
-#channel .channel#download_firefox #download,
-#channel .channel#download_mobile_beta .home-download {
-    margin: 10px 10px 10px 28px;
+#channel #download_beta_mobile_button a,
+#channel #download_aurora_mobile_button a {
+    position: relative;
 }
 
-#channel ul.home-download {
-    width: auto;
-    overflow: visible;
+#channel #download_beta_mobile_button img,
+#channel #download_aurora_mobile_button img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#channel .channel#download_aurora #download_aurora_button,
+#channel .channel#download_aurora #download_aurora_mobile_button,
+#channel .channel#download_beta #download-button,
+#channel .channel#download_beta #download_beta_mobile_button {
+    margin: 10px 10px 30px 28px;
+    width: 300px;
 }
 
 #channel .channel#download_aurora a.download-link,
@@ -96,29 +99,17 @@
     height: auto;
 }
 
-#channel .channel#download_aurora a.download-link,
-#channel .channel#download_aurora a.download-link:hover,
-#channel .channel#download_aurora a.download-link:active {
-	background: #6b65bd; /* old browsers */
-	background: -moz-linear-gradient(top, #6b65bd 0%, #3d2c6f 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b65bd), color-stop(100%,#3d2c6f)); /* webkit */
-	background: linear-gradient(top, #6b65bd 0%, #3d2c6f 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b65bd', endColorstr='#3d2c6f',GradientType=0 ); /* ie */
-}
-
-#channel .channel#download_aurora #download_aurora_button a.download-link span.download-content,
-#channel .channel#download_beta #download-button a.download-link span.download-content,
-#channel .channel#download_firefox #download a.download-link span.download-content,
-#channel .channel#download_mobile_beta a.download-link span.download-content {
+#channel .channel#download_aurora a.download-link span.download-content,
+#channel .channel#download_beta   a.download-link span.download-content {
     background: url("/img/covehead/channel/download-arrow.png") no-repeat 10px 50%;
     padding: 10px 10px 12px 38px;
     margin: 0;
-    height: 50px;
+    height: auto;
     font-size: 15px;
     line-height: 1.1;
 }
 
-#channel #download_aurora_button a.download-link span.download-title,
+#channel a.download-link span.download-title,
 #channel #download_beta #download-button a.download-link span.download-title,
 #channel #download a.download-link span.download-title,
 #channel #download_mobile_beta a.download-link span.download-title {
@@ -141,11 +132,11 @@
     padding: 0;
 }
 
-#channel #download_aurora_button .download-other,
+#channel .download-other,
 #channel #download_beta .download-other,
 #channel #download .download-other,
 #channel #download_mobile_beta .download-other {
-    margin: 5px 0 0 0;
+    margin: 0;
     width: auto;
     text-align: left;
 }
@@ -153,42 +144,7 @@
 .channel ul.channel-list {
     margin: 5px 10px 10px 10px;
     padding: 0 0 10px 20px;
-    min-height: 11em;
-}
-
-.channel a.download,
-.channel a.download:link,
-.channel a.download:visited {
-	display: block;
-    margin: 10px 20px 10px 28px;
-	-moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	-webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	box-shadow:         0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	color: #fff;
-	overflow: visible;
-	background: #84C63C; /* old browsers */
-	background: -moz-linear-gradient(top, #84C63C 0%, #489615 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84C63C), color-stop(100%,#489615)); /* webkit */
-	background: linear-gradient(top, #84C63C 0%, #489615 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84C63C', endColorstr='#489615',GradientType=0 ); /* ie */
-	-moz-transition:   box-shadow 0.2s ease-in-out;
-	-webit-transition: box-shadow 0.2s ease-in-out;
-	transition:        box-shadow 0.2s ease-in-out;
-    text-decoration: none;
-}
-
-.channel a.download:hover,
-.channel a.download:active {
-	-moz-box-shadow:    0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	-webkit-box-shadow: 0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	box-shadow:         0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	-moz-transition:    box-shadow 0.2s ease-in-out;
-	-webkit-transition: box-shadow 0.2s ease-in-out;
-	transition:         box-shadow 0.2s ease-in-out;
-    text-decoration: none;
+    min-height: 6em;
 }
 
 .channel a.download span {
@@ -243,10 +199,6 @@
 .channel small {
     font-size: 10px;
     margin-left: 28px;
-}
-
-#channel .download-info {
-    color: white;
 }
 
 /* }}} */
