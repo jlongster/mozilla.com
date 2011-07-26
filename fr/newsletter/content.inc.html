@@ -1,6 +1,6 @@
 <div id="main-feature">
-  <h2>Découvrez toutes les nouveautés <br /> dans notre newsletter.</h2>
-  <p>Abonnez-vous pour être informé chaque mois de toutes les mises à jour et les nouveautés Mozilla, y compris nos dernières astuces pour optimiser votre navigateur Firefox. La meilleure manière de rester en contact!</p>
+  <h2>Découvrez toutes les<br /> nouveautés dans notre bulletin.</h2>
+  <p>Abonnez-vous pour être informé chaque mois de toutes les mises à jour et des nouveautés Mozilla, y compris nos dernières astuces pour optimiser votre navigateur Firefox. La meilleure manière de rester en contact&nbsp;!</p>
 </div>
 
 <div id="content">
@@ -15,14 +15,13 @@
         </p>
 
         <div class="field required email-field">
-          <label for="email">Votre adresse électronique:</label>
+          <label for="email">Votre adresse électronique&nbsp;:</label>
           <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
         </div>
 
         <div class="field country-field">
-          <label for="country">Pays:</label>
+          <label for="country">Pays&nbsp;:</label>
           <select class="country" name="country">
-            <option value="">Select country</option>
             <?php
                 $country = $form->get('country');
                 if (!$country) {
@@ -34,13 +33,13 @@
         </div>
 
         <div class="field lang-field">
-          <span class="field-label">Langues disponibles actuellement:</span>
+          <span class="field-label">Langues disponibles actuellement</span>
           <div class="field-language">
             <select class="lang" name="lang">
-              <option value="fr">Francês</option>
+              <option value="fr">Français</option>
               <option value="pt-BR">Português</option>
               <option value="de">Deutsch</option>
-              <option value="en">Inglês</option>
+              <option value="en">English</option>
             </select>
           </div>
         </div>
@@ -54,7 +53,7 @@
                   $html_format = '';
               }
           ?>
-          <span class="field-label">Format:</span>
+          <span class="field-label">Format&nbsp;:</span>
           <div class="field-radios">
             <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
             <label for="html-format">HTML</label>
@@ -67,14 +66,14 @@
           <label for="privacy-check" class="privacy-check-label">
             <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
             <span class="error-wrapper"><input type="checkbox" name="privacy" class="privacy-check" <?= $checked ?>></span>
-            <span class="title"> J’ai lu et j’accepte la politique de <a href="/en-US/privacy-policy">confidentialité de Mozilla</a></span>
+            <span class="title fr-title"> J’ai lu et j’accepte la <a href="/en-US/privacy-policy">politique de respect de la vie privée</a> de Mozilla</span>
           </label>
         </div>
 
         <div class="text">Vous recevrez uniquement des informations liées à Mozilla.</div>
 
         <div class="field submit-field">
-          <input name="submit" type="submit" value="M’inscrire" id="subscribe">
+          <input name="submit" type="submit" value="M'abonner" id="subscribe">
         </div>
       </form>
     </li>
