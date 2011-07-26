@@ -1,0 +1,66 @@
+
+<div id="main-feature">
+
+    <h1>Petra nevez gant <img src="<?=$config['static_prefix']?>/img/firefox/beta/4/firstrun/title.png" alt="Firefox 4 Beta" /></h1>
+
+    <div id="sub-feature">
+
+    <?=$movie;?>
+
+        <h3>Ezhomm ez eus muioc'h a venoioù !</h3>
+        <p>
+            Trugarez deoc'h, degemeret hon eus tremen ur milion a venioù a-zivout Firefox 4 Beta. Koulskoude ez eus ezhomm muioc'h a skoazell c'hoazh ! Pouezit war afell ar menoioù e korn uhel a-zehou eus ar merdeer a-benn reiñ deomp da c'houzout pezh a blij deoc'h ha pezh na blij ket deoc'h (arabat ankouaat enlakaat an URL, ivez).
+        </p>
+
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/feedback/">Rannit ho menioù »</a></li>
+            <?=$li_relnotes?>
+        </ul>
+    </div>
+
+</div>
+
+<?php if($fallback == true): include $fallbackcontent; else:?>
+
+
+<div id="main-content">
+
+    <div id="column-4">
+        <h4>Penaos ez a en-dro ho lec'hiennoù gwellañ plijet ganeoc'h ?</h4>
+        <p>
+          Ha karget e vezont buan ? Ha linennoù pe voestadoù dic'hortoz a welit ? Ha leugniet e vez ar furmskridoù ? Flash a ya en-dro ? Videoioù a vez gwelet ? <a href="<?=$feedbackurl?>">Menegit deomp al lec'hiennoù gant kudennoù.</a>
+        </p>
+    </div>
+
+    <div id="column-1">
+        <h4>Ha c'hoariet e vez gant ho c'hoarioù enlinenn gwellañ plijet ganeoc'h ?</h4>
+        <p>
+          Roit sikour deomp a-benn ma yay en-dro al lec'hiennoù a arver Flash pe berzhioù liesvedia all gant un doare aes gant Firefox 4. Ha herrekoc'h ez a ? Pe degouezhet ez eus bet ur sac'hadenn gant ar c'hoari ? <a href="<?=$feedbackurl?>">Lakait ac'hanomp da c'houzout pezh a vez graet gant ar c'hoarioù ha pezh nad a ket en-dro.</a>
+        </p>
+    </div>
+
+    <div id="column-2">
+        <h4>Peseurt enlugelladoù hoc'h eus prouadet ?</h4>
+        <p>
+          Ha keverlec'h eo hoc'h enlugellad muiañ plijet gant Firefox 4 Beta ? Pe re ne 'z eont ket en-dro ? Skoazellet oc'h bet gant Ardoer nevez an askouezhioù da chom kempenn ? (Notenn : a-benn kregiñ gant arver an enlugelladoù gant Firefox 4 Beta klaskit 4.0.* dindan "Labourat a ra gant" e Ardoer an enlugelladoù.) <a href="<?=$feedbackurl?>">Lavarit ho soñj deomp.</a>
+        </p>
+
+        <p>
+          Pe mar fell deoc'h reiñ muioc'h a skoazell c'hoazh, ret eo staliañ <a href="https://addons.mozilla.org/firefox/addon/15003">Kaser danevelloù a-fet keverlec'hded an enlugelladoù</a>. Gant an askouezh-mañ, mar bez gwelet unan eus hoc'h enlugelladoù na hañval ket mont en-dro evel ma veze graet gant handelvoù kent Firefox, digorit Ardoer an enlugelladoù ha klikit war Keverlec'hded e-kichen an enlugellad-mañ da gas un danevell da vMozilla.
+        </p>
+    </div>
+
+    <div id="column-3">
+        <h4>Ha goubredet hoc'h eus ho kontoù ?</h4>
+        <p>
+          Mard hoc'h eus ur gont gant Sync, penaos e tremenas ar c'hefluniañ ? Ha barrek oc'h bet da c'houbredañ ho roadennoù war ho trevnad Android gant Mobile Beta, pe war hoc'h iPhone gant Firefox Home ? Ma n'hoc'h eus ket kefluniet ur gont gant Sync, ha kavet hoc'h eus mollad Sync en ho merdeer ? <a href="<?=$feedbackurl?>">Kasit ur c'hemenn a-zivout Sync</a>.
+        </p>
+    </div>
+</div>
+
+<?=$sidebar?>
+
+
+
+
+<?php endif; ?>
