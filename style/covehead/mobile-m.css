@@ -32,13 +32,6 @@ dd, p {
 
 @font-face {
     font-family: 'MetaBlack';
-    src: local('☺'), url('/img/fonts/MetaWebPro-Book.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'MetaBlack';
     src: local('☺'), url('/img/fonts/MetaWebPro-Black.woff') format('woff');
     font-weight: bold;
     font-style: normal;
@@ -295,6 +288,7 @@ p.button strong {
     border: 0;
     margin: 0;
     line-height: .9em;
+    letter-spacing: -0.04em;
     padding: 0;
 }
 
@@ -595,14 +589,36 @@ ul.link-list a:visited {
 }
 
 #channel .content-box .title {
-    padding-left: 90px;
+    padding-left: 88px;
     padding-top: 5px;
-    min-height: 90px;
-    background: url(/img/logo-78.png) no-repeat;
+    min-height: 85px;
+    background: url(/img/mobile/m/channel-logos.png) no-repeat;
 }
 
-#channel .content-box ul {
-    margin: 0 1em;
+#channel #download-beta {
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    margin-top: 0;
+    border-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+#channel #download-beta .title {
+    background-position: 0 -500px;
+}
+
+#channel #download-aurora {
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+#channel .content-box p {
+    margin: 0;
     color: #666666;
 }
 
@@ -618,6 +634,7 @@ ul.link-list a:visited {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
+    background-color: #fff;
     -moz-box-shadow:0 2px 2px #d7d9e8;
     -webkit-box-shadow:0 2px 2px #d7d9e8;
     box-shadow: 0 2px 2px #d7d9e8;
@@ -629,15 +646,16 @@ ul.link-list a:visited {
 }
 
 #channel .button {
-    margin-top: 1em;
+    margin-top: .7em;
     padding: .7em 0;
+    background: #519d1b;
+    background-image:-moz-linear-gradient(#83c53c, #519d1b);
+    background-image:-webkit-gradient(linear, left top, left bottom, from(#83c53c), to(#519d1b));
+    -moz-box-shadow: 0px 4px 0 #438814;
+    -webkit-box-shadow: 0px 4px 0 #438814;
+    box-shadow: 0px 4px 0 #438814;
 
-    background: -moz-linear-gradient(top, #447BC4 0%, #305d99 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#447BC4), color-stop(100%,#305d99)); /* webkit */
-    -moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-    -webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-    box-shadow:         0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-    text-shadow: none;
+    text-shadow: 0px -1px 0px #4e921d;
 }
 
 #channel a.desktop,
