@@ -46,7 +46,7 @@ Redirect temp /security/ http://www.mozilla.org/security/
 RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
 # Redirect beta firstrun/whatsnew pages to out-of-date beta page (Bug 656721)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]?$ $1firefox/out-of-date/beta.html [PT,L]
+RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/beta.html [PT,L]
 
 # Redirects for HP7 (Bug 665019)
 # Firefox 4, 5, 6 and beyond folk
@@ -509,15 +509,6 @@ RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(5.*|6.*|7.*)$
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/fx/ [R=302]
 # redirect everyone else to /new
 RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
-
-RewriteCond %{HTTP_USER_AGENT} iPhone
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new/? /$1m/ios [R=302]
-
-RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new/? /$1m [R=302]
-
-# RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
-# RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/? /$1m [R=302]
 
 # Bug 672863
 RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
