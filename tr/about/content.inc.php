@@ -1,20 +1,15 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">Hakkımızda</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p>Biz, 1998'den beri daha iyi bir internet inşa etmek etmek için <a href="http://www.mozilla.org/community">birlikte çalışan insanlardan oluşan</a> <strong>küresel bir topluluğuz</strong>.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p>Biz, kendisini, internette <a href="http://www.mozilla.org/about/mission.html">açıklık, yenilik ve fırsat eşitliğini</a> yaymaya adamış <strong>kâr amacı gütmeyen bir kuruluşuz</strong>.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p>Ve biz, <a href="http://www.mozilla.org/projects">yazılımları</a> internetin en iyi uygulamalarından bazılarına geliştirmek için kullanılan <strong>açık kaynaklı bir projeyiz</strong>.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Biz, çağımızın en büyük sosyal ve teknolojik gelişmesi olan internetin geliştirilmesi ve korunması gereken kamusal bir kaynak olduğuna inanıyoruz.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Mozilla Vakfı</a> bu hedefleri gerçekleştirmek için kurulmuş kâr amacı gütmeyen bir kuruluştur; ama Mozilla'nın arkasındaki gerçek güç, dünyanın her tarafında kendi hayallerindeki web'i yaratmak için çalışan insanlardır. <a href="http://www.mozilla.org/contribute">Siz de onlardan biri olabilirsiniz</a>!</p>
 </div>
