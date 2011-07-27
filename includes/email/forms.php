@@ -142,10 +142,18 @@ class LocalizedNewsletterForm extends NewsletterForm {
         $now = date('Y-m-d');
         $data = $this->data;
 
+        $format = getattr($data, 'format', 'html');
+        if(strtolower($format) == 'html') {
+            $format = 'H';
+        }
+        else {
+            $format = 'T';
+        }
+
         $data = array('EMAIL_ADDRESS_' => $data['email'],
                       'LANGUAGE_ISO2' => $data['lang'],
                       'COUNTRY_' => $data['country'],
-                      'EMAIL_FORMAT_' => getattr($data, 'format', 'H'));
+                      'EMAIL_FORMAT_' => $format);
 
         $data[$this->campaign . '_FLG'] = $this->optin ? 'Y' : 'N';
         $data[$this->campaign . '_DATE'] = $now;
