@@ -97,6 +97,7 @@
 #channel .channel#download_mobile_beta a.download-link {
     margin: 0 0 5px;
     height: auto;
+    zoom:1;
 }
 
 #channel .channel#download_aurora a.download-link span.download-content,
@@ -107,6 +108,20 @@
     height: auto;
     font-size: 15px;
     line-height: 1.1;
+}
+
+* html #channel a.download-link,
+* html #channel a.download-link:link,
+* html #channel a.download-link:active,
+* html #channel a.download-link:hover,
+* html #channel a.download-link:active {
+    background: #84C63C;
+    box-shadow: none;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84C63C', endColorstr='#489615',GradientType=0 ); /* ie */
+}
+
+* html #channel a.download-link span.download-content {
+    background: none;
 }
 
 #channel a.download-link span.download-title,
