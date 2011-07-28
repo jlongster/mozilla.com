@@ -55,20 +55,38 @@ $dynamic_header = <<<DYNAMIC_HEADER
 {$extra_headers}
 <style>
 #download #update-notice { display: none; }
+
 #update-notice {
-    background: #333;
+    background: rgb(20,20,20);
+    background: rgba(38, 38, 38, 0.95);
     border-bottom: 2px solid #686868;
     text-shadow: 0 1px #000;
     -moz-text-shadow: 0 1px #000;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+    z-index: 99;
+    line-height: 1;
+}
+
+#update-notice.bottom {
+    position: fixed;
+    bottom: 0;
 }
 
 #update-notice .container {
     text-align: left;
-    padding: 12px 10px 12px 140px;
-    max-width: 780px;
+    padding: 15px 10px 15px 140px;
+    width: 800px;
     display: inline-block;
     margin: 0 auto;
     background: url({$config['static_prefix']}/img/covehead/firefox/update-creature.png) 0 100% no-repeat;
+    position: relative;
+}
+
+#update-notice .message {
+    float: left;
+    width: 600px;
 }
 
 #update-notice h2 {
@@ -76,20 +94,67 @@ $dynamic_header = <<<DYNAMIC_HEADER
     text-transform: none;
     font-family: inherit;
     font-weight: normal;
-    font-size: 22px;
-    font-style: italic;
+    font-size: 18px;
+    font-style: normal;
     margin: 0 0 5px 0;
     color: #fff;
 }
 
-#update-notice p { font-size: 14px; color: #eee;  margin: 0; }
+#update-notice p {
+    font-size: 14px;
+    color: #ccc;
+    margin: 0;
+}
 
-#update-notice a:link,
-#update-notice a:visited,
-#update-notice a:hover,
-#update-notice a:active {
+#update-notice p.action {
+    width: 200px;
+    margin: 0;
+    text-align: center;
+    float: right;
+}
+
+#home #update-notice p.action {
+    display: none;
+}
+
+#update-notice p.action span {
+    display: block;
+}
+
+#update-notice p.action span a {
+    color: #6ba4ff;
+}
+
+#update-notice .button {
+    display: inline-block;
+    padding: 6px 16px 8px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1),
+                0 -2px rgba(0, 0, 0, 0.1) inset;
+    background:-moz-linear-gradient(top, #84C63C, #489615);
+    background-color: #489615;
     color: #fff;
-    text-decoration: underline;
+    font-size: 16px;
+    font-style: italic;
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.4);
+}
+
+#update-notice .close {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    background: url(/img/covehead/firefox/update-close.png) 0 0 no-repeat;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    text-indent: -1000em;
+}
+
+#update-notice .close:hover,
+#update-notice .close:focus {
+    background-position: -25px 0;
 }
 
 </style>
