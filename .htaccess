@@ -7,7 +7,7 @@ Options +MultiViews -Indexes
 
 SetEnvIfNoCase Request_URI "en-US/index.html" vary-ua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" vary-ua
-Header set Vary "User-Agent" env=vary-ua
+Header always set Vary "User-Agent" env=vary-ua
 
 RewriteEngine On
 
@@ -512,7 +512,7 @@ RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
 
 # Bug 672863
 RewriteCond %{HTTP_USER_AGENT} (Android|Maemo|Fennec|Linux\ armv7l)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?$ /$1m [R=302]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?$ /$1m [R=302,E=vary-ua]
 
 # Bug 638948 redirect beta privacy policy link
 RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/firefox.html [R=permanent]
