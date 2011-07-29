@@ -89,7 +89,7 @@ if($lang != 'en-US') {
 
 
 $extra_headers .= <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/channel.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/l10n/channel.css" media="screen" />
     <style>
 
     /* Bug 654158: we hide the newsletter form, subtitle description  */
