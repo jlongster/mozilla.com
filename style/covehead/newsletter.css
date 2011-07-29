@@ -1,3 +1,5 @@
+/* {{{ Main Newsletter Landing page */
+
 #newsletter #doc {
     background: transparent url(/img/news/example.png) no-repeat 580px 100px;
 }
@@ -14,8 +16,15 @@
 }
 #newsletter #main-feature p {
     width: 500px;
-
 }
+
+#newsletter #main-feature h2 {
+    font-size: 40px;
+}
+#newsletter #main-feature h2 span {
+    font-size: 55px;
+}
+
 
 #newsletter-form {
     left: auto;
@@ -30,7 +39,7 @@
 
 #newsletter-form .field {
     clear: left;
-    padding: 8px 0;
+    padding: 12px 0;
 }
 
 #newsletter-form label,
@@ -186,6 +195,7 @@
     line-height: 30px;
 }
 
+#newsletter-form .button,
 #newsletter-form .subscribe {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 14px;
@@ -226,7 +236,8 @@
     clear: both;
 }
 
-/* {{{ about:mozilla,about:mobile, this-week*/
+/* }}} */
+/* {{{ about mozilla, about mobile, this-week */
 
 .newsletter-aboutmozilla #main-feature,
 .newsletter-aboutmobile #main-feature,
@@ -278,10 +289,165 @@
 }
 
 /* }}} */
+/* {{{ New Users on the Newsletter */
 
-#newsletter #main-feature h2 {
-    font-size: 40px;
+#newsletter-new #main-feature {
+    padding-top: 20px;
 }
-#newsletter #main-feature h2 span {
-    font-size: 55px;
+
+#newsletter-new #sub-footer {
+    display: none;
 }
+
+#newsletter-new #footer {
+    margin-top: 80px;
+}
+
+#newsletter-new #newsletter-form {
+    float: left;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #bdc6d7;
+    padding: 0;
+    margin: 2em 0;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -moz-box-shadow:    0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(99, 149, 185, 0.1) inset;
+    -webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(99, 149, 185, 0.1) inset;
+    box-shadow:         0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(99, 149, 185, 0.1) inset;
+}
+
+#newsletter-new #basic-settings,
+#newsletter-new #other-newsletters {
+    float: left;
+    width: 400px;
+    padding: 20px 30px;
+}
+
+#newsletter-new .intro {
+    font-size: 20px;
+    color: #303030;
+    line-height: 1.3;
+}
+
+#newsletter-new #newsletter-form label,
+#newsletter-new #newsletter-form .field-label {
+    width: 145px;
+    padding-right: 10px;
+}
+
+#newsletter-new .field-radios,
+#newsletter-new .field-contents {
+    float: left;
+    width: 245px;
+}
+
+#newsletter-new #newsletter-form .field-radios label {
+    width: auto;
+}
+
+#newsletter-new #other-newsletters h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+#newsletter-new #other-newsletters table {
+    border-collapse: collapse;
+}
+
+#newsletter-new #other-newsletters table td,
+#newsletter-new #other-newsletters table th {
+    padding: .5em .5em .5em 0;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+#newsletter-new #other-newsletters table td {
+    text-align: center;
+}
+
+#newsletter-new #other-newsletters table tbody tr {
+    border-top: 1px solid #eee;
+}
+
+#newsletter-new #other-newsletters table h4 {
+    font-size: 17px;
+    margin: 0;
+}
+
+#newsletter-new #other-newsletters table p {
+    font-size: 11px;
+}
+
+#newsletter-new #newsletter-form table input {
+    float: none;
+    width: auto;
+}
+
+#newsletter-new #newsletter-form .submit-field {
+    clear: both;
+    margin: 0;
+    padding: 20px 30px 20px 490px;
+}
+
+#newsletter-new #newsletter-form .submit-field input {
+    float: none;
+}
+
+#newsletter-new #newsletter-form .button {
+    padding: 8px 20px;
+    display: inline-block;
+    width: auto;
+    font-weight: bold;
+    text-shadow: 1px 1px rgba(0,0,0,0.2);
+    font-size: 16px;
+}
+
+#newsletter-social {
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+
+#newsletter-social h4 {
+    display: inline;
+    margin: 0 7px 0 0;
+    font-size: 17px;
+}
+
+#newsletter-social p {
+    display: inline;
+    margin: 0 7px 0 0;
+}
+
+#newsletter-social ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#newsletter-social ul li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#newsletter-social ul li a {
+    display: inline-block;
+    padding: 5px 5px 5px 30px;
+    background: url(/img/news/social-icons.png) 0 0 no-repeat;
+    list-style-type: none;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    font-style: italic;
+    color: #484848;
+}
+
+#newsletter-social ul li#newsletter-twitter a {
+    background-position: 0 -70px;
+}
+
+}
+/* }}} */

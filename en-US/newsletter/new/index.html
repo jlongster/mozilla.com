@@ -1,0 +1,132 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter-new';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $status = '';
+
+    if(isset($_POST['target']) && $_POST['target'] == 'main') {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+        if ($form->save()) {
+            $status = 'success';
+        } elseif ($form->error) {
+            $status = 'error-'. $form->error;
+        }
+    }
+    else {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    }
+?>
+
+<div id="main-feature">
+    <h2>You’re All Set! <span>But Wait, There’s More</span></h2>
+</div>
+
+<div id="content">
+
+<form action="" method="post" id="newsletter-form">
+<input type="hidden" name="target" value="main" />
+
+<div id="basic-settings">
+
+    <p class="intro">Want to get the most relevant info? Tell us a little more about yourself. And while you’re here, sign up for other Mozilla news.</p>
+
+
+    <div class="field email-field">
+        <label for="email">Your email address:</label>
+        <div class="field-contents">
+            <input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus>
+        </div>
+    </div>
+
+    <div class="field country-field">
+        <label for="country">Country:</label>
+        <div class="field-contents">
+            <select class="country" name="country">
+                <option value="">Select country</option>
+                <?php
+                    $country = $form->get('country');
+                    if (!$country) {
+                        $country = 'us';
+                    }
+                    echo regionsAsOptions($lang, $country);
+              ?>
+            </select>
+        </div>
+    </div>
+
+    <div class="field format-field">
+      <?php
+          $html_format = 'checked="checked"';
+          $text_format = '';
+          if ($form->get('format') == 'text') {
+              $text_format = 'checked="checked"';
+              $html_format = '';
+          }
+      ?>
+      <span class="field-label">Format:</span>
+      <div class="field-radios">
+        <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
+        <label for="html-format">HTML</label>
+        <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
+        <label for="text-format">Text</label>
+      </div>
+    </div>
+
+</div>
+<div id="other-newsletters">
+
+    <h3><span>Our Other Newsletters:</span></h3>
+    <table>
+        <thead>
+        <tr>
+            <td></td>
+            <th>Subscribe</th>
+            <th>Unsubscribe</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>
+                <h4>Mozilla & You</h4>
+                <p>Lorem ipsom dolor sit amet, consectetur adipisicing elit.</p>
+            </th>
+            <td><input type="radio"></td>
+            <td><input type="radio"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="field submit-field">
+  <input name="submit" type="submit" value="Save Preferences"  class="button">
+</div>
+
+</form>
+
+<div id="newsletter-social">
+    <h4>Let’s Be Friends!</h4>
+    <p>Firefox is also on your favorite social networking sites. Connect with us and join the conversation.</p>
+    <ul>
+        <li id="newsletter-twitter">
+            <a onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com', 'DCS.dcsuri', '/firefox', 'WT.ti', 'Twitter');" href="http://twitter.com/firefox">Follow us »</a>
+        </li>
+        <li id="newsletter-facebook">
+            <a onclick="dcsMultiTrack('DCS.dcssip', 'facebook.com', 'DCS.dcsuri', '/Firefox', 'WT.ti', 'Facebook');" href="http://facebook.com/Firefox">Like us »</a>
+        </li>
+</div>
+
+</div><!-- end #content div -->
+
+<script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
