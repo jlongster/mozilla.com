@@ -1181,4 +1181,134 @@ function hidePartialLocaleJS($release) {
     echo '//]]>'."\n";
     echo '</script>'."\n";
 }
+
+//////////////////////////////////////
+// Porting GeoIP detection from mozeu
+//////////////////////////////////////
+
+// geoIP language shortcodes to mozilla.com language shortcodes mapping
+$country_lang_mapping = array(
+    'AD' => 'ca',
+    'AL' => 'sq',
+    'AT' => 'de',
+    'BG' => 'bg',
+    'BY' => 'be',
+    'CZ' => 'cs',
+    'DE' => 'de',
+    'DK' => 'da',
+    'EE' => 'et',
+    'ES' => 'es',
+    'FI' => 'fi',
+    'FR' => 'fr',
+    'FX' => 'fr',
+    'GB' => 'en',
+    'GI' => 'es',
+    'GP' => 'fr',
+    'GR' => 'el',
+    'HR' => 'hr',
+    'HU' => 'hu',
+    'AM' => 'hy-AM',
+    'IE' => 'ga-IE',
+    'IS' => 'is',
+    'IT' => 'it',
+    'KZ' => 'kk',
+    'LT' => 'lt',
+    'LV' => 'lv',
+    'MD' => 'ro',
+    'MG' => 'fr',
+    'MQ' => 'fr',
+    'MS' => 'ca',
+    'NL' => 'nl',
+    'NO' => 'no',
+    'PF' => 'fr',
+    'PL' => 'pl',
+    'PM' => 'fr',
+    'PT' => 'pt',
+    'RE' => 'fr',
+    'RO' => 'ro',
+    'RS' => 'sr',
+    'RU' => 'ru',
+    'SE' => 'sv',
+    'SI' => 'sl',
+    'SK' => 'sk',
+    'TF' => 'fr',
+    'TR' => 'tr',
+    'UA' => 'uk',
+);
+
+/*
+ * getLocaleCodeByIP()
+ *
+ * returns the locale code from a country <-> locale mapping
+ * after getting the country code by geoIP
+ *
+ * $l is the locale code used as fallback
+ */
+
+function getLocaleCodeByIP($lang = 'en') {
+    $path = $_SERVER['DOCUMENT_ROOT'].'/includes/geoip/';
+    include_once $path.'geoip.inc';
+
+    global $country_lang_mapping;
+    global $full_languages;
+
+    $geoip_buffer   = geoip_open($path.'GeoIP.dat', GEOIP_STANDARD);
+    $code = geoip_country_code_by_addr($geoip_buffer, getIP());
+
+    geoip_close($geoip_buffer);
+    $lang = (isset($country_lang_mapping[$code])) ? $country_lang_mapping[$code] : $lang;
+
+    return $lang;
+}
+
+
+/*
+ * getIP()
+ *
+ * returns IP address from visitor, ignore our proxy settings
+ */
+
+function getIP() {
+
+    /* IT populates the $known_proxies array in this file with the list of known proxies */
+    @include $_SERVER['DOCUMENT_ROOT'].'/includes/geoip/proxylist.php';
+
+    /* if the file is not available, let's create a minimal list */
+    if (!isset($known_proxies)) {
+        $known_proxies = array('10.2.81.4');
+    }
+
+    /* just in case HTTP_X_FORWARDED_FOR is not usable we define a fallback IP */
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+
+        if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',') !== false) {
+
+            $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+
+            foreach($ips as $ip_address) {
+
+                /*  returns false if IP is not in human readable format
+                 *  we don't want PHP warnings in our logs thus the @ for error suppression
+                 */
+                $inet_address = @inet_pton($ip_address);
+
+                if (!in_array($ip_address, $known_proxies) && $inet_address !== false) {
+                    $ip = $ip_address;
+                    break;
+                }
+
+                $ip = $ip_address;
+            }
+
+        } elseif (@inet_pton($_SERVER['HTTP_X_FORWARDED_FOR']) !== false) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+
+    }
+
+    return $ip;
+}
+
 ?>
