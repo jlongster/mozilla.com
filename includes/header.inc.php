@@ -32,7 +32,7 @@ $default_fonts = <<<FONTS
 FONTS;
 
 $default_styles = <<<STYLES
-    <link href="{$config['static_prefix']}/includes/min/min.css?g=css&amp;2011-06-21" rel="stylesheet">
+    <link href="{$config['static_prefix']}/includes/min/min.css?g=css&amp;2011-07-29" rel="stylesheet">
 STYLES;
 
 $head_scripts = empty($head_scripts) ? $default_head_scripts : $head_scripts;
