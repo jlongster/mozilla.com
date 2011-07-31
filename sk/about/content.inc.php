@@ -1,20 +1,18 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">O nás</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Sme globálna komnunita</strong>
+            <a href="http://www.mozilla.org/community">ľudí pracujúcich spolu</a> od roku 1998 s cieľom urobiť internet lepším.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Sme nezisková organizácia</strong>
+            určená na šírenie myšlienok <a href="http://www.mozilla.org/about/mission.html">otvorenosti, inovácií a príležitostí</a> vo svete online.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>Sme otvorený projekt</strong>, 
+            náš <a href="http://www.mozilla.org/projects">softvér</a> sa používa pri vytváraní najlepších aplikácií internetu.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Veríme, že internet ako najväčší sociálny a technologický výdobytok našej doby, je verejným zdrojom, ktorý musí byť vylepšovaný a chránený.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> je nezisková organizácia venujúca sa týmto cieľom. Skutočnou silou Mozilly sú však ľudia po celom svete, ktorí sa podieľajú na budovaní takého webu, aký považujú za najlepší. <a href="http://www.mozilla.org/contribute">A vy môžete pri tom pomôcť</a>.</p>
 </div>
