@@ -39,18 +39,24 @@
  * @author    Michael Gauthier <mike@silverorange.com>
  */
 
-var v3UpdateHeading = 'Hey there! Looks like you’re using an old ' +
-    'version of Firefox.';
-
-var v3UpdateP1 = 'Don’t miss out on the latest technology & ' +
-    'security features.<br />Get the free upgrade in less than a minute.';
-
-var v3UpdateP2 = '<a href="/firefox/new/" class="button">Update now</a> ' +
-    '<span>or <a href="/firefox/central/">learn more</a>.</span>';
-
-var v3CloseText = 'Close';
-
 (function() {
+
+    var sprintf = function(str)
+    {
+        for (var i = 1; i < arguments.length; i++) {
+            str = str.replace(/%s/, arguments[i]);
+        }
+        return str;
+    };
+
+    var getString = function(variable, defaultValue)
+    {
+        if (typeof window[variable] === 'undefined') {
+            return defaultValue;
+        }
+
+        return window[variable];
+    };
 
     var isJquery = (typeof jQuery !== 'undefined');
 
@@ -137,20 +143,35 @@ var v3CloseText = 'Close';
         }
 
         var updateHeading       = document.createElement('h2');
-        updateHeading.innerHTML = v3UpdateHeading;
+        updateHeading.innerHTML = getString(
+            'v3UpdateHeading',
+            'Hey there! Looks like you’re using an old version of Firefox.'
+        );
 
         var updateP1       = document.createElement('p');
-        updateP1.innerHTML = v3UpdateP1;
+        updateP1.innerHTML = getString(
+            'v3UpdateP1',
+            'Don’t miss out on the latest technology & security features.' +
+            '<br />Get the free upgrade in less than a minute.'
+        );
 
         var updateP2       = document.createElement('p');
         updateP2.className = 'action';
-        updateP2.innerHTML = v3UpdateP2;
+        updateP2.innerHTML = sprintf(
+            getString(
+                'v3UpdateP2',
+                '<a href="%s" class="button">Update now</a> ' +
+                '<span>or <a href="%s">learn more</a>.</span>'
+            ),
+            getString('v3UpdateLink', '/firefox/new/'),
+            getString('v3UpdateLearnLink', '/firefox/central/')
+        );
 
         var dismissLink       = document.createElement('a');
         dismissLink.href      = '#close';
         dismissLink.className = 'close';
-        dismissLink.title     = v3CloseText;
-        dismissLink.innerHTML = v3CloseText;
+        dismissLink.title     = getString('v3CloseText', 'Close');
+        dismissLink.innerHTML = getString('v3CloseText', 'Close');
 
         // not using jQuery in case it's not available
         dismissLink.addEventListener('click', function(e) {
