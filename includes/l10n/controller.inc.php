@@ -105,13 +105,6 @@ $deactivated = array(
     '',
 );
 
-// pages deactivated on production per locale
-if($lang == 'de') {
-    $deactivated[] = 'newsletter';
-}
-
-
-
 // add the include if it exists only
 if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
     goToEnglishPage();
