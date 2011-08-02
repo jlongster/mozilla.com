@@ -22,9 +22,6 @@ return array(
     'js_stats' => array(
         '//js/webtrends.js' // WebTrends
     ),
-    'js_update_v3' =>(
-        '//js/update-v3.js' // 3.x update notice (Bug 662975) 
-    ),
     'css' => array(
         '//style/covehead/template.css',
         '//style/covehead/content.css',

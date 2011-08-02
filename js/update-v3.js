@@ -54,13 +54,6 @@ var v3CloseText = 'Close';
 
     var isJquery = (typeof jQuery !== 'undefined');
 
-    // only show for Firefox 3.x, don't show for cousins that say they
-    // are Firefox 3.x.
-    var isOldVersion = (navigator.userAgent &&
-        navigator.userAgent.indexOf('Firefox/3.') !== -1 &&
-        navigator.userAgent.indexOf('Camino') === -1 &&
-        navigator.userAgent.indexOf('SeaMonkey') === -1);
-
     // preload background
     var img = new Image();
     img.src = '/img/covehead/firefox/update-creature.png';
@@ -333,7 +326,7 @@ var v3CloseText = 'Close';
         }
     };
 
-    if (isOldVersion && !hide) {
+    if (!hide) {
         setTimeout(function() {
             if (document.getElementById('wrapper')) {
                 initNotice();
