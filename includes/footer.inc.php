@@ -92,8 +92,6 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
         navigator.userAgent.indexOf('Camino') === -1 &&
         navigator.userAgent.indexOf('SeaMonkey') === -1);
 
-    isOldVersion = true;
-
     if (isOldVersion) {
         var oldOnload = window.onload;
         window.onload = function() {
