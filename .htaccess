@@ -139,9 +139,6 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/central.html$ /$1firefox/cen
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?organic[/]?$ / [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/organic[/]?$ / [R=permanent]
 
-# Bug 663374
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/check-marks/?(?:index.html)?$ / [R=permanent]
-
 # Bug 664261
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/download/?(?:index.html)?$ /mobile/ [R=permanent]
 
@@ -150,12 +147,6 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/fastest/?(?:index.html)?$ / 
 
 # Bug 662820
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/switch.html?$ / [R=permanent]
-
-# Bug 656271
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?greenfestival[/]?$ / [R=permanent]
-
-# Bug 656281
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/students[/]?$ / [R=permanent]
 
 # Bug 453876
 RewriteRule ^en-US/add-ons/kodak[/]?$ https://addons.mozilla.org/en-US/firefox/addon/4441 [R=permanent]
@@ -390,17 +381,10 @@ RewriteRule ^firefox/its-an-attack.html$ /en-US/firefox/its-an-attack.html [L]
 RewriteRule ^en-US/launch[/]?$ /firefox/ [R=permanent]
 RewriteRule ^en-US/firefox/updated[/]?$ /firefox/ [R=permanent]
 RewriteRule ^en-US/firefox/landing(?:/.*)$ /firefox/ [R=permanent]
-RewriteRule ^en-US/firefox/pganonffx[/]?$ /firefox/ [R=permanent]
-RewriteRule ^en-US/firefox/pgbffx[/]?$ /firefox/ [R=permanent]
-RewriteRule ^en-US/firefox/pgcshort[/]?$ /firefox/ [R=permanent]
-RewriteRule ^en-US/firefox/pgdlong[/]?$ /firefox/ [R=permanent]
 RewriteRule ^en-US/firefox/phase2(?:/.*)$ /firefox/ [R=permanent]
-RewriteRule ^en-US/add-ons/campus(?:/.*)$ /firefox/ [R=permanent]
-RewriteRule ^en-US/add-ons/jogacompanion(?:/.*)$ /firefox/ [R=permanent]
 RewriteRule ^en-US/add-ons[/]?$ https://addons.mozilla.org/ [R=permanent,L]
 RewriteRule ^en-US/developers[/]?$ http://developer.mozilla.org/ [R=permanent,L]
 RewriteRule ^en-US/support(?:/.*)?$ http://support.mozilla.com/ [R=permanent,L]
-RewriteRule ^en-US/firefox/flicks(?:/.*)$ http://www.firefoxflicks.com/ [R=permanent,L]
 RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 
 # to be used leading up to a release, as a way of diverting HTTP traffic from
