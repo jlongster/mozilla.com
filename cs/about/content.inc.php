@@ -1,20 +1,18 @@
 <div id="content">
-    <h1 id="page-title">About Us</h1>
+    <h1 id="page-title">O nás</h1>
 
     <div class="intro">
-        <p><strong>We're a global community</strong>
-            of <a href="http://www.mozilla.org/community">people working together</a> since 1998 to build a better Internet.</p>
+        <p><strong>Jsme globální komunita</strong>
+            <a href="http://www.mozilla.org/community">lidí, kteří pracují společně</a>, a od roku 1998 vytváří lepší Internet.</p>
       
-        <p><strong>We're a non-profit organization</strong>
-            dedicated to promoting <a href="http://www.mozilla.org/about/mission.html">openness, innovation and opportunity</a> online.</p>
+        <p><strong>Jsme nezisková organizace</strong>
+            snažící se propagovat <a href="http://www.mozilla.org/about/mission.html">otevřenost, inovace a příležitosti</a>.</p>
       
-        <p><strong>And we're an open source project</strong>
-            whose <a href="http://www.mozilla.org/projects">software</a> has been used to build some of the Internet's best applications.</p>
+        <p><strong>Jsme open source projekt</strong>, 
+            jehož <a href="http://www.mozilla.org/projects">software</a> byl použit k vytvoření několika skvělých aplikací pro Internet.</p>
     </div>
 
-    <p>We believe that, as the most significant social and technological development of our time, the Internet is a public resource that must be improved and 
-    protected.</p>
+    <p>Věříme, že Internet musí být jako nejvýznamnější prvek pro sociální a technický rozvoj naší doby vylepšován a chráněn.</p>
 
-    <p>The <a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> is a non-profit organization dedicated to these goals, but the real force behind Mozilla is people 
-    around the world taking action to build the web they want. <a href="http://www.mozilla.org/contribute">And you can help</a>!</p>
+    <p><a href="http://www.mozilla.org/foundation">Mozilla Foundation</a> je nezisková organizace, která má tyto cíle, ale reálná síla za Mozillou jsou lidé po celém světě, kteří utvářejí web, jaký chtějí mít. <a href="http://www.mozilla.org/contribute">Můžete s tím pomoci</a>!</p>
 </div>
