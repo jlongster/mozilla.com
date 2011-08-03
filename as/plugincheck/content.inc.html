@@ -1,8 +1,8 @@
 
 <div id="main-feature">
 
-    <h2>Check Your <span>Plugins</span></h2>
-    <p>Keeping your third-party plugins up to date helps Firefox run safely and smoothly.</p>
+    <h2>আপোনাৰ <span>প্লাগ-ইনসমূহ</span> পৰীক্ষা কৰক</h2>
+    <p>আপোনাৰ তৃতীয় পক্ষীয় প্লাগ-ইনসমূহক উন্নত কৰি থ'লে Firefox সুৰক্ষিত আৰু মিহিকৈ চলিবলৈ সহায় পায় ।</p>
 
 </div>
 
@@ -11,8 +11,8 @@
     <div id="content-left">
         <div class="blocklisted flash">
 
-            <h3>Missing <span>FLASH?</span></h3>
-            <p>For your safety, Firefox has disabled your outdated version of Flash. Please <a <?=$link[0];?> >upgrade to the latest version.</a></p>
+            <h3><span>FLASH</span> হেৰুৱাইছে ?</h3>
+            <p>আপোনাৰ সুৰক্ষাৰ বাবে, Firefox এ আপোনাৰ Flash ৰ আওপুৰণি সংস্কৰণ নিষ্ক্ৰিয় কৰিছে । অনুগ্ৰহ কৰি <a <?=$link[0];?> >শেহতীয়া সংস্কৰণলৈ উন্নত কৰক ।</a></p>
 
             <br class="clearfix" />
         </div>
@@ -20,40 +20,40 @@
         <div id="legend">
             <ul>
                 <li id="old_browser" style="display:none">
-                    <strong>Warning, a newer version of your browser is available.</strong> Please upgrade your browser.
+                    <strong>সকিয়নি, আপোনাৰ ৱেব-চৰকৰ এটা নতুন সংস্কৰণ পোৱা গৈছে ।</strong> অনুগ্ৰহ কৰি আপোনাৰ ৱেব চৰক উন্নত কৰক ।
                 </li>
                 <li id="modern_browsers" style="display:none">
-                    This page works best with the latest browsers: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, or IE 8+
+                    এই পৃষ্ঠা শেহতীয়া ৱেব চৰকৰ সৈতেহে ভালকৈ কাম কৰে: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+, বা IE 8+
                 </li>
                 <li id="exploder" style="display: none">
-                    Plugin Check <strong>support for Internet Explorer is limited</strong>. Also use Tools &gt; Manage Addons
+                    <strong>Internet Explorer ৰ কাৰণে প্লাগ-ইন পৰীক্ষাৰ সমৰ্থন সীমিত</strong> । Tools &gt; Manage Addons ও ব্যৱহাৰ কৰক
                 </li>
                 <li>
-                    <strong><em>Step 1:</em></strong> Click <strong>Update</strong> to update a plugin.
+                    <strong><em>পদক্ষেপ ১:</em></strong> প্লাগ-ইন উন্নত কৰিবলৈ <strong>উন্নয়ন</strong> ত টিপক ।
                 </li>
                 <li>
-                    <strong><em>Step 2:</em></strong> <strong>Complete all recommended updates</strong> <em>before</em> restarting your browser.
+                    <strong><em>পদক্ষেপ ২:</em></strong> <strong>ৱেব চৰক পুনৰাৰম্ভ কৰাৰ <em>আগতে</em> সকলো উপদেশিত উন্নয়ন সম্পূৰণ কৰক । </strong> 
                 </li>
             </ul>
         </div>
 
         <noscript>
             <div>
-                <h3>Note</h3>
-                <p><strong>You have JavaScript disabled</strong> or are using a browser without JavaScript. This Plugin Check page does not work without the awesome power of <strong>JavaScript</strong>. Please enable this Content Preference and reload the page.</p>
-                <p>Or disable all your plugins and keep JavaScript disabled... you'd be in good company, that's how <a <?=$link[1];?> >RMS rolls</a>.</p>
+                <h3>টোকা</h3>
+                <p><strong>আপোনাৰ JavaScript নিষ্ক্ৰিয়</strong> বা আপুনি JavaScript নোহোৱা ৱেব চৰক ব্যৱহাৰ কৰিছে । এই প্লাগ-ইন পৰীক্ষাৰ পৃষ্ঠাই <strong>JavaScript</strong> ৰ অতুলনিয় শক্তি নোহোৱাকে কাম নকৰে । অনুগ্ৰহ কৰি এই তথ্যৰ পছন্দ সক্ৰিয় কৰি এই পৃষ্ঠা পুনঃ তুলি লওক ।</p>
+                <p>বা সকলো প্লাগ-ইনসমূহক নিষ্ক্ৰিয় কৰক আৰু JavaScript নিষ্ক্ৰিয় ৰাখক... আপুনি লগ ভাল হ'ব, <a <?=$link[1];?> >RMS এ তেনে ধৰণেই কাম কৰে </a>।</p>
             </div>
         </noscript>
 
         <?=$pluginsTable?>
 
         <div id="error-panel" style="display: none">
-            <h3>Plugin Finding Service Error</h3>
-            <p>We've encountered an error. Please try your request again later.</p>
+            <h3>প্লাগ-ইণ বিচৰাৰ সেৱাত ভুল</h3>
+            <p>আমি এটা ভুল পাইছো । আপোনাৰ অনুৰোধ অনুগ্ৰহ কৰি পিছত আকৌ চেষ্টা কৰিব ।</p>
 
             <form action="#" method="get">
                 <fieldset>
-                    <button>Retry</button>
+                    <button>পুনঃ চেষ্টা</button>
                 </fieldset>
             </form>
         </div>
@@ -62,21 +62,21 @@
 
     <div id="sidebar">
       <div id="information">
-        <h3>Plugin Tips</h3>
+        <h3>প্লাগ-ইনৰ সঙ্কেত</h3>
         <ul>
-          <li><a <?=$link[2];?> > What is a plugin?                 </a></li>
-          <li><a <?=$link[3];?> > Why should I update my plugins?   </a></li>
-          <li><a <?=$link[4];?> > How can Firefox help me?          </a></li>
-          <li><a <?=$link[5];?> > Which plugins do I have?          </a></li>
-          <li><a <?=$link[6];?> > How do I disable a plugin?        </a></li>
+          <li><a <?=$link[2];?> > প্লাগ-ইন কি?                 </a></li>
+          <li><a <?=$link[3];?> > মই মোৰ প্লাগ-ইনসমূহক কিয় উন্নত কৰোঁ ?   </a></li>
+          <li><a <?=$link[4];?> > মোক Firefox এ কেনেকৈ সহায় কৰিব পাৰে ?          </a></li>
+          <li><a <?=$link[5];?> > মোৰ ওচৰত কি প্লাগ-ইনসমূহ আছে ?          </a></li>
+          <li><a <?=$link[6];?> > মই এটা প্লাগ-ইন কেনেকৈ নিস্ক্ৰিয় কৰোঁ ?        </a></li>
         </ul>
       </div>
 
           <div id="support">
-            <h3>Need Help?</h3>
+            <h3>সহায় লাগে ?</h3>
             <ul>
-              <li><a <?=$link[7];?> > Visit support.mozilla.com </a></li>
-              <li><a <?=$link[8];?> > Read support articles about plugins </a></li>
+              <li><a <?=$link[7];?> > support.mozilla.com চাওক</a></li>
+              <li><a <?=$link[8];?> > প্লাগ-ইনসমূহৰ সম্পৰ্কে সমৰ্থনৰ তথ্য পঢ়ক </a></li>
             </ul>
           </div>
 
@@ -85,21 +85,21 @@
     <div id="information-content" class="clearfix">
         <?=$backtotop?>
 
-        <h2>Frequently asked <span>Questions</span></h2>
+        <h2>সাধাৰণতে কৰা <span>প্ৰশ্ন</span></h2>
 
         <div id="column-one">
-            <h3 id="what-plugin">What is a plugin?</h3>
+            <h3 id="what-plugin">এটা প্লাগ-ইন কি ?</h3>
             <ul>
-                <li>Plugins power <strong>videos, animation and games</strong>.</li>
-                <li>They're built <strong>outside of Firefox by companies</strong> like <a <?=$link[9];?>>Adobe Systems</a> and <a <?=$link[10];?> >Apple</a>.</li>
-                <li>Plugins <strong>don't always update</strong> automatically.</li>
+                <li>প্লাগ-ইনসমূহে <strong>ভিডিঅ', এনিমেছন আৰু খেলসমূহ চলায় </strong>।</li>
+                <li>সিহঁতক<strong> Firefox ৰ বাহিৰৰ কোম্পানিয়ে বনায়</strong> যেনে <a <?=$link[9];?>>Adobe Systems</a> আৰু <a <?=$link[10];?> >Apple</a> ।</li>
+                <li>প্লাগ-ইনসমূহ <strong>সদায়ে স্বয়ংক্ৰিয়ভাবে উন্নত নহয়</strong> ।</li>
             </ul>
 
-            <h3 id="why-update">Why should I update my plugins?</h3>
+            <h3 id="why-update">মই কিয় মোৰ প্লাগ-ইনসমূহ উন্নত কৰিব লাগে ?</h3>
             <ul>
-                <li>Old plugins can interrupt browsing and <strong>waste your time</strong>.</li>
-                <li>Old plugins <strong>increase your risk</strong> for attack by malware, viruses, and other security threats.</li>
-                <li><strong>Updated plugins have improvements</strong> that make the web <strong>better and safer</strong> for you.</li>
+                <li>পুৰণি প্লাগ-ইনসমূহে ৱেব চৰণত বাধা দিব পাৰে আৰু  <strong>আপোনাৰ সময় নষ্ট কৰিব পাৰে</strong> ।</li>
+                <li>পুৰণি প্লাগ-ইনসমূহে আপোনাৰ বেয়া চফ্টৱেৰ, ভাইৰাছ, আৰু অন্যান্য সুৰক্ষাৰ আক্ৰমণৰ<strong>বিপদাশঙ্কা বঢ়াব পাৰে</strong> ।</li>
+                <li><strong>উন্নত প্লাগইনসমূহ উন্নত গুণ আছে</strong> যি আপোনাৰ কাৰণে ৱেবক <strong>ভাল আৰু সুৰক্ষি</strong> কৰি ৰাখে ।</li>
             </ul>
 
             <?=$screenshot;?>
@@ -107,32 +107,32 @@
         </div>
 
         <div id="column-two">
-            <h3 id="firefox-helps">How can Firefox help me?</h3>
-            <p>In the future, Firefox will update plugins for you.  Until then, you should <strong>regularly check this page</strong> and update your plugins to stay safe.</p>
+            <h3 id="firefox-helps">মোক Firefox এ কেনেদৰে সহায় কৰিব পাৰে ?</h3>
+            <p>ভৱিষ্যতে, Firefox এ আপোনাৰ কাৰণে প্লাগ-ইনসমূহ উন্নত কৰিব । তেতিয়ালৈকে, আপুনি <strong>এই পৃষ্ঠা নিয়মিত ভাবে পৰীক্ষা কৰিব লাগপ</strong> আৰু সুৰক্ষিত থাকিবলৈ নিজৰ প্লাগ-ইন উন্নত কৰিব লাগে ।</p>
 
-            <h3 id="list-plugins">Which plugins do I have?</h3>
-            <p>We automatically detected your plugins above, to <strong>view your installed plugins in Firefox</strong> follow these steps:</p>
+            <h3 id="list-plugins">মোৰ ওচৰত কি প্লাগ-ইনসমূহ আছে ?</h3>
+            <p>আমি আপোনাৰ প্লাগ-ইনসমূহক স্বয়ংক্ৰিয়ভাবে সন্ধান কৰোঁ, <strong> Firefox ত আপোনাৰ সংস্থাপিত প্লাগ-ইনসমূহ চাবলৈ</strong> এই পদক্ষেপসমূহ লওক:</p>
             <ol>
-                <li>Open the <kbd>Tools</kbd> menu.</li>
-                <li>Choose <kbd>Add-ons</kbd>.</li>
-                <li>Click the <kbd>plugins</kbd> tab.</li>
+                <li><kbd>সৰঞ্জাম</kbd> ৰ তালিকা খোলক ।</li>
+                <li><kbd>এড-অনসমূহ</kbd> নিৰ্ব্বাচন কৰক ।</li>
+                <li><kbd>প্লাগ-ইনসমূহ</kbd> টেবত টিপক ।</li>
             </ol>
 
             <div class="howto-disable-plugin">
-                <h3 id="howto-disable">How do I disable a plugin?</h3>
-                <p>In Firefox:</p>
+                <h3 id="howto-disable">এটা প্লাগ-ইন কেনেদৰে নিষ্ক্ৰিয় কৰোঁ ?</h3>
+                <p>Firefox ত:</p>
                 <ol>
-                    <li>Open the <kbd>Tools</kbd> menu.</li>
-                    <li>Choose <kbd>Add-ons</kbd>.</li>
-                    <li>Click the <kbd>plugins</kbd> tab.</li>
-                    <li>Click on a plugin in the list.</li>
-                    <li>Click the <kbd>Disable</kbd> button.</li>
+                    <li><kbd>সৰঞ্জাম</kbd> ৰ তালিকা খোলক ।</li>
+                    <li><kbd>এড-অনসমূহ</kbd>নিৰ্ব্বাচন কৰক ।</li>
+                    <li><kbd>প্লাগ-ইনসমূহ</kbd> টেবত টিপক ।</li>
+                    <li>তালিকাৰ এটা প্লাগ-ইনত টিপক ।</li>
+                    <li><kbd>নিষ্ক্ৰিয়</kbd> বুটাম টিপক ।</li>
                 </ol>
-                <p><strong>Caution:</strong> disabling a plugin means that you will <strong>no longer be able to do</strong> certain things. For example, if you disable Flash, you will not be able to watch videos on popular video streaming sites.</p>
+                <p><strong>সাৱধান:</strong> এটা প্লাগ-ইন নিষ্ক্ৰিয় কৰাৰ অৰ্থ হ'ল আপুনি <strong>বহুত কাম আৰু কৰিব নোৱাৰিব</strong> । যেনে, আপুনি Flash নিষ্ক্ৰিয় কৰিলে, আপুনি জনপ্ৰিয় ভিডিঅ' দেখুওৱা ছাইটৰ পৰা ভিডিঅ' চাব নোৱাৰিব ।</p>
             </div>
 
-            <h3 id="more-questions">Have more <span>questions?</span></h3>
-            <p><a <?=$link[7];?>>Our support site</a> can help you <a <?=$link[6];?>>learn about plugins</a> or <a <?=$link[8];?>>troubleshoot plugin problems</a>.</p>
+            <h3 id="more-questions">আৰু<span> প্ৰশ্ন</span> আছে ?</h3>
+            <p><a <?=$link[7];?>>আমাৰ সমৰ্থনৰ ছাইটে</a> আপোনাক সহায় কৰিব <a <?=$link[6];?>>প্লাগ-ইনৰ বিষয়ে জানিবলৈ</a> বা <a <?=$link[8];?>>প্লাগ-ইনৰ সমস্যা সমাধা কৰিবলৈ </a>।</p>
         </div>
     </div>
 </div>
