@@ -31,15 +31,14 @@
         <li class="open-pane" data-wt_uri="<?= $newsletter_wt_blade_uri ?>" data-wt_ti="<?= $newsletter_wt_blade_ti ?>">
           <h3>Get Monthly News</h3>
           <?= $newsletter_snippet ?>
-          <div class="email-field" class="field">
+          <div class="email-field field">
             <span class="error-wrapper">
               <input
-                 class="email"
                  name="email"
                  type="email"
                  placeholder="Your Email Address"
                  value="<?= $form->get('email') ?>"
-                 class="<?= ($form->get('email') == '') ? 'placeholder' : '' ?>">
+                 class="email <?= ($form->get('email') == '') ? ' placeholder' : '' ?>">
             </span>
             <a class="email-open"
                href="/<?php echo $lang; ?>/newsletter/"
