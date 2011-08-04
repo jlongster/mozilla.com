@@ -9,9 +9,13 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/prefs.php";
 
+    $prefs = new EmailPrefs($_POST, 'abcd');
+
     function chk($field, $val, $force=FALSE) {
-        if((!isset($_POST[$field]) && $force) ||
-           (isset($_POST[$field]) && $_POST[$field] == $val)) {
+        global $prefs;
+
+        if(($prefs->get($field) == NULL && $force) ||
+           ($prefs->get($field) == $val)) {
             return 'checked="checked"';
         }
         return '';
@@ -22,8 +26,13 @@ EXTRA_HEADERS;
         'country' => 'Please select a country'
     );
 
-    $prefs = new EmailPrefs($_POST);
-    $prefs->save_new();
+    if($prefs->submitted()) {
+        $prefs->save_user();
+    }
+    else {
+        $prefs->get_user();
+    }
+
 ?>
 
 <div id="main-feature">
@@ -114,8 +123,8 @@ EXTRA_HEADERS;
                 <h4>Mozilla & You</h4>
                 <p>Lorem ipsom dolor sit amet, consectetur adipisicing elit.</p>
             </th>
-            <td><input type="radio" name="mozilla-and-you" value="Y" <?= chk('mozilla-and-you', 'Y', TRUE); ?>></td>
-            <td><input type="radio" name="mozilla-and-you" value="N" <?= chk('mozilla-and-you', 'N'); ?>></td>
+            <td><input type="radio" name="mozilla-and-you" value="Y" <?= chk('mozilla-and-you', 'Y'); ?>></td>
+            <td><input type="radio" name="mozilla-and-you" value="N" <?= chk('mozilla-and-you', 'N', TRUE); ?>></td>
         </tr>
         <tr>
             <th>
