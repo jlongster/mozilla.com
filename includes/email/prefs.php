@@ -4,6 +4,23 @@ require_once("basket.php");
 
 class EmailPrefs {
 
+    var $languages = array(
+        'en' => array('English', array('mozilla-and-you', 'mobile', 'beta')),
+        'fr' => array('French', array('mozilla-and-you', 'mobile')),
+        'de' => array('German', array('mozilla-and-you', 'mobile')),
+        'pt-BR' => array('Portugese', array('mozilla-and-you', 'mobile')),
+        'es' => array('Spanish', array('mozilla-and-you', 'mobile'))
+    );
+
+    var $newsletters = array(
+        'mozilla-and-you' => array('title' => 'Firefox & You',
+                                   'desc' => 'Lorem ipsom dolor sit amet, consectetur adipisicing elit.'),
+        'mobile' => array('title' => 'Firefox Mobile',
+                          'desc' => 'Get the latest news on our mobile browser and tools.'),
+        'beta' => array('title' => 'Beta News',
+                        'desc' => 'Stay on top of the next Firefox release with the latest from our Mobile Team.')
+    );
+
     function __construct($data, $token=FALSE) {
         $this->data = $data;
         $this->errors = array();
@@ -12,6 +29,14 @@ class EmailPrefs {
 
     function get($field) {
         return isset($this->data[$field]) ? $this->data[$field] : NULL;
+    }
+
+    function available_langs() {
+        return $this->languages;
+    }
+
+    function available_newsletters() {
+        return $this->newsletters;
     }
 
     function submitted() {
@@ -75,8 +100,8 @@ class EmailPrefs {
                                               'country' => $data['country'],
                                               'lang' => $data['lang'],
                                               'newsletters' => $newsletters));
-                if($res['status'] != 'ok') {
-                    $this->non_field_error = $res['desc'];
+                if($ret['status'] != 'ok') {
+                    $this->non_field_error = $ret['desc'];
                 }
             }
         }
@@ -102,20 +127,18 @@ class EmailPrefs {
 
         if($this->submitted() && $this->validate()) {
             $data = $this->data;
-            $newsletters = array_join($this->get_newsletters(), ',');
+            $newsletters = $this->get_newsletters();
 
             if(!empty($newsletters)) {
                 $serv = new BasketService();
-                $ret = $serv->update($this->token,
-                                     array('email' => $data['email'],
-                                           'format' => $data['format'] == 'html' ? 'H' : 'T',
-                                           'country' => $data['country'],
-                                           'lang' => $data['lang'],
-                                           'newsletters' => $newsletters,
-                                           'only_these' => 'Y'));
-
-                if($res['status'] != 'ok') {
-                    $this->non_field_error = $res['desc'];
+                $ret = $serv->update_subscriber($this->token,
+                                                array('email' => $data['email'],
+                                                      'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                                      'country' => $data['country'],
+                                                      'lang' => $data['lang'],
+                                                      'newsletters' => $newsletters));
+                if($ret['status'] != 'ok') {
+                    $this->non_field_error = $ret['desc'];
                 }
             }                
         }

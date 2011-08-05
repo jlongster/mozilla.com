@@ -9,7 +9,7 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $prefs = new EmailPrefs($_POST, 'abcd');
+    $prefs = new EmailPrefs($_POST);
 
     function chk($field, $val, $force=FALSE) {
         global $prefs;
@@ -32,7 +32,6 @@ EXTRA_HEADERS;
     else {
         $prefs->get_user();
     }
-
 ?>
 
 <div id="main-feature">
@@ -95,6 +94,18 @@ EXTRA_HEADERS;
         </div>
     </div>
 
+    <div class="field lang-field <?= $prefs->has_error('lang') ? 'field-error' : ''; ?>">
+      <label for="lang">Language:</label>
+      <select class="lang" name="lang">
+<?php
+   foreach($prefs->available_langs() as $code => $info) {
+       $s = ($code == $prefs->get('lang') ? 'selected' : '');
+       echo "<option value=\"$code\" $s>" . ___($info[0]) . '</option>';
+   }
+?>
+      </select>
+    </div>
+
     <div class="field format-field">
       <span class="field-label">Format:</span>
       <div class="field-radios">
@@ -118,41 +129,20 @@ EXTRA_HEADERS;
         </tr>
         </thead>
         <tbody>
+<?php
+foreach($prefs->available_newsletters() as $nl => $info) {
+?>
         <tr>
-            <th>
-                <h4>Mozilla & You</h4>
-                <p>Lorem ipsom dolor sit amet, consectetur adipisicing elit.</p>
-            </th>
-            <td><input type="radio" name="mozilla-and-you" value="Y" <?= chk('mozilla-and-you', 'Y'); ?>></td>
-            <td><input type="radio" name="mozilla-and-you" value="N" <?= chk('mozilla-and-you', 'N', TRUE); ?>></td>
+          <th>
+            <h4><?= $info['title'] ?></h4>
+            <p><?= $info['desc'] ?></p>
+          </th>
+          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y'); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', TRUE); ?>></td>
         </tr>
-        <tr>
-            <th>
-                <h4>Beta News</h4>
-                <p>
-                  Stay on top of the next Firefox release with the
-                  latest from our Mobile Team.
-                </p>
-            </th>
-            <td><input type="radio" name="beta-news" value="Y" <?= chk('beta-news', 'Y'); ?>></td>
-            <td><input type="radio" name="beta-news" value="N" <?= chk('beta-news', 'N', TRUE); ?>></td>
-        </tr>
-        <tr>
-            <th>
-                <h4>Mobile</h4>
-                <p>Get the latest news on our mobile browser and tools.</p>
-            </th>
-            <td><input type="radio" name="mobile" value="Y" <?= chk('mobile', 'Y'); ?>></td>
-            <td><input type="radio" name="mobile" value="N" <?= chk('mobile', 'N', TRUE); ?>></td>
-        </tr>
-        <tr>
-            <th>
-                <h4>Add-ons</h4>
-                <p>Keep up-to-date on the hottest new add-ons.</p>
-            </th>
-            <td><input type="radio" name="addons" value="Y" <?= chk('addons', 'Y'); ?>></td>
-            <td><input type="radio" name="addons" value="N" <?= chk('addons', 'N', TRUE); ?>></td>
-        </tr>
+<?php
+   }
+?>
         </tbody>
     </table>
 
@@ -179,6 +169,49 @@ EXTRA_HEADERS;
 </div><!-- end #content div -->
 
 <script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
+<script>
+  var _newsletter_langs =
+<?php
+   echo json_encode($prefs->available_langs());
+?>;
+
+$(function() {
+
+    function show_newsletters(lang) {
+        var letters = _newsletter_langs[lang][1];
+
+        if(letters) {
+            // Hide all the newsletters and set all radio inputs to
+            // "not subscribing"
+            $('#other-newsletters tbody tr')
+                .each(function() {
+                    $(this).hide();
+                })
+                .find('tr input[type=radio]').each(function() {
+                    var field = $(this);
+
+                    if(field.val() == 'N')
+                        field.attr('checked', 'true');
+                    else
+                        field.attr('checked', 'false');
+                });
+
+            // Show individually available newsletters
+            $.each(letters, function(i, nl) {
+                var field = $('input[name=' + nl + ']');
+                field.parents('tbody tr').show();
+            });
+        }
+    }
+
+    $('select[name=lang]').change(function() {
+        show_newsletters($(this).find(':selected').val());
+    });
+
+    var lang = $('select[name=lang] :selected').val();
+    show_newsletters(lang);
+});
+</script>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
