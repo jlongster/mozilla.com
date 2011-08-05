@@ -133,8 +133,8 @@ foreach($prefs->available_newsletters() as $nl => $info) {
             <h4><?= $info['title'] ?></h4>
             <p><?= $info['desc'] ?></p>
           </th>
-          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y'); ?>></td>
-          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', TRUE); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', $nl != 'mozilla-and-you'); ?>></td>
         </tr>
 <?php
    }
