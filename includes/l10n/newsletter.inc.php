@@ -25,6 +25,8 @@ $form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
 $status = '';
 if ($form->save()) {
     $status = 'success';
+    // Relocate to /newsletter/new/ page
+    header("Location: new/");
 } elseif ($form->error) {
     $status = 'error-'. $form->error;
 }

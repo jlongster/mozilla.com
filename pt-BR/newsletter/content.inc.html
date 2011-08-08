@@ -5,16 +5,21 @@
 
 <div id="content">
 
-<ul class="email-form <?= $status ?>" id="newsletter-form">
-    <li class="form-pane">
-      <form action="" method="post">
-        <p class="form-error email-error"><span>Insira o seu endereço e-mail.</span></p>
-        <p class="form-error privacy-error">
-          <span>Leia a Política de Privacidade do Mozilla e aceite-a
-          selecionando a caixa.</span>
-        </p>
+      <form action="" method="post" id="newsletter-form">
 
-        <div class="field required email-field">
+<? if ($status) { ?>
+    <ul class="field-errors">
+    <? if ($status == 'error-email') { ?>
+        <li>Insira o seu endereço e-mail.</li>
+    <? } ?>
+    <? if ($status == 'error-privacy') { ?>
+        <li>Leia a Política de Privacidade do Mozilla e aceite-a
+          selecionando a caixa.</li>
+    <? } ?>
+    </ul>
+<? } ?>
+
+        <div class="field required email-field<?=$status == 'error-email' ? ' field-error' : ''; ?>">
           <label for="email">O seu endereço e-mail:</label>
           <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
         </div>
@@ -56,14 +61,14 @@
           ?>
           <span class="field-label">Formato:</span>
           <div class="field-radios">
-            <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
+            <span class="radio-wrapper"><input type="radio" name="format" id="html-format" class="html-format" value="html" <?= $html_format?>></span>
             <label for="html-format">HTML</label>
-            <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
+            <span class="radio-wrapper"><input type="radio" name="format" id="text-format" class="text-format" value="text" <?= $text_format?>></span>
             <label for="text-format">Texto</label>
           </div>
         </div>
 
-        <div class="field privacy-field">
+        <div class="field privacy-field"<?=$status == 'error-privacy' ? ' field-error' : ''; ?>>
           <label for="privacy-check" class="privacy-check-label">
             <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
             <span class="error-wrapper"><input type="checkbox" name="privacy" class="privacy-check" <?= $checked ?>></span>
@@ -74,18 +79,9 @@
         <div class="text">Vamos enviar-lhe apenas informações sobre o Mozilla.</div>
 
         <div class="field submit-field">
-          <input name="submit" type="submit" value="Inscrever-se" id="subscribe">
+          <input name="submit" type="submit" value="Inscrever-se" id="subscribe" class="button">
         </div>
       </form>
-    </li>
-
-    <li class="success-pane">
-      <h3>Obrigado por ter assinado!</h3>
-      <p>Confira a sua caixa de correio: deve ter recebido um e-mail de confirmação. Precisa de clicar no e-mail de confirmação para começar a receber as notícias de Mozilla & You.</p>
-      <p><a href="/<?=$lang?>/firefox/connect/" class="stay-connected">Stay Connected »</a></p>
-    </li>
-</ul>
 
 
 </div><!-- end #content div -->
-

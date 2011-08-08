@@ -43,16 +43,11 @@ EXTRA_HEADERS;
 
 <div id="content">
 
-<form action="" method="post" id="newsletter-form">
+<form action="#newsletter-form" method="post" id="newsletter-form">
 <input type="hidden" name="target" value="main" />
-
-<div id="basic-settings">
-
-    <p class="intro">Want to get the most relevant info? Tell us a little more about yourself. And while you’re here, sign up for other Mozilla news.</p>
-
 <?php
     if($prefs->has_error()) {
-        echo '<div class="field-errors"><ul>';
+        echo '<ul class="field-errors">';
 
         foreach($prefs->errors as $error) {
             if(isset($errors[$error])) {
@@ -63,9 +58,14 @@ EXTRA_HEADERS;
             }
         }
 
-        echo '</ul></div>';
+        echo '</ul>';
     }
 ?>
+
+
+<div id="basic-settings">
+
+    <p class="intro">Want to get the most relevant info? Tell us a little more about yourself. And while you’re here, sign up for other Mozilla news.</p>
 
     <div class="field email-field <?= $prefs->has_error('email') ? 'field-error' : ''; ?>">
         <label for="email">Your email address:</label>
@@ -92,6 +92,7 @@ EXTRA_HEADERS;
 
     <div class="field lang-field <?= $prefs->has_error('lang') ? 'field-error' : ''; ?>">
       <label for="lang">Language:</label>
+      <div class="field-contents">
       <select class="lang" name="lang">
 <?php
    foreach($prefs->available_langs() as $code => $info) {
@@ -100,14 +101,15 @@ EXTRA_HEADERS;
    }
 ?>
       </select>
+      </div>
     </div>
 
     <div class="field format-field">
       <span class="field-label">Format:</span>
       <div class="field-radios">
-        <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= chk('format', 'html', TRUE); ?>></span>
+        <span class="radio-wrapper"><input type="radio" name="format" id="html-format" value="html" <?= chk('format', 'html', TRUE); ?>></span>
         <label for="html-format">HTML</label>
-        <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= chk('format', 'text') ?>></span>
+        <span class="radio-wrapper"><input type="radio" name="format" id="text-format" value="text" <?= chk('format', 'text') ?>></span>
         <label for="text-format">Text</label>
       </div>
     </div>

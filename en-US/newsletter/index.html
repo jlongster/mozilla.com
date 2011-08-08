@@ -8,7 +8,6 @@
     <meta name="WT.si_x" content="1">
 EXTRA_HEADERS;
 
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
@@ -17,7 +16,8 @@ EXTRA_HEADERS;
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
         $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
         if ($form->save()) {
-            $status = 'success';
+            // Relocate to /newsletter/new/ page
+            header("Location: new/");
         } elseif ($form->error) {
             $status = 'error-'. $form->error;
         }
@@ -25,6 +25,7 @@ EXTRA_HEADERS;
     else {
         $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     }
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="main-feature">
@@ -34,15 +35,21 @@ EXTRA_HEADERS;
 
 <div id="content">
 
-<ul class="email-form <?= $status ?>" id="newsletter-form">
-    <li class="form-pane">
-      <form action="" method="post">
+      <form action="" method="post" id="newsletter-form">
         <input type="hidden" name="target" value="main" />
 
-        <p class="form-error email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
-        <p class="form-error privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+<? if ($status) { ?>
+    <ul class="field-errors">
+    <? if ($status == 'error-email') { ?>
+        <li>Whoops! Be sure to enter a valid email address.</li>
+    <? } ?>
+    <? if ($status == 'error-privacy') { ?>
+        <li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>
+    <? } ?>
+    </ul>
+<? } ?>
 
-        <div class="field required email-field">
+        <div class="field required email-field<?=$status == 'error-email' ? ' field-error' : ''; ?>">
           <label for="email">Your email address:</label>
           <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
         </div>
@@ -72,17 +79,17 @@ EXTRA_HEADERS;
           ?>
           <span class="field-label">Format:</span>
           <div class="field-radios">
-            <span class="radio-wrapper"><input type="radio" name="format" class="html-format" value="html" <?= $html_format?>></span>
+            <span class="radio-wrapper"><input type="radio" name="format" id="html-format" class="html-format" value="html" <?= $html_format?>></span>
             <label for="html-format">HTML</label>
-            <span class="radio-wrapper"><input type="radio" name="format" class="text-format" value="text" <?= $text_format?>></span>
+            <span class="radio-wrapper"><input type="radio" name="format" id="text-format" class="text-format" value="text" <?= $text_format?>></span>
             <label for="text-format">Text</label>
           </div>
         </div>
 
-        <div class="field privacy-field">
+        <div class="field privacy-field<?=$status == 'error-privacy' ? ' field-error' : ''; ?>">
           <label for="privacy-check" class="privacy-check-label">
             <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
-            <span class="error-wrapper"><input type="checkbox" name="privacy" class="privacy-check" <?= $checked ?>></span>
+            <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" class="privacy-check" <?= $checked ?>></span>
             <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
           </label>
         </div>
@@ -99,30 +106,14 @@ EXTRA_HEADERS;
                  name="submit" 
                  type="submit" 
                  value="Sign me up!" 
-                 class="subscribe">
+                 class="button">
         </div>
 
         <p class="disclaimer">We will only send you Mozilla-related information.</p>
       </form>
-    </li>
-
-    <li class="success-pane">
-      <h3>Thanks for Subscribing!</h3>
-      <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
-      <p><a href="/<?=$lang?>/firefox/connect/" class="stay-connected">Stay Connected »</a></p>
-    </li>
-</ul>
 
 
 </div><!-- end #content div -->
-
-<?php if ($status == 'success'): ?>
-  <script>
-    $(function() {
-        dcsMultiTrack('WT.si_n', 'Main Newsletter Subscribe', 'WT.si_x', '1', 'WT.si_cs', '1');
-      });
-  </script>
-<?php endif ?>
 
 <script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
 
