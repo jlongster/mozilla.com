@@ -1,0 +1,36 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="style/newsletter.css" media="screen">
+    <meta name="WT.si_n" content="newsletter">
+    <meta name="WT.si_x" content="1">
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $status = '';
+
+    if(isset($_POST['target']) && $_POST['target'] == 'main') {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+        if ($form->save()) {
+            $status = 'success';
+        } elseif ($form->error) {
+            $status = 'error-'. $form->error;
+        }
+    }
+    else {
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    }
+?>
+
+<div>
+    <h2>Read all about it in our <span>NEWSLETTER</span></h2>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
