@@ -5,6 +5,7 @@
     $status = '';
 
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
+        print_r($_POST);
         $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
         if ($form->save()) {
             $status = 'success';
