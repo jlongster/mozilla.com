@@ -46,7 +46,7 @@
                     It’s the perfect way for us to keep in touch!
                 </p>
             </div>
-            <?php if($status == 'success') { ?>
+            <?php if($status != 'success') { ?>
             <div id="form-content">
                 <form method="post" action="">
                     <input type="hidden" name="target" value="main" />
@@ -95,10 +95,14 @@
             </div>
             <?php } else { ?>
             <div id="success">
-                <h2>Thanks for Subscribing!</h2>
-                <p>
-                    Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.
-                </p>
+                <div class="clearfix">
+                    <div class="form_item">
+                        <h2>Thanks for Subscribing!</h2>
+                        <p>
+                            Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.
+                        </p>
+                    </div>
+                </div>
             </div>
             <?php } ?>
         </div>
