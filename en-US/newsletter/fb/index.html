@@ -5,7 +5,6 @@
     $status = '';
 
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
-        print_r($_POST);
         $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
         if ($form->save()) {
             $status = 'success';
@@ -88,6 +87,7 @@
                     <div class="clearfix">
                         <div class="label">&nbsp;</div>
                         <div class="form_item">
+                            <input type="hidden" name="submit" value="Sign me up!" />
                             <input type="submit" id="submit" value="Sign me up!" /><br />
                             <span class="small_text">We will only send you Mozilla-related information.</span>
                         </div>
