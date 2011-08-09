@@ -1,14 +1,4 @@
 <?php
-    // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla Newsletter';
-    $body_id    = 'newsletter';
-    $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="style/newsletter.css" media="screen">
-    <meta name="WT.si_n" content="newsletter">
-    <meta name="WT.si_x" content="1">
-EXTRA_HEADERS;
-
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
 
@@ -26,11 +16,52 @@ EXTRA_HEADERS;
         $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     }
 ?>
-
-<div>
-    <h2>Read all about it in our <span>NEWSLETTER</span></h2>
-</div>
-
-<?php
-    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
-?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mozilla Newsletter</title>
+        <meta name="og:image" content="/cdn/img/firefox-100.jpg"> 
+        <style> 
+        /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+        @font-face {
+            font-family: 'MetaBlack';
+            src: url('/cdn/img/fonts/MetaWebPro-Black.eot');
+            src: local('☺'), url('/cdn/img/fonts/MetaWebPro-Black.woff') format('woff');
+            font-weight: bold;
+        }
+        </style>
+        <link rel="stylesheet" href="style/newsletter.css" media="screen" />
+    </head>
+    <body>
+        <div id="main-content">
+            <div id="blurb">
+                <h2>
+                    Read all about it in our <span>NEWSLETTER</span>
+                </h2>
+                <p>
+                    Subscribe to monthly updates and keep current with Mozilla news, including the latest tips and tricks for getting the most out of your Firefox browser. <br /><br />
+                    It’s the perfect way for us to keep in touch!
+                </p>
+            </div>
+            <div id="form-content">
+                <form method="post">
+                    <div>
+                        <label for="email"><b>Your email address:</b></label> 
+                        <input type="text" name="email" />
+                    </div>
+                    <div>
+                        <label for="country">Country:</label> 
+                        <select name="country">
+                            <option>United States</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="format">Format:</label> 
+                        <input type="radio" name="format" value="html" /> HTML 
+                        <input type="radio" name="format" value="text" /> Text
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
