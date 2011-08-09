@@ -12,11 +12,12 @@
             $status = 'error-'. $form->error;
         }
         
-        print $status;
     }
     else {
         $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     }
+    
+    print $status;
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,8 +46,9 @@
                     It’s the perfect way for us to keep in touch!
                 </p>
             </div>
+            <?php if($status == 'success') { ?>
             <div id="form-content">
-                <form method="post">
+                <form method="post" action="">
                     <input type="hidden" name="target" value="main" />
                     <div class="clearfix">
                         <label for="email" class="label"><b>Your email address:</b></label> 
@@ -91,6 +93,14 @@
                     </div>
                 </form>
             </div>
+            <?php } else { ?>
+            <div id="success">
+                <h2>Thanks for Subscribing!</h2>
+                <p>
+                    Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.
+                </p>
+            </div>
+            <?php } ?>
         </div>
     </body>
 </html>
