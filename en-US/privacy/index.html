@@ -1,0 +1,229 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox Web Browser — Your Privace';
+    $body_id    = 'privacy';
+    $breadcrumbs = array(
+        $l10n->get('About') => "/{$lang}/about/",
+        $l10n->get('Your Privacy') => "/{$lang}/privacy/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/privacy-page.css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" href="http://blog.mozilla.com/feed/" />
+    <script src="/js/mozilla-pager.js"></script>
+    <script src="http://w.sharethis.com/button/sharethis.js#publisher=24928a16-4c8b-4e88-8e9e-abd7e9668971&amp;type=website"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2><span>Your Privacy</span></h2>
+    <p>We believe in putting users in control of their personal information. This site covers privacy at Mozilla, our data practices and the tools and controls available across our websites, products and services.</p>
+    <p>We welcome your input and questions and encourage you to get involved with Mozilla. For questions about privacy or any of our privacy policies, please send us an email at privacy@mozilla.com</p>
+</div>
+
+<div id="sidebar">
+    <div id="sidebar-policies">
+        <h3>Our <span>Privacy Policies</span></h3>
+        <p>Mozilla's specific privacy policies for our many websites, products and services:</p>
+        <h4>Online</h4>
+        <ul>
+            <li><a href="http://www.mozilla.com/en-US/privacy-policy.html" class="mozilla">Mozilla Websites</a></li>
+        </ul>
+        <h4>Products / Services</h4>
+        <ul>
+            <li><a href="http://www.mozilla.com/en-US/legal/privacy/firefox.html" class="firefox">Firefox</a></li>
+            <li><a href="http://www.mozillamessaging.com/en-US/about/privacy-policy/" class="thunderbird">Thunderbird</a></li>
+            <li><a href="https://services.mozilla.com/privacy-policy/" class="sync">Sync</a></li>
+            <li><a href="https://testpilot.mozillalabs.com/privacy.php" class="test">Test Pilot</a></li>
+        </ul>
+    </div>
+    <h3>Recent <span>News</span></h3>
+    <p>to do</p>
+</div>
+
+<div id="main-content">
+
+    <div id="" class="pager pager-with-tabs">
+
+    <ul id="privacy-menu" class="pager-tabs">
+        <li id="our-principles-link"><a href="#our-principles">Our Principles</a></li>
+        <li id="your-information-link"><a href="#your-information">Your Information</a></li>
+        <li id="your-choices-link"><a href="#your-choices">Your Choices</a></li>
+        <li id="tracking-link"><a href="#tracking">Tracking</a></li>
+        <li id="third-parties-link"><a href="#third-parties">Third Parties</a></li>
+    </ul>
+
+    <div class="pager-content">
+
+        <div class="contents" id="our-principles">
+            <script>// <![CDATA[
+            document.getElementById('our-principles').id = 'page-our-principles';
+            // ]]></script>
+
+            <p>Six core privacy principles guide our data practices and operations at Mozilla. These principles stem from the <a href="http://www.mozilla.org/about/manifesto">Mozilla Manifesto</a>. In short, we're a non-profit dedicated to putting the user in control and shaping the future of the Web for the public good. These principles remind us that our users’ interests come first and encourage us to build a consistent approach to privacy and security:</p>
+            <ol>
+                <li class="one">No Surprises <span>Only use and share information about our users for their benefit and as spelled out in our notices.</span></li>
+                <li class="four">Limited Data <span>Collect and retain the least amount of user information necessary and share data anonymously whenever possible.</span></li>
+                <li class="two">Real Choices <span>Educate users at the point that we collect any data and give them the option to opt out whenever possible</span></li>
+                <li class="five">User Control <span>Innovate, develop and advocate for privacy enhancements that put users in control of their online experiences.</span></li>
+                <li class="three">Sensible Settings <span>Establish default settings that balance safety and user experience appropriately for each transaction.</span></li>
+                <li class="six">Trusted <span>Third Parties Make privacy a key factor in selecting and interacting with partners.</span></li>
+            </ol>
+        </div>
+        <div class="contents" id="your-information">
+            <script>// <![CDATA[
+            document.getElementById('your-information').id = 'page-your-information';
+            // ]]></script>
+
+            <p>We limit the amount of data we collect about you and do not sell, trade or provide user information to any third parties for marketing or other commercial purposes.</p>
+            <p>In some cases, we may collect non–personally identifying information, like your browser type, and potentially personal information, like your IP address, to understand how our sites are being used and how to improve them. In other areas, we may ask for personal information, like your mailing address, when necessary to ship you your Mozilla membership card or a t-shirt, for example.</p>
+            <p>As an open-source, community-driven organization, there are also instances where we collect non-personally identifying information contributed to us by our users on an opt-in basis for research and product-improvement purposes (e.g., Test Pilot, usage statistics). There may be instances where we post or share aggregate, non-personal information with our community to enhance their ability to improve Mozilla’s products and services. We do not make personal information publicly available if we have specifically promised to keep it confidential when we collected it. Keep in mind, however, that suggestions, comments, and questions you post on our sites or in our products may be viewable by others and may be reproduced on other websites through syndication. We highly recommend, therefore, that you not include personal information when you submit comments through our feedback mechanisms or post questions or answers to our support site. </p>
+            <p>We may share information (in non-personally identifying forms when possible) with employees, contractors, subsidiaries or contributors who have committed to not disclose or use that information other than for Mozilla-related, non-commercial purposes.</p>
+            <p>Please read our Online and Products and Services privacy policies for more information about what user information we collect, use and share.</p>
+
+        </div>
+        <div class="contents" id="your-choices">
+            <script>// <![CDATA[
+            document.getElementById('your-choices').id = 'page-your-choices';
+            // ]]></script>
+
+            <p>If you don't want your session visit information on our websites to be collected and analyzed by Mozilla (or its third-party analytics providers), you can use the opt-out mechanisms listed here <a href="http://www.mozilla.com/opt-out.html">http://www.mozilla.com/opt-out.html</a></p>
+            <p>For people who see online advertising for Mozilla on other web sites, we respect users who have enabled Do Not Track in their browser. For those who are using a browser without DNT, like older versions of Firefox or browsers produced by other vendors, we provide an opt-out cookie that you can install by visiting this page: <a href="http://media.mozilla.com/optout.html">http://media.mozilla.com/optout.html</a></p>
+            <p>If you signed up to receive electronic marketing communications (that's just a fancy word for email) from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive.</p>
+            <p>Within our products and services, we provide various <a href="http://www.mozilla.com/en-US/firefox/security/">privacy and security settings and functionality</a>, and there are also many add-ons available to further enhance control over your online experience, interactions and information. <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
+
+        </div>
+        <div class="contents" id="tracking">
+            <script>// <![CDATA[
+            document.getElementById('tracking').id = 'page-tracking';
+            // ]]></script>
+
+            <p>Mozilla tracks visitors to our websites and usage of our products and services to improve performance and relevance (done with the above six principles in mind). There is some information we gather automatically, which we store in log files. This may include information about Internet protocol (IP) addresses, browser type, Internet service provider (ISP), referring/exit pages, operating system, date/time stamp and/or page views. We use this information, which does not usually identify individual users, to analyze trends, administer our sites, track users’ movements around them and to gather demographic information about our user base as a whole. We may also record your IP address when you place an order through our site to detect and prevent fraud. The full range of tracking activities is covered in privacy policies for our sites, products, and services.</p>
+            <p>See <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a> for code to implement this indicator on the page.</p>
+
+        </div>
+        <div class="contents" id="third-parties">
+            <script>// <![CDATA[
+            document.getElementById('third-parties').id = 'page-third-parties';
+            // ]]></script>
+
+            <p>It takes a lot of work to bring you our many websites, products and services, but Mozilla can’t take all the credit. We work with a number of third party service providers who we expect will respect your privacy and security.</p>
+            <p>Each of our third-party providers is under a licensing agreement with Mozilla. This agreement does three things:</p>
+            <ol>
+                <li class="one">It prohibits the release of personal or potentially personal information to the public.</li>
+                <li class="two">It allows each provider to use this information only in conjunction with the service or services it’s providing.</li>
+                <li class="three">It prohibits the correlation of any user data with any information collected through that provider's other products, services or Web properties.</li>
+            </ol>
+
+            <h3>Current Third Party Service Providers</h3>
+            <table>
+                <tr>
+                    <th>Service Provider</th>
+                    <th>Purpose</th>
+                    <th>Privacy Policy Link</th>
+                </tr>
+                <tr class="blue">
+                    <td>Webtrends</td>
+                    <td>Website analytics</td>
+                    <td>Webtrends Privacy Policy <a href="http://www.webtrends.com/AboutWebtrends/PrivacyPolicy.aspx">http://www.webtrends.com/AboutWebtrends/PrivacyPolicy.aspx</a></td>
+                </tr>
+                <tr>
+                    <td>Responsys</td>
+                    <td>Email</td>
+                    <td>Your Online Privacy Rights <a href="http://www.responsys.com/legal/privacy.php">http://www.responsys.com/legal/privacy.php</a></td>
+                </tr>
+                <tr class="blue">
+                    <td>Jobvite</td>
+                    <td>Job applications</td>
+                    <td>Jobvite Privacy Policy <a href="http://recruiting.jobvite.com/privacy-policy.php">http://recruiting.jobvite.com/privacy-policy.php</a></td>
+                </tr>
+                <tr>
+                    <td>SurveyGizmo</td>
+                    <td>Website polls and surveys</td>
+                    <td>The Fine Print <a href="http://www.surveygizmo.com/the-fine-print/">http://www.surveygizmo.com/the-fine-print/</a></td>
+                </tr>
+                <tr class="blue">
+                    <td>Zazzle</td>
+                    <td>Online store</td>
+                    <td>Zazzle Privacy Policy <a href="http://www.zazzle.com/mk/policy/privacy_policy">http://www.zazzle.com/mk/policy/privacy_policy</a></td>
+                </tr>
+                <tr>
+                    <td>Merchandise Mania</td>
+                    <td>Online store</td>
+                    <td>Terms and Conditions and General Trading Information <a href="http://www.merchandisemania.co.uk/content/terms.html">http://www.merchandisemania.co.uk/content/terms.html</a></td>
+                </tr>
+            </table>
+
+            <h3>Third Party Service Providers for Websites and Email</h3>
+            <table>
+                <tr>
+                    <th>Service Provider</th>
+                    <th>Purpose</th>
+                    <th>Privacy Policy Link</th>
+                </tr>
+                <tr class="blue">
+                    <td>Google Geolocation</td>
+                    <td>Location-aware feature</td>
+                    <td>Google Geolocation Privacy Policy <a href="http://www.google.com/privacy/lsf.html">http://www.google.com/privacy/lsf.html</a></td>
+                </tr>
+                <tr>
+                    <td>Google Safe Browsing</td>
+                    <td>Protection against suspected forgery and attack sites feature</td>
+                    <td>Google Safe Browsing in Mozilla Firefox Version 3 to current versions <a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">http://code.google.com/apis/safebrowsing/firefox3_privacy.html</a></td>
+                </tr>
+                <tr class="blue">
+                    <td>Google</td>
+                    <td>Search feature</td>
+                    <td>Google Privacy Center <a href="http://www.google.com/intl/en/privacy.html">http://www.google.com/intl/en/privacy.html</a></td>
+                </tr>
+                <tr>
+                    <td>Microsoft Bing</td>
+                    <td>Search feature</td>
+                    <td>Microsoft Bing Privacy Policy <a href="http://privacy.microsoft.com/en-us/bing.mspx">http://privacy.microsoft.com/en-us/bing.mspx</a></td>
+                </tr>
+                <tr class="blue">
+                    <td>Yahoo!</td>
+                    <td>Search feature</td>
+                    <td>Yahoo! Privacy Center <a href="http://info.yahoo.com/privacy/us/yahoo/details.html">http://info.yahoo.com/privacy/us/yahoo/details.html</a></td>
+                </tr>
+                <tr>
+                    <td>Amazon.com</td>
+                    <td>Search feature</td>
+                    <td>Amacon.com Privacy Notice <a href="http://www.amazon.com/gp/help/customer/display.html/ref=hp_lnav_dyn?ie=UTF8&nodeId=468496">http://www.amazon.com/gp/help/customer/display.html/ref=hp_lnav_dyn?ie=UTF8&nodeId=468496</a></td>
+                </tr>
+                <tr class="blue">
+                    <td>eBay</td>
+                    <td>Search feature</td>
+                    <td>eBay Privacy Policy <a href="http://pages.ebay.com/help/policies/privacy-policy.html">http://pages.ebay.com/help/policies/privacy-policy.html</a></td>
+                </tr>
+                <tr>
+                    <td>Wikipedia</td>
+                    <td>Search feature</td>
+                    <td>Wikipedia Privacy Policy <a href="http://wikimediafoundation.org/wiki/Privacy_policy">http://wikimediafoundation.org/wiki/Privacy_policy</a></td>
+                </tr>
+            </table>
+
+            <p>Note: We will try to keep this information updated, but we may sometimes fall behind. If you have questions about who provides services for Mozilla, then please email us at privacy at mozilla dot com.</p>
+        </div>
+
+    </div>
+    </div>
+
+    <div id="popular-addons">
+    <div class="container">
+        <h2>Popular <span>Privacy Add-ons</span></h2>
+        <ul>
+            <li><a href=""><h3>The Apollo Pack!</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
+            <li><a href=""><h3>Bearbear's Firefox 4</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
+            <li><a href=""><h3>TOP security and</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
+        </ul>
+    </div>
+    </div>
+
+</div><!-- end #main-content div -->
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
