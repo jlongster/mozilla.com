@@ -5,7 +5,7 @@
  */
 $(document).ready(function() {
 
-    var requiredFlashVersion = '10.3.181.26';
+    var requiredFlashVersion = '10.3.183.5';
 
     function getFlashVersion()
     {
@@ -101,6 +101,7 @@ $(document).ready(function() {
 
     if ($featureSection && !isWinCE && !isPPCMac) {
         var $body = $('body');
+
         var hasRequiredVersion = verifyFlashVersion();
         if (!hasRequiredVersion && hasRequiredVersion !== -1) {
 
@@ -119,12 +120,13 @@ $(document).ready(function() {
 
             if ($body.attr('id') == 'whatsnew') {
                 $body.addClass('flash-warning');
-                $('#main-content').before(
+                $('#main-feature').after(
                     '<div id="flash-warning">' +
                     '<h2>' + FlashAlertTitle + '</h2>' +
                     '<p>' + FlashAlertText + '</p>' +
                     '<a href="#" id="flash-close">✖</a></div>'
                 );
+                console.log(document.getElementById('main-content'));
             }
         }
 
