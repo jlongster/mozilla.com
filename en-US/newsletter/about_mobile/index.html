@@ -63,7 +63,13 @@ EXTRA_HEADERS;
           <label for="country">Country</label>
           <select id="country" name="country">
             <option value="">Choose one</option>
-            <?= regionsAsOptions($lang, $form->get('country')) ?>
+            <?php
+                $country = $form->get('country');
+                if (!$country) {
+                    $country = 'us';
+                }
+                echo regionsAsOptions($lang, $country);
+            ?>
           </select>
         </div>
 
