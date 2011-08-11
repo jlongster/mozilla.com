@@ -45,6 +45,9 @@ return array(
     'css_whatsnew5' => array(
         '//style/firefox/5/whatsnew-page.css'
     ),
+    'css_whatsnew6' => array(
+        '//style/firefox/6/whatsnew-page.css'
+    ),
     'js_portal_header' => array(
         '//js/util.js',
     ),
