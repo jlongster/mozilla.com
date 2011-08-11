@@ -313,20 +313,10 @@ if ($_version !== null && $_valid_version) {
         }, false);
     }
     </script>
-    <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
-    <script type="text/javascript">
-     //<![CDATA[
-     var _tag=new WebTrends({"dcsid":"dcsf9nqmj10000clgc14f05rf_2u7t","rate":5,"fpcdom":"mozilla.com"});
-     _tag.dcsGetId();
-     //]]>
-    </script>
-    <script>
-      //<![CDATA[
-      _tag.dcsCollect();
-      //]]>
-    </script>
-    <noscript>
-      <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/>
-    </noscript>
+    <?
+    // Webtrends stats, see bug 556384
+    require "{$config['file_root']}/includes/js_stats.inc.php";
+    echo $stats_js;
+    ?>
   </body>
 </html>
