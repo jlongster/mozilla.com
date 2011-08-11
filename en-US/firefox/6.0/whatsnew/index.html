@@ -137,40 +137,18 @@ if ($_version !== null && $_valid_version) {
         </form>
 </div>
 
-<div class="sub-feature box" id="mobile">
-    <h3><a href="/<?=$lang?>/mobile/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>//mobile/', 'WT.ti', 'Firefox%20Live');">
-        Get Up and Go
-    </a></h3>
-    <p>It’s your Web, anywhere you go.</p>
+<div class="sub-feature box" id="webifyme">
+    <h3>Visualize Your Web</h3>
+    <p>See your Internet as a custom collage.</p>
     <ul class="link"><li>
-        <a href="/<?=$lang?>/mobile/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 
-                                  'DCS.dcsuri', '/<?=$lang?>/mobile/',
-                                  'WT.ti', 'Get Firefox for mobile',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Get Firefox for mobile');">
-          Get Firefox for mobile »
-        </a>
-    </li></ul>
-</div>
-
-<div class="sub-feature box" id="markup">
-    <h3><a href="http://markup.mozilla.org/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'markup.mozilla.org', 'DCS.dcsuri', '/', 'WT.ti', 'Mark Up');">
-        The Web Belongs to You
-    </a></h3>
-    <p>Visit Mark Up and show your support.</p>
-    <ul class="link"><li>
-        <a href="http://markup.mozilla.org/"
-           onclick="dcsMultiTrack('DCS.dcssip', 'markup.mozilla.org', 
+        <a href="https://webifyme.org/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'webifyme.org', 
                                   'DCS.dcsuri', '/',
-                                  'WT.ti', 'Make your mark',
+                                  'WT.ti', 'Webify Me!',
                                   'WT.dl', 99,
                                   'WT.nv', 'Content',
-                                  'WT.ac', 'Make your mark');">
-          Make your mark »
+                                  'WT.ac', 'Webify Me!');">
+          Webify Me! »
         </a>
     </li></ul>
 </div>
@@ -226,23 +204,7 @@ if ($_version !== null && $_valid_version) {
 </div>
 </div>
 
-    <script>
-
-    // Add a class to the body tag to alternate promo features
-    var class_options   = new Array( "promo-mobile", "promo-markup" );
-
-    if (Math.random) {
-        var class_choice   = Math.floor(Math.random() * (class_options.length));
-
-        // Just in case javascript gets carried away...
-        class_choice   = ( (class_choice < class_options.length) && class_choice >= 0) ? class_choice : 0;
-
-        if (document.body.className == '') {
-            document.body.className = class_options[class_choice];
-        } else {
-            document.body.className += ' '+class_options[choice];
-        }
-    }
+  <script>
 
   var platform = (function() {
     var ua = navigator.userAgent;
