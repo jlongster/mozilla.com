@@ -1,0 +1,111 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter-updated';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
+?>
+
+<?php if(isset($_GET["unsub"]) && $_GET["unsub"] == 1) {
+ // Successful unsubscribe - ask for unsubscribe reasons
+?>
+
+<div id="main-feature">
+    <h2>You’ve been unsubscribed.</h2>
+</div>
+
+<div id="content">
+    <h3>We’re sorry to see you go. Would you mind telling us why you’re leaving?</h3>
+
+    <form>
+    <table>
+        <tr>
+            <td><input type="checkbox" id="unsub1"></td>
+            <td><label for="unsub1">You send too many emails.</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unsub2"></td>
+            <td><label for="unsub2">Your content wasn’t relevant to me.</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unsub3"></td>
+            <td><label for="unsub3">Your email design was too hard to read.</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unsub4"></td>
+            <td><label for="unsub4">I didn’t sign up for this.</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unsub5"></td>
+            <td><label for="unsub5">I’m keeping in touch with Mozilla on Facebook and Twitter instead.</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="unsub6"></td>
+            <td><textarea placeholder="Other…"></textarea></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit" class="button" />
+    </form>
+
+</div>
+
+<?php } elseif(isset($_GET["unsub"]) && $_GET["unsub"] == 2) {
+ // Successful submission of unsubscribe reasons
+?>
+
+<div id="main-feature">
+    <h2>You’ve been unsubscribed.</h2>
+</div>
+
+<div id="content">
+    <h3>Thanks for telling us why you’re leaving.</h3>
+</div>
+
+<?php } else {
+ // Successful preferences update
+?>
+
+<div id="main-feature">
+    <h2>Thanks for updating your email preferences.</h2>
+</div>
+
+<div id="content">
+    <h3>While here, why not check out some more Firefox awesomeness.</h3>
+
+<div class="sub-feature box" id="mobile">
+    <h3>Get Up and Go</h3>
+    <p>It’s your Web anywhere you go.</p>
+    <a href="/<?=$lang?>/mobile/" class="link">Get Firefox for mobile! »</a>
+</div>
+<div class="sub-feature box" id="addons">
+    <h3>Added Extras</h3>
+    <p>Make Firefox do more with add-ons.</p>
+    <a href="https://addons.mozilla.org/" class="link">Find out how! »</a>
+</div>
+<div class="sub-feature box" id="about">
+    <h3>About Us</h3>
+    <p>What’s  Mozilla all about?</p>
+    <a href="/<?=$lang?>/about/" class="link">We’re glad you asked! »</a>
+</div>
+
+</div>
+
+<?php } ?>
+
+</div><!-- end #content div -->
+
+<script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
+<script>
+  var _newsletter_langs =
+<?php
+   echo json_encode($prefs->available_langs());
+?>;
+</script>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
