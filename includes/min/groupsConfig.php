@@ -4,7 +4,7 @@
  * @package Minify
  */
 
-/** 
+/**
  * You may wish to use the Minify URI Builder app to suggest
  * changes. http://yourdomain/min/builder/
  **/
@@ -50,6 +50,9 @@ return array(
     ),
     'css_firstrun6' => array(
         '//style/firefox/6/firstrun-page.css'
+    ),
+    'css_aurora' => array(
+        '//style/firefox/aurora/firstrun-page.css'
     ),
     'js_portal_header' => array(
         '//js/util.js',

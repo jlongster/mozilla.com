@@ -1,0 +1,175 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('AURORA', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('AURORA', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+	$_version       = getVersionBySelf();
+	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firefox Aurora</title>
+   <style>
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+    </style>
+    <? echo min_inline_css('css_aurora'); ?>
+    <? echo min_inline_js('js_whatsnew5'); ?>
+  </head>
+<body>
+
+<div id="wrapper">
+<div id="doc">
+
+
+<div id="main-feature">
+    <img src="<?php echo min_inline_image('/img/firefox/aurora/logo-128.png')?>" alt="Aurora Logo" id="title-logo" width="128" height="128" />
+    <h2>You are now running Firefox Aurora</h2>
+</div>
+
+<div id="main-content-help" class="box">
+    <div class="contents">
+    <div id="intro">
+        <h3>Welcome to the <span>Future of Firefox</span></h3>
+    </div>
+    <p class="note" id="note-win">Thanks for helping us make our next version our best yet. Click the Firefox button, go to the Help menu, and click Submit Feedback to give us immediate input.</p>
+    <p class="note" id="note-mac-lin">Thanks for helping us make our next version our best yet. Go to the Help menu and click Submit Feedback to give us immediate input.</p>
+    </div>
+</div>
+
+<div id="main-content" class="box">
+    <div class="contents">
+    <div id="intro">
+        <h3>Welcome to the <span>Future of Firefox</span></h3>
+    </div>
+    <p class="note" id="note">Thanks for helping us make our next version our best yet. Click on the feedback button to give us immediate input.</p>
+    </div>
+</div>
+
+<div id="sub-features">
+
+<div id="newsletter-signup" class="sub-feature box">
+    <h3>Get Aurora News!</h3>
+    <p>Sign up for our Aurora newsletter.</p>
+        <form id="email-form" class="<?= $status ?>" action="" method="post">
+          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
+          <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+          <div id="success-msg">Thanks for Subscribing!</div>
+          <div class="more">
+            <div class="row">
+              <select id="country" name="country">
+                  <option value="">Select country</option>
+                  <?php
+                      $country = $form->get('country');
+                      if (!$country) {
+                          $country = 'us';
+                      }
+                      echo regionsAsOptions($lang, $country);
+                  ?>
+              </select>
+            </div>
+            <div class="row">
+                <?php
+                    $isText = $form->get('format') == 'text';
+                ?>
+                <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
+                <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
+            </div>
+            <div class="row">
+                <label for="privacy-check" id="privacy-check-label">
+                    <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                </label>
+            </div>
+            <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                            'DCS.dcsuri', '/mainstream_newsletter/signup',
+                            'WT.ti', 'Link: Sign me up - Second Step',
+                            'WT.dl', 99,
+                            'WT.nv', 'Content',
+                            'WT.ac', 'Newsletter');">
+            <p class="footnote">We will only send you Mozilla-related information.</p>
+          </div>
+        </form>
+</div>
+
+<div class="sub-feature box" id="future-blog">
+    <h3><a href="http://blog.mozilla.com/futurereleases/">Future Release Blog</a></h3>
+    <p>Be the first to know what's new with upcoming Firefox releases.</p>
+    <ul class="link"><li>
+        <a href="http://blog.mozilla.com/futurereleases/">Follow the blog »</a>
+    </li></ul>
+</div>
+
+<div class="sub-feature box" id="mobile">
+    <h3><a href="/<?=$lang?>/mobile/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>//mobile/', 'WT.ti', 'Firefox%20Live');">
+        Take Beta to Go
+    </a></h3>
+    <p>Give feedback and help shape Firefox for mobile.</p>
+    <ul class="link"><li>
+        <a href="/<?=$lang?>/mobile/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                  'DCS.dcsuri', '/<?=$lang?>/mobile/',
+                                  'WT.ti', 'Go mobile',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Go mobile');">
+          Go mobile »
+        </a>
+    </li></ul>
+</div>
+
+</div>
+
+<p id="sub-links">
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+
+
+
+
+</div>
+</div>
+
+    <script>
+
+  var platform = (function() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf("Mac") != -1) {
+      return "mac";
+    } else if (ua.indexOf("Linux") != -1) {
+      return "linux";
+    }
+    return "win";
+  })();
+  document.body.classList.add(platform);
+
+    $(document).ready(function(){
+        $("#email").focus(function() {
+            $("#newsletter-signup").addClass("expand");
+        });
+    });
+
+    </script>
+    <script type="text/javascript" src="/includes/min/min.js?g=js_stats"></script>
+    <noscript>
+      <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="//statse.webtrendslive.com/dcso6de4r0000082npfcmh4rf_4b1e/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/>
+    </noscript>
+  </body>
+</html>
