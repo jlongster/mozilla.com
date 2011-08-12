@@ -1,0 +1,221 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Newsletter';
+    $body_id    = 'newsletter-existing';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
+
+    $prefs = new EmailPrefs($_POST);
+
+    function chk($field, $val, $force=FALSE) {
+        global $prefs;
+
+        if(($prefs->get($field) == NULL && $force) ||
+           ($prefs->get($field) == $val)) {
+            return 'checked="checked"';
+        }
+        return '';
+    }
+
+    $errors = array(
+        'email' => 'Whoops! Be sure to enter a valid email address',
+        'country' => 'Please select a country'
+    );
+
+    $prefs = new EmailPrefs($_POST);
+    $prefs->save_new();
+?>
+
+<div id="main-feature">
+    <h2>Manage your <span>Newsletter Subscriptions</span></h2>
+</div>
+
+<?php if($prefs->has_non_field_error()) { ?>
+<div class="non-field-errors">
+  We apologize, but something is amiss with our newsletter
+  system. Try again soon.
+</div>
+<?php } ?>
+
+<div id="content">
+
+<form action="#newsletter-form" method="post" id="newsletter-form">
+<input type="hidden" name="target" value="main" />
+<?php
+    if($prefs->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($prefs->errors as $error) {
+            if(isset($errors[$error])) {
+                echo "<li>" . $errors[$error] . "</li>";
+            }
+            else {
+                echo "$error is invalid";
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
+
+
+<div id="basic-settings">
+
+    <div class="field email-field <?= $prefs->has_error('email') ? 'field-error' : ''; ?>">
+        <label for="email">Your email address:</label>
+        <div class="field-contents">
+            <input name="email" type="email" class="email" value="<?= $prefs->get('email') ?>" autofocus>
+        </div>
+    </div>
+
+    <div class="field country-field <?= $prefs->has_error('country') ? 'field-error' : ''; ?>">
+        <label for="country">Country:</label>
+        <div class="field-contents">
+            <select class="country" name="country">
+                <option value="">Select country</option>
+                <?php
+                    $country = $prefs->get('country');
+                    if (!$country) {
+                        $country = 'us';
+                    }
+                    echo regionsAsOptions($lang, $country);
+              ?>
+            </select>
+        </div>
+    </div>
+
+    <div class="field lang-field <?= $prefs->has_error('lang') ? 'field-error' : ''; ?>">
+      <label for="lang">Language:</label>
+      <div class="field-contents">
+      <select class="lang" name="lang">
+<?php
+   foreach($prefs->available_langs() as $code => $info) {
+       $s = ($code == $prefs->get('lang') ? 'selected' : '');
+       echo "<option value=\"$code\" $s>" . ___($info[0]) . '</option>';
+   }
+?>
+      </select>
+      </div>
+    </div>
+
+    <div class="field format-field">
+      <span class="field-label">Format:</span>
+      <div class="field-radios">
+        <span class="radio-wrapper"><input type="radio" name="format" id="html-format" value="html" <?= chk('format', 'html', TRUE); ?>></span>
+        <label for="html-format">HTML</label>
+        <span class="radio-wrapper"><input type="radio" name="format" id="text-format" value="text" <?= chk('format', 'text') ?>></span>
+        <label for="text-format">Text</label>
+      </div>
+    </div>
+
+</div>
+<div id="all-newsletters">
+
+    <h3><span>Our Monthly Newsletters:</span></h3>
+    <table>
+        <thead>
+        <tr>
+            <td></td>
+            <th>Subscribe</th>
+            <th>Unsubscribe</th>
+        </tr>
+        </thead>
+        <tbody>
+<?php
+foreach($prefs->available_newsletters() as $nl => $info) {
+?>
+        <tr>
+          <th>
+            <h4><?= $info['title'] ?></h4>
+            <p><?= $info['desc'] ?></p>
+          </th>
+          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', $nl != 'mozilla-and-you'); ?>></td>
+        </tr>
+<?php
+   }
+?>
+        <tr>
+            <td colspan="3" id="remove-all-section">
+                <h4>Check here if you’d like to be removed from all Mozilla emails</h4>
+                <input type="checkbox" id="remove-all">
+                <label for="remove-all">Remove me from all Mozilla emails</label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div class="field submit-field">
+  <input name="submit" type="submit" value="Save Preferences" class="button">
+</div>
+
+</form>
+
+<div id="newsletter-social">
+    <h4>Let’s Be Friends!</h4>
+    <p>Firefox is also on your favorite social networking sites. Connect with us and join the conversation.</p>
+    <ul>
+        <li id="newsletter-twitter">
+            <a onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com', 'DCS.dcsuri', '/firefox', 'WT.ti', 'Twitter');" href="http://twitter.com/firefox">Follow us »</a>
+        </li>
+        <li id="newsletter-facebook">
+            <a onclick="dcsMultiTrack('DCS.dcssip', 'facebook.com', 'DCS.dcsuri', '/Firefox', 'WT.ti', 'Facebook');" href="http://facebook.com/Firefox">Like us »</a>
+        </li>
+</div>
+
+</div><!-- end #content div -->
+
+<script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
+<script>
+  var _newsletter_langs =
+<?php
+   echo json_encode($prefs->available_langs());
+?>;
+
+$(function() {
+
+    function show_newsletters(lang) {
+        var letters = _newsletter_langs[lang][1];
+
+        if(letters) {
+            // Hide all the newsletters and set all radio inputs to
+            // "not subscribing"
+            $('#other-newsletters tbody tr')
+                .each(function() {
+                    $(this).hide();
+                })
+                .find('tr input[type=radio]').each(function() {
+                    var field = $(this);
+
+                    if(field.val() == 'N')
+                        field.attr('checked', 'true');
+                    else
+                        field.attr('checked', 'false');
+                });
+
+            // Show individually available newsletters
+            $.each(letters, function(i, nl) {
+                var field = $('input[name=' + nl + ']');
+                field.parents('tbody tr').show();
+            });
+        }
+    }
+
+    $('select[name=lang]').change(function() {
+        show_newsletters($(this).find(':selected').val());
+    });
+
+    var lang = $('select[name=lang] :selected').val();
+    show_newsletters(lang);
+});
+</script>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
