@@ -1,7 +1,47 @@
 <?php
+
+    /* Require config files */
+    require_once "fb-config.php";
+    if (empty($config)) $config['static_prefix'] = 'http://www-fx4-cdn.stage.mozilla.com';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
+    
+    /* Facebook API */
+    require_once "lib/facebook.php";
+    
+    /* Init Facebook API */
+    $facebook = new Facebook(array(
+      'appId'  => APP_ID,
+      'secret' => APP_SECRET,
+      'cookie' => true
+    ));
+    
+    /* Get identifying info about the user from FB */
+    $user = $facebook->getSignedRequest();
 
+    /* Set the Locale */
+    $locale = $user["user"]["locale"];
+
+    $exceptions = array(
+        "ar_AR" => "ar_JO.utf8",
+        "rm_CH" => "it_CH.utf8"
+    );
+
+    if (array_key_exists($locale, $exceptions)) {
+        $locale = $exceptions[$locale];
+    }
+
+    putenv("LC_ALL=" . $locale);
+    setlocale(LC_ALL, $locale);
+    
+    bindtextdomain('messages', dirname(__FILE__) . '/locale');
+    bind_textdomain_codeset("messages", "UTF-8");
+    textdomain('messages');
+
+    /* right-to-left languages */
+    $rtl = in_array($locale, array('ar_JO.utf8', 'he_IL'));
+    
+    /* Handle form post */
     $status = '';
 
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
@@ -32,16 +72,23 @@
         }
         </style>
         <link rel="stylesheet" href="style/newsletter.css" media="screen" />
+        <style type="text/css">
+        /* L10n: Replace this by CSS rules that make things pretty in your locale. */
+        <?php
+            if ( _('custom-css') && (_('custom-css') != 'custom-css') ) {
+                echo _('custom-css');
+            }
+        ?>
+        </style>
     </head>
     <body>
         <div id="main-content">
             <div id="blurb">
                 <h2>
-                    Read all about it in our <span>NEWSLETTER</span>
+                    <?php echo _("Read all about it in our <span>NEWSLETTER</span>"); ?>
                 </h2>
                 <p>
-                    Subscribe to monthly updates and keep current with Mozilla news, including the latest tips and tricks for getting the most out of your Firefox browser. <br /><br />
-                    It’s the perfect way for us to keep in touch!
+                    <?php echo _("Subscribe to monthly updates and keep current with Mozilla news, including the latest tips and tricks for getting the most out of your Firefox browser. <br /><br />It’s the perfect way for us to keep in touch!"); ?>
                 </p>
             </div>
             <?php if($status != 'success') { ?>
@@ -49,16 +96,16 @@
                 <form method="post" action="index.html">
                     <input type="hidden" name="target" value="main" />
                     <div class="clearfix">
-                        <label for="email" class="label"><b>Your email address:</b></label> 
+                        <label for="email" class="label"><b><?php echo _("Your email address:"); ?></b></label> 
                         <div class="form_item">
                             <input type="text" name="email" id="email" placeholder="Your email address" />
                         </div>
                     </div>
                     <div class="clearfix">
-                        <label for="country" class="label">Country:</label> 
+                        <label for="country" class="label"><?php echo _("Country:"); ?></label> 
                         <div class="form_item">
                             <select class="country" name="country">
-                                <option value="">Select country</option>
+                                <option value=""><?php echo _("Select Country"); ?></option>
                                 <?php 
                                     $country = $form->get('country');
                                     if (!$country) {
@@ -70,16 +117,16 @@
                         </div>
                     </div>
                     <div class="clearfix">
-                        <label for="format" class="label">Format:</label> 
+                        <label for="format" class="label"><?php echo _("Format:"); ?></label> 
                         <div class="form_item">
-                            <input type="radio" name="format" value="html" checked="checked" /> HTML &nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="format" value="text" /> Text
+                            <input type="radio" name="format" value="html" checked="checked" /> <?php echo _("HTML"); ?> &nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="format" value="text" /> <?php echo _("Text"); ?>
                         </div>
                     </div>
                     <div class="clearfix">
                         <div class="label">&nbsp;</div>
                         <div class="form_item">
-                            <input type="checkbox" name="privacy" id="privacy" /> &nbsp;I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                            <input type="checkbox" name="privacy" id="privacy" /> &nbsp;<?php echo _('I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>'); ?>
                         </div>
                     </div>
                     <div class="clearfix">
@@ -87,7 +134,7 @@
                         <div class="form_item">
                             <input type="hidden" name="submit" value="Sign me up!" />
                             <input type="submit" id="submit" value="Sign me up!" /><br />
-                            <span class="small_text">We will only send you Mozilla-related information.</span>
+                            <span class="small_text"><?php echo _('We will only send you Mozilla-related information.'); ?></span>
                         </div>
                     </div>
                 </form>
@@ -96,9 +143,9 @@
             <div id="success">
                 <div class="clearfix">
                     <div class="form_item">
-                        <h2>Thanks for Subscribing!</h2>
+                        <h2><?php echo _('Thanks for subscribing!'); ?></h2>
                         <p>
-                            Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.
+                            <?php echo _("Now you will be among the first to see Mozilla's special events, product updates, videos and other awesomeness."); ?>
                         </p>
                     </div>
                 </div>
