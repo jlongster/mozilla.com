@@ -14,11 +14,11 @@ EXTRA_HEADERS;
  // Successful unsubscribe - ask for unsubscribe reasons
 ?>
 
-<div id="main-feature">
+<div id="main-feature" class="unsub">
     <h2>You’ve been unsubscribed.</h2>
 </div>
 
-<div id="content">
+<div id="content" class="unsub">
     <h3>We’re sorry to see you go. Would you mind telling us why you’re leaving?</h3>
 
     <form>
@@ -45,10 +45,13 @@ EXTRA_HEADERS;
         </tr>
         <tr>
             <td><input type="checkbox" id="unsub6"></td>
-            <td><textarea placeholder="Other…"></textarea></td>
+            <td><textarea placeholder="Other…" cols="35" rows="3"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" class="button" /></td>
         </tr>
     </table>
-    <input type="submit" value="Submit" class="button" />
     </form>
 
 </div>
@@ -57,11 +60,11 @@ EXTRA_HEADERS;
  // Successful submission of unsubscribe reasons
 ?>
 
-<div id="main-feature">
+<div id="main-feature" class="unsub">
     <h2>You’ve been unsubscribed.</h2>
 </div>
 
-<div id="content">
+<div id="content" class="unsub">
     <h3>Thanks for telling us why you’re leaving.</h3>
 </div>
 
@@ -77,17 +80,17 @@ EXTRA_HEADERS;
     <h3>While here, why not check out some more Firefox awesomeness.</h3>
 
 <div class="sub-feature box" id="mobile">
-    <h3>Get Up and Go</h3>
+    <h4>Get Up and Go</h4>
     <p>It’s your Web anywhere you go.</p>
     <a href="/<?=$lang?>/mobile/" class="link">Get Firefox for mobile! »</a>
 </div>
 <div class="sub-feature box" id="addons">
-    <h3>Added Extras</h3>
+    <h4>Added Extras</h4>
     <p>Make Firefox do more with add-ons.</p>
     <a href="https://addons.mozilla.org/" class="link">Find out how! »</a>
 </div>
 <div class="sub-feature box" id="about">
-    <h3>About Us</h3>
+    <h4>About Us</h4>
     <p>What’s  Mozilla all about?</p>
     <a href="/<?=$lang?>/about/" class="link">We’re glad you asked! »</a>
 </div>
@@ -99,12 +102,6 @@ EXTRA_HEADERS;
 </div><!-- end #content div -->
 
 <script src="<?php echo "{$config['static_prefix']}/js/autofocus.js"; ?>"></script>
-<script>
-  var _newsletter_langs =
-<?php
-   echo json_encode($prefs->available_langs());
-?>;
-</script>
 
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
