@@ -60,11 +60,12 @@ The latest version of Firefox for Android has the following changes:
     <li>Important improvements "under the hood" and new technology features:</li>
     <ul>
         <li><a href="https://wiki.mozilla.org/Fennec/Features/touch"> Touch Events</a> (part 1 - single touch only): Expose touch events to content for better interaction with web pages and services, and improved compatibility with existing web content.</li>
-        <li><a href="https://wiki.mozilla.org/Fennec/Features/indexdb"> IndexedDB</a> database storage for web pages</li>
-        <li>Better performance and improved memory management</li>
+        <li><a href="https://wiki.mozilla.org/Fennec/Features/indexdb"> IndexedDB</a> database storage for web pages</li>        
         <li>Orientation and accelleration for web pages.  Conforms to <a href="http://dev.w3.org/geo/api/spec-source-orientation.html">Editor's Draft 5 July 2011</a>.</li>
         <li>Automatic text hyphenation with the -moz-hyphens CSS property (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=253317">bug 253317</a>)</li>
         <li>All Firefox versions now support animated CSS Transitions (<a href="https://developer.mozilla.org/en/CSS/CSS_transitions">more info</a> | <a href="http://hacks.mozilla.org/2011/06/rofox-a-css3-animations-demo/">demo</a>).
+        <li>Improved performance and memory management</li>
+
     </ul>
     <li>More bug fixes and enhancements:</li>
     <ul>
@@ -79,22 +80,14 @@ The latest version of Firefox for Android has the following changes:
     </ul>
 </ul>
 <h5>What's New with Add-ons</h5>
-<p>There are now over 160 <a href="http://addons.mozilla.org/mobile/extensions/">add-ons</a> for Firefox for mobile, and counting. Nearly 100 add-ons are already compatible with our latest browser version. Thanks to our awesome community, the number of exciting compatible add-ons increases constantly.</p>
+<p>There are now over 160 <a href="http://addons.mozilla.org/mobile/extensions/">add-ons</a> for Firefox for mobile, and counting. Thanks to our awesome community, the number of exciting compatible add-ons increases constantly.</p>
 <h5>What's New for Developers</h5>
 <p>
-Now is the time to extend your reach and build a new awesome add-on, or to make your mobile add-ons compatible with Firefox for Android. Find all the tools and resources you need on the <a href="https://developer.mozilla.org/mobile">Mozilla Developer Network</a>.
+    As mentioned above, the new version of Firefox introduces a number of technical improvements, most notably <a href="https://wiki.mozilla.org/Fennec/Features/touch">Single Touch Events</a>, <a href="https://wiki.mozilla.org/Fennec/Features/indexdb"> IndexedDB</a>, Orientation and acceleration for web pages. Conforms to <a href="http://dev.w3.org/geo/api/spec-source-orientation.html">Editor's Draft 5 July 2011</a>, Automatic text hyphenation with the -moz-hyphens CSS property (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=253317">bug 253317</a>), and animated CSS Transitions (<a href="https://developer.mozilla.org/en/CSS/CSS_transitions">more info</a> | <a href="http://hacks.mozilla.org/2011/06/rofox-a-css3-animations-demo/">demo</a>).
+<br>
+    Now is the time to extend your reach and build a new awesome add-on, or to make your mobile add-ons compatible with Firefox for Android. Find all the tools and resources you need on the <a href="https://developer.mozilla.org/mobile">Mozilla Developer Network</a>.
 </p>
-<p>Firefox for Android supports:</p>
-<ul>
-    <li>IPv6 on Android</li>
-    <li>"overflow: scroll" and "overflow: auto" CSS properties</li>
-    <li><a href="https://developer.mozilla.org/en/Extensions/Bootstrapped_extensions">Restartless Add-ons</a></li>
-    <li><a href="https://developer.mozilla.org/en/online_and_offline_events">HTML5 online/offline events</a></li>
-    <li>...and much more.</li>
- </ul>
-</li>
-</ul>
-In addition to these new features, please see the features from <a href="http://www.mozilla.com/en-US/mobile/5.0/releasenotes/">previous releases</a>.
+In addition to these features, please see details about features introduced in <a href="http://www.mozilla.com/en-US/mobile/5.0/releasenotes/">previous releases</a>.
 Find more information for developers at <a href="https://developer.mozilla.org/en/Firefox_6_for_developers">https://developer.mozilla.org/en/Firefox_6_for_developers</a></p>
         </div>
       </div>
@@ -121,7 +114,7 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
           </p>
           <p>With this new release we now support <a  href="https://developer.mozilla.org/en/Extensions/Bootstrapped_extensions">Restartless Add-ons</a>. Visit the <a
           href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/Electrolysis">Electrolysis
-          and Add-ons wiki</a> page and the <a  href="https://wiki.mozilla.org/Mobile/AddonsTrainingWeek">Add-ons Training Week</a> documentation to learn more.
+          and Add-ons wiki</a> page and the <a href="https://wiki.mozilla.org/Mobile/AddonsTrainingWeek">Add-ons Training Week</a> documentation to learn more.
           </p>
           <h5>What’s Under the Hood</h5>
           <ul>
@@ -143,6 +136,14 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
             <li>&lt;audio&gt;</li>
             <li>&lt;video&gt;</li>
           </ul>
+          <p>In addition, Firefox for Android supports:</p>
+<ul>
+    <li>IPv6 on Android</li>
+    <li>"overflow: scroll" and "overflow: auto" CSS properties</li>
+    <li><a href="https://developer.mozilla.org/en/Extensions/Bootstrapped_extensions">Restartless Add-ons</a></li>
+    <li><a href="https://developer.mozilla.org/en/online_and_offline_events">HTML5 online/offline events</a></li>
+    <li>...and much more.</li>
+ </ul>
         </div>
       </div>
         <div id="known-issues" class="expander expander-odd">
@@ -151,27 +152,18 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
             <p>This list covers some of the known problems with Firefox for Android which will be resolved in future versions:</p>
             <ul>
                 <li>Layout issues with Google+ and other Google properties: some recent changes in the Google layout and CSS may cause issues in non-webkit browsers like Firefox. We are working with Google on the problem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=668218"> bug 668218</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=668288"> bug 668288</a>)</li>
-                <li>blinking characters in form fields (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374"> bug 665374<a>)</li>
-                <li>Asus Transformer keyboard deletes two characters (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662219"> bug 662219<a>)</li>
-                <li>Asus Transformer hardware keyboard is always en-us (see <a href=https://bugzilla.mozilla.org/show_bug.cgi?id=669361"> bug 669361<a>)</li>
+                <li>blinking characters in form fields (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374"> bug 665374</a>)</li>
+                <li>Asus Transformer keyboard deletes two characters (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662219"> bug 662219</a>)</li>
+                <li>Asus Transformer hardware keyboard is always en-us (see <a href=https://bugzilla.mozilla.org/show_bug.cgi?id=669361"> bug 669361</a>)</li>
                 
             <li>Unable to zoom in/out a webpage on header/footer when a double tap gesture is made (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=639504">bug 639504</a>)</li>
-            <li>Sync Now button is active even if the Sync is in progress (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=656594">bug 656594</a>)</li>
             <li>Searches from the URL bar do not function reliably for some locales (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=645970">bug 645970</a>)</li>
             <li>For some users HTML5 video may load slowly and display rendering artifacts on the screen during playback (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=622839">bug 622839</a>)</li>
             <li>Reloading a page increases the zoom level (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628269">bug 628269</a>)</li>
-            <li>Users who have a large desktop profile using Firefox Sync may see some performance issues during the initial sync process
+            <li>Users who have a large desktop profile using Firefox Sync may see some performance issues during the initial sync process</li>
+            <li>We found an extremely rare case where the browser may become unable to load web pages or close tabs. This should not happen in normal operation (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=676780">bug 676780</a>), but we are working on a solution. Clearing the browser profile (Settings -> Applications -> Clear Data) resolves it, but may remove useful browser data like bookmarks and web history. Recommendation: use <a href="https://support.mozilla.com/en-US/kb/sync-firefox-between-desktop-and-mobile>Firefox Sync</a> for a seamless web experience across all your devices that run Firefox.   
             <li>Adobe Flash and other plugins are not supported. Currently, enabling the Flash plugin results in a compromised user experience across Firefox for mobile</li>
             </ul>
-<p><em>Device and Operating System Known Issues:</em>
-                <ul>
-                  <li>On some Motorola phones, particularly the Droid and the Milestone, Firefox may freeze loading certain pages (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=602252">bug 602252</a>)</li>
-                  <li>On Samsung Galaxy S phones running Android 2.1 the J&auml;gerMonkey JIT compiler is disabled. JavaScript performance in Firefox is slower on these phones than on other devices as a result (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=601222">bug 601222</a>)</li>
-                   <li>On Nokia N900 phones Firefox will display an error when connecting to a network and loading a page at the same time (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=535793">bug 535793</a>)</li>
-<li>On Google Nexus S phones running Android 2.3.1 Firefox may cause the phone to freeze in some cases. The issue is resolved by the Android 2.3.3 system update (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624652">bug 624652</a>)</li>
-<li>Maemo users are not able to open certain file types through the download manager
-(see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624691">bug 624691</a>)</li>
-                </ul>
           </div>
         </div>
       <div id="system-requirements" class="expander expander-even">
