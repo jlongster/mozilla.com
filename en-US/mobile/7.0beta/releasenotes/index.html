@@ -45,31 +45,22 @@ EXTRA_HEADERS;
 The latest version of Firefox Beta for Android has the following changes:
 </p>
 <ul>
-    <li>Copy & Paste - Text selection in web content*: Long tap in a web page and start selecting text using the familiar Android-style drag handles. This was a top request by Firefox users.</li>
+    <li>Copy & Paste - Text selection in web content: Long tap in a web page and start selecting text using the familiar Android-style drag handles. This was a top request by Firefox users.</li>
     <li>Added a ‘Quit’ action to the Android menu: exit the browser with one tap. When you restart Firefox, you can quickly continue where you left off by restoring all or individual tabs from your previous session. This was another very frequent feature request from mobile Firefox users.</li>
     <li>Use Firefox in your language: When Firefox starts for the first time, it detects the language setting of your Android device and automatically switches to that language, if Firefox supports it. You can switch Firefox to a different language with a single tap.</li>
-    <li>We have further improved speed and performance for browser startup and page rendering. Especially on interactive web pages, you will feel the power of the fastest mobile JavaScript engine. Improving speed while reducing memory usage has been an ongoing theme and high priority. You will continue seeing great improvements with every Firefox update.</li>
-    <li>Optimized Android menus and a fresh theme for users of Android 2.3 ('Gingerbread') make your mobile web experience smoother and more fun.</li>
-    
+    <li>We have further improved speed and performance for browser startup and page rendering. Especially on interactive web pages, you will feel the power of the fastest mobile JavaScript engine. Improving speed while reducing memory usage has been an ongoing theme and high priority. You will continue seeing great improvements with every Firefox update.</li>    
+    <li>Improved image rendering on Tegra-based tablets and phones (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=669851">bug 669851</a>).</li> 
+    <li>The WebSocket API is now available in Firefox for Android (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=537787">bug 537787</a>).</li>
+
 </ul>
 <h5>What's New with Add-ons</h5>
-<p>There are now over 160 <a href="http://addons.mozilla.org/mobile/extensions/">add-ons</a> for Firefox for mobile, and counting. Nearly 100 add-ons are already compatible with our latest browser version. Thanks to our awesome community, the number of exciting compatible add-ons increases constantly.</p>
+<p>There are now over 160 <a href="http://addons.mozilla.org/mobile/extensions/">add-ons</a> for Firefox for mobile, and counting. Thanks to our awesome community, the number of exciting compatible add-ons increases constantly.</p>
 <h5>What's New for Developers</h5>
 <p>
 Now is the time to extend your reach and build a new awesome add-on, or to make your mobile add-ons compatible with Firefox for Android. Find all the tools and resources you need on the <a href="https://developer.mozilla.org/mobile">Mozilla Developer Network</a>.
 </p>
-<p>Firefox Beta for Android supports:</p>
-<ul>
-    <li>IPv6 on Android</li>
-    <li>"overflow: scroll" and "overflow: auto" CSS properties</li>
-    <li><a href="https://developer.mozilla.org/en/Extensions/Bootstrapped_extensions">Restartless Add-ons</a></li>
-    <li><a href="https://developer.mozilla.org/en/online_and_offline_events">HTML5 online/offline events</a></li>
-    <li>...and much more.</li>
- </ul>
-</li>
-</ul>
-In addition to these new features, please see the features from <a href="http://www.mozilla.com/en-US/mobile/5.0/releasenotes/">previous releases</a>.
-Find more information for developers at <a href="https://developer.mozilla.org/en/Firefox_6_for_developers">https://developer.mozilla.org/en/Firefox_6_for_developers</a></p>
+In addition to these new features, please see the features from <a href="http://www.mozilla.com/en-US/mobile/6.0/releasenotes/">previous releases</a>.
+Find more information for developers at <a href="https://developer.mozilla.org/en/Firefox_7_for_developers">https://developer.mozilla.org/en/Firefox_7_for_developers</a></p>
         </div>
       </div>
       <div id="for-developers" class="expander expander-even">
@@ -117,6 +108,14 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
             <li>&lt;audio&gt;</li>
             <li>&lt;video&gt;</li>
           </ul>
+          <p>In addition, Firefox Beta for Android supports:</p>
+<ul>
+    <li>IPv6 on Android</li>
+    <li>"overflow: scroll" and "overflow: auto" CSS properties</li>
+    <li><a href="https://developer.mozilla.org/en/Extensions/Bootstrapped_extensions">Restartless Add-ons</a></li>
+    <li><a href="https://developer.mozilla.org/en/online_and_offline_events">HTML5 online/offline events</a></li>
+    <li>...and much more.</li>
+ </ul>
         </div>
       </div>
         <div id="known-issues" class="expander expander-odd">
@@ -125,27 +124,19 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
             <p>This list covers some of the known problems with Firefox Beta for Android which will be resolved in future versions:</p>
             <ul>
                 <li>Layout issues with Google+ and other Google properties: some recent changes in the Google layout and CSS may cause issues in non-webkit browsers like Firefox. We are working with Google on the problem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=668218"> bug 668218</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=668288"> bug 668288</a>)</li>
-                <li>blinking characters in form fields (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374"> bug 665374<a>)</li>
-                <li>Asus Transformer keyboard deletes two characters (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662219"> bug 662219<a>)</li>
-                <li>Asus Transformer hardware keyboard is always en-us (see <a href=https://bugzilla.mozilla.org/show_bug.cgi?id=669361"> bug 669361<a>)</li>
-                
-            <li>Unable to zoom in/out a webpage on header/footer when a double tap gesture is made (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=639504">bug 639504</a>)</li>
-            <li>Sync Now button is active even if the Sync is in progress (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=656594">bug 656594</a>)</li>
-            <li>Searches from the URL bar do not function reliably for some locales (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=645970">bug 645970</a>)</li>
-            <li>For some users HTML5 video may load slowly and display rendering artifacts on the screen during playback (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=622839">bug 622839</a>)</li>
-            <li>Reloading a page increases the zoom level (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628269">bug 628269</a>)</li>
-            <li>Users who have a large desktop profile using Firefox Sync may see some performance issues during the initial sync process
-            <li>Adobe Flash and other plugins are not supported. Currently, enabling the Flash plugin results in a compromised user experience across Firefox for mobile</li>
+                <li>The Swiftkey X input method can cause some character duplication issues when using "backspace" (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=672661">bug 672661</a>).</li>
+                <li>blinking characters in form fields (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374">bug 665374</a>)</li>
+                <li>Asus Transformer keyboard deletes two characters (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662219">bug 662219</a>)</li>
+                <li>Asus Transformer hardware keyboard is always en-us (see <a href=https://bugzilla.mozilla.org/show_bug.cgi?id=669361">bug 669361</a>)</li>
+                <li>Unable to zoom in/out a webpage on header/footer when a double tap gesture is made (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=639504">bug 639504</a>)</li>
+                <li>Sync Now button is active even if the Sync is in progress (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=656594">bug 656594</a>)</li>
+                <li>Searches from the URL bar do not function reliably for some locales (see  <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=645970">bug 645970</a>)</li>
+                <li>We found an extremely rare case where the browser may become unable to load web pages or close tabs. This should not happen in normal operation (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=676780">bug 676780</a>), but we are working on a solution. Clearing the browser profile (Settings -> Applications -> Clear Data) resolves it, but may remove useful browser data like bookmarks and web history. Recommendation: use <a href="https://support.mozilla.com/en-US/kb/sync-firefox-between-desktop-and-mobile">Firefox Sync</a> for a seamless web experience across all your devices that run Firefox.</li>
+                <li>For some users HTML5 video may load slowly and display rendering artifacts on the screen during playback (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=622839">bug 622839</a>)</li>
+                <li>Reloading a page increases the zoom level (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628269">bug 628269</a>)</li>
+                <li>Users who have a large desktop profile using Firefox Sync may see some performance issues during the initial sync process</li>
+                <li>Adobe Flash and other plugins are not supported. Currently, enabling the Flash plugin results in a compromised user experience across Firefox for mobile</li>
             </ul>
-<p><em>Device and Operating System Known Issues:</em>
-                <ul>
-                  <li>On some Motorola phones, particularly the Droid and the Milestone, Firefox may freeze loading certain pages (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=602252">bug 602252</a>)</li>
-                  <li>On Samsung Galaxy S phones running Android 2.1 the J&auml;gerMonkey JIT compiler is disabled. JavaScript performance in Firefox is slower on these phones than on other devices as a result (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=601222">bug 601222</a>)</li>
-                   <li>On Nokia N900 phones Firefox will display an error when connecting to a network and loading a page at the same time (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=535793">bug 535793</a>)</li>
-<li>On Google Nexus S phones running Android 2.3.1 Firefox may cause the phone to freeze in some cases. The issue is resolved by the Android 2.3.3 system update (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624652">bug 624652</a>)</li>
-<li>Maemo users are not able to open certain file types through the download manager
-(see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=624691">bug 624691</a>)</li>
-                </ul>
           </div>
         </div>
       <div id="system-requirements" class="expander expander-even">
@@ -153,8 +144,8 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
         <div class="expander-content">
           <p>Firefox is available for Android 2.1 and higher.
           </p>
-            <p>Firefox requires 512 MB of RAM and around  17  MB of storage. However, Android 2.2 users can move Firefox and user  data to the SD card using Android’s Settings app.</p>
-             <p>This release requires a phone with an ARMv7 processor.  Before installing Firefox on your Android phone, visit the <a href="https://www.mozilla.com/en-US/mobile/platforms/">Platforms and Device Requirements page</a>. See a full list of supported and  unsupported devices by visiting our <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">System Requirements</a> wiki.
+            <p>Firefox requires 512 MB of RAM and around 17 MB of storage. However, Android 2.2 users can move Firefox and user data to the SD card using Android’s Settings app.</p>
+             <p>This release requires a phone with an ARMv7 processor. Before installing Firefox on your Android phone, visit the <a href="https://www.mozilla.com/en-US/mobile/platforms/">Platforms and Device Requirements page</a>. See a full list of supported and  unsupported devices by visiting our <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#System_Requirements">System Requirements</a> wiki.
         </div>
       </div>
         <div id="downloading" class="expander expander-odd">
@@ -193,11 +184,6 @@ Find more information for developers at <a href="https://developer.mozilla.org/e
                   the Nokia N900 at <a href="http://firefox.com/m">firefox.com/m</a>.
                   If Firefox for mobile is not available for your device or platform, we're continuing to investigate ways to bring parts of the Firefox experience to you.
                   <a  href="https://wiki.mozilla.org/Mobile/Platforms#About_Firefox_for_Mobile">Learn more about our mobile projects</a>.
-                </dd>
-                <dt>Is it called Fennec or Firefox?</dt>
-                <dd>
-                Fennec is the codename of Mozilla’s mobile project, however the
-                official product name is Firefox.
                 </dd>
                 <dt>How will Firefox keep me safe while I browse on my mobile?</dt>
                 <dd>
