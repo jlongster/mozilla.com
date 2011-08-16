@@ -68,7 +68,13 @@
                 <?php
                    $form_lang = $form->get('lang');
                     if (!$form_lang) {
-                        $selected = 'en-US';
+
+                        if(in_array($lang, array('de', 'es-ES', 'fr', 'pt-BR'))) {
+                            $selected = $lang;
+                        } else {
+                            $selected = 'en-US';
+                        }
+
                     } else {
                         $selected = $form_lang;
                     }
