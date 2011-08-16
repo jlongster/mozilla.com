@@ -10,7 +10,8 @@
 
     if (isset($_POST['target']) && $_POST['target'] == 'inline') {
 
-        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+        $form   = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
+        $status = '';
 
         if ($form->save()) {
             $status = 'success';
