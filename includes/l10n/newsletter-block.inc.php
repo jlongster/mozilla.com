@@ -10,8 +10,7 @@
 
     if (isset($_POST['target']) && $_POST['target'] == 'inline') {
 
-        $form   = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
-        $status = '';
+        $form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
 
         if ($form->save()) {
             $status = 'success';
@@ -64,8 +63,39 @@
           <div class="form-details">
 
             <div class="field country-field">
+              <select class="country" name="lang">
+                <option value="" style="text-align:center;">--- <?=___('Available Languages')?> ---</option>
+                <?php
+                   $form_lang = $form->get('lang');
+                    if (!$form_lang) {
+                        $selected = 'en-US';
+                    } else {
+                        $selected = $form_lang;
+                    }
+
+                    $supported_lang = array(
+                        'de'    => 'Deutsch',
+                        'en-US' => 'English',
+                        'es-ES' => 'Español',
+                        'fr'    => 'Français',
+                        'pt-BR' => 'Português'
+                        );
+
+                    foreach($supported_lang as $key => $val) {
+                        $is_selected = ($key == $selected) ? " selected='selected'" : "";
+                        echo "<option value='{$key}'{$is_selected}>{$val}</option>\n";
+                    }
+
+
+
+                ?>
+
+              </select>
+            </div>
+
+            <div class="field country-field">
               <select class="country" name="country">
-                <option value=""><?=___('Select country')?></option>
+                <option value="" style="text-align:center;">--- <?=___('Select country')?> ---</option>
                 <?php
                    $country = $form->get('country');
                     if (!$country) {
