@@ -25,28 +25,38 @@ $meta_newsletter = <<<META
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-06-21"></script>
 <style>
 
-
-#footer {
-    width:70% !important;
-    padding:20px 15% !important;
+#footer  {
+    padding:0 15%;
 }
 
-
-#footer #copyright p {
-    max-width:780px !important;
-}
-
-#fonter-contents {
-    width:auto !important;
+#footer-wrap {
+    min-width:980px;
+    width:70%;
+    max-width:1380px;
+    margin:auto;
 }
 
 #sub-footer {
-    clear:none !important;
     float: left !important;
     margin-top: -181px !important;
+    margin-left: 100px !important;
     background:none !important;
-    margin-left:100px !important;
 }
+
+#footer-contents {
+    float:left;
+}
+
+
+form {
+    margin:0; /* IE7 hack */
+    width:300px; /* IE7 hack */
+}
+
+#sub-footer #sub-footer-newsletter {
+   _background:none !important; /* IE6 hack */
+}
+
 
 </style>
 META;
@@ -80,7 +90,7 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
 
     <!-- start #footer -->
     <div id="footer">
-
+        <div id="footer-wrap">
         <div id="footer-contents">
             <div id="copyright">
                 <p id="footer-links"><a href="{$host_l10n}/" id="footer-logo" title="{$l10n->get('Back to home page')}"><img src="{$config['static_prefix']}/img/tignish/template/mozilla-logo.png" height="56" width="145" alt="Mozilla" /></a><a href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/privacy-policy.html">{$l10n->get('Privacy Policy')}</a> &nbsp;|&nbsp;
@@ -91,7 +101,10 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
             </div>
         </div>
 
+
         {$newsletter_form}
+        </div>
+
 
     </div>
     <!-- end #footer -->
