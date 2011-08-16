@@ -91,6 +91,16 @@
                     <?php echo _("Subscribe to monthly updates and keep current with Mozilla news, including the latest tips and tricks for getting the most out of your Firefox browser. <br /><br />It’s the perfect way for us to keep in touch!"); ?>
                 </p>
             </div>
+            <?php if ($status) { ?>
+                <ul id="field-errors">
+                <? if ($status == 'error-email') { ?>
+                    <li><?php echo _("Whoops! Be sure to enter a valid email address."); ?></li>
+                <? } ?>
+                <? if ($status == 'error-privacy') { ?>
+                    <li><?php echo _("Please read the Mozilla Privacy Policy and agree by checking the box."); ?></li>
+                <? } ?>
+                </ul>
+            <? } ?>
             <?php if($status != 'success') { ?>
             <div id="form-content">
                 <form method="post" action="index.html">
