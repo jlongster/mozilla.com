@@ -11,6 +11,7 @@ $body_class     = empty($body_class)     ? ''            : $body_class;
 $extra_top_text = empty($extra_top_text) ? ''            : $extra_top_text;
 $textdir        = (in_array($lang, array('ar', 'fa', 'he'))) ? 'rtl' : 'ltr';
 
+
 // a few commodity variables that are much easier to use in the template than appending config vars
 // when all pages on the site are centralized un controller.inc.php, we can remove those
 $host_root = $config['url_scheme'].'://'.$config['server_name'].'/';
@@ -43,6 +44,8 @@ EXTRA_HEADERS;
 }
 
 
+// activate newsletter
+
 
 // inline util.js since it's such a small file it doesn't deserver an http call
 ob_start();
@@ -63,15 +66,6 @@ DOCTYPE;
 <html xml:lang="{$lang}" lang="{$lang}" dir="{$textdir}">
 DOCTYPE;
 }
-
-if(in_array($lang, array('cs', 'eu', 'fi', 'pl', 'ru', 'sk', 'sl', 'sr', 'uk'))) {
-    $val = str_replace('Mozilla.com', '</span><span id="t2">Mozilla</span><span>.com</span><br/><span id="t3">', ___('Visit Mozilla.com (in English)'));
-    $val = '<span id="t1">'.$val.'</span>';
-} else {
-    $val = str_replace('Mozilla.com', '</span><span id="t2">Mozilla</span><br/><span id="t3">', ___('Visit Mozilla.com (in English)'));
-    $val = '<span id="t1">'.$val.'</span>';
-}
-
 
 $mozillalink = "<a class=\"mozilla\" href=\"$host_enUS/\">mozilla</a>";
 $newfirefox4menu = <<<NEWMENU
@@ -127,6 +121,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/template.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/content.css" media="screen" />
+
     <style type="text/css">
 
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
