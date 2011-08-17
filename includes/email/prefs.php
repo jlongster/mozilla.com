@@ -14,11 +14,11 @@ class EmailPrefs {
 
     var $newsletters = array(
         'mozilla-and-you' => array('title' => 'Firefox & You',
-                                   'desc' => 'Lorem ipsom dolor sit amet, consectetur adipisicing elit.'),
+                                   'desc' => 'Get the latest tips and tricks for getting the most out of your favorite browser.'),
         'mobile' => array('title' => 'Firefox Mobile',
-                          'desc' => 'Get the latest news on our mobile browser and tools.'),
+                          'desc' => 'Learn about the hottest new add-ons and features for Firefox mobile.'),
         'beta' => array('title' => 'Beta News',
-                        'desc' => 'Stay on top of the next Firefox release with the latest from our Mobile Team.')
+                        'desc' => 'Read about the latest features for Firefox desktop and mobile before the final release.')
     );
 
     function __construct($data, $token=FALSE) {
