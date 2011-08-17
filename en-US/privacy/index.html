@@ -7,6 +7,8 @@
         $l10n->get('Your Privacy') => "/{$lang}/privacy/",
     );
 
+    require_once "{$config['file_root']}/includes/feeds/PrivacyAMOFeed.php";
+
     $extra_headers = <<<EXTRA_HEADERS
 
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/privacy-page.css" media="screen" />
@@ -19,8 +21,7 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
     <h2><span>Your Privacy</span></h2>
-    <p>We believe in putting users in control of their personal information. This site covers privacy at Mozilla, our data practices and the tools and controls available across our websites, products and services.</p>
-    <p>We welcome your input and questions and encourage you to get involved with Mozilla. For questions about privacy or any of our privacy policies, please send us an email at privacy@mozilla.com</p>
+    <p>At Mozilla, we believe in putting users in control of their personal information. This site covers our privacy, data practices and the tools and controls available across our websites, products and services.</p>
 </div>
 
 <div id="sidebar">
@@ -30,6 +31,7 @@ EXTRA_HEADERS;
         <h4>Online</h4>
         <ul>
             <li><a href="http://www.mozilla.com/en-US/privacy-policy.html" class="mozilla">Mozilla Websites</a></li>
+            <li><a href="http://intlstore.mozilla.org/privacy.php" class="mozilla">Mozilla Store International</a></li>
         </ul>
         <h4>Products / Services</h4>
         <ul>
@@ -38,9 +40,15 @@ EXTRA_HEADERS;
             <li><a href="https://services.mozilla.com/privacy-policy/" class="sync">Sync</a></li>
             <li><a href="https://testpilot.mozillalabs.com/privacy.php" class="test">Test Pilot</a></li>
         </ul>
+        <h4>Mozilla Labs</h4>
+        <ul>
+            <li><a href="https://browserid.org/privacy" class="mozilla">BrowserID Privacy Policy</a></li>
+        </ul>
     </div>
-    <h3>Recent <span>News</span></h3>
-    <p>to do</p>
+    <div id="sidebar-contact">
+        <h3><span>Contact</span></h3>
+        <p>We welcome your input and questions and encourage you to get involved with Mozilla. For questions about privacy or any of our privacy policies, please send us an email at <a href="mailto:privacy@mozilla.com">privacy@mozilla.com</a></p>
+    </div>
 </div>
 
 <div id="main-content">
@@ -51,7 +59,6 @@ EXTRA_HEADERS;
         <li id="our-principles-link"><a href="#our-principles">Our Principles</a></li>
         <li id="your-information-link"><a href="#your-information">Your Information</a></li>
         <li id="your-choices-link"><a href="#your-choices">Your Choices</a></li>
-        <li id="tracking-link"><a href="#tracking">Tracking</a></li>
         <li id="third-parties-link"><a href="#third-parties">Third Parties</a></li>
     </ul>
 
@@ -77,32 +84,56 @@ EXTRA_HEADERS;
             document.getElementById('your-information').id = 'page-your-information';
             // ]]></script>
 
-            <p>We limit the amount of data we collect about you and do not sell, trade or provide user information to any third parties for marketing or other commercial purposes.</p>
-            <p>In some cases, we may collect non–personally identifying information, like your browser type, and potentially personal information, like your IP address, to understand how our sites are being used and how to improve them. In other areas, we may ask for personal information, like your mailing address, when necessary to ship you your Mozilla membership card or a t-shirt, for example.</p>
-            <p>As an open-source, community-driven organization, there are also instances where we collect non-personally identifying information contributed to us by our users on an opt-in basis for research and product-improvement purposes (e.g., Test Pilot, usage statistics). There may be instances where we post or share aggregate, non-personal information with our community to enhance their ability to improve Mozilla’s products and services. We do not make personal information publicly available if we have specifically promised to keep it confidential when we collected it. Keep in mind, however, that suggestions, comments, and questions you post on our sites or in our products may be viewable by others and may be reproduced on other websites through syndication. We highly recommend, therefore, that you not include personal information when you submit comments through our feedback mechanisms or post questions or answers to our support site. </p>
-            <p>We may share information (in non-personally identifying forms when possible) with employees, contractors, subsidiaries or contributors who have committed to not disclose or use that information other than for Mozilla-related, non-commercial purposes.</p>
-            <p>Please read our Online and Products and Services privacy policies for more information about what user information we collect, use and share.</p>
+            <p>We know how much you value your privacy, so we try to collect as little information about you as possible. We don’t give, sell, trade, or barter your information to anyone else for marketing or any other commercial reason.</p>
+            <p>Our privacy policies explain in detail exactly what our different products will and won't do with your information. If you want to know exactly what gets collected when and for what reason, then be sure to check the relevant policy.</p>
 
+            <h3>Types of Information</h3>
+            <table>
+                <tr>
+                    <th>Aggregate Data</th>
+                    <th>Non-Personal Information</th>
+                    <th>Potentially Personal Information</th>
+                    <th>Personal Information</th>
+                </tr>
+                <tr>
+                    <td>Information recorded about people and collected into groups so it no longer references an individually identifiable person.</td>
+                    <td>Information that cannot be directly associated with a specific person or entity.</td>
+                    <td>Aggregate or non-personal information that could be used in conjunction with other information to personally identify a person.</td>
+                    <td>Information that a person provides to us that personally identifies him or her.</td>
+                </tr>
+            </table>
+
+            <h3>Overview of Information Uses</h3>
+            <ul>
+                <li>We collect non–personally identifying information, like your browser type, and potentially personal information, like your IP address, to understand how our sites are being used and how to improve them. You can opt out of this at <a href="#our-principles">Your Choices</a>.</li>
+                <li>We may ask for personal information, like your mailing address, when we need to ship you stuff, like a Mozilla membership card or an awesome t-shirt, or to detect and prevent fraud.</li>
+                <li>Sometimes, we post or share aggregate, non-personal information with our community to enhance their ability to improve Mozilla’s products and services. </li>
+                <li>We collect non-personally identifying information contributed to us by our users on an opt-in basis for research and product-improvement purposes, like in Test Pilot.</li>
+                <li>We never share personal information publicly if we promised to keep it confidential when we collected it.</li>
+                <li>We sometimes share information with employees, contractors, subsidiaries, contributors or other people working with or for us. We always make them promise not to disclose or use that information except for Mozilla-related, non-commercial purposes. We always try to put information in non-personally identifying forms when we can.</li>
+                <li>When you give us suggestions, comments, and questions about our sites and products, we sometimes make them viewable by other people, and they may get re-posted on other sites. Please don't include personal information when you submit comments and feedback, or when you post questions or answers on our support site!</li>
+            </ul>
         </div>
         <div class="contents" id="your-choices">
             <script>// <![CDATA[
             document.getElementById('your-choices').id = 'page-your-choices';
             // ]]></script>
 
-            <p>If you don't want your session visit information on our websites to be collected and analyzed by Mozilla (or its third-party analytics providers), you can use the opt-out mechanisms listed here <a href="http://www.mozilla.com/opt-out.html">http://www.mozilla.com/opt-out.html</a></p>
-            <p>For people who see online advertising for Mozilla on other web sites, we respect users who have enabled Do Not Track in their browser. For those who are using a browser without DNT, like older versions of Firefox or browsers produced by other vendors, we provide an opt-out cookie that you can install by visiting this page: <a href="http://media.mozilla.com/optout.html">http://media.mozilla.com/optout.html</a></p>
-            <p>If you signed up to receive electronic marketing communications (that's just a fancy word for email) from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive.</p>
-            <p>Within our products and services, we provide various <a href="http://www.mozilla.com/en-US/firefox/security/">privacy and security settings and functionality</a>, and there are also many add-ons available to further enhance control over your online experience, interactions and information. <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
-
-        </div>
-        <div class="contents" id="tracking">
-            <script>// <![CDATA[
-            document.getElementById('tracking').id = 'page-tracking';
-            // ]]></script>
-
-            <p>Mozilla tracks visitors to our websites and usage of our products and services to improve performance and relevance (done with the above six principles in mind). There is some information we gather automatically, which we store in log files. This may include information about Internet protocol (IP) addresses, browser type, Internet service provider (ISP), referring/exit pages, operating system, date/time stamp and/or page views. We use this information, which does not usually identify individual users, to analyze trends, administer our sites, track users’ movements around them and to gather demographic information about our user base as a whole. We may also record your IP address when you place an order through our site to detect and prevent fraud. The full range of tracking activities is covered in privacy policies for our sites, products, and services.</p>
-            <p>See <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a> for code to implement this indicator on the page.</p>
-
+            <h3>Analytics</h3>
+            <p>We use web analytics software to keep track of how many visitors we have, what are most popular links are, and other information about how people use Mozilla websites. We use this information to help make our sites more useful and usable. If you don't want your session visit information on our websites to be collected and analyzed by Mozilla (or its third-party analytics providers), you can use the <a href="http://www.mozilla.com/opt-out.html">opt-out mechanisms</a>.</p>
+            <p>--analytics status indicator</p>
+            <p>--analytics one-click opt-out button</p>
+            <h3>Advertising</h3>
+            <p>We think that we make great stuff, and we think that folks can get a lot out of using it, so we sometimes advertize on other sites. If you see online advertising for Mozilla on other web sites, we respect users who have enabled Do Not Track in their browser. For those who are using a browser without DNT, like older versions of Firefox or browsers produced by other vendors, we provide an opt-out cookie that you can install by <a href="http://media.mozilla.com/optout.html">visiting this page</a>.</p>
+            <p>--advertising status indicator</p>
+            <p>--advertising one-click opt-out button</p>
+            <h3>Email</h3>
+            <p>If you signed up to receive electronic marketing communications (that's just a fancy word for email) from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive. </p>
+            <h3>Do Not Track</h3>
+            <p>Do Not Track is a feature in Firefox (and some other sweet browsers) which lets you tell websites that you'd rather that they don't keep track of you thankyouverymuch. You can read more about Do Not Track and how to turn it on in Firefox at <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a>.</p>
+            <p>-- do-not-track status indicator</p>
+            <h3>Other Stuff</h3>
+            <p>In all the stuff we make, there are a bunch of privacy and security settings and a whole load of functionality. There are also plenty of add-ons which you can use get even more control over your online experience, interactions and information: <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
         </div>
         <div class="contents" id="third-parties">
             <script>// <![CDATA[
@@ -214,11 +245,31 @@ EXTRA_HEADERS;
     <div id="popular-addons">
     <div class="container">
         <h2>Popular <span>Privacy Add-ons</span></h2>
-        <ul>
-            <li><a href=""><h3>The Apollo Pack!</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
-            <li><a href=""><h3>Bearbear's Firefox 4</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
-            <li><a href=""><h3>TOP security and</h3> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin</a></li>
-        </ul>
+        <?php
+           $feed = new PrivacyAMOFeed($config);
+           $items = $feed->getItems(3);
+
+           if (count($items) > 0) {
+               echo '<ul>';
+
+               foreach ($items as $item) {
+                   echo '<li>';
+                   echo '<a href="' . htmlspecialchars($item['link']) .
+                       '" style="background-image: url(\'' . htmlspecialchars($item['icon']) . '\');">';
+
+                   echo '<h3>' . htmlspecialchars($item['title']) . '</h3>';
+                   if (strlen($item['summary']) > 45) {
+                       echo substr(htmlspecialchars($item['summary']), 0, 45) . ' …';
+                   } else {
+                       echo htmlspecialchars($item['summary']);
+                   }
+                   echo '</a>';
+                   echo '</li>';
+               }
+
+               echo '</ul>';
+           }
+       ?>
     </div>
     </div>
 
