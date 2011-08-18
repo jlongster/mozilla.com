@@ -15,41 +15,75 @@
     <meta name="WT.si_cs" content="1">
     <meta name="WT.z_convert" content="DownloadFirefox">
 EXTRA_HEADERS;
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="download-sidebar-contents" style="display: none;">
-  <div id="sidebar-mobile">
-    <img src="<?=$config['static_prefix']?>/img/phone-small.png" alt="" />
-    <h3>Get Firefox <span>on your phone</span></h3>
-      <div>
-        <p>
-          Sync your desktop and mobile, install add-ons and browse with speed.
-        </p>
-        <a href="http://www.mozilla.com/en-US/mobile/">
-          Learn More <span>»</span>
-        </a>
+  <form action="/<?=$lang?>/newsletter/" method="post" id="newsletter-form">
+    <input type="hidden" name="target" value="main" />
+    <h3>More Features. <span>More Firefox.</span></h3>
+    <p>Get the latest Firefox tips and tricks in our monthly newsletter.</p>
+    <div class="field required email-field">
+      <input name="email" type="email" class="email" value="<?= $form->get('email') ?>" placeholder="Your email addresss">
+    </div>
+
+    <div class="field country-field">
+      <select class="country" name="country">
+        <option value="">Select country</option>
+        <?php 
+            $country = $form->get('country');
+            if (!$country) {
+                $country = 'us';
+            }
+            echo regionsAsOptions($lang, $country);
+        ?>
+      </select>
+    </div>
+
+    <div class="field format-field">
+      <?php
+          $html_format = 'checked="checked"';
+          $text_format = '';
+          if ($form->get('format') == 'text') {
+              $text_format = 'checked="checked"';
+              $html_format = '';
+          }
+      ?>
+      <div class="field-radios">
+        <span class="radio-wrapper"><input type="radio" name="format" id="html-format" class="html-format" value="html" <?= $html_format?>></span>
+        <label for="html-format">HTML</label>
+        <label for="text-format">
+            <span class="radio-wrapper"><input type="radio" name="format" id="text-format" class="text-format" value="text" <?= $text_format?>></span>
+            Text
+        </label>
       </div>
-  </div>
-  <div class="sidebar-divider"></div>
-  <div id="sidebar-webifyme">
-    <img src="<?=$config['static_prefix']?>/img/covehead/download/webifyme.png" alt="" />
-    <h3>Visualize <span>Your Web</h3>
-    <p>See your Internet as a custom collage.</p>
-    <a href="http://webifyme.org/" 
-         onclick="dcsMultiTrack('DCS.dcssip', 'webifyme.org', 'DCS.dcsuri', '/', 'WT.ti', 'Link: Webify Me!',
-                  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Webify Me!');">Webify Me! »</a>
-  </div>
-  <div class="sidebar-divider"></div>
-  <div id="sidebar-newsletter">
-    <h3>Get <span>Monthly News</span></h3>
-    <p>Love Firefox?  Get in on the action by signing up for our
-      monthly email newsletter.
-      <a href="/<?=$lang?>/newsletter/" 
-         onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/<?=$lang?>/newsletter/', 'WT.ti', 'Link: Monthly News',
-                  'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Newsletter');">Sign me up »</a>
-    </p>
-  </div>
+    </div>
+
+    <div class="field privacy-field">
+      <label for="privacy-check" class="privacy-check-label">
+        <input type="checkbox" name="privacy" id="privacy-check" class="privacy-check">
+        <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
+      </label>
+    </div>
+
+      <input onclick="dcsMultiTrack(
+                        'DCS.dcssip', 'www.mozilla.com',
+                        'DCS.dcsuri', '/en-us/newsletter',
+                        'WT.ti', 'Link: Mozilla Newsletter',
+                        'WT.dl', 99,
+                        'WT.z_convert', 'newsletter',
+                        'WT.si_n', 'newsletter',
+                        'WT.si_x', '2');"
+             name="submit" 
+             type="submit" 
+             value="Sign me up »" 
+             class="button">
+        <p class="disclaimer">We will only send you Mozilla-related information.</p>
+
+  </form>
 </div>
 
 
@@ -225,6 +259,7 @@ EXTRA_HEADERS;
 		// 3. Display sidebar
 		var msg = '<div id="download-sidebar">';
                 msg += document.getElementById('download-sidebar-contents').innerHTML;
+        document.getElementById('download-sidebar-contents').innerHTML = "";
 		msg += '</div>';
 
 		// 4. display the download URL as a manual fall-back link
@@ -324,5 +359,34 @@ SRC="https://media.mozilla.com/jpixel?spacedesc=1121943_1061349_1x1_1061349_1061
 <? } ?>
 
 <?php
+$extra_footers = <<<EXTRA_FOOTERS
+<script>
+
+// Check for input placeholder attribute support and workaround if it is missing
+
+function supports_input_placeholder() {
+  var i = document.createElement('input');
+  return 'placeholder' in i;
+}
+
+$(document).ready(function() {
+    if(!supports_input_placeholder()){
+        $("input").each(
+            function(){
+                if($(this).val()=="" && $(this).attr("placeholder")!=""){
+                    $(this).val($(this).attr("placeholder"));
+                    $(this).focus(function(){
+                        if($(this).val()==$(this).attr("placeholder")) $(this).val("");
+                    });
+                    $(this).blur(function(){
+                        if($(this).val()=="") $(this).val($(this).attr("placeholder"));
+                    });
+                }
+        });
+    }
+});
+</script>
+    
+EXTRA_FOOTERS;
     @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
