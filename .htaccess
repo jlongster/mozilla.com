@@ -270,6 +270,12 @@ RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/(beta|rc|RC)[/]?$ /$1firefox/ [R=301]
 
+# Bug 679916 Take down Firefox upgrade pages for locales
+RewriteCond $1 !en-(US|GB|ZA)/
+RewriteCond $1 !^$
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/(gamer|socialmedia|worker|messaging|streamer)[/]?$ $1firefox/?gamer [PT]
+
+
 # Bug 660249 Update Mozilla.com for XP campaign
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
