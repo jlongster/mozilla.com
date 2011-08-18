@@ -1,41 +1,20 @@
 <?php
 
-require_once $config['file_root'] . '/includes/Cache/Lite.php';
+require_once $config['file_root'] . '/includes/feeds/AbstractFeed.php';
 
-class RapidReleaseFeed
+class RapidReleaseFeed extends AbstractFeed
 {
+    protected function getURI()
+    {
+        return 'http://blog.mozilla.com/futurereleases/feed/';
+    }
+
     public function get_items($max_items = 4)
     {
-        global $config;
-
-        $uri = 'http://blog.mozilla.com/futurereleases/feed/';
-        $lifetime = 450; // 7.5 mins, about half static cache time
-
-        $document = new DOMDocument();
+        $xpath = $this->getDOMXPath($this->getURI());
         $items = array();
 
-        $cache = new Cache_Lite(
-            array(
-                'cacheDir' => rtrim($config['file_root'], '/') . '/cache/',
-                'lifeTime' => $lifetime,
-            )
-        );
-
-        if (($xml = $cache->get($uri)) === false) {
-            $xml = $this->downloadFeed($uri);
-            if ($xml === false) {
-                // try invalid cached version if it exists
-                if (($xml = $cache->get($uri, 'default', true)) === false) {
-                    $xml = '';
-                }
-            } else {
-                $cache->save($xml, $uri);
-            }
-        }
-
-        if ($xml != '') {
-            $document->loadXML($xml);
-            $xpath = new DOMXPath($document);
+        if ($xpath !== null) {
             $item_els = $xpath->query('//item');
             $count = 0;
             foreach ($item_els as $item_el) {
@@ -59,19 +38,6 @@ class RapidReleaseFeed
         }
 
         return $items;
-    }
-
-    protected function downloadFeed($uri)
-    {
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_URL, $uri);
-        $response = curl_exec($curl);
-        $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        if ($status != 200) {
-            $response = false;
-        }
-        return $response;
     }
 }
 
