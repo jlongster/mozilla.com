@@ -14,9 +14,9 @@ $fx_stable_Major = explode('.', LATEST_FIREFOX_VERSION);
 $str2 = str_replace('4', $fx_stable_Major[0], $str2);
 
 
-$str4 = (i__('Stunning graphics')) ? ___('Stunning graphics'): $str4;
-$str5 = (i__('Super speed')) ? ___('Super speed'): $str5;
-$str6 = (i__('The latest technologies')) ? ___('The latest technologies'): $str6;
+$str4 = (i__('Stunning graphics'))       ? ___('Stunning graphics')       : $str4;
+$str5 = (i__('Super speed'))             ? ___('Super speed')             : $str5;
+$str6 = (i__('The latest technologies')) ? ___('The latest technologies') : $str6;
 
 
 

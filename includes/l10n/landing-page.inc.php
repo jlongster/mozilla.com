@@ -14,17 +14,6 @@ $home_css = '<link rel="stylesheet" type="text/css" href="' . $config['static_pr
 if (count($_GET) > 0) {
     $getArray = secureText($_GET);
     $getArray = array_keys($getArray);
-    $campaigns = array('socialmedia', 'worker', 'streamer', 'gamer', 'messaging');
-
-    foreach($getArray as $val) {
-        if (in_array($val, $campaigns)) {
-            include_once $config['file_root'].'/includes/min/inline.php';
-            $home_css = min_inline_css('css_home');
-            $target   = $val;
-            $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
-            break;
-        }
-    }
 
     // AB testing campaign
     if ($target == 'normal' && $lang == 'fr') {
@@ -124,25 +113,6 @@ EXTRA;
 include $config['file_root'].'/includes/l10n/dlbox.inc.php';
 
 switch($target) {
-    case 'socialmedia':
-        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.social.inc.php';
-        break;
-
-    case 'worker':
-        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.worker.inc.php';
-        break;
-
-    case 'gamer':
-        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.gamer.inc.php';
-        break;
-
-    case 'messaging':
-        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.messaging.inc.php';
-        break;
-
-    case 'streamer':
-        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.streamer.inc.php';
-        break;
 
     case 'AB1':
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.abtesting1.inc.php';
