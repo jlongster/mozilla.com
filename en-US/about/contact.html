@@ -13,7 +13,7 @@
 
 
 EXTRA_HEADERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
 ?>
 
@@ -52,10 +52,10 @@ if (GBrowserIsCompatible()) {
         <h3>Regional Offices</h3>
         <div class="map-address" id="new-zealand">
             <h5>Auckland</h5>
-            <address>8 Kent Street<br />Newmarket, Auckland<br />New Zealand</address>
+            <address>Level 7<br>5 Short St<br>Newmarket<br>Auckland 1023<br>New Zealand</address>
             <div class="geo">
-                <span class="latitude">-36.867639</span>
-                <span class="longitude">174.775915</span>
+                <span class="latitude">-36.866596</span>
+                <span class="longitude">174.777106</span>
             </div>
         </div>
 
@@ -79,6 +79,15 @@ if (GBrowserIsCompatible()) {
 
         <div class="address-row">
 
+        <div class="map-address" id="us-san-francisco">
+            <h5>San Francisco</h5>
+            <address>2 Harrison St<br>San Francisco CA 94105</address>
+            <div class="geo">
+                <span class="latitude">37.789031</span>
+                <span class="longitude">-122.389326</span>
+            </div>
+        </div>
+
         <div class="map-address" id="japan">
             <h5>Tokyo</h5>
             <address>Kojimachi GN Yasuda Bldg., 4F<br />3-6-5 Kojimachi, Chiyoda-ku<br />Tokyo, 102-0083, Japan</address>
@@ -96,6 +105,9 @@ if (GBrowserIsCompatible()) {
                 <span class="longitude">-79.403129</span>
             </div>
         </div>
+
+        </div>
+        <div class="address-row">
 
         <div class="map-address" id="canada-vancouver">
             <h5>Vancouver</h5>
@@ -162,5 +174,5 @@ $extra_footers = <<<EXTRA_FOOTERS
 
 EXTRA_FOOTERS;
 
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
