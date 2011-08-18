@@ -1,0 +1,273 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox Beta Release Notes';
+    $body_id    = 'firefox-relnotes';
+
+    $breadcrumbs = array(
+        "Release Notes" => "/{$lang}/firefox/releases/",
+    );
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/release-notes.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mozilla-expanders.css" media="screen" />
+    
+    <script src="/js/mozilla-expanders.js"></script>
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+  <h2>Firefox Beta <span>Release Notes</span></h2>
+  <p><em>v.7.0, offered to beta channel users on August 18th, 2011</em>Thank you for helping us test the future of Firefox! If you do not wish to participate in the beta program, you can switch to the <a href="http://support.mozilla.com/kb/how-do-i-switch-update-channels">release channel</a> or manually install the <a href="/<?=$lang?>/firefox/all.html">latest released version of Firefox</a>.</p>
+  <p>
+    Check out what’s new, the known issues and frequently asked questions about the latest beta version of Firefox. As always, you’re encouraged to <a href="http://input.mozilla.com/feedback">tell us what you think</a>, or <a href="https://bugzilla.mozilla.org/">file a bug in Bugzilla</a>.</p>
+</div>
+
+<div id="main-content">
+    <?php
+        @include_once "{$config['file_root']}/{$lang}/includes/release-notes-sidebar-generic.inc.php";
+    ?>
+
+    <div id="whatsnew2" class="expander expander-odd">
+      <h3 class="expander-header">What’s New in Firefox&nbsp;Beta</h3>
+      <div class="expander-content">
+        <p>The latest version of Firefox&nbsp;Beta has the following changes:</p>
+        <ul class="spaced">
+            <li>Drastically improved <a href="http://blog.mozilla.com/nnethercote/2011/08/09/firefox-7-is-lean-and-fast-2/">memory use</a></li>
+            <li>Added a new <a href="http://www.basschouten.com/blog1.php">rendering backend</a> to speed up Canvas operations on Windows systems</li>
+            <li>Bookmark and password changes now sync almost instantly when using Firefox Sync</li>
+            <li>Added support for <a href="https://developer.mozilla.org/En/CSS/Text-overflow">text-overflow: ellipsis</a></li>
+            <li>Added support for the <a href="https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/Overview.html">Web Timing specification</a></li>
+            <li>Added an <a href="http://weblogs.mozillazine.org/asa/archives/2011/07/telemetry_in_firefox.html">opt-in system</a> for users to send performance data back to Mozilla to improve future versions of Firefox. This can be enabled by <a href="https://addons.mozilla.org/en-US/firefox/addon/abouttelemetry/">installing an add-on</a></li>
+            <li>Fixed several stability issues</li>
+        </ul>
+        <p>
+            Please see the
+            <a href="buglist.html">complete list of changes</a> 
+            in this version. You may also be interested in the
+            <a href="../../6.0/releasenotes/">list of changes in the previous version</a>.
+        </p>
+      </div>
+    </div>
+
+    <div id="requirements" class="expander">
+      <h3 class="expander-header">System Requirements</h3>
+      <div class="expander-content">
+        <p>Before installing, make sure your computer meets the <a href="../system-requirements/">
+           system requirements</a>.</p>
+      </div>
+    </div>
+
+    <div id="downloading" class="expander expander-odd">
+      <h3 class="expander-header">Downloading</h3>
+      <div class="expander-content">
+        <p>Mozilla provides Firefox for Windows, Linux, and Mac&nbsp;OS&nbsp;X in a variety of languages.
+         You can <a href="/<?=$lang?>/firefox/all.html">get the latest released version of Firefox here</a>
+         or the <a href="/<?=$lang?>/firefox/channel/">latest development version of Firefox here</a>.
+        </p>
+
+        <p>For builds for other systems and languages not provided by Mozilla, see the Contributed Builds section at the end of this document.</p>
+
+      </div>
+    </div>
+
+    <div id="install" class="expander">
+      <h3 class="expander-header">Installing</h3>
+      <div class="expander-content">
+        <p>Please note that installing Firefox&nbsp;Beta will overwrite your existing installation of Firefox.
+        You won’t lose any of your bookmarks or browsing history, but some of your extensions and other add-ons might not work
+        until updates for them are made available.</p>
+      </div>
+    </div>
+
+    <div id="uninstall" class="expander expander-odd">
+      <h3 class="expander-header">Uninstalling</h3>
+      <div class="expander-content">
+        <p>If you do not wish to participate in the beta program, you can switch to the <a href="http://support.mozilla.com/kb/how-do-i-switch-update-channels">release channel</a> or manually install the <a href="/<?=$lang?>/firefox/all.html">latest released version of Firefox</a>.
+        <p>You can remove Firefox&nbsp;Beta with the Add/Remove Programs utility on Windows, by moving the Firefox application to the Trash on Mac OS X, or by deleting the containing folder on Linux.</p>
+        <p>By default, removing Firefox&nbsp;Beta won’t remove your bookmarks,
+           web browsing history, extensions or other add-ons. This data is
+           stored in your <em>profile folder</em>, which can be found by going
+           to the <em>Help</em> menu and selecting <em>Troubleshooting
+           Information...</em>. The button next to the <em>Profile
+           Directory</em> line in <em>Application Basics</em> will open your
+           profile directory in your system's file explorer.</p>
+        <p>Please note that if you keep your profile, any version of Firefox
+           that you install after removing Firefox&nbsp;Beta will
+           continue to use the bookmarks, web browsing history, add-ons, and
+           other data from this profile folder.</p>
+      </div>
+    </div>
+
+    <div id="extensions" class="expander">
+      <h3 class="expander-header">Add-ons and Themes</h3>
+      <div class="expander-content">
+        <p>You can get Add-ons and Themes by opening the Add-ons Manager, or by visiting <a href="https://addons.mozilla.org">the Add-ons Web site</a>. Add-ons installed with previous versions of Firefox may not yet have been updated by their authors to work with this Firefox&nbsp;Beta. If you wish to help test Add-ons, please <a href="https://addons.mozilla.org/addon/15003?src=external-fxbetarelnote">install the Add-on Compatibility Reporter</a> - your favorite Add-on author will appreciate it!</p>
+      </div>
+    </div>
+
+    <div id="issues" class="expander expander-odd">
+      <h3 class="expander-header">Known Issues</h3>
+      <div class="expander-content">
+        <p>This list covers some of the known problems with Firefox&nbsp;Beta which will be resolved in future versions:</p>
+        <dl>
+        <dt id="allsystems">All Systems</dt>
+        <dd>
+          <ul class="spaced">
+            <li>For some users, scrolling in the main GMail window will be slower than usual (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">bug 579260</a>)</li>
+            <li>If you try to start Firefox using a locked profile, it will crash (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">bug 573369</a>)</li>
+          </ul>
+        </dd>
+
+        <dt id="windows">Microsoft Windows</dt>
+        <dd>
+          <ul class="spaced">
+		    <li>Some users of Adobe Reader X have experienced instability when viewing PDF documents in the browser. Uninstalling and reinstalling Adobe Reader X has been determined to resolve the issue (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=640901">bug 640901</a>)</li>
+          </ul>
+        </dd>
+
+        <dt id="osx">Mac OS X</dt>
+        <dd>
+          <ul class="spaced">
+            <li>This version of the beta will not work on Macintosh hardware with Power PC CPUs (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=587799">bug 587799</a>)</li>
+		  </ul>
+        </dd>
+
+        <dt id="linux">Linux and Unix</dt>
+        <dd>
+          <ul class="spaced">
+            <li>The video control buttons may not work when viewing QuickTime videos with libtotem (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=625036">bug 625036</a>)</li>
+            <li>Users compiling from source might need a newer gcc and libstdc++ as the build requirements have changed (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=578880">bug 578880</a>)</li>
+          </ul>
+        </dd>
+
+        </dl>
+      </div>
+    </div>
+
+    <div id="troubleshooting" class="expander">
+      <h3 class="expander-header">Troubleshooting</h3>
+      <div class="expander-content">
+        <ul class="spaced">
+          <li>
+            Poorly designed or incompatible extensions can cause problems with your browser,
+            including make it crash, slow down page display, etc. If you encounter strange
+            problems relating to parts of the browser no longer working, the browser not
+            starting, windows with strange or distorted appearance, degraded performance, etc,
+            you may be suffering from Extension or Theme trouble.
+            Restart the browser in Safe Mode. On Windows, start using the "Safe Mode" shortcut created in your
+            Start menu or by running <code>firefox.exe -safe-mode</code>. On Linux,
+            start with <code>./firefox -safe-mode</code> and on Mac&nbsp;OS&nbsp;X, run:
+            <p><code>
+              cd /Applications/Firefox.app/Contents/MacOS/<br />
+              ./firefox-bin -safe-mode
+            </code></p>
+
+            When started in Safe Mode all extensions are disabled and the Default theme is
+            used. Disable the Extension/Theme that is causing trouble and then start normally.
+          </li>
+          <li>
+            If you uninstall an extension that is installed with your user profile (i.e.
+            you installed it from a Web page) and then wish to install it for all user profiles
+            using the -install-global-extension command line flag, you must restart the
+            browser once to cleanse the profile extensions datasource of traces of that
+            extension before installing with the switch. If you do not do this you may end
+            up with a jammed entry in the Extensions list and will be unable to install
+            the extension globally.
+          </li>
+          <li>
+            If you encounter strange problems relating to bookmarks, downloads, window
+            placement, toolbars, history, or other settings, it is recommended that you try
+            creating a new profile and attempting to reproduce the problem before filing
+            bugs. Create a new profile by running Firefox with the -P command line
+            argument, choose the "Manage Profiles" button and then choose "Create
+            Profile...". Migrate your settings files (Bookmarks, Saved Passwords, etc) over
+            one by one, checking each time to see if the problems resurface. If you do
+            find a particular profile data file is causing a problem, file a bug and attach
+            the file.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="faq" class="expander expander-odd">
+      <h3 class="expander-header">Frequently Asked Questions</h3>
+      <div class="expander-content">
+        <ol class="faq">
+          <li>
+            What can I do to help?
+            <p>We need help from developers and the testing community to provide as much
+               feedback as possible to make Firefox even better. Please pick your <a href="/<?=$lang?>/firefox/beta/feedback/">favorite way to give us your feedback</a> at any time!</p>
+          </li>
+          <li>
+            How do I stop testing beta versions of Firefox?
+          <p>
+If you do not wish to participate in the beta program, you can switch to the <a href="http://support.mozilla.com/kb/how-do-i-switch-update-channels">release channel</a> or manually install the <a href="/<?=$lang?>/firefox/all.html">latest released version of Firefox</a>.
+          </p>
+          </li>
+          <li>
+            Where can I get extensions and themes (add-ons)?
+            <p><a href="https://addons.mozilla.org/<?=$lang?>/firefox/extensions/">Extensions</a> and
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/themes/">Themes</a> can be downloaded from
+               <a href="https://addons.mozilla.org/<?=$lang?>/firefox/">Firefox Add-ons</a>.</p>
+          </li>
+          <li>
+            Who makes Firefox?
+            <p>Lots of people. See Help-&gt;About Mozilla Firefox, and click the "global community" for a list of some of the people who have contributed to Firefox.</p>
+          </li>
+          <li>
+            Where’s the Firefox source code?
+            <p>A tarball of the Firefox source code is available for <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/">download</a>.
+               The latest development code can be obtained through <a href="http://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)">Mercurial</a>.
+               Firefox-specific source is in mozilla-central's "browser", "toolkit",
+               and "chrome" directories. Please follow the <a href=
+               "http://developer.mozilla.org/en/Build_Documentation">build instructions</a>.</p>
+          </li>
+          <li>
+            Where is the mail client?
+            <p>Firefox works with whatever mail client is the default on your system.
+               However, we recommend <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a>, our
+               next-generation email client and the perfect complement to Firefox.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="contributedbuilds" class="expander">
+      <h3 class="expander-header">Contributed Builds</h3>
+      <div class="expander-content">
+        <p>These are unofficial builds and may be configured differently than the official
+           Mozilla builds. They may also be optimized and/or tested for specific
+           platforms. You can browse through the available contributed builds in the "contrib"
+           directory on the
+           <a href="http://releases.mozilla.org/pub/mozilla.org/firefox/releases/">FTP
+           site</a>.</p>
+
+<!-- put contributed builds here -->
+
+      </div>
+    </div>
+
+  <div id="links" class="expander expander-odd">
+      <h3 class="expander-header">Other Resources and Links</h3>
+      <div class="expander-content">
+        <p>The following resources contain useful information about Firefox&nbsp;Beta</p>
+
+        <ul class="spaced">
+          <li><a href="http://support.mozilla.com/">Firefox Support Page</a></li>
+          <li><a href="http://kb.mozillazine.org/">MozillaZine's Knowledge Base</a></li>
+          <li><a href="https://developer.mozilla.org/en/Firefox_5_for_developers">Developer Information</a></li>
+          <li><a href="http://code.google.com/apis/safebrowsing/firefox3_privacy.html">SafeBrowsing Service
+            Privacy Policy</a> (for anti-phishing/anti-malware feature)</li>
+        </ul>
+      </div>
+    </div>
+
+</div>
+
+<div id="release-notes-footer"></div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

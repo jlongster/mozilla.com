@@ -2,7 +2,7 @@
 
 $version = '';
 
-preg_match('/firefox\/([0-9]+)[0-9.]*\//i',
+preg_match('/firefox\/([0-9]+)[^\/]*\//i',
            $_SERVER['PHP_SELF'],
            $matches);
 
