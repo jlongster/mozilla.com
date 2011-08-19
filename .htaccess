@@ -305,6 +305,7 @@ RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(4.*|5.*|6.*|7.*|8.*|9.*)$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox[/]?$ /$1firefox/fx/ [R=302,E=vary-ua]
 # redirect everyone else to /new
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox[/]?$ /$1firefox/new/ [R=302,E=vary-ua]
 
 RewriteCond $1 !en-(US|GB|ZA)/
