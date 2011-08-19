@@ -279,10 +279,10 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/(gamer|socialmedia|worker|me
 # Bug 660249 Update Mozilla.com for XP campaign
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp[/]?$ $1firefox/?xp [PT]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/xp[/]?$ $1firefox/index.html?xp [PT]
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/?xp [PT]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/XP[/]?$ $1firefox/index.html?xp [PT]
 
 # Bug 666937, redirect old ab-CD/firefox/customize/ pages to addons.mozilla.org for locales
 RewriteCond $1 !en-(US|GB|ZA)/
