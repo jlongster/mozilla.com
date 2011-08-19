@@ -42,6 +42,7 @@ $meta_newsletter = <<<META
     margin-top: -181px !important;
     margin-left: 100px !important;
     background:none !important;
+    width:0;
 }
 
 #footer-contents {
