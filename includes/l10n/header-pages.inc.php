@@ -100,7 +100,7 @@ NEWMENU;
 
 }
 
-if(isset($abtest) && $abtest == true && $target == 'AB3') {
+if(isset($abtest) && $abtest == true && in_array($target, array('AB3', 'new')) ) {
     $newfirefox4menu = <<<NEWMENU
         <!-- start menu #nav-main -->
 
