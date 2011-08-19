@@ -471,4 +471,9 @@ EXTRA_HEADERS;
 // build page
 require_once $headerfile;
 require_once $contentfile;
-require_once $footerfile;
+
+// we test if the variable exists because for simplified templates, we may not include the footer, that would cause a warning in strict mode
+if (file_exists($footerfile)) {
+    include_once $footerfile;
+}
+
