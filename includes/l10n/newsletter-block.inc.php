@@ -1,28 +1,51 @@
 <?php
-    require_once $config['file_root'] . '/includes/regions.php';
-    require_once $config['file_root'] . '/includes/email/forms.php';
+require_once $config['file_root'] . '/includes/regions.php';
+require_once $config['file_root'] . '/includes/email/forms.php';
 
-    $newsletter_class        = empty($newsletter_class)         ? '' : $newsletter_class;
-    $newsletter_snippet      = empty($newsletter_snippet)       ? '' : $newsletter_snippet;
-    $newsletter_form_snippet = empty($newsletter_form_snippet)  ? '' : $newsletter_form_snippet;
+$newsletter_class        = empty($newsletter_class)         ? '' : $newsletter_class;
+$newsletter_snippet      = empty($newsletter_snippet)       ? '' : $newsletter_snippet;
+$newsletter_form_snippet = empty($newsletter_form_snippet)  ? '' : $newsletter_form_snippet;
 
-    $status = '';
+$status = '';
 
-    if (isset($_POST['target']) && $_POST['target'] == 'inline') {
+if (isset($_POST['target']) && $_POST['target'] == 'inline') {
 
-        $form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
+    $form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
 
-        if ($form->save()) {
-            $status = 'success';
-        } elseif ($form->error) {
-            $status = 'error error-'. $form->error;
-        }
-
-    } else {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    if ($form->save()) {
+        $status = 'success';
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
     }
 
-    l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/newsletter.lang');
+} else {
+    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+}
+
+l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/newsletter.lang');
+
+$needed = array(
+    'Get Monthly News',
+    'Your Email Address',
+    'Text',
+    'Available Languages',
+    'Select country',
+    'Whoops! Be sure to enter a valid email address.',
+    'Please read the Mozilla Privacy Policy and agree by checking the box.',
+    'I agree to the <a href="%s">Privacy Policy</a>',
+    'Sign me up!',
+    'We will only send you Mozilla-related information.',
+    'Thanks for Subscribing!',
+    'We look forward to soon begin sharing tips &amp; tricks on getting the most out of Firefox, as well as exciting news about Mozilla and how we’re working to create a better Web.',
+);
+
+// only display the form if we are on stage or if all strings are translated
+if( $stage == false ) {
+    foreach($needed as $val) {
+        if(i__($val) == false) return;
+    }
+}
+
 ?>
 
 

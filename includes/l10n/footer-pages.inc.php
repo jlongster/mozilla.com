@@ -25,6 +25,7 @@ $meta_newsletter = <<<META
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-06-21"></script>
 <style>
 
+
 #footer  {
     padding:0 15%;
 }
@@ -61,6 +62,34 @@ form {
 </style>
 META;
 
+
+if ($textdir == 'rtl') {
+$meta_newsletter .= <<<META
+<style>
+#sub-footer #sub-footer-newsletter {
+    float: left !important;
+    margin: 0 32px 0 0 !important;
+    padding: 135px 0 0 !important;
+    text-align: right !important;
+    background: url("/img/template/footer-social.png") no-repeat scroll 70% -427px transparent;
+}
+
+#sub-footer {
+    background: none repeat scroll 0 0 transparent !important;
+    float: left !important;
+    margin-left: 0px !important;
+}
+#footer #copyright {
+
+    padding-right: 0px !important;
+    padding-left: 320px !important;
+}
+
+</style>
+META;
+}
+
+
 echo $meta_newsletter;
 
 echo '<div id="sub-footer">
@@ -77,9 +106,6 @@ echo '            </div>
 $newsletter_form = ob_get_contents();
 ob_end_clean();
 
-if(!in_array($lang, array('fr'))) {
-    $newsletter_form = '';
-}
 
 $dynamic_footer = <<<DYNAMIC_FOOTER
 
