@@ -25,6 +25,9 @@ $meta_newsletter = <<<META
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-06-21"></script>
 <style>
 
+#sub-footer h3 {
+    font-size: 18px;
+}
 
 #footer  {
     padding:0 15%;
@@ -40,7 +43,7 @@ $meta_newsletter = <<<META
 #sub-footer {
     float: left !important;
     margin-top: -181px !important;
-    margin-left: 100px !important;
+    margin-left: 115px !important;
     background:none !important;
     width:0;
 }
@@ -69,8 +72,8 @@ $meta_newsletter .= <<<META
 <style>
 #sub-footer #sub-footer-newsletter {
     float: left !important;
-    margin: 0 32px 0 0 !important;
-    padding: 135px 0 0 !important;
+    margin: 0 !important;
+    padding: 135px 0 0 0 !important;
     text-align: right !important;
     background: url("/img/template/footer-social.png") no-repeat scroll 70% -427px transparent;
 }
@@ -80,12 +83,28 @@ $meta_newsletter .= <<<META
     float: left !important;
     margin-left: 0px !important;
 }
-#footer #copyright {
 
+#footer #copyright {
     padding-right: 0px !important;
-    padding-left: 320px !important;
+    padding-left: 30px !important;
 }
 
+#footer #footer-contents {
+    wi dth: 68 0px;
+}
+
+#sub-footer #sub-footer-contents {
+    width: inherit !important;
+    width: 200px !important;
+}
+
+* {
+    border:1px solid red;
+}
+
+form {
+    max-width:300px; /* IE7 hack */
+}
 </style>
 META;
 }
