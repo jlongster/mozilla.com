@@ -1,0 +1,33 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "Firefox Sync를 사용해 주셔서 감사합니다.";
+    $body_id    = 'sync';
+    $body_class = 'portal-page secondrun';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="shortcut icon" type="image/png" href="{$config['static_prefix']}/img/firefox/sync/sync-ico.png"/>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/sync.css" media="screen" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+<div id="main-feature">
+  <h2 id="main-feature-title">축하합니다! 이제 Firefox Sync를 통해 데이터가 저장됩니다!</h2>
+  <p>Firefox Sync를 통해  모바일과 데스크톱 사이의 정보들이 자동적으로 동기화 됩니다.</p>
+</div>
+
+<div id="main-content">
+  <div>
+    <h3>데이터 저장 위치</h3>
+    <p>여러분의 북마크, 암호, 방문 기록, 환경 설정은 현재 PC에 저장되어 있습니다.</p>
+    <p>정보들은 주기적으로 안전한 원격 Mozilla 저장소에 기록되고, 여러분의 추가된 기기에 계속 동기화 됩니다.</p>
+  </div>
+  <div>
+    <h3>도움말</h3>
+    <p>질문이 있으시면 <a href="http://support.mozilla.com/kb/What+is+Firefox+Sync">FAQ</a>를 참고하세요.</p>
+    <p>더 자세한 정보는 <a href="https://services.mozilla.com/sync/relnotes/1.4.html">제품 소개서</a>를 참고하세요.</p>
+  </div>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
