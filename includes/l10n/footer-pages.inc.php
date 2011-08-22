@@ -90,16 +90,12 @@ $meta_newsletter .= <<<META
 }
 
 #footer #footer-contents {
-    wi dth: 68 0px;
+    width: 68 0px;
 }
 
 #sub-footer #sub-footer-contents {
     width: inherit !important;
     width: 200px !important;
-}
-
-* {
-    border:1px solid red;
 }
 
 form {
