@@ -70,40 +70,17 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<div class="main-content box" id="feature-tabgroups">
-    <div id="intro">
-        <h3><span>Tabs, Meet Groups</span></h3>
-        <p>Reclaim your browser from the clutter.</p>
-    </div>
-    <div class="note" id="note-1">
-        Arrange them into groups with Panorama.
-        <a href="http://support.mozilla.com/en-US/kb/what-are-tab-groups">Learn more »</a>
-    </div>
-    <div class="note" id="note-2">
-        <h4>Name</h4>
-        Group your tabs by name.
-    </div>
-    <div class="note" id="note-3">
-        <h4>Drag</h4>
-        Move your tabs or groups around.
-    </div>
-    <div class="note" id="note-4">
-        <h4>Search</h4>
-        Easily find any tab.
-    </div>
-</div>
-
-<div id="newsletter-signup" class="sub-feature box">
-    <h3>Get Monthly News!</h3>
-    <p>Product info, tips &amp; tricks and much more.</p>
+<div class="main-content box" id="feature-email">
+    <h3>More Features. More Info. <span>More Firefox.</span></h3>
+    <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
+    <div id="newsletter-signup">
         <form id="email-form" class="<?= $status ?>" action="" method="post">
           <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
           <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
           <div id="success-msg">Thanks for Subscribing!</div>
-          <div class="more">
+          <div class="more box">
             <div class="row">
               <select id="country" name="country">
-                  <option value="">Select country</option>
                   <?php
                       $country = $form->get('country');
                       if (!$country) {
@@ -135,6 +112,10 @@ if ($_version !== null && $_valid_version) {
             <p class="footnote">We will only send you Mozilla-related information.</p>
           </div>
         </form>
+    </div>
+</div>
+
+<div class="sub-feature box" id="mobile">
 </div>
 
 <div class="sub-feature box" id="webifyme">
@@ -223,12 +204,6 @@ if ($_version !== null && $_valid_version) {
         });
     });
 
-    var iframe = document.getElementById('persona-preview');
-    if (iframe.contentWindow.postMessage && iframe.addEventListener) {
-        iframe.addEventListener('load', function () {
-            iframe.contentWindow.postMessage("activatePersonas", "*");
-        }, false);
-    }
     </script>
     <?
     // Webtrends stats, see bug 556384
