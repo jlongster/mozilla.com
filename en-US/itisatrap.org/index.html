@@ -1,0 +1,43 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = "It's a trap!";
+    $body_id    = 'its-a-trap';
+    $body_class = 'portal-page';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/its-a-trap.css" media="screen" />
+
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+	<h2>It’s a Trap!</h2>
+	<p>Boo! I’m a naughty web page trying to steal your identity!</p>
+</div>
+
+<div id="main-content">
+
+<p>OK, not really, but web forgeries (also known as <a href="http://en.wikipedia.org/wiki/Phishing">phishing</a> pages) are out there on the Internet, and you should always use caution before giving your personal information to a web page. Firefox 2 or later provides built-in <a href="/<?=$lang?>/firefox/phishing-protection/">Phishing Protection</a> to help you identify web forgeries. If you're using Firefox 2 or later, you should have been warned away from this page.</p>
+
+<h5>You can also make yourself safe from web forgeries by:</h5>
+
+<ul>
+<li><strong>not following links from your e-mail to banks</strong> or online commerce sites; instead, use your bookmarks or type in the web page address by hand;</li>
+<li><strong>using the Firefox Password Manager</strong> to remember your passwords instead of entering them manually;</li>
+<li><strong>using an e-mail product like <a href="/<?=$lang?>/thunderbird/">Mozilla Thunderbird</a></strong>, which detects and alerts you when it finds links to web forgeries in your e-mail.</li>
+</ul>
+
+</div> <!-- end #main-content  -->
+
+<div id="download">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
