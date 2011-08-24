@@ -421,6 +421,8 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$
 # RewriteRule ^$ /fake-page.html [L]
 
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
+## Fix MPL URL (bug 681806)
+RewriteCond %{REQUEST_URI} !/MPL.*
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/personal.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/upgrade.*[/]?$ /$1firefox/ [R=permanent]
@@ -591,7 +593,6 @@ RewriteCond %{DOCUMENT_ROOT}/org -d
 RewriteRule ^about.* /includes/org-handler.php [L]
 
 RewriteRule ^faq.html$ /includes/org-handler.php [L]
-RewriteRule ^MPL.* /includes/org-handler.php [L]
 RewriteRule ^access.* /includes/org-handler.php [L]
 RewriteRule ^banners.* /includes/org-handler.php [L]
 RewriteRule ^book.* /includes/org-handler.php [L]
