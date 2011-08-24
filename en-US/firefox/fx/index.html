@@ -8,8 +8,32 @@
     <meta name="WT.ad" content="Download Firefox;Participate;Amazing Features;Need Help;Twitter;Facebook;Connect;Newsletter;Mobile;Addons;Personas" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/home-fx.css" media="screen" />
 EXTRA_HEADERS;
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
+
+<script>
+
+// Add a class to the body tag to alternate promo features
+var feature_options = new Array( "feature-mobile", "feature-email" );
+
+if (Math.random) {
+    var feature_choice = Math.floor(Math.random() * (feature_options.length));
+
+    // Just in case javascript gets carried away...
+    feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
+
+    if (document.body.className == '') {
+        document.body.className += ' '+feature_options[feature_choice];
+    } else {
+        document.body.className = feature_options[feature_choice];
+    }
+}
+
+</script>
 
 <div id="main-feature">
 
@@ -17,6 +41,69 @@ EXTRA_HEADERS;
         <h2>Good news! Your Firefox is up to date.</h2>
         <h3><span>Now take it with you.</span></h3>
         <a href="/<?=$lang?>/mobile/" class="mobile-button">Download Firefox for Android <span>»</span></a>
+    </div>
+
+    <div id="feature-email">
+        <h2>Good news! Your Firefox is up to date.</h2>
+        <h3><span>Get More Firefox.</span></h3>
+        <p class="intro">Sign up to get the latest Firefox tips and tricks in our <em>Firefox &amp; You</em> newsletter.</p>
+      <form action="/<?=$lang?>/newsletter/" method="post" id="newsletter-form">
+        <input type="hidden" name="target" value="main" />
+
+        <div class="field email-field">
+          <label for="email">Your email address:</label>
+          <input name="email" type="email" class="email" value="" autofocus required>
+        </div>
+
+        <div class="field country-field">
+          <label for="country">Country:</label>
+          <select class="country" name="country">
+            <option value="">Select country</option>
+            <?php 
+                $country = $form->get('country');
+                if (!$country) {
+                    $country = 'us';
+                }
+                echo regionsAsOptions($lang, $country);
+            ?>
+          </select>
+        </div>
+
+        <div class="field format-field">
+          <span class="field-label">Format:</span>
+          <div class="field-radios">
+            <span class="radio-wrapper"><input type="radio" name="format" id="html-format" class="html-format" value="html" checked></span>
+            <label for="html-format">HTML</label>
+            <span class="radio-wrapper"><input type="radio" name="format" id="text-format" class="text-format" value="text"></span>
+            <label for="text-format">Text</label>
+          </div>
+        </div>
+
+        <div class="field privacy-field">
+          <label for="privacy-check" class="privacy-check-label">
+            <input type="checkbox" name="privacy" id="privacy-check" class="privacy-check" required>
+            <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <div class="field submit-field">
+          <input onclick="dcsMultiTrack(
+                            'DCS.dcssip', 'www.mozilla.org',
+                            'DCS.dcsuri', '/en-us/newsletter',
+                            'WT.ti', 'Link: Mozilla Newsletter',
+                            'WT.dl', 99,
+                            'WT.z_convert', 'newsletter',
+                            'WT.si_n', 'newsletter',
+                            'WT.si_x', '2');"
+                 name="submit" 
+                 type="submit" 
+                 value="Sign me up!" 
+                 class="button">
+        </div>
+
+        <p class="disclaimer">We will only send you Mozilla-related information.</p>
+      </form>
+
     </div>
 
 </div>
@@ -36,7 +123,7 @@ EXTRA_HEADERS;
         </div>
     </div>
 
-    <div class="sub-feature" id="sub-participate">
+    <div class="sub-feature" id="sub-mobile">
         <h3>Get Up and <span>go mobile</span></h3>
         <p> Take your Web with you with Firefox for mobile.</p>
         <a href="/<?=$lang?>/mobile/download/">
@@ -44,7 +131,7 @@ EXTRA_HEADERS;
         </a>
     </div>
 
-    <div class="sub-feature" id="sub-support">
+    <div class="sub-feature last" id="sub-webifyme">
         <h3>Visualize <span>Your Web</span></h3>
         <p>See your Internet as a custom collage.</p>
         <a href="https://webifyme.org" 
@@ -55,6 +142,13 @@ EXTRA_HEADERS;
                                   'WT.nv', 'Content',
                                   'WT.ac', 'Webify Me!');">
            Webify Me! <span>»</span>
+        </a>
+    </div>
+
+    <div class="sub-feature last" id="sub-email">
+        <h3>More Features. More Info. <span>More Firefox.</span></h3>
+        <p>Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter.</p>
+        <a href="/<?=$lang?>/newsletter/">Webify Me! <span>»</span>
         </a>
     </div>
 
