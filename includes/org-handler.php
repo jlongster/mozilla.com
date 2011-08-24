@@ -18,22 +18,24 @@ if (is_dir("{$config['file_root']}/{$_SERVER['REDIRECT_URL']}")) {
     $_SERVER['REDIRECT_URL'] = "$path{$config['directory_index']}";
 }
 
-$www_archive_base = '/data/www/www-archive.mozilla.org';
 $path = $_SERVER['REDIRECT_URL'];
-$www_archive_path = realpath($www_archive_base . $path);
-
-// Redirect if it's in the archive
-if(strpos($www_archive_path, $www_archive_base) == 0 && file_exists($www_archive_path)) {
-    header("Status: 301 Moved Permanently");
-    header("Location: http://www-archive.mozilla.org$path");
-    exit;
-}
 
 if(file_exists("{$config['file_root']}/$path")) {
     require("{$config['file_root']}/$path");
     exit;
 }
 else {
+
+    $www_archive_base = '/data/www/www-archive.mozilla.org';
+    $www_archive_path = realpath($www_archive_base . $path);
+
+    // Redirect if it's in the archive
+    if(strpos($www_archive_path, $www_archive_base) == 0 && file_exists($www_archive_path)) {
+        header("Status: 301 Moved Permanently");
+        header("Location: http://www-archive.mozilla.org$path");
+        exit;
+    }
+
     // Show a 404 page (mozilla.com prefetch will take care of it)
     require('prefetch.php');
 }
