@@ -231,11 +231,11 @@ class MozillaCom_MenuData
 
                 'menu_about' => array(
                     'title' => 'About',
-                    'href'  => "/{$this->lang}/about/",
+                    'href'  => "/{$this->lang}/firefox/about/",
                     'items' => array(
                         'submenu_about_firefox' => array(
                             'title' => 'About Firefox',
-                            'href'  => "/{$this->lang}/about/",
+                            'href'  => "/{$this->lang}/firefox/about/",
                         ),
                         'submenu_about_join' => array(
                             'title' => 'Join Mozilla',
