@@ -195,7 +195,7 @@ function render_preview($vars) {
     </head>
     <body>
         <table>
-            <tr><th>From:</th><td>Mozilla.com &lt;noreply@mozilla.com&gt;</td></tr>
+            <tr><th>From:</th><td>Mozilla.org &lt;noreply@mozilla.com&gt;</td></tr>
             <tr><th>To:</th><td><?=$h_vars['from_addr']?></td></tr>
             <tr><th>Subject:</th><td><?=$h_vars['subject']?></td></tr>
         </table>

@@ -34,7 +34,7 @@ if (isset($_GET['p'])) {
         'linkedin', 'forecastfox', 'downloadday'
     );
     if (in_array($_GET['p'], $partners)) {
-        setcookie('partner', $_GET['p'], time() + ( 60*60*24*7 ), '/', '.mozilla.com');
+        setcookie('partner', $_GET['p'], time() + ( 60*60*24*7 ), '/', '.mozilla.org');
     }
 }
 

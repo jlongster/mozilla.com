@@ -1,7 +1,7 @@
 <?php
 require_once "{$config['file_root']}/includes/min/inline.php";
 
-$page_title    = empty($page_title)    ? 'Mozilla.com' : $page_title;
+$page_title    = empty($page_title)    ? 'Mozilla.org' : $page_title;
 $textdir       = empty($textdir)       ? 'ltr'         : $textdir;
 $extra_headers = empty($extra_headers) ? ''            : $extra_headers;
 $breadcrumbs   = empty($breadcrumbs)   ? array()       : $breadcrumbs;

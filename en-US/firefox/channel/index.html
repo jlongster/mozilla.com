@@ -45,7 +45,7 @@ EXTRA_HEADERS;
                 // Configure the Firefox download write script
                 var gDownloadTracker = "";
 
-                var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
+                var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
                 var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + "\" href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Firefox Aurora <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
                 var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
@@ -111,7 +111,7 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
             document.body.className += ' platform-linux';
         }
         
-          var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Beta','WT.dl', 99,'WT.z_convert', 'Firefox Beta','WT.si_n', 'Firefox Beta','WT.si_x', '2');";
+          var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Beta','WT.dl', 99,'WT.z_convert', 'Firefox Beta','WT.si_n', 'Firefox Beta','WT.si_x', '2');";
           var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span class=\"download-content\"><span class=\"download-title\">Download<\/span> Firefox Beta <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
           var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
@@ -136,7 +136,7 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
         <div class="home-download beta-download">
             <a href="<?= mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version)) ?>"
                class="download-link download-firefox"
-               onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+               onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                       'DCS.dcsuri', '/en-US/firefox/channel/',
                                       'WT.ti', 'Link:  Firefox Beta for Mobile',
                                       'WT.dl', 99,
@@ -218,7 +218,7 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
                 </div>
                 <div id="privacy-error">Please agree to the Privacy Policy.</div>
                 <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
-                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                 'DCS.dcsuri', '/mainstream_newsletter/signup',
                                 'WT.ti', 'Link: Sign me up - Second Step',
                                 'WT.dl', 99,

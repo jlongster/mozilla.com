@@ -42,7 +42,7 @@
             </span>
             <a class="email-open"
                href="/<?php echo $lang; ?>/newsletter/"
-               onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+               onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                         'DCS.dcsuri', '/mainstream_newsletter/step1', 
                         'WT.ti', 'Link: Monthly News - First Step',
                         'WT.dl', 99,
@@ -94,7 +94,7 @@
             </div>
 
             <input name="submit" type="submit" value="Sign me up!" class="subscribe"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                             'DCS.dcsuri', '/mainstream_newsletter/signup',
                             'WT.ti', 'Link: Sign me up - Second Step',
                             'WT.dl', 99,

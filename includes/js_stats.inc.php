@@ -43,13 +43,13 @@ if (!empty($disable_js_stats)) {
         $wt_options = array(
             'dcsid' => 'dcst2y3n900000gohmphe66rf_3o6x',
             'rate' => 5,
-            'fpcdom' => 'mozilla.com'
+            'fpcdom' => 'mozilla.org'
         );
     } else {
         $wt_options = array(
             'dcsid' => 'dcsf9nqmj10000clgc14f05rf_2u7t',
             'rate' => 50,
-            'fpcdom' => 'mozilla.com'
+            'fpcdom' => 'mozilla.org'
         );
     }
     $opt_json = json_encode($wt_options);

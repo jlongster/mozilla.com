@@ -42,9 +42,6 @@ Redirect permanent /zh-CN/firefox/uninstall/ http://www.g-fox.cn/chn_feedback/un
 # Temporary rewrite for College page to JobVite page
 RewriteRule ^en-US/college http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vfwa
 
-# security/.htaccess
-Redirect temp /security/ http://www.mozilla.org/security/
-
 # Redirect release-candidate firstrun/whatsnew pages to out-of-date page (Bug 656721)
 RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
@@ -73,16 +70,16 @@ RewriteRule en-US/firefox/(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-dat
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/[/]?$ /$1firefox [R=permanent]
 
 # Redirects for mozillamessaging.com. bug 480373
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird[/]?$ http://www.mozilla.org/thunderbird/ [R=permanent]
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/index.html$ http://www.mozilla.org/thunderbird/ [R=permanent]
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/thunderbird[/]?$ http://www.mozilla.org/thunderbird/ [R=permanent]
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/thunderbird/features.html$ http://www.mozilla.org/thunderbird/features/ [R=permanent]
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.19/releasenotes[/]?$ http://www.mozillamessaging.com/thunderbird/2.0.0.19/releasenotes/ [R=permanent]
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/releasenotes[/]?$ http://www.mozillamessaging.com/$1thunderbird/2.0.0.$2/releasenotes/ [R=permanent]
-RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all.html$ http://www.mozilla.org/thunderbird/all.html [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird[/]?$ http://www.mozilla.org/thunderbird/ [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/index.html$ http://www.mozilla.org/thunderbird/ [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/thunderbird[/]?$ http://www.mozilla.org/thunderbird/ [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/thunderbird/features.html$ http://www.mozilla.org/thunderbird/features/ [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.19/releasenotes[/]?$ http://www.mozillamessaging.com/thunderbird/2.0.0.19/releasenotes/ [R=permanent]
+# RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2.0.0.(2\d)/releasenotes[/]?$ http://www.mozillamessaging.com/$1thunderbird/2.0.0.$2/releasenotes/ [R=permanent]
+# RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all.html$ http://www.mozilla.org/thunderbird/all.html [R=permanent]
 
-# bug 578744
-RewriteRule en-US/thunderbird/(.*) http://www.mozillamessaging.com/en-US/thunderbird/$1 [R=permanent]
+# # bug 578744
+# RewriteRule en-US/thunderbird/(.*) http://www.mozillamessaging.com/en-US/thunderbird/$1 [R=permanent]
 
 Redirect permanent /store http://store.mozilla.org
 
@@ -421,9 +418,10 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/mobile(.*)[/]?$ /$1mobile$2 
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$2 [R=permanent]
 
 # Bug 619404 Quickly redirect index page
-RewriteRule ^$ /fake-page.html [L]
+# RewriteRule ^$ /fake-page.html [L]
+
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)[/]?(?:index.html)?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/personal.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/upgrade.*[/]?$ /$1firefox/ [R=permanent]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/ie.*[/]?$ /$1firefox/ [R=permanent]
@@ -538,8 +536,249 @@ RewriteRule ^en-US/firefox/firefox.html /en-US/firefox/ [R=301]
 # Bug 654614 /blocklist and /en-US/blocklist -> addons.m.o/blocked
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?blocklist(/(?:index.html)?)?$ https://addons.mozilla.org/blocked [R=permanent]
 
+
 # Bug 655193
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/download/?$ / [R=permanent]
+
+#### mozilla.org rewrites ####
+
+# images, script, and style *should* be served from a CDN, but we
+# still rewrite these just in case any page doesn't correctly use
+# the CDN
+RewriteRule ^images/(.*)$ /org/images/$1 [L]
+RewriteRule ^script/(.*)$ /org/script/$1 [L]
+
+# Thunderbird doesn't use a CDN but luckily its media is all
+# underneath the "thunderbird directory"
+RewriteRule ^thunderbird/img/(.*)$ /org/thunderbird/img/$1 [L]
+RewriteRule ^thunderbird/style/(.*)$ /org/thunderbird/style/$1 [L]
+RewriteRule ^thunderbird/js/(.*)$ /org/thunderbird/js/$1 [L]
+
+RewriteRule ^drumbeat/img/(.*)$ /org/drumbeat/img/$1 [L]
+RewriteRule ^drumbeat/style/(.*)$ /org/drumbeat/style/$1 [L]
+RewriteRule ^drumbeat/js/(.*)$ /org/drumbeat/js/$1 [L]
+
+### handle mozilla.org and thunderbird URLs ###
+
+# Check if we should throw a 410 for this URL (ported from
+# mozilla.org's codebase)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond ${org-urls-410:$1} >""
+RewriteRule ^(.*)$ ${org-urls-410:$1} [R=410]
+
+# Check if we should throw a 301 for this URL (ported from
+# mozilla.org's codebase)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond ${org-urls-301:$1} >""
+RewriteRule ^(.*)$ ${org-urls-301:$1} [R=301]
+
+# Let the thunderbird prefetch.php handle all its URLs
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird(.*) /includes/thunderbird-handler.php [L]
+
+# Handle all of the mozilla.org URLs.
+#
+# org-handler.php is the new prefetch.php which handles the
+# mozilla.org URLs. We only take over the homepage if the org site is
+# available at the /org directory.
+
+RewriteCond %{DOCUMENT_ROOT}/org -d
+RewriteRule ^$ /includes/org-handler.php [L]
+
+RewriteRule ^MPL.* /includes/org-handler.php [L]
+RewriteRule ^access.* /includes/org-handler.php [L]
+RewriteRule ^about.* /includes/org-handler.php [L]
+RewriteRule ^book.* /includes/org-handler.php [L]
+RewriteRule ^community.* /includes/org-handler.php [L]
+RewriteRule ^contact.* /includes/org-handler.php [L]
+RewriteRule ^contribute.* /includes/org-handler.php [L]
+RewriteRule ^credits.* /includes/org-handler.php [L]
+RewriteRule ^developer.* /includes/org-handler.php [L]
+RewriteRule ^drumbeat.* /includes/org-handler.php [L]
+RewriteRule ^foundation.* /includes/org-handler.php [L]
+RewriteRule ^grants.* /includes/org-handler.php [L]
+RewriteRule ^hacking.* /includes/org-handler.php [L]
+RewriteRule ^images.* /includes/org-handler.php [L]
+RewriteRule ^join.* /includes/org-handler.php [L]
+RewriteRule ^keymaster.* /includes/org-handler.php [L]
+RewriteRule ^legal.* /includes/org-handler.php [L]
+RewriteRule ^newlayout.* /includes/org-handler.php [L]
+RewriteRule ^parks.* /includes/org-handler.php [L]
+RewriteRule ^phonebook.* /includes/org-handler.php [L]
+RewriteRule ^ports.* /includes/org-handler.php [L]
+RewriteRule ^privacy.* /includes/org-handler.php [L]
+RewriteRule ^projects.* /includes/org-handler.php [L]
+RewriteRule ^rhino.* /includes/org-handler.php [L]
+RewriteRule ^script.* /includes/org-handler.php [L]
+RewriteRule ^security.* /includes/org-handler.php [L]
+RewriteRule ^start.* /includes/org-handler.php [L]
+RewriteRule ^support.* /includes/org-handler.php [L]
+
+### redirects moved over from mozilla.org ###
+
+# XML namespace URI rewrites to prevent 404 errors
+RewriteRule ^2004/em-rdf$ /script/namespace.php?id=em-rdf [L]
+RewriteRule ^2005/app-update$ /script/namespace.php?id=update [L]
+RewriteRule ^2006/addons-blocklist$ /script/namespace.php?id=addons-bl [L]
+RewriteRule ^2006/browser/search/$ /script/namespace.php?id=mozsearch [L]
+RewriteRule ^keymaster/gatekeeper/there.is.only.xul$ /script/namespace.php?id=xul [L]
+RewriteRule ^microsummaries/0.1$ /script/namespace.php?id=microsummaries [L]
+RewriteRule ^projects/xforms/2005/type$ /script/namespace.php?id=xforms-type [L]
+RewriteRule ^xbl$ /script/namespace.php?id=xbl [L]
+
+# Redirect /phonebook from HTTP to HTTPS
+RewriteCond %{HTTP:SSLSessionID} ^$ [NC]
+RewriteCond %{REQUEST_URI} ^/phonebook/
+RewriteRule ^(.*)$ https://www.mozilla.org/$1 [R]
+
+# Redirects for SeaMonkey project website, now living at seamonkey-project.org
+Redirect permanent /projects/seamonkey/ http://www.seamonkey-project.org/
+Redirect permanent /projects/seamonkey/artwork.html http://www.seamonkey-project.org/dev/artwork
+Redirect permanent /projects/seamonkey/community.html http://www.seamonkey-project.org/community
+Redirect permanent /projects/seamonkey/get-involved.html http://www.seamonkey-project.org/dev/get-involved
+Redirect permanent /projects/seamonkey/index.html http://www.seamonkey-project.org/
+Redirect permanent /projects/seamonkey/news.html http://www.seamonkey-project.org/news
+Redirect permanent /projects/seamonkey/project-areas.html http://www.seamonkey-project.org/dev/project-areas
+Redirect permanent /projects/seamonkey/releases/ http://www.seamonkey-project.org/releases/
+Redirect permanent /projects/seamonkey/releases/index.html http://www.seamonkey-project.org/releases/
+Redirect permanent /projects/seamonkey/review-and-flags.html http://www.seamonkey-project.org/dev/review-and-flags
+RedirectMatch permanent ^/projects/seamonkey/releases/(1\..*).html$ http://www.seamonkey-project.org/releases/$1
+RedirectMatch permanent ^/projects/seamonkey/releases/seamonkey(.*)/(.*).html$ http://www.seamonkey-project.org/releases/seamonkey$1/$2
+RedirectMatch permanent ^/projects/seamonkey/releases/seamonkey(.*)/index.html$ http://www.seamonkey-project.org/releases/seamonkey$1/
+RedirectMatch permanent ^/projects/seamonkey/releases/updates/(.*)$ http://www.seamonkey-project.org/releases/updates/$1
+RedirectMatch permanent ^/projects/seamonkey/start/ http://www.seamonkey-project.org/start/
+
+RedirectMatch permanent ^/(licensing|LICENSING) http://www.mozilla.org/foundation/licensing.html
+RedirectMatch permanent /js/language/js20(/.*)$ http://www.ecmascript-lang.org
+RedirectMatch permanent /js/language/es4(/.*)$ http://www.ecmascript-lang.org
+RedirectMatch permanent /parks(/.*)$ http://chelseanovak.wordpress.com/2011/07/08/looking-back-on-mozilla-parks/
+RedirectMatch permanent /projects/xpcom/book.* https://developer.mozilla.org/en/Creating_XPCOM_Components
+RedirectMatch permanent /projects/xpcom/doc.* https://developer.mozilla.org/en/XPCOM
+
+# Fix for reed
+RewriteRule ^security/phishing-test/?$ /security/phishing-test.html  [R]
+
+RewriteRule ^join/thankyou\.en\.html$ join/thankyou.php?locale=en_US
+RewriteRule ^join/thankyou\.de\.html$ join/thankyou.php?locale=de_DE
+
+RedirectMatch temp ^/projects/firefox/.*pre/whatsnew/ http://www.mozilla.org/contribute/
+
+RewriteRule ^about/manifesto(?:/(?:index.html)?)?$ http://www.mozilla.org/about/manifesto.en.html [R]
+RewriteRule ^about/staff(?:/(?:index.html)?)?$ http://www-archive.mozilla.org/about/staff.html [R]
+RewriteRule ^access/dhtml(?:/(?:index.html)?)?$ http://wiki.codetalks.org/wiki/index.php/Main_Page [R]
+RewriteRule ^access/unix/atspi-support(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/Accessibility:AT-APIs [R]
+RewriteRule ^badges(?:/(?:index.html)?)?$ http://wiki.mozilla.org/Badges [R]
+RewriteRule ^betterinternet(?:/(?:index.html)?)?$ http://www.mozilla.org/causes/better.html [R]
+RewriteRule ^bugs(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/Bug_writing_guidelines [R]
+RewriteRule ^build(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/Build_Documentation [R]
+RewriteRule ^catalog/architecture/xul(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/XUL [R]
+RewriteRule ^catalog/web-developer(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/Web_Development [R]
+RewriteRule ^causes(?:/(?:index.html)?)?$ http://www.mozilla.org/about/mission.html [R]
+RewriteRule ^causes/onewebday(?:/(?:index.html)?)?$ http://commonspace.wordpress.com/2010/04/06/owddrumbeat/ [R]
+RewriteRule ^causes/onewebday/posters(?:/(?:index.html)?)?$ http://commonspace.wordpress.com/2010/04/06/owddrumbeat/ [R]
+RewriteRule ^causes/subtitles(?:/(?:index.html)?)?$ http://www.drumbeat.org/universal-subtitles/ [R]
+RewriteRule ^community/forums(?:/(?:index.html)?)?$ http://www.mozilla.org/about/forums/ [R]
+RewriteRule ^community/intl(?:/(?:index.html)?)?$ http://www.mozilla.org/community/directory.html [R]
+RewriteRule ^contribute/writing(?:/(?:index.html)?)?$ https://developer.mozilla.org/Project:en/How_to_Help [R]
+RewriteRule ^contribute/writing/cvs(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Mozilla.org:How_to_Work_with_Site [R]
+RewriteRule ^contribute/writing/(guidelines|guidelines.html)(\/?)$ https://wiki.mozilla.org/Websites/Guides/Style [R]
+RewriteRule ^contribute/writing/how-to(?:/(?:index.html)?)?$ https://developer.mozilla.org/Project:en/How_to_document_Mozilla [R]
+RewriteRule ^contribute/writing/process(?:/(?:index.html)?)?$ https://developer.mozilla.org/Project:en/Getting_started [R]
+RewriteRule ^directory(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Directory [R]
+RewriteRule ^docs(?:/(?:index.html)?)?$ https://developer.mozilla.org/ [R]
+RewriteRule ^docs/docshell(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/DocShell [R]
+RewriteRule ^docs/dom(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/About_the_Document_Object_Model [R]
+RewriteRule ^docs/dom/domref(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/Gecko_DOM_Reference [R]
+RewriteRule ^docs/tutorials/tinderstatus(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/Creating_a_Mozilla_Extension [R]
+RewriteRule ^docs/web-developer(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Web_Development [R]
+RewriteRule ^docs/web-developer/js(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/JavaScript [R]
+RewriteRule ^docs/web-developer/js/debugging(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/Debugging_JavaScript [R]
+RewriteRule ^donate(?:/(?:index.html)?)?$ https://donate.mozilla.org/page/contribute/openwebfund [R]
+RewriteRule ^download http://www.mozilla.org/projects/ [R]
+RewriteRule ^firefox-live/blog(?:/(?:index.html)?)?$ http://firefoxlive.mozilla.org/blog [R]
+RewriteRule ^foundation/blog(?:/(?:index.html)?)?$ http://blog.mozillafoundation.org/ [R]
+RewriteRule ^foundation/donate(?:/(?:index.html)?)?$ https://donate.mozilla.org/page/contribute/openwebfund [R]
+RewriteRule ^foundation/grants(?:/(?:index.html)?)?$ http://www.mozilla.org/grants [R]
+RewriteRule ^foundation/openwebfund(?:/(?:index.html)?)?$ https://donate.mozilla.org/page/contribute/openwebfund [R]
+RewriteRule ^hacking(?:/(?:index.html)?)?$ https://developer.mozilla.org/En/Developer_Guide [R]
+RewriteRule ^hacking/patch-maker(?:/(?:index.html)?)?$ http://www.gerv.net/software/patch-maker/ [R]
+RewriteRule ^internethealth(?:/(?:index.html)?)?$ http://www.mozilla.org/causes/serviceweek/internethealth/ [R]
+RewriteRule ^js(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/About_JavaScript [R]
+RewriteRule ^js/language(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/JavaScript_Language_Resources [R]
+RewriteRule ^js/spidermonkey(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/SpiderMonkey [R]
+RewriteRule ^lightning(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/calendar/ [R]
+RewriteRule ^mailnews(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Thunderbird [R]
+RewriteRule ^mission(?:/(?:index.html)?)?$ http://www.mozilla.org/about/mission.html [R]
+RewriteRule ^onewebday(?:/(?:index.html)?)?$ http://commonspace.wordpress.com/2010/04/06/owddrumbeat/ [R]
+RewriteRule ^open(?:/(?:index.html)?)?$ http://www.mozilla.org/causes/open/ [R]
+RewriteRule ^openwebfund(?:/(?:index.html)?)?$ http://www.mozilla.org/foundation/openwebfund/ [R]
+RewriteRule ^parks/firefoxlive(?:/(?:index.html)?)?$ http://firefoxlive.mozilla.org/ [R]
+RewriteRule ^performance(?:/(?:index.html)?)?$ http://wiki.mozilla.org/Performance:Home_Page [R]
+RewriteRule ^policies(?:/(?:index.html)?)?$ http://www.mozilla.org/about/policies/ [R]
+RewriteRule ^ports/qtmozilla(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Qt [R]
+RewriteRule ^poweredby(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/powered-by.html [R]
+RewriteRule ^press/(?:/(?:index.html)?)?$ http://www.mozilla.com/press/ [R]
+RewriteRule ^press/awards(?:/(?:index.html)?)?$ http://www.mozilla.com/press/awards.html [R]
+RewriteRule ^press/images(?:/(?:index.html)?)?$ http://www.mozilla.com/press/images.html [R]
+RewriteRule ^press/testimonials(?:/(?:index.html)?)?$ http://www.mozilla.com/press/ [R]
+RewriteRule ^products(?:/(?:index.html)?)?$ http://www.mozilla.org/projects [R]
+RewriteRule ^products/firefox(?:/(?:index.html)?)?$ http://www.firefox.com [R]
+RewriteRule ^products/firefox/affiliates(?:/(?:index.html)?)?$ http://www.spreadfirefox.com/affiliates [R]
+RewriteRule ^products/firefox/buttons(?:/(?:index.html)?)?$ http://www.spreadfirefox.com/affiliates [R]
+RewriteRule ^products/mozilla1.x(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/ [R]
+RewriteRule ^products/mozilla1.x/download(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/ [R]
+RewriteRule ^products/thunderbird(?:/(?:index.html)?)?$ http://www.mozilla.org/thunderbird/ [R]
+RewriteRule ^products/thunderbird/why(?:/(?:index.html)?)?$ http://www.mozilla.org/thunderbird/features/ [R]
+RewriteRule ^projects/bonecho(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/bonsai(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Bonsai [R]
+RewriteRule ^projects/camino(?:/(?:index.html)?)?$ http://caminobrowser.org/ [R]
+RewriteRule ^projects/cck(?:/(?:index.html)?)?$ https://wiki.mozilla.org/CCK [R]
+RewriteRule ^projects/chimera(?:/(?:index.html)?)?$ http://caminobrowser.org/ [R]
+RewriteRule ^projects/deerpark(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/devpreview(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/embedding(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Embedding_Mozilla [R]
+RewriteRule ^projects/fennec(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Fennec [R]
+RewriteRule ^projects/granparadiso(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/inspector(?:/(?:index.html)?)?$ https://developer.mozilla.org/En/DOM_Inspector [R]
+RewriteRule ^projects/javaconnect(?:/(?:index.html)?)?$ http://developer.mozilla.org/en/JavaXPCOM [R]
+RewriteRule ^projects/marketing(?:/(?:index.html)?)?$ http://contribute.mozilla.org/Marketing [R]
+RewriteRule ^projects/mathml(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Mozilla_MathML_Project [R]
+RewriteRule ^projects/mathml/fonts(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Mozilla_MathML_Project/Fonts [R]
+RewriteRule ^projects/mathml/screenshots(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Mozilla_MathML_Project/Screenshots [R]
+RewriteRule ^projects/minefield(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/firefox/prerelease.html [R]
+RewriteRule ^projects/minimo(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Mobile [R]
+RewriteRule ^projects/namoroka(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/netlib(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Necko [R]
+RewriteRule ^projects/plugins(?:/(?:index.html)?)?$ https://developer.mozilla.org/En/Plugins [R]
+RewriteRule ^projects/rt-messaging(?:/(?:index.html)?)?$ http://chatzilla.hacksrus.com/ [R]
+RewriteRule ^projects/rt-messaging/chatzilla(?:/(?:index.html)?)?$ http://chatzilla.hacksrus.com/ [R]
+RewriteRule ^projects/shiretoko(?:/(?:index.html)?)?$ http://www.mozilla.com/firefox/channel/ [R]
+RewriteRule ^projects/string(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XPCOM_string_guide [R]
+RewriteRule ^projects/tech-evangelism(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Evangelism [R]
+RewriteRule ^projects/venkman(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/Venkman [R]
+RewriteRule ^projects/webservices/examples/babelfish-wsdl(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/XML_Web_Services [R]
+RewriteRule ^projects/xbl(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XBL [R]
+RewriteRule ^projects/xforms(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XForms [R]
+RewriteRule ^projects/xpcom(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XPCOM [R]
+RewriteRule ^projects/xpinstall(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XPInstall [R]
+RewriteRule ^projects/xslt(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XSLT [R]
+RewriteRule ^projects/xul(?:/(?:index.html)?)?$ https://developer.mozilla.org/En/XUL [R]
+RewriteRule ^quality(?:/(?:index.html)?)?$ http://quality.mozilla.org/ [R]
+RewriteRule ^quality/help(?:/(?:index.html)?)?$ http://quality.mozilla.org/get-involved [R]
+RewriteRule ^releases(?:/(?:index.html)?)?$ http://www.mozilla.org/projects [R]
+RewriteRule ^roadmap(?:/(?:index.html)?)?$ https://wiki.mozilla.org/Roadmap_Scratchpad [R]
+RewriteRule ^school(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
+RewriteRule ^scriptable(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XPConnect [R]
+RewriteRule ^scriptable/xpidl(?:/(?:index.html)?)?$ https://developer.mozilla.org/en/XPIDL [R]
+RewriteRule ^serviceweek(?:/(?:index.html)?)?$ http://www.mozilla.org/causes/serviceweek/ [R]
+RewriteRule ^status(?:/(?:index.html)?)?$ https://wiki.mozilla.org/WeeklyUpdates [R]
+RewriteRule ^sunbird(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/calendar/ [R]
+RewriteRule ^university(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
+RewriteRule ^university/demos/xslt(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
+RewriteRule ^xpfe(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/Toolkit_API [R]
+
+#### end mozilla.org rewrites ####
 
 <FilesMatch "\.(ttf|woff|eot)$">
     ExpiresActive On
@@ -550,6 +789,27 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/download/?$ / [R=permanent]
 AddDefaultCharset UTF-8
 AddType image/x-icon .ico
 AddType text/xml .rdf
+
+# The following types were ported from the old mozilla.org
+
+# Add text types
+AddType text/calendar .ics
+AddType text/x-component .htc
+AddType text/xml .rdf
+
+# Add image types
+AddType image/svg+xml .svg
+AddType image/x-icon .ico
+
+# Add Mozilla application types
+AddType application/vnd.mozilla.xul+xml .xul
+AddType application/x-xpinstall .xpi
+
+# Add StarOffice document types
+AddType application/vnd.stardivision.calc .sdc
+AddType application/vnd.stardivision.draw .sda
+AddType application/vnd.stardivision.impress .sdd
+AddType application/vnd.stardivision.writer .sdw
 
 <IfModule mod_deflate.c>
   <FilesMatch "\.(js|css)$">

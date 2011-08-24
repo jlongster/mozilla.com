@@ -1,6 +1,6 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla.com Search Results';
+    $page_title = 'Mozilla.org Search Results';
     $body_id    = 'search';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/tignish/search.css" media="screen" />
@@ -35,7 +35,7 @@ EXTRA_HEADERS;
             // Add L10n to the search button format
             $nutch->nav_area = '<div class="pages"><table><tr><td class="searchlabel">'.___('Results').'</td>NAV_CONTENT</tr></table></div>';
 
-            // Restrict results to mozilla.com
+            // Restrict results to mozilla.org
             $nutch->server_name = $config['nutch_server_name'];
             $results = $nutch->query($query, $hits_per_page, $start);
             $hits = $nutch->getTotalResultsFromXml($results);
@@ -60,7 +60,7 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
 
-	<h2>Search Mozilla.com</h2>
+	<h2>Search mozilla.org</h2>
 
 	<form id="moz_global_search_body" action="" method="get"><div>
 		<input type="text" name="query" id="query_body" value="<?=$query?>" />

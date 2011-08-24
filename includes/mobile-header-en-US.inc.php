@@ -8,7 +8,7 @@ include_once 'product-details/mobileDetails.class.php';
 
     // Build our dynamic header
 
-    $page_title    = empty($page_title)         ? 'Mozilla.com'    : $page_title;
+    $page_title    = empty($page_title)         ? 'Mozilla.org'    : $page_title;
     $textdir       = empty($textdir)            ? 'ltr'            : $textdir;
     $extra_headers = empty($extra_headers)      ? ''               : $extra_headers;
     $body_class    = empty($body_class)         ? ''               : $body_class;

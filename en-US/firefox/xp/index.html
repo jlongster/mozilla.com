@@ -84,7 +84,7 @@ FUNNEL;
         <!--
         // Configure the Firefox download write script
 
-        var gDownloadTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.com', 'DCS.dcsuri', '/en-US/products/download.html', 'WT.ti', 'Link: Get Firefox', 'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Download Firefox');";
+        var gDownloadTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org', 'DCS.dcsuri', '/en-US/products/download.html', 'WT.ti', 'Link: Get Firefox', 'WT.dl', 99, 'WT.nv', 'Content', 'WT.ac', 'Download Firefox');";
 
         var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%&amp;extra=xpcamp\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\"></span> Free Download <span class=\"download-info\">%VERSION% for %PLATFORM_NAME% <em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
         var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
@@ -112,7 +112,7 @@ FUNNEL;
 
     <p id="mobile-promo">
       <a href="/<?=$lang?>/mobile/?WT.mc_id=hp_1&amp;WT.mc_ev=click"
-         onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+         onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                 'DCS.dcsuri', '/<?=$lang?>/mobile/',
                                 'WT.ti', 'Link: Get Firefox on your phone!',
                                 'WT.dl', 99,
