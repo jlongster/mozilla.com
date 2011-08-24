@@ -15,7 +15,7 @@ if (is_dir("{$config['file_root']}/{$_SERVER['REDIRECT_URL']}")) {
         exit;
     }
     
-    $_SERVER['REDIRECT_URL'] = "$path{$config['directory_index']}";
+    $_SERVER['REDIRECT_URL'] = "{$_SERVER['REDIRECT_URL']}{$config['directory_index']}";
 }
 
 $path = $_SERVER['REDIRECT_URL'];
