@@ -102,7 +102,7 @@ RewriteRule ^(en-US|en-GB|fr|de)/add-ons/ebay/beta/$ https://addons.mozilla.org/
 RewriteRule ^en-US/add-ons/ebay/beta/update.rdf$ https://addons.mozilla.org/ebay/ebay-extension/update.rdf
 
 # Bug 537183
-RewriteRule ^(.+)/firefox/about[/]?$ /$1/about/ [PT]
+RewriteRule ^(.+)/firefox/about[/]?$ /$1/about/ [PT,L]
 
 # Bug 376458
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/dictionaries.html$ https://addons.mozilla.org/thunderbird/dictionaries [R=permanent,L]
@@ -628,7 +628,6 @@ RewriteRule ^script.* /includes/org-handler.php [L]
 RewriteRule ^scriptable.* /includes/org-handler.php [L]
 RewriteRule ^security.* /includes/org-handler.php [L]
 RewriteRule ^start.* /includes/org-handler.php [L]
-RewriteRule ^support.* /includes/org-handler.php [L]
 RewriteRule ^themes.* /includes/org-handler.php [L]
 RewriteRule ^unix.* /includes/org-handler.php [L]
 
