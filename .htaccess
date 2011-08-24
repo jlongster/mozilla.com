@@ -580,17 +580,19 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird(.*) /includes/thunderbir
 # Handle all of the mozilla.org URLs.
 #
 # org-handler.php is the new prefetch.php which handles the
-# mozilla.org URLs. We only take over the homepage if the org site is
-# available at the /org directory. Also, many of the URLs are only here
-# because they redirect to the archive site.
+# mozilla.org URLs. We only take over the homepage and about page if
+# the org site is available at the /org directory. Also, many of the
+# URLs are only here because they redirect to the archive site.
 
 RewriteCond %{DOCUMENT_ROOT}/org -d
 RewriteRule ^$ /includes/org-handler.php [L]
 
+RewriteCond %{DOCUMENT_ROOT}/org -d
+RewriteRule ^about.* /includes/org-handler.php [L]
+
 RewriteRule ^faq.html$ /includes/org-handler.php [L]
 RewriteRule ^MPL.* /includes/org-handler.php [L]
 RewriteRule ^access.* /includes/org-handler.php [L]
-RewriteRule ^about.* /includes/org-handler.php [L]
 RewriteRule ^banners.* /includes/org-handler.php [L]
 RewriteRule ^book.* /includes/org-handler.php [L]
 RewriteRule ^causes.* /includes/org-handler.php [L]
