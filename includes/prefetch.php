@@ -167,13 +167,14 @@ define ('LANG', $lang);
 // If the URL doesn't have a langauage at the front of it, we need to redirect so
 // it does (otherwise we get stuff with no language at all.  For example:
 //  www.mozilla.com/firefox   -->    www.mozilla.com/en-US/firefox
-if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
+$url_parts = explode('/', trim($_SERVER['REDIRECT_URL'], '/'));
+if ($url_parts[0] != $lang) {
 
     // Bug 619404 Quickly redirect homepage
     if ($_SERVER['REQUEST_URI'] == '/') {
         $_SERVER['REQUEST_URI'] = '/firefox/';
     }
-
+    
     $parsed_url = parse_url($_SERVER['REQUEST_URI']);
     // This matches both / and /firefox because of the above code
     if (rtrim($parsed_url['path'], '/') == '/firefox') {
@@ -200,8 +201,8 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
             } else {
                 $_SERVER['REQUEST_URI'] = '/m/ios';
                 $is_mobile_redirected = TRUE;
-            }
-        }
+            }                
+        }            
 
         if (!$is_mobile_redirected && $lang == 'en-US') {
             // Bug 629407 Redirect to user-specific pages
@@ -214,7 +215,7 @@ if (substr($_SERVER['REDIRECT_URL'], 1, strlen($lang)) != $lang) {
                 $_SERVER['REQUEST_URI'] = '/firefox/new/';
             }
         }
-
+        
         if (isset($parsed_url['query']) && $parsed_url['query'] !== '') {
             $_SERVER['REQUEST_URI'] .= '?' . $parsed_url['query'];
         }
