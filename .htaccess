@@ -5,6 +5,8 @@ ExpiresActive on
 ExpiresDefault "access plus 15 minutes"
 Options +MultiViews -Indexes
 
+Header always set X-Robots-Tag "noodp"
+
 SetEnvIfNoCase Request_URI "en-US/index.html" vary-ua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" vary-ua
 Header always set Vary "User-Agent" env=vary-ua
