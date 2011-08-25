@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/privacy-page.css" media="screen" />
     <link rel="alternate" type="application/rss+xml" href="http://blog.mozilla.com/feed/" />
     <script src="/js/mozilla-pager.js"></script>
+    <script src="/js/privacy-opt-out.js"></script>
     <script src="http://w.sharethis.com/button/sharethis.js#publisher=24928a16-4c8b-4e88-8e9e-abd7e9668971&amp;type=website"></script>
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
@@ -73,10 +74,10 @@ EXTRA_HEADERS;
             <ol>
                 <li class="one">No Surprises <span>Only use and share information about our users for their benefit and as spelled out in our notices.</span></li>
                 <li class="four">Limited Data <span>Collect and retain the least amount of user information necessary and share data anonymously whenever possible.</span></li>
-                <li class="two">Real Choices <span>Educate users at the point that we collect any data and give them the option to opt out whenever possible</span></li>
+                <li class="two">Real Choices <span>Educate users at the point that we collect any data and give them the option to opt out whenever possible.</span></li>
                 <li class="five">User Control <span>Innovate, develop and advocate for privacy enhancements that put users in control of their online experiences.</span></li>
                 <li class="three">Sensible Settings <span>Establish default settings that balance safety and user experience appropriately for each transaction.</span></li>
-                <li class="six">Trusted <span>Third Parties Make privacy a key factor in selecting and interacting with partners.</span></li>
+                <li class="six">Trusted Third Parties <span>Make privacy a key factor in selecting and interacting with partners.</span></li>
             </ol>
         </div>
         <div class="contents" id="your-information">
@@ -84,7 +85,7 @@ EXTRA_HEADERS;
             document.getElementById('your-information').id = 'page-your-information';
             // ]]></script>
 
-            <p>We know how much you value your privacy, so we try to collect as little information about you as possible. We don’t give, sell, trade, or barter your information to anyone else for marketing or any other commercial reason.</p>
+            <p>We know how much you value your privacy, so we try to collect as little information about you as possible. We don’t give, sell, trade, or barter your information to anyone else for marketing or any other commercial purpose.</p>
             <p>Our privacy policies explain in detail exactly what our different products will and won't do with your information. If you want to know exactly what gets collected when and for what reason, then be sure to check the relevant policy.</p>
 
             <h3>Types of Information</h3>
@@ -105,7 +106,7 @@ EXTRA_HEADERS;
 
             <h3>Overview of Information Uses</h3>
             <ul>
-                <li>We collect non–personally identifying information, like your browser type, and potentially personal information, like your IP address, to understand how our sites are being used and how to improve them. You can opt out of this at <a href="#our-principles">Your Choices</a>.</li>
+                <li>We collect non–personally identifying information, like your browser type, and potentially personal information, like your IP address, to understand how our sites are being used and how to improve them. You can opt out of this at <a href="#your-choices">Your Choices</a>.</li>
                 <li>We may ask for personal information, like your mailing address, when we need to ship you stuff, like a Mozilla membership card or an awesome t-shirt, or to detect and prevent fraud.</li>
                 <li>Sometimes, we post or share aggregate, non-personal information with our community to enhance their ability to improve Mozilla’s products and services. </li>
                 <li>We collect non-personally identifying information contributed to us by our users on an opt-in basis for research and product-improvement purposes, like in Test Pilot.</li>
@@ -120,20 +121,20 @@ EXTRA_HEADERS;
             // ]]></script>
 
             <h3>Analytics</h3>
-            <p>We use web analytics software to keep track of how many visitors we have, what are most popular links are, and other information about how people use Mozilla websites. We use this information to help make our sites more useful and usable. If you don't want your session visit information on our websites to be collected and analyzed by Mozilla (or its third-party analytics providers), you can use the <a href="http://www.mozilla.com/opt-out.html">opt-out mechanisms</a>.</p>
-            <p>--analytics status indicator</p>
-            <p>--analytics one-click opt-out button</p>
+            <div id="analytics_opt_out">
+                <p><a href="https://ondemand.webtrends.com/support/optout.asp?action=out">You may opt-out of Webtrends analytics</a> across all sites including Mozilla sites.</p>
+            </div>
+            <p>We use web analytics software to keep track of how many visitors we have, which links are most popular, and other information about how people use Mozilla websites. We use this information to help make our sites more useful and usable. If you don't want your session visit information on our websites to be collected and analyzed by Mozilla (or its third-party analytics providers), you can use the <a href="http://www.mozilla.com/opt-out.html">opt-out mechanisms</a>.</p>
             <h3>Advertising</h3>
-            <p>We think that we make great stuff, and we think that folks can get a lot out of using it, so we sometimes advertize on other sites. If you see online advertising for Mozilla on other web sites, we respect users who have enabled Do Not Track in their browser. For those who are using a browser without DNT, like older versions of Firefox or browsers produced by other vendors, we provide an opt-out cookie that you can install by <a href="http://media.mozilla.com/optout.html">visiting this page</a>.</p>
-            <p>--advertising status indicator</p>
-            <p>--advertising one-click opt-out button</p>
+            <div id="advertising_opt_out"></div>
+            <p>We think that we make great stuff, and we think that folks can get a lot out of using it, so we sometimes advertize on other sites. If you have enabled Do Not Track in your browser, our ads on other websites will honor your request not to be tracked. For those who are using a browser without DNT, like older versions of Firefox or browsers produced by other vendors, we provide an opt-out cookie that you can install by <a href="http://media.mozilla.com/optout.html">visiting this page</a>.</p>
             <h3>Email</h3>
-            <p>If you signed up to receive electronic marketing communications (that's just a fancy word for email) from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive. </p>
+            <p>If you signed up to receive a newsletter or other email communication from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive. </p>
             <h3>Do Not Track</h3>
-            <p>Do Not Track is a feature in Firefox (and some other sweet browsers) which lets you tell websites that you'd rather that they don't keep track of you thankyouverymuch. You can read more about Do Not Track and how to turn it on in Firefox at <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a>.</p>
-            <p>-- do-not-track status indicator</p>
+            <p><a href="http://dnt.mozilla.org"><img src="http://dnt.mozilla.org/dnt_status.php" alt="Do-Not-Track status" id="dnt-status" /></a>
+            Do Not Track is a feature in Firefox (and some other sweet browsers) which lets you tell websites that you'd rather that they don't keep track of you thankyouverymuch. You can read more about Do Not Track and how to turn it on in Firefox at <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a>.</p>
             <h3>Other Stuff</h3>
-            <p>In all the stuff we make, there are a bunch of privacy and security settings and a whole load of functionality. There are also plenty of add-ons which you can use get even more control over your online experience, interactions and information: <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
+            <p>In all the stuff we make, there are a bunch of privacy and security settings and a whole load of functionality. There are also plenty of add-ons which you can use to get even more control over your online experience, interactions and information: <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
         </div>
         <div class="contents" id="third-parties">
             <script>// <![CDATA[
@@ -149,6 +150,7 @@ EXTRA_HEADERS;
             </ol>
 
             <h3>Current Third Party Service Providers</h3>
+            <h4>Third Party Service Providers for Websites and Email</h4>
             <table>
                 <tr>
                     <th>Service Provider</th>
@@ -187,7 +189,7 @@ EXTRA_HEADERS;
                 </tr>
             </table>
 
-            <h3>Third Party Service Providers for Websites and Email</h3>
+            <h4>Third Party Service Providers for Firefox</h4>
             <table>
                 <tr>
                     <th>Service Provider</th>
