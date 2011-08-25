@@ -75,7 +75,7 @@ if ($_version !== null && $_valid_version) {
     <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
     <div id="newsletter-signup">
         <form id="email-form" class="<?= $status ?>" action="" method="post">
-          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
+          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
           <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
           <div id="success-msg">Thanks for Subscribing!</div>
           <div class="more box">
@@ -203,10 +203,78 @@ if ($_version !== null && $_valid_version) {
   })();
   document.body.classList.add(platform);
 
-    $(document).ready(function(){
-        $("#email").focus(function() {
-            $("#newsletter-signup").addClass("expand");
+    $(document).ready(function() {
+
+        var $form = $('#newsletter-signup');
+        var $pane = $('#newsletter-signup .more');
+        var opened = $form.hasClass('opened');
+
+        function open()
+        {
+            if (!opened) {
+                $(document).click(documentClick);
+                $form.addClass('opened');
+                $pane.fadeIn('fast');
+                $('#country').focus();
+                opened = true;
+            }
+        }
+
+        function documentClick(e)
+        {
+            var target = e.target;
+            var form = $('#email-form').get(0);
+            var is_form = (form === target);
+
+            while (!is_form && target.parentNode) {
+                target = target.parentNode;
+                is_form = (target == form);
+            }
+
+            if (!is_form) {
+                close();
+            }
+        }
+
+        function close()
+        {
+            if (opened) {
+                $(document).unbind('click', documentClick);
+                $pane.fadeOut('slow');
+                $form.removeClass('opened');
+                opened = false;
+            }
+        }
+
+        $('#email').keydown(function(e) {
+            switch (e.which) {
+            case 13:
+                if (!opened) {
+                    console.log('prevent 13 default');
+                    e.preventDefault();
+                    open();
+                }
+                break;
+            case 9:
+                e.preventDefault();
+                open();
+                $('#country').focus(); // again in case already opened
+                break;
+            }
         });
+
+        $('#expand').click(function(e) {
+            e.preventDefault();
+
+            if (!opened) {
+                var uri = $(this).attr('data-wt_uri');
+                var ti = $(this).attr('data-wt_ti');
+                dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
+            }
+
+            open();
+        });
+
     });
 
     </script>
