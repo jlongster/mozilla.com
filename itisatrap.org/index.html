@@ -1,4 +1,6 @@
 <?php
+    require dirname(__FILE__).'/../includes/external_prefetch.php';
+
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = "It's a trap!";
     $body_id    = 'its-a-trap';
@@ -30,7 +32,7 @@ EXTRA_HEADERS;
 </div> <!-- end #main-content  -->
 
 <div id="download">
-    <script src="/js/download.js"></script>
+    <script src="<?php echo $config['static_prefix'];?>/js/download.js"></script>
     <?php
         $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox');
         echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
