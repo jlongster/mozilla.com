@@ -589,63 +589,6 @@ RewriteRule ^(.*)$ ${org-urls-301:$1} [R=301]
 # Let the thunderbird prefetch.php handle all its URLs
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird(.*) /includes/thunderbird-handler.php [L]
 
-# Handle all of the mozilla.org URLs.
-#
-# org-handler.php is the new prefetch.php which handles the
-# mozilla.org URLs. We only take over the homepage and about page if
-# the org site is available at the /org directory. Also, many of the
-# URLs are only here because they redirect to the archive site.
-
-RewriteCond %{DOCUMENT_ROOT}/org -d
-RewriteRule ^$ /includes/org-handler.php [L]
-
-RewriteCond %{DOCUMENT_ROOT}/org -d
-RewriteRule ^about.* /includes/org-handler.php [L]
-
-RewriteRule ^faq.html$ /includes/org-handler.php [L]
-RewriteRule ^access.* /includes/org-handler.php [L]
-RewriteRule ^banners.* /includes/org-handler.php [L]
-RewriteRule ^book.* /includes/org-handler.php [L]
-RewriteRule ^causes.* /includes/org-handler.php [L]
-RewriteRule ^community.* /includes/org-handler.php [L]
-RewriteRule ^contact.* /includes/org-handler.php [L]
-RewriteRule ^(contribute.*.png) /org/$1 [L] # required for special img dir
-RewriteRule ^contribute.* /includes/org-handler.php [L]
-RewriteRule ^credits.* /includes/org-handler.php [L]
-RewriteRule ^(css.*)$ /org/$1 [L]
-RewriteRule ^developer.* /includes/org-handler.php [L]
-RewriteRule ^directory.* /includes/org-handler.php [L]
-RewriteRule ^docs.* /includes/org-handler.php [L]
-RewriteRule ^drumbeat.* /includes/org-handler.php [L]
-RewriteRule ^editor.* /includes/org-handler.php [L]
-RewriteRule ^foundation.* /includes/org-handler.php [L]
-RewriteRule ^hacking.* /includes/org-handler.php [L]
-RewriteRule ^grants.* /includes/org-handler.php [L]
-RewriteRule ^hacking.* /includes/org-handler.php [L]
-RewriteRule ^images.* /includes/org-handler.php [L]
-RewriteRule ^keymaster.* /includes/org-handler.php [L]
-RewriteRule ^join.* /includes/org-handler.php [L]
-RewriteRule ^js/scripting.* /includes/org-handler.php [L]
-RewriteRule ^keymaster.* /includes/org-handler.php [L]
-RewriteRule ^legal.* /includes/org-handler.php [L]
-RewriteRule ^mailnews.* /includes/org-handler.php [L]
-RewriteRule ^MPL.* /includes/org-handler.php [L]
-RewriteRule ^newlayout.* /includes/org-handler.php [L]
-RewriteRule ^parks.* /includes/org-handler.php [L]
-RewriteRule ^performance.* /includes/org-handler.php [L]
-RewriteRule ^phonebook.* /includes/org-handler.php [L]
-RewriteRule ^ports.* /includes/org-handler.php [L]
-RewriteRule ^privacy.* /includes/org-handler.php [L]
-RewriteRule ^projects.* /includes/org-handler.php [L]
-RewriteRule ^rdf.* /includes/org-handler.php [L]
-RewriteRule ^rhino.* /includes/org-handler.php [L]
-RewriteRule ^script.* /includes/org-handler.php [L]
-RewriteRule ^scriptable.* /includes/org-handler.php [L]
-RewriteRule ^security.* /includes/org-handler.php [L]
-RewriteRule ^start.* /includes/org-handler.php [L]
-RewriteRule ^themes.* /includes/org-handler.php [L]
-RewriteRule ^unix.* /includes/org-handler.php [L]
-
 ### redirects moved over from mozilla.org ###
 
 # XML namespace URI rewrites to prevent 404 errors
@@ -808,6 +751,63 @@ RewriteRule ^sunbird(?:/(?:index.html)?)?$ http://www.mozilla.org/projects/calen
 RewriteRule ^university(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
 RewriteRule ^university/demos/xslt(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
 RewriteRule ^xpfe(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/Toolkit_API [R]
+
+### Handle all of the mozilla.org URLs.
+#
+# org-handler.php is the new prefetch.php which handles the
+# mozilla.org URLs. We only take over the homepage and about page if
+# the org site is available at the /org directory. Also, many of the
+# URLs are only here because they redirect to the archive site.
+
+RewriteCond %{DOCUMENT_ROOT}/org -d
+RewriteRule ^$ /includes/org-handler.php [L]
+
+RewriteCond %{DOCUMENT_ROOT}/org -d
+RewriteRule ^about.* /includes/org-handler.php [L]
+
+RewriteRule ^faq.html$ /includes/org-handler.php [L]
+RewriteRule ^access.* /includes/org-handler.php [L]
+RewriteRule ^banners.* /includes/org-handler.php [L]
+RewriteRule ^book.* /includes/org-handler.php [L]
+RewriteRule ^causes.* /includes/org-handler.php [L]
+RewriteRule ^community.* /includes/org-handler.php [L]
+RewriteRule ^contact.* /includes/org-handler.php [L]
+RewriteRule ^(contribute.*.png) /org/$1 [L] # required for special img dir
+RewriteRule ^contribute.* /includes/org-handler.php [L]
+RewriteRule ^credits.* /includes/org-handler.php [L]
+RewriteRule ^(css.*)$ /org/$1 [L]
+RewriteRule ^developer.* /includes/org-handler.php [L]
+RewriteRule ^directory.* /includes/org-handler.php [L]
+RewriteRule ^docs.* /includes/org-handler.php [L]
+RewriteRule ^drumbeat.* /includes/org-handler.php [L]
+RewriteRule ^editor.* /includes/org-handler.php [L]
+RewriteRule ^foundation.* /includes/org-handler.php [L]
+RewriteRule ^hacking.* /includes/org-handler.php [L]
+RewriteRule ^grants.* /includes/org-handler.php [L]
+RewriteRule ^hacking.* /includes/org-handler.php [L]
+RewriteRule ^images.* /includes/org-handler.php [L]
+RewriteRule ^keymaster.* /includes/org-handler.php [L]
+RewriteRule ^join.* /includes/org-handler.php [L]
+RewriteRule ^js/scripting.* /includes/org-handler.php [L]
+RewriteRule ^keymaster.* /includes/org-handler.php [L]
+RewriteRule ^legal.* /includes/org-handler.php [L]
+RewriteRule ^mailnews.* /includes/org-handler.php [L]
+RewriteRule ^MPL.* /includes/org-handler.php [L]
+RewriteRule ^newlayout.* /includes/org-handler.php [L]
+RewriteRule ^parks.* /includes/org-handler.php [L]
+RewriteRule ^performance.* /includes/org-handler.php [L]
+RewriteRule ^phonebook.* /includes/org-handler.php [L]
+RewriteRule ^ports.* /includes/org-handler.php [L]
+RewriteRule ^privacy.* /includes/org-handler.php [L]
+RewriteRule ^projects.* /includes/org-handler.php [L]
+RewriteRule ^rdf.* /includes/org-handler.php [L]
+RewriteRule ^rhino.* /includes/org-handler.php [L]
+RewriteRule ^script.* /includes/org-handler.php [L]
+RewriteRule ^scriptable.* /includes/org-handler.php [L]
+RewriteRule ^security.* /includes/org-handler.php [L]
+RewriteRule ^start.* /includes/org-handler.php [L]
+RewriteRule ^themes.* /includes/org-handler.php [L]
+RewriteRule ^unix.* /includes/org-handler.php [L]
 
 #### end mozilla.org rewrites ####
 
