@@ -1,0 +1,114 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = '4 Tools for Back to School';
+    $body_id    = 'backtoschool';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/backtoschool.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>4 Tools for <span>Back to School</span></h2>
+
+    <div id="non-firefox">
+        <p>This custom bundle is loaded with add-ons for added productivity.</p>
+
+        <div id="home-download">
+            <script>
+            var isFx = (navigator.userAgent &&
+                    navigator.userAgent.indexOf('Firefox') !== -1 &&
+                    navigator.userAgent.indexOf('Camino') === -1 &&
+                    navigator.userAgent.indexOf('SeaMonkey') === -1);
+
+                if (isFx) {
+                    document.body.className += " firefox";
+                }
+
+                var platform = '';
+
+                if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) {
+                    platform = 'windows';
+                } else if (navigator.platform.indexOf("Linux") != -1) {
+                    platform = 'linux';
+                } else if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+                    platform = 'mac';
+                }
+
+            /**
+             * Gets whether or not the client is an officially unsupported platform
+             */
+            var unsupported = /(Win(16|9[x58]|NT( [1234]| [^0-9]|[^ -]|$))|Windows ([MC]E|9[x58]|3\.1|4\.10|NT( [1234]| [^0-9]|[^ ]|$))|Windows_95)/.test(navigator.userAgent);
+
+            </script>
+
+            <ul class="home-download os_linux ">
+                <li class="os_linux">
+                    <a class="download-link download-firefox" href="#">
+                        <span class="download-content">
+                            <span class="download-title">Firefox <img id="download-arrow" alt="" src="/img/home/download-arrow.png"> <em>Free</em></span> 
+                            <span class="download-extra">+ Back to School bundle</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+            <div class="download-other">
+                <a href="/en-US/firefox/all.html">All Systems &amp; Languages</a> | 
+                <a href="/en-US/legal/privacy/firefox.html">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="is-firefox">
+        <p>This custom bundle is loaded with add-ons for added productivity.</p>
+        <a href="#" class="button">Add the Back to School bundle to Firefox<span> »</span></a>
+    </div>
+
+    <ul id="featured-addons">
+        <li id="addon-zotero">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/zotero/">
+                <strong>Zotero</strong>
+                Collect, manage and cite research sources from your browser.
+            </a>
+        </li>
+        <li id="addon-shareaholic">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/shareaholic-share-links-fast/">
+                <strong>Shareaholic</strong>
+                Share links using Facebook, Twitter, Gmail and more.
+            </a>
+        </li>
+        <li id="addon-evernote">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/evernote-web-clipper/">
+                <strong>Evernote Web Clipper</strong>
+                Save images, links or entire pages rightfrom your toolbar.
+            </a>
+        </li>
+        <li id="addon-stumbleupon">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/stumbleupon/">
+                <strong>StumbleUpon</strong>
+                Discover and share new sites that match your interests.
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div id="main-content">
+
+<div id="mobile-promo" class="section">
+    <h3>In Sync, <span>On the Go</span></h3>
+    <p>Your school may not be mobile, but you are. <a href="/<?=$lang?>/mobile/">Download Firefox for mobile</a> on your Android device and then use Sync to access your open tabs, bookmarks and history wherever you go.</p>
+    <p class="more">Learn more about <a href="/<?=$lang?>/mobile/">Firefox for mobile<span> »</span></a></p>
+    <p class="more">Learn more about <a href="/<?=$lang?>/mobile/sync/">Sync for mobile<span> »</span></a></p>
+</div>
+
+<div id="non-profit" class="section">
+    <h3>About All <span>We Do Good!</span></h3>
+    <p>Firefox answers to no one but you. <a href="/about/mission.html">Learn about our non-profit mission</a> to keep you in control of your Web.</p>
+</div>
+
+</div><!-- end #main-content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
