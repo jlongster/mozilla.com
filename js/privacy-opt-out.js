@@ -63,7 +63,7 @@
     };
 
     var advertisingCookie = 'ID';
-    var advertisingDomain = '.silverorange.com';
+    var advertisingDomain = '.mozilla.org';
 
     var $advertisingStatus = $('<span class="out-out-status"></span>');
 
