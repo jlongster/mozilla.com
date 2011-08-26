@@ -7,6 +7,10 @@
         $l10n->get('Your Privacy') => "/{$lang}/privacy/",
     );
 
+    // Base caching on the DNT header so we can show the DNT status on the
+    // page.
+    header('Vary: DNT');
+
     require_once "{$config['file_root']}/includes/feeds/PrivacyAMOFeed.php";
 
     $extra_headers = <<<EXTRA_HEADERS
@@ -131,8 +135,18 @@ EXTRA_HEADERS;
             <h3>Email</h3>
             <p>If you signed up to receive a newsletter or other email communication from Mozilla, but no longer wish to do so, you can opt out from receiving them by following the “unsubscribe” instructions in the next email you receive. </p>
             <h3>Do Not Track</h3>
-            <p><a href="http://dnt.mozilla.org"><img src="http://dnt.mozilla.org/dnt_status.php" alt="Do-Not-Track status" id="dnt-status" /></a>
-            Do Not Track is a feature in Firefox (and some other sweet browsers) which lets you tell websites that you'd rather that they don't keep track of you thankyouverymuch. You can read more about Do Not Track and how to turn it on in Firefox at <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a>.</p>
+            <?php
+                if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) { ?>
+                <div id="dnt-status" class="dnt-on">
+                    <a href="http://dnt.mozilla.org/">Do Not Track is <strong>ON</strong></a>
+                </div>
+                <? } else { ?>
+                <div id="dnt-status" class="dnt-off">
+                    <a href="http://dnt.mozilla.org/">Do Not Track is <strong>OFF</strong></a>
+                </div>
+                <? }
+            ?>
+            <p>Do Not Track is a feature in Firefox (and some other sweet browsers) which lets you tell websites that you'd rather that they don't keep track of you thankyouverymuch. You can read more about Do Not Track and how to turn it on in Firefox at <a href="http://dnt.mozilla.org">http://dnt.mozilla.org</a>.</p>
             <h3>Other Stuff</h3>
             <p>In all the stuff we make, there are a bunch of privacy and security settings and a whole load of functionality. There are also plenty of add-ons which you can use to get even more control over your online experience, interactions and information: <a href="https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/">https://addons.mozilla.org/en-US/firefox/extensions/privacy-security/</a></p>
         </div>
