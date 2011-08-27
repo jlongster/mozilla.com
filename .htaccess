@@ -349,6 +349,8 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/7\.0/(releasenotes|
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/7\.0beta/whatsnew(/(?:index.html)?)? $1$2/7.0/firstrun$3 [PT]
 
 # Redirect #.#b# to #.#beta
+# See bug 658603 for the reason we need the condition
+RewriteCond $3 !^(?:[1-4]\.[0-9]+)$
 RewriteRule ^(en-US/)?(firefox|mobile)/([0-9]\.[0-9]+)b[0-9]+/(.*) /$1$2/$3beta/$4 [PT,L]
 
 
