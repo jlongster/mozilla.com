@@ -23,10 +23,6 @@ RewriteRule ^certs/mozilla-root\.crt$ includes/certs/mozilla-root.crt [L]
 # mozilla.com/labs -> mozillalabs.com
 Redirect permanent /labs http://www.mozillalabs.com
 
-# support/.htaccess
-Redirect permanent /support/firefox http://www.mozilla.org/support/firefox
-Redirect permanent /support/thunderbird http://www.mozilla.org/support/thunderbird
-
 # get involved redirect
 Redirect permanent /getinvolved http://www.mozilla.com/about/get-involved
 
@@ -103,8 +99,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?careers[/]?$ $1about/careers.html [P
 RewriteRule ^(en-US|en-GB|fr|de)/add-ons/ebay/beta/$ https://addons.mozilla.org/ebay/ebay-extension/
 RewriteRule ^en-US/add-ons/ebay/beta/update.rdf$ https://addons.mozilla.org/ebay/ebay-extension/update.rdf
 
-# Bug 537183
+# Bug 670114
 RewriteRule ^(.+)/firefox/about[/]?$ /$1/about/ [PT,L]
+RewriteRule ^support(?:/.*)?$ http://support.mozilla.com/ [R=permanent,L]
 
 # Bug 376458
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/dictionaries.html$ https://addons.mozilla.org/thunderbird/dictionaries [R=permanent,L]
@@ -402,7 +399,6 @@ RewriteRule ^en-US/firefox/landing(?:/.*)$ /firefox/ [R=permanent]
 RewriteRule ^en-US/firefox/phase2(?:/.*)$ /firefox/ [R=permanent]
 RewriteRule ^en-US/add-ons[/]?$ https://addons.mozilla.org/ [R=permanent,L]
 RewriteRule ^en-US/developers[/]?$ http://developer.mozilla.org/ [R=permanent,L]
-RewriteRule ^en-US/support(?:/.*)?$ http://support.mozilla.com/ [R=permanent,L]
 RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 RewriteRule ^en-US/firefox/lorentz(?:/.*)$ / [R=permanent]
 
