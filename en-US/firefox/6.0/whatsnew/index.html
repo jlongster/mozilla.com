@@ -115,6 +115,41 @@ if ($_version !== null && $_valid_version) {
     </div>
 </div>
 
+<div class="main-content box" id="feature-backtoschool">
+    <div class="intro">
+     <h3>4 Tools for <span>Back to School</span></h3>
+        <p>Boost your productivity with this custom bundle of organization, reference and social add-ons for Firefox.</p>
+        <p>Then <a href="http://www.mozilla.org/about/mission.html">learn all about</a> our non-profit mission to keep you in control of your Web.</p>
+    </div>
+
+    <ul id="featured-addons">
+        <li id="addon-zotero">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/zotero/">
+                <strong>Zotero</strong> Research Assistance
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-shareaholic">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/shareaholic-share-links-fast/">
+                <strong>Shareaholic</strong> Social Sharing
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-evernote">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/evernote-web-clipper/">
+                <strong>Evernote Web Clipper</strong> Note Taking
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-stumbleupon">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/stumbleupon/">
+                <strong>StumbleUpon</strong> Web Discovery
+                <span>Learn more »</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
 <div class="sub-feature box" id="mobile">
     <h3>Firefox is Mobile!</h3>
     <p>Make it your own, even on the go.</p>
@@ -191,6 +226,23 @@ if ($_version !== null && $_valid_version) {
 </div>
 
   <script>
+
+    // Add a class to the body tag to alternate promo features
+    var feature_options = new Array( "feature-email", "feature-backtoschool" );
+
+    if (Math.random) {
+        var feature_choice = Math.floor(Math.random() * (feature_options.length));
+
+        // Just in case javascript gets carried away...
+        feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
+
+        if (document.body.className == '') {
+            document.body.className = feature_options[feature_choice];
+        } else {
+            document.body.className += ' '+feature_options[feature_choice];
+        }
+    }
+
 
   var platform = (function() {
     var ua = navigator.userAgent;
