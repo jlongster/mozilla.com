@@ -13,6 +13,7 @@ EXTRA_HEADERS;
 
     $form = new NewsletterForm('MOZILLA_AND_YOU', array());
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
 ?>
 
 <script>
@@ -40,7 +41,22 @@ if (Math.random) {
     <div id="feature-mobile">
         <h2>Good news! Your Firefox is up to date.</h2>
         <h3><span>Now take it with you.</span></h3>
-        <a href="/<?=$lang?>/mobile/" class="mobile-button">Download Firefox for Android <span>»</span></a>
+        <a href="https://market.android.com/details?id=org.mozilla.firefox"
+            id="mobile-download"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                    'DCS.dcsuri', '/en-us/mobile/download/',
+                                    'WT.ti', 'Link: Get Firefox for Android',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for Android',
+                                    'WT.z_convert','Get Firefox for Android',
+                                    'WT.si_n','Get Firefox for Android',
+                                    'WT.si_x','2')">
+            <span class="title">Get Firefox for Android</span>
+            <span class="desc">Free from the Android Market</span>
+            <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAADYUlEQVR42n2WS0iUURTHXbmvmW9mQm2R23ZhU/SkfKSm0rvMyRbRylLzkaWV5qPnlGYULVpEQUTRe6GbSMUpKWdwRETQFCMJaVHQwgHhdP73u3dOH5+4+Pk/5/zPuXfu/eYbTLkdXZ+yqTQ9UX43QOXdTlA71u0n5UGlJsroPMHxR9YK7kvFugB/EptLMyjUxY1dPAS9E9C5qK5BJTae9JneGGtaZyyIDYLEJ6BQZ8CmSyjr9BtlWDXSh1j6NMaPM6k4AeEEZbf9iqO3fFQGJJea1IHJ4UssCipS+BjYgBO/TdjW0rBPUd65mt5+vke/fv+gxcXFJH/+/qL4twFqelyoZ2XmvzUG9AnS6chNv+IwuAG1+RB9TgsLCwA+PKWJRELx/eeUrvsAYmDihL3B0Qw6fN1Hh65ZwnVL1ebn52lubo6mp6cVMzMzBtTho8/Mu2JzRVzwJTnIpomxiKqBq5Z4Ll9Ajl7AJ7A3OHCFiwyr0GHR7OwsYvGhwOkjdsyZvuQV7Wv3udjP8FVApdYBFXBtplfmJE9+Tfe2emlfq8UKvEmdmpqyvTbjOXsmJydNLGtIj2ywp4ULly2og4mJCe0t7y+Nfga4ohJOSpoZrcWasbEx8YwvvfARuyjWmnwPii95qfiiB+qI4/E4x14q4hyqMLH4es70yTw2UL9FRU1sXtA0CaOjo0p3N3lcHhgZGTFz4ovKt2h3IxZxUtioPiFi+MihDj8WixlfegR50QrOW4zXQf45L0WjUSjyJXuGh4dNL3zo/8hDzj/roV1MfgPgmEE+NDSETwnUAx0fH8e1YWO1eCQSkRmnAvsEW0OrKafawoJJ8jSv3j+j/v4+Ot6+gSKfIqwbaTAyqPK+vj6686iF8uqlH7GsgQ2iwURJXSZtPxmg3FoP5dYxtUKoOUgPnoTpzbuX1NPTQ729vUpfvH5KbferqKB+FeWZGaiAunrIkVMP19LmsgzKrrQop8ajwZDXjmtVDDW5KJAel48NKsNfsqiwag1tCaXRztMeyj6zgrJrVrrIsZV9Zw4wI77MY4NUJt7Rvw6bqAe+7USAdlTwabCQoRq6LK5+gA2YIP4DiIe/ZhGua29DJl4+bIa3nMkAOjekCy5fwLcIm5iTVDIfGVqaoFKecdVcPbam/APuA+jRZ5irFAAAAABJRU5ErkJggg==">
+        </a>
+        <div class="download-other"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::latest_version) ?>">Release Notes</a> | <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a></div>
     </div>
 
     <div id="feature-email">
