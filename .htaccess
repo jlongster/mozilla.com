@@ -553,7 +553,7 @@ RewriteRule ^script/(.*)$ /org/script/$1 [L]
 # Catch-all for static files that should simply be served up by Apache.
 # If it doesn't exist in moz.com, but does in moz.org, and is a static
 # file, serve it up
-RewriteCond %{REQUEST_URI} .*\.(css|png|jpg|jpeg|pdf)
+RewriteCond %{REQUEST_URI} .*\.(css|png|jpg|jpeg|pdf|csv|xsl|crt|xml)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/org%{REQUEST_URI} -f
 RewriteRule ^(.*)$ /org/$1 [L]
@@ -588,6 +588,9 @@ RewriteRule ^(.*)$ ${org-urls-301:$1} [R=301]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird(.*) /includes/thunderbird-handler.php [L]
 
 ### redirects moved over from mozilla.org ###
+
+RewriteRule ^projects/security/certs/pending[/]?$ /projects/security/certs/pending/index.xml
+RewriteRule ^projects/security/certs/included[/]?$ /projects/security/certs/included/index.xml
 
 # XML namespace URI rewrites to prevent 404 errors
 RewriteRule ^2004/em-rdf$ /script/namespace.php?id=em-rdf [L]
