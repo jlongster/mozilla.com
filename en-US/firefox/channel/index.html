@@ -23,23 +23,16 @@
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
-?>
+// Check for URL var to flip order of desktop/mobile buttons for Bug 682350
 
-<div id="main-feature">
-    <h2>Welcome to the<span>Future of Firefox</span></h2>
-    <p>Download and test the build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>
-</div>
+if(isset($_GET['mobile_first']) && $_GET['mobile_first'] == 1) {
+    $mobile_first = true;
+} else {
+    $mobile_first = false;
+}
 
-<div id="main-content">
-
-    <div id="download_aurora" class="channel">
-        <h3>Firefox Aurora</h3>
-        <ul class="channel-list">
-            <li>Experience the newest innovations before they go to beta in an environment that’s not for the faint of heart</li>
-            <li>Provide feedback on features and performance to help determine what makes the final release</li>
-        </ul>
+$aurora_desktop_block = <<<AURORA_DESKTOP_BLOCK
         <div id="download_aurora_button">
-            <script><?php include $config['file_root'] . '/js/download.old.js';?></script>
             <script>
                 <!--
                 // Configure the Firefox download write script
@@ -61,6 +54,9 @@ EXTRA_HEADERS;
                 //-->
             </script>
         </div>
+AURORA_DESKTOP_BLOCK;
+
+$aurora_mobile_block = <<<AURORA_MOBILE_BLOCK
         <div id="download_aurora_mobile_button">
         <div class="home-download beta-download">
             <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_Aurora"
@@ -76,30 +72,16 @@ EXTRA_HEADERS;
                 <span class="download-title">Download</span>
                 Firefox Aurora for Mobile
                 </span>
-                <img src="<?=$config['static_prefix']?>/img/covehead/channel/icon-mobile.png" alt="" />
+                <img src="{$config['static_prefix']}/img/covehead/channel/icon-mobile.png" alt="" />
             </a>
             <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
 <a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
         </div>
         </div>
-    </div>
+AURORA_MOBILE_BLOCK;
 
-    <div id="download_beta" class="channel">
-        <h3>Firefox Beta</h3>
-        <ul class="channel-list">
-            <li>Experience cutting edge features but with more stability</li>
-            <li>Provide feedback to help refine and polish what will be in the final release</li>
-        </ul>
+$beta_desktop_block = <<<BETA_DESKTOP_BLOCK
     <div id="download-button" class="beta-download">
-
-    <script src="/js/download.old.js"></script>
-
-<?php
-// en-US download box is built in js and doesn't offer the flexibility
-// hidePartialLocaleJS() hides unavailable locales for specific platforms
-// include after download.old.js
-hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
-?>
     <script>
           <!--
           // Configure the Firefox download write script
@@ -129,12 +111,15 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
 
     </script>
 
-    <?php echo $firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true)); ?>
+    {$firefoxDetails->getNoScriptBlockForLocale('en-US', array('devel_version' => true))}
 
   </div>
+BETA_DESKTOP_BLOCK;
+
+$beta_mobile_block = <<<BETA_MOBILE_BLOCK
         <div id="download_beta_mobile_button">
         <div class="home-download beta-download">
-            <a href="<?= mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version)) ?>"
+            <a href="{mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version))}"
                class="download-link download-firefox"
                onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                       'DCS.dcsuri', '/en-US/firefox/channel/',
@@ -147,12 +132,60 @@ hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
                 <span class="download-title">Download</span>
                 Firefox Beta for Mobile
                 </span>
-                <img src="<?=$config['static_prefix']?>/img/covehead/channel/icon-mobile.png" alt="" />
+                <img src="{$config['static_prefix']}/img/covehead/channel/icon-mobile.png" alt="" />
             </a>
-            <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
-<a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
+            <div class="download-other"><a href="/{=$lang}/mobile/platforms/">Supported devices</a>  | 
+<a href="/{$lang}/legal/privacy/firefox.html">Privacy Policy</a></div>
         </div>
         </div>
+BETA_MOBILE_BLOCK;
+?>
+
+<div id="main-feature">
+    <h2>Welcome to the<span>Future of Firefox</span></h2>
+    <p>Download and test the build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>
+</div>
+
+<div id="main-content">
+
+    <div id="download_aurora" class="channel">
+        <h3>Firefox Aurora</h3>
+        <ul class="channel-list">
+            <li>Experience the newest innovations before they go to beta in an environment that’s not for the faint of heart</li>
+            <li>Provide feedback on features and performance to help determine what makes the final release</li>
+        </ul>
+        <script><? include $config['file_root'].'/js/download.old.js'; ?></script>
+        <? if ($mobile_first) {
+            echo $aurora_mobile_block;
+            echo $aurora_desktop_block;
+        } else {
+            echo $aurora_desktop_block;
+            echo $aurora_mobile_block;
+        } ?>
+
+    </div>
+
+    <div id="download_beta" class="channel">
+        <h3>Firefox Beta</h3>
+        <ul class="channel-list">
+            <li>Experience cutting edge features but with more stability</li>
+            <li>Provide feedback to help refine and polish what will be in the final release</li>
+        </ul>
+
+        <? if ($mobile_first) {
+            echo $beta_mobile_block;
+            echo $beta_desktop_block;
+        } else {
+            echo $beta_desktop_block;
+            echo $beta_mobile_block;
+        } ?>
+
+<?php
+// en-US download box is built in js and doesn't offer the flexibility
+// hidePartialLocaleJS() hides unavailable locales for specific platforms
+// include after download.old.js
+hidePartialLocaleJS(LATEST_FIREFOX_DEVEL_VERSION);
+?>
     </div>
 
     <div id="channel_news" class="<?= $status ?>">
