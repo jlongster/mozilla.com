@@ -1,5 +1,10 @@
 /* {{{ */
 
+body {
+    font-size: 14px;
+    color: #5e5e5e;
+}
+
 #brand #header h1 {
     display: none;
 }
@@ -26,7 +31,7 @@ ul#nav {
 ul#nav li {
     float: left;
     text-transform: uppercase;
-    margin: 0 10px;
+    margin: 0 8px;
 }
 
 ul#nav li.first { margin-left: 0; }
@@ -62,17 +67,25 @@ ul#identity-nav li,
 ul#artwork-nav li,
 ul#website-nav li,
 ul#copy-nav li {
+    background: url(/img/covehead/firefox/brand-toolkit/divider-menu.png) center left no-repeat;
     display: inline;
     text-transform: uppercase;
-    margin: 0 10px;
+    margin: 0;
     padding: 25px 0;
+}
+
+ul#identity-nav li.first,
+ul#artwork-nav li.first,
+ul#website-nav li.first,
+ul#copy-nav li.first {
+    background: none;
 }
 
 ul#identity-nav li a,
 ul#artwork-nav li a,
 ul#website-nav li a,
 ul#copy-nav li a {
-    padding: 25px;
+    padding: 20px;
 }
 
 ul#identity-nav li a.selected,
@@ -98,6 +111,7 @@ ul#copy-nav li a.selected {
 
 #main-content {
     clear: both;
+    position: relative;
     background-color: #fff;
     margin: 10px 0;
     padding: 0;
@@ -107,7 +121,7 @@ ul#copy-nav li a.selected {
 }
 
 h1, h2 {
-    font-family: MetaNormal;
+    font-family: MetaNormal, sans-serif;
     font-style: normal;
     margin-top: 0;
 }
@@ -116,7 +130,6 @@ h1 {
     font-size: 55px;
     line-height: 0.8em;
 }
-
 
 /* }}} */
 /* {{{ Home */
@@ -152,6 +165,16 @@ h1 {
     overflow: auto;
 }
 
+#page-platform .intro {
+    background: url(/img/covehead/firefox/brand-toolkit/background-brand-platform.png) left bottom repeat-x;
+}
+
+#page-platform img.brand-platform-monster {
+    position: absolute;
+    top: -10px;
+    right: 160px;
+}
+
 #page-platform .promise_position,
 #page-platform .pillars,
 #page-platform .voice,
@@ -176,41 +199,146 @@ h1 {
     width: 270px;
 }
 
-#page-platform .pillars .right,
-#page-platform .manifesto .right {
-    width: 600px;
+#page-platform .intro .right {
+    width: 250px;
 }
 
-#page-platform .pillars .right ol li span {
-    display: block;
-}
-
-#page-platform .promise_position .promise,
-#page-platform .promise_position .position {
+#page-platform .promise_position .promise {
     float: left;
     width: 425px;
 }
 
-#page-platform .promise_position .promise { margin: 0 24px 0 0; }
-#page-platform .promise_position .position { margin: 0 0 0 24px; }
+#page-platform .promise_position .position {
+    float: right;
+    width: 425px;
+}
 
 #page-platform .promise_position .promise .left,
 #page-platform .promise_position .promise .right,
 #page-platform .promise_position .position .left,
 #page-platform .promise_position .position .right {
     float: left;
+    width: 185px;
+}
+
+#page-platform .promise_position .promise .right {
+    width: 150px;
+    margin-top: 50px;
+    padding: 20px 0;
+}
+
+#page-platform .promise_position .promise .right,
+#page-platform .promise_position .position .right {
+    background: url(/img/covehead/firefox/brand-toolkit/divider.png) left center no-repeat;
+    margin-left: 25px;
+    padding-left: 25px;
+}
+
+#page-platform .promise_position .promise .right h2,
+#page-platform .promise_position .position .right h2 {
+    font-family: georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+}
+
+#page-platform .pillars .right,
+#page-platform .manifesto .right {
+    width: 600px;
+}
+
+#page-platform .pillars .right ol {
+    margin: 0;
+}
+
+#page-platform .pillars .right ol li {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+#page-platform .pillars .right ol li span {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+}
+
+#page-platform .voice {
+    background: url(/img/covehead/firefox/brand-toolkit/background-voice.png) right bottom no-repeat;
+}
+
+#page-platform .voice .right ul li {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 1em;
+    list-style: none;
+}
+
+#page-platform .voice .right ul li.unconventional { color: #b32d09; }
+#page-platform .voice .right ul li.engaging { color: #ca5916; }
+#page-platform .voice .right ul li.honest { color: #e78223; }
+#page-platform .voice .right ul li.human { color: #92ccf2; }
+#page-platform .voice .right ul li.smart { color: #5c87d0; }
+#page-platform .voice .right ul li.confident { color: #2a4a97; }
+
+#page-platform .manifesto h2 {
+    float: left;
+    margin-bottom: 75px;
+}
+
+#page-platform .manifesto img {
+    clear: left;
+    float: left;
+    margin: 50px 50px 0 0;
+}
+
+#page-platform .manifesto .left {
+    clear: left;
+    background: url(/img/covehead/firefox/brand-toolkit/divider.png) right center no-repeat;
     width: 180px;
-    margin-right: 30px;
+    margin: 20px 20px 0 0;
+    padding-right: 20px;
+}
+
+#page-platform .manifesto .left h3 {
+    margin-top: 0;
+}
+
+#page-platform .manifesto .left ul li {
+    list-style: none;
+    font-size: 11px;
+}
+
+#page-platform .manifesto .right {
+    float: none;
+    width: auto;
+    padding-left: 225px;
 }
 
 /* }}} */
 /* {{{ Identity */
 
-#page-identity {
-
+#page-identity .title,
+#page-identity .logo {
+    background: #f6fafd url(/img/covehead/firefox/brand-toolkit/background-title.png) left bottom repeat-x;
+    padding: 40px;
+    border-top: 1px #e1edf9 solid;
+    border-bottom: 1px #e1edf9 solid;
+    overflow: auto;
 }
 
-#page-identity .logo,
+#page-identity .title h1 {
+    float: left;
+}
+
+#page-identity .title p {
+    float: right;
+    width: 425px;
+}
+
+#page-identity .content {
+    padding: 40px;
+}
+
 #page-identity .guidelines,
 #page-identity .common-mistakes,
 #page-identity .what-to-look-for,
@@ -219,49 +347,417 @@ h1 {
     overflow: auto;
 }
 
+#page-identity .guidelines,
+#page-identity .what-to-look-for {
+    border-bottom: 1px #e1edf9 solid;
+}
+
+#page-identity .what-to-look-for {
+    padding-bottom: 0;
+}
+
 #page-identity .logo .left,
 #page-identity .guidelines .left,
 #page-identity .common-mistakes .left,
 #page-identity .what-to-look-for .left,
 #page-identity .partner-co-branding .left {
     float: left;
-    width: 200px;
+    width: 150px;
     margin-right: 50px;
 }
+
+#page-identity .logo .left {
+    width: 170px;
+}
+
+#page-identity .logo img {
+    float: left;
+    margin-left: 50px;
+}
+
 #page-identity .guidelines .left {
-    width: 300px;
+    width: 280px;
+}
+
+#page-identity .guidelines .left p {
+    margin-right: 100px;
+}
+
+#page-identity .guidelines .left p.image-note {
+    margin-right: 0;
+    font-size: 11px;
+    font-style: italic;
+}
+
+#page-identity .what-to-look-for .left h2 {
+    font-size: 18px;
+    font-style: italic;
 }
 
 #page-identity .logo .right,
 #page-identity .guidelines .right,
 #page-identity .common-mistakes .right,
-#page-identity .what-to-look-for .right,
-#page-identity .partner-co-branding .right {
+#page-identity .what-to-look-for .right {
     float: left;
     width: 270px;
 }
+
 #page-identity .guidelines .right {
     width: 540px;
+}
+
+#page-identity .what-to-look-for .right {
+    background: url(/img/covehead/firefox/brand-toolkit/identity-lookfor-firefox.png) center bottom no-repeat;
+    position: relative;
+    font-size: 11px;
+    width: 575px;
+    height: 300px;
+}
+
+#page-identity .what-to-look-for .right p.one {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    font-style: italic;
+}
+
+#page-identity .what-to-look-for .right p.two {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    font-style: italic;
+}
+
+#page-identity .what-to-look-for .right p.three {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 100px;
+    font-style: italic;
+}
+
+#page-identity .partner-co-branding .right {
+    float: left;
+    width: 690px;
+}
+
+#page-identity .partner-co-branding .right ul li {
+    float: left;
+    width: 200px;
+    list-style: none;
+    margin-right: 30px;
+}
+
+#page-identity .partner-co-branding .right ul li h3 {
+    font-size: 16px;
+}
+
+.firefox,
+.firefox-beta,
+.firefox-aurora,
+.firefox-nightly,
+.meta-bold,
+.meta-medium,
+.meta-normal,
+.meta-black,
+.georgia,
+.recommended {
+    clear: both;
+    padding: 0 40px;
+}
+
+.firefox,
+.firefox-beta,
+.firefox-aurora,
+.meta-bold,
+.meta-medium,
+.meta-normal,
+.meta-black,
+.georgia {
+    overflow: auto;
+    border-bottom: 1px #e1edf9 solid;
+}
+
+#page-identity #page-channel-logos .left,
+#page-identity #page-wordmarks .left,
+#page-identity #page-typefaces .left {
+    float: left;
+    width: 200px;
+    margin: 25px 5px 25px 0;
+}
+
+#page-identity #page-channel-logos ul,
+#page-identity #page-wordmarks ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+#page-identity #page-channel-logos ul li,
+#page-identity #page-wordmarks ul li {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+#page-identity #page-channel-logos ul li span,
+#page-identity #page-wordmarks ul li span {
+    display: block;
+    font-size: 13px;
+    font-style: normal;
+}
+
+.firefox .right img,
+.firefox-beta .right img,
+.firefox-aurora .right img,
+.firefox-nightly .right img,
+.meta-bold .right img,
+.meta-medium .right img,
+.meta-normal .right img,
+.meta-black .right img,
+.georgia .right img,
+.recommended .right img {
+    float: left;
+}
+
+.firefox .right ul,
+.firefox-beta .right ul,
+.firefox-aurora .right ul,
+.firefox-nightly .right ul,
+.meta-bold .right ul,
+.meta-medium .right ul,
+.meta-normal .right ul,
+.meta-black .right ul,
+.georgia .right ul,
+.recommended .right ul {
+    float: right;
+    width: 175px;
+}
+
+#page-identity #page-channel-logos ul li.download,
+#page-identity #page-wordmarks ul li.download {
+    margin: 25px 0;
+}
+
+#page-identity #page-channel-logos ul li.download a,
+#page-identity #page-wordmarks ul li.download a,
+#page-identity #page-typefaces a.download {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: MetaNormal, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    color: #5e5e5e;
+    padding: 8px 30px;
+    border: 1px #e7ecf1 solid;
+    border-radius: 6px 6px 6px 6px;
+}
+
+#page-identity #page-channel-logos ul li.note {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+#page-identity #page-typefaces .recommended ul li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
 }
 
 /* }}} */
 /* {{{ Artwork */
 
+#page-artwork .title {
+    background: url(/img/covehead/firefox/brand-toolkit/background-title.png) left bottom repeat-x;
+    padding: 40px;
+    border-top: 1px #e1edf9 solid;
+    border-bottom: 1px #e1edf9 solid;
+    overflow: auto;
+}
 
+#page-artwork .title h1 {
+    float: left;
+}
+
+#page-artwork .title p {
+    float: right;
+    width: 425px;
+}
+
+#page-artwork .content,
+#page-artwork .our-characters,
+#page-artwork .feature-tabs {
+    clear: both;
+    padding: 40px;
+}
+
+#page-artwork .our-characters {
+    overflow: auto;
+    border-bottom: 1px #e1edf9 solid;
+}
+
+#page-artwork .left {
+    float: left;
+    width: 200px;
+    margin: 25px 25px 25px 0;
+}
+
+#page-artwork .right {
+    padding-left: 225px;
+}
 
 /* }}} */
 /* {{{ Website */
 
+#page-website .title {
+    background: url(/img/covehead/firefox/brand-toolkit/background-title.png) left bottom repeat-x;
+    padding: 40px;
+    border-top: 1px #e1edf9 solid;
+    border-bottom: 1px #e1edf9 solid;
+    overflow: auto;
+}
+
+#page-website .title h1 {
+    float: left;
+}
+
+#page-website .title p {
+    float: right;
+    width: 425px;
+}
+
+#page-website .universal-tabs,
+#page-website .button-styles,
+#page-website .backgrounds {
+    padding: 0 40px;
+    clear: both;
+}
+
+#page-website .universal-tabs,
+#page-website .button-styles {
+    border-bottom: 1px #e1edf9 solid;
+    overflow: auto;
+}
+
+#page-website .content {
+    padding: 40px;
+}
+
+#page-website #page-style-assets .left {
+    float: left;
+    width: 200px;
+    margin: 25px 25px 25px 0;
+}
+
+#page-website #page-style-assets .right {
+    padding-left: 225px;
+}
+
+#page-website #page-domain-strategy h2 {
+    float: left;
+    width: 150px;
+    line-height: 1em;
+    margin: 0;
+}
+
+#page-website #page-domain-strategy .left {
+    clear: left;
+    float: left;
+    margin: 25px 25px 25px 0;
+}
+
+#page-website #page-domain-strategy .left p {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+#page-website #page-domain-strategy .right {
+    padding-left: 225px;
+}
 
 
 /* }}} */
 /* {{{ Copy */
+
+#page-copy .title {
+    background: url(/img/covehead/firefox/brand-toolkit/background-title.png) left bottom repeat-x;
+    padding: 40px;
+    border-top: 1px #e1edf9 solid;
+    border-bottom: 1px #e1edf9 solid;
+    overflow: auto;
+}
+
+#page-copy .title h1 {
+    float: left;
+}
+
+#page-copy .title p {
+    clear: right;
+    float: right;
+    width: 425px;
+}
+
+#page-copy h2 {
+    float: left;
+    width: 150px;
+    line-height: 1em;
+    margin: 0;
+}
+
+#page-copy h2 span {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+    color: #39393a;
+    width: 150px;
+    margin-top: 10px;
+    text-transform: none;
+}
+
+#page-copy .content {
+    padding: 40px;
+}
+
+#page-copy .left {
+    clear: left;
+    float: left;
+    margin: 25px 25px 25px 0;
+}
+
+#page-copy .left p {
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+#page-copy .right {
+    padding-left: 225px;
+}
+
+#page-copy #page-l10n ol li {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+#page-copy #page-l10n ol li span {
+    display: block;
+    font-size: 13px;
+    font-style: normal;
+}
 
 
 
 /* }}} */
 /* {{{ Downloads */
 
-
+#page-downloads {
+    padding: 40px;
+    overflow: auto;
+}
 
 /* }}} */
