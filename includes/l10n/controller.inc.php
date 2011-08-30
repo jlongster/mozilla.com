@@ -98,6 +98,8 @@ $sitepages = array(
     'webhero'           => 'webhero.inc.php',
     'plugincheck'       => 'plugincheck.inc.php',
     'dl-transition'     => 'download-transition-pages.inc.php',
+    'latest'            => 'latest.inc.php',
+    'latest-from-3.6'   => 'latest-from-3.6.inc.php',
 );
 
 // pages deactivated on production
