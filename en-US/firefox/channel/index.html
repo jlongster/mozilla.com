@@ -1,6 +1,17 @@
 <?php
+// Check for URL var to flip order of desktop/mobile buttons for Bug 682350
+if(isset($_GET['mobile_first']) && $_GET['mobile_first'] == 1) {
+    $mobile_first = true;
+} else {
+    $mobile_first = false;
+}
+
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla Firefox — Download the Aurora or Beta Build or Download & Test the Future of Firefox';
+    if ($mobile_first) {
+        $page_title = 'Mozilla Firefox | Firefox for Android | Download Firefox Aurora & Beta for Mobile';
+    } else {
+        $page_title = 'Mozilla Firefox — Download the Aurora or Beta Build or Download & Test the Future of Firefox';
+    }
     $page_desc  = 'Download and test Firefox future releases. Experience the newest innovations with the Aurora or Beta builds.';
     $body_id    = 'channel';
     require_once "{$config['file_root']}/includes/regions.php";
@@ -22,14 +33,6 @@
     <meta name="WT.si_x" content="1;1;1">
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
-
-// Check for URL var to flip order of desktop/mobile buttons for Bug 682350
-
-if(isset($_GET['mobile_first']) && $_GET['mobile_first'] == 1) {
-    $mobile_first = true;
-} else {
-    $mobile_first = false;
-}
 
 $aurora_desktop_block = <<<AURORA_DESKTOP_BLOCK
         <div id="download_aurora_button">
