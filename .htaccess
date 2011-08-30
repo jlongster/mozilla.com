@@ -756,6 +756,30 @@ RewriteRule ^university(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
 RewriteRule ^university/demos/xslt(?:/(?:index.html)?)?$ http://education.mozilla.org [R]
 RewriteRule ^xpfe(?:/(?:index.html)?)?$ http://developer.mozilla.org/En/Toolkit_API [R]
 
+# This condition will redirect pre release firstrun to the standard
+# prerelase.html page on mozilla.org
+RewriteCond %{DOCUMENT_ROOT}/org%{REQUEST_URI} !-d
+RewriteRule  ^projects/firefox/([^/]+)pre/firstrun  http://www.mozilla.org/projects/firefox/prerelease.html [R]
+
+# This condition will redirect pre release whatsnew to the standard
+# prerelase.html page on mozilla.org
+RewriteCond %{DOCUMENT_ROOT}/org%{REQUEST_URI} !-d
+RewriteRule  ^projects/firefox/([^/]+)pre/whatsnew  http://www.mozilla.org/projects/firefox/prerelease.html [R]
+
+# This condition will redirect pre release releasenotes to the standard
+# prerelase.html page on mozilla.org
+RewriteCond %{DOCUMENT_ROOT}/org%{REQUEST_URI} !-d
+RewriteRule  ^projects/firefox/([^/]+)pre/releasenotes  http://www.mozilla.org/projects/firefox/prerelease.html [R]
+
+# This condition will redirect alpha firstrun to the standard prerelease page
+RewriteRule  ^projects/firefox/([^/]+)a[0-9]+/firstrun http://%{HTTP_HOST}/projects/firefox/prerelease.html [R]
+
+# This condition will redirect alpha whatsnew page to the standard prerelease page
+RewriteRule  ^projects/firefox/([^/]+)a[0-9]+/whatsnew http://%{HTTP_HOST}/projects/firefox/prerelease.html [R]
+
+# This condition will redirect the alpha release notes to the common devpreview site
+RewriteRule  ^projects/firefox/([^/]+)a[0-9]+/releasenotes http://%{HTTP_HOST}/projects/devpreview/releasenotes/ [R]
+
 ### Handle all of the mozilla.org URLs.
 #
 # org-handler.php is the new prefetch.php which handles the
