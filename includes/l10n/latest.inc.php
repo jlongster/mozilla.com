@@ -6,7 +6,6 @@ if ($textdir == 'rtl') {
         body{
             margin: 0 auto 0 0;
             width: 480px;
-            padding: 20px 20px 20px 220px;
         }
 
 EXTRA_HEADERS;
