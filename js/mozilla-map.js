@@ -34,7 +34,7 @@ Mozilla.Map = function()
 	for (var i in this.locations)
 		this.map.addOverlay(this.createMarkerEvent(i, this.locations[i]));
 
-	this.goToLocation('mountain_view');
+	this.updateLocationHash();
 }
 
 
@@ -60,6 +60,23 @@ Mozilla.Map.prototype.addLocations = function(startNode)
 				this.addLocations(loc);
 		}
 	}
+}
+//This will check for a hash tag if there is a hash tag it will send the map to that location
+Mozilla.Map.prototype.updateLocationHash = function()
+{
+	var hash = window.location.hash;
+	var hashName;
+	if (hash !== '') {
+		for (var location in this.locations) {
+			hashName = '#map-' + location;
+			if(hashName === hash){
+				this.goToLocation(location);
+				return;
+			}
+		}
+	}
+	// If no good hash was found, go to default.
+	this.goToLocation('mountain_view');
 }
 
 Mozilla.Map.prototype.addLocation = function(loc)
@@ -110,6 +127,7 @@ Mozilla.Map.prototype.goToLocation = function(name)
 		if (i == name) {
 			this.locations[i].marker.openInfoWindowHtml(this.locations[i].content);
 			this.map.setCenter(this.locations[i], 15);
+			window.location.hash = '#map-' + name;
 
 			if (name == 'china')
 				this.map.setMapType(G_SATELLITE_MAP);
