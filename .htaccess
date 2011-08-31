@@ -85,7 +85,7 @@ Redirect permanent /store http://store.mozilla.org
 RewriteRule ^/thunderbird/releases/(.+?)-release-notes.html$ /thunderbird/releases/$1.html [R=permanent]
 
 # Redirect the Thunderbird 3 release notes and start page to www.mozillamessaging.com (use en-US for everything currently)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/(3(?:\.\d+){1,2}(?:[ab]\d)?(?:pre)?)/(releasenotes|start)(/.*)?$ http://www.mozillamessaging.com/en-US/thunderbird/$2/$3$4 [R=temp,L]
+# RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/(3(?:\.\d+){1,2}(?:[ab]\d)?(?:pre)?)/(releasenotes|start)(/.*)?$ http://www.mozillamessaging.com/en-US/thunderbird/$2/$3$4 [R=temp,L]
 
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/privacy[/]?$ $1legal/privacy/ [PT]
 RewriteRule ^extensions[/]?$ https://addons.mozilla.org/ [R=permanent,L]
@@ -200,7 +200,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?add-ons/ebay[/]?$ https://addons.moz
 #### THUNDERBIRD PRODUCT REDIRECTS
 #
 # Older builds are not supported, so redirect to current builds page
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all-older.html$ $1thunderbird/all.html [PT]
+# RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/all-older.html$ $1thunderbird/all.html [PT]
 
 # Temporary rewrite for Thunderbird 2.0.0.24 beta
 #RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?thunderbird/2\.0\.0\.24/(releasenotes|start)(/(?:index.html)?)?$ $1thunderbird/2.0.0.24rc/$2$3 [PT]
