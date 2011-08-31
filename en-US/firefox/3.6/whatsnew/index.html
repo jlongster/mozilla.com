@@ -19,7 +19,7 @@ if ($_version !== null && $_valid_version) {
     if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
         ?>
         <h2>Thanks for upgrading to Firefox <?=$_version?></h2>
-        <p id="main-feature-contents">And for supporting 
+        <p id="main-feature-contents">And for supporting
           <a href="http://www.mozilla.org/about/mission.html"
              onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org', 'DCS.dcsuri', '/about/mission.html', 'WT.ti', 'Mission');">
             Mozilla’s mission
@@ -49,21 +49,13 @@ if ($_version !== null && $_valid_version) {
         <li>Tons of new features</li>
     </ul>
     <ul class="link"><li>
-        <a href="/<?=$lang?>/firefox/?WT.mc_id=ba3613&amp;WT.mc_ev=click"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/beta/',
-                                  'WT.ti', 'Link: Try the Beta',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Beta');">
-          Download now!
-        </a>
+        <a href="/<?=$lang?>/firefox/">Download now!</a>
     </li></ul>
 </div>
 
 <div id="sidebar">
 
-<?php 
+<?php
    $newsletter_snippet = "<p>Product info, tips & tricks and much more.</p>";
    $newsletter_class = "sub-feature";
    include "{$config['file_root']}/includes/newsletter.inc.php";
@@ -143,14 +135,14 @@ if ($_version !== null && $_valid_version) {
 </p>
 
 <script type="text/javascript">
-  
-  // bug 644255, don't tell users to upgrade to fx4 if they 
+
+  // bug 644255, don't tell users to upgrade to fx4 if they
   // are PPC or using any OS X before 10.5
   if(/(PPC|Mac OS X 10.[0-4])/.test(navigator.userAgent)) {
      document.getElementById('main-content').style.display = 'none';
      document.getElementById('main-feature-contents').style.display = 'none';
   }
-  
+
 </script>
 
 <?php

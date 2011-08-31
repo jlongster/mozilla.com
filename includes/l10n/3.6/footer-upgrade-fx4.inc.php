@@ -31,15 +31,7 @@ $str6 = (i__('The latest technologies')) ? ___('The latest technologies') : $str
         <li><?php echo $str5 ?></li>
     </ul>
     <ul class="link"><li>
-        <a href="/<?=$lang?>/firefox/?WT.mc_id=ba3613&amp;WT.mc_ev=click"
-           onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                                  'DCS.dcsuri', '/<?=$lang?>/firefox/beta/',
-                                  'WT.ti', 'Link: Try the Beta',
-                                  'WT.dl', 99,
-                                  'WT.nv', 'Content',
-                                  'WT.ac', 'Beta');">
-          <?php e__('Download');?>
-        </a>
+        <a href="/<?=$lang?>/firefox/"><?php e__('Download');?></a>
     </li></ul>
 </div>
 
