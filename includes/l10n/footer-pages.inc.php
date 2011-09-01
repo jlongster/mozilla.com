@@ -32,12 +32,6 @@ $meta_newsletter = <<<META
 #footer  {
     padding:0 15%;
 }
-#footer-logo {
-    margin: 15px 5px 0 0;
-}
-#footer #copyright {
-    padding-right: 300px;
-}
 
 #footer-wrap {
     min-width:980px;
@@ -49,7 +43,7 @@ $meta_newsletter = <<<META
 #sub-footer {
     float: left !important;
     margin-top: -181px !important;
-    /*margin-left: 115px !important;*/
+    margin-left: 115px !important;
     background:none !important;
     width:0;
 }
