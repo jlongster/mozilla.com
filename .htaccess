@@ -37,6 +37,9 @@ Redirect temp /firefox/releases/3.0a1.html http://www.mozilla.org/projects/minef
 
 Redirect permanent /zh-CN/firefox/uninstall/ http://www.g-fox.cn/chn_feedback/uninstall.html
 
+# Bug 681904 - Hardcode google verification file.
+RewriteRule ^google64e27e3b438b32ca.html$ /en-US/google64e27e3b438b32ca.html [L]
+
 # Temporary rewrite for College page to JobVite page
 RewriteRule ^en-US/college http://www.jobvite.com/CompanyJobs/Jobs.aspx?c=qpX9Vfwa
 
@@ -395,6 +398,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.[0-9]+/(firstrun|detai
 # Special rewrite for some pages since they are hardcoded in Firefox source
 RewriteRule ^firefox/its-a-trap.html$ /en-US/firefox/its-a-trap.html [L]
 RewriteRule ^firefox/its-an-attack.html$ /en-US/firefox/its-an-attack.html [L]
+
 #
 #### END FIREFOX PRODUCT REDIRECTS
 
