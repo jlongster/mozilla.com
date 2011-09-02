@@ -35,7 +35,7 @@
         font-weight: bold;
     }
     </style>
-    <? echo min_inline_css('css_whatsnew6'); ?>
+    <? echo min_inline_css('css_firstrun_backtoschool'); ?>
     <? echo min_inline_js('js_whatsnew4'); ?>
   </head>
 <body id="whatsnew">
@@ -70,49 +70,39 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<div class="main-content box" id="feature-email">
-    <h3>More Features. More Info. <span>More Firefox.</span></h3>
-    <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
-    <div id="newsletter-signup">
-        <form id="email-form" class="<?= $status ?>" action="" method="post">
-          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
-          <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
-          <div id="success-msg">Thanks for Subscribing!</div>
-          <div class="more box">
-            <div class="row">
-              <select id="country" name="country">
-                  <?php
-                      $country = $form->get('country');
-                      if (!$country) {
-                          $country = 'us';
-                      }
-                      echo regionsAsOptions($lang, $country);
-                  ?>
-              </select>
-            </div>
-            <div class="row"> 
-                <?php
-                    $isText = $form->get('format') == 'text';
-                ?>
-                <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
-                <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
-            </div>
-            <div class="row">
-                <label for="privacy-check" id="privacy-check-label">
-                    <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
-                </label>
-            </div>
-            <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                            'DCS.dcsuri', '/mainstream_newsletter/signup',
-                            'WT.ti', 'Link: Sign me up - Second Step',
-                            'WT.dl', 99,
-                            'WT.nv', 'Content',
-                            'WT.ac', 'Newsletter');">
-            <p class="footnote">We will only send you Mozilla-related information.</p>
-          </div>
-        </form>
+<div class="main-content box" id="feature-backtoschool">
+    <div class="intro">
+     <h3>4 Tools for <span>Back to School</span></h3>
+        <p>Boost your productivity with this custom bundle of organization, reference and social add-ons for Firefox.</p>
+        <p>Then <a href="http://www.mozilla.org/about/mission.html">learn all about</a> our non-profit mission to keep you in control of your Web.</p>
     </div>
+
+    <ul id="featured-addons">
+        <li id="addon-zotero">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/zotero/">
+                <strong>Zotero</strong> Research Assistance
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-shareaholic">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/shareaholic-share-links-fast/">
+                <strong>Shareaholic</strong> Social Sharing
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-evernote">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/evernote-web-clipper/">
+                <strong>Evernote Web Clipper</strong> Note Taking
+                <span>Learn more »</span>
+            </a>
+        </li>
+        <li id="addon-stumbleupon">
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/stumbleupon/">
+                <strong>StumbleUpon</strong> Web Discovery
+                <span>Learn more »</span>
+            </a>
+        </li>
+    </ul>
 </div>
 
 <div class="sub-feature box" id="mobile">

@@ -51,6 +51,9 @@ return array(
     'css_firstrun6' => array(
         '//style/firefox/6/firstrun-page.css'
     ),
+    'css_firstrun_backtoschool' => array(
+        '//style/covehead/backtoschool-firstrun-page.css'
+    ),
     'css_aurora' => array(
         '//style/firefox/aurora/firstrun-page.css'
     ),
