@@ -4,6 +4,12 @@ require_once $config['file_root'] . '/includes/feeds/AbstractFeed.php';
 
 class PrivacyAMOFeed extends AbstractFeed
 {
+    public function __construct(array $config = array())
+    {
+        parent::__construct($config);
+        $this->lifetime = 172800; // 2 days
+    }
+
     public function getItems($limit = 3)
     {
         $items = array();
@@ -48,16 +54,12 @@ class PrivacyAMOFeed extends AbstractFeed
 
     protected function getAMOXPath($slug)
     {
-        $icon = null;
-
         $uri = sprintf(
             'https://services.addons.mozilla.org/en-US/firefox/api/1.3/addon/%s',
             $slug
         );
 
         return $this->getDOMXPath($uri);
-
-        return $icon;
     }
 }
 
