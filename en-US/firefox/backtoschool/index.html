@@ -16,36 +16,11 @@ EXTRA_HEADERS;
         <p>This custom bundle is loaded with add-ons for added productivity.</p>
 
         <div id="home-download">
-            <script>
-            var isFx = (navigator.userAgent &&
-                    navigator.userAgent.indexOf('Firefox') !== -1 &&
-                    navigator.userAgent.indexOf('Camino') === -1 &&
-                    navigator.userAgent.indexOf('SeaMonkey') === -1);
-
-                if (isFx) {
-                    document.body.className += " firefox";
-                }
-
-                var platform = '';
-
-                if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) {
-                    platform = 'windows';
-                } else if (navigator.platform.indexOf("Linux") != -1) {
-                    platform = 'linux';
-                } else if (navigator.userAgent.indexOf("Mac OS X") != -1) {
-                    platform = 'mac';
-                }
-
-            /**
-             * Gets whether or not the client is an officially unsupported platform
-             */
-            var unsupported = /(Win(16|9[x58]|NT( [1234]| [^0-9]|[^ -]|$))|Windows ([MC]E|9[x58]|3\.1|4\.10|NT( [1234]| [^0-9]|[^ ]|$))|Windows_95)/.test(navigator.userAgent);
-
-            </script>
 
             <ul class="home-download os_linux ">
-                <li class="os_linux">
-                    <a class="download-link download-firefox" href="#">
+                <li>
+                    <a id="bundle-link" class="download-link download-firefox" 
+                        href="http://releases.mozilla.com/bts/win32/en-US/Firefox-BTS Setup.exe">
                         <span class="download-content">
                             <span class="download-title">Firefox <img id="download-arrow" alt="" src="/img/home/download-arrow.png"> <em>Free</em></span> 
                             <span class="download-extra">+ Back to School bundle</span>
@@ -57,6 +32,27 @@ EXTRA_HEADERS;
                 <a href="/en-US/firefox/all.html">All Systems &amp; Languages</a> | 
                 <a href="/en-US/legal/privacy/firefox.html">Privacy Policy</a>
             </div>
+            <script>
+            var isFx = (navigator.userAgent &&
+                    navigator.userAgent.indexOf('Firefox') !== -1 &&
+                    navigator.userAgent.indexOf('Camino') === -1 &&
+                    navigator.userAgent.indexOf('SeaMonkey') === -1);
+
+                if (isFx) {
+                    document.body.className += " firefox";
+                }
+
+                var platform = '';
+                var bundleLink = document.getElementById('bundle-link');
+
+                if (navigator.platform.indexOf("Linux") != -1) {
+                    bundleLink.href = 'http://releases.mozilla.com/bts/linux-i686/en-US/firefox-bts.tar.bz2'
+                } else if (navigator.userAgent.indexOf("Mac OS X") != -1) {
+                    bundleLink.href = 'http://releases.mozilla.com/bts/mac/en-US/Firefox-BTS.dmg'
+                }
+
+
+            </script>
         </div>
     </div>
 
