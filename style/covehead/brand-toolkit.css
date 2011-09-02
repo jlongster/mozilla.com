@@ -44,6 +44,18 @@ ul#nav li a {
     border: 1px solid #fff;
     border-radius: 6px 6px 6px 6px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px rgba(99, 149, 185, 0.1) inset, 0 -5px 15px rgba(223, 239, 249, 0.8) inset;
+    -moz-transition-property: background-color, box-shadow;
+    -moz-transition-duration: 0.25s;
+    -moz-transition-timing-function: ease-out;
+    -moz-user-select:none; 
+}
+
+ul#nav li a:hover {
+    background-color: rgba(255,255,255,0.7);
+    -moz-transition-property: background-color, box-shadow;
+    -moz-transition-duration: 0.25s;
+    -moz-transition-timing-function: ease-out;
+    -moz-user-select:none; 
 }
 
 ul#nav li a.selected {
@@ -253,7 +265,7 @@ h1 {
 #page-platform .pillars .right ol li {
     font-size: 24px;
     font-style: italic;
-    margin-bottom: 1em;
+    margin-bottom: 0.6em;
 }
 
 #page-platform .pillars .right ol li span {
@@ -288,7 +300,7 @@ h1 {
 #page-platform .manifesto img {
     clear: left;
     float: left;
-    margin: 50px 50px 0 0;
+    margin: 20px 50px 10px 0;
 }
 
 #page-platform .manifesto .left {
@@ -406,6 +418,45 @@ h1 {
     width: 540px;
 }
 
+#page-identity .guidelines .right ul li {
+    margin-left: 15px;
+}
+
+#page-identity .guidelines ol {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+}
+
+#page-identity .guidelines ol li {
+    float: left;
+    list-style-type: none;
+    width: 415px;
+    margin: 10px 60px 10px 0;
+}
+
+#page-identity .guidelines ol li.one,
+#page-identity .guidelines ol li.two {
+    margin-bottom: 30px;
+}
+
+#page-identity .guidelines ol li.two,
+#page-identity .guidelines ol li.four {
+    margin-right: 0;
+}
+
+#page-identity .guidelines ol li img {
+    float: left;
+    margin-right: 15px;
+    padding-bottom: 50px;
+}
+
+#page-identity .guidelines ol li.one img,
+#page-identity .guidelines ol li.two img {
+    margin-top: 20px;
+}
+
 #page-identity .what-to-look-for .right {
     background: url(/img/covehead/firefox/brand-toolkit/identity-lookfor-firefox.png) center bottom no-repeat;
     position: relative;
@@ -484,25 +535,28 @@ h1 {
 #page-identity #page-wordmarks .left,
 #page-identity #page-typefaces .left {
     float: left;
-    width: 200px;
-    margin: 25px 5px 25px 0;
+    width: 190px;
+    margin: 25px 15px 25px 0;
 }
 
 #page-identity #page-channel-logos ul,
-#page-identity #page-wordmarks ul {
+#page-identity #page-wordmarks ul,
+#page-website #page-style-assets ul {
     list-style-type: none;
     margin: 0;
 }
 
 #page-identity #page-channel-logos ul li,
-#page-identity #page-wordmarks ul li {
+#page-identity #page-wordmarks ul li,
+#page-website #page-style-assets ul li {
     font-size: 18px;
     font-style: italic;
     margin-bottom: 1em;
 }
 
 #page-identity #page-channel-logos ul li span,
-#page-identity #page-wordmarks ul li span {
+#page-identity #page-wordmarks ul li span,
+#page-website #page-style-assets ul li.span {
     display: block;
     font-size: 13px;
     font-style: normal;
@@ -517,7 +571,10 @@ h1 {
 .meta-normal .right img,
 .meta-black .right img,
 .georgia .right img,
-.recommended .right img {
+.recommended .right img,
+.universal-tabs .right img,
+.button-styles .right img,
+.backgrounds .right img {
     float: left;
 }
 
@@ -530,19 +587,24 @@ h1 {
 .meta-normal .right ul,
 .meta-black .right ul,
 .georgia .right ul,
-.recommended .right ul {
+.recommended .right ul,
+.universal-tabs .right ul,
+.button-styles .right ul,
+.backgrounds .right ul {
     float: right;
     width: 175px;
 }
 
 #page-identity #page-channel-logos ul li.download,
-#page-identity #page-wordmarks ul li.download {
+#page-identity #page-wordmarks ul li.download,
+#page-website #page-style-assets ul li.download {
     margin: 25px 0;
 }
 
 #page-identity #page-channel-logos ul li.download a,
 #page-identity #page-wordmarks ul li.download a,
-#page-identity #page-typefaces a.download {
+#page-identity #page-typefaces a.download,
+#page-website #page-style-assets ul li.download a {
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -656,6 +718,10 @@ h1 {
     padding-left: 225px;
 }
 
+#page-website #page-style-assets .right img {
+    float: left;
+}
+
 #page-website #page-domain-strategy h2 {
     float: left;
     width: 150px;
@@ -678,7 +744,6 @@ h1 {
 #page-website #page-domain-strategy .right {
     padding-left: 225px;
 }
-
 
 /* }}} */
 /* {{{ Copy */
@@ -738,26 +803,83 @@ h1 {
     padding-left: 225px;
 }
 
-#page-copy #page-l10n ol li {
-    font-size: 18px;
+#page-copy #page-l10n ol li,
+#page-copy #page-rules dt {
+    font-size: 20px;
+    color: #39393a;
     font-style: italic;
-    margin-bottom: 1em;
+    margin: 0;
 }
 
-#page-copy #page-l10n ol li span {
+#page-copy #page-l10n ol li span,
+#page-copy #page-rules dd {
     display: block;
     font-size: 13px;
     font-style: normal;
+    margin: 0 0 1em 0;
 }
 
-
+#page-copy .terms {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px #e1edf9 solid;
+}
 
 /* }}} */
 /* {{{ Downloads */
 
-#page-downloads {
+#page-downloads .title {
+    background: url(/img/covehead/firefox/brand-toolkit/background-title.png) left bottom repeat-x;
     padding: 40px;
+    border-top: 1px #e1edf9 solid;
+    border-bottom: 1px #e1edf9 solid;
     overflow: auto;
+}
+
+#page-downloads .title h1 {
+    float: left;
+}
+
+#page-downloads .title p {
+    clear: right;
+    float: right;
+    width: 425px;
+}
+
+#page-downloads .logos,
+#page-downloads .wordmarks,
+#page-downloads .typefaces,
+#page-downloads .assets {
+    padding: 0 40px;
+    clear: both;
+}
+
+#page-downloads .wordmarks,
+#page-downloads .typefaces,
+#page-downloads .assets {
+    margin-top: 40px;
+    border-top: 1px #e1edf9 solid;
+}
+
+#page-downloads .logos .left,
+#page-downloads .wordmarks .left,
+#page-downloads .typefaces .left,
+#page-downloads .assets .left {
+    float: left;
+    width: 190px;
+    margin: 25px 15px 25px 0;
+}
+
+#page-downloads .right {
+    padding-left: 200px;
+}
+
+#page-downloads .right .logos-contents {
+    float: left;
+    height: 200px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    width: 145px;
 }
 
 /* }}} */
