@@ -20,7 +20,7 @@ $fields_def = array(
         'rname' => 'LAST_NAME',
     ),
     'email' => array(
-        'label' => 'First name',
+        'label' => 'Home Email',
         'rules' => array( 'required', 'email' ),
         'rname' => 'email',
     ),
@@ -29,30 +29,60 @@ $fields_def = array(
         'rules' => array( 'required' ),
         'rname' => 'STUDENTS_SCHOOL',
     ),
-    'major' => array(
-        'label' => 'Major',
+    'city' => array(
+        'label' => 'City',
         'rules' => array( 'required' ),
-        'rname' => 'STUDENTS_MAJOR',
-    ),
-    'graduation_year' => array(
-        'label' => 'Graduation year',
-        'rules' => array( 'required' ),
-        'rname' => 'STUDENTS_GRAD_YEAR',
+        'rname' => 'STUDENTS_CITY',
     ),
     'country' => array(
         'label' => 'Country',
         'rules' => array( 'required' ),
         'rname' => 'country',
     ),
+    'area' => array(
+        'label' => 'Area of Study',
+        'rules' => array(),
+        'rname' => 'area',
+    ),
+    'level' => array(
+        'label' => 'Level of Study',
+        'rules' => array(),
+        'rname' => 'level',
+    ),
+    'level_other' => array(
+        'label' => 'Level of Study',
+        'rules' => array(),
+        'rname' => 'level_other',
+    ),
+    'graduation_year' => array(
+        'label' => 'Graduation year',
+        'rules' => array(),
+        'rname' => 'STUDENTS_GRAD_YEAR',
+    ),
+    'projects' => array(
+        'label' => 'Interesting projects',
+        'rules' => array(),
+        'rname' => 'projects',
+    ),
+    'projects_ideas' => array(
+        'label' => 'Additional projects',
+        'rules' => array(),
+        'rname' => 'projects_ideas',
+    ),
     'tell_me' => array(
         'label' => 'Tell me more',
-        'rules' => array( 'list', 'required', ),
+        'rules' => array( 'list' ),
         'rname' => 'STUDENTS_INTEREST_AREA',
     ),
     'format' => array(
         'label' => 'Format',
         'rules' => array(),
         'rname' => 'format',
+    ),
+    'share' => array(
+        'label' => 'Share',
+        'rules' => array(),
+        'rname' => 'share',
     ),
     'privacy' => array(
         'label' => 'Privacy',
@@ -136,6 +166,7 @@ function err($name) {
                         <form id="signup" method="post" action="">
 
                             <fieldset>
+                                <legend>Personal information</legend>
                                 <?php if (!empty($f_errors)): ?>
                                     <div id="errors">
                                         <p>The following required fields were missing or invalid:
@@ -161,37 +192,62 @@ function err($name) {
                                             value="<?=$hf_data['last_name']?>" />
                                     </li>
                                     <li<?=err('email')?>>
-                                        <label for="signup-email">Email Address</label> 
+                                        <label for="signup-email">Home Email</label> 
                                         <input type="text" id="signup-email" name="email" required="required"
                                             value="<?=$hf_data['email']?>" />
                                     </li>
+                                </ul>
+                            </fieldset>
+                            <fieldset>
+                                <legend>School information</legend>
+                                <ul>
                                     <li<?=err('school')?>>
-                                        <label for="signup-school">School</label> 
+                                        <label for="signup-school">Name of School</label> 
                                         <input type="text" id="signup-school" name="school" required="required"
                                             value="<?=$hf_data['school']?>" />
                                     </li>
-                                    <li<?=err('major')?>>
-                                        <label for="signup-major">Major</label> 
-                                        <input type="text" id="signup-major" name="major" required="required"
-                                            value="<?=$hf_data['major']?>" />
-                                    </li>
-                                    <li<?=err('graduation_year')?>>
-                                        <label for="signup-graduation-year">Graduation year</label> 
-                                        <select id="signup-graduation-year" name="graduation_year">
-                                            <option value="">Select year</option>
-                                            <?php for ($i=2010; $i<=2020; $i++): ?>
-                                                <option value="<?=$i?>" 
-                                                    <?= ($i==$f_data['graduation_year']) ? 'selected="selected"' : '' ?>><?=$i?></option>
-                                            <?php endfor ?>
-                                        </select>
+                                    <li<?=err('city')?>>
+                                        <label for="signup-city">City</label> 
+                                        <input type="text" id="signup-city" name="city" required="required"
+                                            value="<?=$hf_data['city']?>" />
                                     </li>
                                     <li<?=err('country')?>>
                                         <label for="signup-country">Country</label> 
-                                        <select id="signup-country" name="country">
-                                            <option value="">Select country</option>
-                                            <?php require_once "{$config['file_root']}/includes/regions.php"; ?>
-                                            <?= regionsAsOptions($lang, $f_data['country']); ?>
+                                        <input type="text" id="signup-country" name="country" required="required" value="<?=$hf_data['country']?>">
+                                    </li>
+                                    <li<?=err('area')?>>
+                                        <label for="signup-area">Area of Study</label> 
+                                        <input type="text" id="signup-area" name="area" value="<?=$hf_data['area']?>">
+                                    </li>
+                                    <li<?=err('level')?>>
+                                        <label for="signup-level">Level of Study</label>
+                                        <select id="signup-level" name="level">
+                                            <option value="">Select level</option>
+                                            <option value="secondary">Secondary/High School</option>
+                                            <option value="2-year">2-Year Institution</option>
+                                            <option value="4-year">4-Year Institution</option>
+                                            <option value="masters">Masters Program</option>
+                                            <option value="doctoral">Doctoral Program</option>
                                         </select>
+                                        or <input type="text" name="level_other" placeholder="Other" value="<?=$hf_data['level_other']?>">
+                                    </li>
+
+                                    <li<?=err('graduation_year')?>>
+                                        <label for="signup-graduation-year">Expected Graduation Year</label> 
+                                        <input type="text" id="signup-graduation-year" name="graduation_year" value="<?=$hf_data['graduation_year']?>">
+                                    </li>
+                                    <li<?=err('projects')?>>
+                                        <label for="signup-projects">As a Student Rep, which project(s) would you be interested in leading at your school?</label>
+                                        <select id="signup-projects" name="projects" multiple>
+                                            <option>Create a Firefox club: Create clubs to advocate Firefox usage on campus and to socialize with other Firefox fans</option>
+                                            <option>Promote Firefox: Spread the word by hosting events or promoting with social media</option>
+                                            <option>Get Firefox Installed on Campus: Installing Firefox at your school makes it easily accessible</option>
+                                            <option>Set up a Firefox help desk: Allow students to get help from a physical help desk or a virtual one"</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <label for="signup-projects-ideas">What (if any) additional projects do you think Student Reps could lead at their schools to contribute to Firefox and Mozilla's mission?</label>
+                                        <textarea id="signup-projects-ideas" name="projects_ideas"><?=$hf_data['projects_ideas']?></textarea>
                                     </li>
                                     <li<?=err('tell_me')?>>
                                         <label>Tell me more about</label> 
@@ -229,13 +285,35 @@ function err($name) {
                                         </li>
                                       </ul>
                                     </li>
+                                    
+                                    <li class="field" id="share-field">
+                                      <?php
+                                          $yes_share = 'checked="checked"';
+                                          $no_share = '';
+                                          if ($f_data['share'] == 'no') {
+                                              $no_share = 'checked="checked"';
+                                              $yes_share = '';
+                                          }
+                                      ?>
+                                      <span class="field-label">Can we share your contact and school information with l Student and Mozilla Reps for the purpose of collaborating on Mozilla projects?</span>
+                                      <ul class="checkboxes">
+                                        <li>
+                                          <input type="radio" name="share" id="yes-share" value="html" <?= $yes_share?>>
+                                          <label for="yes-share">Yes</label>
+                                        </li>
+                                        <li>
+                                          <input type="radio" name="share" id="no-share" value="text" <?= $no_share?>>
+                                          <label for="no-share">No</label>
+                                        </li>
+                                      </ul>
+                                    </li>
 
                                     <li id="privacy-field" <?=err('privacy')?>>
                                       <? $checked = array_key_exists('privacy', $f_data) ? 'checked="checked"' : '' ?>
                                       <ul class="checkboxes">
                                         <li>    
                                           <input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?> required="required">
-                                          <label for="privacy-check" id="privacy-check-label">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></label>
+                                          <label for="privacy-check" id="privacy-check-label">I'm okay with you handling this info as you explain in <a href="/en-US/privacy-policy">your privacy policy</a>.</label>
                                         </li>
                                       </ul>
                                     </li>
