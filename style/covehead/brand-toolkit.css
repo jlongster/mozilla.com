@@ -159,6 +159,10 @@ ul#copy-nav li a.selected:focus {
 
 .pager-content {
     clear: both;
+    background: #fff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
 }
 
 .pager-content h1 {
@@ -227,9 +231,14 @@ h1 {
 }
 
 #page-platform img.brand-platform-monster {
+    visibility: hidden;
     position: absolute;
     top: -20px;
     right: 160px;
+}
+
+.pager-selected-platform #page-platform img.brand-platform-monster {
+    visibility: visible;
 }
 
 #page-platform .promise_position,

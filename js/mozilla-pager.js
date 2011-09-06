@@ -390,6 +390,15 @@ Mozilla.Pager.prototype.update = function()
     if (this.$nav) {
         this.updateNav();
     }
+
+    var el = this.$pageContainer.get(0);
+
+    var className = el.className;
+    className     = className.replace(/pager-selected-[\w-]+/g, '');
+    className     = className.replace(/^\s+|\s+$/g,'');
+    el.className  = className;
+
+    this.$pageContainer.addClass('pager-selected-' + this.currentPage.id);
 }
 
 // }}}
