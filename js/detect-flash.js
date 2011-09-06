@@ -5,7 +5,7 @@
  */
 $(document).ready(function() {
 
-    var requiredFlashVersion = '10.3.183.5';
+    var requiredFlashVersion = '10.3.183.7';
 
     function getFlashVersion()
     {
