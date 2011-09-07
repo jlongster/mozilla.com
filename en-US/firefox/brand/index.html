@@ -13,8 +13,10 @@
     </style>
 FONTS;
     $extra_headers = <<<EXTRA_HEADERS
-    <script src="/js/mozilla-pager.js"></script>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/brand-toolkit.css" media="screen" />
+    <script src="/js/mozilla-video-tools.js"></script>
+    <script src="/js/mozilla-pager.js"></script>
 EXTRA_HEADERS;
     @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
 ?>
@@ -114,13 +116,46 @@ EXTRA_HEADERS;
         <div class="manifesto">
             <h2>Manifesto</h2>
             <div class="content">
-                <img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/manifesto-video.png" width="305" height="171" alt="" />
+                <div id="video-player" class="mozilla-video-control section-video">
+                    <video
+                        id="video"
+                        width="320"
+                        height="180"
+                        poster="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/manifesto-video.jpg"
+                        controls="controls">
+
+                        <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" type="vide/webm" />
+                        <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+                        <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4" type="video/mp4" />
+
+                        <object type="application/x-shockwave-flash"
+                            style="width: 320px; height: 180px;"
+                            data="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+                            <param name="movie" value="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                            <param name="wmode" value="transparent" />
+
+                            <div class="video-player-no-flash">
+                            This video requires a browser with support for open video:
+                            <ul>
+                            <li><a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater</li>
+                            <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                            </ul>
+
+                            or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                            Alternatively, you may use the video download links to the right.
+                            </div>
+
+                        </object>
+
+                    </video>
+                </div>
                 <div class="left">
-                    <h3>A Different King of Browser</h3>
+                    <h3>A Different Kind of Browser</h3>
                     <ul>
-                        <li><a href="">Open video format (WebM)</a></li>
-                        <li><a href="">Open video format (Ogg Theora)</a></li>
-                        <li><a href="">MPEG-4 format</a></li>
+                        <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm">Open video format (WebM)</a></li>
+                        <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv">Open video format (Ogg Theora)</a></li>
+                        <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4">MPEG-4 format</a></li>
                     </ul>
                 </div>
                 <div class="right">
@@ -199,7 +234,7 @@ EXTRA_HEADERS;
                         Alternate lockup. Use this on posters, banners or when horizontal space is an issue. Unlike the standard horizontal lockup, do not use this with any of the channel logos or wordmarks.</li>
                 </ol>
             </div>
-            <div class="common-mistakes">
+            <div class="common-mhttps://secure2.silverorange.com/intranet3/so/projects/horton/catalog/54831#54832istakes">
                 <div class="left">
                     <h2>Common Mistakes</h2>
                     <p>Think of these as the equivalent of wearing your shoes on the wrong feet: they’re still shoes, they’re basically where they’re supposed to be, but it just feels wrong.</p>
@@ -484,7 +519,14 @@ EXTRA_HEADERS;
                     <p>OK, that’s enough.</p>
                 </div>
                 <div class="right">
-                    <img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/illustrations-tabs.png" width="700" height="170" alt="Feature Tabs" />
+                    <ul class="feature-links">
+                        <li id="made-easy"><b><span class="feature-link-content"> </span></b></li>
+                        <li id="high-performance"><b><span class="feature-link-content"> </span></b></li>
+                        <li id="advanced-security"><b><span class="feature-link-content"> </span></b></li>
+                        <li id="powerful-personalization"><b><span class="feature-link-content"> </span></b></li>
+                        <li id="cutting-edge"><b><span class="feature-link-content"> </span></b></li>
+                        <li id="universal-access"><b><span class="feature-link-content"> </span></b></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -818,16 +860,16 @@ EXTRA_HEADERS;
             </div>
             <div class="right">
                 <ul>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only-preview.png" alt="Logo" title="Logo" width="145" height="100" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-mobile-beta-preview.png" alt="Logo Mobile Beta" title="Logo Mobile Beta" width="145" height="100" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-mobile-beta.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only-aurora-preview.png" alt="Logo Aurora" title="Logo Aurora" width="145" height="100" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only-aurora-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only-nightly-preview.png" alt="Logo Nightly" title="Logo Nightly" width="145" height="100" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-only-nightly-preview.png" class="download">Download</a></li>
-                    <li style="clear: left;"><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-version-vertical-preview.png" alt="Logo Wordmark Vertical" title="Logo Wordmark Vertical" width="145" height="117" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-version-vertical-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-preview.png" alt="Logo Wordmark" title="Logo Wordmark" width="145" height="51" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-mozilla-preview.png" alt="Logo Mozilla Wordmark" title="Logo Mozilla Wordmark" width="145" height="51" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-mozilla-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-beta-preview.png" alt="Logo Wordmark Beta" title="Logo Wordmark Beta" width="145" height="37" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-beta-preview.png" class="download">Download</a></li>
-                    <li style="clear: left;"><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-aurora-preview.png" alt="Logo Wordmark Aurora" title="Logo Wordmark Aurora" width="145" height="34" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-aurora.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-aurora-white.png" class="download">Download White</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-nightly-preview.png" alt="Logo Wordmark Nightly" title="Logo Wordmark Nightly" width="145" height="33" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-nightly.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/logo-wordmark-nightly-white.png" class="download">Download White</a></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only-preview.png" alt="Logo" title="Logo" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-mobile-beta-preview.png" alt="Logo Mobile Beta" title="Logo Mobile Beta" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-mobile-beta.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only-aurora-preview.png" alt="Logo Aurora" title="Logo Aurora" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only-aurora-preview.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only-nightly-preview.png" alt="Logo Nightly" title="Logo Nightly" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-only-nightly-preview.png" class="download">Download</a></span></li>
+                    <li style="clear: left;"><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-vertical-preview.png" alt="Logo Wordmark Vertical" title="Logo Wordmark Vertical" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-vertical-preview.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-preview.png" alt="Logo Wordmark" title="Logo Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-preview.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-mozilla-preview.png" alt="Logo Mozilla Wordmark" title="Logo Mozilla Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-mozilla-preview.png" class="download">Download</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-beta-preview.png" alt="Logo Wordmark Beta" title="Logo Wordmark Beta" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-beta-preview.png" class="download">Download</a></span></li>
+                    <li style="clear: left;"><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-aurora-preview.png" alt="Logo Wordmark Aurora" title="Logo Wordmark Aurora" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-aurora.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-aurora-white.png" class="download">Download White</a></span></li>
+                    <li><span><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-nightly-preview.png" alt="Logo Wordmark Nightly" title="Logo Wordmark Nightly" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-nightly.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/logo-wordmark-nightly-white.png" class="download">Download White</a></span></li>
                 </ul>
             </div>
         </div>
@@ -837,11 +879,11 @@ EXTRA_HEADERS;
             </div>
             <div class="right">
                 <ul>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/wordmark-only-preview.png" alt="Wordmark" title="Wordmark" width="145" height="56" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/wordmark-only-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/mozilla-wordmark-preview.png" alt="Mozilla Wordmark" title="Mozilla Wordmark" width="145" height="70" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/mozilla-wordmark-preview.png" class="download">Download</a></li>
-                    <li style="clear: left;"><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/beta-wordmark-only-preview.png" alt="Beta Wordmark" title="Beta Wordmark" width="145" height="34" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/beta-wordmark-only-preview.png" class="download">Download</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/aurora-wordmark-only-preview.png" alt="Aurora Wordmark" title="Aurora Wordmark" width="145" height="30" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/aurora-wordmark-only.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/aurora-wordmark-only-white.png" class="download">Download White</a></li>
-                    <li><img src="<?=$config['static_prefix']?>/img/covehead/about/logo/download/nightly-wordmark-only-preview.png" alt="Nightly Wordmark" title="Nightly Wordmark" width="145" height="29" /><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/nightly-wordmark-only.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/about/logo/download/nightly-wordmark-only-white.png" class="download">Download White</a></li>
+                    <li><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/wordmark-only-preview.png" alt="Wordmark" title="Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/wordmark-only-preview.png" class="download">Download</a></li>
+                    <li><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/mozilla-wordmark-preview.png" alt="Mozilla Wordmark" title="Mozilla Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/mozilla-wordmark-preview.png" class="download">Download</a></li>
+                    <li style="clear: left;"><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/beta-wordmark-only-preview.png" alt="Beta Wordmark" title="Beta Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/beta-wordmark-only-preview.png" class="download">Download</a></li>
+                    <li><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/aurora-wordmark-only-preview.png" alt="Aurora Wordmark" title="Aurora Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/aurora-wordmark-only.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/aurora-wordmark-only-white.png" class="download">Download White</a></li>
+                    <li><img src="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/nightly-wordmark-only-preview.png" alt="Nightly Wordmark" title="Nightly Wordmark" width="145" height="145" /><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/nightly-wordmark-only.png" class="download">Download</a><a href="<?=$config['static_prefix']?>/img/covehead/firefox/brand-toolkit/download/nightly-wordmark-only-white.png" class="download">Download White</a></li>
                 </ul>
             </div>
         </div>
