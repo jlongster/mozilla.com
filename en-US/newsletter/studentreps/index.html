@@ -61,7 +61,7 @@ $fields_def = array(
     ),
     'projects' => array(
         'label' => 'Interesting projects',
-        'rules' => array(),
+        'rules' => array('list'),
         'rname' => 'projects',
     ),
     'projects_ideas' => array(
@@ -97,6 +97,12 @@ list( $f_data, $hf_data, $r_data, $f_errors, $sent ) = form_main($fields_def);
 function err($name) {
     global $f_errors;
     return (isset($f_errors[$name])) ? ' class="err"': '';
+}
+function is_level_selected($field) {
+    global $f_data;
+    if ($f_data['level'] == $field) {
+        echo ' selected="selected"';
+    }
 }
 ?>
 <html lang="en" dir="ltr" id="studentreps-mozilla-org" >
@@ -223,11 +229,11 @@ function err($name) {
                                         <label for="signup-level">Level of Study</label>
                                         <select id="signup-level" name="level">
                                             <option value="">Select level</option>
-                                            <option value="secondary">Secondary/High School</option>
-                                            <option value="2-year">2-Year Institution</option>
-                                            <option value="4-year">4-Year Institution</option>
-                                            <option value="masters">Masters Program</option>
-                                            <option value="doctoral">Doctoral Program</option>
+                                            <option value="secondary"<?=is_level_selected('secondary')?>>Secondary/High School</option>
+                                            <option value="2-year"<?=is_level_selected('2-year')?>>2-Year Institution</option>
+                                            <option value="4-year"<?=is_level_selected('4-year')?>>4-Year Institution</option>
+                                            <option value="masters"<?=is_level_selected('masters')?>>Masters Program</option>
+                                            <option value="doctoral"<?=is_level_selected('doctoral')?>>Doctoral Program</option>
                                         </select>
                                         or <input type="text" name="level_other" placeholder="Other" value="<?=$hf_data['level_other']?>">
                                     </li>
@@ -236,17 +242,33 @@ function err($name) {
                                         <label for="signup-graduation-year">Expected Graduation Year</label> 
                                         <input type="text" id="signup-graduation-year" name="graduation_year" value="<?=$hf_data['graduation_year']?>">
                                     </li>
-                                    <li<?=err('projects')?>>
-                                        <label for="signup-projects">As a Student Rep, which project(s) would you be interested in leading at your school?</label>
-                                        <select id="signup-projects" name="projects" multiple>
-                                            <option>Create a Firefox club: Create clubs to advocate Firefox usage on campus and to socialize with other Firefox fans</option>
-                                            <option>Promote Firefox: Spread the word by hosting events or promoting with social media</option>
-                                            <option>Get Firefox Installed on Campus: Installing Firefox at your school makes it easily accessible</option>
-                                            <option>Set up a Firefox help desk: Allow students to get help from a physical help desk or a virtual one"</option>
-                                        </select>
+                                    <li class="field"<?=err('projects')?>>
+                                        <span class="field-label">As a Student Rep, which project(s) would you be interested in leading at your school?</span>
+                                        <ul class="checkboxes">
+                                            <li>
+                                                <input type="checkbox" id="signup-projects-club" name="projects[]" value="club" 
+                                                    <?= in_array('club',$f_data['projects']) ? 'checked="checked"' : '' ?>>
+                                                <label for="signup-projects-club">Create a Firefox club: Create clubs to advocate Firefox usage on campus and to socialize with other Firefox fans</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="signup-projects-promote" name="projects[]" value="promote" 
+                                                    <?= in_array('promote',$f_data['projects']) ? 'checked="checked"' : '' ?>>
+                                                <label for="signup-projects-promote">Promote Firefox: Spread the word by hosting events or promoting with social media</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="signup-projects-install" name="projects[]" value="install" 
+                                                    <?= in_array('install',$f_data['projects']) ? 'checked="checked"' : '' ?>>
+                                                <label for="signup-projects-install">Get Firefox Installed on Campus: Installing Firefox at your school makes it easily accessible</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="signup-projects-help" name="projects[]" value="help" 
+                                                    <?= in_array('help',$f_data['projects']) ? 'checked="checked"' : '' ?>>
+                                                <label for="signup-projects-help">Set up a Firefox help desk: Allow students to get help from a physical help desk or a virtual one"</label>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <label for="signup-projects-ideas">What (if any) additional projects do you think Student Reps could lead at their schools to contribute to Firefox and Mozilla's mission?</label>
+                                        <label for="signup-projects-ideas">What (if any) additional projects do you think Student Reps could lead at their schools to contribute to Firefox and Mozilla's mission?f</label>
                                         <textarea id="signup-projects-ideas" name="projects_ideas"><?=$hf_data['projects_ideas']?></textarea>
                                     </li>
                                     <li<?=err('tell_me')?>>
@@ -295,7 +317,7 @@ function err($name) {
                                               $yes_share = '';
                                           }
                                       ?>
-                                      <span class="field-label">Can we share your contact and school information with l Student and Mozilla Reps for the purpose of collaborating on Mozilla projects?</span>
+                                      <span class="field-label">Can we share your contact and school information with other Student and Mozilla Reps for the purpose of collaborating on Mozilla projects?</span>
                                       <ul class="checkboxes">
                                         <li>
                                           <input type="radio" name="share" id="yes-share" value="html" <?= $yes_share?>>
