@@ -17,7 +17,12 @@ EXTRA_HEADERS;
         $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
         if ($form->save()) {
             // Relocate to /newsletter/new/ page
-            header("Location: new/");
+            $fields = array('email' => $form->data['email'],
+                            'country' => $form->data['country'],
+                            'lang' => $form->data['lang'],
+                            'format' => $form->data['format']);
+            header("Location: new/?" . http_build_query($fields));
+            exit;
         } elseif ($form->error) {
             $status = 'error-'. $form->error;
         }

@@ -552,6 +552,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?blocklist(/(?:index.html)?)?$ https:
 # Bug 655193
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/download/?$ / [R=permanent]
 
+# Bug 678496, make pretty URL for email pref center
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/newsletter/existing/)(.+)/$ /$1?t=$2 [L]
+
 #### mozilla.org rewrites ####
 
 # images, script, and style *should* be served from a CDN, but we

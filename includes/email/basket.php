@@ -7,13 +7,19 @@
 // https://github.com/mozilla/basket/blob/master/apps/news/README
 // for documentation on the API.
 
+class BasketException extends Exception {
+    public function __construct($message, $code, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
+}
+
 class BasketService {
 
     function get($method) {
         return $this->curl($method);
     }
 
-    function post($method, $data) {
+    function post($method, $data=NULL) {
         return $this->curl($method, $data);
     }
 
@@ -30,10 +36,15 @@ class BasketService {
         }
 
         $response = curl_exec($_curl);
-        if (!$response) {
-            $response = curl_error($_curl);
+        $status = curl_getinfo($_curl, CURLINFO_HTTP_CODE);
+
+        if (!$response || $status != 200) {
+            if(!$response) {
+                $response = "Could not connect to basket service.";
+            }
+            throw new BasketException($response, $status);
         }
-        
+
         return $response;
     }
 
@@ -51,6 +62,10 @@ class BasketService {
 
     function get_subscriber($token) {
         return json_decode($this->get('user/' . $token . '/'), TRUE);
+    }
+
+    function delete_subscriber($token) {
+        return json_decode($this->post('delete/' . $token . '/'), TRUE);
     }
 }
 

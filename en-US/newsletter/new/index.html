@@ -5,11 +5,16 @@
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
 EXTRA_HEADERS;
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/prefs.php";
+require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $prefs = new EmailPrefs($_POST);
+    // The data can initially be passed in via GET
+    $data = $_POST;
+    if(empty($data)) {
+        $data = $_GET;
+    }
+
+    $prefs = new EmailPrefs($data);
 
     function chk($field, $val, $force=FALSE) {
         global $prefs;
@@ -26,25 +31,31 @@ EXTRA_HEADERS;
         'country' => 'Please select a country'
     );
 
-    $prefs = new EmailPrefs($_POST);
-    $prefs->save_new();
+    if($prefs->save_new()) {
+        header("Location: /$lang/newsletter/updated/");
+        exit;
+    }
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="main-feature">
     <h2>You’re All Set! <span>But Wait, There’s More</span></h2>
 </div>
 
-<?php if($prefs->has_non_field_error()) { ?>
-<div class="non-field-errors">
-  We apologize, but something is amiss with our newsletter
-  system. Try again soon.
-</div>
-<?php } ?>
+<?php
+if($prefs->has_non_field_error()) {
+    echo '<div class="non-field-errors">' .
+         $prefs->non_field_error .
+         '</div>';
+}
+?>
 
 <div id="content">
 
-<form action="#newsletter-form" method="post" id="newsletter-form">
+<form action="" method="post" id="newsletter-form">
 <input type="hidden" name="target" value="main" />
+
 <?php
     if($prefs->has_error()) {
         echo '<ul class="field-errors">';
@@ -70,7 +81,12 @@ EXTRA_HEADERS;
     <div class="field email-field <?= $prefs->has_error('email') ? 'field-error' : ''; ?>">
         <label for="email">Your email address:</label>
         <div class="field-contents">
+          <?php if (isset($_GET['email'])): ?>
+            <input type="email" class="email" value="<?= htmlspecialchars($_GET['email']) ?>" disabled>
+            <input name="email" type="hidden" class="email" value="<?= htmlspecialchars($_GET['email']) ?>">
+          <?php else: ?>
             <input name="email" type="email" class="email" value="<?= $prefs->get('email') ?>" autofocus>
+          <?php endif ?>
         </div>
     </div>
 
@@ -123,7 +139,6 @@ EXTRA_HEADERS;
         <tr>
             <td></td>
             <th>Subscribe</th>
-            <th>Unsubscribe</th>
         </tr>
         </thead>
         <tbody>
@@ -135,8 +150,7 @@ foreach($prefs->available_newsletters() as $nl => $info) {
             <h4><?= $info['title'] ?></h4>
             <p><?= $info['desc'] ?></p>
           </th>
-          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
-          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', $nl != 'mozilla-and-you'); ?>></td>
+          <td><input type="checkbox" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
         </tr>
 <?php
    }
@@ -147,7 +161,7 @@ foreach($prefs->available_newsletters() as $nl => $info) {
 </div>
 
 <div class="field submit-field">
-  <input name="submit" type="submit" value="Save Preferences" class="button">
+  <input name="submit" type="submit" value="Subscribe" class="button">
 </div>
 
 </form>

@@ -5,11 +5,13 @@
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
 EXTRA_HEADERS;
-    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/prefs.php";
 
     $prefs = new EmailPrefs($_POST);
+
+    $token = $_GET['t'];
+    $prefs->get_user($token);
 
     function chk($field, $val, $force=FALSE) {
         global $prefs;
@@ -26,24 +28,35 @@ EXTRA_HEADERS;
         'country' => 'Please select a country'
     );
 
-    $prefs = new EmailPrefs($_POST);
-    $prefs->save_new();
+    if($prefs->save_user()) {
+        if($prefs->is_subscribing()) {
+            header("Location: /$lang/newsletter/updated/?unsub=1");
+        }
+        else {
+            header("Location: /$lang/newsletter/updated/");
+        }
+        exit;
+    }
+
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
 <div id="main-feature">
     <h2>Manage your <span>Newsletter Subscriptions</span></h2>
 </div>
 
-<?php if($prefs->has_non_field_error()) { ?>
-<div class="non-field-errors">
-  We apologize, but something is amiss with our newsletter
-  system. Try again soon.
-</div>
-<?php } ?>
-
 <div id="content">
 
-<form action="#newsletter-form" method="post" id="newsletter-form">
+<?php
+if($prefs->has_non_field_error()) {
+    echo '<div class="non-field-errors field-errors">' .
+         $prefs->non_field_error .
+         '</div>';
+}
+else {
+?>
+
+<form action="" method="post" id="newsletter-form">
 <input type="hidden" name="target" value="main" />
 <?php
     if($prefs->has_error()) {
@@ -133,8 +146,8 @@ foreach($prefs->available_newsletters() as $nl => $info) {
             <h4><?= $info['title'] ?></h4>
             <p><?= $info['desc'] ?></p>
           </th>
-          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
-          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', $nl != 'mozilla-and-you'); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y'); ?>></td>
+          <td><input type="radio" name="<?= $nl ?>" value="N" <?= chk($nl, 'N', TRUE); ?>></td>
         </tr>
 <?php
    }
@@ -142,7 +155,7 @@ foreach($prefs->available_newsletters() as $nl => $info) {
         <tr>
             <td colspan="3" id="remove-all-section">
                 <h4>Check here if you’d like to be removed from all Mozilla emails</h4>
-                <input type="checkbox" id="remove-all">
+                <input type="checkbox" id="remove-all" name="remove-all" value="Y">
                 <label for="remove-all">Remove me from all Mozilla emails</label>
             </td>
         </tr>
@@ -156,6 +169,8 @@ foreach($prefs->available_newsletters() as $nl => $info) {
 </div>
 
 </form>
+
+<?php } // end if no non_field_errors ?>
 
 <div id="newsletter-social">
     <h4>Let’s Be Friends!</h4>

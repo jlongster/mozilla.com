@@ -21,10 +21,13 @@ class EmailPrefs {
                         'desc' => 'Read about the latest features for Firefox desktop and mobile before the final release.')
     );
 
+    var $general_error = 'Something is amiss with our system, sorry! Please try again later.';
+    var $auth_error = 'The supplied link has expired. You will receive a new one in the next newsletter.';
+
     function __construct($data, $token=FALSE) {
         $this->data = $data;
         $this->errors = array();
-        $this->token = $token;
+        $this->non_field_error = NULL;
     }
 
     function get($field) {
@@ -52,6 +55,19 @@ class EmailPrefs {
 
     function has_non_field_error() {
         return !empty($this->non_field_error);
+    }
+
+    function is_subscribing() {
+        return $data && isset($data['remove-all']);
+    }
+
+    function handle_exception($e) {
+        if($e->getCode() == 403) {
+            $this->non_field_error = $this->auth_error;
+        }
+        else {
+            $this->non_field_error = $this->general_error;
+        }
     }
 
     function validate() {
@@ -95,13 +111,17 @@ class EmailPrefs {
 
             if(!empty($newsletters)) {
                 $serv = new BasketService();
-                $ret = $serv->subscribe(array('email' => $data['email'],
-                                              'format' => $data['format'] == 'html' ? 'H' : 'T',
-                                              'country' => $data['country'],
-                                              'lang' => $data['lang'],
-                                              'newsletters' => $newsletters));
-                if($ret['status'] != 'ok') {
-                    $this->non_field_error = $ret['desc'];
+
+                try {
+                    $serv->subscribe(array('email' => $data['email'],
+                                           'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                           'country' => $data['country'],
+                                           'lang' => $data['lang'],
+                                           'newsletters' => $newsletters));
+                    return TRUE;
+                }
+                catch(BasketException $e) {
+                    $this->handle_exception($e);
                 }
             }
         }
@@ -109,17 +129,37 @@ class EmailPrefs {
         return FALSE;
     }
 
-    function get_user() {
-        $serv = new BasketService();
-        $this->data = $serv->get_subscriber($this->token);
+    function get_user($token) {
+        $this->token = $token;
 
-        if($this->data) {
+        // If we already have data, we don't need the user
+        if(!empty($this->data))
+            return TRUE;
+
+        if(!$token) {
+            $this->non_field_error = $this->auth_error;
+            return FALSE;
+        }
+
+        $serv = new BasketService();
+
+        try {
+            $this->data = $serv->get_subscriber($this->token);
+
+            // Digest for our forms
             foreach($this->data['newsletters'] as $nl) {
                 $this->data[$nl] = 'Y';
             }
+
+            $this->data['format'] = $this->data['format'] == 'H' ? 'html' : 'text';
+            return TRUE;
+        }
+        catch(BasketException $e) {
+            $this->data = array();
+            $this->handle_exception($e);
         }
 
-        $this->data['format'] = $this->data['format'] == 'H' ? 'html' : 'text';
+        return FALSE;
     }
 
     function save_user() {
@@ -127,20 +167,33 @@ class EmailPrefs {
 
         if($this->submitted() && $this->validate()) {
             $data = $this->data;
-            $newsletters = $this->get_newsletters();
+            $serv = new BasketService();
 
-            if(!empty($newsletters)) {
-                $serv = new BasketService();
-                $ret = $serv->update_subscriber($this->token,
-                                                array('email' => $data['email'],
-                                                      'format' => $data['format'] == 'html' ? 'H' : 'T',
-                                                      'country' => $data['country'],
-                                                      'lang' => $data['lang'],
-                                                      'newsletters' => $newsletters));
-                if($ret['status'] != 'ok') {
-                    $this->non_field_error = $ret['desc'];
+            if(isset($data['remove-all'])) {
+                try {
+                    $serv->delete_subscriber($this->token);
+                    return TRUE;
                 }
-            }                
+                catch(BasketException $e) {
+                    $this->handle_exception($e);
+                }
+            }
+            else {
+                $newsletters = $this->get_newsletters();
+
+                try {
+                    $serv->update_subscriber($this->token,
+                                             array('email' => $data['email'],
+                                                   'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                                   'country' => $data['country'],
+                                                   'lang' => $data['lang'],
+                                                   'newsletters' => $newsletters));
+                    return TRUE;
+                }
+                catch(BasketException $e) {
+                    $this->handle_exception($e);
+                }
+            }
         }
 
         return FALSE;
