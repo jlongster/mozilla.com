@@ -81,7 +81,7 @@ $fields_def = array(
     ),
     'share' => array(
         'label' => 'Share',
-        'rules' => array(),
+        'rules' => array('required'),
         'rname' => 'share',
     ),
     'privacy' => array(
@@ -268,7 +268,7 @@ function is_level_selected($field) {
                                         </ul>
                                     </li>
                                     <li>
-                                        <label for="signup-projects-ideas">What (if any) additional projects do you think Student Reps could lead at their schools to contribute to Firefox and Mozilla's mission?f</label>
+                                        <label for="signup-projects-ideas">What (if any) additional projects do you think Student Reps could lead at their schools to contribute to Firefox and Mozilla's mission?</label>
                                         <textarea id="signup-projects-ideas" name="projects_ideas"><?=$hf_data['projects_ideas']?></textarea>
                                     </li>
                                     <li<?=err('tell_me')?>>
@@ -310,28 +310,28 @@ function is_level_selected($field) {
                                     
                                     <li class="field" id="share-field">
                                       <?php
-                                          $yes_share = 'checked="checked"';
-                                          $no_share = '';
-                                          if ($f_data['share'] == 'no') {
+                                          $yes_share = $no_share = '';
+                                          if ($f_data['share'] == 'yes') {
+                                              $yes_share = 'checked="checked"';
+                                          } elseif ($f_data['share'] == 'no') {
                                               $no_share = 'checked="checked"';
-                                              $yes_share = '';
                                           }
                                       ?>
                                       <span class="field-label">Can we share your contact and school information with other Student and Mozilla Reps for the purpose of collaborating on Mozilla projects?</span>
                                       <ul class="checkboxes">
                                         <li>
-                                          <input type="radio" name="share" id="yes-share" value="html" <?= $yes_share?>>
+                                          <input type="radio" name="share" id="yes-share" value="yes" required="required" <?= $yes_share?>>
                                           <label for="yes-share">Yes</label>
                                         </li>
                                         <li>
-                                          <input type="radio" name="share" id="no-share" value="text" <?= $no_share?>>
+                                          <input type="radio" name="share" id="no-share" value="no" required="required" <?= $no_share?>>
                                           <label for="no-share">No</label>
                                         </li>
                                       </ul>
                                     </li>
 
                                     <li id="privacy-field" <?=err('privacy')?>>
-                                      <? $checked = array_key_exists('privacy', $f_data) ? 'checked="checked"' : '' ?>
+                                      <? $checked = array_key_exists('privacy', $f_data) && strlen($f_data['privacy']) > 0 ? 'checked="checked"' : '' ?>
                                       <ul class="checkboxes">
                                         <li>    
                                           <input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?> required="required">
