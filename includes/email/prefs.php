@@ -125,12 +125,12 @@ class EmailPrefs {
                 $serv = new BasketService();
 
                 try {
-                    $serv->subscribe(array('email' => $data['email'],
-                                           'format' => $data['format'] == 'html' ? 'H' : 'T',
-                                           'country' => $data['country'],
-                                           'lang' => $data['lang'],
-                                           'newsletters' => $newsletters));
-                    return TRUE;
+                    $ret = $serv->subscribe(array('email' => $data['email'],
+                                                  'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                                  'country' => $data['country'],
+                                                  'lang' => $data['lang'],
+                                                  'newsletters' => $newsletters));
+                    return $ret['token'];
                 }
                 catch(BasketException $e) {
                     $this->handle_exception($e);

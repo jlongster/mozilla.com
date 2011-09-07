@@ -31,8 +31,8 @@ require_once "{$config['file_root']}/includes/email/prefs.php";
         'country' => 'Please select a country'
     );
 
-    if($prefs->save_new()) {
-        header("Location: /$lang/newsletter/updated/");
+    if(($token = $prefs->save_new())) {
+        header("Location: /$lang/newsletter/updated/?token=" . $token);
         exit;
     }
 
