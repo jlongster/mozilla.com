@@ -216,6 +216,8 @@ $dynamic_header = <<<DYNAMIC_HEADER
     /* }}} */
     /* {{{ Footer */
 
+
+
     .portal-page #footer {
         background: #33559B !important;
         min-height: 80px !important;
@@ -223,10 +225,15 @@ $dynamic_header = <<<DYNAMIC_HEADER
         color:lightgray;
     }
 
-    * html #footer { height: 80px !important; }
+    * html #footer {
+        height: 80px !important;
+    }
+
 
     .portal-page #footer #footer-logo {
         float: left;
+        margin: 15px 40px  0 -20px;
+        height: 100px;
     }
 
     #footer #copyright p {
@@ -368,5 +375,3 @@ unset($dynamic_header);
 unset($extra_top_text);
 unset($dynamic_top_menu);
 unset($util_js);
-
-?>

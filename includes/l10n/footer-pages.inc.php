@@ -34,28 +34,36 @@ $meta_newsletter = <<<META
 }
 
 #footer-wrap {
-    min-width:980px;
-    width:70%;
-    max-width:1380px;
+    width:980px;
     margin:auto;
+}
+
+#footer-wrap #footer-contents {
+    width: 680px;
+    margin:0;
+    float:left;
 }
 
 #sub-footer {
     float: left !important;
-    margin-top: -181px !important;
-    margin-left: 115px !important;
+    margin-top: -105px !important;
+    margin-left: 0 !important;
     background:none !important;
-    width:0;
+    clear: none !important;
 }
 
-#footer-contents {
-    float:left;
+#sub-footer #sub-footer-contents {
+    width:300px;
 }
 
 
 form {
     margin:0; /* IE7 hack */
     width:300px; /* IE7 hack */
+}
+
+#sub-footer #sub-footer-newsletter {
+    margin:0;
 }
 
 #sub-footer #sub-footer-newsletter {
@@ -90,7 +98,7 @@ $meta_newsletter .= <<<META
 }
 
 #footer #footer-contents {
-    width: 68 0px;
+    float:right;
 }
 
 #sub-footer #sub-footer-contents {
@@ -161,4 +169,3 @@ DYNAMIC_FOOTER;
 echo $dynamic_footer;
 
 unset($dynamic_footer);
-?>
