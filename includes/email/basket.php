@@ -43,7 +43,9 @@ class BasketService {
             if(!$response) {
                 $response = "Could not connect to basket service.";
             }
-            throw new BasketException($response, $status);
+
+            $json = json_decode($response);
+            throw new BasketException($json->desc, $status);
         }
 
         return $response;
