@@ -24,7 +24,7 @@ class EmailPrefs {
     var $general_error = 'Something is amiss with our system, sorry! Please try again later.';
     var $auth_error = 'The supplied link has expired. You will receive a new one in the next newsletter.';
 
-    function __construct($data, $token=FALSE) {
+    function __construct($data=NULL, $token=FALSE) {
         $this->data = $data;
         $this->errors = array();
         $this->non_field_error = NULL;
@@ -57,8 +57,8 @@ class EmailPrefs {
         return !empty($this->non_field_error);
     }
 
-    function is_subscribing() {
-        return $data && isset($data['remove-all']);
+    function is_unsubscribing() {
+        return $this->data && isset($this->data['remove-all']);
     }
 
     function handle_exception($e) {
@@ -67,19 +67,30 @@ class EmailPrefs {
         }
         else {
             $this->non_field_error = $this->general_error;
+            $this->non_field_error = $e->getMessage();
         }
     }
 
-    function validate() {
+    function validate($required_fields=NULL) {
         $data = $this->data;
+        
+        if(!$required_fields) {
+            $required_fields = array('email');
+        }
 
-        if (!isset($data['email']) || !preg_match('/^([\w\-.+])+@([\w\-.])+\.[A-Za-z]{2,4}$/', $data['email'])) {
+        if(in_array('email', $required_fields) &&
+           !isset($data['email']) ||
+           !preg_match('/^([\w\-.+])+@([\w\-.])+\.[A-Za-z]{2,4}$/', $data['email'])) {
             $this->errors[] = 'email';
         }
 
-        if(isset($data['country']) &&
+        if(in_array('country', $required_fields) &&
            !preg_match('/^\w{2}$/', $data['country'])) {
             $this->errors[] = 'country';
+        }
+
+        if(in_array('privacy', $required_fields) && !isset($data['privacy'])) {
+            $this->errors[] = 'privacy';
         }
 
         return count($this->errors) == 0;
@@ -102,10 +113,11 @@ class EmailPrefs {
         return join($lst, ',');
     }
 
-    function save_new() {
+    function save_new(/* required fields */) {
         $this->reset();
+        $required_fields = func_get_args();
 
-        if($this->submitted() && $this->validate()) {
+        if($this->submitted() && $this->validate($required_fields)) {
             $data = $this->data;
             $newsletters = $this->get_newsletters();
 
@@ -123,6 +135,9 @@ class EmailPrefs {
                 catch(BasketException $e) {
                     $this->handle_exception($e);
                 }
+            }
+            else {
+                $this->non_field_error = "No newsletter selected";
             }
         }
 
@@ -162,10 +177,11 @@ class EmailPrefs {
         return FALSE;
     }
 
-    function save_user() {
+    function save_user(/* required fields */) {
         $this->reset();
+        $required_fields = func_get_args();
 
-        if($this->submitted() && $this->validate()) {
+        if($this->submitted() && $this->validate($required_fields)) {
             $data = $this->data;
             $serv = new BasketService();
 

@@ -147,8 +147,8 @@ foreach($prefs->available_newsletters() as $nl => $info) {
 ?>
         <tr>
           <th>
-            <h4><?= $info['title'] ?></h4>
-            <p><?= $info['desc'] ?></p>
+            <h4><?= ___($info['title']) ?></h4>
+            <p><?= ___($info['desc']) ?></p>
           </th>
           <td><input type="checkbox" name="<?= $nl ?>" value="Y" <?= chk($nl, 'Y', $nl == 'mozilla-and-you'); ?>></td>
         </tr>

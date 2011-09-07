@@ -9,26 +9,25 @@
 EXTRA_HEADERS;
 
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
     $status = '';
 
+
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
-        if ($form->save()) {
+        $form = new EmailPrefs($_POST);
+        if($form->save_new('email', 'country', 'privacy')) {
             // Relocate to /newsletter/new/ page
-            $fields = array('email' => $form->data['email'],
-                            'country' => $form->data['country'],
-                            'lang' => $form->data['lang'],
-                            'format' => $form->data['format']);
+            $fields = array('email' => $form->get('email'),
+                            'country' => $form->get('country'),
+                            'lang' => $form->get('lang'),
+                            'format' => $form->get('format'));
             header("Location: new/?" . http_build_query($fields));
             exit;
-        } elseif ($form->error) {
-            $status = 'error-'. $form->error;
         }
     }
     else {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+        $form = new EmailPrefs();
     }
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
@@ -42,24 +41,40 @@ EXTRA_HEADERS;
 
       <form action="" method="post" id="newsletter-form">
         <input type="hidden" name="target" value="main" />
+        <input type="hidden" name="mozilla-and-you" value="Y" />
 
-<? if ($status) { ?>
-    <ul class="field-errors">
-    <? if ($status == 'error-email') { ?>
-        <li>Whoops! Be sure to enter a valid email address.</li>
-    <? } ?>
-    <? if ($status == 'error-privacy') { ?>
-        <li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>
-    <? } ?>
-    </ul>
-<? } ?>
+<?php
+    if($form->has_non_field_error()) {
+        echo '<div class="non-field-errors field-errors">' .
+        $form->non_field_error .
+        '</div>';
+    }
 
-        <div class="field required email-field<?=$status == 'error-email' ? ' field-error' : ''; ?>">
+    if($form->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($form->errors as $error) {
+            if($error == 'email') {
+                echo '<li>Whoops! Be sure to enter a valid email address.</li>';
+            }
+            else if($error == 'country') {
+                echo '<li>Please select a country.</li>';
+            }
+            else if($error == 'privacy') {
+                echo '<li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>';
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
+
+        <div class="field required email-field <?= $form->has_error('email') ? 'field-error' : ''; ?>">
           <label for="email">Your email address:</label>
           <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
         </div>
 
-        <div class="field country-field">
+        <div class="field country-field <?= $form->has_error('country') ? 'field-error' : ''; ?>">
           <label for="country">Country:</label>
           <select class="country" name="country">
             <option value="">Select country</option>
@@ -91,7 +106,7 @@ EXTRA_HEADERS;
           </div>
         </div>
 
-        <div class="field privacy-field<?=$status == 'error-privacy' ? ' field-error' : ''; ?>">
+        <div class="field privacy-field <?= $form->has_error('privacy') ? 'field-error' : ''; ?>">
           <label for="privacy-check" class="privacy-check-label">
             <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
             <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" class="privacy-check" <?= $checked ?>></span>
