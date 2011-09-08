@@ -327,7 +327,7 @@ $language_url_map = array(
     'uk'        => 'http://europe.mozilla.org/uk/',
     'vi'        => 'http://www.mozilla.org/vi/',
     'zh-TW'     => 'http://www.moztw.org/',
-    'zh-CN'     => 'http://www.mozillaonline.com/',
+    'zh-CN'     => 'http://firefox.com.cn/',
 );
 
 /* Despite our having in-product pages for all the languages above, we don't have
