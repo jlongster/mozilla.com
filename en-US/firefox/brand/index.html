@@ -10,6 +10,17 @@
         src: url('{$config['static_prefix']}/img/fonts/MetaWebPro-Normal.eot');
         src: local('☺'), url('{$config['static_prefix']}/img/fonts/MetaWebPro-Normal.woff') format('woff');
     }
+    @font-face {
+        font-family: 'MuseoSans500';
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot');
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+    }
     </style>
 FONTS;
     $extra_headers = <<<EXTRA_HEADERS
@@ -285,7 +296,7 @@ EXTRA_HEADERS;
             document.getElementById('channel-logos').id = 'page-channel-logos';
             // ]]></script>
             <div class="title">
-                <h1>CHANNEL LOGOS</h1>
+                <h1>Channel Logos</h1>
                 <p>Firefox is broken down into a series of sub-brands — or “channels” — from the tried, tested and true mainstream release down to the experimental, here-there-be-monsters Nightly builds. Each one has its own visual identity and here’s everything you need to know about that.</p>
             </div>
             <div class="firefox">
@@ -536,7 +547,7 @@ EXTRA_HEADERS;
             document.getElementById('gears').id = 'page-gears';
             // ]]></script>
             <div class="title">
-                <h1>GEAR</h1>
+                <h1>Gear</h1>
                 <p>Shirts, hats, bags, stickers, mouse pads — we just love putting our logo on stuff around here. So whether you call it “swag” or “merch” or “workwear,” here’s the skinny on Mozilla-branded merchandise, from S to XL.</p>
             </div>
             <div class="content">
