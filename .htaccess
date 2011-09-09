@@ -311,8 +311,10 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [R=301,E=
 # redirect everyone else to /new
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [R=301,E=varyua]
 
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox/fx[/]?$ $1firefox/index.html?fx [PT]
+RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox/new[/]?$ $1firefox/index.html?new [PT]
 
