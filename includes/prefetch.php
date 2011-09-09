@@ -204,11 +204,11 @@ if ($url_parts[0] != $lang) {
             }                
         }            
 
-        if (!$is_mobile_redirected && $lang == 'en-US') {
+        if (!$is_mobile_redirected) {
             // Bug 629407 Redirect to user-specific pages
             // This is also implemented in .htaccess, but we do it here
             // to redirect the user only once
-            if (preg_match('/Firefox\/(6|7|8)/', $ua)) {
+            if (preg_match('/Firefox\/(6|7|8|9)/', $ua)) {
                 $_SERVER['REQUEST_URI'] = '/firefox/fx/';
             }
             else {
@@ -220,10 +220,12 @@ if ($url_parts[0] != $lang) {
             $_SERVER['REQUEST_URI'] .= '?' . $parsed_url['query'];
         }
     }
-
+    
+    header( "HTTP/1.1 301 Moved Permanently" ); 
     header("Location: {$config['url_scheme']}://{$config['server_name']}/{$lang}{$_SERVER['REQUEST_URI']}");
     header('Pragma: no-cache');
     header('Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private');
+    header("Vary: User-Agent, Accept-Language");
     exit;
 }
 

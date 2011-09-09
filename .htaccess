@@ -7,9 +7,9 @@ Options +MultiViews -Indexes
 
 Header always set X-Robots-Tag "noodp"
 
-SetEnvIfNoCase Request_URI "en-US/index.html" vary-ua
-SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" vary-ua
-Header always set Vary "User-Agent" env=vary-ua
+SetEnvIfNoCase Request_URI "en-US/index.html" varyua
+SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" varyua
+Header always set Vary "User-Agent" env=varyua
 
 BrowserMatch "(Android|Maemo|Fennec|Linux\ armv7l)" is_mobile=yes
 BrowserMatch "(?!(Android|Maemo|Fennec|Linux\ armv7l))" is_not_mobile=yes
@@ -306,19 +306,15 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/fea
 
 
 # Bug 680147 Redirect updated ff users to /fx, locales only, specific template based on A/B testing
-RewriteCond $1 !en-(US|GB|ZA)/
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(4.*|5.*|6.*|7.*|8.*|9.*)$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox[/]?$ /$1firefox/fx/ [R=302,E=vary-ua]
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(6.*|7.*|8.*|9.*)$
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [R=301,E=varyua]
 # redirect everyone else to /new
-RewriteCond $1 !en-(US|GB|ZA)/
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox[/]?$ /$1firefox/new/ [R=302,E=vary-ua]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [R=301,E=varyua]
 
-RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/fx[/]?$ $1firefox/index.html?fx [PT]
-RewriteCond $1 !en-(US|GB|ZA)/
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox/fx[/]?$ $1firefox/index.html?fx [PT]
 RewriteCond $1 !^$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new[/]?$ $1firefox/index.html?new [PT]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox/new[/]?$ $1firefox/index.html?new [PT]
 
 
 
@@ -428,7 +424,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/mobile(.*)[/]?$ /$1mobile$2 
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/1.0.0(.*)[/]?$ /$1mobile/1.0$2 [R=permanent]
 
 # Bug 619404 Quickly redirect index page
-# RewriteRule ^$ /fake-page.html [L]
+RewriteRule ^firefox$ /fake-page.html [L]
 
 # Bug 611692 Redirect Pre Dec, 2010 pages to new equivalents
 ## Fix MPL URL (bug 681806)
@@ -519,14 +515,8 @@ RewriteRule ^en-US/press/faq/fx4(/(index.html)?)?$ /en-US/press/faq/fx/ [R=301]
 # Bug 640701 redirects stats page to glow
 RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
 
-# Bug 629407  & 659786 Redirect updated ff users to /fx
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(6.*|7.*|8.*)$
-RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/fx/ [R=302]
-# redirect everyone else to /new
-RewriteRule ^en-US/firefox(/(index.html)?)?$ /en-US/firefox/new/ [R=302]
-
 # Bug 672863
-SetEnvIf Request_URI "/(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?" vary-ua
+SetEnvIf Request_URI "/(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?" varyua
 RewriteCond %{ENV:is_mobile} yes
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?$ /$1m [R=302]
 
