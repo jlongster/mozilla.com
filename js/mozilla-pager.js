@@ -54,10 +54,19 @@ $(document).ready(function() {
         }
     });
 
-    // initialize pagers on this page after the document has been loaded
-    $('.pager').each(function(index, el) {
-        new Mozilla.Pager(this);
-    });
+    Mozilla.Pager.createPagers(document.body, Mozilla.Pager.rootPagers, null);
+
+    // If one or more root pagers have history enabled, check if window
+    // location changes from back/forward button use. This doesn't matter
+    // in IE but is nice for Firefox and recent Safari and Opera users.
+    for (var i = 0; i < Mozilla.Pager.rootPagers.length; i++) {
+        if (Mozilla.Pager.rootPagers[i].history) {
+            setInterval(Mozilla.Pager.checkLocation,
+                Mozilla.Pager.LOCATION_INTERVAL);
+
+            break;
+        }
+    }
 
 });
 
@@ -73,7 +82,7 @@ if (typeof Mozilla == 'undefined') {
  *
  * @param DOMElement container
  */
-Mozilla.Pager = function(container)
+Mozilla.Pager = function(container, parentPager)
 {
     this.$container = $(container);
 
@@ -95,6 +104,8 @@ Mozilla.Pager = function(container)
     this.previousPage = null;
     this.currentPage  = null;
     this.animatingOut = false;
+    this.childPagers  = {};
+    this.parentPager  = parentPager;
 
     this.randomStartPage = (this.$container.hasClass('pager-random'));
 
@@ -118,6 +129,7 @@ Mozilla.Pager = function(container)
     this.history = (!this.$container.hasClass('pager-no-history'));
 
     // add pages
+    var page;
     var pageNodes = this.$pageContainer.children('div');
 
     if (this.$tabs) {
@@ -129,8 +141,20 @@ Mozilla.Pager = function(container)
             if (i < tabNodes.length) {
                 var tabAnchorNodes = $(tabNodes[i]).children('a:first');
                 if (tabAnchorNodes.length) {
-                    this.addPage(new Mozilla.Page(pageNodes[i], index,
-                        tabAnchorNodes[0]));
+                    page = new Mozilla.Page(
+                        pageNodes[i],
+                        index,
+                        tabAnchorNodes[0]
+                    );
+
+                    this.addPage(page);
+                    this.childPagers[page.id] = [];
+
+                    Mozilla.Pager.createPagers(
+                        page.el,
+                        this.childPagers[page.id],
+                        this
+                    );
 
                     index++;
                 }
@@ -139,35 +163,31 @@ Mozilla.Pager = function(container)
     } else {
         // initialize pages without tabs
         for (var i = 0; i < pageNodes.length; i++) {
-            this.addPage(new Mozilla.Page(pageNodes[i], i));
+            page = new Mozilla.Page(pageNodes[i], i);
+            this.addPage(page);
+            this.childPagers[page.id] = [];
+
+            Mozilla.Pager.createPagers(
+                page.el,
+                this.childPagers[page.id],
+                this
+            );
         }
     }
 
     // initialize current page
-    var currentPage = null;
-    if (this.history) {
+    var currentPage;
+    if (this.history && !this.parentPager) {
         var hash = location.hash;
         hash = (hash.substring(0, 1) == '#') ? hash.substring(1) : hash;
-        if (hash.length) {
-            currentPage = this.pagesById[hash];
-            if (currentPage) {
-                this.setPage(currentPage);
-            }
-        }
 
-        // check if window location changes from back/forward button use
-        // this doesn't matter in IE but is nice for Firefox and recent
-        // recent Safari and Opera users.
-        function setupInterval(pager)
-        {
-            var intervalFunction = function()
-            {
-                pager.checkLocation();
-            }
-            setInterval(intervalFunction,
-                Mozilla.Pager.LOCATION_INTERVAL, pager);
+        // trim leading and tailing slash
+        hash = hash.replace(/(^\/|\/$)/g, '');
+
+        if (hash.length) {
+            this.setStateFromPath(hash, false, false);
+            currentPage = this.currentPage;
         }
-        setupInterval(this);
     }
 
     if (!currentPage && this.pages.length > 0) {
@@ -221,9 +241,52 @@ Mozilla.Pager = function(container)
 
 // }}}
 
-Mozilla.Pager.currentId = 1;
-Mozilla.Pager.pagers    = {};
+Mozilla.Pager.currentId  = 1;
+Mozilla.Pager.pagers     = {};
+Mozilla.Pager.rootPagers = [];
 
+// {{{ createPagers()
+
+Mozilla.Pager.createPagers = function(node, pagers, parentPager)
+{
+    if (/(^pager$|^pager | pager$| pager )/.test(node.className)) {
+        var pager = new Mozilla.Pager(node, parentPager);
+//        pager.parentPager = parentPager;
+        pagers.push(pager);
+    } else {
+        for (var i = 0; i < node.childNodes.length; i++) {
+            if (node.nodeType == 1) {
+                Mozilla.Pager.createPagers(
+                    node.childNodes[i],
+                    pagers,
+                    parentPager
+                );
+            }
+        }
+    }
+};
+
+// }}}
+// {{{ checkLocation()
+
+Mozilla.Pager.checkLocation = function()
+{
+    var hash = location.hash;
+    hash = (hash.substring(0, 1) == '#') ? hash.substring(1) : hash;
+
+    // trim leading and tailing slash
+    hash = hash.replace(/(^\/|\/$)/g, '');
+
+    var pager;
+    for (var i = 0; i < Mozilla.Pager.rootPagers.length; i++) {
+        pager = Mozilla.Pager.rootPagers[i];
+        if (pager.history) {
+            pager.setStateFromPath(hash, true, true);
+        }
+    }
+};
+
+// }}}
 // {{{ getPseudoRandomPage()
 
 Mozilla.Pager.prototype.getPseudoRandomPage = function()
@@ -248,6 +311,54 @@ Mozilla.Pager.PREV_TEXT            = 'Previous';
 Mozilla.Pager.PAGE_NUMBER_TEXT     = '%s / %s';
 Mozilla.Pager.AUTO_ROTATE_INTERVAL = 10000;  // milliseconds
 
+// {{{ setStateFromPath()
+
+Mozilla.Pager.prototype.setStateFromPath = function(path, animate, focus)
+{
+    var base = path, pos = base.indexOf('/');
+
+    if (pos !== -1) {
+        base = base.substr(0, pos);
+        path = path.substr(pos + 1);
+    }
+
+    var baseParts = base.split('+'), updateSelf, page;
+    for (var i = 0; i < baseParts.length; i++) {
+        base = baseParts[i];
+        page = this.pagesById[base];
+        updateSelf = (this.currentPage === null || base !== this.currentPage.id);
+        if (page) {
+            if (updateSelf) {
+                if (animate) {
+                    this.setPageWithAnimation(
+                        page,
+                        Mozilla.Pager.PAGE_DURATION
+                    );
+                } else {
+                    this.setPage(page);
+                }
+            }
+
+            // check for children
+            for (var j = 0; j < this.childPagers[base].length; j++) {
+                this.childPagers[base][j].setStateFromPath(
+                    path,
+                    animate,
+                    focus
+                );
+            }
+
+            if (updateSelf && focus) {
+                this.currentPage.focusTab(); // for accessibility
+            }
+
+            break;
+        }
+    }
+
+};
+
+// }}}
 // {{{ prevPageWithAnimation()
 
 Mozilla.Pager.prototype.prevPageWithAnimation = function(duration)
@@ -343,22 +454,37 @@ Mozilla.Pager.prototype.drawNav = function()
 }
 
 // }}}
-// {{{ checkLocation()
+// {{{ updateLocation()
 
-Mozilla.Pager.prototype.checkLocation = function()
+Mozilla.Pager.prototype.updateLocation = function(page)
 {
-    var hash = location.hash;
-    hash = (hash.substring(0, 1) == '#') ? hash.substring(1) : hash;
-    var currentHash = this.currentPage.id;
-
-    if (hash && hash !== currentHash) {
-        var page = this.pagesById[hash];
-        if (page) {
-            this.setPageWithAnimation(page, Mozilla.Pager.PAGE_DURATION);
-            this.currentPage.focusTab(); // for accessibility
-        }
+    if (!this.history) {
+        return;
     }
-}
+
+    // set address bar to current page
+    var baseLocation = location.href.split('#')[0];
+
+    var hash = page.id;
+
+    // if this is a child pager, set parent hashes
+    var pager = this;
+    while (pager.parentPager !== null) {
+        hash = pager.parentPager.currentPage.id + '/' + hash;
+        pager = pager.parentPager;
+    }
+
+    // if this is a parent pager, set child hashes for selected page
+    if (this.childPagers[page.id] && this.childPagers[page.id].length) {
+        hash += '/';
+        for (var i = 0; i < this.childPagers[page.id].length; i++) {
+            hash += this.childPagers[page.id][i].currentPage.id + '+';
+        }
+        hash = hash.substr(0, hash.length - 1);
+    }
+
+    location.href = baseLocation + '#' + hash;
+};
 
 // }}}
 // {{{ addPage()
@@ -498,11 +624,7 @@ Mozilla.Pager.prototype.setPageWithAnimation = function(page, duration)
 {
     if (this.currentPage !== page) {
 
-        if (this.history) {
-            // set address bar to current page
-            var baseLocation = location.href.split('#')[0];
-            location.href = baseLocation + '#' + page.id;
-        }
+        this.updateLocation(page);
 
         // deselect last selected page (not necessarily previous page)
         if (this.currentPage) {
