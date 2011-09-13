@@ -13,7 +13,7 @@
 <div id="content">
 
 <p>Mozilla nie jest tradycyjną firmą informatyczną. Jesteśmy globalną <a href="/<?=$lang?>/firefox/community/">społecznością</a>,
-skupiającą się na tworzeniu produktów i&nbsp;technologii open-source, sprawiających, że korzystanie z&nbsp;Sieci staje się wygodniejsze i&nbsp;bezpieczniejsze &ndash; dla wszystkich. Są wśród nas programiści, testerzy, specjaliści od marketingu i&nbsp;inne osoby wspierające nasze idee z&nbsp;całego świata. Chcemy, by Internet pozostał wspólnym dobrem ludzkości. Wierzymy, że otwarte standardy stanowią podstawę dla wolności wyboru, a&nbsp;jednocześnie pozwalają na dokonywanie innowacji w&nbsp;taki sposób, by każdy, gdziekolwiek będzie, mógł korzystać z&nbsp;Sieci w&nbsp;sposób najlepszy z&nbsp;możliwych.</p>
+skupiającą się na tworzeniu produktów i&nbsp;technologii open-source, sprawiających, że korzystanie z&nbsp;Sieci staje się wygodniejsze i&nbsp;bezpieczniejsze &ndash; dla wszystkich. Są wśród nas programiści, testerzy, specjaliści od marketingu i inne osoby – ludzie z całego świata wspierający nasze idee. Chcemy, by Internet pozostał wspólnym dobrem ludzkości. Wierzymy, że otwarte standardy stanowią podstawę dla wolności wyboru, a&nbsp;jednocześnie pozwalają na dokonywanie innowacji w&nbsp;taki sposób, by każdy, gdziekolwiek będzie, mógł korzystać z&nbsp;Sieci w&nbsp;sposób najlepszy z&nbsp;możliwych.</p>
 
 <p>Nasze wielokrotnie nagradzane <a href="/<?=$lang?>/products/">produkty</a> i&nbsp;<a href="http://www.mozilla.org/projects/">technologie</a> open-source dostępne są za darmo dla wszystkich, w&nbsp;ponad 40 językach.</p>
 
