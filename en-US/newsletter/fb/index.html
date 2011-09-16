@@ -46,7 +46,7 @@
 
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
         $form = new EmailPrefs($_POST);
-        if ($form->save()) {
+        if ($form->save_new('email', 'country', 'privacy')) {
             $status = 'success';
         } elseif ($form->error) {
             $status = 'error-'. $form->error;
