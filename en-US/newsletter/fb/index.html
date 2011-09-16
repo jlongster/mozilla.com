@@ -4,7 +4,7 @@
     require_once "fb-config.php";
     if (empty($config)) $config['static_prefix'] = 'http://www-fx4-cdn.stage.mozilla.com';
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
     
     /* Facebook API */
     require_once "facebook.php";
@@ -45,7 +45,7 @@
     $status = '';
 
     if(isset($_POST['target']) && $_POST['target'] == 'main') {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+        $form = new EmailPrefs($_POST);
         if ($form->save()) {
             $status = 'success';
         } elseif ($form->error) {
@@ -54,7 +54,7 @@
         
     }
     else {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+        $form = new EmailPrefs();
     }
 ?>
 <!DOCTYPE html>
