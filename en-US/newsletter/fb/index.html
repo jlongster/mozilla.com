@@ -108,7 +108,18 @@
                     echo '</ul>';
                 }
             ?>
-            <?php if($status != 'success') { ?>
+            <?php if(!$form->has_error() && isset($_POST['target'])) { ?>  
+            <div id="success">
+                <div class="clearfix">
+                    <div class="form_item">
+                        <h2><?php echo _('Thanks for subscribing!'); ?></h2>
+                        <p>
+                            <?php echo _("Now you will be among the first to see Mozilla's special events, product updates, videos and other awesomeness."); ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <?php } else { ?>
             <div id="form-content">
                 <form method="post" action="index.html">
                     <input type="hidden" name="target" value="main" />
@@ -164,17 +175,6 @@
                         </div>
                     </div>
                 </form>
-            </div>
-            <?php } else { ?>
-            <div id="success">
-                <div class="clearfix">
-                    <div class="form_item">
-                        <h2><?php echo _('Thanks for subscribing!'); ?></h2>
-                        <p>
-                            <?php echo _("Now you will be among the first to see Mozilla's special events, product updates, videos and other awesomeness."); ?>
-                        </p>
-                    </div>
-                </div>
             </div>
             <?php } ?>
         </div>
