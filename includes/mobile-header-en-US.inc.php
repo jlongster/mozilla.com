@@ -32,32 +32,6 @@ $header = <<<HEADER
 </head>
 <body id="{$body_id}" class="{$body_class}">
 {$controls}
-<div id="menu" class="closed">
-  <ul>
-    <li><a href="/m">Mozilla Firefox</a></li>
-    <li><a href="/m/features">Features</a></li>
-    <li><a href="/firefox">Desktop</a></li>
-    <li><a href="http://addons.mozilla.org/">Add-ons</a></li>
-    <li><a href="http://support.mozilla.org/">Support</a></li>
-    <li><a href="http://mozilla.org/">Visit Mozilla</a></li>
-  </ul>
-</div>
-
-<script type="text/javascript">
-
-      function toggle_menu(tab) {
-          var menu = document.getElementById('menu');
-          if(menu.className == 'open') {
-              menu.className = 'closed';
-              tab.className = 'closed';
-          }
-          else {
-              menu.className = 'open';
-              tab.className = 'open';
-          }
-      }
-
-</script>
 
 <div class="outer-wrapper">
   <div class="wrapper">
@@ -66,9 +40,6 @@ $header = <<<HEADER
         <a href="/{$lang}/m/" id="mozilla-logo">
           <img src="{$config['static_prefix']}/img/mobile/m/mobile-logo.png" alt="Mozilla"/>
         </a>
-      </div>
-      <div id="nav-tab">
-        <a href="#" onclick="toggle_menu(this);">menu</a>
       </div>
       <div class="clear"></div>
     </div>
