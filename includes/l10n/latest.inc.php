@@ -41,6 +41,7 @@ p {
 ul {
     margin: 20px 0 15px 0;
     padding: 0;
+	width: 520px;
 }
 
 ul li {
