@@ -44,7 +44,7 @@ $extra_headers = <<<EXTRA_HEADERS
 
 
     #plugin-check #doc {
-        background: url("/img/covehead/plugincheck/background.png") no-repeat scroll 370px 36px transparent;
+        background: url("/img/covehead/plugincheck/background.png") no-repeat scroll 370px 46px transparent;
     }
     body.locale-sq #main-feature h2 {
         font-size:35px;
@@ -73,7 +73,7 @@ if($textdir == "rtl") {
     $extra_headers .= <<<EXTRA_HEADERS
     <style>
         [dir="rtl"] #plugin-check #doc {
-            background: url(/img/covehead/plugincheck/background-rtl.png) 190px 36px no-repeat;
+            background: url(/img/covehead/plugincheck/background-rtl.png) 190px 46px no-repeat;
         }
 
         [dir="rtl"] #main-feature {
