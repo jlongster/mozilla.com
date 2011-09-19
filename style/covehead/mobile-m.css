@@ -156,12 +156,13 @@ button {
 }
 
 a.button, .wide-button a, p.button a, button {
-    background: #519d1b;
-    background-image:-moz-linear-gradient(#83c53c, #519d1b);
-    background-image:-webkit-gradient(linear, left top, left bottom, from(#83c53c), to(#519d1b));
-    -moz-box-shadow: 0px 4px 0 #438814;
-    -webkit-box-shadow: 0px 4px 0 #438814;
-    box-shadow: 0px 4px 0 #438814;
+    background: #58a100;
+    background: -moz-linear-gradient(top, #84C63C 0%, #489615 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84C63C), color-stop(100%,#489615)); /* webkit */
+    background: linear-gradient(top, #84C63C 0%, #489615 100%);
+    -webkit-box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -3px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -3px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 3px rgba(0, 0, 0, 0.1), 0 -3px rgba(0, 0, 0, 0.1) inset;
     color: #fff;
     display:block;
     font-size: 150%;
@@ -249,6 +250,10 @@ p.button strong {
     background: url(/img/mobile/m/menu-up.png) 70px 16px no-repeat;
 }
 
+.mozilla {
+    float: right;
+}
+
 .clear {
     clear: both;
     zoom: 1;
@@ -256,7 +261,7 @@ p.button strong {
 
 #mozilla-logo {
     display: block;
-    padding: 4px 10px 2px;
+    padding: 4px 5px 2px 0;
 }
 
 #view-full-site {
@@ -367,7 +372,7 @@ p.button strong {
 }
 
 .buttons {
-    padding: 7px 0 12px 8px;
+    padding: 7px 0 8px 8px;
 }
 
 .button-wrapper .up-corner {
@@ -425,6 +430,24 @@ p.button strong {
 
 .button-wrapper em:before, .button-wrapper em:after {
     content: " - "
+}
+
+.buttons-sub {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.buttons-sub .button {
+    font-size: 130%;
+    line-height: 1.2;
+    padding-top: 0.4em;
+}
+
+.buttons-sub .button small {
+    display: block;
+    font-size: 70%;
+    color: #1b3413;
+    text-shadow: 1px 1px rgba(255,255,255,0.4);
 }
 
 #beta-download {
