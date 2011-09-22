@@ -811,7 +811,10 @@ RewriteRule ^directory.* /includes/org-handler.php [L]
 RewriteRule ^docs.* /includes/org-handler.php [L]
 RewriteRule ^drumbeat.* /includes/org-handler.php [L]
 RewriteRule ^editor.* /includes/org-handler.php [L]
+
+RewriteCond %{REQUEST_URI} !/foundation/annualreport/2010/.*
 RewriteRule ^foundation.* /includes/org-handler.php [L]
+
 RewriteRule ^hacking.* /includes/org-handler.php [L]
 RewriteRule ^grants.* /includes/org-handler.php [L]
 RewriteRule ^hacking.* /includes/org-handler.php [L]
