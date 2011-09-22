@@ -1,0 +1,66 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = file_get_contents("{$config['file_root']}/{$lang}/firefox/brand/includes/titles/identity/channel-logos.html");
+    $body_id    = 'brand';
+    $fonts = <<< FONTS
+    <style>
+    /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+    @font-face {
+        font-family: 'MetaNormal';
+        src: url('{$config['static_prefix']}/img/fonts/MetaWebPro-Normal.eot');
+        src: local('☺'), url('{$config['static_prefix']}/img/fonts/MetaWebPro-Normal.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'MuseoSans500';
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot');
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+    </style>
+FONTS;
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/brand-toolkit.css" media="screen" />
+    <script src="/js/mozilla-video-tools.js"></script>
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="brand-toolkit" class="pager pager-with-tabs">
+
+<ul id="nav" class="pager-tabs">
+    <li id="home-link" class="first"><a href="/<?=$lang?>/firefox/brand">Home</a></li>
+    <li id="platform-link"><a href="/<?=$lang?>/firefox/brand/platform">Platform</a></li>
+    <li id="identity-link"><a href="/<?=$lang?>/firefox/brand/identity" class="selected">Identity</a></li>
+    <li id="artwork-link"><a href="/<?=$lang?>/firefox/brand/artwork">Artwork</a></li>
+    <li id="website-link"><a href="/<?=$lang?>/firefox/brand/website">Website</a></li>
+    <li id="copy-link"><a href="/<?=$lang?>/firefox/brand/copy">Copy</a></li>
+    <li id="downloads-link" class="last"><a href="/<?=$lang?>/firefox/brand/downloads">Downloads</a></li>
+</ul>
+
+<div id="main-content">
+<div class="pager-content">
+    <div class="contents" id="page-identity">
+        <div class="pager pager-with-tabs">
+            <ul id="identity-nav" class="pager-tabs">
+                <li id="logo-link" class="first"><a href="/<?=$lang?>/firefox/brand/identity">Logo</a></li>
+                <li id="channel-logos-link"><span>Channel Logos</span></li>
+                <li id="wordmarks-link"><a href="/<?=$lang?>/firefox/brand/identity/wordmarks">Wordmarks</a></li>
+                <li id="typefaces-link"><a href="/<?=$lang?>/firefox/brand/identity/typefaces">Typefaces</a></li>
+            </ul>
+            <div class="pager-content">
+                <?php include "{$config['file_root']}/{$lang}/firefox/brand/includes/panels/identity/channel-logos.html"; ?>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<?php
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
