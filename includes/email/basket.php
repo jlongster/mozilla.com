@@ -39,8 +39,6 @@ class BasketService {
         $response = curl_exec($_curl);
         $status = curl_getinfo($_curl, CURLINFO_HTTP_CODE);
 
-        var_dump($response); exit;
-
         if (!$response || $status != 200) {
             if(!$response) {
                 $response = "Could not connect to basket service.";
