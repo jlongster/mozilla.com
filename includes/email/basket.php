@@ -8,8 +8,8 @@
 // for documentation on the API.
 
 class BasketException extends Exception {
-    public function __construct($message, $code, Exception $previous = null) {
-        parent::__construct($message, $code, $previous);
+    public function __construct($message, $code) {
+        parent::__construct($message, $code);
     }
 }
 
