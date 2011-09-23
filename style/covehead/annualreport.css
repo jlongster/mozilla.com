@@ -1,0 +1,390 @@
+/* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+@font-face { 
+  font-family: "MetaBlack";
+  src: url('/img/fonts/MetaWebPro-Black.eot'); /* IE9 */
+  src: url('/img/fonts/MetaWebPro-Black.eot?') format('eot'), /* IE6-8 */
+       url('/img/fonts/MetaWebPro-Black.woff') format('woff'); /* Modern browsers */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: "MetaBook"; 
+  src: url('/img/fonts/MetaWebPro-Book.eot'); /* IE9 */
+  src: url('/img/fonts/MetaWebPro-Book.eot?') format('eot'), /* IE6-8 */
+       url('/img/fonts/MetaWebPro-Book.woff') format('woff'); /* Modern browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: "MetaBold"; 
+  src: url('/img/fonts/MetaWebPro-Bold.eot'); /* IE9 */
+  src: url('/img/fonts/MetaWebPro-Bold.eot?') format('eot'), /* IE6-8 */
+       url('/img/fonts/MetaWebPro-Bold.woff') format('woff'); /* Modern browsers */
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* }}} */
+/* {{{ Details */
+
+header, hgroup, nav, section, article, aside, footer { display: block; }
+html, body, form, fieldset, legend, h1, h2, h3, h4, h5, h6, dd { margin: 0; padding: 0; }
+p, pre, blockquote, ul, ol, dl, table { margin: 0 0 1.5em; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset { border: 0; }
+form ul, form ol { list-style: none; margin: 0 0 1.5em; }
+a img { border: 0; }
+input, select, textarea { font-family: inherit; font-size: 100%; }
+.dtstart, .dtend, .published, .updated { border: 0; }
+
+/* }}} */
+/* {{{ Layout */
+
+html {
+    background: #fff url("/img/covehead/annualreport/page-background.png") top center repeat-x; 
+}
+
+body {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #777; 
+    border-top: 2px solid #686868;
+}
+
+#doc {
+    width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#content-main {
+    width: 680px;
+    min-height: 30em;
+    margin: 0 auto;
+}
+
+/* }}} */
+/* {{{ Links */
+
+a:link { text-decoration: none; color: #b63813; }
+a:visited { text-decoration: none; color: #a9543b; }
+a:hover, 
+a:focus, 
+a:active { text-decoration: underline; color: #db4215; }
+
+/* }}} */
+/* {{{ Headings */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-style: italic;
+    color: #333;
+    margin: 0 0 .25em;
+}
+
+h1, .page-title { font-size: 2.32em; }
+h2 { font-size: 1.538em; }
+h3 { font-size: 1.385em; }
+h4 { font-size: 1.231em; }
+h5 { font-size: 1.07em; }
+h6 { font-size: 1em; }
+
+/* }}} */
+/* {{{ Accessible */
+
+#nav-access {
+    position: absolute;
+    top: -10em;
+}
+
+#nav-access a:active, 
+#nav-access a:focus {
+    background: rgba(255,255,255,.8);
+    display: block;
+    position: absolute;
+    top: 15em;
+    left: 240px;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    outline: 0;
+    z-index: 99;
+    padding: .25em 20px;
+    border: 1px solid #db4215;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+
+/* }}} */
+/* {{{ Navigation */
+
+#site-nav {
+    overflow: hidden;
+    height: 60px;
+    padding-right: 140px;
+}
+
+.nav-main {
+    float: right;
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-main li {
+    float: left;
+    background: none;
+    position: relative;
+    margin: 0 0 0 -1px;
+    padding: 0;
+}
+
+.nav-main li a,
+.nav-main li a:link,
+.nav-main li a:visited,
+.nav-main li em {
+    float: left;
+    min-width: 70px;
+    height: 18px;
+    color: #484848;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    border: solid #a7a8a9;
+    border-width: 0 1px;
+    -moz-transition: all 0.1s ease-in; 
+    -webkit-transition: all 0.1s ease-in; 
+    -o-transition: all 0.1s ease-in; 
+    transition: all 0.1s ease-in; 
+}
+
+.nav-main a:hover,
+.nav-main a:focus,
+.nav-main a:active,
+.nav-main li:hover a,
+.nav-main li.current a,
+.nav-main li.current em {
+  background: #fff;
+  background: rgba(255,255,255,.25);
+  color: #db4215; 
+  font-style: normal;
+  outline: 0;
+  padding-bottom: 15px;
+  border: 1px solid #9c9d9e;
+  border-top-width: 0;
+  -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 0 0 rgba(152,178,201,0.2), inset 0 0 10px 5px rgba(255,255,255,0.8), inset 0 -2px 0 rgba(0,0,0,.25);
+  -moz-transition: 0.1s linear;
+  -moz-transition-property: background, box-shadow, border, color;
+  -webkit-transition: 0.1s linear;
+  -webkit-transition-property: background, box-shadow, border, color;
+  -o-transition: 0.1s linear;
+  -o-transition-property: background, box-shadow, border, color;
+  transition: 0.1s linear;
+  transition-property: background, box-shadow, border, color;
+}
+.nav-main li.current a,
+.nav-main li.current em { color: #484848; }
+
+.nav-main li.last a,
+.nav-main li.last span { border-right-color: transparent; }
+
+.nav-main li.last a:hover,
+.nav-main li.last a:focus,
+.nav-main li.last a:active,
+.nav-main li.last a:focus,
+.nav-main li.hover a { border-right-color: #98b2c9; }
+
+/* }}} */
+/* {{{ Brand Header */
+
+#branding {
+    position: relative;
+    margin: 0 0 40px;
+}
+
+#nav-mozilla {
+    width: 118px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#nav-mozilla a.mozilla {
+    background: url("/img/covehead/annualreport/mozilla-tab.png") center bottom no-repeat;
+    display: block;
+    width: 118px;
+    height: 50px;
+    text-indent: -999em;
+    overflow: hidden;
+}
+
+#site-title {
+    font-size: 40px;
+    font-weight: normal;
+    color: #373737;
+    margin: 0;
+    padding: 0;
+}
+
+#site-title span {
+    display: block;
+    font: normal bold 1.5em/.8 "MetaBlack", "Trebuchet MS", sans-serif;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #b63813;
+    margin: -10px 0 15px;
+}
+
+#site-title a:link,
+#site-title a:visited {
+    color: #373737;
+    text-decoration: none;
+}
+
+#site-title a:hover,
+#site-title a:focus,
+#site-title a:active, 
+#site-title a:hover span,
+#site-title a:focus span,
+#site-title a:active span { color: #db4215; }
+
+#tagline {
+    clear: both; 
+}
+
+/* }}} */
+/* {{{ Button */
+
+.button,
+.button:visited,
+.button:hover,
+.button:active {
+    background-color: #dc4800;
+    font-family: sans-serif;
+    color: #fff;
+    padding: 5px 20px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow:    0 2px rgba(0,0,0,0.2), 0 -2px rgba(0,0,0,0.1) inset, 0 0 25px rgba(0, 0, 0, 0.2) inset;
+    -webkit-box-shadow: 0 2px rgba(0,0,0,0.2), 0 -2px rgba(0,0,0,0.1) inset, 0 0 25px rgba(0, 0, 0, 0.2) inset;
+    box-shadow:         0 2px rgba(0,0,0,0.2), 0 -2px rgba(0,0,0,0.1) inset, 0 0 25px rgba(0, 0, 0, 0.2) inset;
+}
+
+.return-to-top {
+    float: right;
+    padding: 15px 0;
+}
+
+.return-to-top:before {
+    content: "\00AB\00A0";
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+/* }}} */
+/* {{{ Pagination */
+
+.nav-paging {
+    clear: both;
+    background: left top url("/img/covehead/annualreport/dots.png") repeat-x;
+    list-style: none;
+    font-style: italic;
+    margin: 1em 0;
+    padding: 15px 0;
+    overflow: hidden;
+}
+
+.nav-paging .prev {
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+.nav-paging .prev a:before { content: "\00AB\00A0"; }
+
+.nav-paging .next {
+    float: right;
+    width: 45%;
+    text-align: right;
+}
+
+.nav-paging .next a:after { content: "\00A0\00BB"; }
+
+/* }}} */
+/* {{{ Footer */
+
+#footer {
+    position: relative;
+    clear: both;
+    background: #313131;
+    margin: 30px 0 0;
+    padding: 10px 0 2em;
+    border-top: 6px solid #b53813;
+    color: #999;
+}
+
+#footer .section {
+    position: relative;
+    width: 680px;
+    margin: 0 auto;
+}
+
+#nav-info ul {
+    width: 60%;
+    float: left;
+    list-style: none;
+    margin: .25em 0 0;
+    text-transform: uppercase;
+}
+
+#nav-info li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#footer a:link,
+#footer a:visited {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#footer a:hover,
+#footer a:active {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#footer #copyright {
+    clear: both;
+    padding-top: 20px;
+}
+
+#footer #copyright p {
+    margin-bottom: 1em;
+    font-size: 11px;
+}
+
+#footer #copyright a:hover,
+#footer #copyright a:focus,
+#footer #copyright a:active { text-decoration: underline; }
+
+#footer #footer-links {
+    font-size: 11px;
+    margin-bottom: 1em;
+}
+
+/* }}} */

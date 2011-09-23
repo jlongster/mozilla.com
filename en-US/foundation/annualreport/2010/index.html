@@ -1,0 +1,49 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'The State of Mozilla Annual Report';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/annualreport.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/headers/annual-report-2010.inc.php";
+?>
+
+    <section id="content-main">
+
+        <div>
+            <img src="" />
+            <h2>Looking Ahead</h2>
+            <p>A quick overview. The state of Mozillz, Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+            <div>
+                <ul>
+                    <li><a href="" class="button">Share</a></li>
+                    <li><a href="" class="button">Embed</a></li>
+                </ul>
+                <p>Download this video:</p>
+                <ul>
+                    <li><a href="">Open video format (Ogg Theora)</a></li>
+                    <li><a href="">MPEG-4 format</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h2>Introduction</h2>
+            <p>Mozilla’s mission is to ensure that the Internet remains open, interoperable and respects user sovereignty. We do this by building software that puts people in control of their digital lives,  like Firefox. We do this by empowering a global community of people who volunteer to champion these efforts.</p>
+            <p>Internet life is changing. We are connecting through more devices. We are living in apps as well as browsers. We are interacting with friends and followers and acquaintances.  We can experience the Web through a highly personal, highly customized lens.</p>
+            <p>The challenges ahead of us are very real.  Mobile platforms are more closed and more centralized than we have seen in decades. As individuals, we are losing the ability to act on the Web without permission from large, centralized gatekeepers. We are all being tracked, logged, cataloged, monetized and turned into products to be sold.  We're seeing the universal platform of the Web fragmenting back into multiple different worlds.</p>
+            <p>As the Internet experience is changing, Mozilla, too, is changing. The products and tools that we use to advance our mission are expanding and evolving. A browser is necessary but not sufficient. Equally important is expanding the number of people who understand our values and identify as Mozillians.  Mozilla has both the challenge and the opportunity to expand our reach dramatically.  We have the ability to bring our values to life in new ways.  Embracing these opportunities means embracing change, embracing hope and embracing determination.  This is how we will continue to give people  ultimate authority over their digital lives.</p>
+            <p>I am pleased to share with you this year’s annual State of Mozilla report.  It details our opportunities, our community and our expanding set of initiatives. I invite you to learn more about the Mozilla Project and join us in our ongoing efforts to build a better Internet.</p>
+        </div>
+
+        <p><a href="" class="return-to-top">Return to Top</a></p>
+
+        <ul class="nav-paging bottom">
+            <li class="prev"><a href="" >Previous</a></li>
+            <li class="next"><a href="" >Next</a></li>
+        </ul>
+
+    </section><!-- end #content-main -->
+
+<?php
+    include_once "{$config['file_root']}/{$lang}/includes/footers/annual-report-2010.inc.php";
+?>
