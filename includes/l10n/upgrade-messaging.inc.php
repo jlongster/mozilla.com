@@ -16,6 +16,7 @@ $needed = array(
 if(!in_array($lang, array('en-US', 'en-GB', 'en-ZA'))) {
 
     // only display the form if we are on stage or if all strings are translated
+    $display_upgrade_warning = true;
     $persistent_strings  = "\n        var v3UpdateLink = '/firefox/new/';\n";
     $persistent_strings .= "        var v3UpdateLearnLink = '/firefox/features/';\n";
 
@@ -29,7 +30,7 @@ if(!in_array($lang, array('en-US', 'en-GB', 'en-ZA'))) {
         $persistent_strings .= "        var $key = '" . addslashes(___($val)) . "';\n";
 
         if(i__($val) == false) {
-            $persistent_strings = '';
+            $display_upgrade_warning = false;
             break;
         }
     }
@@ -78,4 +79,7 @@ $upgrade_warning = <<<UPGRADE
     </script>
 UPGRADE;
 
+if($display_upgrade_warning == false) {
+        $upgrade_warning = '';
+}
 
