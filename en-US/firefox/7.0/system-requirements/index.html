@@ -1,0 +1,89 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox 7 System Requirements';
+    $body_id    = 'firefox-requirements';
+    $extra_headers = <<<EXTRA_HEADERS
+	<link rel="stylesheet" href="/style/covehead/system-requirements.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'devel_version' => false, 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox 6.0');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+</div>
+
+<div id="main-feature">
+	<h2>Firefox&nbsp;7 <span>System Requirements</span></h2>
+</div>
+
+<div id="main-content">
+
+ <h2>Windows</h2>
+  <h6>Operating Systems</h6>
+  <ul>
+    <li>Windows 2000</li>
+    <li>Windows XP</li>
+    <li>Windows Server 2003</li>
+    <li>Windows Vista</li>
+    <li>Windows 7</li>
+  </ul>
+  
+    <p><em><small>Please note that while the 32-bit and 64-bit versions of Windows Vista and Windows 7 can be used to run Firefox 6, only 32-bit builds of Firefox 6 are supported at this time.</small></em></p>
+
+  
+  <h6>Recommended Hardware</h6>
+  <ul>
+    <li>Pentium 4 or newer processor that supports SSE2</li>
+    <li>512MB of RAM</li>
+    <li>200MB of hard drive space</li>
+  </ul>
+
+  <h2>Mac</h2>
+  <h6>Operating Systems</h6>
+  <ul>
+    <li>Mac OS X 10.5</li>
+    <li>Mac OS X 10.6</li>
+    <li>Mac OS X 10.7</li>
+  </ul>
+  <h6>Recommended Hardware</h6>
+  <ul>
+    <li>Macintosh computer with an Intel x86 processor</li>
+    <li>512 MB of RAM</li>
+    <li>200 MB hard drive space</li>
+  </ul>
+
+  <h2>Linux</h2>
+  <h6>Software Requirements</h6>
+  Please note that Linux distributors may provide packages for your distribution which have different requirements.
+  <ul>
+    <li>Firefox will not run at all without the following libraries or packages:
+      <ul>
+        <li>GTK+ 2.10 or higher</li>
+        <li>GLib 2.12 or higher</li>
+        <li>Pango 1.14 or higher</li>
+        <li>X.Org 1.0 or higher (1.7 or higher is recommended)</li>
+        <li>libstdc++ 4.3 or higher</li>
+      </ul>
+    </li>
+    <li>For optimal functionality, we recommend the following libraries or packages:
+      <ul>
+        <li>NetworkManager 0.7 or higher</li>
+        <li>DBus 1.0 or higher</li>
+        <li>HAL 0.5.8 or higher</li>
+        <li>GNOME 2.16 or higher</li>
+      </ul>
+    </li>
+  </ul>
+
+</div><!-- end #content div -->
+
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
