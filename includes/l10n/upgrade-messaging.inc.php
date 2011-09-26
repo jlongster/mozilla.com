@@ -12,11 +12,10 @@ $needed = array(
         => 'Close',
 );
 
+$display_upgrade_warning = true;
 
 if(!in_array($lang, array('en-US', 'en-GB', 'en-ZA'))) {
 
-    // only display the form if we are on stage or if all strings are translated
-    $display_upgrade_warning = true;
     $persistent_strings  = "\n        var v3UpdateLink = '/firefox/new/';\n";
     $persistent_strings .= "        var v3UpdateLearnLink = '/firefox/features/';\n";
 
