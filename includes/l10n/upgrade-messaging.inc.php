@@ -16,8 +16,8 @@ $display_upgrade_warning = true;
 
 if(!in_array($lang, array('en-US', 'en-GB', 'en-ZA'))) {
 
-    $persistent_strings  = "\n        var v3UpdateLink = '/firefox/new/';\n";
-    $persistent_strings .= "        var v3UpdateLearnLink = '/firefox/features/';\n";
+    $persistent_strings  = "\n        var v3UpdateLink = '/$lang/firefox/';\n";
+    $persistent_strings .= "        var v3UpdateLearnLink = '/$lang/firefox/features/';\n";
 
     foreach($needed as $key => $val) {
 

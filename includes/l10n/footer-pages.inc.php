@@ -71,6 +71,20 @@ form {
 }
 
 
+#central h3 {
+    background: none !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    font-style: auto !important;
+    font-weight: inherit !important;
+    height: auto !important;
+    padding-bottom: inherit !important;
+    padding-top: inherit !important;
+    text-align: inherit !important;
+    line-height: 1.2em !important;
+}
+
+
 </style>
 META;
 
