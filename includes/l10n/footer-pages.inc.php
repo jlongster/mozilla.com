@@ -83,7 +83,7 @@ $meta_newsletter .= <<<META
     margin: 0 !important;
     padding: 135px 0 0 0 !important;
     text-align: right !important;
-    background: url("/img/template/footer-social.png") no-repeat scroll 70% -427px transparent;
+    background: url("/img/template/footer-social.png") no-repeat scroll 70% -412px transparent;
 }
 
 #sub-footer {

@@ -103,4 +103,24 @@
     background-position: -25px 0;
 }
 
+.rtl #update-notice,
+.rtl #update-notice * {
+    text-align: right;
+}
 
+.rtl #update-notice .container {
+    margin: 0 auto !important;
+    padding: 15px 140px 15px 10px;
+    background: url("/img/covehead/firefox/update-creature.png") no-repeat scroll 100% 15px transparent;
+    display: table; /* redefine inline-block because there is a bug preventing margin:auto to work in rtl */
+}
+
+.rtl #update-notice .message {
+    float: right;
+}
+
+.rtl #update-notice .close {
+
+    right:auto;
+    text-indent: 1000em;
+}
