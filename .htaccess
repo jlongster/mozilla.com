@@ -65,7 +65,7 @@ RewriteRule ^en-US/hp7(/)?$ /en-US/hp7/new/
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
 # bug 538486
-RewriteCond $1 !^(?:3.6.*|6.*|7.*|8.*|9.*|sync|aurora|backtoschool)$
+RewriteCond $1 !^(?:3.6.*|7.*|8.*|9.*|sync|aurora|backtoschool)$
 RewriteRule en-US/firefox/(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/[/]?$ /$1firefox [R=permanent]
