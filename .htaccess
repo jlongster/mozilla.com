@@ -561,7 +561,7 @@ RewriteRule ^script/(.*)$ /org/script/$1 [L]
 # Catch-all for static files that should simply be served up by Apache.
 # If it doesn't exist in moz.com, but does in moz.org, and is a static
 # file, serve it up
-RewriteCond %{REQUEST_URI} .*\.(css|png|jpg|jpeg|pdf|csv|xsl|crt|xml)
+RewriteCond %{REQUEST_URI} .*\.(css|png|jpg|jpeg|pdf|csv|xsl|crt|xml|xhtml)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/org%{REQUEST_URI} -f
 RewriteRule ^(.*)$ /org/$1 [L]
