@@ -208,7 +208,7 @@ if ($url_parts[0] != $lang) {
             // Bug 629407 Redirect to user-specific pages
             // This is also implemented in .htaccess, but we do it here
             // to redirect the user only once
-            if (preg_match('/Firefox\/(6|7|8|9)/', $ua)) {
+            if (preg_match('/Firefox\/(7|8|9|10)/', $ua)) {
                 $_SERVER['REQUEST_URI'] = '/firefox/fx/';
             }
             else {
