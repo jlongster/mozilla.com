@@ -249,6 +249,10 @@ class MozillaCom_MenuData
                             'title' => 'Press Center',
                             'href'  => "/{$this->lang}/press/",
                         ),
+                        'submenu_brand' => array(
+                            'title' => 'Brand Toolkit',
+                            'href'  => "/{$this->lang}/firefox/brand/",
+                        ),
                         'submenu_careers' => array(
                             'title' => 'Careers',
                             'href'  => "/{$this->lang}/about/careers.html",
