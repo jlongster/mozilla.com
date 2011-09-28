@@ -12,7 +12,7 @@ $(document).ready(function() {
       // Open the menu
       new_li.addClass('hover').find('[role="menu"]').attr('aria-expanded', 'true');
       if (prev_li) {
-        // Close the last selected menu 
+        // Close the last selected menu
         prev_li.dequeue();
       }
     } else {
@@ -77,6 +77,15 @@ $(document).ready(function() {
       });
     });
   });
+
+  if ('ontouchstart' in window) {
+      // don't actually use tocuh events as they cause the menu to flash a
+      // whole bunch on iOS.
+      $('#nav-main [role="menubar"] > li > a').bind('click', function(event) {
+        event.preventDefault();
+        this.focus();
+      });
+  }
 
   // With JavaScript enabled, we can provide a full navigation with #nav-main.
   // Now "hide" the duplicated #footer-menu from AT.
