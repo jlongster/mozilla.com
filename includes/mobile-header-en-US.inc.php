@@ -38,7 +38,7 @@ $header = <<<HEADER
     <div id="header">
       <div class="logo">
         <a href="/{$lang}/m/" id="mozilla-logo">
-          <img src="{$config['static_prefix']}/img/mobile/m/mobile-logo.png" alt="Mozilla"/>
+          <img src="{$config['static_prefix']}/img/mobile/m/mobile-logo.png" alt="Mozilla Firefox"/>
         </a>
       </div>
       <div class="clear"></div>
