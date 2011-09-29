@@ -3,7 +3,7 @@
 
 // Build our dynamic header
 
-$page_title     = empty($page_title)     ? 'Mozilla.com' : $page_title;
+$page_title     = empty($page_title)     ? 'mozilla.org' : $page_title;
 $extra_headers  = empty($extra_headers)  ? ''            : $extra_headers;
 $extra_feature  = empty($extra_feature)  ? ''            : $extra_feature;
 $extra_css      = empty($extra_css)      ? ''            : $extra_css;
@@ -47,7 +47,7 @@ EXTRA_HEADERS;
 // activate newsletter
 
 
-// inline util.js since it's such a small file it doesn't deserver an http call
+// inline util.js since it's such a small file it doesn't deserve an HTTP call
 ob_start();
 include "{$config['file_root']}/js/util.js";
 $util_js = ob_get_contents();

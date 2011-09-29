@@ -100,6 +100,7 @@ $sitepages = array(
     'dl-transition'     => 'download-transition-pages.inc.php',
     'latest'            => 'latest.inc.php',
     'latest-from-3.6'   => 'latest-from-3.6.inc.php',
+    'state-2010-home'   => 'state-2010-home.inc.php',
 );
 
 // pages deactivated on production
