@@ -64,12 +64,12 @@ if ( i__('Super speed') == true) {
 
     <div class="sub-feature first">
         <h3><?php e__('Features');?></h3>
-        <p><?php e__('Check out the new look and feel of Firefox.');?><a href="./features/"><?php e__('Learn More');?></a></p>
+        <p><?php e__('Check out the new look and feel of Firefox.');?><a href="../features/"><?php e__('Learn More');?></a></p>
     </div>
 
     <div class="sub-feature">
         <h3><?php e__('Add-ons');?></h3>
-        <p><?php e__('Customize with Add-ons');?><a href="./customize/"><?php e__('Learn More');?></a>
+        <p><?php e__('Customize with Add-ons');?><a href="../customize/"><?php e__('Learn More');?></a>
         </p>
     </div>
 
@@ -87,7 +87,7 @@ if ( i__('Super speed') == true) {
     }
 ?>
 
-        <p><?=$main_slogan;?><a href="./mobile/"><?php e__('Learn More');?></a>
+        <p><?=$main_slogan;?><a href="../mobile/"><?php e__('Learn More');?></a>
         </p>
     </div>
 
