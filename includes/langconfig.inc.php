@@ -23,7 +23,7 @@ $native_languages = array(
     'bn-IN'     => '&#2476;&#2494;&#2434;&#2482;&#2494;',
     'ca'        => 'Catal&#224;',
     'cs'        => '&#268;e&#353;tina',
-    'csb'       => 'Kashubian',
+    'csb'       => 'Kaszëbsczi',
     'cy'        => 'Cymraeg',
     'da'        => 'Dansk',
     'de'        => 'Deutsch',
@@ -352,7 +352,7 @@ $language_select_list = array(
     'bs'        => 'Bosanski',
     'ca'        => 'Catal&#224;',
     'cs'        => '&#268;e&#353;tina',
-    'csb'       => 'Kashubian',
+    'csb'       => 'Kaszëbsczi',
     'cy'        => 'Cymraeg',
     'da'        => 'Dansk',
     'de'        => 'Deutsch',
@@ -426,4 +426,3 @@ $language_select_list = array(
     'zu'        => 'isiZulu',
 );
 /*** END TEMPORARY CODE ***/
-?>
