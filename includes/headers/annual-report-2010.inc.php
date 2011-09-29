@@ -5,10 +5,11 @@
     $textdir       = empty($textdir)       ? 'ltr'         : $textdir;
     $extra_headers = empty($extra_headers) ? ''            : $extra_headers;
     $dynamic_top_menu = empty($dynamic_top_menu) ? ''            : $dynamic_top_menu;
-$body_class    = !isset($body_class)   ? ''            : $body_class;
-$body_id    = !isset($body_id)   ? ''            : $body_id;
+    $body_class    = !isset($body_class)   ? ''            : $body_class;
+    $body_id    = !isset($body_id)   ? ''            : $body_id;
 
 $default_head_scripts = <<<HEAD_SCRIPTS
+	<script src="/js/mozilla-video-tools.js"></script>
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
 HEAD_SCRIPTS;
 
@@ -25,6 +26,7 @@ $default_fonts = <<<FONTS
 FONTS;
 
 $default_styles = <<<STYLES
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
     <link href="{$config['static_prefix']}/includes/min/min.css?g=css" rel="stylesheet">
 STYLES;
 
@@ -33,13 +35,25 @@ $fonts        = empty($fonts)        ? $default_fonts        : $fonts;
 $styles       = empty($styles)       ? $default_styles       : $styles;
 
 
+$default_menu = '<ul class="nav-main" role="navigation">';
+if ($body_id == 'report_introduction') $default_menu .= '<li class="current" title=""><em>Welcome</em></li>';
+else $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/">Welcome</a></li>';
+if ($body_id == 'report_opportunities') $default_menu .= '<li class="current" title=""><em>Opportunities</em></li>';
+else $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/opportunities/">Opportunities</a></li>';
+if ($body_id == 'report_people') $default_menu .= '<li class="current" title=""><em>People</em></li>';
+else $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/people/">People</a></li>';
+if ($body_id == 'report_ahead') $default_menu .= '<li class="current" title=""><em>Ahead</em></li>';
+else $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/ahead/">Ahead</a></li>';
+if ($body_id == 'report_faq') $default_menu .= '<li class="current last" title=""><em>FAQ</em></li>';
+else $default_menu .= '<li title="" class="last"><a href="/en-US/foundation/annualreport/2010/faq/">FAQ</a></li>';
+$default_menu .= '</ul>';
+
 $dynamic_header = <<<DYNAMIC_HEADER
 <!DOCTYPE HTML>
 <html lang="{$lang}" dir="{$textdir}">
 <head>
     <meta charset="utf-8">
     <title>{$page_title}</title>
-
 
 {$fonts}
 {$styles}
@@ -64,17 +78,10 @@ $dynamic_header = <<<DYNAMIC_HEADER
         </div>
 
         <nav id="site-nav">
-            <ul class="nav-main" role="navigation">
-                <li class="current" title=""><em>Introduction</em></li>
-                <li><a href="">Projects</a></li>
-                <li><a href="">Community</a></li>
-                <li><a href="">Conclusion</a></li>
-                <li><a href="">Financials</a></li>
-            </ul>
+            {$default_menu}
         </nav>
 
         <h1 id="site-title">The State of Mozilla <span>Annual Report</span></h1>
-        <p id="tagline">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
 
     </header>
 
