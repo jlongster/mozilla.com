@@ -10,6 +10,7 @@ Header always set X-Robots-Tag "noodp"
 SetEnvIfNoCase Request_URI "en-US/index.html" varyua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" varyua
 Header always set Vary "User-Agent" env=varyua
+Header always set X-Debug-Vary "varyua" env=varyua
 
 BrowserMatch "(Android|Maemo|Fennec|Linux\ armv7l)" is_mobile=yes
 BrowserMatch "(?!(Android|Maemo|Fennec|Linux\ armv7l))" is_not_mobile=yes
