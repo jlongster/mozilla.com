@@ -9,7 +9,6 @@ $cron = new FeedCacheCron(
     $config['file_root'] . '/includes/feeds/cron-config.ini'
 );
 
-$cron->setVerbose(true);
 $cron->run();
 
 ?>
