@@ -1,7 +1,14 @@
 <?php
 
-require_once $config['file_root'] . '/includes/feeds/AbstractFeed.php';
+require_once dirname(__FILE__) . '/AbstractFeed.php';
 
+/**
+ * @package   MozillaCom
+ * @author    Michael Gauthier <mike@silverorange.com>
+ * @author    James Long
+ * @copyright 2011 Mozilla Foundation, 2011 silverorange
+ * @license   http://www.mozilla.org/MPL/MPL-1.1.txt Mozilla Public License
+ */
 class RapidReleaseFeed extends AbstractFeed
 {
     protected function getURI()
@@ -9,7 +16,7 @@ class RapidReleaseFeed extends AbstractFeed
         return 'http://blog.mozilla.com/futurereleases/feed/';
     }
 
-    public function get_items($max_items = 4)
+    public function getItems($limit = 4)
     {
         $xpath = $this->getDOMXPath($this->getURI());
         $items = array();
@@ -31,7 +38,7 @@ class RapidReleaseFeed extends AbstractFeed
                 $items[] = $item;
                 $count++;
 
-                if ($count >= $max_items) {
+                if ($count >= $limit) {
                     break;
                 }
             }

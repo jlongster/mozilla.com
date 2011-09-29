@@ -1,15 +1,15 @@
 <?php
 
-require_once $config['file_root'] . '/includes/feeds/AbstractFeed.php';
+require_once dirname(__FILE__) . '/AbstractFeed.php';
 
+/**
+ * @package   MozillaCom
+ * @author    Michael Gauthier <mike@silverorange.com>
+ * @copyright 2011 Mozilla Foundation, 2011 silverorange
+ * @license   http://www.mozilla.org/MPL/MPL-1.1.txt Mozilla Public License
+ */
 class PrivacyAMOFeed extends AbstractFeed
 {
-    public function __construct(array $config = array())
-    {
-        parent::__construct($config);
-        $this->lifetime = 172800; // 2 days
-    }
-
     public function getItems($limit = 3)
     {
         $items = array();

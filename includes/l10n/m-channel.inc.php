@@ -3,7 +3,7 @@
     $body_id    = 'channel';
     $body_class = 'locale-'.$lang;
     require_once $config['file_root'].'/includes/product-details/mobileDetails.class.php';
-    require_once $config['file_root'].'/includes/feeds/rapidrelease.php';
+    require_once $config['file_root'].'/includes/feeds/RapidReleaseFeed.php';
     $extra_headers .= <<<EXTRA_HEADERS
     <link href="{$config['static_prefix']}/style/covehead/mobile-m.css" rel="stylesheet" media="all" />
 
@@ -39,7 +39,7 @@ EXTRA_HEADERS;
 <ul class="blog-feed">
 <?php
    $feed = new RapidReleaseFeed();
-   $items = $feed->get_items(4);
+   $items = $feed->getItems(4);
 
    foreach($items as $item) {
 ?>

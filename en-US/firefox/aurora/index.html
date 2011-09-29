@@ -5,7 +5,7 @@
     $body_class = 'darkbg';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
-    require_once "{$config['file_root']}/includes/feeds/aurora.php";
+    require_once "{$config['file_root']}/includes/feeds/AuroraFeed.php";
     require_once "product-details/mobileDetails.class.php";
 
     $form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
@@ -161,7 +161,7 @@ EXTRA_HEADERS;
             </div>
             <?php
                $feed = new AuroraFeed();
-               $items = $feed->get_items(4);
+               $items = $feed->getItems(4);
 
                if (count($items) > 0) {
                    echo '<ul>';
