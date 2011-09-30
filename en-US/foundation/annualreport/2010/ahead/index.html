@@ -14,34 +14,14 @@ EXTRA_HEADERS;
 
         <div id="video">
             <div id="video-player" class="mozilla-video-control">
-                <video id="video" width="400" height="225" controls="controls">
-                    <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" type="vide/webm" />
-                    <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
-                    <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4" type="video/mp4" />
-                    <object type="application/x-shockwave-flash" style="width: 290px; height: 191px;" data="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
-                        <param name="movie" value="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
-                        <param name="wmode" value="transparent" />
-                        <div class="video-player-no-flash">
-                        This video requires a browser with support for open video:
-                        <ul>
-                        <li><a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater</li>
-                        <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
-                        </ul>
-                        or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
-                        Alternatively, you may use the video download links to the right.
-                        </div>
-                    </object>
-                </video>
+                <a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" id="video-ahead"><img width="400" height="225" src="<?=$config['static_prefix']?>/img/covehead/annualreport/poster-ahead.jpg" alt="Video: Looking Ahead" /></a>
             </div>
             <div id="video-description">
-                <h3>Lookin Ahead <span>Mitchel Baker</span></h3>
-                <p>Mitchel Backer, Chair discusses The state of Mozilla.</p>
-                <ul class="share">
-                    <li><a href="" class="button">Share</a></li>
-                    <li><a href="" class="button">Embed</a></li>
-                </ul>
-                <p>Download this video:</p>
+                <h3>Looking Ahead <span>Mitchell Baker</span></h3>
+                <p>Mitchell Baker, Chair discusses the state of Mozilla.</p>
+                <p class="download">Download this video:</p>
                 <ul class="download">
+                    <li><a href="">Open video format (WebM)</a></li>
                     <li><a href="">Open video format (Ogg Theora)</a></li>
                     <li><a href="">MPEG-4 format</a></li>
                 </ul>
@@ -53,7 +33,7 @@ EXTRA_HEADERS;
             <p>Some things don't change at Mozilla. We will always be focused on the <a href="http://www.mozilla.org/about/manifesto.html">Mozilla mission</a>. We will also seek product excellence, individual control over the technology of our lives and the betterment of the Internet as a whole. We will always be an organization of people who believe in these goals and a community of thousands of developers, engineers, students, artists, entrepreneurs and others who have a vision of Internet life centered on individual empowerment.</p>
             <p>Success for Mozilla means that the Internet has respect for human dignity and user sovereignty. Success means that people everywhere have onramps to the Internet that enable them to move from consumption to creation. Success for Mozilla means that people are no longer a number online that companies can track, monetize and sell. It means that we are recognized as real, individual human beings who live all aspects of our online life with richness and excitement.</p>
             <p>Success for Mozilla includes building these fundamental freedoms into the fabric of Internet life. Achieving this success is hard, <em>it's important and it will be great.</em> It is going to take all of us to make this vision a success. Participation ranges from something as simple as spreading the word about Mozilla to friends and family, to leadership positions in determining how the Internet is built. Please find a spot that's comfortable for you and join us.  </p>
-            <p class="">- Mitchel Baker <span>Mozilla Chair</span><p>
+            <p><b><i>- Mitchel Baker</i></b><br>   Mozilla Chair</p>
         </div>
 
         <ul class="nav-paging bottom">
@@ -63,6 +43,31 @@ EXTRA_HEADERS;
 
     </section><!-- end #content-main -->
 
+<script>
+// <![CDATA[
+var player_sync = new Mozilla.VideoPlayer(
+    'video-ahead',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: 'WebM format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: 'Ogg&nbsp;Theora format'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+            type:  'video/mp4',
+            title: 'MPEG-4 format'
+        }
+    ],
+    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4'
+);
+// ]]>
+</script>
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footers/annual-report-2010.inc.php";
 ?>
