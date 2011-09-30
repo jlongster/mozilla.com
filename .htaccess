@@ -10,7 +10,6 @@ Header always set X-Robots-Tag "noodp"
 SetEnvIfNoCase Request_URI "en-US/index.html" varyua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" varyua
 Header always set Vary "User-Agent" env=varyua
-Header always set X-Debug-Vary "varyua" env=varyua
 
 BrowserMatch "(Android|Maemo|Fennec|Linux\ armv7l)" is_mobile=yes
 BrowserMatch "(?!(Android|Maemo|Fennec|Linux\ armv7l))" is_not_mobile=yes
@@ -321,9 +320,9 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/fea
 
 # Bug 680147 Redirect updated ff users to /fx
 RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(7.*|8.*|9.*|10.*)$
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [E=varyua,R=301]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [E=varyua:1,R=301]
 # redirect everyone else to /new
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [E=varyua,R=301]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [E=varyua:1,R=301]
 
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
