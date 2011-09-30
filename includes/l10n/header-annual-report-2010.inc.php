@@ -5,31 +5,31 @@ $default_menu = '<ul class="nav-main" role="navigation">';
 if ($body_id == 'report_introduction') {
     $default_menu .= '<li class="current" title=""><em>' . ___('Welcome') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/">' . ___('Welcome') . '</a></li>';
+    $default_menu .= '<li title=""><a href="/' . $lang . '/foundation/annualreport/2010/">' . ___('Welcome') . '</a></li>';
 }
 
 if ($body_id == 'report_opportunities') {
     $default_menu .= '<li class="current" title=""><em>' . ___('Opportunities') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/opportunities/">' . ___('Opportunities') . '</a></li>';
+    $default_menu .= '<li title=""><a href="/' . $lang . '/foundation/annualreport/2010/opportunities/">' . ___('Opportunities') . '</a></li>';
 }
 
 if ($body_id == 'report_people') {
     $default_menu .= '<li class="current" title=""><em>' . ___('People') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/people/">' . ___('People') . '</a></li>';
+    $default_menu .= '<li title=""><a href="/' . $lang . '/foundation/annualreport/2010/people/">' . ___('People') . '</a></li>';
 }
 
 if ($body_id == 'report_ahead') {
     $default_menu .= '<li class="current" title=""><em>' . ___('Ahead') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/ahead/">' . ___('Ahead') . '</a></li>';
+    $default_menu .= '<li title=""><a href="/' . $lang . '/foundation/annualreport/2010/ahead/">' . ___('Ahead') . '</a></li>';
 }
 
 if ($body_id == 'report_faq') {
     $default_menu .= '<li class="current last" title=""><em>' . ___('FAQ') . '</em></li>';
 } else {
-    $default_menu .= '<li title="" class="last"><a href="/en-US/foundation/annualreport/2010/faq/">' . ___('FAQ') . '</a></li>';
+    $default_menu .= '<li title="" class="last"><a href="/' . $lang . '/foundation/annualreport/2010/faq/">' . ___('FAQ') . '</a></li>';
 }
 
 $default_menu .= '</ul>';
@@ -55,8 +55,9 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
     <link href="{$config['static_prefix']}/includes/min/min.css?g=css" rel="stylesheet">
 
-    <script src="/js/mozilla-video-tools.js"></script>
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
+    <script src="/js/mozilla-video-tools.js"></script>
+
 {$extra_headers}
 </head>
 
@@ -80,7 +81,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
             {$default_menu}
         </nav>
 
-        <h1 id="site-title">The State of Mozilla <span>Annual Report</span></h1>
+        <h1 id="site-title">{$l10n->get('The State of Mozilla <span>Annual Report</span>')}</h1>
 
     </header>
 

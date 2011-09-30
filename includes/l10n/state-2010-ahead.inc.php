@@ -1,6 +1,7 @@
 <?php
 
 $body_id = 'report_ahead';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('Ahead');
 
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';

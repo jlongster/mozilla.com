@@ -1,6 +1,7 @@
 <?php
 
 $body_id = 'report_introduction';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>'));
 
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
