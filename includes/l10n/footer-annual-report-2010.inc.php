@@ -9,6 +9,8 @@ $creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>
 require "{$config['file_root']}/includes/js_stats.inc.php";
 $dynamic_footer = <<<DYNAMIC_FOOTER
 
+{$navigation}
+    </section><!-- end #content-main -->
     </div><!-- end #doc -->
     </div><!-- end #wrapper -->
 

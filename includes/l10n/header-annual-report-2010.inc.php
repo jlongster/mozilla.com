@@ -1,5 +1,6 @@
 <?php
 
+
 // RTL support for Mozilla.com
 if ($textdir == 'rtl') {
     $extra_headers  = <<<EXTRA_HEADERS
@@ -26,36 +27,37 @@ EXTRA_HEADERS;
 
 
 
+
 $default_menu = '<ul class="nav-main" role="navigation">';
 
 if ($body_id == 'report_introduction') {
-    $default_menu .= '<li class="current" title=""><em>Welcome</em></li>';
+    $default_menu .= '<li class="current" title=""><em>' . ___('Welcome') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/">Welcome</a></li>';
+    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/">' . ___('Welcome') . '</a></li>';
 }
 
 if ($body_id == 'report_opportunities') {
-    $default_menu .= '<li class="current" title=""><em>Opportunities</em></li>';
+    $default_menu .= '<li class="current" title=""><em>' . ___('Opportunities') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/opportunities/">Opportunities</a></li>';
+    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/opportunities/">' . ___('Opportunities') . '</a></li>';
 }
 
 if ($body_id == 'report_people') {
-    $default_menu .= '<li class="current" title=""><em>People</em></li>';
+    $default_menu .= '<li class="current" title=""><em>' . ___('People') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/people/">People</a></li>';
+    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/people/">' . ___('People') . '</a></li>';
 }
 
 if ($body_id == 'report_ahead') {
-    $default_menu .= '<li class="current" title=""><em>Ahead</em></li>';
+    $default_menu .= '<li class="current" title=""><em>' . ___('Ahead') . '</em></li>';
 } else {
-    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/ahead/">Ahead</a></li>';
+    $default_menu .= '<li title=""><a href="/en-US/foundation/annualreport/2010/ahead/">' . ___('Ahead') . '</a></li>';
 }
 
 if ($body_id == 'report_faq') {
-    $default_menu .= '<li class="current last" title=""><em>FAQ</em></li>';
+    $default_menu .= '<li class="current last" title=""><em>' . ___('FAQ') . '</em></li>';
 } else {
-    $default_menu .= '<li title="" class="last"><a href="/en-US/foundation/annualreport/2010/faq/">FAQ</a></li>';
+    $default_menu .= '<li title="" class="last"><a href="/en-US/foundation/annualreport/2010/faq/">' . ___('FAQ') . '</a></li>';
 }
 
 $default_menu .= '</ul>';
@@ -109,6 +111,8 @@ $dynamic_header = <<<DYNAMIC_HEADER
         <h1 id="site-title">The State of Mozilla <span>Annual Report</span></h1>
 
     </header>
+
+    <section id="content-main">
 
 DYNAMIC_HEADER;
 

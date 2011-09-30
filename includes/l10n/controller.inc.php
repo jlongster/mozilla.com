@@ -101,6 +101,10 @@ $sitepages = array(
     'latest'            => 'latest.inc.php',
     'latest-from-3.6'   => 'latest-from-3.6.inc.php',
     'state-2010-home'   => 'state-2010-home.inc.php',
+    'state-2010-ahead'  => 'state-2010-ahead.inc.php',
+    'state-2010-opport' => 'state-2010-opport.inc.php',
+    'state-2010-faq'    => 'state-2010-faq.inc.php',
+    'state-2010-people' => 'state-2010-people.inc.php',
 );
 
 // pages deactivated on production
