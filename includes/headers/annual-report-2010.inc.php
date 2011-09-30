@@ -9,8 +9,8 @@
     $body_id    = !isset($body_id)   ? ''            : $body_id;
 
 $default_head_scripts = <<<HEAD_SCRIPTS
-	<script src="/js/mozilla-video-tools.js"></script>
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
+    <script src="/js/mozilla-video-tools.js"></script>
 HEAD_SCRIPTS;
 
 $default_fonts = <<<FONTS
