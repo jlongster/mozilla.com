@@ -3,7 +3,7 @@
 $body_id = 'report_introduction';
 
 // commodity functions for localized pages
-l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/foundationsection.lang');
+
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
 $extra_headers .= <<<EXTRA_HEADERS
@@ -22,6 +22,8 @@ if ($textdir == "rtl") {
         </style>
 RTL;
 }
+
+l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/foundationsection.lang');
 
 $navigation = <<<NAV
 <ul class="nav-paging bottom">

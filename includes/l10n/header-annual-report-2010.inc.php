@@ -1,6 +1,5 @@
 <?php
 
-
 // RTL support for Mozilla.com
 if ($textdir == 'rtl') {
     $extra_headers  = <<<EXTRA_HEADERS
