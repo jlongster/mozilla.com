@@ -93,6 +93,17 @@
               </label>
             </div>
 
+<?php if(isset($__track_footer) && $__track_footer) { ?>
+            <input name="submit" type="submit" value="Sign me up!" class="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                            'DCS.dcsuri', '/mainstream_newsletter/signup',
+                            'WT.ti', 'Link: Mozilla Newsletter',
+                            'WT.dl', 99,
+                            'WT.z_convert', 'newsletter',
+                            'WT.z_page_location', 'footer'
+                            'WT.nv', 'Content',
+                            'WT.ac', 'Newsletter');">
+<?php } else { ?>
             <input name="submit" type="submit" value="Sign me up!" class="subscribe"
                    onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                             'DCS.dcsuri', '/mainstream_newsletter/signup',
@@ -100,6 +111,8 @@
                             'WT.dl', 99,
                             'WT.nv', 'Content',
                             'WT.ac', 'Newsletter');">
+<?php } ?>
+
             <p class="footnote">We will only send you Mozilla-related information.</p>
           </div>
 
