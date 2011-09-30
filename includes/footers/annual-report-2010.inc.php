@@ -25,9 +25,11 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     </div>
     </footer>
     <!-- end #footer -->
+
     {$stats_js}
     {$extra_footers}
 
+    <script type="text/javascript" src="http://s3.www.universalsubtitles.org/js/unisubs-widgetizer.js"></script>
 </body>
 </html>
 DYNAMIC_FOOTER;
