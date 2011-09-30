@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/home-fx.css" media="screen" />
 EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    $form = new EmailPrefs();
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
 ?>
@@ -64,7 +64,7 @@ if (Math.random) {
         <h3><span>Get More Firefox.</span></h3>
         <p class="intro">Sign up to get the latest Firefox tips and tricks in our <em>Firefox &amp; You</em> newsletter.</p>
       <form action="/<?=$lang?>/newsletter/" method="post" id="newsletter-form">
-        <input type="hidden" name="target" value="main" />
+        <input type="hidden" name="mozilla-and-you" value="Y" />
 
         <div class="field email-field">
           <label for="email">Your email address:</label>

@@ -1,38 +1,45 @@
 <?php
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
     $newsletter_class = empty($newsletter_class) ? '' : $newsletter_class;
     $newsletter_snippet = empty($newsletter_snippet) ? '' : $newsletter_snippet;
     $newsletter_form_snippet = empty($newsletter_form_snippet) ? '' : $newsletter_form_snippet;
 
-    $status = '';
-
     if(isset($_POST['target']) && $_POST['target'] == 'inline') {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
-        if ($form->save()) {
-            $status = 'success';
-        } elseif ($form->error) {
-            $status = 'error error-'. $form->error;
-        }
+        $form = new EmailPrefs($_POST);
+        $form->save_new();
     }
     else {
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+        $form = new EmailPrefs();
+    }
+
+    $status = '';
+    if($form->submitted()) {
+        if($form->has_any_errors()) {
+            $status = 'error';
+        }
+        else {
+            $status = 'success';
+        }
     }
 ?>
 
-<div class="newsletter-signup <?= $newsletter_class ?> <?= $status ?> " id="newsletter">
+<div class="newsletter-signup <?= $newsletter_class ?> <?= $status ?>" id="newsletter">
   <div class="container">
 
-    <form class="email-form inline-email-form" action="#subscribe-form" method="post">
+    <form class="email-form inline-email-form"
+          action="#subscribe-form"
+          method="post">
       <input type="hidden" name="target" value="inline" />
+      <input type="hidden" name="mozilla-and-you" value="Y" />
 
       <ul class="<?= $status ?>">
         <li class="open-pane" data-wt_uri="<?= $newsletter_wt_blade_uri ?>" data-wt_ti="<?= $newsletter_wt_blade_ti ?>">
           <h3>Get Monthly News</h3>
           <?= $newsletter_snippet ?>
           <div class="email-field field">
-            <span class="error-wrapper">
+            <span class="error-wrapper <?= $form->has_error('email') ? 'field-error' : ''; ?>">
               <input
                  name="email"
                  type="email"
@@ -51,9 +58,34 @@
           </div>
         </li>
         <li class="form-pane">
-          <?= $newsletter_form_snippet ?>
-          <p class="form-error email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
-          <p class="form-error privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+<?php
+    echo $newsletter_form_snippet;
+
+    if($form->has_non_field_error()) {
+        echo '<ul class="non-field-errors field-errors"><li>' .
+            $form->non_field_error .
+        '</li></ul>';
+    }
+
+    if($form->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($form->errors as $error) {
+            if($error == 'email') {
+                echo '<li>Whoops! Be sure to enter a valid email address.</li>';
+            }
+            else if($error == 'country') {
+                echo '<li>Please select a country.</li>';
+            }
+            else if($error == 'privacy') {
+                echo '<li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>';
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
+
           <div class="form-details">
 
             <div class="field country-field">
@@ -89,7 +121,10 @@
             <div class="privacy-field">
               <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
               <label for="inline-privacy-check" class="privacy-check-label">
-                <span class="error-wrapper"><input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>></span> I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+                <span class="error-wrapper <?= $form->has_error('privacy') ? 'field-error' : ''; ?>">
+                   <input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>>
+                </span>
+                I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
               </label>
             </div>
 

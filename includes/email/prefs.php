@@ -25,6 +25,9 @@ class EmailPrefs {
     var $auth_error = 'The supplied link has expired. You will receive a new one in the next newsletter.';
 
     function __construct($data=NULL, $token=FALSE) {
+        if(!$data) {
+            $data = array();
+        }
         $this->data = $data;
         $this->errors = array();
         $this->non_field_error = NULL;
@@ -57,6 +60,14 @@ class EmailPrefs {
         return !empty($this->non_field_error);
     }
 
+    function has_any_errors() {
+        return $this->has_error() || $this->has_non_field_error();
+    }
+
+    function has_success() {
+        return $this->submitted() && !$this->has_any_errors();
+    }
+
     function is_unsubscribing() {
         return $this->data && isset($this->data['remove-all']);
     }
@@ -67,7 +78,6 @@ class EmailPrefs {
         }
         else {
             $this->non_field_error = $this->general_error;
-            $this->non_field_error = $e->getMessage();
         }
     }
 
@@ -116,6 +126,10 @@ class EmailPrefs {
     function save_new(/* required fields */) {
         $this->reset();
         $required_fields = func_get_args();
+
+        if(empty($required_fields)) {
+            $required_fields = array('email', 'country', 'privacy');
+        }
 
         if($this->submitted() && $this->validate($required_fields)) {
             $data = $this->data;

@@ -17,26 +17,16 @@ $extra_headers = <<<EXTRA_HEADERS
 EXTRA_HEADERS;
 
 require_once "{$config['file_root']}/includes/regions.php";
-require_once "{$config['file_root']}/includes/email/forms.php";
+require_once "{$config['file_root']}/includes/email/prefs.php";
 
-// If some localized should be optin, change the last parameter to
-// TRUE just for those locales
-$form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
-$status = '';
-if ($form->save()) {
-    $status = 'success';
-    // Relocate to /newsletter/new/ page
-    header("Location: new/");
-} elseif ($form->error) {
-    $status = 'error-'. $form->error;
-}
-
+$form = new EmailPrefs($_POST);
+$form->save_new();
 
 require_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
 require_once "{$config['file_root']}/{$lang}/newsletter/content.inc.html";
 
 // form process
-if ($status == 'success') {
+if($form->has_success()) {
   echo "<script>
     dcsMultiTrack('WT.si_n', 'Main Newsletter Subscribe', 'WT.si_x', '1', 'WT.si_cs', '1');
   </script>";

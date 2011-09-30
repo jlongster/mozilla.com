@@ -1,6 +1,6 @@
 <?php
 require_once $config['file_root'] . '/includes/regions.php';
-require_once $config['file_root'] . '/includes/email/forms.php';
+require_once $config['file_root'] . '/includes/email/prefs.php';
 
 $newsletter_class        = empty($newsletter_class)         ? '' : $newsletter_class;
 $newsletter_snippet      = empty($newsletter_snippet)       ? '' : $newsletter_snippet;
@@ -9,17 +9,22 @@ $newsletter_form_snippet = empty($newsletter_form_snippet)  ? '' : $newsletter_f
 $status = '';
 
 if (isset($_POST['target']) && $_POST['target'] == 'inline') {
+    $form = new EmailPrefs($_POST);
+    $form->save_new();
 
-    $form = new LocalizedNewsletterForm('MOZILLA_AND_YOU', $_POST, FALSE);
-
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
+    $status = '';
+    if($form->submitted()) {
+        if($form->has_any_errors()) {
+            $status = 'error';
+        }
+        else {
+            $status = 'success';
+        }
     }
 
+
 } else {
-    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    $form = new EmailPrefs();
 }
 
 l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/newsletter.lang');
@@ -54,6 +59,7 @@ if( $stage == false ) {
   <div class="container">
 
     <form class="email-form inline-email-form" action="#subscribe-form" method="post">
+      <input type="hidden" name="mozilla-and-you" value="Y" />
       <input type="hidden" name="target" value="inline" />
 
       <ul class="<?= $status ?>">
@@ -81,8 +87,29 @@ if( $stage == false ) {
         </li>
         <li class="form-pane">
           <?= $newsletter_form_snippet ?>
-          <p class="form-error email-error"><span><?=___('Whoops! Be sure to enter a valid email address.')?></span></p>
-          <p class="form-error privacy-error"><span><?=___('Please read the Mozilla Privacy Policy and agree by checking the box.')?></span></p>
+
+<?php
+    if($form->has_non_field_error()) {
+        echo '<div class="non-field-errors field-errors">' .
+        ___($form->non_field_error) .
+        '</div>';
+    }
+
+    if($form->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($form->errors as $error) {
+            if($error == 'email') {
+                echo '<li>' . ___('Whoops! Be sure to enter a valid email address.') . '</li>';
+            }
+            else if($error == 'privacy') {
+                echo '<li>' . ___('Please read the Mozilla Privacy Policy and agree by checking the box.') . '</li>';
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
           <div class="form-details">
 
             <div class="field country-field">

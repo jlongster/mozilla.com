@@ -27,7 +27,7 @@ class BasketService {
         global $config;
 
         //$_curl = curl_init("{$config['basket_url']}/news/" . $method);
-        $_curl = curl_init("http://jlongster.com:7001/news/" . $method);
+        $_curl = curl_init("http://localhost:8000/news/" . $method);
         curl_setopt($_curl, CURLOPT_FOLLOWLOCATION, true);  
         curl_setopt($_curl, CURLOPT_RETURNTRANSFER, true);
 

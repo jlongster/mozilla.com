@@ -8,6 +8,7 @@ $breadcrumbs   = empty($breadcrumbs)   ? array()       : $breadcrumbs;
 $body_class    = !isset($body_class)   ? ''            : $body_class;
 $_hits_per_page    = !isset($_hits_per_page)   ? ''    : $_hits_per_page;
 $_hits_per_site    = !isset($_hits_per_site)   ? ''    : $_hits_per_site;
+$hide_footer_newsletter = empty($hide_footer_newsletter) ? FALSE : $hide_footer_newsletter;
 
 if (isset($page_desc)) {
     $meta_desc = '<meta name="Description" content="'.$page_desc.'">';
