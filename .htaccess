@@ -162,6 +162,9 @@ RewriteRule en-US/about/get-involved?(?:.html)?$ http://www.mozilla.org/contribu
 # Bug 656270
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?manyfaces[/]?$ http://www.mozilla.org/community/ [R=permanent]
 
+# Bug 684087
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?aurora[/]?$ /firefox/aurora/ [R=permanent]
+
 # Bug 399466
 RewriteRule en-US/legal/eula/(firefox|thunderbird)(.?)-(.+)\.(.+) /$3/legal/eula/$1$2.$4 [R=permanent]
 
