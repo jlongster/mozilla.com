@@ -1,6 +1,6 @@
 <?php
 
-$body_id = 'report_introduction';
+$body_id = 'report_ahead';
 
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
@@ -9,13 +9,16 @@ require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.p
 
 $navigation = <<<NAV
 
+{$return_top}
+
 <ul class="nav-paging bottom">
-    <li class="next"><a href="/{$lang}/foundation/annualreport/2010/opportunities/">{$l10n->get('Opportunities')}</a></li>
+    <li class="prev"><a href="/{$lang}/foundation/annualreport/2010/people/">{$l10n->get('People')}</a></li>
+    <li class="next"><a href="/{$lang}/foundation/annualreport/2010/faq/">{$l10n->get('FAQ')}</a></li>
 </ul>
+
 NAV;
 
 $video_placeholder = <<<VIDEO
-
 
 <div id="video">
     <div id="video-player" class="mozilla-video-control">
@@ -27,6 +30,7 @@ $video_placeholder = <<<VIDEO
                 <param name="movie" value="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
                 <param name="wmode" value="transparent" />
                 <div class="video-player-no-flash">
+
                 {$l10n->get('This video requires a browser with support for open video:')}
                 <ul>
                 <li>{$l10n->get('<a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater')}</li>
@@ -39,15 +43,14 @@ $video_placeholder = <<<VIDEO
         </video>
     </div>
     <div id="video-description">
-        <h3>{$l10n->get('A Different Kind of Browser')} <span class="time">1:45</span></h3>
-        <p>{$l10n->get('What’s Mozilla all about? Why are we doing this? We’re glad you asked.')}</p>
+        <h3>{$l10n->get('Lookin Ahead <span>Mitchell Baker</span>')}</h3>
+        <p>{$l10n->get('Mitchell Baker, Chair discusses The state of Mozilla.')}</p>
         <ul class="share">
             <li><a href="" class="button">{$l10n->get('Share')}</a></li>
             <li><a href="" class="button">{$l10n->get('Embed')}</a></li>
         </ul>
         <p>{$l10n->get('Download this video:')}</p>
         <ul class="download">
-            <li><a href="">{$l10n->get('WebM format')}</a></li>
             <li><a href="">{$l10n->get('Ogg Theora format')}</a></li>
             <li><a href="">{$l10n->get('MPEG-4 format')}</a></li>
         </ul>
@@ -56,10 +59,9 @@ $video_placeholder = <<<VIDEO
 
 VIDEO;
 
-
 require_once $config['file_root'].'/includes/l10n/header-annual-report-2010.inc.php';
 echo $video_placeholder;
 echo "\n<div id=\"content\">\n";
-require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/content.inc.html';
+require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/ahead/content.inc.html';
 echo "\n</div>\n";
 require_once $config['file_root'].'/includes/l10n/footer-annual-report-2010.inc.php';

@@ -1,32 +1,5 @@
 <?php
 
-// RTL support for Mozilla.com
-if ($textdir == 'rtl') {
-    $extra_headers  = <<<EXTRA_HEADERS
-    {$extra_headers}
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/rtl.css" media="screen" />
-EXTRA_HEADERS;
-}
-
-// no italic for Chineses
-if ($lang == 'zh-CN' || $lang == 'zh-TW') {
-    $extra_headers  = <<<EXTRA_HEADERS
-    {$extra_headers}
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/l10n/covehead/chinese-mod.css" media="screen" />
-EXTRA_HEADERS;
-}
-
-// no uppercasing for Greek
-if ($lang == 'el') {
-    $extra_headers  = <<<EXTRA_HEADERS
-    {$extra_headers}
-    <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/l10n/covehead/greek-mod.css" media="screen" />
-EXTRA_HEADERS;
-}
-
-
-
-
 $default_menu = '<ul class="nav-main" role="navigation">';
 
 if ($body_id == 'report_introduction') {
