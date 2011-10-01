@@ -1,23 +1,44 @@
 <?php
 
-$body_id = 'report_faq';
-$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('FAQ');
-
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 // common content across State of Mozilla pages
 require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.php';
 
+$body_id    = 'report_faq';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('FAQ');
+
 $navigation = <<<NAV
 
 {$return_top}
+
+            <div class="content-block pdf">
+                <div>
+                    {$l10n->get('2010 Audited Financial Statement')}<br/>
+                    <a href="" class="button">{$l10n->get('Download PDF')}</a>
+                </div>
+
+                <div>
+                    {$l10n->get('2010 Form 990')}<br/>
+                    <a href="" class="button">{$l10n->get('Download PDF')}</a>
+                </div>
+            </div>
 <ul class="nav-paging bottom">
     <li class="prev"><a href="/{$lang}/foundation/annualreport/2010/ahead/">{$l10n->get('Ahead')}</a></li>
 </ul>
 NAV;
 
 require_once $config['file_root'].'/includes/l10n/header-annual-report-2010.inc.php';
-echo "\n<div id=\"content\">\n";
+?>
+        <div id="content">
+
+            <div class="content-block">
+                <div class="img-right">
+                    <img src="<?=$config['static_prefix']?>/img/covehead/annualreport/photo-firefox-billboard.jpg" width="297" height="435" alt="<?=___('Firefox billboard, San Francisco');?>" />
+                    <p><?=___('Firefox billboard, San Francisco');?></p>
+                </div>
+<?php
 require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/faq/content.inc.html';
+echo "\n</div>\n";
 echo "\n</div>\n";
 require_once $config['file_root'].'/includes/l10n/footer-annual-report-2010.inc.php';

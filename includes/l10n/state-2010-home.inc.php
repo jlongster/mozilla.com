@@ -1,12 +1,12 @@
 <?php
 
-$body_id = 'report_introduction';
-$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>'));
-
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 // common content across State of Mozilla pages
 require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.php';
+
+$body_id    = 'report_introduction';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>'));
 
 $navigation = <<<NAV
 
@@ -20,37 +20,24 @@ $video_placeholder = <<<VIDEO
 
 <div id="video">
     <div id="video-player" class="mozilla-video-control">
-        <video id="video" width="400" height="225" controls="controls">
-            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" type="vide/webm" />
-            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
-            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4" type="video/mp4" />
-            <object type="application/x-shockwave-flash" style="width: 290px; height: 191px;" data="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
-                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
-                <param name="wmode" value="transparent" />
-                <div class="video-player-no-flash">
-                {$l10n->get('This video requires a browser with support for open video:')}
-                <ul>
-                <li>{$l10n->get('<a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater')}</li>
-                <li>{$l10n->get('<a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater')}</li>
-                </ul>
-                {$l10n->get('or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>')}.
-                {$l10n->get('Alternatively, you may use the video download links to the right.')}
-                </div>
-            </object>
-        </video>
+        <a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" id="video-manifesto"><img width="400" height="225" src="{$config['static_prefix']}/img/covehead/annualreport/poster-manifesto.jpg" alt="Video - {$l10n->get('A Different Kind of Browser')}" /></a>
     </div>
     <div id="video-description">
         <h3>{$l10n->get('A Different Kind of Browser')} <span class="time">1:45</span></h3>
         <p>{$l10n->get('What’s Mozilla all about? Why are we doing this? We’re glad you asked.')}</p>
+
+<!--
         <ul class="share">
             <li><a href="" class="button">{$l10n->get('Share')}</a></li>
             <li><a href="" class="button">{$l10n->get('Embed')}</a></li>
         </ul>
+-->
+
         <p>{$l10n->get('Download this video:')}</p>
         <ul class="download">
-            <li><a href="">{$l10n->get('WebM format')}</a></li>
-            <li><a href="">{$l10n->get('Ogg Theora format')}</a></li>
-            <li><a href="">{$l10n->get('MPEG-4 format')}</a></li>
+            <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm">{$l10n->get('WebM format')}</a></li>
+            <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv">{$l10n->get('Ogg Theora format')}</a></li>
+            <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4">{$l10n->get('MPEG-4 format')}</a></li>
         </ul>
     </div>
 </div>

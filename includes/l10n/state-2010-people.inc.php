@@ -1,12 +1,12 @@
 <?php
 
-$body_id = 'report_people';
-$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('People');
-
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 // common content across State of Mozilla pages
 require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.php';
+
+$body_id    = 'report_people';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('People');
 
 $navigation = <<<NAV
 <ul class="nav-paging bottom">

@@ -1,12 +1,12 @@
 <?php
 
-$body_id = 'report_ahead';
-$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('Ahead');
-
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 // common content across State of Mozilla pages
 require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.php';
+
+$body_id    = 'report_ahead';
+$page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('Ahead');
 
 $navigation = <<<NAV
 
@@ -46,10 +46,15 @@ $video_placeholder = <<<VIDEO
     <div id="video-description">
         <h3>{$l10n->get('Lookin Ahead <span>Mitchell Baker</span>')}</h3>
         <p>{$l10n->get('Mitchell Baker, Chair discusses The state of Mozilla.')}</p>
+
+<!--
         <ul class="share">
             <li><a href="" class="button">{$l10n->get('Share')}</a></li>
             <li><a href="" class="button">{$l10n->get('Embed')}</a></li>
         </ul>
+-->
+
+
         <p>{$l10n->get('Download this video:')}</p>
         <ul class="download">
             <li><a href="">{$l10n->get('Ogg Theora format')}</a></li>
