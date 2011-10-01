@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/annualreport.css" media="screen" />
     <script src="/js/mozilla-video-tools.js"></script>
 EXTRA_HEADERS;
+    $i = 1; // initialize counter for anchors
     @include_once "{$config['file_root']}/{$lang}/includes/headers/annual-report-2010.inc.php";
 ?>
 
@@ -14,36 +15,54 @@ EXTRA_HEADERS;
     <section id="content-main">
 
         <div id="content">
-        <p>2010 Audited Financial Statement</p>
-        <a href="" class="button">Download PDF</a>
-        <h2>FAQ</h2>
-        <h3 id="q1">What are the key projects for Mozilla in the next year? How do you plan to influence the market going forward?</h3>
-        <p>Firefox is a fundamental lever in driving the Web forward and advancing the Mozilla mission. However, the Web is evolving and moving into new areas and so is Mozilla. In addition to Firefox for mobile phones and tablets, we will focus on new projects in the important areas of Apps, Identity, Social, and more. More information can be found on the Firefox vision statement here: <a href="https://wiki.mozilla.org/Firefox/VisionStatement">https://wiki.mozilla.org/Firefox/VisionStatement</a></p>
 
-        <h3 id="q2">Do you see a continued need for an independent player like Mozilla, now that the browser market has been revived?</h3>
-        <p>Absolutely. As much today as ever. Mozilla’s  public benefit mission allows us to be unique as an organization. Our  nonprofit nature enables us to advocate for the user and remain  committed to keeping the Web open and participatory, rather than focusing  on market share or profits. The desktop browser market is  innovative and competitive, but no one other than Mozilla is organized solely for the good of the Web as a whole.  In addition, there are other areas of Internet life where Mozilla needs to advocate for the  user and bring openness and  interoperability, such as mobile browsing,  applications and identity.</p>
+            <div class="content-block">
+                <div class="img-right">
+                    <img src="<?=$config['static_prefix']?>/img/covehead/annualreport/photo-firefox-billboard.jpg" width="297" height="435" alt="Firefox billboard, San Francisco" />
+                    <p>Firefox billboard, San Francisco</p>
+                </div>
 
-        <h3 id="q3">What was Mozilla's total revenue for 2010?</h3>
-        <p>Mozilla's  consolidated reported revenue (Mozilla Foundation and all subsidiaries)  for 2010 was $123 million, up approximately 18 percent from 2009.</p>
+                <h2>FAQ</h2>
+                <h3 id="q<?=$i++?>">What are the key projects for Mozilla in the next year? How do you plan to influence the market going forward?</h3>
+                <p>Firefox continues to be a fundamental lever in driving the Web forward and advancing the Mozilla mission. At the same time, the Web is evolving and moving into new areas and so is Mozilla. In addition to delivering Firefox on mobile phones and tablets, we will focus on new projects in the important areas of <a href="/<?=$lang?>/foundation/annualreport/2010/opportunities/">Apps, Identity, Education, and more.</a>
 
-        <h3 id="q4">How does Mozilla generate revenue?</h3>
-        <p>The  majority of Mozilla's revenue is generated from search functionality  included in our Firefox product through all major search partners  including Google, Bing, Yahoo, Yandex, Amazon, Ebay and others.  Mozilla's reported revenues also include very important individual and  corporate donations and grants as well as other forms of income from our  investable assets.</p>
+                <h3 id="q<?=$i++?>">Do you see a continued need for an independent player like Mozilla, now that competition in the browser market has accelerated?</h3>
+                <p>Absolutely, Mozilla’s public benefit mission and nonprofit nature enables us to advocate for the user and remain  committed to keeping the Web open and participatory, rather than focusing  on market share or profits. The desktop browser market is  innovative and competitive, but no one other than Mozilla is organized solely for the good of the Web as a whole, and we believe that as people become increasingly aware and informed online citizens that more and more people will look for a Web browser, like Firefox, that answers only to them.</p>
+                <h3 id="q<?=$i++?>">What was Mozilla's total revenue for 2010?</h3>
+                <p>Mozilla's consolidated reported revenue (Mozilla Foundation and all subsidiaries)  for 2010 was $123 million, up approximately 18 percent from 2009. </p>
 
-        <h3 id="q5">What is the status of the organization's search partnerships?</h3>
-        <p>We currently have partnerships with a number of search providers that differ by market. Our largest contract, that with Google, comes up for renewal in November and we have every confidence  that search partnerships will remain a solid generator of  revenue for Mozilla for the foreseeable future.</p>
+                <h3 id="q<?=$i++?>">How does Mozilla generate revenue?</h3>
+                <p>The  majority of Mozilla's revenue is generated from search functionality  included in our Firefox product through all major search partners  including Google, Bing, Yahoo, Yandex, Amazon, Ebay and others.  Mozilla's reported revenues also include very important individual and  corporate donations and grants as well as other forms of income from our  investable assets.</p>
 
-        <h3 id="q6">Do Mozilla's partnerships affect its independence?</h3>
-        <p>Our mission and development process are  completely unrelated to revenue or revenue generating relationships. Our open development process is governed by Mozilla's mission  and our commitment to improving the Web.</p>
+                <h3 id="q<?=$i++?>">What is the status of the organization's search partnerships?</h3>
+                <p>We currently have partnerships with a number of search providers that differ by market. Our largest contract, with Google, comes up for renewal in November.  We have every confidence that search partnerships will remain a solid generator of  revenue for Mozilla for the foreseeable future.</p>
 
-        <h3 id="q7">Are you exploring partnership opportunities to diversify your revenue stream?</h3>
-        <p>Mozilla  has always focused on building open products that people love, in ways  that are participatory, and then developing revenue to support that  work. For long-term financial viability, we will of course look  carefully at partnership opportunities to  diversify our revenue mix over time. We continue to explore search partnership opportunities and other potential revenue opportunities in our products.  We'll  continue to build great products that help people enjoy the richness of  the Internet, and we're confident that this allows us to identify  appropriate sources of revenue.</p>
+                <h3 id="q<?=$i++?>">Do Mozilla's partnerships affect its independence?</h3>
+                <p>Our mission and development process are completely unrelated to revenue or revenue generating relationships. Our open development process is governed by Mozilla's mission  and our commitment to improving the Web. </p>
 
 
-        <p><a href="#" class="return-to-top">Return to Top</a></p>
+                <h3 id="q<?=$i++?>">Are you exploring partnership opportunities to diversify your revenue stream?</h3>
+                <p>We currently have several key business partnerships  and are actively exploring search partnership opportunities and other potential revenue opportunities.  We'll continue to build great products that help people enjoy the richness of  the Internet, and we're confident that this allows us to identify appropriate sources of revenue. </p>
 
-        <ul class="nav-paging bottom">
-            <li class="prev"><a href="/<?=$lang?>/foundation/annualreport/2010/ahead/">Ahead</a></li>
-        </ul>
+            </div>
+
+            <p class="return-to-top"><a href="#">Return to Top</a></p>
+
+            <div class="content-block pdf">
+                <div>
+                    2010 Audited Financial Statement<br/>
+                    <a href="" class="button">Download PDF</a>
+                </div>
+
+                <div>
+                    2010 Form 990<br/>
+                    <a href="" class="button">Download PDF</a>
+                </div>
+            </div>
+
+            <ul class="nav-paging bottom">
+                <li class="prev"><a href="/<?=$lang?>/foundation/annualreport/2010/ahead/">Ahead</a></li>
+            </ul>
 
     </section><!-- end #content-main -->
 
