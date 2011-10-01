@@ -34,8 +34,91 @@ $video_placeholder = <<<VIDEO
 
 VIDEO;
 
+$image1 = <<<IMAGE
+        <div class="img-center">
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-meetup-brazil.jpg" width="660" height="365" alt="{$l10n->get('Mozilla Meetup, Brazil')}" />
+            <p>{$l10n->get('Mozilla Meetup, Brazil')}</p>
+        </div>
+IMAGE;
+
+$image2 = <<<IMAGE
+        <div class="img-right">
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-arabic-mozilla.jpg" width="425" height="275" alt="{$l10n->get('Arabic Mozilla')}" />
+            <p>{$l10n->get('Arabic Mozilla')}</p>
+        </div>
+IMAGE;
+
+$image3 = <<<IMAGE
+        <div class="img-left">
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-kenya.jpg" width="294" height="198" alt="{$l10n->get('Mozilla Kenya')}" />
+            <p>{$l10n->get('Mozilla Kenya')}</p>
+        </div>
+IMAGE;
+
+$image4 = <<<IMAGE
+        <div class="img-right">
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-indonesia.jpg" width="187" height="249" alt="{$l10n->get('Mozilla Indonesia')}" />
+            <p>{$l10n->get('Mozilla Indonesia')}</p>
+        </div>
+IMAGE;
+
+$image5 = <<<IMAGE
+        <img src="{$config['static_prefix']}/img/covehead/annualreport/kumi.png" width="134" height="104" style="margin-left: 150px" alt="Kumi" />
+IMAGE;
+
+$image6 = <<<IMAGE
+        <div class="img-left">
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-paris.jpg" width="294" height="278" alt="{$l10n->get('ReMo Work Week, Paris')}" />
+            <p>{$l10n->get('ReMo Work Week, Paris')}</p>
+        </div>
+IMAGE;
+
+$link = array(
+    1  => 'http://www.arabicmozilla.org/',
+    2  => 'http://pierros.papadeas.gr/?p=253',
+    3  => 'http://mozilla-ghana.org',
+    4  => 'http://www.mozilla-kenya.org/',
+    5  => 'http://www.mozilla-kenya.org/blog/18-road-trip',
+    6  => 'http://www.mozilla-hispano.org',
+    7  => 'http://www.mozilla.org/contribute/local/',
+    8  => 'http://www.mozilla.web.id/',
+    9  => 'https://wiki.mozilla.org/Drumbeat/MoJo',
+    10 => 'http://www.mozilla.org/contribute/',
+);
+
+
 require_once $config['file_root'].'/includes/l10n/header-annual-report-2010.inc.php';
 require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/people/content.inc.html';
+?>
+
+<script>
+// <![CDATA[
+var player_sync = new Mozilla.VideoPlayer(
+    'video-getinvolved',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: '<?=___('WebM format')?>'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: '<?=___('Ogg Theora format')?>'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4',
+            type:  'video/mp4',
+            title: '<?=___('MPEG-4 format')?>'
+        }
+    ],
+    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4'
+);
+// ]]>
+</script>
+
+<?php
+
 require_once $config['file_root'].'/includes/l10n/footer-annual-report-2010.inc.php';
 
 

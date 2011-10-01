@@ -50,4 +50,33 @@ echo $video_placeholder;
 echo "\n<div id=\"content\">\n";
 require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/content.inc.html';
 echo "\n</div>\n";
+
+?>
+<script>
+// <![CDATA[
+var player_sync = new Mozilla.VideoPlayer(
+    'video-manifesto',
+    [
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm',
+            type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
+            title: '<?=___('WebM format')?>'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv',
+            type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
+            title: '<?=___('Ogg Theora format')?>'
+        },
+        {
+            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+            type:  'video/mp4',
+            title: '<?=___('MPEG-4 format')?>'
+        }
+    ],
+    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4'
+);
+// ]]>
+</script>
+
+<?php
 require_once $config['file_root'].'/includes/l10n/footer-annual-report-2010.inc.php';
