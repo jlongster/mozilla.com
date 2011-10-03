@@ -13,8 +13,33 @@ EXTRA_HEADERS;
     <section id="content-main">
 
         <div id="video">
-            <div id="video-player" class="mozilla-video-control">
-                <a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" id="video-manifesto"><img width="400" height="225" src="<?=$config['static_prefix']?>/img/covehead/annualreport/poster-manifesto.jpg" alt="Video: A Different Kind of Browser" /></a>
+            <div id="video-player">
+<script type="text/javascript" src="http://s3.www.universalsubtitles.org/embed.js">
+  ({
+       video_url: "http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm",
+       video_config: {
+           width: 400,
+           height: 225,
+           poster: "<?=$config['static_prefix']?>/img/covehead/annualreport/poster-manifesto.jpg",
+           click_to_play: true
+       },
+       alternate_video_urls: [
+            { url: "http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv",
+              config: {
+                  width: 400,
+                  height: 225,
+                  poster: "<?=$config['static_prefix']?>/img/covehead/annualreport/poster-manifesto.jpg",
+                  click_to_play: true
+              }
+            },
+            { url: "http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4",
+              config: { 
+                  width: 400,
+                  height: 225
+              }
+            } ]
+  })
+</script>
             </div>
             <div id="video-description">
                 <h3>A Different Kind of Browser <span class="time">1:45</span></h3>
