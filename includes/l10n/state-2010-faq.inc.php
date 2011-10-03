@@ -35,8 +35,8 @@ require_once $config['file_root'].'/includes/l10n/header-annual-report-2010.inc.
 
             <div class="content-block">
                 <div class="img-right">
-                    <img src="<?=$config['static_prefix']?>/img/covehead/annualreport/photo-firefox-billboard.jpg" width="297" height="435" alt="<?=___('Firefox billboard, San Francisco');?>" />
-                    <p><?=___('Firefox billboard, San Francisco');?></p>
+                    <img src="<?=$config['static_prefix']?>/img/covehead/annualreport/photo-not-every-venture.jpg" width="297" height="396" alt="<?=___('Mozilla Firefox billboard, San Francsico');?>" />
+                    <p><?=___('Mozilla Firefox billboard, San Francsico');?></p>
                 </div>
 <?php
 require_once $config['file_root'].'/'.$lang.'/foundation/annualreport/2010/faq/content.inc.html';
