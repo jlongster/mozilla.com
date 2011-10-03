@@ -29,7 +29,7 @@ $video_placeholder = <<<VIDEO
 
     <div id="video-description">
         <h3>{$l10n->get('Looking Ahead <span>Mitchell Baker</span>')}</h3>
-        <p>{$l10n->get('Mitchell Baker, Chair discusses The state of Mozilla.')}</p>
+        <p>{$l10n->get('Mitchell Baker, Chair discusses the state of Mozilla.')}</p>
 
 <!--
         <ul class="share">
@@ -39,7 +39,7 @@ $video_placeholder = <<<VIDEO
 -->
 
 
-        <p>{$l10n->get('Download this video:')}</p>
+        <p class="download">{$l10n->get('Download this video:')}</p>
         <ul class="download">
             <li><a href="">{$l10n->get('WebM format')}</a></li>
             <li><a href="">{$l10n->get('Ogg Theora format')}</a></li>

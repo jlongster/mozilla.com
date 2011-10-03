@@ -33,7 +33,7 @@ $video_placeholder = <<<VIDEO
         </ul>
 -->
 
-        <p>{$l10n->get('Download this video:')}</p>
+        <p class="download">{$l10n->get('Download this video:')}</p>
         <ul class="download">
             <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm">{$l10n->get('WebM format')}</a></li>
             <li><a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv">{$l10n->get('Ogg Theora format')}</a></li>

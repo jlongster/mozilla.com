@@ -7,6 +7,7 @@ require_once $config['file_root'].'/includes/l10n/state-2010-commoncontent.inc.p
 
 $body_id    = 'report_faq';
 $page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('FAQ');
+$i = 1; // initialize counter for anchors
 
 $navigation = <<<NAV
 
