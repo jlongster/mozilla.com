@@ -1,0 +1,24 @@
+<?php
+
+    //various variables used in the page
+    $body_id        = 'faq';
+    $dev_link       = '../mobile/developers/';
+    $mobile_link    = './';
+    $platforms_link = '../mobile/platforms/';
+    $privacy_link   = 'privacy.html';
+    $require_link   = 'platforms.html';
+    $involved_link  = 'http://www.mozilla.org/contribute/';
+    $sync_link      = 'sync.html';
+    $top            = '<p class="nav-top"><a href="#head">'.___('Return to top').'</a></p>';
+    // get content
+    ob_start();
+    @include_once "{$config['file_root']}/{$lang}/mobile/faq/faq-content.html";
+    $page_content = ob_get_contents();
+    ob_clean();
+
+    // build page
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    echo $page_content;
+    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    unset($page_content);
+?>
