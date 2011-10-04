@@ -29,6 +29,7 @@ $video_placeholder = <<<VIDEO
             <li><a href="http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.webm">{$l10n->get('WebM format')}</a></li>
             <li><a href="http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.ogv">{$l10n->get('Ogg Theora format')}</a></li>
             <li><a href="http://videos-cdn.mozilla.net/serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4">{$l10n->get('MPEG-4 format')}</a></li>
+            <li><a href="http://www.universalsubtitles.org/en/videos/VPRyx1WZwY6Z/">{$l10n->get('Other languages & sharing')}</a></li>
         </ul>
     </div>
 
@@ -112,7 +113,9 @@ var player_sync = new Mozilla.VideoPlayer(
             title: '<?=___('MPEG-4 format')?>'
         }
     ],
-    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4'
+    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4',
+    true,
+    '<a href="http://www.universalsubtitles.org/en/videos/VPRyx1WZwY6Z/" class="lang-link"><?=$l10n->get('Other languages & sharing')?></a>'
 );
 // ]]>
 </script>

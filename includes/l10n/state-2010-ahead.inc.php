@@ -41,9 +41,10 @@ $video_placeholder = <<<VIDEO
 
         <p class="download">{$l10n->get('Download this video:')}</p>
         <ul class="download">
-            <li><a href="">{$l10n->get('WebM format')}</a></li>
-            <li><a href="">{$l10n->get('Ogg Theora format')}</a></li>
-            <li><a href="">{$l10n->get('MPEG-4 format')}</a></li>
+            <li><a href="http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.webm">{$l10n->get('WebM format')}</a></li>
+            <li><a href="http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.theora%202.ogv">{$l10n->get('Ogg Theora format')}</a></li>
+            <li><a href="http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.mp4">{$l10n->get('MPEG-4 format')}</a></li>
+            <li><a href="http://www.universalsubtitles.org/en/videos/6rwEfcRrITSP/">{$l10n->get('Other languages & sharing')}</a></li>
         </ul>
     </div>
 </div>
@@ -79,7 +80,8 @@ var player_sync = new Mozilla.VideoPlayer(
         }
     ],
     'serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.mp4',
-    true
+    true,
+    '<a href="http://www.universalsubtitles.org/en/videos/6rwEfcRrITSP/" class="lang-link"><?=$l10n->get('Other languages & sharing')?></a>'
 );
 // ]]>
 </script>
