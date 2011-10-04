@@ -20,8 +20,8 @@ NAV;
 
 $image1 = <<<IMAGE
         <div class="img-right">
-            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-firefox-billboard.jpg" width="297" height="435" alt="{$l10n->get('Firefox billboard, San Francisco')}" />
-            <p>{$l10n->get('Firefox billboard, San Francisco')}</p>
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-firefox-billboard.jpg" width="297" height="435" alt="{$l10n->get('Mozilla Firefox billboard, San Francisco')}" />
+            <p>{$l10n->get('Mozilla Firefox billboard, San Francisco')}</p>
         </div>
 IMAGE;
 
