@@ -58,7 +58,7 @@ $footerfile = '';
     </div>
 
 <?=$downloadbox?>
-<p id="mobile-promo"><a href="./mobile/"><?=___('Firefox for mobile')?></a></p>
+<p id="mobile-promo"><a href="<?=$host_l10n;?>/mobile/"><?=___('Firefox for mobile')?></a></p>
 </div>
 <?php
 
