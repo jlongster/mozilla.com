@@ -109,11 +109,15 @@ $sitepages = array(
 
 // pages deactivated on production
 $deactivated = array(
-    '',
+    'state-2010-home',
+    'state-2010-ahead',
+    'state-2010-opport',
+    'state-2010-faq',
+    'state-2010-people',
 );
 
 // add the include if it exists only
-if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.com') {
+if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.org') {
     goToEnglishPage();
     exit;
 }
