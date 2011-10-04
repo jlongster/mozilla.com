@@ -1,0 +1,70 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla is Hiring: Don’t Work for the Man, Work for Mankind';
+    $body_id    = 'opportunities';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/opportunties.css" media="screen" />
+	<link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
+	<script src="/js/mozilla-video-tools.js"></script>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <h2>Don’t Work for the Man <span>Work for <em>Mankind</em></span></h2>
+    <p>Help us make sure the web serves the greater good.</p>
+    <div id="video-player" class="mozilla-video-control section-video">
+        <video
+            id="video"
+            width="384"
+            height="216"
+            controls="controls"
+            poster="<?=$config['static_prefix']?>/img/covehead/opportunities/poster-manifesto.jpg">
+
+            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" type="video/webm" />
+            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+            <source src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4" type="video/mp4" />
+
+            <object type="application/x-shockwave-flash"
+                style="width: 384px; height: 240px;"
+                data="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+                <param name="movie" value="/includes/flash/playerWithControls.swf?flv=brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                <param name="wmode" value="transparent" />
+
+                <div class="video-player-no-flash">
+                This video requires a browser with support for open video:
+                <ul>
+                <li><a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater</li>
+                <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+                </ul>
+
+                or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                Alternatively, you may use the video download links to the right.
+                </div>
+
+            </object>
+
+        </video>
+    </div>
+</div>
+
+<div id="main-content">
+
+<div id="hiring" class="section">
+    <h3>We’re Hiring!</h3>
+    <p>Working at Mozilla is awesome, and we have career opportunities across all departments in our offices around the world. <a href="http://hire.jobvite.com/CompanyJobs/Careers.aspx?k=JobListing&amp;c=qpX9Vfwa&amp;v=1">Apply today</a>.</p>
+</div>
+
+<div id="involved" class="section">
+    <h3>Get Involved</h3>
+    <p>Mozilla is powered by a global community of volunteers, and we could use your help even if you only have a bit of time. <a href="/contribute/">Join us!</a></p>
+</div>
+
+
+</div><!-- end #main-content div -->
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
