@@ -1,39 +1,44 @@
 <?php
-
-    // translate $page_title below
+    // The $body_* variables are for compatibility with pre-existing css
     $page_title = '404: Página não encontrada';
+    $body_id    = 'mozilla-404';
+    $body_class = 'darkbg';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/404-page.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
-    $pageid = '404';
-    include_once "{$config['file_root']}/includes/l10n/controller.inc.php";
 ?>
 
+<div id="download" class="top-right">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox');
+        echo $firefoxDetails->getNoScriptBlockForLocale('pt-BR', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('pt-BR', $_options);
+    ?>
+</div>
+
 <div id="main-feature">
-	<h2>Hmmm, está difícil encontrar essa página.</h2>
+    <h2><span>Ops!</span> O que você está fazendo aqui?</h2>
+    <p>Você virou à esquerda naquela última URL em vez da direito? Sem problema. Aqui estão algumas dicas para você encontrar o seu caminho:</p>
+    <div id="eyes">
+        <div class="eye" id="eye1"></div>
+        <div class="eye" id="eye2"></div>
+    </div>
 </div>
 
 <div id="content">
-
-<div id="error-reasons">
-	<h3>Odiamos admitir, mas não encontramos a página ou arquivo que você está procurando.</h3>
-
-	<ul class="spaced">
-		<li>Se você digitou o endereço, verifique novamente a ortografia.</li>
-		<li>Se você chegou até aqui clicando em algum link, por favor avise-nos no endereço <em>webmaster [arroba] mozilla.com</em>. Informe a página de onde você veio e o que você estava procurando e daremos o melhor de nós para corrigir esse erro.</li>
-	</ul>
-</div>
-
-<div id="error-suggestions">
-	<h3>Se você não sabe para onde ir, aqui estão algumas opções:</h3>
-
-	<ul class="spaced">
-		<li>Você estava procurando informações sobre o <a href="/<?=$lang?>/firefox/">Firefox</a>?</li>
-		<li>Ou talvez nosso cliente de email, o <a href="/<?=$lang?>/thunderbird/">Thunderbird</a>?</li>
-		<li>Talvez seja melhor começar novamente em <a href="/<?=$lang?>/">www.mozilla.org</a>.</li>
-	</ul>
+    <ul>
+        <li>Se você digitou o endereço, verifique novamente a ortografia. Talvez seja apenas um erro de digitação.</li>
+        <li>Se você chegou até aqui clicando em algum link, é provável que ele esteja quebrado. Por favor, <a href="/<?=$lang?>/about/contact.html">entre em contato</a> e nós corrigiremos o erro.</li>
+        <li>Se você não tem certeza do que está procurando, comece em <a href="/">mozilla.org</a>.
+    </ul>
 </div>
 
 </div><!-- end #content div -->
 
 <?php
-  require_once $footerfile;
+    $disable_js_stats = true;
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
