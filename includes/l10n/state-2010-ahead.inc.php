@@ -24,7 +24,7 @@ $video_placeholder = <<<VIDEO
 <div id="video">
 
     <div id="video-player" class="mozilla-video-control">
-        <a href="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" id="video-ahead"><img width="400" height="225" src="{$config['static_prefix']}/img/covehead/annualreport/poster-ahead.jpg" alt="Video: {$l10n->get('Looking Ahead <span>Mitchell Baker</span>')}" /></a>
+        <a href="http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.webm" id="video-ahead"><img width="400" height="225" src="{$config['static_prefix']}/img/covehead/annualreport/poster-ahead.jpg" alt="Video: {$l10n->get('Looking Ahead <span>Mitchell Baker</span>')}" /></a>
     </div>
 
     <div id="video-description">
@@ -63,22 +63,22 @@ var player_sync = new Mozilla.VideoPlayer(
     'video-ahead',
     [
         {
-            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm',
+            url:   'http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.webm',
             type:  'video/webm; codecs=&quot;vp8, vorbis&quot;',
             title: '<?=___('WebM format')?>'
         },
         {
-            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.theora.ogv',
+            url:   'http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.theora%202.ogv',
             type:  'video/ogg; codecs=&quot;theora, vorbis&quot;',
             title: '<?=___('Ogg Theora format')?>'
         },
         {
-            url:   'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+            url:   'http://videos.mozilla.org/serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.mp4',
             type:  'video/mp4',
             title: '<?=___('MPEG-4 format')?>'
         }
     ],
-    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4',
+    'serv/brand/State%20of%20Mozilla%202011%20(fcp2)-RC%20-%20720p%20-%20MPEG-4.mp4',
     true
 );
 // ]]>
