@@ -16,7 +16,7 @@ if (isset($page_desc)) {
 }
 
 $default_head_scripts = <<<HEAD_SCRIPTS
-    <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-06-21"></script>
+    <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-01-04"></script>
 HEAD_SCRIPTS;
 
 $default_fonts = <<<FONTS
@@ -32,7 +32,7 @@ $default_fonts = <<<FONTS
 FONTS;
 
 $default_styles = <<<STYLES
-    <link href="{$config['static_prefix']}/includes/min/min.css?g=css&amp;2011-09-07" rel="stylesheet">
+    <link href="{$config['static_prefix']}/includes/min/min.css?g=css&amp;2010-01-04" rel="stylesheet">
 STYLES;
 
 $head_scripts = empty($head_scripts) ? $default_head_scripts : $head_scripts;
