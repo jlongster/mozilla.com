@@ -9,6 +9,9 @@ $body_id    = 'report_faq';
 $page_title = strip_tags(___('The State of Mozilla <span>Annual Report</span>')) . ' - ' . ___('FAQ');
 $i = 1; // initialize counter for anchors
 
+$link = array(
+    1  => 'http://static.mozilla.com/moco/en-US/pdf/Mozilla%20Foundation%20and%20Subsidiaries%202010%20Audited%20Financial%20Statement.pdf',
+);
 $navigation = <<<NAV
 
 {$return_top}
@@ -16,7 +19,7 @@ $navigation = <<<NAV
             <div class="content-block pdf">
                 <div>
                     {$l10n->get('2010 Audited Financial Statement')}<br/>
-                    <a href="" class="button">{$l10n->get('Download PDF')}</a>
+                    <a href="{$link[1]}" class="button">{$l10n->get('Download PDF')}</a>
                 </div>
 
                 <div>

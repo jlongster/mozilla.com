@@ -78,7 +78,8 @@ var player_sync = new Mozilla.VideoPlayer(
             title: '<?=___('MPEG-4 format')?>'
         }
     ],
-    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4'
+    'serv/webmademovies/Moz_Doc_0329_GetInvolved_ST.mp4',
+    true
 );
 // ]]>
 </script>

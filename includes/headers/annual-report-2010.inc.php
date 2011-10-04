@@ -10,7 +10,9 @@
 
 $default_head_scripts = <<<HEAD_SCRIPTS
     <script src="{$config['static_prefix']}/includes/min/min.js?g=js"></script>
-    <script src="/js/mozilla-video-tools.js"></script>
+<!--[if lte IE 9]>
+<script src="{$config['static_prefix']}/js/html5.js"></script>
+<![endif]-->
 HEAD_SCRIPTS;
 
 $default_fonts = <<<FONTS
