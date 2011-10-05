@@ -193,7 +193,7 @@ Mozilla.VideoControl.prototype.unprelight = function()
  * @param String  flv_url
  * @param Booelan autoplay
  */
-Mozilla.VideoPlayer = function(id, sources, flv_url, autoplay)
+Mozilla.VideoPlayer = function(id, sources, flv_url, autoplay, extra_content)
 {
   this.id = id;
   this.flv_url = flv_url;
@@ -204,6 +204,12 @@ Mozilla.VideoPlayer = function(id, sources, flv_url, autoplay)
     this.autoplay = autoplay;
   } else {
     this.autoplay = true;
+  }
+
+  if (arguments.length > 4) {
+    this.extra_content = extra_content;
+  } else {
+    this.extra_content = '';
   }
 
   var that = this;
@@ -277,7 +283,13 @@ Mozilla.VideoPlayer.prototype.drawVideoPlayer = function()
   }
 
   // add download links
-  content += '<div class="video-download-links"><ul>';
+  content += '<div class="video-download-links">';
+
+  if (this.extra_content != '') {
+      content += this.extra_content;
+  }
+
+  content += '<ul>';
   $.each(this.sources, function(index, source) {
     content += '<li><a href="' + source.url + '">' + source.title + '</a></li>';
   });
