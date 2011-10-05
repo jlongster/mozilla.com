@@ -42,12 +42,13 @@ if (in_array($a[0], $full_languages) || in_array(strtolower($a[0]), $full_langua
 unset($a);
 
 // a few commodity variables that are much easier to use in the template than appending config vars
-$host_root = $config['url_scheme'].'://'.$config['server_name'].'/';
-$host_l10n = $host_root.$lang;
-$host_enUS = $host_root.'en-US';
+$host_root    = $config['url_scheme'] . '://' . $config['server_name'] . '/';
+$host_l10n    = $host_root . $lang;
+$host_enUS    = $host_root . 'en-US';
+$firefox_link = $host_l10n . '/firefox/';
 
 // Create a variable to know if we are on production or not
-$publicsites = array('www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com');
+$publicsites = array( 'www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com', );
 $stage = (!in_array($config['server_name'], $publicsites)) ? true: false;
 unset($publicsites);
 
@@ -117,21 +118,19 @@ $deactivated = array(
 );
 
 // pages deactivated on production for a subset of locales
-if ( in_array($lang, array('gl', 'hu', 'cs', 'zh-CN')) ) {
+if ( in_array($lang, array( 'gl', 'hu', 'sl')) ) {
     $deactivated = array(
         'state-2010-home',
         'state-2010-ahead',
         'state-2010-opport',
         'state-2010-faq',
         'state-2010-people',
-)   ;
+    );
 }
 
-
-
 // add the include if it exists only
-if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.org') {
-    goToEnglishPage();
+if ($pageid != '' && in_array($pageid, $deactivated) && $stage == false) {
+    noCachingRedirect($firefox_link);
     exit;
 }
 
