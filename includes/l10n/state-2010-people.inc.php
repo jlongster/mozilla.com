@@ -69,7 +69,7 @@ IMAGE;
 
 $image6 = <<<IMAGE
         <div class="img-left">
-            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-paris.jpg" width="294" height="278" alt="{$l10n->get('ReMo Work Week, Paris')}" />
+            <img src="{$config['static_prefix']}/img/covehead/annualreport/photo-mozilla-paris.jpg" width="294" height="278" alt="{$l10n->get('ReMo Work Week in Paris')}" />
             <p>{$l10n->get('ReMo Work Week, Paris')}</p>
         </div>
 IMAGE;
