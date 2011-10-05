@@ -19,7 +19,7 @@ EXTRA_HEADERS;
 <script>
 
 // Add a class to the body tag to alternate promo features
-var feature_options = new Array( "feature-mobile", "feature-email" );
+var feature_options = [ "feature-mobile", "feature-email" ];
 
 if (Math.random) {
     var feature_choice = Math.floor(Math.random() * (feature_options.length));
@@ -28,12 +28,11 @@ if (Math.random) {
     feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
 
     if (document.body.className == '') {
-        document.body.className += ' '+feature_options[feature_choice];
-    } else {
         document.body.className = feature_options[feature_choice];
+    } else {
+        document.body.className += ' '+feature_options[feature_choice];
     }
 }
-
 </script>
 
 <div id="main-feature">
