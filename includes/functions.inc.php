@@ -201,14 +201,20 @@ function getLangLinksList()
 /**
  * Generate a list of languages (useful for footer links)
  */
-function getLangLinksSelect()
+function getLangLinksSelect($locales = '')
 {
     // From the main config - these are the languages we want in the dropdown
     global $language_select_list;
 
+    if ($locales == '') {
+        $locales = $language_select_list;
+    } else {
+        $locales = array_intersect_key($language_select_list, array_flip($locales));
+    }
+
     $_select_string = '';
 
-    foreach ($language_select_list as $lang => $fullname) {
+    foreach ($locales as $lang => $fullname) {
 
         // Find our current language in the list, and make it the selected option.
         $_selected = ($lang == LANG) ? ' selected="selected"' : '';

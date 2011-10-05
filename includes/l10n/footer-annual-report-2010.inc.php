@@ -1,5 +1,5 @@
 <?php
-
+$lang_list          = getLangLinksSelect(array('cs', 'de', 'es-ES', 'fr', 'gl', 'hu', 'it', 'pl', 'zh-CN', 'zh-TW' ));
 $current_year       = date('Y');
 $extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
@@ -23,6 +23,14 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
                         <a href="/{$lang}/legal/fraud-report/index.html">{$l10n->get('Report Trademark Abuse')}</a></p>
             <p>{$creative_commons}</p>
         </div>
+
+        <form id="lang_form" class="languages"  dir="{$textdir}" method="get" action="{$host_root}includes/l10n/langswitcher.inc.php"><div>
+            <label for="flang">{$l10n->get('switch language')}</label>
+            {$lang_list}
+            <noscript>
+                <div><input type="submit" id="lang_submit" value="{$l10n->get('Go')}" /></div>
+            </noscript>
+        </div></form>
 
     </div>
     </footer>
