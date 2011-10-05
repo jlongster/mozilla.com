@@ -22,7 +22,7 @@ if(!isset($_REQUEST['flang']) OR !in_array($_REQUEST['flang'], $full_languages))
 // security measure for potential CRLF attacks
 $_REQUEST['flang'] = str_replace("%0D", "", $_REQUEST['flang']);
 $_REQUEST['flang'] = str_replace("%0A", "", $_REQUEST['flang']);
-echo '<pre>';
+
 // sanitize the value in HTTP_REFERER to control the redirect by removing the domain, url scheme and locale
 $destination = str_replace('http://',  '', $_SERVER['HTTP_REFERER']);
 $destination = str_replace('https://', '', $destination);
