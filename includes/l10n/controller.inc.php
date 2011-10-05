@@ -107,7 +107,7 @@ $sitepages = array(
     'state-2010-people' => 'state-2010-people.inc.php',
 );
 
-// pages deactivated on production
+// pages deactivated on production for all locales
 $deactivated = array(
     'state-2010-home',
     'state-2010-ahead',
@@ -115,6 +115,19 @@ $deactivated = array(
     'state-2010-faq',
     'state-2010-people',
 );
+
+// pages deactivated on production for a subset of locales
+if ( in_array($lang, array('gl', 'hu', 'cs', 'zh-CN')) ) {
+    $deactivated = array(
+        'state-2010-home',
+        'state-2010-ahead',
+        'state-2010-opport',
+        'state-2010-faq',
+        'state-2010-people',
+)   ;
+}
+
+
 
 // add the include if it exists only
 if ($pageid != '' && in_array($pageid, $deactivated) && $config['server_name'] == 'www.mozilla.org') {
