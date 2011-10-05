@@ -1,5 +1,5 @@
 <?php
-$lang_list          = getLangLinksSelect(array('cs', 'de', 'es-ES', 'fr', 'gl', 'hu', 'it', 'pl', 'zh-CN', 'zh-TW' ));
+$lang_list          = getLangLinksSelect(array( 'cs', 'de', 'en-US', 'es-ES', 'fr', 'gl', 'nl', 'pl', 'zh-CN' ));
 $current_year       = date('Y');
 $extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
