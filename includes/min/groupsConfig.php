@@ -48,6 +48,9 @@ return array(
     'css_whatsnew6' => array(
         '//style/firefox/6/whatsnew-page.css'
     ),
+    'css_whatsnew8' => array(
+        '//style/firefox/8/whatsnew-page.css'
+    ),
     'css_firstrun6' => array(
         '//style/firefox/6/firstrun-page.css'
     ),
