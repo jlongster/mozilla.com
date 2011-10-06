@@ -362,6 +362,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.5b99/(releasenotes)(/(?:in
 # Rapid Release channel redirects
 
 # We are in beta for 8.0, redirect the "final" url to the beta pages
+RewriteCond %{QUERY_STRING} !(no-redirect|survey-complete)
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/8\.0/(releasenotes|whatsnew|firstrun|details)(/(?:index.html|buglist.html)?)?$ $1$2/8.0beta/$3$4 [PT]
 
 # Beta whatsnew -> firstrun

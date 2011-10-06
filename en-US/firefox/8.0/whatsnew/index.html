@@ -1,0 +1,390 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+	$_version       = getVersionBySelf();
+	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firefox</title>
+    <style>
+    /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: 'MetaBook';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.woff') format('woff');
+        font-weight: bold;
+    }
+    </style>
+    <? echo min_inline_css('css_whatsnew8'); ?>
+    <? echo min_inline_js('js_whatsnew4'); ?>
+  </head>
+<body id="whatsnew">
+<div id="wrapper">
+<div id="doc">
+
+<div id="main-feature">
+    <img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/logo.png')?>" alt="Firefox Logo" id="title-logo" width="128" height="130" />
+<?php // check if there is a version
+if ($_version !== null && $_valid_version) {
+    // check if we’re running the latest version
+    if (strcmp($_version, LATEST_FIREFOX_VERSION) == 0) {
+        ?>
+        <h2>Your Firefox is up to date.</h2>
+        <p id="main-feature-contents">Can’t find your last tab session? <a href="http://support.mozilla.com/kb/common-questions-after-updating-firefox">Get answers to the most common questions here.</a></p>
+        <?php
+    } else {
+        ?>
+        <h2> Your Firefox is out of date.</h2>
+        <p id="main-feature-contents">For security reasons, we recommend upgrading to the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+<?php
+    }
+} else {
+    ?>
+    <h2 class="unknown-version">You’re running an unknown version of Firefox.</h2>
+    <p id="main-feature-contents">For security reasons, we recommend downloading the <a href="/<?=$lang?>/firefox/">latest and greatest version</a>.</p>
+<?php
+}
+?>
+</div>
+
+<? $survey = true; ?>
+
+<? if ($survey) { ?>
+    <? if (isset($_GET['survey-complete'])) { ?>
+        <div class="main-content box survey-complete" id="survey-box">
+        <div class="survey-complete-contents">
+            <h2>Thanks!</h2>
+            <p>Firefox is made by Mozilla, a non-profit dedicated to making the Web a better place. <a href="/about/mission.html">Learn more.</a></p>
+        </div>
+        </div>
+    <? } else { ?>
+        <div class="main-content box" id="survey-box">
+        <h3>Have a second? <span>Help Us Out</span></h3>
+
+<form action="http://www.surveygizmo.com/s3/html/616308/9204037df4b1" method="post" enctype="multipart/form-data" class="sg-survey-form" id="sg_FormFor616308" >
+<div class="sg-hidden-inputs"><input type="hidden" name="sg_navchoice" id="sg_navchoice" value="" /><input type="hidden" name="sg_currentpageid" id="sg_currentpageid" value="1" /><input type="hidden" name="sg_surveyident" id="sg_surveyident" value="616308" /><input type="hidden" name="sg_sessionid" id="sg_sessionid" value="" /><input type="hidden" name="sg_interactionlevel" id="sg_interactionlevel" value="0" /></div><div class="sg-wrapper">
+    <div class="sg-header">
+        <div class="sg-header-hook-1"></div>
+        <img class="sg-header-image" src="https://app.sgizmo.com/images/spacer.gif" alt=""/>
+
+        <h1 class="sg-title"><span>Brand Awareness Tracking - What's New</span></h1>
+        <div class="sg-page-title">Page One</div>
+
+        <div class="sg-header-hook-2"></div>
+    </div>
+    <div class="sg-content">
+        <div class="sg-content-hook-1"></div>
+
+        <div class="sg-error-message"><div class="sg-error-top"></div>There was an error on your page. Please correct any required fields and submit again. <a href="javascript:void(0);" id="error-scroll-trigger">Go to the first error</a><div class="sg-error-bottom"></div></div>
+        
+        <div class="sg-question-set" ><div id="sgE-616308-1-2-box" class="sg-question sg-type-radio">
+    <input type="hidden" id="sgE-616308-1-2-meta" name="sgE-616308-1-2-meta" value="hidden=false&amp;required=false" />
+    <div class="sg-question-title">
+    Did you know Firefox is made by a non-profit organization with a mission to make the web better for you?    </div>
+        <div class="sg-question-options">
+    <ul class="sg-list sg-list-vertical sg-list-vertical-flipped">
+    <li class="sg-first-li">
+    <input type="radio" class="sg-input sg-input-radio" name="sgE-616308-1-2" id="sgE-616308-1-2-10001" value="10001" title="Yes" />
+<label for="sgE-616308-1-2-10001" >Yes</label>  </li>
+        <li class="sg-last-li">
+    <input type="radio" class="sg-input sg-input-radio" name="sgE-616308-1-2" id="sgE-616308-1-2-10002" value="10002" title="No" />
+<label for="sgE-616308-1-2-10002" >No</label>   </li>
+    </ul>           <!-- /sg-question-options -->
+        </div>
+            <!-- /sge-box -->
+</div>
+</div>
+
+        <div class="sg-content-hook-2"></div>
+    </div>
+    <div class="sg-footer">        
+        <div class="sg-footer-hook-1"></div>
+        
+        <div class="sg-button-bar"><input type="submit" class="sg-button sg-submit-button" id="sg_SubmitButton" name="sGizmoSubmitButton" value="Submit" /></div>
+        <div class="sg-progress-bar"><div class="sg-progress-bar-inner" style="width:0%;"></div><div class="sg-progress-bar-text">0%</div></div>
+        
+
+        <div class="sg-footer-hook-2"></div>
+    </div>
+</div></form>
+
+        <style type="text/css">
+            div.sg-progress-bar,
+            div.sg-footer-hook-1,
+            div.sg-footer-hook-2,
+            h1.sg-title,
+            div.sg-page-title,
+            div.sg-header-hook-1,
+            div.sg-header-hook-2,
+            div.sg-error-message {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+
+        $(document).ready(function() {
+            // make sure there's only one question, and it's a radio list
+            if ($(".sg-question-set .sg-question-options").length != 1 ||
+                $(".sg-question-set input:radio").length == 0) {
+                return;
+            }
+
+            $(".sg-question-set [type=radio]").each(function() {
+                var label = $(this).siblings('label');
+                var button = $('<button type="button">' +
+                    label.html() + '</button>');
+
+                button.click(function() {
+                    $(this).siblings('input').attr('checked', 'checked');
+                    $('.sg-submit-button').click();
+                });
+
+                label.closest('li').append(button);
+                label.hide();
+                $(this).hide();
+            });
+
+            $('.sg-submit-button').hide();
+        });
+
+        </script>
+    </div>
+    <? } ?>
+<? } else { ?>
+<div class="main-content box" id="feature-email">
+    <h3>More Features. More Info. <span>More Firefox.</span></h3>
+    <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
+    <div id="newsletter-signup">
+        <form id="email-form" class="<?= $status ?>" action="" method="post">
+          <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
+          <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+          <div id="success-msg">Thanks for Subscribing!</div>
+          <div class="more box">
+            <div class="row">
+              <select id="country" name="country">
+                  <?php
+                      $country = $form->get('country');
+                      if (!$country) {
+                          $country = 'us';
+                      }
+                      echo regionsAsOptions($lang, $country);
+                  ?>
+              </select>
+            </div>
+            <div class="row"> 
+                <?php
+                    $isText = $form->get('format') == 'text';
+                ?>
+                <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
+                <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
+            </div>
+            <div class="row">
+                <label for="privacy-check" id="privacy-check-label">
+                    <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                </label>
+            </div>
+            <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                            'DCS.dcsuri', '/mainstream_newsletter/signup',
+                            'WT.ti', 'Link: Sign me up - Second Step',
+                            'WT.dl', 99,
+                            'WT.nv', 'Content',
+                            'WT.ac', 'Newsletter');">
+            <p class="footnote">We will only send you Mozilla-related information.</p>
+          </div>
+        </form>
+    </div>
+</div>
+
+<? } ?>
+
+<div class="sub-feature box" id="mobile">
+    <h3>Firefox is Mobile!</h3>
+    <p>Make it your own, even on the go.</p>
+    <ul class="link"><li>
+        <a href="/<?=$lang?>/mobile/">Get Firefox for Android »</a>
+    </li></ul>
+</div>
+
+<div class="sub-feature box" id="webifyme">
+    <h3>Visualize Your Web</h3>
+    <p>See your Internet as a custom collage.</p>
+    <ul class="link"><li>
+        <a href="https://webifyme.org/"
+           onclick="dcsMultiTrack('DCS.dcssip', 'webifyme.org', 
+                                  'DCS.dcsuri', '/',
+                                  'WT.ti', 'Webify Me!',
+                                  'WT.dl', 99,
+                                  'WT.nv', 'Content',
+                                  'WT.ac', 'Webify Me!');">
+          Webify Me! »
+        </a>
+    </li></ul>
+</div>
+
+<div class="sub-feature box" id="social">
+    <ul class="link">
+        <li id="connect-twitter">
+          <a href="http://twitter.com/firefox"
+             onclick="dcsMultiTrack('DCS.dcssip', 'twitter.com',
+                                    'DCS.dcsuri', '/firefox',
+                                    'WT.ti', 'Link: Twitter',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Footer',
+                                    'WT.ac', 'Twitter');">
+            Twitter »
+          </a>
+        </li>
+        <li id="connect-facebook">
+          <a href="http://www.facebook.com/Firefox"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.facebook.com',
+                                    'DCS.dcsuri', '/firefox',
+                                    'WT.ti', 'Link: Facebook',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Footer',
+                                    'WT.ac', 'Facebook');">
+            Facebook »
+          </a>
+        </li>
+        <li id="connect-participate">
+          <a href="http://www.mozilla.org/join/"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                    'DCS.dcsuri', '/join/',
+                                    'WT.ti', 'Link: Join Mozilla',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Footer',
+                                    'WT.ac', 'Join Mozilla');">
+            Join Mozilla <span>»</span>
+          </a>
+        </li>
+    </ul>
+</div>
+
+<p id="sub-links">
+    <a href="/<?=$lang?>/firefox/<?=$_version?>/releasenotes/">Release Notes <span>»</span></a>
+    <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+
+
+
+
+</div>
+</div>
+
+  <script>
+
+  var platform = (function() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf("Mac") != -1) {
+      return "mac";
+    } else if (ua.indexOf("Linux") != -1) {
+      return "linux";
+    }
+    return "win";
+  })();
+  document.body.classList.add(platform);
+
+    $(document).ready(function() {
+
+        var $form = $('#newsletter-signup');
+        var $pane = $('#newsletter-signup .more');
+        var opened = $form.hasClass('opened');
+
+        function open()
+        {
+            if (!opened) {
+                $(document).click(documentClick);
+                $form.addClass('opened');
+                $pane.fadeIn('fast');
+                $('#country').focus();
+                opened = true;
+            }
+        }
+
+        function documentClick(e)
+        {
+            var target = e.target;
+            var form = $('#email-form').get(0);
+            var is_form = (form === target);
+
+            while (!is_form && target.parentNode) {
+                target = target.parentNode;
+                is_form = (target == form);
+            }
+
+            if (!is_form) {
+                close();
+            }
+        }
+
+        function close()
+        {
+            if (opened) {
+                $(document).unbind('click', documentClick);
+                $pane.fadeOut('slow');
+                $form.removeClass('opened');
+                opened = false;
+            }
+        }
+
+        $('#email').keydown(function(e) {
+            switch (e.which) {
+            case 13:
+                if (!opened) {
+                    console.log('prevent 13 default');
+                    e.preventDefault();
+                    open();
+                }
+                break;
+            case 9:
+                e.preventDefault();
+                open();
+                $('#country').focus(); // again in case already opened
+                break;
+            }
+        });
+
+        $('#expand').click(function(e) {
+            e.preventDefault();
+
+            if (!opened) {
+                var uri = $(this).attr('data-wt_uri');
+                var ti = $(this).attr('data-wt_ti');
+                dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
+            }
+
+            open();
+        });
+
+    });
+
+    </script>
+    <?
+    // Webtrends stats, see bug 556384
+    require "{$config['file_root']}/includes/js_stats.inc.php";
+    echo $stats_js;
+    ?>
+  </body>
+</html>
