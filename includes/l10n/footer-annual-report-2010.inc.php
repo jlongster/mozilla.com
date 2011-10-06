@@ -1,5 +1,7 @@
 <?php
-$lang_list          = getLangLinksSelect(array( 'cs', 'de', 'en-US', 'es-ES', 'fr', 'gl', 'nl', 'pl', 'zh-CN' ));
+$lang_list          = getLangLinksSelect(array( 'cs', 'de', 'en-US', 'es-ES', 'fr', 'it', 'nl', 'pl', 'tr', 'zh-CN', 'zh-TW' ));
+$lang_list          = str_replace(' (España)', '', $lang_list);
+$lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
 $extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
