@@ -3,7 +3,7 @@
 $body_id = 'home';
 
 $extra_headers .= <<<EXTRA_HEADERS
-    <meta name="og:image" content="http://mozcom-cdn.mozilla.net/img/firefox-100.jpg">
+    <meta property="og:image" content="http://mozcom-cdn.mozilla.net/img/firefox-100.jpg" />
     <meta name="description" content="{$meta_description}" />
 
 EXTRA_HEADERS;

@@ -113,6 +113,122 @@ NEWMENU;
 }
 
 
+$extra_css = <<<META
+
+#sub-footer h3 {
+    font-size: 18px;
+}
+
+#footer  {
+    padding:0 15%;
+}
+
+#footer-wrap {
+    width:980px;
+    margin:auto;
+}
+
+#footer-wrap #footer-contents {
+    width: 680px;
+    margin:0;
+    float:left;
+}
+
+#sub-footer {
+    float: left !important;
+    margin-top: -105px !important;
+    margin-left: 0 !important;
+    background:none !important;
+    clear: none !important;
+}
+
+#sub-footer #sub-footer-contents {
+    width:300px;
+}
+
+
+form {
+    margin:0; /* IE7 hack */
+    width:300px; /* IE7 hack */
+}
+
+#sub-footer #sub-footer-newsletter {
+    margin:0;
+}
+
+#sub-footer #sub-footer-newsletter {
+   _background:none !important; /* IE6 hack */
+}
+
+
+#central h3 {
+    background: none !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    font-style: auto !important;
+    font-weight: inherit !important;
+    height: auto !important;
+    padding-bottom: inherit !important;
+    padding-top: inherit !important;
+    text-align: inherit !important;
+    line-height: 1.2em !important;
+}
+
+
+META;
+
+
+
+
+
+if ($textdir == 'rtl') {
+$extra_css .= <<<META
+
+#sub-footer #sub-footer-newsletter {
+    float: left !important;
+    margin: 0 !important;
+    padding: 135px 0 0 0 !important;
+    text-align: right !important;
+    background: url("/img/template/footer-social.png") no-repeat scroll 70% -412px transparent;
+}
+
+#sub-footer {
+    background: none repeat scroll 0 0 transparent !important;
+    float: left !important;
+    margin-left: 0px !important;
+}
+
+#footer #copyright {
+    padding-right: 0px !important;
+    padding-left: 30px !important;
+}
+
+#footer #footer-contents {
+    float:right;
+}
+
+#sub-footer #sub-footer-contents {
+    width: inherit !important;
+    width: 200px !important;
+}
+
+form {
+    max-width:300px; /* IE7 hack */
+}
+
+#sub-footer-newsletter .email-form .email-open, .email-form .email-open {
+    -moz-transform: rotate(-90deg);
+}
+
+.email-form .radio-wrapper,
+.email-form .form-pane .format-field label {
+    float: right;
+}
+
+META;
+}
+
+
 $dynamic_header = <<<DYNAMIC_HEADER
 {$doctype}
 <head>
@@ -121,6 +237,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/template.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/content.css" media="screen" />
+    <script src="{$config['static_prefix']}/includes/min/min.js?g=js&amp;2011-06-21"></script>
 
     <style type="text/css">
 
