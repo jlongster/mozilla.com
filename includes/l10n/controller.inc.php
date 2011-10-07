@@ -48,7 +48,7 @@ $host_enUS    = $host_root . 'en-US';
 $firefox_link = $host_l10n . '/firefox/';
 
 // Create a variable to know if we are on production or not
-$publicsites = array( 'www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com', 'www.monsite-mozilla.com' );
+$publicsites = array( 'www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com',) ;
 $stage = (!in_array($config['server_name'], $publicsites)) ? true: false;
 unset($publicsites);
 
@@ -110,11 +110,11 @@ $sitepages = array(
 
 // pages deactivated on production for all locales
 $deactivated = array(
-    //~ 'state-2010-home',
-    //~ 'state-2010-ahead',
-    //~ 'state-2010-opport',
-    //~ 'state-2010-faq',
-    //~ 'state-2010-people',
+    'state-2010-home',
+    'state-2010-ahead',
+    'state-2010-opport',
+    'state-2010-faq',
+    'state-2010-people',
 );
 
 // pages deactivated on production for a subset of locales for the State of Mozilla project
