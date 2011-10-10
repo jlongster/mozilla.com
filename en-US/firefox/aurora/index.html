@@ -47,7 +47,7 @@ EXTRA_HEADERS;
             var gDownloadTracker = "";
 
             var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
-        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gDownloadTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox Aurora</span> <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\">Free Download <span class=\"download-info\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox Aurora</span> <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\">Free Download <span class=\"download-info\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
             var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
             var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
