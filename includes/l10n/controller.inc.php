@@ -110,11 +110,7 @@ $sitepages = array(
 
 // pages deactivated on production for all locales
 $deactivated = array(
-    'state-2010-home',
-    'state-2010-ahead',
-    'state-2010-opport',
-    'state-2010-faq',
-    'state-2010-people',
+    ''
 );
 
 // pages deactivated on production for a subset of locales for the State of Mozilla project
