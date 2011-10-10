@@ -113,7 +113,7 @@ NEWMENU;
 }
 
 
-$extra_css = <<<META
+$extra_css .= <<<META
 
 #sub-footer h3 {
     font-size: 18px;
