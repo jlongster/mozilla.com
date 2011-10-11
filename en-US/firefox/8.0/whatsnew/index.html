@@ -12,8 +12,8 @@
         $status = 'error error-'. $form->error;
     }
 
-	$_version       = getVersionBySelf();
-	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+    $_version       = getVersionBySelf();
+    $_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,95 +80,8 @@ if ($_version !== null && $_valid_version) {
     <? } else { ?>
         <div class="main-content box" id="survey-box">
         <h3>Have a second? <span>Help Us Out</span></h3>
-
-<form action="http://www.surveygizmo.com/s3/html/616308/9204037df4b1" method="post" enctype="multipart/form-data" class="sg-survey-form" id="sg_FormFor616308" >
-<div class="sg-hidden-inputs"><input type="hidden" name="sg_navchoice" id="sg_navchoice" value="" /><input type="hidden" name="sg_currentpageid" id="sg_currentpageid" value="1" /><input type="hidden" name="sg_surveyident" id="sg_surveyident" value="616308" /><input type="hidden" name="sg_sessionid" id="sg_sessionid" value="" /><input type="hidden" name="sg_interactionlevel" id="sg_interactionlevel" value="0" /></div><div class="sg-wrapper">
-    <div class="sg-header">
-        <div class="sg-header-hook-1"></div>
-        <img class="sg-header-image" src="https://app.sgizmo.com/images/spacer.gif" alt=""/>
-
-        <h1 class="sg-title"><span>Brand Awareness Tracking - What's New</span></h1>
-        <div class="sg-page-title">Page One</div>
-
-        <div class="sg-header-hook-2"></div>
-    </div>
-    <div class="sg-content">
-        <div class="sg-content-hook-1"></div>
-
-        <div class="sg-error-message"><div class="sg-error-top"></div>There was an error on your page. Please correct any required fields and submit again. <a href="javascript:void(0);" id="error-scroll-trigger">Go to the first error</a><div class="sg-error-bottom"></div></div>
-        
-        <div class="sg-question-set" ><div id="sgE-616308-1-2-box" class="sg-question sg-type-radio">
-    <input type="hidden" id="sgE-616308-1-2-meta" name="sgE-616308-1-2-meta" value="hidden=false&amp;required=false" />
-    <div class="sg-question-title">
-    Did you know Firefox is made by a non-profit organization with a mission to make the web better for you?    </div>
-        <div class="sg-question-options">
-    <ul class="sg-list sg-list-vertical sg-list-vertical-flipped">
-    <li class="sg-first-li">
-    <input type="radio" class="sg-input sg-input-radio" name="sgE-616308-1-2" id="sgE-616308-1-2-10001" value="10001" title="Yes" />
-<label for="sgE-616308-1-2-10001" >Yes</label>  </li>
-        <li class="sg-last-li">
-    <input type="radio" class="sg-input sg-input-radio" name="sgE-616308-1-2" id="sgE-616308-1-2-10002" value="10002" title="No" />
-<label for="sgE-616308-1-2-10002" >No</label>   </li>
-    </ul>           <!-- /sg-question-options -->
+        <iframe src="http://www.surveygizmo.com/s3/iframe/671308/26466906335a" frameborder="0" width="500" height="200" style="overflow:hidden"></iframe>
         </div>
-            <!-- /sge-box -->
-</div>
-</div>
-
-        <div class="sg-content-hook-2"></div>
-    </div>
-    <div class="sg-footer">        
-        <div class="sg-footer-hook-1"></div>
-        
-        <div class="sg-button-bar"><input type="submit" class="sg-button sg-submit-button" id="sg_SubmitButton" name="sGizmoSubmitButton" value="Submit" /></div>
-        <div class="sg-progress-bar"><div class="sg-progress-bar-inner" style="width:0%;"></div><div class="sg-progress-bar-text">0%</div></div>
-        
-
-        <div class="sg-footer-hook-2"></div>
-    </div>
-</div></form>
-
-        <style type="text/css">
-            div.sg-progress-bar,
-            div.sg-footer-hook-1,
-            div.sg-footer-hook-2,
-            h1.sg-title,
-            div.sg-page-title,
-            div.sg-header-hook-1,
-            div.sg-header-hook-2,
-            div.sg-error-message {
-                display: none;
-            }
-        </style>
-        <script type="text/javascript">
-
-        $(document).ready(function() {
-            // make sure there's only one question, and it's a radio list
-            if ($(".sg-question-set .sg-question-options").length != 1 ||
-                $(".sg-question-set input:radio").length == 0) {
-                return;
-            }
-
-            $(".sg-question-set [type=radio]").each(function() {
-                var label = $(this).siblings('label');
-                var button = $('<button type="button">' +
-                    label.html() + '</button>');
-
-                button.click(function() {
-                    $(this).siblings('input').attr('checked', 'checked');
-                    $('.sg-submit-button').click();
-                });
-
-                label.closest('li').append(button);
-                label.hide();
-                $(this).hide();
-            });
-
-            $('.sg-submit-button').hide();
-        });
-
-        </script>
-    </div>
     <? } ?>
 <? } else { ?>
 <div class="main-content box" id="feature-email">
