@@ -468,6 +468,7 @@
                     'description'  => 'What’s Mozilla all about? Why are we doing this? We’re glad you asked.',
                     'thumbnail'    => '/img/covehead/video/icon-brand.jpg',
                     'flv_filename' => 'brand/Mozilla_Firefox_Manifesto_v0.2_640.mp4',
+                    'poster'       => '/img/covehead/video/poster-brand.jpg',
                     'sources'      => array(
                         'webm' => array(
                             'src'  => 'http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm',
@@ -580,7 +581,7 @@
         $_page_title = $_selected_video['title'];
         $_page_desc = $_selected_video['description'];
     } else {
-        $_selected_shortname = key($_videos_by_shortname);
+        $_selected_shortname = 'brand';
         $_selected_video = $_videos_by_shortname[$_selected_shortname];
         $_page_title = 'Watch Videos';
         $_page_desc  = 'A video overview of what makes the Firefox web browser so awesome. Explore popular features, learn about the Mozilla mission and more.';
