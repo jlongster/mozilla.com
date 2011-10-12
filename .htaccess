@@ -427,6 +427,9 @@ RewriteRule ^en-US/developers[/]?$ http://developer.mozilla.org/ [R=permanent,L]
 RewriteRule ^(?:en-US/)?fennec[/]?$ /en-US/mobile/ [R=permanent,L]
 RewriteRule ^en-US/firefox/lorentz(?:/.*)$ / [R=permanent]
 
+# Bug 675362
+RewriteRule ^en-US/hp7 /firefox/ [R=permanent]
+
 # to be used leading up to a release, as a way of diverting HTTP traffic from
 # FTP mirrors - remove when the new version goes live
 RewriteRule ^en-US/firefox/comingsoon[/]? /en-US/firefox/ [R=permanent]
