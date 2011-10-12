@@ -9,8 +9,12 @@ if(isset($_GET['mobile_first']) && $_GET['mobile_first'] == 1) {
     // The $body_* variables are for compatibility with pre-existing css
     if ($mobile_first) {
         $page_title = 'Mozilla Firefox | Firefox for Android | Download Firefox Aurora & Beta for Mobile';
+        $headline  = '<h2>The Future of <span>Firefox for Mobile</span></h2>';
+        $headline .= '<p>Download and test the Android build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>';
     } else {
         $page_title = 'Download Firefox Aurora or Beta &amp; Help Determine the Next Firefox';
+        $headline  = '<h2>Welcome to the <span>Future of Firefox</span></h2>';
+        $headline .= '<p>Download and test the build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>';
     }
     $page_desc  = 'Download and test Firefox future releases. Experience the newest innovations with the Aurora or Beta builds.';
     $body_id    = 'channel';
@@ -145,8 +149,7 @@ BETA_MOBILE_BLOCK;
 ?>
 
 <div id="main-feature">
-    <h2>Welcome to the<span>Future of Firefox</span></h2>
-    <p>Download and test the build that’s right for you, and sign up for a channel newsletter to stay in the loop.</p>
+    <?=$headline?>
 </div>
 
 <div id="main-content">
