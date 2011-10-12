@@ -1,0 +1,52 @@
+
+<?php
+    // Please also translate the php variable below
+    // TITLE OF THE PAGE
+    $page_title = "Mozilla | Firefox Mobile";
+
+
+    $body_id = 'home';
+    $extra_headers = <<<EXTRA_HEADERS
+    <style>
+        #home .title { background: none; }
+        #b-download {
+            font-size: 1.8em;
+            border-bottom: 2px solid #418713;
+        }
+        #b-download span {
+            display: block;
+            font-style: italic;
+            font-size: 0.6em;
+            line-height: 1.4;
+        }
+        p { margin: 1em 0; }
+        ul.link-list { margin-top: 1em; }
+        #home .outer-wrapper .wrapper {
+            background: url({$config['static_prefix']}/img/mobile/m/android.png) 90% 50px no-repeat;
+            background-size: 30%;
+        }
+        #footer p { font-size: 65%; }
+    </style>
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+    <div class="title with-titles">
+        <div class="text">
+          <h2>Firefox is</h2>
+          <h1>Mobile</h1>
+        </div>
+    </div>
+
+    <a href="/m/download-android.html" class="button" id="b-download">Download Firefox <span>Free from the Android Market</span></a>
+
+    <p>Firefox for mobile is fast, easy to use and customizable, with the latest security and privacy features to help you stay safe online.</p>
+
+    <ul class="link-list">
+      <li><a href="/m/faq">Frequently Asked Questions</a></li>
+      <li><a href="/m/privacy.html">Privacy Policy</a></li>
+    </ul>
+
+<?php 
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>
