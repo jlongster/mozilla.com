@@ -12,6 +12,7 @@ $i = 1; // initialize counter for anchors
 $link = array(
     1  => 'http://static.mozilla.com/moco/en-US/pdf/Mozilla%20Foundation%20and%20Subsidiaries%202010%20Audited%20Financial%20Statement.pdf',
     2  => 'http://static.mozilla.com/moco/en-US/pdf/Mozilla%20Foundation%20-%202010%20Public%20Disclosure%20990.pdf',
+    3  => '/' . $lang . '/foundation/annualreport/2010/opportunities/#capabilities',
 );
 $navigation = <<<NAV
 
