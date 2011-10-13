@@ -272,10 +272,6 @@ EXTRA_HEADERS;
 		msg += link_text.link(download_url) + '.</p>';
 		msg += '</div>';
 
-        msg += '<div id="survey-box"><h3>Have a second? <span>Help Us Out</span></h3>';
-        msg += '<iframe src="http://www.surveygizmo.com/s3/iframe/666789/249c2dc6780e" frameborder="0" width="500" height="210" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>';
-        msg += '<style>#download-sidebar { display: none; }</style>';
-        msg += '</div>';
 		if (promotion_msg != '') {
 			msg += '<div id="content">';
 			msg += promotion_msg;
@@ -302,6 +298,84 @@ EXTRA_HEADERS;
     } else {
         window.onload = downloadURL;
     }
+
+    $(document).ready(function() {
+
+        var cookieName = 'Firefox8WhatsNewSurvey';
+        var cookieDays = 30;
+
+        var surveyProbability = 0.01;
+
+        var setCookie = function(name, value, path, expire)
+        {
+            if (expire) {
+                var expdate = new Date();
+                expdate.setDate(expdate.getDate() + expire);
+                expire = ';expires=' + expdate.toUTCString();
+            } else {
+                expire = '';
+            }
+
+            if (path) {
+                path = ';path=' + path;
+            } else {
+                path = '';
+            }
+
+            document.cookie = name + '=' + escape(value) + expire + path;
+        };
+
+        var getCookie = function(name)
+        {
+            if (document.cookie.length === 0) {
+                return null;
+            }
+
+            var start = document.cookie.indexOf(name + '=');
+
+            if (start === -1) {
+                return null;
+            }
+
+            start += name.length + 1;
+            end    = document.cookie.indexOf(';', start);
+            if (end === -1) {
+                end = document.cookie.length;
+            }
+
+            return unescape(document.cookie.substring(start, end));
+        };
+
+        var showSurvey = getCookie(cookieName);
+
+        if (showSurvey === null) {
+            // no cookie set, show survey with probability
+            showSurvey = (Math.random() < surveyProbability) ? 'yes' : 'no';
+            // survey is only ever displayed once, set cookie to hide it
+            setCookie(cookieName, 'no', '/', cookieDays);
+        } else {
+            // make sure it stays hidden even if you edit the cookie value
+            showSurvey = 'no';
+            setCookie(cookieName, 'no', '/', cookieDays);
+        }
+
+        if (showSurvey == 'yes') {
+            var $survey = $('<div id="survey-box"><h3>Have a second? <span>Help Us Out</span></h3>'
+                + '<iframe src="http://www.surveygizmo.com/s3/iframe/666789/249c2dc6780e" frameborder="0" width="500" height="210" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
+                + '<style>#download-sidebar { display: none; }</style>'
+                + '</div>'
+            );
+
+            var $footer = $('#download-footer');
+            var $promo  = $('#content');
+
+            if ($promo.length) {
+                $promo.before($survey);
+            } else {
+                $footer.before($survey);
+            }
+        }
+    });
 
 // ]]></script>
 

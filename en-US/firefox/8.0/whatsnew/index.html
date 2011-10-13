@@ -67,23 +67,9 @@ if ($_version !== null && $_valid_version) {
 ?>
 </div>
 
-<? $survey = true; ?>
-
-<? if ($survey) { ?>
-    <? if (isset($_GET['survey-complete'])) { ?>
-        <div class="main-content box survey-complete" id="survey-box">
-        <div class="survey-complete-contents">
-            <h2>Thanks!</h2>
-            <p>Firefox is made by Mozilla, a non-profit dedicated to making the Web a better place. <a href="/about/mission.html">Learn more.</a></p>
-        </div>
-        </div>
-    <? } else { ?>
-        <div class="main-content box" id="survey-box">
-        <h3>Have a second? <span>Help Us Out</span></h3>
-        <iframe src="http://www.surveygizmo.com/s3/iframe/671308/26466906335a" frameborder="0" width="500" height="200" style="overflow:hidden"></iframe>
-        </div>
-    <? } ?>
-<? } else { ?>
+<div class="main-content box" id="survey-box">
+    <h3>Have a second? <span>Help Us Out</span></h3>
+</div>
 <div class="main-content box" id="feature-email">
     <h3>More Features. More Info. <span>More Firefox.</span></h3>
     <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
@@ -128,8 +114,6 @@ if ($_version !== null && $_valid_version) {
         </form>
     </div>
 </div>
-
-<? } ?>
 
 <div class="sub-feature box" id="mobile">
     <h3>Firefox is Mobile!</h3>
@@ -290,6 +274,78 @@ if ($_version !== null && $_valid_version) {
 
             open();
         });
+
+        var cookieName = 'Firefox8WhatsNewSurvey';
+        var cookieDays = 30;
+
+        var surveyProbability = 0.01;
+
+        var setCookie = function(name, value, path, expire)
+        {
+            if (expire) {
+                var expdate = new Date();
+                expdate.setDate(expdate.getDate() + expire);
+                expire = ';expires=' + expdate.toUTCString();
+            } else {
+                expire = '';
+            }
+
+            if (path) {
+                path = ';path=' + path;
+            } else {
+                path = '';
+            }
+
+            document.cookie = name + '=' + escape(value) + expire + path;
+        };
+
+        var getCookie = function(name)
+        {
+            if (document.cookie.length === 0) {
+                return null;
+            }
+
+            var start = document.cookie.indexOf(name + '=');
+
+            if (start === -1) {
+                return null;
+            }
+
+            start += name.length + 1;
+            end    = document.cookie.indexOf(';', start);
+            if (end === -1) {
+                end = document.cookie.length;
+            }
+
+            return unescape(document.cookie.substring(start, end));
+        };
+
+        var showSurvey = getCookie(cookieName);
+
+        if (showSurvey === null) {
+            // no cookie set, show survey with probability
+            showSurvey = (Math.random() < surveyProbability) ? 'yes' : 'no';
+            // survey is only ever displayed once, set cookie to hide it
+            setCookie(cookieName, 'no', '/', cookieDays);
+        } else {
+            // make sure it stays hidden even if you edit the cookie value
+            showSurvey = 'no';
+            setCookie(cookieName, 'no', '/', cookieDays);
+        }
+
+        if (showSurvey == 'yes') {
+            var $iframe = $(
+                '<iframe src="http://www.surveygizmo.com/s3/iframe/671308/26466906335a" ' +
+                'frameborder="0" width="500" height="200" ' +
+                'style="overflow:hidden"></iframe>'
+            );
+            $('#survey-box').append($iframe);
+            $('#feature-email').hide();
+            $('#survey-box').show();
+        } else {
+            $('#survey-box').hide();
+            $('#feature-email').show();
+        }
 
     });
 
