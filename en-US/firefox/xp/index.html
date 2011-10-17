@@ -1,12 +1,5 @@
 <?php
-
-    # Make sure firefox/xp is on HTTPS, for some reason the %{HTTPS}
-    # Apache variable does not work!
-    if($config['url_scheme'] != 'https') {
-        header("Location: https://{$config['server_name']}{$_SERVER['REQUEST_URI']}");
-        exit;
-    }
-
+    require_once "{$config['file_root']}/includes/force_ssl.php";
     require_once "{$config['file_root']}/includes/min/inline.php";
 
     $page_title = 'Mozilla Firefox Web Browser | Free Download';
