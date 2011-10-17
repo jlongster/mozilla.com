@@ -1,12 +1,19 @@
 <?php
-# Make sure the page is on HTTPS, for some reason the %{HTTPS}
-# Apache variable does not work!
 if(in_array($config['server_name'], array('www-dev.allizom.org',
                                           'www.allizom.org',
                                           'www.mozilla.org',
-                                          'mozilla.org')) &&
-   $config['url_scheme'] != 'https') {
+                                          'mozilla.org'))) {
+    if($config['url_scheme'] != 'https') {
+        // Force the page to use SSL
         header("Location: https://{$config['server_name']}{$_SERVER['REQUEST_URI']}");
         exit;
+    }
+    else {
+        // Implement HTTP Strict Transport Security 
+        // http://tools.ietf.org/html/draft-hodges-strict-transport-sec-02
+        header('Strict-Transport-Security: max-age=60000');
+    }
 }
+
+
 ?>
