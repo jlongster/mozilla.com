@@ -57,19 +57,6 @@ RTL;
 */
 
 require_once $config['file_root'] . '/includes/l10n/header-pages.inc.php';
-
-/*
-* We shouldn't have used content.inc.php as a ftile name but content.inc.html
-* remove the check once we have all the files translated and published as content.inc.html
-*/
-
 $translation = $config['file_root'] . '/' . $lang . '/about/content.inc.html';
-
-if (file_exists($translation)) {
-    include_once $translation;
-} else {
-    include_once $config['file_root'] . '/' . $lang . '/about/content.inc.php';
-}
-
 require_once $config['file_root'] . '/includes/l10n/footer-pages.inc.php';
 
