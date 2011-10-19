@@ -239,99 +239,25 @@ $lang_remap = array(
  * A mapping between the short name for the language and the URL for where it's files
  * are.  This is a temporary measure, while we localize pages and move them from
  * external servers to mozilla.com.  As languages are migrated to mozilla.com, change
- * them in this array to point to mozilla.com.  When all the locales in this list
+ * them in this array to point to mozilla.org.  When all the locales in this list
  * point to mozilla.com delete the array and remove the corresponding section marked
  * "TEMPORARY CODE" in prefetch.php.
  */
-$language_url_map = array(
-    'af'        => 'http://www.mozilla.org/af/',
-    'ak'        => 'http://www.mozilla.org/ak/',
-    'ar'        => 'http://www.mozilla.org/ar/',
-    'as'        => 'http://www.mozilla.org/as/',
-    'ast'       => 'http://www.mozilla.org/ast/',
-    'be'        => 'http://www.mozilla.org/be/',
-    'bg'        => 'http://www.mozilla.org/bg/',
-    'bn-BD'     => 'http://www.mozilla.org/bn-BD/',
-    'bn-IN'     => 'http://www.mozilla.org/bn-IN/',
-    'br'        => 'http://www.mozilla.org/br/',
-    'ca'        => 'http://www.mozilla.org/ca/',
-    'cs'        => 'http://www.mozilla.org/cs/',
-    'csb'       => 'http://www.mozilla.org/csb/',
-    'cy'        => 'http://www.mozilla.org/cy/',
-    'da'        => 'http://www.mozilla.org/da/',
-    'de'        => 'http://www.mozilla.org/de/',
-    'el'        => 'http://www.mozilla.org/el/',
-    'en-ZA'     => 'http://www.mozilla.org/en-ZA/',
-    'eo'        => 'http://www.mozilla.org/eo/',
-    'es'        => 'http://www.mozilla.org/es/',
-    'es-AR'     => 'http://www.mozilla.org/es-AR/',
-    'es-CL'     => 'http://www.mozilla.org/es-CL/',
-    'es-ES'     => 'http://www.mozilla.org/es-ES/',
-    'es-MX'     => 'http://www.mozilla.org/es-MX/',
-    'et'        => 'http://www.mozilla.org/et/',
-    'eu'        => 'http://www.mozilla.org/eu/',
-    'en-GB'     => 'http://www.mozilla.org/en-GB/',
-    'en-US'     => 'http://www.mozilla.org/en-US/',
-    'en-ZA'     => 'http://www.mozilla.org/en-ZA/',
-    'fa'        => 'http://www.mozilla.org/fa/',
-    'fi'        => 'http://www.mozilla.org/fi/',
-    'fr'        => 'http://www.mozilla.org/fr/',
-    'fy-NL'     => 'http://www.mozilla.org/fy-NL/',
-    'ga-IE'     => 'http://www.mozilla.org/ga-IE/',
-    'gd'        => 'http://www.mozilla.org/gd/',
-    'gl'        => 'http://www.mozilla.org/gl/',
-    'gu-IN'     => 'http://www.mozilla.org/gu-IN/',
-    'he'        => 'http://www.mozilla.org/he/',
-    'hi-IN'     => 'http://www.mozilla.org/hi-IN/',
-    'hr'        => 'http://www.mozilla.org/hr/',
-    'hu'        => 'http://www.mozilla.org/hu/',
-    'hy-AM'     => 'http://www.mozilla.org/hy-AM/',
-    'id'        => 'http://www.mozilla.org/id/',
-    'is'        => 'http://www.mozilla.org/is/',
-    'it'        => 'http://www.mozilla.org/it/',
-    'ja'        => 'http://mozilla.jp/',
-    'ka'        => 'http://www.mozilla.org/ka/',
-    'kk'        => 'http://www.mozilla.org/kk/',
-    'kn'        => 'http://www.mozilla.org/kn/',
-    'ko'        => 'http://www.mozilla.or.kr/',
-    'ku'        => 'http://www.mozilla.org/ku/',
-    'lg'        => 'http://www.mozilla.org/lg/',
-    'lt'        => 'http://www.mozilla.org/lt/',
-    'lv'        => 'http://www.mozilla.org/lv/',
-    'mai'       => 'http://www.mozilla.org/mai/',
-    'mk'        => 'http://www.mozilla.org/mk/',
-    'ml'        => 'http://www.mozilla.org/ml/',
-    'mn'        => 'http://www.mozilla.org/mn/',
-    'mr'        => 'http://www.mozilla.org/mr/',
-    'nl'        => 'http://www.mozilla.org/nl/',
-    'no'        => 'http://www.mozilla.org/nb-NO/',
-    'nb-NO'     => 'http://www.mozilla.org/nb-NO/',
-    'nso'       => 'http://www.mozilla.org/nso/',
-    'oc'        => 'http://www.mozilla.org/oc/',
-    'pa-IN'     => 'http://www.mozilla.org/pa-IN/',
-    'pl'        => 'http://www.mozilla.org/pl/',
-    'pt-BR'     => 'http://www.mozilla.org/pt-BR/',
-    'pt-PT'     => 'http://www.mozilla.org/pt-PT/',
-    'rm'        => 'http://www.mozilla.org/rm/',
-    'ro'        => 'http://www.mozilla.org/ro/',
-    'ru'        => 'http://www.mozilla.org/ru/',
-    'sk'        => 'http://www.mozilla.org/sk/',
-    'si'        => 'http://www.mozilla.org/si/',
-    'sl'        => 'http://www.mozilla.org/sl/',
-    'son'       => 'http://www.mozilla.org/son/',
-    'sq'        => 'http://www.mozilla.org/sq/',
-    'sr'        => 'http://www.mozilla.org/sr/',
-    'sv-SE'     => 'http://www.mozilla.org/sv-SE/',
-    'ta'        => 'http://www.mozilla.org/ta/',
-    'ta-LK'     => 'http://www.mozilla.org/ta-LK/',
-    'te'        => 'http://www.mozilla.org/te/',
-    'th'        => 'http://www.mozilla.org/th/',
-    'tr'        => 'http://www.mozilla.org/tr/',
-    'uk'        => 'http://www.mozilla.org/uk/',
-    'vi'        => 'http://www.mozilla.org/vi/',
-    'zh-TW'     => 'http://www.moztw.org/',
-    'zh-CN'     => 'http://firefox.com.cn/',
-);
+
+$host_root        = $config['url_scheme'] . '://' . $config['server_name'] . '/';
+$host_l10n        = $host_root . $lang . '/';
+
+/* We create an array of locales roots without hardocing URLs */
+$language_url_map = array();
+
+foreach($full_languages as $val) {
+    $language_url_map[$val] = $host_root . $val . '/';
+}
+
+/* redefine target for locales that are exceptions on mozilla.org */
+$language_url_map['ja']    = 'http://mozilla.jp/';
+$language_url_map['zh-CN'] = 'http://firefox.com.cn/';
+
 
 /* Despite our having in-product pages for all the languages above, we don't have
  * full site translations for all of them.  We can't have them all showing up in the
