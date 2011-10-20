@@ -187,7 +187,9 @@ class EmailPrefs {
 
             if(isset($data['remove-all'])) {
                 try {
-                    $serv->delete_subscriber($this->token);
+                    $serv->unsubscribe($this->token,
+                                       array('email' => $data['email'],
+                                             'optout' => 'Y'));
                     return TRUE;
                 }
                 catch(BasketException $e) {
