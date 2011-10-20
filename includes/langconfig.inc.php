@@ -244,8 +244,7 @@ $lang_remap = array(
  * "TEMPORARY CODE" in prefetch.php.
  */
 
-$host_root        = $config['url_scheme'] . '://' . $config['server_name'] . '/';
-$host_l10n        = $host_root . $lang . '/';
+$host_root = $config['url_scheme'] . '://' . $config['server_name'] . '/';
 
 /* We create an array of locales roots without hardocing URLs */
 $language_url_map = array();
