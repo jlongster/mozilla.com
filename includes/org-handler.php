@@ -21,6 +21,13 @@ if (is_dir("{$config['file_root']}/{$_SERVER['REDIRECT_URL']}")) {
 $path = $_SERVER['REDIRECT_URL'];
 
 if(file_exists("{$config['file_root']}/$path")) {
+
+    // Bug 682993 - serve boilerplate licenses as text/plan
+    if(strstr(trim($path, '/'), 'MPL/boilerplate-1.1/') == 0 &&
+       strstr($path, 'index.html') === FALSE) {
+        header('Content-Type: text/plain');
+    }
+
     require("{$config['file_root']}/$path");
     exit;
 }
