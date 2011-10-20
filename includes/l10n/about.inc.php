@@ -35,7 +35,7 @@ EXTRA_HEADERS;
 if ($textdir == 'rtl') {
     $extra_headers .= <<<RTL
     <style>
-        
+
     body.rtl #wrapper {
         background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background-rtl.png") no-repeat scroll 200px 150px transparent !important;
     }
@@ -57,6 +57,6 @@ RTL;
 */
 
 require_once $config['file_root'] . '/includes/l10n/header-pages.inc.php';
-$translation = $config['file_root'] . '/' . $lang . '/about/content.inc.html';
+require_once $config['file_root'] . '/' . $lang . '/about/content.inc.html';
 require_once $config['file_root'] . '/includes/l10n/footer-pages.inc.php';
 
