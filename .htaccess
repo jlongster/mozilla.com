@@ -11,8 +11,8 @@ SetEnvIfNoCase Request_URI "en-US/index.html" varyua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" varyua
 Header always set Vary "User-Agent" env=varyua
 
-BrowserMatch "(Android|Maemo|Fennec|Linux\ armv7l)" is_mobile=yes
-BrowserMatch "(?!(Android|Maemo|Fennec|Linux\ armv7l))" is_not_mobile=yes
+BrowserMatch "(Android|Maemo|Meego|Fennec|Linux\ armv7l)" is_mobile=yes
+BrowserMatch "(?!(Android|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 
@@ -525,9 +525,8 @@ RewriteRule ^en-US/press/faq/fx4(/(index.html)?)?$ /en-US/press/faq/fx/ [R=301]
 RewriteRule ^en-US/firefox/stats(/(index.html)?)?$ http://glow.mozilla.org/ [R=301]
 
 # Bug 672863
-SetEnvIf Request_URI "/(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?" varyua
 RewriteCond %{ENV:is_mobile} yes
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?$ /$1m [R=302]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/?$ /$1m [E=varyua:1,R=301]
 
 # Bug 638948 redirect beta privacy policy link
 RewriteRule ^en-US/firefox/beta/feedbackprivacypolicy/?$ /en-US/legal/privacy/firefox.html [R=permanent]
