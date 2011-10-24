@@ -58,11 +58,26 @@ unset($publicsites);
 if ($lang == 'pt-BR' && $pageid == '') return;
 
 
-// Bug 672498: send en-GB users to fresher en-US content for existing pages
+// Bug 672498: send en-GB users to fresher en-US content for existing pages,
 // en-ZA is just a remap of en-US in inludes/langconfig.inc.php so no action needed for this locale
 if ($lang == 'en-GB') {
     goToEnglishPage();
 }
+
+$key_pages = array(
+    'landing',
+    'firstrun-36',
+    'whatsnew-36',
+    'firstrun-4',
+    'whatsnew-4',
+    'firefox-channels'
+);
+
+if ($lang == 'nn-NO' && !in_array($pageid, $key_pages)) {
+    goToLocale('nb-NO');
+}
+
+
 
 
 // here we define our per-page includes

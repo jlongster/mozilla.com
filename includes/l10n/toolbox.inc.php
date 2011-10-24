@@ -5,8 +5,7 @@
  *
  */
 
-function localeNumberFormat($val)
-{
+function localeNumberFormat($val) {
     if (UI_LANG == 'en') {
         $val = number_format($val, 0, '.', ',');
     } elseif (UI_LANG == 'fi') {
@@ -20,13 +19,12 @@ function localeNumberFormat($val)
 
 
 // dummy function to avoid error in code borrowed from mozilla-europe
-function localeConvert($lang)
-{
+function localeConvert($lang) {
     return $lang;
 }
 
-function goToEnglishPage()
-{
+
+function goToLocale($locale) {
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
     $requested = secureText($requested);
@@ -38,8 +36,13 @@ function goToEnglishPage()
         $requested = implode('/', $requested);
     }
 
-    noCachingRedirect('http://' . $config['server_name'] . '/en-US' . $requested);
+    noCachingRedirect('http://' . $config['server_name'] . '/' . $locale . $requested);
     exit;
+}
+
+/* this is a wrapper for the old goToEnglishPage() function still used on the site */
+function goToEnglishPage() {
+    goToLocale('en-US');
 }
 
 function noCachingRedirect($url) {
@@ -156,8 +159,7 @@ function buildPlatformImageL10n($filename, $alt, $width = null, $height = null,
         return ob_get_clean();
 }
 
-function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com')
-{
+function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.com') {
     if (!in_array($lang, $productionQuality) && $_SERVER['HTTP_HOST'] ==  $host) {
         $requested = explode('/', $_SERVER['REDIRECT_URL']);
         if (strstr(end($requested), '.html') || strstr(end($requested), '.php')) {
@@ -171,8 +173,7 @@ function checkProductionQuality($lang, $productionQuality, $host = 'www.mozilla.
     return false;
 }
 
-function getVideoSubtitles($videoname, $subfile, $dynamic = false)
-{
+function getVideoSubtitles($videoname, $subfile, $dynamic = false) {
     global $lang;
     global $config;
     ob_start();
@@ -202,8 +203,7 @@ function getVideoSubtitles($videoname, $subfile, $dynamic = false)
 }
 
 
-function outputSubtitles($subarray, $original)
-{
+function outputSubtitles($subarray, $original) {
 
     foreach ($subarray as $key => $str) {
         $original[$key][2] = $str;
@@ -224,8 +224,7 @@ function outputSubtitles($subarray, $original)
 }
 
 
-function get_include_contents($filename)
-{
+function get_include_contents($filename) {
     if (is_file($filename)) {
         ob_start();
         include_once $filename;
@@ -244,8 +243,7 @@ function get_include_contents($filename)
  *
  */
 
-function secureText($var, $tablo = true)
-{
+function secureText($var, $tablo = true) {
     if (!is_array($var)) {
         $var   = array($var);
         $tablo = false;
