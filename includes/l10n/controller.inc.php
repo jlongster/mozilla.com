@@ -115,7 +115,7 @@ $deactivated = array(
 
 // pages deactivated on production for a subset of locales for the State of Mozilla project
 // reactivate them as they get done
-if ( in_array($lang, array( 'hu', 'id', 'sq' )) ) {
+if ( in_array($lang, array( 'hu', 'id', )) ) {
     $deactivated = array(
         'state-2010-home',
         'state-2010-ahead',

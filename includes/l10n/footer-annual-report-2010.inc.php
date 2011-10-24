@@ -1,5 +1,5 @@
 <?php
-$lang_list          = getLangLinksSelect(array( 'cs', 'de', 'en-US', 'es-ES', 'fr', 'gl', 'it', 'ja', 'nl', 'pl', 'sl', 'tr', 'zh-CN', 'zh-TW' ));
+$lang_list          = getLangLinksSelect(array( 'cs', 'de', 'en-US', 'es-ES', 'fr', 'gl', 'it', 'ja', 'nl', 'pl', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW' ));
 $lang_list          = str_replace(' (España)', '', $lang_list);
 $lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
