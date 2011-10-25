@@ -52,11 +52,14 @@ RTL;
 }
 
 
-/*
-    build the page
-*/
+/* old version of the page, delete the file once we have the new one translated */
+
+$old = $config['file_root'] . '/' . $lang . '/about/old.inc.html';
+$new = $config['file_root'] . '/' . $lang . '/about/content.inc.html';
+
+$content = (file_exists($old)) ? $old : $new;
 
 require_once $config['file_root'] . '/includes/l10n/header-pages.inc.php';
-require_once $config['file_root'] . '/' . $lang . '/about/content.inc.html';
+require_once $content;
 require_once $config['file_root'] . '/includes/l10n/footer-pages.inc.php';
 
