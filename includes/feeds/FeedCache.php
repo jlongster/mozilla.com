@@ -125,7 +125,7 @@ class FeedCache
         if (!($this->cacheLite instanceof Cache_Lite)) {
             $this->cacheLite = new Cache_Lite(
                 array(
-                    'cacheDir' => rtrim($this->config['file_root'], '/') . '/cache/',
+                    'cacheDir' => dirname(__FILE__) . '/../../cache/',
                     'lifeTime' => $this->lifetime,
                 )
             );
