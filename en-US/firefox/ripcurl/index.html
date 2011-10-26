@@ -1,0 +1,176 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+
+	$_version       = getVersionBySelf();
+	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firefox</title>
+    <style>
+    /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
+    @font-face {
+        font-family: 'MetaBlack';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Black.woff') format('woff');
+        font-weight: bold;
+    }
+    @font-face {
+        font-family: 'MetaBook';
+        src: url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.eot');
+        src: local('☺'), url('<?=$config['static_prefix']?>/img/fonts/MetaWebPro-Book.woff') format('woff');
+        font-weight: bold;
+    }
+    </style>
+    <? echo min_inline_css('css_firstrun_ripcurl'); ?>
+    <? echo min_inline_js('js_whatsnew4'); ?>
+  </head>
+<body id="whatsnew">
+
+<div id="wrapper">
+<div id="doc">
+
+
+<div id="main-feature">
+    <img src="<?php echo min_inline_image('/img/firefox/3.6/firstrun/logo.png')?>" alt="Firefox Logo" id="title-logo" width="128" height="130" />
+    <h2>Thanks for using the Rip Curl version of Firefox</h2>
+</div>
+
+<div class="main-content box" id="feature-ripcurl">
+    <div class="intro">
+        <h3>Live the Search with… <span>Rip Curl</span></h3>
+    </div>
+
+    <ul id="featured-addons">
+        <li id="rc-social">Instant access to Rip Curl’s Social Media Pages…</li>
+        <li id="rc-apptab">Pre-Pinned App Tabs to  Rip Curl’s Event &amp; Product Websites…</li>
+        <li id="rc-persona">Pre-loaded with a custom Rip Curl persona…</li>
+        <li id="rc-rss">
+            <a href="http://www.ripcurl.com/podcast/rss.xml">
+                RSS Feed to Rip Curl’s Video Podcasts coming directy to the desktop…
+            </a>
+        </li>
+    </ul>
+</div>
+
+<p id="sub-links">
+    <a href="/<?=$lang?>/firefox/<?=$_version?>/releasenotes/">Release Notes <span>»</span></a>
+    <a href="/<?=$lang?>/firefox/features/">Firefox Features <span>»</span></a>
+    <a href="http://support.mozilla.com">Firefox Help <span>»</span></a>
+</p>
+
+
+
+
+
+</div>
+</div>
+
+  <script>
+
+  var platform = (function() {
+    var ua = navigator.userAgent;
+    if (ua.indexOf("Mac") != -1) {
+      return "mac";
+    } else if (ua.indexOf("Linux") != -1) {
+      return "linux";
+    }
+    return "win";
+  })();
+  document.body.classList.add(platform);
+
+    $(document).ready(function() {
+
+        var $form = $('#newsletter-signup');
+        var $pane = $('#newsletter-signup .more');
+        var opened = $form.hasClass('opened');
+
+        function open()
+        {
+            if (!opened) {
+                $(document).click(documentClick);
+                $form.addClass('opened');
+                $pane.fadeIn('fast');
+                $('#country').focus();
+                opened = true;
+            }
+        }
+
+        function documentClick(e)
+        {
+            var target = e.target;
+            var form = $('#email-form').get(0);
+            var is_form = (form === target);
+
+            while (!is_form && target.parentNode) {
+                target = target.parentNode;
+                is_form = (target == form);
+            }
+
+            if (!is_form) {
+                close();
+            }
+        }
+
+        function close()
+        {
+            if (opened) {
+                $(document).unbind('click', documentClick);
+                $pane.fadeOut('slow');
+                $form.removeClass('opened');
+                opened = false;
+            }
+        }
+
+        $('#email').keydown(function(e) {
+            switch (e.which) {
+            case 13:
+                if (!opened) {
+                    console.log('prevent 13 default');
+                    e.preventDefault();
+                    open();
+                }
+                break;
+            case 9:
+                e.preventDefault();
+                open();
+                $('#country').focus(); // again in case already opened
+                break;
+            }
+        });
+
+        $('#expand').click(function(e) {
+            e.preventDefault();
+
+            if (!opened) {
+                var uri = $(this).attr('data-wt_uri');
+                var ti = $(this).attr('data-wt_ti');
+                dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
+            }
+
+            open();
+        });
+
+    });
+
+    </script>
+    <?
+    // Webtrends stats, see bug 556384
+    require "{$config['file_root']}/includes/js_stats.inc.php";
+    echo $stats_js;
+    ?>
+  </body>
+</html>

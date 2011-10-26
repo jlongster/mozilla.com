@@ -57,6 +57,9 @@ return array(
     'css_firstrun_backtoschool' => array(
         '//style/covehead/backtoschool-firstrun-page.css'
     ),
+    'css_firstrun_ripcurl' => array(
+        '//style/covehead/ripcurl-firstrun-page.css'
+    ),
     'css_aurora' => array(
         '//style/firefox/aurora/firstrun-page.css'
     ),
