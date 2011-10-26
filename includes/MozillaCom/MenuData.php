@@ -85,33 +85,21 @@ class MozillaCom_MenuData
                             'title' => 'Features',
                             'href'  => "/{$this->lang}/firefox/features/",
                         ),
-                        'submenu_security' => array(
-                            'title' => 'Security',
-                            'href'  => "/{$this->lang}/firefox/security/",
+                        'submenu_customize' => array(
+                            'title' => 'Customize',
+                            'href'  => "/{$this->lang}/firefox/customize/",
                         ),
                         'submenu_performance' => array(
                             'title' => 'Performance',
                             'href'  => "/{$this->lang}/firefox/performance/",
                         ),
-                        'submenu_customization' => array(
-                            'title' => 'Customization',
-                            'href'  => "/{$this->lang}/firefox/customize/",
-                        ),
                         'submenu_technology' => array(
                             'title' => 'Technology',
                             'href'  => "/{$this->lang}/firefox/technology/",
                         ),
-                        'submenu_video' => array(
-                            'title' => 'Videos',
-                            'href'  => "/{$this->lang}/firefox/video/",
-                        ),
-                        'submenu_tour' => array(
-                            'title' => 'Tour',
-                            'href'  => "/{$this->lang}/firefox/central/",
-                        ),
-                        'submenu_future' => array(
-                            'title' => 'Future Releases',
-                            'href'  => "/{$this->lang}/firefox/channel/",
+                        'submenu_security' => array(
+                            'title' => 'Privacy &amp; Security',
+                            'href'  => "/{$this->lang}/firefox/security/",
                         ),
                     ),
                 ),
@@ -128,37 +116,36 @@ class MozillaCom_MenuData
                             'title' => 'Features',
                             'href'  => "/{$this->lang}/mobile/features/",
                         ),
-                        'submenu_mobile_customization' => array(
-                            'title' => 'Customization',
+                        'submenu_mobile_customize' => array(
+                            'title' => 'Customize',
                             'href'  => "/{$this->lang}/mobile/customize/",
-                        ),
-                        'submenu_mobile_sync' => array(
-                            'title' => 'Sync',
-                            'href'  => "/{$this->lang}/mobile/sync/",
-                        ),
-                        'submenu_mobile_develop' => array(
-                            'title' => 'Develop',
-                            'href'  => "https://developer.mozilla.org/{$this->lang}/mobile",
-                        ),
-                        'submenu_mobile_getinvolved' => array(
-                            'title' => 'Get Involved',
-                            'href'  => "/{$this->lang}/mobile/getinvolved/",
                         ),
                         'submenu_mobile_faq' => array(
                             'title' => 'FAQ',
                             'href'  => "/{$this->lang}/mobile/faq/",
                         ),
-                        'submenu_mobile_blog' => array(
-                            'title' => 'Blog',
-                            'href'  => "https://blog.mozilla.com/mobile/",
-                        ),
-                        'submenu_mobile_videos' => array(
-                            'title' => 'Videos',
-                            'href' => "/{$this->lang}/firefox/video?video=fx4-mobile-greatday"
-                        ),
-                        'submenu_future' => array(
-                            'title' => 'Future Releases',
+                    )
+                ),
+
+                'menu_releases' => array(
+                    'title' => 'Releases',
+                    'href'  => "/{$this->lang}/mobile/",
+                    'items' => array(
+                        'submenu_releases_download' => array(
+                            'title' => 'Download',
                             'href'  => "/{$this->lang}/firefox/channel/",
+                        ),
+                        'submenu_releases_aurora' => array(
+                            'title' => 'Firefox Aurora',
+                            'href'  => "/{$this->lang}/firefox/aurora/",
+                        ),
+                        'submenu_releases_beta' => array(
+                            'title' => 'Firefox Beta',
+                            'href'  => "/{$this->lang}/firefox/beta/",
+                        ),
+                        'submenu_releases_firefox' => array(
+                            'title' => 'Firefox',
+                            'href'  => "/{$this->lang}/firefox/",
                         ),
                     )
                 ),
@@ -168,44 +155,16 @@ class MozillaCom_MenuData
                     'href'  => 'https://addons.mozilla.org/',
                     'items' => array(
                         'submenu_addons_all' => array(
-                            'title' => 'Firefox Add-ons',
+                            'title' => 'Desktop Add-ons',
                             'href'  => "https://addons.mozilla.org/firefox/",
-                        ),
-                        'submenu_addons_featured' => array(
-                            'title' => 'Featured Add-ons',
-                            'href'  => "https://addons.mozilla.org/firefox/featured/",
-                        ),
-                        'submenu_addons_extensions' => array(
-                            'title' => 'Extensions',
-                            'href'  => "https://addons.mozilla.org/firefox/extensions/",
-                        ),
-                        'submenu_addons_themes' => array(
-                            'title' => 'Themes',
-                            'href'  => "https://addons.mozilla.org/firefox/themes/",
-                        ),
-                        'submenu_addons_personas' => array(
-                            'title' => 'Personas',
-                            'href'  => "http://www.getpersonas.com/",
-                        ),
-                        'submenu_addons_searchtools' => array(
-                            'title' => 'Search Tools',
-                            'href'  => "https://addons.mozilla.org/firefox/search-tools/",
-                        ),
-                        'submenu_addons_language' => array(
-                            'title' => 'Language Support',
-                            'href'  => "https://addons.mozilla.org/firefox/language-tools/",
-                        ),
-                        'submenu_addons_collections' => array(
-                            'title' => 'Collections',
-                            'href'  => "https://addons.mozilla.org/firefox/collections/",
                         ),
                         'submenu_addons_mobile' => array(
                             'title' => 'Mobile Add-ons',
                             'href'  => "https://addons.mozilla.org/mobile/",
                         ),
-                        'submenu_addons_developers' => array(
-                            'title' => 'Developer Hub',
-                            'href'  => "https://addons.mozilla.org/firefox/developers/",
+                        'submenu_addons_personas' => array(
+                            'title' => 'Personas',
+                            'href'  => "http://www.getpersonas.com/",
                         ),
                     ),
                 ),
@@ -215,16 +174,12 @@ class MozillaCom_MenuData
                     'href'  => "http://support.mozilla.com/",
                     'items' => array(
                         'submenu_support_kb' => array(
-                            'title' => 'Firefox Support',
+                            'title' => 'Desktop Support',
                             'href'  => "http://support.mozilla.com/{$this->lang}/kb/",
                         ),
                         'submenu_support_mobile' => array(
                             'title' => 'Mobile Support',
                             'href'  => "http://support.mozilla.com/mobile",
-                        ),
-                        'submenu_support_thunderbird' => array(
-                            'title' => 'Thunderbird Support',
-                            'href'  => "http://support.mozillamessaging.com/{$this->lang}/kb/",
                         ),
                     ),
                 ),
@@ -233,6 +188,10 @@ class MozillaCom_MenuData
                     'title' => 'About',
                     'href'  => "/{$this->lang}/firefox/about/",
                     'items' => array(
+                        'submenu_blog' => array(
+                            'title' => 'Blog',
+                            'href'  => "http://blog.mozilla.com/",
+                        ),
                         'submenu_about_firefox' => array(
                             'title' => 'About Firefox',
                             'href'  => "/{$this->lang}/firefox/about/",
@@ -261,17 +220,9 @@ class MozillaCom_MenuData
                             'title' => 'Partnerships',
                             'href'  => "/{$this->lang}/about/partnerships.html",
                         ),
-                        'submenu_legal' => array(
-                            'title' => 'Legal',
-                            'href'  => "/{$this->lang}/about/legal.html",
-                        ),
                         'submenu_contact' => array(
                             'title' => 'Contact Us',
                             'href'  => "/{$this->lang}/about/contact.html",
-                        ),
-                        'submenu_blog' => array(
-                            'title' => 'Blog',
-                            'href'  => "http://blog.mozilla.com/",
                         ),
                     ),
                 ),
