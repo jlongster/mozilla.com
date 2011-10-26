@@ -28,15 +28,18 @@ function goToLocale($locale) {
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
     $requested = secureText($requested);
+    $query_str = '?' . secureText($_SERVER['REDIRECT_QUERY_STRING']);
 
     if (strstr(end($requested), 'index.html') || strstr(end($requested), 'index.php')) {
         array_pop($requested);
-        $requested = implode('/', $requested) . '/';
+        $requested = implode('/', $requested);
     } else {
         $requested = implode('/', $requested);
     }
 
-    noCachingRedirect('http://' . $config['server_name'] . '/' . $locale . $requested);
+    $target = 'http://' . $config['server_name'] . '/' . $locale . $requested . $query_str;
+
+    noCachingRedirect($target);
     exit;
 }
 
