@@ -36,8 +36,8 @@ if ($textdir == 'rtl') {
     $extra_headers .= <<<RTL
     <style>
 
-    body.rtl #wrapper {
-        background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background-rtl.png") no-repeat scroll 200px 150px transparent !important;
+    body.rtl #doc {
+        background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background-rtl.png") no-repeat scroll left 100px transparent !important;
     }
 
 
