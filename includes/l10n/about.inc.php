@@ -16,8 +16,8 @@ EXTRA_HEADERS;
 
 $extra_headers .= <<<EXTRA_HEADERS
     <style>
-    #wrapper {
-        background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll 1100px 150px transparent;
+    #doc {
+        background: url("{$config['static_prefix']}/img/covehead/firefox/survey/thanks-background.png") no-repeat scroll right 100px transparent;
     }
 
     #main-feature, #content {
