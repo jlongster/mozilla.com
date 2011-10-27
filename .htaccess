@@ -16,6 +16,11 @@ BrowserMatch "(?!(Android|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 
+# Bug 694878
+RewriteRule ^job[/]?$ /careers/ [L,R=301]
+RewriteRule ^jobs[/]?$ /careers/ [L,R=301]
+RewriteRule ^career[/]?$ /careers/ [L,R=301]
+
 # certs
 RewriteRule ^certs/mozilla-root\.crt\.md5sum$ includes/certs/mozilla-root.crt.md5sum [L]
 RewriteRule ^certs/mozilla-root\.crt$ includes/certs/mozilla-root.crt [L]
