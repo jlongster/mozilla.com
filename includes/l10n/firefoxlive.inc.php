@@ -96,7 +96,7 @@ VIDEO_CODE;
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/<?=$fb_locale?>/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -105,7 +105,7 @@ VIDEO_CODE;
 
     <header id="branding">
         <div id="nav-mozilla">
-            <a href="http://www.mozilla.org/" class="mozilla" title="Visit Mozilla.org">Mozilla</a>
+            <a href="http://www.mozilla.org/" class="mozilla" title="<?=str_replace('.com', '.org', $l10n->get('Visit Mozilla.com'));?>">Mozilla</a>
         </div>
 
         <h1 id="site-title"><img src="<?=$config['static_prefix']?>/img/covehead/firefoxlive/title.png" height="94" alt="<?=$l10n->get('Firefox Live')?>" /></h1>
@@ -152,7 +152,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
         </div>
 
         <form id="lang_form" class="languages"  dir="<?=$textdir?>" method="get" action="<?=$host_root?>includes/l10n/langswitcher.inc.php"><div>
-            <label for="flang"><?=$l10n->get('Other languages')?></label>
+            <label for="flang"><?=$l10n->get('Other languages:')?></label>
             <?=$lang_list?>
             <noscript>
                 <div><input type="submit" id="lang_submit" value="<?=$l10n->get('Go')?>" /></div>
