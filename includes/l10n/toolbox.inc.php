@@ -28,7 +28,12 @@ function goToLocale($locale) {
     global $config;
     $requested = explode('/', $_SERVER['REDIRECT_URL']);
     $requested = secureText($requested);
-    $query_str = '?' . secureText($_SERVER['REDIRECT_QUERY_STRING']);
+
+    if($_SERVER['REDIRECT_QUERY_STRING'] != '') {
+        $query_str = '?' . secureText($_SERVER['REDIRECT_QUERY_STRING']);
+    } else {
+        $query_str = '';
+    }
 
     if (strstr(end($requested), 'index.html') || strstr(end($requested), 'index.php')) {
         array_pop($requested);

@@ -3,11 +3,12 @@
 // commodity functions for localized pages
 require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
+// temporary include to parallelize webdev and l10n- webdev work on the project
+require_once $config['file_root'].'/includes/l10n/firefoxlive-helper.inc.php';
+
 $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefoxlive.css" media="screen" />
 EXTRA_HEADERS;
-
-l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/firefoxlive.lang');
 
 
 // RTL support for Mozilla.com
@@ -37,7 +38,6 @@ EXTRA_HEADERS;
 
 $body_id    = '';
 $page_title = 'Firefox Live';
-
 
 $share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
 $share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="cubcaretaker">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
@@ -133,7 +133,8 @@ $lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
 $extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
-$creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", 'http://creativecommons.org/licenses/by-sa/3.0/');
+$creative_commons   = sprintf(___('Except where otherwise <a href="%s">noted</a>, content on this site is licensed under the <br /><a href="%s">Creative Commons Attribution Share-Alike License v3.0</a> or any later version.'),"/$lang/about/legal.html#site", 'http://creativecommons.org/licenses/by-sa/3.0/');
+$creative_commons   = str_replace('<br />', '', $creative_commons);
 
 // Webtrends stats, see bug 556384
 require "{$config['file_root']}/includes/js_stats.inc.php";
@@ -151,7 +152,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
         </div>
 
         <form id="lang_form" class="languages"  dir="<?=$textdir?>" method="get" action="<?=$host_root?>includes/l10n/langswitcher.inc.php"><div>
-            <label for="flang"><?=$l10n->get('other languages')?></label>
+            <label for="flang"><?=$l10n->get('Other languages')?></label>
             <?=$lang_list?>
             <noscript>
                 <div><input type="submit" id="lang_submit" value="<?=$l10n->get('Go')?>" /></div>
