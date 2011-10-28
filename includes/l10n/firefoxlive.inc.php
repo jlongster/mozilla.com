@@ -42,11 +42,18 @@ $page_title = 'Firefox Live';
 $share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
 $share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="cubcaretaker">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 
+$overlay_twitter = '<div id="overlay-twitter"><a href="https://twitter.com/cubcaretaker" class="twitter-follow-button" data-show-count="false">Follow @cubcaretaker</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script></div>';
+$overlay_facebook = '<div id="overlay-facebook"><div class="fb-like" data-send="false" data-width="200" data-show-faces="false" data-font="arial"></div></div>';
+
+$overlay_image = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/overlay-facebook.png" alt="" />';
+
 $button_firefox = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
 $video_code =  <<<VIDEO_CODE
-    <div id="video"></div>
+<div id="video">
+<script src="http://player.ooyala.com/player.js?width=444&height=334&embedCode=s0MmVvMTrSlB1ZLzaWXnKZaa42Ib5rJV"></script>
+</div>
 VIDEO_CODE;
 
 // Header
