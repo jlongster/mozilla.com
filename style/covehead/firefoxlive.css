@@ -42,10 +42,16 @@ body {
 /* {{{ Primary Content Area */
 
 #primary {
-    padding: 30px 0 20px 480px;
-    height: 340px;
     margin: 0 0 30px 0;
+    padding: 0 0 30px 0;
     border-bottom: 1px solid #b1b1b1;
+    float: left;
+}
+
+#primary h2,
+#primary p,
+#share {
+    margin-left: 480px;
 }
 
 #primary h2 {
@@ -81,8 +87,9 @@ body {
 }
 
 #share h4 {
-    text-transform: uppercase;
     color: #666;
+    line-height: 1;
+    margin-bottom: 8px;
 }
 
 #share p {
@@ -101,22 +108,23 @@ body {
 #zoo,
 #tweet-container {
     float: left;
-    padding: 0 50px 20px 0;
+    padding: 0 30px 20px 0;
     margin: 0;
-    width: 216px;
+    width: 226px;
+    min-height: 17em;
 }
 
 #zoo,
 #tweet-container {
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 40px;
+    margin-right: 30px;
     background-position: 0 0;
     background-repeat: repeat-y;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAFCAMAAABYbc2uAAAAElBMVEX////5+vru7+/e3+DY2du9v8HbYl3sAAAAGklEQVR42iXBtwEAAAjDMKfw/8sMkUCMQ+8BAD8AEIT9DTkAAAAASUVORK5CYII=);
 }
 
 #tweet-container {
-    padding-right: 0;
-    font-size: 11px;
+    margin-right: 0;
 }
 
 #firefox h3 span,
@@ -171,6 +179,12 @@ body {
     padding-bottom: 5px;
 }
 
+#tweet ul {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 11px;
+}
+
 #tweet ul li {
     list-style-type: none;
     padding: 8px 0;
@@ -183,6 +197,31 @@ body {
 
 #tweet span.tweet_text a {
     color: #333;
+}
+
+#tweet-container .tweet-more,
+#tweet-container .tweet-follow {
+    font-family: "trebuchet MS", sans-serif;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    font-size: 11px;
+}
+
+#tweet-container .tweet-more:hover,
+#tweet-container .tweet-more:active,
+#tweet-container .tweet-follow:hover,
+#tweet-container .tweet-follow:active {
+    text-decoration: none;
+    border-color: #888;
+}
+
+
+#tweet-container .tweet-more {
+    float: left;
+}
+
+#tweet-container .tweet-follow {
+    float: right;
 }
 
 h3 {
@@ -435,7 +474,7 @@ a:active { text-decoration: underline; color: #dc4800; }
 #footer {
     position: relative;
     clear: both;
-    margin: 30px 0 0;
+    margin: 20px 0 0;
     color: #aaa;
     background: none;
     text-align: left;

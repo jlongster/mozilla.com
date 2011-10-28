@@ -45,6 +45,10 @@ $share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-butt
 $button_firefox = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
+$video_code =  <<<VIDEO_CODE
+    <div id="video"></div>
+VIDEO_CODE;
+
 // Header
 
 ?>
@@ -66,6 +70,9 @@ $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxli
 
     <link href="<?=$config['static_prefix']?>/includes/min/min.css?g=css" rel="stylesheet">
     <script src="<?=$config['static_prefix']?>/includes/min/min.js?g=js"></script>
+<!--[if lte IE 9]>
+<script src="<?=$config['static_prefix']?>/js/html5.js"></script>
+<![endif]-->
     <? if ($lang == 'en-US') { ?>
     <script src="<?=$config['static_prefix']?>/js/jquery/jquery.tweet.js"></script>
     <script type='text/javascript'>
@@ -73,7 +80,7 @@ $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxli
             $("#tweet").tweet({
                 count: 2,
                 username: 'cubcaretaker',
-                template: "{text} {time}",
+                template: "{text} {time}"
             });
         });
     </script>
@@ -106,11 +113,12 @@ $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxli
     </header>
 
     <section id="content-main">
-    <div id="video"></div>
     <? require_once $config['file_root'].'/'.$lang.'/firefoxlive/content.inc.html'; ?>
     <section id="tweet-container">
         <h4>Follow us <a href="http://www.twitter.com/cubcaretaker/">@cubcaretaker</a></h4>
         <div id="tweet"></div>
+        <a class="tweet-more" href="http://www.twitter.com/cubcaretaker/"><?=$l10n->get('View more tweets')?>
+        <a class="tweet-follow" href="https://twitter.com/intent/user?screen_name=cubcaretaker">Follow @cubcaretaker</a>
     </section>
     </section><!-- end #content-main -->
 
