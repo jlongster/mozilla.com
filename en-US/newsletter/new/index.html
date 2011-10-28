@@ -33,7 +33,7 @@ require_once "{$config['file_root']}/includes/email/prefs.php";
         'country' => 'Please select a country'
     );
 
-    if(($token = $prefs->save_new())) {
+    if(($token = $prefs->save_new(array('trigger_welcome' => FALSE)))) {
         header("Location: /$lang/newsletter/updated/?token=" . $token);
         exit;
     }

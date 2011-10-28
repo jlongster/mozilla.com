@@ -114,8 +114,16 @@ class EmailPrefs {
     }
 
     function save_new(/* required fields */) {
+        global $lang;
+
         $this->reset();
         $required_fields = func_get_args();
+        $opts = array();
+
+        if(is_array($required_fields[0])) {
+            $opts = $required_fields[0];
+            $required_fields = array_slice($required_fields, 1);
+        }
 
         if($this->submitted() && $this->validate($required_fields)) {
             $data = $this->data;
@@ -125,10 +133,14 @@ class EmailPrefs {
                 $serv = new BasketService();
 
                 try {
+                    $trigger = isset($opts['trigger_welcome']) ? $opts['trigger_welcome'] : TRUE;
+
                     $ret = $serv->subscribe(array('email' => $data['email'],
                                                   'format' => $data['format'] == 'html' ? 'H' : 'T',
                                                   'country' => $data['country'],
                                                   'lang' => $data['lang'],
+                                                  'locale' => $lang,
+                                                  'trigger_welcome' => $trigger,
                                                   'newsletters' => $newsletters));
                     return $ret['token'];
                 }
@@ -178,6 +190,8 @@ class EmailPrefs {
     }
 
     function save_user(/* required fields */) {
+        global $lang;
+
         $this->reset();
         $required_fields = func_get_args();
 
@@ -205,6 +219,7 @@ class EmailPrefs {
                                                    'format' => $data['format'] == 'html' ? 'H' : 'T',
                                                    'country' => $data['country'],
                                                    'lang' => $data['lang'],
+                                                   'locale' => $lang,
                                                    'newsletters' => $newsletters));
                     return TRUE;
                 }
