@@ -114,12 +114,14 @@ VIDEO_CODE;
 
     <section id="content-main">
     <? require_once $config['file_root'].'/'.$lang.'/firefoxlive/content.inc.html'; ?>
+    <? if ($lang == 'en-US') { ?>
     <section id="tweet-container">
         <h4>Follow us <a href="http://www.twitter.com/cubcaretaker/">@cubcaretaker</a></h4>
         <div id="tweet"></div>
         <a class="tweet-more" href="http://www.twitter.com/cubcaretaker/"><?=$l10n->get('View more tweets')?>
         <a class="tweet-follow" href="https://twitter.com/intent/user?screen_name=cubcaretaker">Follow @cubcaretaker</a>
     </section>
+    <? } ?>
     </section><!-- end #content-main -->
 
 
