@@ -6,6 +6,13 @@ require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 // temporary include to parallelize webdev and l10n- webdev work on the project
 require_once $config['file_root'].'/includes/l10n/firefoxlive-helper.inc.php';
 
+$link = array(
+    0 => '#',
+    1 => "/$lang/firefox/new/",
+    2 => '#',
+);
+
+
 $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefoxlive.css" media="screen" />
 EXTRA_HEADERS;
@@ -37,17 +44,20 @@ EXTRA_HEADERS;
 
 
 $body_id    = '';
-$page_title = 'Firefox Live';
 
 $share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
-$share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="cubcaretaker">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
+$share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="cubcaretaker" data-lang="' . $lang . '">' . ___('Tweet'). '</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 
-$overlay_twitter = '<div id="overlay-twitter"><a href="https://twitter.com/cubcaretaker" class="twitter-follow-button" data-show-count="false">Follow @cubcaretaker</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script></div>';
+$share_social_networks = $share_twitter . $share_facebook;
+
+$overlay_twitter = '<div id="overlay-twitter"><a href="https://twitter.com/cubcaretaker" class="twitter-follow-button" data-show-count="false" data-lang="' . $lang . '">' . ___('Follow @cubcaretaker'). '</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script></div>';
 $overlay_facebook = '<div id="overlay-facebook"><div class="fb-like" data-send="false" data-width="200" data-show-faces="false" data-font="arial"></div></div>';
+
+$overlay_social_networks = $overlay_twitter . $overlay_facebook;
 
 $overlay_image = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/overlay-facebook.png" alt="" />';
 
-$button_firefox = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />';
+$button_firefox = '<a href="#"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
 $video_code =  <<<VIDEO_CODE
