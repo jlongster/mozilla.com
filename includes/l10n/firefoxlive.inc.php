@@ -155,7 +155,7 @@ VIDEO_CODE;
     </div><!-- end #wrapper -->
 
 <?
-$lang_list          = getLangLinksSelect(array( 'en-US', 'fr' ));
+$lang_list          = getLangLinksSelect(array( 'de', 'en-US', 'es-ES', 'fr' ));
 $lang_list          = str_replace(' (España)', '', $lang_list);
 $lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
