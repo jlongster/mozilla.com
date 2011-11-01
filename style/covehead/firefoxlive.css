@@ -53,6 +53,14 @@ body {
 #primary p,
 #share {
     margin-left: 480px;
+
+}
+
+html[dir=rtl] #primary h2,
+html[dir=rtl] #primary p,
+html[dir=rtl] #share {
+    margin-left: 0;
+    margin-right: 480px;
 }
 
 #primary h2 {
@@ -77,6 +85,12 @@ body {
     padding: 0;
     margin: 0;
     border: 6px solid #ed7025;
+    position: relative;
+}
+
+html[dir=rtl] #intro,
+html[dir=rtl] #video {
+    float: right;
 }
 
 #video-controls {
@@ -84,16 +98,31 @@ body {
     margin: 0;
     position: absolute;
     width: 70px;
-    left: -70px;
+    left: -75px;
     bottom: 20px;
+}
+
+html[dir=rtl] #video-controls {
+    left: auto;
+    right: -70px;
+}
+
+#video-controls ul {
+    padding: 0;
+    margin: 0;
 }
 
 #video-controls li {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    background: url(/img/covehead/firefoxlive/video-controls.png) 100% 100% no-repeat;
+    background: url(/img/covehead/firefoxlive/video-controls.png) 0 0 no-repeat;
     text-align: right;
+}
+
+html[dir=rtl] #video-controls li {
+    background-image: url(/img/covehead/firefoxlive/video-controls-rtl.png);
+    background-position: 0 100%;
 }
 
 #video-controls li a {
@@ -107,12 +136,13 @@ body {
 
 #video-controls h4 {
     font-family: "Trebuchet MS", sans-serif;
-    text-align: right;
+    text-align: center;
     text-transform: uppercase;
     font-style: normal;
     font-size: 11px;
-    padding: 0 10px 30px 10px;
-    background: url(/img/covehead/firefoxlive/video-controls.png) 12px 10px no-repeat;
+    padding: 0 10px 25px 10px;
+    margin-bottom: 5px;
+    background: url(/img/covehead/firefoxlive/video-controls.png) center 100% no-repeat;
 }
 
 #share {
@@ -489,6 +519,12 @@ a.download-link span {
     right: 0;
 }
 
+
+html[dir=rtl] #nav-mozilla {
+    left: 0;
+    right: auto;
+}
+
 #nav-mozilla a.mozilla {
     background: url("/img/covehead/annualreport/mozilla-tab.png") center bottom no-repeat;
     display: block;
@@ -695,15 +731,20 @@ a.overlay {
     right: -12px;
 }
 
+.overlay-close img {
+    display: block;
+}
+
 .overlay-close a {
     border: 3px solid #ccc;
     display: block;
-    height: 23px;
-    width: 23px;
+    height: 25px;
+    width: 25px;
     margin: 0 0 0 auto;
     overflow: hidden;
-    line-height: 200px;
-    background: rgba(0,0,0,0.7) url(/img/covehead/video/clothes-lol.png) no-repeat 50% 50%;
+    zoom: 1;
+    background: rgb(50,50,50);
+    background: rgba(0,0,0,0.7);
     -webkit-border-radius: 32px;
     -moz-border-radius: 32px;
     border-radius: 32px;

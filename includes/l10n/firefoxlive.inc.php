@@ -63,7 +63,6 @@ $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxli
 $video_code =  <<<VIDEO_CODE
 <div id="video">
 <script src="http://player.ooyala.com/player.js?width=444&height=334&wmode=opaque&embedCode=s0MmVvMTrSlB1ZLzaWXnKZaa42Ib5rJV"></script>
-</div>
 <div id="video-controls">
     <h4>{$l10n->get('Cameras')}</h4>
     <ul>
@@ -72,6 +71,7 @@ $video_code =  <<<VIDEO_CODE
         <li><a href="#">{$l10n->get('Camera 2')}</a></li>
         <li><a href="#faq" id="overlay-open-faq">{$l10n->get('Video help')}</a></li>
     </ul>
+</div>
 </div>
 VIDEO_CODE;
 
@@ -269,11 +269,11 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                     e.preventDefault();
                     that.close();
                 }).append(
-                    $('<img src="/img/covehead/video/clothes-lol.png" height="32" width="32" alt="' + close_text + '" />')
+                    $('<img src="/img/covehead/video/clothes-lol.png" height="25" width="25" alt="' + close_text + '" />')
                 )
             )
         );
-            console.log('inited' + this.selector);
+            //console.log('inited' + this.selector);
     };
 
     Overlay.prototype.open = function()
@@ -327,7 +327,7 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
             var scrollTop = $(window).scrollTop();
             var docHeight = $(document).height();
             var winHeight = $(window).height();
-            var bottom = scrollTop + (winHeight + playerHeight) / 2;
+            var bottom = scrollTop + (winHeight + height) / 2;
             if (bottom > docHeight) {
                 // this prevents infinite scroll
                 this.$el.css('top', docHeight - height - 10);
@@ -434,7 +434,10 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                     that.$currentPage.animate(
                         { left: 50, opacity: 1 },
                         200,
-                        'linear'
+                        'linear',
+                        function() {
+                            this.style.removeAttribute('filter');
+                        }
                     );
                 } else {
                     that.close();
