@@ -19,6 +19,13 @@ function form_main($fields_def) {
                 $r_data['STUDENTS_LEVEL'] = $r_data['STUDENTS_LEVEL_OTHER'];
             }
 
+            if(empty($r_data['STUDENTS_ALLOW_SHARE'])) {
+                $r_data['STUDENTS_ALLOW_SHARE'] = 'N';
+            }
+            else {
+                $r_data['STUDENTS_ALLOW_SHARE'] = 'Y';
+            }
+            
             Responsys::subscribe($r_data['CAMPAIGN'], $r_data);
             $sent = TRUE;
         }
