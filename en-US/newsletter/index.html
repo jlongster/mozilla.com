@@ -31,6 +31,8 @@ EXTRA_HEADERS;
     else {
         $form = new EmailPrefs();
     }
+
+    header("X-Frame-Options: DENY");
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
 EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
-require_once "{$config['file_root']}/includes/email/prefs.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
     // The data can initially be passed in via GET
     $data = $_POST;
@@ -38,6 +38,7 @@ require_once "{$config['file_root']}/includes/email/prefs.php";
         exit;
     }
 
+    header("X-Frame-Options: DENY");
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 ?>
 
