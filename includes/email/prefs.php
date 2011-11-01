@@ -140,7 +140,7 @@ class EmailPrefs {
                                                   'country' => $data['country'],
                                                   'lang' => $data['lang'],
                                                   'locale' => $lang,
-                                                  'trigger_welcome' => $trigger,
+                                                  'trigger_welcome' => $trigger ? 'Y' : 'N',
                                                   'newsletters' => $newsletters));
                     return $ret['token'];
                 }
