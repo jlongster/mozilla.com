@@ -11,7 +11,8 @@ if(in_array($config['server_name'], array('www-dev.allizom.org',
     else {
         // Implement HTTP Strict Transport Security 
         // http://tools.ietf.org/html/draft-hodges-strict-transport-sec-02
-        header('Strict-Transport-Security: max-age=60000');
+        // Set max-age to 3 days
+        header('Strict-Transport-Security: max-age=259200; includeSubDomains');
     }
 }
 
