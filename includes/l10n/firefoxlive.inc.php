@@ -65,12 +65,12 @@ $video_code =  <<<VIDEO_CODE
 <script src="http://player.ooyala.com/player.js?width=444&height=334&wmode=opaque&embedCode=s0MmVvMTrSlB1ZLzaWXnKZaa42Ib5rJV"></script>
 </div>
 <div id="video-controls">
-    <h4>Cub Cam</h4>
+    <h4>{$l10n->get('Cameras')}</h4>
     <ul>
-        <li><a href="#">360° Cute</a></li>
-        <li><a href="#">Frolic</a></li>
-        <li><a href="#">Snuggle</a></li>
-        <li><a href="#faq" id="overlay-open-faq">View FAQ</a></li>
+        <li><a href="#">{$l10n->get('360° view')}</a></li>
+        <li><a href="#">{$l10n->get('Camera 1')}</a></li>
+        <li><a href="#">{$l10n->get('Camera 2')}</a></li>
+        <li><a href="#faq" id="overlay-open-faq">{$l10n->get('Video help')}</a></li>
     </ul>
 </div>
 VIDEO_CODE;
