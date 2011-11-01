@@ -42,17 +42,17 @@ $fields_def = array(
     'area' => array(
         'label' => 'Area of Study',
         'rules' => array(),
-        'rname' => 'area',
+        'rname' => 'STUDENTS_MAJOR',
     ),
     'level' => array(
         'label' => 'Level of Study',
         'rules' => array(),
-        'rname' => 'level',
+        'rname' => 'STUDENTS_LEVEL',
     ),
     'level_other' => array(
         'label' => 'Level of Study',
         'rules' => array(),
-        'rname' => 'level_other',
+        'rname' => 'STUDENTS_LEVEL_OTHER',
     ),
     'graduation_year' => array(
         'label' => 'Graduation year',
@@ -62,12 +62,12 @@ $fields_def = array(
     'projects' => array(
         'label' => 'Interesting projects',
         'rules' => array('list'),
-        'rname' => 'projects',
+        'rname' => 'STUDENTS_PROJECTS',
     ),
     'projects_ideas' => array(
         'label' => 'Additional projects',
         'rules' => array(),
-        'rname' => 'projects_ideas',
+        'rname' => 'STUDENTS_OTHER_PROJECTS',
     ),
     'tell_me' => array(
         'label' => 'Tell me more',
@@ -82,7 +82,7 @@ $fields_def = array(
     'share' => array(
         'label' => 'Share',
         'rules' => array('required'),
-        'rname' => 'share',
+        'rname' => 'STUDENTS_ALLOW_SHARE',
     ),
     'privacy' => array(
         'label' => 'Privacy',
@@ -374,7 +374,13 @@ function is_level_selected($field) {
                 <div id="legal">
 
                     <a id="moz" href="http://www.mozilla.org" title="Go to Mozilla.org">Mozilla</a>
-                    <p id="copyright"><strong>Copyright &copy; 2005-2010 Mozilla.</strong> All rights reserved.</p>
+                    <p id="copyright">
+                      Except where otherwise noted, content on this
+                      site is licensed under
+                      the <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative
+                      Commons Attribution Share-Alike License v3.0</a>
+                      or any later version.
+                    </p>
                     <ul id="nav-legal">
                         <li><a href="http://www.mozilla.org/en-US/privacy-policy.html" rel="external">Privacy Policy</a></li>
                         <li><a href="http://www.mozilla.org/en-US/about/legal.html" rel="external">Legal Notices</a></li>

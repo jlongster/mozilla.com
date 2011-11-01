@@ -14,6 +14,11 @@ function form_main($fields_def) {
         if (empty($f_errors)) {
             $lang = isset($r_data['lang']) ? $r_data['lang'] : 'en';
             require_once dirname(__FILE__) ."/responsys.php";
+
+            if(empty($r_data['STUDENTS_LEVEL'])) {
+                $r_data['STUDENTS_LEVEL'] = $r_data['STUDENTS_LEVEL_OTHER'];
+            }
+
             Responsys::subscribe($r_data['CAMPAIGN'], $r_data);
             $sent = TRUE;
         }
