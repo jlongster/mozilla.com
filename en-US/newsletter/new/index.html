@@ -33,7 +33,11 @@ EXTRA_HEADERS;
         'country' => 'Please select a country'
     );
 
+<<<<<<< HEAD
     if(($token = $prefs->save_new(array('trigger_welcome' => FALSE)))) {
+=======
+    if(($token = $prefs->save_new('email', 'country'))) {
+>>>>>>> newsletters
         header("Location: /$lang/newsletter/updated/?token=" . $token);
         exit;
     }

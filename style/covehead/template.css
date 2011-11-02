@@ -806,7 +806,7 @@ body {
 	outline: none;
 }
 
-.email-form ul.error .form-pane {
+#newsletter.error .form-pane {
     display: block;
 }
 
@@ -972,11 +972,8 @@ body {
 	text-decoration: underline;
 }
 
-#whatsnew #sidebar .email-form p.form-error,
-.email-form p.form-error,
-#email-form p.form-error {
+#whatsnew #sidebar .email-form p.form-error {
 	z-index: 1000;
-	display: none;
 	border: none;
 	color: #fff;
 	background: #b11a04;
@@ -986,13 +983,29 @@ body {
 	width: 150px;
 	position: absolute;
 	left: 475px;
-	top: -30px;
 	text-shadow: none;
 	-moz-border-radius: 5px;
 	-moz-box-shadow:
 		0 3px 0 rgba(0,0,0,0.1),
 		0 1px 10px rgba(0,0,0,0.2);
 }
+
+#sub-footer #newsletter ul.field-errors li {
+    margin: 5px 0;
+    font-size: .9em;
+    line-height: 1.2em;
+}
+
+#sub-footer #newsletter ul.field-errors {
+    background: #B11A04;
+    color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-size: 1.25em;
+}
+
 #whatsnew #sidebar .email-form p.form-error {
 	left: 217px;
 }
@@ -1041,12 +1054,11 @@ body {
     display: block !important;
 }
 
-.error-email .email-field .error-wrapper,
-.error-email #email-field .error-wrapper {
+.email-field .error-wrapper.field-error {
 	background: #b11a04;
 }
-.error-privacy .privacy-field .error-wrapper,
-.error-privacy #privacy-field .error-wrapper {
+.privacy-field .error-wrapper.field-error,
+#privacy-field .error-wrapper.field-error {
 	border-color: #b11a04;
 	background: #eb7a6b;
 }
@@ -1072,6 +1084,10 @@ body {
     display: none;
 }
 
+#sub-footer #newsletter .form-pane {
+    position: absolute;
+}
+
 #sub-footer #newsletter {
     position: relative;
     overflow: visible;
@@ -1091,7 +1107,7 @@ body {
 }
 
 #sub-footer #newsletter p {
-    max-width: 300px;
+    max-width: 250px;
     color: white;
 }
 
@@ -1110,6 +1126,8 @@ body {
 
 #sub-footer #newsletter ul,
 #sub-footer #newsletter ul li {
+    position: relative;
+    left: 0;
     margin: 0;
     list-style: none;
     color: white;

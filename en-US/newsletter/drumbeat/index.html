@@ -1,30 +1,55 @@
 <?php
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $form = new DrumbeatNewsletterForm('DRUMBEAT_NEWS_GROUP', $_POST);
-    $status = '';
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error-'. $form->error;
-    }
+    $form = new EmailPrefs($_POST);
+    $form->save_new('email', 'privacy');
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <title>Drumbeat Newsletter</title>
-    <link rel="stylesheet" href="<?= $config['static_prefix'] ?>/style/tignish/content.css" media="screen">
-    <link rel="stylesheet" href="<?= $config['static_prefix'] ?>/style/email-form.css" media="screen">
-    <link rel="stylesheet" href="<?= $config['static_prefix'] ?>/style/covehead/newsletter/news.css" media="screen">
+
+    <link rel="stylesheet" href="<?= $config['static_prefix'] ?>/style/covehead/newsletter.css" media="screen">
   </head>
   <body id="newsletter">
-    <ul id="email-form" class="<?= $status ?>">
-        <li id="form-pane">
-          <form action="" method="post">
-            <p class="form-error" id="email-error"><span>Whoops! Be sure to enter a valid email address.</span></p>
-            <p class="form-error" id="privacy-error"><span>Please read the Mozilla Privacy Policy and agree by checking the box.</span></p>
+    <div id="content" class="<?= $form->has_success() ? "success" : "" ?>">
 
+
+      <div class="success-pane">
+        <h3>Thanks for Subscribing!</h3>
+        <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
+        <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
+      </div>
+
+      <form action="" id="newsletter-form" method="post">
+        <input type="hidden" name="drumbeat" value="Y" />
+
+<?php
+    if($form->has_non_field_error()) {
+        echo '<div class="non-field-errors field-errors">' .
+        $form->non_field_error .
+        '</div>';
+    }
+
+    if($form->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($form->errors as $error) {
+            if($error == 'email') {
+                echo '<li>Whoops! Be sure to enter a valid email address.</li>';
+            }
+            else if($error == 'country') {
+                echo '<li>Please select a country.</li>';
+            }
+            else if($error == 'privacy') {
+                echo '<li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>';
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
 
             <div class="field" id="firstname-field">
               <label for="firstname">First name</label>
@@ -35,12 +60,12 @@
               <input name="lastname" type="text" id="lastname" value="<?= $form->get('lastname') ?>">
             </div>
 
-            <div class="field required" id="email-field">
-              <label for="email">Your email address</label>
-              <span class="error-wrapper"><input name="email" type="email" id="email" value="<?= $form->get('email') ?>"></span>
+            <div class="field required email-field <?= $form->has_error('email') ? 'field-error' : ''; ?>">
+              <label for="email">Your email address:</label>
+              <span class="error-wrapper"><input name="email" type="email" class="email" value="<?= $form->get('email') ?>" autofocus></span>
             </div>
 
-            <div class="field" id="format-field">
+            <div class="field format-field">
               <?php
                   $html_format = 'checked="checked"';
                   $text_format = '';
@@ -49,19 +74,19 @@
                       $html_format = '';
                   }
               ?>
-              <span class="field-label">Format</span>
+              <span class="field-label">Format:</span>
               <div class="field-radios">
+                <span class="radio-wrapper"><input type="radio" name="format" id="html-format" class="html-format" value="html" <?= $html_format?>></span>
                 <label for="html-format">HTML</label>
-                <input type="radio" name="format" id="html-format" value="html" <?= $html_format?>>
+                <span class="radio-wrapper"><input type="radio" name="format" id="text-format" class="text-format" value="text" <?= $text_format?>></span>
                 <label for="text-format">Text</label>
-                <input type="radio" name="format" id="text-format" value="text" <?= $text_format?>>
               </div>
             </div>
 
-            <div class="field" id="privacy-field">
-              <label for="privacy-check" id="privacy-check-label">
+            <div class="field privacy-field <?= $form->has_error('privacy') ? 'field-error' : ''; ?>">
+              <label for="privacy-check" class="privacy-check-label">
                 <? $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
-                <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" <?= $checked ?>></span>
+                <span class="error-wrapper"><input type="checkbox" name="privacy" id="privacy-check" class="privacy-check" <?= $checked ?>></span>
                 <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
               </label>
             </div>
@@ -72,13 +97,5 @@
 
             <p id="disclaimer">We will only send you Mozilla-related information.</p>
           </form>
-        </li>
-
-        <li id="success-pane">
-          <h3>Thanks for Subscribing!</h3>
-          <p>Now you will be among the first to see Mozilla’s special events, product updates, videos and other awesomeness.</p>
-          <p><a href="/<?=$lang?>/firefox/connect/" id="stay-connected">Stay Connected »</a></p>
-        </li>
-    </ul>
   </body>
 </html>

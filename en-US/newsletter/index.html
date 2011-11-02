@@ -4,6 +4,8 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Mozilla Newsletter';
     $body_id    = 'newsletter';
+    $hide_footer_newsletter = TRUE;
+
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/newsletter.css" media="screen">
     <meta name="WT.si_n" content="newsletter">
@@ -13,23 +15,15 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $status = '';
-
-
-    if(isset($_POST['target']) && $_POST['target'] == 'main') {
-        $form = new EmailPrefs($_POST);
-        if($form->save_new('email', 'country', 'privacy')) {
-            // Relocate to /newsletter/new/ page
-            $fields = array('email' => $form->get('email'),
-                            'country' => $form->get('country'),
-                            'lang' => $form->get('lang'),
-                            'format' => $form->get('format'));
-            header("Location: new/?" . http_build_query($fields));
-            exit;
-        }
-    }
-    else {
-        $form = new EmailPrefs();
+    $form = new EmailPrefs($_POST);
+    if($form->save_new()) {
+        // Relocate to /newsletter/new/ page
+        $fields = array('email' => $form->get('email'),
+                        'country' => $form->get('country'),
+                        'lang' => $form->get('lang'),
+                        'format' => $form->get('format'));
+        header("Location: new/?" . http_build_query($fields));
+        exit;
     }
 
     header("X-Frame-Options: DENY");
@@ -44,7 +38,6 @@ EXTRA_HEADERS;
 <div id="content">
 
       <form action="" method="post" id="newsletter-form">
-        <input type="hidden" name="target" value="main" />
         <input type="hidden" name="mozilla-and-you" value="Y" />
 
 <?php

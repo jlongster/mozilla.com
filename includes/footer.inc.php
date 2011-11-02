@@ -44,10 +44,12 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                     </li>
                   </ul>
 		  <div id="sub-footer-newsletter">
-    <?php
-    $__track_footer = TRUE;
-    require "{$config['file_root']}/includes/newsletter.inc.php";
-    ?>
+<?php 
+    if(!$hide_footer_newsletter) {
+        $__track_footer = TRUE;
+        require "{$config['file_root']}/includes/newsletter.inc.php";
+    }
+?>
 		</div>
 
                 <div class="clear"></div>

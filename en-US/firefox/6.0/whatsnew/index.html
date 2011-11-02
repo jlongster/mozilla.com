@@ -1,19 +1,13 @@
 <?php
     require_once "{$config['file_root']}/includes/min/inline.php";
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
-    $status = '';
-    if ($form->save()) {
-        $status = 'success';
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
-    }
+    $form = new EmailPrefs($_POST);
+    $form->save_new();
 
-	$_version       = getVersionBySelf();
-	$_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
+    $_version       = getVersionBySelf();
+    $_valid_version = isValidVersionByReleaseNotes($_version, $config['file_root'], 	$lang);
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,7 +68,9 @@ if ($_version !== null && $_valid_version) {
     <h3>More Features. More Info. <span>More Firefox.</span></h3>
     <p class="intro">Get the latest Firefox tips and tricks every month in our <em>Firefox &amp; You</em> newsletter. Sign up today!</p>
     <div id="newsletter-signup">
-        <form id="email-form" class="<?= $status ?>" action="" method="post">
+        <form id="email-form" class="<?= $form->has_success() ? "success" : "" ?>" action="" method="post">
+          <input type="hidden" name="mozilla-and-you" value="Y" />
+                                                                                                     
           <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
           <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
           <div id="success-msg">Thanks for Subscribing!</div>

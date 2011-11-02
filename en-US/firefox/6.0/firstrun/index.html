@@ -1,15 +1,17 @@
 <?php
     require_once "{$config['file_root']}/includes/min/inline.php";
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
     $status = '';
-    if ($form->save()) {
+    $form = new EmailPrefs($_POST);
+    $r = $form->save_new();
+
+    if($r) {
         $status = 'success';
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
+    }
+    elseif($form->has_any_errors()) {
+        $status = 'error error-'. $form->errors[0];
     }
 ?>
 <!DOCTYPE html>
@@ -69,6 +71,7 @@
               </div>
             </div>
             <form id="email-form" class="<?= $status ?>" action="" method="post">
+              <input type="hidden" name="mozilla-and-you" value="Y" />
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
               <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
               <div id="success-msg">Thanks for Subscribing!</div>
