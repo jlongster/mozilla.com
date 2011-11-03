@@ -33,6 +33,8 @@ if(isset($_GET['mobile_first']) && $_GET['mobile_first'] == 1) {
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
+    $latest_firefox_version = LATEST_FIREFOX_VERSION;
+
 $aurora_desktop_block = <<<AURORA_DESKTOP_BLOCK
         <div id="download_aurora_button">
             <script>
@@ -44,14 +46,14 @@ $aurora_desktop_block = <<<AURORA_DESKTOP_BLOCK
                 var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + "\" href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Firefox Aurora <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
                 var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-                var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
+                var gDownloadItemOtherPlatform = "<a href=\"/$lang/firefox/$latest_firefox_version/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
 
                 document.writeln("<ul class=\"home-download " + gCssClass + " \">");
                 writeDownloadItems("fxaurora");
                 document.writeln("<\/ul>");
                 document.writeln("<div class=\"download-other\">");
-                document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-aurora.html\">All Systems &amp; Languages<\/a> | ");
-                document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
+                document.writeln("<a href=\"\/$lang\/firefox\/all-aurora.html\">All Systems &amp; Languages<\/a> | ");
+                document.writeln("<a href=\"\/$lang\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
                 document.writeln("<\/div>");
                 //-->
             </script>
@@ -76,8 +78,8 @@ $aurora_mobile_block = <<<AURORA_MOBILE_BLOCK
                 </span>
                 <img src="{$config['static_prefix']}/img/covehead/channel/icon-mobile.png" alt="" />
             </a>
-            <div class="download-other"><a href="/<?=$lang?>/mobile/platforms/">Supported devices</a>  | 
-<a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a></div>
+            <div class="download-other"><a href="/$lang/mobile/platforms/">Supported devices</a>  | 
+<a href="/$lang/legal/privacy/firefox.html">Privacy Policy</a></div>
         </div>
         </div>
 AURORA_MOBILE_BLOCK;
@@ -99,14 +101,14 @@ $beta_desktop_block = <<<BETA_DESKTOP_BLOCK
           var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"javascript:" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link\"> <span class=\"download-content\"><span class=\"download-title\">Download<\/span> Firefox Beta <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
 
           var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-          var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_DEVEL_VERSION?>/releasenotes/#contributedbuilds\">Free Download<\/a>"
+          var gDownloadItemOtherPlatform = "<a href=\"/$lang/firefox/$latest_firefox_version/releasenotes/#contributedbuilds\">Free Download<\/a>"
 
           document.writeln("<ul class=\"home-download download-firefox " + gCssClass + " \">");
           writeDownloadItems("fxbeta");
           document.writeln("<\/ul>");
           document.writeln("<div class=\"download-other\"><span class=\"other\">");
-          document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-beta.html\">All Systems &amp; Languages<\/a> - ");
-          document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
+          document.writeln("<a href=\"\/$lang\/firefox\/all-beta.html\">All Systems &amp; Languages<\/a> - ");
+          document.writeln("<a href=\"\/$lang\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
           document.writeln("<\/span><\/div>");
 
           //-->
@@ -136,8 +138,8 @@ $beta_mobile_block = <<<BETA_MOBILE_BLOCK
                 </span>
                 <img src="{$config['static_prefix']}/img/covehead/channel/icon-mobile.png" alt="" />
             </a>
-            <div class="download-other"><a href="/{=$lang}/mobile/platforms/">Supported devices</a>  | 
-<a href="/{$lang}/legal/privacy/firefox.html">Privacy Policy</a></div>
+            <div class="download-other"><a href="/$lang/mobile/platforms/">Supported devices</a>  | 
+            <a href="/$lang/legal/privacy/firefox.html">Privacy Policy</a></div>
         </div>
         </div>
 BETA_MOBILE_BLOCK;
