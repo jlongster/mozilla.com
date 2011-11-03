@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>გმადლობთ <a <?=$aboutlink?> >Mozilla-ს მისიის</a> მხარდაჭერისთვის - ინტერნეტის გამჭვირვალობის, ინოვაციურ მიდგომებისა და ახალი შესაძლებლობების უზრუნველსაყოფად!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>ახლა სარგებლობთ Firefox ვერსიით <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">უსაფრთხოების მიზნით რეკომენდებულია ჩამოტვირთოთ <a href="/<?=$lang?>/firefox/">ბოლო განახლებული ვერსია</a>.</p>
+
+  </div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>თქვენ სარგებლობთ უცნობი Firefox ვერსიით.</h2>
+
+  <p id="main-feature-contents">უსაფრთხოების მიზნით რეკომენდებულია ჩამოტვირთოთ <a href="/<?=$lang?>/firefox/">ბოლო განახლებული ვერსია</a>.</p>
+
+</div>
+
+
+
+
+<?php endif;?>

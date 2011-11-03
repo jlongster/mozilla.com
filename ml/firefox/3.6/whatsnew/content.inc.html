@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+<?=$logo?>
+     <p><a <?=$aboutlink?> >മോസിലയ്ക്കു് </a> നല്‍കൂന്ന എല്ലാവിധ സഹായ സഹകരണങ്ങള്‍ക്കും പ്രോത്സാഹനങ്ങള്‍ക്കും വളരെ നന്ദി!</p>
+</div>
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>നിങ്ങളിപ്പോള്‍ ഉപയോഗിക്കുന്നതു് ഫയര്‍ഫോക്സ് <?=$_version?> ആണു്.</h2>
+
+  <p id="main-feature-contents">സുരക്ഷാ കാരണങ്ങള്‍കൊണ്ടു്, ദയവായി ഫയര്‍ഫോക്സിന്റെ <a href="/<?=$lang?>/firefox/">ഏറ്റവും പുതിയ പതിപ്പു് ഡൌണ്‍ലോഡ് ചെയ്യുക</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>ഫയര്‍ഫോക്സിന്റെ അപരിചിതമായ പതിപ്പാണു് നിങ്ങള്‍ ഉപയോഗിക്കുന്നതു്.</h2>
+
+  <p id="main-feature-contents">സുരക്ഷാ കാരണങ്ങള്‍കൊണ്ടു്, ദയവായി ഫയര്‍ഫോക്സിന്റെ <a href="/<?=$lang?>/firefox/">ഏറ്റവും പുതിയ പതിപ്പു് ഡൌണ്‍ലോഡ് ചെയ്യുക</a>.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

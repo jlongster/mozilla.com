@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p> திறந்த, புதிய மற்றும் வாய்ப்புகளை இணையத்தில் ஏற்படுத்துதல் என்ற <a <?=$aboutlink?> >Mozilla இன் நோக்கங்களிற்கு</a>  தாங்கள் நல்கும் ஆதரவுக்கு நன்றி!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>நீங்கள் இப்போது பயன்படுத்துவது Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">பாதுகாப்புக் காரணங்களுக்காக நாம் <a href="/<?=$lang?>/firefox/">புதியதும் பிந்தையதுமான</a> பதிப்பைப் பதிவிறக்குமாறு பரிந்துரைக்கிறோம்.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>நீங்கள் ஒரு அறியப்படாத Firefox பதிப்பைப் பயன்படுத்துகிறீர்கள்.</h2>
+
+  <p id="main-feature-contents">பாதுகாப்புக் காரணங்களுக்காக நாம் <a href="/<?=$lang?>/firefox/">புதியதும் பிந்தையதுமான</a> பதிப்பைப் பதிவிறக்குமாறு பரிந்துரைக்கிறோம்.</p>
+
+
+</div>
+
+
+
+
+<?php endif;?>

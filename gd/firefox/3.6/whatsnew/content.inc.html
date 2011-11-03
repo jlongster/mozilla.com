@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Gun robh math agad airson taic a chur ris a' <a <?=$aboutlink?> >mhisean aig Mozilla</a> gus fosgailteachd, tionnsgnadh is cothroman a bhrosnachadh air an lìon!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Tha thu a' cleachdadh Firefox <?=$_version?> a-nis.</h2>
+
+  <p id="main-feature-contents">Mholamaid dhut <a href="/<?=$lang?>/firefox/">an tionndadh as ùire 's as snasaile</a> dheth a luchdadh a-nus air sgàth adhbharan tèarainteachd.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Tha thu a' cleachdadh tionndadh de Firefox nach eil sinn ag aithneachadh.</h2>
+
+  <p id="main-feature-contents">Mholamaid dhut  <a href="/<?=$lang?>/firefox/">an tionndadh as ùire 's as snasaile</a> dheth a luchdadh a-nus air sgàth adhbharan tèarainteachd.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

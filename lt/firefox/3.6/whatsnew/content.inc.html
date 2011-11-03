@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Ačiū, kad prisidedate prie <a <?=$aboutlink?> >„Mozillos“ misijos</a> – skatinti atvirumą, inovatyvumą ir lygias galimybes internete – įgyvendinimo!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Jūs naudojatės „Firefox <?=$_version?>“ laida.</h2>
+
+  <p id="main-feature-contents">Saugumo sumetimais patariame parsisiųsti <a href="/<?=$lang?>/firefox/">paskiausią ir geriausią</a> „Firefox“ laidą.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Jūsų naudojamos „Firefox“ laidos numerio nustatyti nepavyko.</h2>
+
+  <p id="main-feature-contents">Saugumo sumetimais patariame parsisiųsti <a href="/<?=$lang?>/firefox/">paskiausią ir geriausią</a> „Firefox“ laidą.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

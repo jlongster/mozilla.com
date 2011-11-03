@@ -39,6 +39,7 @@ switch($pageid) {
         break;
 
     case 'oldversion':
+    case 'whatsnew-36':
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'dl_latest';
         $dl_box_options         = array();

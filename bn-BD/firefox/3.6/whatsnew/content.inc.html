@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+<?=$logo?>
+      <p>ওয়েবকে উন্মুক্ত, নতুন কিছুর প্রবর্তন এবং সুযোগ তৈরি উৎসাহিত করা, <a <?=$aboutlink?> >মোজিলার এই উদ্দেশ্য</a> সমর্থন করার জন্য ধন্যবাদ!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>আপনি ফায়ারফক্স ব্যবহার করছেন<?=$_version?>.</h2>
+
+  <p id="main-feature-contents">নিরাপত্তার কারনে, আমরা আপনাকে <a href="/<?=$lang?>/firefox/">সাম্প্রতিক এবং উন্নত সংস্করণ</a> ডাউনলোড করার পরামর্শ প্রদান করে থাকে।</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>আপনি ফারাফক্সের অজানা সংস্করণ ব্যবহার করছেন।</h2>
+
+  <p id="main-feature-contents">নিরাপত্তার কারনে, আমরা আপনাকে <a href="/<?=$lang?>/firefox/">সাম্প্রতিক এবং উন্নত সংস্করণ</a> ডাউনলোড করার পরামর্শ প্রদান করে থাকে।</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

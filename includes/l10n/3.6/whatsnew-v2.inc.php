@@ -114,3 +114,8 @@ echo $dynamic_header;
 unset($dynamic_header);
 
 unset($dynamic_top_menu);
+
+
+require_once $config['file_root'] . '/' . $lang . '/firefox/3.6/whatsnew/content.inc.html';
+require_once $footerfile;
+

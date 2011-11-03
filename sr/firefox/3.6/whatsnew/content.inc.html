@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Хвала Вам што подржавате <a <?=$aboutlink?> >Мозилину мисију</a> која охрабрује отвореност, иновације и просперитет веба!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Тренутно користите фајерфокс, верзија <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Из безбедносних разлога, препоручујемо Вам да преузмете <a href="/<?=$lang?>/firefox/">последњу и најбољу верзију</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Тренутно користите непознату верзију фајерфокса.</h2>
+
+  <p id="main-feature-contents">Из безбедносних разлога, препоручујемо Вам да преузмете <a href="/<?=$lang?>/firefox/">последњу и најбољу верзију</a>.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

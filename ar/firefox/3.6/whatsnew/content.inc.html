@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+<?=$logo?>
+      <p>شكرًا لدعمك <a <?=$aboutlink?> >هدف موزيلا</a> بتشجيع الانفتاح والابتكار والفرص في الوب!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>أنت الآن تشغل فَيَرفُكس <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">لأسباب تتعلق بالأمان، ننصحك بتنزيل <a href="/<?=$lang?>/firefox/">آخر وأفضل إصدارة</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>أنت تشغل الآن إصدارة غير معروفة من فَيَرفُكس.</h2>
+
+ <p id="main-feature-contents">لأسباب تتعلق بالأمان، ننصحك بتنزيل <a href="/<?=$lang?>/firefox/">آخر وأفضل إصدارة</a>.</p>
+
+</div>
+
+
+
+
+<?php endif;?>

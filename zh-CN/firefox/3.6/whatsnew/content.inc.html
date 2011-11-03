@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>感谢支持 <a <?=$aboutlink?> >Mozilla 的使命</a> ：鼓励开放、富于创新并充满机遇的互联网！</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>你正在使用 Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">出于安全原因，我们建议您下载 <a href="/<?=$lang?>/firefox/">最新和最好的版本</a>。</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>你正在使用未知版本的 Firefox 。</h2>
+
+  <p id="main-feature-contents">出于安全原因，我们建议您下载 <a href="/<?=$lang?>/firefox/">最新和最好的版本</a>。</p>
+
+</div>
+
+
+
+
+<?php endif;?>

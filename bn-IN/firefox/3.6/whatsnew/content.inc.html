@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>ওয়েবের মাধ্যমে মুক্ত পরিসর, উদ্ভাবন ও সুবিধা উপলব্ধ করার জন্য <a <?=$aboutlink?> >Mozilla-র প্রয়াসকে</a> সমর্থনে জন্য অসংখ্য ধন্যবাদ!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>আপনি Firefox <?=$_version?> সংস্করণ ব্যবহার করছেন।</h2>
+
+  <p id="main-feature-contents">নিরাপত্তার কারণে, <a href="/<?=$lang?>/firefox/">সর্বশেষ ও সর্বাধিক উন্নত সংস্করণ</a> ডাউনলোড করা বাঞ্ছনীয়।</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>আপনি Firefox-র একটি অজানা সংস্করণ ব্যবহার করছেন।</h2>
+
+  <p id="main-feature-contents">নিরাপত্তার কারণে, <a href="/<?=$lang?>/firefox/">সর্বশেষ ও সর্বাধিক উন্নত সংস্করণ</a> ডাউনলোড করা বাঞ্ছনীয়।</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

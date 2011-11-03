@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Eskerrik asko <a <?=$aboutlink?> >Mozillaren misioa</a> laguntzeagatik: sarean irekitasuna, berrikuntza eta aukera berriak bultzatzea!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Orain Firefox <?=$_version?> darabilzu.</h2>
+
+  <p id="main-feature-contents">Segurtasun arrazoiengatik, <a href="/<?=$lang?>/firefox/">azken bertsioa eta onena</a> deskargatzea gomendatzen dizugu.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Firefoxen bertsio ezezagun bat darabilzu.</h2>
+
+  <p id="main-feature-contents">Segurtasun arrazoiengatik, <a href="/<?=$lang?>/firefox/">azken bertsioa eta onena</a> deskargatzea gomendatzen dizugu.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

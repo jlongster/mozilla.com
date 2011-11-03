@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Köszönjük, hogy támogatja a <a <?=$aboutlink?> >Mozilla küldetését</a>, amelynek célja, hogy az internet nyílt, fejlődő és lehetőségekkel teli legyen!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Ön a Firefox <?=$_version?> verziót használja.</h2>
+
+  <p id="main-feature-contents">Biztonsági okokból javasoljuk a <a href="/<?=$lang?>/firefox/">legfrissebb verzió letöltését</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Nem sikerült megállapítani, hogy milyen verziójú Firefox böngészőt használ.</h2>
+
+  <p id="main-feature-contents">Biztonsági okokból javasoljuk a <a href="/<?=$lang?>/firefox/">legfrissebb verzió letöltését</a>.</p>
+
+</div>
+
+
+
+
+<?php endif;?>

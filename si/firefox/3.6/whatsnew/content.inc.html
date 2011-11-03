@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p> ජාලයෙහි විවෘතභාවය, නවීනත්වය හා අවස්ථාවන් දිරිමත් කිරීමේ <a <?=$aboutlink?> >මොසිලා මෙහෙයුමට</a> සහාය වීම ගැන ස්තුතියි!
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>ඔබ දැන් Firefox <?=$_version?> නිකුතුව භාවිත කරයි.</h2>
+
+  <p id="main-feature-contents">﻿ආරක්ෂක හේතුන් මත, <a href="/<?=$lang?>/firefox/">නවතම සහ උසස්ම නිකුතුව</a> බාගන්නා ලෙස අපි නිර්දේශ කරන්නෙමු.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>ඔබ Firefox හි නොදන්නා නිකුතුවක් භාවිත කරයි.</h2>
+
+  <p id="main-feature-contents">﻿ආරක්ෂක හේතුන් මත, <a href="/<?=$lang?>/firefox/">නවතම සහ උසස්ම නිකුතුව</a> බාගන්නා ලෙස අපි නිර්දේශ කරන්නෙමු.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

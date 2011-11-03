@@ -1,0 +1,43 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Благодарим Ви, че подкрепяте <a <?=$aboutlink?> >мисията на Mozilla</a> да окуражава откритостта, иновациите и възможностите в Интернет!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Вие използвате Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">За по-голяма сигурност, Ви препоръчваме да свалите <a href="/<?=$lang?>/firefox/">най-новата и най-добра версия</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Използвате непозната версия на Firefox.</h2>
+
+  <p id="main-feature-contents">За по-голяма сигурност, Ви препоръчваме да свалите  <a href="/<?=$lang?>/firefox/">най-новата и най-добра версия</a>.</p>
+
+</div>
+
+
+
+
+<?php endif;?>

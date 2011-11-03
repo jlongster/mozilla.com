@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>ಮುಕ್ತತೆ, ನಾವಿನ್ಯತೆ  ಹಾಗು ಜಾಲದಲ್ಲಿ ಸದವಕಾಶವನ್ನು ಒದಗಿಸುವ <a <?=$aboutlink?> >ಮೋಝಿಲ್ಲಾದ ಸದುದ್ದೇಶ</a> ವನ್ನು ಬೆಂಬಲಿಸಿದುದಕ್ಕೆ ಧನ್ಯವಾದಗಳು!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>ನೀವು ಈಗ ಫೈರ್ಫಾಕ್ಸ್ <?=$_version?> ಅನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ.</h2>
+
+  <p id="main-feature-contents">ಸುರಕ್ಷತೆಯ ಕಾರಣಗಳಿಂದಾಗಿ ನೀವು <a href="/<?=$lang?>/firefox/">ಇತ್ತೀಚಿನ ಹಾಗು ಅತ್ಯುತ್ತಮ ಆವೃತ್ತಿ</a>ಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿಕೊಳ್ಳುವಂತೆ ನಾವು ಸಲಹೆ ಮಾಡುತ್ತೇವೆ.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>ನೀವು ಫೈರ್ಫಾಕ್ಸಿನ ತಿಳಿಯದೆ ಇರುವ ಒಂದು ಆವೃತ್ತಿಯನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ.</h2>
+
+  <p id="main-feature-contents">ಸುರಕ್ಷತೆಯ ಕಾರಣಗಳಿಂದಾಗಿ ನೀವು  <a href="/<?=$lang?>/firefox/">ಇತ್ತೀಚಿನ ಹಾಗು ಅತ್ಯುತ್ತಮ ಆವೃತ್ತಿ</a>ಯನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿಕೊಳ್ಳುವಂತೆ ನಾವು ಸಲಹೆ ಮಾಡುತ್ತೇವೆ.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Go raibh maith agat as tacaíocht a thabhairt do <a <?=$aboutlink?> >mhisean Mozilla</a>: oscailteacht, nuálaíocht, agus deiseanna a spreagadh ar an nGréasán!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Tá tú ag úsáid Firefox <?=$_version?> faoi láthair.</h2>
+
+  <p id="main-feature-contents">De bharr cúrsaí slándála, molaimid duit <a href="/<?=$lang?>/firefox/">an leagan is déanaí is fearr</a> a íosluchtú.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Tá tú ag úsáid leagan anaithnid de Firefox.</h2>
+
+  <p id="main-feature-contents">De bharr cúrsaí slándála, molaimid duit <a href="/<?=$lang?>/firefox/">an leagan is déanaí is fearr</a> a íosluchtú.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

@@ -1,0 +1,47 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Tack för att du stöder <a
+      <?=$aboutlink?> >Mozillas åtagande</a> att
+      uppmuntra öppenhet, innovation och möjligheter på webben!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Du använder nu Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Av säkerhetsskäl rekommenderar vi att du hämtar
+  <a href="/<?=$lang?>/firefox/">den senaste och bästa versionen</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Du använder en okänd version av Firefox.</h2>
+
+  <p id="main-feature-contents">Av säkerhetsskäl rekommenderar vi att du hämtar
+  <a href="/<?=$lang?>/firefox/">den senaste och bästa versionen</a>.</p>
+
+</div>
+
+
+
+
+<?php endif;?>

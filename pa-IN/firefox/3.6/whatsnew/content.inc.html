@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>ਵੈੱਬ ਉੱਤੇ ਖੁੱਲ੍ਹੇਪਨ, ਖੋਜ ਅਤੇ ਮੌਕਿਆਂ ਦੇ  <a <?=$aboutlink?> >ਮੋਜ਼ੀਲਾ ਦੇ ਮਕਸਦ</a> ਲਈ ਸਹਿਯੋਗ ਵਾਸਤੇ ਧੰਨਵਾਦ ਹੈ!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>ਹੁਣ ਤੁਸੀਂ ਫਾਇਰਫਾਕਸ <?=$_version?> ਚਲਾ ਰਹੇ ਹੋ।</h2>
+
+  <p id="main-feature-contents">ਸੁਰੱਖਿਆ ਕਾਰਨਾਂ ਕਰਕੇ, ਅਸੀਂ <a href="/<?=$lang?>/firefox/">ਸਭ ਤੋਂ ਨਵਾਂ ਅਤੇ ਵਧੀਆ ਵਰਜਨ</a> ਡਾਊਨਲੋਡ ਕਰਨ ਦੀ ਸਿਫਾਰਸ਼ ਕਰਦੇ ਹਾਂ।</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>ਤੁਸੀਂ ਫਾਇਰਫਾਕਸ ਦਾ ਅਣਜਾਣ ਵਰਜਨ ਚਲਾ ਰਹੇ ਹੋ।</h2>
+
+  <p id="main-feature-contents">ਸੁਰੱਖਿਆ ਕਾਰਨਾਂ ਕਰਕੇ, ਅਸੀਂ <a href="/<?=$lang?>/firefox/">ਸਭ ਤੋਂ ਨਵਾਂ ਅਤੇ ਵਧੀਆ ਵਰਜਨ</a> ਡਾਊਨਲੋਡ ਕਰਨ ਦੀ ਸਿਫਾਰਸ਼ ਕਰਦੇ ਹਾਂ।</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

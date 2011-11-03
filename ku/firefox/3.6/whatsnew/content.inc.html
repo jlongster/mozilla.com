@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Spas ji bo ku te piştgirî da <a <?=$aboutlink?> >mîsyona Mozillayê</a> ku vekirîbûn, nûbûn û firsendên ji bo Webê teşwîq dike!!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Tu niha Firefox <?=$_version?> dixebitînî.</h2>
+
+  <p id="main-feature-contents">Ji ber sedemên ewlekariyê em <a href="/<?=$lang?>/firefox/">guhertoya dawî û herî baş</a> pêşniyar dikin.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Tu guhertoyeke nayê zanîn ya Firefoxê bi kar tînî.</h2>
+
+  <p id="main-feature-contents">Ji ber sedemên ewlekariyê em <a href="/<?=$lang?>/firefox/">guhertoya dawî û herî baş</a> pêşniyar dikin.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

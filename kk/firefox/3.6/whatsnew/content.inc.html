@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Ашық болу, инновацияға ұмтылу және мүмкіндіктерді кеңінен қолдануға қуат беретін <a <?=$aboutlink?> >Mozilla миссиясын</a> қолдағаныңыз үшін рахмет!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Сіздің Firefox браузеріңіздің нұсқасы <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Қауіпсіздікті қамтамасыз ету үшін Firefox <a href="/<?=$lang?>/firefox/">соңғы әрі күштісін</a> орнату ұсынылады.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Сіздің Firefox браузеріңіздің нұсқасы белгісіз</h2>
+
+  <p id="main-feature-contents">Қауіпсіздікті қамтамасыз ету үшін Firefox <a href="/<?=$lang?>/firefox/">соңғы әрі күштісін</a> орнату ұсынылады.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

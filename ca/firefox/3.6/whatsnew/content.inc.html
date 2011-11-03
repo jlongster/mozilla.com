@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Gràcies per ajudar amb <a <?=$aboutlink?> >la missió de Mozilla</a> de promoure un Web obert, ple d'oportunitats i d'innovació!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Ara mateix teniu el Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Per motius de seguretat, us recomanem que us baixeu <a href="/<?=$lang?>/firefox/">l'última versió</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Ara mateix teniu una versió desconeguda del Firefox.</h2>
+
+  <p id="main-feature-contents">Per motius de seguretat, us recomanem que us baixeu <a href="/<?=$lang?>/firefox/">l'última versió</a>.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

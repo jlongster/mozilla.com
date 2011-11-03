@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p><a <?=$aboutlink?> >Mozilla'nın misyonu</a> olan İnternet'te açıklık, yenilik ve olanak teşvikini desteklediğiniz için teşekkür ederiz!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Şu an Firefox <?=$_version?> kullanıyorsunuz.</h2>
+
+  <p id="main-feature-contents">Güvenlik gerekçesiyle <a href="/<?=$lang?>/firefox/">en son ve en harika sürümü</a> indirmenizi tavsiye ederiz.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Firefox'un bilinmeyen bir sürümünü kullanıyorsunuz.</h2>
+
+  <p id="main-feature-contents">Güvenlik gerekçesiyle <a href="/<?=$lang?>/firefox/">en son ve en harika sürümü</a> indirmenizi tavsiye ederiz.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

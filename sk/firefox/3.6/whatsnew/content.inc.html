@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Ďakujeme, že podporujete <a <?=$aboutlink?> >misiu Mozilly</a>, ktorej cieľom je prinášať otvorenosť, inovácie a príležitosti na web!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Máte spustený Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Z bezpečnostných dôvodov odporúčame prevziať a nainštalovať <a href="/<?=$lang?>/firefox/">najnovšiu a najlepšiu verziu</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Máte spustenú neznámu verziu Firefoxu.</h2>
+
+  <p id="main-feature-contents">Z bezpečnostných dôvodov odporúčame prevziať a nainštalovať <a href="/<?=$lang?>/firefox/">najnovšiu a najlepšiu verziu</a>.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>

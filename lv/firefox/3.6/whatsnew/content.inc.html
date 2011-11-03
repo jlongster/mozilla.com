@@ -1,0 +1,44 @@
+<?php if($latestVersion): ?>
+
+
+
+<div id="main-feature" class="latest-version">
+  <?=$logo?>
+      <p>Paldies, ka atbalstat <a <?=$aboutlink?> >Mozilla misiju</a>, kas veicina atvērtību un inovācijas internetā!</p>
+</div>
+
+
+<?php elseif($oldVersion): ?>
+
+
+<div id="main-feature" class="old-version">
+
+  <?=$logo2?>
+
+  <h2>Jūs izmantojat Firefox <?=$_version?>.</h2>
+
+  <p id="main-feature-contents">Drošības apsvērumu dēļ, mēs iesakām lejuielādēt <a href="/<?=$lang?>/firefox/">jaunāko un labāko versiju</a>.</p>
+
+</div>
+
+
+
+<?php elseif($unknownVersion): ?>
+
+
+
+<div id="main-feature" class="unknown-version">
+
+  <?=$logo2?>
+
+  <h2>Jūs izmantojat nezināmu Firefox versiju.</h2>
+
+  <p id="main-feature-contents">Drošības apsvērumu dēļ, mēs iesakām lejuielādēt <a href="/<?=$lang?>/firefox/">jaunāko un labāko versiju</a>.</p>
+
+</div>
+
+
+
+
+
+<?php endif;?>
