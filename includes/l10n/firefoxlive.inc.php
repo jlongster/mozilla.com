@@ -89,6 +89,7 @@ VIDEO_CODE;
     <meta property="og:url" content="http://mozilla.org/firefoxlive"/>
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
+    <meta property="fb:admins" content="219601608073693"/>
     <meta property="og:description"
           content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?> http://mozilla.org/firefoxlive"/>
 
