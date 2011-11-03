@@ -60,6 +60,9 @@ RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox
 RewriteCond $1 !^(?:3.6.*|7.*|8.*|9.*|sync|aurora|backtoschool)$
 RewriteRule en-US/firefox/(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
+# Bug 698571
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/8\.0(.*)/whatsnew[/]?$ /$1firefox/central/ [R=301,L]
+
 RewriteRule ^(?:\w{2,3}(?:-\w{2}(?:-mac)?)?/)?products/[/]?$ /$1firefox [R=permanent]
 
 # Redirects for mozillamessaging.com. bug 480373
