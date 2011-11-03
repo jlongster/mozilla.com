@@ -91,7 +91,7 @@ VIDEO_CODE;
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="og:description"
           content="<?=$l10n->get('Can you handle the cute? Mozilla Firefox is streaming video of their 3 adopted
-red panda cubs. Spread the word and ‘share’ the cute.'?> http://mozilla.org/firefoxlive"/>
+red panda cubs. Spread the word and ‘share’ the cute.')?> http://mozilla.org/firefoxlive"/>
 
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
