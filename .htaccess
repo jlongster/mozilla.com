@@ -656,8 +656,7 @@ RedirectMatch permanent /projects/xpcom/doc.* https://developer.mozilla.org/en/X
 # Fix for reed
 RewriteRule ^security/phishing-test/?$ /security/phishing-test.html  [R]
 
-RewriteRule ^join/thankyou\.en\.html$ join/thankyou.php?locale=en_US
-RewriteRule ^join/thankyou\.de\.html$ join/thankyou.php?locale=de_DE
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?join/?$ https://donate.mozilla.org/page/contribute/join-mozilla?source=join_link
 
 RedirectMatch temp ^/projects/firefox/.*pre/whatsnew/ http://www.mozilla.org/contribute/
 
@@ -834,7 +833,6 @@ RewriteRule ^grants.* /includes/org-handler.php [L]
 RewriteRule ^hacking.* /includes/org-handler.php [L]
 RewriteRule ^images.* /includes/org-handler.php [L]
 RewriteRule ^keymaster.* /includes/org-handler.php [L]
-RewriteRule ^join.* /includes/org-handler.php [L]
 RewriteRule ^js/scripting.* /includes/org-handler.php [L]
 RewriteRule ^keymaster.* /includes/org-handler.php [L]
 RewriteRule ^legal.* /includes/org-handler.php [L]
