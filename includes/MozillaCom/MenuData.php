@@ -129,7 +129,7 @@ class MozillaCom_MenuData
 
                 'menu_releases' => array(
                     'title' => 'Releases',
-                    'href'  => "/{$this->lang}/mobile/",
+                    'href'  => "/{$this->lang}/firefox/channel/",
                     'items' => array(
                         'submenu_releases_download' => array(
                             'title' => 'Download',
