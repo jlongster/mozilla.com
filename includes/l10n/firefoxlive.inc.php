@@ -84,6 +84,15 @@ VIDEO_CODE;
     <meta charset="utf-8">
     <title><?=$page_title?></title>
 
+    <meta property="og:title" content="<?=$page_title?>"/>
+    <meta property="og:type" content="non_profit"/>
+    <meta property="og:url" content="http://mozilla.org/firefoxlive"/>
+    <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
+    <meta property="og:site_name" content="<?=$page_title?>"/>
+    <meta property="og:description"
+          content="<?=$l10n->get('Can you handle the cute? Mozilla Firefox is streaming video of their 3 adopted
+red panda cubs. Spread the word and ‘share’ the cute.'?> http://mozilla.org/firefoxlive"/>
+
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
     @font-face {
