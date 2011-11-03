@@ -436,7 +436,9 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                         200,
                         'linear',
                         function() {
-                            this.style.removeAttribute('filter');
+                            if ($.browser.msie) {
+                                this.style.removeAttribute('filter');
+                            }
                         }
                     );
                 } else {
