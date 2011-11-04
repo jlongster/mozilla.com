@@ -145,7 +145,7 @@ if ( in_array($lang, array( 'hu', 'id', )) ) {
 
 // pages deactivated on production for a subset of locales for the Firefox Live project
 // reactivate them as they get done
-if ( in_array($lang, array( 'fa', 'gl', 'hu', 'ko', 'rm', 'ru' )) ) {
+if ( in_array($lang, array( 'fa', 'gl', 'ko', 'rm', 'ru' )) ) {
     $deactivated[] = 'firefoxlive';
 
     if($pageid == 'firefoxlive') {
