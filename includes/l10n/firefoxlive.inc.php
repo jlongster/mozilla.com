@@ -48,7 +48,7 @@ $body_id    = '';
 $share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
 $share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="firefox" data-lang="' . $lang . '">' . ___('Tweet'). '</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 
-$share_social_networks = $share_twitter . $share_facebook;
+$share_social_networks = $share_facebook . $share_twitter;
 
 $overlay_twitter = '<div id="overlay-twitter"><a href="https://twitter.com/firefox/" class="twitter-follow-button" data-show-count="false" data-lang="' . $lang . '">' . ___('Follow @firefox'). '</a><script src="//platform.twitter.com/widgets.js" type="text/javascript"></script></div>';
 $overlay_facebook = '<div id="overlay-facebook"><div class="fb-like" data-send="false" data-width="200" data-show-faces="false" data-font="arial"></div></div>';
