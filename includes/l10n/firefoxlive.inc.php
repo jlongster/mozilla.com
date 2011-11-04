@@ -62,13 +62,17 @@ $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxli
 
 $video_code =  <<<VIDEO_CODE
 <div id="video">
-<script src="http://player.ooyala.com/player.js?width=444&height=334&wmode=opaque&embedCode=s0MmVvMTrSlB1ZLzaWXnKZaa42Ib5rJV"></script>
+<script src="http://player.ooyala.com/player.js?callback=receiveOoyalaEvent&playerId=fxliveplayer&width=444&height=334&wmode=opaque&embedCode=k1Y3l0MToHj6WmLwarsNsFnKZAP6lMTh"></script>
+<script>
+function receiveOoyalaEvent(playerId, eventName, eventArgs) {
+}
+</script>
 <div id="video-controls">
     <h4>{$l10n->get('Cameras')}</h4>
     <ul>
-        <li><a href="#">{$l10n->get('360° view')}</a></li>
-        <li><a href="#">{$l10n->get('Camera 1')}</a></li>
-        <li><a href="#">{$l10n->get('Camera 2')}</a></li>
+        <li><a href="#" onclick="document.getElementById('fxliveplayer').setQueryStringParameters({embedCode:'k1Y3l0MToHj6WmLwarsNsFnKZAP6lMTh'})">{$l10n->get('360° view')}</a></li>
+        <li><a href="#" onclick="document.getElementById('fxliveplayer').setQueryStringParameters({embedCode:'Exc3l0MTqbmMg9v6572B62bfY60ye-io'})">{$l10n->get('Camera 1')}</a></li>
+        <li><a href="#" onclick="document.getElementById('fxliveplayer').setQueryStringParameters({embedCode:'czc3l0MTpIThFhErTzHGqzVoeb_y7trW'})">{$l10n->get('Camera 2')}</a></li>
         <li><a href="#faq" id="overlay-open-faq">{$l10n->get('Video help')}</a></li>
     </ul>
 </div>
