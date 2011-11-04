@@ -120,10 +120,12 @@ $beta_desktop_block = <<<BETA_DESKTOP_BLOCK
   </div>
 BETA_DESKTOP_BLOCK;
 
+$mobile_beta_href = mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version));
+
 $beta_mobile_block = <<<BETA_MOBILE_BLOCK
         <div id="download_beta_mobile_button">
         <div class="home-download beta-download">
-            <a href="{mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version))}"
+            <a href="$mobile_beta_href"
                class="download-link download-firefox"
                onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                       'DCS.dcsuri', '/en-US/firefox/channel/',
