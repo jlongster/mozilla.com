@@ -94,7 +94,7 @@ $fb_locale_codes= array(
 
 $fb_locale = array_key_exists($lang, $fb_locale_codes) ? $fb_locale_codes[$lang] : 'en_US';
 
-$lang_list          = getLangLinksSelect(array( 'ar', 'de', 'en-US', 'es-ES', 'fr', 'gl', 'rm', 'sl', 'zh-TW' ));
+$lang_list          = getLangLinksSelect(array('ar', 'de', 'en-US', 'es-ES', 'fr', 'hr', 'hu', 'pt-BR', 'sk', 'sl', 'zh-CN', 'zh-TW'));
 $lang_list          = str_replace(' (España)', '', $lang_list);
 $lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
