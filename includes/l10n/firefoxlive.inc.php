@@ -7,9 +7,9 @@ require_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 require_once $config['file_root'].'/includes/l10n/firefoxlive-helper.inc.php';
 
 $link = array(
-    0 => '#',
+    0 => 'http://knoxville-zoo.org/about-the-zoo/support-the-zoo/make-a-donation.html',
     1 => "/$lang/firefox/new/",
-    2 => '#',
+    2 => 'http://www.mozilla.org/about/mission.html',
 );
 
 
@@ -46,7 +46,7 @@ EXTRA_HEADERS;
 $body_id    = '';
 
 $share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
-$share_twitter  = '<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="firefox" data-lang="' . $lang . '">' . ___('Tweet'). '</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
+$share_twitter = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mzl.la/ttSCXP" data-text="' . ___('What’s more endearing? Firefox’s non-profit mission or a live feed of their fluffy mascot? Find out'). '" data-count="horizontal" data-via="firefox" data-related="cubcaretaker" data-lang="' . $lang . '">' . ___('Tweet'). '</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 
 $share_social_networks = $share_facebook . $share_twitter;
 
@@ -57,7 +57,7 @@ $overlay_social_networks = $overlay_twitter . $overlay_facebook;
 
 $overlay_image = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/overlay-facebook.png" alt="" />';
 
-$button_firefox = '<a href="#"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
+$button_firefox = '<a href="$link[2]"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
 $video_code =  <<<VIDEO_CODE
@@ -90,12 +90,12 @@ VIDEO_CODE;
 
     <meta property="og:title" content="<?=$page_title?>"/>
     <meta property="og:type" content="non_profit"/>
-    <meta property="og:url" content="http://mozilla.org/firefoxlive"/>
+    <meta property="og:url" content="http://mzl.la/ttSCXP"/>
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="fb:admins" content="219601608073693"/>
     <meta property="og:description"
-          content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?> http://mozilla.org/firefoxlive"/>
+          content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?> http://mzl.la/ttSCXP"/>
 
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
