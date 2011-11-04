@@ -48,7 +48,7 @@ $host_enUS    = $host_root . 'en-US';
 $firefox_link = $host_l10n . '/firefox/';
 
 // Create a variable to know if we are on production or not
-$publicsites = array( 'www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com',) ;
+$publicsites = array( 'www.mozilla.org', 'mozilla.org', 'www.mozilla.com', 'mozilla.com', ) ;
 $stage = (!in_array($config['server_name'], $publicsites)) ? true: false;
 unset($publicsites);
 
@@ -139,8 +139,19 @@ if ( in_array($lang, array( 'hu', 'id', )) ) {
         'state-2010-faq',
         'state-2010-people',
     );
-
     $firefox_link = $host_enUS . '/foundation/annualreport/2010/';
+
+}
+
+// pages deactivated on production for a subset of locales for the Firefox Live project
+// reactivate them as they get done
+if ( in_array($lang, array( 'fa', 'gl', 'hu', 'ko', 'rm', 'ru' )) ) {
+    $deactivated[] = 'firefoxlive';
+
+    if($pageid == 'firefoxlive') {
+        $firefox_link = $host_enUS . '/firefoxlive/';
+    }
+
 }
 
 // add the include if it exists only
