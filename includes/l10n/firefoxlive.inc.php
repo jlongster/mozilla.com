@@ -57,7 +57,7 @@ $overlay_social_networks = $overlay_twitter . $overlay_facebook;
 
 $overlay_image = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/overlay-facebook.png" alt="" />';
 
-$button_firefox = '<a href="$link[2]"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
+$button_firefox = '<a href="' . $link[2] .'"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
 $video_code =  <<<VIDEO_CODE
