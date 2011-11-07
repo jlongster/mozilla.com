@@ -88,7 +88,7 @@ switch($pageid) {
     default:
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'home-download';
-        $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true);
+        $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true, 'ancillary_links' => true);
 
         // transition download pages for the XP campaign
         if ($target == 'XP') {
