@@ -1,0 +1,316 @@
+<?php
+    require_once "{$config['file_root']}/includes/min/inline.php";
+    require_once "{$config['file_root']}/includes/regions.php";
+    require_once "{$config['file_root']}/includes/email/forms.php";
+
+    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $status = '';
+    if ($form->save()) {
+        $status = 'success';
+        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    } elseif ($form->error) {
+        $status = 'error error-'. $form->error;
+    }
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Firefox</title>
+    <? echo min_inline_css('css_firstrun6'); ?>
+    <style>
+      #tour .callout path {
+          fill: #fff;
+      }
+      #tour .callout:hover path {
+          fill: url(#hover);
+          filter: url(#f_hover);
+          stroke: #485e9b;
+      }
+    </style>
+  </head>
+  <body class="version5">
+    <div id="container">
+      <header>
+        <div id="logo"></div>
+        <div id="header">
+          <h1 class="wordmark">mozilla Firefox</h1>
+          <aside>
+            Made by a global non-profit dedicated to
+            shaping the future of the Web for the
+            public good.
+            <a href="http://mozilla.org/about">Learn more »</a>
+          </aside>
+        </div>
+      </header>
+      <div id="content">
+        <nav>
+          <section class="meet">
+            <h2>Step 1: <b>Meet Firefox</b></h2>
+            <a class="emblem" title="play video">
+              <svg width="18" height="17">
+                <polygon fill="#ffffff" points="0 0, 18 9, 0 17">
+              </svg>
+            </a>
+          </section>
+          <section class="know">
+            <h2>Step 2: <b>Know Your Browser</b></h2>
+            <a class="emblem" title="start tour">&raquo;</a>
+          </section>
+        </nav>
+        <footer>
+          <div id="newsletter-signup">
+            <div class="title">
+              <h3>Keep In Touch</h3>
+              <div class="more">
+                <h4>Get Monthly News!</h4>
+                <p>Sign up to get our monthly newsletter featuring
+                   special Mozilla news, Firefox tips & tricks, and more!
+              </div>
+            </div>
+            <form id="email-form" class="<?= $status ?>" action="" method="post">
+              <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo</b></a>
+              <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
+              <div id="success-msg">Thanks for Subscribing!</div>
+              <div class="more">
+                <div class="row">
+                  <select id="country" name="country">
+                      <option value="">Select country</option>
+                      <?php
+                          $country = $form->get('country');
+                          if (!$country) {
+                              $country = 'us';
+                          }
+                          echo regionsAsOptions($lang, $country);
+                      ?>
+                  </select>
+                </div>
+                <div class="row"> 
+                    <?php
+                        $isText = $form->get('format') == 'text';
+                    ?>
+                    <label for="html-format"><input type="radio" <?= $isText ? '' : 'checked' ?> name="format" id="html-format" value="html"> HTML</label>
+                    <label for="text-format"><input type="radio" <?= $isText ? 'checked' : '' ?> name="format" id="text-format" value="text"> Text</label>&nbsp;
+                </div>
+                <div class="row">
+                    <label for="privacy-check" id="privacy-check-label">
+                        <input type="checkbox" id="privacy-check" <?= $form->get('privacy') ? 'checked' : '' ?> name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+                    </label>
+                </div>
+                <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
+                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
+                                'DCS.dcsuri', '/mainstream_newsletter/signup',
+                                'WT.ti', 'Link: Sign me up - Second Step',
+                                'WT.dl', 99,
+                                'WT.nv', 'Content',
+                                'WT.ac', 'Newsletter');">
+                <p class="footnote">We will only send you Mozilla-related information.</p>
+              </div>
+            </form>
+          </div>
+          <div class="promo">
+            <a href="/<?=$lang?>/mobile/" class="button" id="mobile-promo">
+              <img 
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAvCAYAAABg8NNYAAAD2UlEQVR42s1ZTY7TMBTOEXqEHCFLd+cN+3KDWbPqivVoLtALIHU1YcGigj0qYjWaaChISCAkqBBCiA0RLBFScJ7s+cz7aledNBWVnuK82PHn9/M9Oy26rvtv5aDf5fV07qSC5oCxzbR0siiO/sME1oFbQ3PQwpZu/Fkx5q9upqsepJq48sBtLVejn5dY1Fg/TLSpnRUcoLVrdyKNXL2YoNs4mft+9gTgZLK21mCaABDgAFx052OCmtS3ljIitQAK97qN+2ghGyfl0YH5F5MLMbnxAr26BrAtMn54AkwkdiIrXH286J69uS+T1Q27NW4/fT3rXn1edE9u7sWL2rr25AhWM4vYKlefLrr+9/vPLwICAeDvP2+k/9uvj0L/cF0N5bUyTBLAPX//QIB9+fFCgSOQYtV33x4LuJcfHobncQzaIbG2qL3rVFzhnmPMCwHGe5A0yyGW28qLAJD5DBOrwGdwEGTwELL910o8EdMFW1PdI0zu7Np+EE3CMYWYg3WZ52gBh4GT+hjXRNcue1Z3+vPLRkTatb+yGBHS6f4NXUtlEKsI1mwiF20FaCNg+4og4kCJQCdtp0PbP4M0vah7PA/9q0DysKzEelX0fBOUEBlsEW/kUhIQMoRdjH7Iepln6USPXfeWa/1gnWVW0UAKEPMXxypnMgBawaCeSSZHL6YsQpuFaYQlMV5zpZ/H0AKKTDbamB4AnoTpAWOg4wyHEYjgAS4VMza9iSQLEO/lYxNA4SE2BMDFbr0dlAvwvIUYNJUygEsQdqEU8aosXkjPCSxZUQHL7Jwtb1aREBSMFAv84pyV0A8LggA8WCGq33G7yGST3bEbSWzPc3yoeQ0CcLutXYSJ+eXGpi1i2GVYdSZzI2FwhKHgSTmLOKB5EtbnaCbKWAIHAc+xJWA5ohHoGQCXqjwx590KBfFPkstyQLMJgjYlhAhZjicFlegqAaGsJLfCC7mSBw8ROKdcuUHaJVuuELxyFkPFndrQxQmxwmKwbSr8fqpF7Ejb0pZJcRHRBPTsdnI/1fBK7UwEAzac8mFGvr+VqW36/tM9WYXGU9nzIJx+4nRn7n7u9OW+wzTXvP2HaMj+rdagA84kU564SjDQBPEabfnqzodqTabYj+0FCECJ8Bj8QdGfkHAgoRIm0qpDTOvBa3AbHILkvZMjfxemLCULeIDogwWN+3WTiVdkrfqsEwR9EnC6nLHliNtOBI4pwzA4zt7xwSXOCwm30ievccFxkWa39pZkCjEncKsClkiIpe7jx1VjW261o4bOVB9Lh+fR/8FBWVsEUgYw6jcDecuHmoMJ9y8p2431HkuGMgAAAABJRU5ErkJggg==" />
+               Get Firefox for Mobile&nbsp;&raquo;</a>
+          </div>
+          <p class="attribution"><small>The Android Robot was reproduced from work created and <a href="http://code.google.com/policies.html">shared by Google</a> and used according to terms described in the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons 3.0 Attribution License</a>.</small></p>
+        </footer>
+      </div>
+    </div>
+    <div id="video">
+      <a href="#" id="video-close">close</a>
+      <video src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.1.webm"
+             poster="/img/firefox/4.0/firstrun/poster-crop.jpg"
+             preload="none" controls></video>
+    </div>
+    <div id="tour">
+    </div>
+    <div id="overlay"></div>
+    <svg id="effects">
+      <defs>
+        <linearGradient id="hover" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#7ba9e5; stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#4763b2; stop-opacity:1"/>
+        </linearGradient>
+        <filter id="f_hover">
+          <feFlood flood-color="#000000" flood-opacity=".15" result="flood"/>
+          <feComposite in="flood" in2="SourceAlpha" operator="in" result="platter"/>
+          <feOffset in="platter" result="drop-shadow" dx="0" dy="5"/>
+
+          <feFlood flood-color="#485e9b" result="is1"/>
+          <feComposite in="is1" in2="SourceAlpha" operator="in" result="is2"/>
+          <feOffset in="is2" result="is3" dx="0" dy="4"/>
+          <feComposite in="is3" in2="SourceAlpha" operator="out" result="is4"/>
+          <feOffset in="is4" result="inner-shadow" dx="0" dy="-4"/>
+
+          <feMerge>
+            <feMergeNode in="drop-shadow"/>
+            <feMergeNode in="SourceGraphic"/>
+            <feMergeNode in="inner-shadow"/>
+          </feMerge>
+        </filter>
+        <filter id="normal" filterUnits="userSpaceOnUse">
+          <feFlood flood-color="#000000" flood-opacity=".15" result="flood"/>
+          <feComposite in="flood" in2="SourceAlpha" operator="in" result="platter"/>
+          <feOffset in="platter" result="drop-shadow" dx="0" dy="5"/>
+
+          <feFlood flood-color="#000000" flood-opacity=".15" result="is1"/>
+          <feComposite in="is1" in2="SourceAlpha" operator="in" result="is2"/>
+          <feOffset in="is2" result="is3" dx="0" dy="5"/>
+          <feComposite in="is3" in2="SourceAlpha" operator="out" result="is4"/>
+          <feOffset in="is4" result="inner-shadow" dx="0" dy="-6"/>
+
+          <feMerge>
+            <feMergeNode in="drop-shadow"/>
+            <feMergeNode in="SourceGraphic"/>
+            <feMergeNode in="inner-shadow"/>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+    <script>
+      function getTop(el) {
+          if (!el.offsetParent) return 0;
+          return el.offsetTop + getTop(el.offsetParent);
+      }
+      function getLeft(el) {
+          if (!el.offsetParent) return 0;
+          return el.offsetLeft + getLeft(el.offsetParent);
+      }
+
+      $ = document.querySelector.bind(document);
+      function $$(s, fn) {
+          var nl = document.querySelectorAll(s), item;
+          for (var i = 0; i < nl.length; ++i) {
+              item = nl[i];
+              fn.apply(item);
+          }
+      }
+
+      window.addEventListener("DOMContentLoaded", init, false);
+
+      function init() {
+        var body = document.body,
+            vid = $("video");
+            timeout = false;
+            window.vid = vid;
+
+        $(".know").addEventListener("transitionend", function() {
+          if (body.classList.contains("lightbox")) {
+            posTour();
+            body.classList.add("tour");
+          }
+        }, true);
+
+        $("#tour").addEventListener("transitionend", function() {
+          if (!body.classList.contains("tour")) {
+            body.classList.remove("lightbox");
+          }
+        }, true);
+
+        function posTour() {
+          $("#tour").style.top = getTop($(".know")) + "px";
+        }
+        window.addEventListener("resize", function() {
+          posTour();
+        }, false);
+
+        $(".know").addEventListener("click", function() {
+          body.classList.add("lightbox");
+        }, false);
+
+        $(".meet").addEventListener("click", function() {
+          body.classList.add("video");
+        }, false);
+        $("#video").addEventListener("transitionend", function(e) {
+          if (e.originalTarget == $("video") && body.classList.contains("video")) {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+              vid.play();
+            }, 1000);
+          }
+        }, false);
+
+        $("#video").addEventListener("click", function(e) {
+          if (e.originalTarget == $("#video") && body.classList.contains("video")) {
+            dismissVideo(e);
+          }
+        }, false);
+
+        $("#video-close").addEventListener("click", dismissVideo, false);
+
+        function dismissVideo(e) {
+          e.preventDefault();
+          clearTimeout(timeout);
+          vid.pause();
+          body.classList.remove("video");
+        }
+        
+        function bindTour() {
+          $$("#tour .tip .callout, #tour .tip .emblem", function() {
+            this.addEventListener("mouseover", function(e) {
+              e.target.parentNode.classList.add("show");
+            }, false);
+            this.addEventListener("mouseout", function(e) {
+              e.target.parentNode.classList.remove("show");
+            }, false);
+          });
+
+          $("#tour-close").addEventListener("click", function(e) {
+            e.preventDefault();
+            body.classList.remove("tour");
+          }, false);
+        }
+        
+        $("#overlay").addEventListener("click", function(e) {
+          if (e.originalTarget == $("#overlay") && body.classList.contains("tour")) {
+            e.preventDefault();
+            body.classList.remove("tour");
+          }
+        }, false);
+
+        $("#email").addEventListener("focus", function() {
+          $("#newsletter-signup").classList.add("expand");
+        }, false);
+        $("#newsletter-signup .title h3").addEventListener("click", function() {
+          $("#newsletter-signup").classList.add("expand");
+          $("#email").focus();
+        }, false);
+
+        function fetchTour() {
+          var req = new XMLHttpRequest();
+          req.open('GET', '../firstrun/tour_' + platform + '.html', false);
+          req.onreadystatechange = function () {
+            if (req.readyState == 4) {
+              if(req.status == 200) {
+                $("#tour").innerHTML = req.responseText;
+                bindTour();
+                posTour();
+              }
+            }
+          };
+          req.send(null);
+        }
+
+        fetchTour();
+      }
+      
+      var platform = (function() {
+        var ua = navigator.userAgent;
+        if (ua.indexOf("Mac") != -1) {
+          return "mac";
+        } else if (ua.indexOf("Linux") != -1) {
+          return "linux";
+        }
+        return "win";
+      })();
+      document.body.classList.add(platform);
+    </script>
+    <?
+    // Webtrends stats, see bug 556384
+    require "{$config['file_root']}/includes/js_stats.inc.php";
+    echo $stats_js;
+    ?>
+  </body>
+</html> 
