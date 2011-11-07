@@ -146,7 +146,14 @@ if($prefs->has_non_field_error()) {
         </thead>
         <tbody>
 <?php
-foreach($prefs->available_newsletters() as $nl => $info) {
+$primary_newsletters = array();
+$all_newsletters = $prefs->available_newsletters();
+
+foreach(array('mozilla-and-you', 'mobile', 'beta') as $nl) {
+    $primary_newsletters[$nl] = $all_newsletters[$nl];
+}
+
+foreach($primary_newsletters as $nl => $info) {
 ?>
         <tr>
           <th>

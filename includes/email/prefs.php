@@ -18,7 +18,21 @@ class EmailPrefs {
         'mobile' => array('title' => 'Firefox Mobile',
                           'desc' => 'Learn about the hottest new add-ons and features for Firefox mobile.'),
         'beta' => array('title' => 'Beta News',
-                        'desc' => 'Read about the latest features for Firefox desktop and mobile before the final release.')
+                        'desc' => 'Read about the latest features for Firefox desktop and mobile before the final release.'),
+        'aurora' => array('title' => 'Aurora'),
+        'about-mozilla' => array('title' => 'About Mozilla'),
+        'drumbeat' => array('title' => 'Drumbeat Newsgroup'),
+        'addons' => array('title' => 'About Addons'),
+        'hacks' => array('title' => 'About Hacks'),
+        'labs' => array('title' => 'About Labs'),
+        'qa-news' => array('title' => 'QA News'),
+        'student-reps' => array('title' => 'Student Reps'),
+        'about-standards' => array('title' => 'About Standards'),
+        'mobile-addon-dev' => array('title' => 'Mobile Addon Development'),
+        'addon-dev' => array('title' => 'Addon Development'),
+        'join-mozilla' => array('title' => 'Join Mozilla'),
+        'mozilla-phone' => array('title' => 'Mozilla Phone'),
+        'app-dev' => array('title' => 'App Development'),
     );
 
     var $general_error = 'Something is amiss with our system, sorry! Please try again later.';
