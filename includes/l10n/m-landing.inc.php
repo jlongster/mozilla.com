@@ -23,7 +23,6 @@ $downloadbox = <<<BUTTON
       <img class="up-corner" src="/img/mobile/m/up-corner.png" />
       <div class="buttons">
         <a href="{$dl_android}" class="button">Android <em>{$l10n->get('Free Download')}</em></a>
-        <a href="{$dl_maemo}" class="button">Maemo <em>{$l10n->get('Free Download')}</em></a>
         <div class="clear"></div>
         </div>
     </div>
