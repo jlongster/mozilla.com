@@ -154,6 +154,11 @@ if ( in_array($lang, array( 'fa', 'ko',  )) ) {
 
 }
 
+// redirect central page to firefox features for locales that have a Firefox features page
+if ($pageid == 'central' && in_array($lang, array( 'bg', 'ca', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'hr', 'hu', 'it', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'uk', 'zh-TW' )) ) {
+    $pageid = 'firefox-features';
+}
+
 // add the include if it exists only
 if ($pageid != '' && in_array($pageid, $deactivated) && $stage == false) {
     noCachingRedirect($firefox_link);
