@@ -391,8 +391,10 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.7a4webm/(whatsnew|firstrun
 # (we can do these because of bug 573597)
 # 3.5.x details/whatsnew always points to 3.5's version
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.5\.[0-9]+/details(/(?:index.html)?)?$ $1firefox/3.5/details$3 [PT,L]
-# 3.6.x firstrun/details/whatsnew always points to 3.6's version
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html)?)?$ $1firefox/3.6/$2$3 [PT,L]
+# 3.6.x firstrun/details always points to 3.6's version
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.[0-9]+/(firstrun|details)(/(?:index.html)?)?$ $1firefox/3.6/$2$3 [PT,L]
+# 3.6.x whatsnew always points to 4.0's version (bug 698575)
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3\.6\.[0-9]+/(whatsnew)(/(?:index.html)?)?$ $1firefox/4.0/$2$3 [PT,L]
 # 4.0.x firstrun/details/whatsnew always points to 4.0's version
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/4\.0\.[0-9]+/(firstrun|details|whatsnew)(/(?:index.html|tour_.*)?)?$ $1firefox/4.0/$2$3 [PT,L]
 
