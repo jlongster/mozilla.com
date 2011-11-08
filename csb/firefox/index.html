@@ -1,9 +1,6 @@
 <?php
 
-    // translate $page_title and $meta_description
-    $page_title       = "Firefox pò kaszëbskù | Chùtczi, bezpieczniészi ë letczi w dopasowanim";
-    $meta_description = "Witómë w kaszëbsczim Firefoksu! Nôchùtczészi, nôbezpieczniészi ë nôlżészi w dopasowanim przezérnik Jinternetowi.";
+// commodity functions for localized pages
+include_once $config['file_root'].'/includes/l10n/toolbox.inc.php';
 
-
-    $pageid = 'landing';
-    require_once "{$config['file_root']}/includes/l10n/controller.inc.php";
+noCachingRedirect('http://'.$config['server_name'].'/csb/firefox/channel/');
