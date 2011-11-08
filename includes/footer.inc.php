@@ -36,10 +36,10 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
                         Facebook
                       </a>
                     </li>
-                    <li id="footer-connect">
-                      <a href="/<?=$lang?>/firefox/connect/" 
-                         onclick="dcsMultiTrack('DCS.dcsuri', '/<?=$lang?>/firefox/connect/', 'WT.ti', 'Connect');">
-                        More Ways to Connect
+                    <li id="footer-affiliates">
+                      <a href="https://affiliates.mozilla.org/" 
+                         onclick="dcsMultiTrack('DCS.dcsuri', 'https://affiliates.mozilla.org/', 'WT.ti', 'Affiliates');">
+                       Firefox Affiliates
                       </a>
                     </li>
                   </ul>
