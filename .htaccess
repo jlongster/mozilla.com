@@ -308,7 +308,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/fea
 
 
 # Bug 680147 Redirect updated ff users to /fx
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(7.*|8.*|9.*|10.*)$
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(8.*|9.*|10.*)$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [E=varyua:1,R=301]
 # redirect everyone else to /new
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [E=varyua:1,R=301]
