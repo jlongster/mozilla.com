@@ -13,8 +13,9 @@ l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/snippets.lang')
 
 
 $upgrade = ___('Upgrade now');
-$warning = sprintf(___('You\'re not on the latest version of Firefox. <a href="%s">Upgrade today</a> to get the best of the Web!'), "/$lang/firefox/new/");
+$warning = ___('You\'re not on the latest version of Firefox. <a href="%s">Upgrade today</a> to get the best of the Web!');
 $warning = str_replace('<a', '<br/><a', $warning);
+$warning = strip_tags($warning, '<br>');
 
 $body_class = 'whatsnew-3-0-19';
 $body_id = 'out-of-date';
