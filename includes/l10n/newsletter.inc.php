@@ -20,7 +20,7 @@ require_once "{$config['file_root']}/includes/regions.php";
 require_once "{$config['file_root']}/includes/email/prefs.php";
 
 $form = new EmailPrefs($_POST);
-$form->save_new();
+$form->save_new(array('optin' => FALSE));
 
 require_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
 require_once "{$config['file_root']}/{$lang}/newsletter/content.inc.html";

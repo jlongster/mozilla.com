@@ -162,12 +162,14 @@ class EmailPrefs {
 
                 try {
                     $trigger = isset($opts['trigger_welcome']) ? $opts['trigger_welcome'] : TRUE;
+                    $optin = isset($opts['optin']) ? $opts['optin'] : TRUE;
 
                     $ret = $serv->subscribe(array('email' => $data['email'],
                                                   'format' => $data['format'] == 'html' ? 'H' : 'T',
                                                   'country' => $data['country'],
                                                   'lang' => $data['lang'],
                                                   'locale' => $lang,
+                                                  'optin' => $optin ? 'Y' : 'N',
                                                   'trigger_welcome' => $trigger ? 'Y' : 'N',
                                                   'newsletters' => $newsletters));
                     return $ret['token'];
