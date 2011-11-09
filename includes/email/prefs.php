@@ -171,6 +171,7 @@ class EmailPrefs {
                                                   'locale' => $lang,
                                                   'optin' => $optin ? 'Y' : 'N',
                                                   'trigger_welcome' => $trigger ? 'Y' : 'N',
+                                                  'source_url' => $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'],
                                                   'newsletters' => $newsletters));
                     return $ret['token'];
                 }
