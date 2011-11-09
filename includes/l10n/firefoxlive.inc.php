@@ -90,7 +90,7 @@ VIDEO_CODE;
 
     <meta property="og:title" content="<?=$page_title?>"/>
     <meta property="og:type" content="non_profit"/>
-    <meta property="og:url" content="http://mzl.la/s2x11b"/><?php /* stage: http://mzl.la/sXvbnu - prod: http://mzl.la/s2x11b */ ?>
+    <meta property="og:url" content="http://www.mozilla.org/<?=$lang?>/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click"/><?php /* stage: http://mzl.la/sXvbnu - prod: http://mzl.la/s2x11b */ ?>
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="fb:admins" content="219601608073693"/>
