@@ -83,7 +83,7 @@ VIDEO_CODE;
 
 ?>
 <!DOCTYPE HTML>
-<html lang="<?=$lang?>" dir="<?=$textdir?>">
+<html xmlns:fb="http://ogp.me/ns/fb#" lang="<?=$lang?>" dir="<?=$textdir?>">
 <head>
     <meta charset="utf-8">
     <title><?=$page_title?></title>
@@ -167,12 +167,6 @@ VIDEO_CODE;
     </div><!-- end #doc -->
     </div><!-- end #wrapper -->
 
-<?php
-// Webtrends stats, see bug 556384
-require "{$config['file_root']}/includes/js_stats.inc.php";
-
-?>
-
     <footer id="footer">
     <div class="section">
 
@@ -194,7 +188,6 @@ require "{$config['file_root']}/includes/js_stats.inc.php";
     </div>
     </footer>
     <!-- end #footer -->
-    <?=$stats_js?>
     <?=$extra_footers?>
 
     <script>
