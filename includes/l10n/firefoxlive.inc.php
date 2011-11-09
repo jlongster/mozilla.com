@@ -83,7 +83,11 @@ VIDEO_CODE;
 
 ?>
 <!DOCTYPE HTML>
-<html xmlns:fb="http://ogp.me/ns/fb#" lang="<?=$lang?>" dir="<?=$textdir?>">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      lang="<?=$lang?>"
+      dir="<?=$textdir?>">
 <head>
     <meta charset="utf-8">
     <title><?=$page_title?></title>
