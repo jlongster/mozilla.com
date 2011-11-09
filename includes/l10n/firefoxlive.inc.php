@@ -95,7 +95,7 @@ VIDEO_CODE;
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="fb:admins" content="219601608073693"/>
     <meta property="og:description"
-          content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?> http://mzl.la/ttSCXP"/>
+          content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?>"/>
 
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
