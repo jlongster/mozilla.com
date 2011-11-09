@@ -45,7 +45,7 @@ EXTRA_HEADERS;
 
 $body_id    = '';
 
-$share_facebook = '<div class="fb-like" data-send="true" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
+$share_facebook = '<div class="fb-like" data-send="false" data-layout="button_count" data-width="200" data-show-faces="true"></div>';
 $share_twitter = '<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mzl.la/sPo5yu" data-text="' . str_replace('http://mzl.la/sPo5yu', '', ___('What is more endearing? Firefox’s non-profit mission or a live feed of their animal mascot? Find out http://mzl.la/sPo5yu')) . '" data-count="horizontal" data-via="firefox" data-related="cubcaretaker" data-lang="' . $lang . '">' . ___('Tweet'). '</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>';
 
 $share_social_networks = $share_facebook . $share_twitter;
