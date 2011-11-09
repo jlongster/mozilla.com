@@ -90,7 +90,7 @@ VIDEO_CODE;
 
     <meta property="og:title" content="<?=$page_title?>"/>
     <meta property="og:type" content="non_profit"/>
-    <meta property="og:url" content="http://mzl.la/ttSCXP"/>
+    <meta property="og:url" content="http://mzl.la/sSoItM"/><?php /* stage: http://mzl.la/sSoItM - prod: http://mzl.la/ttSCXP */ ?>
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="fb:admins" content="219601608073693"/>
