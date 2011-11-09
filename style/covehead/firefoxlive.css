@@ -240,11 +240,11 @@ html[dir=rtl] #share {
 }
 
 #overlay-nonfx .button {
+    display: inline-block;
     padding-left: 14px;
     padding-right: 10px;
     font-style: normal;
-    margin: 20px 20px 5px 0;
-    float: right;
+    margin: 20px 20px 5px 20px;
     -moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
     -webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
     box-shadow:         0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
@@ -343,6 +343,13 @@ a:visited { text-decoration: none; color: #dc4800; }
 a:hover,
 a:focus,
 a:active { text-decoration: underline; color: #dc4800; }
+
+a#learn-link {
+    float: right;
+    display: inline-block;
+    padding: 10px 30px 10px 10px;
+    margin-top: 20px;
+}
 
 a.download-link,
 a.download-link:link,
@@ -671,6 +678,10 @@ html[dir=rtl] #overlay-returning img {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     color: #fff;
+}
+
+#overlay-nonfx a img {
+    display: none;
 }
 
 #overlay-twitter,

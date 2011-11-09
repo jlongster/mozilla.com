@@ -60,6 +60,8 @@ $overlay_image = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxliv
 $button_firefox = '<a href="' . $link[2] .'"><img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-firefox.png" alt="" />' . ___('Learn More') . ' »</a>';
 $button_zoo     = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxlive/logo-zoo.png" alt="" />';
 
+$learn_link = '<a id="learn-link" href="' . $link[1] .'">' . ___('Learn More') . ' »</a>';
+
 $video_code =  <<<VIDEO_CODE
 <div id="video">
 <script src="http://player.ooyala.com/player.js?callback=receiveOoyalaEvent&playerId=fxliveplayer&width=444&height=334&wmode=opaque&embedCode=k1Y3l0MToHj6WmLwarsNsFnKZAP6lMTh"></script>
@@ -98,7 +100,6 @@ VIDEO_CODE;
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
     <meta property="og:locale" content="<?=$fb_locale?>" />
-    <meta property="fb:admins" content="219601608073693"/>
     <meta property="og:description"
           content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?>"/>
 
