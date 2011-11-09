@@ -97,6 +97,7 @@ VIDEO_CODE;
     <meta property="og:url" content="<?=$host_l10n?>/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click"/><?php /* stage: http://mzl.la/sXvbnu - prod: http://mzl.la/s2x11b */ ?>
     <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
     <meta property="og:site_name" content="<?=$page_title?>"/>
+    <meta property="og:locale" content="<?=$fb_locale?>" />
     <meta property="fb:admins" content="219601608073693"/>
     <meta property="og:description"
           content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?>"/>
