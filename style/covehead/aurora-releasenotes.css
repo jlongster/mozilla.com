@@ -162,8 +162,9 @@ body#aurora-relnotes {
 #relnoteswitcher span {
     display: block;
     padding: 12px 16px;
-    font-family: MuseoSans, "Trebuchet MS", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
     -webkit-border-top-right-radius: 6px;
     -webkit-border-bottom-right-radius: 6px;
@@ -235,6 +236,121 @@ body#aurora-relnotes {
     margin-right: 20px;
 }
 
+.section-contents {
+    background: rgb(10,2,14);
+    background: rgba(40,6,57,0.25);
+    border: 1px solid rgb(42,12,49);
+    border: 1px solid rgba(80,27,91,0.5);
+    box-shadow: 0 0 10px rgba(72,23,95,0.36) inset, 0 -1px 0 rgba(134,80,168,0.5) inset;
+}
+
+#aurora-relnotes #main-content h3 {
+    margin: 30px 0 2px 0;
+    padding: 10px;
+    background: rgb(23,7,30);
+    background: rgba(126,36,163,0.17);
+    border: 1px solid rgb(42,12,49);
+    border: 1px solid rgba(84,24,97,0.5);
+    box-shadow: 0 0 10px rgba(99,29,131,0.36) inset;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    color: #fff;
+    text-shadow: 0 1px 2px #000;
+}
+
+.section-contents ul {
+    margin: 0;
+    padding: 20px 30px;
+}
+
+.section-contents ul li {
+    margin: 0;
+    padding: 10px 20px 10px 150px;
+    min-height: 25px;
+    position: relative;
+    list-style-type: none;
+    border-bottom: 1px dotted #522853;
+}
+
+.section-contents ul li:last-child {
+    border-bottom: 0;
+}
+
+.section-contents ul h5 {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    color: #fff;
+    text-shadow: 0 1px 2px #000;
+}
+
+.section-contents ul p {
+    color: #c785e9;
+    margin: 0 0 5px 0;
+}
+
+#aurora-relnotes .tag {
+    display: inline-block;
+    padding: 0 15px 0 20px;
+    text-transform: uppercase;
+    text-align: right;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    background: #999;
+    background-image: url(/img/covehead/firefox/aurora/relnotes/tags.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    min-width: 85px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    color: #383838;
+    text-shadow: 1px 1px 0 #fff;
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 -1px 0 rgba(0,0,0,0.2) inset;
+    line-height: 22px;
+}
+
+#aurora-relnotes .tag-new {
+    background-color: #ffedcf;
+}
+
+#aurora-relnotes .tag-changed {
+    background-color: #e9cfff;
+    background-position: -150px 50%;
+}
+
+#aurora-relnotes .tag-fixed {
+    background-color: #f0ffe1;
+    background-position: -300px 50%;
+}
+
+#aurora-relnotes .tag-html5 {
+    background-color: #f8dfd8;
+    background-position: -450px 50%;
+}
+
+#aurora-relnotes .tag-resolved {
+    background-color: #dcf6ff;
+    background-position: -600px 50%;
+}
+
+#aurora-relnotes .tag-unresolved {
+    background-color: #ffc8c8;
+    background-position: -750px 50%;
+}
+
+/* }}} */
+/* {{{ Sidebar */
+
 #aurora-relnotes #sidebar {
     float: right;
     display: inline;
@@ -242,46 +358,22 @@ body#aurora-relnotes {
 }
 
 #aurora-relnotes #sidebar section {
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(100,100,100,0.3) inset;
+    padding: 30px;
+    background: rgb(20,20,20);
+    background: rgba(165,165,165,0.1);
+    border: 1px solid rgb(40,40,40);
+    border: 1px solid rgba(80,80,80,0.25);
+    box-shadow: 0 0 10px rgba(100,100,100,0.36) inset, 0 -1px 0 rgba(153,153,153,0.25) inset;
+    margin: 0 0 10px 0;
+    color: #999;
 }
 
 #aurora-relnotes #sidebar section h3 {
-    margin: 0;
-}
-
-.section-contents {
-    box-shadow: 0 0 20px rgba(100,100,100,0.3) inset;
-}
-
-#aurora-relnotes #main-content h3 {
-    margin: 30px 0 0 0;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(100,100,100,0.3) inset;
-}
-
-.section-contents ul li {
-    margin: 0;
-    padding: 20px 20px 20px 150px;
-    position: relative;
-    list-style-type: none;
-    border-bottom: 1px dotted #999;
-}
-
-.section-contents ul h5 {
-    margin: 0;
-}
-
-#aurora-relnotes .tag {
-    display: inline-block;
-    padding: 2px;
-    text-transform: uppercase;
-    text-align: right;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #999;
-    min-width: 100px;
+    margin: 0 0 5px 0;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    color: #fff;
+    font-size: 18px;
 }
 
 /* }}} */
