@@ -1,0 +1,106 @@
+<?php
+    $page_title = 'Firefox Aurora Notes';
+    $body_id    = 'aurora-relnotes';
+    $body_class = 'darkbg';
+$fonts = <<<FONTS
+    <style>
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot');
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot?iefix') format('eot'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.svg#webfont') format('svg');
+    }
+    </style>
+FONTS;
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/aurora-releasenotes.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="relnoteswitcher">
+        <h4>View notes for:</h4>
+        <ul>
+            <li><span>Desktop</span></li>
+            <li><a href="#">Mobile</a></li>
+        </ul>
+    </div>
+    <h2>
+        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/aurora/relnotes/title.png" alt="Firefox Aurora" height="51" width="346" />
+        Notes <small>(First offered to Aurora channel users on November 8th, 2011)</small>
+    </h2>
+    <p>Check out what’s below, and find answers to frequently asked questions. As always, you’re encouraged to <a href="#">tell us what you think</a>, or file a bug in <a href="#">Bugzilla</a>.</p>
+</div>
+
+<div id="main-content">
+
+    <section id="whatsnew">
+        <h3>What’s New</h3>
+        <div class="section-contents">
+            <ul>
+                <li>
+                    <span class="tag tag-new">New</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+                <li>
+                    <span class="tag tag-changed">Changed</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+                <li>
+                    <span class="tag tag-fixed">Fixed</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+                <li>
+                    <span class="tag tag-html5">HTML5</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="knownisues">
+        <h3>Known Issues</h3>
+        <div class="section-contents">
+            <ul>
+                <li>
+                    <span class="tag tag-resolved">Resolved</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+                <li>
+                    <span class="tag tag-unresolved">Unresolved</span>
+                    <h5>Lorem ipsum dolor sit</h5>
+                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus. Curabitur turpis ipsum, laoreet id semper quis, condimentum eu nunc. Morbi id ante urna. Curabitur bibendum vehicula.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+    <section>
+    <h3>Try Firefox Aurora</h3>
+    <ol>
+        <li>Check</li>
+        <li>Download</li>
+        <li>Install</li>
+        <li>Customize</li>
+    </ol>
+    </section>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
