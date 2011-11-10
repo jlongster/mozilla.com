@@ -236,17 +236,25 @@ body#aurora-relnotes {
     margin-right: 20px;
 }
 
+#aurora-relnotes #main-content a,
+#aurora-relnotes #sidebar a {
+    color: #62a5e8;
+}
+
 .section-contents {
     background: rgb(10,2,14);
     background: rgba(40,6,57,0.25);
     border: 1px solid rgb(42,12,49);
     border: 1px solid rgba(80,27,91,0.5);
     box-shadow: 0 0 10px rgba(72,23,95,0.36) inset, 0 -1px 0 rgba(134,80,168,0.5) inset;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
 }
 
 #aurora-relnotes #main-content h3 {
     margin: 30px 0 2px 0;
-    padding: 10px;
+    padding: 20px 30px 15px 30px;
     background: rgb(23,7,30);
     background: rgba(126,36,163,0.17);
     border: 1px solid rgb(42,12,49);
@@ -254,8 +262,12 @@ body#aurora-relnotes {
     box-shadow: 0 0 10px rgba(99,29,131,0.36) inset;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
+    font-size: 20px;
     color: #fff;
     text-shadow: 0 1px 2px #000;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
 }
 
 .section-contents ul {
@@ -358,6 +370,7 @@ body#aurora-relnotes {
 }
 
 #aurora-relnotes #sidebar section {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
     padding: 30px;
     background: rgb(20,20,20);
     background: rgba(165,165,165,0.1);
@@ -366,6 +379,9 @@ body#aurora-relnotes {
     box-shadow: 0 0 10px rgba(100,100,100,0.36) inset, 0 -1px 0 rgba(153,153,153,0.25) inset;
     margin: 0 0 10px 0;
     color: #999;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
 }
 
 #aurora-relnotes #sidebar section h3 {
@@ -373,8 +389,48 @@ body#aurora-relnotes {
     font-family: "Open Sans", sans-serif;
     font-style: normal;
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
 }
+
+#aurora-relnotes #sidebar section#try {
+    padding: 0;
+    margin-top: 30px;
+}
+
+#aurora-relnotes #sidebar section#try h3 {
+    padding: 20px 30px 15px 30px;
+    margin: 0;
+}
+
+#try ol {
+    margin: 0;
+    padding: 0;
+}
+
+#try ol li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-top: 1px dotted rgb(100,100,100);
+    border-top: 1px dotted rgba(150,150,150,0.4);
+}
+
+#try ol li a {
+    display: block;
+    background: url(/img/covehead/firefox/aurora/relnotes/numbers.png) 0 50% no-repeat;
+    padding: 15px 20px 15px 70px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#try ol li#try1 a,
+#try ol li#try3 a {
+    background-color: rgba(115,115,115,0.1);
+}
+
+#try ol li#try2 a { background-position: -300px 50%; }
+#try ol li#try3 a { background-position: -600px 50%; }
+#try ol li#try4 a { background-position: -900px 50%; }
 
 /* }}} */
 /* {{{  Footer */
