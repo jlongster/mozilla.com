@@ -87,6 +87,7 @@ class l10n_moz
 
             for ($i=0; $i<$lines; $i++) {
                 if (substr($f[$i],0,1) == ';' && !empty($f[$i+1])) {
+                    $f[$i] = trim(str_replace('{l10n-extra}', '', $f[$i]));
                     $GLOBALS['__l10n_moz'][trim(substr($f[$i],1))] = trim(str_replace('{ok}', '&shy;', $f[$i+1]));
                     $i++;
                 }
