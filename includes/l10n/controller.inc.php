@@ -143,16 +143,6 @@ if ( in_array($lang, array( 'id', )) ) {
 
 }
 
-// pages deactivated on production for a subset of locales for the Firefox Live project
-// reactivate them as they get done
-if ( in_array($lang, array( 'ko', )) ) {
-    $deactivated[] = 'firefoxlive';
-
-    if($pageid == 'firefoxlive') {
-        $firefox_link = $host_enUS . '/firefoxlive/';
-    }
-
-}
 
 // redirect central page to firefox features for locales that have a Firefox features page
 if ($pageid == 'central' && in_array($lang, array( 'bg', 'ca', 'cs', 'da', 'de', 'el', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'eu', 'fi', 'fr', 'hr', 'hu', 'it', 'lt', 'nb-NO', 'nl', 'pl', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl', 'sq', 'sr', 'sv-SE', 'tr', 'uk', 'zh-TW' )) ) {
