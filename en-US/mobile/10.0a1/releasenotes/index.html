@@ -2,21 +2,29 @@
     $page_title = 'Firefox Aurora Notes';
     $body_id    = 'aurora-relnotes';
     $body_class = 'darkbg';
+
     $extra_headers = <<<EXTRA_HEADERS
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
     <script src="{$config['static_prefix']}/js/html5.js"></script>
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/aurora-releasenotes.css" media="screen" />
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
-
 ?>
 
 <div id="main-feature">
     <div id="relnoteswitcher">
         <h4>View notes for:</h4>
         <ul>
-            <li><span>Desktop</span></li>
-            <li><a href="#">Mobile</a></li>
+          <li>
+            
+            <a href="/firefox/10.0a1/releasenotes/">Desktop</a>
+            
+          </li>
+          <li>
+            
+            <span>Mobile</span>
+            
+          </li>
         </ul>
     </div>
     <h2>
@@ -32,24 +40,46 @@ EXTRA_HEADERS;
         <h3>What’s New</h3>
         <div class="section-contents">
             <ul>
+              
                 <li>
-                    <span class="tag tag-new">New</span>
-                    <h5>Lorem ipsum dolor sit</h5>
-                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus.</p>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Just an across the board feature.</h5>
+                    <!-- <p></p> -->
                 </li>
+              
                 <li>
-                    <span class="tag tag-changed">Changed</span>
-                    <h5>Lorem ipsum dolor sit</h5>
-                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus.</p>
+                    <span class="tag tag-changed">CHANGED</span>
+                    <!-- The description is the title for now -->
+                    <h5>Renamed Firefox to Wetfox across the board.</h5>
+                    <!-- <p></p> -->
                 </li>
-                <li>
-                    <span class="tag tag-fixed">Fixed</span>
-                    <h5>Lorem ipsum dolor sit</h5>
-                </li>
+              
                 <li>
                     <span class="tag tag-html5">HTML5</span>
-                    <h5>Lorem ipsum dolor sit</h5>
+                    <!-- The description is the title for now -->
+                    <h5>This is an example of an <i>HTML5</i> feature!</h5>
+                    <!-- <p></p> -->
                 </li>
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <!-- The description is the title for now -->
+                    <h5>Not a bug, but marked as "fixed" using a tag.</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+
+
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <h5>
+                      Another test
+                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=672892">672892</a>)
+                    </h5>
+                </li>
+              
             </ul>
         </div>
     </section>
@@ -58,16 +88,14 @@ EXTRA_HEADERS;
         <h3>Known Issues</h3>
         <div class="section-contents">
             <ul>
+              
                 <li>
-                    <span class="tag tag-resolved">Resolved</span>
-                    <h5>Lorem ipsum dolor sit</h5>
-                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus.</p>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>This is an example of a crash found in 10, fixed in 11.</h5>
                 </li>
-                <li>
-                    <span class="tag tag-unresolved">Unresolved</span>
-                    <h5>Lorem ipsum dolor sit</h5>
-                    <p>Amet, consectetur adipiscing elit. Nullam tellus odio, gravida vitae convallis quis, euismod nec metus.</p>
-                </li>
+              
             </ul>
         </div>
     </section>
@@ -79,10 +107,10 @@ EXTRA_HEADERS;
     <section id="try">
         <h3>Try Firefox Aurora</h3>
         <ol>
-            <li id="try1"><a href="#">Check »</a></li>
-            <li id="try2"><a href="#">Download »</a></li>
-            <li id="try3"><a href="#">Install »</a></li>
-            <li id="try4"><a href="#">Customize »</a></li>
+          <li id="try1"><a href="#">Check »</a></li>
+          <li id="try2"><a href="#">Download »</a></li>
+          <li id="try3"><a href="#">Install »</a></li>
+          <li id="try4"><a href="#">Customize »</a></li>
         </ol>
     </section>
 
