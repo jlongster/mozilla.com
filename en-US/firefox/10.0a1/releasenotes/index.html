@@ -31,7 +31,7 @@ EXTRA_HEADERS;
         <img src="<?=$config['static_prefix']?>/img/covehead/firefox/aurora/relnotes/title.png" alt="Firefox Aurora" height="51" width="346" />
         Notes <small>(First offered to Aurora channel users on November 8th, 2011)</small>
     </h2>
-    <p>Check out what’s below, and find answers to frequently asked questions. As always, you’re encouraged to <a href="#">tell us what you think</a>, or file a bug in <a href="#">Bugzilla</a>.</p>
+    <p>Check out what’s below, and find answers to frequently asked questions. As always, you’re encouraged to <a href="http://input.mozilla.com/feedback">tell us what you think</a>, or file a bug in <a href="https://bugzilla.mozilla.org/enter_bug.cgi">Bugzilla</a>.</p>
 </div>
 
 <div id="main-content">
@@ -44,42 +44,56 @@ EXTRA_HEADERS;
                 <li>
                     <span class="tag tag-new">NEW</span>
                     <!-- The description is the title for now -->
-                    <h5>Just an across the board feature.</h5>
+                    <h5>Two-finger swiping on a Mac OS X Lion can be used for moving back/forward</h5>
                     <!-- <p></p> -->
                 </li>
               
                 <li>
-                    <span class="tag tag-changed">CHANGED</span>
+                    <span class="tag tag-new">NEW</span>
                     <!-- The description is the title for now -->
-                    <h5>The release notes are better.</h5>
+                    <h5>The forward button is now hidden until you navigate back</h5>
                     <!-- <p></p> -->
                 </li>
               
                 <li>
-                    <span class="tag tag-changed">CHANGED</span>
+                    <span class="tag tag-new">NEW</span>
                     <!-- The description is the title for now -->
-                    <h5>Renamed Firefox to Wetfox across the board.</h5>
+                    <h5>Anti-Aliasing for WebGL is now implemented (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=615976">bug 615976</a>)</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Inspect tool with content highlighting, includes new CSS Style Inspector</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Full Screen APIs allow you to build a web application that runs full screen (see the <a href="https://wiki.mozilla.org/Platform/Features/Full_Screen_APIs">feature page</a>)</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>View source syntax highlighting now uses the HTML5 parser (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=482921">bug 482921</a>)</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>CSS3 3D-Transforms are now supported (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=505115">bug 505115</a>)</h5>
                     <!-- <p></p> -->
                 </li>
               
                 <li>
                     <span class="tag tag-html5">HTML5</span>
                     <!-- The description is the title for now -->
-                    <h5>This is an example of an <i>HTML5</i> feature!</h5>
-                    <!-- <p></p> -->
-                </li>
-              
-                <li>
-                    <span class="tag tag-html5">HTML5</span>
-                    <!-- The description is the title for now -->
-                    <h5>This is another example of an <i>HTML5</i> feature!</h5>
-                    <!-- <p></p> -->
-                </li>
-              
-                <li>
-                    <span class="tag tag-fixed">FIXED</span>
-                    <!-- The description is the title for now -->
-                    <h5>Not a bug, but marked as "fixed" using a tag.</h5>
+                    <h5>New &lt;bdi&gt; element for bi-directional text isolation, along with supporting CSS properties (see bugs <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=613149">613149</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662288">662288</a>)</h5>
                     <!-- <p></p> -->
                 </li>
               
@@ -89,32 +103,16 @@ EXTRA_HEADERS;
                 <li>
                     <span class="tag tag-fixed">FIXED</span>
                     <h5>
-                      This is an example of a crash found in 10 aurora, fixed in 10 beta.
-                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=422044">422044</a>)
+                      Some users may experience a crash when moving bookmarks
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=681795">681795</a>)
                     </h5>
                 </li>
               
                 <li>
                     <span class="tag tag-fixed">FIXED</span>
                     <h5>
-                      This bug caused us to roll 10.0.1 grrrrr.
-                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=688637">688637</a>)
-                    </h5>
-                </li>
-              
-                <li>
-                    <span class="tag tag-fixed">FIXED</span>
-                    <h5>
-                      Another test
-                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=672892">672892</a>)
-                    </h5>
-                </li>
-              
-                <li>
-                    <span class="tag tag-fixed">FIXED</span>
-                    <h5>
-                      Desktop bug fixed in 10 beta
-                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=696188">696188</a>)
+                      For some users, visiting Google+ will cause the back and forward buttons to no longer work
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=670318">670318</a>)
                     </h5>
                 </li>
               
@@ -131,14 +129,60 @@ EXTRA_HEADERS;
                     <span class="tag tag-unresolved">
                       Unresolved
                     </span>
-                    <h5>A bug that's been around since 9, still unfixed - ruh roh.</h5>
+                    <h5>
+                      Mac OS X only - after installing the latest Java release from Apple, Firefox may crash when closing a tab with a Java applet installed
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=700835">700835</a>)
+                    </h5>
                 </li>
               
                 <li>
-                    <span class="tag tag-resolved">
-                      Resolved
+                    <span class="tag tag-unresolved">
+                      Unresolved
                     </span>
-                    <h5>This is an example of a crash found in 10, fixed in 11.</h5>
+                    <h5>
+                      Some synaptic touch pads are unable to vertical scroll
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=622410">622410</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      For some users, scrolling in the main GMail window will be slower than usual
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=579260">579260</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      If you try to start Firefox using a locked profile, it will crash
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=573369">573369</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      This version of the beta will not work on Macintosh hardware with Power PC CPUs
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=587799">587799</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      The video control buttons may not work when viewing QuickTime videos with libtotem
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=625036">625036</a>)
+                    </h5>
                 </li>
               
             </ul>
@@ -152,36 +196,44 @@ EXTRA_HEADERS;
     <section id="try">
         <h3>Try Firefox Aurora</h3>
         <ol>
-          <li id="try1"><a href="#">Check »</a></li>
-          <li id="try2"><a href="#">Download »</a></li>
-          <li id="try3"><a href="#">Install »</a></li>
-          <li id="try4"><a href="#">Customize »</a></li>
+          <li id="try1">
+            <a href="/firefox/10.0a1/system-requirements/">
+              Check »
+            </a>
+          </li>
+          <li id="try2">
+            <a href="/firefox/channel/">
+              Download »
+            </a>
+          </li>
+          
+          <li id="try3"><a href="https://support.mozilla.com/en-US/kb/Installing%20Firefox">Install</a></li>
+          <li id="try4"><a href="https://addons.mozilla.org/en-US/firefox/">Customize</a></li>
+          
         </ol>
     </section>
 
     <section id="get-involved">
         <h3>Want to get involved?</h3>
         <p>Did you know that most of the contention Firefox Support was written by volunteers?</p>
-        <a href="#">Find out more »</a>
+        <a href="/contribute/">Find out more »</a>
     </section>
 
 
     <section id="problems">
         <h3>Having Problems?</h3>
         <ol>
-            <li><a href="#">Give us feedback on your experience with Aurora »</a> [dev only]</li>
-            <li><a href="#">Search for answers on the Firefox Support page »</a></li>
-            <li><a href="#">Look at the known issues list and see if we already know about the problem »</a> [dev only]</li>
-            <li><a href="#">If you can’t find reference to your issue, please consider filing a technical bug report »</a> [dev only]</li>
+          <li><a href="http://support.mozilla.com/">Search for answers on the Firefox Support page »</a></li>
+          <li><a href="#knownissues">Look at the known issues list and see if we already know about the problem »</a></li>
+          <li><a href="https://bugzilla.mozilla.org/enter_bug.cgi">If you can’t find reference to your issue, please consider filing a technical bug report »</a></li>
         </ol>
     </section>
 
 
     <section id="other">
-        <h3>Other Resources</h3>
-        <p><a href="#">Firefox Support page »</a></p>
-        <p><a href="#">Developer Information »</a></p>
-        <p><a href="#">Future of Firefox Blog »</a></p>
+      <h3>Other Resources</h3>
+      <p><a href="https://developer.mozilla.org/en/Firefox_10_for_developers">Developer Information »</a></p>
+      <p><a href="https://blog.mozilla.com/futurereleases/">Future of Firefox Blog »</a></p>
     </section>
 
 </div>
