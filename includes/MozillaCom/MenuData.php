@@ -141,7 +141,7 @@ class MozillaCom_MenuData
                         ),
                         'submenu_releases_beta' => array(
                             'title' => 'Firefox Beta',
-                            'href'  => "/{$this->lang}/firefox/beta/",
+                            'href'  => "/beta/",
                         ),
                         'submenu_releases_firefox' => array(
                             'title' => 'Firefox',
