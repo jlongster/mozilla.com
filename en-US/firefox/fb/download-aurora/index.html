@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml"
+      lang="en-US"
+      dir="ltr">
+    <head>
+        <title>Welcome</title>
+        <link href="<?=$config['static_prefix']?>/style/covehead/content.css" rel="stylesheet">
+        <style type="text/css">
+            @font-face {
+                font-family: 'MuseoSans500';
+                src: url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.eot');
+                src: url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+    
+            html {
+                min-height: 800px;
+            }
+            
+            body {
+                width: 520px;
+                min-height: 800px;
+                background-image: url(images/bg.jpg);
+                background-repeat: no-repeat;
+                background-color: #000;
+                color: #484848;
+                overflow: hidden;
+                margin: 0px;
+                padding: 0px 0px 0px 0px;
+                font-family: georgia, serif;
+            }
+            
+            h1 {
+                 font-family: Georgia, serif;
+                 font-style: italic;
+                 font-weight: normal;
+                 font-size: 32px;
+                 margin: 50px 30px 10px 30px;
+                 padding: 0;
+                 color: #d39eff;
+            }
+
+            h1 b {
+                font-family: MuseoSans500, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                color: #fff;
+                font-size: 52px;
+                line-height: 1;
+                letter-spacing: -0.05em;
+                text-transform: uppercase;
+                display: block;
+            }
+            
+            h2 {
+                font-family: MetaBlack,"Trebuchet MS",sans-serif;
+                font-weight: bold;
+                letter-spacing: -0.02em;
+                font-size: 38px;
+                text-transform: uppercase;
+                padding: 0px;
+                margin: 0px;
+                line-height: 18px;
+                position: absolute;
+                left: 265px;
+                top: 235px;
+            }
+            .intro {
+                color: #FCD348;
+                font-size: 18px;
+                font-style: normal;
+                padding: 0 30px;
+                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+            }
+            .box {
+                zoom: 1;
+                clear: left;
+                margin: 5px 30px;
+                padding: 20px;
+                background: rgb(10,2,14);
+                background: rgba(40,6,57,0.4);
+                border: 1px solid rgb(42,12,49);
+                border: 1px solid rgba(80,27,91,0.5);
+                box-shadow: 0 0 10px rgba(72,23,95,0.5) inset, 0 -1px 0 rgba(134,80,168,0.5) inset;
+                -webkit-border-radius: 1px;
+                -moz-border-radius: 1px;
+                border-radius: 1px;
+            }
+            .box h3 {
+                font-family: MuseoSans500, "Trebuchet MS", sans-serif;
+                font-weight: normal;
+                font-size: 16px;
+                font-style: normal;
+                text-transform: uppercase;
+                color: #fff;
+                margin: 0;
+            }
+            .box p {
+                color: #d39eff;
+                margin: 5px 0 0 0;
+                font-style: italic;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+/* {{{ Main Content */
+
+
+#download_aurora_button {
+    float: left;
+    display: inline;
+    margin: 10px 20px 30px 30px;
+}
+
+#download_aurora_mobile_button {
+    float: left;
+    display: inline;
+    margin: 10px 20px 30px 0;
+}
+
+.download-link img {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+a.download-link,
+a.download-link:link,
+a.download-link:visited {
+    margin: 5px 0;
+    height: auto;
+    zoom:1;
+    position: relative;
+}
+
+a.download-link span.download-content {
+    zoom: 1;
+    letter-spacing: -0.02em;
+    background: url("<?=$config['static_prefix']?>/img/covehead/channel/download-arrow.png") no-repeat 10px 12px;
+    padding: 10px 10px 12px 10px;
+    margin: 0;
+    height: auto;
+    font-size: 15px;
+    line-height: 1.1;
+}
+
+* html ul.home-download li a.download-link,
+* html a.download-link,
+* html a.download-link:link,
+* html a.download-link:active,
+* html a.download-link:hover,
+* html a.download-link:active {
+    background: #84C63C;
+    box-shadow: none;
+    height: auto;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84C63C', endColorstr='#489615',GradientType=0 ); /* ie */
+}
+
+* html a.download-link span.download-content {
+    background: url("<?=$config['static_prefix']?>/img/covehead/channel/download-arrow.png") no-repeat 10px 12px;
+}
+
+.home-download,
+ul.home-download {
+    width: 220px;
+}
+
+.home-download a.download-link span.download-title {
+    background: none;
+    line-height: 1.1;
+    display: block;
+    padding: 0 0 4px 28px;
+    margin: 0;
+    font-style: italic;
+    font-size: 20px;
+}
+
+ul.home-download li a.download-link span.download-info,
+ul.home-download li a.download-link span.download-info em {
+    display: inline;
+    margin-left: 2px;
+    font-style: italic;
+}
+
+.download-other {
+    margin: 0;
+    width: auto;
+    text-align: left;
+}
+
+ a.download span {
+    padding: 10px 20px 12px 45px;
+    display: block;
+    background: url("<?=$config['static_prefix']?>/img/covehead/download-arrow.png") no-repeat 12px 50%;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+ a.download span strong {
+    font-size: 20px;
+    display: block;
+    font-weight: normal;
+}
+
+/* }}} */
+        </style>
+    </head>
+    <body>
+      <div class="content">
+        <h1><img src="images/title.png" alt="Firefox Aurora" height="101" /></h1>
+        <p class="intro">Download Aurora and help shape the future of Firefox.</p>
+
+        <script><? include $config['file_root'].'/js/download.old.js'; ?></script>
+        <div id="download_aurora_button">
+            <script>
+                <!--
+                // Configure the Firefox download write script
+                var gDownloadTracker = "";
+
+                var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org','DCS.dcsuri', '/en-US/firefox/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
+                var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + "\" href=\"%BOUNCER_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Download</span> Firefox Aurora <span class=\"download-info\"><em class=\"download-lang\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
+
+                var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
+                var gDownloadItemOtherPlatform = "<a href=\"/$lang/firefox/$latest_firefox_version/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
+
+                document.writeln("<ul class=\"home-download " + gCssClass + " \">");
+                writeDownloadItems("fxaurora");
+                document.writeln("<\/ul>");
+                document.writeln("<div class=\"download-other\">");
+                document.writeln("<a href=\"\/$lang\/firefox\/all-aurora.html\">All Systems &amp; Languages<\/a> | ");
+                document.writeln("<a href=\"\/$lang\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
+                document.writeln("<\/div>");
+                //-->
+            </script>
+        </div>
+        <div id="download_aurora_mobile_button">
+        <div class="home-download beta-download">
+            <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_Aurora"
+               class="download-link download-firefox"
+               onclick="dcsMultiTrack('DCS.dcssip', 'wiki.mozilla.org',
+                                      'DCS.dcsuri', 'Mobile/Platforms/Android',
+                                      'WT.ti', 'Link:  Firefox Aurora for Mobile',
+                                      'WT.dl', 99,
+                                      'WT.z_convert', 'Firefox Aurora for Mobile',
+                                      'WT.si_n', 'Firefox Aurora for Mobile',
+                                      'WT.si_x', '2');">
+                <span class="download-content">
+                <span class="download-title">Download</span>
+                Firefox Aurora for Mobile
+                </span>
+                <img src="<?=$config['static_prefix']?>/img/covehead/channel/icon-mobile.png" alt="" />
+            </a>
+            <div class="download-other"><a href="/$lang/mobile/platforms/">Supported devices</a>  | 
+<a href="/$lang/legal/privacy/firefox.html">Privacy Policy</a></div>
+        </div>
+        </div>
+
+        <div class="box">
+            <h3>1. Preview Features</h3>
+            <p>Get a sneak peak at the latest developer tools, security features and innovating HTML5 and Web technologies.</p>
+        </div>
+
+        <div class="box">
+            <h3>2. Share Feedback</h3>
+            <p>Test performance in an experimental environment, file bugs and help us determine what makes it to Beta.</p>
+        </div>
+
+        <div class="box">
+            <h3>3. Shape Firefox</h3>
+            <p>Become part of a community of users, contributors and developers working to make our next Final Release our best yet.</p>
+        </div>
+
+        <script src="https://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript">
+          FB.init({
+              appId  : '219601608073693',
+              status : false,
+              cookie : false
+          });
+                  
+          // FB.Canvas.setAutoResize();
+		  FB.Canvas.setSize({ width: 520, height: 800 });
+          
+        </script>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <style type="text/css">
+            @font-face {
+                font-family: 'MuseoSans500';
+                src: url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.eot');
+                src: url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+                     url('<?=$config['static_prefix']?>/img/fonts/MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+    
+            html {
+                min-height: 800px;
+            }
+            
+            body {
+                width: 520px;
+                min-height: 800px;
+                background-image: url(images/bg.jpg);
+                background-repeat: no-repeat;
+                background-color: #000;
+                color: #484848;
+                overflow: hidden;
+                margin: 0px;
+                padding: 0px 0px 0px 0px;
+            }
+            
+            h1 {
+                 font-family: Georgia, serif;
+                 font-style: italic;
+                 font-weight: normal;
+                 font-size: 32px;
+                 margin: 0px;
+                 padding: 90px 40px 40px 40px;
+                 color: #d39eff;
+            }
+
+            h1 b {
+                font-family: MuseoSans500, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                color: #fff;
+                font-size: 52px;
+                line-height: 1;
+                letter-spacing: -0.05em;
+                text-transform: uppercase;
+                display: block;
+            }
+            
+            h2 {
+                font-family: MetaBlack,"Trebuchet MS",sans-serif;
+                font-weight: bold;
+                letter-spacing: -0.02em;
+                font-size: 38px;
+                text-transform: uppercase;
+                padding: 0px;
+                margin: 0px;
+                line-height: 18px;
+                position: absolute;
+                left: 265px;
+                top: 235px;
+            }
+
+            #like {
+                vertical-align: top;
+                box-shadow: 0 0 40px #6ea9be;
+            }
+        </style>
+    </head>
+    <body>
+      <div class="content">
+        <h1><img src="images/like.png" alt="Like" height="31" width="82" id="like"> the <b>Future of Firefox Today!</b></h1>
+        <div id="fb-root"></div>
+        <script src="https://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript">
+          FB.init({
+              appId  : '219601608073693',
+              status : false,
+              cookie : false
+          });
+                  
+          // FB.Canvas.setAutoResize();
+		  FB.Canvas.setSize({ width: 520, height: 800 });
+          
+        </script>
+    </body>
+</html>
