@@ -12,6 +12,26 @@ EXTRA_HEADERS;
     include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
 ?>
 
+<script>
+
+// Add a class to the body tag to alternate promo features
+var feature_options = new Array( "feature-affiliates", "feature-personalize" );
+
+if (Math.random) {
+    var feature_choice = Math.floor(Math.random() * (feature_options.length));
+
+    // Just in case javascript gets carried away...
+    feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
+
+    if (document.body.className == '') {
+        document.body.className += ' '+feature_options[feature_choice];
+    } else {
+        document.body.className = feature_options[feature_choice];
+    }
+}
+
+</script>
+
 <div id="main-feature">
 
     <div id="feature-mobile">
@@ -57,6 +77,14 @@ EXTRA_HEADERS;
         <p>Make it look how you like and do what you want.</p>
         <a href="https://addons.mozilla.org/">
            Get started with add-ons! <span>»</span>
+        </a>
+    </div>
+
+    <div class="sub-feature" id="sub-affiliates">
+        <h3>Share <span>Firefox</span></h3>
+        <p>Become a Firefox Affiliate today!</p>
+        <a href="https://affiliates.mozilla.org/">
+           Sign up now <span>»</span>
         </a>
     </div>
 
