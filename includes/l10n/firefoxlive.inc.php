@@ -521,11 +521,15 @@ VIDEO_CODE;
 
         var historyCookieName = 'FirefoxLiveHistory';
         var history = getCookie(historyCookieName);
-        setCookie(historyCookieName, 'visited', '/', 31 * 24 * 60 * 60);
+        history = parseInt(history, 10);
+        if (isNaN(history)) {
+            history = 0;
+        }
+        setCookie(historyCookieName, history + 1, '/', 31 * 24 * 60 * 60);
 
-        if (history == 'visited') {
+        if (history > 0 && history < 3) {
             returning.open();
-        } else {
+        } else if (history < 3) {
             $video.hide();
             slideshow.open();
             slideshow.$el.bind('close', function() {
