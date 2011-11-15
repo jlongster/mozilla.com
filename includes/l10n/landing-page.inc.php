@@ -5,7 +5,7 @@ $body_id = 'home';
 $extra_headers .= <<<EXTRA_HEADERS
     <meta property="og:image" content="http://mozcom-cdn.mozilla.net/img/firefox-100.jpg" />
     <meta name="description" content="{$meta_description}" />
-    <link rel="canonical" href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/firefox"/>
+    <link rel="canonical" href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/firefox/">
 
 EXTRA_HEADERS;
 
