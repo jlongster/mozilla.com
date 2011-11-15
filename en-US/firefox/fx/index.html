@@ -7,6 +7,8 @@
     $extra_headers = <<<EXTRA_HEADERS
     <meta name="WT.ad" content="Download Firefox;Participate;Amazing Features;Need Help;Twitter;Facebook;Connect;Newsletter;Mobile;Addons;Personas" />
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/home-fx.css" media="screen" />
+    <link rel="canonical" href="{$config['url_scheme']}://{$config['server_name']}/{$lang}/firefox"/>
+
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
     include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
