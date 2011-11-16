@@ -77,81 +77,43 @@ EXTRA_HEADERS;
             <h3>Customize: <span>Add-ons</span></h3>
             <p>Many of the most popular add-ons are extensions, little extras you download to add more bells & whistles to Firefox. Compare prices, check the weather, listen to music, update your Facebook profile – all built right into the browser! There are <a href="https://addons.mozilla.org/firefox/">thousands to choose from</a>, but here are a few of our favorites:</p>
         </div>
-        <div id="addons-feature" class="pager pager-with-tabs">
+        <div id="addons-feature">
+        <div id="addons-video" class="mozilla-video-control">
+            <video
+                id="video"
+                width="640"
+                height="360"
+                poster="<?=$config['static_prefix']?>/img/covehead/video/poster-addons.jpg"
+                controls="controls">
 
-            <ul id="addons-nav" class="pager-tabs">
-                <li id="starter-link"><a href="#feature-starter">Starter <span>Pack</span></a></li>
-                <li id="shopping-link"><a href="#feature-shopping">Online <span>Shopping</span></a></li>
-                <li id="reference-link"><a href="#feature-reference">Reference <span>Desk</span></a></li>
-                <li id="travel-link"><a href="#feature-travel">Travel <span>Help</span></a></li>
-            </ul>
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/696470/FF%20576%20h264%20v6.webm" type="video/webm" />
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/696470/FF%20576%20h264%20v6.theora.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+                <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/696470/FF%20576%20h264%20v6.mp4" type="video/mp4" />
 
-            <div class="pager-content">
+                <object type="application/x-shockwave-flash"
+                    style="width: 640px; height: 388px;"
+                    data="/includes/flash/playerWithControls.swf?flv=serv/marketing/696470/FF%20576%20h264%20v6.mp4&amp;autoplay=false&amp;msg=Play%20Video">
 
-                <div class="addons-feature-contents" id="feature-starter">
-                    <script>// <![CDATA[
-                    document.getElementById('feature-starter').id = 'page-feature-starter';
-                    // ]]></script>
+                    <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/696470/FF%20576%20h264%20v6.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+                    <param name="wmode" value="transparent" />
+
+                    <div class="video-player-no-flash">
+                    This video requires a browser with support for open video:
                     <ul>
-                        <li id="addon-yoono">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/yoono-twitter-facebook-linkedi//?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-yoono.png" alt="Yoono icon">
-                                <span class="desc">Yoono manages all social media in a tidy sidebar.</span>
-                                <span class="link">Download »</span>
-                            </a>
-                        </li>
-                        <li id="addon-invisiblehand">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/invisiblehand/?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-invisiblehand.png" alt="InvisibleHand icon">
-                                <span class="desc">Shop online and save with Invisible Hand.</span>
-                                <span class="link">Download »</span>
-                            </a>
-                        </li>
-                        <li id="addon-imtranslator">
-                            <a href="https://addons.mozilla.org/en-US/firefox/addon/imtranslator/?src=mozcom-personalize">
-                                <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-imtranslator.png" alt="ImTranslator icon">
-                                <span class="desc">Enjoy real-time translation with ImTranslator.</span>
-                                <span class="link">Download »</span>
-                            </a>
-                        </li>
+                    <li><a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater</li>
+                    <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
                     </ul>
-                </div>
 
-                <div class="addons-feature-contents" id="feature-shopping">
-                    <script>// <![CDATA[
-                    document.getElementById('feature-shopping').id = 'page-feature-shopping';
-                    // ]]></script>
-                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-button-11542/?src=mozcom-personalize">
-                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-amazonbutton.png" alt="Amazon Button icon">
-                        <em>Amazon Button</em></a></h4>
-                    <p>Easily navigate popular Amazon destinations, search Amazon using context menu, visually Browse bestsellers/most gifted items, browse Amazon by directory and much more!</p>
-                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/amazon-button-11542/?src=mozcom-personalize">Get the Amazon Button Add-on now »</a></p>
-                </div>
+                    or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+                    Alternatively, you may use the video download links to the right.
+                    </div>
 
-                <div class="addons-feature-contents" id="feature-reference">
-                    <script>// <![CDATA[
-                    document.getElementById('feature-reference').id = 'page-feature-reference';
-                    // ]]></script>
-                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/similarweb-sites-recommendatio/?src=mozcom-personalize">
-                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-similarweb.png" alt="SimilarWeb icon">
-                        <em>SimilarWeb</em></a></h4>
-                    <p>An easy way to find the best sites on the Internet! As you browse, find the most interesting related sites by similarity and category and get the latest articles and buzz on every site you visit.</p>
-                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/similarweb-sites-recommendatio/?src=mozcom-personalize">Get the SimilarWeb Add-on now »</a></p>
-                </div>
+                </object>
 
-                <div class="addons-feature-contents" id="feature-travel">
-                    <script>// <![CDATA[
-                    document.getElementById('feature-travel').id = 'page-feature-travel';
-                    // ]]></script>
-                    <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/flagfox/?src=mozcom-personalize">
-                        <img src="<?=$config['static_prefix']?>/img/firefox/addons/icon-flagfox.png" alt="Flagfox icon">
-                        <em>Flagfox</em></a></h4>
-                    <p>Displays a country flag depicting the location of the current site’s server and provides quick access to detailed location and webserver information.</p>
-                    <p class="link"><a href="https://addons.mozilla.org/en-US/firefox/addon/flagfox/?src=mozcom-personalize">Get the Flagfox Add-on now »</a></p>
-                </div>
-
-            </div>
-            <p id="builder-link">Are you a web developer? <a href="https://addons.mozilla.org/en-US/developers/builder">Learn how to make fantastic, restartless add-ons.</a></p>
+            </video>
+        </div>
+        <p id="builder-link">Are you a web developer? <a href="https://addons.mozilla.org/en-US/developers/builder">Learn how to make fantastic, restartless add-ons.</a></p>
+        </div>
         </div>
     </div>
     <div class="features-container" id="plugins">
@@ -188,7 +150,7 @@ EXTRA_HEADERS;
                 <source src="<?= $config['url_scheme'] ?>://videos-cdn.mozilla.net/serv/marketing/firefox4/FoxySync640.mp4" type="video/mp4" />
 
                 <object type="application/x-shockwave-flash"
-                    style="width: 480px; height: 298px;"
+                    style="width: 640px; height: 388px;"
                     data="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/FoxySync640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
 
                     <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/marketing/firefox4/FoxySync640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
