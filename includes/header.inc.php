@@ -219,7 +219,7 @@ if (gPlatform == 1) {
 	<!-- end #header -->
 
         <div id="preload">
-          <img src="/img/censored_blue.png" width="1" height="1" />
+          <img src="{$config['static_prefix']}/img/censored_blue.png" width="1" height="1" />
         </div>
 
     {$dynamic_breadcrumb}
