@@ -26,9 +26,9 @@ if (Math.random) {
     feature_choice = ( (feature_choice < feature_options.length) && feature_choice >= 0) ? feature_choice : 0;
 
     if (document.body.className == '') {
-        document.body.className += ' '+feature_options[feature_choice];
+        document.body.className = feature_options[feature_choice];    
     } else {
-        document.body.className = feature_options[feature_choice];
+        document.body.className += ' '+feature_options[feature_choice];
     }
 }
 

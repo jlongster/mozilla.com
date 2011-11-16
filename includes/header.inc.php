@@ -177,7 +177,7 @@ div#preload { display: none }
 
 <script>// <![CDATA[
 // add classes to body to indicate browser version and JavaScript availabiliy
-ifcens (document.body.className == '') {
+if (document.body.className == '') {
     document.body.className = 'js';
 } else {
     document.body.className += ' js';
