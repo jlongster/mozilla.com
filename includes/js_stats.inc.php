@@ -54,6 +54,11 @@ if (!empty($disable_js_stats)) {
     }
     $opt_json = json_encode($wt_options);
 
+    if (!empty($auto_link_tracking)) {
+        $auto_link_output = '_tag.trackevents=true;';
+    } else {
+        $auto_link_output = '';
+    }
 
     $stats_js = <<<STATS_JS
 <script type="text/javascript" src="{$config['static_prefix']}/includes/min/min.js?g=js_stats"></script>
@@ -65,6 +70,7 @@ _tag.dcsGetId();
 </script>
 <script>
 //<![CDATA[
+{$auto_link_output}
 _tag.dcsCollect();
 //]]>
 </script>
