@@ -158,6 +158,20 @@ $dynamic_header = <<<DYNAMIC_HEADER
     background-position: -25px 0;
 }
 
+a.censor {
+    background-image: url({$config['static_prefix']}/img/censored_white.png);
+}
+
+/* Preload the rollover image */
+a.censor:before {
+    background-image: url({$config['static_prefix']}/img/censored_blue.png);
+    display: none;
+}
+
+a.censor:hover {
+    background-image: url({$config['static_prefix']}/img/censored_blue.png);
+}
+
 </style>
 </head>
 
@@ -165,7 +179,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
 <script>// <![CDATA[
 // add classes to body to indicate browser version and JavaScript availabiliy
-if (document.body.className == '') {
+ifcens (document.body.className == '') {
     document.body.className = 'js';
 } else {
     document.body.className += ' js';
@@ -194,7 +208,12 @@ if (gPlatform == 1) {
 	<!-- start #header -->
 	<div id="header">
 		<div>
-		<h1><a href="/{$lang}/firefox/" title="{$l10n->get('Back to home page')}">{$l10n->get('Mozilla Firefox')}</a></h1>
+		<h1>
+                  <a href="/{$lang}/firefox/" title="{$l10n->get('Back to home page')}">{$l10n->get('Mozilla Firefox')}</a>
+                </h1>
+
+                <a class="censor" style="width:230px;height:35px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:16px;left:-10px;background-position:center center;background-repeat:no-repeat;-moz-transform: rotate(-2deg);" href="http://www.mozilla.org/sopa"></a>
+
 		<a href="http://www.mozilla.org/" class="mozilla">mozilla</a>
 		{$dynamic_top_menu}
 		</div>
