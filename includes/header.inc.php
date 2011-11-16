@@ -160,17 +160,15 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
 a.censor {
     background-image: url({$config['static_prefix']}/img/censored_white.png);
-}
-
-/* Preload the rollover image */
-a.censor:before {
-    background-image: url({$config['static_prefix']}/img/censored_blue.png);
-    display: none;
+    -moz-transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
 }
 
 a.censor:hover {
     background-image: url({$config['static_prefix']}/img/censored_blue.png);
 }
+
+div#preload { display: none }
 
 </style>
 </head>
@@ -212,13 +210,17 @@ if (gPlatform == 1) {
                   <a href="/{$lang}/firefox/" title="{$l10n->get('Back to home page')}">{$l10n->get('Mozilla Firefox')}</a>
                 </h1>
 
-                <a class="censor" style="width:230px;height:35px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:16px;left:-10px;background-position:center center;background-repeat:no-repeat;-moz-transform: rotate(-2deg);" href="http://www.mozilla.org/sopa"></a>
+                <a class="censor" style="width:230px;height:35px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:16px;left:-10px;background-position:center center;background-repeat:no-repeat;" href="http://www.mozilla.org/sopa"></a>
 
 		<a href="http://www.mozilla.org/" class="mozilla">mozilla</a>
 		{$dynamic_top_menu}
 		</div>
 	</div>
 	<!-- end #header -->
+
+        <div id="preload">
+          <img src="/img/censored_blue.png" width="1" height="1" />
+        </div>
 
     {$dynamic_breadcrumb}
 DYNAMIC_HEADER;
