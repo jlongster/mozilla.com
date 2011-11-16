@@ -288,5 +288,10 @@ ul.home-download li a.download-link span.download-info em {
 		  FB.Canvas.setSize({ width: 520, height: 800 });
           
         </script>
+<?
+// Webtrends stats, see bug 556384
+require "{$config['file_root']}/includes/js_stats.inc.php";
+echo $stats_js;
+?>
     </body>
 </html>
