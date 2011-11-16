@@ -16,6 +16,9 @@ BrowserMatch "(?!(Android|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 
+# Bug 702757 (SOPA)
+RewriteRule ^sopa/?$ /en-US/sopa/ [L]
+
 # Bug 694878
 RewriteRule ^job[/]?$ /careers/ [L,R=301]
 RewriteRule ^jobs[/]?$ /careers/ [L,R=301]
