@@ -25,6 +25,119 @@ $extracontent1 = $extracontent2 = '';
 $betastyling   = '';
 $beta_download = (in_array($dl_product, $betas)) ? true : false;
 
+$survey_url = array(
+    'de'    => 'http://www.surveygizmo.com/s3/iframe/707494/3bb997015b19',
+    'es-AR' => '',
+    'es-ES' => 'http://www.surveygizmo.com/s3/iframe/707370/843445dbed79',
+    'fr'    => 'http://www.surveygizmo.com/s3/iframe/707025/62964b80c226',
+    'it'    => 'http://www.surveygizmo.com/s3/iframe/707358/0e8d68114df5',
+    'pl'    => 'http://www.surveygizmo.com/s3/iframe/707383/bf65f6986203',
+    'pt-BR' => '',
+    'ru'    => '',
+);
+
+$survey_msg = array(
+    'de'    => 'Haben Sie einen Moment Zeit? <span>Helfen Sie uns.</span>',
+    'es-AR' => 'Have a second? <span>Help Us Out</span>',
+    'es-ES' => '¿Tienes un segundo? <span>Ayúdanos.</span>',
+    'fr'    => 'Vous avez une seconde&nbsp;? <span>Donnez-nous un coup de main&nbsp;!</span>',
+    'it'    => 'Hai un momento libero? <span>Aiutaci.</span>',
+    'pl'    => 'Masz chwilę? <span>Pomóż nam.</span>',
+    'pt-BR' => 'Have a second? <span>Help Us Out</span>',
+    'ru'    => 'Have a second? <span>Help Us Out</span>',
+);
+
+
+$extracontent2 = <<<EXTRA
+
+<script>// <![CDATA[
+
+$(document).ready(function() {
+
+        var cookieName = 'Firefox8WhatsNewSurvey';
+        var cookieDays = 30;
+
+        var surveyProbability = 1.0;
+
+        var setCookie = function(name, value, path, expire)
+        {
+            if (expire) {
+                var expdate = new Date();
+                expdate.setDate(expdate.getDate() + expire);
+                expire = ';expires=' + expdate.toUTCString();
+            } else {
+                expire = '';
+            }
+
+            if (path) {
+                path = ';path=' + path;
+            } else {
+                path = '';
+            }
+
+            document.cookie = name + '=' + escape(value) + expire + path;
+        };
+
+        var getCookie = function(name)
+        {
+            if (document.cookie.length === 0) {
+                return null;
+            }
+
+            var start = document.cookie.indexOf(name + '=');
+
+            if (start === -1) {
+                return null;
+            }
+
+            start += name.length + 1;
+            end    = document.cookie.indexOf(';', start);
+            if (end === -1) {
+                end = document.cookie.length;
+            }
+
+            return unescape(document.cookie.substring(start, end));
+        };
+
+        var showSurvey = getCookie(cookieName);
+
+        if (showSurvey === null) {
+
+            // no cookie set, show survey with probability
+            showSurvey = (Math.random() < surveyProbability) ? 'yes' : 'no';
+            // survey is only ever displayed once, set cookie to hide it
+            setCookie(cookieName, 'no', '/', cookieDays);
+        } else {
+            // make sure it stays hidden even if you edit the cookie value
+            showSurvey = 'no';
+            setCookie(cookieName, 'no', '/', cookieDays);
+        }
+
+showSurvey = 'yes';
+
+        if (showSurvey == 'yes') {
+            var \$survey = $('<div id="survey-box"><h3>{$survey_msg[$lang]}</h3>'
+                + '<iframe src="{$survey_url[$lang]}" frameborder="0" width="500" height="210" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
+                + '<style>#download-sidebar { display: none; }</style>'
+                + '</div>'
+            );
+
+            var \$footer = $('#download-footer');
+            var \$promo  = $('#content');
+
+            if (\$promo.length) {
+                \$promo.before(\$survey);
+            } else {
+                \$footer.before(\$survey);
+            }
+        }
+    });
+
+// ]]></script>
+
+EXTRA;
+
+
 
 if ($beta_download) {
 
@@ -105,6 +218,15 @@ $extra_headers = <<<EXTRA_HEADERS
     font-size: 18px;
     margin: 0;
 }
+
+#survey-box {
+    float: none;
+    margin: 10px auto;
+    max-height: 250px;
+    min-height: 210px;
+}
+
+
 
 </style>
 
