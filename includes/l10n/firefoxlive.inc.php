@@ -102,6 +102,8 @@ VIDEO_CODE;
     <meta property="og:locale" content="<?=$fb_locale?>" />
     <meta property="og:description"
           content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?>"/>
+    <meta name="Description"
+          content="<?=$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")?>"/>
 
     <style>
     /* MetaWebPro font family licensed from fontshop.com. WOFF-FTW! */
