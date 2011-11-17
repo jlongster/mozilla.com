@@ -31,7 +31,7 @@ body#home {
     margin: 0;
     width: 430px;
     line-height: 45px;
-    padding: 60px 0 0 0;
+    padding: 60px 0 10px 0;
     letter-spacing: -0.03em;
 }
 
@@ -39,7 +39,7 @@ body#home {
     font-size: 22px;
     font-style: italic;
     padding: 0;
-    margin: 10px 0 20px 0;
+    margin: 0 0 20px 0;
 }
 
 #home ul#benefits li {
@@ -113,6 +113,22 @@ body#home {
 	display: block;
 	font-size: 38px;
 	color: #6fb02b;
+}
+
+/* }}} */
+/* {{{ A/B tests for Bug 695473 */
+
+#home .alt-a#main-feature h2 {
+    font-size: 46px;
+}
+
+#home .alt-a ul#benefits li,
+#home .alt-b ul#benefits li {
+    font-size: 18px;
+}
+
+#home .alt-b#main-feature h2 {
+    font-size: 42px;
 }
 
 /* }}} */

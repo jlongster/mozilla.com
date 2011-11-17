@@ -58,6 +58,23 @@ FUNNEL;
 
 <span id="feature-extra"></span>
 
+<? if(isset($_GET['alt']) && $_GET['alt'] == 'a') { ?>
+<div id="main-feature" class="alt-a">
+    <h2>Different by Design</h2>
+    <ul id="benefits">
+        <li class="first">Proudly <span>non-profit</span></li>
+        <li>User-focused <span>innovation</span></li>
+        <li>Fast, flexible, <span>secure</span></li>
+    </ul>
+<? } elseif(isset($_GET['alt']) && $_GET['alt'] == 'b') { ?>
+<div id="main-feature" class="alt-b">
+    <h2>The People’s Browser</h2>
+    <ul id="benefits">
+        <li class="first">Proudly <span>non-profit</span></li>
+        <li>User-focused <span>innovation</span></li>
+        <li>Fast, flexible, <span>secure</span></li>
+    </ul>
+<? } else { ?>
 <div id="main-feature">
     <h2>Made to make the Web a better place.</h2>
     <ul id="benefits">
@@ -65,6 +82,7 @@ FUNNEL;
         <li>super <span>speed</span></li>
         <li>even more <span>awesomeness</span></li>
     </ul>
+<? } ?>
     <span id="hero">
         <noscript><img src="<?=$config['static_prefix']?>/img/covehead/firefox/main-feature-facebook.png" alt="Firefox screenshot" class="screenshot"></noscript>
     </span>
