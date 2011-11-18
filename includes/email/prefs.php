@@ -165,7 +165,7 @@ class EmailPrefs {
                     $optin = isset($opts['optin']) ? $opts['optin'] : TRUE;
 
                     $ret = $serv->subscribe(array('email' => $data['email'],
-                                                  'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                                  'format' => $data['format'] == 'text' ? 'T' : 'H',
                                                   'country' => $data['country'],
                                                   'lang' => $data['lang'],
                                                   'locale' => $lang,
@@ -247,7 +247,7 @@ class EmailPrefs {
                 try {
                     $serv->update_subscriber($this->token,
                                              array('email' => $data['email'],
-                                                   'format' => $data['format'] == 'html' ? 'H' : 'T',
+                                                   'format' => $data['format'] == 'text' ? 'T' : 'H',
                                                    'country' => $data['country'],
                                                    'lang' => $data['lang'],
                                                    'locale' => $lang,
