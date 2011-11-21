@@ -2,7 +2,6 @@
 require_once "{$config['file_root']}/includes/feeds/PressFeed.php";
 l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
 
-	$page_title = $l10n->get('Press');
     $body_id    = 'press';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/press-page.css" media="screen" />

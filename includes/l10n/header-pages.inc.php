@@ -69,7 +69,7 @@ DOCTYPE;
 
 
 $press_link = "";
-if(in_array($lang, array('fr', 'de', 'it', 'pl', 'es', 'en-GB'))) {
+if(in_array($lang, array('fr', 'de', 'it', 'pl', 'es-ES', 'en-GB'))) {
     l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
     $press_link = <<<PRESS_LINK
         <li id="nav-main-press"><a href="{$host_l10n}/press/">{$l10n->get('Press')}</a></li>
