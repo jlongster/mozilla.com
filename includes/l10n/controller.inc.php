@@ -122,6 +122,7 @@ $sitepages = array(
     'state-2010-faq'    => 'state-2010-faq.inc.php',
     'state-2010-people' => 'state-2010-people.inc.php',
     'firefoxlive'       => 'firefoxlive.inc.php',
+    'press'             => 'press.inc.php',
 );
 
 // pages deactivated on production for all locales
