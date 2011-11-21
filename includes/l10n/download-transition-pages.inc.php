@@ -27,24 +27,24 @@ $beta_download = (in_array($dl_product, $betas)) ? true : false;
 
 $survey_url = array(
     'de'    => 'http://www.surveygizmo.com/s3/iframe/707494/3bb997015b19',
-    'es-AR' => '',
+    'es-AR' => 'http://www.surveygizmo.com/s3/iframe/723855/bc6e39e0e62f',
     'es-ES' => 'http://www.surveygizmo.com/s3/iframe/707370/843445dbed79',
     'fr'    => 'http://www.surveygizmo.com/s3/iframe/707025/62964b80c226',
     'it'    => 'http://www.surveygizmo.com/s3/iframe/707358/0e8d68114df5',
     'pl'    => 'http://www.surveygizmo.com/s3/iframe/707383/bf65f6986203',
-    'pt-BR' => '',
-    'ru'    => '',
+    'pt-BR' => 'http://www.surveygizmo.com/s3/iframe/723849/d557cac80bdd',
+//    'ru'    => '',
 );
 
 $survey_msg = array(
     'de'    => 'Haben Sie einen Moment Zeit? <span>Helfen Sie uns.</span>',
-    'es-AR' => 'Have a second? <span>Help Us Out</span>',
+    'es-AR' => '¿Tenés un segundo? <span>¡Ayudanos!</span>',
     'es-ES' => '¿Tienes un segundo? <span>Ayúdanos.</span>',
     'fr'    => 'Vous avez une seconde&nbsp;? <span>Donnez-nous un coup de main&nbsp;!</span>',
     'it'    => 'Hai un momento libero? <span>Aiutaci.</span>',
     'pl'    => 'Masz chwilę? <span>Pomóż nam.</span>',
-    'pt-BR' => 'Have a second? <span>Help Us Out</span>',
-    'ru'    => 'Have a second? <span>Help Us Out</span>',
+    'pt-BR' => 'Tem um minuto? <span>Da Uma Força!</span>',
+//    'ru'    => 'Have a second? <span>Help Us Out</span>',
 );
 
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
         var cookieName = 'Firefox8WhatsNewSurvey';
         var cookieDays = 30;
 
-        var surveyProbability = 1.0;
+        var surveyProbability = 0.05;
 
         var setCookie = function(name, value, path, expire)
         {
@@ -113,11 +113,9 @@ $(document).ready(function() {
             setCookie(cookieName, 'no', '/', cookieDays);
         }
 
-showSurvey = 'yes';
-
         if (showSurvey == 'yes') {
             var \$survey = $('<div id="survey-box"><h3>{$survey_msg[$lang]}</h3>'
-                + '<iframe src="{$survey_url[$lang]}" frameborder="0" width="500" height="210" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
+                + '<iframe src="{$survey_url[$lang]}" frameborder="0" width="700" height="500" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
                 + '<style>#download-sidebar { display: none; }</style>'
                 + '</div>'
             );
@@ -222,8 +220,8 @@ $extra_headers = <<<EXTRA_HEADERS
 #survey-box {
     float: none;
     margin: 10px auto;
-    max-height: 250px;
-    min-height: 210px;
+    max-height: 620px;
+    min-height: 420px;
 }
 
 
