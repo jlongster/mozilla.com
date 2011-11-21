@@ -1,17 +1,21 @@
 <?php
 require_once "{$config['file_root']}/includes/feeds/PressFeed.php";
+l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
 
+	$page_title = $l10n->get('Press');
     $body_id    = 'press';
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/press-page.css" media="screen" />
 EXTRA_HEADERS;
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
-
 ?>
+<div id="main-feature">
+	<h2><span><?= $l10n->get('Press');?></span></h2>
+</div>
 
-
-
+<div id="main-content">
+	<h3><?= $l10n->get('Latest Press Releases')?></h3>
 <?php
 $feed = new PressFeed();
 $items = $feed->getItems(20, $lang);
@@ -37,6 +41,7 @@ if (count($items) > 0) {
 
    echo '</ul>';
 }
-
-
+?>
+</div>
+<?php
 require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';

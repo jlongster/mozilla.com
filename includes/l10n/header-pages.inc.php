@@ -67,6 +67,15 @@ DOCTYPE;
 DOCTYPE;
 }
 
+
+$press_link = "";
+if(in_array($lang, array('fr', 'de', 'it', 'pl', 'es', 'en-GB'))) {
+    l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
+    $press_link = <<<PRESS_LINK
+        <li id="nav-main-press"><a href="{$host_l10n}/press/">{$l10n->get('Press')}</a></li>
+PRESS_LINK;
+}
+
 $mozillalink = "<a class=\"mozilla\" href=\"$host_enUS/\">mozilla</a>";
 $newfirefox4menu = <<<NEWMENU
         <!-- start menu #nav-main -->
@@ -76,7 +85,8 @@ $newfirefox4menu = <<<NEWMENU
             <li id="nav-main-features" class="first"><a href="{$host_l10n}/firefox/features/">{$l10n->get('Features')}</a></li>
             <li id="nav-main-addons"><a href="https://addons.mozilla.org/">{$l10n->get('Add-ons')}</a></li>
             <li id="nav-main-support"><a href="http://support.mozilla.com/">{$l10n->get('Support')}</a></li>
-            <li id="nav-main-about" class="last"><a href="{$host_l10n}/about/">{$l10n->get('About')}</a></li>
+            <li id="nav-main-about"><a href="{$host_l10n}/about/">{$l10n->get('About')}</a></li>
+            {$press_link}
           </ul>
         </div>
         <!-- end menu #nav-main -->

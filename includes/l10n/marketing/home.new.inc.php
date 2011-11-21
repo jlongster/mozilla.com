@@ -68,6 +68,16 @@ require $config['file_root'] . '/includes/js_stats.inc.php';
 // Persistent Upgrade messaging, only display if it is translated
 require "{$config['file_root']}/includes/l10n/upgrade-messaging.inc.php";
 
+
+$press_link = "";
+if(in_array($lang, array('fr', 'de', 'it', 'pl', 'es', 'en-GB'))) {
+    l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
+    $press_link = <<<PRESS_LINK
+    &nbsp;|&nbsp;<a href="{$host_l10n}/press/">{$l10n->get('Press')}</a>
+PRESS_LINK;
+}
+
+
 $dynamic_footer = <<<DYNAMIC_FOOTER
 
     </div><!-- end #doc -->
@@ -80,6 +90,7 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
             <a href="https://addons.mozilla.org/">{$l10n->get('Add-ons')}</a>&nbsp;|&nbsp;
             <a href="http://support.mozilla.com/">{$l10n->get('Support')}</a>&nbsp;|&nbsp;
             <a href="{$host_l10n}/about/">{$l10n->get('About')}</a>
+            {$press_link}
         </div>
 
     <!-- end #footer -->
