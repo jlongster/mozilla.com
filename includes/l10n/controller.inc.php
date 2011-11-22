@@ -60,7 +60,7 @@ if ($lang == 'pt-BR' && $pageid == '') return;
 
 // Bug 672498: send en-GB users to fresher en-US content for existing pages,
 // en-ZA is just a remap of en-US in inludes/langconfig.inc.php so no action needed for this locale
-if ($lang == 'en-GB') {
+if ($lang == 'en-GB' && $pageid != 'press') {
     goToEnglishPage();
 }
 
