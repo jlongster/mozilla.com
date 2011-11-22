@@ -13,7 +13,7 @@ class PressFeed extends AbstractFeed
     protected function getURI()
     {
         $lang = substr($this->lang, 0, 2);
-        return 'http://www.mozilla-europe.org/' . $lang . '/news.rdf';
+        return 'http://europe.mozilla.org/' . $lang . '/news.rdf';
     }
 
     public function getItems($limit = 4, $lang)
