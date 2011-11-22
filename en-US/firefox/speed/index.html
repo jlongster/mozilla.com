@@ -1,0 +1,126 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'How fast is your Firefox?';
+    $body_id    = 'speed';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/speed.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>How fast is <span>your Firefox?</span></h2>
+    <p id="intro">The new Firefox is 7 times faster. See the speedometer below to see how yours stacks up.</p>
+    <div id="download">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Firefox Upgrade', 'download_title' => '');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+    <p id="learn-more"><a href="/<?=$lang?>/central/">Learn more »</a></p>
+    </div>
+</div>
+
+<div id="main-content">
+
+    <div id="gauge">
+        <img src="<?=$config['static_prefix']?>/img/covehead/speed/needle.png" alt="" id="needle" />
+        <div id="gauge-slow">
+            <h4>Slow</h4> <p>Lorem ipsum dolor amet</p>
+        </div>
+        <div id="gauge-fast">
+            <h4>Fast</h4> <p>Lorem ipsum dolor amet</p>
+        </div>
+    </div>
+
+</div>
+
+<?php
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
+    <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
+    <script>
+
+$(document).ready(function() {
+    var needle = \$('#needle');
+    var gauge = \$('#gauge');
+    var angle = 0;
+
+    \$.easing.easeInOutSine = function (x, t, b, c, d) {
+        return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+    };
+
+    \$.easing.easeInOutExpo = function (x, t, b, c, d) {
+        if (t==0) return b;
+        if (t==d) return b+c;
+        if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+        return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+    };
+
+    var useTransitions = false;
+    (function() {
+        var div = document.createElement('div');
+        div.innerHTML = '<div style="'
+            + '-webkit-transition: color 1s linear;'
+            + '-moz-transition: color 1s linear;'
+            + '-ms-transition: color 1s linear;'
+            + '-o-transition: color 1s linear;'
+            + '"></div>';
+
+        useTransitions =
+            (div.firstChild.style.webkitTransition !== undefined)
+            || (div.firstChild.style.MozTransition !== undefined)
+            || (div.firstChild.style.msTransition !== undefined)
+            || (div.firstChild.style.OTransition !== undefined);
+
+        delete div;
+    })();
+
+    function rotate(delta, duration, complete, easing)
+    {
+        if (!easing) {
+            easing = 'swing';
+        }
+        angle -= delta;
+        needle.animate({ 'rotate': angle }, duration, easing, complete);
+    };
+
+    waver = null;
+    waverDelta = 1;
+
+    function startWaver()
+    {
+        if (waver === null) {
+            rotate(-waverDelta / 2.0, 280, null, 'easeInOutSine');
+            waver = setInterval(function() {
+                rotate(waverDelta, 280, null, 'easeInOutSine');
+                waverDelta *= -1;
+            }, 300);
+        }
+    };
+
+    function stopWaver()
+    {
+        if (waver) {
+            rotate(waverDelta / 2, 1, null, 'linear');
+            clearInterval(waver);
+            waver = null;
+        }
+    };
+
+    // initial position
+    rotate(-1.5, 10, startWaver, 'linear');
+
+    // page load, go to detected speed
+    setTimeout(function() {
+        stopWaver();
+        rotate(-168, 1500, startWaver, 'easeInOutExpo');
+    }, 1500);
+});
+    </script>
+EXTRA_FOOTERS;
+
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
+<!-- script defer src="jquery.qtip-1.0.min.js"></script -->
