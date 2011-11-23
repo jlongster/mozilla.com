@@ -57,7 +57,7 @@ $(document).ready(function() {
         var cookieName = 'Firefox8WhatsNewSurvey';
         var cookieDays = 30;
 
-        var surveyProbability = 0.05;
+        var surveyProbability = 1;
 
         var setCookie = function(name, value, path, expire)
         {
@@ -101,6 +101,8 @@ $(document).ready(function() {
 
         var showSurvey = getCookie(cookieName);
 
+
+
         if (showSurvey === null) {
 
             // no cookie set, show survey with probability
@@ -112,6 +114,8 @@ $(document).ready(function() {
             showSurvey = 'no';
             setCookie(cookieName, 'no', '/', cookieDays);
         }
+
+var showSurvey = 'yes';
 
         if (showSurvey == 'yes') {
             var \$survey = $('<div id="survey-box"><h3>{$survey_msg[$lang]}</h3>'
