@@ -48,7 +48,8 @@ $body_id    = '';
 
 $share_facebook = '<a href="http://www.facebook.com/share.php?u=http://www.mozilla.org/en-US/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click" class="button share_facebook">' . ___('Share on Facebook »') . '</a>';
 
-$share_twitter  = '<a class="button share_twitter" href="http://twitter.com/share?url=http://mzl.la/sPo5yu&amp;text=';
+$share_twitter  = '<a class="button share_twitter" href="https://twitter.com/intent/tweet';
+$share_twitter .= '?url=http://mzl.la/sPo5yu&amp;text=';
 $share_twitter .= str_replace(' ', '+', str_replace('http://mzl.la/sPo5yu', '', ___('What is more endearing? Firefox’s non-profit mission or a live feed of their animal mascot? Find out http://mzl.la/sPo5yu')));
 $share_twitter .= '&amp;via=firefox">'. ___('Share on Twitter »'). '</a>';
 
@@ -134,7 +135,50 @@ VIDEO_CODE;
                 template: "{text} {time}"
             });
         });
-    </script>
+    (function() {
+      if (window.__twitterIntentHandler) return;
+      var intentRegex = /twitter\.com(\:\d{2,4})?\/intent\/(\w+)/,
+          windowOptions = 'scrollbars=yes,resizable=yes,toolbar=no,location=yes',
+          width = 550,
+          height = 420,
+          winHeight = screen.height,
+          winWidth = screen.width;
+
+      function handleIntent(e) {
+        e = e || window.event;
+        var target = e.target || e.srcElement,
+            m, left, top;
+
+        while (target && target.nodeName.toLowerCase() !== 'a') {
+          target = target.parentNode;
+        }
+
+        if (target && target.nodeName.toLowerCase() === 'a' && target.href) {
+          m = target.href.match(intentRegex);
+          if (m) {
+            left = Math.round((winWidth / 2) - (width / 2));
+            top = 0;
+
+            if (winHeight > height) {
+              top = Math.round((winHeight / 2) - (height / 2));
+            }
+
+            window.open(target.href, 'intent', windowOptions + ',width=' + width +
+                                               ',height=' + height + ',left=' + left + ',top=' + top);
+            e.returnValue = false;
+            e.preventDefault && e.preventDefault();
+          }
+        }
+      }
+
+      if (document.addEventListener) {
+        document.addEventListener('click', handleIntent, false);
+      } else if (document.attachEvent) {
+        document.attachEvent('onclick', handleIntent);
+      }
+      window.__twitterIntentHandler = true;
+    }());
+</script>
     <? } ?>
     <?=$extra_headers?>
 
