@@ -30,8 +30,7 @@ return array(
         '//style/firefox/3.6/firstrun-page.css'
     ),
     'css_home' => array(
-        '//style/covehead/home.css',
-        '//style/covehead/video-player.css'
+        '//style/covehead/home.css'
     ),
     'css_firstrun4' => array(
         '//style/firefox/4/firstrun-page.css'
