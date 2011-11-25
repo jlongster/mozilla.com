@@ -284,10 +284,6 @@ RewriteRule ^en-US/firefox/new/(gamer|socialmedia|worker|messaging|streamer)[/]?
 # Bug 682350 Pretty URL for mobile-based Channel page
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/channel/android[/]?$ $1firefox/channel/?mobile_first=1
 
-# Bug 695473 Pretty URL for /firefox/new/ A/B tests
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new1[/]?$ $1firefox/new/?alt=a
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/new2[/]?$ $1firefox/new/?alt=b
-
 # Bug 660249 Update Mozilla.com for XP campaign
 RewriteCond $1 !en-(US|GB|ZA)/
 RewriteCond $1 !^$
