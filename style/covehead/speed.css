@@ -1,26 +1,31 @@
 /* {{{ General Layout */
 
 #speed #main-feature {
-    margin: 30px 180px;
+    margin: 20px 180px;
 }
 
 #speed #main-feature h2 {
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+}
+
+#speed #main-feature h2 span {
+    font-size: 60px;
 }
 
 #speed #main-feature #intro {
     font-style: italic;
     width: 300px;
     float: left;
-    line-height: 1.2;
+    font-size: 18px;
 }
 
 #speed #download {
     float: right;
+    width: 270px;
 }
 
 #speed #download ul.home-download {
-    width: auto;
+    width: 280px;
     float: right;
 }
 
@@ -53,12 +58,16 @@
     padding-top: 40px;
 }
 
+#speed #non-fx {
+    display: none;
+}
+
 /* }}} */
 /* {{{ Gauge */
 
 #gauge {
     background: url(/img/covehead/speed/gauge-bg.jpg) 50% 0 no-repeat;
-    height: 275px;
+    height: 255px;
     width: 800px;
     margin: 0 auto;
     position: relative;
@@ -71,23 +80,67 @@
 #gauge-fast,
 #gauge-slow {
     position: absolute;
-    width: 160px;
-    top: 170px;
+    width: 180px;
+    top: 230px;
+    color: #ef3b24;
+    font-size: 18px;
 }
 
 #gauge-slow {
-    left: 20px;
+    left: 100px;
     text-align: right;
+    color: #005787;
 }
 
 #gauge-fast {
-    left: 618px;
+    left: 520px;
 }
 
-#gauge-slow p,
-#gauge-fast p {
+#gauge-slow-note p,
+#gauge-fast-note p {
     margin: 0;
+    line-height: 1.3;
 }
+
+#gauge-slow-note h4,
+#gauge-fast-note h4 {
+    font-size: 16px;
+}
+
+#gauge-fast-note,
+#gauge-slow-note {
+    display: none;
+    position: absolute;
+    width: 800px;
+    height: 255px;
+    top: 0;
+    left: 0;
+    font-style: italic;
+}
+
+#gauge-slow-note {
+    background: url(/img/covehead/speed/line-l.png) 63px 70px no-repeat;
+}
+
+#gauge-slow-note .content {
+    width: 170px;
+    position: absolute;
+    bottom: 190px;
+    left: 30px;
+}
+
+#gauge-fast-note {
+    background: url(/img/covehead/speed/line.png) 610px 115px no-repeat;
+}
+
+#gauge-fast-note .content {
+    position: absolute;
+    width: 170px;
+    left: auto;
+    right: 20px;
+    bottom: 145px;
+}
+
 
 #needle {
     -webkit-transform-origin: 173px 30px;
@@ -100,8 +153,16 @@
     transform: rotate(0);
     x-moz-transition: all 500ms linear;
     position: absolute;
-    top: 201px;
-    left: 226px;
+    top: 181px;
+    left: 227px;
+}
+
+/* }}} */
+/* {{{ Non Firefox fallback*/
+
+#non-fx {
+    margin: 0 160px;
+    font-size: 22px;
 }
 
 /* }}} */

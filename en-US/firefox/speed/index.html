@@ -10,7 +10,7 @@ EXTRA_HEADERS;
 
 <div id="main-feature">
     <h2>How fast is <span>your Firefox?</span></h2>
-    <p id="intro">The new Firefox is 7 times faster. See the speedometer below to see how yours stacks up.</p>
+    <p id="intro">New Firefox is up to 7 times faster. (That’s a lot!) Check the speedometer to see if yours can keep up.</p>
     <div id="download">
     <script src="/js/download.js"></script>
     <?php
@@ -27,16 +27,33 @@ EXTRA_HEADERS;
     <div id="gauge">
         <img src="<?=$config['static_prefix']?>/img/covehead/speed/needle.png" alt="" id="needle" />
         <div id="gauge-slow">
-            <h4>Slow</h4> <p>Lorem ipsum dolor amet</p>
+            Old Firefox = <em>Sadface</em>
         </div>
         <div id="gauge-fast">
-            <h4>Fast</h4> <p>Lorem ipsum dolor amet</p>
+            New Firefox = <em>Yay!</em>
         </div>
+        <div id="gauge-slow-note">
+            <div class="content">
+            <h4>Seriously?</h4>
+            <p>That just isn’t going to cut it. Stop browsing in the past and <a href="/<?=$lang?>/firefox/">upgrade now!</a></p>
+            </div>
+        </div>
+        <div id="gauge-fast-note">
+            <div class="content">
+            <h4>Now we’re talking!</h4>
+            <p>Feels better, doesn’t it? Welcome to the future of the Web. It’s nice here.</p>
+            </div>
+        </div>
+    </div>
+    <div id="non-fx">
+        <p id="detected">Hey, looks like you’re using %BROWSER%. Why not grab Firefox and get up to speed.</p>
+        <p id="notdetected">Hey, looks like you’re not using Firefox as your browser. Why not grab Firefox and get up to speed.</p>
     </div>
 
 </div>
 
 <?php
+    $latest_firefox = LATEST_FIREFOX_VERSION;
     $extra_footers = <<<EXTRA_FOOTERS
     <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
     <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
@@ -46,6 +63,9 @@ $(document).ready(function() {
     var needle = \$('#needle');
     var gauge = \$('#gauge');
     var angle = 0;
+    var latestVersion = parseInt('{$latest_firefox}'.split('.')[0], 10);
+    var isFirefox = (/\sFirefox/.test(window.navigator.userAgent));
+
 
     \$.easing.easeInOutSine = function (x, t, b, c, d) {
         return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
@@ -58,24 +78,20 @@ $(document).ready(function() {
         return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
     };
 
-    var useTransitions = false;
-    (function() {
-        var div = document.createElement('div');
-        div.innerHTML = '<div style="'
-            + '-webkit-transition: color 1s linear;'
-            + '-moz-transition: color 1s linear;'
-            + '-ms-transition: color 1s linear;'
-            + '-o-transition: color 1s linear;'
-            + '"></div>';
+    function getFirefoxVersion()
+    {
+        var version = 0;
 
-        useTransitions =
-            (div.firstChild.style.webkitTransition !== undefined)
-            || (div.firstChild.style.MozTransition !== undefined)
-            || (div.firstChild.style.msTransition !== undefined)
-            || (div.firstChild.style.OTransition !== undefined);
+        var matches = /Firefox\/([0-9]+).[0-9]+(?:.[0-9]+)?/.exec(
+            navigator.userAgent
+        );
 
-        delete div;
-    })();
+        if (matches !== null && matches.length > 0) {
+            version = parseInt(matches[1], 10);
+        }
+
+        return version;
+    };
 
     function rotate(delta, duration, complete, easing)
     {
@@ -109,14 +125,57 @@ $(document).ready(function() {
         }
     };
 
-    // initial position
-    rotate(-1.5, 10, startWaver, 'linear');
+    if (isFirefox) {
+        // initial position
+        rotate(-1.5, 10, startWaver, 'linear');
 
-    // page load, go to detected speed
-    setTimeout(function() {
-        stopWaver();
-        rotate(-168, 1500, startWaver, 'easeInOutExpo');
-    }, 1500);
+        if (latestVersion > getFirefoxVersion()) {
+            // slow
+            setTimeout(function() {
+                stopWaver();
+                rotate(-29.5, 1000, startWaver, 'easeInOutExpo');
+            }, 1500);
+            \$('#gauge-slow-note').delay(3000).fadeIn('slow');
+        } else {
+            // fast
+            setTimeout(function() {
+                stopWaver();
+                rotate(-168, 1500, startWaver, 'easeInOutExpo');
+            }, 1500);
+            \$('#gauge-fast-note').delay(3000).fadeIn('slow');
+        }
+    } else {
+        gauge.hide();
+
+        var \$nonfx       = \$('#non-fx');
+        var \$detected    = \$('#detected');
+        var \$notdetected = \$('#notdetected');
+
+        var isSafari = /Safari/.test(window.navigator.userAgent);
+        var isChrome = /Chrome/.test(window.navigator.userAgent);
+        var isIE     = /MSIE/.test(window.navigator.userAgent);
+
+        if (isChrome) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Google Chrome')
+            );
+            \$notdetected.hide();
+        } else if (isSafari) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Safari')
+            );
+            \$notdetected.hide();
+        } else if (isIE) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Internet Explorer')
+            );
+            \$notdetected.hide();
+        } else {
+            \$detected.hide();
+        }
+
+        \$nonfx.show();
+    }
 });
     </script>
 EXTRA_FOOTERS;
