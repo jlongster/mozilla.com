@@ -53,6 +53,10 @@ return array(
     'css_firstrun6' => array(
         '//style/firefox/6/firstrun-page.css'
     ),
+    'css_firstrun8' => array(
+        '//style/covehead/video-player.css',
+        '//style/firefox/8/firstrun-page.css'
+    ),
     'css_firstrun_backtoschool' => array(
         '//style/covehead/backtoschool-firstrun-page.css'
     ),
