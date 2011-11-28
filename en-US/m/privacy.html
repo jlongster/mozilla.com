@@ -1,7 +1,10 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla | Firefox Mobile Privacy Policy';
+    $page_title = 'Mozilla Firefox Web Browser for Android — Safe Web Browsing on the Mobile Web';
     $body_id    = 'privacy';
+    $extra_headers = <<<EXTRA_HEADERS
+    <meta name="description" content="Worried about online security? We’ve got your back. Firefox helps keep you safe. Protect your privacy, browse securly and stay in control with Firefox. It’s part of our mission.">
+EXTRA_HEADERS;
 
     include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
     include_once "{$config['file_root']}/{$lang}/legal/privacy/firefox-en-content.html";

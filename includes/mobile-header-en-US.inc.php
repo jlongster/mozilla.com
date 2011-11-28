@@ -3,7 +3,6 @@
   // Remove for now because we've been testing without it and it seems we don't use it
   // and it causes warnings
   //require_once 'wurfl/bootstrap.php';
-
 include_once 'product-details/mobileDetails.class.php';
 
     // Build our dynamic header

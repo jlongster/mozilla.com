@@ -1,9 +1,12 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla | Firefox Features';
+    $page_title = 'Mozilla Firefox Mobile Browser - List of Features';
     $body_id    = 'features';
+    $extra_headers = <<<EXTRA_HEADERS
+    <meta name="description" content="Firefox Web Browser for Android - List of Features for Mobile.">
+EXTRA_HEADERS;
 
-    @include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
 ?>
 
 <div class="buttons buttons-sub">
@@ -37,5 +40,5 @@
 </dl>
 </div>
 <?php
-    @include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
 ?>
