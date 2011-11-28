@@ -57,7 +57,7 @@ $(document).ready(function() {
         var cookieName = 'Firefox8WhatsNewSurvey';
         var cookieDays = 30;
 
-        var surveyProbability = 1;
+        var surveyProbability = 0.1;
 
         var setCookie = function(name, value, path, expire)
         {
@@ -115,11 +115,11 @@ $(document).ready(function() {
             setCookie(cookieName, 'no', '/', cookieDays);
         }
 
-var showSurvey = 'yes';
+
 
         if (showSurvey == 'yes') {
             var \$survey = $('<div id="survey-box"><h3>{$survey_msg[$lang]}</h3>'
-                + '<iframe src="{$survey_url[$lang]}" frameborder="0" width="700" height="500" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
+                + '<iframe src="{$survey_url[$lang]}" frameborder="0" width="700" height="300" style="overflow:hidden" ALLOWTRANSPARENCY="true"></iframe>'
                 + '<style>#download-sidebar { display: none; }</style>'
                 + '</div>'
             );
@@ -224,8 +224,7 @@ $extra_headers = <<<EXTRA_HEADERS
 #survey-box {
     float: none;
     margin: 10px auto;
-    max-height: 620px;
-    min-height: 420px;
+    min-height: 200px;
 }
 
 
