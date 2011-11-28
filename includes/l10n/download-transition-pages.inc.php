@@ -47,6 +47,8 @@ $survey_msg = array(
 //    'ru'    => 'Have a second? <span>Help Us Out</span>',
 );
 
+if( array_key_exists($lang, $survey_url) ) {
+
 
 $extracontent2 = <<<EXTRA
 
@@ -138,7 +140,7 @@ $(document).ready(function() {
 // ]]></script>
 
 EXTRA;
-
+}
 
 
 if ($beta_download) {
