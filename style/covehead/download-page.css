@@ -1,63 +1,59 @@
 /* {{{ download message */
 
-#download #main-feature,
-#download #main-feature-fallback {
-	padding-left: 160px;
-	padding-top: 0;
-	min-height: 170px;
-	background: url(/img/covehead/download/download-logo.png) no-repeat;
+body {
+    background: #df4114 url(/img/firefox/firstrun/background-mosaic.jpg) 50% 0 no-repeat;
+    min-height: 100%;
+    height: 100%;
+    min-width: 980px;
+    line-height: 1.4em;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #484848;
 }
 
-* html #download #main-feature,
-* html #download #main-feature-fallback {
-	height: 170px;
-	background: url(/img/covehead/download/download-logo-8bit.png) no-repeat;
+#download #main-feature,
+#download #main-feature-fallback {
+
 }
 
 #download-message #main-feature h2,
 #download-message #main-feature-fallback h2 {
-	margin: 0;
-	font-size: 30px;
-	padding-top: 20px;
+    color: #fff;
+    text-align: center;
+    padding: 160px 50px 20px 50px;
+    font-size: 42px;
+    line-height: 1;
 }
 
-#download-message #main-feature h2 span,
-#download-message #main-feature-fallback h2 span {
-	display: inline;
-	font-size: 34px;
+#download-message #main-feature h2 em,
+#download-message #main-feature-fallback h2 em {
+    display: block;
 }
 
 #download-message #content,
 #download-message #content-fallback {
-	margin: 0 0 0 15px;
-	padding: 5px 0;
+    margin: 0 15px;
+    padding: 5px 0 10px 0;
     clear: left;
+    background: #fff;
+    zoom: 1;
 }
 
-.default-download #download-message #content,
-.default-download #download-message #content-fallback {
-	background: none;
-}
-
-#download-message #content h3,
-#download-message #content-fallback h3 {
-	margin: 20px 15px 10px 15px;
-	color: #69645c;
-	font-size: 137%;
-}
-
-#download-message #main-feature p.manual-download,
-#download-message #main-feature-fallback p.manual-download {
-	margin: 0 275px 0 0;
-	font-size: 18px;
+#download-message p.manual-download,
+#download-message p.manual-download {
+    margin: 10px 100px 30px 100px;
+    font-size: 18px;
+    text-align: center;
 }
 
 /* }}} */
 /* {{{ install steps */
 
 #download ol.install-steps {
-	margin: 0;
+    margin: 0 40px;
+    padding: 0;
     clear: left;
+    zoom: 1;
 }
 
 #download ol.install-steps:after {
@@ -69,81 +65,57 @@
 }
 
 #download ol.install-steps li {
-	padding: 20px 285px 0 125px;
-	margin: 0;
-	list-style-type: none;
-	min-height: 180px;
+    padding: 235px 25px 30px 35px;
+    width: 230px;
+    margin: 0;
+    list-style-type: none;
+    float: left;
+    zoom: 1;
 }
 
-#download.win-download ol.install-steps li {
-	background: url(/img/covehead/download/download-win.png) no-repeat;
+#download.win-download ol.install-steps {
+    background: url(/img/covehead/download/download-horizontal-win.jpg) 50% 0 no-repeat;
 }
 
-#download.osx-download ol.install-steps li {
-	background: url(/img/covehead/download/download-osx.png) no-repeat;
+#download.osx-download ol.install-steps {
+    background: url(/img/covehead/download/download-horizontal-osx.jpg) 50% 0 no-repeat;
 }
 
-* html #download ol.install-steps li {
-	height: 180px;
-}
-
-ol.install-steps,
-ol.getting-started-steps {
-	margin: 0;
-	padding: 0;
-	width: 755px;
-}
-
-ol.install-steps li {
-	list-style-type: none;
-	padding-right: 60px;
+#download-thanks {
+    font-size: 20px;
+    font-style: italic;
+    margin: 0;
+    padding: 30px 100px;
+    text-align: center;
 }
 
 ol.install-steps li p {
-	margin-top: 3px;
-	font-size: 18px;
-	color: #4b4742;
-	font-style: italic;
-	line-height: 1.2;
-}
-
-ol.install-steps li p.note {
-	font-size: 14px;
-	color: #69645c;
-	font-style: normal;
-	line-height: 1.5;
+    font-size: 14px;
+    color: #69645c;
+    font-style: normal;
+    line-height: 1.5;
 }
 
 #download ol.install-steps li.two {
-	background-position: -755px 0;
+    background-position: -755px 0;
 }
 
 #download ol.install-steps li.three {
-	background-position: -1510px 0;
+    background-position: -1510px 0;
 }
 
 /* }}} */
 /* {{{ sidebar */
 
-#download-sidebar {
-	width: 200px;
-	float: right;
-        background-color: white;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-}
-
 #download-sidebar .sidebar-divider {
-	height: 1px;
+    height: 1px;
         background-color: #edf2f5;
         font-size: 0;
 }
 
 #download-sidebar h3 {
-	margin: 0;
-	color: #505050;
-	font-size: 18px;
+    margin: 0 0 10px 0;
+    font-size: 22px;
 }
 
 #download-sidebar h3 span {
@@ -154,37 +126,28 @@ ol.install-steps li p.note {
     font-size: 16px;
 }
 
-#download-sidebar p {
-	margin-top: 1em;
-	line-height: 1.3;
-}
-
-#download-sidebar a {
-    display: block;
-}
-
 #download-sidebar #sidebar-newsletter a {
     margin-top: 1em;
 }
 
 #download-sidebar a.tweet {
-	background: #fff url(/img/covehead/download/twitter-button-icon) no-repeat 135px center;
-	padding: 8px 20px 8px 8px;
-	font-size: 12px;
-	color: #447bc4;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	box-shadow: -2px 2px 2px #888;
-	-moz-box-shadow: -2px 2px 2px #888;
-	-webkit-box-shadow: -2px 2px 2px #888;
+    background: #fff url(/img/covehead/download/twitter-button-icon) no-repeat 135px center;
+    padding: 8px 20px 8px 8px;
+    font-size: 12px;
+    color: #447bc4;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: -2px 2px 2px #888;
+    -moz-box-shadow: -2px 2px 2px #888;
+    -webkit-box-shadow: -2px 2px 2px #888;
 }
 
 #sidebar-mobile,
 #sidebar-webifyme,
 #sidebar-newsletter,
 #sidebar-twitter {
-	padding: 20px;
+    padding: 20px;
 }
 
 #sidebar-webifyme {
@@ -192,44 +155,71 @@ ol.install-steps li p.note {
 }
 
 #download-sidebar {
-  border: #d7d9e8 1px solid;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-moz-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
-	-webkit-box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
-	box-shadow: 0 2px rgba(0, 0, 0, 0.05), 0 -2px rgba(0, 0, 0, 0.05) inset;
+    display: inline-block;
+    background-color: #FFFFFF;
+    background-image: -moz-linear-gradient(#FFFFFF 95%, rgba(223, 239, 249, 0.15));
+    border: 1px solid #BDC6D7;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.1), 0 -2px #E5EFF8 inset, 0 0 2px rgba(223, 239, 249, 0.8) inset, 0 -5px 10px rgba(223, 239, 249, 0.5) inset;
+    line-height: 24px;
+    list-style-type: none;
+    margin: 30px;
+    padding: 0;
+    clear: left;
+    zoom: 1;
+}
+
+#download-sidebar:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#download-sidebar #form-column1 {
+    width: 200px;
+    padding: 30px 100px 30px 30px;
+    float: left;
+    background: url(/img/covehead/download/newsletter-bg.png) 150px 28px no-repeat;
+}
+
+#download-sidebar #form-column2,
+#download-sidebar #form-column3 {
+    float: left;
+    width: 300px;
+    padding: 30px 30px 20px 0;
+}
+
+#download-sidebar #form-column3 {
+    width: 193px;
 }
 
 #sidebar-mobile img {
-	float: right;
+    float: right;
 }
 
 #sidebar-webifyme img,
 #sidebar-twitter img {
-	float: right;
+    float: right;
 }
 
 #download-sidebar form {
-    padding: 20px 15px 20px 20px;
-}
-
-#download-sidebar form h3 {
-    background: url(/img/covehead/download/mail.png) 100% 12px no-repeat;
-    padding-bottom: 15px;
-    font-size: 15px;
-}
-
-#download-sidebar form h3 span {
-    font-size: 24px;
+    margin: 0;
+    padding: 0;
 }
 
 #download-sidebar form p {
     margin: 0 0 15px 0;
+    color: #666;
+    font-style: italic;
+    line-height: 1.3;
 }
 
-#download-sidebar form h3 span {
-    margin-right: 40px;
+#download-sidebar form h3 em {
+    display: block;
 }
 
 #download-sidebar form .email-field input,
@@ -241,7 +231,7 @@ ol.install-steps li p.note {
     -webkit-border-radius: 4px;
     border-radius: 4px;
     padding: 4px;
-    width: 152px;
+    width: 250px;
     background: #fff;
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) inset
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) inset
@@ -257,7 +247,7 @@ ol.install-steps li p.note {
 }
 
 #download-sidebar form .field {
-    margin: 15px 0;
+    margin: 0 0 10px 0;
 }
 
 #download-sidebar form .privacy-check-label input {
@@ -318,49 +308,52 @@ ol.install-steps li p.note {
 }
 
 /* }}} */
-/* {{{ footer */
+/* {{{ Custom Footer */
 
-#download-footer {
-    clear: left;
-	background: url(/img/covehead/divider-main.jpg) no-repeat 0 0;
-	margin-top: 60px;
-	padding-top: 40px;
+#footer {
+    display: none;
 }
 
-body.default-download #download-footer {
-	background: url(/img/covehead/download/divider-narrow.jpg) no-repeat 0 0;
+#doc:after {
+    content: "";
 }
 
-ul#download-footer {
-	margin: 20px 0;
+.footer-links {
+    margin: 0 15px;
+    padding: 10px 0;
+    clear: both;
+    text-align: center;
+    color: #ccc;
+    font-size: 16px;
+    background: #fff;
 }
 
-ul#download-footer li.one h3 {
-	line-height: 0.9;
+.footer-links .footer-privacy {
+    margin-top: .5em;
+    font-size: .85em;
 }
 
-ul#download-footer li.two h3 span,
-ul#download-footer li.three h3 span {
-	display: inline;
+.footer-links .footer-privacy {
+    font-size: 11px;
+    margin-top: 15px;
+    padding-bottom: 5px;
 }
-
-ul#download-footer li {
-	background: none;
-	float: left;
-	width: 245px;
-	padding: 0 40px 60px 40px;
-	list-style-type: none;
+.footer-links a,
+.footer-links a:link,
+.footer-links a:visited {
+    color: #555;
 }
-
-body.default-download ul#download-footer li {
-	width: 170px;
+.footer-links .footer-privacy a,
+.footer-links .footer-privacy a:link,
+.footer-links .footer-privacy a:visited {
+    color: #999;
 }
 
 /* }}} */
 /* {{{ Fallback content */
 
 #download-fallback {
-	display: none;
+    display: none;
 }
 
 #download-fallback li {
@@ -372,14 +365,14 @@ body.default-download ul#download-footer li {
 }
 
 #content-fallback .download-link span {
-	position: relative;
-	display: block;
-	background: url(/img/home/download-logo.png) 0 0 no-repeat;
-	font-family: georgia, serif;
-	font-style: italic;
-	font-weight: normal;
-	line-height: 18px;
-	padding: 10px 10px 0 112px;
+    position: relative;
+    display: block;
+    background: url(/img/home/download-logo.png) 0 0 no-repeat;
+    font-family: georgia, serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 10px 10px 0 112px;
     margin-left: -25px;
     padding-left: 55px;
     font-size: 15px;

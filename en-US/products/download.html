@@ -2,9 +2,7 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Mozilla Download';
     $body_id    = 'download';
-    $breadcrumbs = array(
-                            'Download' => ""
-                        );
+    $body_class = 'darkbg';
     $extra_headers = <<<EXTRA_HEADERS
 
     <link rel="stylesheet" href="/style/kampyle/k_button.css" media="screen" />
@@ -18,15 +16,18 @@ EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
     $form = new NewsletterForm('MOZILLA_AND_YOU', array());
-    @include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
 ?>
 
 <div id="download-sidebar-contents" style="display: none;">
   <form action="/<?=$lang?>/newsletter/" method="post" id="newsletter-form">
     <input type="hidden" name="mozilla-and-you" value="Y" />
 
-    <h3>More Features. <span>More Firefox.</span></h3>
-    <p>Get the latest Firefox tips and tricks in our monthly newsletter.</p>
+    <div id="form-column1">
+        <h3>More Features. <em>More Firefox.</em></h3>
+        <p>Get the latest Firefox tips and tricks in our monthly newsletter.</p>
+    </div>
+    <div id="form-column2">
     <div class="field required email-field">
       <input name="email" type="email" class="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
     </div>
@@ -69,6 +70,8 @@ EXTRA_HEADERS;
         <span class="title">I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a></span>
       </label>
     </div>
+    </div>
+    <div id="form-column3">
 
       <input onclick="dcsMultiTrack(
                         'DCS.dcssip', 'www.mozilla.org',
@@ -83,6 +86,7 @@ EXTRA_HEADERS;
              value="Sign me up »" 
              class="button">
         <p class="disclaimer">We will only send you Mozilla-related information.</p>
+    </div>
 
   </form>
 </div>
@@ -206,18 +210,22 @@ EXTRA_HEADERS;
 			return;
 		}
 
+
+        promotion_msg = '<p id="download-thanks">Thanks for downloading Firefox! As a non-profit, we’re free to innovate on your behalf without any pressure to compromise. You’re going to love the difference.';
+
 		switch (os) {
 			case 'win' :
 				var at_least_xp = /Windows NT (5\.[1-9]|[6-9]\.|[1-9][0-9]+\.)/.test(navigator.userAgent);
 				if (jQuery.browser.msie && at_least_xp) {
 					document.body.className += ' win-download';
 
-					promotion_msg =
+					promotion_msg +=
 						'<ol class="install-steps">' +
 						'<li class="one">' +
-						'<p>Start the process by clicking Run.</p>' +
-						'<p class="note">Depending on your connection speed, the download may take up to a few minutes. Thanks for your patience… it’ll be worth the wait!</p>' +
-						'</li>' +
+						'<p>Start the process by clicking Run. ' +
+                        'Your download should begin automatically. If not, ' +
+                        'click here'.link(download_url) +
+						'. It could take a few minutes, but it’s worth the wait.</li>' +
 						'<li class="two">' +
 						'<p>Click Run to launch the Mozilla Firefox setup wizard.</p>' +
 						'<p class="note">Then, just follow the steps (we’ve made the process as painless as possible).</p>' +
@@ -234,50 +242,54 @@ EXTRA_HEADERS;
 			case 'osx' :
 				document.body.className += ' osx-download';
 
-				promotion_msg =
+				promotion_msg +=
 					'<ol class="install-steps">' +
 					'<li class="one">' +
-					'<p>Your file should begin downloading automatically in a few seconds.</p>' +
-					'<p class="note">Depending on your connection speed, the download may take up to a few minutes. Thanks for your patience… it’ll be worth the wait!</p>' +
+					'<p>Your download should begin automatically. If not, ' +
+                    'click here'.link(download_url) +
+					'. It could take a few minutes, but it’s worth the wait.</li>' +
 					'</li>' +
 					'<li class="two">' +
 					'<p>When prompted, drag the Firefox icon into the image of your Applications folder.</p>' +
 					'</li>' +
 					'<li class="three">' +
-					'<p>Drag the Firefox icon from the Applications folder into the dock.</p>' +
-					'<p class="note">Then, just click on Firefox whenever you want to use the web!</p>' +
+					'<p>Drag the Firefox icon from the Applications folder into the dock. ' +
+					'Then, just click on Firefox whenever you want to use the web!</p>' +
 					'</li>' +
 					'</ol>';
 					break;
-			default:
-				document.body.className += ' default-download';
+            default:
+                promotion_msg += '<p class="manual-download">Your download should automatically begin in a few seconds, but if not, ';
+                var link_text = 'click here';
+                promotion_msg += link_text.link(download_url) + '.</p>';
+                document.body.className += ' default-download';
 		}
 
 		// 2. Build download.mozilla.org URL out of those vars.
 		download_url = "http://download.mozilla.org/?product=";
 		download_url += product + '&os=' + os + '&lang=' + lang;
 
-		// 3. Display sidebar
-		var msg = '<div id="download-sidebar">';
-                msg += document.getElementById('download-sidebar-contents').innerHTML;
-        document.getElementById('download-sidebar-contents').innerHTML = "";
-		msg += '</div>';
-
 		// 4. display the download URL as a manual fall-back link
-		msg += '<div id="main-feature" class="main-feature-firefox">';
-		msg += '<h2>Thanks for choosing <span>Firefox!</span></h2>';
+		var msg = '<div id="main-feature" class="main-feature-firefox">';
+		msg += '<h2>Welcome to the only browser <em>that puts you first.</em></h2>';
 
 		// 5. display a promotional box with content based on the PRODUCT variable
-		msg += '<p class="manual-download">Your download should automatically begin in a few seconds, but if not, ';
-		var link_text = 'click here';
-		msg += link_text.link(download_url) + '.</p>';
 		msg += '</div>';
+		msg += '<div id="content">';
 
 		if (promotion_msg != '') {
-			msg += '<div id="content">';
+			msg += '<div id="content-msg">';
 			msg += promotion_msg;
 			msg += '</div>';
 		}
+
+		// 3. Display sidebar
+		msg += '<div id="download-sidebar">';
+        msg += document.getElementById('download-sidebar-contents').innerHTML;
+        document.getElementById('download-sidebar-contents').innerHTML = "";
+		msg += '</div>';
+		msg += '</div>';
+
 
 		div.innerHTML = msg;
 	}
@@ -367,62 +379,29 @@ EXTRA_HEADERS;
                 + '</div>'
             );
 
-            var $footer = $('#download-footer');
-            var $promo  = $('#content');
+            var $feature = $('#main-feature');
 
-            if ($promo.length) {
-                $promo.before($survey);
-            } else {
-                $footer.before($survey);
-            }
+            $feature.after($survey);
         }
     });
 
 // ]]></script>
 
-	<ul id="download-footer">
-		<li class="one">
-		  <h3>Need <span>Download Help?</span></h3>
-		  <p>Our help page has plenty of answers.</p>
-		  <a href="http://support.mozilla.com/"
-                     onclick="dcsMultiTrack('DCS.dcssip', 'support.mozilla.com',
-                                            'DCS.dcsuri', '/en-US/home/',
-                                            'WT.ti', 'Link: Download Help',
-                                            'WT.dl', 99,
-                                            'WT.nv', 'Content',
-                                            'WT.ac', 'Support - Download Help');">
-                    Visit Firefox Help »
-                  </a>
-		</li>
-		<li class="two">
-		  <h3>Take the <span>Tour</span></h3>
-		  <p>Explore all the coolest and most helpful features of your new browser.</p>
-		  <a href="/<?=$lang?>/firefox/tips/" 
-                     onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                            'DCS.dcsuri', '/<?=$lang?>/firefox/tips/',
-                                            'WT.ti', 'Link: Take the Tour',
-                                            'WT.dl', 99,
-                                            'WT.nv', 'Content',
-                                            'WT.ac', 'Tour');">
-                    Learn More »
-                  </a>
-		</li>
-		<li class="three">
-		  <h3>About <span>Firefox</span></h3>
-		  <p>Firefox is made by Mozilla, a public benefit organization.</p>
-		  <a href="/<?=$lang?>/about/whatismozilla.html"
-                     onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                            'DCS.dcsuri', '/<?=$lang?>/about/whatismozilla.html',
-                                            'WT.ti', 'Link: About Firefox',
-                                            'WT.dl', 99,
-                                            'WT.nv', 'Content',
-                                            'WT.ac', 'About');">
-                    What is Mozilla? »
-                  </a>
-		</li>
-	</ul>
-
 </div> <!-- end #download_message -->
+
+<div class="footer-links">
+    <a href="/firefox/central/">Tour</a> &nbsp;|&nbsp;
+    <a href="/firefox/features/">Desktop</a> &nbsp;|&nbsp;
+    <a href="/mobile/">Mobile</a> &nbsp;|&nbsp;
+    <a href="https://addons.mozilla.org/">Add-Ons</a> &nbsp;|&nbsp;
+    <a href="http://support.mozilla.com/">Support</a> &nbsp;|&nbsp;
+    <a href="/firefox/about/">About</a>
+    <div class="footer-privacy">
+        <a href="/{$lang}/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="/en-US/about/legal.html">Legal Notices</a>
+    </div>
+</div>
+
 
 <? if (isset($_GET['extra']) && $_GET['extra'] == 'xpcamp') { ?>
 <!-- measure tag (Bug 660249) -->
@@ -467,5 +446,5 @@ $(document).ready(function() {
 </script>
     
 EXTRA_FOOTERS;
-    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+    @include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
 ?>
