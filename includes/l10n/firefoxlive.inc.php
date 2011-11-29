@@ -46,7 +46,7 @@ EXTRA_HEADERS;
 $body_id    = '';
 
 
-$share_facebook = '<a href="http://www.facebook.com/share.php?u=http://www.mozilla.org/en-US/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click" class="button share_facebook">' . ___('Share on Facebook »') . '</a>';
+$share_facebook = '<a href="http://www.facebook.com/share.php?u=http://www.mozilla.org/' . $lang . '/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click" class="button share_facebook">' . ___('Share on Facebook »') . '</a>';
 
 $share_twitter  = '<a class="button share_twitter" href="https://twitter.com/intent/tweet';
 $share_twitter .= '?url=http://mzl.la/sPo5yu&amp;text=';
