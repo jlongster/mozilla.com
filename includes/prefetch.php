@@ -168,7 +168,7 @@ define ('LANG', $lang);
 // it does (otherwise we get stuff with no language at all.  For example:
 //  www.mozilla.com/firefox   -->    www.mozilla.com/en-US/firefox
 $url_parts = explode('/', trim($_SERVER['REDIRECT_URL'], '/'));
-if ($url_parts[0] != $lang && $url_parts[0] != 'b') {
+if ($url_parts[0] != $lang) {
 
     // Bug 619404 Quickly redirect homepage
     if ($_SERVER['REQUEST_URI'] == '/') {
@@ -252,7 +252,7 @@ if (preg_match(':^en-US/(/)?(firefox/(/)?)?index.html$:', $page)) {
 $firefoxDetails = new firefoxDetails();
 
 // Check and make sure our file exists
-if($url_parts[0] != 'b' && file_exists("{$config['file_root']}/{$page}")) {
+if (file_exists("{$config['file_root']}/{$page}")) {
 
     // Headers and footers are included on a per-page basis.
     // This is because we need to change some variables for each page
@@ -274,7 +274,7 @@ if($url_parts[0] != 'b' && file_exists("{$config['file_root']}/{$page}")) {
     // We're all done.
     exit;
 
-} else if($url_parts[0] != 'b') {
+} else {
     // Under normal circumstances, we'd have a 404 - However, we're kind of
     // building a Frankensite with the old mozilla.com.  While we're in this
     // transitional phase, we need to check if the page they are looking for
