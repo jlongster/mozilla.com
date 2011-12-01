@@ -54,6 +54,9 @@ if (count($_GET) > 0) {
 
         $target = (in_array('new', $getArray)) ? 'new' : 'normal';
         $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/home.lang');
+        if( $target == 'normal' && in_array($lang, array('fr')) ) {
+            $target = 'fx';
+        }
     }
 
     $extra_css = <<<EXTRA
@@ -408,6 +411,44 @@ EXTRA;
         $extra_css = '';
         $firefoxDetailsl10n->download_base_url_transition = "/$lang/download/";
         $firefoxDetailsl10n->has_transition_download_page = $XPCampaignTransitionPage;
+        break;
+
+    case 'fx':
+        $contentfile = $config['file_root'].'/includes/l10n/marketing/home.mobilefx.inc.php';
+        $extra_css = '';
+        $body_id = 'home-fx';
+        $home_css = '<link rel="stylesheet" href="/style/covehead/home-fx.css" media="screen" />';
+        require_once "{$config['file_root']}/includes/helpers.php";
+        include_once "{$config['file_root']}/includes/product-details/mobileDetails.class.php";
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'home-fx-download', '_include_js' => true, 'download_product' => 'Firefox');
+        $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/mobile.lang');
+        $extra_css .= <<<EXTRA
+            ul.home-download li a.download-link #download-arrow,
+            ul.home-download li a.download-link .download-arrow {
+                display: none !important;
+            }
+EXTRA;
+        $android_relnotes = '/' .$lang . mobileDetails::release_notes_url(mobileDetails::latest_version);
+        $android_market_download = <<<EXTRA
+            <a href="https://market.android.com/details?id=org.mozilla.firefox"
+            id="mobile-download"
+             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                    'DCS.dcsuri', '/mobile/download/',
+                                    'WT.ti', 'Link: Get Firefox for Android',
+                                    'WT.dl', 99,
+                                    'WT.nv', 'Content',
+                                    'WT.ac', 'Get Firefox for Android',
+                                    'WT.z_convert','Get Firefox for Android',
+                                    'WT.si_n','Get Firefox for Android',
+                                    'WT.si_x','2')">
+
+            <span class="title">{$l10n->get('Get Firefox for Android')}</span>
+            <span class="desc">{$l10n->get('Free from the Android Market')}</span>
+            <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAZCAYAAAArK+5dAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH2wkPFAMGOD/JMQAAAy1JREFUSMeNlU9oFUccxz+z2bdGUmwlARs0tJe2YJo0FBQ8hWqLBNJi/0ChR6EBtXrwKPaQ9uShILTG0ktvASWlh7Y+DyKY0ohCoaFW25oiIagJSfXlT9283Z0ZD/tm3s7uvqQDj/m93+z8ft/5/r7zGwHQ/97xes/rBwLKhlYgvHKfO0fAdWAC+Oan04ciAG+sOl0HAiUTzE8raW2llOPTSqK1dtYac6BkMqhk8qVW8sbQ6MROAA8ILCqtUlPrJtLGrJW0s1bSPY35zrrkAFAdGp0I/CIj6WYhhPPfDONHK7TWCCFSQFpaWwiBVrIPGPFtoCxq4dnAnh/w0eBu3ni1h65t7TbRahgzM1/j26t3mH246IDRGlObD30TOItUq8QiHTk4wP6+XQC889lFi3Di1Af09nRy8u0BTnx92QJsnjxBCLHXN05TvAwXAPS/2MXDx/8RRpIzh9/CazB0b2GZLZU2Kn5bBrm2+xp24BvenOAZyuJE8sm5H2k1vjo27OzN235BMbkkiVSla/l1Q53xG9tSpGR5EKl0yzWAWDbXNRn0Dds3GfNyNCNKUu1bOeYTJLLlXpugFUUAiTIUlAeQWrfc61BkCp1HGiXKEUGe5yhRKLVJgixFeaSJVO4d0Tj2RiJwKNJKNrtmsbc07oZXXMtLPNdpHYoE7ubs0dNTpjfc0KSUQiptZdqkzkhf4ly0gkq0oh6nbdqcLv9dIhs1yCDPhvEz3a+Uw3os+fTj9wFoD3w8kRa+HqetJYwzMtXFGJ4QAuG1IaOwNMHs0ipLq+t88d0v/Lsa8vn4NR6trXP2+ylqTyKm/nzg1iVXIzFWna6P/3AlCGuLbHnm2UIhtz63gz39r9C9vYOtlTZbr5Uw4vbcI/7+47emCnNPqxACH/j1hZd79936+RKV9g48332DwtoCk5ML/K9RUFj6ZF7Y+9LzdHR2Ey4vIuO4tCWUddpWvqztAecrnvh9+OCbdHR2s76yRLRWQ0Z1R13mvcjKMa8+x2683QJgrDq9UwhRjaTqu3l3nrl//qJ2f6bQNlo1vI3WhTHGqtMBcAR4FxjciKLNEplxdOg18RQ29owjgk9YIAAAAABJRU5ErkJggg==">
+        </a>
+        <div class="download-other"><a href="{$android_relnotes}">{$l10n->get('Release Notes')}</a> | <a href="/{$lang}/mobile/platforms">{$l10n->get('Supported Devices')}</a></div>
+EXTRA;
+
         break;
     case 'normal':
     default:

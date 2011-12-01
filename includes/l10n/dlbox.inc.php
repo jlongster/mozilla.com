@@ -97,6 +97,12 @@ switch($pageid) {
             $dl_box_options['dl_extra'] = 'XPUpgrade';
         }
 
+        // fx mobile download page, smaller download button
+        if ($target == 'fx') {
+            $dl_box_options = array('layout' => 'subpage', 'download_parent_override' => 'home-fx-download', '_include_js' => true, );
+            $dl_box_id = 'home-fx-download';
+        }
+
         break;
 }
 
