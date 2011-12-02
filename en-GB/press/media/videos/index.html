@@ -1,0 +1,61 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Media Library';
+    $body_id    = 'images';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about",
+		'Press Center' => "/{$lang}/press",
+		'Mozilla Media Library' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+
+<div id="main-feature">
+	<h2>Mozilla <span>Media Library</span></h2>
+</div>
+
+<div id="main-content">
+
+	<ul id="media-menu">
+		<li id="media-logo"><a href="/<?=$lang?>/press/media/logos/">Logos</a></li>
+		<li id="media-screenshots"><a href="/<?=$lang?>/press/media/screenshots/">Product Screenshots</a></li>
+		<li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Staff Headshots</a></li>
+		<li id="media-images"><a href="/<?=$lang?>/press/media/images/">Images</a></li>
+		<li id="media-videos"><span>Videos</span></li>
+	</ul>
+	
+	<div id="content">
+		<p>Mozilla is pleased to provide b-roll footage and other video assets for media use. If you are unable to download the b-roll for any reason please contact <a href="mailto:press@mozilla.com">press@mozilla.com</a>.</p>
+	
+		<h3>Firefox Video</h3>
+		<table class="video">
+		<tr>
+			<td>
+				<a href="http://videos.mozilla.org/serv/marketing/broll/mozilla_broll.webm"><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/broll-thumbnail.jpg" height="150" width="150" alt="Mozilla B-Roll" /></a>
+				<h5>Mozilla B-Roll</h5>
+	            <ul>
+                <li><a href="http://videos.mozilla.org/serv/marketing/broll/mozilla_broll.webm">191MB WebM Video</a></li>
+                <li><a href="http://videos.mozilla.org/serv/marketing/broll/mozilla_broll.mov">787MB MPEG4 Video</a></li>
+                <li><a href="http://videos.mozilla.org/serv/marketing/broll/mozilla_broll.theora.ogv">234MB Ogg Theora Video</a></li>
+            </ul>
+			</td>
+		</tr>
+		</table>
+	</div>
+
+</div><!-- end #content div -->
+
+<div id="sidebar">
+	<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>

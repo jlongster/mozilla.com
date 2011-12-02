@@ -274,7 +274,6 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     #main-feature h2 {
         font-size:45px;
-        font-style: normal;
     }
 
     /* {{{ Header */

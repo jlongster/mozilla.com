@@ -10,7 +10,8 @@ EXTRA_HEADERS;
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
 ?>
 <div id="main-feature">
-	<h2><span><?= $l10n->get('Press');?></span></h2>
+	<h2>Mozilla <span><?= $l10n->get('Press Center');?></span></h2>
+	<p><?= $l10n->get('Mozilla News, Announcements and More');?></p>
 </div>
 
 <div id="main-content">
@@ -41,6 +42,27 @@ if (count($items) > 0) {
    echo '</ul>';
 }
 ?>
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+  <?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+  
+  <div id="sidebar-box">
+    <h3><?= $l10n->get('Connect <span>with Us</span>');?></h3>
+    <ul class="social">
+        <li class="twitter"><a href="http://twitter.com/Firefox">Twitter »</a></li>
+        <li class="flickr"><a href="http://www.flickr.com/photos/firefox_community">Flickr »</a></li>
+        <li class="facebook"><a href="http://www.facebook.com/Firefox">Facebook »</a></li>
+        <li class="feed"><a href="http://blog.mozilla.com/feed/"><?= $l10n->get('Subscribe to RSS feed »');?></a></li>
+    </ul>
+
+    <h3><?= $l10n->get('Media <span>Contact</span>');?></h3>
+    <p><?= $l10n->get('For interview requests or any other media inquiries, please contact:');?></p>
+    <p><em><?= $l10n->get('press at mozilla dot com');?></em></p>
+  </div>
+
 </div>
+
 <?php
 require_once $config['file_root'].'/includes/l10n/footer-pages.inc.php';

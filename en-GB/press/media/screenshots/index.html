@@ -1,0 +1,263 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Media Library';
+    $body_id    = 'images';
+	$breadcrumbs = array(
+		'About' => "/{$lang}/about",
+		'Press Center' => "/{$lang}/press",
+		'Mozilla Media Library' => "",
+	);
+    $extra_headers = <<<EXTRA_HEADERS
+
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
+
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+
+?>
+
+
+<div id="main-feature">
+    <h2>Mozilla <span>Media Library</span></h2>
+</div>
+
+<div id="main-content">
+
+    <ul id="media-menu">
+        <li id="media-logo"><a href="/<?=$lang?>/press/media/logos/">Logos</a></li>
+        <li id="media-screenshots"><span>Product Screenshots</span></li>
+        <li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Staff Headshots</a></li>
+        <li id="media-images"><a href="/<?=$lang?>/press/media/images/">Images</a></li>
+        <li id="media-videos"><a href="/<?=$lang?>/press/media/videos/">Videos</a></li>
+    </ul>
+
+    <div id="content">
+
+        <p>Below are Mozilla product screenshots that you may use for print, Web and broadcast. Please note that screenshots and related product images must be unaltered, they cannot be annotated or modified in any way. If you have questions or need more details, please <a href="mailto:press@mozilla.com">email our press team</a>.</p>
+
+        <h3>Firefox Desktop</h3>
+        <div class="screenshots">
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-windows.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-windows-small.png" alt="screenshot" width="150" />
+                    <h5>Firefox on Windows</h5>
+                    <span>142Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-mac.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-mac-small.png" alt="screenshot" width="150" />
+                    <h5>Firefox on Mac</h5>
+                    <span>172Kb PNG</span>
+</a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-linux.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox-linux-small.png" alt="screenshot" width="150" />
+                    <h5>Firefox on Linux</h5>
+                    <span>89Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/awesomebar.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/awesomebar-small.png" alt="screenshot" width="150" />
+                    <h5>Awesome Bar</h5>
+                    <span>132Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/switch-to-tab.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/switch-to-tab-small.png" alt="screenshot" width="150" />
+                    <h5>Switch to Tab</h5>
+                    <span>136Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/app-tabs.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/app-tabs-small.png" alt="screenshot" width="150" />
+                    <h5>App Tabs</h5>
+                    <span>285Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/tab-groups.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/tab-groups-small.png" alt="screenshot" width="150" />
+                    <h5>Tab Groups</h5>
+                    <span>514Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/sync.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/sync-small.png" alt="screenshot" />
+                    <h5>Sync</h5>
+                    <span>67Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/addons.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/addons-small.png" alt="screenshot" />
+                    <h5>Add-ons Manager</h5>
+                    <span>563Kbb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/webgl.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/webgl-small.png" alt="screenshot" />
+                    <h5>WebGL</h5>
+                    <span>483Kbb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/instant-site-id.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/instant-site-id-small.png" alt="screenshot" />
+                    <h5>Instant Web Site ID</h5>
+                    <span>258Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/private-browsing.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/private-browsing-small.png" alt="screenshot" />
+                    <h5>Private Browsing</h5>
+                    <span>103Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/add-ons-builder.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/add-ons-builder-small.png" alt="screenshot" />
+                    <h5>Add-ons Builder</h5>
+                    <span>165Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/do-not-track.png">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/do-not-track-small.png" alt="screenshot" />
+                    <h5>Do Not Track</h5>
+                    <span>78Kb PNG</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="http://static.mozilla.com/moco/en-US/pdf/firefox4-ui.pdf">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/firefox4-ui-pdf-small.png" alt="screenshot" />
+                    <h5>Firefox Interface Overview</h5>
+                    <span>2.0Mb PDF</span>
+                </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="http://static.mozilla.com/moco/en-US/pdf/sync.pdf">
+                    <img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/sync-pdf-small.png" alt="screenshot" />
+                    <h5>Firefox Sync Overview</h5>
+                    <span>2.3Mb PDF</span>
+                </a>
+            </div>
+        </div>
+
+
+        <h3>Firefox for Mobile</h3>
+        <div class="screenshots">
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/addons-manager-screen.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/addons-manager-screen-small.png" alt="screenshot" width="73" />
+	                <h5>Add-ons Manager</h5>
+                	<span>82Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/one-touch-bookmarking-screen.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/one-touch-bookmarking-screen-small.png" alt="screenshot" width="73" />
+	                <h5>One Touch Bookmarking</h5>
+                	<span>83Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/start-page-screen.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/start-page-screen-small.png" alt="screenshot" width="73" />
+	                <h5>Start Page</h5>
+                	<span>63Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/tabbed-browsing-screen.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/tabbed-browsing-screen-small.png" alt="screenshot" width="73" />
+	                <h5>Tabbed Browsing</h5>
+                	<span>122Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/typing-awesomescreen-screen.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/typing-awesomescreen-screen-small.png" alt="screenshot" width="73" />
+	                <h5>Typing Awesome Screen</h5>
+                	<span>84Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/personalized-start-page.jpg">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/personalized-start-page-small.png" alt="screenshot" width="73" />
+	                <h5>Personalized Start Page</h5>
+                	<span>806Kb PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/one-touch-bookmarking.jpg">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/one-touch-bookmarking-small.png" alt="screenshot" width="150" />
+	                <h5>One Touch Bookmarking</h5>
+                	<span>2.73MB PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/addons-manager.jpg">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/addons-manager-small.png" alt="screenshot" width="73" />
+	                <h5>Add-ons Manager</h5>
+                	<span>1.94MB PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/tabbed-browsing.jpg">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/tabbed-browsing-small.png" alt="screenshot" width="150" />
+	                <h5>Tabbed Browsing</h5>
+                	<span>1.83MB PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/awesome-screen.jpg">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/awesome-screen-small.png" alt="screenshot" width="150" />
+	                <h5>Awesome Screen</h5>
+                	<span>2.18MB PNG</span>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/do-not-track.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/screenshots/mobile/do-not-track-small.png" alt="screenshot" width="75" />
+	                <h5>Do Not Track</h5>
+                	<span>50Kb PNG</span>
+	              </a>
+            </div>
+        </div>
+        <h3 id="press-images">Press Images</h3>
+        <div class="screenshots">
+            <div class="screenshot-contents">
+                <a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_A_web_EN.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/rapidreleasecycle_A.png" alt="" width="88" />
+	                <h5>Mozilla Firefox Release Channels</h5>
+                	<a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_A_8.5x11_EN.tif">25Mb TIFF</a><br />
+                	<a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_A_web_EN.png">553Kb PNG</a>
+	              </a>
+            </div>
+            <div class="screenshot-contents">
+                <a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_B_web_EN.png">
+                	<img src="<?php echo "{$config['static_prefix']}"; ?>/en-US/img/press/rapidreleasecycle_B.png" alt="" width="88" />
+	                <h5>Mozilla Firefox Rapid Release Timeline</h5>
+                	<a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_B_8.5x11_EN.tif">25Mb TIFF</a><br />
+                	<a href="http://static.mozilla.com/moco/en-US/images/rapidreleasecycle_B_web_EN.png">456Kb PNG</a>
+	              </a>
+            </div>
+        </div>
+    </div>
+
+</div><!-- end #content div -->
+<div id="sidebar">
+    <?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
