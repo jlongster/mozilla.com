@@ -16,6 +16,9 @@ BrowserMatch "(?!(Android|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 
+# Bug 706581
+RewriteRule ^[Ss]tory/?$ https://donate.mozilla.org/Story
+
 # Bug 702757 (SOPA)
 Rewriterule ^sopa/$ /en-US/sopa/ [L]
 RewriteRule ^sopa$ /sopa/ [R=301,L]
