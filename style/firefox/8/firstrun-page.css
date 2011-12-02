@@ -38,28 +38,30 @@ header#feature h2 em {
     margin: 0;
 }
 
+#video,
 #video-player {
-    width: 640px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
     margin: 0 auto;
 }
+
+
 
 /* }}} */
 /* {{{ Newsletter Feature */
 
+
+.promo,
 #newsletter-signup {
-    float: left;
-    width: 350px;
-    margin-left: 120px;
-}
-
-/* }}} */
-/* {{{ Mobile Promo */
-
-.promo {
-    float: right;
+    display: inline-block;
     width: 350px;
     text-align: center;
-    margin-right: 120px;
+    vertical-align: top;
+}
+
+#sub-features {
+    text-align: center;
 }
 
 /* }}} */
@@ -99,6 +101,7 @@ header#feature h2 em {
 }
 
 /* }}} */
+
 html {
     min-height: 100%;
 }
@@ -115,12 +118,22 @@ body {
     background: #df4114 url(/img/firefox/firstrun/background-mosaic.jpg) 50% 0 no-repeat;
     min-height: 100%;
     height: 100%;
-    min-width: 980px;
+    min-width: 400px;
     line-height: 1.4em;
     font-family: Georgia, serif;
     font-size: 16px;
     color: #484848;
 }
+
+#wrapper {
+    min-width: 400px;
+}
+
+#doc {
+    width: auto;
+    max-width: 980px;
+}
+
 #content h2 {
     position: relative;
     font-style: italic;
@@ -134,7 +147,6 @@ body {
 
 .promo {
     font-style: italic;
-    float: right;
 }
 .promo a,
 #newsletter-signup input[type=submit] {
@@ -166,7 +178,6 @@ body {
 /** Newsletter */
 #newsletter-signup {
     position: relative;
-    float: left;
     text-align: center;
 }
 #newsletter-signup .more {
