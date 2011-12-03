@@ -9,6 +9,11 @@ EXTRA_HEADERS;
 
 require_once $config['file_root'].'/includes/l10n/header-pages.inc.php';
 ?>
+<p id="breadcrumbs">
+  <a href="/<?= $lang ?>/" class="home"><?= $l10n->get('Home');?></a> <b>»</b> 
+  <span><?= $l10n->get('Press Center');?></span> 
+</p>
+
 <div id="main-feature">
 	<h2>Mozilla <span><?= $l10n->get('Press Center');?></span></h2>
 	<p><?= $l10n->get('Mozilla News, Announcements and More');?></p>
@@ -54,7 +59,7 @@ if (count($items) > 0) {
         <li class="twitter"><a href="http://twitter.com/Firefox">Twitter »</a></li>
         <li class="flickr"><a href="http://www.flickr.com/photos/firefox_community">Flickr »</a></li>
         <li class="facebook"><a href="http://www.facebook.com/Firefox">Facebook »</a></li>
-        <li class="feed"><a href="http://blog.mozilla.com/feed/"><?= $l10n->get('Subscribe to RSS feed »');?></a></li>
+        <li class="feed"><a href="http://europe.mozilla.org/<?= $lang; ?>/news.rdf"><?= $l10n->get('Subscribe to RSS feed »');?></a></li>
     </ul>
 
     <h3><?= $l10n->get('Media <span>Contact</span>');?></h3>

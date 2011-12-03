@@ -1,0 +1,116 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Bibliothèque Média';
+    $body_id    = 'media';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
+    <script src="/js/mozilla-pager.js"></script>
+    
+EXTRA_HEADERS;
+    
+    @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
+?>
+<p id="breadcrumbs">
+  <a href="/<?= $lang ?>/" class="home">Accueil</a> <b>»</b> 
+  <a href="/<?= $lang ?>/press">Section Presse</a> <b>»</b> 
+  <span>Bibliothèque Média</span>
+</p>
+
+<div id="main-feature">
+	<h2>Mozilla <span>Bibliothèque Média</span></h2>
+</div>
+
+<div id="main-content">
+	
+  <ul id="media-menu">
+    <li id="media-logo"><span>Logos</span></li>
+    <li id="media-screenshots"><a href="/<?=$lang?>/press/media/screenshots/">Captures d'écran produits</a></li>
+    <li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Galerie de portraits</a></li>
+    <li id="media-images"><a href="/<?=$lang?>/press/media/images/">Images</a></li>
+    <li id="media-videos"><a href="/<?=$lang?>/press/media/videos/">Vidéos</a></li>
+  </ul>
+	
+	<div id="content">
+	
+    <p>Besoin d'un logo pour illustrer votre article ? Servez-vous ! - Il suffit de respecter nos indications visuelles et notre <a href="http://www.mozilla.org/foundation/trademarks/policy.html">politique de marque déposée</a>. S'il vous faut une taille ou un format différent, vous pouvez <a href="mailto:eu-press@mozilla.org">contacter notre équipe de relations presse</a>. Si vous souhaitez utiliser l'un de nos logos dans un autre but, y compris pour identifier Mozilla comme client ou partenaire, ou pour montrer la compatibilité de votre produit avec Firefox, il vous faut <a href="mailto:trademarks@mozilla.com">obtenir l'autorisation écrite</a> de Mozilla - à moins que l'utilisation envisagée soit prévue dans nos <a href="http://www.mozilla.org/foundation/trademarks/policy.html">règles de marque déposée</a>. Vous trouverez des informations complémentaires dans <a href="http://www.mozilla.org/foundation/trademarks/faq.html">le document FAQ consacré à notre marque déposée</a>. Souvenez-vous : utilisez sans abuser !</p>
+    
+		<h4>Indications générales :</h4>
+		
+		<p><strong>Pour toute utilisation autorisée de nos marques déposées, veillez à ne pas :</strong></p>
+		<ol>
+			<li>Modifier nos logos, de quelque manière que ce soit.</li>
+			<li>Combiner nos logos au vôtre, ou à tout autre logos, marques déposées, ou visuels.</li>
+			<li>Placer un logo à trop grande proximité d'autres contenus, de manière à rendre sa distinction difficile.</li>
+			<li>Placer notre logo de manière trop proéminente (comme le plus visible) sur votre site, document imprimé ou tout autre contenu.</li>
+			<li>Utiliser nos logos de manière à laisser supposer tout type d'association ou de partenariat avec Mozilla, ou tout type de support, de sponsoring ou de promotion par Mozilla (sauf si autorisé par licence de notre part).</li>
+			<li>Faire une utilisation mal intentionnée, trompeuse, obscène, ou désobligeante de nos logos à l'encontre des individus.</li>
+			<li>Utiliser nos logos sur des sites web ou autres supports proposant du contenu associé à des discours haineux, de la pornographie, des jeux d'argent, ou toute autre activité illégale.</li>
+			<li>Utiliser nos logos en association avec des contenus dépréciants pour nous, ou qui pourraient entacher notre réputation.</li>
+		</ol>
+
+    <h3 class="nomargin">Logos Firefox</h3>
+    <p>Pour télécharger le logo Firefox ou toute autre information liée, <a href="/<?=$lang?>/firefox/brand/">visitez notre boîte à outils</a>.</p>
+
+		<h3 class="nomargin">Logos Mozilla</h3>
+		
+		<div id="mozilla-logos" class="pager pager-with-tabs">
+
+		<ul id="mozilla-logos-nav" class="pager-tabs">
+			<li id="mozilla-logos-link"><a href="#mozilla-logos-download">Télécharger Logos</a></li>
+			<li id="mozilla-mistakes-link"><a href="#mozilla-logos-mistakes">Erreurs Courantes</a></li>
+			<li id="mozilla-guidelines-link"><a href="#logos-guidelines">Indications Supplémentaires</a></li>
+		</ul>
+
+		<div class="pager-content">
+
+			<div class="contents" id="mozilla-logos-download">
+				<script>// <![CDATA[
+				document.getElementById('mozilla-logos-download').id = 'mozilla-download-logos';
+				// ]]></script>
+				
+				<div class="logos-contents">
+					<h4><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla-small.png" alt="Mozilla logo" height="100" width="145" /></h4>
+					<p>TELECHARGEMENT:<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla.png">(Fichier PNG 1MB)</a><br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla.eps">(Fichier EPS 1MB)</a></p>
+				</div>
+				<div class="logos-contents">
+					<h4><img src="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla_wht-small.png" alt="Mozilla logo" height="100" width="145" /></h4>
+					<p>TELECHARGEMENT:<br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla_wht.png">(Fichier PNG 1.1MB)</a><br /><a href="<?php echo "{$config['static_prefix']}"; ?>/img/press/mozilla_wht.eps">(Fichier EPS 1MB)</a></p>
+				</div>
+			</div>
+			<div class="contents" id="mozilla-logos-mistakes">
+				<script>// <![CDATA[
+				document.getElementById('mozilla-logos-mistakes').id = 'mozilla-common-mistakes';
+				// ]]></script>
+				<img src="<?=$config['static_prefix']?>/img/covehead/about/logo/all-mozilla-logo-mistakes.jpg" alt="Mozilla Logo Mistakes" title="Mozilla Logo Mistakes" height="300" width="650" />
+			</div>
+			<div class="contents" id="mozilla-logos-guidelines">
+				<script>// <![CDATA[
+				document.getElementById('mozilla-logos-guidelines').id = 'mozilla-additional-guidelines';
+				// ]]></script>
+				<h4>Espace libre minimum</h4>
+				<p>Le logo et le nom de la marquedoivent être espacés. Merci de suivre les indications d'espace libre minimum illustrées ci-dessous. Ainsi, la dilution de la marque et la confusion liée aux nuisances de fond seront évitées</p>
+				<img src="/img/covehead/about/logo/minimum-space-mozilla.png" alt="Espace libre minimum" class="min-space-image" />
+				<p><em>L'espace libre minimum, ou "zone de sécurité", est égal à "x" (la hauteur du "M" dans le logo Mozilla)</em></p>
+			</div>
+		
+		</div>
+		
+		</div>
+
+		<h3 id="more-logos">Plus de logos :</h3>
+		<ul id="more-logos-links">
+			<li><a href="http://www.mozilla.org/foundation/identity-guidelines/thunderbird.html">Thunderbird</a></li>
+			<li><a href="http://www.mozilla.org/foundation/identity-guidelines/labs.html">Mozilla Labs</a></li>
+		</ul>
+		
+	</div>
+
+</div><!-- end #content div -->
+<div id="sidebar">
+	<?php include "{$config['file_root']}/{$lang}/press/includes/sidebar.php"; ?>
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/includes/l10n/footer-pages.inc.php";
+?>

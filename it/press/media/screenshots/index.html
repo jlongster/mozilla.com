@@ -1,24 +1,23 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Media Library';
-    $body_id    = 'images';
-	$breadcrumbs = array(
-		'About' => "/{$lang}/about",
-		'Press Center' => "/{$lang}/press",
-		'Mozilla Media Library' => "",
-	);
+    $page_title = 'Galleria Multimediale';
+    $body_id    = 'media';
+
     $extra_headers = <<<EXTRA_HEADERS
-
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
-
+    
 EXTRA_HEADERS;
+    
     @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
-
 ?>
-
+<p id="breadcrumbs">
+  <a href="/<?= $lang ?>/" class="home">Pagina iniziale</a> <b>»</b> 
+  <a href="/<?= $lang ?>/press">Sala Stampa</a> <b>»</b> 
+  <span>Galleria Multimediale</span>
+</p>
 
 <div id="main-feature">
-  <h2>Mozilla <span>Galleria multimediale</span></h2>
+  <h2>Mozilla <span>Galleria Multimediale</span></h2>
 </div>
 
 <div id="main-content">

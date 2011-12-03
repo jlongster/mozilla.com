@@ -1,8 +1,8 @@
 <?php
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Galeria Multimediów';
+    $page_title = 'Bibliothèque Média';
     $body_id    = 'media';
-    
+
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/media-page.css" media="screen" />
 
@@ -11,24 +11,25 @@ EXTRA_HEADERS;
     @include_once "{$config['file_root']}/includes/l10n/header-pages.inc.php";
 ?>
 <p id="breadcrumbs">
-  <a href="/<?= $lang ?>/" class="home">Strona Główna</a> <b>»</b> 
-  <a href="/<?= $lang ?>/press">Centrum Prasowe</a> <b>»</b> 
-  <span>Galeria Multimediów</span>
+  <a href="/<?= $lang ?>/" class="home">Accueil</a> <b>»</b> 
+  <a href="/<?= $lang ?>/press">Section Presse</a> <b>»</b> 
+  <span>Bibliothèque Média</span>
 </p>
 
 <div id="main-feature">
-	<h2>Mozilla <span>Galeria multimediów</span></h2>
+	<h2>Mozilla <span>Bibliothèque Média</span></h2>
 </div>
 
 <div id="main-content">
 
-	<ul id="media-menu">
-		<li id="media-logo"><a href="/<?=$lang?>/press/media/logos/">Loga</a></li>
-		<li id="media-screenshots"><a href="/<?=$lang?>/press/media/screenshots/">Screenshoty Produktów</a></li>
-		<li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Fotografie Zespołu</a></li>
-		<li id="media-images"><span>Grafiki</span></li>
-		<li id="media-videos"><a href="/<?=$lang?>/press/media/videos/">Wideo</a></li>
-	</ul>
+  <ul id="media-menu">
+    <li id="media-logo"><a href="/<?=$lang?>/press/media/logos/">Logos</a></li>
+    <li id="media-screenshots"><a href="/<?=$lang?>/press/media/screenshots/">Captures d'écran produits</a></li>
+    <li id="media-staff"><a href="/<?=$lang?>/press/media/bios/">Galerie de portraits</a></li>
+    <li id="media-images"><span>Images</span></li>
+    <li id="media-videos"><a href="/<?=$lang?>/press/media/videos/">Vidéos</a></li>
+  </ul>
+
 	
 	<div id="content">
 		<p>Coming soon.</p>
