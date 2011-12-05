@@ -3,7 +3,7 @@
     $body_id = 'channel';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
-    require_once "{$config['file_root']}/includes/feeds/rapidrelease.php";
+    require_once "{$config['file_root']}/includes/feeds/RapidReleaseFeed.php";
 
     $form = new ChannelsPrivacyForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
     $status = '';
@@ -123,34 +123,33 @@
 
 <h2>Future Release Blog</h2>
 
-<ul class="blog-feed">
-<?php
-   $feed = new RapidReleaseFeed();
-   $items = $feed->get_items(4);
+    <?php
+       $feed = new RapidReleaseFeed();
+       $items = $feed->getItems(4);
 
-   foreach($items as $item) {
-?>
+       if (count($items) > 0) {
+           echo '<ul class="blog-feed">';
 
-  <li>
-    <a href="<?= htmlspecialchars($item['link']); ?>">
-      <?= htmlspecialchars($item['title']) ?>
-    </a>
-    <span class="date">
-      <?= htmlspecialchars(date('F j, Y', $item['date'])) ?> 
-<?php
-      if (count($item['categories']) > 0) {
-          echo ' • ';
-          $categories = array_map('htmlspecialchars', $item['categories']);
-          echo implode(', ', $categories);
-      }
-?> 
-    </span>
-  </li>
+           foreach ($items as $item) {
+               echo '<li>';
+               echo '<h4><a href="' . htmlspecialchars($item['link']) . '">';
+               echo htmlspecialchars($item['title']);
+               echo '</a></h4>';
+               echo '<div class="info">';
+               echo '<span class="date">' . htmlspecialchars(date('F j, Y', $item['date'])) . '</span>';
+               if (count($item['categories']) > 0) {
+                   echo ' • ';
+                   $categories = array_map('htmlspecialchars', $item['categories']);
+                   echo implode(', ', $categories);
+               }
+               echo '</div>';
+               echo '</li>';
+           }
 
-<?php
-   }
-?>
-</ul>
+           echo '</ul>';
+       }
+
+    ?>
 
 <a class="blog" href="http://blog.mozilla.com/futurereleases/">View Blog »</a>
 
