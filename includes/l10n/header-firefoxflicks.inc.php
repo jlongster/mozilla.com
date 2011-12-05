@@ -64,6 +64,8 @@ $social = <<<SOCIAL
 </section>
 SOCIAL;
 
+$content_title = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxflicks/content-title-en-US.png" ' .
+                 'alt="' . ___('Firefox Flicks') . '" />';
 
 $brand_video = <<<BRAND_VIDEO
    
