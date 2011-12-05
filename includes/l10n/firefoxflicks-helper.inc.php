@@ -2,7 +2,7 @@
 
 // temporary include
 
-l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/firefoxlive.lang');
+l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/firefoxflicks.lang');
 
 
 $fb_locale_codes= array(
@@ -94,9 +94,11 @@ $fb_locale_codes= array(
 
 $fb_locale = array_key_exists($lang, $fb_locale_codes) ? $fb_locale_codes[$lang] : 'en_US';
 
-$lang_list          = getLangLinksSelect(array('ar', 'de', 'en-US', 'es-ES', 'fa', 'fr', 'gl', 'hr', 'hu', 'ko', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'sk', 'sl', 'sq', 'tr', 'zh-CN', 'zh-TW'));
+$lang_list          = getLangLinksSelect(array('en-US', 'fr',));
 $lang_list          = str_replace(' (España)', '', $lang_list);
 $lang_list          = str_replace(' (US)', '', $lang_list);
 $current_year       = date('Y');
 $extra_footers      = empty($extra_footers) ? '' : $extra_footers;
 $extra_footer_links = empty($extra_footer_links) ? '' : $extra_footer_links;
+
+
