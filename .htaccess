@@ -11,8 +11,8 @@ SetEnvIfNoCase Request_URI "en-US/index.html" varyua
 SetEnvIfNoCase Request_URI "en-US/firefox/(index|personal|upgrade|firefox).html" varyua
 Header always set Vary "User-Agent" env=varyua
 
-BrowserMatch "(Android|Maemo|Meego|Fennec|Linux\ armv7l)" is_mobile=yes
-BrowserMatch "(?!(Android|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
+BrowserMatch "(Mobile|Maemo|Meego|Fennec|Linux\ armv7l)" is_mobile=yes
+BrowserMatch "(?!(Mobile|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 

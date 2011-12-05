@@ -183,7 +183,7 @@ if ($url_parts[0] != $lang) {
         $ua_nocase = strtolower($ua);
 
         // Redirect mobile devices (Android, Maemo)
-        if (preg_match(':(Android|Maemo|Meego|Fennec|Linux armv7l):', $ua)) {
+        if (preg_match(':(Mobile|Maemo|Meego|Fennec|Linux armv7l):', $ua)) {
             if (isset($_GET['mobile_no_redirect']) || isset($_COOKIE['mobile_no_redirect'])) {
                 setcookie('mobile_no_redirect', '1', 0, '/');
             } else {
