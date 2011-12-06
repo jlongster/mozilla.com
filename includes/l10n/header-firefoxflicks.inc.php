@@ -71,6 +71,14 @@ $brand_video = <<<BRAND_VIDEO
    
 BRAND_VIDEO;
 
+if ($body_id == 'firefoxflicks') {
+    $home_link_open  = '';
+    $home_link_close = '';
+} else {
+    $home_link_open  = '<a href="../">';
+    $home_link_close = '</a>';
+}
+
 $dynamic_header = <<<DYNAMIC_HEADER
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -121,7 +129,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
         <div id="nav-mozilla">
             <a href="http://www.mozilla.org/" class="mozilla">Mozilla</a>
         </div>
-        <h1><a href="../"><img src="{$config['static_prefix']}/img/covehead/firefoxflicks/title-en-US.png" height="59" alt="{$l10n->get('Firefox Flicks')}" /></a></h1>
+        <h1>{$home_link_open}<img src="{$config['static_prefix']}/img/covehead/firefoxflicks/title-en-US.png" height="59" alt="{$l10n->get('Firefox Flicks')}" />{$home_link_close}</h1>
         {$default_menu}
     </nav>
 </header>
