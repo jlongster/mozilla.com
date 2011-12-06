@@ -11,6 +11,8 @@ require_once $config['file_root'] . '/includes/l10n/upgrade-messaging.inc.php';
 // inlining functions
 require_once $config['file_root'] . '/includes/min/inline.php';
 
+// download page specific strings
+$l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
 ?>
 
 <!DOCTYPE HTML>
