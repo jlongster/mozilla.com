@@ -68,7 +68,8 @@ DOCTYPE;
 }
 
 
-$press_link = "";
+$press_link = '';
+
 if(in_array($lang, array('fr', 'de', 'it', 'pl', 'es-ES', 'en-GB'))) {
     l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/press.lang');
     $press_link = <<<PRESS_LINK
@@ -77,7 +78,8 @@ PRESS_LINK;
 }
 
 $mozillalink = "<a class=\"mozilla\" href=\"$host_enUS/\">mozilla</a>";
-$newfirefox4menu = <<<NEWMENU
+
+$top_menu = <<<NEWMENU
         <!-- start menu #nav-main -->
 
         <div id="nav-main" role="navigation">
@@ -92,8 +94,8 @@ $newfirefox4menu = <<<NEWMENU
         <!-- end menu #nav-main -->
 NEWMENU;
 
-if(isset($abtest) && $abtest == true) {
-    $newfirefox4menu = <<<NEWMENU
+
+$top_menu = <<<NEWMENU
         <!-- start menu #nav-main -->
 
         <div id="nav-main" role="navigation">
@@ -108,10 +110,8 @@ if(isset($abtest) && $abtest == true) {
         <!-- end menu #nav-main -->
 NEWMENU;
 
-}
-
-if(isset($abtest) && $abtest == true && in_array($target, array('AB3', 'new')) ) {
-    $newfirefox4menu = <<<NEWMENU
+if(in_array($target, array('new')) ) {
+    $top_menu = <<<NEWMENU
         <!-- start menu #nav-main -->
 
         <div id="nav-main" role="navigation">
@@ -186,9 +186,6 @@ form {
 
 
 META;
-
-
-
 
 
 if ($textdir == 'rtl') {
@@ -485,7 +482,7 @@ if (gPlatform == 1) {
         <h1><a href="{$host_l10n}/" title="{$l10n->get('Back to home page')}">Mozilla</a></h1>
 
         {$mozillalink}
-        {$newfirefox4menu}
+        {$top_menu}
 
         </div>
         <hr class="hide" />
