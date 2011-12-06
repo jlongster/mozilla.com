@@ -110,7 +110,7 @@ $top_menu = <<<NEWMENU
         <!-- end menu #nav-main -->
 NEWMENU;
 
-if(in_array($target, array('new')) ) {
+if( isset($target) && in_array($target, array('new')) ) {
     $top_menu = <<<NEWMENU
         <!-- start menu #nav-main -->
 

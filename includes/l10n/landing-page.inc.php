@@ -92,7 +92,7 @@ if (count($_GET) > 0) {
 
         // do we have a brand awareness campaign page or do we keep the regular download page ?
         if( $target == 'new' && in_array( $lang, array('fr')) ) {
-           // $target = 'newbranding';
+            $target = 'newbranding';
         }
     }
 }
@@ -103,7 +103,6 @@ include $config['file_root'].'/includes/l10n/dlbox.inc.php';
 switch($target) {
 
     case 'new':
-    $abtest = true;
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.new.inc.php';
         $extra_css .= <<<EXTRA
 
@@ -181,11 +180,9 @@ EXTRA;
         break;
 
     case 'newbranding':
+        $headerfile  = '';
         $contentfile = $config['file_root'].'/includes/l10n/marketing/home.newbranding.inc.php';
-        $footerfile  = $config['file_root'].'/includes/footer.inc.php';
-        $headerfile  = $config['file_root'].'/includes/header.inc.php';
-        $home_css = '';
-        $extra_css = '';
+        $footerfile  = '';
         break;
 
     case 'fx':
@@ -252,12 +249,17 @@ $extra_headers .= <<<EXTRA_HEADERS
 EXTRA_HEADERS;
 
 
-// build page
-require_once $headerfile;
-require_once $contentfile;
+// we test if the variables exists because including chunks of pages
+if ($headerfile != '' && file_exists($headerfile)) {
+    include_once $headerfile;
+}
 
-// we test if the variable exists because for simplified templates, we may not include the footer, that would cause a warning in strict mode
-if (file_exists($footerfile)) {
+if ($contentfile != '' && file_exists($contentfile)) {
+    include_once $contentfile;
+}
+
+if ($footerfile != '' && file_exists($footerfile)) {
     include_once $footerfile;
 }
+
 

@@ -90,13 +90,6 @@ switch($pageid) {
         $dl_box_id              = 'home-download';
         $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true, 'ancillary_links' => true);
 
-        // transition download pages for the XP campaign
-        if ($target == 'XP') {
-            $firefoxDetailsl10n -> download_base_url_transition = "/$lang/download/";
-            $firefoxDetailsl10n -> has_transition_download_page = $XPCampaignTransitionPage;
-            $dl_box_options['dl_extra'] = 'XPUpgrade';
-        }
-
         // fx mobile download page, smaller download button
         if ($target == 'fx') {
             $dl_box_options = array('layout' => 'subpage', 'download_parent_override' => 'home-fx-download', '_include_js' => true, );
