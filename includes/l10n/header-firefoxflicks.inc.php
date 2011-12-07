@@ -49,12 +49,11 @@ $intro_video = <<<INTRO_VIDEO
 <div id="intro-video"></div>
 INTRO_VIDEO;
 
-$share_twitter  = '<a class="button share_twitter" href="https://twitter.com/intent/tweet';
-$share_twitter .= '?url=http://mzl.la/sPo5yu&amp;text=';
-$share_twitter .= str_replace(' ', '+', str_replace('http://mzl.la/sPo5yu', '', ___('What is more endearing? Firefox’s non-profit mission or a live feed of their animal mascot? Find out http://mzl.la/sPo5yu')));
-$share_twitter .= '&amp;via=firefox">'. ___('Twitter'). '</a>';
+$share_twitter  = '<a class="button share_twitter" href="http://twitter.com/#!/FirefoxFlicks">' .
+                   ___('Twitter'). '</a>';
 
-$share_facebook = '<a href="http://www.facebook.com/share.php?u=http://www.mozilla.org/' . $lang . '/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click" class="button share_facebook">' . ___('Facebook') . '</a>';
+$share_facebook = '<a href="http://www.facebook.com/FirefoxFlicks" class="button share_facebook">' .
+                  ___('Facebook') . '</a>';
 
 $social = <<<SOCIAL
 <section id="social">
@@ -92,14 +91,14 @@ $dynamic_header = <<<DYNAMIC_HEADER
 
     <meta property="og:title" content="{$page_title}"/>
     <meta property="og:type" content="non_profit"/>
-    <meta property="og:url" content="{$host_l10n}/firefoxlive/?WT.mc_id=fxl_fbmsg&WT.mc_ev=click"/>
-    <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxlive/facebook.jpg"/>
+    <meta property="og:url" content="{$host_l10n}/firefoxflicks/"/>
+    <meta property="og:image" content="http://www.mozilla.org/img/covehead/firefoxflicks/facebook.jpg"/>
     <meta property="og:site_name" content="{$page_title}"/>
     <meta property="og:locale" content="{$fb_locale}" />
     <meta property="og:description"
-          content="{$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")}"/>
+          content="{$l10n->get("Mozilla presents a global video contest to tell our story.")}"/>
     <meta name="Description"
-          content="{$l10n->get("Do you like baby animals? Mozilla Firefox is streaming video of their 3 adopted red panda babies. Spread the word and 'share' with your friends.")}"/>
+          content="{$l10n->get("Mozilla presents a global video contest to tell our story.")}"/>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
