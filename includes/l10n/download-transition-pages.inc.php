@@ -194,7 +194,7 @@ BETA_STYLING;
 
 $extra_headers = <<<EXTRA_HEADERS
 
-<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/download-page.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/l10n/covehead/download-page.css" media="screen" />
 
 <meta name="WT.ad" content="Support - Download Help;Tour;About;Mobile;Newsletter;Twitter;Facebook;Connect" />
 <meta name="WT.si_n" content="DownloadFirefox" />
