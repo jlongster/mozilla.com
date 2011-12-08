@@ -61,6 +61,10 @@ RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firef
 # Redirect beta firstrun/whatsnew pages to out-of-date beta page (Bug 656721)
 RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/beta.html [PT,L]
 
+# Redirect for latest Aurora release notes
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/aurora/notes[/]?$ /$1firefox/10.0a2/auroranotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/aurora/notes[/]?$ /$1mobile/10.0a2/auroranotes [R=301,L]
+
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
 # bug 538486
@@ -369,6 +373,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/9\.0beta/whatsnew(/
 # See bug 658603 for the reason we need the condition
 RewriteCond $3 !^(?:[1-4]\.[0-9]+)$
 RewriteRule ^(en-US/)?(firefox|mobile)/([0-9]\.[0-9]+)b[0-9]+/(.*) /$1$2/$3beta/$4 [PT,L]
+
 
 
 # Old development minor update redirects
