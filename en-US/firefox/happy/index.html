@@ -1,0 +1,110 @@
+<?php
+    // The $body_* variables are for compatibility with pre-existing css
+    $page_title = 'Mozilla Firefox Web Browser — Free Download';
+    $body_id    = 'happy';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefox-happy.css" media="screen" />
+EXTRA_HEADERS;
+    @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
+?>
+
+<div id="main-feature">
+    <h2>Fewer Crashes <span>More Happiness</span></h2>
+    <p id="intro">Upgrade now and see how much happier browsing can be with the <b>newest and fastest Firefox</b>.</p>
+    <div id="download">
+    <script src="/js/download.js"></script>
+    <?php
+        $_options = array('ancillary_links' => true, 'layout' => 'subpage', 'download_parent_override' => 'download', '_include_js' => true, 'download_product' => 'Upgrade Firefox', 'download_title' => '');
+        echo $firefoxDetails->getNoScriptBlockForLocale('en-US', $_options);
+        echo $firefoxDetails->getDownloadBlockForLocale('en-US', $_options);
+    ?>
+    <p id="learn-more"><a href="/<?=$lang?>/firefox/central/">Learn more »</a></p>
+    </div>
+</div>
+
+<div id="main-content">
+ <div id="fx">
+    <ul id="bars">
+      <li id="old-fx"><b>Old Firefox</b> <span><img src="/img/covehead/firefox/happy/smiley.png"></span></li>
+      <li id="new-fx"><b>New Firefox</b> <span><img src="/img/covehead/firefox/happy/smiley.png"></span></li>
+    </ul>
+  </div>
+  <div id="non-fx">
+    <p id="detected">Hey, looks like you’re using %BROWSER%. Why not grab Firefox and get up to speed.</p>
+    <p id="notdetected">Hey, looks like you’re not using Firefox as your browser. Why not grab Firefox and get up to speed.</p>
+  </div>
+  <p id="followup">
+    <em>New Firefox is faster, free (as always), crashes less and protects your privacy more.</em>
+    <a href="/en-US/firefox/">Upgrading</a> takes less than a minute and you won’t lose your history or bookmarks. Hooray!
+  </p>
+</div>
+
+<?php
+    $latest_firefox = LATEST_FIREFOX_VERSION;
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
+    <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
+     <script>
+
+\$(document).ready(function() {
+    var isFirefox = (/\sFirefox/.test(window.navigator.userAgent));
+    var moving = true;
+
+    function grow() {
+      moving = true;
+      \$('#old-fx img').animate({'margin-left': '100px'}, 2000);
+      \$('#new-fx img').animate({'margin-left': '430px'}, 2000, 'swing',
+                                 function(){ moving = false; });
+    }
+
+    function reset() {
+      \$('#bars img').css('margin-left', 0);
+    }
+
+    if (isFirefox) {
+      grow();
+      \$('#fx').click(function(){
+        if (!moving) {
+          reset();
+          grow();
+        }
+      });
+    } else {
+        \$('#fx').hide();
+
+        var \$nonfx       = \$('#non-fx');
+        var \$detected    = \$('#detected');
+        var \$notdetected = \$('#notdetected');
+
+        var isSafari = /Safari/.test(window.navigator.userAgent);
+        var isChrome = /Chrome/.test(window.navigator.userAgent);
+        var isIE     = /MSIE/.test(window.navigator.userAgent);
+
+        if (isChrome) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Google Chrome')
+            );
+            \$notdetected.hide();
+        } else if (isSafari) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Safari')
+            );
+            \$notdetected.hide();
+        } else if (isIE) {
+            \$detected.text(
+                \$detected.text().replace(/%BROWSER%/, 'Internet Explorer')
+            );
+            \$notdetected.hide();
+        } else {
+            \$detected.hide();
+        }
+
+        \$nonfx.show();
+    }
+});
+    </script>
+EXTRA_FOOTERS;
+
+@include_once "{$config['file_root']}/{$lang}/includes/footer-portal-pages.inc.php";
+?>
+<!-- script defer src="jquery.qtip-1.0.min.js"></script -->
