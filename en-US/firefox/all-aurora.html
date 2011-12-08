@@ -3,9 +3,13 @@
     // The $body_* variables are for compatibility with pre-existing css
     $page_title = 'Firefox web browser | International versions: Get Firefox in your language';
     $body_id    = 'firefox-all';
-    $body_class   = 'aurora-all';
+    $body_class   = 'darkbg aurora-all';
+// Report simple running errors
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/all-aurora.css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
     <script src="/js/mozilla-language-search.js"></script>
 
 EXTRA_HEADERS;
@@ -20,10 +24,12 @@ EXTRA_HEADERS;
     }
 ?>
 
-<div id="feature-header"></div>
 <div id="main-feature">
-    <h2>Download Firefox Aurora <span>in your language</span></h2>
-    <p>Experience the newest innovations in an unstable environment and provide feedback on features and performance to help determine what makes the final release.</p>
+    <h2>
+        <img src="<?=$config['static_prefix']?>/img/covehead/all-aurora/title.png" alt="Firefox Aurora" />
+        <em>Speaks your language</em>
+    </h2>
+    <p>Download Firefox Aurora in your language to experience the newest features and innovations in an unstable environment even before they go to Beta. Give us feedback that will determine what makes it to Final Release and help shape the future of Firefox.</p>
 </div>
 
 
@@ -63,26 +69,34 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 </div><!-- end #main-content div -->
 
 <div id="sidebar">
-	<div id="sidebar-search">
-		<h3>Search Language</h3>
-		<form method="get" action="all-aurora.html" id="search-form">
-			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
-		</form>
-		<script>// <![CDATA[
-		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
-		var language_search = new Mozilla.LanguageSearch(
-			'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
-		// ]]>
-		Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
-		Mozilla.LanguageSearch.download_text = 'download';
-		</script>
-	</div>
-	<div id="other-versions">
-		<h3>Other Firefox Downloads</h3>
-		<ul>
-			<li><a href="all.html">Firefox <?=LATEST_FIREFOX_VERSION?></a></li>
-		</ul>
-	</div>
+    <div id="aurora-links" class="section">
+        <h3>Firefox Aurora Links</h3>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/aurora/">Return to Homepage »</a></li>
+            <li><a href="/<?=$lang?>/firefox/aurora/notes/">Release Notes »</a></li>
+        </ul>
+    </div>
+    <div id="sidebar-search" class="section">
+        <h3>Search Languages</h3>
+        <form method="get" action="all-aurora.html" id="search-form">
+            <div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+        </form>
+        <script>// <![CDATA[
+        var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
+        var language_search = new Mozilla.LanguageSearch(
+            'language-search', 'search-form', data, '<?php echo LATEST_FIREFOX_VERSION; ?>');
+        // ]]>
+        Mozilla.LanguageSearch.no_results_text = 'No matching languages found.';
+        Mozilla.LanguageSearch.download_text = 'download';
+        </script>
+    </div>
+    <div id="other-downloads" class="section">
+        <h3>Other Firefox Downloads</h3>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/">Firefox Beta »</a></li>
+            <li><a href="/<?=$lang?>/firefox/">Firefox (Final Release) »</a></li>
+        </ul>
+    </div>
 </div>
 <?php
     include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
