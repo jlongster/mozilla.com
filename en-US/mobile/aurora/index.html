@@ -1,7 +1,7 @@
 <?php
-    $page_title = 'Mozilla Firefox | Firefox for Android | Download Firefox Aurora & Beta for Mobile';
+    $page_title = 'Mozilla Firefox | Download Firefox Aurora For Android';
     $page_desc  = 'Download and test Firefox future releases. Experience the newest innovations with the Aurora or Beta builds.';
-    $body_id    = 'aurora';
+    $body_id    = 'aurora-mobile';
     $body_class = 'darkbg';
     require_once "{$config['file_root']}/includes/regions.php";
     require_once "{$config['file_root']}/includes/email/forms.php";
@@ -30,7 +30,7 @@ $fonts = <<<FONTS
 FONTS;
 
     $extra_headers = <<<EXTRA_HEADERS
-    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/aurora.css" media="screen" />
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/mobile-aurora.css" media="screen" />
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
@@ -40,36 +40,37 @@ EXTRA_HEADERS;
     <div id="switcher">
         <h4>Firefox Aurora for:</h4>
         <ul>
-          <li><span>Desktop</span></li>
-          <li><a href="/<?=$lang?>/mobile/aurora/">Mobile</a></li>
+          <li><a href="/<?=$lang?>/firefox/aurora/">Desktop</a></li>
+          <li><span>Mobile</span></li>
         </ul>
     </div>
     <h2><img src="<?=$config['static_prefix']?>/img/covehead/firefox/aurora/title.png" alt="Firefox Aurora" height="69" width="486" /></h2>
     <p>Download Aurora and help shape the future of Firefox.</p>
-    <script><? include $config['file_root'].'/js/download.old.js'; ?></script>
     <div id="download_aurora_button">
-        <script>
-            <!--
-            // Configure the Firefox download write script
-            var gDownloadTracker = "";
-
-            var gTracker = "dcsMultiTrack('DCS.dcssip', 'www.mozilla.org','DCS.dcsuri', '/en-US/firefox/channel/','WT.ti', 'Link:  Firefox Aurora','WT.dl', 99,'WT.z_convert', 'Firefox Aurora','WT.si_n', 'Firefox Aurora','WT.si_x', '2');";
-        var gDownloadItemTemplate = " <li class=\"%CSS_CLASS%\"> <a onclick=\"" + gTracker + " do_download('%BOUNCER_URL%');\" href=\"%DOWNLOAD_URL%\" class=\"download-link download-firefox\"><span class=\"download-content\"><span class=\"download-title\">Firefox Aurora</span> <img src=\"<?=$config['static_prefix']?>/img/home/download-arrow.png\" alt=\"\" id=\"download-arrow\">Free Download <span class=\"download-info\">%LANGUAGE_NAME%<\/em><\/span><\/span><\/a> <\/li>";
-
-            var gDownloadItemMacOS9 = "<a href=\"\">MacOS 9 and earlier are not supported<\/a>";
-            var gDownloadItemOtherPlatform = "<a href=\"/<?=$lang?>/firefox/<?=LATEST_FIREFOX_VERSION?>/releasenotes/#contributedbuilds\" onclick=\"" + gDownloadTracker + "\">Free Download<\/a>"
-
-            document.writeln("<ul class=\"home-download " + gCssClass + " \">");
-            writeDownloadItems("fxaurora");
-            document.writeln("<\/ul>");
-            document.writeln("<div class=\"download-other\">");
-            document.writeln("<a href=\"\/<?=$lang?>\/firefox\/all-aurora.html\">All Systems &amp; Languages<\/a> | ");
-            document.writeln("<a href=\"\/<?=$lang?>\/legal\/privacy\/firefox.html\">Privacy Policy<\/a>");
-            document.writeln("<\/div>");
-            //-->
-        </script>
+        <div class="home-download beta-download">
+            <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_Aurora"
+               class="download-link download-firefox"
+               onclick="dcsMultiTrack('DCS.dcssip', 'wiki.mozilla.org',
+                                      'DCS.dcsuri', 'Mobile/Platforms/Android',
+                                      'WT.ti', 'Link:  Firefox Aurora for Mobile',
+                                      'WT.dl', 99,
+                                      'WT.z_convert', 'Firefox Aurora for Mobile',
+                                      'WT.si_n', 'Firefox Aurora for Mobile',
+                                      'WT.si_x', '2');">
+                <span class="download-content">
+                <span class="download-title">Firefox Aurora</span>
+                <em>for Android</em>
+                </span>
+            </a>
+            <div class="download-other">
+                <a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy Policy</a> |
+                <a href="/<?=$lang?>/mobile/platforms/">List of Supported devices</a> |
+                <a href="/<?=$lang?>/mobile/aurora/notes/">What’s New</a>
+            </div>
+        </div>
     </div>
-    <ul id="feature-list">
+    <div id="features">
+    <ul id="feature-list" class="bjqs">
         <li>
             <h3>1. Preview Features</h3>
             <p>Get a first look at the latest developer tools, security features and innovative HTML5 and other Web technologies.</p>
@@ -83,6 +84,7 @@ EXTRA_HEADERS;
             <p>Become part of a community of users, contributors and developers working to make the next Firefox our best yet.</p>
         </li>
     </ul>
+    </div>
 </div>
 
 <div id="main-content">
@@ -197,8 +199,28 @@ EXTRA_HEADERS;
 
     </div>
 
+    <div id="stay-connected">
+        <h4>Stay <span>Connected</span></h4>
+        <p>Firefox Aurora is on your favorite social media sites. Connect with us and join the conversation!</p>
+        <a href="http://www.facebook.com/FirefoxAurora" class="button">Join the conversation<span> »</span></a>
+    </div>
+
 </div><!-- end #main-content div -->
 
 <?php
+    $extra_footers = <<<EXTRA_FOOTERS
+    <script src="{$config['static_prefix']}/js/jquery/jquery-basic-slider.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#features').bjqs({
+                'width' : 350,
+                'height' : 200,
+                'showMarkers' : true,
+                'showControls' : false,
+                'centerMarkers' : true
+            });
+        });
+    </script>
+EXTRA_FOOTERS;
     @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
 ?>
