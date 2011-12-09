@@ -47,8 +47,12 @@ class EmailPrefs {
         $this->non_field_error = NULL;
     }
 
-    function get($field) {
-        return isset($this->data[$field]) ? $this->data[$field] : NULL;
+    function get($key, $default = '', $clean = true) {
+        if (array_key_exists($key, $this->data)) {
+            $val = $this->data[$key];
+            return $clean ? htmlentities($val) : $val;
+        }
+        return $default;
     }
 
     function available_langs() {
