@@ -148,7 +148,7 @@ class EmailPrefs {
         $required_fields = func_get_args();
         $opts = array();
 
-        if(is_array($required_fields[0])) {
+        if($required_fields && is_array($required_fields[0])) {
             $opts = $required_fields[0];
             $required_fields = array_slice($required_fields, 1);
         }
@@ -177,7 +177,7 @@ class EmailPrefs {
                                                   'trigger_welcome' => $trigger ? 'Y' : 'N',
                                                   'source_url' => $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'],
                                                   'newsletters' => $newsletters));
-                    return TRUE;
+                    return $ret['token'];
                 }
                 catch(BasketException $e) {
                     $this->handle_exception($e);
