@@ -118,6 +118,7 @@ echo $stats_js;
 
 // survey inclusion
 $target_id ='#survey-target';
+$extracontent2 = '';
 require_once $config['file_root'] . '/includes/l10n/download-transition-pages-survey.inc.php';
 echo $extracontent2;
 ?>

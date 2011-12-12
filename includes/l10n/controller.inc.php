@@ -113,7 +113,6 @@ $sitepages = array(
     'newsletter'          => 'newsletter.inc.php',
     'webhero'             => 'webhero.inc.php',
     'plugincheck'         => 'plugincheck.inc.php',
-    //~ 'dl-transition'       => 'download-transition-pages.inc.php',
     'dl-transition'       => 'download-transition-pages-newbranding.inc.php',
     'latest'              => 'latest.inc.php',
     'latest-from-3.6'     => 'latest-from-3.6.inc.php',
@@ -128,6 +127,16 @@ $sitepages = array(
     'firefoxflicks-faq'   => 'firefoxflicks.inc.php',
     'press'               => 'press.inc.php',
 );
+
+// use older version of Download page for locales not listed below
+
+$brand_aware_locales = array('fr', );
+
+if ( $stage == false ) {
+    $sitepages['dl-transition'] = 'download-transition-pages.inc.php';
+} else {
+    $brand_aware_locales = $full_languages;
+}
 
 // pages deactivated on production for all locales
 $deactivated = array(

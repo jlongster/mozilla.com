@@ -91,7 +91,7 @@ if (count($_GET) > 0) {
         }
 
         // do we have a brand awareness campaign page or do we keep the regular download page ?
-        if( $target == 'new' && in_array( $lang, array('fr')) ) {
+        if( $target == 'new' && in_array( $lang, $brand_aware_locales) ) {
             $target = 'newbranding';
         }
     }
