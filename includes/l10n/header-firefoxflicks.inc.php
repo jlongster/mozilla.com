@@ -89,7 +89,7 @@ $content_title = '<img src="'.$config['static_prefix'].'/img/covehead/firefoxfli
                  'alt="' . ___('Firefox Flicks') . '" />';
 
 $brand_video = <<<BRAND_VIDEO
-   
+
 BRAND_VIDEO;
 
 if ($body_id == 'firefoxflicks') {
@@ -122,7 +122,7 @@ $dynamic_header = <<<DYNAMIC_HEADER
     <meta name="Description"
           content="{$l10n->get("Mozilla presents a global video contest to tell our story.")}"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,greek,latin-ext,cyrillic-ext,cyrillic,greek-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
     <link href="{$config['static_prefix']}/includes/min/min.css?g=css" rel="stylesheet">
