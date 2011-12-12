@@ -25,6 +25,28 @@ EXTRA_HEADERS;
 if ($textdir == 'rtl') {
     $extra_headers  = <<<EXTRA_HEADERS
     {$extra_headers}
+    <style>
+        #global-nav, #firefoxflicks #primary #prequel .container,
+        #primary .container {
+            text-align: right;
+        }
+        #global-nav h1 {
+            float: right;
+        }
+        .nav-main {
+            float: right;
+        }
+        #intro p {
+            text-align: center;
+        }
+        #prequel h3, #prequel p.intro {
+            float: none;
+        }
+        #footer #copyright {
+            padding-right: 0 !important;
+            text-align: center !important;
+        }
+    </style>
     <link rel="stylesheet" type="text/css" href="{$config['static_prefix']}/style/covehead/rtl.css" media="screen" />
 EXTRA_HEADERS;
 }
