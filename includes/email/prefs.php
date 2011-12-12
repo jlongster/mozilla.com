@@ -96,6 +96,7 @@ class EmailPrefs {
         }
         else {
             $this->non_field_error = $this->general_error;
+            $this->non_field_error = $e->getMessage();
         }
     }
 
