@@ -1,53 +1,53 @@
 <?php
 
 // translate the variables below please
-$page_title = "Plugin Check";
+$page_title = "ପ୍ଲଗଇନ ଯାଞ୍ଚ";
 
-$tableHeader[1] = "Plugin details";
-$tableHeader[2] = "State";
-$tableHeader[3] = "Action";
+$tableHeader[1] = "ପ୍ଲଗଇନ ବିବରଣୀ";
+$tableHeader[2] = "ଅବସ୍ଥା";
+$tableHeader[3] = "କାର୍ଯ୍ୟ";
 
 
 // PLuginCheck application strings
-$message[0]  = "Checking with Mozilla on the status of your plugins";
-$message[1]  = "Loading Data";
-$message[2]  = "View All Your Plugins";
+$message[0]  = "ଆପଣଙ୍କର ପ୍ଲଗଇନଗୁଡ଼ିକର ସ୍ଥିତିରେ Mozilla ସହିତ ଯାଞ୍ଚ କରୁଅଛି";
+$message[1]  = "ତଥ୍ୟ ଧାରଣ କରୁଅଛି";
+$message[2]  = "ଆପଣଙ୍କର ସମସ୍ତ ପ୍ଲଗଇନଗୁଡ଼ିକୁ ଦେଖନ୍ତୁ";
 
 // label and status for plugin detection table
-$message[3]  = "Disable Now";
-$message[4]  = "Vulnerable No Fix";
-$message[5]  = "Update Now";
-$message[6]  = "Vulnerable";
-$message[7]  = "Update";
-$message[8]  = "Outdated Version";
-$message[9]  = "Up to Date";
-$message[10] = "Research";
-$message[11] = "Unknown plugin";
+$message[3]  = "ବର୍ତ୍ତମାନ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ";
+$message[4]  = "ଅସୁରକ୍ଷିତ ସମାଧାନ ନାହିଁ";
+$message[5]  = "ବର୍ତ୍ତମାନ ଅଦ୍ୟତନ କରନ୍ତୁ";
+$message[6]  = "ଅସୁରକ୍ଷିତ";
+$message[7]  = "ଅଦ୍ୟତନ କରନ୍ତୁ";
+$message[8]  = "ଅଦ୍ୟତିତ ସଂସ୍କରଣ";
+$message[9]  = "ଆଧୁନିକ";
+$message[10] = "ଅନ୍ୱେଷଣ";
+$message[11] = "ଅଜଣା ପ୍ଲଗଇନ";
 $message[12] = ""; // unused string, keep blank
-$message[13] = "Out of date plugins:";
-$message[14] = "Vulnerable plugins:";
-$message[15] = "Potentially vulnerable plugins:";
-$message[16] = "The plugins listed below are up to date";
-$message[17] = "No plugins were detected";
+$message[13] = "ପୁରୁଣା ପ୍ଲଗଇନଗୁଡ଼ିକ:";
+$message[14] = "ଅସୁରକ୍ଷିତ ପ୍ଲଗଇନଗୁଡ଼ିକ:";
+$message[15] = "ଶକ୍ତିଅନୁଯାୟୀ ଅସୁରକ୍ଷିତ ପ୍ଲଗିନଗୁଡିକ:";
+$message[16] = "ନିମ୍ନରେ ତାଲିକାଭୁକ୍ତ ପ୍ଲଗଇନଗୁଡ଼ିକ  ଆଧୁନିକ ଅଟେ";
+$message[17] = "କୌଣସି ପ୍ଲଗଇନକୁ ଚିହ୍ନିହେଲା ନାହିଁ";
 $message[18] = "http://www.google.com/search?q=";
 
 /*search terms before the plugin name...
  Example if there was a plugin named "DivX Media Player" that we couldn't detect, then we would
  search google for "current version plugin DivX Media Player */
 
-$message[19] = "current version plugin";
+$message[19] = "ପ୍ରଚଳିତ ସଂସ୍କରଣ ପ୍ଲଗଇନ";
 
 // more labels and status for plugin detection table
 
 
-$message[20] = "Update Now";                   //MAYBE_VULNERABLE
-$message[21] = "Potentially Vulnerable";       //MAYBE_VULNERABLE
-$message[22] = "Update";                       //MAYBE_OUTDATED
-$message[23] = "Potentially Outdated Version"; //MAYBE_OUTDATED
+$message[20] = "ବର୍ତ୍ତମାନ ଅଦ୍ୟତନ କରନ୍ତୁ";                   //MAYBE_VULNERABLE
+$message[21] = "ଶକ୍ତି ଅନୁଯାୟୀ ଅସୁରକ୍ଷିତ";       //MAYBE_VULNERABLE
+$message[22] = "ଅଦ୍ୟତନ କରନ୍ତୁ";                       //MAYBE_OUTDATED
+$message[23] = "ଶକ୍ତି ଅନୁଯାୟୀ ପୁରୁଣା ସଂସ୍କରଣ"; //MAYBE_OUTDATED
 
 // Bug#553661 Vulnerability details
-$message[24] = "<p>This plugin version has a security vulnerability that websites can exploit and potentially harm your computer. It is recommended that you update this plugin or if an update is not available, <a href='#howto-disable'>disable it</a>.</p><p>For more information, read the <a href='#' class='vulner-url'>plugin vendor's vulnerability information</a>.</p><p><a class='qtip-closer'>Close</a></p>";
-$message[25] = " (more info)";
+$message[24] = "<p>ଏହି ପ୍ଲଗଇନ ସଂସ୍କରଣରେ ଏକ ସୁରକ୍ଷା ଜନିତ ଅସହାୟତା ଅଛି ଯାହାକି ୱେବସାଇଟଗୁଡ଼ିକ ଆପଣହ୍ କମ୍ପୁଟରକୁ କ୍ଷତି କରିପାରିବେ । ଏହା ପରାମର୍ଶିତ ଯେ ଆପଣ ଏହି ପ୍ଲଗଇନକୁ ଅଦ୍ୟତନ କରନ୍ତୁ ଅଥବା ଯଦି କୌଣସି ଅଦ୍ୟତନ ଉପଲବ୍ଧ ହୋଇନଥାଏ, <a href='#howto-disable'>ଏହାକୁ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ</a>।</p><p>ଅଧିକ ସୂଚନା ପାଇଁ,  <a href='#' class='vulner-url'>ପ୍ଲଗଇନ ବିକ୍ରେତାରସୁରକ୍ଷା ଜନିତ ସୂଚନା</a> କୁ ପଢ଼ନ୍ତୁ।</p><p><a class='qtip-closer'>ବନ୍ଦ କରନ୍ତୁ</a></p>";
+$message[25] = " (ଅଧିକ ସୂଚନା)";
 
 // end of translations
 
