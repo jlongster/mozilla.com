@@ -29,12 +29,6 @@ $extra         = (isset($_GET['extra'])) ? secureText($_GET['extra']) : '';
 $nodownload    = (isset($_GET['nodownload'])) ? true: false;
 $dl_link       = "http://download.mozilla.org/?product={$dl_product}&os={$dl_os}&lang={$dl_lang}";
 
-if (!$nodownload) {
-    $extra_footers .= get_include_contents($config['file_root'] . '/js/download-transition-l10n.js');
-}
-
-
-
 ?>
 <!DOCTYPE HTML>
 <html lang="<?=$lang?>" dir="<?=$textdir?>">
@@ -44,7 +38,7 @@ if (!$nodownload) {
     <meta name="viewport" content="width=1024">
     <link rel="stylesheet" href="/style/kampyle/k_button.css" media="screen" />
     <link rel="stylesheet" href="/style/covehead/download-page.css" media="screen" />
-
+    <script src="<?=$config['static_prefix'];?>/includes/min/min.js?g=js&amp;2011-06-21"></script>
     <title><?=$page_title?></title>
 
 <?php
@@ -52,6 +46,12 @@ if (!$nodownload) {
     //~ echo min_inline_css('css_home');
 ?>
     <style>
+    #survey-box {
+        float: none;
+        margin: 10px auto;
+        min-height: 200px;
+    }
+
     </style>
 </head>
 
@@ -82,10 +82,15 @@ if (!$nodownload) {
                             <p id="download-thanks"><?e__('Thanks for choosing Firefox!');?> <?e__('As a non-profit, we’re free to innovate on your behalf without any pressure to compromise. You’re going to love the difference.');?> </p>
                             <p class="manual-download"><?php echo sprintf(___('Your download should automatically begin in a few seconds, but if not, <a href="%s">click here</a>.'), $dl_link); ?></p>
                     </div><!-- end #content-msg -->
+
                 </div><!-- end #content -->
+
             </div><!-- end #download-message -->
 
+
+
             <div class="footer-links">
+                <span id="survey-target"></span>
                 <a href="/firefox/features/"><?e__('Desktop');?></a> &nbsp;|&nbsp;
                 <a href="/<?=$lang?>/mobile/"><?e__('Mobile');?></a> &nbsp;|&nbsp;
                 <a href="https://addons.mozilla.org/"><?e__('Add-ons');?></a> &nbsp;|&nbsp;
@@ -101,7 +106,21 @@ if (!$nodownload) {
         </div><!-- end #doc -->
     </div><!-- end #wrapper -->
 
+<?php
 
+if (!$nodownload) {
+    echo get_include_contents($config['file_root'] . '/js/download-transition-l10n.js');
+}
+
+// Webtrends stats, see bug 556384
+require "{$config['file_root']}/includes/js_stats.inc.php";
+echo $stats_js;
+
+// survey inclusion
+$target_id ='#survey-target';
+require_once $config['file_root'] . '/includes/l10n/download-transition-pages-survey.inc.php';
+echo $extracontent2;
+?>
 
 </body>
 </html>
