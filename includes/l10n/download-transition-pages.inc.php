@@ -13,6 +13,11 @@ if (!isset($_GET['product']) || !isset($_GET['lang']) || !isset($_GET['os'])) {
     noCachingRedirect('http://www.mozilla.com/firefox/');
 }
 
+
+// get key strings
+l10n_moz::load($config['file_root'] . '/'. $lang.'/includes/l10n/download.lang');
+
+
 $page_title    = 'Mozilla - '.___('Download');
 $body_id       = 'download';
 $dl_product    = htmlspecialchars(strip_tags($_GET['product']), ENT_QUOTES);
@@ -246,29 +251,14 @@ if (!$nodownload) {
     $extra_footers .= get_include_contents($config['file_root'] . '/js/download-transition-l10n.js');
 }
 
-if($extra == 'XPUpgrade') {
-    // extra tracking code for the XP campaign will go there and be added to the footer
-    $extracontent2 = <<<EXTRA
-
-<!-- measure tag (Bug 660249) -->
-<IFRAME
-SRC="https://media.mozilla.com/ipixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"
-     WIDTH="1" HEIGHT="1" SCROLLING="No" FRAMEBORDER="0" MARGINHEIGHT="0" MARGINWIDTH="0">
-<![if lt IE 5]>
-<SCRIPT
-SRC="https://media.mozilla.com/jpixel?spacedesc=1121943_1061349_1x1_1061349_1061349&db_afcr=123&target=_blank&group=Mozilla&event=DownLoad&revenue=REVENUE&random=CACHEBUSTER"></SCRIPT>
-<![endif]>
-</IFRAME>
-
-EXTRA;
-
-}
-
 $content = $config['file_root'] . '/' . $lang . '/download/content.inc.html';
 
 if (!file_exists($content)) {
     $content = $config['file_root'] . '/en-GB/download/content.inc.html';
 }
+
+
+
 
 require_once $config['file_root'] . '/includes/l10n/header-pages.inc.php';
 require_once $content;
