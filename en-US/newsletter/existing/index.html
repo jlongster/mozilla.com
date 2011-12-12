@@ -32,7 +32,7 @@ EXTRA_HEADERS;
 
     if($prefs->save_user()) {
         if($prefs->is_unsubscribing()) {
-            header("Location: /$lang/newsletter/updated/?unsub=1");
+            header("Location: /$lang/newsletter/updated/?unsub=1&email=" . $prefs->get('email'));
         }
         else {
             header("Location: /$lang/newsletter/updated/");

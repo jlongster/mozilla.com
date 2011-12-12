@@ -44,7 +44,12 @@ class BasketService {
             }
 
             $json = json_decode($response);
-            throw new BasketException($json->desc, $status);
+            if($json) {
+                throw new BasketException($json->desc, $status);
+            }
+            else {
+                throw new BasketException($response, $status);
+            }
         }
 
         return $response;
@@ -68,6 +73,12 @@ class BasketService {
 
     function delete_subscriber($token) {
         return json_decode($this->post('delete/' . $token . '/'), TRUE);
+    }
+
+    function custom_unsub_reason($email, $reason) {
+        return json_decode($this->post('custom_unsub_reason/',
+                                       array('email' => $email,
+                                             'reason' => $reason)));
     }
 }
 
