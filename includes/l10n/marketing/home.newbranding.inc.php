@@ -23,6 +23,15 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
     <meta name="og:image" content="/img/firefox-100.jpg">
     <meta name="description" content="<?e__('Mozilla Firefox, free web browser, is created by a global non-profit dedicated to putting individuals in control & shaping the future of the web for the public good.');?>" />
     <link rel="canonical" href="<?=$config['url_scheme'] .'://' . $config['server_name'] ."/$lang/firefox/"?>">
+
+<?php if ($lang == 'zh-CN' || $lang == 'zh-TW') : ?>
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix'];?>/style/l10n/covehead/chinese-mod.css" media="screen" />
+<?php endif; ?>
+
+<?php if ($lang == 'el') : ?>
+    <link rel="stylesheet" type="text/css" href="<?=$config['static_prefix'];?>/style/l10n/covehead/greek-mod.css" media="screen" />
+<?php endif; ?>
+
     <title><?=$page_title?></title>
 
 <?php
