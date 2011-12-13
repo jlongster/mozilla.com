@@ -17,6 +17,8 @@ if ($body_id == 'firefoxflicks-faq') {
 $default_menu .= '</ul>';
 
 $extra_headers .= <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
+    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script> 
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefoxflicks.css" media="screen" />
 EXTRA_HEADERS;
 
@@ -68,7 +70,40 @@ EXTRA_HEADERS;
 }
 
 $intro_video = <<<INTRO_VIDEO
-<div id="intro-video"></div>
+<div id="intro-video" class="mozilla-video-control">
+    <video
+        id="video"
+        width="640"
+        height="360"
+        poster="{$config['static_prefix']}/img/covehead/firefoxflicks/poster.jpg"
+        controls="controls">
+
+        <source src="{$config['url_scheme']}://videos-cdn.mozilla.net/serv/firefoxflicks/firefox-flicks-intro-v6-640.mp4" type="video/webm" />
+        <source src="{$config['url_scheme']}://videos-cdn.mozilla.net/serv/firefoxflicks/firefox-flicks-intro-v6-640.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+        <source src="{$config['url_scheme']}://videos-cdn.mozilla.net/serv/firefoxflicks/firefox-flicks-intro-v6-640.mp4" type="video/mp4" />
+
+        <object type="application/x-shockwave-flash"
+            style="width: 640px; height: 388px;"
+            data="/includes/flash/playerWithControls.swf?flv=serv/firefoxflicks/firefox-flicks-intro-v6-640.mp4&amp;autoplay=false&amp;msg=Play%20Video">
+
+            <param name="movie" value="/includes/flash/playerWithControls.swf?flv=serv/firefoxflicks/firefox-flicks-intro-v6-640.mp4&amp;autoplay=false&amp;msg=Play%20Video" />
+            <param name="wmode" value="transparent" />
+
+            <div class="video-player-no-flash">
+            This video requires a browser with support for open video:
+            <ul>
+            <li><a href="http://www.mozilla.org/firefox/">Firefox</a> 3.5 or greater</li>
+            <li><a href="http://www.apple.com/safari/">Safari</a> 3.1 or greater</li>
+            </ul>
+
+            or the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player</a>.
+            Alternatively, you may use the video download links to the right.
+            </div>
+
+        </object>
+
+    </video>
+</div>
 INTRO_VIDEO;
 
 $share_twitter  = '<a class="button share_twitter" href="http://twitter.com/#!/FirefoxFlicks">' .
