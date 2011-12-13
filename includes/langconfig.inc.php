@@ -11,6 +11,7 @@
  * being remapped.
  */
 $native_languages = array(
+    'ach'       => 'Acoli',
     'ak'        => 'Akan',
     'af'        => 'Afrikaans',
     'ar'        => '&#1593;&#1585;&#1576;&#1610;',
@@ -109,6 +110,7 @@ $native_languages = array(
  * remapped.
  */
 $full_languages = array(
+    'ach',
     'af',
     'ak', // Remap to en-GB
     'ar',
@@ -269,6 +271,7 @@ $language_url_map['zh-CN'] = 'http://firefox.com.cn/';
  * change the getLangLinksSelect() function in includes/functions.inc.php to run off
  * $native_languages. */
 $language_select_list = array(
+    'ach'       => 'Acoli',
     'af'        => 'Afrikaans',
     'ak'        => 'Akan',
     'ar'        => '&#1593;&#1585;&#1576;&#1610;',
