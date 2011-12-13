@@ -101,6 +101,37 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
     }
     * html a.download-link span.download-content{background:url({$config['static_prefix']}/img/covehead/firefox/ab/download-ie6-dbd.jpg) 0 0 no-repeat}
     </style>
+
+<?php if($textdir == "rtl"): ?>
+<style>
+
+    #home #wrapper {
+        background: #e04113 url(<?=$config['static_prefix']?>/img/covehead/firefox/ab/dbd-feature-bg.jpg) 250% 0 no-repeat;
+    }
+
+
+    #home ul#benefits li {
+        float: right;
+        border-right: 2px dotted #FFA800;
+        border-left: none;
+    }
+
+    #home ul#benefits li.first {
+        border-right:none;
+    }
+
+    #home #home-download {
+        clear: right;
+    }
+
+    a.download-link span.download-content {
+        padding-right: 50px;
+    }
+
+</style>
+<?php endif; ?>
+
+
 </head>
 
 <body id="<?=$body_id?>" class="locale-<?=$lang?> <?=$textdir?>">
