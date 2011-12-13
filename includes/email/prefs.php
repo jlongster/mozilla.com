@@ -178,7 +178,7 @@ class EmailPrefs {
                                                   'trigger_welcome' => $trigger ? 'Y' : 'N',
                                                   'source_url' => $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'],
                                                   'newsletters' => $newsletters));
-                    return $ret['token'];
+                    return TRUE;
                 }
                 catch(BasketException $e) {
                     $this->handle_exception($e);
