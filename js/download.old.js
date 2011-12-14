@@ -10,6 +10,7 @@ var PLATFORM_LINUX    = 2;
 var PLATFORM_MACOSX   = 3;
 var PLATFORM_MAC      = 4;
 var PLATFORM_SOLARIS  = 5;
+var PLATFORM_ANDROID  = 6;
 
 if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) {
   gPlatform = PLATFORM_WINDOWS;
@@ -34,6 +35,9 @@ if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win
 } else if (navigator.platform.indexOf("SunOS") != -1) {
   gPlatform = PLATFORM_SOLARIS;
   gCssClass = '';
+} else if (navigator.platform.indexOf("Android") != -1) {
+  gPlatform = PLATFORM_ANDROID;
+  gCssClass = 'os_android';
 } else {
   gPlatform = PLATFORM_OTHER;
   gCssClass = '';
@@ -73,6 +77,8 @@ function getPlatformName(aPlatform)
     return "Mac OS X";
   if (aPlatform == PLATFORM_SOLARIS)
     return "SunOS";
+	if (aPlatform == PLATFORM_ANDROID)
+     return "Android";
   return "Unknown";
 }
 
@@ -360,13 +366,30 @@ function writeDownloadItem(aLanguageID)
   document.writeln(item);
 }
 
-function writeDownloadItems(aProduct)
+function writeDownloadItemForAndroid(aProduct)
 {
-  // Show the dynamic links
+	var aLanguageID = new LanguageID("en", "us", aProduct, gLanguages["en"]["us"]);
+  var item = gDownloadItemTemplate;
+  item = item.replace(/%DOWNLOAD_URL%/g,  'https://market.android.com/details?id=org.mozilla.firefox');
+  item = item.replace(/%BOUNCER_URL%/g,   'https://market.android.com/details?id=org.mozilla.firefox');
+  item = item.replace(/%VERSION%/g,       aLanguageID[aLanguageID.product]);
+  item = item.replace(/%PLATFORM_NAME%/g, getPlatformName(gPlatform));
+  item = item.replace(/%LANGUAGE_NAME%/g, "");
+  item = item.replace(/%FILE_SIZE%/g,     getPlatformFileSize(gPlatform, aLanguageID.product));
+  item = item.replace(/%CSS_CLASS%/g,     gCssClass);
+  document.writeln(item);
+}
+
+
+function writeDownloadItems(aProduct)
+{	
+	// Show the dynamic links
   if (gPlatform == PLATFORM_MAC) {
     document.writeln(gDownloadItemMacOS9);
   } else if (gPlatform == PLATFORM_OTHER) {
     document.writeln(gDownloadItemOtherPlatform);
+	} else if (gPlatform == PLATFORM_ANDROID && aProduct == "fx") {
+		writeDownloadItemForAndroid(aProduct);
   } else {
     var languageIDs = getLanguageIDs(aProduct);
     for (var i = 0; i < languageIDs.length; ++i)
