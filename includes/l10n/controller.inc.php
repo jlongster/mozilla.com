@@ -126,6 +126,7 @@ $sitepages = array(
     'firefoxflicks-brief' => 'firefoxflicks.inc.php',
     'firefoxflicks-faq'   => 'firefoxflicks.inc.php',
     'press'               => 'press.inc.php',
+    'spaces'              => 'spaces.inc.php',
 );
 
 // use older version of Download page for locales not listed below
