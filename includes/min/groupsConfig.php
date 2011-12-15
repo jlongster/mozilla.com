@@ -57,6 +57,10 @@ return array(
         '//style/covehead/video-player.css',
         '//style/firefox/8/firstrun-page.css'
     ),
+    'css_whatsnew9' => array(
+        '//style/covehead/video-player.css',
+        '//style/firefox/9/whatsnew-page.css'
+    ),
     'css_firstrun_backtoschool' => array(
         '//style/covehead/backtoschool-firstrun-page.css'
     ),
