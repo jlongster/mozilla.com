@@ -58,6 +58,7 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
         padding-top: 6px;
         margin-top: 4px;
         font-size: 20px;
+        line-height:21px;
     }
     #home ul#benefits li.first {
         border-left: 0;
@@ -108,7 +109,33 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
     .footer-links .footer-privacy a:visited {
         color: #999;
     }
-    * html a.download-link span.download-content{background:url({$config['static_prefix']}/img/covehead/firefox/ab/download-ie6-dbd.jpg) 0 0 no-repeat}
+
+    * html a.download-link span.download-content{
+        background:url({$config['static_prefix']}/img/covehead/firefox/ab/download-ie6-dbd.jpg) 0 0 no-repeat
+    }
+
+
+    body.locale-fr a.download-link span.download-content {
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    body.locale-el#home  #main-feature h2 {
+        line-height: 56px;
+        padding-top: 80px;
+    }
+
+    body.locale-el#home ul#benefits li {
+        font-size:18px;
+        padding: 5px 8px;
+    }
+
+    body.locale-hu#home  #main-feature h2 {
+        color: #FFFFFF;
+        font-size: 54px;
+        padding-top: 155px;
+    }
+
     </style>
 
 <?php if($textdir == "rtl"): ?>
