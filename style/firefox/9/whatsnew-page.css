@@ -37,6 +37,12 @@ header#feature h2.unknown-version {
 
 header#feature p {
     margin: 0;
+    color: #fff;
+}
+
+header#feature p a {
+    color: #fff;
+    text-decoration: underline;
 }
 
 /* }}} */
@@ -81,9 +87,11 @@ header#feature p {
 .promo,
 #newsletter-signup {
     display: inline-block;
-    width: 280px;
+    width: 278px;
     text-align: center;
     vertical-align: top;
+    padding: 0 0 15px 0;
+    margin-top: 15px;
 }
 
 #sub-features {
@@ -179,13 +187,10 @@ body {
 
 /* {{{ Promo links */
 
-.promo {
-    font-style: italic;
-}
-
 #newsletter-signup h3,
 .promo h3 {
     font-size: 26px;
+    margin: 0 0 10px 0;
 }
 
 .promo a,
@@ -203,6 +208,14 @@ body {
 .promo a {
     font-size: 15px;
 }
+
+.promo#mobile {
+    border-width: 0 3px;
+    border-style: dotted;
+    border-color: #ddd;
+    padding-bottom: 20px;
+}
+
 #mobile-promo {
     position: relative;
     margin-top: 5px;
@@ -282,7 +295,7 @@ body {
 #newsletter-signup .more {
     display: none;
     font-size: .9em;
-    width: 235px;
+    width: 224px;
     padding: 10px;
     position: absolute;
     top: 30px;
@@ -327,11 +340,11 @@ body {
     font-family: Georgia, serif;
     font-size: 16px;
     height: 34px;
-    width: 165px;
+    width: 160px;
     border-radius: 4px 0 0 4px;
     border: 1px solid #aaa;
     border-right:0;
-    padding: 1px 0 1px 65px;
+    padding: 1px 0 1px 58px;
     box-shadow: 0 2px rgba(0,0,0,.1), 0 0 1px #888 inset;
     position: relative;
     z-index: 10;
