@@ -363,9 +363,18 @@ h1 span {
     background: -moz-linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F5F9FD)); /* webkit */
     background: linear-gradient(top, #FFFFFF 0%, #F5F9FD 100%); /* firefox */
+    zoom: 1;
 }
 
-#contact h3{
+#contact:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#contact h3 {
     margin: 0 0 1em 0;
 }
 
@@ -377,6 +386,27 @@ h1 span {
 
 #extra-links a {
     color: #333;
+}
+
+#contact-links {
+    float: left;
+    width: 290px;
+    margin: 0;
+    padding: 0;
+    border-left: 2px dotted #ddd;
+}
+
+#contact-links li {
+    list-style-type: none;
+    margin: 0;
+    padding: 3px 0 3px 20px;
+    font-style: italic;
+    color: #666;
+}
+
+#contact-links span {
+    display: inline-block;
+    min-width: 4em;
 }
 
 /* }}} */
@@ -507,6 +537,11 @@ input:-moz-placeholder {
 }
 #newsletter-signup label:first-child {
     margin-right: 20px;
+}
+
+#newsletter-signup {
+    float: left;
+    width: 350px;
 }
 
 #expand,

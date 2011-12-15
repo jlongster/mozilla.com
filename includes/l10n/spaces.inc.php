@@ -311,8 +311,8 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     </section><!-- end #content-main -->
 
     <section id="contact">
-        <h3>Sign up for Mozilla Spaces updates</h3>
     <div id="newsletter-signup">
+        <h3>Sign up for Mozilla Spaces updates</h3>
         <form id="email-form" class="{$status}" action="" method="post">
           <input id="email" name="email" type="email" value="{$form->get('email')}" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
           <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
@@ -343,6 +343,12 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
           </div>
         </form>
     </div>
+
+    <ul id="contact-links">
+        <li><span>Email:</span> <a href="mailto:mozspaces@mozilla.com">mozspaces@mozilla.com</a></li>
+        <li><span>Twitter:</span> <a href="http://twitter.com/MozillaSpaces">@MozillaSpaces</a></li>
+        <li><span>IRC:</span> <a href="irc://irc.mozilla.org/MozillaSpaces">#MozillaSpaces</a></li>
+    </ul>
 
     </section>
 
