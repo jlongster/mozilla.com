@@ -87,7 +87,11 @@ Mozilla.VideoControl.controls = [];
 
 Mozilla.VideoControl.prototype.drawControl = function()
 {
-  this.control = $('<a href="#" class="mozilla-video-control-overlay" style="opacity: 0" />');
+  var buttonTag = '<a href="#" class="mozilla-video-control-overlay" style="opacity: 0">' +
+                  '<span style="visibility:hidden;">' +
+                  this._video.id +
+                  '</span></a>';
+  this.control = $(buttonTag);
 
   // Show the click-to-play button. In the future, this may be changed
   // to show the click-to-play button based on media events like the
