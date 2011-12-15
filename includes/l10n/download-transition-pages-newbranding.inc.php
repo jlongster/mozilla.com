@@ -52,8 +52,16 @@ $dl_link       = "http://download.mozilla.org/?product={$dl_product}&os={$dl_os}
         min-height: 200px;
     }
 
+    body.locale-el #download-message #main-feature h2,
+    #download-message #main-feature-fallback h2 {
+        font-size: 38px;
+    }
+
+
     </style>
 </head>
+
+
 
 <body id="<?=$body_id?>" class="darkbg locale-<?=$lang?> <?=$textdir?>">
 
