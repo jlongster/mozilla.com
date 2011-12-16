@@ -20,6 +20,8 @@ var gPlatform = PLATFORM_WINDOWS;
 
 if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1)
   gPlatform = PLATFORM_WINDOWS;
+else if (navigator.platform.indexOf("Android") != -1)
+      gPlatform = PLATFORM_ANDROID;
 else if (navigator.platform.indexOf("Linux") != -1)
   gPlatform = PLATFORM_LINUX;
 else if (navigator.userAgent.indexOf("Mac OS X") != -1)
@@ -28,8 +30,6 @@ else if (navigator.userAgent.indexOf("MSIE 5.2") != -1)
   gPlatform = PLATFORM_MACOSX;
 else if (navigator.platform.indexOf("Mac") != -1)
   gPlatform = PLATFORM_MAC;
-else if (navigator.platform.indexOf("Android") != -1)
-    gPlatform = PLATFORM_ANDROID;
 else
   gPlatform = PLATFORM_OTHER;
 
