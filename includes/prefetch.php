@@ -236,6 +236,13 @@ if (urlHasLang($_SERVER['REDIRECT_URL'], $lang)) {
     $_SERVER['REDIRECT_URL'] = substr($_SERVER['REDIRECT_URL'], strlen($lang)+1);
 }
 
+if($_SERVER['REDIRECT_URL'] == '/mobile/android-download.html') {
+    // Bug 708791
+    // Allow the android download interstitial page for desktop to be 
+    // viewable by all locales
+    $lang = 'en-US';
+}
+
 // Special check for an index page.  This is explained in
 // /includes/config.inc.php in the "directory_index" section.  Basically, if
 // we're looking at a directory, check for the index page underneath
