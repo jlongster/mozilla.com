@@ -556,6 +556,98 @@ VIDEO_CODE;
 
     var slideshow = new Slideshow('#intro');
 
+    /**
+     * This file contains Flash-detection routines adapted from SWFObject and
+     * originally licensed under the MIT license.
+     *
+     * See http://blog.deconcept.com/flashobject/
+     */
+
+    var FlashVersion = function(version)
+    {
+        this.major = version[0] != null ? parseInt(version[0], 10) : 0;
+        this.minor = version[1] != null ? parseInt(version[1], 10) : 0;
+        this.rev   = version[2] != null ? parseInt(version[2], 10) : 0;
+    };
+
+    FlashVersion.prototype.isValid = function(version)
+    {
+        if (version instanceof Array) {
+            version = new Mozilla.FlashVersion(version);
+        }
+
+        if (this.major < version.major) {
+            return false;
+        }
+        if (this.major > version.major) {
+            return true;
+        }
+        if (this.minor < version.minor) {
+            return false;
+        }
+        if (this.minor > version.minor) {
+            return true;
+        }
+        if (this.rev < version.rev) {
+            return false;
+        }
+        return true;
+    };
+
+    var flash = (function()
+    {
+        var version = new FlashVersion([0, 0, 0]);
+        if (navigator.plugins && navigator.mimeTypes.length) {
+            var x = navigator.plugins['Shockwave Flash'];
+            if (x && x.description) {
+                // strip text to get version number only
+                version = x.description.replace(/([a-zA-Z]|\s)+/, '');
+
+                // convert revisions and beta to dots
+                version = version.replace(/(\s+r|\s+b[0-9]+)/, '.');
+
+                // get version
+                version = new FlashVersion(version.split('.'));
+            }
+        } else {
+            if (navigator.userAgent && navigator.userAgent.indexOf('Windows CE') >= 0) {
+                var axo = true;
+                var majorVersion = 3;
+                while (axo) {
+                    // look for greatest installed version starting at 4
+                    try {
+                        majorVersion++;
+                        axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash.' + majorVersion);
+                        version = new FlashVersion([majorVersion, 0, 0]);
+                    } catch (e) {
+                        axo = null;
+                    }
+                }
+            } else {
+                try {
+                    var axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash.7');
+                } catch (e) {
+                    try {
+                        var axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash.6');
+                        version = new FlashVersion([6, 0, 21]);
+                        axo.AllowScriptAccess = 'always';
+                    } catch (e) {
+                        if (version.major == 6) {
+                            return version;
+                        }
+                    }
+                    try {
+                        axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+                    } catch (e) {}
+                }
+                if (axo != null) {
+                    version = new FlashVersion(axo.GetVariable('$version').split(' ')[1].split(','));
+                }
+            }
+        }
+        return version;
+    })();
+
     $(document).ready(function() {
         $('#overlay-open-faq').click(function(e) {
             e.preventDefault();
@@ -576,6 +668,38 @@ VIDEO_CODE;
             history = 0;
         }
         setCookie(historyCookieName, history + 1, '/', 31 * 24 * 60 * 60);
+
+        if (flash.major == 0 && (typeof HTMLMediaElement != 'undefined')) {
+            var sources = [
+                {
+                    src:  'http://videos.mozilla.org/serv/firefoxlive/Webcam%20Highlight%20Reel%20Final.webm',
+                    type: 'video/webm'
+                },
+                {
+                    src:  'http://videos.mozilla.org/serv/firefoxlive/Webcam%20Highlight%20Reel%20Final.mp4',
+                    type: 'video/mp4'
+                },
+                {
+                    src:  'http://videos.mozilla.org/serv/firefoxlive/Webcam%20Highlight%20Reel%20Final.ogv',
+                    type: 'video/ogg'
+                },
+            ];
+
+            var poster = '/img/covehead/firefoxlive/fallback-poster.jpg';
+
+            var content = '<video controls width="444" height="334" poster="' + poster + '">';
+
+            for (var i = 0; i < sources.length; i++) {
+                content += '<source src="' + sources[i].src + '" type="' + sources[i].type + '"></source>';
+            }
+
+            content += '</video>';
+
+            var $fallback = $(content);
+            $video
+                .empty()
+                .append($fallback);
+        }
 
         if (history > 0 && history < 3) {
             returning.open();
