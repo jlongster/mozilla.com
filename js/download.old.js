@@ -15,7 +15,7 @@ var PLATFORM_ANDROID  = 6;
 if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1) {
   gPlatform = PLATFORM_WINDOWS;
   gCssClass = 'os_windows';
-} else if (navigator.platform.indexOf("Android") != -1) {
+} else if (navigator.platform.indexOf("armv7l") != -1) {
   gPlatform = PLATFORM_ANDROID;
   gCssClass = 'os_android';
 } else if (navigator.platform.indexOf("Linux") != -1) {

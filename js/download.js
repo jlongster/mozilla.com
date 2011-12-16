@@ -20,7 +20,7 @@ var gPlatform = PLATFORM_WINDOWS;
 
 if (navigator.platform.indexOf("Win32") != -1 || navigator.platform.indexOf("Win64") != -1)
   gPlatform = PLATFORM_WINDOWS;
-else if (navigator.platform.indexOf("Android") != -1)
+else if (navigator.platform.indexOf("armv7l") != -1)
       gPlatform = PLATFORM_ANDROID;
 else if (navigator.platform.indexOf("Linux") != -1)
   gPlatform = PLATFORM_LINUX;
