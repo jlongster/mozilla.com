@@ -388,17 +388,14 @@ $dynamic_header = <<<DYNAMIC_HEADER
     /* }}} */
 
     /* if javascript is disabled, we should show all download boxes */
-    li.os_windows, li.os_osx, li.os_linux {
+    li.os_windows, li.os_osx, li.os_linux, li.os_android {
         display: block;
     }
 
-    ul.os_linux li.os_windows, ul.os_linux li.os_osx {
-        display: none;
-    }
-    ul.os_windows li.os_linux, ul.os_windows li.os_osx {
-        display: none;
-    }
-    ul.os_osx li.os_linux, ul.os_osx li.os_windows {
+    ul.os_linux li.os_windows, ul.os_linux li.os_osx, ul.os_linux li.os_android,
+    ul.os_windows li.os_linux, ul.os_windows li.os_osx, ul.os_windows li.os_android,
+    ul.os_osx li.os_linux, ul.os_osx li.os_windows, ul.os_osx li.os_android,
+	ul.os_android li.os_linux, ul.os_android li.os_windows, ul.os_android li.os_osx {
         display: none;
     }
 

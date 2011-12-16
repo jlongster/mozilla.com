@@ -12,6 +12,7 @@ class firefoxDetailsL10n extends firefoxDetails
         $_bouncer_js               = array_key_exists('bouncer_js', $options)               ? $options['bouncer_js']                : false;
         $_extra_link_attr          = array_key_exists('extra_link_attr', $options)          ? $options['extra_link_attr']           : false;
         $_channel                  = array_key_exists('channel', $options)                  ? $options['channel']                   : 'stable';
+		$_include_android          = array_key_exists('include_android', $options)          ? $options['include_android']           : true;
 
         switch ($_channel) {
             case 'older':
@@ -105,7 +106,11 @@ class firefoxDetailsL10n extends firefoxDetails
         $_li_windows = $_temp['Windows'];
         $_li_linux   = $_temp['Linux'];
         $_li_osx     = $_temp['OS X'];
-
+		
+		$_li_android = "";
+		if ($_include_android) {
+			$_li_android = $this->_getDownloadBlockListHtmlForLocaleAndPlatform2('en-US', 'Android', $options);
+		}
 
         if ($_include_js) {
             $_js_replace_links = $_js_replace_links ? 'true' : 'false';
@@ -149,6 +154,7 @@ JS_INCLUDE;
 {$_li_windows}
 {$_li_linux}
 {$_li_osx}
+{$_li_android}
         </ul>
 
 {$_ancillary_links}
@@ -217,6 +223,11 @@ HTML_RETURN;
                 $_os_name      = ___('Mac OS X');
                 $_os_file_ext  = 'mac.dmg';
                 break;
+			case 'Android':
+	            $_os_class     = 'os_android';
+	            $_os_shortname = 'android';
+	            $_os_name      = ___('Android');
+				break;
             default:
                 return;
         }
@@ -236,7 +247,14 @@ HTML_RETURN;
             $extra_dl_info = "<em>$_os_name - $_language_name</em>";
         }
 
+		$_dl_link = $_download_base_url . '?product=' . $_product . '-' . $_current_version . '&amp;os=' . $_os_shortname . '&amp;lang='. $locale . $extra;
+		if ($platform == 'Android') {
+			$_dl_link = 'https://market.android.com/details?id=org.mozilla.firefox';
+			$_language_name = '';
+		}
+		
         switch ($_layout) {
+			// FIXME can't find this case in the source code, maybe we should delete?
             case 'linksonly':
 
                 $_return = <<<LI_SIDEBAR
@@ -248,14 +266,14 @@ LI_SIDEBAR;
             case 'smallbox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}><span class="download-content"><span class="download-title">{$_wording}</span>{$_download_product}</span></a></li>
+                <li class="{$_os_class}"><a class="download-link download-{$_product}" href="{$_dl_link}" {$_extra_link_attr}><span class="download-content"><span class="download-title">{$_wording}</span>{$_download_product}</span></a></li>
 LI_SIDEBAR;
                 break;
 
             case 'betabox':
 
                 $_return = <<<LI_SIDEBAR
-                <li class="{$_os_class}"><a class="download-link" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
+                <li class="{$_os_class}"><a class="download-link" href="{$_dl_link}" {$_extra_link_attr}><span>{$_download_product}</span></a>{$extra_dl_info}
                 </li>
 LI_SIDEBAR;
                 break;
@@ -281,7 +299,7 @@ LI_SIDEBAR;
             case 'simple':
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
-                <a class="download-link download-firefox" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}">
+					<a class="download-link download-firefox" href="{$_dl_link}">
                 <span class="download-content">
                     <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
@@ -295,7 +313,7 @@ LI_SIDEBAR;
             default:
                 $_return = <<<LI_MAIN
                 <li class="{$_os_class}">
-                    <a class="download-link download-{$_product}" href="{$_download_base_url}?product={$_product}-{$_current_version}&amp;os={$_os_shortname}&amp;lang={$locale}{$extra}" {$_extra_link_attr}>
+                    <a class="download-link download-{$_product}" href="{$_dl_link}" {$_extra_link_attr}>
                         <span class="download-content">
                             <span class="download-title">{$_wording} <img class="download-arrow" alt="" src="/img/home/download-arrow.png"></span>
                             {$_download_product}
