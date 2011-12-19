@@ -17,54 +17,63 @@ EXTRA_HEADERS;
 ?>
 
 <div id="main-feature">
-  <h2>Download Firefox to <span>Your Mobile</span></h2>
+    <h2>Download Firefox <span>for Android</span></h2>
+    <p>Firefox is full of innovations that let you type less, browse more and get to the Web quickly and easily. <a href="/<?=$lang?>/mobile/features/">Learn more »</a></p>
+    <div id="download">
+        <a href="https://market.android.com/details?id=org.mozilla.firefox"
+            class="download"
+            onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                   'DCS.dcsuri', '/en-us/mobile/download/',
+                                   'WT.ti', 'Link: Get Firefox for Android',
+                                   'WT.dl', 99,
+                                   'WT.nv', 'Content',
+                                   'WT.ac', 'Get Firefox for Android',
+                                   'WT.z_convert','Get Firefox for Android',
+                                   'WT.si_n','Get Firefox for Android',
+                                   'WT.si_x','2')">
+            <span class="title">Get Firefox for Android</span>
+            <span class="desc">Free from the Android Market</span>
+        </a>
+        <div class="download-other">
+            <a href="/<?=$lang?>/mobile/platforms">Supported Devices</a> |
+            <a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::latest_version) ?>">Release Notes</a> |
+            <a href="/<?=$lang?>/legal/privacy/firefox.html">Privacy</a>
+        </div>
+    </div>
+    <p id="firefox-home">iPhone user?
+      <a href="http://itunes.com/apps/firefoxhome"
+         onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                                'DCS.dcsuri', '/en-us/mobile/download/',
+                                'WT.ti', 'Link: Get Firefox for iPhone',
+                                'WT.dl', 99,
+                                'WT.nv', 'Content',
+                                'WT.ac', 'Get Firefox for iPhone',
+                                'WT.z_convert','Get Firefox for iPhone', 
+                                'WT.si_n','Get Firefox for iPhone',
+                                'WT.si_x','2');">
+        <span class="title">Get Firefox Home »</span>
+      </a>
+    </p>
 </div>
 
 <div id="main-content">
 
-  <div id="platforms">
-    <div id="platforms-divider">
-      <div id="android" class="platform">
-        <h3>Download for <span>Android</span></h3>
-        <p class="dl">
-          <a href="https://market.android.com/details?id=org.mozilla.firefox"
-             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                    'DCS.dcsuri', '/en-us/mobile/download/',
-                                    'WT.ti', 'Link: Get Firefox for Android',
-                                    'WT.dl', 99,
-                                    'WT.nv', 'Content',
-                                    'WT.ac', 'Get Firefox for Android',
-                                    'WT.z_convert','Get Firefox for Android', 
-                                    'WT.si_n','Get Firefox for Android',
-                                    'WT.si_x','2')">
-            <span class="title">Get Firefox for Android</span>
-            <span class="desc">Free from the Android Market</span>
-          </a>
-          <div class="download-other"><a href="/<?=$lang . mobileDetails::release_notes_url(mobileDetails::latest_version) ?>">Release Notes</a></div>
-        </p>
-        <p><a href="/<?=$lang?>/mobile/platforms">List of Supported Devices »</a></p>
-      </div>
-      <div id="iphone" class="platform">
-        <h3>Firefox Home for <span>iPhone</span></h3>
-        <p class="dl">
-          <a href="http://itunes.com/apps/firefoxhome"
-             onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                    'DCS.dcsuri', '/en-us/mobile/download/',
-                                    'WT.ti', 'Link: Get Firefox for iPhone',
-                                    'WT.dl', 99,
-                                    'WT.nv', 'Content',
-                                    'WT.ac', 'Get Firefox for iPhone',
-                                    'WT.z_convert','Get Firefox for iPhone', 
-                                    'WT.si_n','Get Firefox for iPhone',
-                                    'WT.si_x','2');">
-            <span class="title">Get Firefox Home for iPhone</span>
-            <span class="desc">Free from iTunes</span>
-          </a>
-        </p>
-        <p>Access your Firefox history, bookmarks and open tabs on your iPhone. <a href="/<?=$lang?>/mobile/home/">Learn More »</a></p>
-      </div>
+    <div class="sub-feature" id="typing">
+        <h3>Freedom from typing</h3>
+        <p>The Awesome Screen learns your favorite sites so you can browse with little or no typing.</p>
     </div>
-  </div>
+
+    <div class="sub-feature" id="tablets">
+        <h3>Best of both worlds</h3>
+        <p>Firefox for Android is now redesigned and optimized for the way you browse on phones and tablets.</p>
+    </div>
+
+    <div class="sub-feature" id="quick">
+        <h3>Browse quick and easy</h3>
+        <p>Features like Sync, tabbed browsing and one-touch bookmarking mean everything you want is close at hand.</p>
+    </div>
+
+    <p id="support-link"><a href="http://support.mozilla.com/mobile">Need help?</a> Visit our Firefox for Android Support site.</p>
 
   <div id="secondary">
     <div id="beta_android" class="sub-feature">

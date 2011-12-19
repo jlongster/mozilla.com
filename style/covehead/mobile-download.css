@@ -1,87 +1,47 @@
 /* {{{ Main Content */
 
 #mobile-download #main-feature {
-    padding-top: 30px;
+    padding: 30px 500px 30px 0;
+    min-height: 360px;
 }
 
-#platforms {
-  overflow: hidden;
-  margin: 0 30px 40px 30px;
-  background: url(/img/covehead/divider-main-reverse.jpg) no-repeat center 100%;
-  padding: 0;
+* html #mobile-download #main-feature {
+    height: 360px;
 }
 
-#platforms .platform {
-  width: 275px;
-  min-height: 215px;
-  padding: 10px 10px 10px 140px;
-  margin: 15px 0;
-  position: relative;
-  float: left;
-}
-
-* html #platforms,
-* html #platforms .platform,
-* html #secondary,
-* html #feature-boxes,
-* html #feature-boxes div {
-  zoom: 1;
-}
-
-* html #platforms .platform {
-  height: 215px;
-}
-
-#platforms-divider {
-  background: url(/img/covehead/mobile/dotted-line.png) 415px 20px no-repeat;
-  min-height: 215px;
-}
-
-* html #platforms-divider {
-  height: 215px;
-}
-
-#platforms #android {
-  background: url(/img/mobile/device-android.jpg) 0 0 no-repeat;
-    margin-right: 15px;
-}
-
-#platforms #iphone {
-  background: url(/img/mobile/device-iphone.png) 0 0 no-repeat;
-}
-
-#platforms #iphone p {
-}
-
-.platform h3 {
-  line-height: 0.9;
-  margin: 0 0 20px;
-  zoom: 1;
-}
-
-.platform h3 span {
-  color: #447bc4;
-}
-
-#platforms .notes {
-  font-size: 11px;
-  zoom: 1;
-  text-align: left;
-  color: #999;
-}
-
-.platform .dl {
-  width: 70%;
-  margin-bottom: 5px;
+#mobile-download #wrapper {
+    background: url(/img/mobile/android-background.jpg) no-repeat 50% 0;
 }
 
 #main-content {
-  background: url(/img/covehead/divider-main.jpg) no-repeat center 0;
-  padding-top: 10px;
+    padding-top: 20px;
+    font-size: 15px;
 }
 
-#main-feature {
- padding-bottom: 15px;
+.sub-feature {
+    width: 260px;
+    padding: 0 30px 0 0;
+    margin: 0 30px 30px 0;
+    border-right: 2px dotted #eee;
+    float: left;
+}
+
+.sub-feature#quick {
+    margin-right: 0;
+    border-right: 0;
+}
+
+.sub-feature h3 {
+    margin: 0;
+}
+
+.sub-feature p {
+    margin: 5px 0;
+}
+
+#support-link {
+    clear: left;
+    margin: 20px 0;
 }
 
 #secondary {
@@ -93,11 +53,14 @@
 #secondary .sub-feature {
   width: 420px;
   padding: 20px;
+  margin: 0;
   float: left;
   background: #c9ddf2;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
+  border: 0;
+  font-size: 14px;
 }
 
 #secondary p {
@@ -122,7 +85,7 @@
 }
 
 #secondary #ffhome ul {
-	margin-left: 15px;
+    margin-left: 15px;
 }
 
 #secondary #desktop {
@@ -177,78 +140,77 @@
 /* }}} */
 /* {{{ Download Links */
 
-.platform .dl a,
-.platform .dl a:link,
-.platform .dl a:visited {
-	width: 250px;
-	font-family: "Trebuchet MS", sans-serif;
-	font-size: 16px;
-	display: block;
-	-moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	-webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	box-shadow:         0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	color: #fff;
-	overflow: visible;
-	background: #84C63C; /* old browsers */
-	background: -moz-linear-gradient(top, #84C63C 0%, #489615 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84C63C), color-stop(100%,#489615)); /* webkit */
-	background: linear-gradient(top, #84C63C 0%, #489615 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84C63C', endColorstr='#489615',GradientType=0 ); /* ie */
-	-moz-transition:   box-shadow 0.2s ease-in-out;
-	-webit-transition: box-shadow 0.2s ease-in-out;
-	transition:        box-shadow 0.2s ease-in-out;
+#download a.download,
+#download a.downoad:link,
+#download a.download:visited {
+    width: 300px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    display: block;
+    margin: 0 0 5px 0;
+    -moz-box-shadow:    0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
+    box-shadow:         0 3px rgba(0,0,0,0.1), inset 0 -4px rgba(0,0,0,0.1);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    color: #fff;
+    overflow: visible;
+    background: #84C63C; /* old browsers */
+    background: -moz-linear-gradient(top, #84C63C 0%, #489615 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#84C63C), color-stop(100%,#489615)); /* webkit */
+    background: linear-gradient(top, #84C63C 0%, #489615 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84C63C', endColorstr='#489615',GradientType=0 ); /* ie */
+    -moz-transition:   box-shadow 0.2s ease-in-out;
+    -webit-transition: box-shadow 0.2s ease-in-out;
+    transition:        box-shadow 0.2s ease-in-out;
 }
 
-#iphone.platform .dl a,
-#iphone.platform .dl a:link,
-#iphone.platform .dl a:visited {
-    width: 265px;
-}
-
-.platform .dl a span.title {
+#download a span.title {
     font-weight: bold;
-	display: block;
-	background: url(/img/firefox/download-arrow.png) 10px 14px no-repeat;
-	padding: 8px 8px 0 30px;
+    display: block;
+    background: url(/img/firefox/download-arrow.png) 10px 14px no-repeat;
+    padding: 8px 12px 0 30px;
     letter-spacing: -0.02em;
 }
 
-.platform .dl a span.desc {
-	display: block;
-	padding: 0 8px 8px 30px;
-    font-size: 11px;
+#download a span.desc {
+    display: block;
+    padding: 0 8px 12px 30px;
+    font-size: 12px;
     color: #ddecd2;
 }
 
 
-.platform .dl a:hover span.title {
+#download a:hover span.title {
     text-decoration: underline;
 }
 
-.platform .dl a:hover,
-.platform .dl a:active {
-	-moz-box-shadow:    0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	-webkit-box-shadow: 0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	box-shadow:         0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
-	-moz-transition:    box-shadow 0.2s ease-in-out;
-	-webkit-transition: box-shadow 0.2s ease-in-out;
-	transition:         box-shadow 0.2s ease-in-out;
+#download a.download:hover,
+#download a.download:active {
+    -moz-box-shadow:    0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
+    -webkit-box-shadow: 0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
+    box-shadow:         0 3px rgba(0,0,0,0.15), inset 0 -4px rgba(0,0,0,0.15), inset 0 0 80px rgba(255,255,255,0.3);
+    -moz-transition:    box-shadow 0.2s ease-in-out;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    transition:         box-shadow 0.2s ease-in-out;
     text-decoration: none;
 }
 
-#mobile-download .download-other {
+#download .download-other {
     width: auto;
     text-align: inherit;
+    margin: auto;
 }
 
-#mobile-download #beta_android .download-other {
-    margin-left: 14px;
+#main-feature p#firefox-home {
+    font-style: italic;
+    font-size: 15px;
+    margin: 20px 0;
 }
 
 /* }}} */
+/* {{{ Social Stuff */
 
 #connect {
     text-align: center;
@@ -279,3 +241,5 @@
 }
 
 #firefox-mobile #footer { margin-top: 0; }
+
+/* }}} */
