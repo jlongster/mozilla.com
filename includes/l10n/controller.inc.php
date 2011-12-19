@@ -131,7 +131,7 @@ $sitepages = array(
 
 // use older version of Download page for locales not listed below
 
-$brand_aware_locales = array('fr', );
+$brand_aware_locales = array('ar', 'as', 'cs', 'de', 'el', 'et', 'eu', 'ff', 'fr', 'ga-IE', 'hr', 'hu', 'is', 'it', 'ko', 'lv', 'mk', 'ro', 'ru', 'sq', 'sv-SE', 'tr', 'zh-TW');
 
 if ( $stage == false ) {
     $sitepages['dl-transition'] = 'download-transition-pages.inc.php';
