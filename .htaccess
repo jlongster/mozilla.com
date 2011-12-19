@@ -61,9 +61,11 @@ RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firef
 # Redirect beta firstrun/whatsnew pages to out-of-date beta page (Bug 656721)
 RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/beta.html [PT,L]
 
-# Redirect for latest Aurora release notes
+# Redirect for latest Aurora/Beta release notes
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/aurora/notes[/]?$ /$1firefox/10.0a2/auroranotes [R=301,L]
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/aurora/notes[/]?$ /$1mobile/10.0a2/auroranotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta/notes[/]?$ /$1firefox/9.0beta/releasenotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/beta/notes[/]?$ /$1mobile/9.0beta/releasenotes [R=301,L]
 
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
@@ -515,8 +517,7 @@ RewriteRule en-US/legal/privacy/firefox/mobile/(index.html)? /en-US/legal/privac
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?legal/privacy/firefox-en.html? /legal/privacy/firefox.html [R=permanent]
 
 # Bug 651645 /beta -> /firefox/channel
-RewriteRule ^beta/?$ /firefox/channel/ [R=302]
-RewriteRule ^firefox/beta/?$ /firefox/channel/ [R=301]
+RewriteRule ^beta/?$ /firefox/beta/ [R=302]
 RewriteRule ^RC/?$ /firefox/channel/ [R=302,NC]
 RewriteRule ^firefox/RC/?$ /firefox/channel/ [R=302,NC]
 
@@ -527,7 +528,6 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?m/beta/? /$1m/firefox/channel/ [R=pe
 RewriteRule ^en-US/firefox/beta/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301]
 RewriteRule ^en-US/firefox/beta/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301]
 RewriteRule ^en-US/firefox/beta/faq(/(index.html)?)?$ /en-US/press/faq/fx4 [R=301]
-RewriteRule ^en-US/firefox/beta(?:/(.*))?$ /en-US/firefox/ [R=301]
 
 RewriteRule ^en-US/firefox/RC/features(/(index.html)?)?$ /en-US/firefox/features/ [R=301,NC]
 RewriteRule ^en-US/firefox/RC/technology(/(index.html)?)?$ /en-US/firefox/performance/ [R=301,NC]
@@ -552,9 +552,6 @@ RewriteRule ^en-US/mobile/beta /en-US/mobile
 
 # Bug make fx mobile rc1 look like real thing
 RewriteRule ^en-US/mobile/4.0rc1/(.*)$ /en-US/mobile/4.0/$1 [P]
-
-# Bug 644178 special redirect for google snippets (please remove when may 2011 snippets are online)
-RewriteRule ^en/firefox/beta/$ /en-US/firefox/ [R=301]
 
 # Bug 646078 deprecate /firefox/firefox.html
 RewriteRule ^en-US/firefox/firefox.html /en-US/firefox/ [R=301]
