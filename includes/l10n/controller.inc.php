@@ -133,9 +133,7 @@ $sitepages = array(
 
 $brand_aware_locales = array('ar', 'as', 'cs', 'de', 'el', 'et', 'eu', 'ff', 'fr', 'ga-IE', 'hr', 'hu', 'is', 'it', 'ko', 'lv', 'mk', 'ro', 'ru', 'sq', 'sv-SE', 'tr', 'zh-TW');
 
-if ( $stage == false ) {
-    $sitepages['dl-transition'] = 'download-transition-pages.inc.php';
-} else {
+if ( $stage == true ) {
     $brand_aware_locales = $full_languages;
 }
 
