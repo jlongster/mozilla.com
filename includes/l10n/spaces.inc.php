@@ -8,17 +8,20 @@ $page_title = strip_tags(___('Mozilla Spaces'));
 
 // Email form setup
 require_once "{$config['file_root']}/includes/regions.php";
-require_once "{$config['file_root']}/includes/email/forms.php";
+require_once "{$config['file_root']}/includes/email/prefs.php";
 
-$form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+$form = new EmailPrefs($_POST);
+$form->save_new();
+
 $status = '';
-if ($form->save()) {
-    $status = 'success';
-    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
-} elseif ($form->error) {
-    $status = 'error error-'. $form->error;
+if($form->submitted()) {
+    if($form->has_any_errors()) {
+        $status = 'error';
+    }
+    else {
+        $status = 'success';
+    }
 }
-
 
 $map = <<<MAP
 
@@ -304,44 +307,139 @@ if ($form->get('privacy')){
     $privacy_checked = '';
 }
 
-
-
-$dynamic_footer = <<<DYNAMIC_FOOTER
+?>
 
     </section><!-- end #content-main -->
 
     <section id="contact">
     <div id="newsletter-signup">
-        <h3>Sign up for Mozilla Spaces updates</h3>
-        <form id="email-form" class="{$status}" action="" method="post">
-          <input id="email" name="email" type="email" value="{$form->get('email')}" placeholder="Your email address" required="true"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
-          <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
-          <div id="success-msg">Thanks for Subscribing!</div>
-          <div class="more box">
-            <div class="row">
-              <select id="country" name="country">
-                {regionsAsOptions($lang, $country)}
+
+      <h3>Sign up for Mozilla Spaces updates</h3>
+      <div id="newsletter-signup" class="newsletter-signup <?= $status ?>" id="newsletter">
+        <div class="container">
+
+          <form class="email-form inline-email-form"
+                action="#subscribe-form"
+                method="post"
+                id="subscribe-form">
+            <input type="hidden" name="moz-spaces" value="Y" />
+
+            <ul class="<?= $status ?>">
+              <li class="open-pane">
+                <div class="email-field field">
+                  <span class="error-wrapper <?= $form->has_error('email') ? 'field-error' : ''; ?>">
+                    <input
+                       id="email"
+                       name="email"
+                       type="email"
+                       placeholder="Your Email Address"
+                       value="<?= $form->get('email') ?>"
+                       class="email">
+                  </span>
+                  <a id="expand" class="button email-open"
+                     href="#subscribe-form"
+                     onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                              'DCS.dcsuri', '/mainstream_newsletter/step1', 
+                              'WT.ti', 'Link: Monthly News - First Step',
+                              'WT.dl', 99,
+                              'WT.nv', 'Content',
+                              'WT.ac', 'Newsletter');"><b>»</b></a>
+                </div>
+              </li>
+              <li class="form-pane">
+<?php
+    if($form->has_non_field_error()) {
+        echo '<ul class="non-field-errors field-errors"><li>' .
+            $form->non_field_error .
+        '</li></ul>';
+    }
+
+    if($form->has_error()) {
+        echo '<ul class="field-errors">';
+
+        foreach($form->errors as $error) {
+            if($error == 'email') {
+                echo '<li>Whoops! Be sure to enter a valid email address.</li>';
+            }
+            else if($error == 'country') {
+                echo '<li>Please select a country.</li>';
+            }
+            else if($error == 'privacy') {
+                echo '<li>Please read the Mozilla Privacy Policy and agree by checking the box.</li>';
+            }
+        }
+
+        echo '</ul>';
+    }
+?>
+
+          <div class="form-details">
+
+            <div class="field country-field">
+              <select class="country" name="country">
+                <option value="">Select country</option>
+                <?php
+                   $country = $form->get('country');
+                if (!$country) {
+                $country = 'us';
+                }
+                echo regionsAsOptions($lang, $country);
+                ?>
               </select>
             </div>
-            <div class="row"> 
-                <label for="html-format"><input type="radio" {$html_checked} name="format" id="html-format" value="html"> HTML</label>
-                <label for="text-format"><input type="radio" {$text_checked} name="format" id="text-format" value="text"> Text</label>&nbsp;
-            </div>
-            <div class="row">
-                <label for="privacy-check" id="privacy-check-label">
-                    <input type="checkbox" id="privacy-check" {$privacy_checked} name="privacy" required>I agree to the <a href="/en-US/privacy-policy">Mozilla Privacy Policy</a>
+
+            <div class="field format-field">
+              <?php
+                 $html_format = 'checked="checked"';
+                 $text_format = '';
+                 if ($form->get('format') == 'text') {
+              $text_format = 'checked="checked"';
+              $html_format = '';
+              }
+              ?>
+              <div class="field-radios">
+                <label for="inline-html-format">
+                  <input type="radio" name="format" class="html-format" id="inline-html-format" value="html" <?= $html_format?>>
+                  HTML
                 </label>
+                <label for="inline-text-format">
+                  <input type="radio" name="format" class="text-format" id="inline-text-format" value="text" <?= $text_format?>>
+                  Text</label>
+              </div>
             </div>
-            <input name="submit" class="button" type="submit" value="Sign me up!" id="subscribe"
-                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.com',
-                            'DCS.dcsuri', '/mainstream_newsletter/signup',
-                            'WT.ti', 'Link: Sign me up - Second Step',
+
+            <div class="privacy-field">
+              <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
+              <label for="inline-privacy-check" class="privacy-check-label">
+                <span class="error-wrapper <?= $form->has_error('privacy') ? 'field-error' : ''; ?>">
+                   <input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>>
+                </span>
+                I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
+              </label>
+            </div>
+
+            <input name="submit" type="submit" value="Sign me up!" class="button" id="subscribe"
+                   onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
+                            'DCS.dcsuri', '/about/mozilla-spaces',
+                            'WT.ti', 'Link: Spaces Signup',
                             'WT.dl', 99,
                             'WT.nv', 'Content',
                             'WT.ac', 'Newsletter');">
             <p class="footnote">We will only send you Mozilla-related information.</p>
           </div>
-        </form>
+
+        </li>
+        <li class="success-pane">
+          <div id="success-msg">Thanks for Subscribing!</div>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>
+
+
+
+
     </div>
 
     <ul id="contact-links">
@@ -382,90 +480,11 @@ $dynamic_footer = <<<DYNAMIC_FOOTER
     </div>
     </footer>
     <!-- end #footer -->
-    <script>
-    $(document).ready(function() {
+    
+    <script type="text/javascript" src="/js/newsletter-form.js"></script>
 
-        var \$form = \$('#newsletter-signup');
-        var \$pane = \$('#newsletter-signup .more');
-        var opened = \$form.hasClass('opened');
-
-        function open()
-        {
-            if (!opened) {
-                \$(document).click(documentClick);
-                \$form.addClass('opened');
-                \$pane.fadeIn('fast');
-                \$('#country').focus();
-                opened = true;
-            }
-        }
-
-        function documentClick(e)
-        {
-            var target = e.target;
-            var form = \$('#email-form').get(0);
-            var is_form = (form === target);
-
-            while (!is_form && target.parentNode) {
-                target = target.parentNode;
-                is_form = (target == form);
-            }
-
-            if (!is_form) {
-                close();
-            }
-        }
-
-        function close()
-        {
-            if (opened) {
-                \$(document).unbind('click', documentClick);
-                \$pane.fadeOut('slow');
-                \$form.removeClass('opened');
-                opened = false;
-            }
-        }
-
-        \$('#email').keydown(function(e) {
-            switch (e.which) {
-            case 13:
-                if (!opened) {
-                    console.log('prevent 13 default');
-                    e.preventDefault();
-                    open();
-                }
-                break;
-            case 9:
-                e.preventDefault();
-                open();
-                \$('#country').focus(); // again in case already opened
-                break;
-            }
-        });
-
-        \$('#expand').click(function(e) {
-            e.preventDefault();
-
-            if (!opened) {
-                var uri = \$(this).attr('data-wt_uri');
-                var ti = \$(this).attr('data-wt_ti');
-                dcsMultiTrack('DCS.dcsuri', uri, 'WT.ti', ti);
-            }
-
-            open();
-        });
-
-    });
-
-    </script>
-    {$stats_js}
-    {$extra_footers}
+    <?=$stats_js?>
+    <?=$extra_footers?>
 
 </body>
 </html>
-DYNAMIC_FOOTER;
-
-
-echo $dynamic_footer;
-
-unset($dynamic_footer);

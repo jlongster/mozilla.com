@@ -441,7 +441,38 @@ input#email {
     color: #c00;
     display: block;
 }
-.button {
+ul.error .form-pane {
+    display: block;
+}
+.form-pane .form-details,
+.success-pane p,
+.email-form .form-pane .privacy-field {
+    line-height: 1.5em;
+    font-size: 16px;
+}
+.privacy-field {
+    margin: 1.5em 0 1em 0;
+}
+.radio-wrapper {
+    line-height: 1.5em;
+}
+ul.field-errors {
+    width: 85%;
+    margin: .5em 0;
+    background: #B11A04;
+    color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-size: 17px;
+    font-style: italic;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+ul.field-errors li {
+    margin: .5em 0;
+}
+.button, #expand {
     text-align: center;
     border: 1px solid #bdc6d7;
     border-radius: 6px;
@@ -449,6 +480,9 @@ input#email {
     box-shadow: 0 2px rgba(0,0,0,.1), 0 -2px #e5eff8 inset, 0 0 2px rgba(223, 239, 249, 0.8) inset;
     background-color: #fff;
     background-image: -moz-linear-gradient(#fff 95%, rgba(223,239,249,.15));
+}
+#expand {
+    -moz-transform: none;
 }
 #newsletter-signup.success .more,
 #newsletter-signup .more {
@@ -559,6 +593,21 @@ input:-moz-placeholder {
 }
 #expand b {
     -moz-transform: rotate(90deg);
+}
+
+.email-form .error-wrapper {
+    padding: 0;
+    margin: 0;
+}
+
+.email-form .field-error {
+    padding: 2px;
+    background: #B11A04;    
+}
+
+.email-form .email-field {
+    margin: 0;
+    font-size: 0;
 }
 
 /* }}} */
