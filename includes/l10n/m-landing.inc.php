@@ -37,6 +37,13 @@ BUTTON;
 
 
 $extra_headers .= <<<EXTRA_HEADERS
+	<script>
+	// FIXME : Ugly detection for Firefox for tablets
+	// See bug 699289
+	if (navigator.platform.indexOf("armv7l") != -1 && navigator.userAgent.indexOf("Firefox") != - 1 && screen.width > 700) {
+		location = location.protocol + '//' + location.host + '/firefox/?mobile_no_redirect=1';
+	}
+	</script>
     <link href="{$config['static_prefix']}/style/covehead/mobile-m.css" rel="stylesheet" media="all" />
     <style>
     .title .text {
