@@ -63,6 +63,7 @@ $native_languages = array(
     'kn'        => '&#57522;&#38368;&#45736;&#57523;&#36320;&#45736;&#57522;',
     'ko'        => '&#54620;&#44397;&#50612;',
     'ku'        => 'Kurd&#238;',
+    'lij'       => 'Ligure',
     'lg'        => 'Luganda',
     'lt'        => 'Lietuvi&#371;',
     'lv'        => 'Latvie&#353;u',
@@ -171,6 +172,7 @@ $full_languages = array(
     'ko',
     'ku',
     'lg', // remap to en-GB
+    'lij',
     'lt',
     'lv',
     'mai', // remap to en-GB
@@ -332,6 +334,7 @@ $language_select_list = array(
     'ko'        => '&#54620;&#44397;&#50612;',
     'ku'        => 'Kurd&#238;',
     'lg'        => 'Luganda',
+    'lij'       => 'Ligure',
     'lt'        => 'Lietuvi&#371;',
     'lv'        => 'Latvie&#353;u',
     'mk'        => '&#1052;&#1072;&#1082;&#1077;&#1076;&#1086;&#1085;&#1089;&#1082;&#1080;',
