@@ -69,6 +69,7 @@ switch($pageid) {
                                           'download_product'          => ___('Download'),
                                           'all_file'                  => 'aurora',
                                           'ancillary_links'           => true,
+                                          'include_android'           => false,
                                     );
         $dl_box_options_beta      = array('download_parent_override'  => 'download_beta',
                                           'wording'                   => $mz_beta,

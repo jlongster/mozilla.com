@@ -224,9 +224,9 @@ HTML_RETURN;
                 $_os_file_ext  = 'mac.dmg';
                 break;
 			case 'Android':
-	            $_os_class     = 'os_android';
-	            $_os_shortname = 'android';
-	            $_os_name      = ___('Android');
+				$_os_class     = 'os_android';
+				$_os_shortname = 'android';
+				$_os_name      = ___('Android');
 				break;
             default:
                 return;
