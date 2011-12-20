@@ -5,13 +5,6 @@
     $page_title = "Mozilla Firefox - Firefox for Android - Download Firefox to Your Mobile Devices";
     $extra_headers = <<<EXTRA_HEADERS
     <meta name="description" content="Firefox Web Browser for Android - Download free to your mobile devices.">
-	<script>
-	// FIXME : Ugly detection for Firefox for tablets
-	// See bug 699289
-	if (navigator.platform.indexOf("armv7l") != -1 && navigator.userAgent.indexOf("Firefox") != - 1 && screen.width > 700) {
-		location = location.protocol + '//' + location.host + '/firefox/?mobile_no_redirect=1';
-	}
-	</script>
 EXTRA_HEADERS;
 
     $body_id = 'home';
