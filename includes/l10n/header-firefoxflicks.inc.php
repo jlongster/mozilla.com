@@ -18,7 +18,7 @@ $default_menu .= '</ul>';
 
 $extra_headers .= <<<EXTRA_HEADERS
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/video-player.css" media="screen" />
-    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script> 
+    <script src="{$config['static_prefix']}/js/mozilla-video-tools.js"></script>
     <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/firefoxflicks.css" media="screen" />
 EXTRA_HEADERS;
 
@@ -111,6 +111,11 @@ $share_twitter  = '<a class="button share_twitter" href="http://twitter.com/#!/F
 
 $share_facebook = '<a href="http://www.facebook.com/FirefoxFlicks" class="button share_facebook">' .
                   ___('Facebook') . '</a>';
+
+if ($lang == 'zh-CN') {
+    $share_facebook = '<a href="http://mozilla.com.cn/event/61-firefox-flicks/" class="button share_facebook">火狐社区</a>';
+
+}
 
 $social = <<<SOCIAL
 <section id="social">
