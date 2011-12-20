@@ -2,6 +2,9 @@
 require_once dirname(__FILE__) ."/responsys.php";
 require_once dirname(__FILE__) ."/../validation.php";
 
+throw new Exception("This file is deprecated. Please use " .
+                    "the EmailPrefs class in prefs.php instead.");
+
 class NewsletterValidationException extends Exception {
     function __construct($code = '') {
         $this->code = $code;
