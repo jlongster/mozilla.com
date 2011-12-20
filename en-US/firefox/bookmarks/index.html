@@ -23,6 +23,7 @@ EXTRA_HEADERS;
 </div>
 
 <div id="main-content">
+  <img class="stars" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/star.png">
   <div id="fx">
     <img id="rocket" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/rocket.png" title="Upgrade Firefox and take your bookmarks with you.">
   </div>
@@ -36,6 +37,12 @@ EXTRA_HEADERS;
     <em>New Firefox is faster, free (as always), crashes less and protects your privacy more.</em>
     <a href="/<?=$lang?>/firefox/">Upgrading</a> takes less than a minute and you won’t lose your history or bookmarks. Hooray!
   </p>
+  <!-- Layer the clouds to make them more opaque. -->
+  <img class="cloud" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/cloud.png">
+  <img class="cloud" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/cloud.png">
+  <img class="cloud" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/cloud.png">
+  <img class="cloud" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/cloud.png">
+  <img class="cloud" src="<?=$config['static_prefix']?>/img/covehead/firefox/bookmarks/cloud.png">
 </div>
 
 <?php
@@ -44,6 +51,45 @@ EXTRA_HEADERS;
     <script src="{$config['static_prefix']}/js/jquery/jquery-css-transform.js"></script>
     <script src="{$config['static_prefix']}/js/jquery/jquery-animate-css-rotate-scale.js"></script>
  <script>
+
+function fly() {
+  var star = $('.stars')[0],
+      imgHeight = star.height,
+      imgWidth = star.width,
+      numStars = 8,  // Total number of stars on the page.
+      pause = 800  // Pause between starting star animations.
+      minSpeed = 4000, maxSpeed = 9000, // Range for animation lengths.
+      minX = 200, maxX = 575; // Range for position: right.
+
+  for (var i = 1; i < numStars; i++) {
+    star.parentNode.appendChild(star.cloneNode(false));
+  }
+
+  var stars = $('.stars');
+
+  stars.each(function(i, e) {
+    setTimeout(function(){ anim(e); }, i * pause);
+  });
+
+  var anim = function(e) {
+    // Reset/resize the image and then animate to the bottom of the screen,
+    // calling this function recursively at the end of the animation.
+    var right = Math.random() * (maxX - minX) + minX;
+        // Make the element smaller inversely proportional to the speed.
+        rand = Math.random(),
+        imgDelta = Math.max(1 - rand, .2),
+        speed = rand * (maxSpeed - minSpeed) + minSpeed;
+    $(e).css({'display': 'block',
+              'top': 0,
+              'right': right,
+              '-moz-transform': 'rotate(' + rand * 120 + 'deg)',
+              'height': imgDelta * imgHeight + 'px',
+              'width': imgDelta * imgWidth + 'px'})
+        .animate({'top': '500px'}, speed, 'linear',
+                 function(){ anim(e); });
+  };
+
+};
 
 $(document).ready(function() {
     var rocket = \$('#rocket');
@@ -81,6 +127,7 @@ $(document).ready(function() {
     };
 
     if (isFirefox) {
+        fly();
         rotate(-1.5, 10, startWaver, 'linear');
     } else {
         \$('#fx').hide();
