@@ -81,7 +81,7 @@ $(document).ready(function() {
   if ('ontouchstart' in window) {
       // don't actually use tocuh events as they cause the menu to flash a
       // whole bunch on iOS.
-      $('#nav-main [role="menubar"] > li > a').bind('click', function(event) {
+      $('#nav-main [role="menubar"] > li:has(ul) > a').bind('click', function(event) {
         event.preventDefault();
         this.focus();
       });
