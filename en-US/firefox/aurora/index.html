@@ -4,16 +4,25 @@
     $body_id    = 'aurora';
     $body_class = 'darkbg';
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
     require_once "{$config['file_root']}/includes/feeds/AuroraFeed.php";
     require_once "product-details/mobileDetails.class.php";
 
-    $form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
+    $form = new EmailPrefs($_POST);
+    $form->save_new();
+
     $status = '';
-    if ($form->save()) {
+    $status_msg = '';
+
+    if ($form->has_any_errors()) {
+        $status = 'error';
+
+        if($form->has_error()) {
+            $status .= ' error-'. $form->errors[0];
+        }
+    }
+    else if($form->submitted()) {
         $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
     }
     
 $fonts = <<<FONTS
@@ -97,6 +106,13 @@ EXTRA_HEADERS;
             <div class="success-pane">
               <h3>Thanks for subscribing!</h3>
             </div>
+<?php
+            if($form->has_non_field_error()) {
+                echo '<div class="non-field-errors field-errors">' .
+                $form->non_field_error .
+                '</div>';
+            }
+?>
             <form id="email-form" action="#newsletter-signup" method="post">
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
               <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
@@ -117,21 +133,21 @@ EXTRA_HEADERS;
                   <li>
                     <label for="check_aurora">
                       <?php $checked = $form->get('aurora') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_aurora" name="aurora" value="t" <?= $checked ?> />
+                      <input type="checkbox" id="check_aurora" name="aurora" value="Y" <?= $checked ?> />
                       <span>Aurora</span>
                     </label>
                   </li>
                   <li>
                     <label for="check_beta">
                       <?php $checked = $form->get('beta') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_beta" name="beta" value="t" <?= $checked ?> />
+                      <input type="checkbox" id="check_beta" name="beta" value="Y" <?= $checked ?> />
                       <span>Beta</span>
                     </label>
                   </li>
                   <li>
                     <label for="check_general">
                       <?php $checked = $form->get('general') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_general" name="general" value="t" <?= $checked ?> />
+                      <input type="checkbox" id="check_general" name="mozilla-and-you" value="Y" <?= $checked ?> />
                       <span>Final Release</span>
                     </label>
                   </li>
