@@ -118,23 +118,6 @@ $map = <<<MAP
             </div>
         </li>
         <li id="site6">
-            <span class="pin" title="Tokyo"></span>
-            <div class="info" aria-hidden="true">
-            <h3>Tokyo</h3>
-            <dl>
-                <dt>Address:</dt>
-                <dd><address>
-                    Kojimachi GN Yasuda Bldg., 4F<br/>
-                    3-6-5 Kojimachi, Chiyoda-ku<br/>
-                    Tokyo, 102-0083<br/>
-                    Japan
-                </address></dd>
-                <dt>E-mail:</dt>
-                <dd><a href="mailto:mozspaces@mozilla.com">mozspaces@mozilla.com</a></dd>
-            </dl>
-            </div>
-        </li>
-        <li id="site7">
             <span class="pin" title="Toronto"></span>
             <div class="info" aria-hidden="true">
             <h3>Toronto</h3>
@@ -153,7 +136,7 @@ $map = <<<MAP
             <p>August 2011 brought the launch of our new Mozilla Space in Toronto, complete with signature espresso machine.</p>
             </div>
         </li>
-        <li id="site8">
+        <li id="site7">
             <span class="pin" title="Vancouver"></span>
             <div class="info" aria-hidden="true">
             <h3>Vancouver</h3>
@@ -172,7 +155,7 @@ $map = <<<MAP
             <p>We are in the process of revamping our Vancouver space. We’re staying in the same building, just expanding to incorporate a new community area that will launch early in 2012. Hope to see you there!</p>
             </div>
         </li>
-        <li id="site9">
+        <li id="site8">
             <span class="pin" title="London"></span>
             <div class="info" aria-hidden="true">
             <h3>London</h3>
@@ -191,7 +174,7 @@ $map = <<<MAP
             <p>This space is currently under construction and coming along nicely. We’ll be opening our doors in January 2012.</p>
             </div>
         </li>
-        <li id="site10">
+        <li id="site9">
             <span class="pin" title="Berlin"></span>
             <div class="info" aria-hidden="true">
             <h3>Berlin</h3>
@@ -202,7 +185,7 @@ $map = <<<MAP
             <p>The search is under way! Stay tuned for updates on tours, building locations and construction kick-off. We’re targeting to open our doors in the second half of 2012.</p>
             </div>
         </li>
-        <li id="site11">
+        <li id="site10">
             <span class="pin" title="Taipei"></span>
             <div class="info" aria-hidden="true">
             <h3>Taipei</h3>
