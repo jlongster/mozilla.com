@@ -324,7 +324,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/security[/]?$ /$1firefox/fea
 
 
 # Bug 680147 Redirect updated ff users to /fx
-RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(8.*|9.*|10.*|11.*)$
+RewriteCond %{HTTP_USER_AGENT} ^.*Firefox/(9.*|10.*|11.*|12.*)$
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/fx/ [E=varyua:1,R=301]
 # redirect everyone else to /new
 RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)firefox[/]?$ /$1firefox/new/ [E=varyua:1,R=301]
@@ -365,7 +365,7 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/3.5b99/(releasenotes)(/(?:in
 
 # We are in beta for 10.0, redirect the "final" url to the beta pages
 RewriteCond %{QUERY_STRING} !(no-redirect|survey-complete)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/10\.0/(releasenotes|whatsnew|firstrun|details)(/(?:index.html|buglist.html)?)?$ $1$2/10.0beta/$3$4 [PT]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/10\.0/(releasenotes|whatsnew|firstrun|details|system-requirements)(/(?:index.html|buglist.html)?)?$ $1$2/10.0beta/$3$4 [PT]
 
 # Beta whatsnew -> firstrun
 # (in the future, we should change this to match how we have been doing it for point releases below)
