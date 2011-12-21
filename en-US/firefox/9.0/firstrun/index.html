@@ -1,15 +1,24 @@
 <?php
     require_once "{$config['file_root']}/includes/min/inline.php";
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
+    require_once "{$config['file_root']}/includes/email/prefs.php";
 
-    $form = new NewsletterForm('MOZILLA_AND_YOU', $_POST);
+    $form = new EmailPrefs($_POST);
+    $form->save_new();
+
     $status = '';
-    if ($form->save()) {
+    $status_msg = '';
+
+    if ($form->has_any_errors()) {
+        $status = 'error';
+
+        if($form->has_error()) {
+            $status .= ' error-'. $form->errors[0];
+        }
+    }
+    else if($form->submitted()) {
         $status = 'success';
-        $form = new NewsletterForm('MOZILLA_AND_YOU', array());
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
+        $form->data['email'] = '';
     }
 
     // The $body_* variables are for compatibility with pre-existing css
@@ -21,6 +30,16 @@
 
     $extra_headers = <<<EXTRA_HEADERS
     {$min_inline_css}
+    <style type="text/css">
+       #newsletter-signup #email {
+         width: auto;
+       }
+
+       #newsletter-signup .success #email {
+         height: 38px;
+       }
+       
+    </style>
 EXTRA_HEADERS;
 	@include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
 	$url_prefix = $config['url_scheme'] . '://' . $config['server_name'];
@@ -47,6 +66,7 @@ EXTRA_HEADERS;
           <div id="newsletter-signup">
               <h3>Keep in touch</h3>
             <form id="email-form" class="<?= $status ?>" action="#" method="post">
+              <input type="hidden" name="mozilla-and-you" value="Y" />
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA7CAMAAAD8UnzuAAADAFBMVEXW7O7zmGb98dHueR7P2s74xJ3pZgH878j628xdR0T77cT76ryykmibuJb55a3uchz66Lb66LP55KnhKAA6q6H86rz87cBuh2r+8MT767788Mn3t4n++tv77cD45L387sXo8/f54qP10aT979DpYRztVAP15cLdagz768H+/vvgVAzoWxb24rP78M388Mz98tT668r87MP+99n88c7sZCHyiFcKYK/VWQLwXhX65rD1roP76rj/++L33Zn+89n87sb657L76bjp69nyZyP17tPkNgD87s777L799NX99N7vWg0gqKP/7bn/+/T45rX15sn85dv/9/Px7dz87L/oRAH68Nn579r50L3tbSHxfEb1pHr458T87MT55rH76bz++dUIoZvrUQ0Hg8ELrar88s775av2tpn/6a7znXY2mokiopn97OD37dT76LT04rz868Hrah373LxKqZnz37n778f767rzeDVenoQskH303bKHu9L26s777c41pZnl47jzcSXufRLvfRz54J91rpDmTgD+6rXodDn85sr0lVj56cf+9s7scgL/9uCqx6nxhT34snpGnMvTdCb+9e7h3awBd8Aep6NDkHmzazL14av/9tEojsn1wo7udh9tr8z0hUv86LLvhRmOelLo5s4UkoS51Nv4x6TwZhqlzen868uWwc7KXCH1+/v57NDhYBnndBT66Lv//evhhkX7ybG5gDzsdRTqaxTuXAX69d3889719OTxbzP546jurnjnaC378dOgxtjAz6dHmoVUo8h4x8X+8tD96cf+7bb74bj607Dp3LfmaBznWA++0cr88tz68Nb72bHtuYeEwKXvbTziZSXvXR/557LQ2K376rnnQwCi3t5MtKv/7r/56Lb65a/+88fwXiD757HwWw3677rz9uruYQ766L+ZyeXA0Kf778rZi1TarIPwypf09fCDv6X0895SkrnnTwE0r6pMvPH977vwhFTqlVv59Nvtwa3978X66bdccovooGXns3r888zy5Nf///+YPDv3AAABAHRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AU/cHJQAACj1JREFUeNqdlnlcE3cah0kkhmbKMBMIMCHDiEkwARLIYbmiZMoGA4qIpOUOh4Q7UJFSRZECVcF6oFLxrlqLR+tRu2qrrVabVivaMxhthNKWbdl1D9y6XbKXfQdYTPvp7tb9MvDhn+fJe8zMLx73/4/IU7/pvCAf/9/jYdnNJ3OuiBofK65+eIF82sHGhbNnSlkF+y81ehZUPZRgs1fmiceLuw6LONk5Hd+/mSwuuBL3SwWveHicWHw2cfGZ3cW7o3KXVcurvDiZCw/tufdLBJvTUy8U71gozk6M01V7ptUGH6eC9mxoeb796ysxe1L/u2Ba6onS7BydZ1fxAd2aK2s+fLWjViAQIPP+8eg179caFuae5cj/o0Au//3uzoO6OGmDWHfgwOO6N5K/Twv9zXEBIjCbLTXrb/3Ze29mNce2+WcF8qrS8jWiS491qsVxnDW6dTrduuQnl4cGI4AjCDKI1v7uT10Be0v/aDx/+KcCucfBxjNJDdIgnWdn4+Pq67oTACdff7K6w4xAmD+0hXZ+8LfHHtnLenPt4R3yBwL5gpOZ0G7XtYKgmUFs4xNqkTp53brk60Cf7yCIOQQB7UMJ6CBiFr7+yKapn765v7hr2gNB+tmG937VuePw9qT31CJj5OzZyclvJF+vrl4exVOp8lQyGUkyDWD8eDMSeGck2jTiVV3cmerWwh6Oevl+m00stokjGf767OvVaWkdMmqUR1EylQwk5ByCrzcjZoL3memLbK/zuz1PuAlOGm1swCHAGz/88Inq5aEdCRSXgiuBolQJKhUpw1CM6eO7l//6r68XLn9VvdhNkLqiUZwkFrOT2JHnz7+6PC0tV8YTcrlc5hcsFE/Fk8mAZ3I7IzQtKklsDM5OfyCQH+7ab0sCB3tFVBosnSAprnB4WAk/3AQhiCgVRccSBBRAu/CI3ChxUiTrywVugh1dnjam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" alt="" id="letters" />
               <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address"><a class="button" href="#newsletter-signup" id="expand"><b>&raquo;</b></a>
               <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
