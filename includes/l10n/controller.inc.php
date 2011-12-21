@@ -131,7 +131,7 @@ $sitepages = array(
 
 // use older version of Download page for locales not listed below
 
-$brand_aware_locales = array('ar', 'as', 'ca', 'cs', 'de', 'el', 'es-CL', 'es-MX', 'et', 'eu', 'ff', 'fr', 'ga-IE', 'gl', 'hr', 'hu', 'is', 'it', 'ko', 'lv', 'mk', 'pl', 'ro', 'ru', 'sq', 'sv-SE', 'tr', 'zh-TW');
+$brand_aware_locales = array('ar', 'as', 'ca', 'cs', 'de', 'el', 'es-CL', 'es-MX', 'et', 'eu', 'ff', 'fr', 'ga-IE', 'gl', 'hr', 'hu', 'is', 'it', 'ko', 'lv', 'mk', 'nl', 'pl', 'ro', 'ru', 'sq', 'sv-SE', 'tr', 'zh-CN', 'zh-TW');
 
 if ( $stage == true ) {
     $brand_aware_locales = $full_languages;
