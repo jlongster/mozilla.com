@@ -13,6 +13,9 @@ $css = file_get_contents($config['file_root'].'/style/l10n/fx4-fistrun-fallback.
 $extra_headers = <<<EXTRA_HEADERS
     <style>
         {$css}
+        #personalize ul.link {
+            pointer-events:none;
+        }
     </style>
 EXTRA_HEADERS;
 
