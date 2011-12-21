@@ -463,17 +463,17 @@ if ($form->get('privacy')){
     <div class="section">
 
         <div id="copyright">
-            <p id="footer-links"><a href="/{$lang}/privacy-policy.html">{$l10n->get('Privacy Policy')}</a> &nbsp;|&nbsp;
-            <a href="/{$lang}/about/legal.html">{$l10n->get('Legal Notices')}</a> &nbsp;|&nbsp;
-                        <a href="/{$lang}/legal/fraud-report/index.html">{$l10n->get('Report Trademark Abuse')}</a></p>
-            <p>{$creative_commons}</p>
+            <p id="footer-links"><a href="/<?=$lang?>/privacy-policy.html"><?=$l10n->get('Privacy Policy')?></a> &nbsp;|&nbsp;
+            <a href="/<?=$lang?>/about/legal.html"><?=$l10n->get('Legal Notices')?></a> &nbsp;|&nbsp;
+                        <a href="/<?=$lang?>/legal/fraud-report/index.html"><?=$l10n->get('Report Trademark Abuse')?></a></p>
+            <p><?=$creative_commons?></p>
         </div>
 
-        <form id="lang_form" class="languages"  dir="{$textdir}" method="get" action="{$host_root}includes/l10n/langswitcher.inc.php"><div>
-            <label for="flang">{$l10n->get('switch language')}</label>
-            {$lang_list}
+        <form id="lang_form" class="languages"  dir="<?=$textdir?>" method="get" action="<?=$host_root?>includes/l10n/langswitcher.inc.php"><div>
+            <label for="flang"><?=$l10n->get('switch language')?></label>
+            <?=$lang_list?>
             <noscript>
-                <div><input type="submit" id="lang_submit" value="{$l10n->get('Go')}" /></div>
+                <div><input type="submit" id="lang_submit" value="<?=$l10n->get('Go')?>" /></div>
             </noscript>
         </div></form>
 
