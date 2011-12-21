@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 $body_id = 'home';
 
@@ -40,7 +40,7 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
 ?>
     <style>
     #wrapper {
-        background: #e04113 url(<?=$config['static_prefix'];?>/img/covehead/firefox/ab/dbd-feature-bg.jpg) 50% 0 no-repeat;
+        background: #e04113 url(<?=$config['static_prefix'];?>/img/covehead/firefox/dbd-feature-bg.jpg) 50% 0 no-repeat;
     }
     #home #main-feature {
         padding-bottom: 30px;
@@ -111,7 +111,7 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
     }
 
     * html a.download-link span.download-content{
-        background:url(<?=$config['static_prefix'];?>/img/covehead/firefox/ab/download-ie6-dbd.jpg) 0 0 no-repeat
+        background:url(<?=$config['static_prefix'];?>/img/covehead/firefox/download-ie6-dbd.jpg) 0 0 no-repeat
     }
 
 
@@ -157,7 +157,7 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
 <style>
 
     #home #wrapper {
-        background: #e04113 url(<?=$config['static_prefix']?>/img/covehead/firefox/ab/dbd-feature-bg.jpg) 250% 0 no-repeat;
+        background: #e04113 url(<?=$config['static_prefix']?>/img/covehead/firefox/dbd-feature-bg.jpg) 250% 0 no-repeat;
     }
 
 
