@@ -15,8 +15,8 @@
     <meta name="robots" content="noindex">
 EXTRA_HEADERS;
     require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
-    $form = new NewsletterForm('MOZILLA_AND_YOU', array());
+    require_once "{$config['file_root']}/includes/email/prefs.php";
+    $form = new EmailPrefs();
     @include_once "{$config['file_root']}/{$lang}/includes/header-portal-pages.inc.php";
 ?>
 
