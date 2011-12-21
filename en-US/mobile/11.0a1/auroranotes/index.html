@@ -1,1 +1,355 @@
-/Users/james/projects/mozilla/relnotes/out.html
+<?php
+    $page_title = 'Firefox Aurora Notes';
+    $body_id    = 'aurora-relnotes';
+    $body_class = 'darkbg';
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
+    <script src="{$config['static_prefix']}/js/html5.js"></script>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/aurora-releasenotes.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+?>
+
+<div id="main-feature">
+    <div id="relnoteswitcher">
+        <h4>View notes for:</h4>
+        <ul>
+          <li>
+            
+            <a href="/firefox/11.0a1/auroranotes/">Desktop</a>
+            
+          </li>
+          <li>
+            
+            <span>Mobile</span>
+            
+          </li>
+        </ul>
+    </div>
+    <h2>
+        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/aurora/relnotes/title.png" alt="Firefox Aurora" height="51" width="346" />
+        Notes <small>(First offered to Aurora channel users on 2012-01-31)</small>
+    </h2>
+    <p>Check out what’s below, and find answers to frequently asked questions. As always, you’re encouraged to <a href="http://input.mozilla.com/feedback">tell us what you think</a>, or file a bug in <a href="https://bugzilla.mozilla.org/enter_bug.cgi">Bugzilla</a>.</p>
+</div>
+
+<div id="main-content">
+
+    <section id="whatsnew">
+        <h3>What’s New</h3>
+        <div class="section-contents">
+            <ul>
+              
+                <li>
+                    <span class="tag tag-none">None</span>
+                    <!-- The description is the title for now -->
+                    <h5>Faster start-up and page load times!</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>The CSS <a href="https://developer.mozilla.org/en/CSS/text-size-adjust">text-size-adjust property</a> is now supported</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>The user interface has been completely redesigned!</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Re-designed start page with Top Sites</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>"Request Desktop Site" menu option added</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-changed">CHANGED</span>
+                    <!-- The description is the title for now -->
+                    <h5>Top Sites, Bookmarks, and History are now more accessible from the awesome bar</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-html5">HTML5</span>
+                    <!-- The description is the title for now -->
+                    <h5>The <a href="https://developer.mozilla.org/en/HTML_in_XMLHttpRequest">outerHTML property</a> is now supported on HTML elements</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-developer">DEVELOPER</span>
+                    <!-- The description is the title for now -->
+                    <h5>SPDY protocol implemented for faster page loads from some web servers</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-developer">DEVELOPER</span>
+                    <!-- The description is the title for now -->
+                    <h5>XMLHttpRequest now <a href="http://developer.mozilla.org/en/HTML_in_XMLHttpRequest>supports HTML parsing</a></h5>
+                    <!-- <p></p> -->
+                </li>
+              
+
+
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <h5>
+                      Blinking characters in form fields
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374">665374</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <h5>
+                      Reloading a page increases the zoom level
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628269">628269</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <h5>
+                      Adobe Flash and other plugins are not supported
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=687265">687265</a>)
+                    </h5>
+                </li>
+              
+            </ul>
+        </div>
+    </section>
+
+    <section id="knownissues">
+        <h3>Known Issues</h3>
+        <div class="section-contents">
+            <ul>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Searches from the URL bar do not function reliably for some locales
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=645970">645970</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Some recent changes in the Google layout and CSS may cause issues in non-webkit browsers like Firefox
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=668288">668288</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>
+                      Blinking characters in form fields
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=665374">665374</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Unable to zoom in/out a webpage on header/footer when a double tap gesture is made
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=639504">639504</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Sync Now button is active even if the Sync is in progress
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=656594">656594</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      For some users HTML5 video may load slowly and display rendering artifacts on the screen during playback
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=622839">622839</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>
+                      Reloading a page increases the zoom level
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=628269">628269</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>
+                      Adobe Flash and other plugins are not supported
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=687265">687265</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Firefox for Android is English-only regardless of any device-specific language settings
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=695565">695565</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Text on areas of some web pages may inconsistently large
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=705446">705446</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      The user interface for Ice Cream Sandwich devices is not yet completed
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=705678">705678</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Forms are not yet fully functional
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=705201">705201</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Some text may appear too large
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=710808">710808</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Opening links from external apps may not open properly.
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=711515">711515</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Your previous tab session may not be re-opened on launch in some instances
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697858">697858</a>)
+                    </h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>
+                      Some Android 2.1 devices may crash on startup
+                      (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=705874">705874</a>)
+                    </h5>
+                </li>
+              
+            </ul>
+        </div>
+    </section>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+    <section id="try">
+        <h3>Try Firefox Aurora</h3>
+        <ol>
+          <li id="try1">
+            <a href="/mobile/platforms/">
+              Check »
+            </a>
+          </li>
+          <li id="try2">
+            <a href="/firefox/aurora/">
+              Download »
+            </a>
+          </li>
+          
+        </ol>
+    </section>
+
+    <section id="get-involved">
+        <h3>Want to get involved?</h3>
+        <p>Did you know that most of the contention Firefox Support was written by volunteers?</p>
+        <a href="/contribute/">Find out more »</a>
+    </section>
+
+
+    <section id="problems">
+        <h3>Having Problems?</h3>
+        <ol>
+          <li><a href="http://support.mozilla.com/">Search for answers on the Firefox Support page »</a></li>
+          <li><a href="#knownissues">Look at the known issues list and see if we already know about the problem »</a></li>
+          <li><a href="https://bugzilla.mozilla.org/enter_bug.cgi">If you can’t find reference to your issue, please consider filing a technical bug report »</a></li>
+        </ol>
+    </section>
+
+
+    <section id="other">
+      <h3>Other Resources</h3>
+      <p><a href="https://developer.mozilla.org/en/Firefox_10_for_developers">Developer Information »</a></p>
+      <p><a href="https://blog.mozilla.com/futurereleases/">Future of Firefox Blog »</a></p>
+    </section>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
