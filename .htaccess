@@ -16,6 +16,9 @@ BrowserMatch "(?!(Mobile|Maemo|Meego|Fennec|Linux\ armv7l))" is_not_mobile=yes
 
 RewriteEngine On
 
+# Bug 684089
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefoxbeta[/]?$ /$1firefox/beta/ [R=301,L]
+
 # Bug 706581
 RewriteRule ^[Ss]tory/?$ https://donate.mozilla.org/Story
 
