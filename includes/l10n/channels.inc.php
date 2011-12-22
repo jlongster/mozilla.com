@@ -16,14 +16,23 @@ $stable_button = $downloadbox;
 
 // email form
 require_once $config['file_root'].'/includes/regions.php';
-require_once $config['file_root'].'/includes/email/forms.php';
+require_once $config['file_root'].'/includes/email/prefs.php';
 
-$form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
+$form = new EmailPrefs($_POST);
+$form->save_new('email');
+
 $status = '';
-if($form->save()) {
+$status_msg = '';
+
+if ($form->has_any_errors()) {
+    $status = 'error';
+
+    if($form->has_error()) {
+        $status .= ' error-'. $form->errors[0];
+    }
+}
+else if($form->submitted()) {
     $status = 'success';
-} elseif ($form->error) {
-    $status = 'error error-'. $form->error;
 }
 
 $country = $form->get('country');
@@ -48,6 +57,7 @@ $newsletter_form = <<<FORM
               <h3>{$success}</h3>
             </div>
             <form id="email-form" action="#newsletter-signup" method="post">
+                  <div style="color: red">{$form->non_field_error}</div>
               <input id="email" name="email" type="email" value="{$form->get('email')}" placeholder="{$email_field}">
               <div id="email-error">{$email_error}</div>
               <div class="more">
@@ -59,9 +69,9 @@ $newsletter_form = <<<FORM
                   </select>
                 </div>
                 <ul class="channels_signup">
-                  <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="t" /> {$aurora_list}</label></li>
-                  <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="t" /> {$beta_list}</label></li>
-                  <li><label for="check_general"><input type="checkbox" id="check_general" name="general" value="t" /> {$general_list}</label></li>
+                  <li><label for="check_aurora"><input type="checkbox" id="check_aurora" name="aurora" value="Y" /> {$aurora_list}</label></li>
+                  <li><label for="check_beta"><input type="checkbox" id="check_beta" name="beta" value="Y" /> {$beta_list}</label></li>
+                  <li><label for="check_general"><input type="checkbox" id="check_general" name="mozilla-and-you" value="Y" /> {$general_list}</label></li>
                 </ul>
                 <div id="channel-error">{$select_lists}</div>
                 <input name="submit" class="button" type="submit" value="{$send_button}" id="subscribe"
