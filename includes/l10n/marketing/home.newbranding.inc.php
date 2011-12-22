@@ -139,6 +139,18 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
     body.locale-lv#home #main-feature h2 {
         font-size: 52px;
     }
+
+    body.locale-he#home #main-feature * {
+        font-style: normal;
+    }
+
+    body.locale-he#home #main-feature h2 {
+        font-weight: bold;
+    }
+
+
+
+
     /* if javascript is disabled, we should show all download boxes */
     li.os_windows, li.os_osx, li.os_linux, li.os_android {
         display: block;
@@ -157,7 +169,7 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
 <style>
 
     #home #wrapper {
-        background: #e04113 url(<?=$config['static_prefix']?>/img/covehead/firefox/dbd-feature-bg.jpg) 250% 0 no-repeat;
+        background: #e04113 url(<?=$config['static_prefix']?>/img/covehead/firefox/dbd-feature-bg.jpg) -800px 0 no-repeat;
     }
 
 
