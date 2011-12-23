@@ -1,6 +1,8 @@
 <?php
+    @include_once "{$config['file_root']}/{$lang}/includes/release-notes.php";
+
     // The $body_* variables are for compatibility with pre-existing css
-    $page_title = 'Mozilla Firefox 10 System Requirements';
+    $page_title = "Mozilla Firefox $version System Requirements";
     $body_id    = 'firefox-requirements';
     $extra_headers = <<<EXTRA_HEADERS
 	<link rel="stylesheet" href="/style/covehead/system-requirements.css" media="screen" />
@@ -19,7 +21,7 @@ EXTRA_HEADERS;
 </div>
 
 <div id="main-feature">
-	<h2>Firefox 10 <span>System Requirements</span></h2>
+	<h2>Firefox&nbsp;<?=$version?> <span>System Requirements</span></h2>
 </div>
 
 <div id="main-content">
@@ -34,7 +36,7 @@ EXTRA_HEADERS;
     <li>Windows 7</li>
   </ul>
   
-    <p><em><small>Please note that while the 32-bit and 64-bit versions of Windows Vista and Windows 7 can be used to run Firefox 5, only 32-bit builds of Firefox 5 are supported at this time.</small></em></p>
+    <p><em><small>Please note that while the 32-bit and 64-bit versions of Windows Vista and Windows 7 can be used to run Firefox <?=$version?>, only 32-bit builds of Firefox <?=$version?> are supported at this time.</small></em></p>
 
   
   <h6>Recommended Hardware</h6>

@@ -65,15 +65,15 @@ RewriteRule en-US/firefox/(3.6rc|4.0rc)(.*)/(whatsnew|firstrun)[/]? /en-US/firef
 RewriteRule en-US/firefox/(3.6b|4.0b)(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/beta.html [PT,L]
 
 # Redirect for latest Aurora/Beta release notes
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/aurora/notes[/]?$ /$1firefox/10.0a2/auroranotes [R=301,L]
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/aurora/notes[/]?$ /$1mobile/10.0a2/auroranotes [R=301,L]
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta/notes[/]?$ /$1firefox/9.0beta/releasenotes [R=301,L]
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/beta/notes[/]?$ /$1mobile/9.0beta/releasenotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/aurora/notes[/]?$ /$1firefox/11.0a2/auroranotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/aurora/notes[/]?$ /$1mobile/11.0a2/auroranotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?firefox/beta/notes[/]?$ /$1firefox/10.0beta/releasenotes [R=301,L]
+RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?mobile/beta/notes[/]?$ /$1mobile/10.0beta/releasenotes [R=301,L]
 
 # Redirect all old firstrun versions to a out-of-date page
 # NOTE:  you need to add exceptions here for normal firstrun pages!!
 # bug 538486
-RewriteCond $1 !^(?:3.6.*|7.*|8.*|9.*|sync|aurora|backtoschool)$
+RewriteCond $1 !^(?:3.6.*|7.*|8.*|9.*|10.*|sync|aurora|backtoschool)$
 RewriteRule en-US/firefox/(.*)/(whatsnew|firstrun)[/]? /en-US/firefox/out-of-date/ [PT,L]
 
 # Bug 698571
@@ -372,7 +372,8 @@ RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/10\.0/(releasenotes
 
 # Beta whatsnew -> firstrun
 # (in the future, we should change this to match how we have been doing it for point releases below)
-RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/9\.0beta/whatsnew(/(?:index.html)?)? $1$2/8.0/firstrun$3 [PT]
+# TODO: Where'd this page go?
+#RewriteRule ^(\w{2,3}(?:-\w{2}(?:-mac)?)?/)?(firefox|mobile)/10\.0beta/whatsnew(/(?:index.html)?)? $1$2/9.0/firstrun$3 [PT]
 
 # Redirect #.#b# to #.#beta
 # See bug 658603 for the reason we need the condition
