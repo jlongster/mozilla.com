@@ -1,0 +1,199 @@
+<?php
+    $page_title = 'Firefox Beta Notes';
+    $body_id    = 'beta-notes';
+$fonts = <<<FONTS
+    <style>
+    @font-face {
+        font-family: 'MuseoSans';
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot');
+        src: url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.eot?iefix') format('eot'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.woff') format('woff'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+             url('{$config['static_prefix']}/img/fonts/MuseoSans_500-webfont.svg#webfont') format('svg');
+    }
+    </style>
+FONTS;
+
+    $extra_headers = <<<EXTRA_HEADERS
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{$config['static_prefix']}/style/covehead/beta-notes.css" media="screen" />
+EXTRA_HEADERS;
+    include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
+
+?>
+
+<div id="main-feature">
+    <div id="relnoteswitcher">
+        <h4>View notes for:</h4>
+        <ul>
+            <li>
+              
+              <a href="/firefox/10.0b1/releasenotes/">Desktop</a>
+              
+            </li>
+            <li>
+              
+              <span>Mobile</span>
+              
+            </li>
+        </ul>
+    </div>
+    <h2>
+        <img src="<?=$config['static_prefix']?>/img/covehead/firefox/beta/notes/title.png" alt="Firefox Beta" height="156" width="482" />
+        Notes <small>(First offered to Beta channel users on November 22nd, 2011)</small>
+    </h2>
+    
+    <p>Check out what&#146;s new and known issues for this version of Firefox for mobile below. As always, you&#146;re encouraged to <a href="http://input.mozilla.com/feedback">tell us what you think</a>, or <a href="https://bugzilla.mozilla.org/">file a bug in Bugzilla</a>.</p>
+</div>
+
+<div id="main-content">
+
+    <section id="whatsnew">
+        <h3>What’s New</h3>
+        <div class="section-contents">
+            <ul>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Anti-Aliasing for WebGL is now implemented (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=615976">bug 615976</a>)</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-new">NEW</span>
+                    <!-- The description is the title for now -->
+                    <h5>Accelerated layers are now supported via OpenGL ES</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-changed">CHANGED</span>
+                    <!-- The description is the title for now -->
+                    <h5>It's now even easier to set up Firefox Sync - see the "Set up Sync" link on the home tab</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-html5">HTML5</span>
+                    <!-- The description is the title for now -->
+                    <h5>New &lt;bdi&gt; element for bi-directional text isolation, along with supporting CSS properties (see bugs <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=613149">613149</a> and <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=662288">662288</a>)</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+                <li>
+                    <span class="tag tag-developer">DEVELOPER</span>
+                    <!-- The description is the title for now -->
+                    <h5>We've added IndexedDB APIs to more closely match the specification</h5>
+                    <!-- <p></p> -->
+                </li>
+              
+
+
+              
+                <li>
+                    <span class="tag tag-fixed">FIXED</span>
+                    <h5>
+                      There is an extremely rare case where the browser may become unable to load web pages or close tabs
+                      (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=676780">676780</a>)
+                    </h5>
+                </li>
+              
+            </ul>
+        </div>
+    </section>
+
+    <section id="knownissues">
+        <h3>Known Issues</h3>
+        <div class="section-contents">
+            <ul>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>Some recent changes in the Google layout and CSS may cause issues in non-webkit browsers like Firefox</h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>Blinking characters in form fields</h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-unresolved">
+                      Unresolved
+                    </span>
+                    <h5>Sync Now button is active even if the Sync is in progress</h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>Reloading a page increases the zoom level</h5>
+                </li>
+              
+                <li>
+                    <span class="tag tag-resolved">
+                      Resolved
+                    </span>
+                    <h5>Adobe Flash and other plugins are not supported</h5>
+                </li>
+              
+            </ul>
+        </div>
+    </section>
+
+</div><!-- end #main-content div -->
+
+<div id="sidebar">
+
+    <section id="try">
+        <h3>Try Firefox Beta</h3>
+        <ol>
+          <li id="try1">
+            <a href="/mobile/platforms/">
+              Check »
+            </a>
+          </li>
+          <li id="try2">
+            <a href="/firefox/channel/">
+              Download »
+            </a>
+          </li>
+          
+        </ol>
+    </section>
+
+    <section id="get-involved">
+        <h3>Want to get involved?</h3>
+        <p>Did you know that most of the contention Firefox Support was written by volunteers?</p>
+        <a href="/contribute/">Find out more »</a>
+    </section>
+
+
+    <section id="problems">
+        <h3>Having Problems?</h3>
+        <ol>
+          <li><a href="http://support.mozilla.com/">Search for answers on the Firefox Support page »</a></li>
+          <li><a href="#knownissues">Look at the known issues list and see if we already know about the problem »</a></li>
+          <li><a href="https://bugzilla.mozilla.org/enter_bug.cgi">If you can’t find reference to your issue, please consider filing a technical bug report »</a></li>
+        </ol>
+    </section>
+
+
+    <section id="other">
+        <h3>Other Resources</h3>
+      <p><a href="https://developer.mozilla.org/en/Firefox_10_for_developers">Developer Information »</a></p>
+      <p><a href="https://blog.mozilla.com/futurereleases/">Future of Firefox Blog »</a></p>
+    </section>
+
+</div>
+
+<?php
+    @include_once "{$config['file_root']}/{$lang}/includes/footer.inc.php";
+?>
+
