@@ -1,137 +1,28 @@
-<div id="main-feature">
+<section id="intro">
 
-    <h2>Preverite svoje <span>vstavke</span></h2>
-    <p>Če redno posodabljate vstavke, bo Firefox deloval varno in brez težav.</p>
+<h2>LUČI! KAMERA! <em>BLAZN!</em></h2>
 
-</div>
+<h3><em>Mozilla predstavlja</em> <?=$content_title?></h3>
 
-<div id="main-content">
+<h4>Globalni video natečaj  za prikaz naše zgodbe</h4>
 
-    <div id="content-left">
-        <div class="blocklisted flash">
+<p>Kot edini neprofitni brskalnik vas Firefox postavlja na prvo mesto. Sedaj bi vas radi posadili v režiserjev stol, da nam pomagate širiti naše sporočilo. Ustvarite kratek video in z njim priložnost, da zmagate in dobite nekaj neverjetnih nagrad. Že samo če se prijavite, boste dobili nagradni paket  Firefox, in vaš prispevek si bodo ogledali poznani sodniki.
+ Lahko da jih boste srečali na enem od štirih mednarodnih dogodkov, vaš video pa bo morda  za našo svetovno kampanjo.  Prispevke bomo začeli sprejemati v februarju, zmagovalci pa bodo predvidoma objavljeni v maju. Za zdaj začnite razmišljati o svojem filmu in ostanite v stiku za novice!</p>
 
-            <h3>Pogrešate <span>FLASH?</span></h3>
-            <p>Zaradi večje varnosti je Firefox zastarelo različico Flasha onemogočil. <a <?=$link[0];?> >Nadgradite na najnovejšo.</a></p>
 
-            <br class="clearfix" />
-        </div>
 
-        <div id="legend">
-            <ul>
-                <li id="old_browser" style="display:none">
-                    <strong>Opozorilo: na voljo je novejša različica vašega brskalnika.</strong> Prosimo, da ga posodobite.
-                </li>
-                <li id="modern_browsers" style="display:none">
-                    Ta stran najbolje deluje z najnovejšimi brskalniki: Firefox 3.6+, Opera 10.5+, Safari 4+, Chrome 4+ in IE 8+.
-                </li>
-                <li id="exploder" style="display: none">
-                    Preverjanje vstavkov <strong>v Internet Explorerju ni podprto v celoti</strong>. Uporabite lahko tudi Orodja &gt; Upravljanje dodatkov
-                </li>
-                <li>
-                    <strong><em>Korak 1:</em></strong> Kliknite <strong>Posodobi</strong> za posodobitev vstavkov.
-                </li>
-                <li>
-                    <strong><em>Korak 2:</em></strong> Najprej <strong>opravite vse predlagane posodobitve</strong> in <em>šele potem</em> ponovno zaženite vaš brskalnik.
-                </li>
-            </ul>
-        </div>
+<?=$intro_video?>
 
-        <noscript>
-            <div>
-                <h3>Opozorilo</h3>
-                <p><strong>JavaScript je onemogočen</strong> ali pa uporabljate brskalnik brez JavaScripta. Stran za preverjanje vstavkov ne deluje brez <strong>JavaScripta</strong>. Omogočite ga v Orodja &gt; Možnosti in ponovno naložite stran.</p>
-                <p>Onemogočite lahko tudi vse svoje vstavke in pustite JavaScript onemogočen. Tako boste v dobri družbi <a <?=$link[1];?> >RMS</a>.</p>
-            </div>
-        </noscript>
+<?=$social?>
 
-        <?=$pluginsTable?>
 
-        <div id="error-panel" style="display: none">
-            <h3>Napaka storitve za iskanje vstavkov</h3>
-            <p>Prišlo je do napake. Poskusite znova pozneje.</p>
 
-            <form action="#" method="get">
-                <fieldset>
-                    <button>Poskusi znova</button>
-                </fieldset>
-            </form>
-        </div>
+</section>
 
-    </div>
+<section id="prequel"><div class="container">
 
-    <div id="sidebar">
-      <div id="information">
-        <h3>Nasveti</h3>
-        <ul>
-          <li><a <?=$link[2];?> > Kaj je vstavek?                   </a></li>
-          <li><a <?=$link[3];?> > Zakaj naj posodabljam vstavke?    </a></li>
-          <li><a <?=$link[4];?> > Kako mi lahko Firefox pomaga?     </a></li>
-          <li><a <?=$link[5];?> > Katere vstavke uporabljam?        </a></li>
-          <li><a <?=$link[6];?> > Kako vstavek onemogočim?          </a></li>
-        </ul>
-      </div>
+<h3>Začetek</h3>
 
-          <div id="support">
-            <h3>Potrebujete pomoč?</h3>
-            <ul>
-              <li><a <?=$link[7];?> > Obiščite support.mozilla.com </a></li>
-              <li><a <?=$link[8];?> > Preberite članke o vstavkih </a></li>
-            </ul>
-          </div>
+<p class="intro">To niso naši filmi. Natečaj smo priredili že leta 2006 in prejeli skoraj 300 prijav iz rok naših pristašev in filmskih ustvarjalcev po vsem svetu. Bili so neverjetni! Tukaj nekaj naših najbolj priljubljenih, da dobite navdih ali pa da samo uživate v njih. </p>
 
-        </div>
-
-    <div id="information-content" class="clearfix">
-        <?=$backtotop?>
-
-        <h2>Pogosta <span>vprašanja</span></h2>
-
-        <div id="column-one">
-            <h3 id="what-plugin">Kaj je vstavek?</h3>
-            <ul>
-                <li>Vstavki poganjajo <strong>videoposnetke, animacije in igre</strong>.</li>
-                <li>Izdelujejo jih <strong>podjetja, ki ne razvijajo Firefoxa</strong>, npr. <a <?=$link[9];?>>Adobe Systems</a> in <a <?=$link[10];?> >Apple</a>.</li>
-                <li>Vstavki se <strong>vedno ne posodabljajo</strong> samodejno.</li>
-            </ul>
-
-            <h3 id="why-update">Zakaj naj posodabljam vstavke?</h3>
-            <ul>
-                <li>Stari vstavki lahko otežujejo brskanje in <strong>zapravljajo vaš čas</strong>.</li>
-                <li>Zastareli vstavki <strong>povečujejo tveganje</strong> za napad s stranih škodljivih programov, virusov in drugih virov nevarnosti.</li>
-                <li><strong>Posodobljeni vstavki vsebujejo izboljšave</strong>, zaradi katerih je splet <strong>boljši in varnejši</strong>.</li>
-            </ul>
-
-            <?=$screenshot;?>
-
-        </div>
-
-        <div id="column-two">
-            <h3 id="firefox-helps">Kako mi lahko Firefox pomaga?</h3>
-            <p>V prihodnje bo Firefox skrbel za posodobitve vaših vstavkov. Do takrat pa bi bilo dobro, če <strong>redno obiščete to stran</strong> in za svojo lastno varnost vstavke posodobite.</p>
-
-            <h3 id="list-plugins">Katere vstavke uporabljam?</h3>
-            <p>Samodejno smo odkrili vstavke v zgornjem seznamu. Za <strong>ogled vstavkov v Firefoxu</strong> sledite naslednjm korakom:</p>
-            <ol>
-                <li>Odprite meni <kbd>Orodja</kbd>.</li>
-                <li>Izberite <kbd>Dodatki</kbd>.</li>
-                <li>Kliknite na izbiro <kbd>Vstavki</kbd>.</li>
-            </ol>
-
-            <div class="howto-disable-plugin">
-                <h3 id="howto-disable">Kako vstavek onemogočim? </h3>
-                <p>V Firefoxu:</p>
-                <ol>
-					<li>Odprite meni <kbd>Orodja</kbd>.</li>
-					<li>Izberite <kbd>Dodatki</kbd>.</li>
-					<li>Kliknite na izbiro <kbd>Vstavki</kbd>.</li>
-                    <li>Kliknite na vstavek v seznamu.</li>
-                    <li>Kliknite na gumb <kbd>Onemogoči</kbd>.</li>
-                </ol>
-                <p><strong>Pozor:</strong> potem ko vstavek onemogočite, nekaterih stvari <strong>ne boste mogli več izvajati</strong>. Npr., če onemogočite Flash, ne boste mogli več predvajati videoposnetkov na priljubljenih spletnih straneh.</p>
-            </div>
-
-            <h3 id="more-questions">Imate več <span>vprašanj?</span></h3>
-            <p><a <?=$link[7];?>>Naša stran za podporo</a> vam lahko pomaga pri <a <?=$link[6];?>>učenju o vstavkih</a> in <a <?=$link[8];?>>reševanju težav z njimi</a>.</p>
-        </div>
-    </div>
-</div>
+</div></section>
