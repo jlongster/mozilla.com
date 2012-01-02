@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 $body_id = 'home';
 
