@@ -4,8 +4,12 @@
     $page_title = 'Firefox web browser | Help us test the latest beta';
     $body_id    = 'firefox-all';
     $body_class   = 'beta-all';
+// Report simple running errors
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
     $extra_headers = <<<EXTRA_HEADERS
     <link rel="stylesheet" href="/style/covehead/all.css" media="screen" />
+    <link rel="stylesheet" href="/style/covehead/all-beta.css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,800italic,700italic' rel='stylesheet' type='text/css'>
     <script src="/js/mozilla-language-search.js"></script>
 
 EXTRA_HEADERS;
@@ -20,10 +24,12 @@ EXTRA_HEADERS;
     }
 ?>
 
-<div id="feature-header"></div>
 <div id="main-feature">
-    <h2>Download Firefox Beta <span>in your language</span></h2>
-    <p>Experience cutting edge features with more stability. Provide feedback to help refine and polish what will be in the final release.</p>
+    <h2>
+        <img src="<?=$config['static_prefix']?>/img/covehead/all-beta/title.png" alt="Firefox Beta" />
+        <em>Speaks your language</em>
+    </h2>
+    <p>Download Firefox Beta in your language and experience cutting edge features before they make it to final release. Provide feedback to help us refine and polish the next version of Firefox.</p>
 </div>
 
 
@@ -63,10 +69,17 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 </div><!-- end #main-content div -->
 
 <div id="sidebar">
-	<div id="sidebar-search">
-		<h3>Search Language</h3>
-		<form method="get" action="all-beta.html" id="search-form">
-			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/firefox/all/search-button.png" /></div>
+    <div id="beta-links" class="section">
+        <h3>Firefox Beta Links</h3>
+        <ul>
+            <li><a href="/<?=$lang?>/firefox/beta/">Return to Homepage »</a></li>
+            <li><a href="/<?=$lang?>/firefox/beta/notes/">What’s New in Firefox Beta »</a></li>
+        </ul>
+    </div>
+    <div id="sidebar-search" class="section">
+        <h3>Search Languages</h3>
+        <form method="get" action="all-beta.html" id="search-form">
+			<div class="search-box"><input id="language-search" name="lang-search" type="search" class="search-input" /><input type="image" alt="Search" id="lang-submit" src="/img/covehead/all-beta/search-button.png" /></div>
 		</form>
 		<script>// <![CDATA[
 		var data = <?php echo $firefoxDetails->getJavaScriptArrayForAllBuilds(); ?>;
@@ -77,10 +90,11 @@ if (isset($_GET['lang-search']) && $_GET['lang-search'] != '') {
 		Mozilla.LanguageSearch.download_text = 'download';
 		</script>
 	</div>
-	<div id="other-versions">
+    <div id="other-downloads" class="section">
 		<h3>Other Firefox Downloads</h3>
 		<ul>
-			<li><a href="all.html">Firefox <?=LATEST_FIREFOX_VERSION?></a></li>
+            <li><a href="/<?=$lang?>/firefox/aurora/">Firefox Aurora »</a></li>
+            <li><a href="/<?=$lang?>/firefox/">Firefox (Final Release) »</a></li>
 		</ul>
 	</div>
 </div>
