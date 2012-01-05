@@ -248,8 +248,6 @@ EXTRA;
         foreach($links as $key => $val) {
             $links[$key] = ' href="' . $val . '"';
         }
-        var_dump($links);
-
 
         break;
     case 'normal':
