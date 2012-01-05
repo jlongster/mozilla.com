@@ -10,6 +10,7 @@ $link = array(
     0 => 'http://knoxville-zoo.org/about-the-zoo/support-the-zoo/make-a-donation.html',
     1 => "/$lang/firefox/new/?WT.mc_id=fxlive2",
     2 => 'http://www.mozilla.org/about/mission.html',
+    3 => 'http://redpandanetwork.org/contribute/sponsor-a-guardian/',
 );
 
 
