@@ -86,7 +86,7 @@ if (count($_GET) > 0) {
         $target = ( in_array('new', $getArray) ) ? 'new' : 'normal';
 
         // do we have an fx page for this locale or do we keep the fallback ?
-        if( $target == 'normal' && in_array( $lang, array('fr')) ) {
+        if( $target == 'normal' && in_array( $lang, array('de', 'es-ES', 'fr')) ) {
             $target = 'fx';
         }
 
@@ -199,6 +199,25 @@ EXTRA;
             ul.home-download li a.download-link .download-arrow {
                 display: none !important;
             }
+
+            #main-content .sub-feature a:after {
+                content:"»";
+            }
+
+            #main-content #sub-firefox a:after {
+                content:"";
+            }
+
+            #home-fx #main-feature h3 {
+                font-size: 57px;
+                letter-spacing: -0.05em;
+                line-height: 0.9;
+                display: block;
+                font-family: MetaBlack,"Trebuchet MS",sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
 EXTRA;
         $android_relnotes = '/' .$lang . mobileDetails::release_notes_url(mobileDetails::latest_version);
         $android_market_download = <<<EXTRA
@@ -220,6 +239,17 @@ EXTRA;
         </a>
         <div class="download-other"><a href="{$android_relnotes}">{$l10n->get('Release Notes')}</a> | <a href="/{$lang}/mobile/platforms">{$l10n->get('Supported Devices')}</a></div>
 EXTRA;
+
+        $links = array(
+            0 =>"https://affiliates.mozilla.org/$lang/",
+            1 => "/$lang/newsletter/",
+        );
+
+        foreach($links as $key => $val) {
+            $links[$key] = ' href="' . $val . '"';
+        }
+        var_dump($links);
+
 
         break;
     case 'normal':
