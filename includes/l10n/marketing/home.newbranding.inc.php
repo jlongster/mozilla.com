@@ -130,6 +130,11 @@ $l10n->load($config['file_root'].'/'.$lang.'/includes/l10n/download.lang');
         padding: 5px 8px;
     }
 
+    body.locale-fi#home ul#benefits li {
+        font-size:19px;
+        padding: 5px 10px;
+    }
+
     body.locale-hu#home #main-feature h2 {
         color: #FFFFFF;
         font-size: 54px;
