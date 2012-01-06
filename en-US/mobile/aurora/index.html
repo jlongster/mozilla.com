@@ -3,18 +3,6 @@
     $page_desc  = 'Download and test Firefox future releases. Experience the newest innovations with the Aurora or Beta builds.';
     $body_id    = 'aurora-mobile';
     $body_class = 'darkbg';
-    require_once "{$config['file_root']}/includes/regions.php";
-    require_once "{$config['file_root']}/includes/email/forms.php";
-    require_once "{$config['file_root']}/includes/feeds/AuroraFeed.php";
-    require_once "product-details/mobileDetails.class.php";
-
-    $form = new ChannelsForm(array('AURORA', 'FIREFOX_BETA_NEWS', 'MOZILLA_AND_YOU'), $_POST);
-    $status = '';
-    if ($form->save()) {
-        $status = 'success';
-    } elseif ($form->error) {
-        $status = 'error error-'. $form->error;
-    }
     
 $fonts = <<<FONTS
     <style>
@@ -73,15 +61,15 @@ EXTRA_HEADERS;
     <ul id="feature-list" class="bjqs">
         <li>
             <h3>1. Preview Features</h3>
-            <p>Get a first look at the latest developer tools, security features and innovative HTML5 and other Web technologies.</p>
+            <p>Get the latest mobile and tablet UI, security features, HTML5 and other technologies first.</p>
         </li>
         <li>
             <h3>2. Share Feedback</h3>
-            <p>Test performance in an experimental environment, file bugs and help us determine what makes it to Beta.</p>
+            <p>Test performance, file bugs and help us determine what features go on to Beta.</p>
         </li>
         <li>
             <h3>3. Shape Firefox</h3>
-            <p>Become part of a community of users, contributors and developers working to make the next Firefox our best yet.</p>
+            <p>Join a community of users, contributors and developers working to build Firefox.</p>
         </li>
     </ul>
     </div>
@@ -98,69 +86,6 @@ EXTRA_HEADERS;
             <div class="success-pane">
               <h3>Thanks for subscribing!</h3>
             </div>
-            <form id="email-form" action="#newsletter-signup" method="post">
-              <input id="email" name="email" type="email" value="<?= $form->get('email') ?>" placeholder="Your email address">
-              <div id="email-error">Whoops! Be sure to enter a valid email address.</div>
-              <div class="more">
-                <div class="row">
-                  <select id="country" name="country">
-                      <option value="">Select country</option>
-                      <?php
-                          $country = $form->get('country');
-                          if (!$country) {
-                              $country = 'us';
-                          }
-                          echo regionsAsOptions($lang, $country);
-                      ?>
-                  </select>
-                </div>
-                <ul class="channels_signup">
-                  <li>
-                    <label for="check_aurora">
-                      <?php $checked = $form->get('aurora') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_aurora" name="aurora" value="t" <?= $checked ?> />
-                      <span>Aurora</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="check_beta">
-                      <?php $checked = $form->get('beta') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_beta" name="beta" value="t" <?= $checked ?> />
-                      <span>Beta</span>
-                    </label>
-                  </li>
-                  <li>
-                    <label for="check_general">
-                      <?php $checked = $form->get('general') ? 'checked="checked"' : '' ?>
-                      <input type="checkbox" id="check_general" name="general" value="t" <?= $checked ?> />
-                      <span>Final Release</span>
-                    </label>
-                  </li>
-                </ul>
-                <div id="channel-error">Please select at least one newsletter.</div>
-                <div class="privacy-field">
-                  <?php $checked = $form->get('privacy') ? 'checked="checked"' : '' ?>
-                  <label for="inline-privacy-check" class="privacy-check-label">
-                    <span class="error-wrapper">
-                      <input type="checkbox" class="privacy-check" id="inline-privacy-check" name="privacy" <?= $checked ?>>
-                    </span> 
-                    <span class="title">
-                      I agree to the <a href="/en-US/privacy-policy">Privacy Policy</a>
-                    </span>
-                    <div class="clear"></div>
-                  </label>
-                </div>
-                <div id="privacy-error">Please agree to the Privacy Policy.</div>
-                <input name="submit" class="button" type="submit" value="Sign me up »" id="subscribe"
-                       onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
-                                'DCS.dcsuri', '/mainstream_newsletter/signup',
-                                'WT.ti', 'Link: Sign me up »',
-                                'WT.dl', 99,
-                                'WT.nv', 'Content',
-                                'WT.ac', 'Newsletter');">
-                <p class="footnote">We will only send you Mozilla-related information.</p>
-              </div>
-            </form>
           </div>
 
         <div id="blog">
@@ -168,33 +93,6 @@ EXTRA_HEADERS;
             <h3>Read about the latest <span>Aurora features <a href="http://blog.mozilla.com/futurereleases/category/aurora/feed/">RSS Feed</a></span></h3>
             <p>Follow the <a href="http://blog.mozilla.com/futurereleases/">Future Release Blog</a> to stay in the loop.</p>
             </div>
-            <?php
-               $feed = new AuroraFeed();
-               $items = $feed->getItems(4);
-
-               if (count($items) > 0) {
-                   echo '<ul>';
-
-                   foreach ($items as $item) {
-                       echo '<li>';
-                       echo '<h4><a href="' . htmlspecialchars($item['link']) . '">';
-                       echo htmlspecialchars($item['title']);
-                       echo '</a></h4>';
-                       echo '<div class="info">';
-                       echo '<span class="date">' . htmlspecialchars(date('F j, Y', $item['date'])) . '</span>';
-                       if (count($item['categories']) > 0) {
-                           echo ' • ';
-                           $categories = array_map('htmlspecialchars', $item['categories']);
-                           echo implode(', ', $categories);
-                       }
-                       echo '</div>';
-                       echo '</li>';
-                   }
-
-                   echo '</ul>';
-               }
-
-            ?>
         </div>
 
     </div>
@@ -214,7 +112,7 @@ EXTRA_HEADERS;
         $(document).ready(function(){
             $('#features').bjqs({
                 'width' : 350,
-                'height' : 200,
+                'height' : 180,
                 'showMarkers' : true,
                 'showControls' : false,
                 'centerMarkers' : true
