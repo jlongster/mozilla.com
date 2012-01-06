@@ -131,7 +131,7 @@ $sitepages = array(
 
 // use older version of Download page for locales not listed below
 
-$brand_aware_locales = array('ar', 'as', 'ast', 'be', 'bg', 'bn-IN', 'br', 'ca', 'cs', 'csb', 'cy', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu', 'ff', 'fr', 'ga-IE', 'gd', 'gl', 'he', 'hr', 'hu', 'is', 'it', 'ko', 'ku', 'lt', 'lv', 'mk', 'nb-NO', 'nl', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sv-SE', 'th', 'tr', 'vi', 'zh-CN', 'zh-TW');
+$brand_aware_locales = array('ar', 'as', 'ast', 'be', 'bg', 'bn-IN', 'br', 'ca', 'cs', 'csb', 'cy', 'de', 'el', 'eo', 'es-AR', 'es-CL', 'es-ES', 'es-MX', 'et', 'eu', 'ff', 'fi', 'fr', 'ga-IE', 'gd', 'gl', 'he', 'hr', 'hu', 'is', 'it', 'ko', 'ku', 'lt', 'lv', 'mk', 'nb-NO', 'nl', 'pl', 'pt-BR', 'rm', 'ro', 'ru', 'si', 'sk', 'sl', 'sq', 'sv-SE', 'th', 'tr', 'vi', 'zh-CN', 'zh-TW');
 
 if ( $stage == true ) {
     $brand_aware_locales = $full_languages;
