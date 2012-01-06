@@ -60,6 +60,9 @@ EXTRA_HEADERS;
         }
         ?>
       </header>
+      <div class="main-content box" id="survey-box">
+        <h3>Have a second? <span>Help Us Out</span></h3>
+       </div>
       <div id="content">
         <section id="intro">
             <h3>Different by Design</h3>
@@ -158,6 +161,83 @@ EXTRA_HEADERS;
     email_input.addEventListener("focus", function() {
             document.getElementById("newsletter-signup").className += " expand";
         }, false);
+   $(document).ready(function() {
+
+   
+
+        var cookieName = 'Firefox8WhatsNewSurvey';
+        var cookieDays = 30;
+
+        var surveyProbability = 1;
+
+        var setCookie = function(name, value, path, expire)
+        {
+            if (expire) {
+                var expdate = new Date();
+                expdate.setDate(expdate.getDate() + expire);
+                expire = ';expires=' + expdate.toUTCString();
+            } else {
+                expire = '';
+            }
+
+            if (path) {
+                path = ';path=' + path;
+            } else {
+                path = '';
+            }
+
+            document.cookie = name + '=' + escape(value) + expire + path;
+        };
+
+        var getCookie = function(name)
+        {
+            if (document.cookie.length === 0) {
+                return null;
+            }
+
+            var start = document.cookie.indexOf(name + '=');
+
+            if (start === -1) {
+                return null;
+            }
+
+            start += name.length + 1;
+            end    = document.cookie.indexOf(';', start);
+            if (end === -1) {
+                end = document.cookie.length;
+            }
+
+            return unescape(document.cookie.substring(start, end));
+        };
+
+        var showSurvey = getCookie(cookieName);
+
+        if (showSurvey === null) {
+            // no cookie set, show survey with probability
+            showSurvey = (Math.random() < surveyProbability) ? 'yes' : 'no';
+            // survey is only ever displayed once, set cookie to hide it
+            setCookie(cookieName, 'no', '/', cookieDays);
+        } else {
+            // make sure it stays hidden even if you edit the cookie value
+            showSurvey = 'no';
+            setCookie(cookieName, 'no', '/', cookieDays);
+        }
+
+        if (showSurvey == 'yes') {
+            var $iframe = $(
+                '<iframe src="http://www.surveygizmo.com/s3/iframe/671308/26466906335a" ' +
+                'frameborder="0" width="500" height="200" ' +
+                'style="overflow:hidden"></iframe>'
+            );
+            $('#survey-box').append($iframe);
+            $('#feature-email').hide();
+            $('#survey-box').css('display', 'inline-block');
+        } else {
+            $('#survey-box').hide();
+            $('#feature-email').show();
+        }
+
+    });
     </script>
 <?php
     $auto_link_tracking = true;
