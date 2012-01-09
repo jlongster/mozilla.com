@@ -1,0 +1,43 @@
+<?php
+    $page_title = "Firefox Nightly for Android";
+    $body_id = 'nightly-mobile';
+    $body_class = 'darkbg';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/nightly-m.css" media="screen" />
+    <script src="/js/mozilla-language-search.js"></script>
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2><img src="<?=$config['static_prefix']?>/img/mobile/m/nightly/title.png" height="49" width="279" alt="Firefox Nightly" /></h2>
+
+    <div class="content-box with-titles" id="download-nightly">
+      <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_Nightly" class="button">
+        <img src="<?=$config['static_prefix']?>/img/mobile/m/nightly/download-logo.png" alt="" />
+        Download Nightly<br />
+        <em>for Android</em>
+      </a>
+        <div class="center-link">
+          <a href="/<?= $lang ?>/mobile/platforms/">List of Supported Devices »</a>
+        </div>
+
+    </div>
+</div>
+
+<div id="main-content">
+
+    <ul class="link-list">
+        <li><a href="">Submit your Feedback</a></li>
+        <li><a href="">Nightly-Tester Mailing List</a></li>
+        <li><a href="">Report bugs in Bugzilla</a></li>
+        <li><a href="/m/privacy.html">Privacy Policy</a></li>
+    </ul>
+
+</div>
+
+<?php 
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>
