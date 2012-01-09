@@ -10,8 +10,8 @@
 
   <div class="success-pane">
     <h3>¡Gracias por suscribirte!</h3>
-    <p>Vérifiez dans votre boite de réception si vous avez bien reçu le mail de confirmation. Votre inscription à la newsletter Mozilla & Vous sera effective après avoir cliqué sur le lien de confirmation.</p>
-    <p><a href="/<?=$lang?>/firefox/connect/" class="stay-connected">Gardez le contact »</a></p>
+    <p>Estamos deseando empezar a compartir contigo consejos y trucos sobre cómo sacar el máximo partido de Firefox, las noticias más increíbles sobre Mozilla y todo el trabajo que hacemos para crear una Web mejor.</p>
+    <p><a href="/<?=$lang?>/firefox/connect/" class="stay-connected">Stay Connected »</a></p>
   </div>
 
   <form action="" method="post" id="newsletter-form">
@@ -29,10 +29,10 @@
 
         foreach($form->errors as $error) {
             if($error == 'email') {
-                echo '<li>Veuillez saisir votre adresse électronique.</li>';
+                echo '<li>¡Uy! Asegúrate de introducir un correo electrónico válido.</li>';
             }
             else if($error == 'privacy') {
-                echo '<li>Confirmez que vous avez lu et acceptez la politique de confidentialité de Mozilla en cochant la case.</li>';
+                echo '<li>Por favor, lee la política de privacidad de Mozilla y acepta marcando la casilla.</li>';
            }
         }
 
