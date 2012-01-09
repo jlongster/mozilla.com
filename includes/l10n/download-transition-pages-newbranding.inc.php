@@ -40,6 +40,11 @@ $dl_link       = "http://download.mozilla.org/?product={$dl_product}&os={$dl_os}
     <link rel="stylesheet" href="/style/covehead/download-page.css" media="screen" />
     <script src="<?=$config['static_prefix'];?>/includes/min/min.js?g=js&amp;2011-06-21"></script>
     <title><?=$page_title?></title>
+    <meta name="WT.ad" content="Support - Download Help;Tour;About;Mobile;Newsletter;Twitter;Facebook;Connect" />
+    <meta name="WT.si_n" content="DownloadFirefox" />
+    <meta name="WT.si_x" content="1" />
+    <meta name="WT.si_cs" content="1" />
+    <meta name="WT.z_convert" content="DownloadFirefox" />
 
 <?php
     //~ echo min_inline_css('css');
