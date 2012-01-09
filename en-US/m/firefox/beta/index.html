@@ -1,0 +1,57 @@
+<?php
+    $page_title = "Firefox Beta for Android";
+    $body_id = 'beta-mobile';
+    $body_class = 'darkbg';
+    $extra_headers = <<<EXTRA_HEADERS
+    <link rel="stylesheet" href="/style/covehead/beta-m.css" media="screen" />
+
+EXTRA_HEADERS;
+
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-header.inc.php";
+?>
+
+<div id="main-feature">
+    <h2><img src="<?=$config['static_prefix']?>/img/mobile/m/beta/title.png" alt="Firefox Beta" height="45" width"268" /></h2>
+
+    <div class="content-box with-titles" id="download-beta">
+      <a href="https://wiki.mozilla.org/Mobile/Platforms/Android#Download_beta" class="button">
+        <img src="<?=$config['static_prefix']?>/img/mobile/m/beta/download-logo.png" alt="" />
+        Download Beta<br />
+        <em>for Android</em>
+      </a>
+        <div class="center-link">
+          <a href="/<?= $lang ?>/mobile/platforms/">List of Supported Devices »</a>
+        </div>
+
+    </div>
+</div>
+
+<div id="main-content">
+
+    <h3 id="intro">Download Beta for mobile and be part of the next version of Firefox.</h3>
+
+    <ol id="feature-list">
+        <li>
+            <h3>1. Test Features</h3>
+            <p>Try out the latest mobile and tablet UI, plus other enhancements almost ready for prime time.</p>
+        </li>
+        <li>
+            <h3>2. Refine &amp; Polish</h3>
+            <p>File bugs to help us put the final tweaks on performance and functionality in a stable environment.</p>
+        </li>
+        <li>
+            <h3>3. Do Your Part</h3>
+            <p>Have an impact on the next version of Firefox and the 450 million people who use it every day.</p>
+        </li>
+    </ol>
+
+    <ul class="link-list">
+        <li><a href="/<?=$lang?>/mobile/beta/notes/">What’s New in this Version</a></li>
+        <li><a href="/m/privacy.html">Privacy Policy</a></li>
+    </ul>
+
+</div>
+
+<?php 
+    include_once "{$config['file_root']}/{$lang}/includes/mobile-footer.inc.php";
+?>
