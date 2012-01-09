@@ -1,7 +1,7 @@
 
 <div id="main-feature">
   <h2>¡Lee toda la información sobre Firefox en nuestro boletín!</h2>
-  <p>Suscríbete para recibir actualizaciones mensuales y estar al día de las novedades de Firefox, incluyendo los último trucos y consejos para sacar el máximo partido a tu navegador. Es la forma perfecta de que sigamos en contacto contigo.</p>
+  <p>Suscríbete para recibir actualizaciones mensuales y estar al día de las novedades de Firefox, incluyendo los últimos trucos y consejos para sacar el máximo partido a tu navegador. Es la forma perfecta de que sigamos en contacto contigo.</p>
 </div>
 
 
@@ -51,7 +51,7 @@
             <?php
                 $country = $form->get('country');
                 if (!$country) {
-                    $country = 'fr';
+                    $country = 'es';
                 }
                 echo regionsAsOptions($lang, $country);
             ?>
@@ -65,6 +65,7 @@
               <option value="fr">Francés</option>
               <option value="pt-BR">Portugués</option>
               <option value="de">Alemán</option>
+              <option value="es-ES" selected>Español</option>
               <option value="en">Inglés</option>
             </select>
           </div>
@@ -96,7 +97,7 @@
           </label>
         </div>
 
-        <div class="text">Sólo te enviaremos información relacionada con Mozilla.</div>
+        <div class="text">Solo te enviaremos información relacionada con Mozilla.</div>
 
         <div class="field submit-field">
           <input name="submit" type="submit" value="¡Quiero suscribirme!" id="subscribe" class="button">
