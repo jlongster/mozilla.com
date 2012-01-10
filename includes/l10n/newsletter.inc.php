@@ -116,11 +116,40 @@ require_once $config['file_root'] . '/includes/l10n/header-pages.inc.php';
           <span class="field-label"><?=___('Available Languages')?></span>
           <div class="field-language">
             <select class="lang" name="lang">
-              <option value="fr">Français</option>
-              <option value="pt-BR">Português</option>
-              <option value="de">Deutsch</option>
-              <option value="en">English</option>
-              <option value="es-ES">Español</option>
+
+
+<?php
+    // generate <option> automatically
+    $form_lang = $form->get('lang');
+    if (!$form_lang) {
+
+        if(in_array($lang, array('de', 'es-ES', 'fr', 'pt-BR'))) {
+            $selected = $lang;
+        } else {
+            $selected = 'en-US';
+        }
+
+    } else {
+        $selected = $form_lang;
+    }
+
+    $supported_lang = array(
+        'de'    => 'Deutsch',
+        'en-US' => 'English',
+        'es-ES' => 'Español',
+        'fr'    => 'Français',
+        'pt-BR' => 'Português'
+        );
+
+    foreach($supported_lang as $key => $val) {
+        $is_selected = ($key == $selected) ? " selected='selected'" : "";
+        echo "<option value='{$key}'{$is_selected}>{$val}</option>\n";
+    }
+
+
+
+?>
+
             </select>
           </div>
         </div>
