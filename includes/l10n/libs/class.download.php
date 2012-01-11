@@ -200,7 +200,11 @@ HTML_RETURN;
         }
 
         if($_betalocale_status) {
-            $_betalocaletext = '<em style="color:orange; text-align:right;float:right; font-size:90%; padding: 0 5px;">beta language</em>';
+            $beta_text = 'beta language';
+            if($locale == 'sr') {
+                $beta_text = 'бета језик';
+            }
+            $_betalocaletext = '<em style="color:orange; text-align:right;float:right; font-size:90%; padding: 0 5px;">' . $beta_text . '</em>';
         } else {
             $_betalocaletext = '';
         }
