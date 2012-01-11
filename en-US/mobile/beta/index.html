@@ -30,6 +30,7 @@
 EXTRA_HEADERS;
     include_once "{$config['file_root']}/{$lang}/includes/header.inc.php";
 
+    $mobile_beta_href = mobileDetails::android_web_link(mobileDetails::download_url('en-us', mobileDetails::android, mobileDetails::beta_version));
 ?>
 
 <div id="main-feature">
@@ -37,7 +38,7 @@ EXTRA_HEADERS;
     <p>Download Beta and be part of the next version of Firefox.</p>
         <div id="download_beta_mobile_button">
         <div class="home-download beta-download">
-            <a href="$mobile_beta_href"
+            <a href="<?=$mobile_beta_href?>"
                class="download-link download-firefox"
                onclick="dcsMultiTrack('DCS.dcssip', 'www.mozilla.org',
                                       'DCS.dcsuri', '/en-US/firefox/channel/',
