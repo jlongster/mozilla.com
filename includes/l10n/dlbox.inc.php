@@ -27,7 +27,16 @@ if(isset($dl_lang)) {
 }
 
 
-$firefox_wordmark = 'Firefox';
+$firefox_wordmark = ___('Firefox');
+$windows_name     = ___('Windows');
+$linux_name       = ___('Linux');
+$osx_name         = ___('Mac OS X');
+$android_name     = ___('Android');
+
+if($lang == 'sr') {
+    $firefox_wordmark = 'Фајерфокс';
+    $windows_name     = 'Виндоус';
+}
 
 switch($pageid) {
     case 'security':
@@ -89,7 +98,14 @@ switch($pageid) {
     default:
         $dl_box_class['stable'] = 'home-download';
         $dl_box_id              = 'home-download';
-        $dl_box_options         = array('wording' => $firefox_wordmark, 'relnotes_link' => true, 'ancillary_links' => true);
+        $dl_box_options         = array('wording'           => $firefox_wordmark,
+                                        'relnotes_link'     => true,
+                                        'ancillary_links'   => true,
+                                        'linux_name'        => $linux_name,
+                                        'windows_name'      => $windows_name,
+                                        'osx_name'          => $osx_name,
+                                        'android_name'      => $android_name,
+                                        );
 
         // fx mobile download page, smaller download button
         if ($target == 'fx') {

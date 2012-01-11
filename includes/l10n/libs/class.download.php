@@ -12,7 +12,7 @@ class firefoxDetailsL10n extends firefoxDetails
         $_bouncer_js               = array_key_exists('bouncer_js', $options)               ? $options['bouncer_js']                : false;
         $_extra_link_attr          = array_key_exists('extra_link_attr', $options)          ? $options['extra_link_attr']           : false;
         $_channel                  = array_key_exists('channel', $options)                  ? $options['channel']                   : 'stable';
-		$_include_android          = array_key_exists('include_android', $options)          ? $options['include_android']           : true;
+        $_include_android          = array_key_exists('include_android', $options)          ? $options['include_android']           : true;
 
         switch ($_channel) {
             case 'older':
@@ -106,11 +106,11 @@ class firefoxDetailsL10n extends firefoxDetails
         $_li_windows = $_temp['Windows'];
         $_li_linux   = $_temp['Linux'];
         $_li_osx     = $_temp['OS X'];
-		
-		$_li_android = "";
-		if ($_include_android) {
-			$_li_android = $this->_getDownloadBlockListHtmlForLocaleAndPlatform2('en-US', 'Android', $options);
-		}
+
+        $_li_android = "";
+        if ($_include_android) {
+            $_li_android = $this->_getDownloadBlockListHtmlForLocaleAndPlatform2('en-US', 'Android', $options);
+        }
 
         if ($_include_js) {
             $_js_replace_links = $_js_replace_links ? 'true' : 'false';
@@ -177,9 +177,10 @@ HTML_RETURN;
         $_release_notes               = ___('Release Notes');
         $_other_systems_and_languages = ___('Other Systems and Languages');
         $_language_name               = $this->localeDetails->getNativeNameForLocale($locale);
-        $_windows_name                = ___('Windows');
-        $_linux_name                  = ___('Linux');
-        $_osx_name                    = ___('Mac OS X');
+        $_windows_name                = array_key_exists('windows_name', $options) ? $options['windows_name'] : ___('Windows');
+        $_linux_name                  = array_key_exists('linux_name',   $options) ? $options['linux_name']   : ___('Linux');
+        $_osx_name                    = array_key_exists('osx_name',     $options) ? $options['osx_name']     : ___('Mac OS X');
+        $_android_name                = array_key_exists('android_name', $options) ? $options['android_name'] : ___('Android');
         $_mb                          = ___('MB');
         $_megabytes                   = ___('MegaBytes');
         $_betalocale_status           = array_key_exists('betalocale_status', $options) ? $options['betalocale_status'] : false;
@@ -208,26 +209,26 @@ HTML_RETURN;
             case 'Windows':
                 $_os_class     = 'os_windows';
                 $_os_shortname = 'win';
-                $_os_name      = ___('Windows');
+                $_os_name      = $_windows_name;
                 $_os_file_ext  = 'win32.installer.exe';
                 break;
             case 'Linux':
                 $_os_class     = 'os_linux';
                 $_os_shortname = 'linux';
-                $_os_name      = ___('Linux');
+                $_os_name      = $_linux_name;
                 $_os_file_ext  = 'linux-i686.tar.bz2';
                 break;
             case 'OS X':
                 $_os_class     = 'os_osx';
                 $_os_shortname = 'osx';
-                $_os_name      = ___('Mac OS X');
+                $_os_name      = $_osx_name;
                 $_os_file_ext  = 'mac.dmg';
                 break;
-			case 'Android':
-				$_os_class     = 'os_android';
-				$_os_shortname = 'android';
-				$_os_name      = ___('Android');
-				break;
+            case 'Android':
+                $_os_class     = 'os_android';
+                $_os_shortname = 'android';
+                $_os_name      = $_android_name;
+                break;
             default:
                 return;
         }
@@ -247,14 +248,14 @@ HTML_RETURN;
             $extra_dl_info = "<em>$_os_name - $_language_name</em>";
         }
 
-		$_dl_link = $_download_base_url . '?product=' . $_product . '-' . $_current_version . '&amp;os=' . $_os_shortname . '&amp;lang='. $locale . $extra;
-		if ($platform == 'Android') {
-			$_dl_link = 'https://market.android.com/details?id=org.mozilla.firefox';
-			$_language_name = '';
-		}
-		
+        $_dl_link = $_download_base_url . '?product=' . $_product . '-' . $_current_version . '&amp;os=' . $_os_shortname . '&amp;lang='. $locale . $extra;
+        if ($platform == 'Android') {
+            $_dl_link = 'https://market.android.com/details?id=org.mozilla.firefox';
+            $_language_name = '';
+        }
+
         switch ($_layout) {
-			// FIXME can't find this case in the source code, maybe we should delete?
+            // FIXME can't find this case in the source code, maybe we should delete?
             case 'linksonly':
 
                 $_return = <<<LI_SIDEBAR
@@ -299,7 +300,7 @@ LI_SIDEBAR;
             case 'simple':
                 $_return = <<<LI_SIDEBAR
                 <li class="{$_os_class}">
-					<a class="download-link download-firefox" href="{$_dl_link}">
+                    <a class="download-link download-firefox" href="{$_dl_link}">
                 <span class="download-content">
                     <span class="download-title">{$_download_product}</span> {$_wording}
                 </span>
