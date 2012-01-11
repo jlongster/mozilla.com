@@ -1,0 +1,90 @@
+#!/bin/sh 
+
+# Use this script to rollout bugs for mozilla.org.
+#
+# Arguments: <bug> <rev> <branch>
+#
+# <bug>: bugzilla bug number
+# <rev>: svn rev list like 10000 or 10000,10001,10002
+# <branch>: branch name where the edits live, either trunk or stage
+#
+# <rev> and <branch> are optional. They will be parsed from the
+# whiteboard in bugzilla if not given.
+#
+# This scripts will first merge the changes into tags/stage, ask if
+# everything's ok, and commit if so. It then does the same for
+# tags/production. If <branch> is "stage", it only merges from stage
+# to production.
+
+bug="$1"
+rev="$2"
+branch="$3"
+
+function try {
+    "$@"
+    code="$?"
+    if ! [ "$code" -eq "0" ]; then
+        echo "$@ failed with code $code"
+        exit 10
+    fi
+}
+
+if [ ! -d trunk ]; then
+    echo "Error: you must run this in the root of the" \
+         "site where trunk and all the tags are available."
+    exit 1
+fi
+
+if [ -z "$bug" ]; then
+    echo "Usage: $0 <bug-id> <revs> <branch>"
+    echo "\n<revs> and <branch> are optional"
+    exit 2
+fi
+
+# If no rev and branch provided, parse it from the bug
+if [[ -z "$rev" || -z "$branch" ]]; then
+    output_func='$revs = $1; $branch = $2; $revs =~ s/\s*//g; print "$revs $branch\n";'
+
+    data=`curl -s "https://bugzilla.mozilla.org/show_bug.cgi?id=$bug" | \
+          perl -ne 'if(/td colspan="2">.*r=([\d\s,]+)(?:b=(\w*))?/) { '"$output_func"' }'`
+    read rev branch <<<"$data"
+fi
+
+if [ "$branch" = "trunk" ]; then
+    path="../../trunk"
+
+    try cd tags/stage
+
+    echo "Merging into tags/stage..."
+    try svn merge --non-interactive --ignore-ancestry -c"$rev" "$path"
+
+    read -p "Continue? y/n [n]" answer
+    if [ ! "$answer" = "y" ]; then
+        echo "Stopped after merging into tags/stage"
+        exit 0
+    fi
+
+    echo "Committing tags/stage..."
+    try svn commit -m "merge $rev from $branch for bug $bug"
+elif [ "$branch" = "stage" ]; then
+    path="../stage"
+else
+    echo "Invalid branch in the whiteboard: $branch";
+    exit 3
+fi
+
+try cd tags/production
+
+echo "Merging into tags/production..."
+try svn merge --ignore-ancestry -c"$rev" "$path"
+
+read -p "Continue? y/n [n]" answer
+if [ ! "$answer" = "y" ]; then
+    echo "Stopped after merging into tags/production"
+    exit 0
+fi
+
+echo "Committing tags/production..."
+try svn commit -m "merge $rev from $branch for bug $bug"
+
+
